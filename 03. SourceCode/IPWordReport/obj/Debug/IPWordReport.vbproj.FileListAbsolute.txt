@@ -1,0 +1,13 @@
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPWordReport\bin\IP.Core.IPWordReport.dll
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPWordReport\bin\IP.Core.IPWordReport.pdb
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPWordReport\bin\IP.Core.IPWordReport.xml
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPWordReport\bin\Interop.Microsoft.Office.Core.dll
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPWordReport\bin\Interop.Word.dll
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPWordReport\bin\Interop.VBIDE.dll
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPWordReport\obj\Debug\IPWordReport.vbprojResolveAssemblyReference.cache
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPWordReport\obj\Debug\Interop.Microsoft.Office.Core.dll
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPWordReport\obj\Debug\Interop.VBIDE.dll
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPWordReport\obj\Debug\IPWordReport.vbproj.ResolveComReference.cache
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPWordReport\obj\Debug\IP.Core.IPWordReport.dll
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPWordReport\obj\Debug\IP.Core.IPWordReport.xml
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPWordReport\obj\Debug\IP.Core.IPWordReport.pdb

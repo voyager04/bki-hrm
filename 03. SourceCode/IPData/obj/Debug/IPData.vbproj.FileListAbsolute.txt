@@ -1,0 +1,7 @@
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPData\bin\IPData.dll.config
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPData\bin\IPData.dll
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPData\bin\IPData.pdb
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPData\bin\IPData.xml
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPData\obj\Debug\IPData.dll
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPData\obj\Debug\IPData.xml
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPData\obj\Debug\IPData.pdb

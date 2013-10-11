@@ -1,0 +1,5 @@
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\BKI_HRM.US\bin\Debug\BKI_HRM.US.dll
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\BKI_HRM.US\bin\Debug\BKI_HRM.US.pdb
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\BKI_HRM.US\obj\Debug\BKI_HRM.US.csprojResolveAssemblyReference.cache
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\BKI_HRM.US\obj\Debug\BKI_HRM.US.dll
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\BKI_HRM.US\obj\Debug\BKI_HRM.US.pdb

@@ -1,0 +1,10 @@
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPBusinessService\bin\IPBusinessService.dll
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPBusinessService\bin\IPBusinessService.pdb
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPBusinessService\bin\IPBusinessService.xml
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPBusinessService\bin\IPException.dll
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPBusinessService\bin\IPException.pdb
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPBusinessService\bin\IPException.xml
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPBusinessService\obj\Debug\IPBusinessService.vbprojResolveAssemblyReference.cache
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPBusinessService\obj\Debug\IPBusinessService.dll
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPBusinessService\obj\Debug\IPBusinessService.xml
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPBusinessService\obj\Debug\IPBusinessService.pdb

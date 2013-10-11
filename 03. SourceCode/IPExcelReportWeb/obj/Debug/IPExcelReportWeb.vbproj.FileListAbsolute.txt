@@ -1,0 +1,9 @@
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPExcelReportWeb\bin\Debug\IPExcelReportWeb.dll
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPExcelReportWeb\bin\Debug\IPExcelReportWeb.pdb
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPExcelReportWeb\bin\Debug\IPExcelReportWeb.xml
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPExcelReportWeb\bin\Debug\C1.Common.dll
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPExcelReportWeb\obj\Debug\IPExcelReportWeb.Resources.resources
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPExcelReportWeb\obj\Debug\IPExcelReportWeb.vbproj.GenerateResource.Cache
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPExcelReportWeb\obj\Debug\IPExcelReportWeb.dll
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPExcelReportWeb\obj\Debug\IPExcelReportWeb.xml
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPExcelReportWeb\obj\Debug\IPExcelReportWeb.pdb

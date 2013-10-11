@@ -1,0 +1,10 @@
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\BKI_HRM\bin\Debug\BKI_HRM.exe.config
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\BKI_HRM\bin\Debug\BKI_HRM.exe
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\BKI_HRM\bin\Debug\BKI_HRM.pdb
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\BKI_HRM\obj\x86\Debug\BKI_HRM.Properties.Resources.resources
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\BKI_HRM\obj\x86\Debug\BKI_HRM.csproj.GenerateResource.Cache
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\BKI_HRM\obj\x86\Debug\BKI_HRM.exe
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\BKI_HRM\obj\x86\Debug\BKI_HRM.pdb
+D:\QLNS-HRM\03. SourceCode\BKI_HRM\bin\Debug\BKI_HRM.exe.config
+D:\QLNS-HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.exe
+D:\QLNS-HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.pdb
