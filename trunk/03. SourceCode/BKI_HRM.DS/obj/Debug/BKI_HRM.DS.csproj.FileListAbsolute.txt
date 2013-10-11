@@ -1,0 +1,5 @@
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\BKI_HRM.DS\bin\Debug\BKI_HRM.DS.dll.config
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\BKI_HRM.DS\bin\Debug\BKI_HRM.DS.dll
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\BKI_HRM.DS\bin\Debug\BKI_HRM.DS.pdb
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\BKI_HRM.DS\obj\Debug\BKI_HRM.DS.dll
+C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\BKI_HRM.DS\obj\Debug\BKI_HRM.DS.pdb
