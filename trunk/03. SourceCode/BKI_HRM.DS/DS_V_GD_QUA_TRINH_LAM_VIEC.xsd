@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_V_GD_QUA_TRINH_LAM_VIEC" targetNamespace="http://tempuri.org/DS_V_GD_QUA_TRINH_LAM_VIEC.xsd" xmlns:mstns="http://tempuri.org/DS_V_GD_QUA_TRINH_LAM_VIEC.xsd" xmlns="http://tempuri.org/DS_V_GD_QUA_TRINH_LAM_VIEC.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BKI_HRMConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BKI_HRMConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_HRM.DS.Properties.Settings.GlobalReference.Default.BKI_HRMConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_GD_QUA_TRINH_LAM_VIECTableAdapter" GeneratorDataComponentClassName="V_GD_QUA_TRINH_LAM_VIECTableAdapter" Name="V_GD_QUA_TRINH_LAM_VIEC" UserDataComponentName="V_GD_QUA_TRINH_LAM_VIECTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BKI_HRMConnectionString (Settings)" DbObjectName="BKI_HRM.dbo.V_GD_QUA_TRINH_LAM_VIEC" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MA_NV, HO_DEM, TEN, MA_CV, TEN_CV, MA_DON_VI, MA_QUYET_DINH, NGAY_CO_HIEU_LUC, ID_TRANG_THAI_CV, Expr1 FROM dbo.V_GD_QUA_TRINH_LAM_VIEC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MA_NV" DataSetColumn="MA_NV" />
+              <Mapping SourceColumn="HO_DEM" DataSetColumn="HO_DEM" />
+              <Mapping SourceColumn="TEN" DataSetColumn="TEN" />
+              <Mapping SourceColumn="MA_CV" DataSetColumn="MA_CV" />
+              <Mapping SourceColumn="TEN_CV" DataSetColumn="TEN_CV" />
+              <Mapping SourceColumn="MA_DON_VI" DataSetColumn="MA_DON_VI" />
+              <Mapping SourceColumn="MA_QUYET_DINH" DataSetColumn="MA_QUYET_DINH" />
+              <Mapping SourceColumn="NGAY_CO_HIEU_LUC" DataSetColumn="NGAY_CO_HIEU_LUC" />
+              <Mapping SourceColumn="ID_TRANG_THAI_CV" DataSetColumn="ID_TRANG_THAI_CV" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_V_GD_QUA_TRINH_LAM_VIEC" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_GD_QUA_TRINH_LAM_VIEC" msprop:Generator_UserDSName="DS_V_GD_QUA_TRINH_LAM_VIEC">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_GD_QUA_TRINH_LAM_VIEC" msprop:Generator_TableClassName="V_GD_QUA_TRINH_LAM_VIECDataTable" msprop:Generator_TableVarName="tableV_GD_QUA_TRINH_LAM_VIEC" msprop:Generator_TablePropName="V_GD_QUA_TRINH_LAM_VIEC" msprop:Generator_RowDeletingName="V_GD_QUA_TRINH_LAM_VIECRowDeleting" msprop:Generator_RowChangingName="V_GD_QUA_TRINH_LAM_VIECRowChanging" msprop:Generator_RowEvHandlerName="V_GD_QUA_TRINH_LAM_VIECRowChangeEventHandler" msprop:Generator_RowDeletedName="V_GD_QUA_TRINH_LAM_VIECRowDeleted" msprop:Generator_UserTableName="V_GD_QUA_TRINH_LAM_VIEC" msprop:Generator_RowChangedName="V_GD_QUA_TRINH_LAM_VIECRowChanged" msprop:Generator_RowEvArgName="V_GD_QUA_TRINH_LAM_VIECRowChangeEvent" msprop:Generator_RowClassName="V_GD_QUA_TRINH_LAM_VIECRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MA_NV" msprop:Generator_ColumnVarNameInTable="columnMA_NV" msprop:Generator_ColumnPropNameInRow="MA_NV" msprop:Generator_ColumnPropNameInTable="MA_NVColumn" msprop:Generator_UserColumnName="MA_NV">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HO_DEM" msprop:Generator_ColumnVarNameInTable="columnHO_DEM" msprop:Generator_ColumnPropNameInRow="HO_DEM" msprop:Generator_ColumnPropNameInTable="HO_DEMColumn" msprop:Generator_UserColumnName="HO_DEM">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEN" msprop:Generator_ColumnVarNameInTable="columnTEN" msprop:Generator_ColumnPropNameInRow="TEN" msprop:Generator_ColumnPropNameInTable="TENColumn" msprop:Generator_UserColumnName="TEN">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MA_CV" msprop:Generator_ColumnVarNameInTable="columnMA_CV" msprop:Generator_ColumnPropNameInRow="MA_CV" msprop:Generator_ColumnPropNameInTable="MA_CVColumn" msprop:Generator_UserColumnName="MA_CV" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEN_CV" msprop:Generator_ColumnVarNameInTable="columnTEN_CV" msprop:Generator_ColumnPropNameInRow="TEN_CV" msprop:Generator_ColumnPropNameInTable="TEN_CVColumn" msprop:Generator_UserColumnName="TEN_CV" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MA_DON_VI" msprop:Generator_ColumnVarNameInTable="columnMA_DON_VI" msprop:Generator_ColumnPropNameInRow="MA_DON_VI" msprop:Generator_ColumnPropNameInTable="MA_DON_VIColumn" msprop:Generator_UserColumnName="MA_DON_VI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MA_QUYET_DINH" msprop:Generator_ColumnVarNameInTable="columnMA_QUYET_DINH" msprop:Generator_ColumnPropNameInRow="MA_QUYET_DINH" msprop:Generator_ColumnPropNameInTable="MA_QUYET_DINHColumn" msprop:Generator_UserColumnName="MA_QUYET_DINH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NGAY_CO_HIEU_LUC" msprop:Generator_ColumnVarNameInTable="columnNGAY_CO_HIEU_LUC" msprop:Generator_ColumnPropNameInRow="NGAY_CO_HIEU_LUC" msprop:Generator_ColumnPropNameInTable="NGAY_CO_HIEU_LUCColumn" msprop:Generator_UserColumnName="NGAY_CO_HIEU_LUC" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ID_TRANG_THAI_CV" msprop:Generator_ColumnVarNameInTable="columnID_TRANG_THAI_CV" msprop:Generator_ColumnPropNameInRow="ID_TRANG_THAI_CV" msprop:Generator_ColumnPropNameInTable="ID_TRANG_THAI_CVColumn" msprop:Generator_UserColumnName="ID_TRANG_THAI_CV" type="xs:decimal" />
+              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
