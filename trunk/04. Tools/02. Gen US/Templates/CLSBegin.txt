@@ -1,4 +1,4 @@
-namespace AuctionUS{
+namespace BKI_HRM.US{
 
 public class US_<TABLE_NAME> : US_Object
 {
