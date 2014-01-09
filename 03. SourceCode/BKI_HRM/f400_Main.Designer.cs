@@ -59,6 +59,7 @@
             this.quáTrìnhLàmViệcToolStripMenuItem.Name = "quáTrìnhLàmViệcToolStripMenuItem";
             this.quáTrìnhLàmViệcToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.quáTrìnhLàmViệcToolStripMenuItem.Text = "Quá trình làm việc";
+            this.quáTrìnhLàmViệcToolStripMenuItem.Click += new System.EventHandler(this.quáTrìnhLàmViệcToolStripMenuItem_Click);
             // 
             // trạngTháiLaoĐộngToolStripMenuItem
             // 
