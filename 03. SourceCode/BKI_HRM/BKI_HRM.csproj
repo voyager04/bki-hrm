@@ -83,6 +83,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WinFormControls.cs" />
     <EmbeddedResource Include="BaoCao\f100_V_GD_QUA_TRINH_LAM_VIEC.resx">
       <DependentUpon>f100_V_GD_QUA_TRINH_LAM_VIEC.cs</DependentUpon>
     </EmbeddedResource>
