@@ -25,9 +25,6 @@ using C1.Win.C1FlexGrid;
 
 namespace BKI_HRM
 {
-
-
-
 	public class f200_V_GD_QUA_TRINH_LAM_VIEC : System.Windows.Forms.Form
 	{
 		internal System.Windows.Forms.ImageList ImageList;
@@ -249,7 +246,10 @@ namespace BKI_HRM
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
 			load_data_2_grid();
-            load_data_2_cbo_trang_thai();
+            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_CHUC_VU,
+                WinFormControls.eTAT_CA.NO,
+                m_cbo_trang_thai);
+            //load_data_2_cbo_trang_thai();
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -296,9 +296,9 @@ namespace BKI_HRM
 			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
 		}
 
-        private void load_data_2_cbo_trang_thai(){
-            BKI_HRM.US.US_CM_DM_TU_DIEN v_us = new BKI_HRM.US.US_CM_DM_TU_DIEN();
-            BKI_HRM.DS.DS_CM_DM_TU_DIEN v_ds = new BKI_HRM.DS.DS_CM_DM_TU_DIEN();
+        /*private void load_data_2_cbo_trang_thai(){
+            US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
+            DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
             v_us.FillDataset_trang_thai(v_ds);
             m_bds_trang_thai.DataSource = v_ds.CM_DM_TU_DIEN;
             m_cbo_trang_thai.DataSource = m_bds_trang_thai.DataSource;
@@ -306,7 +306,7 @@ namespace BKI_HRM
             m_cbo_trang_thai.ValueMember = CM_DM_TU_DIEN.ID;
             // Thêm 1 dòng Tất cả ---
          //   m_cbo_trang_thai.Items.Add();
-        }
+        }*/
 		private void insert_v_gd_qua_trinh_lam_viec(){			
 		//	f200_V_GD_QUA_TRINH_LAM_VIEC_DE v_fDE = new  f200_V_GD_QUA_TRINH_LAM_VIEC_DE();								
 		//	v_fDE.display();
