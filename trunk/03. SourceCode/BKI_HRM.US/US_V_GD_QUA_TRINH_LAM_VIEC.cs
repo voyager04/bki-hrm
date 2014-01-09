@@ -8,15 +8,15 @@
 /// </summary>
 
 using System;
-using WebDS;
+using BKI_HRM.DS;
 using IP.Core.IPCommon;
 using IP.Core.IPUserService;
 using System.Data.SqlClient;
 using System.Data;
-using WebDS;
 
 
-namespace AuctionUS{
+
+namespace BKI_HRM.US{
 
 public class US_V_GD_QUA_TRINH_LAM_VIEC : US_Object
 {
