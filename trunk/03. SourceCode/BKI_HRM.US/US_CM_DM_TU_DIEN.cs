@@ -172,5 +172,11 @@ public class US_CM_DM_TU_DIEN : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+    #region "Addtional"
+    public void FillDataset_trang_thai(DS_CM_DM_TU_DIEN op_ds){
+        var command = new CStoredProc("pr_CM_DM_TU_DIEN_Load_trang_thai");        
+        command.fillDataSetByCommand(this, op_ds);
+    }
+    #endregion
+}
 }
