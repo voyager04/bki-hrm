@@ -23,7 +23,7 @@ using BKI_HRM.DS.CDBNames;
 
 using C1.Win.C1FlexGrid;
 
-namespace QltsForm
+namespace BKI_HRM
 {
 
 
