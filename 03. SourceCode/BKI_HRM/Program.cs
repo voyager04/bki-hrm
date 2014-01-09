@@ -15,7 +15,7 @@ namespace BKI_HRM
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
+            Application.Run(new f400_Main());
         }
     }
 }
