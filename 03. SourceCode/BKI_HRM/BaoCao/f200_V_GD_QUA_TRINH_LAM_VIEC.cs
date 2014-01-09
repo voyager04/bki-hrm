@@ -161,6 +161,7 @@ namespace BKI_HRM
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
             this.m_cbo_trang_thai.Size = new System.Drawing.Size(158, 21);
             this.m_cbo_trang_thai.TabIndex = 21;
+            this.m_cbo_trang_thai.SelectedIndexChanged += new System.EventHandler(this.m_cbo_trang_thai_SelectedIndexChanged);
             // 
             // m_lbl_ma_nhan_vien
             // 
@@ -186,6 +187,7 @@ namespace BKI_HRM
             this.m_txt_ma_nhan_vien.Name = "m_txt_ma_nhan_vien";
             this.m_txt_ma_nhan_vien.Size = new System.Drawing.Size(133, 20);
             this.m_txt_ma_nhan_vien.TabIndex = 24;
+            this.m_txt_ma_nhan_vien.TextChanged += new System.EventHandler(this.m_txt_ma_nhan_vien_TextChanged);
             // 
             // f200_V_GD_QUA_TRINH_LAM_VIEC
             // 
@@ -198,7 +200,7 @@ namespace BKI_HRM
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f200_V_GD_QUA_TRINH_LAM_VIEC";
-            this.Text = "f200_V_GD_QUA_TRINH_LAM_VIEC";
+            this.Text = "F200 Quá trình làm việc";
             this.Load += new System.EventHandler(this.f200_V_GD_QUA_TRINH_LAM_VIEC_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
@@ -234,7 +236,7 @@ namespace BKI_HRM
 		ITransferDataRow m_obj_trans;		
 		DS_V_GD_QUA_TRINH_LAM_VIEC m_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC();
 		US_V_GD_QUA_TRINH_LAM_VIEC m_us = new US_V_GD_QUA_TRINH_LAM_VIEC();
-        BKI_HRM.DS.DS_CM_DM_TU_DIEN m_ds_dm_tu_dien = new BKI_HRM.DS.DS_CM_DM_TU_DIEN();
+        
 		#endregion
 
 		#region Private Methods
@@ -246,7 +248,8 @@ namespace BKI_HRM
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
-			load_data_2_grid();		
+			load_data_2_grid();
+            load_data_2_cbo_trang_thai();
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -270,6 +273,13 @@ namespace BKI_HRM
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
 			m_fg.Redraw = true;
 		}
+        private void load_data_2_grid_search(){
+            m_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC();
+            m_us.FillDataset_search(m_ds, m_txt_ma_nhan_vien.Text, CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue));
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            m_fg.Redraw = true;
+        }
 		private void grid2us_object(US_V_GD_QUA_TRINH_LAM_VIEC i_us
 			, int i_grid_row) {
 			DataRow v_dr;
@@ -287,10 +297,15 @@ namespace BKI_HRM
 		}
 
         private void load_data_2_cbo_trang_thai(){
-            m_bds_trang_thai.DataSource = m_ds_dm_tu_dien;
+            BKI_HRM.US.US_CM_DM_TU_DIEN v_us = new BKI_HRM.US.US_CM_DM_TU_DIEN();
+            BKI_HRM.DS.DS_CM_DM_TU_DIEN v_ds = new BKI_HRM.DS.DS_CM_DM_TU_DIEN();
+            v_us.FillDataset_trang_thai(v_ds);
+            m_bds_trang_thai.DataSource = v_ds.CM_DM_TU_DIEN;
             m_cbo_trang_thai.DataSource = m_bds_trang_thai.DataSource;
-            m_cbo_trang_thai.DisplayMember = "";
-            m_cbo_trang_thai.ValueMember = "";
+            m_cbo_trang_thai.DisplayMember = CM_DM_TU_DIEN.TEN;
+            m_cbo_trang_thai.ValueMember = CM_DM_TU_DIEN.ID;
+            // Thêm 1 dòng Tất cả ---
+         //   m_cbo_trang_thai.Items.Add();
         }
 		private void insert_v_gd_qua_trinh_lam_viec(){			
 		//	f200_V_GD_QUA_TRINH_LAM_VIEC_DE v_fDE = new  f200_V_GD_QUA_TRINH_LAM_VIEC_DE();								
@@ -401,6 +416,28 @@ namespace BKI_HRM
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
+        }
+
+        private void m_txt_ma_nhan_vien_TextChanged(object sender, EventArgs e)
+        {
+            try{
+                load_data_2_grid_search();
+            }
+            catch(Exception v_e){
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid_search();
+            }
+            catch (Exception v_e)
+            {
+            	//CSystemLog_301.ExceptionHandle(this, v_e);
+            }
         }
 
 	}

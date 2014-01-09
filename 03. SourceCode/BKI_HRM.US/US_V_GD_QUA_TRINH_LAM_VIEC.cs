@@ -258,5 +258,15 @@ public class US_V_GD_QUA_TRINH_LAM_VIEC : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
+
+    public void FillDataset_search(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds, 
+        string ip_str_ma_nhan_vien, 
+        decimal ip_dc_trang_thai){
+            var command = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_Search");
+            command.addNVarcharInputParam("@MA_NV", ip_str_ma_nhan_vien);
+            command.addDecimalInputParam("@ID_TRANG_THAI_CV", ip_dc_trang_thai);
+            command.fillDataSetByCommand(this, op_ds);
+
 	}
+}
 }
