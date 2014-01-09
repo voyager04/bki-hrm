@@ -45,6 +45,7 @@
     <Compile Include="CHelperCore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="US_V_GD_QUA_TRINH_LAM_VIEC.cs" />
+    <Compile Include="US_V_GD_TRANG_THAI_LAO_DONG.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BKI_HRM.DS\BKI_HRM.DS.csproj">

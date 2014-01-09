@@ -66,6 +66,7 @@
             this.trạngTháiLaoĐộngToolStripMenuItem.Name = "trạngTháiLaoĐộngToolStripMenuItem";
             this.trạngTháiLaoĐộngToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.trạngTháiLaoĐộngToolStripMenuItem.Text = "Trạng thái lao động";
+            this.trạngTháiLaoĐộngToolStripMenuItem.Click += new System.EventHandler(this.trạngTháiLaoĐộngToolStripMenuItem_Click);
             // 
             // f400_Main
             // 

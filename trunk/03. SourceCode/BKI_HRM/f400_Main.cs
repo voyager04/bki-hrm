@@ -21,5 +21,10 @@ namespace BKI_HRM
             f200_V_GD_QUA_TRINH_LAM_VIEC frm = new f200_V_GD_QUA_TRINH_LAM_VIEC();
             frm.Show();
         }
+
+        private void trạngTháiLaoĐộngToolStripMenuItem_Click(object sender, EventArgs e) {
+            f100_V_GD_QUA_TRINH_LAM_VIEC frm = new f100_V_GD_QUA_TRINH_LAM_VIEC();
+            frm.Show();
+        }
     }
 }
