@@ -218,6 +218,7 @@ namespace BKI_HRM
             this.m_dat_ngay_bat_dau.Name = "m_dat_ngay_bat_dau";
             this.m_dat_ngay_bat_dau.Size = new System.Drawing.Size(141, 20);
             this.m_dat_ngay_bat_dau.TabIndex = 29;
+            this.m_dat_ngay_bat_dau.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // m_dat_ngay_ket_thuc
             // 
@@ -309,6 +310,7 @@ namespace BKI_HRM
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_CHUC_VU,
                 WinFormControls.eTAT_CA.YES,
                 m_cbo_trang_thai);
+            
             //load_data_2_cbo_trang_thai();
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
