@@ -257,5 +257,23 @@ public class US_V_GD_TRANG_THAI_LAO_DONG : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+
+    #region Addtional
+
+    public void FillDataset(string ip_txt_search,DS_V_GD_TRANG_THAI_LAO_DONG op_ds_v_gd_trang_thai_lao_dong){
+        CStoredProc v_stored_proc = new CStoredProc("pr_V_GD_TRANG_THAI_LAO_DONG_search");
+        v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_txt_search);
+        v_stored_proc.fillDataSetByCommand(this,op_ds_v_gd_trang_thai_lao_dong);
+    }
+
+    public void FillDataset(DateTime ip_dat_bat_dau, DateTime ip_dat_ket_thuc, string ip_txt_search, DS_V_GD_TRANG_THAI_LAO_DONG op_ds_v_gd_trang_thai_lao_dong) {
+        CStoredProc v_stored_proc = new CStoredProc("pr_V_GD_TRANG_THAI_LAO_DONG_search_datetime");
+        v_stored_proc.addDatetimeInputParam("@ip_dat_bat_dau", ip_dat_bat_dau);
+        v_stored_proc.addDatetimeInputParam("@ip_dat_ket_thuc", ip_dat_ket_thuc);
+        v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_txt_search);
+        v_stored_proc.fillDataSetByCommand(this, op_ds_v_gd_trang_thai_lao_dong);
+    }
+
+    #endregion
+}
 }
