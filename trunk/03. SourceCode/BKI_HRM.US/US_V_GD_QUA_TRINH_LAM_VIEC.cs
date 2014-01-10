@@ -260,14 +260,13 @@ public class US_V_GD_QUA_TRINH_LAM_VIEC : US_Object
 #endregion
 
     public void FillDataset_search(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds, 
-        string ip_str_ma_nhan_vien, 
-        string ip_str_ho_ten,
+        string ip_str_nhan_vien, 
         decimal ip_dc_trang_thai,
         DateTime ip_dat_ngay_bat_dau,
         DateTime ip_dat_ngay_ket_thuc){
             var command = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_Search");
-            command.addNVarcharInputParam("@MA_NV", ip_str_ma_nhan_vien);
-            command.addNVarcharInputParam("@HO_TEN", ip_str_ho_ten);
+            
+            command.addNVarcharInputParam("@NHAN_VIEN", ip_str_nhan_vien);
             command.addDecimalInputParam("@ID_TRANG_THAI_CV", ip_dc_trang_thai);
             command.addDatetimeInputParam("@NGAY_BAT_DAU", ip_dat_ngay_bat_dau);
             command.addDatetimeInputParam("@NGAY_KET_THUC", ip_dat_ngay_ket_thuc);
