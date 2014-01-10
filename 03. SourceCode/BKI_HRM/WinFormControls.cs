@@ -60,7 +60,15 @@ namespace BKI_HRM
 
             if (ip_e_tat_ca == eTAT_CA.YES)
             {
-                ip_obj_cbo_trang_thai.Items.Insert(0, CONST_HRM.TAT_CA);
+                DataRow v_dr = v_ds_dm_tu_dien.CM_DM_TU_DIEN.NewRow();
+                v_dr[CM_DM_TU_DIEN.ID] = -1;
+                v_dr[CM_DM_TU_DIEN.TEN] = "------ Tất cả ------";
+                v_dr[CM_DM_TU_DIEN.MA_TU_DIEN] = "";
+                v_dr[CM_DM_TU_DIEN.TEN_NGAN] = "";
+                v_dr[CM_DM_TU_DIEN.ID_LOAI_TU_DIEN] = 1;
+                v_dr[CM_DM_TU_DIEN.GHI_CHU] = "";
+                v_ds_dm_tu_dien.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
+                ip_obj_cbo_trang_thai.SelectedIndex = 0;
             }
         }
     }
