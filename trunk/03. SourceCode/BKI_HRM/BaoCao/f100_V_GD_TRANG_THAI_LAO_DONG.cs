@@ -41,6 +41,7 @@ namespace BKI_HRM
         private DateTimePicker m_dat_bat_dau;
         private Label label2;
         private Label label1;
+        private Label label3;
 		private System.ComponentModel.IContainer components;
 
 		public f100_V_GD_TRANG_THAI_LAO_DONG()
@@ -91,6 +92,7 @@ namespace BKI_HRM
             this.label1 = new System.Windows.Forms.Label();
             this.m_dat_ket_thuc = new System.Windows.Forms.DateTimePicker();
             this.m_dat_bat_dau = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -159,6 +161,7 @@ namespace BKI_HRM
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.m_cmd_search);
             this.groupBox1.Controls.Add(this.m_txt_search);
@@ -226,6 +229,15 @@ namespace BKI_HRM
             this.m_dat_bat_dau.Size = new System.Drawing.Size(195, 20);
             this.m_dat_bat_dau.TabIndex = 999;
             this.m_dat_bat_dau.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(122, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.TabIndex = 1000;
+            this.label3.Text = "Tìm kiếm";
             // 
             // f100_V_GD_TRANG_THAI_LAO_DONG
             // 
