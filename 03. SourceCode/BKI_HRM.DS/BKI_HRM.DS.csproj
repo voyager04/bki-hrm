@@ -42,6 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CDBNames.cs" />
+    <Compile Include="DS_V_GD_HOP_DONG_LAO_DONG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_GD_HOP_DONG_LAO_DONG.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_GD_QUA_TRINH_LAM_VIEC.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -62,6 +67,17 @@
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="DS_V_GD_HOP_DONG_LAO_DONG.xsc">
+      <DependentUpon>DS_V_GD_HOP_DONG_LAO_DONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_HOP_DONG_LAO_DONG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_GD_HOP_DONG_LAO_DONG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_GD_HOP_DONG_LAO_DONG.xss">
+      <DependentUpon>DS_V_GD_HOP_DONG_LAO_DONG.xsd</DependentUpon>
     </None>
     <None Include="DS_V_GD_QUA_TRINH_LAM_VIEC.xsc">
       <DependentUpon>DS_V_GD_QUA_TRINH_LAM_VIEC.xsd</DependentUpon>
