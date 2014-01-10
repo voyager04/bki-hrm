@@ -32,6 +32,7 @@
             this.báoCáoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quáTrìnhLàmViệcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trạngTháiLaoĐộngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hợpĐồngLaoĐộngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +50,8 @@
             // 
             this.báoCáoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.quáTrìnhLàmViệcToolStripMenuItem,
-            this.trạngTháiLaoĐộngToolStripMenuItem});
+            this.trạngTháiLaoĐộngToolStripMenuItem,
+            this.hợpĐồngLaoĐộngToolStripMenuItem});
             this.báoCáoToolStripMenuItem.Name = "báoCáoToolStripMenuItem";
             this.báoCáoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.báoCáoToolStripMenuItem.Text = "Báo cáo";
@@ -67,6 +69,13 @@
             this.trạngTháiLaoĐộngToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.trạngTháiLaoĐộngToolStripMenuItem.Text = "Trạng thái lao động";
             this.trạngTháiLaoĐộngToolStripMenuItem.Click += new System.EventHandler(this.trạngTháiLaoĐộngToolStripMenuItem_Click);
+            // 
+            // hợpĐồngLaoĐộngToolStripMenuItem
+            // 
+            this.hợpĐồngLaoĐộngToolStripMenuItem.Name = "hợpĐồngLaoĐộngToolStripMenuItem";
+            this.hợpĐồngLaoĐộngToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.hợpĐồngLaoĐộngToolStripMenuItem.Text = "Hợp đồng lao động";
+            this.hợpĐồngLaoĐộngToolStripMenuItem.Click += new System.EventHandler(this.hợpĐồngLaoĐộngToolStripMenuItem_Click);
             // 
             // f400_Main
             // 
@@ -90,5 +99,6 @@
         private System.Windows.Forms.ToolStripMenuItem báoCáoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quáTrìnhLàmViệcToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem trạngTháiLaoĐộngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hợpĐồngLaoĐộngToolStripMenuItem;
     }
 }

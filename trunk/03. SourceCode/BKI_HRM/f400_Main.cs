@@ -26,5 +26,11 @@ namespace BKI_HRM
            f100_V_GD_TRANG_THAI_LAO_DONG frm = new f100_V_GD_TRANG_THAI_LAO_DONG();
             frm.Show();
         }
+
+        private void hợpĐồngLaoĐộngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            f300_V_GD_HOP_DONG_LAO_DONG frm = new f300_V_GD_HOP_DONG_LAO_DONG();
+            frm.Show();
+        }
     }
 }
