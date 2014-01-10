@@ -22,6 +22,7 @@ using BKI_HRM.US;
 using BKI_HRM.DS.CDBNames;
 
 using C1.Win.C1FlexGrid;
+using IP.Core.IPExcelReport;
 
 namespace BKI_HRM
 {
@@ -33,7 +34,6 @@ namespace BKI_HRM
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private ComboBox m_cbo_trang_thai;
         private Label m_lbl_trang_thai;
-        private BindingSource m_bds_trang_thai;
         private Label m_lbl_ho_ten;
         public TextBox m_txt_nhan_vien;
         private Label m_lbl_ngay_bat_dau;
@@ -41,6 +41,7 @@ namespace BKI_HRM
         private DateTimePicker m_dat_ngay_bat_dau;
         private DateTimePicker m_dat_ngay_ket_thuc;
         internal SIS.Controls.Button.SiSButton m_cmd_loc;
+        internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
 		private System.ComponentModel.IContainer components;
 
 		public f200_V_GD_QUA_TRINH_LAM_VIEC()
@@ -86,7 +87,6 @@ namespace BKI_HRM
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_cbo_trang_thai = new System.Windows.Forms.ComboBox();
             this.m_lbl_trang_thai = new System.Windows.Forms.Label();
-            this.m_bds_trang_thai = new System.Windows.Forms.BindingSource(this.components);
             this.m_lbl_ho_ten = new System.Windows.Forms.Label();
             this.m_txt_nhan_vien = new System.Windows.Forms.TextBox();
             this.m_lbl_ngay_bat_dau = new System.Windows.Forms.Label();
@@ -94,9 +94,9 @@ namespace BKI_HRM
             this.m_dat_ngay_bat_dau = new System.Windows.Forms.DateTimePicker();
             this.m_dat_ngay_ket_thuc = new System.Windows.Forms.DateTimePicker();
             this.m_cmd_loc = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_bds_trang_thai)).BeginInit();
             this.SuspendLayout();
             // 
             // ImageList
@@ -128,6 +128,7 @@ namespace BKI_HRM
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 373);
@@ -242,6 +243,22 @@ namespace BKI_HRM
             this.m_cmd_loc.Text = "&Lọc";
             this.m_cmd_loc.Click += new System.EventHandler(this.m_cmd_loc_Click);
             // 
+            // m_cmd_xuat_excel
+            // 
+            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xuat_excel.ImageIndex = 19;
+            this.m_cmd_xuat_excel.ImageList = this.ImageList;
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_xuat_excel.TabIndex = 12;
+            this.m_cmd_xuat_excel.Text = "Xuất Excel";
+            this.m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
+            // 
             // f200_V_GD_QUA_TRINH_LAM_VIEC
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -262,7 +279,6 @@ namespace BKI_HRM
             this.Load += new System.EventHandler(this.f200_V_GD_QUA_TRINH_LAM_VIEC_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_bds_trang_thai)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,6 +317,8 @@ namespace BKI_HRM
 		private void format_controls(){
 			CControlFormat.setFormStyle(this);
 			CControlFormat.setC1FlexFormat(m_fg);
+            CGridUtils.AddSave_Excel_Handlers(m_fg);
+   //         CGridUtils.AddSearch_Handlers(m_fg);
 			set_define_events();
 			this.KeyPreview = true;		
 		}
@@ -494,6 +512,19 @@ namespace BKI_HRM
             {
             	CSystemLog_301.ExceptionHandle( v_e);
             }
+        }
+
+        private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+        {
+            CExcelReport v_obj_excel = new CExcelReport(
+                "f200_gd_qua_trinh_lam_viec.xls"
+                , 3
+                , 3);
+
+            v_obj_excel.Export2Excel(m_fg
+                , 1
+                , (int)m_fg.Cols.Count - 1
+                , true);
         }
 
         //private void m_txt_ma_nhan_vien_TextChanged(object sender, EventArgs e)
