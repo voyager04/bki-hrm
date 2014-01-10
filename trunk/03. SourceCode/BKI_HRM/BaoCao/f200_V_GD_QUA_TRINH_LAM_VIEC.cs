@@ -307,7 +307,7 @@ namespace BKI_HRM
 			m_obj_trans = get_trans_object(m_fg);
 			load_data_2_grid();
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_CHUC_VU,
-                WinFormControls.eTAT_CA.NO,
+                WinFormControls.eTAT_CA.YES,
                 m_cbo_trang_thai);
             //load_data_2_cbo_trang_thai();
 		}	
