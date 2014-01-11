@@ -47,7 +47,7 @@ namespace BKI_HRM
                 while (!v_UserWant2ExitFromSystem)
                 {
                     CAppContext_201.InitializeContext(v_obj_login_info);
-                    CAppContext_201.LoadDecentralizationByUserLogin();		
+                   // CAppContext_201.LoadDecentralizationByUserLogin();		
                     f400_Main v_frm_main = new f400_Main();
                     v_frm_main.display(ref v_exitmode);
                     v_frm_main.Dispose();

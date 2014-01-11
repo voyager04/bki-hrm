@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f400_Main));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.báoCáoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quáTrìnhLàmViệcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,6 +84,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "f400_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
