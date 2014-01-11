@@ -85,7 +85,9 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "f400_Main";
-            this.Text = "f400_Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "F400 - Chương trình quản lý nhân sự";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

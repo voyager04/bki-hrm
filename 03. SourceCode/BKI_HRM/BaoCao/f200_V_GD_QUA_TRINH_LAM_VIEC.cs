@@ -328,7 +328,6 @@ namespace BKI_HRM
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_CHUC_VU,
                 WinFormControls.eTAT_CA.YES,
                 m_cbo_trang_thai);
-            
             //load_data_2_cbo_trang_thai();
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
@@ -433,6 +432,18 @@ namespace BKI_HRM
 		//	f200_V_GD_QUA_TRINH_LAM_VIEC_DE v_fDE = new f200_V_GD_QUA_TRINH_LAM_VIEC_DE();			
 		//	v_fDE.display(m_us);
 		}
+        private void xuat_excel()
+        {
+            CExcelReport v_obj_excel = new CExcelReport(
+                "f200_gd_qua_trinh_lam_viec.xls"
+                , 3
+                , 3);
+
+            v_obj_excel.Export2Excel(m_fg
+                , 1
+                , (int)m_fg.Cols.Count - 1
+                , true);
+        }
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 //			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
@@ -516,15 +527,15 @@ namespace BKI_HRM
 
         private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
         {
-            CExcelReport v_obj_excel = new CExcelReport(
-                "f200_gd_qua_trinh_lam_viec.xls"
-                , 3
-                , 3);
-
-            v_obj_excel.Export2Excel(m_fg
-                , 1
-                , (int)m_fg.Cols.Count - 1
-                , true);
+            
+            try
+            {
+                xuat_excel();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle( v_e);
+            }
         }
 
         //private void m_txt_ma_nhan_vien_TextChanged(object sender, EventArgs e)

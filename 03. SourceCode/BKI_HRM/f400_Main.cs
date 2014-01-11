@@ -16,6 +16,10 @@ namespace BKI_HRM
             InitializeComponent();
         }
 
+        public void display(ref IP.Core.IPCommon.IPConstants.HowUserWantTo_Exit_MainForm v_exitmode)
+        {
+            this.ShowDialog();
+        }
         private void quáTrìnhLàmViệcToolStripMenuItem_Click(object sender, EventArgs e)
         {
             f200_V_GD_QUA_TRINH_LAM_VIEC frm = new f200_V_GD_QUA_TRINH_LAM_VIEC();
@@ -32,5 +36,7 @@ namespace BKI_HRM
             f300_V_GD_HOP_DONG_LAO_DONG frm = new f300_V_GD_HOP_DONG_LAO_DONG();
             frm.Show();
         }
+
+        
     }
 }
