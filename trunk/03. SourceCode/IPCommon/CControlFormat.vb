@@ -4,7 +4,7 @@ Option Strict On
 Imports System.Windows.Forms
 
 Public Interface IControlerControl
-    Function CanUseControl( _
+    Function CanUseControl(
                 ByVal ip_strFormName As String _
                 , ByVal ip_strControlName As String _
                 , ByVal ip_strControlType As String) As Boolean
@@ -50,7 +50,7 @@ Public Class CControlFormat
     End Function
 
     Private Shared Function getRegularForeColor() As System.Drawing.Color
-        Return System.Drawing.Color.Navy
+        Return System.Drawing.Color.Maroon
     End Function
 
     Private Shared Function getRegularBackColor() As System.Drawing.Color
@@ -96,8 +96,11 @@ Public Class CControlFormat
         ElseIf TypeOf ip_control Is CheckBox Then
             ip_control.Font = getRegularFont()
             ip_control.ForeColor = getRegularForeColor()
-        ElseIf TypeOf ip_control Is Button Then
+        ElseIf TypeOf ip_control Is DateTimePicker Then
             ip_control.Font = getRegularFont()
+            ip_control.ForeColor = getRegularForeColor()
+        ElseIf TypeOf ip_control Is Button Then
+            ip_control.Font = getBoldFont()
             ip_control.ForeColor = getRegularForeColor()
             If (i_objControlerControl.CanUseControl(ip_str_form_name, ip_control.Name, "") = False) Then
                 ip_control.Visible = False
