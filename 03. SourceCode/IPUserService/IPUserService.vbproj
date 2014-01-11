@@ -194,6 +194,7 @@
     <Compile Include="US_HT_NGUOI_SU_DUNG.vb">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="US_HT_PHAN_QUYEN_DETAIL.vb" />
     <Compile Include="US_HT_THAM_SO_HE_THONG.vb">
       <SubType>Code</SubType>
     </Compile>
