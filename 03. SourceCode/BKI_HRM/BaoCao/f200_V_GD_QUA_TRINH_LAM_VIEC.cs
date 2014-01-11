@@ -16,6 +16,7 @@ using IP.Core.IPCommon;
 using IP.Core.IPException;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
+using IP.Core.IPSystemAdmin;
 
 using BKI_HRM.DS;
 using BKI_HRM.US;
@@ -315,7 +316,7 @@ namespace BKI_HRM
 
 		#region Private Methods
 		private void format_controls(){
-			CControlFormat.setFormStyle(this);
+            CControlFormat.setFormStyle(this, new CAppContext_201());
 			CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
    //         CGridUtils.AddSearch_Handlers(m_fg);

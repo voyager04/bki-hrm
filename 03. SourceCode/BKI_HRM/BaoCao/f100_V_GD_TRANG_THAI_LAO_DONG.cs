@@ -18,6 +18,7 @@ using IP.Core.IPExcelReport;
 using IP.Core.IPException;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
+using IP.Core.IPSystemAdmin;
 
 using BKI_HRM.US;
 using BKI_HRM.DS;
@@ -291,7 +292,14 @@ namespace BKI_HRM
 
 		#region Data Structure
 		private enum e_col_Number{
-			HO_DEM = 2,MA_NV = 1,MA_QUYET_DINH = 5,Expr2 = 7,Expr1 = 4,NGAY_CO_HIEU_LUC = 6,TEN = 3
+			HO_DEM = 2
+,MA_NV = 1
+,MA_QUYET_DINH = 5
+,Expr2 = 7
+,Expr1 = 4
+,NGAY_CO_HIEU_LUC = 6
+,TEN = 3
+
 		}			
 		#endregion
 
@@ -303,7 +311,7 @@ namespace BKI_HRM
 
 		#region Private Methods
 		private void format_controls(){
-			CControlFormat.setFormStyle(this);
+			CControlFormat.setFormStyle(this, new CAppContext_201());
 			CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
 			set_define_events();
@@ -323,7 +331,14 @@ namespace BKI_HRM
 
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
-			v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.HO_DEM, e_col_Number.HO_DEM);			v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.MA_NV, e_col_Number.MA_NV);			v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.MA_QUYET_DINH, e_col_Number.MA_QUYET_DINH);			v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.Expr2, e_col_Number.Expr2);			v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.Expr1, e_col_Number.Expr1);			v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.NGAY_CO_HIEU_LUC, e_col_Number.NGAY_CO_HIEU_LUC);			v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.TEN, e_col_Number.TEN);									
+			v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.HO_DEM, e_col_Number.HO_DEM);
+			v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.MA_NV, e_col_Number.MA_NV);
+			v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.MA_QUYET_DINH, e_col_Number.MA_QUYET_DINH);
+			v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.Expr2, e_col_Number.Expr2);
+			v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.Expr1, e_col_Number.Expr1);
+			v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.NGAY_CO_HIEU_LUC, e_col_Number.NGAY_CO_HIEU_LUC);
+			v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.TEN, e_col_Number.TEN);
+									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_GD_TRANG_THAI_LAO_DONG.NewRow());
 			return v_obj_trans;			
 		}
