@@ -169,6 +169,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_HT_NGUOI_SU_DUNG.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_HT_PHAN_QUYEN_DETAIL.Designer.vb" />
     <Compile Include="DS_HT_THAM_SO_HE_THONG.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -229,6 +230,13 @@
     </None>
     <None Include="DS_HT_NGUOI_SU_DUNG.xsx">
       <DependentUpon>DS_HT_NGUOI_SU_DUNG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_PHAN_QUYEN_DETAIL.xsc">
+      <DependentUpon>DS_HT_PHAN_QUYEN_DETAIL.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_PHAN_QUYEN_DETAIL.xsd" />
+    <None Include="DS_HT_PHAN_QUYEN_DETAIL.xss">
+      <DependentUpon>DS_HT_PHAN_QUYEN_DETAIL.xsd</DependentUpon>
     </None>
     <None Include="DS_HT_THAM_SO_HE_THONG.xsx">
       <DependentUpon>DS_HT_THAM_SO_HE_THONG.xsd</DependentUpon>

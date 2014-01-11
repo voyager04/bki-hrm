@@ -1,8 +1,14 @@
-﻿Option Explicit On 
+﻿Option Explicit On
 Option Strict On
 
 Imports System.Windows.Forms
 
+Public Interface IControlerControl
+    Function CanUseControl( _
+                ByVal ip_strFormName As String _
+                , ByVal ip_strControlName As String _
+                , ByVal ip_strControlType As String) As Boolean
+End Interface
 
 Public Class CControlFormat
 
@@ -61,9 +67,95 @@ Public Class CControlFormat
         End If
 
     End Sub
+
+    Private Shared Sub formatControlInForms( _
+    ByVal ip_str_form_name As String _
+    , ByVal i_objControlerControl As IControlerControl _
+    , ByVal ip_control As System.Windows.Forms.Control)
+
+        'If (ip_control.ToString().IndexOf("SIS.Controls.Button.SiSButton") >= 0) Then
+        '    If (i_objControlerControl.CanUseControl(ip_str_form_name, ip_control.Name, "") = False) Then
+        '        ip_control.Visible = False
+        '        ip_control.Enabled = False
+        '    End If
+        'End If
+        If TypeOf ip_control Is Label Then
+            ip_control.Font = getRegularFont()
+            ip_control.ForeColor = getRegularForeColor()
+            ip_control.BackColor = getRegularBackColor()
+        ElseIf TypeOf ip_control Is TextBox Then
+            ip_control.Font = getRegularFont()
+            ip_control.ForeColor = getRegularForeColor()
+        ElseIf TypeOf ip_control Is GroupBox Then
+            ip_control.Font = getRegularFont()
+            ip_control.ForeColor = getRegularForeColor()
+            ip_control.BackColor = getRegularBackColor()
+        ElseIf TypeOf ip_control Is ComboBox Then
+            ip_control.Font = getRegularFont()
+            ip_control.ForeColor = getRegularForeColor()
+        ElseIf TypeOf ip_control Is CheckBox Then
+            ip_control.Font = getRegularFont()
+            ip_control.ForeColor = getRegularForeColor()
+        ElseIf TypeOf ip_control Is Button Then
+            ip_control.Font = getRegularFont()
+            ip_control.ForeColor = getRegularForeColor()
+            If (i_objControlerControl.CanUseControl(ip_str_form_name, ip_control.Name, "") = False) Then
+                ip_control.Visible = False
+                ip_control.Enabled = False
+            End If
+        End If
+        Dim v_control As System.Windows.Forms.Control
+        For Each v_control In ip_control.Controls
+            formatControlInForms(ip_str_form_name, i_objControlerControl, v_control)
+        Next
+
+    End Sub
 #End Region
 
 #Region "Public interface"
+
+    Public Shared Sub setFormStyle(ByVal i_form As Form _
+    , ByVal i_objControlerControl As IControlerControl _
+    , Optional ByVal i_form_style As IPFormStyle = IPFormStyle.DialogForm)
+        Try
+            AddHandler i_form.KeyDown, AddressOf i_form_KeyDown
+
+            Dim v_Control As System.Windows.Forms.Control
+            i_form.KeyPreview = True
+            With i_form
+                '.AutoScaleBaseSize = New System.Drawing.Size(6, 15)
+                .BackColor = getRegularBackColor()
+                .Font = getRegularFont()
+                .ForeColor = getRegularForeColor()
+                Select Case i_form_style
+                    Case IPFormStyle.DialogForm
+                        .FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable
+                        .MaximizeBox = False
+                        .MinimizeBox = False
+                        .StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+                        .ShowInTaskbar = False
+                    Case IPFormStyle.DockableTopForm
+                        .FormBorderStyle = FormBorderStyle.Sizable
+                        .MaximizeBox = True
+                        .MinimizeBox = True
+                        .StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+                        .ShowInTaskbar = False
+                    Case Else
+
+                End Select
+
+                '.ResumeLayout(False)
+                'Tund sửa ngày 11/06/2008
+                formatControlInForms(i_form.Name, i_objControlerControl, i_form)
+
+            End With
+        Catch exp As Exception
+            MessageBox.Show(exp.Message, i_form.Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Stop)
+        Finally
+
+        End Try
+    End Sub
+
     Public Shared Sub setFormStyle(ByVal i_form As Form)
         '***************************************************
         ' Dùng để set các property của Form ngoại trừ frmMain
@@ -155,7 +247,7 @@ Public Class CControlFormat
             .BackColorSel = System.Drawing.SystemColors.Highlight
             .Editable = C1.Win.C1FlexGrid.Classic.EditableSettings.flexEDKbdMouse
             .ExplorerBar = C1.Win.C1FlexGrid.Classic.ExplorerBarSettings.flexExSortShowAndMove
-            .ExtendLastCol = True
+            .ExtendLastCol = False
             .ForeColor = System.Drawing.SystemColors.WindowText
             .ForeColorFixed = System.Drawing.SystemColors.Highlight
             .ForeColorSel = System.Drawing.SystemColors.HighlightText
@@ -200,7 +292,7 @@ Public Class CControlFormat
             .AutoSearch = C1.Win.C1FlexGrid.AutoSearchEnum.FromTop
             .BackColor = System.Drawing.SystemColors.Window
             '.Dock = System.Windows.Forms.DockStyle.Fill
-            .ExtendLastCol = True
+            .ExtendLastCol = False
             .ForeColor = System.Drawing.SystemColors.WindowText
             .Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.Complete
             .Font = New System.Drawing.Font(C_FontName, C_FormFontSize, Drawing.FontStyle.Regular)
@@ -278,5 +370,11 @@ Public Class CControlFormat
 
 End Class
 
+Public Enum IPFormStyle
+    DockableTopForm
+    DialogForm
+    MessageForm
+    FlashForm
+End Enum
 
 
