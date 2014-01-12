@@ -279,5 +279,20 @@ public class US_V_GD_HOP_DONG_LAO_DONG : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
+    public void FillDataset_search(DS_V_GD_HOP_DONG_LAO_DONG op_ds,
+        string ip_str_nhan_vien,
+        decimal ip_dc_loai_hop_dong,
+        DateTime ip_dat_ngay_bat_dau,
+        DateTime ip_dat_ngay_ket_thuc)
+    {
+        var command = new CStoredProc("pr_V_GD_HOP_DONG_LAO_DONG_Search");
+
+        command.addNVarcharInputParam("@NHAN_VIEN", ip_str_nhan_vien);
+        command.addDecimalInputParam("@ID_LOAI_HOP_DONG", ip_dc_loai_hop_dong);
+        command.addDatetimeInputParam("@NGAY_BAT_DAU", ip_dat_ngay_bat_dau);
+        command.addDatetimeInputParam("@NGAY_KET_THUC", ip_dat_ngay_ket_thuc);
+        command.fillDataSetByCommand(this, op_ds);
+
+    }
 	}
 }

@@ -16,5 +16,6 @@ namespace BKI_HRM.US
     public class MA_LOAI_TU_DIEN
     {
         public const string TRANG_THAI_CHUC_VU = "TRANG_THAI_CHUC_VU";
+        public const string LOAI_HOP_DONG = "LOAI_HOP_DONG";
     }
   }
