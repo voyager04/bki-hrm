@@ -42,6 +42,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CDBNames.cs" />
+    <Compile Include="DS_HT_NHOM_NGUOI_SU_DUNG1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_HT_NHOM_NGUOI_SU_DUNG.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_HT_PHAN_QUYEN_CHO_NHOM1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_HT_PHAN_QUYEN_CHO_NHOM.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_HT_PHAN_QUYEN_HE_THONG1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_HT_PHAN_QUYEN_HE_THONG.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_GD_HOP_DONG_LAO_DONG.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -67,6 +82,40 @@
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="DS_HT_NHOM_NGUOI_SU_DUNG.xsc">
+      <DependentUpon>DS_HT_NHOM_NGUOI_SU_DUNG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_NHOM_NGUOI_SU_DUNG.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_HT_NHOM_NGUOI_SU_DUNG1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DS_HT_NHOM_NGUOI_SU_DUNG.xss">
+      <DependentUpon>DS_HT_NHOM_NGUOI_SU_DUNG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_PHAN_QUYEN_CHO_NHOM.xsc">
+      <DependentUpon>DS_HT_PHAN_QUYEN_CHO_NHOM.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_PHAN_QUYEN_CHO_NHOM.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_HT_PHAN_QUYEN_CHO_NHOM1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DS_HT_PHAN_QUYEN_CHO_NHOM.xss">
+      <DependentUpon>DS_HT_PHAN_QUYEN_CHO_NHOM.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_PHAN_QUYEN_HE_THONG.xsc">
+      <DependentUpon>DS_HT_PHAN_QUYEN_HE_THONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_PHAN_QUYEN_HE_THONG.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_HT_PHAN_QUYEN_HE_THONG1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DS_HT_PHAN_QUYEN_HE_THONG.xss">
+      <DependentUpon>DS_HT_PHAN_QUYEN_HE_THONG.xsd</DependentUpon>
     </None>
     <None Include="DS_V_GD_HOP_DONG_LAO_DONG.xsc">
       <DependentUpon>DS_V_GD_HOP_DONG_LAO_DONG.xsd</DependentUpon>

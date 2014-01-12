@@ -44,6 +44,9 @@
     <Compile Include="CConstantValues.cs" />
     <Compile Include="CHelperCore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="US_HT_NHOM_NGUOI_SU_DUNG.cs" />
+    <Compile Include="US_HT_PHAN_QUYEN_CHO_NHOM.cs" />
+    <Compile Include="US_HT_PHAN_QUYEN_HE_THONG.cs" />
     <Compile Include="US_V_GD_HOP_DONG_LAO_DONG.cs" />
     <Compile Include="US_V_GD_QUA_TRINH_LAM_VIEC.cs" />
     <Compile Include="US_V_GD_TRANG_THAI_LAO_DONG.cs" />
