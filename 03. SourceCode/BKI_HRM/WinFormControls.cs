@@ -32,7 +32,8 @@ namespace BKI_HRM
         }
         public enum eLOAI_TU_DIEN
         {
-            TRANG_THAI_CHUC_VU
+            TRANG_THAI_CHUC_VU,
+            LOAI_HOP_DONG
         }
         public static void load_data_to_cbo_tu_dien(
              eLOAI_TU_DIEN ip_e_trang_thai_chuc_vu
@@ -42,15 +43,18 @@ namespace BKI_HRM
 
             US_CM_DM_TU_DIEN v_us_dm_tu_dien = new US_CM_DM_TU_DIEN();
             DS_CM_DM_TU_DIEN v_ds_dm_tu_dien = new DS_CM_DM_TU_DIEN();
-            string v_str_loai_trang_thai = "";
+            string v_str_loai_tu_dien = "";
             switch (ip_e_trang_thai_chuc_vu)
             {
                 case eLOAI_TU_DIEN.TRANG_THAI_CHUC_VU:
-                    v_str_loai_trang_thai = MA_LOAI_TU_DIEN.TRANG_THAI_CHUC_VU;
+                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.TRANG_THAI_CHUC_VU;
+                    break;
+                case eLOAI_TU_DIEN.LOAI_HOP_DONG:
+                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.LOAI_HOP_DONG;
                     break;
             }
             v_us_dm_tu_dien.fill_tu_dien_cung_loai_ds(
-                v_str_loai_trang_thai
+                v_str_loai_tu_dien
                 , CM_DM_TU_DIEN.GHI_CHU
                 , v_ds_dm_tu_dien);
 
