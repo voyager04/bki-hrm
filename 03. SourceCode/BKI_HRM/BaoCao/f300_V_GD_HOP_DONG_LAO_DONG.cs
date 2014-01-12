@@ -192,6 +192,7 @@ namespace BKI_HRM
             // 
             // m_dat_ngay_hieu_luc
             // 
+            this.m_dat_ngay_hieu_luc.CalendarTrailingForeColor = System.Drawing.Color.Maroon;
             this.m_dat_ngay_hieu_luc.Location = new System.Drawing.Point(181, 76);
             this.m_dat_ngay_hieu_luc.Name = "m_dat_ngay_hieu_luc";
             this.m_dat_ngay_hieu_luc.Size = new System.Drawing.Size(100, 20);
