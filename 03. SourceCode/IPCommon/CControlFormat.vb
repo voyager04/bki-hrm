@@ -106,21 +106,16 @@ Public Class CControlFormat
                 ip_control.Visible = False
                 ip_control.Enabled = False
             End If
-
+        ElseIf TypeOf ip_control Is DateTimePicker Then
+            CType(ip_control, DateTimePicker).CalendarForeColor = getRegularForeColor()
+            CType(ip_control, DateTimePicker).CalendarTitleForeColor = getRegularForeColor()
+            CType(ip_control, DateTimePicker).CalendarTrailingForeColor = getRegularForeColor()
         ElseIf TypeOf ip_control Is MenuStrip Then
             Dim v_obj_tool_strip As ToolStripMenuItem
             For Each v_obj_tool_strip In CType(ip_control, MenuStrip).Items
                 formatToolStripMenuItem(ip_str_form_name, i_objControlerControl, v_obj_tool_strip)
-
             Next
-
-
         End If
-
-
-
-
-
         Dim v_control As System.Windows.Forms.Control
         For Each v_control In ip_control.Controls
             formatControlInForms(ip_str_form_name, i_objControlerControl, v_control)
