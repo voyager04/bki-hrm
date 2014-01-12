@@ -35,13 +35,13 @@ namespace BKI_HRM
 		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
-        private TextBox m_txt_ma_nhan_vien;
+        private TextBox m_txt_nhan_vien;
         private Label m_lbl_ma_nhan_vien;
         private Label m_lbl_ngay_hieu_luc;
         private Label m_lbl_ngay_het_han;
         internal SIS.Controls.Button.SiSButton m_cmd_tim_kiem;
-        private Label m_lbl_ma_hop_dong;
-        private ComboBox m_cbo_ma_hop_dong;
+        private Label m_lbl_loai_hop_dong;
+        private ComboBox m_cbo_loai_hop_dong;
         private DateTimePicker m_dat_ngay_bat_dau;
         private DateTimePicker m_dat_ngay_ket_thuc;
 		private System.ComponentModel.IContainer components;
@@ -87,13 +87,13 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_txt_ma_nhan_vien = new System.Windows.Forms.TextBox();
+            this.m_txt_nhan_vien = new System.Windows.Forms.TextBox();
             this.m_lbl_ma_nhan_vien = new System.Windows.Forms.Label();
             this.m_lbl_ngay_hieu_luc = new System.Windows.Forms.Label();
             this.m_lbl_ngay_het_han = new System.Windows.Forms.Label();
             this.m_cmd_tim_kiem = new SIS.Controls.Button.SiSButton();
-            this.m_lbl_ma_hop_dong = new System.Windows.Forms.Label();
-            this.m_cbo_ma_hop_dong = new System.Windows.Forms.ComboBox();
+            this.m_lbl_loai_hop_dong = new System.Windows.Forms.Label();
+            this.m_cbo_loai_hop_dong = new System.Windows.Forms.ComboBox();
             this.m_dat_ngay_bat_dau = new System.Windows.Forms.DateTimePicker();
             this.m_dat_ngay_ket_thuc = new System.Windows.Forms.DateTimePicker();
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -163,13 +163,13 @@ namespace BKI_HRM
             this.m_fg.TabIndex = 20;
             this.m_fg.Click += new System.EventHandler(this.m_fg_Click);
             // 
-            // m_txt_ma_nhan_vien
+            // m_txt_nhan_vien
             // 
-            this.m_txt_ma_nhan_vien.Location = new System.Drawing.Point(181, 23);
-            this.m_txt_ma_nhan_vien.Name = "m_txt_ma_nhan_vien";
-            this.m_txt_ma_nhan_vien.Size = new System.Drawing.Size(377, 20);
-            this.m_txt_ma_nhan_vien.TabIndex = 21;
-            this.m_txt_ma_nhan_vien.TextChanged += new System.EventHandler(this.m_txt_ma_nhan_vien_TextChanged);
+            this.m_txt_nhan_vien.Location = new System.Drawing.Point(181, 23);
+            this.m_txt_nhan_vien.Name = "m_txt_nhan_vien";
+            this.m_txt_nhan_vien.Size = new System.Drawing.Size(377, 20);
+            this.m_txt_nhan_vien.TabIndex = 21;
+            this.m_txt_nhan_vien.TextChanged += new System.EventHandler(this.m_txt_ma_nhan_vien_TextChanged);
             // 
             // m_lbl_ma_nhan_vien
             // 
@@ -212,25 +212,26 @@ namespace BKI_HRM
             this.m_cmd_tim_kiem.Size = new System.Drawing.Size(102, 42);
             this.m_cmd_tim_kiem.TabIndex = 33;
             this.m_cmd_tim_kiem.Text = "&Tìm kiếm";
+            this.m_cmd_tim_kiem.Click += new System.EventHandler(this.m_cmd_tim_kiem_Click);
             // 
-            // m_lbl_ma_hop_dong
+            // m_lbl_loai_hop_dong
             // 
-            this.m_lbl_ma_hop_dong.AutoSize = true;
-            this.m_lbl_ma_hop_dong.Location = new System.Drawing.Point(80, 52);
-            this.m_lbl_ma_hop_dong.Name = "m_lbl_ma_hop_dong";
-            this.m_lbl_ma_hop_dong.Size = new System.Drawing.Size(95, 13);
-            this.m_lbl_ma_hop_dong.TabIndex = 23;
-            this.m_lbl_ma_hop_dong.Text = "Mã/loại hợp đồng:";
-            this.m_lbl_ma_hop_dong.UseMnemonic = false;
-            this.m_lbl_ma_hop_dong.Click += new System.EventHandler(this.label1_Click);
+            this.m_lbl_loai_hop_dong.AutoSize = true;
+            this.m_lbl_loai_hop_dong.Location = new System.Drawing.Point(80, 52);
+            this.m_lbl_loai_hop_dong.Name = "m_lbl_loai_hop_dong";
+            this.m_lbl_loai_hop_dong.Size = new System.Drawing.Size(79, 13);
+            this.m_lbl_loai_hop_dong.TabIndex = 23;
+            this.m_lbl_loai_hop_dong.Text = "Loại hợp đồng:";
+            this.m_lbl_loai_hop_dong.UseMnemonic = false;
             // 
-            // m_cbo_ma_hop_dong
+            // m_cbo_loai_hop_dong
             // 
-            this.m_cbo_ma_hop_dong.FormattingEnabled = true;
-            this.m_cbo_ma_hop_dong.Location = new System.Drawing.Point(181, 49);
-            this.m_cbo_ma_hop_dong.Name = "m_cbo_ma_hop_dong";
-            this.m_cbo_ma_hop_dong.Size = new System.Drawing.Size(271, 21);
-            this.m_cbo_ma_hop_dong.TabIndex = 34;
+            this.m_cbo_loai_hop_dong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_loai_hop_dong.FormattingEnabled = true;
+            this.m_cbo_loai_hop_dong.Location = new System.Drawing.Point(181, 49);
+            this.m_cbo_loai_hop_dong.Name = "m_cbo_loai_hop_dong";
+            this.m_cbo_loai_hop_dong.Size = new System.Drawing.Size(271, 21);
+            this.m_cbo_loai_hop_dong.TabIndex = 34;
             // 
             // m_dat_ngay_bat_dau
             // 
@@ -263,13 +264,13 @@ namespace BKI_HRM
             this.ClientSize = new System.Drawing.Size(713, 409);
             this.Controls.Add(this.m_dat_ngay_ket_thuc);
             this.Controls.Add(this.m_dat_ngay_bat_dau);
-            this.Controls.Add(this.m_cbo_ma_hop_dong);
+            this.Controls.Add(this.m_cbo_loai_hop_dong);
             this.Controls.Add(this.m_cmd_tim_kiem);
             this.Controls.Add(this.m_lbl_ngay_het_han);
             this.Controls.Add(this.m_lbl_ngay_hieu_luc);
-            this.Controls.Add(this.m_lbl_ma_hop_dong);
+            this.Controls.Add(this.m_lbl_loai_hop_dong);
             this.Controls.Add(this.m_lbl_ma_nhan_vien);
-            this.Controls.Add(this.m_txt_ma_nhan_vien);
+            this.Controls.Add(this.m_txt_nhan_vien);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f300_V_GD_HOP_DONG_LAO_DONG";
@@ -320,7 +321,10 @@ namespace BKI_HRM
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
-			load_data_2_grid();		
+			load_data_2_grid();
+            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.LOAI_HOP_DONG,
+                WinFormControls.eTAT_CA.YES,
+                m_cbo_loai_hop_dong);
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -336,6 +340,7 @@ namespace BKI_HRM
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_GD_HOP_DONG_LAO_DONG.NewRow());
 			return v_obj_trans;			
 		}
+        
 		private void load_data_2_grid(){						
 			m_ds = new DS_V_GD_HOP_DONG_LAO_DONG();			
 			m_us.FillDataset(m_ds);
@@ -343,6 +348,17 @@ namespace BKI_HRM
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
 			m_fg.Redraw = true;
 		}
+        private void load_data_2_grid_search(){
+            m_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
+            m_us.FillDataset_search(m_ds,
+                m_txt_nhan_vien.Text,
+                CIPConvert.ToDecimal(m_cbo_loai_hop_dong.SelectedValue),
+                m_dat_ngay_bat_dau.Value,
+                m_dat_ngay_ket_thuc.Value);
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            m_fg.Redraw = true;
+        }
 		private void grid2us_object(US_V_GD_HOP_DONG_LAO_DONG i_us
 			, int i_grid_row) {
 			DataRow v_dr;
@@ -436,15 +452,7 @@ namespace BKI_HRM
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void m_txt_ma_nhan_vien_TextChanged(object sender, EventArgs e)
         {
@@ -454,6 +462,18 @@ namespace BKI_HRM
         private void m_lbl_ma_nhan_vien_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void m_cmd_tim_kiem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid_search();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle( v_e);
+            }
         }
 
 
