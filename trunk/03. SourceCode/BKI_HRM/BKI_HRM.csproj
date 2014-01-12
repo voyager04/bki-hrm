@@ -85,6 +85,8 @@
     <Compile Include="f400_Main.Designer.cs">
       <DependentUpon>f400_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="HeThong\f998_ht_nguoi_su_dung_de.cs" />
+    <Compile Include="HeThong\f999_ht_nguoi_su_dung.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WinFormControls.cs" />
     <EmbeddedResource Include="BaoCao\f100_V_GD_TRANG_THAI_LAO_DONG.resx">
@@ -98,6 +100,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="f400_Main.resx">
       <DependentUpon>f400_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeThong\f998_ht_nguoi_su_dung_de.resx">
+      <DependentUpon>f998_ht_nguoi_su_dung_de.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeThong\f999_ht_nguoi_su_dung.resx">
+      <DependentUpon>f999_ht_nguoi_su_dung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -166,8 +174,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Danh muc\" />
-    <Folder Include="He Thong\" />
-    <Folder Include="Nghiep Vu\" />
+    <Folder Include="NghiepVu\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
