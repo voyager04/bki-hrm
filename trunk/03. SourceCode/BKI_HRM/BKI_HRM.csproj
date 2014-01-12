@@ -173,7 +173,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Danh muc\" />
+    <Folder Include="DanhMuc\" />
     <Folder Include="NghiepVu\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
