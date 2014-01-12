@@ -92,7 +92,28 @@ namespace BKI_HRM.DS.CDBNames
     }
 
 
+    public class HT_PHAN_QUYEN_HE_THONG {
+        public const string ID = "ID";
+        public const string MA_PHAN_QUYEN = "MA_PHAN_QUYEN";
+        public const string GHI_CHU = "GHI_CHU";
+        public const string LOAI_PHAN_QUYEN = "LOAI_PHAN_QUYEN";
+    }
+    public class HT_PHAN_QUYEN_CHO_NHOM {
+        public const string ID = "ID";
+        public const string ID_NHOM_NGUOI_SU_DUNG = "ID_NHOM_NGUOI_SU_DUNG";
+        public const string ID_PHAN_QUYEN_HE_THONG = "ID_PHAN_QUYEN_HE_THONG";
+    }
 
+    public class HT_NHOM_NGUOI_SU_DUNG {
+        public const string ID = "ID";
+        public const string MA_NHOM = "MA_NHOM";
+        public const string GHI_CHU = "GHI_CHU";
+        public const string TRANG_THAI_NHOM = "TRANG_THAI_NHOM";
+        public const string ID_INPUTED_BY = "ID_INPUTED_BY";
+        public const string INPUTED_DATE = "INPUTED_DATE";
+        public const string ID_LAST_UPDATED_BY = "ID_LAST_UPDATED_BY";
+        public const string LAS_UPDATED_DATE = "LAS_UPDATED_DATE";
+    }
 
     public class SU_KIEN
     {
