@@ -238,5 +238,16 @@ namespace BKI_HRM.DS.CDBNames
         public const string TRANG_THAI_HIEN_TAI = "TRANG_THAI_HIEN_TAI";
         public const string Expr2 = "Expr2";
     }
+    public class GD_HOP_DONG
+    {
+        public const string ID = "ID";
+        public const string MA_HOP_DONG = "MA_HOP_DONG";
+        public const string ID_LOAI_HOP_DONG = "ID_LOAI_HOP_DONG";
+        public const string ID_NHAN_SU = "ID_NHAN_SU";
+        public const string NGAY_CO_HIEU_LUC = "NGAY_CO_HIEU_LUC";
+        public const string NGAY_HET_HAN = "NGAY_HET_HAN";
+        public const string LINK = "LINK";
+    }
+
 
 }

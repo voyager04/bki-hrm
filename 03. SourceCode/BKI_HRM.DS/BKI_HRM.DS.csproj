@@ -42,6 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CDBNames.cs" />
+    <Compile Include="DS_GD_HOP_DONG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_GD_HOP_DONG.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_HT_NHOM_NGUOI_SU_DUNG1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -84,6 +89,17 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="ClassDiagram1.cd" />
+    <None Include="DS_GD_HOP_DONG.xsc">
+      <DependentUpon>DS_GD_HOP_DONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_HOP_DONG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_GD_HOP_DONG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_GD_HOP_DONG.xss">
+      <DependentUpon>DS_GD_HOP_DONG.xsd</DependentUpon>
+    </None>
     <None Include="DS_HT_NHOM_NGUOI_SU_DUNG.xsc">
       <DependentUpon>DS_HT_NHOM_NGUOI_SU_DUNG.xsd</DependentUpon>
     </None>
