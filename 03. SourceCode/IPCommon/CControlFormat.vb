@@ -106,11 +106,46 @@ Public Class CControlFormat
                 ip_control.Visible = False
                 ip_control.Enabled = False
             End If
+
+        ElseIf TypeOf ip_control Is MenuStrip Then
+            Dim v_obj_tool_strip As ToolStripMenuItem
+            For Each v_obj_tool_strip In CType(ip_control, MenuStrip).Items
+                formatToolStripMenuItem(ip_str_form_name, i_objControlerControl, v_obj_tool_strip)
+
+            Next
+
+
         End If
+
+
+
+
+
         Dim v_control As System.Windows.Forms.Control
         For Each v_control In ip_control.Controls
             formatControlInForms(ip_str_form_name, i_objControlerControl, v_control)
         Next
+
+    End Sub
+
+    Private Shared Sub formatToolStripMenuItem( _
+    ByVal ip_str_form_name As String _
+    , ByVal i_objControlerControl As IControlerControl _
+    , ByVal ip_obj_toolstripMenuItem As System.Windows.Forms.ToolStripMenuItem)
+        If (i_objControlerControl.CanUseControl(ip_str_form_name, ip_obj_toolstripMenuItem.Name, "") = False) Then
+            'v_obj_tool_strip.Visible = False
+            ip_obj_toolstripMenuItem.Enabled = False
+        Else
+
+            Dim v_obj_tool_strip As ToolStripMenuItem
+            For Each v_obj_tool_strip In ip_obj_toolstripMenuItem.DropDownItems
+                formatToolStripMenuItem(ip_str_form_name, i_objControlerControl, v_obj_tool_strip)
+
+            Next
+        End If
+
+        
+
 
     End Sub
 #End Region
