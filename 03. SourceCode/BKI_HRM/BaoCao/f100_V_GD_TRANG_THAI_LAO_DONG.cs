@@ -133,7 +133,7 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(850, 36);
-            this.m_pnl_out_place_dm.TabIndex = 19;
+            this.m_pnl_out_place_dm.TabIndex = 8;
             // 
             // m_cmd_xuat_excel
             // 
@@ -150,7 +150,7 @@ namespace BKI_HRM
             this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
             this.m_cmd_xuat_excel.Size = new System.Drawing.Size(113, 28);
-            this.m_cmd_xuat_excel.TabIndex = 13;
+            this.m_cmd_xuat_excel.TabIndex = 0;
             this.m_cmd_xuat_excel.Text = "Xuất Excel";
             // 
             // m_cmd_exit
@@ -167,7 +167,7 @@ namespace BKI_HRM
             this.m_cmd_exit.Location = new System.Drawing.Point(739, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(107, 28);
-            this.m_cmd_exit.TabIndex = 11;
+            this.m_cmd_exit.TabIndex = 1;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // m_fg
@@ -178,17 +178,17 @@ namespace BKI_HRM
             this.m_fg.Name = "m_fg";
             this.m_fg.Size = new System.Drawing.Size(850, 328);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 20;
+            this.m_fg.TabIndex = 7;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(35, 11);
+            this.label3.Location = new System.Drawing.Point(20, 41);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 16);
-            this.label3.TabIndex = 1000;
+            this.label3.TabIndex = 4;
             this.label3.Text = "Từ khoá tìm kiếm";
             // 
             // label2
@@ -196,10 +196,10 @@ namespace BKI_HRM
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(394, 46);
+            this.label2.Location = new System.Drawing.Point(446, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 16);
-            this.label2.TabIndex = 999;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Đến ngày";
             // 
             // m_cmd_search
@@ -213,45 +213,51 @@ namespace BKI_HRM
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(722, 13);
+            this.m_cmd_search.Location = new System.Drawing.Point(739, 36);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(99, 28);
-            this.m_cmd_search.TabIndex = 3;
+            this.m_cmd_search.TabIndex = 6;
             this.m_cmd_search.Text = "Tìm kiếm";
             // 
             // m_txt_search
             // 
-            this.m_txt_search.Location = new System.Drawing.Point(185, 11);
+            this.m_txt_search.Location = new System.Drawing.Point(157, 41);
             this.m_txt_search.Name = "m_txt_search";
-            this.m_txt_search.Size = new System.Drawing.Size(485, 20);
-            this.m_txt_search.TabIndex = 0;
+            this.m_txt_search.Size = new System.Drawing.Size(565, 20);
+            this.m_txt_search.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(100, 45);
+            this.label1.Location = new System.Drawing.Point(72, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 16);
-            this.label1.TabIndex = 999;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Từ ngày";
             // 
             // m_dat_ket_thuc
             // 
             this.m_dat_ket_thuc.CalendarForeColor = System.Drawing.Color.Maroon;
             this.m_dat_ket_thuc.CalendarTitleForeColor = System.Drawing.Color.Maroon;
-            this.m_dat_ket_thuc.Location = new System.Drawing.Point(465, 46);
+            this.m_dat_ket_thuc.CustomFormat = "dd/MM/yyy";
+            this.m_dat_ket_thuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_ket_thuc.Location = new System.Drawing.Point(517, 15);
             this.m_dat_ket_thuc.Name = "m_dat_ket_thuc";
+            this.m_dat_ket_thuc.ShowCheckBox = true;
             this.m_dat_ket_thuc.Size = new System.Drawing.Size(205, 20);
-            this.m_dat_ket_thuc.TabIndex = 2;
+            this.m_dat_ket_thuc.TabIndex = 3;
             // 
             // m_dat_bat_dau
             // 
             this.m_dat_bat_dau.CalendarForeColor = System.Drawing.Color.Maroon;
             this.m_dat_bat_dau.CalendarTitleForeColor = System.Drawing.Color.Maroon;
-            this.m_dat_bat_dau.Location = new System.Drawing.Point(185, 45);
+            this.m_dat_bat_dau.CustomFormat = "dd/MM/yyy";
+            this.m_dat_bat_dau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_bat_dau.Location = new System.Drawing.Point(157, 14);
             this.m_dat_bat_dau.Name = "m_dat_bat_dau";
+            this.m_dat_bat_dau.ShowCheckBox = true;
             this.m_dat_bat_dau.Size = new System.Drawing.Size(203, 20);
             this.m_dat_bat_dau.TabIndex = 1;
             this.m_dat_bat_dau.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
