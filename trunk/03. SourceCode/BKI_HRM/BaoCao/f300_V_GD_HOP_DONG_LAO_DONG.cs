@@ -38,12 +38,12 @@ namespace BKI_HRM
         private TextBox m_txt_ma_nhan_vien;
         private Label m_lbl_ma_nhan_vien;
         private Label m_lbl_ngay_hieu_luc;
-        private DateTimePicker m_dat_ngay_hieu_luc;
         private Label m_lbl_ngay_het_han;
-        private DateTimePicker m_dat_ngay_het_han;
         internal SIS.Controls.Button.SiSButton m_cmd_tim_kiem;
         private Label m_lbl_ma_hop_dong;
         private ComboBox m_cbo_ma_hop_dong;
+        private DateTimePicker m_dat_ngay_bat_dau;
+        private DateTimePicker m_dat_ngay_ket_thuc;
 		private System.ComponentModel.IContainer components;
 
 		public f300_V_GD_HOP_DONG_LAO_DONG()
@@ -90,12 +90,12 @@ namespace BKI_HRM
             this.m_txt_ma_nhan_vien = new System.Windows.Forms.TextBox();
             this.m_lbl_ma_nhan_vien = new System.Windows.Forms.Label();
             this.m_lbl_ngay_hieu_luc = new System.Windows.Forms.Label();
-            this.m_dat_ngay_hieu_luc = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_ngay_het_han = new System.Windows.Forms.Label();
-            this.m_dat_ngay_het_han = new System.Windows.Forms.DateTimePicker();
             this.m_cmd_tim_kiem = new SIS.Controls.Button.SiSButton();
             this.m_lbl_ma_hop_dong = new System.Windows.Forms.Label();
             this.m_cbo_ma_hop_dong = new System.Windows.Forms.ComboBox();
+            this.m_dat_ngay_bat_dau = new System.Windows.Forms.DateTimePicker();
+            this.m_dat_ngay_ket_thuc = new System.Windows.Forms.DateTimePicker();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -184,35 +184,20 @@ namespace BKI_HRM
             // m_lbl_ngay_hieu_luc
             // 
             this.m_lbl_ngay_hieu_luc.AutoSize = true;
-            this.m_lbl_ngay_hieu_luc.Location = new System.Drawing.Point(36, 80);
+            this.m_lbl_ngay_hieu_luc.Location = new System.Drawing.Point(36, 82);
             this.m_lbl_ngay_hieu_luc.Name = "m_lbl_ngay_hieu_luc";
             this.m_lbl_ngay_hieu_luc.Size = new System.Drawing.Size(139, 13);
             this.m_lbl_ngay_hieu_luc.TabIndex = 25;
             this.m_lbl_ngay_hieu_luc.Text = "Ngày hợp đồng có hiệu lực:";
             // 
-            // m_dat_ngay_hieu_luc
-            // 
-            this.m_dat_ngay_hieu_luc.CalendarTrailingForeColor = System.Drawing.Color.Maroon;
-            this.m_dat_ngay_hieu_luc.Location = new System.Drawing.Point(181, 76);
-            this.m_dat_ngay_hieu_luc.Name = "m_dat_ngay_hieu_luc";
-            this.m_dat_ngay_hieu_luc.Size = new System.Drawing.Size(100, 20);
-            this.m_dat_ngay_hieu_luc.TabIndex = 26;
-            // 
             // m_lbl_ngay_het_han
             // 
             this.m_lbl_ngay_het_han.AutoSize = true;
-            this.m_lbl_ngay_het_han.Location = new System.Drawing.Point(329, 80);
+            this.m_lbl_ngay_het_han.Location = new System.Drawing.Point(314, 84);
             this.m_lbl_ngay_het_han.Name = "m_lbl_ngay_het_han";
             this.m_lbl_ngay_het_han.Size = new System.Drawing.Size(123, 13);
             this.m_lbl_ngay_het_han.TabIndex = 25;
             this.m_lbl_ngay_het_han.Text = "Ngày hợp đồng hết hạn:";
-            // 
-            // m_dat_ngay_het_han
-            // 
-            this.m_dat_ngay_het_han.Location = new System.Drawing.Point(458, 76);
-            this.m_dat_ngay_het_han.Name = "m_dat_ngay_het_han";
-            this.m_dat_ngay_het_han.Size = new System.Drawing.Size(100, 20);
-            this.m_dat_ngay_het_han.TabIndex = 26;
             // 
             // m_cmd_tim_kiem
             // 
@@ -247,14 +232,39 @@ namespace BKI_HRM
             this.m_cbo_ma_hop_dong.Size = new System.Drawing.Size(271, 21);
             this.m_cbo_ma_hop_dong.TabIndex = 34;
             // 
+            // m_dat_ngay_bat_dau
+            // 
+            this.m_dat_ngay_bat_dau.CalendarForeColor = System.Drawing.Color.Maroon;
+            this.m_dat_ngay_bat_dau.CalendarTitleForeColor = System.Drawing.Color.Maroon;
+            this.m_dat_ngay_bat_dau.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_bat_dau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_ngay_bat_dau.Location = new System.Drawing.Point(181, 80);
+            this.m_dat_ngay_bat_dau.Name = "m_dat_ngay_bat_dau";
+            this.m_dat_ngay_bat_dau.ShowCheckBox = true;
+            this.m_dat_ngay_bat_dau.Size = new System.Drawing.Size(113, 20);
+            this.m_dat_ngay_bat_dau.TabIndex = 35;
+            this.m_dat_ngay_bat_dau.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            // 
+            // m_dat_ngay_ket_thuc
+            // 
+            this.m_dat_ngay_ket_thuc.CalendarForeColor = System.Drawing.Color.Maroon;
+            this.m_dat_ngay_ket_thuc.CalendarTitleForeColor = System.Drawing.Color.Maroon;
+            this.m_dat_ngay_ket_thuc.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_ket_thuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_ngay_ket_thuc.Location = new System.Drawing.Point(445, 80);
+            this.m_dat_ngay_ket_thuc.Name = "m_dat_ngay_ket_thuc";
+            this.m_dat_ngay_ket_thuc.ShowCheckBox = true;
+            this.m_dat_ngay_ket_thuc.Size = new System.Drawing.Size(113, 20);
+            this.m_dat_ngay_ket_thuc.TabIndex = 36;
+            // 
             // f300_V_GD_HOP_DONG_LAO_DONG
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(713, 409);
+            this.Controls.Add(this.m_dat_ngay_ket_thuc);
+            this.Controls.Add(this.m_dat_ngay_bat_dau);
             this.Controls.Add(this.m_cbo_ma_hop_dong);
             this.Controls.Add(this.m_cmd_tim_kiem);
-            this.Controls.Add(this.m_dat_ngay_het_han);
-            this.Controls.Add(this.m_dat_ngay_hieu_luc);
             this.Controls.Add(this.m_lbl_ngay_het_han);
             this.Controls.Add(this.m_lbl_ngay_hieu_luc);
             this.Controls.Add(this.m_lbl_ma_hop_dong);
