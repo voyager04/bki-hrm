@@ -280,7 +280,7 @@ namespace BKI_HRM
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "f100_V_GD_TRANG_THAI_LAO_DONG";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "F100 TRẠNG THÁI LAO ĐỘNG";
+            this.Text = "F100 - Trạng thái lao động";
             this.Load += new System.EventHandler(this.f100_V_GD_TRANG_THAI_LAO_DONG_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
