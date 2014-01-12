@@ -108,5 +108,17 @@ namespace BKI_HRM
             }
             
         }
+
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Application.Exit();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle( v_e);
+            }
+        }
     }
 }
