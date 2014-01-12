@@ -33,8 +33,8 @@ namespace BKI_HRM
         #endregion 
 
         private void set_define_events() {
-            this.m_mnu_tu_dien_he_thong.Click += new EventHandler(m_mnu_tu_dien_he_thong_Click);
-            this.m_mnu_quan_ly_nguoi_su_dung.Click += new EventHandler(m_mnu_quan_ly_nguoi_su_dung_Click);
+            this.m_menuitem_tudien.Click += new EventHandler(m_mnu_tu_dien_he_thong_Click);
+            this.m_menuitem_user.Click += new EventHandler(m_mnu_quan_ly_nguoi_su_dung_Click);
         }
 
         void m_mnu_quan_ly_nguoi_su_dung_Click(object sender, EventArgs e) {
