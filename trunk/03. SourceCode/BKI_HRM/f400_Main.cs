@@ -127,5 +127,31 @@ namespace BKI_HRM {
             }
         }
 
+        private void m_menu_dschucvu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f401_DM_CHUC_VU frm = new f401_DM_CHUC_VU();
+                frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_menuitem_user_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f999_ht_nguoi_su_dung frm = new f999_ht_nguoi_su_dung();
+                frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
     }
 }

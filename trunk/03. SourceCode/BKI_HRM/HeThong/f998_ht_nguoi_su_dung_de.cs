@@ -16,7 +16,7 @@ using BKI_HRM.DS.CDBNames;
 using BKI_HRM.DS;
 using BKI_HRM.US;
 
-namespace BdtApp
+namespace BKI_HRM
 {
 	/// <summary>
 	/// Summary description for f998_ht_nguoi_su_dung_de.
