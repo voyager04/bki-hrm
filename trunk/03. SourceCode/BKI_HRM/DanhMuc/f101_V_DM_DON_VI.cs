@@ -11,7 +11,7 @@ using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
-
+using BKI_HRM.DanhMuc;
 using IP.Core.IPCommon;
 using IP.Core.IPException;
 using IP.Core.IPData;
@@ -294,8 +294,8 @@ namespace BKI_HRM
 
 
 		private void insert_v_dm_don_vi(){			
-		//	f101_V_DM_DON_VI_DE v_fDE = new  f101_V_DM_DON_VI_DE();								
-		//	v_fDE.display();
+		    f102_DM_DON_VI_DE frm = new f102_DM_DON_VI_DE();
+            frm.display_for_insert();
 			load_data_2_grid();
 		}
 
