@@ -120,5 +120,20 @@ namespace BKI_HRM
             	CSystemLog_301.ExceptionHandle( v_e);
             }
         }
+
+        private void m_menu_dsnhansu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f201_DM_NHAN_SU frm = new f201_DM_NHAN_SU();
+                frm.display();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        
     }
 }

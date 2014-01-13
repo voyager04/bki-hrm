@@ -157,6 +157,7 @@
             this.m_menu_dsnhansu.Name = "m_menu_dsnhansu";
             this.m_menu_dsnhansu.Size = new System.Drawing.Size(189, 22);
             this.m_menu_dsnhansu.Text = "Danh sách nhân sự";
+            this.m_menu_dsnhansu.Click += new System.EventHandler(this.m_menu_dsnhansu_Click);
             // 
             // m_menu_dschucvu
             // 
