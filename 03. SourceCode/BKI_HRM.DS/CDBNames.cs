@@ -258,5 +258,36 @@ namespace BKI_HRM.DS.CDBNames
         public const string DIA_BAN = "DIA_BAN";
         public const string TRANG_THAI = "TRANG_THAI";
     }
+    public class DM_NHAN_SU
+    {
+        public const string ID = "ID";
+        public const string MA_NV = "MA_NV";
+        public const string HO_DEM = "HO_DEM";
+        public const string TEN = "TEN";
+        public const string GIOI_TINH = "GIOI_TINH";
+        public const string NGAY_SINH = "NGAY_SINH";
+        public const string NOI_SINH = "NOI_SINH";
+        public const string NGUYEN_QUAN = "NGUYEN_QUAN";
+        public const string CMND = "CMND";
+        public const string NGAY_CAP_CMND = "NGAY_CAP_CMND";
+        public const string NOI_CAP_CMND = "NOI_CAP_CMND";
+        public const string TRINH_DO = "TRINH_DO";
+        public const string NOI_DAO_TAO = "NOI_DAO_TAO";
+        public const string CHUYEN_NGANH = "CHUYEN_NGANH";
+        public const string NAM_TOT_NGHIEP = "NAM_TOT_NGHIEP";
+        public const string EMAIL_CQ = "EMAIL_CQ";
+        public const string EMAIL_CA_NHAN = "EMAIL_CA_NHAN";
+        public const string DT_NHA = "DT_NHA";
+        public const string DI_DONG = "DI_DONG";
+        public const string CHO_O = "CHO_O";
+        public const string HO_KHAU = "HO_KHAU";
+        public const string NGUOI_LIEN_HE = "NGUOI_LIEN_HE";
+        public const string DI_DONG_LIEN_HE = "DI_DONG_LIEN_HE";
+        public const string QUAN_HE = "QUAN_HE";
+        public const string TON_GIAO = "TON_GIAO";
+        public const string DAN_TOC = "DAN_TOC";
+        public const string MA_SO_THUE = "MA_SO_THUE";
+        public const string TRANG_THAI = "TRANG_THAI";
+    }
 
 }

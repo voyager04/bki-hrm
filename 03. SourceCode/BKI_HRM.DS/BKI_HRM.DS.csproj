@@ -47,6 +47,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_DM_DON_VI.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_DM_NHAN_SU.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_DM_NHAN_SU.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_GD_HOP_DONG.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -104,6 +109,17 @@
     </None>
     <None Include="DS_DM_DON_VI.xss">
       <DependentUpon>DS_DM_DON_VI.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_NHAN_SU.xsc">
+      <DependentUpon>DS_DM_NHAN_SU.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_NHAN_SU.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_DM_NHAN_SU.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_DM_NHAN_SU.xss">
+      <DependentUpon>DS_DM_NHAN_SU.xsd</DependentUpon>
     </None>
     <None Include="DS_GD_HOP_DONG.xsc">
       <DependentUpon>DS_GD_HOP_DONG.xsd</DependentUpon>
