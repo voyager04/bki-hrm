@@ -99,6 +99,7 @@
             this.m_menuitem_user.Name = "m_menuitem_user";
             this.m_menuitem_user.Size = new System.Drawing.Size(188, 22);
             this.m_menuitem_user.Text = "Người sử dụng";
+            this.m_menuitem_user.Click += new System.EventHandler(this.m_menuitem_user_Click);
             // 
             // m_menuitem_usergroup
             // 
@@ -163,6 +164,7 @@
             this.m_menu_dschucvu.Name = "m_menu_dschucvu";
             this.m_menu_dschucvu.Size = new System.Drawing.Size(189, 22);
             this.m_menu_dschucvu.Text = "Danh sách chức vụ";
+            this.m_menu_dschucvu.Click += new System.EventHandler(this.m_menu_dschucvu_Click);
             // 
             // m_menu_dsdonvi
             // 

@@ -42,6 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CDBNames.cs" />
+    <Compile Include="DS_DM_CHUC_VU.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_DM_CHUC_VU.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_DM_DON_VI.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -104,6 +109,17 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="ClassDiagram1.cd" />
+    <None Include="DS_DM_CHUC_VU.xsc">
+      <DependentUpon>DS_DM_CHUC_VU.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_CHUC_VU.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_DM_CHUC_VU.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_DM_CHUC_VU.xss">
+      <DependentUpon>DS_DM_CHUC_VU.xsd</DependentUpon>
+    </None>
     <None Include="DS_DM_DON_VI.xsc">
       <DependentUpon>DS_DM_DON_VI.xsd</DependentUpon>
     </None>

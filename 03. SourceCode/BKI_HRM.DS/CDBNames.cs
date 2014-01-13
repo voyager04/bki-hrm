@@ -302,5 +302,14 @@ namespace BKI_HRM.DS.CDBNames
         public const string MA_DON_VI_CAP_TREN = "MA_DON_VI_CAP_TREN";
         public const string TEN_DON_VI_CAP_TREN = "TEN_DON_VI_CAP_TREN";
     }
-
+   public class DM_CHUC_VU
+   {
+       public const string ID = "ID";
+       public const string MA_CV = "MA_CV";
+       public const string TEN_CV = "TEN_CV";
+       public const string TEN_CV_TA = "TEN_CV_TA";
+       public const string TRANG_THAI = "TRANG_THAI";
+       public const string NGAY_AP_DUNG = "NGAY_AP_DUNG";
+       public const string NGAY_KET_THUC = "NGAY_KET_THUC";
+   }
 }
