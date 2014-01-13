@@ -224,7 +224,7 @@ namespace BKI_HRM
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f201_DM_NHAN_SU";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "F201 Danh sách nhân sự";
+            this.Text = "F201 - Danh sách nhân sự";
             this.Load += new System.EventHandler(this.f201_DM_NHAN_SU_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
