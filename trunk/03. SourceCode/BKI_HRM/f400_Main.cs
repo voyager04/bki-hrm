@@ -120,7 +120,7 @@ namespace BKI_HRM {
 
         private void m_menu_dsdonvi_Click(object sender, EventArgs e){
             try {
-                f101_DM_DON_VI frm = new f101_DM_DON_VI();
+                f101_V_DM_DON_VI frm = new f101_V_DM_DON_VI();
                 frm.Show();
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
