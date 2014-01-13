@@ -79,14 +79,21 @@
     <Compile Include="BaoCao\f300_V_GD_HOP_DONG_LAO_DONG.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DanhMuc\f101_DM_DON_VI.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="f400_Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="f400_Main.Designer.cs">
       <DependentUpon>f400_Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="HeThong\f998_ht_nguoi_su_dung_de.cs" />
-    <Compile Include="HeThong\f999_ht_nguoi_su_dung.cs" />
+    <Compile Include="HeThong\f998_ht_nguoi_su_dung_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeThong\f999_ht_nguoi_su_dung.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WinFormControls.cs" />
     <EmbeddedResource Include="BaoCao\f100_V_GD_TRANG_THAI_LAO_DONG.resx">
@@ -97,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f300_V_GD_HOP_DONG_LAO_DONG.resx">
       <DependentUpon>f300_V_GD_HOP_DONG_LAO_DONG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f101_DM_DON_VI.resx">
+      <DependentUpon>f101_DM_DON_VI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f400_Main.resx">
       <DependentUpon>f400_Main.cs</DependentUpon>
@@ -173,7 +183,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DanhMuc\" />
     <Folder Include="NghiepVu\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

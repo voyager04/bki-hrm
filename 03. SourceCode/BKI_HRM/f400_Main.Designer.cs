@@ -128,7 +128,6 @@
             this.m_menuitem_thoat.Name = "m_menuitem_thoat";
             this.m_menuitem_thoat.Size = new System.Drawing.Size(165, 22);
             this.m_menuitem_thoat.Text = "Thoát";
-            this.m_menuitem_thoat.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
             // m_menuitem_nghiepvu
             // 
@@ -224,21 +223,18 @@
             this.m_menu_bcquatrinhlv.Name = "m_menu_bcquatrinhlv";
             this.m_menu_bcquatrinhlv.Size = new System.Drawing.Size(229, 22);
             this.m_menu_bcquatrinhlv.Text = "Quá trình làm việc";
-            this.m_menu_bcquatrinhlv.Click += new System.EventHandler(this.quáTrìnhLàmViệcToolStripMenuItem_Click);
             // 
             // m_menuitem_bctrangthaild
             // 
             this.m_menuitem_bctrangthaild.Name = "m_menuitem_bctrangthaild";
             this.m_menuitem_bctrangthaild.Size = new System.Drawing.Size(229, 22);
             this.m_menuitem_bctrangthaild.Text = "Trạng thái lao động";
-            this.m_menuitem_bctrangthaild.Click += new System.EventHandler(this.trạngTháiLaoĐộngToolStripMenuItem_Click);
             // 
             // m_menuitem_bc_hopdongld
             // 
             this.m_menuitem_bc_hopdongld.Name = "m_menuitem_bc_hopdongld";
             this.m_menuitem_bc_hopdongld.Size = new System.Drawing.Size(229, 22);
             this.m_menuitem_bc_hopdongld.Text = "Hợp đồng lao động";
-            this.m_menuitem_bc_hopdongld.Click += new System.EventHandler(this.hợpĐồngLaoĐộngToolStripMenuItem_Click);
             // 
             // m_menuitem_bcsoluongnv
             // 
