@@ -328,7 +328,7 @@
     <value>False</value>
   </data>
   <data name="$this.Name">
-    <value>f101_DM_DON_VI</value>
+    <value>f101_V_DM_DON_VI</value>
   </data>
   <data name="$this.Localizable" type="System.Boolean, mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
