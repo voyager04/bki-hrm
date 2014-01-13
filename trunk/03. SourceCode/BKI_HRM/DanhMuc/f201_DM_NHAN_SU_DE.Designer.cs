@@ -287,7 +287,7 @@
             this.textBox1.Location = new System.Drawing.Point(73, 65);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(326, 48);
+            this.textBox1.Size = new System.Drawing.Size(361, 48);
             this.textBox1.TabIndex = 32;
             // 
             // m_txt_nguyen_quan
@@ -295,7 +295,7 @@
             this.m_txt_nguyen_quan.Location = new System.Drawing.Point(523, 65);
             this.m_txt_nguyen_quan.Multiline = true;
             this.m_txt_nguyen_quan.Name = "m_txt_nguyen_quan";
-            this.m_txt_nguyen_quan.Size = new System.Drawing.Size(326, 48);
+            this.m_txt_nguyen_quan.Size = new System.Drawing.Size(342, 48);
             this.m_txt_nguyen_quan.TabIndex = 34;
             // 
             // m_lbl_nguyen_quan
@@ -743,7 +743,7 @@
             this.Controls.Add(this.m_lbl_ma_nhan_vien);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f201_DM_NHAN_SU_DE";
-            this.Text = "f201_DM_NHAN_SU_DE";
+            this.Text = "F201 - Chi tiết nhân sự";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
