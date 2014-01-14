@@ -1115,8 +1115,13 @@ SELECT ID, MA_DON_VI, TEN_DON_VI, ID_LOAI_DON_VI, ID_DON_VI_CAP_TREN, DIA_BAN, T
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(decimal Original_ID, string Original_MA_DON_VI, string Original_TEN_DON_VI, decimal Original_ID_LOAI_DON_VI, global::System.Nullable<decimal> Original_ID_DON_VI_CAP_TREN, string Original_DIA_BAN, string Original_TRANG_THAI) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_ID));
+        public virtual int Delete(global::System.Nullable<decimal> Original_ID, string Original_MA_DON_VI, string Original_TEN_DON_VI, decimal Original_ID_LOAI_DON_VI, global::System.Nullable<decimal> Original_ID_DON_VI_CAP_TREN, string Original_DIA_BAN, string Original_TRANG_THAI) {
+            if ((Original_ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_ID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((Original_MA_DON_VI == null)) {
                 throw new global::System.ArgumentNullException("Original_MA_DON_VI");
             }
@@ -1228,7 +1233,7 @@ SELECT ID, MA_DON_VI, TEN_DON_VI, ID_LOAI_DON_VI, ID_DON_VI_CAP_TREN, DIA_BAN, T
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string MA_DON_VI, string TEN_DON_VI, decimal ID_LOAI_DON_VI, global::System.Nullable<decimal> ID_DON_VI_CAP_TREN, string DIA_BAN, string TRANG_THAI, decimal Original_ID, string Original_MA_DON_VI, string Original_TEN_DON_VI, decimal Original_ID_LOAI_DON_VI, global::System.Nullable<decimal> Original_ID_DON_VI_CAP_TREN, string Original_DIA_BAN, string Original_TRANG_THAI, decimal ID) {
+        public virtual int Update(string MA_DON_VI, string TEN_DON_VI, decimal ID_LOAI_DON_VI, global::System.Nullable<decimal> ID_DON_VI_CAP_TREN, string DIA_BAN, string TRANG_THAI, global::System.Nullable<decimal> Original_ID, string Original_MA_DON_VI, string Original_TEN_DON_VI, decimal Original_ID_LOAI_DON_VI, global::System.Nullable<decimal> Original_ID_DON_VI_CAP_TREN, string Original_DIA_BAN, string Original_TRANG_THAI, global::System.Nullable<decimal> ID) {
             if ((MA_DON_VI == null)) {
                 throw new global::System.ArgumentNullException("MA_DON_VI");
             }
@@ -1260,7 +1265,12 @@ SELECT ID, MA_DON_VI, TEN_DON_VI, ID_LOAI_DON_VI, ID_DON_VI_CAP_TREN, DIA_BAN, T
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(TRANG_THAI));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(Original_ID));
+            if ((Original_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(Original_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
             if ((Original_MA_DON_VI == null)) {
                 throw new global::System.ArgumentNullException("Original_MA_DON_VI");
             }
@@ -1300,7 +1310,12 @@ SELECT ID, MA_DON_VI, TEN_DON_VI, ID_LOAI_DON_VI, ID_DON_VI_CAP_TREN, DIA_BAN, T
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_TRANG_THAI));
             }
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((decimal)(ID));
+            if ((ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((decimal)(ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1321,7 +1336,7 @@ SELECT ID, MA_DON_VI, TEN_DON_VI, ID_LOAI_DON_VI, ID_DON_VI_CAP_TREN, DIA_BAN, T
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string MA_DON_VI, string TEN_DON_VI, decimal ID_LOAI_DON_VI, global::System.Nullable<decimal> ID_DON_VI_CAP_TREN, string DIA_BAN, string TRANG_THAI, decimal Original_ID, string Original_MA_DON_VI, string Original_TEN_DON_VI, decimal Original_ID_LOAI_DON_VI, global::System.Nullable<decimal> Original_ID_DON_VI_CAP_TREN, string Original_DIA_BAN, string Original_TRANG_THAI) {
+        public virtual int Update(string MA_DON_VI, string TEN_DON_VI, decimal ID_LOAI_DON_VI, global::System.Nullable<decimal> ID_DON_VI_CAP_TREN, string DIA_BAN, string TRANG_THAI, global::System.Nullable<decimal> Original_ID, string Original_MA_DON_VI, string Original_TEN_DON_VI, decimal Original_ID_LOAI_DON_VI, global::System.Nullable<decimal> Original_ID_DON_VI_CAP_TREN, string Original_DIA_BAN, string Original_TRANG_THAI) {
             return this.Update(MA_DON_VI, TEN_DON_VI, ID_LOAI_DON_VI, ID_DON_VI_CAP_TREN, DIA_BAN, TRANG_THAI, Original_ID, Original_MA_DON_VI, Original_TEN_DON_VI, Original_ID_LOAI_DON_VI, Original_ID_DON_VI_CAP_TREN, Original_DIA_BAN, Original_TRANG_THAI, Original_ID);
         }
     }
