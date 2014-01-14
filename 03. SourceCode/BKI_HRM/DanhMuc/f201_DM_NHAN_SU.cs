@@ -41,19 +41,7 @@ namespace BKI_HRM
 		internal SIS.Controls.Button.SiSButton m_cmd_view;
 		private System.ComponentModel.IContainer components;
 
-		public f201_DM_NHAN_SU()
-		{
-			//
-			// Required for Windows Form Designer support
-			//
-			InitializeComponent();
-
-			//
-			// TODO: Add any constructor code after InitializeComponent call
-			//
-			format_controls();
-		}
-
+		
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
@@ -237,6 +225,19 @@ namespace BKI_HRM
 		public void display(){			
 			this.ShowDialog();
 		}
+        public f201_DM_NHAN_SU()
+        {
+            //
+            // Required for Windows Form Designer support
+            //
+            InitializeComponent();
+
+            //
+            // TODO: Add any constructor code after InitializeComponent call
+            //
+            format_controls();
+        }
+
 		#endregion
 
 		#region Data Structure
@@ -283,7 +284,7 @@ namespace BKI_HRM
 			CControlFormat.setFormStyle(this, new CAppContext_201());
 			CControlFormat.setC1FlexFormat(m_fg);
 			CGridUtils.AddSave_Excel_Handlers(m_fg);
-            			CGridUtils.AddSearch_Handlers(m_fg);
+                        //CGridUtils.AddSearch_Handlers(m_fg);
 			set_define_events();
 			this.KeyPreview = true;		
 		}
@@ -349,8 +350,8 @@ namespace BKI_HRM
 
 
 		private void insert_dm_nhan_su(){			
-		//	f201_DM_NHAN_SU_DE v_fDE = new  f201_DM_NHAN_SU_DE();								
-		//	v_fDE.display();
+			f201_DM_NHAN_SU_DE v_fDE = new  f201_DM_NHAN_SU_DE();								
+			v_fDE.display_for_insert();
 			load_data_2_grid();
 		}
 
@@ -358,8 +359,8 @@ namespace BKI_HRM
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
 			grid2us_object(m_us, m_fg.Row);
-		//	f201_DM_NHAN_SU_DE v_fDE = new f201_DM_NHAN_SU_DE();
-		//	v_fDE.display(m_us);
+            f201_DM_NHAN_SU_DE v_fDE = new f201_DM_NHAN_SU_DE();
+            v_fDE.display_for_update(m_us);
 			load_data_2_grid();
 		}
 				
@@ -399,12 +400,12 @@ namespace BKI_HRM
 		}
 		#endregion
 
-//
-		//
-		//		EVENT HANLDERS
-		//
-		//
-		private void f201_DM_NHAN_SU_Load(object sender, System.EventArgs e) {
+
+
+        #region EVENT HANLDERS
+
+
+        private void f201_DM_NHAN_SU_Load(object sender, System.EventArgs e) {
 			try{
 				set_initial_form_load();
 			}
@@ -457,8 +458,9 @@ namespace BKI_HRM
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
-		}
+        }
+        #endregion
 
-	}
+    }
 }
 
