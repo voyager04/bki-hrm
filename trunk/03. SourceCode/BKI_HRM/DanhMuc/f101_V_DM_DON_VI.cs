@@ -39,6 +39,9 @@ namespace BKI_HRM
 		internal SIS.Controls.Button.SiSButton m_cmd_insert;
 		internal SIS.Controls.Button.SiSButton m_cmd_exit;
 		internal SIS.Controls.Button.SiSButton m_cmd_view;
+        private Label label3;
+        internal SIS.Controls.Button.SiSButton m_cmd_search;
+        private TextBox m_txt_search;
 		private System.ComponentModel.IContainer components;
 
 		public f101_V_DM_DON_VI()
@@ -86,6 +89,9 @@ namespace BKI_HRM
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.label3 = new System.Windows.Forms.Label();
+            this.m_cmd_search = new SIS.Controls.Button.SiSButton();
+            this.m_txt_search = new System.Windows.Forms.TextBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -209,25 +215,65 @@ namespace BKI_HRM
             // m_fg
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 0);
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_fg.Location = new System.Drawing.Point(0, 68);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1005, 438);
+            this.m_fg.Size = new System.Drawing.Size(1005, 370);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(87, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 16);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Từ khoá tìm kiếm";
+            // 
+            // m_cmd_search
+            // 
+            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_search.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.m_cmd_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_cmd_search.ForeColor = System.Drawing.Color.Maroon;
+            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_search.ImageIndex = 5;
+            this.m_cmd_search.ImageList = this.ImageList;
+            this.m_cmd_search.Location = new System.Drawing.Point(806, 18);
+            this.m_cmd_search.Name = "m_cmd_search";
+            this.m_cmd_search.Size = new System.Drawing.Size(99, 28);
+            this.m_cmd_search.TabIndex = 27;
+            this.m_cmd_search.Text = "Tìm kiếm";
+            // 
+            // m_txt_search
+            // 
+            this.m_txt_search.Location = new System.Drawing.Point(224, 23);
+            this.m_txt_search.Name = "m_txt_search";
+            this.m_txt_search.Size = new System.Drawing.Size(565, 20);
+            this.m_txt_search.TabIndex = 26;
             // 
             // f101_V_DM_DON_VI
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(1005, 474);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.m_cmd_search);
+            this.Controls.Add(this.m_txt_search);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "f101_V_DM_DON_VI";
             this.Text = "F101 - Danh mục đơn vị";
             this.Load += new System.EventHandler(this.f101_V_DM_DON_VI_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 		#endregion
@@ -335,13 +381,7 @@ namespace BKI_HRM
 		//	f101_V_DM_DON_VI_DE v_fDE = new f101_V_DM_DON_VI_DE();			
 		//	v_fDE.display(m_us);
 		}
-		private void set_define_events(){
-			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
-			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
-			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
-		}
+		
 		#endregion
 
 //
@@ -349,6 +389,15 @@ namespace BKI_HRM
 		//		EVENT HANLDERS
 		//
 		//
+        private void set_define_events() {
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
+            m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
+            m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
+            m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_cmd_search.Click += new EventHandler(m_cmd_search_Click);
+        }
+
 		private void f101_V_DM_DON_VI_Load(object sender, System.EventArgs e) {
 			try{
 				set_initial_form_load();
@@ -403,6 +452,15 @@ namespace BKI_HRM
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
+
+	    private void m_cmd_search_Click(object sender, EventArgs e){
+	        try{
+                load_data_2_grid();
+	        }
+	        catch (Exception v_e){
+	            CSystemLog_301.ExceptionHandle(v_e);
+	        }
+	    }
 
 	}
 }
