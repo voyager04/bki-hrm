@@ -19,7 +19,7 @@ namespace BKI_HRM
 {
     public partial class f201_DM_NHAN_SU_DE : Form
     {
-#region Public Interface
+    #region Public Interface
         public void display()
         {
             this.ShowDialog();
@@ -39,14 +39,14 @@ namespace BKI_HRM
             us_object_to_form();
             this.ShowDialog();
         }
-#endregion
+    #endregion
 
-#region Members
+    #region Members
         DataEntryFormMode m_e_form_mode;
         US_DM_NHAN_SU m_us_dm_nhan_su = new US_DM_NHAN_SU();
-#endregion
+    #endregion
 
-#region Private Methods
+    #region Private Methods
         private void format_controls()
         {
             CControlFormat.setFormStyle(this, new CAppContext_201());
@@ -109,6 +109,50 @@ namespace BKI_HRM
             m_us_dm_nhan_su.strQUAN_HE = m_txt_quan_he.Text;
         }
         private bool check_validate_data_is_ok(){
+            if (!CValidateTextBox.IsValid(m_txt_ma_nhan_vien, DataType.NumberType, allowNull.NO, true))
+                return false;
+            if (!CValidateTextBox.IsValid(m_txt_ho_dem, DataType.StringType, allowNull.NO, true))
+                return false;
+            if (!CValidateTextBox.IsValid(m_txt_ten, DataType.StringType, allowNull.NO, true))
+                return false;
+            if (m_cbo_gioi_tinh.SelectedIndex == 0)
+                return false;
+            if ((DateTime.Today.Year - m_dat_ngay_sinh.Value.Year) < 15)
+                return false;
+            if (!CValidateTextBox.IsValid(m_txt_noi_sinh, DataType.StringType, allowNull.YES, true))
+                return false;
+            if (!CValidateTextBox.IsValid(m_txt_cmnd, DataType.NumberType, allowNull.YES, true))
+                return false;
+            if (!CValidateTextBox.IsValid(m_txt_noi_cap, DataType.StringType, allowNull.YES, true))
+                return false;
+            if (m_dat_ngay_cap.Value.Year < (m_dat_ngay_sinh.Value.Year + 14))
+                return false;
+            if (!CValidateTextBox.IsValid(m_txt_ton_giao, DataType.StringType, allowNull.YES, true))
+                return false;
+            if (!CValidateTextBox.IsValid(m_txt_dan_toc, DataType.StringType, allowNull.YES, true))
+                return false;
+            if (!CValidateTextBox.IsValid(m_txt_nam_tot_nghiep, DataType.NumberType, allowNull.YES, true))
+                return false;
+            if (!CValidateTextBox.IsValid(m_txt_email_ca_nhan, DataType.StringType, allowNull.YES, true))
+                return false;
+            if (!CValidateTextBox.IsValid(m_txt_email_co_quan, DataType.StringType, allowNull.YES, true))
+                return false;
+            if (!CValidateTextBox.IsValid(m_txt_so_dtdd, DataType.NumberType, allowNull.YES, true) || (m_txt_so_dtdd.Text.Trim(' ').Length != 10 && m_txt_so_dtdd.Text.Trim(' ').Length != 11))
+                return false;
+            if (!CValidateTextBox.IsValid(m_txt_sdt_nha_rieng, DataType.NumberType, allowNull.YES, true))
+                return false;
+            if (!CValidateTextBox.IsValid(m_txt_ma_so_thue, DataType.NumberType, allowNull.YES, true))
+                return false;
+            if (!CValidateTextBox.IsValid(m_txt_dia_chi, DataType.StringType, allowNull.YES, true))
+                return false;
+            if (!CValidateTextBox.IsValid(m_txt_ho_dem, DataType.StringType, allowNull.YES, true))
+                return false;
+            if (!CValidateTextBox.IsValid(m_txt_nguoi_lien_he, DataType.StringType, allowNull.YES, true))
+                return false;
+            if (!CValidateTextBox.IsValid(m_txt_sdt_lien_he, DataType.NumberType, allowNull.YES, true))
+                return false;
+            if (!CValidateTextBox.IsValid(m_txt_quan_he, DataType.StringType, allowNull.YES, true))
+                return false;
             return true;
         }
         
@@ -179,9 +223,9 @@ namespace BKI_HRM
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
         }
         
-#endregion
+    #endregion
 
-#region Event Hanlders
+    #region Event Hanlders
         private void f201_DM_NHAN_SU_DE_Load(object sendrer, EventArgs e){
             try
             {
@@ -224,10 +268,7 @@ namespace BKI_HRM
             	CSystemLog_301.ExceptionHandle( v_e);
             }
         }
-#endregion
+    #endregion
 
-
-
-        
     }
 }
