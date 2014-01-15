@@ -39,6 +39,43 @@ namespace BKI_HRM
             us_object_to_form();
             this.ShowDialog();
         }
+        public void display_for_view(US_DM_NHAN_SU ip_us_dm_nhan_su)
+        {
+            m_us_dm_nhan_su = ip_us_dm_nhan_su;
+            m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            us_object_to_form();
+            m_txt_ma_nhan_vien.Enabled = false;
+            m_txt_ho_dem.Enabled = false;
+            m_txt_ten.Enabled = false;
+            m_cbo_gioi_tinh.Enabled = false;
+            m_dat_ngay_sinh.Enabled = false;
+            m_txt_noi_sinh.Enabled = false;
+            m_txt_nguyen_quan.Enabled = false;
+            m_txt_cmnd.Enabled = false;
+            m_dat_ngay_cap.Enabled = false;
+            m_txt_noi_cap.Enabled = false;
+            m_txt_ton_giao.Enabled = false;
+            m_txt_dan_toc.Enabled = false;
+            m_chk_trang_thai.Enabled = false;
+            m_txt_trinh_do.Enabled = false;
+            m_txt_noi_dao_tao.Enabled = false;
+            m_txt_nam_tot_nghiep.Enabled = false;
+            m_txt_chuyen_nganh.Enabled = false;
+            m_txt_email_ca_nhan.Enabled = false;
+            m_txt_email_co_quan.Enabled = false;
+            m_txt_dia_chi.Enabled = false;
+            m_txt_ho_khau.Enabled = false;
+            m_txt_sdt_lien_he.Enabled = false;
+            m_txt_so_dtdd.Enabled = false;
+            m_txt_sdt_nha_rieng.Enabled = false;
+            m_txt_nguoi_lien_he.Enabled = false;
+            m_txt_quan_he.Enabled = false;
+            m_txt_ma_so_thue.Enabled = false;
+
+            m_cmd_refresh.Visible = false;
+            m_cmd_save.Visible = false;
+            this.ShowDialog();
+        }
     #endregion
 
     #region Members
@@ -209,6 +246,8 @@ namespace BKI_HRM
                 case DataEntryFormMode.UpdateDataState:
                     us_object_to_form();
                     break;
+                case DataEntryFormMode.ViewDataState:
+                    break;
                 case DataEntryFormMode.InsertDataState:
                     break;
                 default:
@@ -221,6 +260,7 @@ namespace BKI_HRM
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
             m_cmd_refresh.Click += new EventHandler(m_cmd_refresh_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            
         }
         
     #endregion
@@ -268,6 +308,8 @@ namespace BKI_HRM
             	CSystemLog_301.ExceptionHandle( v_e);
             }
         }
+        
+        
     #endregion
 
     }

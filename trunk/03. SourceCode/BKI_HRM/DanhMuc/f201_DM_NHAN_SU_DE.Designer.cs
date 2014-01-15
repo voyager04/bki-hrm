@@ -64,6 +64,7 @@
             this.m_txt_noi_cap = new System.Windows.Forms.TextBox();
             this.m_lbl_noi_cap = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.m_txt_nam_tot_nghiep = new System.Windows.Forms.TextBox();
             this.m_lbl_nam_tot_nghiep = new System.Windows.Forms.Label();
             this.m_txt_chuyen_nganh = new System.Windows.Forms.TextBox();
             this.m_lbl_chuyen_nganh = new System.Windows.Forms.Label();
@@ -92,7 +93,6 @@
             this.m_lbl_email_co_quan = new System.Windows.Forms.Label();
             this.m_txt_ma_so_thue = new System.Windows.Forms.TextBox();
             this.m_ma_so_thue = new System.Windows.Forms.Label();
-            this.m_txt_nam_tot_nghiep = new System.Windows.Forms.TextBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -176,6 +176,7 @@
             this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
             this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
@@ -470,6 +471,13 @@
             this.tabPage2.Text = "Trình độ học vấn";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // m_txt_nam_tot_nghiep
+            // 
+            this.m_txt_nam_tot_nghiep.Location = new System.Drawing.Point(108, 157);
+            this.m_txt_nam_tot_nghiep.Name = "m_txt_nam_tot_nghiep";
+            this.m_txt_nam_tot_nghiep.Size = new System.Drawing.Size(85, 20);
+            this.m_txt_nam_tot_nghiep.TabIndex = 31;
+            // 
             // m_lbl_nam_tot_nghiep
             // 
             this.m_lbl_nam_tot_nghiep.AutoSize = true;
@@ -719,17 +727,11 @@
             this.m_ma_so_thue.TabIndex = 44;
             this.m_ma_so_thue.Text = "Mã số thuế";
             // 
-            // m_txt_nam_tot_nghiep
-            // 
-            this.m_txt_nam_tot_nghiep.Location = new System.Drawing.Point(108, 157);
-            this.m_txt_nam_tot_nghiep.Name = "m_txt_nam_tot_nghiep";
-            this.m_txt_nam_tot_nghiep.Size = new System.Drawing.Size(85, 20);
-            this.m_txt_nam_tot_nghiep.TabIndex = 31;
-            // 
             // f201_DM_NHAN_SU_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.m_cmd_exit;
             this.ClientSize = new System.Drawing.Size(896, 429);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.m_cbo_gioi_tinh);
