@@ -154,7 +154,10 @@ namespace BKI_HRM
             if (!CValidateTextBox.IsValid(m_txt_ten, DataType.StringType, allowNull.NO, true))
                 return false;
             if (m_cbo_gioi_tinh.SelectedIndex == 0)
+            {
+                BaseMessages.MsgBox_Warning(6);
                 return false;
+            }
             if ((m_dat_ngay_sinh.Checked == true) && (DateTime.Today.Year - m_dat_ngay_sinh.Value.Year) < 15)
                 return false;
             if (!CValidateTextBox.IsValid(m_txt_noi_sinh, DataType.StringType, allowNull.YES, true))
@@ -194,61 +197,9 @@ namespace BKI_HRM
             return true;
         }
 
-        private void thong_bao()
-        {
-            string v_str_thong_bao = "";
-            if (!CValidateTextBox.IsValid(m_txt_ma_nhan_vien, DataType.NumberType, allowNull.NO, true))
-                v_str_thong_bao += " Thiếu Mã nhân viên hoặc Mã nhân viên không hợp lệ.";
-            if (!CValidateTextBox.IsValid(m_txt_ho_dem, DataType.StringType, allowNull.NO, true))
-                v_str_thong_bao += "\n Thiếu Họ Đệm hoặc Họ Đệm không hợp lệ.";
-            if (!CValidateTextBox.IsValid(m_txt_ten, DataType.StringType, allowNull.NO, true))
-                v_str_thong_bao += "\n Thiếu Tên hoặc Tên không hợp lệ.";
-            if (m_cbo_gioi_tinh.SelectedIndex == 0)
-                v_str_thong_bao += "\n Chưa chọn giới tính.";
-            if ((m_dat_ngay_sinh.Checked == true) && (DateTime.Today.Year - m_dat_ngay_sinh.Value.Year) < 15)
-                v_str_thong_bao += "\n Tuổi không hợp lệ";
-            if (!CValidateTextBox.IsValid(m_txt_noi_sinh, DataType.StringType, allowNull.YES, true))
-                v_str_thong_bao += "\n Nơi sinh không hợp lệ.";
-            if (!CValidateTextBox.IsValid(m_txt_cmnd, DataType.NumberType, allowNull.YES, true))
-                v_str_thong_bao += "\n Số CMND không hợp lệ.";
-            if (!CValidateTextBox.IsValid(m_txt_noi_cap, DataType.StringType, allowNull.YES, true))
-                v_str_thong_bao += "\n Nơi cấp CMND không hợp lệ.";
-            if (m_dat_ngay_cap.Value.Year < (m_dat_ngay_sinh.Value.Year + 14))
-                v_str_thong_bao += "\n Ngày cấp CMND không hợp lệ.";
-            if (!CValidateTextBox.IsValid(m_txt_ton_giao, DataType.StringType, allowNull.YES, true))
-                v_str_thong_bao += "\n Tôn giáo không hợp lệ.";
-            if (!CValidateTextBox.IsValid(m_txt_dan_toc, DataType.StringType, allowNull.YES, true))
-                v_str_thong_bao += "\n Dân tộc không hợp lệ.";
-            if (!CValidateTextBox.IsValid(m_txt_nam_tot_nghiep, DataType.NumberType, allowNull.YES, true))
-                v_str_thong_bao += "\n Năm tốt nghiệp không hợp lệ.";
-            if (!CValidateTextBox.IsValid(m_txt_email_ca_nhan, DataType.StringType, allowNull.YES, true))
-                v_str_thong_bao += "\n Email cá nhân không hợp lệ.";
-            if (!CValidateTextBox.IsValid(m_txt_email_co_quan, DataType.StringType, allowNull.YES, true))
-                v_str_thong_bao += "\n Email cơ quan không hợp lệ.";
-            if (!CValidateTextBox.IsValid(m_txt_so_dtdd, DataType.NumberType, allowNull.YES, true) || (m_txt_so_dtdd.Text.Trim(' ').Length != 10 && m_txt_so_dtdd.Text.Trim(' ').Length != 11))
-                v_str_thong_bao += "\n Số ĐTDĐ không hợp lệ.";
-            if (!CValidateTextBox.IsValid(m_txt_sdt_nha_rieng, DataType.NumberType, allowNull.YES, true))
-                v_str_thong_bao += "\n Số ĐT nhà riêng không hợp lệ.";
-            if (!CValidateTextBox.IsValid(m_txt_ma_so_thue, DataType.NumberType, allowNull.YES, true))
-                v_str_thong_bao += "\n Mã số thuế không hợp lệ.";
-            if (!CValidateTextBox.IsValid(m_txt_dia_chi, DataType.StringType, allowNull.YES, true))
-                v_str_thong_bao += "\n Địa chỉ không hợp lệ.";
-            if (!CValidateTextBox.IsValid(m_txt_ho_khau, DataType.StringType, allowNull.YES, true))
-                v_str_thong_bao += "\n Hộ khẩu không hợp lệ.";
-            if (!CValidateTextBox.IsValid(m_txt_nguoi_lien_he, DataType.StringType, allowNull.YES, true))
-                v_str_thong_bao += "\n Tên người liên hệ không hợp lệ.";
-            if (!CValidateTextBox.IsValid(m_txt_sdt_lien_he, DataType.NumberType, allowNull.YES, true))
-                v_str_thong_bao += "\n Số ĐT của người liên hệ không hợp lệ.";
-            if (!CValidateTextBox.IsValid(m_txt_quan_he, DataType.StringType, allowNull.YES, true))
-                v_str_thong_bao += "\n Quan hệ của người liên hệ không hợp lệ.";
-            BaseMessages.MsgBox_Infor(v_str_thong_bao);
-        }
-
         private void save_data(){
-            if (check_validate_data_is_ok() == false) {
-                thong_bao();
+            if (check_validate_data_is_ok() == false) 
                 return;
-            }
             form_to_us_object();
             switch (m_e_form_mode)
             {
