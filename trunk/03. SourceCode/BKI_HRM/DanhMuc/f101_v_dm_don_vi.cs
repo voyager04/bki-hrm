@@ -326,7 +326,7 @@ namespace BKI_HRM
 		}
 		private void load_data_2_grid(){						
 			m_ds = new DS_V_DM_DON_VI();			
-			m_us.FillDataset(" ",m_ds);
+			m_us.FillDataset(m_ds);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
 			m_fg.Redraw = true;
