@@ -59,8 +59,8 @@ namespace BKI_HRM.DanhMuc {
             DS_V_DM_DON_VI v_ds_v = new DS_V_DM_DON_VI();
             US_V_DM_DON_VI v_us_v = new US_V_DM_DON_VI();
             v_us_v.FillDataset(v_ds_v);
-            m_cbo_loai_don_vi.ValueMember = V_DM_DON_VI.ID_LOAI_DON_VI;
-            m_cbo_loai_don_vi.DisplayMember = V_DM_DON_VI.TEN_LOAI_DON_VI;
+            //m_cbo_loai_don_vi.ValueMember = V_DM_DON_VI.ID_LOAI_DON_VI;
+            //m_cbo_loai_don_vi.DisplayMember = V_DM_DON_VI.TEN_LOAI_DON_VI;
             m_cbo_loai_don_vi.DataSource = v_ds_v.V_DM_DON_VI;
             if (v_ds_v.V_DM_DON_VI.Rows.Count > 0) {
                 m_cbo_loai_don_vi.SelectedIndex = 0;
