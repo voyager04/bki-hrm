@@ -235,5 +235,9 @@ public class US_V_DM_DON_VI : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+
+    public void FillDataset(string ip_str_key_word, DS_V_DM_DON_VI op_ds_v_v_dm_don_vi) {
+        
+    }
+}
 }
