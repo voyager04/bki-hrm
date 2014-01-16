@@ -1,0 +1,47 @@
+<?xml version="1.0" standalone="yes"?>
+<DatasetMsg xmlns="http://tempuri.org/DatasetMsg.xsd">
+  <Message>
+    <Message>Bạn chưa nhập mã nhà đầu tư</Message>
+    <ID>129</ID>
+  </Message>
+  <Message>
+    <Message>Bạn chưa nhập tên nhà đầu tư</Message>
+    <ID>139</ID>
+  </Message>
+  <Message>
+    <Message>Bạn chưa chọn nhóm nhà đầu tư</Message>
+    <ID>138</ID>
+  </Message>
+  <Message>
+    <Message>Đợt đấu giá chỉ cho phép đăng kí từ ngày:..... đến ngày:..</Message>
+    <ID>137</ID>
+  </Message>
+  <Message>
+    <Message>Số lượng đặt mua phải lớn hơn 0</Message>
+    <ID>136</ID>
+  </Message>
+  <Message>
+    <Message>Đăng kí không hợp lệ, danh sách đăng kí đã có nhà đầu tư này</Message>
+    <ID>130</ID>
+  </Message>
+  <Message>
+    <Message>Mã tham chiếu nhà đầu tư đã tồn tại, bạn hãy kiểm tra lại.</Message>
+    <ID>131</ID>
+  </Message>
+  <Message>
+    <Message>Mã đăng kí đã có bạn hãy chọn mã khác</Message>
+    <ID>132</ID>
+  </Message>
+  <Message>
+    <Message>Tên nhà đầu tư đã tồn tại bạn chọn tên khác</Message>
+    <ID>133</ID>
+  </Message>
+  <Message>
+    <Message>Số lượng đăng ký không hợp lệ !</Message>
+    <ID>134</ID>
+  </Message>
+  <Message>
+    <Message>Hệ số ưu tiên không hợp lệ !</Message>
+    <ID>135</ID>
+  </Message>
+</DatasetMsg>
