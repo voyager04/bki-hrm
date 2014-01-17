@@ -32,7 +32,9 @@ namespace BKI_HRM
         public void display_for_insert(){
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             m_cbo_gioi_tinh.SelectedIndex = 0;
+            m_txt_ma_nhan_vien.Focus();
             this.ShowDialog();
+            
         }
         public void display_for_update(US_DM_NHAN_SU ip_us_dm_nhan_su){
             m_us_dm_nhan_su = ip_us_dm_nhan_su;
@@ -147,51 +149,78 @@ namespace BKI_HRM
             m_us_dm_nhan_su.strQUAN_HE = m_txt_quan_he.Text;
         }
         private bool check_validate_data_is_ok(){
-            if (!CValidateTextBox.IsValid(m_txt_ma_nhan_vien, DataType.NumberType, allowNull.NO, true))
-                return false;
-            if (!CValidateTextBox.IsValid(m_txt_ho_dem, DataType.StringType, allowNull.NO, true))
-                return false;
-            if (!CValidateTextBox.IsValid(m_txt_ten, DataType.StringType, allowNull.NO, true))
-                return false;
-            if (m_cbo_gioi_tinh.SelectedIndex == 0)
-            {
-                BaseMessages.MsgBox_Warning(6);
+            if (!CValidateTextBox.IsValid(m_txt_ma_nhan_vien, DataType.NumberType, allowNull.NO, true)){
+                BaseMessages.MsgBox_Warning(201);
                 return false;
             }
-            if ((m_dat_ngay_sinh.Checked == true) && (DateTime.Today.Year - m_dat_ngay_sinh.Value.Year) < 15)
+            if (!CValidateTextBox.IsValid(m_txt_ho_dem, DataType.StringType, allowNull.NO, true) || CIPConvert.is_valid_number(m_txt_ho_dem)){
+                BaseMessages.MsgBox_Warning(202);
                 return false;
-            if (!CValidateTextBox.IsValid(m_txt_noi_sinh, DataType.StringType, allowNull.YES, true))
+            }
+            if (!CValidateTextBox.IsValid(m_txt_ten, DataType.StringType, allowNull.NO, true) || CIPConvert.is_valid_number(m_txt_ten))
+            {
+                BaseMessages.MsgBox_Warning(203);
                 return false;
-            if (!CValidateTextBox.IsValid(m_txt_cmnd, DataType.NumberType, allowNull.YES, true))
+            }
+            if (m_cbo_gioi_tinh.SelectedIndex == 0)
+            {
+                BaseMessages.MsgBox_Warning(204);
                 return false;
+            }
+            if ((m_dat_ngay_sinh.Checked == true) && (DateTime.Today.Year - m_dat_ngay_sinh.Value.Year) < 15){
+                BaseMessages.MsgBox_Warning(205);
+                return false;
+            }
+            if (!CValidateTextBox.IsValid(m_txt_noi_sinh, DataType.StringType, allowNull.YES, true)){
+                BaseMessages.MsgBox_Warning(206);
+                return false;
+            }
+            if (!CValidateTextBox.IsValid(m_txt_cmnd, DataType.NumberType, allowNull.YES, true)){
+                BaseMessages.MsgBox_Warning(207);
+                return false;
+            }
             if (!CValidateTextBox.IsValid(m_txt_noi_cap, DataType.StringType, allowNull.YES, true))
                 return false;
-            if (m_dat_ngay_cap.Value.Year < (m_dat_ngay_sinh.Value.Year + 14))
+            if (m_dat_ngay_cap.Value.Year < (m_dat_ngay_sinh.Value.Year + 14)){
+                BaseMessages.MsgBox_Warning(208);
                 return false;
-            if (!CValidateTextBox.IsValid(m_txt_ton_giao, DataType.StringType, allowNull.YES, true))
+            }
+            if (!CValidateTextBox.IsValid(m_txt_ton_giao, DataType.StringType, allowNull.YES, true)){
+                BaseMessages.MsgBox_Warning(209);
                 return false;
+            }
             if (!CValidateTextBox.IsValid(m_txt_dan_toc, DataType.StringType, allowNull.YES, true))
                 return false;
-            if (!CValidateTextBox.IsValid(m_txt_nam_tot_nghiep, DataType.NumberType, allowNull.YES, true))
+            if (!CValidateTextBox.IsValid(m_txt_nam_tot_nghiep, DataType.NumberType, allowNull.YES, true) || (m_txt_nam_tot_nghiep != null && CIPConvert.ToDecimal(m_txt_nam_tot_nghiep.Text) > DateTime.Today.Year)){
+                BaseMessages.MsgBox_Warning(211);
                 return false;
+            }
             if (!CValidateTextBox.IsValid(m_txt_email_ca_nhan, DataType.StringType, allowNull.YES, true))
                 return false;
             if (!CValidateTextBox.IsValid(m_txt_email_co_quan, DataType.StringType, allowNull.YES, true))
                 return false;
-            if (!CValidateTextBox.IsValid(m_txt_so_dtdd, DataType.NumberType, allowNull.YES, true) || (m_txt_so_dtdd.Text.Trim(' ').Length != 10 && m_txt_so_dtdd.Text.Trim(' ').Length != 11))
+            if (!CValidateTextBox.IsValid(m_txt_so_dtdd, DataType.NumberType, allowNull.YES, true) || (m_txt_so_dtdd.Text.Trim(' ').Length != 10 && m_txt_so_dtdd.Text.Trim(' ').Length != 11)){
+                BaseMessages.MsgBox_Warning(210);
                 return false;
-            if (!CValidateTextBox.IsValid(m_txt_sdt_nha_rieng, DataType.NumberType, allowNull.YES, true))
+            }
+            if (!CValidateTextBox.IsValid(m_txt_sdt_nha_rieng, DataType.NumberType, allowNull.YES, true)){
+                BaseMessages.MsgBox_Warning(210);
                 return false;
+            }
             if (!CValidateTextBox.IsValid(m_txt_ma_so_thue, DataType.NumberType, allowNull.YES, true))
                 return false;
-            if (!CValidateTextBox.IsValid(m_txt_dia_chi, DataType.StringType, allowNull.YES, true))
+            if (!CValidateTextBox.IsValid(m_txt_dia_chi, DataType.StringType, allowNull.YES, true)){
+                BaseMessages.MsgBox_Warning(210);
                 return false;
+            }
             if (!CValidateTextBox.IsValid(m_txt_ho_khau, DataType.StringType, allowNull.YES, true))
                 return false;
             if (!CValidateTextBox.IsValid(m_txt_nguoi_lien_he, DataType.StringType, allowNull.YES, true))
                 return false;
-            if (!CValidateTextBox.IsValid(m_txt_sdt_lien_he, DataType.NumberType, allowNull.YES, true))
+            if (!CValidateTextBox.IsValid(m_txt_sdt_lien_he, DataType.NumberType, allowNull.YES, true)){
+                BaseMessages.MsgBox_Warning(210);
                 return false;
+            }
             if (!CValidateTextBox.IsValid(m_txt_quan_he, DataType.StringType, allowNull.YES, true))
                 return false;
             return true;
@@ -254,11 +283,11 @@ namespace BKI_HRM
                 case DataEntryFormMode.ViewDataState:
                     break;
                 case DataEntryFormMode.InsertDataState:
-                    
                     break;
                 default:
                     break;
             }
+            
         }
         
         private void set_define_event(){
@@ -275,7 +304,9 @@ namespace BKI_HRM
         private void f201_DM_NHAN_SU_DE_Load(object sendrer, EventArgs e){
             try
             {
-            	set_inital_form_load();
+                
+                set_inital_form_load();
+                
             }
             catch (Exception v_e)
             {
