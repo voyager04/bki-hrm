@@ -97,14 +97,14 @@ namespace BKI_HRM
             m_txt_ho_dem.Text = m_us_dm_nhan_su.strHO_DEM;
             m_txt_ten.Text = m_us_dm_nhan_su.strTEN;
             m_cbo_gioi_tinh.SelectedIndex = (m_us_dm_nhan_su.strGIOI_TINH.Equals("Nam") == true) ? 1 : 2;
-            if (m_us_dm_nhan_su.datNGAY_SINH != null)
+            if (m_us_dm_nhan_su.datNGAY_SINH.Year > 1900)
                 m_dat_ngay_sinh.Value = m_us_dm_nhan_su.datNGAY_SINH;
             else
                 m_dat_ngay_sinh.Checked = false;
             m_txt_noi_sinh.Text = m_us_dm_nhan_su.strNOI_SINH;
             m_txt_nguyen_quan.Text = m_us_dm_nhan_su.strNGUYEN_QUAN;
             m_txt_cmnd.Text = m_us_dm_nhan_su.strCMND;
-            if (m_us_dm_nhan_su.datNGAY_CAP_CMND != null)
+            if (m_us_dm_nhan_su.datNGAY_CAP_CMND.Year > 1900)
                 m_dat_ngay_cap.Value = m_us_dm_nhan_su.datNGAY_CAP_CMND;
             else
                 m_dat_ngay_cap.Checked = false;
@@ -115,7 +115,7 @@ namespace BKI_HRM
             m_txt_trinh_do.Text = m_us_dm_nhan_su.strTRINH_DO;
             m_txt_noi_dao_tao.Text = m_us_dm_nhan_su.strNOI_DAO_TAO;
             m_txt_chuyen_nganh.Text = m_us_dm_nhan_su.strCHUYEN_NGANH;
-            m_txt_nam_tot_nghiep.Text = CIPConvert.ToStr(m_us_dm_nhan_su.dcNAM_TOT_NGHIEP);
+            m_txt_nam_tot_nghiep.Text = (m_us_dm_nhan_su.dcNAM_TOT_NGHIEP>0)?CIPConvert.ToStr(m_us_dm_nhan_su.dcNAM_TOT_NGHIEP):"";
             m_txt_email_co_quan.Text = m_us_dm_nhan_su.strEMAIL_CQ;
             m_txt_email_ca_nhan.Text = m_us_dm_nhan_su.strEMAIL_CA_NHAN;
             m_txt_sdt_nha_rieng.Text = m_us_dm_nhan_su.strDT_NHA;
@@ -145,7 +145,8 @@ namespace BKI_HRM
             m_us_dm_nhan_su.strTRINH_DO = m_txt_trinh_do.Text;
             m_us_dm_nhan_su.strNOI_DAO_TAO = m_txt_noi_dao_tao.Text;
             m_us_dm_nhan_su.strCHUYEN_NGANH = m_txt_chuyen_nganh.Text;
-            m_us_dm_nhan_su.dcNAM_TOT_NGHIEP = CIPConvert.ToDecimal(m_txt_nam_tot_nghiep.Text);
+            if (m_txt_nam_tot_nghiep.Text.Trim(' ').Length > 0)
+                m_us_dm_nhan_su.dcNAM_TOT_NGHIEP = CIPConvert.ToDecimal(m_txt_nam_tot_nghiep.Text);
             m_us_dm_nhan_su.strEMAIL_CQ = m_txt_email_co_quan.Text;
             m_us_dm_nhan_su.strEMAIL_CA_NHAN = m_txt_email_ca_nhan.Text;
             m_us_dm_nhan_su.strDT_NHA = m_txt_sdt_nha_rieng.Text;
