@@ -7,78 +7,65 @@
 
 using System;
 using System.Data;
-using System.Drawing;
 using System.Collections;
-using System.ComponentModel;
-using System.Security.AccessControl;
 using System.Windows.Forms;
 
 using IP.Core.IPCommon;
 using IP.Core.IPExcelReport;
 using IP.Core.IPException;
-using IP.Core.IPData;
-using IP.Core.IPUserService;
 using IP.Core.IPSystemAdmin;
 
 using BKI_HRM.US;
 using BKI_HRM.DS;
 using BKI_HRM.DS.CDBNames;
 
-using C1.Win.C1FlexGrid;
-
-namespace BKI_HRM
-{
-	public class f100_V_GD_TRANG_THAI_LAO_DONG : System.Windows.Forms.Form
-	{
-		internal System.Windows.Forms.ImageList ImageList;
-		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
+namespace BKI_HRM {
+    public class f100_V_GD_TRANG_THAI_LAO_DONG : System.Windows.Forms.Form {
+        internal System.Windows.Forms.ImageList ImageList;
+        internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
-        private TextBox m_txt_search;
+        private TextBox m_txt_tim_kiem;
         private DateTimePicker m_dat_ket_thuc;
         private DateTimePicker m_dat_bat_dau;
         private Label label2;
         private Label label1;
         private Label label3;
         internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
-		private System.ComponentModel.IContainer components;
+        private System.ComponentModel.IContainer components;
 
-		public f100_V_GD_TRANG_THAI_LAO_DONG()
-		{
-			//
-			// Required for Windows Form Designer support
-			//
-			InitializeComponent();
+        public f100_V_GD_TRANG_THAI_LAO_DONG() {
+            //
+            // Required for Windows Form Designer support
+            //
+            InitializeComponent();
 
-			//
-			// TODO: Add any constructor code after InitializeComponent call
-			//
-			format_controls();
-		}
+            //
+            // TODO: Add any constructor code after InitializeComponent call
+            //
+            format_controls();
+        }
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		protected override void Dispose( bool disposing )
-		{
-			if( disposing )
-			{
-				if(components != null)
-				{
-					components.Dispose();
-				}
-			}
-			base.Dispose( disposing );
-		}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        
+        protected override void Dispose(bool disposing) {
+            if (disposing) {
+                if (components != null) {
+                    components.Dispose();
+                }
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
+        #region Windows Form Designer generated code
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f100_V_GD_TRANG_THAI_LAO_DONG));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
@@ -89,7 +76,7 @@ namespace BKI_HRM
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
-            this.m_txt_search = new System.Windows.Forms.TextBox();
+            this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.m_dat_ket_thuc = new System.Windows.Forms.DateTimePicker();
             this.m_dat_bat_dau = new System.Windows.Forms.DateTimePicker();
@@ -219,12 +206,12 @@ namespace BKI_HRM
             this.m_cmd_search.TabIndex = 6;
             this.m_cmd_search.Text = "Tìm kiếm";
             // 
-            // m_txt_search
+            // m_txt_tim_kiem
             // 
-            this.m_txt_search.Location = new System.Drawing.Point(157, 41);
-            this.m_txt_search.Name = "m_txt_search";
-            this.m_txt_search.Size = new System.Drawing.Size(565, 20);
-            this.m_txt_search.TabIndex = 5;
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(157, 41);
+            this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
+            this.m_txt_tim_kiem.Size = new System.Drawing.Size(565, 20);
+            this.m_txt_tim_kiem.TabIndex = 5;
             // 
             // label1
             // 
@@ -272,7 +259,7 @@ namespace BKI_HRM
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_cmd_search);
             this.Controls.Add(this.m_pnl_out_place_dm);
-            this.Controls.Add(this.m_txt_search);
+            this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_dat_bat_dau);
             this.Controls.Add(this.m_dat_ket_thuc);
@@ -287,214 +274,116 @@ namespace BKI_HRM
             this.ResumeLayout(false);
             this.PerformLayout();
 
-		}
-		#endregion
+        }
+        #endregion
 
-		#region Public Interface
-		public void display(){			
-			this.ShowDialog();
-		}
-		#endregion
+        #region Public Interface
+        public void display() {
+            this.ShowDialog();
+        }
+        #endregion
 
-		#region Data Structure
-		private enum e_col_Number{
-			HO_DEM = 2
-,MA_NV = 1
-,MA_QUYET_DINH = 5
-,Expr2 = 7
-,Expr1 = 4
-,NGAY_CO_HIEU_LUC = 6
-,TEN = 3
+        #region Data Structure
+        private enum e_col_Number {
+            HO_DEM = 2,
+            MA_NV = 1,
+            MA_QUYET_DINH = 5,
+            Expr2 = 7,
+            Expr1 = 4,
+            NGAY_CO_HIEU_LUC = 6, 
+            TEN = 3
+        }
+        #endregion
 
-		}			
-		#endregion
+        #region Members
+        ITransferDataRow m_obj_trans;
+        DS_V_GD_TRANG_THAI_LAO_DONG m_ds = new DS_V_GD_TRANG_THAI_LAO_DONG();
+        US_V_GD_TRANG_THAI_LAO_DONG m_us = new US_V_GD_TRANG_THAI_LAO_DONG();
+        #endregion
 
-		#region Members
-		ITransferDataRow m_obj_trans;		
-		DS_V_GD_TRANG_THAI_LAO_DONG m_ds = new DS_V_GD_TRANG_THAI_LAO_DONG();
-		US_V_GD_TRANG_THAI_LAO_DONG m_us = new US_V_GD_TRANG_THAI_LAO_DONG();
-		#endregion
+        #region Private Methods
 
-		#region Private Methods
-		private void format_controls(){
-			CControlFormat.setFormStyle(this, new CAppContext_201());
-			CControlFormat.setC1FlexFormat(m_fg);
+        private void format_controls() {
+            CControlFormat.setFormStyle(this, new CAppContext_201());
+            CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
-			set_define_events();
-			this.KeyPreview = true;		
-		}
-		private void set_initial_form_load(){						
-			m_obj_trans = get_trans_object(m_fg);
-			load_data_2_grid();
-		    m_txt_search.Focus();
-		    fomat_grid();
-		}
+            set_define_events();
+            this.KeyPreview = true;
+        }
 
-	    private void fomat_grid(){
-            
-	    }
+        private void set_initial_form_load() {
+            m_obj_trans = get_trans_object(m_fg);
+            load_data_2_grid();
+            m_txt_tim_kiem.Focus();
+            fomat_grid();
+        }
 
+        private void fomat_grid() {
 
-		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
-			Hashtable v_htb = new Hashtable();
-			v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.HO_DEM, e_col_Number.HO_DEM);
-			v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.MA_NV, e_col_Number.MA_NV);
-			v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.MA_QUYET_DINH, e_col_Number.MA_QUYET_DINH);
-			v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.Expr2, e_col_Number.Expr2);
-			v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.Expr1, e_col_Number.Expr1);
-			v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.NGAY_CO_HIEU_LUC, e_col_Number.NGAY_CO_HIEU_LUC);
-			v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.TEN, e_col_Number.TEN);
-									
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_GD_TRANG_THAI_LAO_DONG.NewRow());
-			return v_obj_trans;			
-		}
-		private void load_data_2_grid(){						
-			m_ds = new DS_V_GD_TRANG_THAI_LAO_DONG();			
-			m_us.FillDataset(m_dat_bat_dau.Value, m_dat_ket_thuc.Value, m_txt_search.Text.Trim(),m_ds);
-			m_fg.Redraw = false;
-			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-			m_fg.Redraw = true;
-		}
+        }
 
-		private void grid2us_object(US_V_GD_TRANG_THAI_LAO_DONG i_us
-			, int i_grid_row) {
-			DataRow v_dr;
-			v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
-			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
-			i_us.DataRow2Me(v_dr);
-		}
+        private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg) {
+            Hashtable v_htb = new Hashtable();
+            v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.HO_DEM, e_col_Number.HO_DEM);
+            v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.MA_NV, e_col_Number.MA_NV);
+            v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.MA_QUYET_DINH, e_col_Number.MA_QUYET_DINH);
+            v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.Expr2, e_col_Number.Expr2);
+            v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.Expr1, e_col_Number.Expr1);
+            v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.NGAY_CO_HIEU_LUC, e_col_Number.NGAY_CO_HIEU_LUC);
+            v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.TEN, e_col_Number.TEN);
 
-	
-		private void us_object2grid(US_V_GD_TRANG_THAI_LAO_DONG i_us
-			, int i_grid_row) {
-			DataRow v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
-			i_us.Me2DataRow(v_dr);
-			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
-		}
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_GD_TRANG_THAI_LAO_DONG.NewRow());
+            return v_obj_trans;
+        }
 
+        private void load_data_2_grid() {
+            m_ds = new DS_V_GD_TRANG_THAI_LAO_DONG();
+            m_us.FillDataset(m_dat_bat_dau.Value, m_dat_ket_thuc.Value, m_txt_tim_kiem.Text.Trim(), m_ds);
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            m_fg.Redraw = true;
+            /*Để focus vào ô tìm kiếm*/
+            if (m_txt_tim_kiem.Text.Trim().Equals(String.Empty)){
+                m_txt_tim_kiem.Select();
+            }
+            m_txt_tim_kiem.SelectAll();
+        }
 
-		private void insert_v_gd_trang_thai_lao_dong(){			
-		//	f100_V_GD_TRANG_THAI_LAO_DONG_DE v_fDE = new  f100_V_GD_TRANG_THAI_LAO_DONG_DE();								
-		//	v_fDE.display();
-			load_data_2_grid();
-		}
+        #endregion
 
-		private void update_v_gd_trang_thai_lao_dong(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
-			grid2us_object(m_us, m_fg.Row);
-		//	f100_V_GD_TRANG_THAI_LAO_DONG_DE v_fDE = new f100_V_GD_TRANG_THAI_LAO_DONG_DE();
-		//	v_fDE.display(m_us);
-			load_data_2_grid();
-		}
-				
-		private void delete_v_gd_trang_thai_lao_dong(){
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			US_V_GD_TRANG_THAI_LAO_DONG v_us = new US_V_GD_TRANG_THAI_LAO_DONG();
-			grid2us_object(v_us, m_fg.Row);
-			try {			
-				v_us.BeginTransaction();    											
-				v_us.Delete();                      								
-				v_us.CommitTransaction();
-				m_fg.Rows.Remove(m_fg.Row);				
-			}
-			catch (Exception v_e) {
-				v_us.Rollback();
-				CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
-					new CDBClientDBExceptionInterpret());
-				v_objErrHandler.showErrorMessage();
-			}
-		}
-
-		private void view_v_gd_trang_thai_lao_dong(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			grid2us_object(m_us, m_fg.Row);
-		//	f100_V_GD_TRANG_THAI_LAO_DONG_DE v_fDE = new f100_V_GD_TRANG_THAI_LAO_DONG_DE();			
-		//	v_fDE.display(m_us);
-		}
-		private void set_define_events(){
-			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+        //
+        //
+        //		EVENT HANLDERS
+        //
+        //
+        private void set_define_events() {
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_search.Click += new EventHandler(m_cmd_search_Click);
-            m_txt_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(CheckEnterKeyPress);
+            m_txt_tim_kiem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(CheckEnterKeyPress);
             m_dat_bat_dau.KeyPress += new System.Windows.Forms.KeyPressEventHandler(CheckEnterKeyPress);
             m_dat_ket_thuc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(CheckEnterKeyPress);
             m_cmd_xuat_excel.Click += new EventHandler(m_cmd_xuat_excel_Click);
-		}
-		#endregion
+        }
 
-//
-		//
-		//		EVENT HANLDERS
-		//
-		//
-		private void f100_V_GD_TRANG_THAI_LAO_DONG_Load(object sender, System.EventArgs e) {
-			try{
-				set_initial_form_load();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		
-		}
+        private void f100_V_GD_TRANG_THAI_LAO_DONG_Load(object sender, System.EventArgs e) {
+            try {
+                set_initial_form_load();
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
 
-		private void m_cmd_exit_Click(object sender, EventArgs e) {
-			try{
-				this.Close();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        }
 
-		private void m_cmd_insert_Click(object sender, EventArgs e) {
-			try{
-				insert_v_gd_trang_thai_lao_dong();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
-
-		private void m_cmd_update_Click(object sender, EventArgs e) {
-			try{
-				update_v_gd_trang_thai_lao_dong();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
-
-		private void m_cmd_delete_Click(object sender, EventArgs e) {
-			try{
-				delete_v_gd_trang_thai_lao_dong();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
-
-		private void m_cmd_view_Click(object sender, EventArgs e) {
-			try{
-				view_v_gd_trang_thai_lao_dong();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
-
-        private void m_cmd_search_Click(object sender, EventArgs e) {
-            try{
-                load_data_2_grid();
+        private void m_cmd_exit_Click(object sender, EventArgs e) {
+            try {
+                this.Close();
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
-        private void m_txt_search_TextChanged(object sender, EventArgs e) {
+        private void m_cmd_search_Click(object sender, EventArgs e) {
             try {
                 load_data_2_grid();
             } catch (Exception v_e) {
@@ -502,7 +391,7 @@ namespace BKI_HRM
             }
         }
 
-        private void CheckEnterKeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e) {
+        private void CheckEnterKeyPress(object sender, KeyPressEventArgs e) {
             try {
                 if (e.KeyChar == (char)Keys.Return) {
                     load_data_2_grid();
@@ -510,26 +399,26 @@ namespace BKI_HRM
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
-            
+
         }
 
         private void m_cmd_xuat_excel_Click(object sender, EventArgs e) {
-            try{
+            try {
                 CExcelReport v_obj_excel_report = new CExcelReport(
                     "f100_gd_trang_thai_lao_dong"
-                    ,3
-                    ,3
+                    , 3
+                    , 3
                     );
                 v_obj_excel_report.Export2Excel(
                     m_fg
                     , 1
-                    , (int)m_fg.Cols.Count -1
+                    , (int)m_fg.Cols.Count - 1
                     , true
                     );
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-	}
+    }
 }
 
