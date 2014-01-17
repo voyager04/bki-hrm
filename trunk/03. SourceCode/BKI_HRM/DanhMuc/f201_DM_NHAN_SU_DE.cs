@@ -97,11 +97,17 @@ namespace BKI_HRM
             m_txt_ho_dem.Text = m_us_dm_nhan_su.strHO_DEM;
             m_txt_ten.Text = m_us_dm_nhan_su.strTEN;
             m_cbo_gioi_tinh.SelectedIndex = (m_us_dm_nhan_su.strGIOI_TINH.Equals("Nam") == true) ? 1 : 2;
-            m_dat_ngay_sinh.Value = m_us_dm_nhan_su.datNGAY_SINH;
+            if (m_us_dm_nhan_su.datNGAY_SINH != null)
+                m_dat_ngay_sinh.Value = m_us_dm_nhan_su.datNGAY_SINH;
+            else
+                m_dat_ngay_sinh.Checked = false;
             m_txt_noi_sinh.Text = m_us_dm_nhan_su.strNOI_SINH;
             m_txt_nguyen_quan.Text = m_us_dm_nhan_su.strNGUYEN_QUAN;
             m_txt_cmnd.Text = m_us_dm_nhan_su.strCMND;
-            m_dat_ngay_cap.Value = m_us_dm_nhan_su.datNGAY_CAP_CMND;
+            if (m_us_dm_nhan_su.datNGAY_CAP_CMND != null)
+                m_dat_ngay_cap.Value = m_us_dm_nhan_su.datNGAY_CAP_CMND;
+            else
+                m_dat_ngay_cap.Checked = false;
             m_txt_noi_cap.Text = m_us_dm_nhan_su.strNOI_CAP_CMND;
             m_txt_ton_giao.Text = m_us_dm_nhan_su.strTON_GIAO;
             m_txt_dan_toc.Text = m_us_dm_nhan_su.strDAN_TOC;
@@ -125,11 +131,13 @@ namespace BKI_HRM
             m_us_dm_nhan_su.strHO_DEM = m_txt_ho_dem.Text;
             m_us_dm_nhan_su.strTEN = m_txt_ten.Text;
             m_us_dm_nhan_su.strGIOI_TINH = ((m_cbo_gioi_tinh.SelectedIndex == 1) ? "Nam" : "Nữ");
-            m_us_dm_nhan_su.datNGAY_SINH = m_dat_ngay_sinh.Value;
+            if(m_dat_ngay_sinh.Checked == true)
+                m_us_dm_nhan_su.datNGAY_SINH = m_dat_ngay_sinh.Value;
             m_us_dm_nhan_su.strNOI_SINH = m_txt_noi_sinh.Text;
             m_us_dm_nhan_su.strNGUYEN_QUAN = m_txt_nguyen_quan.Text;
             m_us_dm_nhan_su.strCMND = m_txt_cmnd.Text;
-            m_us_dm_nhan_su.datNGAY_CAP_CMND = m_dat_ngay_cap.Value;
+            if(m_dat_ngay_cap.Checked == true)
+                m_us_dm_nhan_su.datNGAY_CAP_CMND = m_dat_ngay_cap.Value;
             m_us_dm_nhan_su.strNOI_CAP_CMND = m_txt_noi_cap.Text;
             m_us_dm_nhan_su.strTON_GIAO = m_txt_ton_giao.Text;
             m_us_dm_nhan_su.strDAN_TOC = m_txt_dan_toc.Text;
@@ -176,22 +184,23 @@ namespace BKI_HRM
                 return false;
             }
             if (!CValidateTextBox.IsValid(m_txt_cmnd, DataType.NumberType, allowNull.YES, true)){
-                BaseMessages.MsgBox_Warning(207);
+                BaseMessages.MsgBox_Warning(208);
                 return false;
             }
             if (!CValidateTextBox.IsValid(m_txt_noi_cap, DataType.StringType, allowNull.YES, true))
                 return false;
-            if (m_dat_ngay_cap.Value.Year < (m_dat_ngay_sinh.Value.Year + 14)){
-                BaseMessages.MsgBox_Warning(208);
+            
+            if ((m_dat_ngay_cap.Checked == true) && (m_dat_ngay_cap.Value.Year < (m_dat_ngay_sinh.Value.Year + 14))){
+                BaseMessages.MsgBox_Warning(209);
                 return false;
             }
             if (!CValidateTextBox.IsValid(m_txt_ton_giao, DataType.StringType, allowNull.YES, true)){
-                BaseMessages.MsgBox_Warning(209);
+                
                 return false;
             }
             if (!CValidateTextBox.IsValid(m_txt_dan_toc, DataType.StringType, allowNull.YES, true))
                 return false;
-            if (!CValidateTextBox.IsValid(m_txt_nam_tot_nghiep, DataType.NumberType, allowNull.YES, true) || (m_txt_nam_tot_nghiep != null && CIPConvert.ToDecimal(m_txt_nam_tot_nghiep.Text) > DateTime.Today.Year)){
+            if (!CValidateTextBox.IsValid(m_txt_nam_tot_nghiep, DataType.NumberType, allowNull.YES, true) || ((m_txt_nam_tot_nghiep.Text.Trim(' ').Length > 0) && (CIPConvert.ToDecimal(m_txt_nam_tot_nghiep.Text) > DateTime.Today.Year))){
                 BaseMessages.MsgBox_Warning(211);
                 return false;
             }
@@ -199,7 +208,8 @@ namespace BKI_HRM
                 return false;
             if (!CValidateTextBox.IsValid(m_txt_email_co_quan, DataType.StringType, allowNull.YES, true))
                 return false;
-            if (!CValidateTextBox.IsValid(m_txt_so_dtdd, DataType.NumberType, allowNull.YES, true) || (m_txt_so_dtdd.Text.Trim(' ').Length != 10 && m_txt_so_dtdd.Text.Trim(' ').Length != 11)){
+            if (!CValidateTextBox.IsValid(m_txt_so_dtdd, DataType.NumberType, allowNull.YES, true) || ((m_txt_so_dtdd.Text.Trim(' ').Length > 0) && (m_txt_so_dtdd.Text.Trim(' ').Length != 10 && m_txt_so_dtdd.Text.Trim(' ').Length != 11)))
+            {
                 BaseMessages.MsgBox_Warning(210);
                 return false;
             }
