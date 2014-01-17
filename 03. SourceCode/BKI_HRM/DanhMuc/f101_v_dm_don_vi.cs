@@ -43,6 +43,8 @@ namespace BKI_HRM
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         private TextBox m_txt_tim_kiem;
         private Label m_lbl_tim_kiem;
+        private Label label1;
+        private DateTimePicker m_dat_bat_dau;
 		private System.ComponentModel.IContainer components;
 
 		public f101_v_dm_don_vi()
@@ -94,6 +96,8 @@ namespace BKI_HRM
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_dat_bat_dau = new System.Windows.Forms.DateTimePicker();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
@@ -152,7 +156,7 @@ namespace BKI_HRM
             this.m_cmd_insert.Location = new System.Drawing.Point(680, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_insert.TabIndex = 12;
+            this.m_cmd_insert.TabIndex = 4;
             this.m_cmd_insert.Text = "&Thêm";
             // 
             // m_cmd_update
@@ -167,7 +171,7 @@ namespace BKI_HRM
             this.m_cmd_update.Location = new System.Drawing.Point(768, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_update.TabIndex = 13;
+            this.m_cmd_update.TabIndex = 5;
             this.m_cmd_update.Text = "&Sửa";
             // 
             // m_cmd_view
@@ -182,7 +186,7 @@ namespace BKI_HRM
             this.m_cmd_view.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_view.Name = "m_cmd_view";
             this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_view.TabIndex = 21;
+            this.m_cmd_view.TabIndex = 3;
             this.m_cmd_view.Text = "Xem";
             // 
             // m_cmd_delete
@@ -197,7 +201,7 @@ namespace BKI_HRM
             this.m_cmd_delete.Location = new System.Drawing.Point(856, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_delete.TabIndex = 14;
+            this.m_cmd_delete.TabIndex = 6;
             this.m_cmd_delete.Text = "&Xoá";
             // 
             // m_cmd_exit
@@ -212,28 +216,30 @@ namespace BKI_HRM
             this.m_cmd_exit.Location = new System.Drawing.Point(944, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 11;
+            this.m_cmd_exit.TabIndex = 7;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // m_fg
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 66);
+            this.m_fg.Location = new System.Drawing.Point(0, 99);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1036, 354);
+            this.m_fg.Size = new System.Drawing.Size(1036, 321);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 20;
+            this.m_fg.TabIndex = 999;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.m_dat_bat_dau);
             this.panel1.Controls.Add(this.m_cmd_search);
             this.panel1.Controls.Add(this.m_txt_tim_kiem);
             this.panel1.Controls.Add(this.m_lbl_tim_kiem);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1036, 60);
+            this.panel1.Size = new System.Drawing.Size(1036, 93);
             this.panel1.TabIndex = 21;
             // 
             // m_cmd_search
@@ -244,27 +250,52 @@ namespace BKI_HRM
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(658, 14);
+            this.m_cmd_search.Location = new System.Drawing.Point(768, 14);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_search.TabIndex = 24;
+            this.m_cmd_search.TabIndex = 2;
             this.m_cmd_search.Text = "Tìm kiếm";
             // 
             // m_txt_tim_kiem
             // 
             this.m_txt_tim_kiem.Location = new System.Drawing.Point(293, 19);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
-            this.m_txt_tim_kiem.Size = new System.Drawing.Size(324, 20);
-            this.m_txt_tim_kiem.TabIndex = 25;
+            this.m_txt_tim_kiem.Size = new System.Drawing.Size(435, 20);
+            this.m_txt_tim_kiem.TabIndex = 1;
             // 
             // m_lbl_tim_kiem
             // 
             this.m_lbl_tim_kiem.AutoSize = true;
-            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(167, 26);
+            this.m_lbl_tim_kiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(136, 23);
             this.m_lbl_tim_kiem.Name = "m_lbl_tim_kiem";
-            this.m_lbl_tim_kiem.Size = new System.Drawing.Size(88, 13);
-            this.m_lbl_tim_kiem.TabIndex = 23;
+            this.m_lbl_tim_kiem.Size = new System.Drawing.Size(109, 16);
+            this.m_lbl_tim_kiem.TabIndex = 999;
             this.m_lbl_tim_kiem.Text = "Từ khoá tìm kiếm";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(188, 58);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 16);
+            this.label1.TabIndex = 1000;
+            this.label1.Text = "Từ ngày";
+            // 
+            // m_dat_bat_dau
+            // 
+            this.m_dat_bat_dau.CalendarForeColor = System.Drawing.Color.Maroon;
+            this.m_dat_bat_dau.CalendarTitleForeColor = System.Drawing.Color.Maroon;
+            this.m_dat_bat_dau.CustomFormat = "dd/MM/yyy";
+            this.m_dat_bat_dau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_bat_dau.Location = new System.Drawing.Point(293, 58);
+            this.m_dat_bat_dau.Name = "m_dat_bat_dau";
+            this.m_dat_bat_dau.ShowCheckBox = true;
+            this.m_dat_bat_dau.Size = new System.Drawing.Size(203, 20);
+            this.m_dat_bat_dau.TabIndex = 1001;
+            this.m_dat_bat_dau.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // f101_v_dm_don_vi
             // 
@@ -326,10 +357,15 @@ namespace BKI_HRM
 		}
 		private void load_data_2_grid(){						
 			m_ds = new DS_V_DM_DON_VI();			
-			m_us.FillDataset(m_ds);
+			m_us.FillDatasetByKeyWorad(m_txt_tim_kiem.Text.Trim(),m_ds);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
 			m_fg.Redraw = true;
+            /*Để focus vào ô tìm kiếm*/
+            if (m_txt_tim_kiem.Text.Trim().Equals(String.Empty)) {
+                m_txt_tim_kiem.Select();
+            }
+            m_txt_tim_kiem.SelectAll();
 		}
 		private void grid2us_object(US_V_DM_DON_VI i_us
 			, int i_grid_row) {
@@ -390,13 +426,7 @@ namespace BKI_HRM
 		//	f101_v_dm_don_vi_DE v_fDE = new f101_v_dm_don_vi_DE();			
 		//	v_fDE.display(m_us);
 		}
-		private void set_define_events(){
-			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
-			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
-			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
-		}
+		
 		#endregion
 
 //
@@ -404,6 +434,16 @@ namespace BKI_HRM
 		//		EVENT HANLDERS
 		//
 		//
+        private void set_define_events() {
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
+            m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
+            m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
+            m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_cmd_search.Click += new EventHandler(m_cmd_search_Click);
+            m_txt_tim_kiem.KeyPress += new KeyPressEventHandler(CheckEnterKeyPress);
+        }
+
 		private void f101_v_dm_don_vi_Load(object sender, System.EventArgs e) {
 			try{
 				set_initial_form_load();
@@ -462,6 +502,17 @@ namespace BKI_HRM
 	    private void m_cmd_search_Click(object sender, EventArgs e){
 	        try{
                 load_data_2_grid();
+	        }
+	        catch (Exception v_e){
+	            CSystemLog_301.ExceptionHandle(v_e);
+	        }
+	    }
+
+	    private void CheckEnterKeyPress(object sender, KeyPressEventArgs e){
+	        try{
+	            if (e.KeyChar==(char)Keys.Return){
+	                load_data_2_grid();
+	            }
 	        }
 	        catch (Exception v_e){
 	            CSystemLog_301.ExceptionHandle(v_e);
