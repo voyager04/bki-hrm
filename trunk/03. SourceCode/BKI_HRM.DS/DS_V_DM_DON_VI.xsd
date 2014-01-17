@@ -79,11 +79,11 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="TU_NGAY" msprop:Generator_ColumnVarNameInTable="columnTU_NGAY" msprop:Generator_ColumnPropNameInRow="TU_NGAY" msprop:Generator_ColumnPropNameInTable="TU_NGAYColumn" msprop:Generator_UserColumnName="TU_NGAY" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TU_NGAY" msprop:Generator_ColumnVarNameInTable="columnTU_NGAY" msprop:Generator_ColumnPropNameInRow="TU_NGAY" msprop:Generator_ColumnPropNameInTable="TU_NGAYColumn" msprop:Generator_UserColumnName="TU_NGAY" type="xs:dateTime" minOccurs="0" />
               <xs:element name="DIA_BAN" msprop:Generator_ColumnVarNameInTable="columnDIA_BAN" msprop:Generator_ColumnPropNameInRow="DIA_BAN" msprop:Generator_ColumnPropNameInTable="DIA_BANColumn" msprop:Generator_UserColumnName="DIA_BAN" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="250" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
