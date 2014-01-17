@@ -137,7 +137,7 @@ namespace BKI_HRM
             this.m_cmd_insert.Location = new System.Drawing.Point(326, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_insert.TabIndex = 12;
+            this.m_cmd_insert.TabIndex = 5;
             this.m_cmd_insert.Text = "&Thêm";
             // 
             // m_cmd_update
@@ -152,7 +152,7 @@ namespace BKI_HRM
             this.m_cmd_update.Location = new System.Drawing.Point(414, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_update.TabIndex = 13;
+            this.m_cmd_update.TabIndex = 6;
             this.m_cmd_update.Text = "&Sửa";
             // 
             // m_cmd_view
@@ -167,7 +167,7 @@ namespace BKI_HRM
             this.m_cmd_view.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_view.Name = "m_cmd_view";
             this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_view.TabIndex = 21;
+            this.m_cmd_view.TabIndex = 4;
             this.m_cmd_view.Text = "Xem";
             // 
             // m_cmd_delete
@@ -182,7 +182,7 @@ namespace BKI_HRM
             this.m_cmd_delete.Location = new System.Drawing.Point(502, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_delete.TabIndex = 14;
+            this.m_cmd_delete.TabIndex = 7;
             this.m_cmd_delete.Text = "&Xoá";
             // 
             // m_cmd_exit
@@ -198,7 +198,7 @@ namespace BKI_HRM
             this.m_cmd_exit.Location = new System.Drawing.Point(590, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(92, 28);
-            this.m_cmd_exit.TabIndex = 11;
+            this.m_cmd_exit.TabIndex = 8;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // m_fg
@@ -209,7 +209,7 @@ namespace BKI_HRM
             this.m_fg.Name = "m_fg";
             this.m_fg.Size = new System.Drawing.Size(686, 298);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 20;
+            this.m_fg.TabIndex = 3;
             // 
             // m_lbl_tim_kiem
             // 
@@ -225,7 +225,7 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Location = new System.Drawing.Point(178, 24);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(272, 20);
-            this.m_txt_tim_kiem.TabIndex = 22;
+            this.m_txt_tim_kiem.TabIndex = 1;
             // 
             // m_cmd_search
             // 
@@ -238,7 +238,7 @@ namespace BKI_HRM
             this.m_cmd_search.Location = new System.Drawing.Point(487, 19);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_search.TabIndex = 22;
+            this.m_cmd_search.TabIndex = 2;
             this.m_cmd_search.Text = "Tìm kiếm";
             this.m_cmd_search.Click += new System.EventHandler(this.m_cmd_search_Click);
             // 
