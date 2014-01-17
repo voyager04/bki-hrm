@@ -439,7 +439,7 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_DM_DON_VIRow AddV_DM_DON_VIRow(decimal ID, string MA_KHOI, string MA_TRUNG_TAM, string MA_PHONG, string TEN_PHONG, string TEN_TIENG_ANH, decimal TU_NGAY, string DIA_BAN, string TRANG_THAI) {
+            public V_DM_DON_VIRow AddV_DM_DON_VIRow(decimal ID, string MA_KHOI, string MA_TRUNG_TAM, string MA_PHONG, string TEN_PHONG, string TEN_TIENG_ANH, System.DateTime TU_NGAY, string DIA_BAN, string TRANG_THAI) {
                 V_DM_DON_VIRow rowV_DM_DON_VIRow = ((V_DM_DON_VIRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
@@ -505,7 +505,7 @@ namespace BKI_HRM.DS {
                 base.Columns.Add(this.columnTEN_PHONG);
                 this.columnTEN_TIENG_ANH = new global::System.Data.DataColumn("TEN_TIENG_ANH", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTEN_TIENG_ANH);
-                this.columnTU_NGAY = new global::System.Data.DataColumn("TU_NGAY", typeof(decimal), null, global::System.Data.MappingType.Element);
+                this.columnTU_NGAY = new global::System.Data.DataColumn("TU_NGAY", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTU_NGAY);
                 this.columnDIA_BAN = new global::System.Data.DataColumn("DIA_BAN", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDIA_BAN);
@@ -520,7 +520,7 @@ namespace BKI_HRM.DS {
                 this.columnMA_PHONG.MaxLength = 15;
                 this.columnTEN_PHONG.MaxLength = 250;
                 this.columnTEN_TIENG_ANH.MaxLength = 250;
-                this.columnDIA_BAN.MaxLength = 50;
+                this.columnDIA_BAN.MaxLength = 250;
                 this.columnTRANG_THAI.MaxLength = 1;
             }
             
@@ -740,10 +740,10 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal TU_NGAY {
+            public System.DateTime TU_NGAY {
                 get {
                     try {
-                        return ((decimal)(this[this.tableV_DM_DON_VI.TU_NGAYColumn]));
+                        return ((global::System.DateTime)(this[this.tableV_DM_DON_VI.TU_NGAYColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TU_NGAY\' in table \'V_DM_DON_VI\' is DBNull.", e);

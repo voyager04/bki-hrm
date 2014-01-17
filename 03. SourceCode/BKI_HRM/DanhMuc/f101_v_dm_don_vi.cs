@@ -44,7 +44,7 @@ namespace BKI_HRM
         private TextBox m_txt_tim_kiem;
         private Label m_lbl_tim_kiem;
         private Label label1;
-        private DateTimePicker m_dat_bat_dau;
+        private DateTimePicker m_dat_tu_ngay;
 		private System.ComponentModel.IContainer components;
 
 		public f101_v_dm_don_vi()
@@ -93,11 +93,11 @@ namespace BKI_HRM
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_dat_tu_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.m_dat_bat_dau = new System.Windows.Forms.DateTimePicker();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
@@ -232,7 +232,7 @@ namespace BKI_HRM
             // panel1
             // 
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.m_dat_bat_dau);
+            this.panel1.Controls.Add(this.m_dat_tu_ngay);
             this.panel1.Controls.Add(this.m_cmd_search);
             this.panel1.Controls.Add(this.m_txt_tim_kiem);
             this.panel1.Controls.Add(this.m_lbl_tim_kiem);
@@ -241,6 +241,31 @@ namespace BKI_HRM
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1036, 93);
             this.panel1.TabIndex = 21;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(188, 58);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 16);
+            this.label1.TabIndex = 1000;
+            this.label1.Text = "Từ ngày";
+            // 
+            // m_dat_tu_ngay
+            // 
+            this.m_dat_tu_ngay.CalendarForeColor = System.Drawing.Color.Maroon;
+            this.m_dat_tu_ngay.CalendarTitleForeColor = System.Drawing.Color.Maroon;
+            this.m_dat_tu_ngay.Checked = false;
+            this.m_dat_tu_ngay.CustomFormat = "dd/MM/yyy";
+            this.m_dat_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_tu_ngay.Location = new System.Drawing.Point(293, 58);
+            this.m_dat_tu_ngay.Name = "m_dat_tu_ngay";
+            this.m_dat_tu_ngay.ShowCheckBox = true;
+            this.m_dat_tu_ngay.Size = new System.Drawing.Size(203, 20);
+            this.m_dat_tu_ngay.TabIndex = 1001;
+            this.m_dat_tu_ngay.Value = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
             // 
             // m_cmd_search
             // 
@@ -272,30 +297,6 @@ namespace BKI_HRM
             this.m_lbl_tim_kiem.Size = new System.Drawing.Size(109, 16);
             this.m_lbl_tim_kiem.TabIndex = 999;
             this.m_lbl_tim_kiem.Text = "Từ khoá tìm kiếm";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(188, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 16);
-            this.label1.TabIndex = 1000;
-            this.label1.Text = "Từ ngày";
-            // 
-            // m_dat_bat_dau
-            // 
-            this.m_dat_bat_dau.CalendarForeColor = System.Drawing.Color.Maroon;
-            this.m_dat_bat_dau.CalendarTitleForeColor = System.Drawing.Color.Maroon;
-            this.m_dat_bat_dau.CustomFormat = "dd/MM/yyy";
-            this.m_dat_bat_dau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_bat_dau.Location = new System.Drawing.Point(293, 58);
-            this.m_dat_bat_dau.Name = "m_dat_bat_dau";
-            this.m_dat_bat_dau.ShowCheckBox = true;
-            this.m_dat_bat_dau.Size = new System.Drawing.Size(203, 20);
-            this.m_dat_bat_dau.TabIndex = 1001;
-            this.m_dat_bat_dau.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // f101_v_dm_don_vi
             // 
@@ -336,7 +337,8 @@ namespace BKI_HRM
 		#endregion
 
 		#region Private Methods
-		private void format_controls(){
+		
+        private void format_controls(){
 			CControlFormat.setFormStyle(this, new CAppContext_201());
 			CControlFormat.setC1FlexFormat(m_fg);
 			CGridUtils.AddSave_Excel_Handlers(m_fg);
@@ -345,19 +347,30 @@ namespace BKI_HRM
 			set_define_events();
 			this.KeyPreview = true;		
 		}
-		private void set_initial_form_load(){						
+		
+        private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
 			load_data_2_grid();
 		}	
-		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
+		
+        private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
 			v_htb.Add(V_DM_DON_VI.TEN_TIENG_ANH, e_col_Number.TEN_TIENG_ANH);			v_htb.Add(V_DM_DON_VI.MA_TRUNG_TAM, e_col_Number.MA_TRUNG_TAM);			v_htb.Add(V_DM_DON_VI.TRANG_THAI, e_col_Number.TRANG_THAI);			v_htb.Add(V_DM_DON_VI.MA_PHONG, e_col_Number.MA_PHONG);			v_htb.Add(V_DM_DON_VI.TEN_PHONG, e_col_Number.TEN_PHONG);			v_htb.Add(V_DM_DON_VI.TU_NGAY, e_col_Number.TU_NGAY);			v_htb.Add(V_DM_DON_VI.MA_KHOI, e_col_Number.MA_KHOI);			v_htb.Add(V_DM_DON_VI.DIA_BAN, e_col_Number.DIA_BAN);									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_DM_DON_VI.NewRow());
 			return v_obj_trans;			
 		}
-		private void load_data_2_grid(){						
-			m_ds = new DS_V_DM_DON_VI();			
-			m_us.FillDatasetByKeyWorad(m_txt_tim_kiem.Text.Trim(),m_ds);
+		
+        private void load_data_2_grid(){						
+			m_ds = new DS_V_DM_DON_VI();
+			DateTime dat = new DateTime(1755,1,1);
+            if (m_dat_tu_ngay.Checked){
+                dat = m_dat_tu_ngay.Value;
+                m_us.FillDatasetByKeyWord_DateTime(m_txt_tim_kiem.Text.Trim(), dat, m_ds);
+            }
+            else{
+                m_us.FillDatasetByKeyWord(m_txt_tim_kiem.Text.Trim(),m_ds);
+            }
+            
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
 			m_fg.Redraw = true;
@@ -367,22 +380,19 @@ namespace BKI_HRM
             }
             m_txt_tim_kiem.SelectAll();
 		}
-		private void grid2us_object(US_V_DM_DON_VI i_us
-			, int i_grid_row) {
+		
+        private void grid2us_object(US_V_DM_DON_VI i_us, int i_grid_row) {
 			DataRow v_dr;
 			v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
 			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
 			i_us.DataRow2Me(v_dr);
 		}
 
-	
-		private void us_object2grid(US_V_DM_DON_VI i_us
-			, int i_grid_row) {
+		private void us_object2grid(US_V_DM_DON_VI i_us, int i_grid_row) {
 			DataRow v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
 			i_us.Me2DataRow(v_dr);
 			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
 		}
-
 
 		private void insert_v_dm_don_vi(){			
 		//	f101_v_dm_don_vi_DE v_fDE = new  f101_v_dm_don_vi_DE();								
@@ -442,6 +452,7 @@ namespace BKI_HRM
             m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
             m_cmd_search.Click += new EventHandler(m_cmd_search_Click);
             m_txt_tim_kiem.KeyPress += new KeyPressEventHandler(CheckEnterKeyPress);
+            m_dat_tu_ngay.KeyPress += new KeyPressEventHandler(CheckEnterKeyPress);
         }
 
 		private void f101_v_dm_don_vi_Load(object sender, System.EventArgs e) {
