@@ -292,6 +292,10 @@ namespace BKI_HRM.DS.CDBNames
 
    public class V_DM_DON_VI {
        public const string ID = "ID";
+       public const string ID_CAP_DON_VI = "ID_CAP_DON_VI";
+       public const string ID_LOAI_DON_VI = "ID_LOAI_DON_VI";
+       public const string CAP_DON_VI = "CAP_DON_VI";
+       public const string LOAI_DON_VI = "LOAI_DON_VI";
        public const string MA_KHOI = "MA_KHOI";
        public const string MA_TRUNG_TAM = "MA_TRUNG_TAM";
        public const string MA_PHONG = "MA_PHONG";
