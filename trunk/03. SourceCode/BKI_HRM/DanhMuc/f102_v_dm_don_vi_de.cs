@@ -10,6 +10,8 @@ using BKI_HRM.DS;
 using BKI_HRM.DS.CDBNames;
 using BKI_HRM.US;
 using IP.Core.IPCommon;
+using IP.Core.IPData;
+using IP.Core.IPUserService;
 
 namespace BKI_HRM.DanhMuc {
     public partial class f102_v_dm_don_vi_de : Form {
@@ -50,30 +52,23 @@ namespace BKI_HRM.DanhMuc {
         private void fomat_control() {
             CControlFormat.setFormStyle(this);
             set_define_events();
-            load_data_2_combobox_ma_don_vi_cap_tren();
-            load_data_2_combobox_loai_don_vi();
-            load_data_2_combobox_ten_don_vi_cap_tren();
-        }
-        private void load_data_2_combobox_loai_don_vi() {
-            DS_V_DM_DON_VI v_ds_v = new DS_V_DM_DON_VI();
-            US_V_DM_DON_VI v_us_v = new US_V_DM_DON_VI();
-            v_us_v.FillDataset(v_ds_v);
-            m_cbo_loai_don_vi.ValueMember = V_DM_DON_VI.ID_LOAI_DON_VI;
-            m_cbo_loai_don_vi.DisplayMember = V_DM_DON_VI.LOAI_DON_VI;
-            m_cbo_loai_don_vi.DataSource = v_ds_v.V_DM_DON_VI;
-            if (v_ds_v.V_DM_DON_VI.Rows.Count > 0) {
-                m_cbo_loai_don_vi.SelectedIndex = 0;
-            }
-        }
-        private void load_data_2_combobox_ma_don_vi_cap_tren() {
-
+            /*Load Combobox Loai don vi*/
+            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.LOAI_DON_VI,
+                WinFormControls.eTAT_CA.NO,
+                m_cbo_loai_don_vi);
+            /*Load Combobox Cap don vi*/
+            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.CAP_DON_VI,
+                WinFormControls.eTAT_CA.NO,
+                m_cbo_cap_don_vi);
         }
 
-        private void load_data_2_combobox_ten_don_vi_cap_tren() {
+        private void load_data_2_cbo_don_vi(){
+            DS_V_DM_DON_VI v_ds = new DS_V_DM_DON_VI();
+            US_V_DM_DON_VI v_us = new US_V_DM_DON_VI();
+            v_us.FillDataset(v_ds);
+            //m_cbo_ma_don_vi_cap_tren.DisplayMember = V_DM_DON_VI.
 
         }
-
-
 
         private bool check_data_is_ok() {
             return false;
