@@ -11,7 +11,7 @@ using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
-
+using BKI_HRM.DanhMuc;
 using IP.Core.IPCommon;
 using IP.Core.IPException;
 using IP.Core.IPData;
@@ -394,9 +394,9 @@ namespace BKI_HRM
 			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
 		}
 
-		private void insert_v_dm_don_vi(){			
-		//	f101_v_dm_don_vi_DE v_fDE = new  f101_v_dm_don_vi_DE();								
-		//	v_fDE.display();
+		private void insert_v_dm_don_vi(){
+            f102_v_dm_don_vi_de v_fDE = new f102_v_dm_don_vi_de();
+            v_fDE.display_for_insert();
 			load_data_2_grid();
 		}
 
@@ -529,6 +529,7 @@ namespace BKI_HRM
 	            CSystemLog_301.ExceptionHandle(v_e);
 	        }
 	    }
+
 	}
 }
 
