@@ -38,6 +38,74 @@ namespace BKI_HRM.US{
             pm_objDR["ID"] = System.Convert.DBNull;
         }
 
+        public decimal dcID_CAP_DON_VI {
+            get {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_CAP_DON_VI", IPConstants.c_DefaultDecimal);
+            }
+            set {
+                pm_objDR["ID_CAP_DON_VI"] = value;
+            }
+        }
+
+        public bool IsID_CAP_DON_VINull() {
+            return pm_objDR.IsNull("ID_CAP_DON_VI");
+        }
+
+        public void SetID_CAP_DON_VINull() {
+            pm_objDR["ID_CAP_DON_VI"] = System.Convert.DBNull;
+        }
+
+        public decimal dcID_LOAI_DON_VI {
+            get {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_LOAI_DON_VI", IPConstants.c_DefaultDecimal);
+            }
+            set {
+                pm_objDR["ID_LOAI_DON_VI"] = value;
+            }
+        }
+
+        public bool IsID_LOAI_DON_VINull() {
+            return pm_objDR.IsNull("ID_LOAI_DON_VI");
+        }
+
+        public void SetID_LOAI_DON_VINull() {
+            pm_objDR["ID_LOAI_DON_VI"] = System.Convert.DBNull;
+        }
+
+        public string strCAP_DON_VI {
+            get {
+                return CNull.RowNVLString(pm_objDR, "CAP_DON_VI", IPConstants.c_DefaultString);
+            }
+            set {
+                pm_objDR["CAP_DON_VI"] = value;
+            }
+        }
+
+        public bool IsCAP_DON_VINull() {
+            return pm_objDR.IsNull("CAP_DON_VI");
+        }
+
+        public void SetCAP_DON_VINull() {
+            pm_objDR["CAP_DON_VI"] = System.Convert.DBNull;
+        }
+
+        public string strLOAI_DON_VI {
+            get {
+                return CNull.RowNVLString(pm_objDR, "LOAI_DON_VI", IPConstants.c_DefaultString);
+            }
+            set {
+                pm_objDR["LOAI_DON_VI"] = value;
+            }
+        }
+
+        public bool IsLOAI_DON_VINull() {
+            return pm_objDR.IsNull("LOAI_DON_VI");
+        }
+
+        public void SetLOAI_DON_VINull() {
+            pm_objDR["LOAI_DON_VI"] = System.Convert.DBNull;
+        }
+
         public string strMA_KHOI {
             get {
                 return CNull.RowNVLString(pm_objDR, "MA_KHOI", IPConstants.c_DefaultString);
@@ -201,7 +269,6 @@ namespace BKI_HRM.US{
 
         #region Addtional
 
-        #endregion
         public void FillDatasetByKeyWord(string ip_str_key_word, DS_V_DM_DON_VI op_ds_v_v_dm_don_vi) {
         CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DON_VI_search");
         v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_str_key_word);
@@ -214,5 +281,8 @@ namespace BKI_HRM.US{
             v_stored_proc.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
             v_stored_proc.fillDataSetByCommand(this, op_ds_v_v_dm_don_vi);
         }
-}
+
+
+        #endregion
+    }
 }
