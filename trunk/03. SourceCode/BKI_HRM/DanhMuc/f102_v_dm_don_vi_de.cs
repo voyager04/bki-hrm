@@ -12,6 +12,7 @@ using BKI_HRM.US;
 using IP.Core.IPCommon;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
+using Encoder = System.Drawing.Imaging.Encoder;
 
 namespace BKI_HRM.DanhMuc {
     public partial class f102_v_dm_don_vi_de : Form {
@@ -60,26 +61,48 @@ namespace BKI_HRM.DanhMuc {
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.CAP_DON_VI,
                 WinFormControls.eTAT_CA.NO,
                 m_cbo_cap_don_vi);
+            load_data_2_cbo_don_vi();
         }
 
-        private void load_data_2_cbo_don_vi(){
-            DS_V_DM_DON_VI v_ds = new DS_V_DM_DON_VI();
-            US_V_DM_DON_VI v_us = new US_V_DM_DON_VI();
+        private void load_data_2_cbo_don_vi() {
+            DS_DM_DON_VI v_ds = new DS_DM_DON_VI();
+            US_DM_DON_VI v_us = new US_DM_DON_VI();
             v_us.FillDataset(v_ds);
-            //m_cbo_ma_don_vi_cap_tren.DisplayMember = V_DM_DON_VI.
+            m_cbo_ma_don_vi_cap_tren.DisplayMember = DM_DON_VI.MA_DON_VI;
+            m_cbo_ma_don_vi_cap_tren.ValueMember = DM_DON_VI.ID;
+            m_cbo_ma_don_vi_cap_tren.DataSource = v_ds.DM_DON_VI;
 
+            m_cbo_ten_don_vi_cap_tren.DisplayMember = DM_DON_VI.TEN_DON_VI;
+            m_cbo_ten_don_vi_cap_tren.ValueMember = DM_DON_VI.ID;
+            m_cbo_ten_don_vi_cap_tren.DataSource = v_ds.DM_DON_VI;
         }
 
         private bool check_data_is_ok() {
-            return false;
+            if (!CValidateTextBox.IsValid(m_txt_dia_ban, DataType.StringType, allowNull.YES, true)) {
+                return false;
+            }
+            if (!CValidateTextBox.IsValid(m_txt_ma_don_vi, DataType.StringType, allowNull.NO, true)) {
+                return false;
+            }
+            if (!CValidateTextBox.IsValid(m_txt_ten_don_vi, DataType.StringType, allowNull.NO, true)) {
+                return false;
+            }
+            if (!CValidateTextBox.IsValid(m_txt_ten_tieng_anh, DataType.StringType, allowNull.YES, true)) {
+                return false;
+            }
+            return true;
         }
 
         private void form_2_us_object() {
             m_us.strMA_DON_VI = m_txt_ma_don_vi.Text.Trim();
             m_us.strTEN_DON_VI = m_txt_ten_don_vi.Text.Trim();
-            m_us.strDIA_BAN = m_txt_dia_chi.Text.Trim();
+            m_us.strTEN_TA = m_txt_ten_tieng_anh.Text.Trim();
+            m_us.strDIA_BAN = m_txt_dia_ban.Text.Trim();
             m_us.strTRANG_THAI = CIPConvert.ToYNString(m_ckb_trang_thai.Checked);
             m_us.dcID_LOAI_DON_VI = CIPConvert.ToDecimal(m_cbo_loai_don_vi.SelectedValue);
+            m_us.dcID_CAP_DON_VI = CIPConvert.ToDecimal(m_cbo_cap_don_vi.SelectedValue);
+            m_us.dcID_DON_VI_CAP_TREN = CIPConvert.ToDecimal(m_cbo_ma_don_vi_cap_tren.SelectedValue);
+            m_us.datTU_NGAY = m_dat_tu_ngay.Value.Date;
         }
 
         private void save_data() {
@@ -105,6 +128,12 @@ namespace BKI_HRM.DanhMuc {
 
         private void set_define_events() {
             this.m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
+            this.m_cmd_refresh.Click += new EventHandler(m_cmd_refresh_Click);
+            this.m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            this.m_cbo_ma_don_vi_cap_tren.SelectedIndexChanged +=
+                new EventHandler(m_cbo_ma_don_vi_cap_tren_SelectedIndexChanged);
+            this.m_cbo_ten_don_vi_cap_tren.SelectedIndexChanged +=
+                new EventHandler(m_cbo_ten_don_vi_cap_tren_SelectedIndexChanged);
         }
 
         protected void m_cmd_save_Click(object sender, EventArgs e) {
@@ -115,9 +144,34 @@ namespace BKI_HRM.DanhMuc {
             }
         }
 
+        protected void m_cbo_ma_don_vi_cap_tren_SelectedIndexChanged(object sender, EventArgs e) {
+            m_cbo_ten_don_vi_cap_tren.SelectedValue = m_cbo_ma_don_vi_cap_tren.SelectedValue;
+        }
+
+        protected void m_cbo_ten_don_vi_cap_tren_SelectedIndexChanged(object sender, EventArgs e) {
+            m_cbo_ma_don_vi_cap_tren.SelectedValue = m_cbo_ten_don_vi_cap_tren.SelectedValue;
+        }
+
+        protected void m_cmd_refresh_Click(object sender, EventArgs e) {
+
+        }
+
+        protected void m_cmd_exit_Click(object sender, EventArgs e) {
+            try{
+                this.Close();
+            }
+            catch (Exception v_e){
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        
         #endregion
 
 
-        
+
+
+
+
+
     }
 }

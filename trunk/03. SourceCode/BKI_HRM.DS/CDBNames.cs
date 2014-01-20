@@ -253,10 +253,13 @@ namespace BKI_HRM.DS.CDBNames
         public const string ID = "ID";
         public const string MA_DON_VI = "MA_DON_VI";
         public const string TEN_DON_VI = "TEN_DON_VI";
-        public const string ID_LOAI_DON_VI = "ID_LOAI_DON_VI";
+        public const string TEN_TA = "TEN_TA";
+        public const string ID_CAP_DON_VI = "ID_CAP_DON_VI";
         public const string ID_DON_VI_CAP_TREN = "ID_DON_VI_CAP_TREN";
+        public const string ID_LOAI_DON_VI = "ID_LOAI_DON_VI";
         public const string DIA_BAN = "DIA_BAN";
         public const string TRANG_THAI = "TRANG_THAI";
+        public const string TU_NGAY = "TU_NGAY";
     }
     public class DM_NHAN_SU
     {

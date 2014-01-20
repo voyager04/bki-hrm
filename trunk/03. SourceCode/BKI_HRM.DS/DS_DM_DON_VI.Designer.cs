@@ -1263,8 +1263,13 @@ SELECT ID, MA_DON_VI, TEN_DON_VI, TEN_TA, ID_CAP_DON_VI, ID_DON_VI_CAP_TREN, ID_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(decimal Original_ID, string Original_MA_DON_VI, string Original_TEN_DON_VI, string Original_TEN_TA, decimal Original_ID_CAP_DON_VI, global::System.Nullable<decimal> Original_ID_DON_VI_CAP_TREN, global::System.Nullable<decimal> Original_ID_LOAI_DON_VI, string Original_DIA_BAN, string Original_TRANG_THAI, global::System.Nullable<global::System.DateTime> Original_TU_NGAY) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_ID));
+        public virtual int Delete(global::System.Nullable<decimal> Original_ID, string Original_MA_DON_VI, string Original_TEN_DON_VI, string Original_TEN_TA, decimal Original_ID_CAP_DON_VI, global::System.Nullable<decimal> Original_ID_DON_VI_CAP_TREN, global::System.Nullable<decimal> Original_ID_LOAI_DON_VI, string Original_DIA_BAN, string Original_TRANG_THAI, global::System.Nullable<global::System.DateTime> Original_TU_NGAY) {
+            if ((Original_ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_ID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((Original_MA_DON_VI == null)) {
                 throw new global::System.ArgumentNullException("Original_MA_DON_VI");
             }
@@ -1428,7 +1433,7 @@ SELECT ID, MA_DON_VI, TEN_DON_VI, TEN_TA, ID_CAP_DON_VI, ID_DON_VI_CAP_TREN, ID_
                     string DIA_BAN, 
                     string TRANG_THAI, 
                     global::System.Nullable<global::System.DateTime> TU_NGAY, 
-                    decimal Original_ID, 
+                    global::System.Nullable<decimal> Original_ID, 
                     string Original_MA_DON_VI, 
                     string Original_TEN_DON_VI, 
                     string Original_TEN_TA, 
@@ -1438,7 +1443,7 @@ SELECT ID, MA_DON_VI, TEN_DON_VI, TEN_TA, ID_CAP_DON_VI, ID_DON_VI_CAP_TREN, ID_
                     string Original_DIA_BAN, 
                     string Original_TRANG_THAI, 
                     global::System.Nullable<global::System.DateTime> Original_TU_NGAY, 
-                    decimal ID) {
+                    global::System.Nullable<decimal> ID) {
             if ((MA_DON_VI == null)) {
                 throw new global::System.ArgumentNullException("MA_DON_VI");
             }
@@ -1488,7 +1493,12 @@ SELECT ID, MA_DON_VI, TEN_DON_VI, TEN_TA, ID_CAP_DON_VI, ID_DON_VI_CAP_TREN, ID_
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(Original_ID));
+            if ((Original_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(Original_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
             if ((Original_MA_DON_VI == null)) {
                 throw new global::System.ArgumentNullException("Original_MA_DON_VI");
             }
@@ -1552,7 +1562,12 @@ SELECT ID, MA_DON_VI, TEN_DON_VI, TEN_TA, ID_CAP_DON_VI, ID_DON_VI_CAP_TREN, ID_
                 this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[26].Value = ((decimal)(ID));
+            if ((ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((decimal)(ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1583,7 +1598,7 @@ SELECT ID, MA_DON_VI, TEN_DON_VI, TEN_TA, ID_CAP_DON_VI, ID_DON_VI_CAP_TREN, ID_
                     string DIA_BAN, 
                     string TRANG_THAI, 
                     global::System.Nullable<global::System.DateTime> TU_NGAY, 
-                    decimal Original_ID, 
+                    global::System.Nullable<decimal> Original_ID, 
                     string Original_MA_DON_VI, 
                     string Original_TEN_DON_VI, 
                     string Original_TEN_TA, 
