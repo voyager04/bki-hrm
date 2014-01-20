@@ -7,7 +7,7 @@ imports system.drawing
 public  class CErrorTextBoxHandler
 
         PRIVATE CONST C_ERROR_CONTROL_IMAGE_INDEX AS INTEGER = 14
-        PRIVATE C_BACKCOLOR_ERROR AS system.Drawing.Color = system.DRAWING.Color.pink
+    Private C_BACKCOLOR_ERROR As System.Drawing.Color = System.Drawing.Color.Orchid
         private withevents m_txtBox as textbox            
         private withevents m_form as form
         private m_old_backcolor_of_txtBox as Drawing.color
