@@ -68,8 +68,8 @@
     <FileName>bao_cao.xml</FileName>
     <UserName>common</UserName>
     <Description>Báo cáo</Description>
-    <FromNum>201</FromNum>
-    <ToNum>220</ToNum>
+    <FromNum>300</FromNum>
+    <ToNum>330</ToNum>
     <AppName>7</AppName>
   </Users_DataSet>
   <Users_DataSet>
@@ -79,5 +79,13 @@
     <FromNum>221</FromNum>
     <ToNum>222</ToNum>
     <AppName>8</AppName>
+  </Users_DataSet>
+  <Users_DataSet>
+    <FileName>ho_so.xml</FileName>
+    <UserName>common</UserName>
+    <Description>Hồ sơ nhân sự</Description>
+    <FromNum>200</FromNum>
+    <ToNum>220</ToNum>
+    <AppName>HRM</AppName>
   </Users_DataSet>
 </Users_DataSet>
