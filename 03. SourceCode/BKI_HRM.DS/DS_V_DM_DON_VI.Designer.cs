@@ -281,6 +281,8 @@ namespace BKI_HRM.DS {
             
             private global::System.Data.DataColumn columnID;
             
+            private global::System.Data.DataColumn columnID_DON_VI_CAP_TREN;
+            
             private global::System.Data.DataColumn columnMA_DON_VI;
             
             private global::System.Data.DataColumn columnID_CAP_DON_VI;
@@ -345,6 +347,14 @@ namespace BKI_HRM.DS {
             public global::System.Data.DataColumn IDColumn {
                 get {
                     return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_DON_VI_CAP_TRENColumn {
+                get {
+                    return this.columnID_DON_VI_CAP_TREN;
                 }
             }
             
@@ -489,10 +499,11 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_DM_DON_VIRow AddV_DM_DON_VIRow(decimal ID, string MA_DON_VI, decimal ID_CAP_DON_VI, decimal ID_LOAI_DON_VI, string CAP_DON_VI, string LOAI_DON_VI, string MA_KHOI, string MA_TRUNG_TAM, string MA_PHONG, string TEN_PHONG, string TEN_TIENG_ANH, System.DateTime TU_NGAY, string DIA_BAN, string TRANG_THAI) {
+            public V_DM_DON_VIRow AddV_DM_DON_VIRow(decimal ID, decimal ID_DON_VI_CAP_TREN, string MA_DON_VI, decimal ID_CAP_DON_VI, decimal ID_LOAI_DON_VI, string CAP_DON_VI, string LOAI_DON_VI, string MA_KHOI, string MA_TRUNG_TAM, string MA_PHONG, string TEN_PHONG, string TEN_TIENG_ANH, System.DateTime TU_NGAY, string DIA_BAN, string TRANG_THAI) {
                 V_DM_DON_VIRow rowV_DM_DON_VIRow = ((V_DM_DON_VIRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
+                        ID_DON_VI_CAP_TREN,
                         MA_DON_VI,
                         ID_CAP_DON_VI,
                         ID_LOAI_DON_VI,
@@ -535,6 +546,7 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
+                this.columnID_DON_VI_CAP_TREN = base.Columns["ID_DON_VI_CAP_TREN"];
                 this.columnMA_DON_VI = base.Columns["MA_DON_VI"];
                 this.columnID_CAP_DON_VI = base.Columns["ID_CAP_DON_VI"];
                 this.columnID_LOAI_DON_VI = base.Columns["ID_LOAI_DON_VI"];
@@ -555,6 +567,8 @@ namespace BKI_HRM.DS {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
+                this.columnID_DON_VI_CAP_TREN = new global::System.Data.DataColumn("ID_DON_VI_CAP_TREN", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_DON_VI_CAP_TREN);
                 this.columnMA_DON_VI = new global::System.Data.DataColumn("MA_DON_VI", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMA_DON_VI);
                 this.columnID_CAP_DON_VI = new global::System.Data.DataColumn("ID_CAP_DON_VI", typeof(decimal), null, global::System.Data.MappingType.Element);
@@ -753,6 +767,22 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ID_DON_VI_CAP_TREN {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableV_DM_DON_VI.ID_DON_VI_CAP_TRENColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID_DON_VI_CAP_TREN\' in table \'V_DM_DON_VI\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_DM_DON_VI.ID_DON_VI_CAP_TRENColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string MA_DON_VI {
                 get {
                     return ((string)(this[this.tableV_DM_DON_VI.MA_DON_VIColumn]));
@@ -917,6 +947,18 @@ namespace BKI_HRM.DS {
                 set {
                     this[this.tableV_DM_DON_VI.TRANG_THAIColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsID_DON_VI_CAP_TRENNull() {
+                return this.IsNull(this.tableV_DM_DON_VI.ID_DON_VI_CAP_TRENColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetID_DON_VI_CAP_TRENNull() {
+                this[this.tableV_DM_DON_VI.ID_DON_VI_CAP_TRENColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1140,6 +1182,7 @@ namespace BKI_HRM.DS.DS_V_DM_DON_VITableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "V_DM_DON_VI";
             tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("ID_DON_VI_CAP_TREN", "ID_DON_VI_CAP_TREN");
             tableMapping.ColumnMappings.Add("MA_DON_VI", "MA_DON_VI");
             tableMapping.ColumnMappings.Add("ID_CAP_DON_VI", "ID_CAP_DON_VI");
             tableMapping.ColumnMappings.Add("ID_LOAI_DON_VI", "ID_LOAI_DON_VI");
@@ -1169,9 +1212,9 @@ namespace BKI_HRM.DS.DS_V_DM_DON_VITableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, MA_DON_VI, ID_CAP_DON_VI, ID_LOAI_DON_VI, CAP_DON_VI, LOAI_DON_VI, MA_" +
-                "KHOI, MA_TRUNG_TAM, MA_PHONG, TEN_PHONG, TEN_TIENG_ANH, TU_NGAY, DIA_BAN, TRANG_" +
-                "THAI FROM dbo.V_DM_DON_VI";
+            this._commandCollection[0].CommandText = "SELECT ID, ID_DON_VI_CAP_TREN, MA_DON_VI, ID_CAP_DON_VI, ID_LOAI_DON_VI, CAP_DON_" +
+                "VI, LOAI_DON_VI, MA_KHOI, MA_TRUNG_TAM, MA_PHONG, TEN_PHONG, TEN_TIENG_ANH, TU_N" +
+                "GAY, DIA_BAN, TRANG_THAI FROM dbo.V_DM_DON_VI";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

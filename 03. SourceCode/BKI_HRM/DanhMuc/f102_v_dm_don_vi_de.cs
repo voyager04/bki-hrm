@@ -118,6 +118,7 @@ namespace BKI_HRM.DanhMuc {
         }
 
         private void us_object_2_form(US_V_DM_DON_VI ip_us_dm_don_vi){
+            m_us.dcID = ip_us_dm_don_vi.dcID;
             m_cbo_cap_don_vi.SelectedValue = ip_us_dm_don_vi.dcID_CAP_DON_VI;
             m_cbo_loai_don_vi.SelectedValue = ip_us_dm_don_vi.dcID_LOAI_DON_VI;
             m_txt_ma_don_vi.Text = ip_us_dm_don_vi.strMA_DON_VI;
@@ -126,7 +127,7 @@ namespace BKI_HRM.DanhMuc {
             m_txt_dia_ban.Text = ip_us_dm_don_vi.strDIA_BAN;
             m_ckb_trang_thai.Checked = ip_us_dm_don_vi.strTRANG_THAI.ToUpper().Equals("Y") ? true : false;
             m_dat_tu_ngay.Value = ip_us_dm_don_vi.datTU_NGAY;
-            
+            m_cbo_ma_don_vi_cap_tren.SelectedValue = ip_us_dm_don_vi.dcID_DON_VI_CAP_TREN;
         }
 
         #endregion

@@ -13,7 +13,7 @@
               <DbSource ConnectionRef="BKI_HRMConnectionString3 (Settings)" DbObjectName="BKI_HRM.dbo.V_DM_DON_VI" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, MA_DON_VI, ID_CAP_DON_VI, ID_LOAI_DON_VI, CAP_DON_VI, LOAI_DON_VI, MA_KHOI, MA_TRUNG_TAM, MA_PHONG, TEN_PHONG, TEN_TIENG_ANH, TU_NGAY, DIA_BAN, TRANG_THAI FROM dbo.V_DM_DON_VI</CommandText>
+                    <CommandText>SELECT ID, ID_DON_VI_CAP_TREN, MA_DON_VI, ID_CAP_DON_VI, ID_LOAI_DON_VI, CAP_DON_VI, LOAI_DON_VI, MA_KHOI, MA_TRUNG_TAM, MA_PHONG, TEN_PHONG, TEN_TIENG_ANH, TU_NGAY, DIA_BAN, TRANG_THAI FROM dbo.V_DM_DON_VI</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -21,6 +21,7 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="ID_DON_VI_CAP_TREN" DataSetColumn="ID_DON_VI_CAP_TREN" />
               <Mapping SourceColumn="MA_DON_VI" DataSetColumn="MA_DON_VI" />
               <Mapping SourceColumn="ID_CAP_DON_VI" DataSetColumn="ID_CAP_DON_VI" />
               <Mapping SourceColumn="ID_LOAI_DON_VI" DataSetColumn="ID_LOAI_DON_VI" />
@@ -49,6 +50,7 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="ID_DON_VI_CAP_TREN" msprop:Generator_ColumnVarNameInTable="columnID_DON_VI_CAP_TREN" msprop:Generator_ColumnPropNameInRow="ID_DON_VI_CAP_TREN" msprop:Generator_ColumnPropNameInTable="ID_DON_VI_CAP_TRENColumn" msprop:Generator_UserColumnName="ID_DON_VI_CAP_TREN" type="xs:decimal" minOccurs="0" />
               <xs:element name="MA_DON_VI" msprop:Generator_ColumnVarNameInTable="columnMA_DON_VI" msprop:Generator_ColumnPropNameInRow="MA_DON_VI" msprop:Generator_ColumnPropNameInTable="MA_DON_VIColumn" msprop:Generator_UserColumnName="MA_DON_VI">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
