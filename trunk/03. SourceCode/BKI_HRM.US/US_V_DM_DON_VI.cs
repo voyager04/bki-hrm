@@ -38,6 +38,23 @@ namespace BKI_HRM.US{
             pm_objDR["ID"] = System.Convert.DBNull;
         }
 
+        public string strMA_DON_VI {
+            get {
+                return CNull.RowNVLString(pm_objDR, "MA_DON_VI", IPConstants.c_DefaultString);
+            }
+            set {
+                pm_objDR["MA_DON_VI"] = value;
+            }
+        }
+
+        public bool IsMA_DON_VINull() {
+            return pm_objDR.IsNull("MA_DON_VI");
+        }
+
+        public void SetMA_DON_VINull() {
+            pm_objDR["MA_DON_VI"] = System.Convert.DBNull;
+        }
+
         public decimal dcID_CAP_DON_VI {
             get {
                 return CNull.RowNVLDecimal(pm_objDR, "ID_CAP_DON_VI", IPConstants.c_DefaultDecimal);
