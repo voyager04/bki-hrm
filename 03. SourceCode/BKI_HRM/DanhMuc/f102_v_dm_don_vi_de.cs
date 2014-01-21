@@ -22,34 +22,29 @@ namespace BKI_HRM.DanhMuc {
             InitializeComponent();
             fomat_control();
         }
-
-
         public void display_for_insert() {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             this.ShowDialog();
         }
-
-        //public void display_for_update(US_VIEW_KET_QUA_HOC_TAP ip_us_view_ket_qua_hoc_tap) {
-        //    //m_us_v_ket_qua_hoc_tap = ip_us_view_ket_qua_hoc_tap;
-        //    //load_data_2_combobox();
-        //    //m_e_form_mode = DataEntryFormMode.UpdateDataState;
-        //    this.ShowDialog();
-        //}
+        public void display_for_update(US_V_DM_DON_VI ip_v_us_dm_don_vi) {
+            m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            us_object_2_form(ip_v_us_dm_don_vi);
+            this.ShowDialog();
+        }
         #endregion
 
         #region Data Structures
         #endregion
 
         #region Members
-
         private DataEntryFormMode m_e_form_mode;
         private US_DM_DON_VI m_us = new US_DM_DON_VI();
         private DS_DM_DON_VI m_ds = new DS_DM_DON_VI();
         private DS_V_DM_DON_VI m_v_ds = new DS_V_DM_DON_VI();
-
         #endregion
 
         #region Private Methods
+
         private void fomat_control() {
             CControlFormat.setFormStyle(this);
             set_define_events();
@@ -122,6 +117,12 @@ namespace BKI_HRM.DanhMuc {
             this.Close();
         }
 
+        private void us_object_2_form(US_V_DM_DON_VI ip_us_dm_don_vi){
+            m_cbo_cap_don_vi.SelectedValue = ip_us_dm_don_vi.dcID_CAP_DON_VI;
+            m_cbo_loai_don_vi.SelectedValue = ip_us_dm_don_vi.dcID_LOAI_DON_VI;
+            
+        }
+
         #endregion
 
         #region Events
@@ -166,12 +167,6 @@ namespace BKI_HRM.DanhMuc {
         }
         
         #endregion
-
-
-
-
-
-
 
     }
 }
