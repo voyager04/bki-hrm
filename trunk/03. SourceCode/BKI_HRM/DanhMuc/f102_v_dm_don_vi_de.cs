@@ -120,6 +120,12 @@ namespace BKI_HRM.DanhMuc {
         private void us_object_2_form(US_V_DM_DON_VI ip_us_dm_don_vi){
             m_cbo_cap_don_vi.SelectedValue = ip_us_dm_don_vi.dcID_CAP_DON_VI;
             m_cbo_loai_don_vi.SelectedValue = ip_us_dm_don_vi.dcID_LOAI_DON_VI;
+            m_txt_ma_don_vi.Text = ip_us_dm_don_vi.strMA_DON_VI;
+            m_txt_ten_don_vi.Text = ip_us_dm_don_vi.strTEN_PHONG;
+            m_txt_ten_tieng_anh.Text = ip_us_dm_don_vi.strTEN_TIENG_ANH;
+            m_txt_dia_ban.Text = ip_us_dm_don_vi.strDIA_BAN;
+            m_ckb_trang_thai.Checked = ip_us_dm_don_vi.strTRANG_THAI.ToUpper().Equals("Y") ? true : false;
+            m_dat_tu_ngay.Value = ip_us_dm_don_vi.datTU_NGAY;
             
         }
 
