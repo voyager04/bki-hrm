@@ -1,0 +1,111 @@
+<?xml version="1.0" standalone="yes"?>
+<DatasetMsg xmlns="http://tempuri.org/DatasetMsg.xsd">
+  <Message>
+    <Message>Bạn chưa nhập tên của cuộc đấu giá</Message>
+    <ID>100</ID>
+  </Message>
+  <Message>
+    <Message>Bạn chưa nhập mã của đợt đấu giá</Message>
+    <ID>101</ID>
+  </Message>
+  <Message>
+    <Message>Tống số cổ phần của lần phát hành dự kiến phải lớn hơn Tống số cổ phần của lần phát hành dự kiến phải lớn hơn 0</Message>
+    <ID>102</ID>
+  </Message>
+  <Message>
+    <Message>Mệnh giá của cổ phần trong đợt đấu giá phải lớn hơn 0</Message>
+    <ID>103</ID>
+  </Message>
+  <Message>
+    <Message>Giá khởi điểm không bé hơn mệnh giá</Message>
+    <ID>104</ID>
+  </Message>
+  <Message>
+    <Message>Số lượng đặt mua tối đa không được vượt quá tổng khối lượng phát hành</Message>
+    <ID>105</ID>
+  </Message>
+  <Message>
+    <Message>Ngày kết thúc đăng kí phải lớn hơn ngày đăng ký</Message>
+    <ID>106</ID>
+  </Message>
+  <Message>
+    <Message>Số mức giá cho phép phải lớn hơn 0</Message>
+    <ID>107</ID>
+  </Message>
+  <Message>
+    <Message>Quy định về bước giá phải lớn hơn 0</Message>
+    <ID>108</ID>
+  </Message>
+  <Message>
+    <Message>Số lượng đặt mua tối thiểu phải lớn hơn 0</Message>
+    <ID>109</ID>
+  </Message>
+  <Message>
+    <Message>Số lượng đặt mua tối thiểu không vượt quá số lượng đặt mua tối đa</Message>
+    <ID>110</ID>
+  </Message>
+  <Message>
+    <Message>Bạn chưa nhập địa điểm tổ chức đấu giá</Message>
+    <ID>111</ID>
+  </Message>
+  <Message>
+    <Message>Bạn chưa nhập địa điểm nộp\nhận lại tiền cho nhà đầu tư</Message>
+    <ID>112</ID>
+  </Message>
+  <Message>
+    <Message>Bạn chưa nhập điện thoại và địa chỉ liên lạc của hội đồng đấu giá</Message>
+    <ID>113</ID>
+  </Message>
+  <Message>
+    <Message>Dữ liệu đã được cập nhật thành công </Message>
+    <ID>114</ID>
+  </Message>
+  <Message>
+    <Message>gặp lỗi mã đợt đấu giá đã có bạn hãy chọn mã khác</Message>
+    <ID>115</ID>
+  </Message>
+  <Message>
+    <Message>Bạn chưa nhập mã của đợt đấu giá</Message>
+    <ID>116</ID>
+  </Message>
+  <Message>
+    <Message>Bạn chưa nhập tên của đợt đấu giá</Message>
+    <ID>117</ID>
+  </Message>
+  <Message>
+    <Message>Chương trình sẽ xoá mẩu tin đang hiển thị bạn có muốn tiếp tục</Message>
+    <ID>118</ID>
+  </Message>
+  <Message>
+    <Message>Giá khởi điểm phải lớn hơn 0</Message>
+    <ID>119</ID>
+  </Message>
+  <Message>
+    <Message>Bước giá phải lớn hơn 0</Message>
+    <ID>120</ID>
+  </Message>
+  <Message>
+    <Message>Số lượng tối đa phải lớn hơn 0</Message>
+    <ID>121</ID>
+  </Message>
+  <Message>
+    <Message>Ngày kết thúc kết toán phải lớn hơn ngày bắt đầu</Message>
+    <ID>122</ID>
+  </Message>
+  <Message>
+    <Message>Ngày kết toán phải lớn hơn ngày đấu giá</Message>
+    <ID>123</ID>
+  </Message>
+  <Message>
+    <Message>Ngày đấu giá phải lớn hơn ngày đăng ký</Message>
+    <ID>124</ID>
+  </Message>
+  <Message>
+    <Message>Mã đợt đấu giá này đã tồn tại, xin hãy nhập mã khác</Message>
+    <ID>125</ID>
+  </Message>
+  <Message>
+    <Message>Dữ liệu đã được cập nhật !</Message>
+    <ID>126</ID>
+  </Message>
+</DatasetMsg>

@@ -1,0 +1,91 @@
+<?xml version="1.0" standalone="yes"?>
+<Users_DataSet xmlns="http://tempuri.org/Users_DataSet.xsd">
+  <Users_DataSet>
+    <FileName>UserMsg.xml</FileName>
+    <UserName>User</UserName>
+    <Description>Thông báo các Form </Description>
+    <FromNum>1</FromNum>
+    <ToNum>50</ToNum>
+    <AppName>Auction</AppName>
+  </Users_DataSet>
+  <Users_DataSet>
+    <FileName>CommonMsg.xml</FileName>
+    <UserName>Common</UserName>
+    <Description>Thông báo chung</Description>
+    <FromNum>51</FromNum>
+    <ToNum>99</ToNum>
+    <AppName>Auction</AppName>
+  </Users_DataSet>
+  <Users_DataSet>
+    <FileName>dang_ky.xml</FileName>
+    <UserName>common</UserName>
+    <Description>Đăng kí</Description>
+    <FromNum>119</FromNum>
+    <ToNum>139</ToNum>
+    <AppName>2</AppName>
+  </Users_DataSet>
+  <Users_DataSet>
+    <FileName>lan_dau_gia.xml</FileName>
+    <UserName>common</UserName>
+    <Description>Lần đấu giá</Description>
+    <FromNum>100</FromNum>
+    <ToNum>130</ToNum>
+    <AppName>1</AppName>
+  </Users_DataSet>
+  <Users_DataSet>
+    <FileName>dau_gia.xml</FileName>
+    <UserName>common</UserName>
+    <Description>Đấu giá</Description>
+    <FromNum>140</FromNum>
+    <ToNum>160</ToNum>
+    <AppName>3</AppName>
+  </Users_DataSet>
+  <Users_DataSet>
+    <FileName>ket_qua.xml</FileName>
+    <UserName>common</UserName>
+    <Description>kết quả</Description>
+    <FromNum>161</FromNum>
+    <ToNum>180</ToNum>
+    <AppName>4</AppName>
+  </Users_DataSet>
+  <Users_DataSet>
+    <FileName>dang_nhap.xml</FileName>
+    <UserName>common</UserName>
+    <Description>Đăng nhập</Description>
+    <FromNum>181</FromNum>
+    <ToNum>190</ToNum>
+    <AppName>5</AppName>
+  </Users_DataSet>
+  <Users_DataSet>
+    <FileName>danh_muc.xml</FileName>
+    <UserName>common</UserName>
+    <Description>Danh mục</Description>
+    <FromNum>190</FromNum>
+    <ToNum>200</ToNum>
+    <AppName>6</AppName>
+  </Users_DataSet>
+  <Users_DataSet>
+    <FileName>bao_cao.xml</FileName>
+    <UserName>common</UserName>
+    <Description>Báo cáo</Description>
+    <FromNum>300</FromNum>
+    <ToNum>330</ToNum>
+    <AppName>7</AppName>
+  </Users_DataSet>
+  <Users_DataSet>
+    <FileName>tuy_chon.xml</FileName>
+    <UserName>common</UserName>
+    <Description>tuy_chon</Description>
+    <FromNum>221</FromNum>
+    <ToNum>222</ToNum>
+    <AppName>8</AppName>
+  </Users_DataSet>
+  <Users_DataSet>
+    <FileName>ho_so.xml</FileName>
+    <UserName>common</UserName>
+    <Description>Hồ sơ nhân sự</Description>
+    <FromNum>200</FromNum>
+    <ToNum>220</ToNum>
+    <AppName>HRM</AppName>
+  </Users_DataSet>
+</Users_DataSet>

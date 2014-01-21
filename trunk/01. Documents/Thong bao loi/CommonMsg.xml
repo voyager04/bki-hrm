@@ -1,0 +1,23 @@
+<?xml version="1.0" standalone="yes"?>
+<DatasetMsg xmlns="http://tempuri.org/DatasetMsg.xsd">
+  <Message>
+    <Message>lưu thành công</Message>
+    <ID>50</ID>
+  </Message>
+  <Message>
+    <Message>Bạn không thể thực hiện chức năng này với tên đăng nhập hiện tại.</Message>
+    <ID>51</ID>
+  </Message>
+  <Message>
+    <Message>Tên đăng nhập hoặc mật khẩu không đúng</Message>
+    <ID>52</ID>
+  </Message>
+  <Message>
+    <Message>Mật khẩu xác nhận lại không đúng</Message>
+    <ID>53</ID>
+  </Message>
+  <Message>
+    <Message>Chương trình sẽ cập nhật lại số phiếu đầu tiên sinh ra trong chuỗi của số phiếu đăng kí. Bạn có muốn tiếp tục?</Message>
+    <ID>54</ID>
+  </Message>
+</DatasetMsg>
