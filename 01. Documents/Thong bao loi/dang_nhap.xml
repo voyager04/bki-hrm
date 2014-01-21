@@ -1,0 +1,23 @@
+<?xml version="1.0" standalone="yes"?>
+<DatasetMsg xmlns="http://tempuri.org/DatasetMsg.xsd">
+  <Message>
+    <Message>Tên người dùng phải khác rỗng.</Message>
+    <ID>181</ID>
+  </Message>
+  <Message>
+    <Message>Dữ liệu bị thay đổi trong lúc bạn đang thao tác. Bạn nên nạp lại dữ liệu trước khi lập lại thao tác này.</Message>
+    <ID>182</ID>
+  </Message>
+  <Message>
+    <Message>Bạn có muốn lưu lại trước khi thoát.</Message>
+    <ID>183</ID>
+  </Message>
+  <Message>
+    <Message>Bạn chưa nhập tên truy cập!</Message>
+    <ID>602</ID>
+  </Message>
+  <Message>
+    <Message>Bạn chưa nhập mật khẩu!</Message>
+    <ID>603</ID>
+  </Message>
+</DatasetMsg>

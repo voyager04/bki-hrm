@@ -1,0 +1,7 @@
+<?xml version="1.0" standalone="yes"?>
+<DatasetMsg xmlns="http://tempuri.org/DatasetMsg.xsd">
+  <Message>
+    <Message>Bạn phải chọn ít nhất một cuộc đấu giá. Trong trường hợp không muốn tiếp tục vui lòng nhấn nút trở về</Message>
+    <ID>201</ID>
+  </Message>
+</DatasetMsg>

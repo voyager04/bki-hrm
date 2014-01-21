@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="yes"?>
+<DatasetMsg xmlns="http://tempuri.org/DatasetMsg.xsd">
+  <Message>
+    <Message>Bạn có muốn thực hiện giao dịch này không?</Message>
+    <ID>140</ID>
+  </Message>
+  <Message>
+    <Message>tổng khối lượng đặt lớn hơn tổng khối lượng đăng kí</Message>
+    <ID>141</ID>
+  </Message>
+  <Message>
+    <Message>Giá đăng kí nhỏ hơn giá khởi điểm, bạn có muốn tiếp tục?</Message>
+    <ID>142</ID>
+  </Message>
+  <Message>
+    <Message>Tổng khối lượng đặt nhỏ hơn tổng khối lượng đăng kí. Bạn có muốn phạt tiền trên số lượng này?</Message>
+    <ID>143</ID>
+  </Message>
+  <Message>
+    <Message>Giá đăng kí " ?" mà bạn vừa nhập không thoả mãn qui định về bước giá.Bạn có muốn tiếp tục</Message>
+    <ID>144</ID>
+  </Message>
+  <Message>
+    <Message>Đợt đấu giá này chỉ cho phép "?" mức giá</Message>
+    <ID>145</ID>
+  </Message>
+  <Message>
+    <Message>Chương trình sẽ xoá các lệnh đặt giá của phiếu đấu giá này. Bạn có muốn tiếp tục?</Message>
+    <ID>146</ID>
+  </Message>
+  <Message>
+    <Message>Các trường dữ liệu còn thiếu</Message>
+    <ID>147</ID>
+  </Message>
+  <Message>
+    <Message>Lưu thành công !</Message>
+    <ID>148</ID>
+  </Message>
+</DatasetMsg>
