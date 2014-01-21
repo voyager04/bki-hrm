@@ -79,6 +79,9 @@
     <Compile Include="BaoCao\f300_V_GD_HOP_DONG_LAO_DONG.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DanhMuc\f101_v_dm_don_vi.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DanhMuc\f102_v_dm_don_vi_de.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f300_V_GD_HOP_DONG_LAO_DONG.resx">
       <DependentUpon>f300_V_GD_HOP_DONG_LAO_DONG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f101_v_dm_don_vi.resx">
+      <DependentUpon>f101_v_dm_don_vi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f102_v_dm_don_vi_de.resx">
       <DependentUpon>f102_v_dm_don_vi_de.cs</DependentUpon>
