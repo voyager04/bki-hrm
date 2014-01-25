@@ -335,8 +335,8 @@ namespace BKI_HRM {
 
         #region Members
         ITransferDataRow m_obj_trans;
-        DS_V_DM_DON_VI m_ds = new DS_V_DM_DON_VI();
-        US_V_DM_DON_VI m_us = new US_V_DM_DON_VI();
+        DS_V_DM_DON_VI m_v_ds = new DS_V_DM_DON_VI();
+        US_V_DM_DON_VI m_v_us = new US_V_DM_DON_VI();
         #endregion
 
         #region Private Methods
@@ -351,7 +351,6 @@ namespace BKI_HRM {
         private void set_initial_form_load() {
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_grid();
-
         }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg) {
             Hashtable v_htb = new Hashtable();
@@ -365,18 +364,18 @@ namespace BKI_HRM {
             v_htb.Add(V_DM_DON_VI.MA_KHOI, e_col_Number.MA_KHOI);
             v_htb.Add(V_DM_DON_VI.DIA_BAN, e_col_Number.DIA_BAN);
 
-            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_DM_DON_VI.NewRow());
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_v_ds.V_DM_DON_VI.NewRow());
             return v_obj_trans;
         }
         private void load_data_2_grid() {
-            m_ds = new DS_V_DM_DON_VI();
+            m_v_ds = new DS_V_DM_DON_VI();
             if (m_dat_tu_ngay.Checked) {
-                m_us.FillDatasetByKeyWord_DateTime(m_txt_tim_kiem.Text.Trim(), m_dat_tu_ngay.Value.Date, m_ds);
+                m_v_us.FillDatasetByKeyWord_DateTime(m_txt_tim_kiem.Text.Trim(), m_dat_tu_ngay.Value.Date, m_v_ds);
             } else {
-                m_us.FillDatasetByKeyWord(m_txt_tim_kiem.Text.Trim(), m_ds);
+                m_v_us.FillDatasetByKeyWord(m_txt_tim_kiem.Text.Trim(), m_v_ds);
             }
             m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.Dataset2C1Grid(m_v_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;
             if (m_txt_tim_kiem.Text.Trim().Equals(String.Empty)) {
                 m_txt_tim_kiem.Select();
@@ -392,14 +391,12 @@ namespace BKI_HRM {
             i_us.DataRow2Me(v_dr);
         }
 
-
         private void us_object2grid(US_V_DM_DON_VI i_us
             , int i_grid_row) {
             DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
             i_us.Me2DataRow(v_dr);
             m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
         }
-
 
         private void insert_v_dm_don_vi() {
             f102_v_dm_don_vi_de v_fDE = new f102_v_dm_don_vi_de();
@@ -410,9 +407,9 @@ namespace BKI_HRM {
         private void update_v_dm_don_vi() {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            grid2us_object(m_us, m_fg.Row);
-            f102_v_dm_don_vi_de v_fDE = new f102_v_dm_don_vi_de();
-            v_fDE.display_for_update(m_us);
+            grid2us_object(m_v_us, m_fg.Row);
+            var v_f_de = new f102_v_dm_don_vi_de();
+            v_f_de.display_for_update(m_v_us);
             load_data_2_grid();
         }
 
@@ -438,7 +435,7 @@ namespace BKI_HRM {
         private void view_v_dm_don_vi() {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            grid2us_object(m_us, m_fg.Row);
+            grid2us_object(m_v_us, m_fg.Row);
             //	f101_v_dm_don_vi_DE v_fDE = new f101_v_dm_don_vi_DE();			
             //	v_fDE.display(m_us);
         }

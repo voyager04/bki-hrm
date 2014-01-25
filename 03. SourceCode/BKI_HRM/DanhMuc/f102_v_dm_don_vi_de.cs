@@ -60,8 +60,8 @@ namespace BKI_HRM.DanhMuc {
         }
 
         private void load_data_2_cbo_don_vi() {
-            DS_DM_DON_VI v_ds = new DS_DM_DON_VI();
-            US_DM_DON_VI v_us = new US_DM_DON_VI();
+            var v_ds = new DS_DM_DON_VI();
+            var v_us = new US_DM_DON_VI();
             v_us.FillDataset(v_ds);
             m_cbo_ma_don_vi_cap_tren.DisplayMember = DM_DON_VI.MA_DON_VI;
             m_cbo_ma_don_vi_cap_tren.ValueMember = DM_DON_VI.ID;
@@ -70,6 +70,20 @@ namespace BKI_HRM.DanhMuc {
             m_cbo_ten_don_vi_cap_tren.DisplayMember = DM_DON_VI.TEN_DON_VI;
             m_cbo_ten_don_vi_cap_tren.ValueMember = DM_DON_VI.ID;
             m_cbo_ten_don_vi_cap_tren.DataSource = v_ds.DM_DON_VI;
+
+            DataRow v_row = v_ds.DM_DON_VI.NewRow();
+            v_row[DM_DON_VI.ID] = -1;
+            v_row[DM_DON_VI.ID_CAP_DON_VI] = 0;
+            v_row[DM_DON_VI.ID_DON_VI_CAP_TREN] = -1;
+            v_row[DM_DON_VI.ID_LOAI_DON_VI] = -1;
+            v_row[DM_DON_VI.MA_DON_VI] = "NULL";
+            v_row[DM_DON_VI.TEN_DON_VI] = "Không có đơn vị cấp trên";
+            v_row[DM_DON_VI.TEN_TA] = "NULL";
+            v_row[DM_DON_VI.TRANG_THAI] = "Y";
+            v_row[DM_DON_VI.TU_NGAY] = "1/1/1800";
+            v_row[DM_DON_VI.DIA_BAN] = "NULL";
+
+            v_ds.DM_DON_VI.Rows.InsertAt(v_row,0);
         }
 
         private bool check_data_is_ok() {
@@ -126,8 +140,14 @@ namespace BKI_HRM.DanhMuc {
             m_txt_ten_tieng_anh.Text = ip_us_dm_don_vi.strTEN_TIENG_ANH;
             m_txt_dia_ban.Text = ip_us_dm_don_vi.strDIA_BAN;
             m_ckb_trang_thai.Checked = ip_us_dm_don_vi.strTRANG_THAI.ToUpper().Equals("Y") ? true : false;
-            m_dat_tu_ngay.Value = ip_us_dm_don_vi.datTU_NGAY;
-            m_cbo_ma_don_vi_cap_tren.SelectedValue = ip_us_dm_don_vi.dcID_DON_VI_CAP_TREN;
+            m_dat_tu_ngay.Value = ip_us_dm_don_vi.datTU_NGAY.Date;
+            if (ip_us_dm_don_vi.dcID_DON_VI_CAP_TREN == 0 || ip_us_dm_don_vi.dcID_DON_VI_CAP_TREN==-1) {
+                m_cbo_ma_don_vi_cap_tren.SelectedIndex = 0;
+            }
+            else{
+                m_cbo_ma_don_vi_cap_tren.SelectedValue = ip_us_dm_don_vi.dcID_DON_VI_CAP_TREN;
+            }
+            
         }
 
         #endregion
