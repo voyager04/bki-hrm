@@ -156,11 +156,11 @@
             this.m_cmd_save.AdjustImageLocation = new System.Drawing.Point(0, 0);
             this.m_cmd_save.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_save.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(432, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 12;
