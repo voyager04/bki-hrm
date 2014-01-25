@@ -304,7 +304,7 @@ namespace BKI_HRM.US{
         #region Addtional
 
         public void FillDatasetByKeyWord(string ip_str_key_word, DS_V_DM_DON_VI op_ds_v_v_dm_don_vi) {
-        CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DON_VI_search");
+            CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DON_VI_search");
         v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_str_key_word);
         v_stored_proc.fillDataSetByCommand(this,op_ds_v_v_dm_don_vi);
     }
