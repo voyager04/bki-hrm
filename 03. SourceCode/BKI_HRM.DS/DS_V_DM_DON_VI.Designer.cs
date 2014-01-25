@@ -595,24 +595,15 @@ namespace BKI_HRM.DS {
                 base.Columns.Add(this.columnDIA_BAN);
                 this.columnTRANG_THAI = new global::System.Data.DataColumn("TRANG_THAI", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTRANG_THAI);
-                this.columnID.AllowDBNull = false;
-                this.columnMA_DON_VI.AllowDBNull = false;
                 this.columnMA_DON_VI.MaxLength = 15;
-                this.columnID_CAP_DON_VI.AllowDBNull = false;
-                this.columnCAP_DON_VI.AllowDBNull = false;
                 this.columnCAP_DON_VI.MaxLength = 250;
-                this.columnLOAI_DON_VI.AllowDBNull = false;
                 this.columnLOAI_DON_VI.MaxLength = 250;
-                this.columnMA_KHOI.AllowDBNull = false;
                 this.columnMA_KHOI.MaxLength = 15;
-                this.columnMA_TRUNG_TAM.AllowDBNull = false;
                 this.columnMA_TRUNG_TAM.MaxLength = 15;
-                this.columnMA_PHONG.AllowDBNull = false;
                 this.columnMA_PHONG.MaxLength = 15;
                 this.columnTEN_PHONG.MaxLength = 250;
                 this.columnTEN_TIENG_ANH.MaxLength = 250;
                 this.columnDIA_BAN.MaxLength = 250;
-                this.columnTRANG_THAI.AllowDBNull = false;
                 this.columnTRANG_THAI.MaxLength = 13;
             }
             
@@ -758,7 +749,12 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal ID {
                 get {
-                    return ((decimal)(this[this.tableV_DM_DON_VI.IDColumn]));
+                    try {
+                        return ((decimal)(this[this.tableV_DM_DON_VI.IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID\' in table \'V_DM_DON_VI\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_DM_DON_VI.IDColumn] = value;
@@ -785,7 +781,12 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string MA_DON_VI {
                 get {
-                    return ((string)(this[this.tableV_DM_DON_VI.MA_DON_VIColumn]));
+                    try {
+                        return ((string)(this[this.tableV_DM_DON_VI.MA_DON_VIColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MA_DON_VI\' in table \'V_DM_DON_VI\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_DM_DON_VI.MA_DON_VIColumn] = value;
@@ -796,7 +797,12 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal ID_CAP_DON_VI {
                 get {
-                    return ((decimal)(this[this.tableV_DM_DON_VI.ID_CAP_DON_VIColumn]));
+                    try {
+                        return ((decimal)(this[this.tableV_DM_DON_VI.ID_CAP_DON_VIColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID_CAP_DON_VI\' in table \'V_DM_DON_VI\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_DM_DON_VI.ID_CAP_DON_VIColumn] = value;
@@ -823,7 +829,12 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string CAP_DON_VI {
                 get {
-                    return ((string)(this[this.tableV_DM_DON_VI.CAP_DON_VIColumn]));
+                    try {
+                        return ((string)(this[this.tableV_DM_DON_VI.CAP_DON_VIColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CAP_DON_VI\' in table \'V_DM_DON_VI\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_DM_DON_VI.CAP_DON_VIColumn] = value;
@@ -834,7 +845,12 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string LOAI_DON_VI {
                 get {
-                    return ((string)(this[this.tableV_DM_DON_VI.LOAI_DON_VIColumn]));
+                    try {
+                        return ((string)(this[this.tableV_DM_DON_VI.LOAI_DON_VIColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LOAI_DON_VI\' in table \'V_DM_DON_VI\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_DM_DON_VI.LOAI_DON_VIColumn] = value;
@@ -845,7 +861,12 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string MA_KHOI {
                 get {
-                    return ((string)(this[this.tableV_DM_DON_VI.MA_KHOIColumn]));
+                    try {
+                        return ((string)(this[this.tableV_DM_DON_VI.MA_KHOIColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MA_KHOI\' in table \'V_DM_DON_VI\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_DM_DON_VI.MA_KHOIColumn] = value;
@@ -856,7 +877,12 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string MA_TRUNG_TAM {
                 get {
-                    return ((string)(this[this.tableV_DM_DON_VI.MA_TRUNG_TAMColumn]));
+                    try {
+                        return ((string)(this[this.tableV_DM_DON_VI.MA_TRUNG_TAMColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MA_TRUNG_TAM\' in table \'V_DM_DON_VI\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_DM_DON_VI.MA_TRUNG_TAMColumn] = value;
@@ -867,7 +893,12 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string MA_PHONG {
                 get {
-                    return ((string)(this[this.tableV_DM_DON_VI.MA_PHONGColumn]));
+                    try {
+                        return ((string)(this[this.tableV_DM_DON_VI.MA_PHONGColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MA_PHONG\' in table \'V_DM_DON_VI\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_DM_DON_VI.MA_PHONGColumn] = value;
@@ -942,11 +973,28 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string TRANG_THAI {
                 get {
-                    return ((string)(this[this.tableV_DM_DON_VI.TRANG_THAIColumn]));
+                    try {
+                        return ((string)(this[this.tableV_DM_DON_VI.TRANG_THAIColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TRANG_THAI\' in table \'V_DM_DON_VI\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_DM_DON_VI.TRANG_THAIColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIDNull() {
+                return this.IsNull(this.tableV_DM_DON_VI.IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIDNull() {
+                this[this.tableV_DM_DON_VI.IDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -963,6 +1011,30 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMA_DON_VINull() {
+                return this.IsNull(this.tableV_DM_DON_VI.MA_DON_VIColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMA_DON_VINull() {
+                this[this.tableV_DM_DON_VI.MA_DON_VIColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsID_CAP_DON_VINull() {
+                return this.IsNull(this.tableV_DM_DON_VI.ID_CAP_DON_VIColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetID_CAP_DON_VINull() {
+                this[this.tableV_DM_DON_VI.ID_CAP_DON_VIColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsID_LOAI_DON_VINull() {
                 return this.IsNull(this.tableV_DM_DON_VI.ID_LOAI_DON_VIColumn);
             }
@@ -971,6 +1043,66 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetID_LOAI_DON_VINull() {
                 this[this.tableV_DM_DON_VI.ID_LOAI_DON_VIColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCAP_DON_VINull() {
+                return this.IsNull(this.tableV_DM_DON_VI.CAP_DON_VIColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCAP_DON_VINull() {
+                this[this.tableV_DM_DON_VI.CAP_DON_VIColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLOAI_DON_VINull() {
+                return this.IsNull(this.tableV_DM_DON_VI.LOAI_DON_VIColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLOAI_DON_VINull() {
+                this[this.tableV_DM_DON_VI.LOAI_DON_VIColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMA_KHOINull() {
+                return this.IsNull(this.tableV_DM_DON_VI.MA_KHOIColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMA_KHOINull() {
+                this[this.tableV_DM_DON_VI.MA_KHOIColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMA_TRUNG_TAMNull() {
+                return this.IsNull(this.tableV_DM_DON_VI.MA_TRUNG_TAMColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMA_TRUNG_TAMNull() {
+                this[this.tableV_DM_DON_VI.MA_TRUNG_TAMColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMA_PHONGNull() {
+                return this.IsNull(this.tableV_DM_DON_VI.MA_PHONGColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMA_PHONGNull() {
+                this[this.tableV_DM_DON_VI.MA_PHONGColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1019,6 +1151,18 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDIA_BANNull() {
                 this[this.tableV_DM_DON_VI.DIA_BANColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTRANG_THAINull() {
+                return this.IsNull(this.tableV_DM_DON_VI.TRANG_THAIColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTRANG_THAINull() {
+                this[this.tableV_DM_DON_VI.TRANG_THAIColumn] = global::System.Convert.DBNull;
             }
         }
         
