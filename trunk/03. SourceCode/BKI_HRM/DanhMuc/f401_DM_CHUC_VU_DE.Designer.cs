@@ -243,6 +243,7 @@
             // m_rdb_sudung
             // 
             this.m_rdb_sudung.AutoSize = true;
+            this.m_rdb_sudung.Checked = true;
             this.m_rdb_sudung.Location = new System.Drawing.Point(514, 31);
             this.m_rdb_sudung.Name = "m_rdb_sudung";
             this.m_rdb_sudung.Size = new System.Drawing.Size(65, 17);
