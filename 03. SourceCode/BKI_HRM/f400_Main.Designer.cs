@@ -168,6 +168,7 @@
             this.m_menuitem_qlchucvu.Name = "m_menuitem_qlchucvu";
             this.m_menuitem_qlchucvu.Size = new System.Drawing.Size(206, 22);
             this.m_menuitem_qlchucvu.Text = "Quản lý chức vụ";
+            this.m_menuitem_qlchucvu.Click += new System.EventHandler(this.m_menuitem_qlchucvu_Click);
             // 
             // m_menuitem_qlbac
             // 
