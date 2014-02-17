@@ -320,4 +320,15 @@ namespace BKI_HRM.DS.CDBNames
        public const string NGAY_AP_DUNG = "NGAY_AP_DUNG";
        public const string NGAY_KET_THUC = "NGAY_KET_THUC";
    }
+   public class V_DM_CHUC_VU
+   {
+       public const string ID = "ID";
+       public const string MA_CV = "MA_CV";
+       public const string TEN_CV = "TEN_CV";
+       public const string TEN_CV_TA = "TEN_CV_TA";
+       public const string TRANG_THAI = "TRANG_THAI";
+       public const string NGAY_AP_DUNG = "NGAY_AP_DUNG";
+       public const string NGAY_KET_THUC = "NGAY_KET_THUC";
+       public const string TRANG_THAI_SU_DUNG = "TRANG_THAI_SU_DUNG";
+   }
 }
