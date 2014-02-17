@@ -410,7 +410,7 @@ namespace BKI_HRM
 
 		private void m_cmd_view_Click(object sender, EventArgs e) {
 			try{
-				view_dm_chuc_vu();
+				//view_dm_chuc_vu();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);

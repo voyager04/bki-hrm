@@ -53,7 +53,12 @@ namespace BKI_HRM
 
         private void load_data_2_cbo_trang_thai()
         {
- 
+            DS_DM_CHUC_VU v_ds = new DS_DM_CHUC_VU();
+            US_DM_CHUC_VU v_us = new US_DM_CHUC_VU();
+            v_us.FillDataset(v_ds);
+            m_cbo_trangthaisudung.DisplayMember = DM_CHUC_VU.TRANG_THAI;
+            m_cbo_trangthaisudung.ValueMember = DM_CHUC_VU.TRANG_THAI;
+            m_cbo_trangthaisudung.DataSource = v_ds.DM_CHUC_VU;
         }
 
         private bool check_data_is_ok() {
