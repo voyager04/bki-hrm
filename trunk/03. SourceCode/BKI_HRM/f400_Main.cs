@@ -47,8 +47,21 @@ namespace BKI_HRM {
             this.m_menuitem_user.Click += new EventHandler(m_mnu_quan_ly_nguoi_su_dung_Click);
             this.m_menuitem_thoat.Click += new EventHandler(m_menuitem_thoat_Click);
             this.m_menuitem_qldonvi.Click += new EventHandler(m_menuitem_qldonvi_Click);
+            this.m_menu_dsnhansu.Click += new EventHandler(m_menu_dsnhansu_Click);
         }
 
+        private void m_menu_dsnhansu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f201_dm_nhan_su frm = new f201_dm_nhan_su();
+                frm.Show();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         private void m_mnu_quan_ly_nguoi_su_dung_Click(object sender, EventArgs e) {
             try {
 
