@@ -48,17 +48,6 @@ namespace BKI_HRM
         private void fomat_control() {
             CControlFormat.setFormStyle(this);
             set_define_events();
-            load_data_2_cbo_trang_thai();
-        }
-
-        private void load_data_2_cbo_trang_thai()
-        {
-            DS_DM_CHUC_VU v_ds = new DS_DM_CHUC_VU();
-            US_DM_CHUC_VU v_us = new US_DM_CHUC_VU();
-            v_us.FillDataset(v_ds);
-            m_cbo_trangthaisudung.DisplayMember = DM_CHUC_VU.TRANG_THAI;
-            m_cbo_trangthaisudung.ValueMember = DM_CHUC_VU.TRANG_THAI;
-            m_cbo_trangthaisudung.DataSource = v_ds.DM_CHUC_VU;
         }
 
         private bool check_data_is_ok() {
@@ -78,7 +67,6 @@ namespace BKI_HRM
             m_us.strMA_CV = m_txt_macv.Text.Trim();
             m_us.strTEN_CV = m_txt_tencv.Text.Trim();
             m_us.strTEN_CV_TA = m_txt_tenta.Text.Trim();
-            m_us.strTRANG_THAI= CIPConvert.ToStr(m_cbo_trangthaisudung.SelectedValue);
             m_us.datNGAY_AP_DUNG = m_dat_ngayapdung.Value.Date;
             m_us.datNGAY_KET_THUC = m_dat_ngayketthuc.Value.Date;
         }
@@ -102,12 +90,13 @@ namespace BKI_HRM
 
         private void us_object_2_form(US_DM_CHUC_VU ip_us_dm_chuc_vu){
             m_us.dcID = ip_us_dm_chuc_vu.dcID;
-            m_cbo_trangthaisudung.SelectedValue = ip_us_dm_chuc_vu.strTRANG_THAI;
             m_txt_macv.Text = ip_us_dm_chuc_vu.strMA_CV;
             m_txt_tencv.Text = ip_us_dm_chuc_vu.strTEN_CV;
             m_txt_tenta.Text = ip_us_dm_chuc_vu.strTEN_CV_TA;
             m_dat_ngayapdung.Value = ip_us_dm_chuc_vu.datNGAY_AP_DUNG;
             m_dat_ngayketthuc.Value = ip_us_dm_chuc_vu.datNGAY_KET_THUC;
+            if (ip_us_dm_chuc_vu.strTRANG_THAI == "y")
+                m_rdb_sudung.Checked = true;
         }
 
         #endregion

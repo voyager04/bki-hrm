@@ -38,7 +38,6 @@
             this.m_txt_macv = new System.Windows.Forms.TextBox();
             this.m_txt_tencv = new System.Windows.Forms.TextBox();
             this.m_txt_tenta = new System.Windows.Forms.TextBox();
-            this.m_cbo_trangthaisudung = new System.Windows.Forms.ComboBox();
             this.m_dat_ngayapdung = new System.Windows.Forms.DateTimePicker();
             this.m_dat_ngayketthuc = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_tencv = new System.Windows.Forms.Label();
@@ -47,6 +46,8 @@
             this.m_lbl_trangthaisudung = new System.Windows.Forms.Label();
             this.m_lbl_ngayapdung = new System.Windows.Forms.Label();
             this.m_lbl_ngayketthuc = new System.Windows.Forms.Label();
+            this.m_rdb_khongsudung = new System.Windows.Forms.RadioButton();
+            this.m_rdb_sudung = new System.Windows.Forms.RadioButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +60,7 @@
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 122);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(574, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(616, 36);
             this.m_pnl_out_place_dm.TabIndex = 21;
             // 
             // m_cmd_save
@@ -71,7 +72,7 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(306, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(348, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 31;
@@ -113,7 +114,7 @@
             this.m_cmd_refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_refresh.ImageIndex = 9;
             this.m_cmd_refresh.ImageList = this.ImageList;
-            this.m_cmd_refresh.Location = new System.Drawing.Point(394, 4);
+            this.m_cmd_refresh.Location = new System.Drawing.Point(436, 4);
             this.m_cmd_refresh.Name = "m_cmd_refresh";
             this.m_cmd_refresh.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_refresh.TabIndex = 32;
@@ -129,7 +130,7 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(482, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(524, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 33;
@@ -155,14 +156,6 @@
             this.m_txt_tenta.Name = "m_txt_tenta";
             this.m_txt_tenta.Size = new System.Drawing.Size(176, 20);
             this.m_txt_tenta.TabIndex = 24;
-            // 
-            // m_cbo_trangthaisudung
-            // 
-            this.m_cbo_trangthaisudung.FormattingEnabled = true;
-            this.m_cbo_trangthaisudung.Location = new System.Drawing.Point(411, 27);
-            this.m_cbo_trangthaisudung.Name = "m_cbo_trangthaisudung";
-            this.m_cbo_trangthaisudung.Size = new System.Drawing.Size(121, 21);
-            this.m_cbo_trangthaisudung.TabIndex = 25;
             // 
             // m_dat_ngayapdung
             // 
@@ -236,11 +229,35 @@
             this.m_lbl_ngayketthuc.TabIndex = 33;
             this.m_lbl_ngayketthuc.Text = "Ngày kết thúc:";
             // 
+            // m_rdb_khongsudung
+            // 
+            this.m_rdb_khongsudung.AutoSize = true;
+            this.m_rdb_khongsudung.Location = new System.Drawing.Point(411, 30);
+            this.m_rdb_khongsudung.Name = "m_rdb_khongsudung";
+            this.m_rdb_khongsudung.Size = new System.Drawing.Size(97, 17);
+            this.m_rdb_khongsudung.TabIndex = 34;
+            this.m_rdb_khongsudung.TabStop = true;
+            this.m_rdb_khongsudung.Text = "Không sử dụng";
+            this.m_rdb_khongsudung.UseVisualStyleBackColor = true;
+            // 
+            // m_rdb_sudung
+            // 
+            this.m_rdb_sudung.AutoSize = true;
+            this.m_rdb_sudung.Location = new System.Drawing.Point(514, 31);
+            this.m_rdb_sudung.Name = "m_rdb_sudung";
+            this.m_rdb_sudung.Size = new System.Drawing.Size(65, 17);
+            this.m_rdb_sudung.TabIndex = 35;
+            this.m_rdb_sudung.TabStop = true;
+            this.m_rdb_sudung.Text = "Sử dụng";
+            this.m_rdb_sudung.UseVisualStyleBackColor = true;
+            // 
             // f401_DM_CHUC_VU_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 158);
+            this.ClientSize = new System.Drawing.Size(616, 158);
+            this.Controls.Add(this.m_rdb_sudung);
+            this.Controls.Add(this.m_rdb_khongsudung);
             this.Controls.Add(this.m_lbl_ngayketthuc);
             this.Controls.Add(this.m_lbl_ngayapdung);
             this.Controls.Add(this.m_lbl_trangthaisudung);
@@ -249,7 +266,6 @@
             this.Controls.Add(this.m_lbl_tencv);
             this.Controls.Add(this.m_dat_ngayketthuc);
             this.Controls.Add(this.m_dat_ngayapdung);
-            this.Controls.Add(this.m_cbo_trangthaisudung);
             this.Controls.Add(this.m_txt_tenta);
             this.Controls.Add(this.m_txt_tencv);
             this.Controls.Add(this.m_txt_macv);
@@ -271,7 +287,6 @@
         private System.Windows.Forms.TextBox m_txt_macv;
         private System.Windows.Forms.TextBox m_txt_tencv;
         private System.Windows.Forms.TextBox m_txt_tenta;
-        private System.Windows.Forms.ComboBox m_cbo_trangthaisudung;
         private System.Windows.Forms.DateTimePicker m_dat_ngayapdung;
         private System.Windows.Forms.DateTimePicker m_dat_ngayketthuc;
         private System.Windows.Forms.Label m_lbl_tencv;
@@ -281,5 +296,7 @@
         private System.Windows.Forms.Label m_lbl_ngayapdung;
         private System.Windows.Forms.Label m_lbl_ngayketthuc;
         internal System.Windows.Forms.ImageList ImageList;
+        private System.Windows.Forms.RadioButton m_rdb_khongsudung;
+        private System.Windows.Forms.RadioButton m_rdb_sudung;
     }
 }
