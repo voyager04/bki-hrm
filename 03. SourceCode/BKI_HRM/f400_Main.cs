@@ -87,7 +87,7 @@ namespace BKI_HRM {
 
         private void m_menuitem_qlchucvu_Click(object sender, EventArgs e)
         {
-            f401_DM_CHUC_VU frm = new f401_DM_CHUC_VU();
+            f401_V_DM_CHUC_VU frm = new f401_V_DM_CHUC_VU();
             frm.Show();
         }
 
