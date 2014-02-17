@@ -116,10 +116,10 @@ namespace BKI_HRM {
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 413);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 441);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(850, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(954, 36);
             this.m_pnl_out_place_dm.TabIndex = 8;
             // 
             // m_cmd_xuat_excel
@@ -151,7 +151,7 @@ namespace BKI_HRM {
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(739, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(843, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(107, 28);
             this.m_cmd_exit.TabIndex = 1;
@@ -161,9 +161,10 @@ namespace BKI_HRM {
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 85);
+            this.m_fg.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.m_fg.Location = new System.Drawing.Point(0, 82);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(850, 328);
+            this.m_fg.Size = new System.Drawing.Size(954, 359);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 7;
             // 
@@ -253,7 +254,7 @@ namespace BKI_HRM {
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(850, 449);
+            this.ClientSize = new System.Drawing.Size(954, 477);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.m_fg);
@@ -303,6 +304,11 @@ namespace BKI_HRM {
 
         #region Private Methods
 
+        private void wrap_text_header(){
+            m_fg.Rows[0].Height = 2 * m_fg.Rows.DefaultSize;
+            m_fg.Styles["Fixed"].WordWrap = true;
+        }
+
         private void format_controls() {
             CControlFormat.setFormStyle(this, new CAppContext_201());
             CControlFormat.setC1FlexFormat(m_fg);
@@ -310,6 +316,7 @@ namespace BKI_HRM {
             CGridUtils.AddSearch_Handlers(m_fg);
             set_define_events();
             this.KeyPreview = true;
+            wrap_text_header();
         }
 
         private void set_initial_form_load() {
