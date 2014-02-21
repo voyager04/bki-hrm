@@ -48,7 +48,7 @@ namespace BKI_HRM
         private TabPage m_tpg_thong_tin_ca_nhan;
         private TextBox m_txt_nam_tot_nghiep;
         private TextBox m_txt_chuyen_nganh;
-        private TextBox textBox1;
+        private TextBox m_txt_noi_dao_tao;
         private TextBox m_txt_trinh_do;
         private TextBox m_txt_ten;
         private TextBox m_txt_ho_dem;
@@ -80,7 +80,7 @@ namespace BKI_HRM
         private Label m_lbl_cmnd;
         private DateTimePicker m_dat_ngay_cap;
         private TabControl m_tct_chi_tiet_nhan_vien;
-        private TextBox m_txt_dtdd_lien_he;
+        private TextBox m_txt_sdt_lien_he;
         private TextBox m_txt_quan_he;
         private TextBox m_txt_nguoi_lien_he;
         private Label m_lbl_dtdd_lien_he;
@@ -105,6 +105,7 @@ namespace BKI_HRM
         private Label m_lbl;
         private Label m_lbl_ho_ten;
         private Label m_lbl_ma_nhan_vien;
+        private Label m_lbl2;
 		private System.ComponentModel.IContainer components;
 
 		
@@ -149,7 +150,7 @@ namespace BKI_HRM
             this.m_grv_qua_trinh_lam_viec = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_tpg_thong_tin_ca_nhan = new System.Windows.Forms.TabPage();
             this.m_cmd_browse = new SIS.Controls.Button.SiSButton();
-            this.m_txt_dtdd_lien_he = new System.Windows.Forms.TextBox();
+            this.m_txt_sdt_lien_he = new System.Windows.Forms.TextBox();
             this.m_txt_quan_he = new System.Windows.Forms.TextBox();
             this.m_txt_nguoi_lien_he = new System.Windows.Forms.TextBox();
             this.m_lbl_dtdd_lien_he = new System.Windows.Forms.Label();
@@ -171,7 +172,7 @@ namespace BKI_HRM
             this.m_lbl_email_co_quan = new System.Windows.Forms.Label();
             this.m_txt_nam_tot_nghiep = new System.Windows.Forms.TextBox();
             this.m_txt_chuyen_nganh = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.m_txt_noi_dao_tao = new System.Windows.Forms.TextBox();
             this.m_txt_trinh_do = new System.Windows.Forms.TextBox();
             this.m_txt_ten = new System.Windows.Forms.TextBox();
             this.m_txt_ho_dem = new System.Windows.Forms.TextBox();
@@ -206,6 +207,7 @@ namespace BKI_HRM
             this.m_lbl = new System.Windows.Forms.Label();
             this.m_lbl_ho_ten = new System.Windows.Forms.Label();
             this.m_lbl_ma_nhan_vien = new System.Windows.Forms.Label();
+            this.m_lbl2 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).BeginInit();
             this.panel1.SuspendLayout();
@@ -344,6 +346,7 @@ namespace BKI_HRM
             this.m_grv_nhan_su.Size = new System.Drawing.Size(1008, 277);
             this.m_grv_nhan_su.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_nhan_su.Styles"));
             this.m_grv_nhan_su.TabIndex = 3;
+            this.m_grv_nhan_su.Click += new System.EventHandler(this.m_grv_nhan_su_Click);
             // 
             // m_lbl_tim_kiem
             // 
@@ -421,7 +424,7 @@ namespace BKI_HRM
             // m_tpg_thong_tin_ca_nhan
             // 
             this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.m_cmd_browse);
-            this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.m_txt_dtdd_lien_he);
+            this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.m_txt_sdt_lien_he);
             this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.m_txt_quan_he);
             this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.m_txt_nguoi_lien_he);
             this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.m_lbl_dtdd_lien_he);
@@ -443,7 +446,7 @@ namespace BKI_HRM
             this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.m_lbl_email_co_quan);
             this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.m_txt_nam_tot_nghiep);
             this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.m_txt_chuyen_nganh);
-            this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.textBox1);
+            this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.m_txt_noi_dao_tao);
             this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.m_txt_trinh_do);
             this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.m_txt_ten);
             this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.m_txt_ho_dem);
@@ -496,12 +499,12 @@ namespace BKI_HRM
             this.m_cmd_browse.TabIndex = 82;
             this.m_cmd_browse.Text = "Sửa ảnh";
             // 
-            // m_txt_dtdd_lien_he
+            // m_txt_sdt_lien_he
             // 
-            this.m_txt_dtdd_lien_he.Location = new System.Drawing.Point(557, 269);
-            this.m_txt_dtdd_lien_he.Name = "m_txt_dtdd_lien_he";
-            this.m_txt_dtdd_lien_he.Size = new System.Drawing.Size(175, 20);
-            this.m_txt_dtdd_lien_he.TabIndex = 27;
+            this.m_txt_sdt_lien_he.Location = new System.Drawing.Point(557, 269);
+            this.m_txt_sdt_lien_he.Name = "m_txt_sdt_lien_he";
+            this.m_txt_sdt_lien_he.Size = new System.Drawing.Size(175, 20);
+            this.m_txt_sdt_lien_he.TabIndex = 27;
             // 
             // m_txt_quan_he
             // 
@@ -670,12 +673,12 @@ namespace BKI_HRM
             this.m_txt_chuyen_nganh.Size = new System.Drawing.Size(337, 20);
             this.m_txt_chuyen_nganh.TabIndex = 17;
             // 
-            // textBox1
+            // m_txt_noi_dao_tao
             // 
-            this.textBox1.Location = new System.Drawing.Point(678, 114);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(292, 20);
-            this.textBox1.TabIndex = 16;
+            this.m_txt_noi_dao_tao.Location = new System.Drawing.Point(678, 114);
+            this.m_txt_noi_dao_tao.Name = "m_txt_noi_dao_tao";
+            this.m_txt_noi_dao_tao.Size = new System.Drawing.Size(292, 20);
+            this.m_txt_noi_dao_tao.TabIndex = 16;
             // 
             // m_txt_trinh_do
             // 
@@ -966,11 +969,20 @@ namespace BKI_HRM
             // m_lbl_ma_nhan_vien
             // 
             this.m_lbl_ma_nhan_vien.AutoSize = true;
-            this.m_lbl_ma_nhan_vien.Location = new System.Drawing.Point(281, 348);
+            this.m_lbl_ma_nhan_vien.Location = new System.Drawing.Point(600, 348);
             this.m_lbl_ma_nhan_vien.Name = "m_lbl_ma_nhan_vien";
             this.m_lbl_ma_nhan_vien.Size = new System.Drawing.Size(35, 13);
             this.m_lbl_ma_nhan_vien.TabIndex = 27;
             this.m_lbl_ma_nhan_vien.Text = "label4";
+            // 
+            // m_lbl2
+            // 
+            this.m_lbl2.AutoSize = true;
+            this.m_lbl2.Location = new System.Drawing.Point(514, 348);
+            this.m_lbl2.Name = "m_lbl2";
+            this.m_lbl2.Size = new System.Drawing.Size(75, 13);
+            this.m_lbl2.TabIndex = 28;
+            this.m_lbl2.Text = "Mã nhân viên:";
             // 
             // f201_dm_nhan_su
             // 
@@ -978,6 +990,7 @@ namespace BKI_HRM
             this.AutoSize = true;
             this.CancelButton = this.m_cmd_exit;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.m_lbl2);
             this.Controls.Add(this.m_lbl_ma_nhan_vien);
             this.Controls.Add(this.m_lbl_ho_ten);
             this.Controls.Add(this.m_lbl);
@@ -1093,7 +1106,7 @@ namespace BKI_HRM
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_grv_nhan_su);
 			load_data_2_grid();
-            load_data_2_grv_qua_trinh_lam_viec();
+            load_chi_tiet_nhan_vien();
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -1166,12 +1179,57 @@ namespace BKI_HRM
             m_grv_qua_trinh_lam_viec.Redraw = true;
         }
 
+        private void load_chi_tiet_nhan_vien()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_nhan_su)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;
+            grid2us_object(m_us, m_grv_nhan_su.Row);
+            us_object_to_form();
+            load_data_2_grv_qua_trinh_lam_viec();
+        }
+
         private void load_data_2_grid_search(){
             m_ds = new DS_DM_NHAN_SU();
             m_us.FillDataset_search(m_ds, m_txt_tim_kiem.Text);
             m_grv_nhan_su.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_grv_nhan_su, m_obj_trans);
             m_grv_nhan_su.Redraw = true;
+        }
+        private void us_object_to_form()
+        {
+            m_lbl_ho_ten.Text = m_us.strHO_DEM + " " + m_us.strTEN;
+            m_lbl_ma_nhan_vien.Text = m_us.strMA_NV;
+            m_txt_ho_dem.Text = m_us.strHO_DEM;
+            m_txt_ten.Text = m_us.strTEN;
+            m_cbo_gioi_tinh.SelectedIndex = (m_us.strGIOI_TINH.Equals("Nam") == true) ? 1 : 2;
+            if (m_us.datNGAY_SINH.Year > 1900)
+                m_dat_ngay_sinh.Value = m_us.datNGAY_SINH;
+            else
+                m_dat_ngay_sinh.Checked = false;
+            m_txt_noi_sinh.Text = m_us.strNOI_SINH;
+            m_txt_nguyen_quan.Text = m_us.strNGUYEN_QUAN;
+            m_txt_cmnd.Text = m_us.strCMND;
+            if (m_us.datNGAY_CAP_CMND.Year > 1900)
+                m_dat_ngay_cap.Value = m_us.datNGAY_CAP_CMND;
+            else
+                m_dat_ngay_cap.Checked = false;
+            m_txt_noi_cap.Text = m_us.strNOI_CAP_CMND;
+            m_txt_ton_giao.Text = m_us.strTON_GIAO;
+            m_txt_dan_toc.Text = m_us.strDAN_TOC;
+            m_chk_trang_thai.Checked = (m_us.strTRANG_THAI.Equals("Y") == true) ? true : false;
+            m_txt_trinh_do.Text = m_us.strTRINH_DO;
+            m_txt_noi_dao_tao.Text = m_us.strNOI_DAO_TAO;
+            m_txt_chuyen_nganh.Text = m_us.strCHUYEN_NGANH;
+            m_txt_nam_tot_nghiep.Text = (m_us.dcNAM_TOT_NGHIEP > 0) ? CIPConvert.ToStr(m_us.dcNAM_TOT_NGHIEP) : "";
+            m_txt_email_co_quan.Text = m_us.strEMAIL_CQ;
+            m_txt_email_ca_nhan.Text = m_us.strEMAIL_CA_NHAN;
+            m_txt_sdt_nha_rieng.Text = m_us.strDT_NHA;
+            m_txt_ma_so_thue.Text = m_us.strMA_SO_THUE;
+            m_txt_dia_chi.Text = m_us.strCHO_O;
+            m_txt_ho_khau.Text = m_us.strHO_KHAU;
+            m_txt_nguoi_lien_he.Text = m_us.strNGUOI_LIEN_HE;
+            m_txt_sdt_lien_he.Text = m_us.strDI_DONG_LIEN_HE;
+            m_txt_quan_he.Text = m_us.strQUAN_HE;
         }
 		private void grid2us_object(US_DM_NHAN_SU i_us
 			, int i_grid_row) {
@@ -1327,6 +1385,20 @@ namespace BKI_HRM
         }
         #endregion
 
+        private void m_grv_nhan_su_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_chi_tiet_nhan_vien();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+               
+        }
+
+       
         
 
     }
