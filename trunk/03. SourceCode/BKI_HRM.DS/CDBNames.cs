@@ -331,4 +331,18 @@ namespace BKI_HRM.DS.CDBNames
        public const string NGAY_KET_THUC = "NGAY_KET_THUC";
        public const string TRANG_THAI_SU_DUNG = "TRANG_THAI_SU_DUNG";
    }
+
+   public class V_DM_DU_AN_QUYET_DINH_TU_DIEN
+   {
+       public const string ID = "ID";
+       public const string MA_DU_AN = "MA_DU_AN";
+       public const string TEN_DU_AN = "TEN_DU_AN";
+       public const string TRANG_THAI = "TRANG_THAI";
+       public const string LOAI_DU_AN = "LOAI_DU_AN";
+       public const string NGAY_BAT_DAU = "NGAY_BAT_DAU";
+       public const string NGAY_KET_THUC = "NGAY_KET_THUC";
+       public const string NOI_DUNG = "NOI_DUNG";
+       public const string CO_CHE = "CO_CHE";
+       public const string MA_QUYET_DINH = "MA_QUYET_DINH";
+   }
 }
