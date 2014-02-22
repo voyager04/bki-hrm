@@ -330,6 +330,7 @@
             this.m_meuitem_ttduan.Name = "m_meuitem_ttduan";
             this.m_meuitem_ttduan.Size = new System.Drawing.Size(159, 22);
             this.m_meuitem_ttduan.Text = "Thông tin dự án";
+            this.m_meuitem_ttduan.Click += new System.EventHandler(this.m_meuitem_ttduan_Click);
             // 
             // m_meuitem_nhansuduan
             // 
