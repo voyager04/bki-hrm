@@ -285,8 +285,8 @@ namespace BKI_HRM
 
 
 		private void insert_v_dm_chuc_vu(){			
-		//	f401_V_DM_CHUC_VU_DE v_fDE = new  f401_V_DM_CHUC_VU_DE();								
-		//	v_fDE.display();
+			f401_V_DM_CHUC_VU_DE v_fDE = new  f401_V_DM_CHUC_VU_DE();								
+			v_fDE.display_for_insert();
 			load_data_2_grid();
 		}
 
@@ -294,8 +294,8 @@ namespace BKI_HRM
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
 			grid2us_object(m_us, m_fg.Row);
-		//	f401_V_DM_CHUC_VU_DE v_fDE = new f401_V_DM_CHUC_VU_DE();
-		//	v_fDE.display(m_us);
+			f401_V_DM_CHUC_VU_DE v_fDE = new f401_V_DM_CHUC_VU_DE();
+			v_fDE.display_for_update(m_us);
 			load_data_2_grid();
 		}
 				

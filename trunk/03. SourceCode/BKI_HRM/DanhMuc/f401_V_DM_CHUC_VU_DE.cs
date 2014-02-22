@@ -16,10 +16,10 @@ using Encoder = System.Drawing.Imaging.Encoder;
 
 namespace BKI_HRM
 {
-    public partial class f401_DM_CHUC_VU_DE : Form
+    public partial class f401_V_DM_CHUC_VU_DE : Form
     {
         #region Public Interfaces
-        public f401_DM_CHUC_VU_DE() {
+        public f401_V_DM_CHUC_VU_DE() {
             InitializeComponent();
             fomat_control();
         }
@@ -27,9 +27,9 @@ namespace BKI_HRM
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             this.ShowDialog();
         }
-        public void display_for_update(US_DM_CHUC_VU ip_m_us_dm_chuc_vu) {
+        public void display_for_update(US_V_DM_CHUC_VU ip_m_us_v_dm_chuc_vu) {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
-            us_object_2_form(ip_m_us_dm_chuc_vu);
+            us_object_2_form(ip_m_us_v_dm_chuc_vu);
             this.ShowDialog();
         }
         #endregion
@@ -39,6 +39,8 @@ namespace BKI_HRM
 
         #region Members
         private DataEntryFormMode m_e_form_mode;
+        private US_V_DM_CHUC_VU m_v_us = new US_V_DM_CHUC_VU();
+        private DS_V_DM_CHUC_VU m_v_ds = new DS_V_DM_CHUC_VU();
         private US_DM_CHUC_VU m_us = new US_DM_CHUC_VU();
         private DS_DM_CHUC_VU m_ds = new DS_DM_CHUC_VU();
         #endregion
@@ -57,9 +59,6 @@ namespace BKI_HRM
             if (!CValidateTextBox.IsValid(m_txt_tencv, DataType.StringType, allowNull.NO, true)) {
                 return false;
             }
-            if (!CValidateTextBox.IsValid(m_txt_tenta, DataType.StringType, allowNull.NO, true)) {
-                return false;
-            }
             return true;
         }
 
@@ -69,6 +68,10 @@ namespace BKI_HRM
             m_us.strTEN_CV_TA = m_txt_tenta.Text.Trim();
             m_us.datNGAY_AP_DUNG = m_dat_ngayapdung.Value.Date;
             m_us.datNGAY_KET_THUC = m_dat_ngayketthuc.Value.Date;
+            if (m_rdb_khongsudung.Checked == true)
+                m_us.strTRANG_THAI = "n";
+            else
+                m_us.strTRANG_THAI = "y";
         }
 
         private void save_data() {
@@ -88,15 +91,17 @@ namespace BKI_HRM
             this.Close();
         }
 
-        private void us_object_2_form(US_DM_CHUC_VU ip_us_dm_chuc_vu){
-            m_us.dcID = ip_us_dm_chuc_vu.dcID;
-            m_txt_macv.Text = ip_us_dm_chuc_vu.strMA_CV;
-            m_txt_tencv.Text = ip_us_dm_chuc_vu.strTEN_CV;
-            m_txt_tenta.Text = ip_us_dm_chuc_vu.strTEN_CV_TA;
-            m_dat_ngayapdung.Value = ip_us_dm_chuc_vu.datNGAY_AP_DUNG;
-            m_dat_ngayketthuc.Value = ip_us_dm_chuc_vu.datNGAY_KET_THUC;
-            if (ip_us_dm_chuc_vu.strTRANG_THAI == "y")
+        private void us_object_2_form(US_V_DM_CHUC_VU ip_us_v_dm_chuc_vu){
+            m_us.dcID = ip_us_v_dm_chuc_vu.dcID;
+            m_txt_macv.Text = ip_us_v_dm_chuc_vu.strMA_CV;
+            m_txt_tencv.Text = ip_us_v_dm_chuc_vu.strTEN_CV;
+            m_txt_tenta.Text = ip_us_v_dm_chuc_vu.strTEN_CV_TA;
+            m_dat_ngayapdung.Value = ip_us_v_dm_chuc_vu.datNGAY_AP_DUNG;
+            m_dat_ngayketthuc.Value = ip_us_v_dm_chuc_vu.datNGAY_KET_THUC;
+            if (ip_us_v_dm_chuc_vu.strTRANG_THAI == "y")
                 m_rdb_sudung.Checked = true;
+            else
+                m_rdb_khongsudung.Checked = true;
         }
 
         #endregion
