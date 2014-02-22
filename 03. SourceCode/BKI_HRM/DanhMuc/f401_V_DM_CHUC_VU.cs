@@ -347,7 +347,6 @@ namespace BKI_HRM
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
-		
 		}
 
 		private void m_cmd_exit_Click(object sender, EventArgs e) {
