@@ -636,5 +636,15 @@ public class US_V_BAO_CAO_NHAN_SU : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
+
+    #region "Addtional"
+
+    public void FillDatasetByKeyWord(string ip_str_key_word, DS_V_BAO_CAO_NHAN_SU op_ds_v_bao_cao_nhan_su) {
+        CStoredProc v_stored_proc = new CStoredProc("pr_V_BAO_CAO_NHAN_SU_search");
+        v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_str_key_word);
+        v_stored_proc.fillDataSetByCommand(this, op_ds_v_bao_cao_nhan_su);
+    }
+
+    #endregion
 	}
 }
