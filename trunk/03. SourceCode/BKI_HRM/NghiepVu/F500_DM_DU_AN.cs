@@ -187,6 +187,7 @@ namespace BKI_HRM
             this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_view.TabIndex = 21;
             this.m_cmd_view.Text = "Xem";
+            this.m_cmd_view.Click += new System.EventHandler(this.m_cmd_view_Click);
             // 
             // m_cmd_delete
             // 
@@ -248,6 +249,7 @@ namespace BKI_HRM
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 23;
             this.m_cmd_search.Text = "Tìm kiếm";
+            this.m_cmd_search.Click += new System.EventHandler(this.m_cmd_search_Click);
             // 
             // m_lbl_tim_kiem
             // 
@@ -453,6 +455,7 @@ namespace BKI_HRM
 		private void F500_V_DM_DU_AN_Load(object sender, System.EventArgs e) {
 			try{
 				set_initial_form_load();
+                load_data_2_grid_dm_nhan_su(1);
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
@@ -509,8 +512,8 @@ namespace BKI_HRM
         {
             try
             {
-                
-                load_data_2_grid_dm_nhan_su();
+                int rows_index = m_grv_du_an.Row;
+                load_data_2_grid_dm_nhan_su(rows_index);
             }
             catch (Exception v_e)
             {
@@ -518,12 +521,12 @@ namespace BKI_HRM
             }
         }
 
-        private void load_data_2_grid_dm_nhan_su()
+        private void load_data_2_grid_dm_nhan_su(int i_dc_row_index)
         {
             DS_V_DM_NHAN_SU_DU_AN v_ds_nhan_su = new DS_V_DM_NHAN_SU_DU_AN();
             US_V_DM_NHAN_SU_DU_AN v_us_nhan_su = new US_V_DM_NHAN_SU_DU_AN();
 
-            grid2us_object(m_us, m_grv_nhan_su.Row);
+            grid2us_object(m_us, i_dc_row_index);
             v_us_nhan_su.FillDatasetByIdDuAn(v_ds_nhan_su, m_us.dcID);
             m_grv_nhan_su.Redraw = false;
             
@@ -561,8 +564,12 @@ namespace BKI_HRM
             THOI_DIEM_KT = 10,
             THOI_GIAN_TG = 11,
             DANH_HIEU = 12
-        }		
+        }
 
+        private void m_cmd_search_Click(object sender, EventArgs e)
+        {
+
+        }
 	}
 }
 
