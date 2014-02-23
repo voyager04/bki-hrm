@@ -345,4 +345,20 @@ namespace BKI_HRM.DS.CDBNames
        public const string CO_CHE = "CO_CHE";
        public const string MA_QUYET_DINH = "MA_QUYET_DINH";
    }
+
+   public class V_DM_NHAN_SU_DU_AN
+   {
+       public const string ID_DU_AN = "ID_DU_AN";
+       public const string ID_NHAN_SU = "ID_NHAN_SU";
+       public const string MA_NV = "MA_NV";
+       public const string HO_DEM = "HO_DEM";
+       public const string TEN = "TEN";
+       public const string MA_CV = "MA_CV";
+       public const string MA_DON_VI = "MA_DON_VI";
+       public const string VI_TRI = "VI_TRI";
+       public const string THOI_DIEM_TG = "THOI_DIEM_TG";
+       public const string THOI_DIEM_KT = "THOI_DIEM_KT";
+       public const string THOI_GIAN_TG = "THOI_GIAN_TG";
+       public const string DANH_HIEU = "DANH_HIEU";
+   }
 }
