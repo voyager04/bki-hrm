@@ -77,6 +77,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_HT_PHAN_QUYEN_HE_THONG.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_BAO_CAO_NHAN_SU.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_BAO_CAO_NHAN_SU.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_DM_CHUC_VU.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -200,6 +205,17 @@
     </None>
     <None Include="DS_HT_PHAN_QUYEN_HE_THONG.xss">
       <DependentUpon>DS_HT_PHAN_QUYEN_HE_THONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_BAO_CAO_NHAN_SU.xsc">
+      <DependentUpon>DS_V_BAO_CAO_NHAN_SU.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_BAO_CAO_NHAN_SU.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_BAO_CAO_NHAN_SU.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_BAO_CAO_NHAN_SU.xss">
+      <DependentUpon>DS_V_BAO_CAO_NHAN_SU.xsd</DependentUpon>
     </None>
     <None Include="DS_V_DM_CHUC_VU.xsc">
       <DependentUpon>DS_V_DM_CHUC_VU.xsd</DependentUpon>
