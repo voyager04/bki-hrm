@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 
 using IP.Core.IPCommon;
+using IP.Core.IPCommon.My;
+using IP.Core.IPExcelReport.My;
 using IP.Core.IPSystemAdmin;
 
 
@@ -48,6 +50,7 @@ namespace BKI_HRM {
             this.m_menuitem_thoat.Click += new EventHandler(m_menuitem_thoat_Click);
             this.m_menuitem_qldonvi.Click += new EventHandler(m_menuitem_qldonvi_Click);
             this.m_menu_dsnhansu.Click += new EventHandler(m_menu_dsnhansu_Click);
+            this.m_menuitem_bcnhansu.Click += new EventHandler(m_menuitem_bcnhansu_Click);
         }
 
         private void m_menu_dsnhansu_Click(object sender, EventArgs e)
@@ -128,6 +131,15 @@ namespace BKI_HRM {
             }
             catch (Exception v_e)
             {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_menuitem_bcnhansu_Click(object sender, EventArgs e) {
+            try {
+                f103_v_bao_cao_nhan_su frm = new f103_v_bao_cao_nhan_su();
+                frm.Show();
+            } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }

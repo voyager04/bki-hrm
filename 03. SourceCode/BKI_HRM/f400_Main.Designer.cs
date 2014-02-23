@@ -76,6 +76,7 @@
             this.m_menuitem_bccoche = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_bcduan = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_bctuyendung = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_menuitem_bcnhansu = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -356,7 +357,8 @@
             this.m_menuitem_bcbaohiem,
             this.m_menuitem_bccoche,
             this.m_menuitem_bcduan,
-            this.m_menuitem_bctuyendung});
+            this.m_menuitem_bctuyendung,
+            this.m_menuitem_bcnhansu});
             this.m_menuitem_baocao.Name = "m_menuitem_baocao";
             this.m_menuitem_baocao.Size = new System.Drawing.Size(61, 20);
             this.m_menuitem_baocao.Text = "Báo cáo";
@@ -421,11 +423,17 @@
             this.m_menuitem_bctuyendung.Size = new System.Drawing.Size(234, 22);
             this.m_menuitem_bctuyendung.Text = "Báo cáo tuyển dụng";
             // 
+            // m_menuitem_bcnhansu
+            // 
+            this.m_menuitem_bcnhansu.Name = "m_menuitem_bcnhansu";
+            this.m_menuitem_bcnhansu.Size = new System.Drawing.Size(234, 22);
+            this.m_menuitem_bcnhansu.Text = "Báo cáo nhân sự";
+            // 
             // f400_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 413);
+            this.ClientSize = new System.Drawing.Size(835, 445);
             this.Controls.Add(this.m_mst_menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.m_mst_menu;
@@ -489,5 +497,6 @@
         private System.Windows.Forms.ToolStripMenuItem m_menuitem_bccoche;
         private System.Windows.Forms.ToolStripMenuItem m_menuitem_bcduan;
         private System.Windows.Forms.ToolStripMenuItem m_menuitem_bctuyendung;
+        private System.Windows.Forms.ToolStripMenuItem m_menuitem_bcnhansu;
     }
 }
