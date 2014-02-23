@@ -54,6 +54,7 @@
     <Compile Include="US_V_DM_CHUC_VU.cs" />
     <Compile Include="US_V_DM_DON_VI.cs" />
     <Compile Include="US_V_DM_DU_AN_QUYET_DINH_TU_DIEN.cs" />
+    <Compile Include="US_V_DM_NHAN_SU_DU_AN.cs" />
     <Compile Include="US_V_GD_HOP_DONG_LAO_DONG.cs" />
     <Compile Include="US_V_GD_QUA_TRINH_LAM_VIEC.cs" />
     <Compile Include="US_V_GD_TRANG_THAI_LAO_DONG.cs" />
