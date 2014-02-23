@@ -24,13 +24,11 @@ using BKI_HRM.DS.CDBNames;
 
 using C1.Win.C1FlexGrid;
 
-namespace BKI_HRM
-{
+namespace BKI_HRM {
 
 
 
-	public class f103_v_bao_cao_nhan_su : System.Windows.Forms.Form
-	{
+    public class f103_v_bao_cao_nhan_su : System.Windows.Forms.Form {
         internal System.Windows.Forms.ImageList ImageList;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
         private Panel panel2;
@@ -103,43 +101,38 @@ namespace BKI_HRM
         internal Panel m_pnl_out_place_dm;
         internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
-		private System.ComponentModel.IContainer components;
+        private System.ComponentModel.IContainer components;
 
-		public f103_v_bao_cao_nhan_su()
-		{
-			//
-			// Required for Windows Form Designer support
-			//
-			InitializeComponent();
+        public f103_v_bao_cao_nhan_su() {
+            //
+            // Required for Windows Form Designer support
+            //
+            InitializeComponent();
 
-			//
-			// TODO: Add any constructor code after InitializeComponent call
-			//
-			format_controls();
-		}
+            //
+            // TODO: Add any constructor code after InitializeComponent call
+            //
+            format_controls();
+        }
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		protected override void Dispose( bool disposing )
-		{
-			if( disposing )
-			{
-				if(components != null)
-				{
-					components.Dispose();
-				}
-			}
-			base.Dispose( disposing );
-		}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        protected override void Dispose(bool disposing) {
+            if (disposing) {
+                if (components != null) {
+                    components.Dispose();
+                }
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
+        #region Windows Form Designer generated code
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f103_v_bao_cao_nhan_su));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
@@ -257,7 +250,7 @@ namespace BKI_HRM
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Location = new System.Drawing.Point(0, 57);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1207, 148);
+            this.m_fg.Size = new System.Drawing.Size(1207, 171);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -309,7 +302,7 @@ namespace BKI_HRM
             this.panel1.Controls.Add(this.m_lbl_ho_ten);
             this.panel1.Controls.Add(this.m_lbl);
             this.panel1.Controls.Add(this.m_tct_chi_tiet_nhan_vien);
-            this.panel1.Location = new System.Drawing.Point(0, 211);
+            this.panel1.Location = new System.Drawing.Point(0, 234);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1207, 364);
             this.panel1.TabIndex = 24;
@@ -357,7 +350,7 @@ namespace BKI_HRM
             this.m_tct_chi_tiet_nhan_vien.Location = new System.Drawing.Point(0, 42);
             this.m_tct_chi_tiet_nhan_vien.Name = "m_tct_chi_tiet_nhan_vien";
             this.m_tct_chi_tiet_nhan_vien.SelectedIndex = 0;
-            this.m_tct_chi_tiet_nhan_vien.Size = new System.Drawing.Size(1008, 320);
+            this.m_tct_chi_tiet_nhan_vien.Size = new System.Drawing.Size(1207, 320);
             this.m_tct_chi_tiet_nhan_vien.TabIndex = 29;
             // 
             // m_tpg_thong_tin_ca_nhan
@@ -419,7 +412,7 @@ namespace BKI_HRM
             this.m_tpg_thong_tin_ca_nhan.Location = new System.Drawing.Point(4, 23);
             this.m_tpg_thong_tin_ca_nhan.Name = "m_tpg_thong_tin_ca_nhan";
             this.m_tpg_thong_tin_ca_nhan.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tpg_thong_tin_ca_nhan.Size = new System.Drawing.Size(1000, 293);
+            this.m_tpg_thong_tin_ca_nhan.Size = new System.Drawing.Size(1199, 293);
             this.m_tpg_thong_tin_ca_nhan.TabIndex = 0;
             this.m_tpg_thong_tin_ca_nhan.Text = "Thông tin cá nhân";
             this.m_tpg_thong_tin_ca_nhan.UseVisualStyleBackColor = true;
@@ -903,7 +896,7 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 575);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 604);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1207, 36);
@@ -947,7 +940,7 @@ namespace BKI_HRM
             // f103_v_bao_cao_nhan_su
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(1207, 611);
+            this.ClientSize = new System.Drawing.Size(1207, 640);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -970,182 +963,202 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
 
-		}
-		#endregion
+        }
+        #endregion
 
-		#region Public Interface
-		public void display(){			
-			this.ShowDialog();
-		}
-		#endregion
+        #region Public Interface
 
-		#region Data Structure
-		private enum e_col_Number{
-			CMND = 8,MA_NV = 1,TON_GIAO = 24,DI_DONG_LIEN_HE = 22,NOI_CAP_CMND = 10,TRANG_THAI = 27,EMAIL_CA_NHAN = 16,TEN = 3,HO_KHAU = 20,NOI_SINH = 6,DT_NHA = 17,NGAY_CAP_CMND = 9,CHUYEN_NGANH = 13,GIOI_TINH = 4,NGUYEN_QUAN = 7,DI_DONG = 18,QUAN_HE = 23,EMAIL_CQ = 15,CHO_O = 19,DAN_TOC = 25,NGAY_SINH = 5,TRINH_DO = 11,MA_SO_THUE = 26,NOI_DAO_TAO = 12,NGUOI_LIEN_HE = 21,NAM_TOT_NGHIEP = 14,HO_DEM = 2
-		}			
-		#endregion
+        public void display() {
+            this.ShowDialog();
+        }
 
-		#region Members
-		ITransferDataRow m_obj_trans;		
-		DS_V_BAO_CAO_NHAN_SU m_ds = new DS_V_BAO_CAO_NHAN_SU();
-		US_V_BAO_CAO_NHAN_SU m_us = new US_V_BAO_CAO_NHAN_SU();
-		#endregion
+        #endregion
 
-		#region Private Methods
-		private void format_controls(){
-			CControlFormat.setFormStyle(this, new CAppContext_201());
-			CControlFormat.setC1FlexFormat(m_fg);
-			CGridUtils.AddSave_Excel_Handlers(m_fg);
-            			CGridUtils.AddSearch_Handlers(m_fg);
-			set_define_events();
-			this.KeyPreview = true;		
-		}
-		private void set_initial_form_load(){						
-			m_obj_trans = get_trans_object(m_fg);
-			load_data_2_grid();		
-		}	
-		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
-			Hashtable v_htb = new Hashtable();
-			v_htb.Add(V_BAO_CAO_NHAN_SU.CMND, e_col_Number.CMND);			v_htb.Add(V_BAO_CAO_NHAN_SU.MA_NV, e_col_Number.MA_NV);			v_htb.Add(V_BAO_CAO_NHAN_SU.TON_GIAO, e_col_Number.TON_GIAO);			v_htb.Add(V_BAO_CAO_NHAN_SU.DI_DONG_LIEN_HE, e_col_Number.DI_DONG_LIEN_HE);			v_htb.Add(V_BAO_CAO_NHAN_SU.NOI_CAP_CMND, e_col_Number.NOI_CAP_CMND);			v_htb.Add(V_BAO_CAO_NHAN_SU.TRANG_THAI, e_col_Number.TRANG_THAI);			v_htb.Add(V_BAO_CAO_NHAN_SU.EMAIL_CA_NHAN, e_col_Number.EMAIL_CA_NHAN);			v_htb.Add(V_BAO_CAO_NHAN_SU.TEN, e_col_Number.TEN);			v_htb.Add(V_BAO_CAO_NHAN_SU.HO_KHAU, e_col_Number.HO_KHAU);			v_htb.Add(V_BAO_CAO_NHAN_SU.NOI_SINH, e_col_Number.NOI_SINH);			v_htb.Add(V_BAO_CAO_NHAN_SU.DT_NHA, e_col_Number.DT_NHA);			v_htb.Add(V_BAO_CAO_NHAN_SU.NGAY_CAP_CMND, e_col_Number.NGAY_CAP_CMND);			v_htb.Add(V_BAO_CAO_NHAN_SU.CHUYEN_NGANH, e_col_Number.CHUYEN_NGANH);			v_htb.Add(V_BAO_CAO_NHAN_SU.GIOI_TINH, e_col_Number.GIOI_TINH);			v_htb.Add(V_BAO_CAO_NHAN_SU.NGUYEN_QUAN, e_col_Number.NGUYEN_QUAN);			v_htb.Add(V_BAO_CAO_NHAN_SU.DI_DONG, e_col_Number.DI_DONG);			v_htb.Add(V_BAO_CAO_NHAN_SU.QUAN_HE, e_col_Number.QUAN_HE);			v_htb.Add(V_BAO_CAO_NHAN_SU.EMAIL_CQ, e_col_Number.EMAIL_CQ);			v_htb.Add(V_BAO_CAO_NHAN_SU.CHO_O, e_col_Number.CHO_O);			v_htb.Add(V_BAO_CAO_NHAN_SU.DAN_TOC, e_col_Number.DAN_TOC);			v_htb.Add(V_BAO_CAO_NHAN_SU.NGAY_SINH, e_col_Number.NGAY_SINH);			v_htb.Add(V_BAO_CAO_NHAN_SU.TRINH_DO, e_col_Number.TRINH_DO);			v_htb.Add(V_BAO_CAO_NHAN_SU.MA_SO_THUE, e_col_Number.MA_SO_THUE);			v_htb.Add(V_BAO_CAO_NHAN_SU.NOI_DAO_TAO, e_col_Number.NOI_DAO_TAO);			v_htb.Add(V_BAO_CAO_NHAN_SU.NGUOI_LIEN_HE, e_col_Number.NGUOI_LIEN_HE);			v_htb.Add(V_BAO_CAO_NHAN_SU.NAM_TOT_NGHIEP, e_col_Number.NAM_TOT_NGHIEP);			v_htb.Add(V_BAO_CAO_NHAN_SU.HO_DEM, e_col_Number.HO_DEM);									
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_BAO_CAO_NHAN_SU.NewRow());
-			return v_obj_trans;			
-		}
-		private void load_data_2_grid(){						
-			m_ds = new DS_V_BAO_CAO_NHAN_SU();			
-			m_us.FillDataset(m_ds);
-			m_fg.Redraw = false;
-			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-			m_fg.Redraw = true;
-		}
-		private void grid2us_object(US_V_BAO_CAO_NHAN_SU i_us
-			, int i_grid_row) {
-			DataRow v_dr;
-			v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
-			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
-			i_us.DataRow2Me(v_dr);
-		}
+        #region Data Structure
 
-	
-		private void us_object2grid(US_V_BAO_CAO_NHAN_SU i_us
-			, int i_grid_row) {
-			DataRow v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
-			i_us.Me2DataRow(v_dr);
-			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
-		}
+        private enum e_col_Number {
+            CMND = 8
+                ,
+            MA_NV = 1
+                ,
+            TON_GIAO = 24
+                ,
+            DI_DONG_LIEN_HE = 22
+                ,
+            NOI_CAP_CMND = 10
+                ,
+            TRANG_THAI = 27
+                ,
+            EMAIL_CA_NHAN = 16
+                ,
+            TEN = 3
+                ,
+            HO_KHAU = 20
+                ,
+            NOI_SINH = 6
+                ,
+            DT_NHA = 17
+                ,
+            NGAY_CAP_CMND = 9
+                ,
+            CHUYEN_NGANH = 13
+                ,
+            GIOI_TINH = 4
+                ,
+            NGUYEN_QUAN = 7
+                ,
+            DI_DONG = 18
+                ,
+            QUAN_HE = 23
+                ,
+            EMAIL_CQ = 15
+                ,
+            CHO_O = 19
+                ,
+            DAN_TOC = 25
+                ,
+            NGAY_SINH = 5
+                ,
+            TRINH_DO = 11
+                ,
+            MA_SO_THUE = 26
+                ,
+            NOI_DAO_TAO = 12
+                ,
+            NGUOI_LIEN_HE = 21
+                ,
+            NAM_TOT_NGHIEP = 14
+                , HO_DEM = 2
 
+        }
 
-		private void insert_v_bao_cao_nhan_su(){			
-		//	f103_v_bao_cao_nhan_su_DE v_fDE = new  f103_v_bao_cao_nhan_su_DE();								
-		//	v_fDE.display();
-			load_data_2_grid();
-		}
+        #endregion
 
-		private void update_v_bao_cao_nhan_su(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
-			grid2us_object(m_us, m_fg.Row);
-		//	f103_v_bao_cao_nhan_su_DE v_fDE = new f103_v_bao_cao_nhan_su_DE();
-		//	v_fDE.display(m_us);
-			load_data_2_grid();
-		}
-				
-		private void delete_v_bao_cao_nhan_su(){
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			US_V_BAO_CAO_NHAN_SU v_us = new US_V_BAO_CAO_NHAN_SU();
-			grid2us_object(v_us, m_fg.Row);
-			try {			
-				v_us.BeginTransaction();    											
-				v_us.Delete();                      								
-				v_us.CommitTransaction();
-				m_fg.Rows.Remove(m_fg.Row);				
-			}
-			catch (Exception v_e) {
-				v_us.Rollback();
-				CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
-					new CDBClientDBExceptionInterpret());
-				v_objErrHandler.showErrorMessage();
-			}
-		}
+        #region Members
+        ITransferDataRow m_obj_trans;
+        DS_V_BAO_CAO_NHAN_SU m_ds = new DS_V_BAO_CAO_NHAN_SU();
+        US_V_BAO_CAO_NHAN_SU m_us = new US_V_BAO_CAO_NHAN_SU();
+        #endregion
 
-		private void view_v_bao_cao_nhan_su(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			grid2us_object(m_us, m_fg.Row);
-		//	f103_v_bao_cao_nhan_su_DE v_fDE = new f103_v_bao_cao_nhan_su_DE();			
-		//	v_fDE.display(m_us);
-		}
-		private void set_define_events(){
-			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-            //m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
-            //m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
-            //m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-            //m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
-		}
-		#endregion
+        #region Private Methods
 
-//
-		//
-		//		EVENT HANLDERS
-		//
-		//
-		private void f103_v_bao_cao_nhan_su_Load(object sender, System.EventArgs e) {
-			try{
-				set_initial_form_load();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		
-		}
+        private void format_controls() {
+            CControlFormat.setFormStyle(this, new CAppContext_201());
+            CControlFormat.setC1FlexFormat(m_fg);
+            CGridUtils.AddSave_Excel_Handlers(m_fg);
+            CGridUtils.AddSearch_Handlers(m_fg);
+            set_define_events();
+            this.KeyPreview = true;
+        }
+        private void set_initial_form_load() {
+            m_obj_trans = get_trans_object(m_fg);
+            load_data_2_grid();
+        }
+        private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg) {
+            Hashtable v_htb = new Hashtable();
+            v_htb.Add(V_BAO_CAO_NHAN_SU.CMND, e_col_Number.CMND);
+            v_htb.Add(V_BAO_CAO_NHAN_SU.MA_NV, e_col_Number.MA_NV);
+            v_htb.Add(V_BAO_CAO_NHAN_SU.TON_GIAO, e_col_Number.TON_GIAO);
+            v_htb.Add(V_BAO_CAO_NHAN_SU.DI_DONG_LIEN_HE, e_col_Number.DI_DONG_LIEN_HE);
+            v_htb.Add(V_BAO_CAO_NHAN_SU.NOI_CAP_CMND, e_col_Number.NOI_CAP_CMND);
+            v_htb.Add(V_BAO_CAO_NHAN_SU.TRANG_THAI, e_col_Number.TRANG_THAI);
+            v_htb.Add(V_BAO_CAO_NHAN_SU.EMAIL_CA_NHAN, e_col_Number.EMAIL_CA_NHAN);
+            v_htb.Add(V_BAO_CAO_NHAN_SU.TEN, e_col_Number.TEN);
+            v_htb.Add(V_BAO_CAO_NHAN_SU.HO_KHAU, e_col_Number.HO_KHAU);
+            v_htb.Add(V_BAO_CAO_NHAN_SU.NOI_SINH, e_col_Number.NOI_SINH);
+            v_htb.Add(V_BAO_CAO_NHAN_SU.DT_NHA, e_col_Number.DT_NHA);
+            v_htb.Add(V_BAO_CAO_NHAN_SU.NGAY_CAP_CMND, e_col_Number.NGAY_CAP_CMND);
+            v_htb.Add(V_BAO_CAO_NHAN_SU.CHUYEN_NGANH, e_col_Number.CHUYEN_NGANH);
+            v_htb.Add(V_BAO_CAO_NHAN_SU.GIOI_TINH, e_col_Number.GIOI_TINH);
+            v_htb.Add(V_BAO_CAO_NHAN_SU.NGUYEN_QUAN, e_col_Number.NGUYEN_QUAN);
+            v_htb.Add(V_BAO_CAO_NHAN_SU.DI_DONG, e_col_Number.DI_DONG);
+            v_htb.Add(V_BAO_CAO_NHAN_SU.QUAN_HE, e_col_Number.QUAN_HE);
+            v_htb.Add(V_BAO_CAO_NHAN_SU.EMAIL_CQ, e_col_Number.EMAIL_CQ);
+            v_htb.Add(V_BAO_CAO_NHAN_SU.CHO_O, e_col_Number.CHO_O);
+            v_htb.Add(V_BAO_CAO_NHAN_SU.DAN_TOC, e_col_Number.DAN_TOC);
+            v_htb.Add(V_BAO_CAO_NHAN_SU.NGAY_SINH, e_col_Number.NGAY_SINH);
+            v_htb.Add(V_BAO_CAO_NHAN_SU.TRINH_DO, e_col_Number.TRINH_DO);
+            v_htb.Add(V_BAO_CAO_NHAN_SU.MA_SO_THUE, e_col_Number.MA_SO_THUE);
+            v_htb.Add(V_BAO_CAO_NHAN_SU.NOI_DAO_TAO, e_col_Number.NOI_DAO_TAO);
+            v_htb.Add(V_BAO_CAO_NHAN_SU.NGUOI_LIEN_HE, e_col_Number.NGUOI_LIEN_HE);
+            v_htb.Add(V_BAO_CAO_NHAN_SU.NAM_TOT_NGHIEP, e_col_Number.NAM_TOT_NGHIEP);
+            v_htb.Add(V_BAO_CAO_NHAN_SU.HO_DEM, e_col_Number.HO_DEM);
 
-		private void m_cmd_exit_Click(object sender, EventArgs e) {
-			try{
-				this.Close();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_BAO_CAO_NHAN_SU.NewRow());
+            return v_obj_trans;
+        }
+        private void load_data_2_grid() {
+            m_ds = new DS_V_BAO_CAO_NHAN_SU();
+            m_us.FillDatasetByKeyWord(m_txt_tim_kiem.Text.Trim(), m_ds);
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            m_fg.Redraw = true;
+            if (m_txt_tim_kiem.Text.Trim().Equals(String.Empty)) {
+                m_txt_tim_kiem.Select();
+            } else {
+                m_txt_tim_kiem.SelectAll();
+            }
+        }
+        private void grid2us_object(US_V_BAO_CAO_NHAN_SU i_us, int i_grid_row) {
+            DataRow v_dr;
+            v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
+            m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
+            i_us.DataRow2Me(v_dr);
+        }
+        private void us_object2grid(US_V_BAO_CAO_NHAN_SU i_us, int i_grid_row) {
+            DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
+            i_us.Me2DataRow(v_dr);
+            m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
+        }
 
-		private void m_cmd_insert_Click(object sender, EventArgs e) {
-			try{
-				insert_v_bao_cao_nhan_su();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        #endregion
 
-		private void m_cmd_update_Click(object sender, EventArgs e) {
-			try{
-				update_v_bao_cao_nhan_su();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        //
+        //
+        //		EVENT HANLDERS
+        //
+        //
 
-		private void m_cmd_delete_Click(object sender, EventArgs e) {
-			try{
-				delete_v_bao_cao_nhan_su();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void set_define_events() {
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_cmd_search.Click += new EventHandler(m_cmd_search_Click);
+            m_txt_tim_kiem.KeyPress += new KeyPressEventHandler(CheckEnterKeyPress);
+        }
 
-		private void m_cmd_view_Click(object sender, EventArgs e) {
-			try{
-				view_v_bao_cao_nhan_su();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void f103_v_bao_cao_nhan_su_Load(object sender, System.EventArgs e) {
+            try {
+                set_initial_form_load();
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
 
+        }
 
-	}
+        private void m_cmd_exit_Click(object sender, EventArgs e) {
+            try {
+                this.Close();
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_search_Click(object sender, EventArgs e) {
+            try {
+                load_data_2_grid();
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void CheckEnterKeyPress(object sender, KeyPressEventArgs e) {
+            try {
+                if (e.KeyChar == (char)Keys.Return) {
+                    load_data_2_grid();
+                }
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+    }
 }
 
