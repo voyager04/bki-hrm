@@ -16,7 +16,7 @@ using System.Data;
 
 
 
-namespace BKI_HRM.US{
+namespace BKI_HRM.US {
 
     public class US_V_DM_DON_VI : US_Object {
         private const string c_TableName = "V_DM_DON_VI";
@@ -305,9 +305,9 @@ namespace BKI_HRM.US{
 
         public void FillDatasetByKeyWord(string ip_str_key_word, DS_V_DM_DON_VI op_ds_v_v_dm_don_vi) {
             CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DON_VI_search");
-        v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_str_key_word);
-        v_stored_proc.fillDataSetByCommand(this,op_ds_v_v_dm_don_vi);
-    }
+            v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_str_key_word);
+            v_stored_proc.fillDataSetByCommand(this, op_ds_v_v_dm_don_vi);
+        }
 
         public void FillDatasetByKeyWord_DateTime(string ip_str_key_word, DateTime ip_dat_tu_ngay, DS_V_DM_DON_VI op_ds_v_v_dm_don_vi) {
             CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DON_VI_search_datetime");
