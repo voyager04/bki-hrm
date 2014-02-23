@@ -299,5 +299,12 @@ public class US_V_DM_NHAN_SU_DU_AN : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+
+    public void FillDatasetByIdDuAn(DS_V_DM_NHAN_SU_DU_AN op_ds_nhan_su, decimal i_dc_id)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_V_NHAN_SU_DU_AN_select_by_ID");
+        v_sp.addDecimalInputParam("@ID_DU_AN", i_dc_id);
+        v_sp.fillDataSetByCommand(this, op_ds_nhan_su);
+    }
+}
 }
