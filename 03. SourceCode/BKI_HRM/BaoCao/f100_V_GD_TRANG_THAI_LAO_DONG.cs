@@ -322,7 +322,11 @@ namespace BKI_HRM {
         private void set_initial_form_load() {
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_grid();
-            m_txt_tim_kiem.Focus();
+            if (m_txt_tim_kiem.Text.Trim().Equals(String.Empty)) {
+                m_txt_tim_kiem.Select();
+            } else {
+                m_txt_tim_kiem.SelectAll();
+            }
             fomat_grid();
         }
 
