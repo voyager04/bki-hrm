@@ -391,5 +391,20 @@ namespace BKI_HRM.DS.CDBNames
        public const string MA_SO_THUE = "MA_SO_THUE";
        public const string TRANG_THAI = "TRANG_THAI";
    }
-
+   class V_DM_DU_LIEU_NHAN_VIEN
+   {
+       public const string ID_NHAN_SU = "ID_NHAN_SU";
+       public const string MA_NV = "MA_NV";
+       public const string HO_DEM = "HO_DEM";
+       public const string TEN = "TEN";
+       public const string ID_CHUC_VU = "ID_CHUC_VU";
+       public const string MA_CV = "MA_CV";
+       public const string ID_TRANG_THAI_CV = "ID_TRANG_THAI_CV";
+       public const string TRANG_THAI_CV = "TRANG_THAI_CV";
+       public const string ID_DON_VI = "ID_DON_VI";
+       public const string MA_DON_VI = "MA_DON_VI";
+       public const string ID_TRANG_LAO_DONG = "ID_TRANG_LAO_DONG";
+       public const string TRANG_THAI_LAO_DONG = "TRANG_THAI_LAO_DONG";
+       public const string TRANG_THAI_HIEN_TAI = "TRANG_THAI_HIEN_TAI";
+   }
 }
