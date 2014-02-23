@@ -33,7 +33,7 @@ namespace BKI_HRM
 	{
 		internal System.Windows.Forms.ImageList ImageList;
 		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
-		private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
+		private C1.Win.C1FlexGrid.C1FlexGrid m_grv_du_an;
 		internal SIS.Controls.Button.SiSButton m_cmd_delete;
 		internal SIS.Controls.Button.SiSButton m_cmd_update;
 		internal SIS.Controls.Button.SiSButton m_cmd_insert;
@@ -42,9 +42,9 @@ namespace BKI_HRM
         private TextBox m_txt_tim_kiem;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         private Label m_lbl_tim_kiem;
-        private C1FlexGrid c1FlexGrid1;
         private Label m_lbl_ten_du_an;
         private Label m_lbl_danh_sach_nhan_su;
+        private C1FlexGrid m_grv_nhan_su;
 		private System.ComponentModel.IContainer components;
 
 		public F500_DM_DU_AN()
@@ -91,16 +91,16 @@ namespace BKI_HRM
             this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_grv_du_an = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
-            this.c1FlexGrid1 = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_lbl_ten_du_an = new System.Windows.Forms.Label();
             this.m_lbl_danh_sach_nhan_su = new System.Windows.Forms.Label();
+            this.m_grv_nhan_su = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.c1FlexGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv_du_an)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).BeginInit();
             this.SuspendLayout();
             // 
             // ImageList
@@ -218,14 +218,15 @@ namespace BKI_HRM
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
-            // m_fg
+            // m_grv_du_an
             // 
-            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Location = new System.Drawing.Point(0, 57);
-            this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1008, 291);
-            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 20;
+            this.m_grv_du_an.ColumnInfo = resources.GetString("m_grv_du_an.ColumnInfo");
+            this.m_grv_du_an.Location = new System.Drawing.Point(0, 57);
+            this.m_grv_du_an.Name = "m_grv_du_an";
+            this.m_grv_du_an.Size = new System.Drawing.Size(1008, 291);
+            this.m_grv_du_an.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_du_an.Styles"));
+            this.m_grv_du_an.TabIndex = 20;
+            this.m_grv_du_an.Click += new System.EventHandler(this.m_grv_du_an_Click);
             // 
             // m_txt_tim_kiem
             // 
@@ -257,15 +258,6 @@ namespace BKI_HRM
             this.m_lbl_tim_kiem.TabIndex = 24;
             this.m_lbl_tim_kiem.Text = "Tìm kiếm";
             // 
-            // c1FlexGrid1
-            // 
-            this.c1FlexGrid1.ColumnInfo = resources.GetString("c1FlexGrid1.ColumnInfo");
-            this.c1FlexGrid1.Location = new System.Drawing.Point(0, 438);
-            this.c1FlexGrid1.Name = "c1FlexGrid1";
-            this.c1FlexGrid1.Size = new System.Drawing.Size(1008, 186);
-            this.c1FlexGrid1.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("c1FlexGrid1.Styles"));
-            this.c1FlexGrid1.TabIndex = 25;
-            // 
             // m_lbl_ten_du_an
             // 
             this.m_lbl_ten_du_an.AutoSize = true;
@@ -284,24 +276,35 @@ namespace BKI_HRM
             this.m_lbl_danh_sach_nhan_su.TabIndex = 27;
             this.m_lbl_danh_sach_nhan_su.Text = "Danh sách nhân sự dự án:";
             // 
+            // m_grv_nhan_su
+            // 
+            this.m_grv_nhan_su.ColumnInfo = resources.GetString("m_grv_nhan_su.ColumnInfo");
+            this.m_grv_nhan_su.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_grv_nhan_su.Enabled = false;
+            this.m_grv_nhan_su.Location = new System.Drawing.Point(0, 439);
+            this.m_grv_nhan_su.Name = "m_grv_nhan_su";
+            this.m_grv_nhan_su.Size = new System.Drawing.Size(1008, 223);
+            this.m_grv_nhan_su.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_nhan_su.Styles"));
+            this.m_grv_nhan_su.TabIndex = 29;
+            // 
             // F500_DM_DU_AN
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(1008, 662);
+            this.Controls.Add(this.m_grv_nhan_su);
             this.Controls.Add(this.m_lbl_ten_du_an);
             this.Controls.Add(this.m_lbl_danh_sach_nhan_su);
-            this.Controls.Add(this.c1FlexGrid1);
             this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.m_cmd_search);
             this.Controls.Add(this.m_lbl_tim_kiem);
-            this.Controls.Add(this.m_fg);
+            this.Controls.Add(this.m_grv_du_an);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "F500_DM_DU_AN";
             this.Text = "F500 Danh mục dự án";
             this.Load += new System.EventHandler(this.F500_V_DM_DU_AN_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.c1FlexGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv_du_an)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,19 +337,21 @@ namespace BKI_HRM
 		ITransferDataRow m_obj_trans;		
 		DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN m_ds = new DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
 		US_V_DM_DU_AN_QUYET_DINH_TU_DIEN m_us = new US_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
+        
+
 		#endregion
 
 		#region Private Methods
 		private void format_controls(){
 			CControlFormat.setFormStyle(this, new CAppContext_201());
-			CControlFormat.setC1FlexFormat(m_fg);
-			CGridUtils.AddSave_Excel_Handlers(m_fg);
-            			CGridUtils.AddSearch_Handlers(m_fg);
+			CControlFormat.setC1FlexFormat(m_grv_du_an);
+			CGridUtils.AddSave_Excel_Handlers(m_grv_du_an);
+            			CGridUtils.AddSearch_Handlers(m_grv_du_an);
 			set_define_events();
 			this.KeyPreview = true;		
 		}
 		private void set_initial_form_load(){						
-			m_obj_trans = get_trans_object(m_fg);
+			m_obj_trans = get_trans_object(m_grv_du_an);
 			load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
@@ -368,14 +373,14 @@ namespace BKI_HRM
 		private void load_data_2_grid(){						
 			m_ds = new DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN();			
 			m_us.FillDataset(m_ds);
-			m_fg.Redraw = false;
-			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-			m_fg.Redraw = true;
+			m_grv_du_an.Redraw = false;
+			CGridUtils.Dataset2C1Grid(m_ds, m_grv_du_an, m_obj_trans);
+			m_grv_du_an.Redraw = true;
 		}
 		private void grid2us_object(US_V_DM_DU_AN_QUYET_DINH_TU_DIEN i_us
 			, int i_grid_row) {
 			DataRow v_dr;
-			v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
+			v_dr = (DataRow) m_grv_du_an.Rows[i_grid_row].UserData;
 			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
 			i_us.DataRow2Me(v_dr);
 		}
@@ -383,7 +388,7 @@ namespace BKI_HRM
 	
 		private void us_object2grid(US_V_DM_DU_AN_QUYET_DINH_TU_DIEN i_us
 			, int i_grid_row) {
-			DataRow v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
+			DataRow v_dr = (DataRow) m_grv_du_an.Rows[i_grid_row].UserData;
 			i_us.Me2DataRow(v_dr);
 			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
 		}
@@ -396,25 +401,25 @@ namespace BKI_HRM
 		}
 
 		private void update_v_dm_du_an_quyet_dinh_tu_dien(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
-			grid2us_object(m_us, m_fg.Row);
+			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_du_an)) return;
+			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_du_an, m_grv_du_an.Row)) return;			
+			grid2us_object(m_us, m_grv_du_an.Row);
 		//	F500_V_DM_DU_AN_DE v_fDE = new F500_V_DM_DU_AN_DE();
 		//	v_fDE.display(m_us);
 			load_data_2_grid();
 		}
 				
 		private void delete_v_dm_du_an_quyet_dinh_tu_dien(){
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_du_an)) return;
+			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_du_an, m_grv_du_an.Row)) return;
 			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
 			US_V_DM_DU_AN_QUYET_DINH_TU_DIEN v_us = new US_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
-			grid2us_object(v_us, m_fg.Row);
+			grid2us_object(v_us, m_grv_du_an.Row);
 			try {			
 				v_us.BeginTransaction();    											
 				v_us.Delete();                      								
 				v_us.CommitTransaction();
-				m_fg.Rows.Remove(m_fg.Row);				
+				m_grv_du_an.Rows.Remove(m_grv_du_an.Row);				
 			}
 			catch (Exception v_e) {
 				v_us.Rollback();
@@ -425,9 +430,9 @@ namespace BKI_HRM
 		}
 
 		private void view_v_dm_du_an_quyet_dinh_tu_dien(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			grid2us_object(m_us, m_fg.Row);
+			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_du_an)) return;
+			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_du_an, m_grv_du_an.Row)) return;
+			grid2us_object(m_us, m_grv_du_an.Row);
 		//	F500_V_DM_DU_AN_DE v_fDE = new F500_V_DM_DU_AN_DE();			
 		//	v_fDE.display(m_us);
 		}
@@ -499,6 +504,64 @@ namespace BKI_HRM
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
+
+        private void m_grv_du_an_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                load_data_2_grid_dm_nhan_su();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void load_data_2_grid_dm_nhan_su()
+        {
+            DS_V_DM_NHAN_SU_DU_AN v_ds_nhan_su = new DS_V_DM_NHAN_SU_DU_AN();
+            US_V_DM_NHAN_SU_DU_AN v_us_nhan_su = new US_V_DM_NHAN_SU_DU_AN();
+
+            grid2us_object(m_us, m_grv_nhan_su.Row);
+            v_us_nhan_su.FillDatasetByIdDuAn(v_ds_nhan_su, m_us.dcID);
+            m_grv_nhan_su.Redraw = false;
+            
+            ITransferDataRow v_obj_trans = get_trans_object_qua_trinh_lam_viec(m_grv_nhan_su);
+            CGridUtils.Dataset2C1Grid(v_ds_nhan_su, m_grv_nhan_su, v_obj_trans);
+            m_grv_nhan_su.Redraw = true;
+        }
+
+        private ITransferDataRow get_trans_object_qua_trinh_lam_viec(C1FlexGrid i_fg)
+        {
+            Hashtable v_htb = new Hashtable();
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_NV, e_col_Number_of_nhan_su_du_an.MA_NV);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.HO_DEM, e_col_Number_of_nhan_su_du_an.HO_DEM);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.TEN, e_col_Number_of_nhan_su_du_an.TEN);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_CV, e_col_Number_of_nhan_su_du_an.MA_CV);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_DON_VI, e_col_Number_of_nhan_su_du_an.MA_DON_VI);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.VI_TRI, e_col_Number_of_nhan_su_du_an.VI_TRI);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_DIEM_TG, e_col_Number_of_nhan_su_du_an.THOI_DIEM_TG);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_DIEM_KT, e_col_Number_of_nhan_su_du_an.THOI_DIEM_KT);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_GIAN_TG, e_col_Number_of_nhan_su_du_an.THOI_GIAN_TG);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.DANH_HIEU, e_col_Number_of_nhan_su_du_an.DANH_HIEU);
+            DS_V_DM_NHAN_SU_DU_AN v_ds = new DS_V_DM_NHAN_SU_DU_AN();
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, v_ds.V_DM_NHAN_SU_DU_AN.NewRow());
+            return v_obj_trans;
+        }
+        private enum e_col_Number_of_nhan_su_du_an
+        {
+            MA_NV = 3,
+            HO_DEM = 4,
+            TEN = 5,
+            MA_CV = 6,
+            MA_DON_VI = 7,
+            VI_TRI =8,
+            THOI_DIEM_TG = 9,
+            THOI_DIEM_KT = 10,
+            THOI_GIAN_TG = 11,
+            DANH_HIEU = 12
+        }		
 
 	}
 }
