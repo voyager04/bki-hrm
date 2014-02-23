@@ -39,6 +39,7 @@ namespace BKI_HRM
 		internal SIS.Controls.Button.SiSButton m_cmd_insert;
 		internal SIS.Controls.Button.SiSButton m_cmd_exit;
 		internal SIS.Controls.Button.SiSButton m_cmd_view;
+        private C1FlexGrid c1FlexGrid1;
 		private System.ComponentModel.IContainer components;
 
 		public f401_V_DM_CHUC_VU()
@@ -86,8 +87,10 @@ namespace BKI_HRM
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.c1FlexGrid1 = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.c1FlexGrid1)).BeginInit();
             this.SuspendLayout();
             // 
             // ImageList
@@ -124,7 +127,7 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 373);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 264);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(686, 36);
@@ -210,14 +213,24 @@ namespace BKI_HRM
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Location = new System.Drawing.Point(0, 0);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(686, 373);
+            this.m_fg.Size = new System.Drawing.Size(686, 258);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
+            // 
+            // c1FlexGrid1
+            // 
+            this.c1FlexGrid1.ColumnInfo = resources.GetString("c1FlexGrid1.ColumnInfo");
+            this.c1FlexGrid1.Location = new System.Drawing.Point(0, 306);
+            this.c1FlexGrid1.Name = "c1FlexGrid1";
+            this.c1FlexGrid1.Size = new System.Drawing.Size(686, 250);
+            this.c1FlexGrid1.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("c1FlexGrid1.Styles"));
+            this.c1FlexGrid1.TabIndex = 21;
             // 
             // f401_V_DM_CHUC_VU
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(686, 409);
+            this.ClientSize = new System.Drawing.Size(686, 541);
+            this.Controls.Add(this.c1FlexGrid1);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f401_V_DM_CHUC_VU";
@@ -225,6 +238,7 @@ namespace BKI_HRM
             this.Load += new System.EventHandler(this.f401_V_DM_CHUC_VU_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.c1FlexGrid1)).EndInit();
             this.ResumeLayout(false);
 
 		}

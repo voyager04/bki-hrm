@@ -391,7 +391,7 @@ namespace BKI_HRM.DS.CDBNames
        public const string MA_SO_THUE = "MA_SO_THUE";
        public const string TRANG_THAI = "TRANG_THAI";
    }
-   class V_DM_DU_LIEU_NHAN_VIEN
+   public class V_DM_DU_LIEU_NHAN_VIEN
    {
        public const string ID_NHAN_SU = "ID_NHAN_SU";
        public const string MA_NV = "MA_NV";
