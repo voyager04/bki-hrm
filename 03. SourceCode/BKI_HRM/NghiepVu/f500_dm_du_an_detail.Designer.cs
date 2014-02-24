@@ -35,24 +35,24 @@
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.m_cmd_refresh = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-            this.m_txt_ma_nhan_vien = new System.Windows.Forms.TextBox();
+            this.m_txt_ma_du_an = new System.Windows.Forms.TextBox();
             this.m_lbl_ma_du_an = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.m_txt_ten_du_an = new System.Windows.Forms.TextBox();
             this.m_lbl_ten_du_an = new System.Windows.Forms.Label();
             this.m_lbl_ngay_ket_thuc = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.m_dat_ngay_kt = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_ngay_bat_dau = new System.Windows.Forms.Label();
-            this.m_dat_ngay_sinh = new System.Windows.Forms.DateTimePicker();
+            this.m_dat_ngay_bd = new System.Windows.Forms.DateTimePicker();
             this.m_cbo_trang_thai = new System.Windows.Forms.ComboBox();
             this.m_lbl_trang_thai = new System.Windows.Forms.Label();
             this.m_cbo_loai_du_an = new System.Windows.Forms.ComboBox();
             this.m_lbl_loai_du_an = new System.Windows.Forms.Label();
-            this.m_cbo_quyet_dinh = new System.Windows.Forms.ComboBox();
             this.m_lbl_quyet_dinh = new System.Windows.Forms.Label();
             this.m_cbo_co_che = new System.Windows.Forms.ComboBox();
             this.m_lbl_co_che = new System.Windows.Forms.Label();
             this.m_lbl_noi_dung = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.m_txt_noi_dung = new System.Windows.Forms.TextBox();
+            this.m_txt_ma_quyet_dinh = new System.Windows.Forms.TextBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,6 +109,7 @@
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 31;
             this.m_cmd_save.Text = "&Lưu";
+            this.m_cmd_save.Click += new System.EventHandler(this.m_cmd_save_Click);
             // 
             // m_cmd_refresh
             // 
@@ -124,6 +125,7 @@
             this.m_cmd_refresh.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_refresh.TabIndex = 32;
             this.m_cmd_refresh.Text = "L&àm lại";
+            this.m_cmd_refresh.Click += new System.EventHandler(this.m_cmd_refresh_Click);
             // 
             // m_cmd_exit
             // 
@@ -140,13 +142,14 @@
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 33;
             this.m_cmd_exit.Text = "Thoát (Esc)";
+            this.m_cmd_exit.Click += new System.EventHandler(this.m_cmd_exit_Click);
             // 
-            // m_txt_ma_nhan_vien
+            // m_txt_ma_du_an
             // 
-            this.m_txt_ma_nhan_vien.Location = new System.Drawing.Point(102, 36);
-            this.m_txt_ma_nhan_vien.Name = "m_txt_ma_nhan_vien";
-            this.m_txt_ma_nhan_vien.Size = new System.Drawing.Size(248, 20);
-            this.m_txt_ma_nhan_vien.TabIndex = 22;
+            this.m_txt_ma_du_an.Location = new System.Drawing.Point(102, 36);
+            this.m_txt_ma_du_an.Name = "m_txt_ma_du_an";
+            this.m_txt_ma_du_an.Size = new System.Drawing.Size(248, 20);
+            this.m_txt_ma_du_an.TabIndex = 22;
             // 
             // m_lbl_ma_du_an
             // 
@@ -157,12 +160,12 @@
             this.m_lbl_ma_du_an.TabIndex = 23;
             this.m_lbl_ma_du_an.Text = "Mã dự án";
             // 
-            // textBox1
+            // m_txt_ten_du_an
             // 
-            this.textBox1.Location = new System.Drawing.Point(102, 78);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(248, 20);
-            this.textBox1.TabIndex = 24;
+            this.m_txt_ten_du_an.Location = new System.Drawing.Point(102, 78);
+            this.m_txt_ten_du_an.Name = "m_txt_ten_du_an";
+            this.m_txt_ten_du_an.Size = new System.Drawing.Size(248, 20);
+            this.m_txt_ten_du_an.TabIndex = 24;
             // 
             // m_lbl_ten_du_an
             // 
@@ -182,15 +185,15 @@
             this.m_lbl_ngay_ket_thuc.TabIndex = 33;
             this.m_lbl_ngay_ket_thuc.Text = "Ngày kết thúc";
             // 
-            // dateTimePicker1
+            // m_dat_ngay_kt
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(543, 78);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ShowCheckBox = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(121, 20);
-            this.dateTimePicker1.TabIndex = 32;
+            this.m_dat_ngay_kt.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_kt.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_ngay_kt.Location = new System.Drawing.Point(543, 78);
+            this.m_dat_ngay_kt.Name = "m_dat_ngay_kt";
+            this.m_dat_ngay_kt.ShowCheckBox = true;
+            this.m_dat_ngay_kt.Size = new System.Drawing.Size(121, 20);
+            this.m_dat_ngay_kt.TabIndex = 32;
             // 
             // m_lbl_ngay_bat_dau
             // 
@@ -201,24 +204,20 @@
             this.m_lbl_ngay_bat_dau.TabIndex = 35;
             this.m_lbl_ngay_bat_dau.Text = "Ngày bắt đầu";
             // 
-            // m_dat_ngay_sinh
+            // m_dat_ngay_bd
             // 
-            this.m_dat_ngay_sinh.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_ngay_sinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_sinh.Location = new System.Drawing.Point(543, 36);
-            this.m_dat_ngay_sinh.Name = "m_dat_ngay_sinh";
-            this.m_dat_ngay_sinh.ShowCheckBox = true;
-            this.m_dat_ngay_sinh.Size = new System.Drawing.Size(121, 20);
-            this.m_dat_ngay_sinh.TabIndex = 34;
+            this.m_dat_ngay_bd.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_bd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_ngay_bd.Location = new System.Drawing.Point(543, 36);
+            this.m_dat_ngay_bd.Name = "m_dat_ngay_bd";
+            this.m_dat_ngay_bd.ShowCheckBox = true;
+            this.m_dat_ngay_bd.Size = new System.Drawing.Size(121, 20);
+            this.m_dat_ngay_bd.TabIndex = 34;
             // 
             // m_cbo_trang_thai
             // 
             this.m_cbo_trang_thai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_trang_thai.FormattingEnabled = true;
-            this.m_cbo_trang_thai.Items.AddRange(new object[] {
-            "Chọn giới tính",
-            "Nam",
-            "Nữ"});
             this.m_cbo_trang_thai.Location = new System.Drawing.Point(102, 120);
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
             this.m_cbo_trang_thai.Size = new System.Drawing.Size(157, 21);
@@ -237,10 +236,6 @@
             // 
             this.m_cbo_loai_du_an.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_loai_du_an.FormattingEnabled = true;
-            this.m_cbo_loai_du_an.Items.AddRange(new object[] {
-            "Chọn giới tính",
-            "Nam",
-            "Nữ"});
             this.m_cbo_loai_du_an.Location = new System.Drawing.Point(102, 162);
             this.m_cbo_loai_du_an.Name = "m_cbo_loai_du_an";
             this.m_cbo_loai_du_an.Size = new System.Drawing.Size(157, 21);
@@ -255,19 +250,6 @@
             this.m_lbl_loai_du_an.TabIndex = 39;
             this.m_lbl_loai_du_an.Text = "Loại dự án";
             // 
-            // m_cbo_quyet_dinh
-            // 
-            this.m_cbo_quyet_dinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_quyet_dinh.FormattingEnabled = true;
-            this.m_cbo_quyet_dinh.Items.AddRange(new object[] {
-            "Chọn giới tính",
-            "Nam",
-            "Nữ"});
-            this.m_cbo_quyet_dinh.Location = new System.Drawing.Point(543, 162);
-            this.m_cbo_quyet_dinh.Name = "m_cbo_quyet_dinh";
-            this.m_cbo_quyet_dinh.Size = new System.Drawing.Size(157, 21);
-            this.m_cbo_quyet_dinh.TabIndex = 42;
-            // 
             // m_lbl_quyet_dinh
             // 
             this.m_lbl_quyet_dinh.AutoSize = true;
@@ -281,10 +263,6 @@
             // 
             this.m_cbo_co_che.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_co_che.FormattingEnabled = true;
-            this.m_cbo_co_che.Items.AddRange(new object[] {
-            "Chọn giới tính",
-            "Nam",
-            "Nữ"});
             this.m_cbo_co_che.Location = new System.Drawing.Point(543, 120);
             this.m_cbo_co_che.Name = "m_cbo_co_che";
             this.m_cbo_co_che.Size = new System.Drawing.Size(157, 21);
@@ -308,22 +286,31 @@
             this.m_lbl_noi_dung.TabIndex = 44;
             this.m_lbl_noi_dung.Text = "Nội dung";
             // 
-            // textBox2
+            // m_txt_noi_dung
             // 
-            this.textBox2.Location = new System.Drawing.Point(25, 226);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(675, 140);
-            this.textBox2.TabIndex = 45;
+            this.m_txt_noi_dung.Location = new System.Drawing.Point(25, 226);
+            this.m_txt_noi_dung.Multiline = true;
+            this.m_txt_noi_dung.Name = "m_txt_noi_dung";
+            this.m_txt_noi_dung.Size = new System.Drawing.Size(675, 140);
+            this.m_txt_noi_dung.TabIndex = 45;
+            // 
+            // m_txt_ma_quyet_dinh
+            // 
+            this.m_txt_ma_quyet_dinh.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_txt_ma_quyet_dinh.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.m_txt_ma_quyet_dinh.Location = new System.Drawing.Point(543, 167);
+            this.m_txt_ma_quyet_dinh.Name = "m_txt_ma_quyet_dinh";
+            this.m_txt_ma_quyet_dinh.Size = new System.Drawing.Size(157, 20);
+            this.m_txt_ma_quyet_dinh.TabIndex = 46;
             // 
             // f500_dm_du_an_detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(725, 429);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.m_txt_ma_quyet_dinh);
+            this.Controls.Add(this.m_txt_noi_dung);
             this.Controls.Add(this.m_lbl_noi_dung);
-            this.Controls.Add(this.m_cbo_quyet_dinh);
             this.Controls.Add(this.m_lbl_quyet_dinh);
             this.Controls.Add(this.m_cbo_co_che);
             this.Controls.Add(this.m_lbl_co_che);
@@ -332,16 +319,17 @@
             this.Controls.Add(this.m_cbo_trang_thai);
             this.Controls.Add(this.m_lbl_trang_thai);
             this.Controls.Add(this.m_lbl_ngay_bat_dau);
-            this.Controls.Add(this.m_dat_ngay_sinh);
+            this.Controls.Add(this.m_dat_ngay_bd);
             this.Controls.Add(this.m_lbl_ngay_ket_thuc);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.m_dat_ngay_kt);
+            this.Controls.Add(this.m_txt_ten_du_an);
             this.Controls.Add(this.m_lbl_ten_du_an);
-            this.Controls.Add(this.m_txt_ma_nhan_vien);
+            this.Controls.Add(this.m_txt_ma_du_an);
             this.Controls.Add(this.m_lbl_ma_du_an);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f500_dm_du_an_detail";
             this.Text = "F500 Chi tiết danh mục dự án ";
+            this.Load += new System.EventHandler(this.f500_dm_du_an_detail_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -355,24 +343,24 @@
         internal SIS.Controls.Button.SiSButton m_cmd_save;
         internal SIS.Controls.Button.SiSButton m_cmd_refresh;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
-        private System.Windows.Forms.TextBox m_txt_ma_nhan_vien;
+        private System.Windows.Forms.TextBox m_txt_ma_du_an;
         private System.Windows.Forms.Label m_lbl_ma_du_an;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox m_txt_ten_du_an;
         private System.Windows.Forms.Label m_lbl_ten_du_an;
         private System.Windows.Forms.Label m_lbl_ngay_ket_thuc;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker m_dat_ngay_kt;
         private System.Windows.Forms.Label m_lbl_ngay_bat_dau;
-        private System.Windows.Forms.DateTimePicker m_dat_ngay_sinh;
+        private System.Windows.Forms.DateTimePicker m_dat_ngay_bd;
         private System.Windows.Forms.ComboBox m_cbo_trang_thai;
         private System.Windows.Forms.Label m_lbl_trang_thai;
         private System.Windows.Forms.ComboBox m_cbo_loai_du_an;
         private System.Windows.Forms.Label m_lbl_loai_du_an;
-        private System.Windows.Forms.ComboBox m_cbo_quyet_dinh;
         private System.Windows.Forms.Label m_lbl_quyet_dinh;
         private System.Windows.Forms.ComboBox m_cbo_co_che;
         private System.Windows.Forms.Label m_lbl_co_che;
         private System.Windows.Forms.Label m_lbl_noi_dung;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox m_txt_noi_dung;
+        private System.Windows.Forms.TextBox m_txt_ma_quyet_dinh;
 
     }
 }
