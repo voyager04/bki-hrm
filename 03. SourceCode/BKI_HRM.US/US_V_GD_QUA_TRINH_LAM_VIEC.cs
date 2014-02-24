@@ -273,10 +273,15 @@ public class US_V_GD_QUA_TRINH_LAM_VIEC : US_Object
             command.fillDataSetByCommand(this, op_ds);
 
 	}
-    public void FillDatasetByIDnhanvien(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds, string ip_str_ma_nv)
+    public void FillDatasetByManhanvien(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds, 
+        string ip_str_ma_nv,
+        DateTime ip_dat_ngay_bat_dau,
+        DateTime ip_dat_ngay_ket_thuc)
     {
         CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_By_Ma_nhan_vien");
         v_sp.addDecimalInputParam("@MA_NHAN_VIEN", ip_str_ma_nv);
+        v_sp.addDatetimeInputParam("@NGAY_BAT_DAU", ip_dat_ngay_bat_dau);
+        v_sp.addDatetimeInputParam("@NGAY_KET_THUC", ip_dat_ngay_ket_thuc);
         v_sp.fillDataSetByCommand(this, op_ds);
     }
 }
