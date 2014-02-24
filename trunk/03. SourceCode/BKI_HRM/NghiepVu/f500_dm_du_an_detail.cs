@@ -30,7 +30,8 @@ namespace BKI_HRM.NghiepVu
         enum cm_dm_tu_dien { 
             TRANG_THAI = 10,
             LOAI_DU_AN = 9,
-            CO_CHE =8
+            CO_CHE =8,
+            THANH_LAP_DU_AN = 679
         }
         #endregion
 
@@ -38,7 +39,40 @@ namespace BKI_HRM.NghiepVu
         public void display_for_insert()
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
+            load_data_2_control();
             this.ShowDialog();
+        }
+
+        public void display_for_update(DS.DS_DM_DU_AN i_ds)
+        {
+            m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            load_data_2_control();
+            ds_2_form(i_ds);
+            this.ShowDialog();            
+        }
+
+        private void ds_2_form(DS.DS_DM_DU_AN i_ds)
+        {
+            DataRow dr = i_ds.Tables[0].Rows[0];
+            m_us.dcID = CIPConvert.ToDecimal(dr["ID"].ToString());
+            m_txt_ma_du_an.Text = dr["MA_DU_AN"].ToString();
+            //m_txt_ma_quyet_dinh.Text = dr["TEN_DU_AN"].ToString();
+            m_txt_noi_dung.Text = dr["NOI_DUNG"].ToString();
+            m_txt_ten_du_an.Text = dr["TEN_DU_AN"].ToString();
+
+            m_cbo_co_che.SelectedValue = CIPConvert.ToDecimal(dr["ID_CO_CHE"].ToString());
+            m_cbo_loai_du_an.SelectedValue = CIPConvert.ToDecimal(dr["ID_LOAI_DU_AN"].ToString());
+            m_cbo_trang_thai.SelectedValue = CIPConvert.ToDecimal(dr["ID_TRANG_THAI"].ToString());
+
+            m_dat_ngay_bd.Value = (DateTime)dr["NGAY_BAT_DAU"];
+            m_dat_ngay_kt.Value = (DateTime)dr["NGAY_KET_THUC"];
+
+            US.US_DM_QUYET_DINH v_us_qd = new US.US_DM_QUYET_DINH();
+            DS.DS_DM_QUYET_DINH v_ds_qd = new DS.DS_DM_QUYET_DINH();
+            v_us_qd.FillDatasetByIdQD(v_ds_qd, CIPConvert.ToDecimal(dr["ID_QUYET_DINH"].ToString()));
+            dr = v_ds_qd.Tables[0].Rows[0];
+            m_txt_ma_quyet_dinh.Text = dr["MA_QUYET_DINH"].ToString();
+            
         }
 
         public void load_data_2_cbo_trang_thai()
@@ -50,7 +84,7 @@ namespace BKI_HRM.NghiepVu
             m_cbo_trang_thai.DisplayMember = CM_DM_TU_DIEN.TEN_NGAN;
             m_cbo_trang_thai.ValueMember = CM_DM_TU_DIEN.ID;
         }
-
+        
         public void load_data_2_cbo_co_che() 
         {
             DS_CM_DM_TU_DIEN v_ds_cm_dm_td = new DS_CM_DM_TU_DIEN();
@@ -74,7 +108,7 @@ namespace BKI_HRM.NghiepVu
         {
             BKI_HRM.DS.DS_DM_QUYET_DINH v_ds_quyet_dinh = new BKI_HRM.DS.DS_DM_QUYET_DINH();
             BKI_HRM.US.US_DM_QUYET_DINH v_us_quyet_dinh = new BKI_HRM.US.US_DM_QUYET_DINH();
-            v_us_quyet_dinh.FillDataset(v_ds_quyet_dinh);
+            v_us_quyet_dinh.FillDatasetByIdLoaiQD(v_ds_quyet_dinh,(int)cm_dm_tu_dien.THANH_LAP_DU_AN);
             int count = v_ds_quyet_dinh.Tables["DM_QUYET_DINH"].Rows.Count;
             for (int i = 0; i < count; i++)
             {
@@ -129,6 +163,14 @@ namespace BKI_HRM.NghiepVu
         {
             return true;
         }
+
+        private void load_data_2_control() 
+        {
+            load_data_2_cbo_co_che();
+            load_data_2_cbo_loai_du_an();
+            load_data_2_cbo_trang_thai();
+            load_data_2_txt_ma_quyet_dinh_custom_source();
+        }
         #endregion
 
         #region eventHandle
@@ -166,11 +208,10 @@ namespace BKI_HRM.NghiepVu
 
         private void f500_dm_du_an_detail_Load(object sender, EventArgs e)
         {
-            load_data_2_txt_ma_quyet_dinh_custom_source();
-            load_data_2_cbo_co_che();
-            load_data_2_cbo_loai_du_an();
-            load_data_2_cbo_trang_thai();
+            
         }
         #endregion        
+    
+        
     }
 }
