@@ -35,7 +35,10 @@ namespace BKI_HRM
             TRANG_THAI_CHUC_VU,
             LOAI_HOP_DONG,
             LOAI_DON_VI,
-            CAP_DON_VI
+            CAP_DON_VI,
+            CO_CHE,
+            LOAI_DU_AN,
+            TRANG_THAI_DU_AN
         }
         public static void load_data_to_cbo_tu_dien(
              eLOAI_TU_DIEN ip_e_trang_thai_chuc_vu
@@ -43,8 +46,8 @@ namespace BKI_HRM
             , ComboBox ip_obj_cbo_trang_thai)
         {
 
-            US_CM_DM_TU_DIEN v_us_dm_tu_dien = new US_CM_DM_TU_DIEN();
-            DS_CM_DM_TU_DIEN v_ds_dm_tu_dien = new DS_CM_DM_TU_DIEN();
+            IP.Core.IPUserService.US_CM_DM_TU_DIEN v_us_dm_tu_dien = new IP.Core.IPUserService.US_CM_DM_TU_DIEN();
+            IP.Core.IPData.DS_CM_DM_TU_DIEN v_ds_dm_tu_dien = new IP.Core.IPData.DS_CM_DM_TU_DIEN();
             string v_str_loai_tu_dien = "";
             switch (ip_e_trang_thai_chuc_vu)
             {
