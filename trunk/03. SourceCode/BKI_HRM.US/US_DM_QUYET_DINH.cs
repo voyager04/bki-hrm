@@ -225,5 +225,19 @@ public class US_DM_QUYET_DINH : US_Object
         v_sp.addNVarcharInputParam("@STR_MA_QD", i_str_ma_qd);
         v_sp.fillDataSetByCommand(this, op_ds_dm_qd);
     }
+
+    public void FillDatasetByIdLoaiQD(DS_DM_QUYET_DINH op_ds_quyet_dinh, int i_dc_id_loai_qd)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_DM_QUYET_DINH_search_by_id_loai_qd");
+        v_sp.addDecimalInputParam("@ID_LOAI_QD", i_dc_id_loai_qd);
+        v_sp.fillDataSetByCommand(this, op_ds_quyet_dinh);
+    }
+
+    public void FillDatasetByIdQD(DS_DM_QUYET_DINH op_ds_quyet_dinh, decimal i_dc_id_qd)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_DM_QUYET_DINH_search_by_id_qd");
+        v_sp.addDecimalInputParam("@ID_QD", i_dc_id_qd);
+        v_sp.fillDataSetByCommand(this, op_ds_quyet_dinh);
+    }
 }
 }
