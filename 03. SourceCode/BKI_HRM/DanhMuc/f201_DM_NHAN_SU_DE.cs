@@ -92,6 +92,18 @@ namespace BKI_HRM
             CControlFormat.setFormStyle(this, new CAppContext_201());
             this.KeyPreview = true;
         }
+        private void chon_anh()
+        {
+            m_ofd_chon_anh.Filter = "(*.jpg)|*.jpg";
+            m_ofd_chon_anh.Multiselect = false;
+            m_ofd_chon_anh.Title = "Chọn ảnh";
+            DialogResult result = m_ofd_chon_anh.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                m_ptb_anh.SizeMode = PictureBoxSizeMode.Zoom;
+                m_ptb_anh.Image = new Bitmap(m_ofd_chon_anh.FileName);
+            }
+        }
         private void us_object_to_form(){
             m_txt_ma_nhan_vien.Text = m_us_dm_nhan_su.strMA_NV;
             m_txt_ho_dem.Text = m_us_dm_nhan_su.strHO_DEM;
@@ -111,6 +123,7 @@ namespace BKI_HRM
             m_txt_noi_cap.Text = m_us_dm_nhan_su.strNOI_CAP_CMND;
             m_txt_ton_giao.Text = m_us_dm_nhan_su.strTON_GIAO;
             m_txt_dan_toc.Text = m_us_dm_nhan_su.strDAN_TOC;
+            m_ofd_chon_anh.FileName = m_us_dm_nhan_su.strANH;
             m_chk_trang_thai.Checked = (m_us_dm_nhan_su.strTRANG_THAI.Equals("Y") == true) ? true : false;
             m_txt_trinh_do.Text = m_us_dm_nhan_su.strTRINH_DO;
             m_txt_noi_dao_tao.Text = m_us_dm_nhan_su.strNOI_DAO_TAO;
@@ -131,6 +144,7 @@ namespace BKI_HRM
             m_us_dm_nhan_su.strHO_DEM = m_txt_ho_dem.Text;
             m_us_dm_nhan_su.strTEN = m_txt_ten.Text;
             m_us_dm_nhan_su.strGIOI_TINH = ((m_cbo_gioi_tinh.SelectedIndex == 1) ? "Nam" : "Nữ");
+            m_us_dm_nhan_su.strANH = m_ofd_chon_anh.FileName;
             if(m_dat_ngay_sinh.Checked == true)
                 m_us_dm_nhan_su.datNGAY_SINH = m_dat_ngay_sinh.Value;
             m_us_dm_nhan_su.strNOI_SINH = m_txt_noi_sinh.Text;
@@ -306,7 +320,7 @@ namespace BKI_HRM
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
             m_cmd_refresh.Click += new EventHandler(m_cmd_refresh_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-            
+            m_cmd_chon_anh.Click += new EventHandler(m_cmd_chon_anh_Click);
         }
         
     #endregion
@@ -356,9 +370,21 @@ namespace BKI_HRM
             	CSystemLog_301.ExceptionHandle( v_e);
             }
         }
-        
+        private void m_cmd_chon_anh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                chon_anh();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         
     #endregion
 
+        
+        
     }
 }
