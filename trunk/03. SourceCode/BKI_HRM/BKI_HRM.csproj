@@ -167,6 +167,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f401_V_DM_CHUC_VU.resx">
       <DependentUpon>f401_V_DM_CHUC_VU.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="f400_Main.resx">
       <DependentUpon>f400_Main.cs</DependentUpon>
