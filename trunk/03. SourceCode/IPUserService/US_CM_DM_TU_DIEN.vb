@@ -170,4 +170,10 @@ Public Class US_CM_DM_TU_DIEN
         v_cstore.addNVarcharInputParam("@USERNAME", ip_str_username)
         v_cstore.fillDataSetByCommand(Me, op_ds_tu_dien)
     End Sub
+
+    Public Sub FillDatasetByIdLoaiTuDien(ByVal op_ds_dm_dm_td As DS_CM_DM_TU_DIEN, ByVal i_dc_id_loai_tu_dien As Integer)
+        Dim v_cstore As New CStoredProc("pr_CM_DM_TU_DIEN_search_by_id_loai_td")
+        v_cstore.addDecimalInputParam("@ID_LOAI_TD", i_dc_id_loai_tu_dien)
+        v_cstore.fillDataSetByCommand(Me, op_ds_dm_dm_td)
+    End Sub
 End Class
