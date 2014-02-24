@@ -23,6 +23,7 @@ using BKI_HRM.DS;
 using BKI_HRM.DS.CDBNames;
 
 using C1.Win.C1FlexGrid;
+using BKI_HRM.NghiepVu;
 
 namespace BKI_HRM
 {
@@ -231,10 +232,15 @@ namespace BKI_HRM
             // 
             // m_txt_tim_kiem
             // 
+            this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.m_txt_tim_kiem.Location = new System.Drawing.Point(344, 28);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(272, 20);
             this.m_txt_tim_kiem.TabIndex = 22;
+            this.m_txt_tim_kiem.Text = "Nhập mã dự án, tên dự án, trạng thái";
+            this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
+            this.m_txt_tim_kiem.Leave += new System.EventHandler(this.m_txt_tim_kiem_Leave);
             // 
             // m_cmd_search
             // 
@@ -336,7 +342,8 @@ namespace BKI_HRM
 		#endregion
 
 		#region Members
-		ITransferDataRow m_obj_trans;		
+		ITransferDataRow m_obj_trans;
+        int m_dc_index_row;
 		DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN m_ds = new DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
 		US_V_DM_DU_AN_QUYET_DINH_TU_DIEN m_us = new US_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
         
@@ -399,6 +406,8 @@ namespace BKI_HRM
 		private void insert_v_dm_du_an_quyet_dinh_tu_dien(){			
 		//	F500_V_DM_DU_AN_DE v_fDE = new  F500_V_DM_DU_AN_DE();								
 		//	v_fDE.display();
+            f500_dm_du_an_detail v_fDE = new f500_dm_du_an_detail();
+            v_fDE.display_for_insert();
 			load_data_2_grid();
 		}
 
@@ -416,19 +425,25 @@ namespace BKI_HRM
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_du_an, m_grv_du_an.Row)) return;
 			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
 			US_V_DM_DU_AN_QUYET_DINH_TU_DIEN v_us = new US_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
-			grid2us_object(v_us, m_grv_du_an.Row);
-			try {			
-				v_us.BeginTransaction();    											
-				v_us.Delete();                      								
-				v_us.CommitTransaction();
-				m_grv_du_an.Rows.Remove(m_grv_du_an.Row);				
-			}
-			catch (Exception v_e) {
-				v_us.Rollback();
-				CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
-					new CDBClientDBExceptionInterpret());
-				v_objErrHandler.showErrorMessage();
-			}
+            US_DM_DU_AN v_us_dm_du_an = new US_DM_DU_AN();
+            DS_DM_DU_AN v_ds_dm_du_an = new DS_DM_DU_AN();
+            //v_us_dm_du_an.BeginTransaction();
+            grid2us_object(m_us, m_dc_index_row);
+            v_us_dm_du_an.DeleteDuAnById(v_ds_dm_du_an,m_us.dcID);
+            //v_us_dm_du_an.CommitTransaction();
+            grid2us_object(v_us, m_grv_du_an.Row);
+            m_grv_du_an.Rows.Remove(m_grv_du_an.Row);
+            //try
+            //{
+            //    m_grv_du_an.Rows.Remove(m_grv_du_an.Row);
+            //}
+            //catch (Exception v_e)
+            //{
+            //    v_us.Rollback();
+            //    CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
+            //        new CDBClientDBExceptionInterpret());
+            //    v_objErrHandler.showErrorMessage();
+            //}
 		}
 
 		private void view_v_dm_du_an_quyet_dinh_tu_dien(){			
@@ -456,12 +471,25 @@ namespace BKI_HRM
 			try{
 				set_initial_form_load();
                 load_data_2_grid_dm_nhan_su(1);
+                load_custom_source_2_m_txt_tim_kiem();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		
 		}
+
+        private void load_custom_source_2_m_txt_tim_kiem()
+        {
+            //m_us.FillDataset(m_ds);
+            int count = m_ds.Tables["V_DM_DU_AN_QUYET_DINH_TU_DIEN"].Rows.Count;
+            for (int i = 0; i < count; i++)
+            {
+                DataRow dr = m_ds.Tables["V_DM_DU_AN_QUYET_DINH_TU_DIEN"].Rows[i];
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[1].ToString());
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[2].ToString());
+            }
+        }
 
 		private void m_cmd_exit_Click(object sender, EventArgs e) {
 			try{
@@ -512,8 +540,8 @@ namespace BKI_HRM
         {
             try
             {
-                int rows_index = m_grv_du_an.Row;
-                load_data_2_grid_dm_nhan_su(rows_index);
+                m_dc_index_row = m_grv_du_an.Row;
+                load_data_2_grid_dm_nhan_su(m_dc_index_row);
             }
             catch (Exception v_e)
             {
@@ -527,15 +555,18 @@ namespace BKI_HRM
             US_V_DM_NHAN_SU_DU_AN v_us_nhan_su = new US_V_DM_NHAN_SU_DU_AN();
 
             grid2us_object(m_us, i_dc_row_index);
+
+            m_lbl_ten_du_an.Text = m_us.strMA_DU_AN;
+
             v_us_nhan_su.FillDatasetByIdDuAn(v_ds_nhan_su, m_us.dcID);
             m_grv_nhan_su.Redraw = false;
             
-            ITransferDataRow v_obj_trans = get_trans_object_qua_trinh_lam_viec(m_grv_nhan_su);
+            ITransferDataRow v_obj_trans = get_trans_object_nhan_su_du_an(m_grv_nhan_su);
             CGridUtils.Dataset2C1Grid(v_ds_nhan_su, m_grv_nhan_su, v_obj_trans);
             m_grv_nhan_su.Redraw = true;
         }
 
-        private ITransferDataRow get_trans_object_qua_trinh_lam_viec(C1FlexGrid i_fg)
+        private ITransferDataRow get_trans_object_nhan_su_du_an(C1FlexGrid i_fg)
         {
             Hashtable v_htb = new Hashtable();
             v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_NV, e_col_Number_of_nhan_su_du_an.MA_NV);
@@ -568,7 +599,25 @@ namespace BKI_HRM
 
         private void m_cmd_search_Click(object sender, EventArgs e)
         {
+            m_obj_trans = get_trans_object(m_grv_du_an);
+            m_ds.Clear();
+            m_us.FillDatasetSearch(m_ds, m_txt_tim_kiem.Text);
+            m_grv_du_an.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_grv_du_an, m_obj_trans);
+            m_grv_du_an.Redraw = true;
+        }
 
+        private void m_txt_tim_kiem_MouseClick(object sender, MouseEventArgs e)
+        {
+            m_txt_tim_kiem.Text = "";
+        }
+
+        private void m_txt_tim_kiem_Leave(object sender, EventArgs e)
+        {
+            if (m_txt_tim_kiem.Text == "")
+            {
+                m_txt_tim_kiem.Text = "Nhập mã dự án, tên dự án, trạng thái";
+            }
         }
 	}
 }
