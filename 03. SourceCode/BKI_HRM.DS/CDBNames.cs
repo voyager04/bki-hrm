@@ -270,6 +270,7 @@ namespace BKI_HRM.DS.CDBNames
         public const string GIOI_TINH = "GIOI_TINH";
         public const string NGAY_SINH = "NGAY_SINH";
         public const string NOI_SINH = "NOI_SINH";
+        public const string ANH = "ANH";
         public const string NGUYEN_QUAN = "NGUYEN_QUAN";
         public const string CMND = "CMND";
         public const string NGAY_CAP_CMND = "NGAY_CAP_CMND";
