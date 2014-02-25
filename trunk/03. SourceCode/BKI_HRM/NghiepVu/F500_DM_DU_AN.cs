@@ -460,13 +460,14 @@ namespace BKI_HRM
         }
         private void delete_gd_chi_tiet_du_an()
         {
+            if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
             DataRow v_dr;
             v_dr = (DataRow)m_grv_nhan_su.Rows[m_dc_index_row_chi_tiet_da].UserData;
             US_GD_CHI_TIET_DU_AN v_us = new US_GD_CHI_TIET_DU_AN();
             DS_GD_CHI_TIET_DU_AN v_ds = new DS_GD_CHI_TIET_DU_AN();
 
             v_us.DeleteChiTietDuAnById(v_ds, CIPConvert.ToDecimal(v_dr["ID"].ToString()));
-            m_grv_nhan_su.Rows.Remove(m_grv_du_an.Row);
+            m_grv_nhan_su.Rows.Remove(m_grv_nhan_su.Row);
         }
         private ITransferDataRow get_trans_object_nhan_su_du_an(C1FlexGrid i_fg)
         {
@@ -600,6 +601,15 @@ namespace BKI_HRM
             v_fDE.display_for_update(v_ds_dm_da);
 			load_data_2_grid();
 		}
+
+        private void update_gd_chi_tiet_du_an()
+        {
+            F500_gd_chi_tiet_du_an_de v_fDE = new F500_gd_chi_tiet_du_an_de();
+            DataRow v_dr = (DataRow)m_grv_nhan_su.Rows[m_dc_index_row_chi_tiet_da].UserData;
+            decimal v_dc_id_chi_tiet_du_an =(decimal)v_dr["ID"];
+            v_fDE.display_for_update(v_dc_id_chi_tiet_du_an);
+            load_data_2_grid_dm_nhan_su(m_dc_index_row);
+        }
 				
 		private void delete_v_dm_du_an_quyet_dinh_tu_dien(){
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_du_an)) return;
@@ -731,7 +741,7 @@ namespace BKI_HRM
             try
             {
                 insert_gd_chi_tiet_du_an();
-                load_data_2_grid_dm_nhan_su(1);
+                load_data_2_grid_dm_nhan_su(m_dc_index_row);
             }
             catch (Exception v_e)
             {
@@ -741,8 +751,17 @@ namespace BKI_HRM
 
         private void m_cmd_sua_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                update_gd_chi_tiet_du_an();
+                load_data_2_grid_dm_nhan_su(m_dc_index_row);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
+
 
         private void m_cmd_xoa_Click(object sender, EventArgs e)
         {

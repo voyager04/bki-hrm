@@ -24,10 +24,37 @@ namespace BKI_HRM.NghiepVu
             load_data_2_control();
             this.ShowDialog();
         }
+        public void display_for_update(decimal i_dc_id_gd_chi_tiet_du_an)
+        {
+            m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            load_data_2_control();
+            us_obj_2_form(i_dc_id_gd_chi_tiet_du_an);
+            this.ShowDialog();
+        }
+
+        private void us_obj_2_form(decimal i_dc_id_gd_chi_tiet_du_an)
+        {
+            US_GD_CHI_TIET_DU_AN v_us = new US_GD_CHI_TIET_DU_AN();
+            DS_GD_CHI_TIET_DU_AN v_ds = new DS_GD_CHI_TIET_DU_AN();
+            v_us.FillDatasetByID(v_ds, i_dc_id_gd_chi_tiet_du_an);
+            DataRow v_dr = v_ds.Tables[0].Rows[0];
+            m_cbo_danh_hieu.SelectedValue = CIPConvert.ToDecimal(v_dr["ID_VI_TRI"].ToString());
+            if (v_dr["ID_DANH_HIEU"].ToString() != "")
+            {
+                m_cbo_vi_tri.SelectedValue = CIPConvert.ToDecimal(v_dr["ID_DANH_HIEU"].ToString());    
+            }
+
+            if (v_dr["THOI_DIEM_KT"].ToString() != "")
+            {
+                m_dat_ngay_kt.Value = (DateTime)v_dr["THOI_DIEM_KT"];    
+            }
+            m_dat_tham_gia.Value = (DateTime)v_dr["THOI_DIEM_TG"];
+        }
         public F500_gd_chi_tiet_du_an_de()
         {
             InitializeComponent();
         }
+
         #endregion
 
         #region Members
@@ -175,5 +202,7 @@ namespace BKI_HRM.NghiepVu
                 m_us.dcID_DU_AN =CIPConvert.ToDecimal(dr["ID"].ToString());
             }
         }
+
+        
     }
 }
