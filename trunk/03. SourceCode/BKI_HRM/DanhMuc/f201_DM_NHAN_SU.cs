@@ -113,6 +113,8 @@ namespace BKI_HRM
         private Label label3;
         private Label label2;
         private OpenFileDialog m_ofd_chon_anh;
+        private TabPage tabPage2;
+        private C1FlexGrid m_grv_trang_thai_lao_dong;
 		private System.ComponentModel.IContainer components;
 
 		
@@ -222,6 +224,8 @@ namespace BKI_HRM
             this.m_lbl_ma_nhan_vien = new System.Windows.Forms.Label();
             this.m_lbl2 = new System.Windows.Forms.Label();
             this.m_ofd_chon_anh = new System.Windows.Forms.OpenFileDialog();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.m_grv_trang_thai_lao_dong = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).BeginInit();
             this.panel1.SuspendLayout();
@@ -233,6 +237,8 @@ namespace BKI_HRM
             this.m_tct_chi_tiet_nhan_vien.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_hop_dong_lao_dong)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv_trang_thai_lao_dong)).BeginInit();
             this.SuspendLayout();
             // 
             // ImageList
@@ -998,6 +1004,7 @@ namespace BKI_HRM
             this.m_tct_chi_tiet_nhan_vien.Controls.Add(this.m_tpg_thong_tin_ca_nhan);
             this.m_tct_chi_tiet_nhan_vien.Controls.Add(this.m_tpg_qua_trinh_lam_viec);
             this.m_tct_chi_tiet_nhan_vien.Controls.Add(this.tabPage1);
+            this.m_tct_chi_tiet_nhan_vien.Controls.Add(this.tabPage2);
             this.m_tct_chi_tiet_nhan_vien.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_tct_chi_tiet_nhan_vien.Location = new System.Drawing.Point(0, 293);
             this.m_tct_chi_tiet_nhan_vien.Name = "m_tct_chi_tiet_nhan_vien";
@@ -1019,6 +1026,7 @@ namespace BKI_HRM
             // m_grv_hop_dong_lao_dong
             // 
             this.m_grv_hop_dong_lao_dong.ColumnInfo = resources.GetString("m_grv_hop_dong_lao_dong.ColumnInfo");
+            this.m_grv_hop_dong_lao_dong.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_hop_dong_lao_dong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_grv_hop_dong_lao_dong.Location = new System.Drawing.Point(3, 3);
             this.m_grv_hop_dong_lao_dong.Name = "m_grv_hop_dong_lao_dong";
@@ -1066,6 +1074,29 @@ namespace BKI_HRM
             // 
             this.m_ofd_chon_anh.FileName = "openFileDialog1";
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.m_grv_trang_thai_lao_dong);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1000, 306);
+            this.tabPage2.TabIndex = 4;
+            this.tabPage2.Text = "Trạng thái lao động";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // m_grv_trang_thai_lao_dong
+            // 
+            this.m_grv_trang_thai_lao_dong.ColumnInfo = resources.GetString("m_grv_trang_thai_lao_dong.ColumnInfo");
+            this.m_grv_trang_thai_lao_dong.Cursor = System.Windows.Forms.Cursors.Default;
+            this.m_grv_trang_thai_lao_dong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_grv_trang_thai_lao_dong.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.m_grv_trang_thai_lao_dong.Location = new System.Drawing.Point(3, 3);
+            this.m_grv_trang_thai_lao_dong.Name = "m_grv_trang_thai_lao_dong";
+            this.m_grv_trang_thai_lao_dong.Size = new System.Drawing.Size(994, 300);
+            this.m_grv_trang_thai_lao_dong.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_trang_thai_lao_dong.Styles"));
+            this.m_grv_trang_thai_lao_dong.TabIndex = 8;
+            // 
             // f201_dm_nhan_su
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -1097,6 +1128,8 @@ namespace BKI_HRM
             this.m_tct_chi_tiet_nhan_vien.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_hop_dong_lao_dong)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv_trang_thai_lao_dong)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1166,9 +1199,15 @@ namespace BKI_HRM
                 ,
             MA_QUYET_DINH = 5
                 , NGAY_CO_HIEU_LUC = 1
-        }			
-		#endregion
-
+        }
+        private enum e_col_Number_of_trang_thai_lao_dong
+        {
+            
+            MA_QUYET_DINH = 1,
+            Expr2 = 4,
+            Expr1 = 2,
+            NGAY_CO_HIEU_LUC = 3
+        }
         private enum e_col_Number_of_hop_dong_lao_dong
         {
             NGAY_HET_HAN = 4,
@@ -1177,7 +1216,10 @@ namespace BKI_HRM
             TRANG_THAI_HOP_DONG = 5,
             NGAY_CO_HIEU_LUC = 3
 
-        }		
+        }	
+		#endregion
+
+       	
 		#region Members
 		ITransferDataRow m_obj_trans;		
 		DS_DM_NHAN_SU m_ds = new DS_DM_NHAN_SU();
@@ -1230,8 +1272,7 @@ namespace BKI_HRM
 			v_htb.Add(DM_NHAN_SU.NOI_DAO_TAO, e_col_Number.NOI_DAO_TAO);
 			v_htb.Add(DM_NHAN_SU.NGUOI_LIEN_HE, e_col_Number.NGUOI_LIEN_HE);
 			v_htb.Add(DM_NHAN_SU.NAM_TOT_NGHIEP, e_col_Number.NAM_TOT_NGHIEP);
-			v_htb.Add(DM_NHAN_SU.HO_DEM, e_col_Number.HO_DEM);
-									
+			v_htb.Add(DM_NHAN_SU.HO_DEM, e_col_Number.HO_DEM);						
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.DM_NHAN_SU.NewRow());
 			return v_obj_trans;			
 		}
@@ -1257,6 +1298,19 @@ namespace BKI_HRM
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.NGAY_CO_HIEU_LUC, e_col_Number_of_hop_dong_lao_dong.NGAY_CO_HIEU_LUC);
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.NGAY_HET_HAN, e_col_Number_of_hop_dong_lao_dong.NGAY_HET_HAN);
           
+            DS_V_GD_HOP_DONG_LAO_DONG v_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, v_ds.V_GD_HOP_DONG_LAO_DONG.NewRow());
+            return v_obj_trans;
+        }
+        private ITransferDataRow get_trans_object_trang_thai_lao_dong(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
+        {
+            Hashtable v_htb = new Hashtable();
+            v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.Expr1, e_col_Number_of_trang_thai_lao_dong.Expr1);
+            v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.Expr2, e_col_Number_of_trang_thai_lao_dong.Expr2);
+            v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.MA_QUYET_DINH, e_col_Number_of_trang_thai_lao_dong.MA_QUYET_DINH);
+            v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.NGAY_CO_HIEU_LUC, e_col_Number_of_trang_thai_lao_dong.NGAY_CO_HIEU_LUC);
+
+
             DS_V_GD_HOP_DONG_LAO_DONG v_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, v_ds.V_GD_HOP_DONG_LAO_DONG.NewRow());
             return v_obj_trans;
@@ -1295,14 +1349,29 @@ namespace BKI_HRM
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;
             grid2us_object(m_us, m_grv_nhan_su.Row);
 
-            v_us.FillDatasetByIDnhanvien(v_ds, m_us.strMA_NV);
+            v_us.FillDatasetByManhanvien(v_ds, m_us.strMA_NV);
             m_grv_hop_dong_lao_dong.Redraw = false;
             // phai viet 1 ham get_trans_object khac
             ITransferDataRow v_obj_trans = get_trans_object_hop_dong_lao_dong(m_grv_hop_dong_lao_dong);
             CGridUtils.Dataset2C1Grid(v_ds, m_grv_hop_dong_lao_dong, v_obj_trans);
             m_grv_hop_dong_lao_dong.Redraw = true;
         }
+        private void load_data_2_grv_trang_thai_lao_dong()
+        {
+            DS_V_GD_TRANG_THAI_LAO_DONG v_ds = new DS_V_GD_TRANG_THAI_LAO_DONG();
+            US_V_GD_TRANG_THAI_LAO_DONG v_us = new US_V_GD_TRANG_THAI_LAO_DONG();
 
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_nhan_su)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;
+            grid2us_object(m_us, m_grv_nhan_su.Row);
+
+            v_us.FillDatasetByManhanvien(v_ds, m_us.strMA_NV);
+            m_grv_trang_thai_lao_dong.Redraw = false;
+            // phai viet 1 ham get_trans_object khac
+            ITransferDataRow v_obj_trans = get_trans_object_trang_thai_lao_dong(m_grv_trang_thai_lao_dong);
+            CGridUtils.Dataset2C1Grid(v_ds, m_grv_trang_thai_lao_dong, v_obj_trans);
+            m_grv_trang_thai_lao_dong.Redraw = true;
+        }
         private void load_chi_tiet_nhan_vien()
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_nhan_su)) return;
@@ -1311,6 +1380,7 @@ namespace BKI_HRM
             us_object_to_form();
             load_data_2_grv_qua_trinh_lam_viec();
             load_data_2_grv_hop_dong_lao_dong();
+            load_data_2_grv_trang_thai_lao_dong();
         }
 
         private void load_data_2_grid_search(){
@@ -1348,6 +1418,7 @@ namespace BKI_HRM
             m_txt_nam_tot_nghiep.Text = (m_us.dcNAM_TOT_NGHIEP > 0) ? CIPConvert.ToStr(m_us.dcNAM_TOT_NGHIEP) : "";
             m_txt_email_co_quan.Text = m_us.strEMAIL_CQ;
             m_txt_email_ca_nhan.Text = m_us.strEMAIL_CA_NHAN;
+            m_txt_so_dtdd.Text = m_us.strDI_DONG;
             m_txt_sdt_nha_rieng.Text = m_us.strDT_NHA;
             m_txt_ma_so_thue.Text = m_us.strMA_SO_THUE;
             m_txt_dia_chi.Text = m_us.strCHO_O;
