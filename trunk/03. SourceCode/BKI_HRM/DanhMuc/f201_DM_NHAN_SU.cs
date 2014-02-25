@@ -1203,9 +1203,9 @@ namespace BKI_HRM
         private enum e_col_Number_of_trang_thai_lao_dong
         {
             
-            MA_QUYET_DINH = 1,
+            MA_QUYET_DINH = 2,
             Expr2 = 4,
-            Expr1 = 2,
+            Expr1 = 1,
             NGAY_CO_HIEU_LUC = 3
         }
         private enum e_col_Number_of_hop_dong_lao_dong
@@ -1311,8 +1311,8 @@ namespace BKI_HRM
             v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.NGAY_CO_HIEU_LUC, e_col_Number_of_trang_thai_lao_dong.NGAY_CO_HIEU_LUC);
 
 
-            DS_V_GD_HOP_DONG_LAO_DONG v_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
-            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, v_ds.V_GD_HOP_DONG_LAO_DONG.NewRow());
+            DS_V_GD_TRANG_THAI_LAO_DONG v_ds = new DS_V_GD_TRANG_THAI_LAO_DONG();
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, v_ds.V_GD_TRANG_THAI_LAO_DONG.NewRow());
             return v_obj_trans;
         }
 		private void load_data_2_grid(){						
