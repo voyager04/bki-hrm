@@ -131,6 +131,7 @@ namespace BKI_HRM
             m_txt_nam_tot_nghiep.Text = (m_us_dm_nhan_su.dcNAM_TOT_NGHIEP>0)?CIPConvert.ToStr(m_us_dm_nhan_su.dcNAM_TOT_NGHIEP):"";
             m_txt_email_co_quan.Text = m_us_dm_nhan_su.strEMAIL_CQ;
             m_txt_email_ca_nhan.Text = m_us_dm_nhan_su.strEMAIL_CA_NHAN;
+            m_txt_so_dtdd.Text = m_us_dm_nhan_su.strDI_DONG;
             m_txt_sdt_nha_rieng.Text = m_us_dm_nhan_su.strDT_NHA;
             m_txt_ma_so_thue.Text = m_us_dm_nhan_su.strMA_SO_THUE;
             m_txt_dia_chi.Text = m_us_dm_nhan_su.strCHO_O;
@@ -163,6 +164,7 @@ namespace BKI_HRM
                 m_us_dm_nhan_su.dcNAM_TOT_NGHIEP = CIPConvert.ToDecimal(m_txt_nam_tot_nghiep.Text);
             m_us_dm_nhan_su.strEMAIL_CQ = m_txt_email_co_quan.Text;
             m_us_dm_nhan_su.strEMAIL_CA_NHAN = m_txt_email_ca_nhan.Text;
+            m_us_dm_nhan_su.strDI_DONG = m_txt_so_dtdd.Text;
             m_us_dm_nhan_su.strDT_NHA = m_txt_sdt_nha_rieng.Text;
             m_us_dm_nhan_su.strMA_SO_THUE = m_txt_ma_so_thue.Text;
             m_us_dm_nhan_su.strCHO_O = m_txt_dia_chi.Text;
@@ -289,6 +291,7 @@ namespace BKI_HRM
             m_txt_nam_tot_nghiep.Text = "";
             m_txt_email_co_quan.Text = "";
             m_txt_email_ca_nhan.Text = "";
+            m_txt_so_dtdd.Text = "";
             m_txt_sdt_nha_rieng.Text = "";
             m_txt_ma_so_thue.Text = "";
             m_txt_dia_chi.Text = "";
