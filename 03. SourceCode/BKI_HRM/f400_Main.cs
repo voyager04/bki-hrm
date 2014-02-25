@@ -6,7 +6,7 @@ using System.Drawing;
 
 using System.Text;
 using System.Windows.Forms;
-
+using BKI_HRM.BaoCao;
 using IP.Core.IPCommon;
 using IP.Core.IPCommon.My;
 using IP.Core.IPExcelReport.My;
@@ -137,7 +137,8 @@ namespace BKI_HRM {
 
         private void m_menuitem_bcnhansu_Click(object sender, EventArgs e) {
             try {
-
+                f103_bao_cao_nhan_su frm =  new f103_bao_cao_nhan_su();
+                frm.Show();
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
