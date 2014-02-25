@@ -361,6 +361,7 @@ namespace BKI_HRM.DS.CDBNames
        public const string THOI_DIEM_KT = "THOI_DIEM_KT";
        public const string THOI_GIAN_TG = "THOI_GIAN_TG";
        public const string DANH_HIEU = "DANH_HIEU";
+       public const string ID = "ID";
    }
    public class V_BAO_CAO_NHAN_SU {
        public const string ID = "ID";
