@@ -269,5 +269,12 @@ public class US_DM_DU_AN : US_Object
         v_sp.addDecimalInputParam("@ID", i_dc_id);
         v_sp.fillDataSetByCommand(this, op_ds_dm_da);
     }
+
+    public void FillDataset_search_by_ma_da(DS_DM_DU_AN op_ds_dm_da, string i_str_id)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_DM_DU_AN_select_by_ma_da");
+        v_sp.addNVarcharInputParam("@MA_DA", i_str_id);
+        v_sp.fillDataSetByCommand(this, op_ds_dm_da);
+    }
 }
 }

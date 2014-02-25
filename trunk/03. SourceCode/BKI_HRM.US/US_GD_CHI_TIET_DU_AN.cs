@@ -212,5 +212,19 @@ public class US_GD_CHI_TIET_DU_AN : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+
+    public void DeleteChiTietDuAnById(DS_GD_CHI_TIET_DU_AN v_ds_gd_chi_tiet_da, decimal i_dc_id)
+    {   
+        CStoredProc v_sp = new CStoredProc("pr_GD_CHI_TIET_DU_AN_Delete");
+        v_sp.addDecimalInputParam("@ID", i_dc_id);
+        v_sp.fillDataSetByCommand(this, v_ds_gd_chi_tiet_da);    
+    }
+
+    public void FillDatasetByID(DS_GD_CHI_TIET_DU_AN v_ds, decimal i_dc_id)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_GD_CHI_TIET_DU_AN_select_by_ID");
+        v_sp.addDecimalInputParam("@ID", i_dc_id);
+        v_sp.fillDataSetByCommand(this, v_ds); 
+    }
+}
 }
