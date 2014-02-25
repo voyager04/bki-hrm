@@ -160,7 +160,7 @@ namespace BKI_HRM
             m_us_dm_nhan_su.strTRINH_DO = m_txt_trinh_do.Text;
             m_us_dm_nhan_su.strNOI_DAO_TAO = m_txt_noi_dao_tao.Text;
             m_us_dm_nhan_su.strCHUYEN_NGANH = m_txt_chuyen_nganh.Text;
-            if (m_txt_nam_tot_nghiep.Text.Trim(' ').Length > 0)
+            if (m_txt_nam_tot_nghiep.Text.Trim().Length > 0)
                 m_us_dm_nhan_su.dcNAM_TOT_NGHIEP = CIPConvert.ToDecimal(m_txt_nam_tot_nghiep.Text);
             m_us_dm_nhan_su.strEMAIL_CQ = m_txt_email_co_quan.Text;
             m_us_dm_nhan_su.strEMAIL_CA_NHAN = m_txt_email_ca_nhan.Text;
@@ -217,7 +217,7 @@ namespace BKI_HRM
             }
             if (!CValidateTextBox.IsValid(m_txt_dan_toc, DataType.StringType, allowNull.YES, true))
                 return false;
-            if (!CValidateTextBox.IsValid(m_txt_nam_tot_nghiep, DataType.NumberType, allowNull.YES, true) || ((m_txt_nam_tot_nghiep.Text.Trim(' ').Length > 0) && (CIPConvert.ToDecimal(m_txt_nam_tot_nghiep.Text) > DateTime.Today.Year))){
+            if (!CValidateTextBox.IsValid(m_txt_nam_tot_nghiep, DataType.NumberType, allowNull.YES, true) || ((m_txt_nam_tot_nghiep.Text.Trim().Length > 0) && (CIPConvert.ToDecimal(m_txt_nam_tot_nghiep.Text) > DateTime.Today.Year))){
                 BaseMessages.MsgBox_Warning(211);
                 return false;
             }
@@ -225,8 +225,12 @@ namespace BKI_HRM
                 return false;
             if (!CValidateTextBox.IsValid(m_txt_email_co_quan, DataType.StringType, allowNull.YES, true))
                 return false;
-            if (!CValidateTextBox.IsValid(m_txt_so_dtdd, DataType.NumberType, allowNull.YES, true) || ((m_txt_so_dtdd.Text.Trim(' ').Length > 0) && (m_txt_so_dtdd.Text.Trim(' ').Length != 10 && m_txt_so_dtdd.Text.Trim(' ').Length != 11)))
+            if (!CValidateTextBox.IsValid(m_txt_so_dtdd, DataType.NumberType, allowNull.YES, true)
+                || ((m_txt_so_dtdd.Text.Replace(" ",string.Empty).Length > 0)
+                    && (m_txt_so_dtdd.Text.Replace(" ", string.Empty).Length != 10)
+                    && (m_txt_so_dtdd.Text.Replace(" ", string.Empty).Length != 11)))
             {
+                MessageBox.Show("length: "+m_txt_so_dtdd.Text.Trim().Length);
                 BaseMessages.MsgBox_Warning(210);
                 return false;
             }
