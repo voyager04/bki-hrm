@@ -1158,29 +1158,24 @@ namespace BKI_HRM
             TEN_CV = 3
 ,
             
-            MA_DON_VI = 5
+            MA_DON_VI = 4
                 ,
             Expr1 = 6
                 ,
             MA_CV = 2
                 ,
-            MA_QUYET_DINH = 4
+            MA_QUYET_DINH = 5
                 , NGAY_CO_HIEU_LUC = 1
         }			
 		#endregion
 
         private enum e_col_Number_of_hop_dong_lao_dong
         {
-            NGAY_HET_HAN = 4
-,
-            
-            Expr1 = 2
-                ,
-            
-            MA_HOP_DONG = 1
-                ,
-            Expr2 = 5
-                , NGAY_CO_HIEU_LUC = 3
+            NGAY_HET_HAN = 4,
+            LOAI_HOP_DONG = 2,
+            MA_HOP_DONG = 1,
+            TRANG_THAI_HOP_DONG = 5,
+            NGAY_CO_HIEU_LUC = 3
 
         }		
 		#region Members
@@ -1257,8 +1252,8 @@ namespace BKI_HRM
         {
             Hashtable v_htb = new Hashtable();
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.MA_HOP_DONG, e_col_Number_of_hop_dong_lao_dong.MA_HOP_DONG);
-            v_htb.Add(V_GD_HOP_DONG_LAO_DONG.Expr1, e_col_Number_of_hop_dong_lao_dong.Expr1);
-            v_htb.Add(V_GD_HOP_DONG_LAO_DONG.Expr2, e_col_Number_of_hop_dong_lao_dong.Expr2);
+            v_htb.Add(V_GD_HOP_DONG_LAO_DONG.TRANG_THAI_HOP_DONG, e_col_Number_of_hop_dong_lao_dong.TRANG_THAI_HOP_DONG);
+            v_htb.Add(V_GD_HOP_DONG_LAO_DONG.LOAI_HOP_DONG, e_col_Number_of_hop_dong_lao_dong.LOAI_HOP_DONG);
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.NGAY_CO_HIEU_LUC, e_col_Number_of_hop_dong_lao_dong.NGAY_CO_HIEU_LUC);
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.NGAY_HET_HAN, e_col_Number_of_hop_dong_lao_dong.NGAY_HET_HAN);
           
