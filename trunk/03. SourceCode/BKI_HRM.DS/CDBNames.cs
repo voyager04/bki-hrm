@@ -408,4 +408,16 @@ namespace BKI_HRM.DS.CDBNames
        public const string TRANG_THAI_LAO_DONG = "TRANG_THAI_LAO_DONG";
        public const string TRANG_THAI_HIEN_TAI = "TRANG_THAI_HIEN_TAI";
    }
+
+   public class gd_chi_tiet_du_an
+   {
+       public const string ID = "ID";
+       public const string ID_DU_AN = "ID_DU_AN";
+       public const string ID_NHAN_SU = "ID_NHAN_SU";
+       public const string ID_VI_TRI = "ID_VI_TRI";
+       public const string ID_DANH_HIEU = "ID_DANH_HIEU";
+       public const string THOI_DIEM_TG = "THOI_DIEM_TG";
+       public const string THOI_DIEM_KT = "THOI_DIEM_KT";
+       public const string THOI_GIAN_TG = "THOI_GIAN_TG";
+   }
 }
