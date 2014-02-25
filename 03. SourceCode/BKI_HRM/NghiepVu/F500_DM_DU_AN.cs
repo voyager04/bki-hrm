@@ -105,10 +105,10 @@ namespace BKI_HRM
             this.m_lbl_danh_sach_nhan_su = new System.Windows.Forms.Label();
             this.m_grv_nhan_su = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.m_cmd_them_moi = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_sua = new SIS.Controls.Button.SiSButton();
             this.siSButton3 = new SIS.Controls.Button.SiSButton();
             this.m_cmd_xoa = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_sua = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_them_moi = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_du_an)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).BeginInit();
@@ -318,38 +318,6 @@ namespace BKI_HRM
             this.panel1.Size = new System.Drawing.Size(1008, 36);
             this.panel1.TabIndex = 22;
             // 
-            // m_cmd_them_moi
-            // 
-            this.m_cmd_them_moi.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_them_moi.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_them_moi.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_them_moi.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_them_moi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_them_moi.ImageIndex = 2;
-            this.m_cmd_them_moi.ImageList = this.ImageList;
-            this.m_cmd_them_moi.Location = new System.Drawing.Point(740, 4);
-            this.m_cmd_them_moi.Name = "m_cmd_them_moi";
-            this.m_cmd_them_moi.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_them_moi.TabIndex = 12;
-            this.m_cmd_them_moi.Text = "&Thêm";
-            this.m_cmd_them_moi.Click += new System.EventHandler(this.m_cmd_them_moi_Click);
-            // 
-            // m_cmd_sua
-            // 
-            this.m_cmd_sua.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_sua.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_sua.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_sua.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_sua.ImageIndex = 3;
-            this.m_cmd_sua.ImageList = this.ImageList;
-            this.m_cmd_sua.Location = new System.Drawing.Point(828, 4);
-            this.m_cmd_sua.Name = "m_cmd_sua";
-            this.m_cmd_sua.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_sua.TabIndex = 13;
-            this.m_cmd_sua.Text = "&Sửa";
-            this.m_cmd_sua.Click += new System.EventHandler(this.m_cmd_sua_Click);
-            // 
             // siSButton3
             // 
             this.siSButton3.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -380,6 +348,38 @@ namespace BKI_HRM
             this.m_cmd_xoa.TabIndex = 14;
             this.m_cmd_xoa.Text = "&Xoá";
             this.m_cmd_xoa.Click += new System.EventHandler(this.m_cmd_xoa_Click);
+            // 
+            // m_cmd_sua
+            // 
+            this.m_cmd_sua.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_sua.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_sua.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_sua.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_sua.ImageIndex = 3;
+            this.m_cmd_sua.ImageList = this.ImageList;
+            this.m_cmd_sua.Location = new System.Drawing.Point(828, 4);
+            this.m_cmd_sua.Name = "m_cmd_sua";
+            this.m_cmd_sua.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_sua.TabIndex = 13;
+            this.m_cmd_sua.Text = "&Sửa";
+            this.m_cmd_sua.Click += new System.EventHandler(this.m_cmd_sua_Click);
+            // 
+            // m_cmd_them_moi
+            // 
+            this.m_cmd_them_moi.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_them_moi.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_them_moi.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_them_moi.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_them_moi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_them_moi.ImageIndex = 2;
+            this.m_cmd_them_moi.ImageList = this.ImageList;
+            this.m_cmd_them_moi.Location = new System.Drawing.Point(740, 4);
+            this.m_cmd_them_moi.Name = "m_cmd_them_moi";
+            this.m_cmd_them_moi.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_them_moi.TabIndex = 12;
+            this.m_cmd_them_moi.Text = "&Thêm";
+            this.m_cmd_them_moi.Click += new System.EventHandler(this.m_cmd_them_moi_Click);
             // 
             // F500_DM_DU_AN
             // 
