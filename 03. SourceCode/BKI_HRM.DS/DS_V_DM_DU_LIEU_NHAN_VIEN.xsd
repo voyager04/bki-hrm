@@ -13,7 +13,7 @@
               <DbSource ConnectionRef="BKI_HRMConnectionString5 (Settings)" DbObjectName="BKI_HRM.dbo.V_DM_DU_LIEU_NHAN_VIEN" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, MA_NV, HO_DEM, TEN, GIOI_TINH, NGAY_SINH, ID_CHUC_VU, MA_CV, ID_TRANG_THAI_CV, TRANG_THAI_CV, TY_LE_THAM_GIA, ID_DON_VI, MA_DON_VI, TEN_DON_VI, ID_DON_VI_CAP_TREN, ID_LOAI_DON_VI, ID_TRANG_LAO_DONG, TRANG_THAI_LAO_DONG, TRANG_THAI_HIEN_TAI, ID_VI_TRI, VI_TRI_DU_AN, THOI_DIEM_TG, MA_DU_AN, TEN_DU_AN, MA_HOP_DONG, ID_LOAI_HOP_DONG, LOAI_HOP_DONG, NGAY_HET_HAN, TRANG_THAI_HOP_DONG FROM dbo.V_DM_DU_LIEU_NHAN_VIEN</CommandText>
+                    <CommandText>SELECT ID, MA_NV, HO_DEM, TEN, GIOI_TINH, NGAY_SINH, TRINH_DO, ID_CHUC_VU, MA_CV, ID_TRANG_THAI_CV, TRANG_THAI_CV, TY_LE_THAM_GIA, ID_DON_VI, MA_DON_VI, TEN_DON_VI, ID_DON_VI_CAP_TREN, ID_LOAI_DON_VI, ID_TRANG_LAO_DONG, TRANG_THAI_LAO_DONG, TRANG_THAI_HIEN_TAI, ID_VI_TRI, VI_TRI_DU_AN, THOI_DIEM_TG, MA_DU_AN, TEN_DU_AN, MA_HOP_DONG, ID_LOAI_HOP_DONG, LOAI_HOP_DONG, NGAY_HET_HAN, TRANG_THAI_HOP_DONG FROM dbo.V_DM_DU_LIEU_NHAN_VIEN</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -26,6 +26,7 @@
               <Mapping SourceColumn="TEN" DataSetColumn="TEN" />
               <Mapping SourceColumn="GIOI_TINH" DataSetColumn="GIOI_TINH" />
               <Mapping SourceColumn="NGAY_SINH" DataSetColumn="NGAY_SINH" />
+              <Mapping SourceColumn="TRINH_DO" DataSetColumn="TRINH_DO" />
               <Mapping SourceColumn="ID_CHUC_VU" DataSetColumn="ID_CHUC_VU" />
               <Mapping SourceColumn="MA_CV" DataSetColumn="MA_CV" />
               <Mapping SourceColumn="ID_TRANG_THAI_CV" DataSetColumn="ID_TRANG_THAI_CV" />
@@ -93,6 +94,13 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="NGAY_SINH" msprop:Generator_ColumnVarNameInTable="columnNGAY_SINH" msprop:Generator_ColumnPropNameInRow="NGAY_SINH" msprop:Generator_ColumnPropNameInTable="NGAY_SINHColumn" msprop:Generator_UserColumnName="NGAY_SINH" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TRINH_DO" msprop:Generator_ColumnVarNameInTable="columnTRINH_DO" msprop:Generator_ColumnPropNameInRow="TRINH_DO" msprop:Generator_ColumnPropNameInTable="TRINH_DOColumn" msprop:Generator_UserColumnName="TRINH_DO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="ID_CHUC_VU" msprop:Generator_ColumnVarNameInTable="columnID_CHUC_VU" msprop:Generator_ColumnPropNameInRow="ID_CHUC_VU" msprop:Generator_ColumnPropNameInTable="ID_CHUC_VUColumn" msprop:Generator_UserColumnName="ID_CHUC_VU" type="xs:decimal" />
               <xs:element name="MA_CV" msprop:Generator_ColumnVarNameInTable="columnMA_CV" msprop:Generator_ColumnPropNameInRow="MA_CV" msprop:Generator_ColumnPropNameInTable="MA_CVColumn" msprop:Generator_UserColumnName="MA_CV">
                 <xs:simpleType>
