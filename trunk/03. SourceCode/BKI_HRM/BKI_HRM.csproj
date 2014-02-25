@@ -73,6 +73,12 @@
     <Compile Include="BaoCao\f100_v_gd_trang_thai_lao_dong.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BaoCao\f103_bao_cao_nhan_su.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\f103_bao_cao_nhan_su.Designer.cs">
+      <DependentUpon>f103_bao_cao_nhan_su.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaoCao\f200_V_GD_QUA_TRINH_LAM_VIEC.cs">
       <SubType>Form</SubType>
     </Compile>
