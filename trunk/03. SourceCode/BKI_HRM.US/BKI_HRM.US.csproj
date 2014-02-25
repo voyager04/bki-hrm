@@ -57,6 +57,7 @@
     <Compile Include="US_DM_DU_AN.cs" />
     <Compile Include="US_DM_NHAN_SU.cs" />
     <Compile Include="US_DM_QUYET_DINH.cs" />
+    <Compile Include="US_GD_CHI_TIET_DU_AN.cs" />
     <Compile Include="US_GD_HOP_DONG.cs" />
     <Compile Include="US_HT_NHOM_NGUOI_SU_DUNG.cs" />
     <Compile Include="US_HT_PHAN_QUYEN_CHO_NHOM.cs" />
