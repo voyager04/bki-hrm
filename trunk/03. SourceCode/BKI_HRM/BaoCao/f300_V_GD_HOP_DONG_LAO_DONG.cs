@@ -320,11 +320,11 @@ namespace BKI_HRM
 		private enum e_col_Number{
 			NGAY_HET_HAN = 7
 ,MA_NV = 1
-,Expr1 = 5
+,LOAI_HOP_DONG = 5
 ,HO_DEM = 2
 ,TEN = 3
 ,MA_HOP_DONG = 4
-,Expr2 = 8
+,TRANG_THAI_HOP_DONG = 8
 ,NGAY_CO_HIEU_LUC = 6
 
 		}			
@@ -356,11 +356,11 @@ namespace BKI_HRM
 			Hashtable v_htb = new Hashtable();
 			v_htb.Add(V_GD_HOP_DONG_LAO_DONG.NGAY_HET_HAN, e_col_Number.NGAY_HET_HAN);
 			v_htb.Add(V_GD_HOP_DONG_LAO_DONG.MA_NV, e_col_Number.MA_NV);
-			v_htb.Add(V_GD_HOP_DONG_LAO_DONG.Expr1, e_col_Number.Expr1);
+			v_htb.Add(V_GD_HOP_DONG_LAO_DONG.TRANG_THAI_HOP_DONG, e_col_Number.TRANG_THAI_HOP_DONG);
 			v_htb.Add(V_GD_HOP_DONG_LAO_DONG.HO_DEM, e_col_Number.HO_DEM);
 			v_htb.Add(V_GD_HOP_DONG_LAO_DONG.TEN, e_col_Number.TEN);
 			v_htb.Add(V_GD_HOP_DONG_LAO_DONG.MA_HOP_DONG, e_col_Number.MA_HOP_DONG);
-			v_htb.Add(V_GD_HOP_DONG_LAO_DONG.Expr2, e_col_Number.Expr2);
+			v_htb.Add(V_GD_HOP_DONG_LAO_DONG.LOAI_HOP_DONG, e_col_Number.LOAI_HOP_DONG);
 			v_htb.Add(V_GD_HOP_DONG_LAO_DONG.NGAY_CO_HIEU_LUC, e_col_Number.NGAY_CO_HIEU_LUC);
 									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_GD_HOP_DONG_LAO_DONG.NewRow());
