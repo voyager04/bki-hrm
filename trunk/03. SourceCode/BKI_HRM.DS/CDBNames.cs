@@ -231,13 +231,12 @@ namespace BKI_HRM.DS.CDBNames
         public const string TEN = "TEN";
         public const string MA_HOP_DONG = "MA_HOP_DONG";
         public const string ID_LOAI_HOP_DONG = "ID_LOAI_HOP_DONG";
-        public const string Expr1 = "Expr1";
+        public const string LOAI_HOP_DONG = "LOAI_HOP_DONG";
         public const string NGAY_CO_HIEU_LUC = "NGAY_CO_HIEU_LUC";
         public const string NGAY_HET_HAN = "NGAY_HET_HAN";
-        public const string ID_TRANG_LAO_DONG = "ID_TRANG_LAO_DONG";
-        public const string TRANG_THAI_HIEN_TAI = "TRANG_THAI_HIEN_TAI";
-        public const string Expr2 = "Expr2";
+        public const string TRANG_THAI_HOP_DONG = "TRANG_THAI_HOP_DONG";
     }
+
     public class GD_HOP_DONG
     {
         public const string ID = "ID";
