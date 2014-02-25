@@ -44,7 +44,6 @@ namespace BKI_HRM {
         private Label m_lbl_tim_kiem;
         private DateTimePicker m_dat_tu_ngay;
         private Label label1;
-        private TreeView m_trv_don_vi;
         private System.ComponentModel.IContainer components;
 
         public f101_v_dm_don_vi() {
@@ -93,7 +92,6 @@ namespace BKI_HRM {
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
-            this.m_trv_don_vi = new System.Windows.Forms.TreeView();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
@@ -218,9 +216,9 @@ namespace BKI_HRM {
             // m_fg
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Location = new System.Drawing.Point(209, 92);
+            this.m_fg.Location = new System.Drawing.Point(0, 92);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(991, 364);
+            this.m_fg.Size = new System.Drawing.Size(1200, 364);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -287,18 +285,10 @@ namespace BKI_HRM {
             this.m_lbl_tim_kiem.TabIndex = 24;
             this.m_lbl_tim_kiem.Text = "Tìm kiếm";
             // 
-            // m_trv_don_vi
-            // 
-            this.m_trv_don_vi.Location = new System.Drawing.Point(4, 92);
-            this.m_trv_don_vi.Name = "m_trv_don_vi";
-            this.m_trv_don_vi.Size = new System.Drawing.Size(199, 364);
-            this.m_trv_don_vi.TabIndex = 22;
-            // 
             // f101_v_dm_don_vi
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(1200, 491);
-            this.Controls.Add(this.m_trv_don_vi);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
@@ -362,6 +352,13 @@ namespace BKI_HRM {
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_grid();
             load_treeview();
+        }
+
+        private void test(){
+            var row = m_fg.Rows[10];
+            if (row.IsNode){
+                var note = row.Node;
+            }
         }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg) {
             Hashtable v_htb = new Hashtable();
@@ -452,13 +449,7 @@ namespace BKI_HRM {
         }
 
         private void load_treeview(){
-            foreach (DataRow row in m_v_ds.V_DM_DON_VI.Rows){
-                string v_str_ten_phong = row[V_DM_DON_VI.TEN_PHONG].ToString();
-                string v_str_id_cap_don_vi = row[V_DM_DON_VI.ID_CAP_DON_VI].ToString();
-                if (v_str_id_cap_don_vi.Equals(TU_DIEN.KHOI)) {
-                    m_trv_don_vi.Nodes.Add(v_str_ten_phong);
-                }
-            }
+            
         }
 
         #endregion
