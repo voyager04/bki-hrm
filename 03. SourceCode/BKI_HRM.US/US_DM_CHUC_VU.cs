@@ -196,5 +196,6 @@ public class US_DM_CHUC_VU : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
+    
 	}
 }
