@@ -208,7 +208,7 @@ namespace BKI_HRM.DS.CDBNames
         public const string MA_QUYET_DINH = "MA_QUYET_DINH";
         public const string NGAY_CO_HIEU_LUC = "NGAY_CO_HIEU_LUC";
         public const string ID_TRANG_THAI_CV = "ID_TRANG_THAI_CV";
-        public const string Expr1 = "Expr1";
+        public const string TRANG_THAI_CV = "TRANG_THAI_CV";
     }
 
     public class V_GD_TRANG_THAI_LAO_DONG {
@@ -216,11 +216,11 @@ namespace BKI_HRM.DS.CDBNames
         public const string HO_DEM = "HO_DEM";
         public const string TEN = "TEN";
         public const string ID_TRANG_LAO_DONG = "ID_TRANG_LAO_DONG";
-        public const string Expr1 = "Expr1";
+        public const string TRANG_THAI_LAO_DONG = "TRANG_THAI_LAO_DONG";
         public const string MA_QUYET_DINH = "MA_QUYET_DINH";
         public const string NGAY_CO_HIEU_LUC = "NGAY_CO_HIEU_LUC";
         public const string ID_LOAI_QD = "ID_LOAI_QD";
-        public const string Expr2 = "Expr2";
+        public const string LOAI_QUYET_DINH = "LOAI_QUYET_DINH";
         public const string TRANG_THAI_HIEN_TAI = "TRANG_THAI_HIEN_TAI";
     }
 
