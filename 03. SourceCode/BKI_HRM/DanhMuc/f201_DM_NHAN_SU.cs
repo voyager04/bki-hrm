@@ -1247,7 +1247,7 @@ namespace BKI_HRM
             
             MA_DON_VI = 4
                 ,
-            Expr1 = 6
+            TRANG_THAI_CV = 6
                 ,
             MA_CV = 2
                 ,
@@ -1258,8 +1258,8 @@ namespace BKI_HRM
         {
             
             MA_QUYET_DINH = 3,
-            Expr2 = 4,
-            Expr1 = 1,
+            LOAI_QUYET_DINH = 4,
+            TRANG_THAI_LAO_DONG = 1,
             NGAY_CO_HIEU_LUC = 2
         }
         private enum e_col_Number_of_hop_dong_lao_dong
@@ -1338,7 +1338,7 @@ namespace BKI_HRM
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.TEN_CV, e_col_Number_of_qua_trinh_lam_viec.TEN_CV);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_QUYET_DINH, e_col_Number_of_qua_trinh_lam_viec.MA_QUYET_DINH);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_DON_VI, e_col_Number_of_qua_trinh_lam_viec.MA_DON_VI);
-            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.Expr1, e_col_Number_of_qua_trinh_lam_viec.Expr1);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.TRANG_THAI_CV, e_col_Number_of_qua_trinh_lam_viec.TRANG_THAI_CV);
             DS_V_GD_QUA_TRINH_LAM_VIEC v_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC();
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, v_ds.V_GD_QUA_TRINH_LAM_VIEC.NewRow());
             return v_obj_trans;
@@ -1359,8 +1359,8 @@ namespace BKI_HRM
         private ITransferDataRow get_trans_object_trang_thai_lao_dong(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
             Hashtable v_htb = new Hashtable();
-            v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.Expr1, e_col_Number_of_trang_thai_lao_dong.Expr1);
-            v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.Expr2, e_col_Number_of_trang_thai_lao_dong.Expr2);
+            v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.TRANG_THAI_LAO_DONG, e_col_Number_of_trang_thai_lao_dong.TRANG_THAI_LAO_DONG);
+            v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.LOAI_QUYET_DINH, e_col_Number_of_trang_thai_lao_dong.LOAI_QUYET_DINH);
             v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.MA_QUYET_DINH, e_col_Number_of_trang_thai_lao_dong.MA_QUYET_DINH);
             v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.NGAY_CO_HIEU_LUC, e_col_Number_of_trang_thai_lao_dong.NGAY_CO_HIEU_LUC);
 
