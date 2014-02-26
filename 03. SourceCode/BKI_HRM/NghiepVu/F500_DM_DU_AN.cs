@@ -431,8 +431,8 @@ namespace BKI_HRM
 
 		#region Members
 		ITransferDataRow m_obj_trans;
-        int m_dc_index_row;
-        int m_dc_index_row_chi_tiet_da;
+        int m_dc_index_row = 1;
+        int m_dc_index_row_chi_tiet_da = 1;
 		DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN m_ds = new DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
 		US_V_DM_DU_AN_QUYET_DINH_TU_DIEN m_us = new US_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
         private enum e_col_Number_of_nhan_su_du_an
@@ -754,7 +754,7 @@ namespace BKI_HRM
             try
             {
                 update_gd_chi_tiet_du_an();
-                load_data_2_grid_dm_nhan_su(m_dc_index_row);
+                //load_data_2_grid_dm_nhan_su(m_dc_index_row);
             }
             catch (Exception v_e)
             {

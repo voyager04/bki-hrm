@@ -24,37 +24,20 @@ namespace BKI_HRM.NghiepVu
             load_data_2_control();
             this.ShowDialog();
         }
+
         public void display_for_update(decimal i_dc_id_gd_chi_tiet_du_an)
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             load_data_2_control();
             us_obj_2_form(i_dc_id_gd_chi_tiet_du_an);
+            m_us.dcID = i_dc_id_gd_chi_tiet_du_an;
             this.ShowDialog();
         }
 
-        private void us_obj_2_form(decimal i_dc_id_gd_chi_tiet_du_an)
-        {
-            US_GD_CHI_TIET_DU_AN v_us = new US_GD_CHI_TIET_DU_AN();
-            DS_GD_CHI_TIET_DU_AN v_ds = new DS_GD_CHI_TIET_DU_AN();
-            v_us.FillDatasetByID(v_ds, i_dc_id_gd_chi_tiet_du_an);
-            DataRow v_dr = v_ds.Tables[0].Rows[0];
-            m_cbo_danh_hieu.SelectedValue = CIPConvert.ToDecimal(v_dr["ID_VI_TRI"].ToString());
-            if (v_dr["ID_DANH_HIEU"].ToString() != "")
-            {
-                m_cbo_vi_tri.SelectedValue = CIPConvert.ToDecimal(v_dr["ID_DANH_HIEU"].ToString());    
-            }
-
-            if (v_dr["THOI_DIEM_KT"].ToString() != "")
-            {
-                m_dat_ngay_kt.Value = (DateTime)v_dr["THOI_DIEM_KT"];    
-            }
-            m_dat_tham_gia.Value = (DateTime)v_dr["THOI_DIEM_TG"];
-        }
         public F500_gd_chi_tiet_du_an_de()
         {
             InitializeComponent();
         }
-
         #endregion
 
         #region Members
@@ -68,6 +51,39 @@ namespace BKI_HRM.NghiepVu
         #endregion
 
         #region privateMethods
+        private void us_obj_2_form(decimal i_dc_id_gd_chi_tiet_du_an)
+        {
+            US_GD_CHI_TIET_DU_AN v_us = new US_GD_CHI_TIET_DU_AN();
+            DS_GD_CHI_TIET_DU_AN v_ds = new DS_GD_CHI_TIET_DU_AN();
+            v_us.FillDatasetByID(v_ds, i_dc_id_gd_chi_tiet_du_an);
+            DataRow v_dr = v_ds.Tables[0].Rows[0];
+            m_cbo_vi_tri.SelectedValue = CIPConvert.ToDecimal(v_dr["ID_VI_TRI"].ToString());
+            if (v_dr["ID_DANH_HIEU"].ToString() != "")
+            {
+                m_cbo_danh_hieu.SelectedValue = CIPConvert.ToDecimal(v_dr["ID_DANH_HIEU"].ToString());
+            }
+
+            if (v_dr["THOI_DIEM_KT"].ToString() != "")
+            {
+                m_dat_ngay_kt.Value = (DateTime)v_dr["THOI_DIEM_KT"];
+            }
+            m_dat_tham_gia.Value = (DateTime)v_dr["THOI_DIEM_TG"];
+
+            US_DM_NHAN_SU v_us_dm_ns = new US_DM_NHAN_SU();
+            DS_DM_NHAN_SU v_ds_dm_ns = new DS_DM_NHAN_SU();
+            US_DM_DU_AN v_us_dm_du_an = new US_DM_DU_AN();
+            DS_DM_DU_AN v_ds_dm_du_an = new DS_DM_DU_AN();
+
+            v_us_dm_ns.FillDatasetByID(v_ds_dm_ns, CIPConvert.ToDecimal(v_dr["ID_NHAN_SU"].ToString()));
+            v_us_dm_du_an.FillDatasetByID(v_ds_dm_du_an, CIPConvert.ToDecimal(v_dr["ID_DU_AN"].ToString()));
+
+            v_dr = v_ds_dm_ns.Tables[0].Rows[0];
+            m_txt_ma_ns.Text = v_dr["MA_NV"].ToString();
+
+            v_dr = v_ds_dm_du_an.Tables[0].Rows[0];
+            m_txt_ma_du_an.Text = v_dr["MA_DU_AN"].ToString();
+        }
+
         private void save_data()
         {
             if (check_data_is_ok() == false)
@@ -100,6 +116,7 @@ namespace BKI_HRM.NghiepVu
         {
             return true;
         }
+
         private void load_data_2_control()
         {
             load_data_2_cbo_vi_tri();
@@ -153,8 +170,7 @@ namespace BKI_HRM.NghiepVu
 
             m_cbo_danh_hieu.DataSource = v_ds.Tables[0];
             m_cbo_danh_hieu.ValueMember = CM_DM_TU_DIEN.ID;
-            m_cbo_danh_hieu.DisplayMember = CM_DM_TU_DIEN.TEN_NGAN;
-            
+            m_cbo_danh_hieu.DisplayMember = CM_DM_TU_DIEN.TEN_NGAN;            
         }
         #endregion
 
@@ -172,6 +188,7 @@ namespace BKI_HRM.NghiepVu
                 m_us.dcID_NHAN_SU = CIPConvert.ToDecimal(dr["ID"].ToString());
             }
         }
+
         private void m_cmd_save_Click(object sender, EventArgs e)
         {
             try
@@ -183,13 +200,12 @@ namespace BKI_HRM.NghiepVu
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
         
         private void m_cmd_refresh_Click(object sender, EventArgs e)
         {
-
+            m_txt_ma_du_an.Text = "";
+            m_txt_ma_ns.Text = "";
         }
-        #endregion        
 
         private void m_txt_ma_du_an_TextChanged(object sender, EventArgs e)
         {
@@ -199,10 +215,9 @@ namespace BKI_HRM.NghiepVu
             if (v_ds.Tables[0].Rows.Count > 0)
             {
                 DataRow dr = v_ds.Tables[0].Rows[0];
-                m_us.dcID_DU_AN =CIPConvert.ToDecimal(dr["ID"].ToString());
+                m_us.dcID_DU_AN = CIPConvert.ToDecimal(dr["ID"].ToString());
             }
         }
-
-        
+        #endregion                
     }
 }
