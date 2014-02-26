@@ -703,6 +703,13 @@ public class US_DM_NHAN_SU : US_Object
     }
 #endregion
 
-    
+
+
+    public void FillDatasetByID(DS_DM_NHAN_SU op_ds_dm_nhan_su, decimal ip_dc_id)
+    {
+        CStoredProc cstored = new CStoredProc("pr_DM_NHAN_SU_Search_by_ID");
+        cstored.addDecimalInputParam("@ID_NS", ip_dc_id);
+        cstored.fillDataSetByCommand(this, op_ds_dm_nhan_su);
+    }
 }
 }
