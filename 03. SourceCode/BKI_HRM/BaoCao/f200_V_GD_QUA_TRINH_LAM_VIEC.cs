@@ -315,7 +315,7 @@ namespace BKI_HRM
 			TEN_CV = 5
 ,MA_NV = 1
 ,MA_DON_VI = 6
-,Expr1 = 9
+,TRANG_THAI_CV = 9
 ,MA_CV = 4
 ,HO_DEM = 2
 ,TEN = 3
@@ -354,7 +354,7 @@ namespace BKI_HRM
 			v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.TEN_CV, e_col_Number.TEN_CV);
 			v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_NV, e_col_Number.MA_NV);
 			v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_DON_VI, e_col_Number.MA_DON_VI);
-			v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.Expr1, e_col_Number.Expr1);
+			v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.TRANG_THAI_CV, e_col_Number.TRANG_THAI_CV);
 			v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_CV, e_col_Number.MA_CV);
 			v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.HO_DEM, e_col_Number.HO_DEM);
 			v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.TEN, e_col_Number.TEN);
