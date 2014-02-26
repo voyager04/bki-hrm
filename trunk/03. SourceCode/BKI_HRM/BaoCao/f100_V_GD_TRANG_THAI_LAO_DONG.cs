@@ -289,8 +289,8 @@ namespace BKI_HRM {
             HO_DEM = 2,
             MA_NV = 1,
             MA_QUYET_DINH = 5,
-            Expr2 = 7,
-            Expr1 = 4,
+            LOAI_QUYET_DINH = 7,
+            TRANG_THAI_LAO_DONG = 4,
             NGAY_CO_HIEU_LUC = 6, 
             TEN = 3
         }
@@ -339,8 +339,8 @@ namespace BKI_HRM {
             v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.HO_DEM, e_col_Number.HO_DEM);
             v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.MA_NV, e_col_Number.MA_NV);
             v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.MA_QUYET_DINH, e_col_Number.MA_QUYET_DINH);
-            v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.Expr2, e_col_Number.Expr2);
-            v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.Expr1, e_col_Number.Expr1);
+            v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.LOAI_QUYET_DINH, e_col_Number.LOAI_QUYET_DINH);
+            v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.TRANG_THAI_LAO_DONG, e_col_Number.TRANG_THAI_LAO_DONG);
             v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.NGAY_CO_HIEU_LUC, e_col_Number.NGAY_CO_HIEU_LUC);
             v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.TEN, e_col_Number.TEN);
 
