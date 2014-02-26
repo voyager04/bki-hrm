@@ -219,13 +219,13 @@ namespace BKI_HRM
             this.m_tct_chi_tiet_nhan_vien = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.m_grv_hop_dong_lao_dong = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.m_grv_trang_thai_lao_dong = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_lbl = new System.Windows.Forms.Label();
             this.m_lbl_ho_ten = new System.Windows.Forms.Label();
             this.m_lbl_ma_nhan_vien = new System.Windows.Forms.Label();
             this.m_lbl2 = new System.Windows.Forms.Label();
             this.m_ofd_chon_anh = new System.Windows.Forms.OpenFileDialog();
+            this.m_grv_trang_thai_lao_dong = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).BeginInit();
             this.panel1.SuspendLayout();
@@ -237,8 +237,8 @@ namespace BKI_HRM
             this.m_tct_chi_tiet_nhan_vien.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_hop_dong_lao_dong)).BeginInit();
-            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_trang_thai_lao_dong)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ImageList
@@ -490,6 +490,7 @@ namespace BKI_HRM
             // m_grv_qua_trinh_lam_viec
             // 
             this.m_grv_qua_trinh_lam_viec.ColumnInfo = resources.GetString("m_grv_qua_trinh_lam_viec.ColumnInfo");
+            this.m_grv_qua_trinh_lam_viec.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_qua_trinh_lam_viec.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_qua_trinh_lam_viec.Location = new System.Drawing.Point(0, 42);
             this.m_grv_qua_trinh_lam_viec.Name = "m_grv_qua_trinh_lam_viec";
@@ -1079,34 +1080,13 @@ namespace BKI_HRM
             // m_grv_hop_dong_lao_dong
             // 
             this.m_grv_hop_dong_lao_dong.ColumnInfo = resources.GetString("m_grv_hop_dong_lao_dong.ColumnInfo");
+            this.m_grv_hop_dong_lao_dong.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_hop_dong_lao_dong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_grv_hop_dong_lao_dong.Location = new System.Drawing.Point(3, 3);
             this.m_grv_hop_dong_lao_dong.Name = "m_grv_hop_dong_lao_dong";
             this.m_grv_hop_dong_lao_dong.Size = new System.Drawing.Size(994, 300);
             this.m_grv_hop_dong_lao_dong.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_hop_dong_lao_dong.Styles"));
             this.m_grv_hop_dong_lao_dong.TabIndex = 21;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.m_grv_trang_thai_lao_dong);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1000, 306);
-            this.tabPage2.TabIndex = 4;
-            this.tabPage2.Text = "Trạng thái lao động";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // m_grv_trang_thai_lao_dong
-            // 
-            this.m_grv_trang_thai_lao_dong.ColumnInfo = resources.GetString("m_grv_trang_thai_lao_dong.ColumnInfo");
-            this.m_grv_trang_thai_lao_dong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grv_trang_thai_lao_dong.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.m_grv_trang_thai_lao_dong.Location = new System.Drawing.Point(3, 3);
-            this.m_grv_trang_thai_lao_dong.Name = "m_grv_trang_thai_lao_dong";
-            this.m_grv_trang_thai_lao_dong.Size = new System.Drawing.Size(994, 300);
-            this.m_grv_trang_thai_lao_dong.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_trang_thai_lao_dong.Styles"));
-            this.m_grv_trang_thai_lao_dong.TabIndex = 8;
             // 
             // m_lbl
             // 
@@ -1148,6 +1128,29 @@ namespace BKI_HRM
             // 
             this.m_ofd_chon_anh.FileName = "openFileDialog1";
             // 
+            // m_grv_trang_thai_lao_dong
+            // 
+            this.m_grv_trang_thai_lao_dong.ColumnInfo = resources.GetString("m_grv_trang_thai_lao_dong.ColumnInfo");
+            this.m_grv_trang_thai_lao_dong.Cursor = System.Windows.Forms.Cursors.Default;
+            this.m_grv_trang_thai_lao_dong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_grv_trang_thai_lao_dong.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.m_grv_trang_thai_lao_dong.Location = new System.Drawing.Point(3, 3);
+            this.m_grv_trang_thai_lao_dong.Name = "m_grv_trang_thai_lao_dong";
+            this.m_grv_trang_thai_lao_dong.Size = new System.Drawing.Size(994, 300);
+            this.m_grv_trang_thai_lao_dong.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_trang_thai_lao_dong.Styles"));
+            this.m_grv_trang_thai_lao_dong.TabIndex = 8;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.m_grv_trang_thai_lao_dong);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1000, 306);
+            this.tabPage2.TabIndex = 4;
+            this.tabPage2.Text = "Trạng thái lao động";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // f201_dm_nhan_su
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -1179,8 +1182,8 @@ namespace BKI_HRM
             this.m_tct_chi_tiet_nhan_vien.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_hop_dong_lao_dong)).EndInit();
-            this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_trang_thai_lao_dong)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
