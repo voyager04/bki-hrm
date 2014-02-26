@@ -297,7 +297,7 @@ namespace BKI_HRM.DS {
             
             private global::System.Data.DataColumn columnID_TRANG_THAI_CV;
             
-            private global::System.Data.DataColumn columnExpr1;
+            private global::System.Data.DataColumn columnTRANG_THAI_CV;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -406,9 +406,9 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr1Column {
+            public global::System.Data.DataColumn TRANG_THAI_CVColumn {
                 get {
-                    return this.columnExpr1;
+                    return this.columnTRANG_THAI_CV;
                 }
             }
             
@@ -449,7 +449,7 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_GD_QUA_TRINH_LAM_VIECRow AddV_GD_QUA_TRINH_LAM_VIECRow(string MA_NV, string HO_DEM, string TEN, string MA_CV, string TEN_CV, string MA_DON_VI, string MA_QUYET_DINH, System.DateTime NGAY_CO_HIEU_LUC, decimal ID_TRANG_THAI_CV, string Expr1) {
+            public V_GD_QUA_TRINH_LAM_VIECRow AddV_GD_QUA_TRINH_LAM_VIECRow(string MA_NV, string HO_DEM, string TEN, string MA_CV, string TEN_CV, string MA_DON_VI, string MA_QUYET_DINH, System.DateTime NGAY_CO_HIEU_LUC, decimal ID_TRANG_THAI_CV, string TRANG_THAI_CV) {
                 V_GD_QUA_TRINH_LAM_VIECRow rowV_GD_QUA_TRINH_LAM_VIECRow = ((V_GD_QUA_TRINH_LAM_VIECRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MA_NV,
@@ -461,7 +461,7 @@ namespace BKI_HRM.DS {
                         MA_QUYET_DINH,
                         NGAY_CO_HIEU_LUC,
                         ID_TRANG_THAI_CV,
-                        Expr1};
+                        TRANG_THAI_CV};
                 rowV_GD_QUA_TRINH_LAM_VIECRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowV_GD_QUA_TRINH_LAM_VIECRow);
                 return rowV_GD_QUA_TRINH_LAM_VIECRow;
@@ -499,7 +499,7 @@ namespace BKI_HRM.DS {
                 this.columnMA_QUYET_DINH = base.Columns["MA_QUYET_DINH"];
                 this.columnNGAY_CO_HIEU_LUC = base.Columns["NGAY_CO_HIEU_LUC"];
                 this.columnID_TRANG_THAI_CV = base.Columns["ID_TRANG_THAI_CV"];
-                this.columnExpr1 = base.Columns["Expr1"];
+                this.columnTRANG_THAI_CV = base.Columns["TRANG_THAI_CV"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -523,8 +523,8 @@ namespace BKI_HRM.DS {
                 base.Columns.Add(this.columnNGAY_CO_HIEU_LUC);
                 this.columnID_TRANG_THAI_CV = new global::System.Data.DataColumn("ID_TRANG_THAI_CV", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_TRANG_THAI_CV);
-                this.columnExpr1 = new global::System.Data.DataColumn("Expr1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr1);
+                this.columnTRANG_THAI_CV = new global::System.Data.DataColumn("TRANG_THAI_CV", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTRANG_THAI_CV);
                 this.columnMA_NV.AllowDBNull = false;
                 this.columnMA_NV.MaxLength = 35;
                 this.columnHO_DEM.AllowDBNull = false;
@@ -536,8 +536,8 @@ namespace BKI_HRM.DS {
                 this.columnMA_DON_VI.MaxLength = 15;
                 this.columnMA_QUYET_DINH.MaxLength = 50;
                 this.columnID_TRANG_THAI_CV.AllowDBNull = false;
-                this.columnExpr1.AllowDBNull = false;
-                this.columnExpr1.MaxLength = 250;
+                this.columnTRANG_THAI_CV.AllowDBNull = false;
+                this.columnTRANG_THAI_CV.MaxLength = 250;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -806,12 +806,12 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr1 {
+            public string TRANG_THAI_CV {
                 get {
-                    return ((string)(this[this.tableV_GD_QUA_TRINH_LAM_VIEC.Expr1Column]));
+                    return ((string)(this[this.tableV_GD_QUA_TRINH_LAM_VIEC.TRANG_THAI_CVColumn]));
                 }
                 set {
-                    this[this.tableV_GD_QUA_TRINH_LAM_VIEC.Expr1Column] = value;
+                    this[this.tableV_GD_QUA_TRINH_LAM_VIEC.TRANG_THAI_CVColumn] = value;
                 }
             }
             
@@ -1044,7 +1044,7 @@ namespace BKI_HRM.DS.DS_V_GD_QUA_TRINH_LAM_VIECTableAdapters {
             tableMapping.ColumnMappings.Add("MA_QUYET_DINH", "MA_QUYET_DINH");
             tableMapping.ColumnMappings.Add("NGAY_CO_HIEU_LUC", "NGAY_CO_HIEU_LUC");
             tableMapping.ColumnMappings.Add("ID_TRANG_THAI_CV", "ID_TRANG_THAI_CV");
-            tableMapping.ColumnMappings.Add("Expr1", "Expr1");
+            tableMapping.ColumnMappings.Add("TRANG_THAI_CV", "TRANG_THAI_CV");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1052,7 +1052,7 @@ namespace BKI_HRM.DS.DS_V_GD_QUA_TRINH_LAM_VIECTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BKI_HRM.DS.Properties.Settings.Default.BKI_HRMConnectionString;
+            this._connection.ConnectionString = global::BKI_HRM.DS.Properties.Settings.Default.BKI_HRMConnectionString3;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1062,7 +1062,7 @@ namespace BKI_HRM.DS.DS_V_GD_QUA_TRINH_LAM_VIECTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT MA_NV, HO_DEM, TEN, MA_CV, TEN_CV, MA_DON_VI, MA_QUYET_DINH, NGAY_CO_HIEU_" +
-                "LUC, ID_TRANG_THAI_CV, Expr1 FROM dbo.V_GD_QUA_TRINH_LAM_VIEC";
+                "LUC, ID_TRANG_THAI_CV, TRANG_THAI_CV FROM dbo.V_GD_QUA_TRINH_LAM_VIEC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
