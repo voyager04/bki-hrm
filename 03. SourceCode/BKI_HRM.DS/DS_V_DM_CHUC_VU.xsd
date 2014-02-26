@@ -75,7 +75,7 @@
               <xs:element name="TRANG_THAI_SU_DUNG" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTRANG_THAI_SU_DUNG" msprop:Generator_ColumnPropNameInRow="TRANG_THAI_SU_DUNG" msprop:Generator_ColumnPropNameInTable="TRANG_THAI_SU_DUNGColumn" msprop:Generator_UserColumnName="TRANG_THAI_SU_DUNG" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="14" />
+                    <xs:maxLength value="13" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
