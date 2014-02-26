@@ -692,11 +692,31 @@ public class US_V_DM_DU_LIEU_NHAN_VIEN : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
+
+    #region "Addtional"
+
     public void FillDatasetByIdCV(DS_V_DM_DU_LIEU_NHAN_VIEN op_ds_nhan_su, decimal i_dc_id)
     {
         CStoredProc v_sp = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_select_by_ID_CHUC_VU");
         v_sp.addDecimalInputParam("@ID_CHUC_VU", i_dc_id);
         v_sp.fillDataSetByCommand(this, op_ds_nhan_su);
     }
-	}
+
+
+    public void FillDatasetByKeyWord(string ip_str_key_word, DS_V_DM_DU_LIEU_NHAN_VIEN op_ds_v_dm_du_lieu_nhan_vien) {
+        CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_search");
+        v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_str_key_word);
+        v_stored_proc.fillDataSetByCommand(this, op_ds_v_dm_du_lieu_nhan_vien);
+    }
+
+    public void FillDatasetConvention(string ip_str_key_word, string ip_str_gender, DS_V_DM_DU_LIEU_NHAN_VIEN op_ds_v_dm_du_lieu_nhan_vien) {
+        CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_search_gioi_tinh");
+        v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_str_key_word);
+        v_stored_proc.addNVarcharInputParam("@ip_str_gioi_tinh", ip_str_gender);
+        v_stored_proc.fillDataSetByCommand(this, op_ds_v_dm_du_lieu_nhan_vien);
+    }
+    
+
+    #endregion
+}
 }
