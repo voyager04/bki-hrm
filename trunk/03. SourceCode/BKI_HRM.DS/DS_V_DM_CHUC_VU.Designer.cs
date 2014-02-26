@@ -519,7 +519,7 @@ namespace BKI_HRM.DS {
                 this.columnTRANG_THAI.AllowDBNull = false;
                 this.columnTRANG_THAI.MaxLength = 1;
                 this.columnTRANG_THAI_SU_DUNG.ReadOnly = true;
-                this.columnTRANG_THAI_SU_DUNG.MaxLength = 14;
+                this.columnTRANG_THAI_SU_DUNG.MaxLength = 13;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
