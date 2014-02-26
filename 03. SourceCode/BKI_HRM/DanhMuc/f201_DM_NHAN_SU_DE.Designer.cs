@@ -280,6 +280,7 @@
             this.m_dat_ngay_sinh.ShowCheckBox = true;
             this.m_dat_ngay_sinh.Size = new System.Drawing.Size(121, 20);
             this.m_dat_ngay_sinh.TabIndex = 6;
+            this.m_dat_ngay_sinh.Value = new System.DateTime(1995, 1, 1, 0, 0, 0, 0);
             // 
             // m_lbl_noi_sinh
             // 
@@ -418,9 +419,11 @@
             // m_ptb_anh
             // 
             this.m_ptb_anh.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.m_ptb_anh.ErrorImage = ((System.Drawing.Image)(resources.GetObject("m_ptb_anh.ErrorImage")));
             this.m_ptb_anh.Location = new System.Drawing.Point(737, 20);
             this.m_ptb_anh.Name = "m_ptb_anh";
             this.m_ptb_anh.Size = new System.Drawing.Size(114, 149);
+            this.m_ptb_anh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.m_ptb_anh.TabIndex = 48;
             this.m_ptb_anh.TabStop = false;
             // 

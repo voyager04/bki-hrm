@@ -123,7 +123,12 @@ namespace BKI_HRM
             m_txt_noi_cap.Text = m_us_dm_nhan_su.strNOI_CAP_CMND;
             m_txt_ton_giao.Text = m_us_dm_nhan_su.strTON_GIAO;
             m_txt_dan_toc.Text = m_us_dm_nhan_su.strDAN_TOC;
+            
             m_ofd_chon_anh.FileName = m_us_dm_nhan_su.strANH;
+            if (m_us_dm_nhan_su.strANH != "")
+                m_ptb_anh.Image = new Bitmap(m_ofd_chon_anh.FileName);
+            else
+                m_ptb_anh.Image = m_ptb_anh.ErrorImage;
             m_chk_trang_thai.Checked = (m_us_dm_nhan_su.strTRANG_THAI.Equals("Y") == true) ? true : false;
             m_txt_trinh_do.Text = m_us_dm_nhan_su.strTRINH_DO;
             m_txt_noi_dao_tao.Text = m_us_dm_nhan_su.strNOI_DAO_TAO;
@@ -217,7 +222,8 @@ namespace BKI_HRM
             }
             if (!CValidateTextBox.IsValid(m_txt_dan_toc, DataType.StringType, allowNull.YES, true))
                 return false;
-            if (!CValidateTextBox.IsValid(m_txt_nam_tot_nghiep, DataType.NumberType, allowNull.YES, true) || ((m_txt_nam_tot_nghiep.Text.Trim().Length > 0) && (CIPConvert.ToDecimal(m_txt_nam_tot_nghiep.Text) > DateTime.Today.Year))){
+            if (!CValidateTextBox.IsValid(m_txt_nam_tot_nghiep, DataType.NumberType, allowNull.YES, true)
+                || ((m_txt_nam_tot_nghiep.Text.Trim().Length > 0)&&(CIPConvert.ToDecimal(m_txt_nam_tot_nghiep.Text) > DateTime.Today.Year))){
                 BaseMessages.MsgBox_Warning(211);
                 return false;
             }
@@ -225,16 +231,13 @@ namespace BKI_HRM
                 return false;
             if (!CValidateTextBox.IsValid(m_txt_email_co_quan, DataType.StringType, allowNull.YES, true))
                 return false;
-            if (!CValidateTextBox.IsValid(m_txt_so_dtdd, DataType.NumberType, allowNull.YES, true)
-                || ((m_txt_so_dtdd.Text.Replace(" ",string.Empty).Length > 0)
-                    && (m_txt_so_dtdd.Text.Replace(" ", string.Empty).Length != 10)
-                    && (m_txt_so_dtdd.Text.Replace(" ", string.Empty).Length != 11)))
+            if (!CValidateTextBox.IsValid(m_txt_so_dtdd, DataType.StringType, allowNull.YES, true))
             {
-                MessageBox.Show("length: "+m_txt_so_dtdd.Text.Trim().Length);
+               
                 BaseMessages.MsgBox_Warning(210);
                 return false;
             }
-            if (!CValidateTextBox.IsValid(m_txt_sdt_nha_rieng, DataType.NumberType, allowNull.YES, true)){
+            if (!CValidateTextBox.IsValid(m_txt_sdt_nha_rieng, DataType.StringType, allowNull.YES, true)){
                 BaseMessages.MsgBox_Warning(210);
                 return false;
             }
@@ -248,7 +251,7 @@ namespace BKI_HRM
                 return false;
             if (!CValidateTextBox.IsValid(m_txt_nguoi_lien_he, DataType.StringType, allowNull.YES, true))
                 return false;
-            if (!CValidateTextBox.IsValid(m_txt_sdt_lien_he, DataType.NumberType, allowNull.YES, true)){
+            if (!CValidateTextBox.IsValid(m_txt_sdt_lien_he, DataType.StringType, allowNull.YES, true)){
                 BaseMessages.MsgBox_Warning(210);
                 return false;
             }
