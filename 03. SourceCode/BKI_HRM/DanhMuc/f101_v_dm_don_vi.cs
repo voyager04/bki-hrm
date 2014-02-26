@@ -271,6 +271,8 @@ namespace BKI_HRM {
             // 
             // m_txt_tim_kiem
             // 
+            this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.m_txt_tim_kiem.Location = new System.Drawing.Point(242, 22);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(445, 20);
@@ -385,10 +387,14 @@ namespace BKI_HRM {
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_v_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;
+            set_search_textbox_style();
+        }
+
+        private void set_search_textbox_style() {
             if (m_txt_tim_kiem.Text.Trim().Equals(String.Empty)) {
-                m_txt_tim_kiem.Select();
+                m_txt_tim_kiem.Select(); //Đưa chuột vào ô tìm kiếm
             } else {
-                m_txt_tim_kiem.SelectAll();
+                m_txt_tim_kiem.SelectAll(); //Chọn tất cả dữ liệu trong ô tìm kiếm
             }
         }
         private void grid2us_object(US_V_DM_DON_VI i_us
@@ -468,6 +474,7 @@ namespace BKI_HRM {
             m_cmd_search.Click += new EventHandler(m_cmd_search_Click);
             m_txt_tim_kiem.KeyPress += new KeyPressEventHandler(CheckEnterKeyPress);
             m_dat_tu_ngay.KeyPress += new KeyPressEventHandler(CheckEnterKeyPress);
+            m_txt_tim_kiem.TextChanged += new EventHandler(m_txt_tim_kiem_TextChanged);
         }
 
         private void f101_v_dm_don_vi_Load(object sender, System.EventArgs e) {
@@ -533,6 +540,15 @@ namespace BKI_HRM {
                     load_data_2_grid();
                 }
             } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_txt_tim_kiem_TextChanged(object sender, EventArgs e) {
+            try{
+                
+            }
+            catch (Exception v_e){
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
