@@ -21,25 +21,22 @@ namespace BKI_HRM.DanhMuc
         public F600_V_DM_QUYET_DINH_DE()
         {
             InitializeComponent();
+            /*Load Combobox Loai quyet dinh*/
+            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.LOAI_QUYET_DINH,
+                WinFormControls.eTAT_CA.NO,
+                m_cbo_loai_quyet_dinh);
             format_control();
         }
         public void display_for_insert()
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
-            /*Load Combobox Loai quyet dinh*/
-            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.LOAI_QUYET_DINH,
-                WinFormControls.eTAT_CA.NO,
-                m_cbo_loai_quyet_dinh);
+            
             this.ShowDialog();
         }
         public void display_for_update(US_V_DM_QUYET_DINH ip_m_us_v_dm_quyet_dinh)
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
-            /*Load Combobox Loai quyet dinh*/
-            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.LOAI_QUYET_DINH,
-                WinFormControls.eTAT_CA.NO,
-                m_cbo_loai_quyet_dinh);
-            m_cbo_loai_quyet_dinh.SelectedIndex = (int)m_us.dcID_LOAI_QD;
+            
             us_object_2_form(ip_m_us_v_dm_quyet_dinh);
             this.ShowDialog();
         }
@@ -75,8 +72,7 @@ namespace BKI_HRM.DanhMuc
                 m_dat_ngay_het_hieu_luc.Checked = false;
             else
             m_dat_ngay_het_hieu_luc.Value = ip_us_v_dm_quyet_dinh.datNGAY_HET_HIEU_LUC;
-            m_cbo_loai_quyet_dinh.SelectedIndex =
-                (int)CIPConvert.ToDecimal(m_us.dcID_LOAI_QD);
+            m_cbo_loai_quyet_dinh.SelectedValue = ip_us_v_dm_quyet_dinh.dcID_LOAI_QD;
         }
         private void format_control()
         {
