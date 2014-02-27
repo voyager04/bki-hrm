@@ -122,6 +122,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_DM_NHAN_SU_DU_AN.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_DM_QUYET_DINH.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_DM_QUYET_DINH.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_GD_HOP_DONG_LAO_DONG.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -324,6 +329,17 @@
     </None>
     <None Include="DS_V_DM_NHAN_SU_DU_AN.xss">
       <DependentUpon>DS_V_DM_NHAN_SU_DU_AN.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DM_QUYET_DINH.xsc">
+      <DependentUpon>DS_V_DM_QUYET_DINH.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DM_QUYET_DINH.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_DM_QUYET_DINH.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_DM_QUYET_DINH.xss">
+      <DependentUpon>DS_V_DM_QUYET_DINH.xsd</DependentUpon>
     </None>
     <None Include="DS_V_GD_HOP_DONG_LAO_DONG.xsc">
       <DependentUpon>DS_V_GD_HOP_DONG_LAO_DONG.xsd</DependentUpon>
