@@ -194,6 +194,7 @@
             this.m_menuitem_qlquyetdinh.Name = "m_menuitem_qlquyetdinh";
             this.m_menuitem_qlquyetdinh.Size = new System.Drawing.Size(206, 22);
             this.m_menuitem_qlquyetdinh.Text = "Quản lý quyết định";
+            this.m_menuitem_qlquyetdinh.Click += new System.EventHandler(this.m_menuitem_qlquyetdinh_Click);
             // 
             // m_menuitem_qlcoche
             // 
@@ -431,9 +432,9 @@
             // 
             // f400_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 445);
+            this.ClientSize = new System.Drawing.Size(835, 413);
             this.Controls.Add(this.m_mst_menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.m_mst_menu;

@@ -143,5 +143,18 @@ namespace BKI_HRM {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_menuitem_qlquyetdinh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                F600_V_DM_QUYET_DINH frm = new F600_V_DM_QUYET_DINH();
+                frm.Show();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
