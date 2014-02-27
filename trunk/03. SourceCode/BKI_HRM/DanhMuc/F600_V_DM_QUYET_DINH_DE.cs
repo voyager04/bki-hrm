@@ -59,6 +59,7 @@ namespace BKI_HRM.DanhMuc
         private void us_object_2_form(US_V_DM_QUYET_DINH ip_us_v_dm_quyet_dinh)
         {
             m_us.dcID = ip_us_v_dm_quyet_dinh.dcID;
+            
             m_txt_link.Text = ip_us_v_dm_quyet_dinh.strLINK;
             m_txt_ma_quyet_dinh.Text = ip_us_v_dm_quyet_dinh.strMA_QUYET_DINH;
             m_txt_noi_dung.Text = ip_us_v_dm_quyet_dinh.strNOI_DUNG;
@@ -104,7 +105,7 @@ namespace BKI_HRM.DanhMuc
             m_us.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value;
             m_us.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc.Value;
             m_us.datNGAY_KY = m_dat_ngay_ky.Value;
-            m_us.dcID_LOAI_QD = (m_cbo_loai_quyet_dinh.SelectedIndex);
+            m_us.dcID_LOAI_QD = CIPConvert.ToDecimal(m_cbo_loai_quyet_dinh.SelectedValue.ToString());
 			
         }
         private void save_data()
