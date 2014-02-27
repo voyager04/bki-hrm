@@ -118,9 +118,6 @@
     <Compile Include="DanhMuc\f401_V_DM_CHUC_VU.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DanhMuc\F402_V_DM_DU_LIEU_NHAN_VIEN.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="f400_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,9 +180,6 @@
     <EmbeddedResource Include="DanhMuc\f401_V_DM_CHUC_VU.resx">
       <DependentUpon>f401_V_DM_CHUC_VU.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DanhMuc\F402_V_DM_DU_LIEU_NHAN_VIEN.resx">
-      <DependentUpon>F402_V_DM_DU_LIEU_NHAN_VIEN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f400_Main.resx">
       <DependentUpon>f400_Main.cs</DependentUpon>
