@@ -16,6 +16,7 @@ namespace BKI_HRM.US {
         public const string LOAI_HOP_DONG = "LOAI_HOP_DONG";
         public const string LOAI_DON_VI = "LOAI_DON_VI";
         public const string CAP_DON_VI = "CAP_DON_VI";
+        public const string LOAI_QUYET_DINH = "LOAI_QUYET_DINH";
     }
 
     public class TU_DIEN {

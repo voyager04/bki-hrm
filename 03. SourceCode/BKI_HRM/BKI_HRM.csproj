@@ -112,6 +112,15 @@
     <Compile Include="DanhMuc\f401_V_DM_CHUC_VU.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DanhMuc\F600_V_DM_QUYET_DINH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\F600_V_DM_QUYET_DINH_DE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\F600_V_DM_QUYET_DINH_DE.designer.cs">
+      <DependentUpon>F600_V_DM_QUYET_DINH_DE.cs</DependentUpon>
+    </Compile>
     <Compile Include="f400_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +131,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HeThong\f999_ht_nguoi_su_dung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f202_V_GD_QUA_TRINH_LAM_VIEC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f203_V_GD_TRANG_THAI_LAO_DONG.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NghiepVu\F500_DM_DU_AN.cs">
@@ -172,6 +187,12 @@
       <DependentUpon>f401_V_DM_CHUC_VU.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\F600_V_DM_QUYET_DINH.resx">
+      <DependentUpon>F600_V_DM_QUYET_DINH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\F600_V_DM_QUYET_DINH_DE.resx">
+      <DependentUpon>F600_V_DM_QUYET_DINH_DE.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="f400_Main.resx">
       <DependentUpon>f400_Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +201,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HeThong\f999_ht_nguoi_su_dung.resx">
       <DependentUpon>f999_ht_nguoi_su_dung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f202_V_GD_QUA_TRINH_LAM_VIEC.resx">
+      <DependentUpon>f202_V_GD_QUA_TRINH_LAM_VIEC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f203_V_GD_TRANG_THAI_LAO_DONG.resx">
+      <DependentUpon>f203_V_GD_TRANG_THAI_LAO_DONG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\F500_DM_DU_AN.resx">
       <DependentUpon>F500_DM_DU_AN.cs</DependentUpon>

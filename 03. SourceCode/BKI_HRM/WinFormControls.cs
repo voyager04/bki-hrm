@@ -38,7 +38,8 @@ namespace BKI_HRM
             CAP_DON_VI,
             CO_CHE,
             LOAI_DU_AN,
-            TRANG_THAI_DU_AN
+            TRANG_THAI_DU_AN,
+            LOAI_QUYET_DINH
         }
         public static void load_data_to_cbo_tu_dien(
              eLOAI_TU_DIEN ip_e_trang_thai_chuc_vu
@@ -62,6 +63,9 @@ namespace BKI_HRM
                     break;
                 case eLOAI_TU_DIEN.CAP_DON_VI:
                     v_str_loai_tu_dien = MA_LOAI_TU_DIEN.CAP_DON_VI;
+                    break;
+                case eLOAI_TU_DIEN.LOAI_QUYET_DINH:
+                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.LOAI_QUYET_DINH;
                     break;
             }
             v_us_dm_tu_dien.fill_tu_dien_cung_loai_ds(
