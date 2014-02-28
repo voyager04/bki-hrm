@@ -523,14 +523,20 @@ public class US_V_DM_DU_LIEU_NHAN_VIEN : US_Object
         v_stored_proc.fillDataSetByCommand(this, op_ds_v_dm_du_lieu_nhan_vien);
     }
 
-    public void FillDatasetConvention(string ip_str_key_word, string ip_str_gender, DS_V_DM_DU_LIEU_NHAN_VIEN op_ds_v_dm_du_lieu_nhan_vien) {
+    public void FillDatasetGender(string ip_str_key_word, string ip_str_gender, DS_V_DM_DU_LIEU_NHAN_VIEN op_ds_v_dm_du_lieu_nhan_vien) {
         CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_search_gioi_tinh");
         v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_str_key_word);
         v_stored_proc.addNVarcharInputParam("@ip_str_gioi_tinh", ip_str_gender);
         v_stored_proc.fillDataSetByCommand(this, op_ds_v_dm_du_lieu_nhan_vien);
     }
-    
 
+    public void FillDatasetConditions(DS_V_DM_DU_LIEU_NHAN_VIEN op_ds_v_dm_du_lieu_nhan_vien,string ip_str_key_word, string ip_str_gender, string ip_str_trang_thai_lao_dong) {
+                    CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_Search_Conditions");
+        v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_str_key_word);
+        v_stored_proc.addNVarcharInputParam("@ip_str_gioi_tinh", ip_str_gender);
+        v_stored_proc.addNVarcharInputParam("@ip_str_trang_thai_lao_dong", ip_str_trang_thai_lao_dong);
+        v_stored_proc.fillDataSetByCommand(this, op_ds_v_dm_du_lieu_nhan_vien);
+    }
     #endregion
 }
 }
