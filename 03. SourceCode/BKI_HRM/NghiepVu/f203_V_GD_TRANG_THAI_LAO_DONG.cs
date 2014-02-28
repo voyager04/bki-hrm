@@ -23,7 +23,8 @@ using BKI_HRM.DS;
 using BKI_HRM.DS.CDBNames;
 
 using C1.Win.C1FlexGrid;
-
+using BKI_HRM.NghiepVu;
+using BKI_HRM.DanhMuc;
 namespace BKI_HRM
 {
 
@@ -35,17 +36,21 @@ namespace BKI_HRM
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
 		internal SIS.Controls.Button.SiSButton m_cmd_delete;
 		internal SIS.Controls.Button.SiSButton m_cmd_update;
-		internal SIS.Controls.Button.SiSButton m_cmd_insert;
+		internal SIS.Controls.Button.SiSButton m_cmd_save;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
-        internal SIS.Controls.Button.SiSButton siSButton3;
-        private Label label6;
-        private Label label2;
-        internal SIS.Controls.Button.SiSButton siSButton1;
-        private TextBox textBox1;
-        private Label label1;
+        internal SIS.Controls.Button.SiSButton m_cmd_them_quyet_dinh;
+        private Label m_lbl_trang_thai_hien_tai;
+        internal SIS.Controls.Button.SiSButton m_cmd_tim_nhan_vien;
+        private TextBox m_txt_thong_tin_nhan_vien;
+        private Label m_lbl_thong_tin_nhan_vien;
         private C1FlexGrid m_grv_trang_thai_lao_dong;
-        private Label label4;
-        private ComboBox comboBox1;
+        private Label m_lbl_trang_thai_moi;
+        private ComboBox m_cbo_trang_thai_moi;
+        private ComboBox m_cbo_trang_thai_hien_tai;
+        private Label m_lbl_ngay_co_hieu_luc;
+        private DateTimePicker m_dat_ngay_co_hieu_luc;
+        private DateTimePicker m_dat_ngay_het_hieu_luc;
+        private Label m_lbl_ngay_het_hieu_luc;
 		private System.ComponentModel.IContainer components;
 
 		public f203_V_GD_TRANG_THAI_LAO_DONG()
@@ -87,19 +92,23 @@ namespace BKI_HRM
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f203_V_GD_TRANG_THAI_LAO_DONG));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-            this.siSButton3 = new SIS.Controls.Button.SiSButton();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.siSButton1 = new SIS.Controls.Button.SiSButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.m_cmd_them_quyet_dinh = new SIS.Controls.Button.SiSButton();
+            this.m_lbl_trang_thai_hien_tai = new System.Windows.Forms.Label();
+            this.m_cmd_tim_nhan_vien = new SIS.Controls.Button.SiSButton();
+            this.m_txt_thong_tin_nhan_vien = new System.Windows.Forms.TextBox();
+            this.m_lbl_thong_tin_nhan_vien = new System.Windows.Forms.Label();
             this.m_grv_trang_thai_lao_dong = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.m_lbl_trang_thai_moi = new System.Windows.Forms.Label();
+            this.m_cbo_trang_thai_moi = new System.Windows.Forms.ComboBox();
+            this.m_cbo_trang_thai_hien_tai = new System.Windows.Forms.ComboBox();
+            this.m_lbl_ngay_co_hieu_luc = new System.Windows.Forms.Label();
+            this.m_dat_ngay_co_hieu_luc = new System.Windows.Forms.DateTimePicker();
+            this.m_dat_ngay_het_hieu_luc = new System.Windows.Forms.DateTimePicker();
+            this.m_lbl_ngay_het_hieu_luc = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_trang_thai_lao_dong)).BeginInit();
             this.SuspendLayout();
@@ -133,7 +142,7 @@ namespace BKI_HRM
             // 
             // m_pnl_out_place_dm
             // 
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
@@ -144,20 +153,21 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(781, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
-            // m_cmd_insert
+            // m_cmd_save
             // 
-            this.m_cmd_insert.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_insert.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_insert.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_insert.ImageIndex = 2;
-            this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(425, 4);
-            this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_insert.TabIndex = 12;
-            this.m_cmd_insert.Text = "&Thêm";
+            this.m_cmd_save.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_save.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_save.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_save.ImageIndex = 2;
+            this.m_cmd_save.ImageList = this.ImageList;
+            this.m_cmd_save.Location = new System.Drawing.Point(425, 4);
+            this.m_cmd_save.Name = "m_cmd_save";
+            this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_save.TabIndex = 12;
+            this.m_cmd_save.Text = "&Thêm";
+            this.m_cmd_save.Click += new System.EventHandler(this.m_cmd_save_Click);
             // 
             // m_cmd_update
             // 
@@ -204,107 +214,152 @@ namespace BKI_HRM
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
-            // siSButton3
+            // m_cmd_them_quyet_dinh
             // 
-            this.siSButton3.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.siSButton3.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.siSButton3.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.siSButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.siSButton3.ImageIndex = 2;
-            this.siSButton3.ImageList = this.ImageList;
-            this.siSButton3.Location = new System.Drawing.Point(389, 60);
-            this.siSButton3.Name = "siSButton3";
-            this.siSButton3.Size = new System.Drawing.Size(124, 28);
-            this.siSButton3.TabIndex = 51;
-            this.siSButton3.Text = "Thêm quyết định";
+            this.m_cmd_them_quyet_dinh.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_them_quyet_dinh.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_them_quyet_dinh.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_them_quyet_dinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_them_quyet_dinh.ImageIndex = 2;
+            this.m_cmd_them_quyet_dinh.ImageList = this.ImageList;
+            this.m_cmd_them_quyet_dinh.Location = new System.Drawing.Point(389, 60);
+            this.m_cmd_them_quyet_dinh.Name = "m_cmd_them_quyet_dinh";
+            this.m_cmd_them_quyet_dinh.Size = new System.Drawing.Size(124, 28);
+            this.m_cmd_them_quyet_dinh.TabIndex = 51;
+            this.m_cmd_them_quyet_dinh.Text = "Thêm quyết định";
+            this.m_cmd_them_quyet_dinh.Click += new System.EventHandler(this.m_cmd_them_quyet_dinh_Click);
             // 
-            // label6
+            // m_lbl_trang_thai_hien_tai
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(133, 43);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 44;
-            this.label6.Text = "label6";
+            this.m_lbl_trang_thai_hien_tai.AutoSize = true;
+            this.m_lbl_trang_thai_hien_tai.Location = new System.Drawing.Point(15, 39);
+            this.m_lbl_trang_thai_hien_tai.Name = "m_lbl_trang_thai_hien_tai";
+            this.m_lbl_trang_thai_hien_tai.Size = new System.Drawing.Size(92, 13);
+            this.m_lbl_trang_thai_hien_tai.TabIndex = 40;
+            this.m_lbl_trang_thai_hien_tai.Text = "Trạng thái hiện tại";
             // 
-            // label2
+            // m_cmd_tim_nhan_vien
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 13);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Trạng thái hiện tại";
+            this.m_cmd_tim_nhan_vien.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_tim_nhan_vien.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_tim_nhan_vien.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_tim_nhan_vien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_tim_nhan_vien.ImageIndex = 5;
+            this.m_cmd_tim_nhan_vien.ImageList = this.ImageList;
+            this.m_cmd_tim_nhan_vien.Location = new System.Drawing.Point(566, 3);
+            this.m_cmd_tim_nhan_vien.Name = "m_cmd_tim_nhan_vien";
+            this.m_cmd_tim_nhan_vien.Size = new System.Drawing.Size(111, 28);
+            this.m_cmd_tim_nhan_vien.TabIndex = 39;
+            this.m_cmd_tim_nhan_vien.Text = "Tìm nhân viên";
+            this.m_cmd_tim_nhan_vien.Click += new System.EventHandler(this.m_cmd_tim_nhan_vien_Click);
             // 
-            // siSButton1
+            // m_txt_thong_tin_nhan_vien
             // 
-            this.siSButton1.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.siSButton1.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.siSButton1.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.siSButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.siSButton1.ImageIndex = 5;
-            this.siSButton1.ImageList = this.ImageList;
-            this.siSButton1.Location = new System.Drawing.Point(566, 3);
-            this.siSButton1.Name = "siSButton1";
-            this.siSButton1.Size = new System.Drawing.Size(111, 28);
-            this.siSButton1.TabIndex = 39;
-            this.siSButton1.Text = "Tìm nhân viên";
+            this.m_txt_thong_tin_nhan_vien.Location = new System.Drawing.Point(133, 8);
+            this.m_txt_thong_tin_nhan_vien.Name = "m_txt_thong_tin_nhan_vien";
+            this.m_txt_thong_tin_nhan_vien.Size = new System.Drawing.Size(422, 20);
+            this.m_txt_thong_tin_nhan_vien.TabIndex = 38;
             // 
-            // textBox1
+            // m_lbl_thong_tin_nhan_vien
             // 
-            this.textBox1.Location = new System.Drawing.Point(133, 8);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(422, 20);
-            this.textBox1.TabIndex = 38;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 13);
-            this.label1.TabIndex = 37;
-            this.label1.Text = "Thông tin nhân viên";
+            this.m_lbl_thong_tin_nhan_vien.AutoSize = true;
+            this.m_lbl_thong_tin_nhan_vien.Location = new System.Drawing.Point(5, 11);
+            this.m_lbl_thong_tin_nhan_vien.Name = "m_lbl_thong_tin_nhan_vien";
+            this.m_lbl_thong_tin_nhan_vien.Size = new System.Drawing.Size(102, 13);
+            this.m_lbl_thong_tin_nhan_vien.TabIndex = 37;
+            this.m_lbl_thong_tin_nhan_vien.Text = "Thông tin nhân viên";
             // 
             // m_grv_trang_thai_lao_dong
             // 
             this.m_grv_trang_thai_lao_dong.ColumnInfo = resources.GetString("m_grv_trang_thai_lao_dong.ColumnInfo");
             this.m_grv_trang_thai_lao_dong.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_grv_trang_thai_lao_dong.Location = new System.Drawing.Point(0, 104);
+            this.m_grv_trang_thai_lao_dong.Location = new System.Drawing.Point(0, 156);
             this.m_grv_trang_thai_lao_dong.Name = "m_grv_trang_thai_lao_dong";
-            this.m_grv_trang_thai_lao_dong.Size = new System.Drawing.Size(781, 269);
+            this.m_grv_trang_thai_lao_dong.Size = new System.Drawing.Size(781, 217);
             this.m_grv_trang_thai_lao_dong.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_trang_thai_lao_dong.Styles"));
             this.m_grv_trang_thai_lao_dong.TabIndex = 20;
             // 
-            // label4
+            // m_lbl_trang_thai_moi
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 68);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 13);
-            this.label4.TabIndex = 52;
-            this.label4.Text = "Trạng thái mới";
+            this.m_lbl_trang_thai_moi.AutoSize = true;
+            this.m_lbl_trang_thai_moi.Location = new System.Drawing.Point(33, 68);
+            this.m_lbl_trang_thai_moi.Name = "m_lbl_trang_thai_moi";
+            this.m_lbl_trang_thai_moi.Size = new System.Drawing.Size(74, 13);
+            this.m_lbl_trang_thai_moi.TabIndex = 52;
+            this.m_lbl_trang_thai_moi.Text = "Trạng thái mới";
             // 
-            // comboBox1
+            // m_cbo_trang_thai_moi
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(133, 65);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(183, 21);
-            this.comboBox1.TabIndex = 53;
+            this.m_cbo_trang_thai_moi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_trang_thai_moi.FormattingEnabled = true;
+            this.m_cbo_trang_thai_moi.Location = new System.Drawing.Point(133, 65);
+            this.m_cbo_trang_thai_moi.Name = "m_cbo_trang_thai_moi";
+            this.m_cbo_trang_thai_moi.Size = new System.Drawing.Size(183, 21);
+            this.m_cbo_trang_thai_moi.TabIndex = 53;
+            // 
+            // m_cbo_trang_thai_hien_tai
+            // 
+            this.m_cbo_trang_thai_hien_tai.BackColor = System.Drawing.SystemColors.Info;
+            this.m_cbo_trang_thai_hien_tai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_trang_thai_hien_tai.Enabled = false;
+            this.m_cbo_trang_thai_hien_tai.ForeColor = System.Drawing.Color.Maroon;
+            this.m_cbo_trang_thai_hien_tai.FormattingEnabled = true;
+            this.m_cbo_trang_thai_hien_tai.Location = new System.Drawing.Point(133, 36);
+            this.m_cbo_trang_thai_hien_tai.Name = "m_cbo_trang_thai_hien_tai";
+            this.m_cbo_trang_thai_hien_tai.Size = new System.Drawing.Size(183, 21);
+            this.m_cbo_trang_thai_hien_tai.TabIndex = 54;
+            // 
+            // m_lbl_ngay_co_hieu_luc
+            // 
+            this.m_lbl_ngay_co_hieu_luc.AutoSize = true;
+            this.m_lbl_ngay_co_hieu_luc.Location = new System.Drawing.Point(20, 99);
+            this.m_lbl_ngay_co_hieu_luc.Name = "m_lbl_ngay_co_hieu_luc";
+            this.m_lbl_ngay_co_hieu_luc.Size = new System.Drawing.Size(87, 13);
+            this.m_lbl_ngay_co_hieu_luc.TabIndex = 55;
+            this.m_lbl_ngay_co_hieu_luc.Text = "Ngày có hiệu lực";
+            // 
+            // m_dat_ngay_co_hieu_luc
+            // 
+            this.m_dat_ngay_co_hieu_luc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_ngay_co_hieu_luc.Location = new System.Drawing.Point(133, 93);
+            this.m_dat_ngay_co_hieu_luc.Name = "m_dat_ngay_co_hieu_luc";
+            this.m_dat_ngay_co_hieu_luc.Size = new System.Drawing.Size(100, 20);
+            this.m_dat_ngay_co_hieu_luc.TabIndex = 56;
+            // 
+            // m_dat_ngay_het_hieu_luc
+            // 
+            this.m_dat_ngay_het_hieu_luc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_ngay_het_hieu_luc.Location = new System.Drawing.Point(389, 94);
+            this.m_dat_ngay_het_hieu_luc.Name = "m_dat_ngay_het_hieu_luc";
+            this.m_dat_ngay_het_hieu_luc.ShowCheckBox = true;
+            this.m_dat_ngay_het_hieu_luc.Size = new System.Drawing.Size(100, 20);
+            this.m_dat_ngay_het_hieu_luc.TabIndex = 58;
+            // 
+            // m_lbl_ngay_het_hieu_luc
+            // 
+            this.m_lbl_ngay_het_hieu_luc.AutoSize = true;
+            this.m_lbl_ngay_het_hieu_luc.Location = new System.Drawing.Point(289, 100);
+            this.m_lbl_ngay_het_hieu_luc.Name = "m_lbl_ngay_het_hieu_luc";
+            this.m_lbl_ngay_het_hieu_luc.Size = new System.Drawing.Size(90, 13);
+            this.m_lbl_ngay_het_hieu_luc.TabIndex = 57;
+            this.m_lbl_ngay_het_hieu_luc.Text = "Ngày hết hiệu lực";
             // 
             // f203_V_GD_TRANG_THAI_LAO_DONG
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(781, 409);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.siSButton3);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.siSButton1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.m_dat_ngay_het_hieu_luc);
+            this.Controls.Add(this.m_lbl_ngay_het_hieu_luc);
+            this.Controls.Add(this.m_dat_ngay_co_hieu_luc);
+            this.Controls.Add(this.m_lbl_ngay_co_hieu_luc);
+            this.Controls.Add(this.m_cbo_trang_thai_hien_tai);
+            this.Controls.Add(this.m_cbo_trang_thai_moi);
+            this.Controls.Add(this.m_lbl_trang_thai_moi);
+            this.Controls.Add(this.m_cmd_them_quyet_dinh);
+            this.Controls.Add(this.m_lbl_trang_thai_hien_tai);
+            this.Controls.Add(this.m_cmd_tim_nhan_vien);
+            this.Controls.Add(this.m_txt_thong_tin_nhan_vien);
+            this.Controls.Add(this.m_lbl_thong_tin_nhan_vien);
             this.Controls.Add(this.m_grv_trang_thai_lao_dong);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f203_V_GD_TRANG_THAI_LAO_DONG";
@@ -341,8 +396,11 @@ namespace BKI_HRM
 
 		#region Members
 		ITransferDataRow m_obj_trans;		
-		DS_V_GD_TRANG_THAI_LAO_DONG m_ds = new DS_V_GD_TRANG_THAI_LAO_DONG();
-		US_V_GD_TRANG_THAI_LAO_DONG m_us = new US_V_GD_TRANG_THAI_LAO_DONG();
+		DS_V_GD_TRANG_THAI_LAO_DONG m_ds_trang_thai_ld = new DS_V_GD_TRANG_THAI_LAO_DONG();
+        US_V_GD_TRANG_THAI_LAO_DONG m_us_trang_thai_ld = new US_V_GD_TRANG_THAI_LAO_DONG();
+        US_GD_CHI_TIET_TRANG_THAI_LD m_us_chi_tiet_trang_thai_ld = new US_GD_CHI_TIET_TRANG_THAI_LD();
+        US_V_DM_QUYET_DINH m_us_dm_quyet_dinh = new US_V_DM_QUYET_DINH();
+        US_DM_NHAN_SU m_us_dm_nhan_su = new US_DM_NHAN_SU();
 		#endregion
 
 		#region Private Methods
@@ -354,9 +412,15 @@ namespace BKI_HRM
 			set_define_events();
 			this.KeyPreview = true;		
 		}
-		private void set_initial_form_load(){						
-			m_obj_trans = get_trans_object(m_grv_trang_thai_lao_dong);
-			load_data_2_grid();		
+		private void set_initial_form_load(){
+            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_LAO_DONG,
+               WinFormControls.eTAT_CA.NO,
+               m_cbo_trang_thai_moi);
+            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_LAO_DONG,
+               WinFormControls.eTAT_CA.NO,
+               m_cbo_trang_thai_hien_tai);
+            //m_obj_trans = get_trans_object(m_grv_trang_thai_lao_dong);
+			//load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -370,15 +434,19 @@ namespace BKI_HRM
 			v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.TRANG_THAI_HIEN_TAI, e_col_Number.TRANG_THAI_HIEN_TAI);
 			v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.NGAY_CO_HIEU_LUC, e_col_Number.NGAY_CO_HIEU_LUC);
 									
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_GD_TRANG_THAI_LAO_DONG.NewRow());
+			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds_trang_thai_ld.V_GD_TRANG_THAI_LAO_DONG.NewRow());
 			return v_obj_trans;			
 		}
-		private void load_data_2_grid(){						
-			m_ds = new DS_V_GD_TRANG_THAI_LAO_DONG();			
-			m_us.FillDataset(m_ds);
+		private void load_data_2_grid(US_DM_NHAN_SU ip_us){						
+			m_ds_trang_thai_ld = new DS_V_GD_TRANG_THAI_LAO_DONG();			
+			m_us_trang_thai_ld.FillDatasetByManhanvien(m_ds_trang_thai_ld,ip_us.strMA_NV);
 			m_grv_trang_thai_lao_dong.Redraw = false;
-			CGridUtils.Dataset2C1Grid(m_ds, m_grv_trang_thai_lao_dong, m_obj_trans);
+            m_obj_trans = get_trans_object(m_grv_trang_thai_lao_dong);
+			CGridUtils.Dataset2C1Grid(m_ds_trang_thai_ld, m_grv_trang_thai_lao_dong, m_obj_trans);
 			m_grv_trang_thai_lao_dong.Redraw = true;
+           // m_us_trang_thai_ld.FillDatasetByManhanvien_trang_thai_hien_tai(m_ds, ip_us.strMA_NV);
+            m_us_trang_thai_ld.DataRow2Me((DataRow)m_grv_trang_thai_lao_dong.Rows[1].UserData);
+            m_cbo_trang_thai_hien_tai.SelectedValue = m_us_trang_thai_ld.dcID_TRANG_LAO_DONG;
 		}
 		private void grid2us_object(US_V_GD_TRANG_THAI_LAO_DONG i_us
 			, int i_grid_row) {
@@ -400,16 +468,26 @@ namespace BKI_HRM
 		private void insert_v_gd_trang_thai_lao_dong(){			
 		//	f203_V_GD_TRANG_THAI_LAO_DONG_DE v_fDE = new  f203_V_GD_TRANG_THAI_LAO_DONG_DE();								
 		//	v_fDE.display();
-			load_data_2_grid();
+			//load_data_2_grid();
+            m_us_chi_tiet_trang_thai_ld.dcID_NHAN_SU = m_us_dm_nhan_su.dcID;
+            m_us_chi_tiet_trang_thai_ld.dcID_QUYET_DINH = m_us_dm_quyet_dinh.dcID;
+            m_us_chi_tiet_trang_thai_ld.dcID_TRANG_LAO_DONG = CIPConvert.ToDecimal(m_cbo_trang_thai_moi.SelectedValue.ToString());
+            m_us_chi_tiet_trang_thai_ld.strTRANG_THAI_HIEN_TAI = "y";
+            m_us_chi_tiet_trang_thai_ld.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value;
+            if (m_dat_ngay_het_hieu_luc.Checked)
+                m_us_chi_tiet_trang_thai_ld.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc.Value;
+            //else
+            //    m_us_chi_tiet_trang_thai_ld.datNGAY_HET_HIEU_LUC = null;
+            m_us_chi_tiet_trang_thai_ld.Insert();
 		}
 
 		private void update_v_gd_trang_thai_lao_dong(){			
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_trang_thai_lao_dong)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_trang_thai_lao_dong, m_grv_trang_thai_lao_dong.Row)) return;			
-			grid2us_object(m_us, m_grv_trang_thai_lao_dong.Row);
+			grid2us_object(m_us_trang_thai_ld, m_grv_trang_thai_lao_dong.Row);
 		//	f203_V_GD_TRANG_THAI_LAO_DONG_DE v_fDE = new f203_V_GD_TRANG_THAI_LAO_DONG_DE();
 		//	v_fDE.display(m_us);
-			load_data_2_grid();
+		//	load_data_2_grid();
 		}
 				
 		private void delete_v_gd_trang_thai_lao_dong(){
@@ -431,17 +509,35 @@ namespace BKI_HRM
 				v_objErrHandler.showErrorMessage();
 			}
 		}
+        private void tim_kiem_nhan_vien()
+        {
+            f201_dm_nhan_su v_frm = new f201_dm_nhan_su() ;
 
+            v_frm.select_data(ref m_us_dm_nhan_su);
+            load_data(m_us_dm_nhan_su);
+        }
+        private void load_data(US_DM_NHAN_SU ip_us)
+        {
+            
+            m_txt_thong_tin_nhan_vien.Text = ip_us.strMA_NV + ", "+ip_us.strHO_DEM+" " + ip_us.strTEN;
+            load_data_2_grid(ip_us);
+        }
 		private void view_v_gd_trang_thai_lao_dong(){			
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_trang_thai_lao_dong)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_trang_thai_lao_dong, m_grv_trang_thai_lao_dong.Row)) return;
-			grid2us_object(m_us, m_grv_trang_thai_lao_dong.Row);
+			grid2us_object(m_us_trang_thai_ld, m_grv_trang_thai_lao_dong.Row);
 		//	f203_V_GD_TRANG_THAI_LAO_DONG_DE v_fDE = new f203_V_GD_TRANG_THAI_LAO_DONG_DE();			
 		//	v_fDE.display(m_us);
 		}
+        private void them_quyet_dinh()
+        {
+            F600_V_DM_QUYET_DINH v_frm = new F600_V_DM_QUYET_DINH();
+            
+            v_frm.select_data(ref m_us_dm_quyet_dinh);
+           
+        }
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 		}
@@ -471,14 +567,7 @@ namespace BKI_HRM
 			}
 		}
 
-		private void m_cmd_insert_Click(object sender, EventArgs e) {
-			try{
-				insert_v_gd_trang_thai_lao_dong();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+		
 
 		private void m_cmd_update_Click(object sender, EventArgs e) {
 			try{
@@ -497,6 +586,42 @@ namespace BKI_HRM
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
+
+        private void m_cmd_tim_nhan_vien_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                tim_kiem_nhan_vien();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_them_quyet_dinh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                them_quyet_dinh();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_save_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                insert_v_gd_trang_thai_lao_dong();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
 		
 
