@@ -266,6 +266,7 @@ namespace BKI_HRM
             form_to_us_object();
             switch (m_e_form_mode)
             {
+                    
                 case DataEntryFormMode.UpdateDataState:
                     m_us_dm_nhan_su.Update();
                     break;
