@@ -12,7 +12,7 @@ using BKI_HRM.US;
 using IP.Core.IPCommon;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
-
+//a
 namespace BKI_HRM.DanhMuc
 {
     public partial class F600_V_DM_QUYET_DINH_DE : Form
