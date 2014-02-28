@@ -77,6 +77,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_GD_CHI_TIET_DU_AN.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_GD_CHI_TIET_TRANG_THAI_LD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_GD_CHI_TIET_TRANG_THAI_LD.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_GD_HOP_DONG.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -230,6 +235,17 @@
     </None>
     <None Include="DS_GD_CHI_TIET_DU_AN.xss">
       <DependentUpon>DS_GD_CHI_TIET_DU_AN.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_CHI_TIET_TRANG_THAI_LD.xsc">
+      <DependentUpon>DS_GD_CHI_TIET_TRANG_THAI_LD.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_CHI_TIET_TRANG_THAI_LD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_GD_CHI_TIET_TRANG_THAI_LD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_GD_CHI_TIET_TRANG_THAI_LD.xss">
+      <DependentUpon>DS_GD_CHI_TIET_TRANG_THAI_LD.xsd</DependentUpon>
     </None>
     <None Include="DS_GD_HOP_DONG.xsc">
       <DependentUpon>DS_GD_HOP_DONG.xsd</DependentUpon>
