@@ -13,6 +13,7 @@ namespace BKI_HRM.US {
 
     public class MA_LOAI_TU_DIEN {
         public const string TRANG_THAI_CHUC_VU = "TRANG_THAI_CHUC_VU";
+        public const string TRANG_THAI_LAO_DONG = "TRANG_THAI_LAO_DONG";
         public const string LOAI_HOP_DONG = "LOAI_HOP_DONG";
         public const string LOAI_DON_VI = "LOAI_DON_VI";
         public const string CAP_DON_VI = "CAP_DON_VI";

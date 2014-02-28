@@ -405,7 +405,7 @@ namespace BKI_HRM.DS.CDBNames
        public const string TRINH_DO = "TRINH_DO";
        public const string ID_CHUC_VU = "ID_CHUC_VU";
        public const string MA_CV = "MA_CV";
-       public const string TEN_CV = "TEN_CV" ;
+       public const string TEN_CV = "TEN_CV";
        public const string ID_TRANG_THAI_CV = "ID_TRANG_THAI_CV";
        public const string TRANG_THAI_CV = "TRANG_THAI_CV";
        public const string TY_LE_THAM_GIA = "TY_LE_THAM_GIA";
@@ -414,19 +414,15 @@ namespace BKI_HRM.DS.CDBNames
        public const string TEN_DON_VI = "TEN_DON_VI";
        public const string ID_DON_VI_CAP_TREN = "ID_DON_VI_CAP_TREN";
        public const string ID_LOAI_DON_VI = "ID_LOAI_DON_VI";
+       public const string LOAI_DON_VI = "LOAI_DON_VI";
+       public const string ID_CAP_DON_VI = "ID_CAP_DON_VI";
+       public const string CAP_DON_VI = "CAP_DON_VI";
+       public const string DIA_BAN = "DIA_BAN";
        public const string ID_TRANG_LAO_DONG = "ID_TRANG_LAO_DONG";
        public const string TRANG_THAI_LAO_DONG = "TRANG_THAI_LAO_DONG";
+       public const string NGAY_CO_HIEU_LUC = "NGAY_CO_HIEU_LUC";
+       public const string NGAY_HET_HIEU_LUC = "NGAY_HET_HIEU_LUC";
        public const string TRANG_THAI_HIEN_TAI = "TRANG_THAI_HIEN_TAI";
-       public const string ID_VI_TRI = "ID_VI_TRI";
-       public const string VI_TRI_DU_AN = "VI_TRI_DU_AN";
-       public const string THOI_DIEM_TG = "THOI_DIEM_TG";
-       public const string MA_DU_AN = "MA_DU_AN";
-       public const string TEN_DU_AN = "TEN_DU_AN";
-       public const string MA_HOP_DONG = "MA_HOP_DONG";
-       public const string ID_LOAI_HOP_DONG = "ID_LOAI_HOP_DONG";
-       public const string LOAI_HOP_DONG = "LOAI_HOP_DONG";
-       public const string NGAY_HET_HAN = "NGAY_HET_HAN";
-       public const string TRANG_THAI_HOP_DONG = "TRANG_THAI_HOP_DONG";
    }
 
 

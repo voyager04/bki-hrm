@@ -507,36 +507,36 @@ namespace BKI_HRM
         private ITransferDataRow get_trans_object_nhan_su_chuc_vu(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
             Hashtable v_htb = new Hashtable();
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.ID_VI_TRI, e_col_Number_Nhansu_chuc_vu.ID_VI_TRI);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_HET_HAN, e_col_Number_Nhansu_chuc_vu.NGAY_HET_HAN);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN_DON_VI, e_col_Number_Nhansu_chuc_vu.TEN_DON_VI);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.ID_DON_VI_CAP_TREN, e_col_Number_Nhansu_chuc_vu.ID_DON_VI_CAP_TREN);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_DU_AN, e_col_Number_Nhansu_chuc_vu.MA_DU_AN);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_HOP_DONG, e_col_Number_Nhansu_chuc_vu.MA_HOP_DONG);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_SINH, e_col_Number_Nhansu_chuc_vu.NGAY_SINH);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRANG_THAI_LAO_DONG, e_col_Number_Nhansu_chuc_vu.TRANG_THAI_LAO_DONG);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN_CV, e_col_Number_Nhansu_chuc_vu.TEN_CV);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.LOAI_HOP_DONG, e_col_Number_Nhansu_chuc_vu.LOAI_HOP_DONG);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN, e_col_Number_Nhansu_chuc_vu.TEN);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.ID_LOAI_DON_VI, e_col_Number_Nhansu_chuc_vu.ID_LOAI_DON_VI);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.THOI_DIEM_TG, e_col_Number_Nhansu_chuc_vu.THOI_DIEM_TG);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRANG_THAI_HIEN_TAI, e_col_Number_Nhansu_chuc_vu.TRANG_THAI_HIEN_TAI);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_DON_VI, e_col_Number_Nhansu_chuc_vu.MA_DON_VI);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.VI_TRI_DU_AN, e_col_Number_Nhansu_chuc_vu.VI_TRI_DU_AN);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.ID_CHUC_VU, e_col_Number_Nhansu_chuc_vu.ID_CHUC_VU);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.HO_DEM, e_col_Number_Nhansu_chuc_vu.HO_DEM);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TY_LE_THAM_GIA, e_col_Number_Nhansu_chuc_vu.TY_LE_THAM_GIA);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRANG_THAI_HOP_DONG, e_col_Number_Nhansu_chuc_vu.TRANG_THAI_HOP_DONG);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.ID_TRANG_THAI_CV, e_col_Number_Nhansu_chuc_vu.ID_TRANG_THAI_CV);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_NV, e_col_Number_Nhansu_chuc_vu.MA_NV);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN_DU_AN, e_col_Number_Nhansu_chuc_vu.TEN_DU_AN);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.ID_DON_VI, e_col_Number_Nhansu_chuc_vu.ID_DON_VI);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.ID_LOAI_HOP_DONG, e_col_Number_Nhansu_chuc_vu.ID_LOAI_HOP_DONG);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.ID_TRANG_LAO_DONG, e_col_Number_Nhansu_chuc_vu.ID_TRANG_LAO_DONG);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_CV, e_col_Number_Nhansu_chuc_vu.MA_CV);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRINH_DO, e_col_Number_Nhansu_chuc_vu.TRINH_DO);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRANG_THAI_CV, e_col_Number_Nhansu_chuc_vu.TRANG_THAI_CV);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.GIOI_TINH, e_col_Number_Nhansu_chuc_vu.GIOI_TINH);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.ID_VI_TRI, e_col_Number_Nhansu_chuc_vu.ID_VI_TRI);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_HET_HAN, e_col_Number_Nhansu_chuc_vu.NGAY_HET_HAN);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN_DON_VI, e_col_Number_Nhansu_chuc_vu.TEN_DON_VI);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.ID_DON_VI_CAP_TREN, e_col_Number_Nhansu_chuc_vu.ID_DON_VI_CAP_TREN);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_DU_AN, e_col_Number_Nhansu_chuc_vu.MA_DU_AN);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_HOP_DONG, e_col_Number_Nhansu_chuc_vu.MA_HOP_DONG);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_SINH, e_col_Number_Nhansu_chuc_vu.NGAY_SINH);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRANG_THAI_LAO_DONG, e_col_Number_Nhansu_chuc_vu.TRANG_THAI_LAO_DONG);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN_CV, e_col_Number_Nhansu_chuc_vu.TEN_CV);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.LOAI_HOP_DONG, e_col_Number_Nhansu_chuc_vu.LOAI_HOP_DONG);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN, e_col_Number_Nhansu_chuc_vu.TEN);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.ID_LOAI_DON_VI, e_col_Number_Nhansu_chuc_vu.ID_LOAI_DON_VI);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.THOI_DIEM_TG, e_col_Number_Nhansu_chuc_vu.THOI_DIEM_TG);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRANG_THAI_HIEN_TAI, e_col_Number_Nhansu_chuc_vu.TRANG_THAI_HIEN_TAI);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_DON_VI, e_col_Number_Nhansu_chuc_vu.MA_DON_VI);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.VI_TRI_DU_AN, e_col_Number_Nhansu_chuc_vu.VI_TRI_DU_AN);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.ID_CHUC_VU, e_col_Number_Nhansu_chuc_vu.ID_CHUC_VU);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.HO_DEM, e_col_Number_Nhansu_chuc_vu.HO_DEM);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TY_LE_THAM_GIA, e_col_Number_Nhansu_chuc_vu.TY_LE_THAM_GIA);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRANG_THAI_HOP_DONG, e_col_Number_Nhansu_chuc_vu.TRANG_THAI_HOP_DONG);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.ID_TRANG_THAI_CV, e_col_Number_Nhansu_chuc_vu.ID_TRANG_THAI_CV);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_NV, e_col_Number_Nhansu_chuc_vu.MA_NV);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN_DU_AN, e_col_Number_Nhansu_chuc_vu.TEN_DU_AN);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.ID_DON_VI, e_col_Number_Nhansu_chuc_vu.ID_DON_VI);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.ID_LOAI_HOP_DONG, e_col_Number_Nhansu_chuc_vu.ID_LOAI_HOP_DONG);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.ID_TRANG_LAO_DONG, e_col_Number_Nhansu_chuc_vu.ID_TRANG_LAO_DONG);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_CV, e_col_Number_Nhansu_chuc_vu.MA_CV);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRINH_DO, e_col_Number_Nhansu_chuc_vu.TRINH_DO);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRANG_THAI_CV, e_col_Number_Nhansu_chuc_vu.TRANG_THAI_CV);
+            //v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.GIOI_TINH, e_col_Number_Nhansu_chuc_vu.GIOI_TINH);
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, v_ds.V_DM_DU_LIEU_NHAN_VIEN.NewRow());
             return v_obj_trans;
@@ -562,8 +562,8 @@ namespace BKI_HRM
 		private void f401_V_DM_CHUC_VU_Load(object sender, System.EventArgs e) {
 			try{
 				set_initial_form_load();
-                load_data_2_grid_dm_nhan_su(1);
-                load_custom_source_2_m_txt_tim_kiem();
+                //load_data_2_grid_dm_nhan_su(1);
+                //load_custom_source_2_m_txt_tim_kiem();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
