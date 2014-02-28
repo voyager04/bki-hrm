@@ -207,6 +207,7 @@ namespace BKI_HRM.DS.CDBNames
         public const string MA_DON_VI = "MA_DON_VI";
         public const string MA_QUYET_DINH = "MA_QUYET_DINH";
         public const string NGAY_CO_HIEU_LUC = "NGAY_CO_HIEU_LUC";
+        public const string NGAY_HET_HIEU_LUC = "NGAY_HET_HIEU_LUC";
         public const string ID_TRANG_THAI_CV = "ID_TRANG_THAI_CV";
         public const string TRANG_THAI_CV = "TRANG_THAI_CV";
     }
