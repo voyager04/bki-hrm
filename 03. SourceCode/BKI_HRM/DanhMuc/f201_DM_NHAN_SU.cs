@@ -115,6 +115,7 @@ namespace BKI_HRM
         private OpenFileDialog m_ofd_chon_anh;
         private TabPage tabPage2;
         private C1FlexGrid m_grv_trang_thai_lao_dong;
+        internal SIS.Controls.Button.SiSButton m_cmd_chon_nhan_vien;
 		private System.ComponentModel.IContainer components;
 
 		
@@ -144,6 +145,7 @@ namespace BKI_HRM
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f201_dm_nhan_su));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_chon_nhan_vien = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_report = new SIS.Controls.Button.SiSButton();
@@ -219,13 +221,13 @@ namespace BKI_HRM
             this.m_tct_chi_tiet_nhan_vien = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.m_grv_hop_dong_lao_dong = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.m_grv_trang_thai_lao_dong = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_lbl = new System.Windows.Forms.Label();
             this.m_lbl_ho_ten = new System.Windows.Forms.Label();
             this.m_lbl_ma_nhan_vien = new System.Windows.Forms.Label();
             this.m_lbl2 = new System.Windows.Forms.Label();
             this.m_ofd_chon_anh = new System.Windows.Forms.OpenFileDialog();
-            this.m_grv_trang_thai_lao_dong = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).BeginInit();
             this.panel1.SuspendLayout();
@@ -237,8 +239,8 @@ namespace BKI_HRM
             this.m_tct_chi_tiet_nhan_vien.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_hop_dong_lao_dong)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grv_trang_thai_lao_dong)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv_trang_thai_lao_dong)).BeginInit();
             this.SuspendLayout();
             // 
             // ImageList
@@ -270,6 +272,7 @@ namespace BKI_HRM
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_chon_nhan_vien);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_report);
@@ -281,6 +284,22 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1008, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
+            // 
+            // m_cmd_chon_nhan_vien
+            // 
+            this.m_cmd_chon_nhan_vien.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_chon_nhan_vien.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_chon_nhan_vien.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_chon_nhan_vien.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_chon_nhan_vien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_chon_nhan_vien.ImageIndex = 13;
+            this.m_cmd_chon_nhan_vien.ImageList = this.ImageList;
+            this.m_cmd_chon_nhan_vien.Location = new System.Drawing.Point(393, 4);
+            this.m_cmd_chon_nhan_vien.Name = "m_cmd_chon_nhan_vien";
+            this.m_cmd_chon_nhan_vien.Size = new System.Drawing.Size(138, 28);
+            this.m_cmd_chon_nhan_vien.TabIndex = 33;
+            this.m_cmd_chon_nhan_vien.Text = "&Chọn nhân viên";
+            this.m_cmd_chon_nhan_vien.Click += new System.EventHandler(this.m_cmd_chon_nhan_vien_Click);
             // 
             // m_cmd_insert
             // 
@@ -369,6 +388,7 @@ namespace BKI_HRM
             this.m_grv_nhan_su.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_nhan_su.Styles"));
             this.m_grv_nhan_su.TabIndex = 3;
             this.m_grv_nhan_su.Click += new System.EventHandler(this.m_grv_nhan_su_Click);
+            this.m_grv_nhan_su.KeyDown += new System.Windows.Forms.KeyEventHandler(this.m_grv_nhan_su_KeyDown);
             // 
             // m_lbl_tim_kiem
             // 
@@ -490,7 +510,6 @@ namespace BKI_HRM
             // m_grv_qua_trinh_lam_viec
             // 
             this.m_grv_qua_trinh_lam_viec.ColumnInfo = resources.GetString("m_grv_qua_trinh_lam_viec.ColumnInfo");
-            this.m_grv_qua_trinh_lam_viec.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_qua_trinh_lam_viec.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_qua_trinh_lam_viec.Location = new System.Drawing.Point(0, 42);
             this.m_grv_qua_trinh_lam_viec.Name = "m_grv_qua_trinh_lam_viec";
@@ -1080,13 +1099,34 @@ namespace BKI_HRM
             // m_grv_hop_dong_lao_dong
             // 
             this.m_grv_hop_dong_lao_dong.ColumnInfo = resources.GetString("m_grv_hop_dong_lao_dong.ColumnInfo");
-            this.m_grv_hop_dong_lao_dong.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_hop_dong_lao_dong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_grv_hop_dong_lao_dong.Location = new System.Drawing.Point(3, 3);
             this.m_grv_hop_dong_lao_dong.Name = "m_grv_hop_dong_lao_dong";
             this.m_grv_hop_dong_lao_dong.Size = new System.Drawing.Size(994, 300);
             this.m_grv_hop_dong_lao_dong.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_hop_dong_lao_dong.Styles"));
             this.m_grv_hop_dong_lao_dong.TabIndex = 21;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.m_grv_trang_thai_lao_dong);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1000, 306);
+            this.tabPage2.TabIndex = 4;
+            this.tabPage2.Text = "Trạng thái lao động";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // m_grv_trang_thai_lao_dong
+            // 
+            this.m_grv_trang_thai_lao_dong.ColumnInfo = resources.GetString("m_grv_trang_thai_lao_dong.ColumnInfo");
+            this.m_grv_trang_thai_lao_dong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_grv_trang_thai_lao_dong.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.m_grv_trang_thai_lao_dong.Location = new System.Drawing.Point(3, 3);
+            this.m_grv_trang_thai_lao_dong.Name = "m_grv_trang_thai_lao_dong";
+            this.m_grv_trang_thai_lao_dong.Size = new System.Drawing.Size(994, 300);
+            this.m_grv_trang_thai_lao_dong.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_trang_thai_lao_dong.Styles"));
+            this.m_grv_trang_thai_lao_dong.TabIndex = 8;
             // 
             // m_lbl
             // 
@@ -1128,29 +1168,6 @@ namespace BKI_HRM
             // 
             this.m_ofd_chon_anh.FileName = "openFileDialog1";
             // 
-            // m_grv_trang_thai_lao_dong
-            // 
-            this.m_grv_trang_thai_lao_dong.ColumnInfo = resources.GetString("m_grv_trang_thai_lao_dong.ColumnInfo");
-            this.m_grv_trang_thai_lao_dong.Cursor = System.Windows.Forms.Cursors.Default;
-            this.m_grv_trang_thai_lao_dong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grv_trang_thai_lao_dong.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.m_grv_trang_thai_lao_dong.Location = new System.Drawing.Point(3, 3);
-            this.m_grv_trang_thai_lao_dong.Name = "m_grv_trang_thai_lao_dong";
-            this.m_grv_trang_thai_lao_dong.Size = new System.Drawing.Size(994, 300);
-            this.m_grv_trang_thai_lao_dong.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_trang_thai_lao_dong.Styles"));
-            this.m_grv_trang_thai_lao_dong.TabIndex = 8;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.m_grv_trang_thai_lao_dong);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1000, 306);
-            this.tabPage2.TabIndex = 4;
-            this.tabPage2.Text = "Trạng thái lao động";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // f201_dm_nhan_su
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -1182,8 +1199,8 @@ namespace BKI_HRM
             this.m_tct_chi_tiet_nhan_vien.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_hop_dong_lao_dong)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grv_trang_thai_lao_dong)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv_trang_thai_lao_dong)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1194,6 +1211,12 @@ namespace BKI_HRM
 		public void display(){			
 			this.ShowDialog();
 		}
+        public void select_data(ref US_DM_NHAN_SU op_us_dm_nhan_su)
+        {
+            m_e_form_mode = DataEntryFormMode.SelectDataState;
+            this.ShowDialog();
+            op_us_dm_nhan_su = m_us;
+        }
         public f201_dm_nhan_su()
         {
             //
@@ -1275,7 +1298,8 @@ namespace BKI_HRM
 
        	
 		#region Members
-		ITransferDataRow m_obj_trans;		
+		ITransferDataRow m_obj_trans;
+        DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
 		DS_DM_NHAN_SU m_ds = new DS_DM_NHAN_SU();
 		US_DM_NHAN_SU m_us = new US_DM_NHAN_SU();
 		#endregion
@@ -1293,10 +1317,31 @@ namespace BKI_HRM
 			set_define_events();
 			this.KeyPreview = true;		
 		}
-		private void set_initial_form_load(){						
+		private void set_initial_form_load(){
+            switch (m_e_form_mode)
+            {
+                case DataEntryFormMode.UpdateDataState:
+                    m_cmd_chon_nhan_vien.Visible = false;
+                    break;
+                case DataEntryFormMode.InsertDataState:
+                    m_cmd_chon_nhan_vien.Visible = false;
+                    break;
+                case DataEntryFormMode.ViewDataState:
+                    m_cmd_chon_nhan_vien.Visible = false;
+                    break;
+                case DataEntryFormMode.SelectDataState:
+                    m_cmd_chon_nhan_vien.Visible = true;
+                    m_cmd_chon_nhan_vien.Enabled = true;
+                    m_cmd_insert.Visible = false;
+                    m_cmd_update.Visible = false;
+                    m_cmd_delete.Visible = false;
+                    break;
+
+            }
 			m_obj_trans = get_trans_object(m_grv_nhan_su);
 			load_data_2_grid();
             load_chi_tiet_nhan_vien();
+            
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -1544,6 +1589,14 @@ namespace BKI_HRM
             f201_DM_NHAN_SU_DE v_fde = new f201_DM_NHAN_SU_DE();
             v_fde.display_for_view(m_us);
 		}
+
+        private void select_data_2_us()
+	    {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_nhan_su)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;
+            grid2us_object(m_us, m_grv_nhan_su.Row);
+	        this.Close();
+	    }
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
@@ -1664,11 +1717,53 @@ namespace BKI_HRM
             	CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_grv_nhan_su_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.Enter:
+                        if (m_grv_nhan_su.Focused)
+                        {
+                            switch (m_e_form_mode)
+                            {
+
+                                case DataEntryFormMode.ViewDataState:
+                                    update_dm_nhan_su();
+                                    break;
+                                case DataEntryFormMode.SelectDataState:
+                                    select_data_2_us();
+                                    break;
+
+                            }
+                        }
+                        break;
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+
+
+
+        }
+
+        private void m_cmd_chon_nhan_vien_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                select_data_2_us();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
         #endregion
-
-       
-
-       
 
        
         
