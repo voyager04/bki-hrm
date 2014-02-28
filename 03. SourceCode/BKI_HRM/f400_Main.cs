@@ -156,5 +156,18 @@ namespace BKI_HRM {
             	CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_menuitem_trangthailaodong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f203_V_GD_TRANG_THAI_LAO_DONG frm = new f203_V_GD_TRANG_THAI_LAO_DONG();
+                frm.Show();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
