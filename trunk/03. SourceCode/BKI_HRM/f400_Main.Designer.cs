@@ -254,6 +254,7 @@
             this.m_menuitem_trangthailaodong.Name = "m_menuitem_trangthailaodong";
             this.m_menuitem_trangthailaodong.Size = new System.Drawing.Size(178, 22);
             this.m_menuitem_trangthailaodong.Text = "Trạng thái lao động";
+            this.m_menuitem_trangthailaodong.Click += new System.EventHandler(this.m_menuitem_trangthailaodong_Click);
             // 
             // m_menu_tuyendung
             // 
