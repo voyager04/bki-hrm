@@ -158,6 +158,7 @@
             // 
             // m_cbo_loai_quyet_dinh
             // 
+            this.m_cbo_loai_quyet_dinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_loai_quyet_dinh.FormattingEnabled = true;
             this.m_cbo_loai_quyet_dinh.Location = new System.Drawing.Point(109, 54);
             this.m_cbo_loai_quyet_dinh.Name = "m_cbo_loai_quyet_dinh";
