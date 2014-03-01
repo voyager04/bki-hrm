@@ -76,6 +76,12 @@
     <Compile Include="BaoCao\f103_bao_cao_tra_cuu_nhan_su.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BaoCao\f104_bao_cao_nhan_su_theo_phong_ban.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\f104_bao_cao_nhan_su_theo_phong_ban.Designer.cs">
+      <DependentUpon>f104_bao_cao_nhan_su_theo_phong_ban.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaoCao\f200_V_GD_QUA_TRINH_LAM_VIEC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f103_bao_cao_tra_cuu_nhan_su.resx">
       <DependentUpon>f103_bao_cao_tra_cuu_nhan_su.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f104_bao_cao_nhan_su_theo_phong_ban.resx">
+      <DependentUpon>f104_bao_cao_nhan_su_theo_phong_ban.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f200_V_GD_QUA_TRINH_LAM_VIEC.resx">
       <DependentUpon>f200_V_GD_QUA_TRINH_LAM_VIEC.cs</DependentUpon>
