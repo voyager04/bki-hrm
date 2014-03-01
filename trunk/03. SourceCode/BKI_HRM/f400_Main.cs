@@ -42,6 +42,8 @@ namespace BKI_HRM {
 
         #endregion
 
+        // Event handlers
+
         private void set_define_events() {
             this.m_menuitem_tudien.Click += new EventHandler(m_mnu_tu_dien_he_thong_Click);
             this.m_menuitem_user.Click += new EventHandler(m_mnu_quan_ly_nguoi_su_dung_Click);
@@ -49,20 +51,18 @@ namespace BKI_HRM {
             this.m_menuitem_qldonvi.Click += new EventHandler(m_menuitem_qldonvi_Click);
             this.m_menu_dsnhansu.Click += new EventHandler(m_menu_dsnhansu_Click);
             this.m_menuitem_bcnhansu.Click += new EventHandler(m_menuitem_bcnhansu_Click);
+            m_menuitem_nhan_su_theo_phong_ban.Click += new System.EventHandler(m_menuitem_nhan_su_theo_phong_ban_Click);
         }
 
-        private void m_menu_dsnhansu_Click(object sender, EventArgs e)
-        {
-            try
-            {
+        private void m_menu_dsnhansu_Click(object sender, EventArgs e) {
+            try {
                 f201_dm_nhan_su frm = new f201_dm_nhan_su();
                 frm.Show();
-            }
-            catch (Exception v_e)
-            {
-            	CSystemLog_301.ExceptionHandle(v_e);
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        
         private void m_mnu_quan_ly_nguoi_su_dung_Click(object sender, EventArgs e) {
             try {
 
@@ -81,8 +81,6 @@ namespace BKI_HRM {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
-        // Event handlers
 
         private void m_menuitem_thoat_Click(object sender, EventArgs e) {
             try {
@@ -120,15 +118,11 @@ namespace BKI_HRM {
             }
         }
 
-        private void m_meuitem_ttduan_Click(object sender, EventArgs e)
-        {
-            try
-            {
+        private void m_meuitem_ttduan_Click(object sender, EventArgs e) {
+            try {
                 F500_DM_DU_AN frm = new F500_DM_DU_AN();
                 frm.Show();
-            }
-            catch (Exception v_e)
-            {
+            } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
@@ -142,29 +136,30 @@ namespace BKI_HRM {
             }
         }
 
-        private void m_menuitem_qlquyetdinh_Click(object sender, EventArgs e)
-        {
-            try
-            {
+        private void m_menuitem_qlquyetdinh_Click(object sender, EventArgs e) {
+            try {
                 F600_V_DM_QUYET_DINH frm = new F600_V_DM_QUYET_DINH();
                 frm.Show();
-            }
-            catch (Exception v_e)
-            {
-            	CSystemLog_301.ExceptionHandle(v_e);
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
-        private void m_menuitem_trangthailaodong_Click(object sender, EventArgs e)
-        {
-            try
-            {
+        private void m_menuitem_trangthailaodong_Click(object sender, EventArgs e) {
+            try {
                 f203_V_GD_TRANG_THAI_LAO_DONG frm = new f203_V_GD_TRANG_THAI_LAO_DONG();
                 frm.Show();
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
             }
-            catch (Exception v_e)
-            {
-            	CSystemLog_301.ExceptionHandle(v_e);
+        }
+
+        private void m_menuitem_nhan_su_theo_phong_ban_Click(object sender, EventArgs e) {
+            try {
+                f104_bao_cao_nhan_su_theo_phong_ban frm = new f104_bao_cao_nhan_su_theo_phong_ban();
+                frm.Show();
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
     }
