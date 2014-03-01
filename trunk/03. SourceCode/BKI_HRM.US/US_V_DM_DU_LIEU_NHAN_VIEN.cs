@@ -547,6 +547,15 @@ public class US_V_DM_DU_LIEU_NHAN_VIEN : US_Object
         v_stored_proc.fillDataSetByCommand(this, op_ds_v_dm_du_lieu_nhan_vien);
     }
 
+    public void FillDatasetByIdCV_ThoiDiem(DS_V_DM_DU_LIEU_NHAN_VIEN op_ds_nhan_su, decimal i_dc_id, DateTime thoi_diem)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_select_by_ID_CHUC_VU_THOI_DIEM");
+        v_sp.addDecimalInputParam("@ID_CHUC_VU", i_dc_id);
+        v_sp.addDatetimeInputParam("@THOI_DIEM",thoi_diem);
+        v_sp.fillDataSetByCommand(this, op_ds_nhan_su);
+    }
+
+
     #endregion
 }
 }

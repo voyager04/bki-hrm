@@ -37,7 +37,7 @@ namespace BKI_HRM
         private TextBox m_txt_tim_kiem;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         private C1FlexGrid m_grv_nhan_su;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker m_dtp_thoidiem;
 		private System.ComponentModel.IContainer components;
 
 		public f402_BAO_CAO_NHAN_SU_CHUC_VU()
@@ -85,7 +85,7 @@ namespace BKI_HRM
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_grv_nhan_su = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.m_dtp_thoidiem = new System.Windows.Forms.DateTimePicker();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).BeginInit();
@@ -196,19 +196,19 @@ namespace BKI_HRM
             this.m_grv_nhan_su.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_nhan_su.Styles"));
             this.m_grv_nhan_su.TabIndex = 32;
             // 
-            // dateTimePicker1
+            // m_dtp_thoidiem
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(137, 238);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(122, 20);
-            this.dateTimePicker1.TabIndex = 33;
+            this.m_dtp_thoidiem.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dtp_thoidiem.Location = new System.Drawing.Point(137, 238);
+            this.m_dtp_thoidiem.Name = "m_dtp_thoidiem";
+            this.m_dtp_thoidiem.Size = new System.Drawing.Size(122, 20);
+            this.m_dtp_thoidiem.TabIndex = 33;
             // 
             // f402_BAO_CAO_NHAN_SU_CHUC_VU
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(686, 558);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.m_dtp_thoidiem);
             this.Controls.Add(this.m_grv_nhan_su);
             this.Controls.Add(this.m_cmd_search);
             this.Controls.Add(this.m_txt_tim_kiem);
@@ -385,7 +385,7 @@ namespace BKI_HRM
 
             m_lbl_ma_chuc_vu.Text = m_us.strMA_CV;
 
-            v_us_nhan_su.FillDatasetByIdCV(v_ds_nhan_su, m_us.dcID);
+            v_us_nhan_su.FillDatasetByIdCV_ThoiDiem(v_ds_nhan_su, m_us.dcID,m_dtp_thoidiem.Value);
             m_grv_nhan_su.Redraw = false;
 
             ITransferDataRow v_obj_trans = get_trans_object_nhan_su_chuc_vu(m_grv_nhan_su);
