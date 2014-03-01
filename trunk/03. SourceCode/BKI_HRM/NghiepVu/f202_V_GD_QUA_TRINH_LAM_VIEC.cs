@@ -434,8 +434,8 @@ namespace BKI_HRM
 
 		#region Members
 		ITransferDataRow m_obj_trans;		
-		DS_V_GD_QUA_TRINH_LAM_VIEC m_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC();
-		US_V_GD_QUA_TRINH_LAM_VIEC m_us = new US_V_GD_QUA_TRINH_LAM_VIEC();
+		DS_V_GD_QUA_TRINH_LAM_VIEC m_ds_qua_trinh_lam_viec = new DS_V_GD_QUA_TRINH_LAM_VIEC();
+		US_V_GD_QUA_TRINH_LAM_VIEC m_us_qua_trinh_lam_viec = new US_V_GD_QUA_TRINH_LAM_VIEC();
         US_V_DM_QUYET_DINH m_us_dm_quyet_dinh = new US_V_DM_QUYET_DINH();
         US_DM_NHAN_SU m_us_dm_nhan_su = new US_DM_NHAN_SU();
 		#endregion
@@ -465,19 +465,29 @@ namespace BKI_HRM
 			v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_QUYET_DINH, e_col_Number.MA_QUYET_DINH);
 			v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.NGAY_CO_HIEU_LUC, e_col_Number.NGAY_CO_HIEU_LUC);
 									
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_GD_QUA_TRINH_LAM_VIEC.NewRow());
+			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.NewRow());
 			return v_obj_trans;			
 		}
 		private void load_data_2_grid(){						
-			m_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC();			
-			m_us.FillDataset(m_ds);
+			m_ds_qua_trinh_lam_viec = new DS_V_GD_QUA_TRINH_LAM_VIEC();			
+			m_us_qua_trinh_lam_viec.FillDataset(m_ds_qua_trinh_lam_viec);
 			m_grv_qua_trinh_lam_viec.Redraw = false;
-			CGridUtils.Dataset2C1Grid(m_ds, m_grv_qua_trinh_lam_viec, m_obj_trans);
-			m_grv_qua_trinh_lam_viec.Redraw = true;
-		}
-        private void load_data(US_DM_NHAN_SU ip_us)
+			CGridUtils.Dataset2C1Grid(m_ds_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec, m_obj_trans);
+            m_grv_qua_trinh_lam_viec.Redraw = true;
+        }
+        private void load_data_2_grid(US_DM_NHAN_SU ip_us_dm_nhan_su)
         {
-
+            m_ds_qua_trinh_lam_viec = new DS_V_GD_QUA_TRINH_LAM_VIEC();
+            m_us_qua_trinh_lam_viec.FillDatasetByManhanvien(m_ds_qua_trinh_lam_viec, ip_us_dm_nhan_su.strMA_NV,CIPConvert.ToDatetime("01/01/1800"),DateTime.Now);
+            m_grv_qua_trinh_lam_viec.Redraw = false;
+            m_obj_trans = get_trans_object(m_grv_qua_trinh_lam_viec);
+            CGridUtils.Dataset2C1Grid(m_ds_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec, m_obj_trans);
+            m_grv_qua_trinh_lam_viec.Redraw = true;
+        }
+        private void load_data(US_DM_NHAN_SU ip_us_dm_nhan_su)
+        {
+            m_txt_thong_tin_nhan_vien.Text = ip_us_dm_nhan_su.strMA_NV + ", " + ip_us_dm_nhan_su.strHO_DEM + " " + ip_us_dm_nhan_su.strTEN;
+            load_data_2_grid(ip_us_dm_nhan_su);
         }
 		private void grid2us_object(US_V_GD_QUA_TRINH_LAM_VIEC i_us
 			, int i_grid_row) {
@@ -518,7 +528,7 @@ namespace BKI_HRM
 		private void update_v_gd_qua_trinh_lam_viec(){			
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_qua_trinh_lam_viec)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row)) return;			
-			grid2us_object(m_us, m_grv_qua_trinh_lam_viec.Row);
+			grid2us_object(m_us_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row);
 		//	f202_V_GD_QUA_TRINH_LAM_VIEC_DE v_fDE = new f202_V_GD_QUA_TRINH_LAM_VIEC_DE();
 		//	v_fDE.display(m_us);
 			load_data_2_grid();
@@ -547,7 +557,7 @@ namespace BKI_HRM
 		private void view_v_gd_qua_trinh_lam_viec(){			
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_qua_trinh_lam_viec)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row)) return;
-			grid2us_object(m_us, m_grv_qua_trinh_lam_viec.Row);
+			grid2us_object(m_us_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row);
 		//	f202_V_GD_QUA_TRINH_LAM_VIEC_DE v_fDE = new f202_V_GD_QUA_TRINH_LAM_VIEC_DE();			
 		//	v_fDE.display(m_us);
 		}
