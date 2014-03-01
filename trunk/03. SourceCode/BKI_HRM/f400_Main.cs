@@ -175,5 +175,18 @@ namespace BKI_HRM {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_menuitem_quatrinhlamviec_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f202_V_GD_QUA_TRINH_LAM_VIEC frm = new f202_V_GD_QUA_TRINH_LAM_VIEC();
+                frm.Show();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
