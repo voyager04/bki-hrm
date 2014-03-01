@@ -162,5 +162,18 @@ namespace BKI_HRM {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_menuitem_hopdong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                F701_V_GD_HOP_DONG_LAO_DONG frm = new F701_V_GD_HOP_DONG_LAO_DONG();
+                frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }

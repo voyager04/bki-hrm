@@ -243,6 +243,7 @@
             this.m_menuitem_hopdong.Name = "m_menuitem_hopdong";
             this.m_menuitem_hopdong.Size = new System.Drawing.Size(178, 22);
             this.m_menuitem_hopdong.Text = "Hợp đồng lao động";
+            this.m_menuitem_hopdong.Click += new System.EventHandler(this.m_menuitem_hopdong_Click);
             // 
             // m_menuitem_quatrinhlamviec
             // 
