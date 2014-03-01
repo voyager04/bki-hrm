@@ -244,7 +244,7 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(272, 20);
             this.m_txt_tim_kiem.TabIndex = 32;
-            this.m_txt_tim_kiem.Text = "Nhập mã quyết định, loại quyết định, nội dung";
+            this.m_txt_tim_kiem.Text = "Nhập mã quyết định, loại quyết định, nội dung, link\r\n";
             // 
             // F600_V_DM_QUYET_DINH
             // 
