@@ -78,6 +78,7 @@
             this.m_menuitem_bctuyendung = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_bcnhansu = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_nhan_su_theo_phong_ban = new System.Windows.Forms.ToolStripMenuItem();
+            this.nhânSựTheoChứcVuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -431,7 +432,8 @@
             // m_menuitem_bcnhansu
             // 
             this.m_menuitem_bcnhansu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_menuitem_nhan_su_theo_phong_ban});
+            this.m_menuitem_nhan_su_theo_phong_ban,
+            this.nhânSựTheoChứcVuToolStripMenuItem});
             this.m_menuitem_bcnhansu.Name = "m_menuitem_bcnhansu";
             this.m_menuitem_bcnhansu.Size = new System.Drawing.Size(234, 22);
             this.m_menuitem_bcnhansu.Text = "Báo cáo nhân sự";
@@ -441,6 +443,13 @@
             this.m_menuitem_nhan_su_theo_phong_ban.Name = "m_menuitem_nhan_su_theo_phong_ban";
             this.m_menuitem_nhan_su_theo_phong_ban.Size = new System.Drawing.Size(206, 22);
             this.m_menuitem_nhan_su_theo_phong_ban.Text = "Nhân sự theo phòng ban";
+            // 
+            // nhânSựTheoChứcVuToolStripMenuItem
+            // 
+            this.nhânSựTheoChứcVuToolStripMenuItem.Name = "nhânSựTheoChứcVuToolStripMenuItem";
+            this.nhânSựTheoChứcVuToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.nhânSựTheoChứcVuToolStripMenuItem.Text = "Nhân sự theo chức vụ";
+            this.nhânSựTheoChứcVuToolStripMenuItem.Click += new System.EventHandler(this.nhânSựTheoChứcVuToolStripMenuItem_Click);
             // 
             // f400_Main
             // 
@@ -512,5 +521,6 @@
         private System.Windows.Forms.ToolStripMenuItem m_menuitem_bctuyendung;
         private System.Windows.Forms.ToolStripMenuItem m_menuitem_bcnhansu;
         private System.Windows.Forms.ToolStripMenuItem m_menuitem_nhan_su_theo_phong_ban;
+        private System.Windows.Forms.ToolStripMenuItem nhânSựTheoChứcVuToolStripMenuItem;
     }
 }

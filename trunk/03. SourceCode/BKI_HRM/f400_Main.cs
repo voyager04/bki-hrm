@@ -188,5 +188,18 @@ namespace BKI_HRM {
             	CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void nhânSựTheoChứcVuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f402_BAO_CAO_NHAN_SU_CHUC_VU frm = new f402_BAO_CAO_NHAN_SU_CHUC_VU();
+                frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
