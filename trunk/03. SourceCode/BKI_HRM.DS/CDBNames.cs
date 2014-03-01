@@ -248,6 +248,7 @@ namespace BKI_HRM.DS.CDBNames
         public const string NGAY_CO_HIEU_LUC = "NGAY_CO_HIEU_LUC";
         public const string NGAY_HET_HAN = "NGAY_HET_HAN";
         public const string LINK = "LINK";
+        public const string TRANG_THAI_HOP_DONG = "TRANG_THAI_HOP_DONG";
     }
 
     public class DM_DON_VI {
