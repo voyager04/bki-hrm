@@ -40,7 +40,8 @@ namespace BKI_HRM
 		internal SIS.Controls.Button.SiSButton m_cmd_insert;
 		internal SIS.Controls.Button.SiSButton m_cmd_exit;
 		internal SIS.Controls.Button.SiSButton m_cmd_view;
-        internal SIS.Controls.Button.SiSButton m_cmd_chon_quyet_dinh;
+        internal SIS.Controls.Button.SiSButton m_cmd_search;
+        private TextBox m_txt_tim_kiem;
         
 		private System.ComponentModel.IContainer components;
 
@@ -83,13 +84,14 @@ namespace BKI_HRM
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F600_V_DM_QUYET_DINH));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_cmd_chon_quyet_dinh = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_grv_dm_quyet_dinh = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_cmd_search = new SIS.Controls.Button.SiSButton();
+            this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_quyet_dinh)).BeginInit();
             this.SuspendLayout();
@@ -123,7 +125,6 @@ namespace BKI_HRM
             // 
             // m_pnl_out_place_dm
             // 
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_chon_quyet_dinh);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
@@ -135,22 +136,6 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(686, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
-            // 
-            // m_cmd_chon_quyet_dinh
-            // 
-            this.m_cmd_chon_quyet_dinh.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_chon_quyet_dinh.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_chon_quyet_dinh.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_chon_quyet_dinh.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_chon_quyet_dinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_chon_quyet_dinh.ImageIndex = 2;
-            this.m_cmd_chon_quyet_dinh.ImageList = this.ImageList;
-            this.m_cmd_chon_quyet_dinh.Location = new System.Drawing.Point(206, 4);
-            this.m_cmd_chon_quyet_dinh.Name = "m_cmd_chon_quyet_dinh";
-            this.m_cmd_chon_quyet_dinh.Size = new System.Drawing.Size(124, 28);
-            this.m_cmd_chon_quyet_dinh.TabIndex = 22;
-            this.m_cmd_chon_quyet_dinh.Text = "&Chọn quyết định";
-            this.m_cmd_chon_quyet_dinh.Click += new System.EventHandler(this.m_cmd_chon_quyet_dinh_Click);
             // 
             // m_cmd_insert
             // 
@@ -230,17 +215,43 @@ namespace BKI_HRM
             // m_grv_dm_quyet_dinh
             // 
             this.m_grv_dm_quyet_dinh.ColumnInfo = resources.GetString("m_grv_dm_quyet_dinh.ColumnInfo");
-            this.m_grv_dm_quyet_dinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grv_dm_quyet_dinh.Location = new System.Drawing.Point(0, 0);
+            this.m_grv_dm_quyet_dinh.Location = new System.Drawing.Point(0, 44);
             this.m_grv_dm_quyet_dinh.Name = "m_grv_dm_quyet_dinh";
-            this.m_grv_dm_quyet_dinh.Size = new System.Drawing.Size(686, 373);
+            this.m_grv_dm_quyet_dinh.Size = new System.Drawing.Size(686, 329);
             this.m_grv_dm_quyet_dinh.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_dm_quyet_dinh.Styles"));
             this.m_grv_dm_quyet_dinh.TabIndex = 20;
+            // 
+            // m_cmd_search
+            // 
+            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_search.ImageIndex = 5;
+            this.m_cmd_search.ImageList = this.ImageList;
+            this.m_cmd_search.Location = new System.Drawing.Point(495, 7);
+            this.m_cmd_search.Name = "m_cmd_search";
+            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_search.TabIndex = 33;
+            this.m_cmd_search.Text = "Tìm kiếm";
+            this.m_cmd_search.Click += new System.EventHandler(this.m_cmd_search_Click);
+            // 
+            // m_txt_tim_kiem
+            // 
+            this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(186, 12);
+            this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
+            this.m_txt_tim_kiem.Size = new System.Drawing.Size(272, 20);
+            this.m_txt_tim_kiem.TabIndex = 32;
+            this.m_txt_tim_kiem.Text = "Nhập mã quyết định, loại quyết định, nội dung";
             // 
             // F600_V_DM_QUYET_DINH
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(686, 409);
+            this.Controls.Add(this.m_cmd_search);
+            this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.m_grv_dm_quyet_dinh);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "F600_V_DM_QUYET_DINH";
@@ -249,6 +260,7 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_quyet_dinh)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 		#endregion
@@ -257,12 +269,6 @@ namespace BKI_HRM
 		public void display(){			
 			this.ShowDialog();
 		}
-        public void select_data(ref US_V_DM_QUYET_DINH op_us)
-        {
-            m_e_form_mode = DataEntryFormMode.SelectDataState;
-            this.ShowDialog();
-            op_us = m_us;
-        }
 		#endregion
 
 		#region Data Structure
@@ -279,8 +285,7 @@ namespace BKI_HRM
 		#endregion
 
 		#region Members
-		ITransferDataRow m_obj_trans;
-        DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
+		ITransferDataRow m_obj_trans;		
 		DS_V_DM_QUYET_DINH m_ds = new DS_V_DM_QUYET_DINH();
 		US_V_DM_QUYET_DINH m_us = new US_V_DM_QUYET_DINH();
 		#endregion
@@ -294,27 +299,7 @@ namespace BKI_HRM
 			set_define_events();
 			this.KeyPreview = true;		
 		}
-		private void set_initial_form_load(){
-            switch (m_e_form_mode)
-            {
-                case DataEntryFormMode.UpdateDataState:
-                    m_cmd_chon_quyet_dinh.Visible = false;
-                    break;
-                case DataEntryFormMode.InsertDataState:
-                    m_cmd_chon_quyet_dinh.Visible = false;
-                    break;
-                case DataEntryFormMode.ViewDataState:
-                    m_cmd_chon_quyet_dinh.Visible = false;
-                    break;
-                case DataEntryFormMode.SelectDataState:
-                    m_cmd_chon_quyet_dinh.Visible = true;
-                    m_cmd_chon_quyet_dinh.Enabled = true;
-                    
-                    m_cmd_update.Visible = false;
-                    m_cmd_delete.Visible = false;
-                    break;
-
-            }			
+		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_grv_dm_quyet_dinh);
 			load_data_2_grid();		
 		}	
@@ -345,13 +330,7 @@ namespace BKI_HRM
 			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
 			i_us.DataRow2Me(v_dr);
 		}
-        private void select_data_2_us()
-        {
-            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_dm_quyet_dinh)) return;
-            if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_dm_quyet_dinh, m_grv_dm_quyet_dinh.Row)) return;
-            grid2us_object(m_us, m_grv_dm_quyet_dinh.Row);
-            this.Close();
-        }
+
 	
 		private void us_object2grid(US_V_DM_QUYET_DINH i_us
 			, int i_grid_row) {
@@ -472,18 +451,17 @@ namespace BKI_HRM
 			}
 		}
 
-        private void m_cmd_chon_quyet_dinh_Click(object sender, EventArgs e)
+        private void m_cmd_search_Click(object sender, EventArgs e)
         {
-            try
-            {
-                select_data_2_us();
-            }
-            catch (Exception v_e)
-            {
-            	CSystemLog_301.ExceptionHandle(v_e);
-            }
+            m_obj_trans = get_trans_object(m_grv_dm_quyet_dinh);
+            m_ds.Clear();
+            m_us.FillDatasetSearch(m_ds, m_txt_tim_kiem.Text);
+            m_grv_dm_quyet_dinh.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_grv_dm_quyet_dinh, m_obj_trans);
+            m_grv_dm_quyet_dinh.Redraw = true;
         }
 
+       
 	}
 }
 
