@@ -4,7 +4,6 @@
 /// Goal: Create Form for V_DM_DU_LIEU_NHAN_VIEN
 ///************************************************
 
-
 using System;
 using System.Data;
 using System.Drawing;
@@ -425,6 +424,7 @@ namespace BKI_HRM {
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_LAO_DONG,
                 WinFormControls.eTAT_CA.YES,
                 m_cbo_trang_thai);
+            
         }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg) {
             Hashtable v_htb = new Hashtable();
@@ -542,35 +542,6 @@ namespace BKI_HRM {
         private void tim_kiem() {
             load_data_2_grid();
         }
-        private void tim_kiem_dung_tu_khoa() {
-            m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
-            var v_str_search = m_txt_tim_kiem.Text.Trim();
-            var v_str_month = Regex.Match(v_str_search, @"\d+").Value;
-            if (!v_str_month.Equals("")) {
-                v_str_search = v_str_month;
-            }
-            m_us.FillDatasetByKeyWord(v_str_search, m_ds);
-            m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            m_fg.Redraw = true;
-            set_search_textbox_style();
-            m_lbl_so_nhan_vien.Text = lay_so_ban_ghi().ToString();
-        }
-        private void tim_kiem_theo_gioi_tinh() {
-            m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
-            var v_str_search = m_txt_tim_kiem.Text.Trim();
-            var v_str_month = Regex.Match(v_str_search, @"\d+").Value;
-            if (!v_str_month.Equals("")) {
-                v_str_search = v_str_month;
-            }
-            m_us.FillDatasetGender(v_str_search, get_gender(), m_ds);
-            m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            m_fg.Redraw = true;
-            set_search_textbox_style();
-            m_lbl_so_nhan_vien.Text = lay_so_ban_ghi().ToString();
-        }
-
         #endregion
 
         //
@@ -582,6 +553,7 @@ namespace BKI_HRM {
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_search.Click += new EventHandler(m_cmd_search_Click);
             m_txt_tim_kiem.KeyDown += new KeyEventHandler(m_txt_tim_kiem_KeyDown);
+            m_cbo_trang_thai.SelectedIndexChanged += new System.EventHandler(this.m_cbo_trang_thai_SelectedIndexChanged);
         }
 
         private void f103_bao_cao_tra_cuu_nhan_su_Load(object sender, System.EventArgs e) {
@@ -616,7 +588,11 @@ namespace BKI_HRM {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        
+        private void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e) {
 
+        }
+        
     }
 }
 
