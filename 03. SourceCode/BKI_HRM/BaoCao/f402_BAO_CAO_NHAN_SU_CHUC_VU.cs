@@ -156,6 +156,8 @@ namespace BKI_HRM
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             this.m_fg.Click += new System.EventHandler(this.m_fg_Click);
+            this.m_fg.KeyDown += new System.Windows.Forms.KeyEventHandler(this.m_fg_KeyDown);
+            this.m_fg.KeyUp += new System.Windows.Forms.KeyEventHandler(this.m_fg_KeyUp);
             // 
             // m_lbl_ma_chuc_vu
             // 
@@ -458,6 +460,18 @@ namespace BKI_HRM
         }
 
         private void m_dtp_thoidiem_ValueChanged(object sender, EventArgs e)
+        {
+            m_dc_index_row = m_fg.Row;
+            load_data_2_grid_dm_nhan_su(m_dc_index_row, m_dtp_thoidiem.Value);
+        }
+
+        private void m_fg_KeyDown(object sender, KeyEventArgs e)
+        {
+            m_dc_index_row = m_fg.Row;
+            load_data_2_grid_dm_nhan_su(m_dc_index_row, m_dtp_thoidiem.Value);
+        }
+
+        private void m_fg_KeyUp(object sender, KeyEventArgs e)
         {
             m_dc_index_row = m_fg.Row;
             load_data_2_grid_dm_nhan_su(m_dc_index_row, m_dtp_thoidiem.Value);
