@@ -21,7 +21,7 @@ using C1.Win.C1FlexGrid;
 
 namespace BKI_HRM {
     public partial class f104_bao_cao_nhan_su_theo_phong_ban : Form {
-        
+
         public f104_bao_cao_nhan_su_theo_phong_ban() {
             InitializeComponent();
             format_controls();
@@ -91,7 +91,7 @@ namespace BKI_HRM {
             TRANG_THAI_CV = 9
                 ,
             GIOI_TINH = 4
-                , 
+                ,
             MA_CV = 7
 
         }
@@ -104,9 +104,11 @@ namespace BKI_HRM {
         US_V_DM_DON_VI m_us_don_vi = new US_V_DM_DON_VI();
         DS_V_DM_DU_LIEU_NHAN_VIEN m_ds_nhan_su = new DS_V_DM_DU_LIEU_NHAN_VIEN();
         US_V_DM_DU_LIEU_NHAN_VIEN m_us_nhan_su = new US_V_DM_DU_LIEU_NHAN_VIEN();
+        int m_dc_index_row;
         #endregion
 
         #region Private Methods
+
         private void format_controls() {
             CControlFormat.setFormStyle(this, new CAppContext_201());
             CControlFormat.setC1FlexFormat(m_fg_don_vi);
@@ -136,7 +138,6 @@ namespace BKI_HRM {
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg_don_vi, v_htb, m_ds_don_vi.V_DM_DON_VI.NewRow());
             return v_obj_trans;
         }
-
         private ITransferDataRow get_trans_object_nhan_su(C1.Win.C1FlexGrid.C1FlexGrid i_fg_nhan_su) {
             Hashtable v_htb = new Hashtable();
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.LOAI_DON_VI, e_col_Number_Nhan_Su.LOAI_DON_VI);
@@ -189,8 +190,7 @@ namespace BKI_HRM {
             set_search_textbox_style();
             m_lbl_so_ban_ghi_don_vi.Text = m_ds_don_vi.V_DM_DON_VI.Count.ToString();
         }
-
-        private void load_data_2_grid_nhan_su() {
+        private void load_data_2_grid_dm_nhan_su(int ip_int_row_index_choose) {
             m_ds_nhan_su = new DS_V_DM_DU_LIEU_NHAN_VIEN();
             /*Xử lý tìm kiếm*/
             var v_str_search = m_txt_tim_kiem.Text.Trim();
@@ -198,18 +198,31 @@ namespace BKI_HRM {
             if (!v_str_month.Equals("")) {
                 v_str_search = v_str_month;
             }
-            m_us_nhan_su.FillDataset_TheoPhongBan(m_ds_nhan_su, get_id_don_vi(), v_str_search, get_gender(), get_trang_thai_lao_dong());
+            var v_id_don_vi = get_id_don_vi(ip_int_row_index_choose);
+            var v_str_gender = get_gender();
+            var v_str_trang_thai_lao_dong = get_trang_thai_lao_dong();
+            m_us_nhan_su.FillDataset_By_ID_Don_Vi(m_ds_nhan_su, v_id_don_vi, v_str_search, v_str_gender, v_str_trang_thai_lao_dong);
             m_fg_nhan_su.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds_nhan_su, m_fg_nhan_su, m_obj_trans_nhan_su);
+            ITransferDataRow v_obj_trans_nhan_su = get_trans_object_nhan_su(m_fg_nhan_su);
+            CGridUtils.Dataset2C1Grid(m_ds_nhan_su, m_fg_nhan_su, v_obj_trans_nhan_su);
             m_fg_nhan_su.Redraw = true;
             set_search_textbox_style();
             m_lbl_so_ban_ghi_nhan_su.Text = lay_so_ban_ghi();
         }
-
-        private decimal get_id_don_vi(){
-            return 0;
+        private void grid2us_object(US_V_DM_DON_VI i_us, int i_grid_row){
+            var v_user_data = m_fg_don_vi.Rows[i_grid_row].UserData;
+            DataRow v_dr = null;
+            if (v_user_data!=null) {
+                v_dr = (DataRow)v_user_data;
+                m_obj_trans_don_vi.GridRow2DataRow(i_grid_row, v_dr);
+                i_us.DataRow2Me(v_dr); 
+            }
         }
-
+        private decimal get_id_don_vi(int ip_dc_row_index_choose) {
+            //Truyền dữ liệu của dòng chọn vào us
+            grid2us_object(m_us_don_vi, ip_dc_row_index_choose);
+            return m_us_don_vi.dcID;
+        }
         private string lay_so_ban_ghi() {
             return m_ds_nhan_su.V_DM_DU_LIEU_NHAN_VIEN.Count.ToString();
         }
@@ -221,14 +234,12 @@ namespace BKI_HRM {
             }
             return "";
         }
-
         private string get_trang_thai_lao_dong() {
             if (m_cbo_trang_thai.SelectedIndex != 0) {
                 return m_cbo_trang_thai.Text;
             }
             return "";
         }
-
         private void set_search_textbox_style() {
             if (m_txt_tim_kiem.Text.Trim().Equals(String.Empty)) {
                 m_txt_tim_kiem.Select(); //Đưa chuột vào ô tìm kiếm
@@ -246,7 +257,7 @@ namespace BKI_HRM {
         //
 
         private void set_define_events() {
-            m_fg_don_vi.Click += new System.EventHandler(this.m_fg_don_vi_Click);
+            m_fg_don_vi.Click += new System.EventHandler(m_fg_don_vi_Click);
         }
 
         private void f104_bao_cao_nhan_su_theo_phong_ban_Load(object sender, EventArgs e) {
@@ -259,7 +270,8 @@ namespace BKI_HRM {
 
         private void m_fg_don_vi_Click(object sender, EventArgs e) {
             try {
-                load_data_2_grid_nhan_su();
+                m_dc_index_row = m_fg_don_vi.Row;
+                load_data_2_grid_dm_nhan_su(m_dc_index_row);
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
