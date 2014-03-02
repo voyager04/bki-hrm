@@ -393,7 +393,7 @@ namespace BKI_HRM
             // m_lbl_tim_kiem
             // 
             this.m_lbl_tim_kiem.AutoSize = true;
-            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(325, 18);
+            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(172, 18);
             this.m_lbl_tim_kiem.Name = "m_lbl_tim_kiem";
             this.m_lbl_tim_kiem.Size = new System.Drawing.Size(49, 13);
             this.m_lbl_tim_kiem.TabIndex = 21;
@@ -401,10 +401,16 @@ namespace BKI_HRM
             // 
             // m_txt_tim_kiem
             // 
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(393, 15);
+            this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.m_txt_tim_kiem.ForeColor = System.Drawing.Color.Gray;
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(227, 15);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
-            this.m_txt_tim_kiem.Size = new System.Drawing.Size(272, 20);
+            this.m_txt_tim_kiem.Size = new System.Drawing.Size(438, 20);
             this.m_txt_tim_kiem.TabIndex = 1;
+            this.m_txt_tim_kiem.Text = "Nhập vào thông tin muốn tìm kiếm";
+            this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
+            this.m_txt_tim_kiem.Leave += new System.EventHandler(this.m_txt_tim_kiem_Leave);
             // 
             // m_cmd_search
             // 
@@ -910,6 +916,7 @@ namespace BKI_HRM
             this.m_cbo_gioi_tinh.BackColor = System.Drawing.SystemColors.Info;
             this.m_cbo_gioi_tinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_gioi_tinh.Enabled = false;
+            this.m_cbo_gioi_tinh.ForeColor = System.Drawing.Color.Maroon;
             this.m_cbo_gioi_tinh.FormattingEnabled = true;
             this.m_cbo_gioi_tinh.Items.AddRange(new object[] {
             "Chọn giới tính",
@@ -1014,6 +1021,7 @@ namespace BKI_HRM
             // 
             // m_dat_ngay_sinh
             // 
+            this.m_dat_ngay_sinh.CalendarForeColor = System.Drawing.Color.Maroon;
             this.m_dat_ngay_sinh.CalendarMonthBackground = System.Drawing.SystemColors.Info;
             this.m_dat_ngay_sinh.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_sinh.Enabled = false;
@@ -1062,6 +1070,7 @@ namespace BKI_HRM
             // 
             // m_dat_ngay_cap
             // 
+            this.m_dat_ngay_cap.CalendarForeColor = System.Drawing.Color.Maroon;
             this.m_dat_ngay_cap.CalendarMonthBackground = System.Drawing.SystemColors.Info;
             this.m_dat_ngay_cap.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_cap.Enabled = false;
@@ -1228,6 +1237,7 @@ namespace BKI_HRM
             // TODO: Add any constructor code after InitializeComponent call
             //
             format_controls();
+            m_txt_tim_kiem.ForeColor = Color.Gray;
         }
 
 		#endregion
@@ -1341,7 +1351,7 @@ namespace BKI_HRM
 			m_obj_trans = get_trans_object(m_grv_nhan_su);
 			load_data_2_grid();
             load_chi_tiet_nhan_vien();
-            
+            load_custom_source_2_m_txt_tim_kiem();
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -1484,10 +1494,21 @@ namespace BKI_HRM
 
         private void load_data_2_grid_search(){
             m_ds = new DS_DM_NHAN_SU();
-            m_us.FillDataset_search(m_ds, m_txt_tim_kiem.Text);
+            m_us.FillDataset_search(m_ds, m_txt_tim_kiem.Text.Trim());
             m_grv_nhan_su.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_grv_nhan_su, m_obj_trans);
             m_grv_nhan_su.Redraw = true;
+        }
+        private void load_custom_source_2_m_txt_tim_kiem()
+        {
+            
+            int count = m_ds.Tables["DM_NHAN_SU"].Rows.Count;
+            for (int i = 0; i < count; i++)
+            {
+                DataRow dr = m_ds.Tables["DM_NHAN_SU"].Rows[i];
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[1].ToString());
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[2].ToString());
+            }
         }
         private void us_object_to_form()
         {
@@ -1617,6 +1638,7 @@ namespace BKI_HRM
         private void f201_DM_NHAN_SU_Load(object sender, System.EventArgs e) {
 			try{
 				set_initial_form_load();
+                load_custom_source_2_m_txt_tim_kiem();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
@@ -1763,7 +1785,39 @@ namespace BKI_HRM
             }
         }
 
+        private void m_txt_tim_kiem_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                m_txt_tim_kiem.Text = "";
+                m_txt_tim_kiem.ForeColor = Color.Black;
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_txt_tim_kiem_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_txt_tim_kiem.Text == "")
+                {
+                    m_txt_tim_kiem.Text = "Nhập nội dung muốn tìm kiếm";
+                    m_txt_tim_kiem.ForeColor = Color.Gray;
+                }
+
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        
         #endregion
+
+        
+        
 
        
         
