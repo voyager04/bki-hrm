@@ -85,7 +85,7 @@ Public Class CControlFormat
             ip_control.BackColor = getRegularBackColor()
         ElseIf TypeOf ip_control Is TextBox Then
             ip_control.Font = getRegularFont()
-            ip_control.ForeColor = getRegularForeColor()
+            'ip_control.ForeColor = getRegularForeColor()
         ElseIf TypeOf ip_control Is GroupBox Then
             ip_control.Font = getRegularFont()
             ip_control.ForeColor = getRegularForeColor()
