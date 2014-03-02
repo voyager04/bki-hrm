@@ -353,7 +353,10 @@ namespace BKI_HRM
             {
                 m_us_gd_hop_dong.BeginTransaction();
                 m_us_gd_hop_dong.Delete();
-                File.Delete(m_us_gd_hop_dong.strLINK);
+                if (File.Exists(m_us_gd_hop_dong.strLINK))
+                {
+                    File.Delete(m_us_gd_hop_dong.strLINK);                    
+                }
                 m_us_gd_hop_dong.CommitTransaction();
                 m_fg.Rows.Remove(m_fg.Row);
                 BaseMessages.MsgBox_Infor("Xoá thành công!");
