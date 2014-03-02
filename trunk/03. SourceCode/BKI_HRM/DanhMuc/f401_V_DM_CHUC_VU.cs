@@ -223,6 +223,8 @@ namespace BKI_HRM
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             this.m_fg.Click += new System.EventHandler(this.m_fg_Click);
+            this.m_fg.KeyDown += new System.Windows.Forms.KeyEventHandler(this.m_fg_KeyDown);
+            this.m_fg.KeyUp += new System.Windows.Forms.KeyEventHandler(this.m_fg_KeyUp);
             // 
             // m_lbl_danh_sach_nhan_su
             // 
@@ -587,6 +589,18 @@ namespace BKI_HRM
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_v_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;
+        }
+
+        private void m_fg_KeyDown(object sender, KeyEventArgs e)
+        {
+            m_dc_index_row = m_fg.Row;
+            load_data_2_grid_dm_nhan_su(m_dc_index_row);
+        }
+
+        private void m_fg_KeyUp(object sender, KeyEventArgs e)
+        {
+            m_dc_index_row = m_fg.Row;
+            load_data_2_grid_dm_nhan_su(m_dc_index_row);
         }
 
 	}
