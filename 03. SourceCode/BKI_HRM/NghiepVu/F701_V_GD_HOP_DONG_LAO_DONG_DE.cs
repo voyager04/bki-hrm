@@ -80,13 +80,17 @@ namespace BKI_HRM.NghiepVu
             m_us.strMA_HOP_DONG = m_txt_ma_hop_dong.Text;
             m_us.dcID_LOAI_HOP_DONG = (decimal)m_cbo_loai_hop_dong.SelectedValue;
             m_us.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value;
-            m_us.datNGAY_HET_HAN = m_dat_ngay_het_han.Value;
             m_us.strTRANG_THAI_HOP_DONG = m_cbo_trang_thai.SelectedIndex.Equals(0) ? "y" : "n";
             m_us.strLINK = m_str_destination + m_txt_file_name.Text;
 
             DS_DM_NHAN_SU m_ds_dm_nhan_su = new DS_DM_NHAN_SU();
             m_us_dm_nhan_su.FillDataset_search_by_ma_ns(m_ds_dm_nhan_su,m_lbl_ma_nhan_vien.Text);
             m_us.dcID_NHAN_SU = (decimal)m_ds_dm_nhan_su.Tables[0].Rows[0].ItemArray[0];
+
+            if (m_dat_ngay_het_han.Checked == false)
+                m_us.SetNGAY_HET_HANNull();
+            else
+                m_us.datNGAY_HET_HAN = m_dat_ngay_het_han.Value;   
         }
 
         private void save_data()
