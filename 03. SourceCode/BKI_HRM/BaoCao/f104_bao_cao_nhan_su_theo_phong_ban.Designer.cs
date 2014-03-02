@@ -59,9 +59,9 @@
             // m_fg_don_vi
             // 
             this.m_fg_don_vi.ColumnInfo = resources.GetString("m_fg_don_vi.ColumnInfo");
-            this.m_fg_don_vi.Location = new System.Drawing.Point(1, 88);
+            this.m_fg_don_vi.Location = new System.Drawing.Point(1, 70);
             this.m_fg_don_vi.Name = "m_fg_don_vi";
-            this.m_fg_don_vi.Size = new System.Drawing.Size(1169, 165);
+            this.m_fg_don_vi.Size = new System.Drawing.Size(1169, 183);
             this.m_fg_don_vi.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_don_vi.Styles"));
             this.m_fg_don_vi.TabIndex = 21;
             // 
@@ -77,13 +77,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1173, 85);
+            this.panel1.Size = new System.Drawing.Size(1173, 72);
             this.panel1.TabIndex = 22;
             // 
             // m_lbl_so_ban_ghi_don_vi
             // 
             this.m_lbl_so_ban_ghi_don_vi.AutoSize = true;
-            this.m_lbl_so_ban_ghi_don_vi.Location = new System.Drawing.Point(137, 61);
+            this.m_lbl_so_ban_ghi_don_vi.Location = new System.Drawing.Point(137, 53);
             this.m_lbl_so_ban_ghi_don_vi.Name = "m_lbl_so_ban_ghi_don_vi";
             this.m_lbl_so_ban_ghi_don_vi.Size = new System.Drawing.Size(127, 14);
             this.m_lbl_so_ban_ghi_don_vi.TabIndex = 28;
@@ -92,7 +92,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 61);
+            this.label2.Location = new System.Drawing.Point(16, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 14);
             this.label2.TabIndex = 27;
@@ -345,7 +345,10 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_fg_don_vi);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "f104_bao_cao_nhan_su_theo_phong_ban";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "f104 - Báo cáo nhân sự theo phòng ban";
             this.Load += new System.EventHandler(this.f104_bao_cao_nhan_su_theo_phong_ban_Load);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_don_vi)).EndInit();
