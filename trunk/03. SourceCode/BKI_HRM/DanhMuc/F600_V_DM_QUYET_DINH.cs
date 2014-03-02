@@ -481,8 +481,7 @@ namespace BKI_HRM
 			}
 		
 		}
-        
-
+  
 		private void m_cmd_exit_Click(object sender, EventArgs e) {
 			try{
 				this.Close();
