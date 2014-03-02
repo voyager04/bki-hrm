@@ -264,7 +264,7 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(272, 20);
             this.m_txt_tim_kiem.TabIndex = 32;
-            this.m_txt_tim_kiem.Text = "Nhập mã quyết định, loại quyết định, nội dung, link\r\n";
+            this.m_txt_tim_kiem.Text = "Nhập mã quyết định, loại quyết định, nội dung\r\n";
             // 
             // F600_V_DM_QUYET_DINH
             // 
@@ -318,6 +318,20 @@ namespace BKI_HRM
 		#endregion
 
 		#region Private Methods
+        private void load_custom_source_2_m_txt_tim_kiem()
+        {
+            //m_us.FillDataset(m_ds);
+            int count = m_ds.Tables["V_DM_QUYET_DINH"].Rows.Count;
+            for (int i = 0; i < count; i++)
+            {
+                DataRow dr = m_ds.Tables["V_DM_QUYET_DINH"].Rows[i];
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[1].ToString());
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[8].ToString());
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[6].ToString());
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[7].ToString());
+
+            }
+        }
 		private void format_controls(){
 			CControlFormat.setFormStyle(this, new CAppContext_201());
 			CControlFormat.setC1FlexFormat(m_grv_dm_quyet_dinh);
@@ -458,12 +472,14 @@ namespace BKI_HRM
 		private void F600_V_DM_QUYET_DINH_Load(object sender, System.EventArgs e) {
 			try{
 				set_initial_form_load();
+                load_custom_source_2_m_txt_tim_kiem();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		
 		}
+        
 
 		private void m_cmd_exit_Click(object sender, EventArgs e) {
 			try{
@@ -518,6 +534,17 @@ namespace BKI_HRM
             m_grv_dm_quyet_dinh.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_grv_dm_quyet_dinh, m_obj_trans);
             m_grv_dm_quyet_dinh.Redraw = true;
+        }
+        private void m_txt_tim_kiem_MouseClick(object sender, MouseEventArgs e)
+        {
+            m_txt_tim_kiem.Text = "";
+        }
+        private void m_txt_tim_kiem_Leave(object sender, EventArgs e)
+        {
+            if (m_txt_tim_kiem.Text == "")
+            {
+                m_txt_tim_kiem.Text = "Nhập mã dự án, tên dự án, trạng thái";
+            }
         }
 
         private void m_grv_dm_quyet_dinh_KeyDown(object sender, KeyEventArgs e)
