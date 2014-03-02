@@ -174,7 +174,7 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(272, 20);
             this.m_txt_tim_kiem.TabIndex = 30;
-            this.m_txt_tim_kiem.Text = "Nhập mã dự án, tên dự án, trạng thái";
+            this.m_txt_tim_kiem.Text = "Nhập mã chức vụ, tên chức vụ";
             // 
             // m_cmd_search
             // 

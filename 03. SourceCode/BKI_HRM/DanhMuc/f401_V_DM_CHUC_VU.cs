@@ -250,7 +250,7 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(272, 20);
             this.m_txt_tim_kiem.TabIndex = 30;
-            this.m_txt_tim_kiem.Text = "Nhập mã dự án, tên dự án, trạng thái";
+            this.m_txt_tim_kiem.Text = "Nhập mã chức vụ, tên chức vụ";
             // 
             // m_cmd_search
             // 
@@ -349,8 +349,10 @@ namespace BKI_HRM
 		#region Members
 		ITransferDataRow m_obj_trans;
         int m_dc_index_row;
-		DS_V_DM_CHUC_VU m_ds = new DS_V_DM_CHUC_VU();
-		US_V_DM_CHUC_VU m_us = new US_V_DM_CHUC_VU();
+        DS_DM_CHUC_VU m_ds = new DS_DM_CHUC_VU();
+        US_DM_CHUC_VU m_us;
+		DS_V_DM_CHUC_VU m_v_ds = new DS_V_DM_CHUC_VU();
+		US_V_DM_CHUC_VU m_v_us = new US_V_DM_CHUC_VU();
         DS_V_DM_DU_LIEU_NHAN_VIEN v_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
         US_V_DM_DU_LIEU_NHAN_VIEN v_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
 		#endregion
@@ -377,22 +379,23 @@ namespace BKI_HRM
 			v_htb.Add(V_DM_CHUC_VU.MA_CV, e_col_Number.MA_CV);
 			v_htb.Add(V_DM_CHUC_VU.TEN_CV, e_col_Number.TEN_CV);
 									
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_DM_CHUC_VU.NewRow());
+			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_v_ds.V_DM_CHUC_VU.NewRow());
 			return v_obj_trans;			
 		}
 		private void load_data_2_grid(){						
-			m_ds = new DS_V_DM_CHUC_VU();			
-			m_us.FillDataset(m_ds);
+			m_v_ds = new DS_V_DM_CHUC_VU();			
+			m_v_us.FillDataset(m_v_ds);
 			m_fg.Redraw = false;
-			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+			CGridUtils.Dataset2C1Grid(m_v_ds, m_fg, m_obj_trans);
 			m_fg.Redraw = true;
 		}
-		private void grid2us_object(US_V_DM_CHUC_VU i_us
+		private void grid2us_object(US_DM_CHUC_VU i_us
 			, int i_grid_row) {
 			DataRow v_dr;
 			v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
-			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
-			i_us.DataRow2Me(v_dr);
+            m_us = new US_DM_CHUC_VU((decimal)v_dr.ItemArray[0]);
+			//m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
+			//i_us.DataRow2Me(v_dr);
 		}
 
 	
@@ -423,7 +426,7 @@ namespace BKI_HRM
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
 			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			US_V_DM_CHUC_VU v_us = new US_V_DM_CHUC_VU();
+			US_DM_CHUC_VU v_us = new US_DM_CHUC_VU();
 			grid2us_object(v_us, m_fg.Row);
 			try {			
 				v_us.BeginTransaction();    											
@@ -442,9 +445,9 @@ namespace BKI_HRM
 		private void view_v_dm_chuc_vu(){			
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			grid2us_object(m_us, m_fg.Row);
+			//grid2us_object(m_v_us, m_fg.Row);
 		//	f401_V_DM_CHUC_VU_DE v_fDE = new f401_V_DM_CHUC_VU_DE();			
-		//	v_fDE.display(m_us);
+		//	v_fDE.display(m_v_us);
 		}
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
@@ -460,7 +463,7 @@ namespace BKI_HRM
 
             grid2us_object(m_us, i_dc_row_index);
 
-            m_lbl_ma_chuc_vu.Text = m_us.strMA_CV;
+            m_lbl_ma_chuc_vu.Text = m_v_us.strMA_CV;
 
             v_us_nhan_su.FillDatasetByIdCV(v_ds_nhan_su, m_us.dcID);
             m_grv_nhan_su.Redraw = false;
@@ -491,11 +494,11 @@ namespace BKI_HRM
         }
         private void load_custom_source_2_m_txt_tim_kiem()
         {
-            //m_us.FillDataset(m_ds);
-            int count = m_ds.Tables["V_DM_CHUC_VU"].Rows.Count;
+            //m_v_us.FillDataset(m_v_ds);
+            int count = m_v_ds.Tables["V_DM_CHUC_VU"].Rows.Count;
             for (int i = 0; i < count; i++)
             {
-                DataRow dr = m_ds.Tables["V_DM_CHUC_VU"].Rows[i];
+                DataRow dr = m_v_ds.Tables["V_DM_CHUC_VU"].Rows[i];
                 m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[1].ToString());
                 m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[2].ToString());
             }
@@ -579,10 +582,10 @@ namespace BKI_HRM
         private void m_cmd_search_Click(object sender, EventArgs e)
         {
             m_obj_trans = get_trans_object(m_fg);
-            m_ds.Clear();
-            m_us.FillDatasetSearch(m_ds, m_txt_tim_kiem.Text);
+            m_v_ds.Clear();
+            m_v_us.FillDatasetSearch(m_v_ds, m_txt_tim_kiem.Text);
             m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.Dataset2C1Grid(m_v_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;
         }
 

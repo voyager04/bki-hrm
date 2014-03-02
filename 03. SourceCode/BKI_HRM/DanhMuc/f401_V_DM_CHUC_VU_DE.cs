@@ -27,7 +27,7 @@ namespace BKI_HRM
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             this.ShowDialog();
         }
-        public void display_for_update(US_V_DM_CHUC_VU ip_m_us_v_dm_chuc_vu) {
+        public void display_for_update(US_DM_CHUC_VU ip_m_us_v_dm_chuc_vu) {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             us_object_2_form(ip_m_us_v_dm_chuc_vu);
             this.ShowDialog();
@@ -91,7 +91,7 @@ namespace BKI_HRM
             this.Close();
         }
 
-        private void us_object_2_form(US_V_DM_CHUC_VU ip_us_v_dm_chuc_vu){
+        private void us_object_2_form(US_DM_CHUC_VU ip_us_v_dm_chuc_vu){
             m_us.dcID = ip_us_v_dm_chuc_vu.dcID;
             m_txt_macv.Text = ip_us_v_dm_chuc_vu.strMA_CV;
             m_txt_tencv.Text = ip_us_v_dm_chuc_vu.strTEN_CV;
