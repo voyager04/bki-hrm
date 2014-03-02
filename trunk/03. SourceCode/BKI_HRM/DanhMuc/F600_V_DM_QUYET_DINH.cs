@@ -264,10 +264,9 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(272, 20);
             this.m_txt_tim_kiem.TabIndex = 32;
-            this.m_txt_tim_kiem.Text = "Nhập mã quyết định, loại quyết định, nội dung\r\n";
+            this.m_txt_tim_kiem.Text = "Nhập mã quyết định";
             this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
             this.m_txt_tim_kiem.Leave += new System.EventHandler(this.m_txt_tim_kiem_Leave);
-            
             // 
             // F600_V_DM_QUYET_DINH
             // 
@@ -329,9 +328,9 @@ namespace BKI_HRM
             {
                 DataRow dr = m_ds.Tables["V_DM_QUYET_DINH"].Rows[i];
                 m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[1].ToString());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[8].ToString());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[6].ToString());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[7].ToString());
+                //m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[8].ToString());
+                //m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[6].ToString());
+                //m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[7].ToString());
 
             }
         }
@@ -546,7 +545,7 @@ namespace BKI_HRM
         {
             if (m_txt_tim_kiem.Text == "")
             {
-                m_txt_tim_kiem.Text = "Nhập mã dự án, tên dự án, trạng thái";
+                m_txt_tim_kiem.Text = "Nhập mã quyết định";
             }
         }
 
