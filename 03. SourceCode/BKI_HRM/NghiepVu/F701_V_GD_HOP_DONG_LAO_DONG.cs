@@ -10,6 +10,7 @@ using System.Data;
 using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
+using System.IO;
 using System.Windows.Forms;
 using BKI_HRM.NghiepVu;
 using IP.Core.IPCommon;
@@ -341,6 +342,8 @@ namespace BKI_HRM
 
         private void delete_v_gd_hop_dong_lao_dong()
         {
+            if (BaseMessages.MsgBox_Confirm(214) == false)
+                return;
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             //if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
@@ -350,6 +353,7 @@ namespace BKI_HRM
             {
                 m_us_gd_hop_dong.BeginTransaction();
                 m_us_gd_hop_dong.Delete();
+                File.Delete(m_us_gd_hop_dong.strLINK);
                 m_us_gd_hop_dong.CommitTransaction();
                 m_fg.Rows.Remove(m_fg.Row);
                 BaseMessages.MsgBox_Infor("Xoá thành công!");
