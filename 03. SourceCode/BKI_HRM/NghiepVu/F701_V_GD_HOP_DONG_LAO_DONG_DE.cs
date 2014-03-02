@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -49,6 +51,11 @@ namespace BKI_HRM.NghiepVu
         US_V_GD_HOP_DONG_LAO_DONG m_us_v = new US_V_GD_HOP_DONG_LAO_DONG();
         DS_V_GD_HOP_DONG_LAO_DONG m_ds_v = new DS_V_GD_HOP_DONG_LAO_DONG();
         US_DM_NHAN_SU m_us_dm_nhan_su = new US_DM_NHAN_SU();
+        private string m_str_destination = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
+        private string m_str_path = "";
+        private string m_str_file_name = "";
+        private string m_str_origination = "";
+        private string m_str_old_path = "";
         #endregion
 
         #region Private Methods
@@ -56,9 +63,15 @@ namespace BKI_HRM.NghiepVu
         {
             if (!CValidateTextBox.IsValid(m_txt_ma_hop_dong, DataType.StringType, allowNull.NO, true))
             {
+                BaseMessages.MsgBox_Infor(212);
                 return false;
             }
 
+            if (m_lbl_ma_nhan_vien.Text == "")
+            {
+                BaseMessages.MsgBox_Infor(213);
+                return false;
+            }
             return true;
         }
 
@@ -66,11 +79,14 @@ namespace BKI_HRM.NghiepVu
         {
             m_us.strMA_HOP_DONG = m_txt_ma_hop_dong.Text;
             m_us.dcID_LOAI_HOP_DONG = (decimal)m_cbo_loai_hop_dong.SelectedValue;
-            m_us.dcID_NHAN_SU = m_us_dm_nhan_su.dcID;
-            m_us.strLINK = m_txt_link.Text;
             m_us.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value;
             m_us.datNGAY_HET_HAN = m_dat_ngay_het_han.Value;
             m_us.strTRANG_THAI_HOP_DONG = m_cbo_trang_thai.SelectedIndex.Equals(0) ? "y" : "n";
+            m_us.strLINK = m_str_destination + m_txt_file_name.Text;
+
+            DS_DM_NHAN_SU m_ds_dm_nhan_su = new DS_DM_NHAN_SU();
+            m_us_dm_nhan_su.FillDataset_search_by_ma_ns(m_ds_dm_nhan_su,m_lbl_ma_nhan_vien.Text);
+            m_us.dcID_NHAN_SU = (decimal)m_ds_dm_nhan_su.Tables[0].Rows[0].ItemArray[0];
         }
 
         private void save_data()
@@ -80,6 +96,7 @@ namespace BKI_HRM.NghiepVu
                 return;
             }
             form_2_us_object();
+            upload_file();
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.InsertDataState:
@@ -98,7 +115,6 @@ namespace BKI_HRM.NghiepVu
             m_us.dcID = ip_us_gd_hop_dong.dcID;
             m_txt_ma_hop_dong.Text = ip_us_gd_hop_dong.strMA_HOP_DONG;
             m_cbo_loai_hop_dong.SelectedValue = ip_us_gd_hop_dong.dcID_LOAI_HOP_DONG;
-            m_txt_link.Text = ip_us_gd_hop_dong.strLINK;
             m_dat_ngay_co_hieu_luc.Value = ip_us_gd_hop_dong.datNGAY_CO_HIEU_LUC;
             m_dat_ngay_het_han.Value = ip_us_gd_hop_dong.datNGAY_HET_HAN;
             m_cbo_trang_thai.SelectedIndex = (ip_us_gd_hop_dong.strTRANG_THAI_HOP_DONG.Equals("y")) ? 0 : 1;
@@ -106,6 +122,9 @@ namespace BKI_HRM.NghiepVu
             US_DM_NHAN_SU v_us_dm_nhan_su = new US_DM_NHAN_SU(ip_us_gd_hop_dong.dcID_NHAN_SU);
             m_lbl_ma_nhan_vien.Text = v_us_dm_nhan_su.strMA_NV;
             m_lbl_ho_va_ten.Text = v_us_dm_nhan_su.strHO_DEM + " " + v_us_dm_nhan_su.strTEN;
+
+            string[] v_strs = ip_us_gd_hop_dong.strLINK.Split('\\');
+            m_txt_file_name.Text = v_strs[v_strs.Length - 1];
         }
 
         private void load_data_2_cbo_loai_hop_dong()
@@ -122,8 +141,6 @@ namespace BKI_HRM.NghiepVu
         {
             m_txt_ma_hop_dong.Text = "";
             m_cbo_loai_hop_dong.SelectedIndex = 0;
-            //m_cbo_nhan_su.SelectedIndex = 0;
-            m_txt_link.Text = "";
             m_dat_ngay_co_hieu_luc.Value = DateTime.Today;
             m_dat_ngay_het_han.Value = DateTime.Today;
             m_cbo_trang_thai.SelectedIndex = 0;
@@ -136,6 +153,40 @@ namespace BKI_HRM.NghiepVu
             v_f_dm_nhan_su.select_data(ref m_us_dm_nhan_su);
             m_lbl_ma_nhan_vien.Text = m_us_dm_nhan_su.strMA_NV;
             m_lbl_ho_va_ten.Text = m_us_dm_nhan_su.strHO_DEM + " " + m_us_dm_nhan_su.strTEN;
+        }
+
+        private void chon_file()
+        {
+            m_str_old_path = m_str_destination + m_txt_file_name.Text;
+            int v_i_file_size = 5096000;
+            m_ofd_chon_file.Filter = "(*.*)|*.*";
+            m_ofd_chon_file.Multiselect = false;
+            m_ofd_chon_file.Title = "Chọn file";
+            m_ofd_chon_file.FileName = "";
+            DialogResult result = m_ofd_chon_file.ShowDialog();
+            if (result != DialogResult.OK) return;
+
+            if (new FileInfo(m_ofd_chon_file.FileName).Length > v_i_file_size)
+            {
+                BaseMessages.MsgBox_Infor(211);
+                return;
+            }
+            m_txt_file_name.Text = m_ofd_chon_file.SafeFileName;
+            m_str_file_name = m_ofd_chon_file.SafeFileName;
+            m_str_origination = m_ofd_chon_file.FileName;
+        }
+
+        private void upload_file()
+        {
+            if (m_str_file_name == "")
+                return;
+            string v_str_path_destination = m_str_destination + m_str_file_name;
+            m_str_path = m_str_destination + m_txt_ma_hop_dong.Text + "-" + m_str_file_name;
+            File.Copy(m_str_origination, v_str_path_destination);
+            File.Move(m_str_destination + m_str_file_name, m_str_path);
+            if (File.Exists(m_str_old_path))
+                File.Delete(m_str_old_path);
+            m_us.strLINK = m_str_path;
         }
 
         #endregion
@@ -176,12 +227,12 @@ namespace BKI_HRM.NghiepVu
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        #endregion
 
         private void m_cmd_chon_nhan_su_Click(object sender, EventArgs e)
         {
             try
             {
+
                 chon_nhan_su();
             }
             catch (Exception v_e)
@@ -189,5 +240,19 @@ namespace BKI_HRM.NghiepVu
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_cmd_chon_file_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (check_data_is_ok() == false) return;
+                chon_file();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        #endregion
     }
 }
