@@ -7,8 +7,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using IP.Core.IPCommon;
-using IP.Core.IPCommon.My;
-using IP.Core.IPExcelReport.My;
+using IP.Core.IPExcelReport;
 using IP.Core.IPSystemAdmin;
 
 namespace BKI_HRM {
