@@ -1695,7 +1695,14 @@ namespace BKI_HRM
         {
             try
             {
-                load_data_2_grid_search();
+                if (m_txt_tim_kiem.Text.Trim() == "Nhập vào thông tin muốn tìm kiếm")
+                {
+                    m_txt_tim_kiem.Text = "";
+                    load_data_2_grid_search();
+                    m_txt_tim_kiem.Text = "Nhập vào thông tin muốn tìm kiếm";
+                }
+                else
+                    load_data_2_grid_search();
                 load_chi_tiet_nhan_vien();
             }
             catch (Exception v_e)
@@ -1804,7 +1811,7 @@ namespace BKI_HRM
             {
                 if (m_txt_tim_kiem.Text == "")
                 {
-                    m_txt_tim_kiem.Text = "Nhập nội dung muốn tìm kiếm";
+                    m_txt_tim_kiem.Text = "Nhập vào thông tin muốn tìm kiếm";
                     m_txt_tim_kiem.ForeColor = Color.Gray;
                 }
 
