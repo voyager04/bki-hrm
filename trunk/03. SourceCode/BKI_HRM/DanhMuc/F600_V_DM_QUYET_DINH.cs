@@ -331,12 +331,15 @@ namespace BKI_HRM
             {
                 case DataEntryFormMode.UpdateDataState:
                     m_cmd_chon_quyet_dinh.Visible = false;
+                    m_cmd_search.Visible = true;
                     break;
                 case DataEntryFormMode.InsertDataState:
                     m_cmd_chon_quyet_dinh.Visible = false;
+                    m_cmd_search.Visible = true;
                     break;
                 case DataEntryFormMode.ViewDataState:
                     m_cmd_chon_quyet_dinh.Visible = false;
+                    m_cmd_search.Visible = true;
                     break;
                 case DataEntryFormMode.SelectDataState:
                     m_cmd_chon_quyet_dinh.Visible = true;
