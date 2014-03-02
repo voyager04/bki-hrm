@@ -265,6 +265,9 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(272, 20);
             this.m_txt_tim_kiem.TabIndex = 32;
             this.m_txt_tim_kiem.Text = "Nhập mã quyết định, loại quyết định, nội dung\r\n";
+            this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
+            this.m_txt_tim_kiem.Leave += new System.EventHandler(this.m_txt_tim_kiem_Leave);
+            
             // 
             // F600_V_DM_QUYET_DINH
             // 
