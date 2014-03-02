@@ -176,6 +176,28 @@ public class US_V_GD_TRANG_THAI_LAO_DONG : US_Object
         pm_objDR["NGAY_CO_HIEU_LUC"] = System.Convert.DBNull;
     }
 
+    public DateTime datNGAY_HET_HIEU_LUC
+    {
+        get
+        {
+            return CNull.RowNVLDate(pm_objDR, "NGAY_HET_HIEU_LUC", IPConstants.c_DefaultDate);
+        }
+        set
+        {
+            pm_objDR["NGAY_HET_HIEU_LUC"] = value;
+        }
+    }
+
+    public bool IsNGAY_HET_HIEU_LUCNull()
+    {
+        return pm_objDR.IsNull("NGAY_HET_HIEU_LUC");
+    }
+
+    public void SetNGAY_HET_HIEU_LUCNull()
+    {
+        pm_objDR["NGAY_HET_HIEU_LUC"] = System.Convert.DBNull;
+    }
+
     public decimal dcID_LOAI_QD
     {
         get
@@ -240,6 +262,28 @@ public class US_V_GD_TRANG_THAI_LAO_DONG : US_Object
     public void SetTRANG_THAI_HIEN_TAINull()
     {
         pm_objDR["TRANG_THAI_HIEN_TAI"] = System.Convert.DBNull;
+    }
+
+    public decimal dcID
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "ID", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["ID"] = value;
+        }
+    }
+
+    public bool IsIDNull()
+    {
+        return pm_objDR.IsNull("ID");
+    }
+
+    public void SetIDNull()
+    {
+        pm_objDR["ID"] = System.Convert.DBNull;
     }
 
     #endregion

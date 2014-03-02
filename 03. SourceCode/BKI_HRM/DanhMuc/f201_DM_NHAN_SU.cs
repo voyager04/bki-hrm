@@ -1220,11 +1220,13 @@ namespace BKI_HRM
 		public void display(){			
 			this.ShowDialog();
 		}
+        
         public void select_data(ref US_DM_NHAN_SU op_us_dm_nhan_su)
         {
             m_e_form_mode = DataEntryFormMode.SelectDataState;
             this.ShowDialog();
             op_us_dm_nhan_su = m_us;
+
         }
         public f201_dm_nhan_su()
         {
@@ -1351,7 +1353,6 @@ namespace BKI_HRM
 			m_obj_trans = get_trans_object(m_grv_nhan_su);
 			load_data_2_grid();
             load_chi_tiet_nhan_vien();
-            load_custom_source_2_m_txt_tim_kiem();
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();

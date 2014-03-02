@@ -198,6 +198,7 @@ namespace BKI_HRM
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 14;
             this.m_cmd_delete.Text = "&Xoá";
+            this.m_cmd_delete.Click += new System.EventHandler(this.m_cmd_delete_Click);
             // 
             // m_cmd_exit
             // 
@@ -511,8 +512,7 @@ namespace BKI_HRM
 		}
         private void tim_kiem_nhan_vien()
         {
-            f201_dm_nhan_su v_frm = new f201_dm_nhan_su() ;
-
+            f201_dm_nhan_su v_frm = new f201_dm_nhan_su();
             v_frm.select_data(ref m_us_dm_nhan_su);
             load_data(m_us_dm_nhan_su);
         }
@@ -532,9 +532,9 @@ namespace BKI_HRM
         private void them_quyet_dinh()
         {
             F600_V_DM_QUYET_DINH v_frm = new F600_V_DM_QUYET_DINH();
-            
+            //US_V_DM_QUYET_DINH v_us = new US_V_DM_QUYET_DINH();
             v_frm.select_data(ref m_us_dm_quyet_dinh);
-           
+            //m_us_dm_quyet_dinh = v_us;
         }
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
@@ -616,6 +616,7 @@ namespace BKI_HRM
             try
             {
                 insert_v_gd_trang_thai_lao_dong();
+                load_data_2_grid(m_us_dm_nhan_su);
             }
             catch (Exception v_e)
             {
@@ -623,7 +624,7 @@ namespace BKI_HRM
             }
         }
 
-		
+       
 
 	}
 }

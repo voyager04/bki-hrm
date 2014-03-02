@@ -13,7 +13,7 @@
               <DbSource ConnectionRef="BKI_HRMConnectionString3 (Settings)" DbObjectName="BKI_HRM.dbo.V_GD_TRANG_THAI_LAO_DONG" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT MA_NV, HO_DEM, TEN, ID_TRANG_LAO_DONG, TRANG_THAI_LAO_DONG, MA_QUYET_DINH, NGAY_CO_HIEU_LUC, ID_LOAI_QD, LOAI_QUYET_DINH, TRANG_THAI_HIEN_TAI FROM dbo.V_GD_TRANG_THAI_LAO_DONG</CommandText>
+                    <CommandText>SELECT MA_NV, HO_DEM, TEN, ID_TRANG_LAO_DONG, TRANG_THAI_LAO_DONG, MA_QUYET_DINH, NGAY_CO_HIEU_LUC, NGAY_HET_HIEU_LUC, ID_LOAI_QD, LOAI_QUYET_DINH, TRANG_THAI_HIEN_TAI, ID FROM dbo.V_GD_TRANG_THAI_LAO_DONG</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -27,9 +27,11 @@
               <Mapping SourceColumn="TRANG_THAI_LAO_DONG" DataSetColumn="TRANG_THAI_LAO_DONG" />
               <Mapping SourceColumn="MA_QUYET_DINH" DataSetColumn="MA_QUYET_DINH" />
               <Mapping SourceColumn="NGAY_CO_HIEU_LUC" DataSetColumn="NGAY_CO_HIEU_LUC" />
+              <Mapping SourceColumn="NGAY_HET_HIEU_LUC" DataSetColumn="NGAY_HET_HIEU_LUC" />
               <Mapping SourceColumn="ID_LOAI_QD" DataSetColumn="ID_LOAI_QD" />
               <Mapping SourceColumn="LOAI_QUYET_DINH" DataSetColumn="LOAI_QUYET_DINH" />
               <Mapping SourceColumn="TRANG_THAI_HIEN_TAI" DataSetColumn="TRANG_THAI_HIEN_TAI" />
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -81,6 +83,7 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="NGAY_CO_HIEU_LUC" msprop:Generator_ColumnVarNameInTable="columnNGAY_CO_HIEU_LUC" msprop:Generator_ColumnPropNameInRow="NGAY_CO_HIEU_LUC" msprop:Generator_ColumnPropNameInTable="NGAY_CO_HIEU_LUCColumn" msprop:Generator_UserColumnName="NGAY_CO_HIEU_LUC" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NGAY_HET_HIEU_LUC" msprop:Generator_ColumnVarNameInTable="columnNGAY_HET_HIEU_LUC" msprop:Generator_ColumnPropNameInRow="NGAY_HET_HIEU_LUC" msprop:Generator_ColumnPropNameInTable="NGAY_HET_HIEU_LUCColumn" msprop:Generator_UserColumnName="NGAY_HET_HIEU_LUC" type="xs:dateTime" minOccurs="0" />
               <xs:element name="ID_LOAI_QD" msprop:Generator_ColumnVarNameInTable="columnID_LOAI_QD" msprop:Generator_ColumnPropNameInRow="ID_LOAI_QD" msprop:Generator_ColumnPropNameInTable="ID_LOAI_QDColumn" msprop:Generator_UserColumnName="ID_LOAI_QD" type="xs:decimal" minOccurs="0" />
               <xs:element name="LOAI_QUYET_DINH" msprop:Generator_ColumnVarNameInTable="columnLOAI_QUYET_DINH" msprop:Generator_ColumnPropNameInRow="LOAI_QUYET_DINH" msprop:Generator_ColumnPropNameInTable="LOAI_QUYET_DINHColumn" msprop:Generator_UserColumnName="LOAI_QUYET_DINH" minOccurs="0">
                 <xs:simpleType>
@@ -96,10 +99,15 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>
     </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:V_GD_TRANG_THAI_LAO_DONG" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
   </xs:element>
 </xs:schema>
