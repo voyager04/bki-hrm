@@ -43,20 +43,19 @@
             this.m_dat_ngay_co_hieu_luc = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_ngay_ket_thuc = new System.Windows.Forms.Label();
             this.m_dat_ngay_het_han = new System.Windows.Forms.DateTimePicker();
-            this.m_txt_link = new System.Windows.Forms.TextBox();
-            this.m_lbl_ten_du_an = new System.Windows.Forms.Label();
             this.m_txt_ma_hop_dong = new System.Windows.Forms.TextBox();
             this.m_lbl_ma_du_an = new System.Windows.Forms.Label();
             this.m_cmd_chon_nhan_su = new SIS.Controls.Button.SiSButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.m_lbl_ho_va_ten = new System.Windows.Forms.Label();
+            this.m_lbl_ma_nhan_vien = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.m_cmd_chon_file = new SIS.Controls.Button.SiSButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.m_cmd_chon_file = new SIS.Controls.Button.SiSButton();
             this.m_txt_file_name = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.m_lbl_ma_nhan_vien = new System.Windows.Forms.Label();
-            this.m_lbl_ho_va_ten = new System.Windows.Forms.Label();
+            this.m_ofd_chon_file = new System.Windows.Forms.OpenFileDialog();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -227,22 +226,6 @@
             this.m_dat_ngay_het_han.Size = new System.Drawing.Size(121, 20);
             this.m_dat_ngay_het_han.TabIndex = 51;
             // 
-            // m_txt_link
-            // 
-            this.m_txt_link.Location = new System.Drawing.Point(89, 99);
-            this.m_txt_link.Name = "m_txt_link";
-            this.m_txt_link.Size = new System.Drawing.Size(157, 20);
-            this.m_txt_link.TabIndex = 49;
-            // 
-            // m_lbl_ten_du_an
-            // 
-            this.m_lbl_ten_du_an.AutoSize = true;
-            this.m_lbl_ten_du_an.Location = new System.Drawing.Point(9, 102);
-            this.m_lbl_ten_du_an.Name = "m_lbl_ten_du_an";
-            this.m_lbl_ten_du_an.Size = new System.Drawing.Size(27, 13);
-            this.m_lbl_ten_du_an.TabIndex = 50;
-            this.m_lbl_ten_du_an.Text = "Link";
-            // 
             // m_txt_ma_hop_dong
             // 
             this.m_txt_ma_hop_dong.Location = new System.Drawing.Point(100, 24);
@@ -288,14 +271,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nhân sự";
             // 
-            // label1
+            // m_lbl_ho_va_ten
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 66);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 13);
-            this.label1.TabIndex = 64;
-            this.label1.Text = "Mã nhân viên";
+            this.m_lbl_ho_va_ten.AutoSize = true;
+            this.m_lbl_ho_va_ten.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_ho_va_ten.ForeColor = System.Drawing.Color.Blue;
+            this.m_lbl_ho_va_ten.Location = new System.Drawing.Point(148, 102);
+            this.m_lbl_ho_va_ten.Name = "m_lbl_ho_va_ten";
+            this.m_lbl_ho_va_ten.Size = new System.Drawing.Size(0, 17);
+            this.m_lbl_ho_va_ten.TabIndex = 68;
+            // 
+            // m_lbl_ma_nhan_vien
+            // 
+            this.m_lbl_ma_nhan_vien.AutoSize = true;
+            this.m_lbl_ma_nhan_vien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_ma_nhan_vien.ForeColor = System.Drawing.Color.Blue;
+            this.m_lbl_ma_nhan_vien.Location = new System.Drawing.Point(148, 66);
+            this.m_lbl_ma_nhan_vien.Name = "m_lbl_ma_nhan_vien";
+            this.m_lbl_ma_nhan_vien.Size = new System.Drawing.Size(0, 17);
+            this.m_lbl_ma_nhan_vien.TabIndex = 67;
             // 
             // label2
             // 
@@ -305,6 +299,27 @@
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 66;
             this.label2.Text = "Họ và tên";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(23, 66);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 13);
+            this.label1.TabIndex = 64;
+            this.label1.Text = "Mã nhân viên";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.m_cmd_chon_file);
+            this.groupBox2.Controls.Add(this.m_txt_file_name);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Location = new System.Drawing.Point(399, 174);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(263, 100);
+            this.groupBox2.TabIndex = 64;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "File đính kèm";
             // 
             // m_cmd_chon_file
             // 
@@ -317,22 +332,9 @@
             this.m_cmd_chon_file.Location = new System.Drawing.Point(147, 19);
             this.m_cmd_chon_file.Name = "m_cmd_chon_file";
             this.m_cmd_chon_file.Size = new System.Drawing.Size(99, 28);
-            this.m_cmd_chon_file.TabIndex = 63;
+            this.m_cmd_chon_file.TabIndex = 66;
             this.m_cmd_chon_file.Text = "&Chọn file";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.m_txt_file_name);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.m_txt_link);
-            this.groupBox2.Controls.Add(this.m_cmd_chon_file);
-            this.groupBox2.Controls.Add(this.m_lbl_ten_du_an);
-            this.groupBox2.Location = new System.Drawing.Point(399, 139);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(263, 135);
-            this.groupBox2.TabIndex = 64;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "File đính kèm";
+            this.m_cmd_chon_file.Click += new System.EventHandler(this.m_cmd_chon_file_Click);
             // 
             // m_txt_file_name
             // 
@@ -350,25 +352,9 @@
             this.label3.TabIndex = 65;
             this.label3.Text = "File Name";
             // 
-            // m_lbl_ma_nhan_vien
+            // m_ofd_chon_file
             // 
-            this.m_lbl_ma_nhan_vien.AutoSize = true;
-            this.m_lbl_ma_nhan_vien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_ma_nhan_vien.ForeColor = System.Drawing.Color.Blue;
-            this.m_lbl_ma_nhan_vien.Location = new System.Drawing.Point(148, 66);
-            this.m_lbl_ma_nhan_vien.Name = "m_lbl_ma_nhan_vien";
-            this.m_lbl_ma_nhan_vien.Size = new System.Drawing.Size(0, 17);
-            this.m_lbl_ma_nhan_vien.TabIndex = 67;
-            // 
-            // m_lbl_ho_va_ten
-            // 
-            this.m_lbl_ho_va_ten.AutoSize = true;
-            this.m_lbl_ho_va_ten.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_ho_va_ten.ForeColor = System.Drawing.Color.Blue;
-            this.m_lbl_ho_va_ten.Location = new System.Drawing.Point(148, 102);
-            this.m_lbl_ho_va_ten.Name = "m_lbl_ho_va_ten";
-            this.m_lbl_ho_va_ten.Size = new System.Drawing.Size(0, 17);
-            this.m_lbl_ho_va_ten.TabIndex = 68;
+            this.m_ofd_chon_file.FileName = "m_ofd_chon_file";
             // 
             // F701_V_GD_HOP_DONG_LAO_DONG_DE
             // 
@@ -415,19 +401,18 @@
         private System.Windows.Forms.DateTimePicker m_dat_ngay_co_hieu_luc;
         private System.Windows.Forms.Label m_lbl_ngay_ket_thuc;
         private System.Windows.Forms.DateTimePicker m_dat_ngay_het_han;
-        private System.Windows.Forms.TextBox m_txt_link;
-        private System.Windows.Forms.Label m_lbl_ten_du_an;
         private System.Windows.Forms.TextBox m_txt_ma_hop_dong;
         private System.Windows.Forms.Label m_lbl_ma_du_an;
         internal SIS.Controls.Button.SiSButton m_cmd_chon_nhan_su;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        internal SIS.Controls.Button.SiSButton m_cmd_chon_file;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox m_txt_file_name;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label m_lbl_ho_va_ten;
         private System.Windows.Forms.Label m_lbl_ma_nhan_vien;
+        private System.Windows.Forms.OpenFileDialog m_ofd_chon_file;
+        internal SIS.Controls.Button.SiSButton m_cmd_chon_file;
     }
 }
