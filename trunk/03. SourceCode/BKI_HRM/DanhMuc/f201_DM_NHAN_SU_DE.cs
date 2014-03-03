@@ -14,6 +14,8 @@ using IP.Core.IPSystemAdmin;
 using BKI_HRM.US;
 using BKI_HRM.DS;
 using BKI_HRM.DS.CDBNames;
+using System.Net.Mail;
+using System.Text.RegularExpressions;
 
 namespace BKI_HRM
 {
@@ -59,7 +61,6 @@ namespace BKI_HRM
             m_txt_noi_cap.Enabled = false;
             m_txt_ton_giao.Enabled = false;
             m_txt_dan_toc.Enabled = false;
-            m_chk_trang_thai.Enabled = false;
             m_txt_trinh_do.Enabled = false;
             m_txt_noi_dao_tao.Enabled = false;
             m_txt_nam_tot_nghiep.Enabled = false;
@@ -84,6 +85,7 @@ namespace BKI_HRM
     #region Members
         DataEntryFormMode m_e_form_mode;
         US_DM_NHAN_SU m_us_dm_nhan_su = new US_DM_NHAN_SU();
+        
     #endregion
 
     #region Private Methods
@@ -129,7 +131,6 @@ namespace BKI_HRM
                 m_ptb_anh.Image = new Bitmap(m_ofd_chon_anh.FileName);
             else
                 m_ptb_anh.Image = m_ptb_anh.ErrorImage;
-            m_chk_trang_thai.Checked = (m_us_dm_nhan_su.strTRANG_THAI.Equals("Y") == true) ? true : false;
             m_txt_trinh_do.Text = m_us_dm_nhan_su.strTRINH_DO;
             m_txt_noi_dao_tao.Text = m_us_dm_nhan_su.strNOI_DAO_TAO;
             m_txt_chuyen_nganh.Text = m_us_dm_nhan_su.strCHUYEN_NGANH;
@@ -161,7 +162,6 @@ namespace BKI_HRM
             m_us_dm_nhan_su.strNOI_CAP_CMND = m_txt_noi_cap.Text;
             m_us_dm_nhan_su.strTON_GIAO = m_txt_ton_giao.Text;
             m_us_dm_nhan_su.strDAN_TOC = m_txt_dan_toc.Text;
-            m_us_dm_nhan_su.strTRANG_THAI = ((m_chk_trang_thai.Checked == true) ? "Y" : "N");
             m_us_dm_nhan_su.strTRINH_DO = m_txt_trinh_do.Text;
             m_us_dm_nhan_su.strNOI_DAO_TAO = m_txt_noi_dao_tao.Text;
             m_us_dm_nhan_su.strCHUYEN_NGANH = m_txt_chuyen_nganh.Text;
@@ -178,11 +178,23 @@ namespace BKI_HRM
             m_us_dm_nhan_su.strDI_DONG_LIEN_HE = m_txt_sdt_lien_he.Text;
             m_us_dm_nhan_su.strQUAN_HE = m_txt_quan_he.Text;
         }
+        private bool check_trung_ma_nv(string ip_str_ma_nv)
+        {
+           
+            DS_DM_NHAN_SU v_ds = new DS_DM_NHAN_SU();
+            decimal count_ma_nv;
+            m_us_dm_nhan_su.FillDataset_search_by_ma_nv(v_ds, ip_str_ma_nv);
+            count_ma_nv = v_ds.DM_NHAN_SU.Count;
+            if (count_ma_nv > 0)
+                return true;
+            return false;
+        }
         private bool check_validate_data_is_ok(){
             if (!CValidateTextBox.IsValid(m_txt_ma_nhan_vien, DataType.NumberType, allowNull.NO, true)){
                 BaseMessages.MsgBox_Warning(201);
                 return false;
             }
+            
             if (!CValidateTextBox.IsValid(m_txt_ho_dem, DataType.StringType, allowNull.NO, true) || CIPConvert.is_valid_number(m_txt_ho_dem)){
                 BaseMessages.MsgBox_Warning(202);
                 return false;
@@ -224,13 +236,23 @@ namespace BKI_HRM
                 return false;
             if (!CValidateTextBox.IsValid(m_txt_nam_tot_nghiep, DataType.NumberType, allowNull.YES, true)
                 || ((m_txt_nam_tot_nghiep.Text.Trim().Length > 0)&&(CIPConvert.ToDecimal(m_txt_nam_tot_nghiep.Text) > DateTime.Today.Year))){
-                BaseMessages.MsgBox_Warning(211);
+                //BaseMessages.MsgBox_Warning(211);
                 return false;
             }
-            if (!CValidateTextBox.IsValid(m_txt_email_ca_nhan, DataType.StringType, allowNull.YES, true))
+            if (!CValidateTextBox.IsValid(m_txt_email_ca_nhan, DataType.StringType, allowNull.YES, true) || !check_validate_email(m_txt_email_ca_nhan.Text))
+            {
+                BaseMessages.MsgBox_Warning(211);
+                m_txt_email_ca_nhan.Focus();
+                m_txt_email_ca_nhan.SelectAll();
                 return false;
-            if (!CValidateTextBox.IsValid(m_txt_email_co_quan, DataType.StringType, allowNull.YES, true))
+            }
+            if (!CValidateTextBox.IsValid(m_txt_email_co_quan, DataType.StringType, allowNull.YES, true) || !check_validate_email(m_txt_email_co_quan.Text))
+            {
+                BaseMessages.MsgBox_Warning(211);
+                m_txt_email_co_quan.Focus();
+                m_txt_email_co_quan.SelectAll();
                 return false;
+            }
             if (!CValidateTextBox.IsValid(m_txt_so_dtdd, DataType.StringType, allowNull.YES, true))
             {
                
@@ -261,17 +283,42 @@ namespace BKI_HRM
         }
 
         private void save_data(){
-            if (check_validate_data_is_ok() == false) 
-                return;
-            form_to_us_object();
+            
             switch (m_e_form_mode)
             {
                     
                 case DataEntryFormMode.UpdateDataState:
-                    m_us_dm_nhan_su.Update();
+                    if (check_validate_data_is_ok() == false)
+                        return;
+                    else
+                    {
+                        form_to_us_object();
+                        m_us_dm_nhan_su.Update();
+                    }
+                        
                     break;
                 case DataEntryFormMode.InsertDataState:
-                    m_us_dm_nhan_su.Insert();
+                    if (check_trung_ma_nv(m_txt_ma_nhan_vien.Text))
+                    {
+                        BaseMessages.MsgBox_Warning(212);
+                        m_txt_ma_nhan_vien.BackColor = Color.LightPink;
+                        m_txt_ma_nhan_vien.Focus();
+                        m_txt_ma_nhan_vien.SelectAll();
+                        return;
+                    }
+                    else
+                    {
+                        m_txt_ma_nhan_vien.BackColor = Color.White;
+                        if (check_validate_data_is_ok() == false)
+                            return;
+                        else
+                        {
+                            form_to_us_object();
+                            m_us_dm_nhan_su.Insert();
+                        }
+                        
+                    }
+                    
                     break;
                 default:
                     break;
@@ -292,7 +339,6 @@ namespace BKI_HRM
             m_txt_noi_cap.Text = "";
             m_txt_ton_giao.Text = "";
             m_txt_dan_toc.Text = "";
-            m_chk_trang_thai.Checked = false;
             m_txt_trinh_do.Text = "";
             m_txt_noi_dao_tao.Text = "";
             m_txt_chuyen_nganh.Text = "";
@@ -331,9 +377,21 @@ namespace BKI_HRM
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
             m_cmd_refresh.Click += new EventHandler(m_cmd_refresh_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-            m_cmd_chon_anh.Click += new EventHandler(m_cmd_chon_anh_Click);
         }
-        
+        private bool check_validate_email(string emailaddress)
+        {
+            if (emailaddress == "") return true;
+            string MatchEmailPattern =
+            @"^(([\w-]+\.)+[\w-]+|([a-zA-Z]{1}|[\w-]{2,}))@"
+            + @"((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\.([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\."
+              + @"([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\.([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
+            + @"([a-zA-Z]+[\w-]+\.)+[a-zA-Z]{2,4})$";
+
+
+           
+             return Regex.IsMatch(emailaddress, MatchEmailPattern);
+                
+        }
     #endregion
 
     #region Event Hanlders
@@ -381,7 +439,9 @@ namespace BKI_HRM
             	CSystemLog_301.ExceptionHandle( v_e);
             }
         }
-        private void m_cmd_chon_anh_Click(object sender, EventArgs e)
+      
+
+        private void m_ptb_anh_Click(object sender, EventArgs e)
         {
             try
             {
@@ -389,9 +449,138 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle(v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_txt_ma_nhan_vien_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+                && !char.IsDigit(e.KeyChar)
+                )
+            {
+                e.Handled = true;
+            }
+
+
+        }
+
+        private void m_txt_cmnd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+        && !char.IsDigit(e.KeyChar)
+        )
+            {
+                e.Handled = true;
+            }
+
+
+        }
+
+        private void m_txt_nam_tot_nghiep_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+        && !char.IsDigit(e.KeyChar)
+        )
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void m_txt_so_dtdd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+        && !char.IsDigit(e.KeyChar)
+        && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+
+        }
+
+        private void m_txt_sdt_nha_rieng_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+        && !char.IsDigit(e.KeyChar)
+        && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+
+        }
+
+        private void m_txt_sdt_lien_he_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+        && !char.IsDigit(e.KeyChar)
+        && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+
+        }
+
+        private void m_txt_ho_dem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            {
+
+                e.Handled = true;
+            }
+
+
+        }
+
+        private void m_txt_ten_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+
+                e.Handled = true;
+            }
+        }
+
+        private void m_txt_ton_giao_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+
+                e.Handled = true;
+            }
+        }
+
+        private void m_txt_dan_toc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+
+                e.Handled = true;
+            }
+        }
+
+        private void m_txt_noi_cap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+
+                e.Handled = true;
+            }
+        }
+
+        private void m_txt_ma_so_thue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+        && !char.IsDigit(e.KeyChar)
+        && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
         
     #endregion
 

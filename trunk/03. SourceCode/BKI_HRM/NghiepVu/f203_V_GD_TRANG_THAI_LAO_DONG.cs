@@ -162,11 +162,11 @@ namespace BKI_HRM
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 2;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(425, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(389, 4);
             this.m_cmd_save.Name = "m_cmd_save";
-            this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_save.Size = new System.Drawing.Size(124, 28);
             this.m_cmd_save.TabIndex = 12;
-            this.m_cmd_save.Text = "&Thêm";
+            this.m_cmd_save.Text = "&Thay đổi trạng thái";
             this.m_cmd_save.Click += new System.EventHandler(this.m_cmd_save_Click);
             // 
             // m_cmd_update
