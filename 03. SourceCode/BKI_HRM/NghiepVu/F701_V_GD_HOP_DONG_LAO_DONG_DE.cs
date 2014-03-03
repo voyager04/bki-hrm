@@ -84,7 +84,7 @@ namespace BKI_HRM.NghiepVu
             m_us.strLINK = m_str_destination + m_txt_file_name.Text;
 
             DS_DM_NHAN_SU m_ds_dm_nhan_su = new DS_DM_NHAN_SU();
-            m_us_dm_nhan_su.FillDataset_search_by_ma_ns(m_ds_dm_nhan_su,m_lbl_ma_nhan_vien.Text);
+            m_us_dm_nhan_su.FillDataset_search_by_ma_nv(m_ds_dm_nhan_su,m_lbl_ma_nhan_vien.Text);
             m_us.dcID_NHAN_SU = (decimal)m_ds_dm_nhan_su.Tables[0].Rows[0].ItemArray[0];
 
             if (m_dat_ngay_het_han.Checked == false)
