@@ -184,7 +184,7 @@ namespace BKI_HRM.NghiepVu
         {
             US_DM_NHAN_SU v_us = new US_DM_NHAN_SU();
             DS_DM_NHAN_SU v_ds = new DS_DM_NHAN_SU();
-            v_us.FillDataset_search_by_ma_ns(v_ds, m_txt_ma_ns.Text);
+            v_us.FillDataset_search_by_ma_nv(v_ds, m_txt_ma_ns.Text);
             if (v_ds.Tables[0].Rows.Count > 0)
             {
                 DataRow dr = v_ds.Tables[0].Rows[0];
