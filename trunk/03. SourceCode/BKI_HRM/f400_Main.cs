@@ -192,8 +192,8 @@ namespace BKI_HRM {
         {
             try
             {
-                f402_BAO_CAO_NHAN_SU_CHUC_VU frm = new f402_BAO_CAO_NHAN_SU_CHUC_VU();
-                frm.Show();
+                //f402_BAO_CAO_NHAN_SU_CHUC_VU frm = new f402_BAO_CAO_NHAN_SU_CHUC_VU();
+                //frm.Show();
             }
             catch (Exception v_e)
             {
