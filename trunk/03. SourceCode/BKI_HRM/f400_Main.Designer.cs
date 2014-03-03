@@ -344,6 +344,7 @@
             this.m_meuitem_nhansuduan.Name = "m_meuitem_nhansuduan";
             this.m_meuitem_nhansuduan.Size = new System.Drawing.Size(159, 22);
             this.m_meuitem_nhansuduan.Text = "Nhân sự dự án";
+            this.m_meuitem_nhansuduan.Click += new System.EventHandler(this.m_meuitem_nhansuduan_Click);
             // 
             // m_meuitem_headcount
             // 
