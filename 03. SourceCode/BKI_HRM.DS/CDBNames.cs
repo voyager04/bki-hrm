@@ -424,12 +424,15 @@ namespace BKI_HRM.DS.CDBNames
        public const string ID_CAP_DON_VI = "ID_CAP_DON_VI";
        public const string CAP_DON_VI = "CAP_DON_VI";
        public const string DIA_BAN = "DIA_BAN";
+       public const string NGAY_BAT_DAU = "NGAY_BAT_DAU";
+       public const string NGAY_KET_THUC = "NGAY_KET_THUC";
        public const string ID_TRANG_LAO_DONG = "ID_TRANG_LAO_DONG";
        public const string TRANG_THAI_LAO_DONG = "TRANG_THAI_LAO_DONG";
        public const string NGAY_CO_HIEU_LUC = "NGAY_CO_HIEU_LUC";
        public const string NGAY_HET_HIEU_LUC = "NGAY_HET_HIEU_LUC";
        public const string TRANG_THAI_HIEN_TAI = "TRANG_THAI_HIEN_TAI";
    }
+
 
 
    public class gd_chi_tiet_du_an
