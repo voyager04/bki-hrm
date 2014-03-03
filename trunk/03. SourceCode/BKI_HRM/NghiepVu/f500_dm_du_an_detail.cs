@@ -21,7 +21,10 @@ namespace BKI_HRM.NghiepVu
         public f500_dm_du_an_detail()
         {
             InitializeComponent();
+            format_control();
         }
+
+        
         #endregion
 
         #region Member
@@ -36,6 +39,10 @@ namespace BKI_HRM.NghiepVu
         #endregion
 
         #region privateMethod
+        private void format_control()
+        {
+            CControlFormat.setFormStyle(this);
+        }
         public void display_for_insert()
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
