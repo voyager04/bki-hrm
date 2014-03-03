@@ -695,21 +695,23 @@ public class US_DM_NHAN_SU : US_Object
         cstored.addNVarcharInputParam("@ip_str_search", ip_str_search);
         cstored.fillDataSetByCommand(this, op_ds_dm_nhan_su);
     }
-    public void FillDataset_search_by_ma_ns(DS_DM_NHAN_SU op_ds_dm_nhan_su, string ip_str_search)
+    public void FillDataset_search_by_ma_nv(DS_DM_NHAN_SU op_ds_dm_nhan_su, string ip_str_search)
     {
         CStoredProc cstored = new CStoredProc("pr_DM_NHAN_SU_Search_by_ma_ns");
         cstored.addNVarcharInputParam("@ip_str_search", ip_str_search);
         cstored.fillDataSetByCommand(this, op_ds_dm_nhan_su);
     }
-#endregion
-
-
-
     public void FillDatasetByID(DS_DM_NHAN_SU op_ds_dm_nhan_su, decimal ip_dc_id)
     {
         CStoredProc cstored = new CStoredProc("pr_DM_NHAN_SU_Search_by_ID");
         cstored.addDecimalInputParam("@ID_NS", ip_dc_id);
         cstored.fillDataSetByCommand(this, op_ds_dm_nhan_su);
     }
+    
+#endregion
+
+
+
+   
 }
 }

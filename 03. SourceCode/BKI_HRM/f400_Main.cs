@@ -56,7 +56,7 @@ namespace BKI_HRM {
         private void m_menu_dsnhansu_Click(object sender, EventArgs e) {
             try {
                 f201_dm_nhan_su frm = new f201_dm_nhan_su();
-                frm.Show();
+                frm.display();
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -147,7 +147,7 @@ namespace BKI_HRM {
         private void m_menuitem_trangthailaodong_Click(object sender, EventArgs e) {
             try {
                 f203_V_GD_TRANG_THAI_LAO_DONG frm = new f203_V_GD_TRANG_THAI_LAO_DONG();
-                frm.Show();
+                frm.display();
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -180,7 +180,7 @@ namespace BKI_HRM {
             try
             {
                 f202_V_GD_QUA_TRINH_LAM_VIEC frm = new f202_V_GD_QUA_TRINH_LAM_VIEC();
-                frm.Show();
+                frm.display();
             }
             catch (Exception v_e)
             {
