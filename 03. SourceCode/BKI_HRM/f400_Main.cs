@@ -200,5 +200,18 @@ namespace BKI_HRM {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_meuitem_nhansuduan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f501_v_dm_nhan_su_du_an frm = new f501_v_dm_nhan_su_du_an();
+                frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
