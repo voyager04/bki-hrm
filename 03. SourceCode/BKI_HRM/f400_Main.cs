@@ -192,7 +192,7 @@ namespace BKI_HRM {
         {
             try
             {
-                f402_BAO_CAO_NHAN_VIEN_CHUC_VU frm = new f402_BAO_CAO_NHAN_VIEN_CHUC_VU();
+                f402_BAO_CAO_CHUC_VU_NHAN_VIEN frm = new f402_BAO_CAO_CHUC_VU_NHAN_VIEN();
                 frm.Show();
             }
             catch (Exception v_e)
