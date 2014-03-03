@@ -51,6 +51,10 @@ namespace BKI_HRM
         internal SIS.Controls.Button.SiSButton m_cmd_sua;
         internal SIS.Controls.Button.SiSButton siSButton3;
         internal SIS.Controls.Button.SiSButton m_cmd_xoa;
+        private DateTimePicker m_dat_tu_ngay;
+        private DateTimePicker m_dat_den_ngay;
+        private Label m_lbl_tu_ngay;
+        private Label label1;
 		private System.ComponentModel.IContainer components;
 
 		public F500_DM_DU_AN()
@@ -105,10 +109,14 @@ namespace BKI_HRM
             this.m_lbl_danh_sach_nhan_su = new System.Windows.Forms.Label();
             this.m_grv_nhan_su = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cmd_them_moi = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_sua = new SIS.Controls.Button.SiSButton();
             this.siSButton3 = new SIS.Controls.Button.SiSButton();
             this.m_cmd_xoa = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_sua = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_them_moi = new SIS.Controls.Button.SiSButton();
+            this.m_dat_tu_ngay = new System.Windows.Forms.DateTimePicker();
+            this.m_dat_den_ngay = new System.Windows.Forms.DateTimePicker();
+            this.m_lbl_tu_ngay = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_du_an)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).BeginInit();
@@ -245,13 +253,10 @@ namespace BKI_HRM
             // 
             this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(344, 28);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(111, 29);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
-            this.m_txt_tim_kiem.Size = new System.Drawing.Size(272, 20);
+            this.m_txt_tim_kiem.Size = new System.Drawing.Size(324, 20);
             this.m_txt_tim_kiem.TabIndex = 22;
-            this.m_txt_tim_kiem.Text = "Nhập mã dự án, tên dự án, trạng thái";
-            this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
-            this.m_txt_tim_kiem.Leave += new System.EventHandler(this.m_txt_tim_kiem_Leave);
             // 
             // m_cmd_search
             // 
@@ -261,7 +266,7 @@ namespace BKI_HRM
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(633, 23);
+            this.m_cmd_search.Location = new System.Drawing.Point(906, 23);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 23;
@@ -271,7 +276,7 @@ namespace BKI_HRM
             // m_lbl_tim_kiem
             // 
             this.m_lbl_tim_kiem.AutoSize = true;
-            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(276, 31);
+            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(43, 36);
             this.m_lbl_tim_kiem.Name = "m_lbl_tim_kiem";
             this.m_lbl_tim_kiem.Size = new System.Drawing.Size(49, 13);
             this.m_lbl_tim_kiem.TabIndex = 24;
@@ -318,6 +323,38 @@ namespace BKI_HRM
             this.panel1.Size = new System.Drawing.Size(1008, 36);
             this.panel1.TabIndex = 22;
             // 
+            // m_cmd_them_moi
+            // 
+            this.m_cmd_them_moi.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_them_moi.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_them_moi.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_them_moi.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_them_moi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_them_moi.ImageIndex = 2;
+            this.m_cmd_them_moi.ImageList = this.ImageList;
+            this.m_cmd_them_moi.Location = new System.Drawing.Point(740, 4);
+            this.m_cmd_them_moi.Name = "m_cmd_them_moi";
+            this.m_cmd_them_moi.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_them_moi.TabIndex = 12;
+            this.m_cmd_them_moi.Text = "&Thêm";
+            this.m_cmd_them_moi.Click += new System.EventHandler(this.m_cmd_them_moi_Click);
+            // 
+            // m_cmd_sua
+            // 
+            this.m_cmd_sua.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_sua.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_sua.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_sua.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_sua.ImageIndex = 3;
+            this.m_cmd_sua.ImageList = this.ImageList;
+            this.m_cmd_sua.Location = new System.Drawing.Point(828, 4);
+            this.m_cmd_sua.Name = "m_cmd_sua";
+            this.m_cmd_sua.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_sua.TabIndex = 13;
+            this.m_cmd_sua.Text = "&Sửa";
+            this.m_cmd_sua.Click += new System.EventHandler(this.m_cmd_sua_Click);
+            // 
             // siSButton3
             // 
             this.siSButton3.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -349,42 +386,54 @@ namespace BKI_HRM
             this.m_cmd_xoa.Text = "&Xoá";
             this.m_cmd_xoa.Click += new System.EventHandler(this.m_cmd_xoa_Click);
             // 
-            // m_cmd_sua
+            // m_dat_tu_ngay
             // 
-            this.m_cmd_sua.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_sua.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_sua.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_sua.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_sua.ImageIndex = 3;
-            this.m_cmd_sua.ImageList = this.ImageList;
-            this.m_cmd_sua.Location = new System.Drawing.Point(828, 4);
-            this.m_cmd_sua.Name = "m_cmd_sua";
-            this.m_cmd_sua.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_sua.TabIndex = 13;
-            this.m_cmd_sua.Text = "&Sửa";
-            this.m_cmd_sua.Click += new System.EventHandler(this.m_cmd_sua_Click);
+            this.m_dat_tu_ngay.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_tu_ngay.Location = new System.Drawing.Point(538, 29);
+            this.m_dat_tu_ngay.Name = "m_dat_tu_ngay";
+            this.m_dat_tu_ngay.ShowCheckBox = true;
+            this.m_dat_tu_ngay.Size = new System.Drawing.Size(121, 20);
+            this.m_dat_tu_ngay.TabIndex = 33;
+            this.m_dat_tu_ngay.Value = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
             // 
-            // m_cmd_them_moi
+            // m_dat_den_ngay
             // 
-            this.m_cmd_them_moi.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_them_moi.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_them_moi.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_them_moi.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_them_moi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_them_moi.ImageIndex = 2;
-            this.m_cmd_them_moi.ImageList = this.ImageList;
-            this.m_cmd_them_moi.Location = new System.Drawing.Point(740, 4);
-            this.m_cmd_them_moi.Name = "m_cmd_them_moi";
-            this.m_cmd_them_moi.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_them_moi.TabIndex = 12;
-            this.m_cmd_them_moi.Text = "&Thêm";
-            this.m_cmd_them_moi.Click += new System.EventHandler(this.m_cmd_them_moi_Click);
+            this.m_dat_den_ngay.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_den_ngay.Location = new System.Drawing.Point(751, 29);
+            this.m_dat_den_ngay.Name = "m_dat_den_ngay";
+            this.m_dat_den_ngay.ShowCheckBox = true;
+            this.m_dat_den_ngay.Size = new System.Drawing.Size(121, 20);
+            this.m_dat_den_ngay.TabIndex = 34;
+            this.m_dat_den_ngay.Value = new System.DateTime(2015, 12, 31, 0, 0, 0, 0);
+            // 
+            // m_lbl_tu_ngay
+            // 
+            this.m_lbl_tu_ngay.AutoSize = true;
+            this.m_lbl_tu_ngay.Location = new System.Drawing.Point(489, 35);
+            this.m_lbl_tu_ngay.Name = "m_lbl_tu_ngay";
+            this.m_lbl_tu_ngay.Size = new System.Drawing.Size(46, 13);
+            this.m_lbl_tu_ngay.TabIndex = 35;
+            this.m_lbl_tu_ngay.Text = "Từ ngày";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(692, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Đến ngày";
             // 
             // F500_DM_DU_AN
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(1008, 662);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.m_lbl_tu_ngay);
+            this.Controls.Add(this.m_dat_den_ngay);
+            this.Controls.Add(this.m_dat_tu_ngay);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_grv_nhan_su);
             this.Controls.Add(this.m_lbl_ten_du_an);
@@ -530,8 +579,11 @@ namespace BKI_HRM
 		private void format_controls(){
 			CControlFormat.setFormStyle(this, new CAppContext_201());
 			CControlFormat.setC1FlexFormat(m_grv_du_an);
+            CControlFormat.setC1FlexFormat(m_grv_nhan_su);
 			CGridUtils.AddSave_Excel_Handlers(m_grv_du_an);
             			CGridUtils.AddSearch_Handlers(m_grv_du_an);
+            m_dat_den_ngay.Checked = false;
+            m_dat_tu_ngay.Checked = false;
 			set_define_events();
 			this.KeyPreview = true;		
 		}
@@ -717,25 +769,20 @@ namespace BKI_HRM
         {
             m_obj_trans = get_trans_object(m_grv_du_an);
             m_ds.Clear();
-            m_us.FillDatasetSearch(m_ds, m_txt_tim_kiem.Text);
+            if (!m_dat_tu_ngay.Checked)
+            {
+                m_dat_tu_ngay.Value = new DateTime(2010, 1, 1);
+            }
+            if (!m_dat_den_ngay.Checked)
+            {
+                m_dat_den_ngay.Value = new DateTime(2015,12,31);
+            }
+            m_us.FillDatasetSearch(m_ds, m_txt_tim_kiem.Text,m_dat_tu_ngay.Value, m_dat_den_ngay.Value);
             m_grv_du_an.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_grv_du_an, m_obj_trans);
             m_grv_du_an.Redraw = true;
         }
-
-        private void m_txt_tim_kiem_MouseClick(object sender, MouseEventArgs e)
-        {
-            m_txt_tim_kiem.Text = "";
-        }
-
-        private void m_txt_tim_kiem_Leave(object sender, EventArgs e)
-        {
-            if (m_txt_tim_kiem.Text == "")
-            {
-                m_txt_tim_kiem.Text = "Nhập mã dự án, tên dự án, trạng thái";
-            }
-        }
-
+        
         private void m_cmd_them_moi_Click(object sender, EventArgs e)
         {
             try
@@ -761,8 +808,7 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
-
+        
         private void m_cmd_xoa_Click(object sender, EventArgs e)
         {
             try

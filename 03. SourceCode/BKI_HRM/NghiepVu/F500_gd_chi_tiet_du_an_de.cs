@@ -37,6 +37,7 @@ namespace BKI_HRM.NghiepVu
         public F500_gd_chi_tiet_du_an_de()
         {
             InitializeComponent();
+            format_control();
         }
         #endregion
 
@@ -51,6 +52,10 @@ namespace BKI_HRM.NghiepVu
         #endregion
 
         #region privateMethods
+        private void format_control()
+        {
+            CControlFormat.setFormStyle(this);
+        }
         private void us_obj_2_form(decimal i_dc_id_gd_chi_tiet_du_an)
         {
             US_GD_CHI_TIET_DU_AN v_us = new US_GD_CHI_TIET_DU_AN();
