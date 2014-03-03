@@ -29,7 +29,8 @@ namespace BKI_HRM.NghiepVu
 
         #region Member
         DataEntryFormMode m_e_form_mode;
-        BKI_HRM.US.US_DM_DU_AN m_us = new BKI_HRM.US.US_DM_DU_AN();
+        US.US_DM_DU_AN m_us_dm_du_an = new US.US_DM_DU_AN();
+        US.US_DM_QUYET_DINH m_us_dm_quyet_dinh = new US.US_DM_QUYET_DINH();
         enum cm_dm_tu_dien { 
             TRANG_THAI = 10,
             LOAI_DU_AN = 9,
@@ -55,13 +56,51 @@ namespace BKI_HRM.NghiepVu
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             load_data_2_control();
             ds_2_form(i_ds);
+            load_data_2_form_chi_tiet_qd(m_txt_ma_quyet_dinh.Text);
             this.ShowDialog();            
+        }
+
+        private void load_data_2_form_chi_tiet_qd(string i_str_ma_qd)
+        {
+            DS.DS_DM_QUYET_DINH v_ds_dm_qd = new DS.DS_DM_QUYET_DINH();
+            m_us_dm_quyet_dinh.FillDatasetByMaQuyetDinh(v_ds_dm_qd, i_str_ma_qd);
+            DataRow v_dr = v_ds_dm_qd.Tables[0].Rows[0];
+            m_txt_link.Text = v_dr["LINK"].ToString();
+            m_txt_noi_dung_quyet_dinh.Text = v_dr["NOI_DUNG"].ToString();
+
+            if (v_dr["NGAY_KY"].ToString() != "")
+            {
+                m_dat_ngay_ki.Value = (DateTime)v_dr["NGAY_KY"];
+            }
+            else
+            {
+                m_dat_ngay_ki.Checked = false;
+            }
+
+            if (v_dr["NGAY_HET_HIEU_LUC"].ToString() != "")
+            {
+                m_dat_ngay_het_hieu_luc.Value = (DateTime)v_dr["NGAY_HET_HIEU_LUC"];
+            }
+            else
+            {
+                m_dat_ngay_het_hieu_luc.Checked = false;
+            }
+            if (v_dr["NGAY_CO_HIEU_LUC"].ToString() != "")
+            {
+                m_dat_ngay_co_hieu_luc.Value = (DateTime)v_dr["NGAY_CO_HIEU_LUC"];
+            }
+            else
+            {
+                m_dat_ngay_co_hieu_luc.Checked = false;
+            }
+            
+            m_us_dm_quyet_dinh.dcID = CIPConvert.ToDecimal(v_dr["ID"].ToString());
         }
 
         private void ds_2_form(DS.DS_DM_DU_AN i_ds)
         {
             DataRow dr = i_ds.Tables[0].Rows[0];
-            m_us.dcID = CIPConvert.ToDecimal(dr["ID"].ToString());
+            m_us_dm_du_an.dcID = CIPConvert.ToDecimal(dr["ID"].ToString());
             m_txt_ma_du_an.Text = dr["MA_DU_AN"].ToString();
             //m_txt_ma_quyet_dinh.Text = dr["TEN_DU_AN"].ToString();
             m_txt_noi_dung.Text = dr["NOI_DUNG"].ToString();
@@ -124,26 +163,49 @@ namespace BKI_HRM.NghiepVu
             }
         }
         public void form_2_us_object()
-        {            
-            m_us.dcID_CO_CHE = CIPConvert.ToDecimal(m_cbo_co_che.SelectedValue);
-            m_us.dcID_LOAI_DU_AN = CIPConvert.ToDecimal(m_cbo_loai_du_an.SelectedValue);
-            m_us.dcID_TRANG_THAI = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
+        {
+            m_us_dm_quyet_dinh.strMA_QUYET_DINH = m_txt_ma_quyet_dinh.Text;
+            m_us_dm_quyet_dinh.strNOI_DUNG = m_txt_noi_dung_quyet_dinh.Text;
+            m_us_dm_quyet_dinh.strLINK = m_txt_link.Text;
+
+            if (m_dat_ngay_co_hieu_luc.Checked)
+            {
+                m_us_dm_quyet_dinh.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value;
+            }
+
+            if (m_dat_ngay_het_hieu_luc.Checked)
+            {
+                m_us_dm_quyet_dinh.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc.Value;
+            }
+
+            if (m_dat_ngay_ki.Checked)
+            {
+                m_us_dm_quyet_dinh.datNGAY_KY = m_dat_ngay_ki.Value;
+            }
+
+            m_us_dm_quyet_dinh.dcID_LOAI_QD = (int)cm_dm_tu_dien.THANH_LAP_DU_AN;
+
+            //----------------------------------------------------------------------------------
+            m_us_dm_du_an.dcID_CO_CHE = CIPConvert.ToDecimal(m_cbo_co_che.SelectedValue);
+            m_us_dm_du_an.dcID_LOAI_DU_AN = CIPConvert.ToDecimal(m_cbo_loai_du_an.SelectedValue);
+            m_us_dm_du_an.dcID_TRANG_THAI = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
 
             BKI_HRM.US.US_DM_QUYET_DINH v_us = new BKI_HRM.US.US_DM_QUYET_DINH();
             BKI_HRM.DS.DS_DM_QUYET_DINH v_ds = new BKI_HRM.DS.DS_DM_QUYET_DINH();
 
-            v_us.FillDatasetByMaQuyetDinh(v_ds,m_txt_ma_quyet_dinh.Text);
+            //v_us.FillDatasetByMaQuyetDinh(v_ds,m_txt_ma_quyet_dinh.Text);
 
-            DataRow dr = v_ds.Tables[0].Rows[0];
+            //DataRow dr = v_ds.Tables[0].Rows[0];
 
-            m_us.dcID_QUYET_DINH = CIPConvert.ToDecimal(dr[0].ToString());
+            m_us_dm_du_an.dcID_QUYET_DINH = m_us_dm_quyet_dinh.dcID;
+                //CIPConvert.ToDecimal(dr[0].ToString());
 
-            m_us.strMA_DU_AN = m_txt_ma_du_an.Text;
-            m_us.strNOI_DUNG = m_txt_noi_dung.Text;
-            m_us.strTEN_DU_AN = m_txt_ten_du_an.Text;
+            m_us_dm_du_an.strMA_DU_AN = m_txt_ma_du_an.Text;
+            m_us_dm_du_an.strNOI_DUNG = m_txt_noi_dung.Text;
+            m_us_dm_du_an.strTEN_DU_AN = m_txt_ten_du_an.Text;
 
-            m_us.datNGAY_BAT_DAU = m_dat_ngay_bd.Value;
-            m_us.datNGAY_KET_THUC = m_dat_ngay_kt.Value;
+            m_us_dm_du_an.datNGAY_BAT_DAU = m_dat_ngay_bd.Value;
+            m_us_dm_du_an.datNGAY_KET_THUC = m_dat_ngay_kt.Value;
         }
 
         private void save_data()
@@ -156,10 +218,12 @@ namespace BKI_HRM.NghiepVu
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.InsertDataState:
-                    m_us.Insert();
+                    m_us_dm_quyet_dinh.Insert();
+                    m_us_dm_du_an.Insert();                    
                     break;
                 case DataEntryFormMode.UpdateDataState:
-                    m_us.Update();
+                    m_us_dm_quyet_dinh.Update();
+                    m_us_dm_du_an.Update();                    
                     break;
             }
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
