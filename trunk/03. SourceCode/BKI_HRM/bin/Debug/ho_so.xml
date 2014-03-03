@@ -40,4 +40,12 @@
     <Message>Số điện thoại không hợp lệ.</Message>
     <ID>210</ID>
   </Message>
+  <Message>
+    <Message>Mã nhân viên đã tồn tại.</Message>
+    <ID>212</ID>
+  </Message>
+  <Message>
+    <Message>Email không hợp lệ.</Message>
+    <ID>211</ID>
+  </Message>
 </DatasetMsg>
