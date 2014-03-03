@@ -260,10 +260,19 @@ public class US_V_DM_DU_AN_QUYET_DINH_TU_DIEN : US_Object
 	}
 #endregion
 
-    public void FillDatasetSearch(DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN op_ds, string i_str_search)
+    //public void FillDatasetSearch(DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN op_ds, string i_str_search)
+    //{
+    //    CStoredProc v_sp = new CStoredProc("pr_V_DM_DU_AN_QUYET_DINH_TU_DIEN_search");
+    //    v_sp.addNVarcharInputParam("@STR_SEARCH", i_str_search);
+    //    v_sp.fillDataSetByCommand(this, op_ds);
+    //}
+
+    public void FillDatasetSearch(DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN op_ds, string i_str_search, DateTime v_dat_tu_ngay, DateTime v_dat_den_ngay)
     {
         CStoredProc v_sp = new CStoredProc("pr_V_DM_DU_AN_QUYET_DINH_TU_DIEN_search");
         v_sp.addNVarcharInputParam("@STR_SEARCH", i_str_search);
+        v_sp.addDatetimeInputParam("@DAT_TU_NGAY", v_dat_tu_ngay);
+        v_sp.addDatetimeInputParam("@DAT_DEN_NGAY", v_dat_den_ngay);
         v_sp.fillDataSetByCommand(this, op_ds);
     }
 }
