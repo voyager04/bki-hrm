@@ -202,6 +202,7 @@ namespace BKI_HRM
             this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
             this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
@@ -257,6 +258,7 @@ namespace BKI_HRM
             // f203_v_gd_trang_thai_lao_dong
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.CancelButton = this.m_cmd_exit;
             this.ClientSize = new System.Drawing.Size(840, 409);
             this.Controls.Add(this.m_cmd_tim_kiem);
             this.Controls.Add(this.m_txt_tim_kiem);
@@ -264,6 +266,7 @@ namespace BKI_HRM
             this.Controls.Add(this.m_grv_trang_thai_ld);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f203_v_gd_trang_thai_lao_dong";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F203 - Thay đổi trạng thái lao động";
             this.Load += new System.EventHandler(this.f203_v_gd_trang_thai_lao_dong_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
@@ -306,7 +309,9 @@ namespace BKI_HRM
 			CControlFormat.setFormStyle(this, new CAppContext_201());
 			CControlFormat.setC1FlexFormat(m_grv_trang_thai_ld);
 			CGridUtils.AddSave_Excel_Handlers(m_grv_trang_thai_ld);
-            			CGridUtils.AddSearch_Handlers(m_grv_trang_thai_ld);
+            CGridUtils.AddSearch_Handlers(m_grv_trang_thai_ld);
+            m_grv_trang_thai_ld.Tree.Column = (int)e_col_Number.MA_NV;
+            m_grv_trang_thai_ld.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.SimpleLeaf;
 			set_define_events();
 			this.KeyPreview = true;		
 		}
@@ -334,6 +339,12 @@ namespace BKI_HRM
 			m_us.FillDataset(m_ds);
 			m_grv_trang_thai_ld.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_grv_trang_thai_ld, m_obj_trans);
+            m_grv_trang_thai_ld.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+              , 0
+              , (int)e_col_Number.MA_NV // chỗ này là tên trường mà mình nhóm
+              , (int)e_col_Number.TRANG_THAI_LAO_DONG // chỗ này là tên trường mà mình Count
+              , "{0}"
+              );
 			m_grv_trang_thai_ld.Redraw = true;
 		}
         private void load_data_2_grid_search()
