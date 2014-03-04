@@ -146,7 +146,7 @@ namespace BKI_HRM {
 
         private void m_menuitem_trangthailaodong_Click(object sender, EventArgs e) {
             try {
-                f203_V_GD_TRANG_THAI_LAO_DONG frm = new f203_V_GD_TRANG_THAI_LAO_DONG();
+                f203_v_gd_trang_thai_lao_dong frm = new f203_v_gd_trang_thai_lao_dong();
                 frm.display();
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
