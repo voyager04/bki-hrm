@@ -423,6 +423,7 @@
             this.m_menuitem_bcduan.Name = "m_menuitem_bcduan";
             this.m_menuitem_bcduan.Size = new System.Drawing.Size(234, 22);
             this.m_menuitem_bcduan.Text = "Báo cáo dự án";
+            this.m_menuitem_bcduan.Click += new System.EventHandler(this.m_menuitem_bcduan_Click);
             // 
             // m_menuitem_bctuyendung
             // 
