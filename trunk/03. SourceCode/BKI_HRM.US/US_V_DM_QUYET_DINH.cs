@@ -244,5 +244,11 @@ public class US_V_DM_QUYET_DINH : US_Object
         v_sp.addNVarcharInputParam("@STR_SEARCH", i_str_search);
         v_sp.fillDataSetByCommand(this, op_ds);
     }
+    public void FillDataset_By_Ma_qd(DS_V_DM_QUYET_DINH op_ds, string ip_str_ma_qd)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_V_DM_QUYET_DINH_By_Ma_qd");
+        v_sp.addNVarcharInputParam("@ip_str_ma_qd", ip_str_ma_qd);
+        v_sp.fillDataSetByCommand(this, op_ds);
+    }
 }
 }

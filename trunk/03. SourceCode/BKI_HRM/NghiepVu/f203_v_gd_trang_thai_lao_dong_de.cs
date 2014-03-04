@@ -37,9 +37,11 @@ namespace BKI_HRM
             InitializeComponent();
             format_controls();
         }
-        public void display_for_insert(){
+        public void display_for_insert(US_V_GD_TRANG_THAI_LAO_DONG ip_us_trang_thai_ld)
+        {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
-            
+            m_us_trang_thai_ld = ip_us_trang_thai_ld;
+            us_object_to_form();
             this.ShowDialog();
             
         }
@@ -73,9 +75,28 @@ namespace BKI_HRM
               WinFormControls.eTAT_CA.NO,
               m_cbo_trang_thai_moi);
         }
-        
-        private void us_object_to_form(){
-           
+
+        private void us_object_to_form()
+        {
+            m_txt_ma_nv.Text = m_us_trang_thai_ld.strMA_NV;
+            m_txt_ho_dem.Text = m_us_trang_thai_ld.strHO_DEM;
+            m_txt_ten.Text = m_us_trang_thai_ld.strTEN;
+            
+            switch (m_e_form_mode)
+            {
+                case DataEntryFormMode.InsertDataState:
+                    m_txt_ma_nv.BackColor = SystemColors.Info;
+                    m_txt_ma_nv.ReadOnly = true;
+                    m_txt_ten.BackColor = SystemColors.Info;
+                    m_txt_ten.ReadOnly = true;
+                    m_txt_ho_dem.BackColor = SystemColors.Info;
+                    m_txt_ho_dem.ReadOnly = true;
+                    break;
+                case DataEntryFormMode.UpdateDataState:
+
+                    break;
+                default: break;
+            }
         }
         private void form_to_us_object(){
             
