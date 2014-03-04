@@ -142,6 +142,9 @@
     <Compile Include="NghiepVu\f202_v_gd_qua_trinh_lam_viec.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="NghiepVu\f203_v_gd_trang_thai_lao_dong.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="NghiepVu\f203_v_gd_trang_thai_lao_dong_de.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f202_v_gd_qua_trinh_lam_viec.resx">
       <DependentUpon>f202_v_gd_qua_trinh_lam_viec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f203_v_gd_trang_thai_lao_dong.resx">
+      <DependentUpon>f203_v_gd_trang_thai_lao_dong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f203_v_gd_trang_thai_lao_dong_de.resx">
       <DependentUpon>f203_v_gd_trang_thai_lao_dong_de.cs</DependentUpon>
