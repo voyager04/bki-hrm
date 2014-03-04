@@ -35,6 +35,9 @@ namespace BKI_HRM
 		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
+        private TextBox m_txt_tim_kiem;
+        internal SIS.Controls.Button.SiSButton m_cmd_search;
+        private DateTimePicker m_dtp_thoidiem;
 		private System.ComponentModel.IContainer components;
 
 		public f402_BAO_CAO_NHAN_SU_CHUC_VU()
@@ -78,6 +81,9 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
+            this.m_cmd_search = new SIS.Controls.Button.SiSButton();
+            this.m_dtp_thoidiem = new System.Windows.Forms.DateTimePicker();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -137,17 +143,53 @@ namespace BKI_HRM
             // m_fg
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 0);
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_fg.Location = new System.Drawing.Point(0, 47);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(686, 373);
+            this.m_fg.Size = new System.Drawing.Size(686, 326);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
+            // 
+            // m_txt_tim_kiem
+            // 
+            this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(275, 12);
+            this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
+            this.m_txt_tim_kiem.Size = new System.Drawing.Size(272, 20);
+            this.m_txt_tim_kiem.TabIndex = 31;
+            this.m_txt_tim_kiem.Text = "Nhập mã chức vụ, tên chức vụ";
+            // 
+            // m_cmd_search
+            // 
+            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_search.ImageIndex = 5;
+            this.m_cmd_search.ImageList = this.ImageList;
+            this.m_cmd_search.Location = new System.Drawing.Point(553, 7);
+            this.m_cmd_search.Name = "m_cmd_search";
+            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_search.TabIndex = 32;
+            this.m_cmd_search.Text = "Tìm kiếm";
+            this.m_cmd_search.Click += new System.EventHandler(this.m_cmd_search_Click);
+            // 
+            // m_dtp_thoidiem
+            // 
+            this.m_dtp_thoidiem.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dtp_thoidiem.Location = new System.Drawing.Point(69, 12);
+            this.m_dtp_thoidiem.Name = "m_dtp_thoidiem";
+            this.m_dtp_thoidiem.Size = new System.Drawing.Size(200, 20);
+            this.m_dtp_thoidiem.TabIndex = 33;
             // 
             // f402_BAO_CAO_NHAN_SU_CHUC_VU
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(686, 409);
+            this.Controls.Add(this.m_dtp_thoidiem);
+            this.Controls.Add(this.m_cmd_search);
+            this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f402_BAO_CAO_NHAN_SU_CHUC_VU";
@@ -156,6 +198,7 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 		#endregion
@@ -282,7 +325,24 @@ namespace BKI_HRM
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
-		}		
+		}
+
+        private void m_cmd_search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                m_obj_trans = get_trans_object(m_fg);
+                m_ds.Clear();
+                m_us.FillDatasetSearchChucVuThoiDiem(m_ds, m_txt_tim_kiem.Text,m_dtp_thoidiem.Value);
+                m_fg.Redraw = false;
+                CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+                m_fg.Redraw = true;
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }		
 
 	}
 }
