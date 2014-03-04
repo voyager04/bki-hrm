@@ -213,5 +213,18 @@ namespace BKI_HRM {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_menuitem_bcduan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f502_bao_cao_du_an frm = new f502_bao_cao_du_an();
+                frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
