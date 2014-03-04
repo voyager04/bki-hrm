@@ -514,5 +514,14 @@ public class US_V_GD_QUA_TRINH_LAM_VIEC : US_Object
         v_sp.addDatetimeInputParam("@NGAY_KET_THUC", ip_dat_ngay_ket_thuc);
         v_sp.fillDataSetByCommand(this, op_ds);
     }
+    public void FillDatasetSearchChucVuThoiDiem(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds,
+        string ip_str_ma_cv,
+        DateTime ip_dat_thoi_diem)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_select_by_MA_CHUC_VU_THOI_DIEM");
+        v_sp.addNVarcharInputParam("@MA_CHUC_VU", ip_str_ma_cv);
+        v_sp.addDatetimeInputParam("@THOI_DIEM", ip_dat_thoi_diem);
+        v_sp.fillDataSetByCommand(this, op_ds);
+    }
 }
 }

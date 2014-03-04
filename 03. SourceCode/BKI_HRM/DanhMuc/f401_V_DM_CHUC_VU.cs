@@ -470,12 +470,19 @@ namespace BKI_HRM
 
         private void m_cmd_search_Click(object sender, EventArgs e)
         {
-            m_obj_trans = get_trans_object(m_fg);
-            m_v_ds.Clear();
-            m_v_us.FillDatasetSearch(m_v_ds, m_txt_tim_kiem.Text);
-            m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_v_ds, m_fg, m_obj_trans);
-            m_fg.Redraw = true;
+            try
+            {
+                m_obj_trans = get_trans_object(m_fg);
+                m_v_ds.Clear();
+                m_v_us.FillDatasetSearch(m_v_ds, m_txt_tim_kiem.Text);
+                m_fg.Redraw = false;
+                CGridUtils.Dataset2C1Grid(m_v_ds, m_fg, m_obj_trans);
+                m_fg.Redraw = true;
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 	}
 }
