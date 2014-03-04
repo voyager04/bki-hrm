@@ -523,5 +523,11 @@ public class US_V_GD_QUA_TRINH_LAM_VIEC : US_Object
         v_sp.addDatetimeInputParam("@THOI_DIEM", ip_dat_thoi_diem);
         v_sp.fillDataSetByCommand(this, op_ds);
     }
+    public void FillDataset_chuc_vu_hien_tai(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds, string ip_str_ma_nv)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_chuc_vu_hien_tai");
+        v_sp.addNVarcharInputParam("@MA_NHAN_VIEN", ip_str_ma_nv);
+        v_sp.fillDataSetByCommand(this, op_ds);
+    }
 }
 }
