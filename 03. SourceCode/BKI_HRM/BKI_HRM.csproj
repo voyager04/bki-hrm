@@ -142,8 +142,11 @@
     <Compile Include="NghiepVu\f202_v_gd_qua_trinh_lam_viec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NghiepVu\f203_v_gd_trang_thai_lao_dong.cs">
+    <Compile Include="NghiepVu\f203_v_gd_trang_thai_lao_dong_de.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f203_v_gd_trang_thai_lao_dong_de.designer.cs">
+      <DependentUpon>f203_v_gd_trang_thai_lao_dong_de.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\F500_DM_DU_AN.cs">
       <SubType>Form</SubType>
@@ -229,8 +232,8 @@
     <EmbeddedResource Include="NghiepVu\f202_v_gd_qua_trinh_lam_viec.resx">
       <DependentUpon>f202_v_gd_qua_trinh_lam_viec.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\f203_v_gd_trang_thai_lao_dong.resx">
-      <DependentUpon>f203_v_gd_trang_thai_lao_dong.cs</DependentUpon>
+    <EmbeddedResource Include="NghiepVu\f203_v_gd_trang_thai_lao_dong_de.resx">
+      <DependentUpon>f203_v_gd_trang_thai_lao_dong_de.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\F500_DM_DU_AN.resx">
       <DependentUpon>F500_DM_DU_AN.cs</DependentUpon>
