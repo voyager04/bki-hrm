@@ -583,9 +583,6 @@ namespace BKI_HRM
             }
         }
 
-        
-    #endregion
-
         private void m_ptb_anh_MouseHover(object sender, EventArgs e)
         {
             m_ptb_anh.Image = m_ptb_anh.ErrorImage;
@@ -597,6 +594,9 @@ namespace BKI_HRM
                 m_ptb_anh.Image = new Bitmap(m_ofd_chon_anh.FileName);
         }
 
+    #endregion
+
+       
         
         
     }
