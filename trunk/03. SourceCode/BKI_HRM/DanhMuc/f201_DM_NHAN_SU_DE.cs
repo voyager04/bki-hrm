@@ -93,6 +93,7 @@ namespace BKI_HRM
         {
             CControlFormat.setFormStyle(this, new CAppContext_201());
             this.KeyPreview = true;
+            m_ptb_anh.Image = m_ptb_anh.ErrorImage;
         }
         private void chon_anh()
         {
@@ -129,8 +130,7 @@ namespace BKI_HRM
             m_ofd_chon_anh.FileName = m_us_dm_nhan_su.strANH;
             if (m_us_dm_nhan_su.strANH != "")
                 m_ptb_anh.Image = new Bitmap(m_ofd_chon_anh.FileName);
-            else
-                m_ptb_anh.Image = m_ptb_anh.ErrorImage;
+            
             m_txt_trinh_do.Text = m_us_dm_nhan_su.strTRINH_DO;
             m_txt_noi_dao_tao.Text = m_us_dm_nhan_su.strNOI_DAO_TAO;
             m_txt_chuyen_nganh.Text = m_us_dm_nhan_su.strCHUYEN_NGANH;
@@ -242,6 +242,7 @@ namespace BKI_HRM
             if (!CValidateTextBox.IsValid(m_txt_email_ca_nhan, DataType.StringType, allowNull.YES, true) || !check_validate_email(m_txt_email_ca_nhan.Text))
             {
                 BaseMessages.MsgBox_Warning(211);
+                m_txt_email_ca_nhan.BackColor = Color.Bisque;
                 m_txt_email_ca_nhan.Focus();
                 m_txt_email_ca_nhan.SelectAll();
                 return false;
@@ -249,6 +250,7 @@ namespace BKI_HRM
             if (!CValidateTextBox.IsValid(m_txt_email_co_quan, DataType.StringType, allowNull.YES, true) || !check_validate_email(m_txt_email_co_quan.Text))
             {
                 BaseMessages.MsgBox_Warning(211);
+                m_txt_email_co_quan.BackColor = Color.Bisque;
                 m_txt_email_co_quan.Focus();
                 m_txt_email_co_quan.SelectAll();
                 return false;
@@ -301,7 +303,7 @@ namespace BKI_HRM
                     if (check_trung_ma_nv(m_txt_ma_nhan_vien.Text))
                     {
                         BaseMessages.MsgBox_Warning(212);
-                        m_txt_ma_nhan_vien.BackColor = Color.LightPink;
+                        m_txt_ma_nhan_vien.BackColor = Color.Bisque;
                         m_txt_ma_nhan_vien.Focus();
                         m_txt_ma_nhan_vien.SelectAll();
                         return;
@@ -583,6 +585,17 @@ namespace BKI_HRM
 
         
     #endregion
+
+        private void m_ptb_anh_MouseHover(object sender, EventArgs e)
+        {
+            m_ptb_anh.Image = m_ptb_anh.ErrorImage;
+        }
+
+        private void m_ptb_anh_MouseLeave(object sender, EventArgs e)
+        {
+            if (m_ofd_chon_anh.FileName != "")
+                m_ptb_anh.Image = new Bitmap(m_ofd_chon_anh.FileName);
+        }
 
         
         

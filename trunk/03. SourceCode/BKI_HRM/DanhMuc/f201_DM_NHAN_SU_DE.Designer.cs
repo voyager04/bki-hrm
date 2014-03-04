@@ -55,7 +55,6 @@
             this.m_lbl_ngay_cap = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
             this.m_ptb_anh = new System.Windows.Forms.PictureBox();
             this.m_lbl_dan_toc = new System.Windows.Forms.Label();
             this.m_txt_dan_toc = new System.Windows.Forms.TextBox();
@@ -373,7 +372,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.m_ptb_anh);
             this.tabPage1.Controls.Add(this.m_lbl_dan_toc);
             this.tabPage1.Controls.Add(this.m_cbo_gioi_tinh);
@@ -407,15 +405,6 @@
             this.tabPage1.Text = "Thông tin cá nhân";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(600, 205);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 13);
-            this.label1.TabIndex = 51;
-            this.label1.Text = "(Nhấn vào ảnh để thay đổi)";
-            // 
             // m_ptb_anh
             // 
             this.m_ptb_anh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -427,6 +416,8 @@
             this.m_ptb_anh.TabIndex = 48;
             this.m_ptb_anh.TabStop = false;
             this.m_ptb_anh.Click += new System.EventHandler(this.m_ptb_anh_Click);
+            this.m_ptb_anh.MouseLeave += new System.EventHandler(this.m_ptb_anh_MouseLeave);
+            this.m_ptb_anh.MouseHover += new System.EventHandler(this.m_ptb_anh_MouseHover);
             // 
             // m_lbl_dan_toc
             // 
@@ -785,7 +776,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f201_DM_NHAN_SU_DE";
-            this.Text = "F201 - Chi tiết nhân sự";
+            this.Text = "F201 - Chi tiết hồ sơ nhân sự";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -864,6 +855,5 @@
         private System.Windows.Forms.TextBox m_txt_nam_tot_nghiep;
         private System.Windows.Forms.PictureBox m_ptb_anh;
         private System.Windows.Forms.OpenFileDialog m_ofd_chon_anh;
-        private System.Windows.Forms.Label label1;
     }
 }
