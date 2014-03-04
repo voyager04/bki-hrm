@@ -42,6 +42,7 @@ namespace BKI_HRM {
         internal Panel m_pnl_out_place_dm;
         internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
+        private ToolTip m_tooltip;
         private System.ComponentModel.IContainer components;
 
         public f103_bao_cao_tra_cuu_nhan_su() {
@@ -91,6 +92,7 @@ namespace BKI_HRM {
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -213,7 +215,7 @@ namespace BKI_HRM {
             this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
-            this.m_cmd_search.Location = new System.Drawing.Point(874, 42);
+            this.m_cmd_search.Location = new System.Drawing.Point(1069, 50);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 2;
@@ -223,15 +225,16 @@ namespace BKI_HRM {
             // 
             this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(333, 46);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(135, 50);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
-            this.m_txt_tim_kiem.Size = new System.Drawing.Size(513, 20);
+            this.m_txt_tim_kiem.Size = new System.Drawing.Size(896, 20);
             this.m_txt_tim_kiem.TabIndex = 1;
+            this.m_tooltip.SetToolTip(this.m_txt_tim_kiem, "Để tìm kiếm nhân viên sinh nhật theo tháng, bạn gõ: Tháng 10");
             // 
             // m_lbl_tim_kiem
             // 
             this.m_lbl_tim_kiem.AutoSize = true;
-            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(204, 49);
+            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(42, 50);
             this.m_lbl_tim_kiem.Name = "m_lbl_tim_kiem";
             this.m_lbl_tim_kiem.Size = new System.Drawing.Size(87, 14);
             this.m_lbl_tim_kiem.TabIndex = 24;
@@ -288,7 +291,7 @@ namespace BKI_HRM {
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_fg);
             this.Name = "f103_bao_cao_tra_cuu_nhan_su";
-            this.Text = "f103 - Báo cáo tra cứu nhân sự";
+            this.Text = "F103 - Tra cứu nhân sự";
             this.Load += new System.EventHandler(this.f103_bao_cao_tra_cuu_nhan_su_Load);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.panel1.ResumeLayout(false);
