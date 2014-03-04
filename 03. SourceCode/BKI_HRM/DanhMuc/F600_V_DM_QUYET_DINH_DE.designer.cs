@@ -57,63 +57,63 @@
             this.m_lbl_ma_quyet_dinh.AutoSize = true;
             this.m_lbl_ma_quyet_dinh.Location = new System.Drawing.Point(26, 31);
             this.m_lbl_ma_quyet_dinh.Name = "m_lbl_ma_quyet_dinh";
-            this.m_lbl_ma_quyet_dinh.Size = new System.Drawing.Size(78, 13);
+            this.m_lbl_ma_quyet_dinh.Size = new System.Drawing.Size(75, 13);
             this.m_lbl_ma_quyet_dinh.TabIndex = 0;
-            this.m_lbl_ma_quyet_dinh.Text = "Mã quyết định:";
+            this.m_lbl_ma_quyet_dinh.Text = "Mã quyết định";
             // 
             // m_lbl_loai_quyet_dinh
             // 
             this.m_lbl_loai_quyet_dinh.AutoSize = true;
             this.m_lbl_loai_quyet_dinh.Location = new System.Drawing.Point(26, 57);
             this.m_lbl_loai_quyet_dinh.Name = "m_lbl_loai_quyet_dinh";
-            this.m_lbl_loai_quyet_dinh.Size = new System.Drawing.Size(83, 13);
+            this.m_lbl_loai_quyet_dinh.Size = new System.Drawing.Size(80, 13);
             this.m_lbl_loai_quyet_dinh.TabIndex = 1;
-            this.m_lbl_loai_quyet_dinh.Text = "Loại quyết định:";
+            this.m_lbl_loai_quyet_dinh.Text = "Loại quyết định";
             // 
             // m_lbl_ngay_co_hieu_luc
             // 
             this.m_lbl_ngay_co_hieu_luc.AutoSize = true;
             this.m_lbl_ngay_co_hieu_luc.Location = new System.Drawing.Point(306, 31);
             this.m_lbl_ngay_co_hieu_luc.Name = "m_lbl_ngay_co_hieu_luc";
-            this.m_lbl_ngay_co_hieu_luc.Size = new System.Drawing.Size(90, 13);
+            this.m_lbl_ngay_co_hieu_luc.Size = new System.Drawing.Size(87, 13);
             this.m_lbl_ngay_co_hieu_luc.TabIndex = 2;
-            this.m_lbl_ngay_co_hieu_luc.Text = "Ngày có hiệu lực:";
+            this.m_lbl_ngay_co_hieu_luc.Text = "Ngày có hiệu lực";
             // 
             // m_lbl_ngay_ky
             // 
             this.m_lbl_ngay_ky.AutoSize = true;
             this.m_lbl_ngay_ky.Location = new System.Drawing.Point(306, 57);
             this.m_lbl_ngay_ky.Name = "m_lbl_ngay_ky";
-            this.m_lbl_ngay_ky.Size = new System.Drawing.Size(49, 13);
+            this.m_lbl_ngay_ky.Size = new System.Drawing.Size(46, 13);
             this.m_lbl_ngay_ky.TabIndex = 3;
-            this.m_lbl_ngay_ky.Text = "Ngày ký:";
+            this.m_lbl_ngay_ky.Text = "Ngày ký";
             // 
             // m_lbl_ngay_het_hieu_luc
             // 
             this.m_lbl_ngay_het_hieu_luc.AutoSize = true;
             this.m_lbl_ngay_het_hieu_luc.Location = new System.Drawing.Point(306, 83);
             this.m_lbl_ngay_het_hieu_luc.Name = "m_lbl_ngay_het_hieu_luc";
-            this.m_lbl_ngay_het_hieu_luc.Size = new System.Drawing.Size(93, 13);
+            this.m_lbl_ngay_het_hieu_luc.Size = new System.Drawing.Size(90, 13);
             this.m_lbl_ngay_het_hieu_luc.TabIndex = 4;
-            this.m_lbl_ngay_het_hieu_luc.Text = "Ngày hết hiệu lực:";
+            this.m_lbl_ngay_het_hieu_luc.Text = "Ngày hết hiệu lực";
             // 
             // m_lbl_link
             // 
             this.m_lbl_link.AutoSize = true;
             this.m_lbl_link.Location = new System.Drawing.Point(26, 83);
             this.m_lbl_link.Name = "m_lbl_link";
-            this.m_lbl_link.Size = new System.Drawing.Size(30, 13);
+            this.m_lbl_link.Size = new System.Drawing.Size(27, 13);
             this.m_lbl_link.TabIndex = 5;
-            this.m_lbl_link.Text = "Link:";
+            this.m_lbl_link.Text = "Link";
             // 
             // m_lbl_noi_dung
             // 
             this.m_lbl_noi_dung.AutoSize = true;
             this.m_lbl_noi_dung.Location = new System.Drawing.Point(26, 106);
             this.m_lbl_noi_dung.Name = "m_lbl_noi_dung";
-            this.m_lbl_noi_dung.Size = new System.Drawing.Size(53, 13);
+            this.m_lbl_noi_dung.Size = new System.Drawing.Size(50, 13);
             this.m_lbl_noi_dung.TabIndex = 6;
-            this.m_lbl_noi_dung.Text = "Nội dung:";
+            this.m_lbl_noi_dung.Text = "Nội dung";
             // 
             // m_txt_ma_quyet_dinh
             // 
