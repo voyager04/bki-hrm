@@ -281,6 +281,21 @@ namespace BKI_HRM
               );
 			m_fg.Redraw = true;
 		}
+        private void load_data_2_grid_search()
+        {
+            m_obj_trans = get_trans_object(m_fg);
+            m_ds.Clear();
+            m_us.FillDatasetSearchChucVuThoiDiem(m_ds, m_txt_tim_kiem.Text, m_dtp_thoidiem.Value);
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count
+          , 0
+          , (int)e_col_Number.MA_CV
+          , (int)e_col_Number.TEN_CV
+          , "{0}"
+          );
+            m_fg.Redraw = true;
+        }
 		private void grid2us_object(US_V_GD_QUA_TRINH_LAM_VIEC i_us
 			, int i_grid_row) {
 			DataRow v_dr;
@@ -350,12 +365,7 @@ namespace BKI_HRM
         {
             try
             {
-                m_obj_trans = get_trans_object(m_fg);
-                m_ds.Clear();
-                m_us.FillDatasetSearchChucVuThoiDiem(m_ds, m_txt_tim_kiem.Text,m_dtp_thoidiem.Value);
-                m_fg.Redraw = false;
-                CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-                m_fg.Redraw = true;
+                load_data_2_grid_search();
             }
             catch (Exception v_e)
             {
