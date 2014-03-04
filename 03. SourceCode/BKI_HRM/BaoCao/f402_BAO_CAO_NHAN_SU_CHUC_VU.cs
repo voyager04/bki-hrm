@@ -158,7 +158,7 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(272, 20);
             this.m_txt_tim_kiem.TabIndex = 31;
-            this.m_txt_tim_kiem.Text = "Nhập mã chức vụ, tên chức vụ";
+            this.m_txt_tim_kiem.Text = "Nhập mã chức vụ";
             // 
             // m_cmd_search
             // 
@@ -301,6 +301,16 @@ namespace BKI_HRM
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 
 		}
+        private void load_custom_source_2_m_txt_tim_kiem()
+        {
+            //m_v_us.FillDataset(m_v_ds);
+            int count = m_ds.Tables["V_GD_QUA_TRINH_LAM_VIEC"].Rows.Count;
+            for (int i = 0; i < count; i++)
+            {
+                DataRow dr = m_ds.Tables["V_GD_QUA_TRINH_LAM_VIEC"].Rows[i];
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[3].ToString());
+            }
+        }
 		#endregion
 
 //
@@ -311,6 +321,7 @@ namespace BKI_HRM
 		private void f402_BAO_CAO_NHAN_SU_CHUC_VU_Load(object sender, System.EventArgs e) {
 			try{
 				set_initial_form_load();
+                load_custom_source_2_m_txt_tim_kiem();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
