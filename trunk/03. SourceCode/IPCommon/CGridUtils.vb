@@ -137,6 +137,26 @@ Public Class CGridUtils
         AddHandler i_fg.DoubleClick, AddressOf grid_DoubleClick
     End Sub
 
+    ''' -----------------------------------------------------------------------------
+    ''' <summary>
+    ''' Dùng để Collapse-Expand khi Double Click vào Dòng node group
+    ''' </summary>
+    ''' <remarks>
+    ''' Được gọi ở sự kiện Double lên Dòng node group
+    ''' </remarks>
+    ''' <history>
+    ''' 	[tronghv]	03/03/2014	Edited
+    ''' </history>
+    ''' -----------------------------------------------------------------------------
+
+    Public Shared Sub grid_Double_Click(ByVal sender As Object, _
+                             ByVal e As EventArgs)
+        Dim v_fg As C1FlexGrid = CType(sender, C1.Win.C1FlexGrid.C1FlexGrid)
+        If v_fg.Tree.Column = v_fg.Col Then
+            ToggleNodeState(v_fg)
+        End If
+    End Sub
+
     Public Shared Sub AddSearch_Handlers(ByVal i_fg As C1FlexGrid)
         AddHandler i_fg.KeyDown, AddressOf grid_Keydown_Search
     End Sub

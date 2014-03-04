@@ -68,10 +68,7 @@ namespace BKI_HRM
             m_us.strTEN_CV_TA = m_txt_tenta.Text.Trim();
             m_us.datNGAY_AP_DUNG = m_dat_ngayapdung.Value.Date;
             m_us.datNGAY_KET_THUC = m_dat_ngayketthuc.Value.Date;
-            if (m_rdb_khongsudung.Checked == true)
-                m_us.strTRANG_THAI = "n";
-            else
-                m_us.strTRANG_THAI = "y";
+            m_us.strTRANG_THAI = m_rdb_khongsudung.Checked ? "n" : "y";
         }
 
         private void save_data() {

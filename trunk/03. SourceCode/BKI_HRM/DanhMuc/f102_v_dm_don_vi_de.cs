@@ -11,6 +11,7 @@ using BKI_HRM.DS.CDBNames;
 using BKI_HRM.US;
 using IP.Core.IPCommon;
 using IP.Core.IPData;
+using IP.Core.IPSystemAdmin;
 using IP.Core.IPUserService;
 using Encoder = System.Drawing.Imaging.Encoder;
 
@@ -23,6 +24,7 @@ namespace BKI_HRM.DanhMuc {
             fomat_control();
         }
         public void display_for_insert() {
+            set_initial_form_load();
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             this.ShowDialog();
         }
@@ -46,7 +48,7 @@ namespace BKI_HRM.DanhMuc {
         #region Private Methods
 
         private void fomat_control() {
-            CControlFormat.setFormStyle(this);
+            CControlFormat.setFormStyle(this, new CAppContext_201());
             set_define_events();
             /*Load Combobox Loai don vi*/
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.LOAI_DON_VI,
@@ -56,34 +58,47 @@ namespace BKI_HRM.DanhMuc {
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.CAP_DON_VI,
                 WinFormControls.eTAT_CA.NO,
                 m_cbo_cap_don_vi);
-            load_data_2_cbo_don_vi();
+            load_data_2_cbo_don_vi_cap_tren();
         }
-
         private void set_initial_form_load(){
             m_cbo_trang_thai.SelectedIndex = 0;
+            m_cbo_cap_don_vi.SelectedIndex = 2;
         }
-        private void load_data_2_cbo_don_vi() {
-            var v_ds = new DS_DM_DON_VI();
-            var v_us = new US_DM_DON_VI();
-            v_us.FillDataset(v_ds);
+        private void load_data_2_cbo_don_vi_cap_tren() {
+            var v_ds = new DS_V_DM_DON_VI();
+            var v_us = new US_V_DM_DON_VI();
+            v_us.FillDatasetByCapDonVi(v_ds, CAP_DON_VI.TRUNG_TAM);
 
             m_cbo_ten_don_vi_cap_tren.DisplayMember = DM_DON_VI.TEN_DON_VI;
             m_cbo_ten_don_vi_cap_tren.ValueMember = DM_DON_VI.ID;
-            m_cbo_ten_don_vi_cap_tren.DataSource = v_ds.DM_DON_VI;
+            m_cbo_ten_don_vi_cap_tren.DataSource = v_ds.V_DM_DON_VI;
 
-            DataRow v_row = v_ds.DM_DON_VI.NewRow();
-            v_row[DM_DON_VI.ID] = -1;
-            v_row[DM_DON_VI.ID_CAP_DON_VI] = 0;
-            v_row[DM_DON_VI.ID_DON_VI_CAP_TREN] = -1;
-            v_row[DM_DON_VI.ID_LOAI_DON_VI] = -1;
-            v_row[DM_DON_VI.MA_DON_VI] = "NULL";
-            v_row[DM_DON_VI.TEN_DON_VI] = "Không có đơn vị cấp trên";
-            v_row[DM_DON_VI.TEN_TA] = "NULL";
-            v_row[DM_DON_VI.TRANG_THAI] = "Y";
-            v_row[DM_DON_VI.TU_NGAY] = "1/1/1800";
-            v_row[DM_DON_VI.DIA_BAN] = "NULL";
-
-            v_ds.DM_DON_VI.Rows.InsertAt(v_row, 0);
+            DataRow v_row = v_ds.V_DM_DON_VI.NewRow();
+            v_row[V_DM_DON_VI.ID] = -1;
+            v_row[V_DM_DON_VI.ID_CAP_DON_VI] = 0;
+            v_row[V_DM_DON_VI.ID_DON_VI_CAP_TREN] = -1;
+            v_row[V_DM_DON_VI.ID_LOAI_DON_VI] = -1;
+            v_row[V_DM_DON_VI.MA_DON_VI] = "NULL";
+            v_row[V_DM_DON_VI.TEN_DON_VI] = "Không có đơn vị cấp trên";
+            v_row[V_DM_DON_VI.TEN_TIENG_ANH] = "NULL";
+            v_row[V_DM_DON_VI.TRANG_THAI] = "Y";
+            v_row[V_DM_DON_VI.TU_NGAY] = "1/1/1800";
+            v_row[V_DM_DON_VI.DIA_BAN] = "NULL";
+            v_ds.V_DM_DON_VI.Rows.InsertAt(v_row, 0);
+            
+            switch (m_cbo_cap_don_vi.SelectedIndex){
+                case 0: // Khối
+                    m_cbo_ten_don_vi_cap_tren.SelectedIndex = 0;
+                    m_cbo_ten_don_vi_cap_tren.Enabled = false;
+                    break;
+                case 1: // Trung Tâm
+                    v_us.FillDatasetByCapDonVi(v_ds, CAP_DON_VI.KHOI);
+                    m_cbo_ten_don_vi_cap_tren.Enabled = true;
+                    break;
+                case 2: // Phòng
+                    m_cbo_ten_don_vi_cap_tren.Enabled = true;
+                    break;
+            }
         }
         private bool check_data_is_ok() {
             if (!CValidateTextBox.IsValid(m_txt_dia_ban, DataType.StringType, allowNull.YES, true)) {
@@ -100,7 +115,10 @@ namespace BKI_HRM.DanhMuc {
             }
             return true;
         }
-        private void form_2_us_object() {
+        private void form_2_us_object(){
+            m_us.dcID_DON_VI_CAP_TREN = CIPConvert.ToDecimal(m_cbo_ten_don_vi_cap_tren.SelectedValue);
+            m_us.dcID_LOAI_DON_VI = CIPConvert.ToDecimal(m_cbo_loai_don_vi.SelectedValue);
+            m_us.dcID_CAP_DON_VI = CIPConvert.ToDecimal(m_cbo_cap_don_vi.SelectedValue);
             m_us.strMA_DON_VI = m_txt_ma_don_vi.Text.Trim();
             m_us.strTEN_DON_VI = m_txt_ten_don_vi.Text.Trim();
             m_us.strTEN_TA = m_txt_ten_tieng_anh.Text.Trim();
@@ -110,11 +128,8 @@ namespace BKI_HRM.DanhMuc {
             m_us.dcID_CAP_DON_VI = CIPConvert.ToDecimal(m_cbo_cap_don_vi.SelectedValue);
             m_us.datTU_NGAY = m_dat_tu_ngay.Value.Date;
         }
-        private string get_trang_thai(ComboBox ip_cbo) {
-            if (ip_cbo.SelectedIndex == 0) {
-                return "y";
-            }
-            return "n";
+        private static string get_trang_thai(ListControl ip_cbo){
+            return ip_cbo.SelectedIndex == 0 ? "y" : "n";
         }
         private void save_data() {
             if (check_data_is_ok() == false) {
@@ -130,7 +145,7 @@ namespace BKI_HRM.DanhMuc {
                     break;
             }
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
-            this.Close();
+            Close();
         }
         private void us_object_2_form(US_V_DM_DON_VI ip_us_dm_don_vi) {
             m_us.dcID = ip_us_dm_don_vi.dcID;
@@ -149,10 +164,12 @@ namespace BKI_HRM.DanhMuc {
         #region Events
 
         private void set_define_events() {
-            this.m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
-            this.m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-            this.m_cbo_ten_don_vi_cap_tren.SelectedIndexChanged +=
-                new EventHandler(m_cbo_ten_don_vi_cap_tren_SelectedIndexChanged);
+            m_cmd_save.Click += m_cmd_save_Click;
+            m_cmd_exit.Click += m_cmd_exit_Click;
+            m_cbo_ten_don_vi_cap_tren.SelectedIndexChanged +=
+                m_cbo_ten_don_vi_cap_tren_SelectedIndexChanged;
+            m_cbo_cap_don_vi.SelectedIndexChanged += 
+                m_cbo_cap_don_vi_SelectedIndexChanged;
         }
 
         protected void m_cmd_save_Click(object sender, EventArgs e) {
@@ -175,23 +192,30 @@ namespace BKI_HRM.DanhMuc {
 
         protected void m_cmd_exit_Click(object sender, EventArgs e) {
             try {
-                this.Close();
+                Close();
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
-        
-
         private void f102_v_dm_don_vi_de_Load(object sender, EventArgs e) {
             try{
-                set_initial_form_load();
             }
             catch (Exception v_e){
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
         
+        private void m_cbo_cap_don_vi_SelectedIndexChanged(object sender, EventArgs e) {
+            try {
+                load_data_2_cbo_don_vi_cap_tren();
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+       
         #endregion
+
+
     }
 }

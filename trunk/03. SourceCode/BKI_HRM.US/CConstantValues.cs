@@ -49,4 +49,10 @@ namespace BKI_HRM.US {
         public const string VHOL = "670";
         public const string VHTT = "671";
     }
+
+    public class CAP_DON_VI {
+        public const decimal KHOI = 1;
+        public const decimal TRUNG_TAM = 2;
+        public const decimal PHONG_BAN = 3;
+    }
 }
