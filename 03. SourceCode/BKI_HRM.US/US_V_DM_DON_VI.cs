@@ -243,6 +243,18 @@ namespace BKI_HRM.US {
             v_stored_proc.fillDataSetByCommand(this, op_ds_v_v_dm_don_vi);
         }
 
+        public void FillDatasetByKeyWord(DS_V_DM_DON_VI op_ds_v_v_dm_don_vi, string ip_str_key_word) {
+            CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DON_VI_search");
+            v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_str_key_word);
+            v_stored_proc.fillDataSetByCommand(this, op_ds_v_v_dm_don_vi);
+        }
+
+        public void FillDatasetByCapDonVi(DS_V_DM_DON_VI op_ds_v_v_dm_don_vi, decimal ip_dc_cap_don_vi) {
+            CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DON_VI_search_cap_don_vi");
+            v_stored_proc.addNVarcharInputParam("@ip_dc_cap_don_vi", ip_dc_cap_don_vi);
+            v_stored_proc.fillDataSetByCommand(this, op_ds_v_v_dm_don_vi);
+        }
+
 
         #endregion
     }

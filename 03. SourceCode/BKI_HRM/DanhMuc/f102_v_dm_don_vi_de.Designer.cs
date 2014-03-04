@@ -128,7 +128,6 @@
             // 
             // m_pnl_out_place_dm
             // 
-            this.m_pnl_out_place_dm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -148,9 +147,9 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(586, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(555, 4);
             this.m_cmd_save.Name = "m_cmd_save";
-            this.m_cmd_save.Size = new System.Drawing.Size(121, 29);
+            this.m_cmd_save.Size = new System.Drawing.Size(131, 31);
             this.m_cmd_save.TabIndex = 12;
             this.m_cmd_save.Text = "&Lưu";
             // 
@@ -190,9 +189,9 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(707, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(686, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(88, 29);
+            this.m_cmd_exit.Size = new System.Drawing.Size(111, 31);
             this.m_cmd_exit.TabIndex = 14;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 

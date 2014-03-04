@@ -50,6 +50,10 @@ Public Class CControlFormat
     End Function
 
     Private Shared Function getRegularForeColor() As System.Drawing.Color
+        Return System.Drawing.Color.Black
+    End Function
+
+    Private Shared Function getSpecialForeColor() As System.Drawing.Color
         Return System.Drawing.Color.Maroon
     End Function
 
@@ -81,11 +85,11 @@ Public Class CControlFormat
         'End If
         If TypeOf ip_control Is Label Then
             ip_control.Font = getRegularFont()
-            ip_control.ForeColor = getRegularForeColor()
+            ip_control.ForeColor = getSpecialForeColor()
             ip_control.BackColor = getRegularBackColor()
         ElseIf TypeOf ip_control Is TextBox Then
             ip_control.Font = getRegularFont()
-            'ip_control.ForeColor = getRegularForeColor()
+            ip_control.ForeColor = getRegularForeColor()
         ElseIf TypeOf ip_control Is GroupBox Then
             ip_control.Font = getRegularFont()
             ip_control.ForeColor = getRegularForeColor()
@@ -101,7 +105,7 @@ Public Class CControlFormat
             ip_control.ForeColor = getRegularForeColor()
         ElseIf TypeOf ip_control Is Button Then
             ip_control.Font = getBoldFont()
-            ip_control.ForeColor = getRegularForeColor()
+            ip_control.ForeColor = getSpecialForeColor()
             If (i_objControlerControl.CanUseControl(ip_str_form_name, ip_control.Name, "") = False) Then
                 ip_control.Visible = False
                 ip_control.Enabled = False
