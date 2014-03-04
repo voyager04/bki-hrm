@@ -444,6 +444,7 @@ namespace BKI_HRM
             // 
             // m_grv_nhan_su
             // 
+            this.m_grv_nhan_su.AllowEditing = false;
             this.m_grv_nhan_su.ColumnInfo = resources.GetString("m_grv_nhan_su.ColumnInfo");
             this.m_grv_nhan_su.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_nhan_su.Location = new System.Drawing.Point(0, 57);
