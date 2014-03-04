@@ -306,19 +306,14 @@ namespace BKI_HRM.DS.CDBNames
         public const string MA_SO_THUE = "MA_SO_THUE";
         public const string TRANG_THAI = "TRANG_THAI";
     }
-
     public class V_DM_DON_VI {
         public const string ID = "ID";
         public const string ID_DON_VI_CAP_TREN = "ID_DON_VI_CAP_TREN";
-        public const string MA_DON_VI = "MA_DON_VI";
         public const string ID_CAP_DON_VI = "ID_CAP_DON_VI";
         public const string ID_LOAI_DON_VI = "ID_LOAI_DON_VI";
-        public const string CAP_DON_VI = "CAP_DON_VI";
-        public const string LOAI_DON_VI = "LOAI_DON_VI";
-        public const string MA_KHOI = "MA_KHOI";
-        public const string MA_TRUNG_TAM = "MA_TRUNG_TAM";
-        public const string MA_PHONG = "MA_PHONG";
-        public const string TEN_PHONG = "TEN_PHONG";
+        public const string TEN_DON_VI_CAP_TREN = "TEN_DON_VI_CAP_TREN";
+        public const string MA_DON_VI = "MA_DON_VI";
+        public const string TEN_DON_VI = "TEN_DON_VI";
         public const string TEN_TIENG_ANH = "TEN_TIENG_ANH";
         public const string TU_NGAY = "TU_NGAY";
         public const string DIA_BAN = "DIA_BAN";
