@@ -20,6 +20,7 @@ namespace BKI_HRM.US {
 
     public class US_V_DM_DON_VI : US_Object {
         private const string c_TableName = "V_DM_DON_VI";
+
         #region "Public Properties"
         public decimal dcID {
             get {
@@ -53,23 +54,6 @@ namespace BKI_HRM.US {
 
         public void SetID_DON_VI_CAP_TRENNull() {
             pm_objDR["ID_DON_VI_CAP_TREN"] = System.Convert.DBNull;
-        }
-
-        public string strMA_DON_VI {
-            get {
-                return CNull.RowNVLString(pm_objDR, "MA_DON_VI", IPConstants.c_DefaultString);
-            }
-            set {
-                pm_objDR["MA_DON_VI"] = value;
-            }
-        }
-
-        public bool IsMA_DON_VINull() {
-            return pm_objDR.IsNull("MA_DON_VI");
-        }
-
-        public void SetMA_DON_VINull() {
-            pm_objDR["MA_DON_VI"] = System.Convert.DBNull;
         }
 
         public decimal dcID_CAP_DON_VI {
@@ -106,106 +90,55 @@ namespace BKI_HRM.US {
             pm_objDR["ID_LOAI_DON_VI"] = System.Convert.DBNull;
         }
 
-        public string strCAP_DON_VI {
+        public string strTEN_DON_VI_CAP_TREN {
             get {
-                return CNull.RowNVLString(pm_objDR, "CAP_DON_VI", IPConstants.c_DefaultString);
+                return CNull.RowNVLString(pm_objDR, "TEN_DON_VI_CAP_TREN", IPConstants.c_DefaultString);
             }
             set {
-                pm_objDR["CAP_DON_VI"] = value;
+                pm_objDR["TEN_DON_VI_CAP_TREN"] = value;
             }
         }
 
-        public bool IsCAP_DON_VINull() {
-            return pm_objDR.IsNull("CAP_DON_VI");
+        public bool IsTEN_DON_VI_CAP_TRENNull() {
+            return pm_objDR.IsNull("TEN_DON_VI_CAP_TREN");
         }
 
-        public void SetCAP_DON_VINull() {
-            pm_objDR["CAP_DON_VI"] = System.Convert.DBNull;
+        public void SetTEN_DON_VI_CAP_TRENNull() {
+            pm_objDR["TEN_DON_VI_CAP_TREN"] = System.Convert.DBNull;
         }
 
-        public string strLOAI_DON_VI {
+        public string strMA_DON_VI {
             get {
-                return CNull.RowNVLString(pm_objDR, "LOAI_DON_VI", IPConstants.c_DefaultString);
+                return CNull.RowNVLString(pm_objDR, "MA_DON_VI", IPConstants.c_DefaultString);
             }
             set {
-                pm_objDR["LOAI_DON_VI"] = value;
+                pm_objDR["MA_DON_VI"] = value;
             }
         }
 
-        public bool IsLOAI_DON_VINull() {
-            return pm_objDR.IsNull("LOAI_DON_VI");
+        public bool IsMA_DON_VINull() {
+            return pm_objDR.IsNull("MA_DON_VI");
         }
 
-        public void SetLOAI_DON_VINull() {
-            pm_objDR["LOAI_DON_VI"] = System.Convert.DBNull;
+        public void SetMA_DON_VINull() {
+            pm_objDR["MA_DON_VI"] = System.Convert.DBNull;
         }
 
-        public string strMA_KHOI {
+        public string strTEN_DON_VI {
             get {
-                return CNull.RowNVLString(pm_objDR, "MA_KHOI", IPConstants.c_DefaultString);
+                return CNull.RowNVLString(pm_objDR, "TEN_DON_VI", IPConstants.c_DefaultString);
             }
             set {
-                pm_objDR["MA_KHOI"] = value;
+                pm_objDR["TEN_DON_VI"] = value;
             }
         }
 
-        public bool IsMA_KHOINull() {
-            return pm_objDR.IsNull("MA_KHOI");
+        public bool IsTEN_DON_VINull() {
+            return pm_objDR.IsNull("TEN_DON_VI");
         }
 
-        public void SetMA_KHOINull() {
-            pm_objDR["MA_KHOI"] = System.Convert.DBNull;
-        }
-
-        public string strMA_TRUNG_TAM {
-            get {
-                return CNull.RowNVLString(pm_objDR, "MA_TRUNG_TAM", IPConstants.c_DefaultString);
-            }
-            set {
-                pm_objDR["MA_TRUNG_TAM"] = value;
-            }
-        }
-
-        public bool IsMA_TRUNG_TAMNull() {
-            return pm_objDR.IsNull("MA_TRUNG_TAM");
-        }
-
-        public void SetMA_TRUNG_TAMNull() {
-            pm_objDR["MA_TRUNG_TAM"] = System.Convert.DBNull;
-        }
-
-        public string strMA_PHONG {
-            get {
-                return CNull.RowNVLString(pm_objDR, "MA_PHONG", IPConstants.c_DefaultString);
-            }
-            set {
-                pm_objDR["MA_PHONG"] = value;
-            }
-        }
-
-        public bool IsMA_PHONGNull() {
-            return pm_objDR.IsNull("MA_PHONG");
-        }
-
-        public void SetMA_PHONGNull() {
-            pm_objDR["MA_PHONG"] = System.Convert.DBNull;
-        }
-
-        public string strTEN_PHONG {
-            get {
-                return CNull.RowNVLString(pm_objDR, "TEN_PHONG", IPConstants.c_DefaultString);
-            }
-            set {
-                pm_objDR["TEN_PHONG"] = value;
-            }
-        }
-
-        public bool IsTEN_PHONGNull() {
-            return pm_objDR.IsNull("TEN_PHONG");
-        }
-
-        public void SetTEN_PHONGNull() {
-            pm_objDR["TEN_PHONG"] = System.Convert.DBNull;
+        public void SetTEN_DON_VINull() {
+            pm_objDR["TEN_DON_VI"] = System.Convert.DBNull;
         }
 
         public string strTEN_TIENG_ANH {
@@ -303,14 +236,8 @@ namespace BKI_HRM.US {
 
         #region Addtional
 
-        public void FillDatasetByKeyWord(string ip_str_key_word, DS_V_DM_DON_VI op_ds_v_v_dm_don_vi) {
+        public void FillDatasetByKeyWord(DS_V_DM_DON_VI op_ds_v_v_dm_don_vi, string ip_str_key_word, DateTime ip_dat_tu_ngay) {
             CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DON_VI_search");
-            v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_str_key_word);
-            v_stored_proc.fillDataSetByCommand(this, op_ds_v_v_dm_don_vi);
-        }
-
-        public void FillDatasetByKeyWord_DateTime(string ip_str_key_word, DateTime ip_dat_tu_ngay, DS_V_DM_DON_VI op_ds_v_v_dm_don_vi) {
-            CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DON_VI_search_datetime");
             v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_str_key_word);
             v_stored_proc.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
             v_stored_proc.fillDataSetByCommand(this, op_ds_v_v_dm_don_vi);
