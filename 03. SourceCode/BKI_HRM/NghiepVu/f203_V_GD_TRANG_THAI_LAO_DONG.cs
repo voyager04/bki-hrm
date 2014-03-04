@@ -345,6 +345,7 @@ namespace BKI_HRM
               , (int)e_col_Number.TRANG_THAI_LAO_DONG // chỗ này là tên trường mà mình Count
               , "{0}"
               );
+           
 			m_grv_trang_thai_ld.Redraw = true;
 		}
         private void load_data_2_grid_search()
@@ -373,9 +374,12 @@ namespace BKI_HRM
 
 
 		private void insert_v_gd_trang_thai_lao_dong(){
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_trang_thai_ld)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_trang_thai_ld, m_grv_trang_thai_ld.Row)) return;
+            grid2us_object(m_us, m_grv_trang_thai_ld.Row);
             f203_v_gd_trang_thai_lao_dong_de v_fDE = new f203_v_gd_trang_thai_lao_dong_de();
-            v_fDE.display_for_insert();
-			load_data_2_grid();
+            v_fDE.display_for_insert(m_us);
+            load_data_2_grid();
 		}
 
 		private void update_v_gd_trang_thai_lao_dong(){			
