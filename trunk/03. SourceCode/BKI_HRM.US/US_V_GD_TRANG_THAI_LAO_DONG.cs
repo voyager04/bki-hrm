@@ -342,6 +342,12 @@ public class US_V_GD_TRANG_THAI_LAO_DONG : US_Object
         v_sp.addDecimalInputParam("@MA_NHAN_VIEN", ip_str_ma_nv);
         v_sp.fillDataSetByCommand(this, op_ds);
     }
+    public void FillDataset_Search(DS_V_GD_TRANG_THAI_LAO_DONG op_ds, string ip_str_search)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_V_GD_TRANG_THAI_LAO_DONG_search");
+        v_sp.addDecimalInputParam("@ip_str_search", ip_str_search);
+        v_sp.fillDataSetByCommand(this, op_ds);
+    }
     #endregion
 }
 }
