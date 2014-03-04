@@ -38,6 +38,7 @@ namespace BKI_HRM
         private TextBox m_txt_tim_kiem;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         private DateTimePicker m_dtp_thoidiem;
+        private Label m_lbl_thoidiem;
 		private System.ComponentModel.IContainer components;
 
 		public f402_BAO_CAO_NHAN_SU_CHUC_VU()
@@ -84,6 +85,7 @@ namespace BKI_HRM
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_dtp_thoidiem = new System.Windows.Forms.DateTimePicker();
+            this.m_lbl_thoidiem = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -154,9 +156,9 @@ namespace BKI_HRM
             // 
             this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(275, 12);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(324, 12);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
-            this.m_txt_tim_kiem.Size = new System.Drawing.Size(272, 20);
+            this.m_txt_tim_kiem.Size = new System.Drawing.Size(223, 20);
             this.m_txt_tim_kiem.TabIndex = 31;
             this.m_txt_tim_kiem.Text = "Nhập mã chức vụ";
             // 
@@ -178,15 +180,25 @@ namespace BKI_HRM
             // m_dtp_thoidiem
             // 
             this.m_dtp_thoidiem.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.m_dtp_thoidiem.Location = new System.Drawing.Point(69, 12);
+            this.m_dtp_thoidiem.Location = new System.Drawing.Point(142, 12);
             this.m_dtp_thoidiem.Name = "m_dtp_thoidiem";
-            this.m_dtp_thoidiem.Size = new System.Drawing.Size(200, 20);
+            this.m_dtp_thoidiem.Size = new System.Drawing.Size(176, 20);
             this.m_dtp_thoidiem.TabIndex = 33;
+            // 
+            // m_lbl_thoidiem
+            // 
+            this.m_lbl_thoidiem.AutoSize = true;
+            this.m_lbl_thoidiem.Location = new System.Drawing.Point(79, 15);
+            this.m_lbl_thoidiem.Name = "m_lbl_thoidiem";
+            this.m_lbl_thoidiem.Size = new System.Drawing.Size(57, 13);
+            this.m_lbl_thoidiem.TabIndex = 34;
+            this.m_lbl_thoidiem.Text = "Thời điểm:";
             // 
             // f402_BAO_CAO_NHAN_SU_CHUC_VU
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(686, 409);
+            this.Controls.Add(this.m_lbl_thoidiem);
             this.Controls.Add(this.m_dtp_thoidiem);
             this.Controls.Add(this.m_cmd_search);
             this.Controls.Add(this.m_txt_tim_kiem);
