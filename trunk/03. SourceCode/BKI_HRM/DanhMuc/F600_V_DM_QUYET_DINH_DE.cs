@@ -170,5 +170,10 @@ namespace BKI_HRM.DanhMuc
         #endregion
 
 
+
+        internal void display(US_V_DM_QUYET_DINH m_us)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
