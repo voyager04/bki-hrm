@@ -169,6 +169,15 @@
     <Compile Include="NghiepVu\f501_v_dm_nhan_su_du_an.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="NghiepVu\f701_v_gd_hop_dong_lao_dong_DE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f701_v_gd_hop_dong_lao_dong_DE.Designer.cs">
+      <DependentUpon>f701_v_gd_hop_dong_lao_dong_DE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NghiepVu\f701_v_hop_dong_lao_dong.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WinFormControls.cs" />
     <EmbeddedResource Include="BaoCao\f100_v_gd_trang_thai_lao_dong.resx">
@@ -243,6 +252,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f501_v_dm_nhan_su_du_an.resx">
       <DependentUpon>f501_v_dm_nhan_su_du_an.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f701_v_gd_hop_dong_lao_dong_DE.resx">
+      <DependentUpon>f701_v_gd_hop_dong_lao_dong_DE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f701_v_hop_dong_lao_dong.resx">
+      <DependentUpon>f701_v_hop_dong_lao_dong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
