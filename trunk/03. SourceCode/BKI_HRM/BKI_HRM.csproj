@@ -169,15 +169,6 @@
     <Compile Include="NghiepVu\f501_v_dm_nhan_su_du_an.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NghiepVu\F701_V_GD_HOP_DONG_LAO_DONG.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\F701_V_GD_HOP_DONG_LAO_DONG_DE.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\F701_V_GD_HOP_DONG_LAO_DONG_DE.Designer.cs">
-      <DependentUpon>F701_V_GD_HOP_DONG_LAO_DONG_DE.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WinFormControls.cs" />
     <EmbeddedResource Include="BaoCao\f100_v_gd_trang_thai_lao_dong.resx">
@@ -253,12 +244,6 @@
     <EmbeddedResource Include="NghiepVu\f501_v_dm_nhan_su_du_an.resx">
       <DependentUpon>f501_v_dm_nhan_su_du_an.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\F701_V_GD_HOP_DONG_LAO_DONG.resx">
-      <DependentUpon>F701_V_GD_HOP_DONG_LAO_DONG.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\F701_V_GD_HOP_DONG_LAO_DONG_DE.resx">
-      <DependentUpon>F701_V_GD_HOP_DONG_LAO_DONG_DE.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -323,9 +308,6 @@
       <Project>{B490EA92-2990-4CBB-B58B-12901AFCCCB5}</Project>
       <Name>IPUserService</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="NghiepVu\TextFile1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

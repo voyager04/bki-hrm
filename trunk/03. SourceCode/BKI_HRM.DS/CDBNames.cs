@@ -250,6 +250,9 @@ namespace BKI_HRM.DS.CDBNames
         public const string NGAY_CO_HIEU_LUC = "NGAY_CO_HIEU_LUC";
         public const string NGAY_HET_HAN = "NGAY_HET_HAN";
         public const string TRANG_THAI_HOP_DONG = "TRANG_THAI_HOP_DONG";
+        public const string CHUC_VU_NGUOI_KY = "CHUC_VU_NGUOI_KY";
+        public const string NGUOI_KY = "NGUOI_KY";
+        public const string NGAY_KY_HOP_DONG = "NGAY_KY_HOP_DONG";
     }
 
     public class GD_HOP_DONG
@@ -262,6 +265,9 @@ namespace BKI_HRM.DS.CDBNames
         public const string NGAY_HET_HAN = "NGAY_HET_HAN";
         public const string LINK = "LINK";
         public const string TRANG_THAI_HOP_DONG = "TRANG_THAI_HOP_DONG";
+        public const string CHUC_VU_NGUOI_KY = "CHUC_VU_NGUOI_KY";
+        public const string NGUOI_KY = "NGUOI_KY";
+        public const string NGAY_KY_HOP_DONG = "NGAY_KY_HOP_DONG";
     }
 
     public class DM_DON_VI {
