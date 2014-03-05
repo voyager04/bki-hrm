@@ -355,6 +355,13 @@ namespace BKI_HRM
             m_us.FillDataset_Search(m_ds, m_txt_tim_kiem.Text.Trim());
             m_grv_trang_thai_ld.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_grv_trang_thai_ld, m_obj_trans);
+            m_grv_trang_thai_ld.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+              , 0
+              , (int)e_col_Number.MA_NV // chỗ này là tên trường mà mình nhóm
+              , (int)e_col_Number.TRANG_THAI_LAO_DONG // chỗ này là tên trường mà mình Count
+              , "{0}"
+              );
+           
             m_grv_trang_thai_ld.Redraw = true;
         }
 		private void grid2us_object(US_V_GD_TRANG_THAI_LAO_DONG i_us
@@ -389,7 +396,7 @@ namespace BKI_HRM
             }
             f203_v_gd_trang_thai_lao_dong_de v_fDE = new f203_v_gd_trang_thai_lao_dong_de();
             v_fDE.display_for_insert(m_us);
-            load_data_2_grid();
+            load_data_2_grid_search();
 		}
 
 		private void update_v_gd_trang_thai_lao_dong(){			
