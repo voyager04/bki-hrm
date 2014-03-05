@@ -286,6 +286,28 @@ public class US_V_GD_TRANG_THAI_LAO_DONG : US_Object
         pm_objDR["ID"] = System.Convert.DBNull;
     }
 
+    public decimal dcID_NHAN_SU
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "ID_NHAN_SU", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["ID_NHAN_SU"] = value;
+        }
+    }
+
+    public bool IsID_NHAN_SUNull()
+    {
+        return pm_objDR.IsNull("ID_NHAN_SU");
+    }
+
+    public void SetID_NHAN_SUNull()
+    {
+        pm_objDR["ID_NHAN_SU"] = System.Convert.DBNull;
+    }
+
     #endregion
     #region "Init Functions"
     public US_V_GD_TRANG_THAI_LAO_DONG()
@@ -331,7 +353,7 @@ public class US_V_GD_TRANG_THAI_LAO_DONG : US_Object
     }
     public void FillDatasetByManhanvien(DS_V_GD_TRANG_THAI_LAO_DONG op_ds, string ip_str_ma_nv)
     {
-        CStoredProc v_sp = new CStoredProc("pr_V_GD_TRANG_THAI_LAO_DONG_By_Ma_nhan_vien");
+        CStoredProc v_sp = new CStoredProc("pr_V_GD_TRANG_THAI_LAO_DONG_hien_tai_By_Ma_nhan_vien");
         v_sp.addDecimalInputParam("@MA_NHAN_VIEN", ip_str_ma_nv);
         v_sp.fillDataSetByCommand(this, op_ds);
     }
@@ -345,7 +367,7 @@ public class US_V_GD_TRANG_THAI_LAO_DONG : US_Object
     public void FillDataset_Search(DS_V_GD_TRANG_THAI_LAO_DONG op_ds, string ip_str_search)
     {
         CStoredProc v_sp = new CStoredProc("pr_V_GD_TRANG_THAI_LAO_DONG_search");
-        v_sp.addDecimalInputParam("@ip_str_search", ip_str_search);
+        v_sp.addNVarcharInputParam("@ip_str_search", ip_str_search);
         v_sp.fillDataSetByCommand(this, op_ds);
     }
     #endregion
