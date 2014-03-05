@@ -407,12 +407,7 @@ namespace BKI_HRM
             v_frm.select_data(ref m_us_dm_nhan_su);
             load_data(m_us_dm_nhan_su);
         }
-        private void them_quyet_dinh()
-        {
-            f600_v_dm_quyet_dinh v_frm = new f600_v_dm_quyet_dinh();
-            v_frm.select_data(ref m_us_dm_quyet_dinh);
-
-        }
+        
 		private void us_object2grid(US_V_GD_QUA_TRINH_LAM_VIEC i_us
 			, int i_grid_row) {
 			DataRow v_dr = (DataRow) m_grv_qua_trinh_lam_viec.Rows[i_grid_row].UserData;
@@ -530,20 +525,7 @@ namespace BKI_HRM
             tim_kiem_nhan_vien();
         }
 
-        private void m_cmd_them_quyet_dinh_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                them_quyet_dinh();
-            }
-            catch (Exception v_e)
-            {
-            	CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-		
-
+        
 	}
 }
 
