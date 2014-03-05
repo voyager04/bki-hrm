@@ -85,6 +85,7 @@ namespace BKI_HRM
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f701_v_hop_dong_lao_dong));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
@@ -93,7 +94,6 @@ namespace BKI_HRM
             this.m_cmd_tim_kiem = new SIS.Controls.Button.SiSButton();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -138,6 +138,24 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1188, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
+            // 
+            // m_cmd_xuat_excel
+            // 
+            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xuat_excel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xuat_excel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_cmd_xuat_excel.ForeColor = System.Drawing.Color.Maroon;
+            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xuat_excel.ImageIndex = 19;
+            this.m_cmd_xuat_excel.ImageList = this.ImageList;
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(113, 28);
+            this.m_cmd_xuat_excel.TabIndex = 39;
+            this.m_cmd_xuat_excel.Text = "Xuất Excel";
             // 
             // m_cmd_insert
             // 
@@ -229,6 +247,8 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(928, 20);
             this.m_txt_tim_kiem.TabIndex = 28;
+            this.m_txt_tim_kiem.Text = "Nhập Mã nhân viên, Họ đệm, Tên, Mã hợp đồng, Loại hợp đồng, Ngày tháng, Trạng thá" +
+    "i";
             this.m_txt_tim_kiem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.m_txt_tim_kiem_KeyPress);
             // 
             // label1
@@ -239,24 +259,6 @@ namespace BKI_HRM
             this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 27;
             this.label1.Text = "Từ khoá tìm kiếm";
-            // 
-            // m_cmd_xuat_excel
-            // 
-            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_xuat_excel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_xuat_excel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_cmd_xuat_excel.ForeColor = System.Drawing.Color.Maroon;
-            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_xuat_excel.ImageIndex = 19;
-            this.m_cmd_xuat_excel.ImageList = this.ImageList;
-            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
-            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(113, 28);
-            this.m_cmd_xuat_excel.TabIndex = 39;
-            this.m_cmd_xuat_excel.Text = "Xuất Excel";
             // 
             // f701_v_hop_dong_lao_dong
             // 
@@ -393,7 +395,7 @@ namespace BKI_HRM
 		}
 				
 		private void delete_v_gd_hop_dong_lao_dong(){
-            if (BaseMessages.MsgBox_Confirm(214) == false)
+            if (BaseMessages.MsgBox_Confirm("Bạn có chắc chắn muốn xoá Hợp Đồng này không ? ") == false)
                 return;
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
