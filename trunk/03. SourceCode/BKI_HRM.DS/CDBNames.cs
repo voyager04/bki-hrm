@@ -235,6 +235,7 @@ namespace BKI_HRM.DS.CDBNames
         public const string LOAI_QUYET_DINH = "LOAI_QUYET_DINH";
         public const string TRANG_THAI_HIEN_TAI = "TRANG_THAI_HIEN_TAI";
         public const string ID = "ID";
+        public const string ID_NHAN_SU = "ID_NHAN_SU"
     }
 
     public class V_GD_HOP_DONG_LAO_DONG
