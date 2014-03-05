@@ -548,7 +548,7 @@ namespace BKI_HRM
 
         private void m_txt_ton_giao_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
             {
 
                 e.Handled = true;
@@ -557,7 +557,7 @@ namespace BKI_HRM
 
         private void m_txt_dan_toc_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
             {
 
                 e.Handled = true;
@@ -566,7 +566,7 @@ namespace BKI_HRM
 
         private void m_txt_noi_cap_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
             {
 
                 e.Handled = true;
