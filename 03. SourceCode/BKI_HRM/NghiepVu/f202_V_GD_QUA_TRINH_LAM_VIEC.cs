@@ -389,9 +389,9 @@ namespace BKI_HRM
         }
         private void them_quyet_dinh()
         {
-            F600_V_DM_QUYET_DINH v_frm = new F600_V_DM_QUYET_DINH();
+            //F600_V_DM_QUYET_DINH v_frm = new F600_V_DM_QUYET_DINH();
 
-            v_frm.select_data(ref m_us_dm_quyet_dinh);
+            //v_frm.select_data(ref m_us_dm_quyet_dinh);
 
         }
 		private void us_object2grid(US_V_GD_QUA_TRINH_LAM_VIEC i_us
