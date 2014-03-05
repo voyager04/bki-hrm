@@ -72,6 +72,12 @@ namespace BKI_HRM
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.LOAI_QUYET_DINH,
               WinFormControls.eTAT_CA.NO,
               m_cbo_loai_quyet_dinh);
+            m_cmd_save.Visible = true;
+            m_cmd_refresh.Visible = true;
+            m_cmd_exit.Visible = true;
+            m_cmd_save.Enabled = true;
+            m_cmd_refresh.Enabled = true;
+            m_cmd_exit.Enabled = true;
         }
 
         private void us_object_to_form()
@@ -99,24 +105,39 @@ namespace BKI_HRM
                     m_txt_trang_thai_hien_tai.ReadOnly = true;
                     break;
                 case DataEntryFormMode.UpdateDataState:
-                    m_txt_ma_quyet_dinh.Text = m_us_v_trang_thai_ld.strMA_QUYET_DINH;
+                    if (m_us_v_trang_thai_ld.datNGAY_CO_HIEU_LUC > DateTime.Parse("01/01/1900"))
+                        m_dat_ngay_co_hieu_luc.Value = m_us_v_trang_thai_ld.datNGAY_CO_HIEU_LUC;
+                    else
+                        m_dat_ngay_co_hieu_luc.Checked = false;
+                    if (m_us_v_trang_thai_ld.datNGAY_HET_HIEU_LUC > DateTime.Parse("01/01/1900"))
+                        m_dat_ngay_het_hieu_luc.Value = m_us_v_trang_thai_ld.datNGAY_HET_HIEU_LUC;
+                    else
+                        m_dat_ngay_het_hieu_luc.Checked = false;
                     m_us_quyet_dinh.FillDataset_By_Ma_qd(m_ds_quyet_dinh, m_us_v_trang_thai_ld.strMA_QUYET_DINH);
                     if (m_ds_quyet_dinh.DM_QUYET_DINH.Select("MA_QUYET_DINH is not null").Length > 0)
                     {
+                        m_txt_ma_quyet_dinh.Text = m_us_v_trang_thai_ld.strMA_QUYET_DINH;
                         m_us_quyet_dinh.DataRow2Me((DataRow)m_ds_quyet_dinh.DM_QUYET_DINH.Rows[0]);
                         m_cbo_loai_quyet_dinh.SelectedValue = m_us_quyet_dinh.dcID_LOAI_QD;
                         m_dat_ngay_ky.Value = m_us_quyet_dinh.datNGAY_KY;
-                        m_dat_ngay_co_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_CO_HIEU_LUC;
-                        m_dat_ngay_het_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_HET_HIEU_LUC;
+                        if (m_us_quyet_dinh.datNGAY_CO_HIEU_LUC > DateTime.Parse("01/01/1900"))
+                            m_dat_ngay_co_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_CO_HIEU_LUC;
+                        else
+                            m_dat_ngay_co_hieu_luc_qd.Checked = false;
+                        if (m_us_quyet_dinh.datNGAY_HET_HIEU_LUC > DateTime.Parse("01/01/1900"))
+                            m_dat_ngay_het_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_HET_HIEU_LUC;
+                        else
+                            m_dat_ngay_het_hieu_luc_qd.Checked = false;
                         m_txt_noi_dung.Text = m_us_quyet_dinh.strNOI_DUNG;
                         m_ofd_openfile.FileName = m_us_quyet_dinh.strLINK;
                     }
                     else
                     {
+                        m_txt_ma_quyet_dinh.Text = "";
                         m_cbo_loai_quyet_dinh.SelectedIndex = 0;
-                        m_dat_ngay_ky.Value = DateTime.Today;
-                        m_dat_ngay_co_hieu_luc_qd.Value = DateTime.Today;
-                        m_dat_ngay_het_hieu_luc_qd.Value = DateTime.Today;
+                        m_dat_ngay_ky.Checked = false;
+                        m_dat_ngay_co_hieu_luc_qd.Checked = false;
+                        m_dat_ngay_het_hieu_luc_qd.Checked = false;
                         m_txt_noi_dung.Text = "";
                         m_ofd_openfile.FileName = "";
                     }
@@ -140,10 +161,12 @@ namespace BKI_HRM
             m_us_trang_thai_ld.dcID_TRANG_LAO_DONG = CIPConvert.ToDecimal(m_cbo_trang_thai_moi.SelectedValue);
             if (m_txt_ma_quyet_dinh.Text != "")
                 m_us_trang_thai_ld.dcID_QUYET_DINH = m_us_quyet_dinh.dcID;
-           
             m_us_trang_thai_ld.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value;
-            m_us_trang_thai_ld.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc.Value;
-            m_us_trang_thai_ld.strTRANG_THAI_HIEN_TAI = "y";
+            
+            if (m_dat_ngay_het_hieu_luc.Checked)
+                m_us_trang_thai_ld.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc.Value;
+            
+            m_us_trang_thai_ld.strTRANG_THAI_HIEN_TAI = "Y";
         }
         
         private bool check_validate_data_is_ok(){
