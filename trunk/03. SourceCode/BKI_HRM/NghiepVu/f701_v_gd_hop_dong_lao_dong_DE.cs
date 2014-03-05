@@ -103,6 +103,7 @@ namespace BKI_HRM.NghiepVu
         {
             if (check_data_is_ok() == false)
                 return;
+
             form_2_us_object();
             upload_file();
             switch (m_e_form_mode)
