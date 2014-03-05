@@ -54,7 +54,6 @@ namespace BKI_HRM.NghiepVu
         private string m_str_file_name = "";
         private string m_str_origination = "";
         private string m_str_old_path = "";
-        private string a = "";
         #endregion
 
         #region Private Methods
