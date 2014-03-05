@@ -150,8 +150,10 @@ namespace BKI_HRM
         private void form_to_us_object_trang_thai_ld(){
             m_us_trang_thai_ld.dcID_NHAN_SU = m_us_v_trang_thai_ld.dcID_NHAN_SU;
             m_us_trang_thai_ld.dcID_TRANG_LAO_DONG = CIPConvert.ToDecimal(m_cbo_trang_thai_moi.SelectedValue);
-            if(m_txt_ma_quyet_dinh.Text != "")
+            if (m_txt_ma_quyet_dinh.Text != "")
                 m_us_trang_thai_ld.dcID_QUYET_DINH = m_us_quyet_dinh.dcID;
+            //else
+            //    m_us_trang_thai_ld.dcID_QUYET_DINH = null;
             m_us_trang_thai_ld.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value;
             m_us_trang_thai_ld.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc.Value;
             m_us_trang_thai_ld.strTRANG_THAI_HIEN_TAI = "y";
@@ -192,8 +194,11 @@ namespace BKI_HRM
                         return;
                     else
                     {
+                        form_to_us_object_quyet_dinh();
+                        m_us_quyet_dinh.Update();
                         form_to_us_object_trang_thai_ld();
-                        //m_us_dm_nhan_su.Update();
+                        m_us_trang_thai_ld.Update();
+                        
                     }
                         
                     break;

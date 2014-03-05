@@ -377,7 +377,16 @@ namespace BKI_HRM
 		private void insert_v_gd_trang_thai_lao_dong(){
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_trang_thai_ld)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_trang_thai_ld, m_grv_trang_thai_ld.Row)) return;
-            grid2us_object(m_us, m_grv_trang_thai_ld.Row);
+            if (m_grv_trang_thai_ld.Rows[m_grv_trang_thai_ld.Row].UserData != null)
+            {
+
+                grid2us_object(m_us, m_grv_trang_thai_ld.Row);
+                
+            }
+            else
+            {
+                grid2us_object(m_us, m_grv_trang_thai_ld.Row + 1);
+            }
             f203_v_gd_trang_thai_lao_dong_de v_fDE = new f203_v_gd_trang_thai_lao_dong_de();
             v_fDE.display_for_insert(m_us);
             load_data_2_grid();
@@ -385,11 +394,19 @@ namespace BKI_HRM
 
 		private void update_v_gd_trang_thai_lao_dong(){			
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_trang_thai_ld)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_trang_thai_ld, m_grv_trang_thai_ld.Row)) return;			
-			grid2us_object(m_us, m_grv_trang_thai_ld.Row);
-            f203_v_gd_trang_thai_lao_dong_de v_fDE = new f203_v_gd_trang_thai_lao_dong_de();
-            v_fDE.display_for_update(m_us);
-			load_data_2_grid();
+			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_trang_thai_ld, m_grv_trang_thai_ld.Row)) return;
+            if (m_grv_trang_thai_ld.Rows[m_grv_trang_thai_ld.Row].UserData != null)
+            {
+
+                grid2us_object(m_us, m_grv_trang_thai_ld.Row);
+                f203_v_gd_trang_thai_lao_dong_de v_fDE = new f203_v_gd_trang_thai_lao_dong_de();
+                v_fDE.display_for_update(m_us);
+                load_data_2_grid();
+            }
+            else
+            {
+                MessageBox.Show("Chọn dòng khác để sửa.");
+            }
 		}
 				
 		private void delete_v_gd_trang_thai_lao_dong(){
