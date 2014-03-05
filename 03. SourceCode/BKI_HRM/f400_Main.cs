@@ -137,7 +137,7 @@ namespace BKI_HRM {
 
         private void m_menuitem_qlquyetdinh_Click(object sender, EventArgs e) {
             try {
-                F600_V_DM_QUYET_DINH frm = new F600_V_DM_QUYET_DINH();
+                F600_v_dm_quyet_dinh frm = new F600_v_dm_quyet_dinh();
                 frm.Show();
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
