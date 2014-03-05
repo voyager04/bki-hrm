@@ -31,7 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f701_v_gd_hop_dong_lao_dong_DE));
             this.m_cmd_chon_file = new SIS.Controls.Button.SiSButton();
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_xuat_word = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_save = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_dat_ngay_ky_hop_dong = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_file_name = new System.Windows.Forms.Label();
             this.m_txt_chuc_vu_nguoi_ky = new System.Windows.Forms.TextBox();
@@ -61,10 +65,6 @@
             this.m_txt_ma_hop_dong = new System.Windows.Forms.TextBox();
             this.m_lbl_ma_du_an = new System.Windows.Forms.Label();
             this.m_ofd_chon_file = new System.Windows.Forms.OpenFileDialog();
-            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_save = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_xuat_word = new SIS.Controls.Button.SiSButton();
-            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +84,33 @@
             this.m_cmd_chon_file.Text = "&Đính kèm";
             this.m_cmd_chon_file.Click += new System.EventHandler(this.m_cmd_chon_file_Click);
             // 
+            // ImageList
+            // 
+            this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
+            this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.ImageList.Images.SetKeyName(0, "");
+            this.ImageList.Images.SetKeyName(1, "");
+            this.ImageList.Images.SetKeyName(2, "");
+            this.ImageList.Images.SetKeyName(3, "");
+            this.ImageList.Images.SetKeyName(4, "");
+            this.ImageList.Images.SetKeyName(5, "");
+            this.ImageList.Images.SetKeyName(6, "");
+            this.ImageList.Images.SetKeyName(7, "");
+            this.ImageList.Images.SetKeyName(8, "");
+            this.ImageList.Images.SetKeyName(9, "");
+            this.ImageList.Images.SetKeyName(10, "");
+            this.ImageList.Images.SetKeyName(11, "");
+            this.ImageList.Images.SetKeyName(12, "");
+            this.ImageList.Images.SetKeyName(13, "");
+            this.ImageList.Images.SetKeyName(14, "");
+            this.ImageList.Images.SetKeyName(15, "");
+            this.ImageList.Images.SetKeyName(16, "");
+            this.ImageList.Images.SetKeyName(17, "");
+            this.ImageList.Images.SetKeyName(18, "");
+            this.ImageList.Images.SetKeyName(19, "");
+            this.ImageList.Images.SetKeyName(20, "");
+            this.ImageList.Images.SetKeyName(21, "");
+            // 
             // m_pnl_out_place_dm
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_word);
@@ -95,6 +122,55 @@
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(954, 36);
             this.m_pnl_out_place_dm.TabIndex = 113;
+            // 
+            // m_cmd_xuat_word
+            // 
+            this.m_cmd_xuat_word.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xuat_word.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xuat_word.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xuat_word.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xuat_word.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xuat_word.ImageIndex = 2;
+            this.m_cmd_xuat_word.ImageList = this.ImageList;
+            this.m_cmd_xuat_word.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_xuat_word.Name = "m_cmd_xuat_word";
+            this.m_cmd_xuat_word.Size = new System.Drawing.Size(104, 28);
+            this.m_cmd_xuat_word.TabIndex = 36;
+            this.m_cmd_xuat_word.Text = "&Xuất Word";
+            this.m_cmd_xuat_word.Click += new System.EventHandler(this.m_cmd_xuat_word_Click);
+            // 
+            // m_cmd_save
+            // 
+            this.m_cmd_save.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_save.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_save.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_save.ImageIndex = 10;
+            this.m_cmd_save.ImageList = this.ImageList;
+            this.m_cmd_save.Location = new System.Drawing.Point(774, 4);
+            this.m_cmd_save.Name = "m_cmd_save";
+            this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_save.TabIndex = 35;
+            this.m_cmd_save.Text = "&Lưu";
+            this.m_cmd_save.Click += new System.EventHandler(this.m_cmd_save_Click);
+            // 
+            // m_cmd_exit
+            // 
+            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_exit.ImageIndex = 12;
+            this.m_cmd_exit.ImageList = this.ImageList;
+            this.m_cmd_exit.Location = new System.Drawing.Point(862, 4);
+            this.m_cmd_exit.Name = "m_cmd_exit";
+            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_exit.TabIndex = 34;
+            this.m_cmd_exit.Text = "Thoát (Esc)";
+            this.m_cmd_exit.Click += new System.EventHandler(this.m_cmd_exit_Click_1);
             // 
             // m_dat_ngay_ky_hop_dong
             // 
@@ -221,6 +297,7 @@
             this.m_txt_tim_kiem_nhan_vien.Name = "m_txt_tim_kiem_nhan_vien";
             this.m_txt_tim_kiem_nhan_vien.Size = new System.Drawing.Size(750, 20);
             this.m_txt_tim_kiem_nhan_vien.TabIndex = 0;
+            this.m_txt_tim_kiem_nhan_vien.Text = "Nhập Họ đệm, Tên nhân viên";
             this.m_txt_tim_kiem_nhan_vien.Leave += new System.EventHandler(this.m_txt_tim_kiem_nhan_vien_Leave);
             // 
             // label3
@@ -365,82 +442,6 @@
             // m_ofd_chon_file
             // 
             this.m_ofd_chon_file.FileName = "openFileDialog1";
-            // 
-            // m_cmd_exit
-            // 
-            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_exit.ImageIndex = 12;
-            this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(862, 4);
-            this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 34;
-            this.m_cmd_exit.Text = "Thoát (Esc)";
-            this.m_cmd_exit.Click += new System.EventHandler(this.m_cmd_exit_Click_1);
-            // 
-            // m_cmd_save
-            // 
-            this.m_cmd_save.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_save.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_save.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_save.ImageIndex = 10;
-            this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(774, 4);
-            this.m_cmd_save.Name = "m_cmd_save";
-            this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_save.TabIndex = 35;
-            this.m_cmd_save.Text = "&Lưu";
-            this.m_cmd_save.Click += new System.EventHandler(this.m_cmd_save_Click);
-            // 
-            // m_cmd_xuat_word
-            // 
-            this.m_cmd_xuat_word.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_xuat_word.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_xuat_word.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_xuat_word.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_xuat_word.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_xuat_word.ImageIndex = 2;
-            this.m_cmd_xuat_word.ImageList = this.ImageList;
-            this.m_cmd_xuat_word.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_xuat_word.Name = "m_cmd_xuat_word";
-            this.m_cmd_xuat_word.Size = new System.Drawing.Size(104, 28);
-            this.m_cmd_xuat_word.TabIndex = 36;
-            this.m_cmd_xuat_word.Text = "&Xuất Word";
-            this.m_cmd_xuat_word.Click += new System.EventHandler(this.m_cmd_xuat_word_Click);
-            // 
-            // ImageList
-            // 
-            this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
-            this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.ImageList.Images.SetKeyName(0, "");
-            this.ImageList.Images.SetKeyName(1, "");
-            this.ImageList.Images.SetKeyName(2, "");
-            this.ImageList.Images.SetKeyName(3, "");
-            this.ImageList.Images.SetKeyName(4, "");
-            this.ImageList.Images.SetKeyName(5, "");
-            this.ImageList.Images.SetKeyName(6, "");
-            this.ImageList.Images.SetKeyName(7, "");
-            this.ImageList.Images.SetKeyName(8, "");
-            this.ImageList.Images.SetKeyName(9, "");
-            this.ImageList.Images.SetKeyName(10, "");
-            this.ImageList.Images.SetKeyName(11, "");
-            this.ImageList.Images.SetKeyName(12, "");
-            this.ImageList.Images.SetKeyName(13, "");
-            this.ImageList.Images.SetKeyName(14, "");
-            this.ImageList.Images.SetKeyName(15, "");
-            this.ImageList.Images.SetKeyName(16, "");
-            this.ImageList.Images.SetKeyName(17, "");
-            this.ImageList.Images.SetKeyName(18, "");
-            this.ImageList.Images.SetKeyName(19, "");
-            this.ImageList.Images.SetKeyName(20, "");
-            this.ImageList.Images.SetKeyName(21, "");
             // 
             // f701_v_gd_hop_dong_lao_dong_DE
             // 

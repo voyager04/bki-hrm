@@ -59,15 +59,15 @@ namespace BKI_HRM.NghiepVu
         #region Private Methods
         private bool check_data_is_ok()
         {
-            if (!CValidateTextBox.IsValid(m_txt_ma_hop_dong, DataType.StringType, allowNull.NO, true))
+            if (m_txt_ma_hop_dong.Text == "")
             {
-                BaseMessages.MsgBox_Infor(212);
+                BaseMessages.MsgBox_Infor("Bạn chưa nhập Mã Hợp Đồng");
                 return false;
             }
 
             if (m_lbl_ma_nhan_vien.Text == "")
             {
-                BaseMessages.MsgBox_Infor(213);
+                BaseMessages.MsgBox_Infor("Bạn chưa nhập Mã Nhân Viên");
                 return false;
             }
             return true;
@@ -158,7 +158,7 @@ namespace BKI_HRM.NghiepVu
             m_us_dm_nhan_su.FillDataset_search_by_ma_nv(v_ds_dm_nhan_su, v_strs[v_strs.Length - 1].Trim());
             if (v_ds_dm_nhan_su.Tables[0].Rows.Count == 0)
             {
-                BaseMessages.MsgBox_Error(701);
+                BaseMessages.MsgBox_Error("Mã Nhân Sự không tồn tại. Vui lòng nhập lại!");
                 return;
             }
             m_lbl_ma_nhan_vien.Text = v_ds_dm_nhan_su.Tables[0].Rows[0]["MA_NV"].ToString();
@@ -198,7 +198,7 @@ namespace BKI_HRM.NghiepVu
 
             if (new FileInfo(m_ofd_chon_file.FileName).Length > v_i_file_size)
             {
-                BaseMessages.MsgBox_Infor(211);
+                BaseMessages.MsgBox_Infor("File đính kèm quá lớn. \nVui lòng chọn file có dung lượng < 5Mb");
                 return;
             }
             m_lbl_file_name.Text = m_ofd_chon_file.SafeFileName;
