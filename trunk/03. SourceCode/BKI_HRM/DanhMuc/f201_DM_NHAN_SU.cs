@@ -1780,13 +1780,13 @@ namespace BKI_HRM
         }
         private void load_custom_source_2_m_txt_tim_kiem()
         {
-            
             int count = m_ds.Tables["DM_NHAN_SU"].Rows.Count;
             for (int i = 0; i < count; i++)
             {
                 DataRow dr = m_ds.Tables["DM_NHAN_SU"].Rows[i];
                 m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[1].ToString());
                 m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[2].ToString());
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[3].ToString());
             }
         }
         private void us_object_to_form()
@@ -1937,6 +1937,7 @@ namespace BKI_HRM
 			f201_DM_NHAN_SU_DE v_fDE = new  f201_DM_NHAN_SU_DE();								
 			v_fDE.display_for_insert();
 			load_data_2_grid();
+            load_chi_tiet_nhan_vien();
 		}
 
 		private void update_dm_nhan_su(){			
@@ -1946,6 +1947,7 @@ namespace BKI_HRM
             f201_DM_NHAN_SU_DE v_fDE = new f201_DM_NHAN_SU_DE();
             v_fDE.display_for_update(m_us);
 			load_data_2_grid();
+            load_chi_tiet_nhan_vien();
 		}
 				
 		private void delete_dm_nhan_su(){
@@ -1966,6 +1968,7 @@ namespace BKI_HRM
 					new CDBClientDBExceptionInterpret());
 				v_objErrHandler.showErrorMessage();
 			}
+            load_chi_tiet_nhan_vien();
 		}
 
 		private void view_dm_nhan_su(){			
