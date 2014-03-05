@@ -427,7 +427,7 @@
             this.m_lbl_ma_quyet_dinh.TabIndex = 14;
             this.m_lbl_ma_quyet_dinh.Text = "Mã quyết định";
             // 
-            // f203_v_gd_trang_thai_lao_dong_de
+            // f202_v_gd_qua_trinh_lam_viec_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -447,7 +447,7 @@
             this.Controls.Add(this.m_lbl_trang_thai_moi);
             this.Controls.Add(this.m_lbl_trang_thai_hien_tai);
             this.MaximizeBox = false;
-            this.Name = "f203_v_gd_trang_thai_lao_dong_de";
+            this.Name = "f202_v_gd_qua_trinh_lam_viec_de";
             this.Text = "F203 - Thay đổi trạng thái lao động";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.m_grb_quyet_dinh.ResumeLayout(false);
