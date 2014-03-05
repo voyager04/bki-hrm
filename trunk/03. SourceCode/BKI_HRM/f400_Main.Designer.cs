@@ -80,8 +80,9 @@
             this.m_menuitem_traCuuNhanSuChung = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_nhan_su_theo_phong_ban = new System.Windows.Forms.ToolStripMenuItem();
             this.nhânSựTheoChứcVuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_lbl_du_an_sap_kt = new System.Windows.Forms.Label();
             this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_lbl_du_an_sap_kt = new System.Windows.Forms.Label();
+            this.m_lbl_thong_bao_hop_dong_sap_het_han = new System.Windows.Forms.Label();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -464,6 +465,13 @@
             this.nhânSựTheoChứcVuToolStripMenuItem.Text = "Nhân sự theo chức vụ";
             this.nhânSựTheoChứcVuToolStripMenuItem.Click += new System.EventHandler(this.nhânSựTheoChứcVuToolStripMenuItem_Click);
             // 
+            // báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem
+            // 
+            this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem.Name = "báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem";
+            this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem.Text = "Báo cáo hợp đồng đã hết hạn";
+            this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem.Click += new System.EventHandler(this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem_Click);
+            // 
             // m_lbl_du_an_sap_kt
             // 
             this.m_lbl_du_an_sap_kt.AutoSize = true;
@@ -478,18 +486,24 @@
             this.m_lbl_du_an_sap_kt.Text = "dự án sắp đến ngày kết thúc";
             this.m_lbl_du_an_sap_kt.Click += new System.EventHandler(this.m_lbl_du_an_sap_kt_Click);
             // 
-            // báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem
+            // m_lbl_thong_bao_hop_dong_sap_het_han
             // 
-            this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem.Name = "báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem";
-            this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
-            this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem.Text = "Báo cáo hợp đồng đã hết hạn";
-            this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem.Click += new System.EventHandler(this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem_Click);
+            this.m_lbl_thong_bao_hop_dong_sap_het_han.AutoSize = true;
+            this.m_lbl_thong_bao_hop_dong_sap_het_han.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_lbl_thong_bao_hop_dong_sap_het_han.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_thong_bao_hop_dong_sap_het_han.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_thong_bao_hop_dong_sap_het_han.Location = new System.Drawing.Point(0, 382);
+            this.m_lbl_thong_bao_hop_dong_sap_het_han.Name = "m_lbl_thong_bao_hop_dong_sap_het_han";
+            this.m_lbl_thong_bao_hop_dong_sap_het_han.Size = new System.Drawing.Size(0, 13);
+            this.m_lbl_thong_bao_hop_dong_sap_het_han.TabIndex = 3;
+            this.m_lbl_thong_bao_hop_dong_sap_het_han.Click += new System.EventHandler(this.m_lbl_thong_bao_hop_dong_sap_het_han_Click);
             // 
             // f400_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 413);
+            this.Controls.Add(this.m_lbl_thong_bao_hop_dong_sap_het_han);
             this.Controls.Add(this.m_lbl_du_an_sap_kt);
             this.Controls.Add(this.m_mst_menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -561,5 +575,6 @@
         private System.Windows.Forms.Label m_lbl_du_an_sap_kt;
         private System.Windows.Forms.ToolStripMenuItem m_menuitem_traCuuNhanSuChung;
         private System.Windows.Forms.ToolStripMenuItem báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem;
+        private System.Windows.Forms.Label m_lbl_thong_bao_hop_dong_sap_het_han;
     }
 }
