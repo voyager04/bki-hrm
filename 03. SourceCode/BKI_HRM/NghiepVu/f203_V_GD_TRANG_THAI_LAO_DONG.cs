@@ -387,7 +387,7 @@ namespace BKI_HRM
             {
                 grid2us_object(m_us, m_grv_trang_thai_ld.Row + 1);
             }
-            f203_v_gd_trang_thai_lao_dong_de v_fDE = new f203_v_gd_trang_thai_lao_dong_de();
+            f202_v_gd_qua_trinh_lam_viec_de v_fDE = new f202_v_gd_qua_trinh_lam_viec_de();
             v_fDE.display_for_insert(m_us);
             load_data_2_grid();
 		}
@@ -399,7 +399,7 @@ namespace BKI_HRM
             {
 
                 grid2us_object(m_us, m_grv_trang_thai_ld.Row);
-                f203_v_gd_trang_thai_lao_dong_de v_fDE = new f203_v_gd_trang_thai_lao_dong_de();
+                f202_v_gd_qua_trinh_lam_viec_de v_fDE = new f202_v_gd_qua_trinh_lam_viec_de();
                 v_fDE.display_for_update(m_us);
                 load_data_2_grid();
             }

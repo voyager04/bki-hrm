@@ -18,14 +18,14 @@ using System.Net.Mail;
 using System.Text.RegularExpressions;
 namespace BKI_HRM
 {
-    public partial class f203_v_gd_trang_thai_lao_dong_de : Form
+    public partial class f202_v_gd_qua_trinh_lam_viec_de : Form
     {
         #region Public Interface
         public void display()
         {
             this.ShowDialog();
         }
-        public f203_v_gd_trang_thai_lao_dong_de()
+        public f202_v_gd_qua_trinh_lam_viec_de()
         {
             InitializeComponent();
             format_controls();
