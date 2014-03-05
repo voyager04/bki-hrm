@@ -282,6 +282,19 @@ namespace BKI_HRM
 		public void display(){			
 			this.ShowDialog();
 		}
+
+        public void Display_Hop_Dong_Sap_Het_Han()
+        {
+            m_obj_trans = get_trans_object(m_fg);
+            US_V_GD_HOP_DONG_LAO_DONG v_us = new US_V_GD_HOP_DONG_LAO_DONG();
+            DS_V_GD_HOP_DONG_LAO_DONG v_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
+            v_us.FIllDataset_By_Hop_Dong_Sap_Het_Han(v_ds);
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(v_ds, m_fg, m_obj_trans);
+            m_fg.Redraw = true;
+            m_b_is_report = false;
+            this.Show();
+        }
 		#endregion
 
 		#region Data Structure
@@ -306,6 +319,7 @@ namespace BKI_HRM
         DS_V_GD_HOP_DONG_LAO_DONG m_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
         US_V_GD_HOP_DONG_LAO_DONG m_us = new US_V_GD_HOP_DONG_LAO_DONG();
         private US_GD_HOP_DONG m_us_gd_hop_dong;
+	    private bool m_b_is_report = true;
 		#endregion
 
 		#region Private Methods
@@ -441,6 +455,13 @@ namespace BKI_HRM
 		//
 		private void f701_v_hop_dong_lao_dong_Load(object sender, System.EventArgs e) {
 			try{
+                if (m_b_is_report == false)
+                {
+                    m_cmd_insert.Visible = false;
+                    m_cmd_update.Visible = false;
+                    m_cmd_delete.Visible = false;
+			        return;
+			    }
 				set_initial_form_load();
 			}
 			catch (Exception v_e){
