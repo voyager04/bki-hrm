@@ -6,7 +6,7 @@ using System.Drawing;
 
 using System.Text;
 using System.Windows.Forms;
-using BKI_HRM.BaoCao;
+using BKI_HRM;
 using IP.Core.IPCommon;
 using IP.Core.IPExcelReport;
 using IP.Core.IPSystemAdmin;
