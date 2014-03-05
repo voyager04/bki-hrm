@@ -592,7 +592,6 @@ namespace BKI_HRM.DS {
                 this.columnTRANG_THAI_LAO_DONG.MaxLength = 250;
                 this.columnMA_QUYET_DINH.MaxLength = 50;
                 this.columnLOAI_QUYET_DINH.MaxLength = 250;
-                this.columnTRANG_THAI_HIEN_TAI.ReadOnly = true;
                 this.columnTRANG_THAI_HIEN_TAI.MaxLength = 19;
                 this.columnID.AllowDBNull = false;
                 this.columnID_NHAN_SU.AllowDBNull = false;
