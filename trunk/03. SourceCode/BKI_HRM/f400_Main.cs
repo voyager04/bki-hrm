@@ -186,8 +186,8 @@ namespace BKI_HRM
         {
             try
             {
-                //f600_v_dm_quyet_dinh frm = new f600_v_dm_quyet_dinh();
-                //frm.Show();
+                F600_V_DM_QUYET_DINH frm = new F600_V_DM_QUYET_DINH();
+                frm.Show();
             }
             catch (Exception v_e)
             {
