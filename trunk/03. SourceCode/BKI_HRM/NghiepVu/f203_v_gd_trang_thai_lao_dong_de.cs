@@ -20,13 +20,6 @@ namespace BKI_HRM
 {
     public partial class f203_v_gd_trang_thai_lao_dong_de : Form
     {
-        //public f203_v_gd_trang_thai_lao_dong_de()
-        //{
-        //    InitializeComponent();
-        //    WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_LAO_DONG,
-        //      WinFormControls.eTAT_CA.NO,
-        //      m_cbo_trang_thai_moi);
-        //}
         #region Public Interface
         public void display()
         {
@@ -108,7 +101,6 @@ namespace BKI_HRM
                     m_txt_trang_thai_hien_tai.ReadOnly = true;
                     break;
                 case DataEntryFormMode.UpdateDataState:
-                    //m_cbo_trang_thai_moi.Visible = false;
                     m_txt_ma_quyet_dinh.Text = m_us_v_trang_thai_ld.strMA_QUYET_DINH;
                     m_us_quyet_dinh.FillDataset_By_Ma_qd(m_ds_quyet_dinh, m_us_v_trang_thai_ld.strMA_QUYET_DINH);
                     if (m_ds_quyet_dinh.DM_QUYET_DINH.Select("MA_QUYET_DINH is not null").Length > 0)
@@ -150,35 +142,14 @@ namespace BKI_HRM
             m_us_trang_thai_ld.dcID_TRANG_LAO_DONG = CIPConvert.ToDecimal(m_cbo_trang_thai_moi.SelectedValue);
             if (m_txt_ma_quyet_dinh.Text != "")
                 m_us_trang_thai_ld.dcID_QUYET_DINH = m_us_quyet_dinh.dcID;
-            //else
-            //    m_us_trang_thai_ld.dcID_QUYET_DINH = null;
+           
             m_us_trang_thai_ld.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value;
             m_us_trang_thai_ld.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc.Value;
             m_us_trang_thai_ld.strTRANG_THAI_HIEN_TAI = "y";
         }
-        private bool check_trung_ma_nv(string ip_str_ma_nv)
-        {
-           
-            DS_DM_NHAN_SU v_ds = new DS_DM_NHAN_SU();
-            decimal count_ma_nv;
-          //  m_us_dm_nhan_su.FillDataset_search_by_ma_nv(v_ds, ip_str_ma_nv);
-            count_ma_nv = v_ds.DM_NHAN_SU.Count;
-            if (count_ma_nv > 0)
-                return true;
-            return false;
-        }
+        
         private bool check_validate_data_is_ok(){
             
-            
-            if (!CValidateTextBox.IsValid(m_txt_ho_ten, DataType.StringType, allowNull.NO, true) || CIPConvert.is_valid_number(m_txt_ho_ten)){
-                BaseMessages.MsgBox_Warning(202);
-                return false;
-            }
-            if (!CValidateTextBox.IsValid(m_txt_ten, DataType.StringType, allowNull.NO, true) || CIPConvert.is_valid_number(m_txt_ten))
-            {
-                BaseMessages.MsgBox_Warning(203);
-                return false;
-            }
             return true;
         }
 
@@ -247,7 +218,7 @@ namespace BKI_HRM
         }
         
         private void set_define_event(){
-            this.Load += new EventHandler(f203_v_gd_trang_thai_lao_dong_de_Load);
+            this.Load += new EventHandler(f202_v_gd_qua_trinh_lam_viec_de_Load);
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
             m_cmd_refresh.Click += new EventHandler(m_cmd_refresh_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
@@ -312,17 +283,9 @@ namespace BKI_HRM
             {
                 e.Handled = true;
             }
-
-
         }
         
-       
-       
     #endregion
-
-        
-
-        
         
     }
 

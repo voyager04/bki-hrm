@@ -294,36 +294,10 @@ namespace BKI_HRM
 			set_define_events();
             this.KeyPreview = true;
         }
-        private void load_data_2_cbo_chuc_vu()
-        {
-            US_DM_CHUC_VU v_us = new US_DM_CHUC_VU();
-            DS_DM_CHUC_VU v_ds = new DS_DM_CHUC_VU();
-            v_us.FillDataset(v_ds);
-            m_cbo_chuc_vu_hien_tai.DataSource = v_ds.DM_CHUC_VU;
-            m_cbo_chuc_vu_hien_tai.DisplayMember = DM_CHUC_VU.TEN_CV;
-            m_cbo_chuc_vu_hien_tai.ValueMember = DM_CHUC_VU.MA_CV;
-
-            m_cbo_ma_chuc_vu_hien_tai.DataSource = v_ds.DM_CHUC_VU;
-            m_cbo_ma_chuc_vu_hien_tai.DisplayMember = DM_CHUC_VU.MA_CV;
-            m_cbo_ma_chuc_vu_hien_tai.ValueMember = DM_CHUC_VU.MA_CV;
-
-            US_DM_CHUC_VU v_us_1 = new US_DM_CHUC_VU();
-            DS_DM_CHUC_VU v_ds_1 = new DS_DM_CHUC_VU();
-            v_us_1.FillDataset(v_ds_1);
-            m_cbo_chuc_vu_moi.DataSource = v_ds_1.DM_CHUC_VU;
-            m_cbo_chuc_vu_moi.DisplayMember = DM_CHUC_VU.TEN_CV;
-            m_cbo_chuc_vu_moi.ValueMember = DM_CHUC_VU.MA_CV;
-
-            m_cbo_ma_chuc_vu_moi.DataSource = v_ds_1.DM_CHUC_VU;
-            m_cbo_ma_chuc_vu_moi.DisplayMember = DM_CHUC_VU.MA_CV;
-            m_cbo_ma_chuc_vu_moi.ValueMember = DM_CHUC_VU.MA_CV;
-        }
+        
         private void set_initial_form_load()
         {
-            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_CHUC_VU,
-               WinFormControls.eTAT_CA.NO,
-               m_cbo_trang_thai_chuc_vu);
-            load_data_2_cbo_chuc_vu();
+            
 			m_obj_trans = get_trans_object(m_grv_qua_trinh_lam_viec);
 			load_data_2_grid();		
 		}	
@@ -362,11 +336,11 @@ namespace BKI_HRM
         {
             US_V_GD_QUA_TRINH_LAM_VIEC v_us = new US_V_GD_QUA_TRINH_LAM_VIEC();
             v_us.DataRow2Me((DataRow)m_grv_qua_trinh_lam_viec.Rows[1].UserData);
-            m_cbo_chuc_vu_hien_tai.SelectedValue = v_us.strMA_CV;
+           
             m_txt_thong_tin_nhan_vien.Text = ip_us_dm_nhan_su.strMA_NV + ", " + ip_us_dm_nhan_su.strHO_DEM + " " + ip_us_dm_nhan_su.strTEN;
             
             load_data_2_grid(ip_us_dm_nhan_su);
-            m_txt_don_vi_hien_tai.Text = m_us_qua_trinh_lam_viec.strMA_DON_VI;
+          
         }
 		private void grid2us_object(US_V_GD_QUA_TRINH_LAM_VIEC i_us
 			, int i_grid_row) {
