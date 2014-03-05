@@ -111,6 +111,28 @@ namespace BKI_HRM.US
             pm_objDR["ID_NHAN_SU"] = System.Convert.DBNull;
         }
 
+        public DateTime datNGAY_KY_HOP_DONG
+        {
+            get
+            {
+                return CNull.RowNVLDate(pm_objDR, "NGAY_KY_HOP_DONG", IPConstants.c_DefaultDate);
+            }
+            set
+            {
+                pm_objDR["NGAY_KY_HOP_DONG"] = value;
+            }
+        }
+
+        public bool IsNGAY_KY_HOP_DONGNull()
+        {
+            return pm_objDR.IsNull("NGAY_KY_HOP_DONG");
+        }
+
+        public void SetNGAY_KY_HOP_DONGNull()
+        {
+            pm_objDR["NGAY_KY_HOP_DONG"] = System.Convert.DBNull;
+        }
+
         public DateTime datNGAY_CO_HIEU_LUC
         {
             get
@@ -197,6 +219,50 @@ namespace BKI_HRM.US
         public void SetLINKNull()
         {
             pm_objDR["LINK"] = System.Convert.DBNull;
+        }
+
+        public string strNGUOI_KY
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "NGUOI_KY", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["NGUOI_KY"] = value;
+            }
+        }
+
+        public bool IsNGUOI_KYNull()
+        {
+            return pm_objDR.IsNull("NGUOI_KY");
+        }
+
+        public void SetNGUOI_KYNull()
+        {
+            pm_objDR["NGUOI_KY"] = System.Convert.DBNull;
+        }
+
+        public string strCHUC_VU_NGUOI_KY
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "CHUC_VU_NGUOI_KY", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["CHUC_VU_NGUOI_KY"] = value;
+            }
+        }
+
+        public bool IsCHUC_VU_NGUOI_KYNull()
+        {
+            return pm_objDR.IsNull("CHUC_VU_NGUOI_KY");
+        }
+
+        public void SetCHUC_VU_NGUOI_KYNull()
+        {
+            pm_objDR["CHUC_VU_NGUOI_KY"] = System.Convert.DBNull;
         }
 
         #endregion
