@@ -1848,7 +1848,7 @@ namespace BKI_HRM
            
 
             // Load trạng thái lao động
-            v_us_trang_thai_lao_dong.FillDatasetByManhanvien(v_ds_trang_thai_lao_dong, m_us.strMA_NV);
+            v_us_trang_thai_lao_dong.FillDatasetByManhanvien_trang_thai_hien_tai(v_ds_trang_thai_lao_dong, m_us.strMA_NV);
             if (v_ds_trang_thai_lao_dong.V_GD_TRANG_THAI_LAO_DONG.Select("MA_NV is not null").Length > 0)
             {
                 v_us_trang_thai_lao_dong.DataRow2Me(v_ds_trang_thai_lao_dong.V_GD_TRANG_THAI_LAO_DONG.Rows[0]);
