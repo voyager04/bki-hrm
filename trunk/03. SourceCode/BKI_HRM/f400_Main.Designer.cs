@@ -457,11 +457,13 @@
             // m_lbl_du_an_sap_kt
             // 
             this.m_lbl_du_an_sap_kt.AutoSize = true;
-            this.m_lbl_du_an_sap_kt.Location = new System.Drawing.Point(12, 391);
+            this.m_lbl_du_an_sap_kt.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_lbl_du_an_sap_kt.Location = new System.Drawing.Point(0, 400);
             this.m_lbl_du_an_sap_kt.Name = "m_lbl_du_an_sap_kt";
             this.m_lbl_du_an_sap_kt.Size = new System.Drawing.Size(144, 13);
             this.m_lbl_du_an_sap_kt.TabIndex = 2;
             this.m_lbl_du_an_sap_kt.Text = "dự án sắp đến ngày kết thúc";
+            this.m_lbl_du_an_sap_kt.Click += new System.EventHandler(this.m_lbl_du_an_sap_kt_Click);
             // 
             // f400_Main
             // 
