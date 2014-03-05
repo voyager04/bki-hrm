@@ -121,9 +121,6 @@
     <Compile Include="DanhMuc\f401_V_DM_CHUC_VU.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DanhMuc\F600_V_DM_QUYET_DINH.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="DanhMuc\F600_V_DM_QUYET_DINH_DE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,9 +219,6 @@
     <EmbeddedResource Include="DanhMuc\f401_V_DM_CHUC_VU.resx">
       <DependentUpon>f401_V_DM_CHUC_VU.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DanhMuc\F600_V_DM_QUYET_DINH.resx">
-      <DependentUpon>F600_V_DM_QUYET_DINH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\F600_V_DM_QUYET_DINH_DE.resx">
       <DependentUpon>F600_V_DM_QUYET_DINH_DE.cs</DependentUpon>
