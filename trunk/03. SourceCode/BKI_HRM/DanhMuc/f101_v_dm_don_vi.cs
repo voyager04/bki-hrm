@@ -36,7 +36,6 @@ namespace BKI_HRM {
         internal SIS.Controls.Button.SiSButton m_cmd_update;
         internal SIS.Controls.Button.SiSButton m_cmd_insert;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
-        internal SIS.Controls.Button.SiSButton m_cmd_view;
         private Panel panel1;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         private TextBox m_txt_tim_kiem;
@@ -45,6 +44,7 @@ namespace BKI_HRM {
         private Label label2;
         private C1FlexGrid m_fg;
         private ToolTip m_tooltip;
+        internal SIS.Controls.Button.SiSButton m_cmd_view;
         private System.ComponentModel.IContainer components;
 
         public f101_v_dm_don_vi() {
@@ -83,7 +83,6 @@ namespace BKI_HRM {
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -94,6 +93,7 @@ namespace BKI_HRM {
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
+            this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -128,16 +128,18 @@ namespace BKI_HRM {
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_lbl_so_luong_ban_ghi);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
+            this.m_pnl_out_place_dm.Controls.Add(this.label2);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 570);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 533);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1248, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1266, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_insert
@@ -149,7 +151,7 @@ namespace BKI_HRM {
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(892, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(910, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 5;
@@ -164,26 +166,11 @@ namespace BKI_HRM {
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(980, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(998, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 6;
             this.m_cmd_update.Text = "&Sửa";
-            // 
-            // m_cmd_view
-            // 
-            this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_view.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_view.ImageIndex = 18;
-            this.m_cmd_view.ImageList = this.ImageList;
-            this.m_cmd_view.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_view.Name = "m_cmd_view";
-            this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_view.TabIndex = 4;
-            this.m_cmd_view.Text = "Xem";
             // 
             // m_cmd_delete
             // 
@@ -194,7 +181,7 @@ namespace BKI_HRM {
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(1068, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(1086, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 7;
@@ -209,7 +196,7 @@ namespace BKI_HRM {
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(1156, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(1174, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 8;
@@ -217,34 +204,32 @@ namespace BKI_HRM {
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.m_lbl_so_luong_ban_ghi);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.m_cmd_search);
             this.panel1.Controls.Add(this.m_txt_tim_kiem);
             this.panel1.Controls.Add(this.m_lbl_tim_kiem);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1248, 83);
+            this.panel1.Size = new System.Drawing.Size(1266, 64);
             this.panel1.TabIndex = 21;
             // 
-            // m_lbl_so_luong_truong
+            // m_lbl_so_luong_ban_ghi
             // 
             this.m_lbl_so_luong_ban_ghi.AutoSize = true;
-            this.m_lbl_so_luong_ban_ghi.Location = new System.Drawing.Point(142, 57);
-            this.m_lbl_so_luong_ban_ghi.Name = "m_lbl_so_luong_truong";
-            this.m_lbl_so_luong_ban_ghi.Size = new System.Drawing.Size(35, 14);
+            this.m_lbl_so_luong_ban_ghi.Location = new System.Drawing.Point(182, 11);
+            this.m_lbl_so_luong_ban_ghi.Name = "m_lbl_so_luong_ban_ghi";
+            this.m_lbl_so_luong_ban_ghi.Size = new System.Drawing.Size(25, 14);
             this.m_lbl_so_luong_ban_ghi.TabIndex = 28;
-            this.m_lbl_so_luong_ban_ghi.Text = "label3";
+            this.m_lbl_so_luong_ban_ghi.Text = "000";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 57);
+            this.label2.Location = new System.Drawing.Point(7, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 14);
+            this.label2.Size = new System.Drawing.Size(169, 14);
             this.label2.TabIndex = 27;
-            this.label2.Text = "Số lượng phòng ban:";
+            this.label2.Text = "Số lượng đơn vị trong danh sách:";
             // 
             // m_cmd_search
             // 
@@ -268,7 +253,7 @@ namespace BKI_HRM {
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(604, 20);
             this.m_txt_tim_kiem.TabIndex = 1;
-            this.m_tooltip.SetToolTip(this.m_txt_tim_kiem, "Tìm kiếm theo tên đơn vị, mã đơn vị, ");
+            this.m_tooltip.SetToolTip(this.m_txt_tim_kiem, "Tìm kiếm theo tên đơn vị, mã đơn vị");
             // 
             // m_lbl_tim_kiem
             // 
@@ -283,18 +268,33 @@ namespace BKI_HRM {
             // 
             this.m_fg.AllowEditing = false;
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Location = new System.Drawing.Point(1, 89);
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_fg.Location = new System.Drawing.Point(0, 64);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1248, 479);
+            this.m_fg.Size = new System.Drawing.Size(1266, 469);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 29;
-            this.m_tooltip.SetToolTip(this.m_fg, "Tìm theo tên đơn vị, mã đơn vị, địa bàn\r\n");
             this.m_fg.Tree.LineColor = System.Drawing.Color.Maroon;
+            // 
+            // m_cmd_view
+            // 
+            this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_view.ImageIndex = 18;
+            this.m_cmd_view.ImageList = this.ImageList;
+            this.m_cmd_view.Location = new System.Drawing.Point(798, 4);
+            this.m_cmd_view.Name = "m_cmd_view";
+            this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_view.TabIndex = 4;
+            this.m_cmd_view.Text = "Xem";
+            this.m_cmd_view.Visible = false;
             // 
             // f101_v_dm_don_vi
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(1248, 606);
+            this.ClientSize = new System.Drawing.Size(1266, 569);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_pnl_out_place_dm);
@@ -302,6 +302,7 @@ namespace BKI_HRM {
             this.Text = "F101 - Danh sách đơn vị";
             this.Load += new System.EventHandler(this.f101_v_dm_don_vi_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
+            this.m_pnl_out_place_dm.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
