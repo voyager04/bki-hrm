@@ -352,6 +352,7 @@ namespace BKI_HRM
 		#endregion
 
 		#region Members
+        bool trang_thai = true;
 		ITransferDataRow m_obj_trans;
         int m_dc_index_row = 1;
         int m_dc_index_row_chi_tiet_da = 1;
@@ -439,6 +440,10 @@ namespace BKI_HRM
         {
             try
             {
+                if (!trang_thai)
+                {
+                    return;
+                }
                 set_initial_form_load();
                 //load_data_2_grid_dm_nhan_su(1);
                 load_custom_source_2_m_txt_tim_kiem();
@@ -706,6 +711,32 @@ namespace BKI_HRM
         //    }
         //}
         #endregion
+
+        public void DisplaySapKetThuc()
+        {
+            try
+            {
+                m_obj_trans = get_trans_object(m_grv_du_an);
+                US.US_V_DM_DU_AN_QUYET_DINH_TU_DIEN v_us = new US_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
+                DS.DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN v_ds = new DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
+                v_us.FillDatasetSapKetThuc(v_ds, DateTime.Now.Date);
+                m_grv_du_an.Redraw = false;
+                CGridUtils.Dataset2C1Grid(v_ds, m_grv_du_an, m_obj_trans);
+                m_grv_du_an.Redraw = true;
+                //m_ds = new DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
+                //m_us.FillDataset(m_ds);
+                //m_grv_du_an.Redraw = false;
+                //CGridUtils.Dataset2C1Grid(m_ds, m_grv_du_an, m_obj_trans);
+                //m_grv_du_an.Redraw = true;
+                trang_thai = false;
+                this.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+            
+        }
     }
 }
 

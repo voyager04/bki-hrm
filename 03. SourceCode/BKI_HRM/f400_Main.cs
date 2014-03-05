@@ -249,5 +249,18 @@ namespace BKI_HRM {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_lbl_du_an_sap_kt_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                F500_DM_DU_AN frm = new F500_DM_DU_AN();
+                frm.DisplaySapKetThuc();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
