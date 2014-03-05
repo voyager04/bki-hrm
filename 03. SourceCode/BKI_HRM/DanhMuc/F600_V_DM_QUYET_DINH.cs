@@ -457,8 +457,8 @@ namespace BKI_HRM
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_dm_quyet_dinh)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_dm_quyet_dinh, m_grv_dm_quyet_dinh.Row)) return;
 			grid2us_object(m_us, m_grv_dm_quyet_dinh.Row);
-		//	F600_V_DM_QUYET_DINH_DE v_fDE = new F600_V_DM_QUYET_DINH_DE();			
-		//	v_fDE.display(m_us);
+			F600_V_DM_QUYET_DINH_DE v_fDE = new F600_V_DM_QUYET_DINH_DE();			
+			v_fDE.display(m_us);
 		}
 
         private void select_data_2_us()
