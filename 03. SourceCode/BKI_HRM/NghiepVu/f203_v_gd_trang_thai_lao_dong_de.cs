@@ -86,14 +86,12 @@ namespace BKI_HRM
         private void us_object_to_form()
         {
             m_txt_ma_nv.Text = m_us_v_trang_thai_ld.strMA_NV;
-            m_txt_ho_dem.Text = m_us_v_trang_thai_ld.strHO_DEM;
-            m_txt_ten.Text = m_us_v_trang_thai_ld.strTEN;
+            m_txt_ho_ten.Text = m_us_v_trang_thai_ld.strHO_DEM + " " + m_us_v_trang_thai_ld.strTEN;
+            
             m_txt_ma_nv.BackColor = SystemColors.Info;
             m_txt_ma_nv.ReadOnly = true;
-            m_txt_ten.BackColor = SystemColors.Info;
-            m_txt_ten.ReadOnly = true;
-            m_txt_ho_dem.BackColor = SystemColors.Info;
-            m_txt_ho_dem.ReadOnly = true;
+            m_txt_ho_ten.BackColor = SystemColors.Info;
+            m_txt_ho_ten.ReadOnly = true;
             m_us_v_trang_thai_ld.FillDatasetByManhanvien_trang_thai_hien_tai(m_ds_v_trang_thai_ld, m_us_v_trang_thai_ld.strMA_NV);
             if (m_ds_v_trang_thai_ld.V_GD_TRANG_THAI_LAO_DONG.Select("MA_NV is not null").Length > 0)
             {
@@ -172,7 +170,7 @@ namespace BKI_HRM
         private bool check_validate_data_is_ok(){
             
             
-            if (!CValidateTextBox.IsValid(m_txt_ho_dem, DataType.StringType, allowNull.NO, true) || CIPConvert.is_valid_number(m_txt_ho_dem)){
+            if (!CValidateTextBox.IsValid(m_txt_ho_ten, DataType.StringType, allowNull.NO, true) || CIPConvert.is_valid_number(m_txt_ho_ten)){
                 BaseMessages.MsgBox_Warning(202);
                 return false;
             }
@@ -226,8 +224,8 @@ namespace BKI_HRM
         }
         private void xoa_trang(){
             
-            m_txt_ho_dem.Text = "";
-            m_txt_ten.Text = "";
+            m_txt_ho_ten.Text = "";
+            
             
         }
         private void set_inital_form_load()
