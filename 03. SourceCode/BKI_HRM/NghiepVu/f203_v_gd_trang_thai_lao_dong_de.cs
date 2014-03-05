@@ -110,7 +110,7 @@ namespace BKI_HRM
                     m_txt_trang_thai_hien_tai.ReadOnly = true;
                     break;
                 case DataEntryFormMode.UpdateDataState:
-                    m_cbo_trang_thai_moi.Visible = false;
+                    //m_cbo_trang_thai_moi.Visible = false;
                     m_txt_ma_quyet_dinh.Text = m_us_v_trang_thai_ld.strMA_QUYET_DINH;
                     m_us_quyet_dinh.FillDataset_By_Ma_qd(m_ds_quyet_dinh, m_us_v_trang_thai_ld.strMA_QUYET_DINH);
                     if (m_ds_quyet_dinh.DM_QUYET_DINH.Select("MA_QUYET_DINH is not null").Length > 0)
