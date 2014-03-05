@@ -151,6 +151,7 @@ namespace BKI_HRM
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 12;
             this.m_cmd_insert.Text = "&Thêm mới";
+            this.m_cmd_insert.Click += new System.EventHandler(this.m_cmd_insert_Click);
             // 
             // m_cmd_update
             // 
@@ -166,6 +167,7 @@ namespace BKI_HRM
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 13;
             this.m_cmd_update.Text = "&Sửa";
+            this.m_cmd_update.Click += new System.EventHandler(this.m_cmd_update_Click);
             // 
             // m_cmd_delete
             // 
@@ -419,9 +421,12 @@ namespace BKI_HRM
 		}
 
 
-		private void insert_v_gd_qua_trinh_lam_viec(){			
-		//	f202_V_GD_QUA_TRINH_LAM_VIEC_DE v_fDE = new  f202_V_GD_QUA_TRINH_LAM_VIEC_DE();								
-		//	v_fDE.display();
+		private void insert_v_gd_qua_trinh_lam_viec(){
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_qua_trinh_lam_viec)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row)) return;
+            grid2us_object(m_us_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row);
+            f202_v_gd_qua_trinh_lam_viec_de v_fDE = new f202_v_gd_qua_trinh_lam_viec_de();
+            v_fDE.display_for_insert(m_us_qua_trinh_lam_viec);
 			load_data_2_grid();
 		}
 
@@ -429,8 +434,8 @@ namespace BKI_HRM
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_qua_trinh_lam_viec)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row)) return;			
 			grid2us_object(m_us_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row);
-		//	f202_V_GD_QUA_TRINH_LAM_VIEC_DE v_fDE = new f202_V_GD_QUA_TRINH_LAM_VIEC_DE();
-		//	v_fDE.display(m_us);
+            f202_v_gd_qua_trinh_lam_viec_de v_fDE = new f202_v_gd_qua_trinh_lam_viec_de();
+            v_fDE.display_for_update(m_us_qua_trinh_lam_viec);
 			load_data_2_grid();
 		}
 				
