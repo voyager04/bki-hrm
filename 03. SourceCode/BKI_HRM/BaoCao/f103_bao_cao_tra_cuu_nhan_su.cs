@@ -130,7 +130,7 @@ namespace BKI_HRM {
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Location = new System.Drawing.Point(0, 94);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1169, 373);
+            this.m_fg.Size = new System.Drawing.Size(1189, 478);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -148,14 +148,14 @@ namespace BKI_HRM {
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1169, 95);
+            this.panel1.Size = new System.Drawing.Size(1189, 95);
             this.panel1.TabIndex = 24;
             // 
             // m_cbo_trang_thai
             // 
             this.m_cbo_trang_thai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_trang_thai.FormattingEnabled = true;
-            this.m_cbo_trang_thai.Location = new System.Drawing.Point(135, 9);
+            this.m_cbo_trang_thai.Location = new System.Drawing.Point(333, 14);
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
             this.m_cbo_trang_thai.Size = new System.Drawing.Size(121, 22);
             this.m_cbo_trang_thai.TabIndex = 30;
@@ -163,7 +163,7 @@ namespace BKI_HRM {
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 13);
+            this.label3.Location = new System.Drawing.Point(210, 17);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 14);
             this.label3.TabIndex = 29;
@@ -172,19 +172,20 @@ namespace BKI_HRM {
             // m_lbl_so_nhan_vien
             // 
             this.m_lbl_so_nhan_vien.AutoSize = true;
-            this.m_lbl_so_nhan_vien.Location = new System.Drawing.Point(111, 77);
+            this.m_lbl_so_nhan_vien.Location = new System.Drawing.Point(204, 77);
             this.m_lbl_so_nhan_vien.Name = "m_lbl_so_nhan_vien";
-            this.m_lbl_so_nhan_vien.Size = new System.Drawing.Size(0, 14);
+            this.m_lbl_so_nhan_vien.Size = new System.Drawing.Size(25, 14);
             this.m_lbl_so_nhan_vien.TabIndex = 28;
+            this.m_lbl_so_nhan_vien.Text = "000";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 77);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 14);
+            this.label2.Size = new System.Drawing.Size(186, 14);
             this.label2.TabIndex = 27;
-            this.label2.Text = "Số nhân viên:";
+            this.label2.Text = "Số lượng nhân viên trong danh sách:";
             // 
             // m_cbo_gioi_tinh
             // 
@@ -194,7 +195,7 @@ namespace BKI_HRM {
             "Tất cả",
             "Nam",
             "Nữ"});
-            this.m_cbo_gioi_tinh.Location = new System.Drawing.Point(333, 9);
+            this.m_cbo_gioi_tinh.Location = new System.Drawing.Point(531, 14);
             this.m_cbo_gioi_tinh.Name = "m_cbo_gioi_tinh";
             this.m_cbo_gioi_tinh.Size = new System.Drawing.Size(69, 22);
             this.m_cbo_gioi_tinh.TabIndex = 26;
@@ -202,7 +203,7 @@ namespace BKI_HRM {
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(279, 13);
+            this.label1.Location = new System.Drawing.Point(477, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 14);
             this.label1.TabIndex = 25;
@@ -215,6 +216,7 @@ namespace BKI_HRM {
             this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
+            this.m_cmd_search.ImageList = this.ImageList;
             this.m_cmd_search.Location = new System.Drawing.Point(1069, 50);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
@@ -225,16 +227,16 @@ namespace BKI_HRM {
             // 
             this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(135, 50);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(333, 50);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
-            this.m_txt_tim_kiem.Size = new System.Drawing.Size(896, 20);
+            this.m_txt_tim_kiem.Size = new System.Drawing.Size(698, 20);
             this.m_txt_tim_kiem.TabIndex = 1;
             this.m_tooltip.SetToolTip(this.m_txt_tim_kiem, "Để tìm kiếm nhân viên sinh nhật theo tháng, bạn gõ: Tháng 10");
             // 
             // m_lbl_tim_kiem
             // 
             this.m_lbl_tim_kiem.AutoSize = true;
-            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(42, 50);
+            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(222, 50);
             this.m_lbl_tim_kiem.Name = "m_lbl_tim_kiem";
             this.m_lbl_tim_kiem.Size = new System.Drawing.Size(87, 14);
             this.m_lbl_tim_kiem.TabIndex = 24;
@@ -244,10 +246,11 @@ namespace BKI_HRM {
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 475);
+            this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 536);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1169, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1189, 36);
             this.m_pnl_out_place_dm.TabIndex = 31;
             // 
             // m_cmd_xuat_excel
@@ -277,7 +280,7 @@ namespace BKI_HRM {
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(1047, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(1067, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(118, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -286,7 +289,7 @@ namespace BKI_HRM {
             // f103_bao_cao_tra_cuu_nhan_su
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(1169, 511);
+            this.ClientSize = new System.Drawing.Size(1189, 572);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_fg);
