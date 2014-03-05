@@ -45,7 +45,7 @@
   <xs:element name="DS_V_GD_TRANG_THAI_LAO_DONG" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_GD_TRANG_THAI_LAO_DONG" msprop:Generator_UserDSName="DS_V_GD_TRANG_THAI_LAO_DONG">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="V_GD_TRANG_THAI_LAO_DONG" msprop:Generator_TableClassName="V_GD_TRANG_THAI_LAO_DONGDataTable" msprop:Generator_TableVarName="tableV_GD_TRANG_THAI_LAO_DONG" msprop:Generator_TablePropName="V_GD_TRANG_THAI_LAO_DONG" msprop:Generator_RowDeletingName="V_GD_TRANG_THAI_LAO_DONGRowDeleting" msprop:Generator_RowChangingName="V_GD_TRANG_THAI_LAO_DONGRowChanging" msprop:Generator_RowEvHandlerName="V_GD_TRANG_THAI_LAO_DONGRowChangeEventHandler" msprop:Generator_RowDeletedName="V_GD_TRANG_THAI_LAO_DONGRowDeleted" msprop:Generator_UserTableName="V_GD_TRANG_THAI_LAO_DONG" msprop:Generator_RowChangedName="V_GD_TRANG_THAI_LAO_DONGRowChanged" msprop:Generator_RowEvArgName="V_GD_TRANG_THAI_LAO_DONGRowChangeEvent" msprop:Generator_RowClassName="V_GD_TRANG_THAI_LAO_DONGRow">
+        <xs:element name="V_GD_TRANG_THAI_LAO_DONG" msprop:Generator_TableClassName="V_GD_TRANG_THAI_LAO_DONGDataTable" msprop:Generator_TableVarName="tableV_GD_TRANG_THAI_LAO_DONG" msprop:Generator_RowChangedName="V_GD_TRANG_THAI_LAO_DONGRowChanged" msprop:Generator_TablePropName="V_GD_TRANG_THAI_LAO_DONG" msprop:Generator_RowDeletingName="V_GD_TRANG_THAI_LAO_DONGRowDeleting" msprop:Generator_RowChangingName="V_GD_TRANG_THAI_LAO_DONGRowChanging" msprop:Generator_RowEvHandlerName="V_GD_TRANG_THAI_LAO_DONGRowChangeEventHandler" msprop:Generator_RowDeletedName="V_GD_TRANG_THAI_LAO_DONGRowDeleted" msprop:Generator_RowClassName="V_GD_TRANG_THAI_LAO_DONGRow" msprop:Generator_UserTableName="V_GD_TRANG_THAI_LAO_DONG" msprop:Generator_RowEvArgName="V_GD_TRANG_THAI_LAO_DONGRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MA_NV" msprop:Generator_ColumnVarNameInTable="columnMA_NV" msprop:Generator_ColumnPropNameInRow="MA_NV" msprop:Generator_ColumnPropNameInTable="MA_NVColumn" msprop:Generator_UserColumnName="MA_NV">
@@ -94,7 +94,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="TRANG_THAI_HIEN_TAI" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTRANG_THAI_HIEN_TAI" msprop:Generator_ColumnPropNameInRow="TRANG_THAI_HIEN_TAI" msprop:Generator_ColumnPropNameInTable="TRANG_THAI_HIEN_TAIColumn" msprop:Generator_UserColumnName="TRANG_THAI_HIEN_TAI" minOccurs="0">
+              <xs:element name="TRANG_THAI_HIEN_TAI" msprop:Generator_ColumnVarNameInTable="columnTRANG_THAI_HIEN_TAI" msprop:Generator_ColumnPropNameInRow="TRANG_THAI_HIEN_TAI" msprop:Generator_ColumnPropNameInTable="TRANG_THAI_HIEN_TAIColumn" msprop:Generator_UserColumnName="TRANG_THAI_HIEN_TAI" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="19" />
