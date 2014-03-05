@@ -79,6 +79,7 @@
             this.m_menuitem_bcnhansu = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_nhan_su_theo_phong_ban = new System.Windows.Forms.ToolStripMenuItem();
             this.nhânSựTheoChứcVuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_lbl_du_an_sap_kt = new System.Windows.Forms.Label();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -453,11 +454,21 @@
             this.nhânSựTheoChứcVuToolStripMenuItem.Text = "Nhân sự theo chức vụ";
             this.nhânSựTheoChứcVuToolStripMenuItem.Click += new System.EventHandler(this.nhânSựTheoChứcVuToolStripMenuItem_Click);
             // 
+            // m_lbl_du_an_sap_kt
+            // 
+            this.m_lbl_du_an_sap_kt.AutoSize = true;
+            this.m_lbl_du_an_sap_kt.Location = new System.Drawing.Point(12, 391);
+            this.m_lbl_du_an_sap_kt.Name = "m_lbl_du_an_sap_kt";
+            this.m_lbl_du_an_sap_kt.Size = new System.Drawing.Size(144, 13);
+            this.m_lbl_du_an_sap_kt.TabIndex = 2;
+            this.m_lbl_du_an_sap_kt.Text = "dự án sắp đến ngày kết thúc";
+            // 
             // f400_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 413);
+            this.Controls.Add(this.m_lbl_du_an_sap_kt);
             this.Controls.Add(this.m_mst_menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.m_mst_menu;
@@ -465,6 +476,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F400 - Chương trình quản lý nhân sự";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.f400_Main_Load);
             this.m_mst_menu.ResumeLayout(false);
             this.m_mst_menu.PerformLayout();
             this.ResumeLayout(false);
@@ -524,5 +536,6 @@
         private System.Windows.Forms.ToolStripMenuItem m_menuitem_bcnhansu;
         private System.Windows.Forms.ToolStripMenuItem m_menuitem_nhan_su_theo_phong_ban;
         private System.Windows.Forms.ToolStripMenuItem nhânSựTheoChứcVuToolStripMenuItem;
+        private System.Windows.Forms.Label m_lbl_du_an_sap_kt;
     }
 }

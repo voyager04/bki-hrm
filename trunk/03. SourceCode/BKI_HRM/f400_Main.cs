@@ -226,5 +226,28 @@ namespace BKI_HRM {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void f400_Main_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                US.US_DM_DU_AN v_us = new US.US_DM_DU_AN();
+                DS.DS_DM_DU_AN v_ds = new DS.DS_DM_DU_AN();
+                v_us.FillDatasetSapKetThuc(v_ds, DateTime.Now.Date);
+                if (v_ds.Tables[0].Rows.Count > 0)
+	            {
+                    m_lbl_du_an_sap_kt.Text = "Có " + v_ds.Tables[0].Rows.Count.ToString() + " dự án sắp kết thúc!";
+                    m_lbl_du_an_sap_kt.Visible = true;
+	            }
+                else
+                {
+                    m_lbl_du_an_sap_kt.Visible = false;
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
