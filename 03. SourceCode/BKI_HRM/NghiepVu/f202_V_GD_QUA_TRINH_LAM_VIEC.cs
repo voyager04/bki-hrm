@@ -41,6 +41,7 @@ namespace BKI_HRM
         private TextBox m_txt_thong_tin_nhan_vien;
         internal SIS.Controls.Button.SiSButton m_cmd_tim_nhan_vien;
         private C1FlexGrid m_grv_qua_trinh_lam_viec;
+        internal SIS.Controls.Button.SiSButton m_cmd_view;
 		private System.ComponentModel.IContainer components;
 
 		public f202_V_GD_QUA_TRINH_LAM_VIEC()
@@ -90,6 +91,7 @@ namespace BKI_HRM
             this.m_txt_thong_tin_nhan_vien = new System.Windows.Forms.TextBox();
             this.m_cmd_tim_nhan_vien = new SIS.Controls.Button.SiSButton();
             this.m_grv_qua_trinh_lam_viec = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_qua_trinh_lam_viec)).BeginInit();
             this.SuspendLayout();
@@ -123,6 +125,7 @@ namespace BKI_HRM
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
@@ -234,6 +237,21 @@ namespace BKI_HRM
             this.m_grv_qua_trinh_lam_viec.Size = new System.Drawing.Size(893, 373);
             this.m_grv_qua_trinh_lam_viec.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_qua_trinh_lam_viec.Styles"));
             this.m_grv_qua_trinh_lam_viec.TabIndex = 24;
+            // 
+            // m_cmd_view
+            // 
+            this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_view.ImageIndex = 18;
+            this.m_cmd_view.ImageList = this.ImageList;
+            this.m_cmd_view.Location = new System.Drawing.Point(12, 4);
+            this.m_cmd_view.Name = "m_cmd_view";
+            this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_view.TabIndex = 25;
+            this.m_cmd_view.Text = "Xem";
+            this.m_cmd_view.Visible = false;
             // 
             // f202_V_GD_QUA_TRINH_LAM_VIEC
             // 
