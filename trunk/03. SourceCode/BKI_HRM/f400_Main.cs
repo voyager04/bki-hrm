@@ -166,8 +166,8 @@ namespace BKI_HRM {
         {
             try
             {
-                //F701_V_GD_HOP_DONG_LAO_DONG frm = new F701_V_GD_HOP_DONG_LAO_DONG();
-                //frm.Show();
+                f701_v_hop_dong_lao_dong frm = new f701_v_hop_dong_lao_dong();
+                frm.Show();
             }
             catch (Exception v_e)
             {
