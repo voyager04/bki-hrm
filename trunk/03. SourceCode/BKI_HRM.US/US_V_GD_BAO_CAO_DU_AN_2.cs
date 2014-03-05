@@ -217,5 +217,14 @@ public class US_V_GD_BAO_CAO_DU_AN_2 : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+
+    public void FillDatasetSearch(DS_V_GD_BAO_CAO_DU_AN_2 op_ds_bc_da, string i_str_tu_khoa, DateTime i_dat_ngay_bd, DateTime i_dat_ngay_kt)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_V_GD_BAO_CAO_DU_AN_2_search");
+        v_sp.addNVarcharInputParam("@STR_DU_AN", i_str_tu_khoa);
+        v_sp.addDatetimeInputParam("@DAT_BD",i_dat_ngay_bd);
+        v_sp.addDatetimeInputParam("@DAT_KT", i_dat_ngay_kt);
+        v_sp.fillDataSetByCommand(this, op_ds_bc_da);
+    }
+}
 }
