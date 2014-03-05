@@ -6,6 +6,7 @@ using System.Drawing;
 
 using System.Text;
 using System.Windows.Forms;
+using BKI_HRM.BaoCao;
 using IP.Core.IPCommon;
 using IP.Core.IPExcelReport;
 using IP.Core.IPSystemAdmin;
@@ -266,6 +267,19 @@ namespace BKI_HRM {
             {
                 F500_DM_DU_AN frm = new F500_DM_DU_AN();
                 frm.DisplaySapKetThuc();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f702_bao_cao_hdld_het_han frm = new f702_bao_cao_hdld_het_han();
+                frm.Show();
             }
             catch (Exception v_e)
             {

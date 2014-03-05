@@ -81,6 +81,7 @@
             this.m_menuitem_nhan_su_theo_phong_ban = new System.Windows.Forms.ToolStripMenuItem();
             this.nhânSựTheoChứcVuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_lbl_du_an_sap_kt = new System.Windows.Forms.Label();
+            this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -367,7 +368,8 @@
             this.m_menuitem_bccoche,
             this.m_menuitem_bcduan,
             this.m_menuitem_bctuyendung,
-            this.m_menuitem_bcnhansu});
+            this.m_menuitem_bcnhansu,
+            this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem});
             this.m_menuitem_baocao.Name = "m_menuitem_baocao";
             this.m_menuitem_baocao.Size = new System.Drawing.Size(61, 20);
             this.m_menuitem_baocao.Text = "Báo cáo";
@@ -476,6 +478,13 @@
             this.m_lbl_du_an_sap_kt.Text = "dự án sắp đến ngày kết thúc";
             this.m_lbl_du_an_sap_kt.Click += new System.EventHandler(this.m_lbl_du_an_sap_kt_Click);
             // 
+            // báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem
+            // 
+            this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem.Name = "báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem";
+            this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem.Text = "Báo cáo hợp đồng đã hết hạn";
+            this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem.Click += new System.EventHandler(this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem_Click);
+            // 
             // f400_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -551,5 +560,6 @@
         private System.Windows.Forms.ToolStripMenuItem nhânSựTheoChứcVuToolStripMenuItem;
         private System.Windows.Forms.Label m_lbl_du_an_sap_kt;
         private System.Windows.Forms.ToolStripMenuItem m_menuitem_traCuuNhanSuChung;
+        private System.Windows.Forms.ToolStripMenuItem báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem;
     }
 }
