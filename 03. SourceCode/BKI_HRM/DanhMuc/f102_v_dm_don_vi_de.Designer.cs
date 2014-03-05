@@ -259,11 +259,11 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(513, 290);
+            this.label10.Location = new System.Drawing.Point(465, 294);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(47, 14);
+            this.label10.Size = new System.Drawing.Size(79, 14);
             this.label10.TabIndex = 999;
-            this.label10.Text = "Từ ngày";
+            this.label10.Text = "Ngày thành lập";
             // 
             // m_dat_tu_ngay
             // 

@@ -35,128 +35,63 @@ namespace BKI_HRM {
 
         #region Data Structure
 
-        private enum e_col_Number_Nhan_Su {
-            LOAI_DON_VI = 13
+        private enum e_col_Number {
+            NGAY_BAT_DAU = 9
                 ,
-            TEN_DON_VI = 12
+            TEN_CV = 7
                 ,
-            MA_NV = 1
+            TEN_DON_VI = 1
                 ,
-            CAP_DON_VI = 14
+            MA_NV = 3
                 ,
-            TRANG_THAI_LAO_DONG = 16
+            MA_DON_VI = 2
                 ,
-            DIA_BAN = 15
+            NGAY_KET_THUC = 10
                 ,
-            TEN = 3
+            MA_CV = 6
                 ,
-            NGAY_CO_HIEU_LUC = 17
+            HO_DEM = 4
                 ,
-            TRANG_THAI_HIEN_TAI = 19
+            NGAY_HET_HIEU_LUC = 13
                 ,
-            MA_DON_VI = 11
+            TEN = 5
                 ,
-            HO_DEM = 2
+            TRANG_THAI_CV = 8
                 ,
-            TY_LE_THAM_GIA = 10
-                ,
-            TEN_CV = 8
-                ,
-            NGAY_HET_HIEU_LUC = 18
-                ,
-            NGAY_SINH = 5
-                ,
-            TRINH_DO = 6
-                ,
-            TRANG_THAI_CV = 9
-                ,
-            GIOI_TINH = 4
-                ,
-            MA_CV = 7
-
+            MA_QUYET_DINH = 11
+                , 
+            NGAY_CO_HIEU_LUC = 12
         }
         #endregion
 
         #region Members
-        ITransferDataRow m_obj_trans_nhan_su;
-        DS_V_DM_DU_LIEU_NHAN_VIEN m_ds_nhan_su = new DS_V_DM_DU_LIEU_NHAN_VIEN();
-        US_V_DM_DU_LIEU_NHAN_VIEN m_us_nhan_su = new US_V_DM_DU_LIEU_NHAN_VIEN();
-        int m_dc_index_row;
+        ITransferDataRow m_obj_trans;
+        DS_V_GD_QUA_TRINH_LAM_VIEC m_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC();
+        US_V_GD_QUA_TRINH_LAM_VIEC m_us = new US_V_GD_QUA_TRINH_LAM_VIEC();
+
         #endregion
 
         #region Private Methods
 
         private void format_controls() {
             CControlFormat.setFormStyle(this, new CAppContext_201());
+            CControlFormat.setC1FlexFormat(m_fg);
+            CGridUtils.AddSave_Excel_Handlers(m_fg);
+            CGridUtils.AddSearch_Handlers(m_fg);
+            m_fg.Tree.Column = (int)e_col_Number.TEN_DON_VI;
+            m_fg.Tree.Style = TreeStyleFlags.Simple;
+
             set_define_events();
             this.KeyPreview = true;
         }
         private void set_initial_form_load() {
-            m_obj_trans_nhan_su = get_trans_object_nhan_su(m_fg_nhan_su);
+            m_obj_trans = get_trans_object(m_fg);
+            load_data_2_grid();
+            set_format_txt_search();
+            
         }
-        private ITransferDataRow get_trans_object_nhan_su(C1.Win.C1FlexGrid.C1FlexGrid i_fg_nhan_su) {
-            Hashtable v_htb = new Hashtable();
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.LOAI_DON_VI, e_col_Number_Nhan_Su.LOAI_DON_VI);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN_DON_VI, e_col_Number_Nhan_Su.TEN_DON_VI);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_NV, e_col_Number_Nhan_Su.MA_NV);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.CAP_DON_VI, e_col_Number_Nhan_Su.CAP_DON_VI);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRANG_THAI_LAO_DONG, e_col_Number_Nhan_Su.TRANG_THAI_LAO_DONG);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.DIA_BAN, e_col_Number_Nhan_Su.DIA_BAN);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN, e_col_Number_Nhan_Su.TEN);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_CO_HIEU_LUC, e_col_Number_Nhan_Su.NGAY_CO_HIEU_LUC);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRANG_THAI_HIEN_TAI, e_col_Number_Nhan_Su.TRANG_THAI_HIEN_TAI);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_DON_VI, e_col_Number_Nhan_Su.MA_DON_VI);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.HO_DEM, e_col_Number_Nhan_Su.HO_DEM);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TY_LE_THAM_GIA, e_col_Number_Nhan_Su.TY_LE_THAM_GIA);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN_CV, e_col_Number_Nhan_Su.TEN_CV);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_HET_HIEU_LUC, e_col_Number_Nhan_Su.NGAY_HET_HIEU_LUC);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_SINH, e_col_Number_Nhan_Su.NGAY_SINH);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRINH_DO, e_col_Number_Nhan_Su.TRINH_DO);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRANG_THAI_CV, e_col_Number_Nhan_Su.TRANG_THAI_CV);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.GIOI_TINH, e_col_Number_Nhan_Su.GIOI_TINH);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_CV, e_col_Number_Nhan_Su.MA_CV);
 
-            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg_nhan_su, v_htb, m_ds_nhan_su.V_DM_DU_LIEU_NHAN_VIEN.NewRow());
-            return v_obj_trans;
-        }
-   
-        private void load_data_2_grid_dm_nhan_su(int ip_int_row_index_choose) {
-            m_ds_nhan_su = new DS_V_DM_DU_LIEU_NHAN_VIEN();
-            /*Xử lý tìm kiếm*/
-            var v_str_search = m_txt_tim_kiem.Text.Trim();
-            var v_str_month = Regex.Match(v_str_search, @"\d+").Value;
-            if (!v_str_month.Equals("")) {
-                v_str_search = v_str_month;
-            }
-            decimal v_id_don_vi = 0;
-            var v_str_gender = get_gender();
-            var v_str_trang_thai_lao_dong = get_trang_thai_lao_dong();
-            m_us_nhan_su.FillDataset_By_ID_Don_Vi(m_ds_nhan_su, v_id_don_vi, v_str_search, v_str_gender, v_str_trang_thai_lao_dong);
-            m_fg_nhan_su.Redraw = false;
-            ITransferDataRow v_obj_trans_nhan_su = get_trans_object_nhan_su(m_fg_nhan_su);
-            CGridUtils.Dataset2C1Grid(m_ds_nhan_su, m_fg_nhan_su, v_obj_trans_nhan_su);
-            m_fg_nhan_su.Redraw = true;
-            set_search_textbox_style();
-            m_lbl_so_ban_ghi_nhan_su.Text = lay_so_ban_ghi();
-        }
-        private string lay_so_ban_ghi() {
-            return m_ds_nhan_su.V_DM_DU_LIEU_NHAN_VIEN.Count.ToString();
-        }
-        private string get_gender() {
-            if (m_cbo_gioi_tinh.SelectedIndex == 1) {
-                return "Nam";
-            } else if (m_cbo_gioi_tinh.SelectedIndex == 2) {
-                return "Nữ";
-            }
-            return "";
-        }
-        private string get_trang_thai_lao_dong() {
-            if (m_cbo_trang_thai.SelectedIndex != 0) {
-                return m_cbo_trang_thai.Text;
-            }
-            return "";
-        }
-        private void set_search_textbox_style() {
+        private void set_format_txt_search() {
             if (m_txt_tim_kiem.Text.Trim().Equals(String.Empty)) {
                 m_txt_tim_kiem.Select(); //Đưa chuột vào ô tìm kiếm
             } else {
@@ -164,6 +99,46 @@ namespace BKI_HRM {
             }
         }
 
+        private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg) {
+            Hashtable v_htb = new Hashtable();
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.NGAY_BAT_DAU, e_col_Number.NGAY_BAT_DAU);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.TEN_CV, e_col_Number.TEN_CV);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.TEN_DON_VI, e_col_Number.TEN_DON_VI);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_NV, e_col_Number.MA_NV);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_DON_VI, e_col_Number.MA_DON_VI);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.NGAY_KET_THUC, e_col_Number.NGAY_KET_THUC);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_CV, e_col_Number.MA_CV);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.HO_DEM, e_col_Number.HO_DEM);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.NGAY_HET_HIEU_LUC, e_col_Number.NGAY_HET_HIEU_LUC);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.TEN, e_col_Number.TEN);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.TRANG_THAI_CV, e_col_Number.TRANG_THAI_CV);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_QUYET_DINH, e_col_Number.MA_QUYET_DINH);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.NGAY_CO_HIEU_LUC, e_col_Number.NGAY_CO_HIEU_LUC);
+
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_GD_QUA_TRINH_LAM_VIEC.NewRow());
+            return v_obj_trans;
+        }
+        private void load_data_2_grid() {
+            m_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC();
+            string v_str_search = m_txt_tim_kiem.Text.Trim();
+            DateTime v_dat_thoi_diem = DateTime.Now;
+            if (m_dtp_thoidiem.Checked){
+                v_dat_thoi_diem = m_dtp_thoidiem.Value.Date;
+            }
+            m_us.FillDatase_NhanSu_TheoPhongBan(m_ds, v_str_search, v_dat_thoi_diem);
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            /*Group (subtotal) trên grid.*/
+            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count
+              , 0
+              , (int)e_col_Number.TEN_DON_VI   // Group theo cột này
+              , (int)e_col_Number.MA_NV    // Subtotal theo cột này
+              , "{0}"
+              );
+            m_fg.Redraw = true;
+            /*Đếm số dòng dữ liệu trên Grid*/
+            m_lbl_so_luong_ban_ghi.Text = m_ds.V_GD_QUA_TRINH_LAM_VIEC.Count.ToString();
+        }
         #endregion
 
         //
@@ -173,15 +148,56 @@ namespace BKI_HRM {
         //
 
         private void set_define_events() {
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_txt_tim_kiem.KeyPress += new KeyPressEventHandler(CheckEnterKeyPress);
+            m_txt_tim_kiem.KeyDown += new KeyEventHandler(m_txt_tim_kiem_KeyDown);
+            m_cmd_search.Click += new EventHandler(m_cmd_search_Click);
         }
 
-        private void f104_bao_cao_nhan_su_theo_phong_ban_Load(object sender, EventArgs e) {
+        private void f104_bao_cao_nhan_su_theo_phong_ban_Load(object sender, System.EventArgs e) {
             try {
                 set_initial_form_load();
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+
         }
+
+        private void m_cmd_exit_Click(object sender, EventArgs e) {
+            try {
+                this.Close();
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void CheckEnterKeyPress(object sender, KeyPressEventArgs e) {
+            try {
+                if (e.KeyChar == (char)Keys.Return) {
+                    load_data_2_grid();
+                }
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_txt_tim_kiem_KeyDown(object sender, KeyEventArgs e) {
+            try {
+                if (e.KeyData == Keys.Enter)
+                   load_data_2_grid();
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_search_Click(object sender, EventArgs e) {
+            try {
+                load_data_2_grid();
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
 
     }
 }

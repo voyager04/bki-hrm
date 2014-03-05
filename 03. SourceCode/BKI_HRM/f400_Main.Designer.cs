@@ -80,6 +80,7 @@
             this.m_menuitem_nhan_su_theo_phong_ban = new System.Windows.Forms.ToolStripMenuItem();
             this.nhânSựTheoChứcVuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_lbl_du_an_sap_kt = new System.Windows.Forms.Label();
+            this.m_menuitem_traCuuNhanSuChung = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -435,6 +436,7 @@
             // m_menuitem_bcnhansu
             // 
             this.m_menuitem_bcnhansu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_menuitem_traCuuNhanSuChung,
             this.m_menuitem_nhan_su_theo_phong_ban,
             this.nhânSựTheoChứcVuToolStripMenuItem});
             this.m_menuitem_bcnhansu.Name = "m_menuitem_bcnhansu";
@@ -459,20 +461,26 @@
             this.m_lbl_du_an_sap_kt.AutoSize = true;
             this.m_lbl_du_an_sap_kt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.m_lbl_du_an_sap_kt.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_lbl_du_an_sap_kt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_du_an_sap_kt.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_du_an_sap_kt.ForeColor = System.Drawing.Color.Red;
-            this.m_lbl_du_an_sap_kt.Location = new System.Drawing.Point(0, 395);
+            this.m_lbl_du_an_sap_kt.Location = new System.Drawing.Point(0, 427);
             this.m_lbl_du_an_sap_kt.Name = "m_lbl_du_an_sap_kt";
-            this.m_lbl_du_an_sap_kt.Size = new System.Drawing.Size(218, 18);
+            this.m_lbl_du_an_sap_kt.Size = new System.Drawing.Size(207, 18);
             this.m_lbl_du_an_sap_kt.TabIndex = 2;
             this.m_lbl_du_an_sap_kt.Text = "dự án sắp đến ngày kết thúc";
             this.m_lbl_du_an_sap_kt.Click += new System.EventHandler(this.m_lbl_du_an_sap_kt_Click);
             // 
+            // m_menuitem_traCuuNhanSuChung
+            // 
+            this.m_menuitem_traCuuNhanSuChung.Name = "m_menuitem_traCuuNhanSuChung";
+            this.m_menuitem_traCuuNhanSuChung.Size = new System.Drawing.Size(206, 22);
+            this.m_menuitem_traCuuNhanSuChung.Text = "Tra cứu nhân sự chung";
+            // 
             // f400_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 413);
+            this.ClientSize = new System.Drawing.Size(835, 445);
             this.Controls.Add(this.m_lbl_du_an_sap_kt);
             this.Controls.Add(this.m_mst_menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -542,5 +550,6 @@
         private System.Windows.Forms.ToolStripMenuItem m_menuitem_nhan_su_theo_phong_ban;
         private System.Windows.Forms.ToolStripMenuItem nhânSựTheoChứcVuToolStripMenuItem;
         private System.Windows.Forms.Label m_lbl_du_an_sap_kt;
+        private System.Windows.Forms.ToolStripMenuItem m_menuitem_traCuuNhanSuChung;
     }
 }

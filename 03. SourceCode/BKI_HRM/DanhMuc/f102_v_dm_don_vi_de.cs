@@ -60,7 +60,7 @@ namespace BKI_HRM.DanhMuc {
                 m_cbo_cap_don_vi);
             load_data_2_cbo_don_vi_cap_tren();
         }
-        private void set_initial_form_load(){
+        private void set_initial_form_load() {
             m_cbo_trang_thai.SelectedIndex = 0;
             m_cbo_cap_don_vi.SelectedIndex = 2;
         }
@@ -85,18 +85,14 @@ namespace BKI_HRM.DanhMuc {
             v_row[V_DM_DON_VI.TU_NGAY] = "1/1/1800";
             v_row[V_DM_DON_VI.DIA_BAN] = "NULL";
             v_ds.V_DM_DON_VI.Rows.InsertAt(v_row, 0);
-            
-            switch (m_cbo_cap_don_vi.SelectedIndex){
+
+            switch (m_cbo_cap_don_vi.SelectedIndex) {
                 case 0: // Khối
                     m_cbo_ten_don_vi_cap_tren.SelectedIndex = 0;
-                    m_cbo_ten_don_vi_cap_tren.Enabled = false;
+                    v_us.FillDatasetByCapDonVi(v_ds, CAP_DON_VI.KHOI);
                     break;
                 case 1: // Trung Tâm
                     v_us.FillDatasetByCapDonVi(v_ds, CAP_DON_VI.KHOI);
-                    m_cbo_ten_don_vi_cap_tren.Enabled = true;
-                    break;
-                case 2: // Phòng
-                    m_cbo_ten_don_vi_cap_tren.Enabled = true;
                     break;
             }
         }
@@ -115,7 +111,7 @@ namespace BKI_HRM.DanhMuc {
             }
             return true;
         }
-        private void form_2_us_object(){
+        private void form_2_us_object() {
             m_us.dcID_DON_VI_CAP_TREN = CIPConvert.ToDecimal(m_cbo_ten_don_vi_cap_tren.SelectedValue);
             m_us.dcID_LOAI_DON_VI = CIPConvert.ToDecimal(m_cbo_loai_don_vi.SelectedValue);
             m_us.dcID_CAP_DON_VI = CIPConvert.ToDecimal(m_cbo_cap_don_vi.SelectedValue);
@@ -128,7 +124,7 @@ namespace BKI_HRM.DanhMuc {
             m_us.dcID_CAP_DON_VI = CIPConvert.ToDecimal(m_cbo_cap_don_vi.SelectedValue);
             m_us.datTU_NGAY = m_dat_tu_ngay.Value.Date;
         }
-        private static string get_trang_thai(ListControl ip_cbo){
+        private static string get_trang_thai(ListControl ip_cbo) {
             return ip_cbo.SelectedIndex == 0 ? "y" : "n";
         }
         private void save_data() {
@@ -151,6 +147,11 @@ namespace BKI_HRM.DanhMuc {
             m_us.dcID = ip_us_dm_don_vi.dcID;
             m_cbo_cap_don_vi.SelectedValue = ip_us_dm_don_vi.dcID_CAP_DON_VI;
             m_cbo_loai_don_vi.SelectedValue = ip_us_dm_don_vi.dcID_LOAI_DON_VI;
+            if (ip_us_dm_don_vi.dcID_DON_VI_CAP_TREN == 0) {
+                m_cbo_ten_don_vi_cap_tren.SelectedIndex = 0;
+            } else {
+                m_cbo_ten_don_vi_cap_tren.SelectedValue = ip_us_dm_don_vi.dcID_DON_VI_CAP_TREN;
+            }
             m_txt_ma_don_vi.Text = ip_us_dm_don_vi.strMA_DON_VI;
             m_txt_ten_don_vi.Text = ip_us_dm_don_vi.strTEN_DON_VI;
             m_txt_ten_tieng_anh.Text = ip_us_dm_don_vi.strTEN_TIENG_ANH;
@@ -168,7 +169,7 @@ namespace BKI_HRM.DanhMuc {
             m_cmd_exit.Click += m_cmd_exit_Click;
             m_cbo_ten_don_vi_cap_tren.SelectedIndexChanged +=
                 m_cbo_ten_don_vi_cap_tren_SelectedIndexChanged;
-            m_cbo_cap_don_vi.SelectedIndexChanged += 
+            m_cbo_cap_don_vi.SelectedIndexChanged +=
                 m_cbo_cap_don_vi_SelectedIndexChanged;
         }
 
@@ -199,13 +200,12 @@ namespace BKI_HRM.DanhMuc {
         }
 
         private void f102_v_dm_don_vi_de_Load(object sender, EventArgs e) {
-            try{
-            }
-            catch (Exception v_e){
+            try {
+            } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        
+
         private void m_cbo_cap_don_vi_SelectedIndexChanged(object sender, EventArgs e) {
             try {
                 load_data_2_cbo_don_vi_cap_tren();
@@ -213,7 +213,7 @@ namespace BKI_HRM.DanhMuc {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-       
+
         #endregion
 
 
