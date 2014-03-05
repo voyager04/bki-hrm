@@ -153,8 +153,9 @@ namespace BKI_HRM
             m_us_quyet_dinh.dcID_LOAI_QD = CIPConvert.ToDecimal(m_cbo_loai_quyet_dinh.SelectedValue);
             m_us_quyet_dinh.datNGAY_KY = m_dat_ngay_ky.Value;
             m_us_quyet_dinh.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc_qd.Value;
-            m_us_quyet_dinh.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc_qd.Value;
-
+            if (m_dat_ngay_het_hieu_luc_qd.Checked)
+                m_us_quyet_dinh.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc_qd.Value;
+            
         }
         private void form_to_us_object_trang_thai_ld(){
             m_us_trang_thai_ld.dcID_NHAN_SU = m_us_v_trang_thai_ld.dcID_NHAN_SU;
