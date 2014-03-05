@@ -16,14 +16,14 @@ using BKI_HRM.DS;
 using BKI_HRM.DS.CDBNames;
 namespace BKI_HRM
 {
-    public partial class f202_v_gd_qua_trinh_lam_viec_de : Form
+    public partial class f203_v_gd_trang_thai_lao_dong_de : Form
     {
         #region Public Interface
         public void display()
         {
             this.ShowDialog();
         }
-        public f202_v_gd_qua_trinh_lam_viec_de()
+        public f203_v_gd_trang_thai_lao_dong_de()
         {
             InitializeComponent();
             format_controls();
