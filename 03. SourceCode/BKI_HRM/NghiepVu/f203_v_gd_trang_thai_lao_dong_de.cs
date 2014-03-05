@@ -218,7 +218,7 @@ namespace BKI_HRM
         }
         
         private void set_define_event(){
-            this.Load += new EventHandler(f202_v_gd_qua_trinh_lam_viec_de_Load);
+            this.Load += new EventHandler(f203_v_gd_trang_thai_lao_dong_de_Load);
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
             m_cmd_refresh.Click += new EventHandler(m_cmd_refresh_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
