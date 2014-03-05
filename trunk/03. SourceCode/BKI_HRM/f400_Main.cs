@@ -49,7 +49,7 @@ namespace BKI_HRM {
             this.m_menuitem_thoat.Click += new EventHandler(m_menuitem_thoat_Click);
             this.m_menuitem_qldonvi.Click += new EventHandler(m_menuitem_qldonvi_Click);
             this.m_menu_dsnhansu.Click += new EventHandler(m_menu_dsnhansu_Click);
-            this.m_menuitem_bcnhansu.Click += new EventHandler(m_menuitem_bcnhansu_Click);
+            this.m_menuitem_traCuuNhanSuChung.Click += new EventHandler(m_menuitem_traCuuNhanSuChung_Click);
             m_menuitem_nhan_su_theo_phong_ban.Click += new System.EventHandler(m_menuitem_nhan_su_theo_phong_ban_Click);
         }
 
@@ -166,8 +166,8 @@ namespace BKI_HRM {
         {
             try
             {
-                F701_V_GD_HOP_DONG_LAO_DONG frm = new F701_V_GD_HOP_DONG_LAO_DONG();
-                frm.Show();
+                //F701_V_GD_HOP_DONG_LAO_DONG frm = new F701_V_GD_HOP_DONG_LAO_DONG();
+                //frm.Show();
             }
             catch (Exception v_e)
             {
@@ -227,6 +227,16 @@ namespace BKI_HRM {
             }
         }
 
+        private void m_menuitem_traCuuNhanSuChung_Click(object sender, EventArgs e) {
+            try {
+                f103_bao_cao_tra_cuu_nhan_su frm = new f103_bao_cao_tra_cuu_nhan_su();
+                frm.Show();
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+
         private void f400_Main_Load(object sender, EventArgs e)
         {
             try
@@ -262,5 +272,7 @@ namespace BKI_HRM {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+    
+        
     }
 }

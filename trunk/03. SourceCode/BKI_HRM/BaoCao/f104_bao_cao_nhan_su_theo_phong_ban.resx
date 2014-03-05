@@ -118,14 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="ImageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+    <value>87, 13</value>
   </metadata>
   <data name="ImageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAO
-        HwAAAk1TRnQBSQFMAgEBFgEAAVwBAAFcAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        HwAAAk1TRnQBSQFMAgEBFgEAAYwBAAGMAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAAWADAAEBAQABCAYAARgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -260,13 +260,16 @@
         AQMBgAEPAYEB/wHAAQ8BwAEHAYgBHwHDA/8BwAEPAZ8B/ws=
 </value>
   </data>
-  <data name="m_fg_nhan_su.ColumnInfo" xml:space="preserve">
-    <value>20,1,0,0,0,85,Columns:0{Width:13;}	1{Caption:"MÃ NHÂN VIÊN";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	2{Width:103;Caption:"HỌ ĐỆM";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	3{Caption:"TÊN";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	4{Caption:"GIỚI TÍNH";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	5{Caption:"NGÀY SINH";Visible:False;DataType:System.DateTime;Format:"dd/MM/yyyy";TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	6{Caption:"TRÌNH ĐỘ";Visible:False;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	7{Width:104;Caption:"MÃ CÔNG VIỆC";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	8{Width:115;Caption:"TÊN CÔNG VIỆC";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	9{Width:139;Caption:"TRẠNG THÁI CÔNG VIỆC";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	10{Width:109;Caption:"TỶ LỆ THAM GIA";DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	11{Caption:"MÃ ĐƠN VỊ";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	12{Caption:"TÊN ĐƠN VỊ";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	13{Caption:"LOẠI ĐƠN VỊ";Visible:False;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	14{Caption:"CẤP ĐƠN VỊ";Visible:False;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	15{Caption:"ĐỊA BÀN";Visible:False;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	16{Width:145;Caption:"TRẠNG THÁI LAO ĐỘNG";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	17{Width:124;Caption:"NGÀY CÓ HIỆU LỰC";Visible:False;DataType:System.DateTime;Format:"dd/MM/yyyy";TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	18{Caption:"NGÀY HẾT HIỆU LỰC";Visible:False;DataType:System.DateTime;Format:"dd/MM/yyyy";TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	19{Caption:"TRẠNG THÁI HIỆN TẠI";Visible:False;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	</value>
+  <metadata name="m_tooltip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>223, 12</value>
+  </metadata>
+  <data name="m_fg.ColumnInfo" xml:space="preserve">
+    <value>14,1,0,0,0,85,Columns:0{Width:13;}	1{Width:207;Caption:"ĐƠN VỊ";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	2{Caption:"MÃ ĐƠN VỊ";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	3{Width:100;Caption:"MÃ NHÂN VIÊN";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	4{Width:170;Caption:"HỌ ĐỆM";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	5{Width:102;Caption:"TÊN";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	6{Caption:"MÃ CHỨC VỤ";Visible:False;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	7{Width:120;Caption:"CHỨC VỤ";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	8{Width:147;Caption:"TRẠNG THÁI CÔNG VIỆC";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	9{Width:107;Caption:"NGÀY BẮT ĐẦU";DataType:System.DateTime;Format:"dd/MM/yyyy";TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	10{Width:103;Caption:"NGÀY KẾT THÚC";DataType:System.DateTime;Format:"dd/MM/yyyy";TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	11{Caption:"MÃ QUYẾT ĐỊNH";Visible:False;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	12{Caption:"NGÀY CÓ HIỆU LỰC";Visible:False;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	13{Caption:"NGÀY HẾT HIỆU LỰC";Visible:False;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	</value>
   </data>
-  <data name="m_fg_nhan_su.Styles" xml:space="preserve">
+  <data name="m_fg.Styles" xml:space="preserve">
     <value>Normal{Font:Arial, 8.25pt;}	Alternate{BackColor:Info;}	Fixed{BackColor:Control;ForeColor:ControlText;Border:Flat,1,ControlDark,Both;}	Highlight{BackColor:Highlight;ForeColor:HighlightText;}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	EmptyArea{BackColor:AppWorkspace;Border:Flat,1,ControlDarkDark,Both;}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal2{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	</value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
+    <value>31</value>
   </metadata>
 </root>
