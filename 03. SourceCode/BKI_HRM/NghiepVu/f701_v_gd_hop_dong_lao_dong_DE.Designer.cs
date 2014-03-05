@@ -297,7 +297,6 @@
             this.m_txt_tim_kiem_nhan_vien.Name = "m_txt_tim_kiem_nhan_vien";
             this.m_txt_tim_kiem_nhan_vien.Size = new System.Drawing.Size(750, 20);
             this.m_txt_tim_kiem_nhan_vien.TabIndex = 0;
-            this.m_txt_tim_kiem_nhan_vien.Text = "Nhập Họ đệm, Tên nhân viên";
             this.m_txt_tim_kiem_nhan_vien.Leave += new System.EventHandler(this.m_txt_tim_kiem_nhan_vien_Leave);
             // 
             // label3
