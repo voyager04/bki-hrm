@@ -276,5 +276,12 @@ public class US_DM_DU_AN : US_Object
         v_sp.addNVarcharInputParam("@MA_DA", i_str_id);
         v_sp.fillDataSetByCommand(this, op_ds_dm_da);
     }
+
+    public void FillDatasetSapKetThuc(DS_DM_DU_AN op_ds_dm_da, DateTime i_dat_now)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_DM_DU_AN_sap_ket_thuc");
+        v_sp.addDatetimeInputParam("@DAT_NOW", i_dat_now);
+        v_sp.fillDataSetByCommand(this, op_ds_dm_da);
+    }
 }
 }
