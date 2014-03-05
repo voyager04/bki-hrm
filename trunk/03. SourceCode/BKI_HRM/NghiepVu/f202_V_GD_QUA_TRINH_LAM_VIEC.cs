@@ -588,7 +588,7 @@ namespace BKI_HRM
         }
         private void them_quyet_dinh()
         {
-            F600_v_dm_quyet_dinh v_frm = new F600_v_dm_quyet_dinh();
+            f600_v_dm_quyet_dinh v_frm = new f600_v_dm_quyet_dinh();
 
             v_frm.select_data(ref m_us_dm_quyet_dinh);
 
