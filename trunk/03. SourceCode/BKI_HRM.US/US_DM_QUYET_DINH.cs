@@ -239,5 +239,11 @@ public class US_DM_QUYET_DINH : US_Object
         v_sp.addDecimalInputParam("@ID_QD", i_dc_id_qd);
         v_sp.fillDataSetByCommand(this, op_ds_quyet_dinh);
     }
+    public void FillDataset_By_Ma_qd(DS_DM_QUYET_DINH op_ds, string ip_str_ma_qd)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_DM_QUYET_DINH_By_Ma_qd");
+        v_sp.addNVarcharInputParam("@ip_str_ma_qd", ip_str_ma_qd);
+        v_sp.fillDataSetByCommand(this, op_ds);
+    }
 }
 }
