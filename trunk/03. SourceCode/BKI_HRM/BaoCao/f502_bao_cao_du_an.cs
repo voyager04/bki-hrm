@@ -39,6 +39,14 @@ namespace BKI_HRM
 		internal SIS.Controls.Button.SiSButton m_cmd_insert;
 		internal SIS.Controls.Button.SiSButton m_cmd_exit;
 		internal SIS.Controls.Button.SiSButton m_cmd_view;
+        private Label label1;
+        private Label m_lbl_tu_ngay;
+        private DateTimePicker m_dat_den_ngay;
+        private DateTimePicker m_dat_tu_ngay;
+        private TextBox m_txt_tim_kiem;
+        internal SIS.Controls.Button.SiSButton m_cmd_search;
+        private Label m_lbl_tim_kiem;
+        private ToolTip toolTip1;
 		private System.ComponentModel.IContainer components;
 
 		public f502_bao_cao_du_an()
@@ -86,6 +94,14 @@ namespace BKI_HRM
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_lbl_tu_ngay = new System.Windows.Forms.Label();
+            this.m_dat_den_ngay = new System.Windows.Forms.DateTimePicker();
+            this.m_dat_tu_ngay = new System.Windows.Forms.DateTimePicker();
+            this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
+            this.m_cmd_search = new SIS.Controls.Button.SiSButton();
+            this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -209,18 +225,99 @@ namespace BKI_HRM
             // m_fg
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 0);
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_fg.Location = new System.Drawing.Point(0, 83);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(890, 432);
+            this.m_fg.Size = new System.Drawing.Size(890, 349);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(552, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 43;
+            this.label1.Text = "Đến ngày";
+            // 
+            // m_lbl_tu_ngay
+            // 
+            this.m_lbl_tu_ngay.AutoSize = true;
+            this.m_lbl_tu_ngay.Location = new System.Drawing.Point(349, 28);
+            this.m_lbl_tu_ngay.Name = "m_lbl_tu_ngay";
+            this.m_lbl_tu_ngay.Size = new System.Drawing.Size(46, 13);
+            this.m_lbl_tu_ngay.TabIndex = 42;
+            this.m_lbl_tu_ngay.Text = "Từ ngày";
+            // 
+            // m_dat_den_ngay
+            // 
+            this.m_dat_den_ngay.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_den_ngay.Location = new System.Drawing.Point(611, 22);
+            this.m_dat_den_ngay.Name = "m_dat_den_ngay";
+            this.m_dat_den_ngay.ShowCheckBox = true;
+            this.m_dat_den_ngay.Size = new System.Drawing.Size(121, 20);
+            this.m_dat_den_ngay.TabIndex = 41;
+            this.m_dat_den_ngay.Value = new System.DateTime(2015, 12, 31, 0, 0, 0, 0);
+            // 
+            // m_dat_tu_ngay
+            // 
+            this.m_dat_tu_ngay.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_tu_ngay.Location = new System.Drawing.Point(398, 22);
+            this.m_dat_tu_ngay.Name = "m_dat_tu_ngay";
+            this.m_dat_tu_ngay.ShowCheckBox = true;
+            this.m_dat_tu_ngay.Size = new System.Drawing.Size(121, 20);
+            this.m_dat_tu_ngay.TabIndex = 40;
+            this.m_dat_tu_ngay.Value = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
+            // 
+            // m_txt_tim_kiem
+            // 
+            this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(78, 22);
+            this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
+            this.m_txt_tim_kiem.Size = new System.Drawing.Size(242, 20);
+            this.m_txt_tim_kiem.TabIndex = 37;
+            this.toolTip1.SetToolTip(this.m_txt_tim_kiem, "Nhập Tên dự án, mã dự án, trưởng dự án, cơ chế");
+            // 
+            // m_cmd_search
+            // 
+            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_search.ImageIndex = 5;
+            this.m_cmd_search.ImageList = this.ImageList;
+            this.m_cmd_search.Location = new System.Drawing.Point(790, 14);
+            this.m_cmd_search.Name = "m_cmd_search";
+            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_search.TabIndex = 38;
+            this.m_cmd_search.Text = "Tìm kiếm";
+            this.m_cmd_search.Click += new System.EventHandler(this.m_cmd_search_Click);
+            // 
+            // m_lbl_tim_kiem
+            // 
+            this.m_lbl_tim_kiem.AutoSize = true;
+            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(10, 29);
+            this.m_lbl_tim_kiem.Name = "m_lbl_tim_kiem";
+            this.m_lbl_tim_kiem.Size = new System.Drawing.Size(49, 13);
+            this.m_lbl_tim_kiem.TabIndex = 39;
+            this.m_lbl_tim_kiem.Text = "Tìm kiếm";
             // 
             // f502_bao_cao_du_an
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(890, 468);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.m_lbl_tu_ngay);
+            this.Controls.Add(this.m_dat_den_ngay);
+            this.Controls.Add(this.m_dat_tu_ngay);
+            this.Controls.Add(this.m_txt_tim_kiem);
+            this.Controls.Add(this.m_cmd_search);
+            this.Controls.Add(this.m_lbl_tim_kiem);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -234,6 +331,7 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 		#endregion
@@ -262,6 +360,8 @@ namespace BKI_HRM
 		ITransferDataRow m_obj_trans;		
 		DS_V_GD_BAO_CAO_DU_AN_2 m_ds = new DS_V_GD_BAO_CAO_DU_AN_2();
 		US_V_GD_BAO_CAO_DU_AN_2 m_us = new US_V_GD_BAO_CAO_DU_AN_2();
+        DateTime v_dat_ngay_bd;
+        DateTime v_dat_ngay_kt;
 		#endregion
 
 		#region Private Methods
@@ -425,6 +525,41 @@ namespace BKI_HRM
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
+
+        private void m_cmd_search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                m_ds = new DS_V_GD_BAO_CAO_DU_AN_2();
+                if (!m_dat_tu_ngay.Checked)
+                {
+                    v_dat_ngay_bd = new DateTime(1970,1,1);
+                }
+                else
+                {
+                    v_dat_ngay_bd = m_dat_tu_ngay.Value;
+                }
+
+                if (!m_dat_den_ngay.Checked)
+                {
+                    v_dat_ngay_kt = new DateTime(2050,12,31);
+                }
+                else
+                {
+                    v_dat_ngay_kt = m_dat_den_ngay.Value;
+                }
+
+                m_us.FillDatasetSearch(m_ds, m_txt_tim_kiem.Text, v_dat_ngay_bd, v_dat_ngay_kt);
+                m_fg.Redraw = false;
+                CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+                m_fg.Redraw = true;
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+
+            }
+        }
 
 	}
 }
