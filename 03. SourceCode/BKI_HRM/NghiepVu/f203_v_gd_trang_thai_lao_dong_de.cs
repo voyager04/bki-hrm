@@ -14,8 +14,6 @@ using IP.Core.IPSystemAdmin;
 using BKI_HRM.US;
 using BKI_HRM.DS;
 using BKI_HRM.DS.CDBNames;
-using System.Net.Mail;
-using System.Text.RegularExpressions;
 namespace BKI_HRM
 {
     public partial class f202_v_gd_qua_trinh_lam_viec_de : Form
