@@ -487,5 +487,17 @@ namespace BKI_HRM.DS.CDBNames
        public const string CO_CHE = "CO_CHE";
        public const string GHI_CHU = "GHI_CHU";
    }
+   public class GD_CHI_TIET_CHUC_VU
+   {
+       public const string ID = "ID";
+       public const string ID_NHAN_SU = "ID_NHAN_SU";
+       public const string ID_CHUC_VU = "ID_CHUC_VU";
+       public const string ID_DON_VI = "ID_DON_VI";
+       public const string ID_QUYET_DINH = "ID_QUYET_DINH";
+       public const string ID_TRANG_THAI_CV = "ID_TRANG_THAI_CV";
+       public const string TY_LE_THAM_GIA = "TY_LE_THAM_GIA";
+       public const string NGAY_BAT_DAU = "NGAY_BAT_DAU";
+       public const string NGAY_KET_THUC = "NGAY_KET_THUC";
+   }
 
 }
