@@ -1,4 +1,5 @@
-﻿namespace BKI_HRM
+﻿using System.Windows.Forms;
+namespace BKI_HRM
 {
     partial class f400_Main
     {
@@ -489,12 +490,13 @@
             // m_lbl_thong_bao_hop_dong_sap_het_han
             // 
             this.m_lbl_thong_bao_hop_dong_sap_het_han.AutoSize = true;
+            this.m_lbl_thong_bao_hop_dong_sap_het_han.Cursor = System.Windows.Forms.Cursors.Hand;
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_lbl_thong_bao_hop_dong_sap_het_han.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_thong_bao_hop_dong_sap_het_han.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold);
             this.m_lbl_thong_bao_hop_dong_sap_het_han.ForeColor = System.Drawing.Color.Red;
-            this.m_lbl_thong_bao_hop_dong_sap_het_han.Location = new System.Drawing.Point(0, 382);
+            this.m_lbl_thong_bao_hop_dong_sap_het_han.Location = new System.Drawing.Point(0, 377);
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Name = "m_lbl_thong_bao_hop_dong_sap_het_han";
-            this.m_lbl_thong_bao_hop_dong_sap_het_han.Size = new System.Drawing.Size(0, 13);
+            this.m_lbl_thong_bao_hop_dong_sap_het_han.Size = new System.Drawing.Size(0, 18);
             this.m_lbl_thong_bao_hop_dong_sap_het_han.TabIndex = 3;
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Click += new System.EventHandler(this.m_lbl_thong_bao_hop_dong_sap_het_han_Click);
             // 
