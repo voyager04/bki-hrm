@@ -170,7 +170,7 @@ Public Class CControlFormat
                         .MaximizeBox = False
                         .MinimizeBox = False
                         .StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-                        .ShowInTaskbar = False
+                        .ShowInTaskbar = True
                     Case IPFormStyle.DockableTopForm
                         .FormBorderStyle = FormBorderStyle.Sizable
                         .MaximizeBox = True
