@@ -56,15 +56,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.m_cbo_trang_thai = new System.Windows.Forms.ComboBox();
             this.m_lbl_co_che = new System.Windows.Forms.Label();
-            this.m_cbo_loai_hop_dong = new System.Windows.Forms.ComboBox();
             this.m_lbl_trang_thai = new System.Windows.Forms.Label();
             this.m_lbl_ngay_bat_dau = new System.Windows.Forms.Label();
             this.m_dat_ngay_co_hieu_luc = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_ngay_ket_thuc = new System.Windows.Forms.Label();
-            this.m_dat_ngay_het_han = new System.Windows.Forms.DateTimePicker();
             this.m_txt_ma_hop_dong = new System.Windows.Forms.TextBox();
             this.m_lbl_ma_du_an = new System.Windows.Forms.Label();
             this.m_ofd_chon_file = new System.Windows.Forms.OpenFileDialog();
+            this.m_dat_ngay_het_han = new System.Windows.Forms.DateTimePicker();
+            this.m_cbo_loai_hop_dong = new System.Windows.Forms.ComboBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -174,12 +174,10 @@
             // 
             // m_dat_ngay_ky_hop_dong
             // 
-            this.m_dat_ngay_ky_hop_dong.Checked = false;
             this.m_dat_ngay_ky_hop_dong.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_ky_hop_dong.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_ky_hop_dong.Location = new System.Drawing.Point(435, 18);
             this.m_dat_ngay_ky_hop_dong.Name = "m_dat_ngay_ky_hop_dong";
-            this.m_dat_ngay_ky_hop_dong.ShowCheckBox = true;
             this.m_dat_ngay_ky_hop_dong.Size = new System.Drawing.Size(141, 20);
             this.m_dat_ngay_ky_hop_dong.TabIndex = 99;
             // 
@@ -367,15 +365,6 @@
             this.m_lbl_co_che.TabIndex = 108;
             this.m_lbl_co_che.Text = "Trạng thái";
             // 
-            // m_cbo_loai_hop_dong
-            // 
-            this.m_cbo_loai_hop_dong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_loai_hop_dong.FormattingEnabled = true;
-            this.m_cbo_loai_hop_dong.Location = new System.Drawing.Point(124, 58);
-            this.m_cbo_loai_hop_dong.Name = "m_cbo_loai_hop_dong";
-            this.m_cbo_loai_hop_dong.Size = new System.Drawing.Size(157, 21);
-            this.m_cbo_loai_hop_dong.TabIndex = 96;
-            // 
             // m_lbl_trang_thai
             // 
             this.m_lbl_trang_thai.AutoSize = true;
@@ -412,16 +401,6 @@
             this.m_lbl_ngay_ket_thuc.TabIndex = 105;
             this.m_lbl_ngay_ket_thuc.Text = "Ngày hết hạn";
             // 
-            // m_dat_ngay_het_han
-            // 
-            this.m_dat_ngay_het_han.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_ngay_het_han.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_het_han.Location = new System.Drawing.Point(435, 107);
-            this.m_dat_ngay_het_han.Name = "m_dat_ngay_het_han";
-            this.m_dat_ngay_het_han.ShowCheckBox = true;
-            this.m_dat_ngay_het_han.Size = new System.Drawing.Size(141, 20);
-            this.m_dat_ngay_het_han.TabIndex = 101;
-            // 
             // m_txt_ma_hop_dong
             // 
             this.m_txt_ma_hop_dong.Location = new System.Drawing.Point(124, 18);
@@ -442,11 +421,32 @@
             // 
             this.m_ofd_chon_file.FileName = "openFileDialog1";
             // 
+            // m_dat_ngay_het_han
+            // 
+            this.m_dat_ngay_het_han.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_het_han.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_ngay_het_han.Location = new System.Drawing.Point(435, 107);
+            this.m_dat_ngay_het_han.Name = "m_dat_ngay_het_han";
+            this.m_dat_ngay_het_han.ShowCheckBox = true;
+            this.m_dat_ngay_het_han.Size = new System.Drawing.Size(141, 20);
+            this.m_dat_ngay_het_han.TabIndex = 115;
+            // 
+            // m_cbo_loai_hop_dong
+            // 
+            this.m_cbo_loai_hop_dong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_loai_hop_dong.FormattingEnabled = true;
+            this.m_cbo_loai_hop_dong.Location = new System.Drawing.Point(126, 59);
+            this.m_cbo_loai_hop_dong.Name = "m_cbo_loai_hop_dong";
+            this.m_cbo_loai_hop_dong.Size = new System.Drawing.Size(155, 21);
+            this.m_cbo_loai_hop_dong.TabIndex = 116;
+            // 
             // f701_v_gd_hop_dong_lao_dong_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 415);
+            this.Controls.Add(this.m_cbo_loai_hop_dong);
+            this.Controls.Add(this.m_dat_ngay_het_han);
             this.Controls.Add(this.m_cmd_chon_file);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_dat_ngay_ky_hop_dong);
@@ -459,12 +459,10 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_cbo_trang_thai);
             this.Controls.Add(this.m_lbl_co_che);
-            this.Controls.Add(this.m_cbo_loai_hop_dong);
             this.Controls.Add(this.m_lbl_trang_thai);
             this.Controls.Add(this.m_lbl_ngay_bat_dau);
             this.Controls.Add(this.m_dat_ngay_co_hieu_luc);
             this.Controls.Add(this.m_lbl_ngay_ket_thuc);
-            this.Controls.Add(this.m_dat_ngay_het_han);
             this.Controls.Add(this.m_txt_ma_hop_dong);
             this.Controls.Add(this.m_lbl_ma_du_an);
             this.Name = "f701_v_gd_hop_dong_lao_dong_DE";
@@ -502,12 +500,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox m_cbo_trang_thai;
         private System.Windows.Forms.Label m_lbl_co_che;
-        private System.Windows.Forms.ComboBox m_cbo_loai_hop_dong;
         private System.Windows.Forms.Label m_lbl_trang_thai;
         private System.Windows.Forms.Label m_lbl_ngay_bat_dau;
         private System.Windows.Forms.DateTimePicker m_dat_ngay_co_hieu_luc;
         private System.Windows.Forms.Label m_lbl_ngay_ket_thuc;
-        private System.Windows.Forms.DateTimePicker m_dat_ngay_het_han;
         private System.Windows.Forms.TextBox m_txt_ma_hop_dong;
         private System.Windows.Forms.Label m_lbl_ma_du_an;
         private System.Windows.Forms.OpenFileDialog m_ofd_chon_file;
@@ -515,5 +511,7 @@
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         internal SIS.Controls.Button.SiSButton m_cmd_xuat_word;
         internal System.Windows.Forms.ImageList ImageList;
+        private System.Windows.Forms.DateTimePicker m_dat_ngay_het_han;
+        private System.Windows.Forms.ComboBox m_cbo_loai_hop_dong;
     }
 }

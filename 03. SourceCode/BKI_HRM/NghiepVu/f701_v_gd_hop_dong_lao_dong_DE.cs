@@ -20,9 +20,12 @@ namespace BKI_HRM.NghiepVu
         #region Public Interfaces
         public f701_v_gd_hop_dong_lao_dong_DE()
         {
+
             InitializeComponent();
             auto_suggest_text();
             CControlFormat.setFormStyle(this);
+            load_data_2_cbo_loai_hop_dong();
+            m_cbo_trang_thai.SelectedIndex = 0;
         }
 
         public void display_for_insert()
@@ -92,11 +95,6 @@ namespace BKI_HRM.NghiepVu
                 m_us.SetNGAY_HET_HANNull();
             else
                 m_us.datNGAY_HET_HAN = m_dat_ngay_het_han.Value;
-
-            if (m_dat_ngay_ky_hop_dong.Checked == false)
-                m_us.SetNGAY_KY_HOP_DONGNull();
-            else
-                m_us.datNGAY_KY_HOP_DONG = m_dat_ngay_ky_hop_dong.Value;
         }
 
         private void save_data()
@@ -125,12 +123,8 @@ namespace BKI_HRM.NghiepVu
             m_txt_ma_hop_dong.Text = ip_us_gd_hop_dong.strMA_HOP_DONG;
             m_txt_nguoi_ky.Text = ip_us_gd_hop_dong.strNGUOI_KY;
             m_txt_chuc_vu_nguoi_ky.Text = ip_us_gd_hop_dong.strCHUC_VU_NGUOI_KY;
-            m_cbo_loai_hop_dong.SelectedValue = ip_us_gd_hop_dong.dcID_LOAI_HOP_DONG;
             m_dat_ngay_co_hieu_luc.Value = ip_us_gd_hop_dong.datNGAY_CO_HIEU_LUC;
             m_dat_ngay_ky_hop_dong.Value = ip_us_gd_hop_dong.datNGAY_KY_HOP_DONG;
-            m_cbo_trang_thai.SelectedIndex = (ip_us_gd_hop_dong.strTRANG_THAI_HOP_DONG.Equals("y")) ? 0 : 1;
-
-            m_dat_ngay_het_han.Value = m_dat_ngay_het_han.Checked ? DateTime.Today : ip_us_gd_hop_dong.datNGAY_HET_HAN;
 
             US_DM_NHAN_SU v_us_dm_nhan_su = new US_DM_NHAN_SU(ip_us_gd_hop_dong.dcID_NHAN_SU);
             m_lbl_ma_nhan_vien.Text = v_us_dm_nhan_su.strMA_NV;
@@ -138,6 +132,20 @@ namespace BKI_HRM.NghiepVu
             m_lbl_ngay_sinh.Text = v_us_dm_nhan_su.datNGAY_SINH.ToShortDateString();
             m_lbl_dia_chi.Text = v_us_dm_nhan_su.strCHO_O;
 
+            m_cbo_loai_hop_dong.SelectedValue = ip_us_gd_hop_dong.dcID_LOAI_HOP_DONG;
+            m_cbo_trang_thai.SelectedIndex = (ip_us_gd_hop_dong.strTRANG_THAI_HOP_DONG.Equals("y")) ? 0 : 1;
+
+            if (ip_us_gd_hop_dong.datNGAY_HET_HAN.Equals(DateTime.Parse("1/1/1900 12:00:00 AM")))
+            {
+                m_dat_ngay_het_han.Checked = false;
+            }
+            else
+            {
+                m_dat_ngay_het_han.Value = ip_us_gd_hop_dong.datNGAY_HET_HAN;
+                m_dat_ngay_het_han.Checked = true;
+            }
+
+            if (ip_us_gd_hop_dong.strLINK == "") return;
             string[] v_strs = ip_us_gd_hop_dong.strLINK.Split('\\');
             m_lbl_file_name.Text = v_strs[v_strs.Length - 1];
         }
@@ -236,9 +244,6 @@ namespace BKI_HRM.NghiepVu
 
         private void f701_v_gd_hop_dong_lao_dong_DE_Load(object sender, EventArgs e)
         {
-            load_data_2_cbo_loai_hop_dong();
-            m_cbo_trang_thai.SelectedIndex = 0;
-            m_dat_ngay_het_han.Checked = false;
             generate_ma_hop_dong();
             m_txt_ma_hop_dong.Focus();
         }
