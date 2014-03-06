@@ -180,6 +180,7 @@ namespace BKI_HRM
             // 
             // m_menuitem_qlbac
             // 
+            this.m_menuitem_qlbac.Enabled = false;
             this.m_menuitem_qlbac.Name = "m_menuitem_qlbac";
             this.m_menuitem_qlbac.Size = new System.Drawing.Size(206, 22);
             this.m_menuitem_qlbac.Text = "Quản lý bậc";
@@ -192,6 +193,7 @@ namespace BKI_HRM
             // 
             // m_menuitem_qlphapnhan
             // 
+            this.m_menuitem_qlphapnhan.Enabled = false;
             this.m_menuitem_qlphapnhan.Name = "m_menuitem_qlphapnhan";
             this.m_menuitem_qlphapnhan.Size = new System.Drawing.Size(206, 22);
             this.m_menuitem_qlphapnhan.Text = "Quản lý pháp nhân";
@@ -205,6 +207,7 @@ namespace BKI_HRM
             // 
             // m_menuitem_qlcoche
             // 
+            this.m_menuitem_qlcoche.Enabled = false;
             this.m_menuitem_qlcoche.Name = "m_menuitem_qlcoche";
             this.m_menuitem_qlcoche.Size = new System.Drawing.Size(206, 22);
             this.m_menuitem_qlcoche.Text = "Quản lý cơ chế";
@@ -270,6 +273,7 @@ namespace BKI_HRM
             this.m_menu_tuyendung.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.m_menuitem_hosouv,
             this.m_menuitem_quatrinhtuyendung});
+            this.m_menu_tuyendung.Enabled = false;
             this.m_menu_tuyendung.Name = "m_menu_tuyendung";
             this.m_menu_tuyendung.Size = new System.Drawing.Size(160, 22);
             this.m_menu_tuyendung.Text = "Tuyển dụng";
@@ -294,6 +298,7 @@ namespace BKI_HRM
             this.m_meuitem_thue,
             this.m_menuitem_baohiem,
             this.m_meuitem_luongthang});
+            this.m_menuitem_luong.Enabled = false;
             this.m_menuitem_luong.Name = "m_menuitem_luong";
             this.m_menuitem_luong.Size = new System.Drawing.Size(160, 22);
             this.m_menuitem_luong.Text = "Lương";
@@ -353,6 +358,7 @@ namespace BKI_HRM
             // 
             // m_meuitem_headcount
             // 
+            this.m_meuitem_headcount.Enabled = false;
             this.m_meuitem_headcount.Name = "m_meuitem_headcount";
             this.m_meuitem_headcount.Size = new System.Drawing.Size(160, 22);
             this.m_meuitem_headcount.Text = "Headcount";
@@ -378,48 +384,56 @@ namespace BKI_HRM
             // 
             // m_menuitem_soyeulilich
             // 
+            this.m_menuitem_soyeulilich.Enabled = false;
             this.m_menuitem_soyeulilich.Name = "m_menuitem_soyeulilich";
             this.m_menuitem_soyeulilich.Size = new System.Drawing.Size(234, 22);
             this.m_menuitem_soyeulilich.Text = "Sơ yếu lý lịch";
             // 
             // m_menuitem_bcnghiviec
             // 
+            this.m_menuitem_bcnghiviec.Enabled = false;
             this.m_menuitem_bcnghiviec.Name = "m_menuitem_bcnghiviec";
             this.m_menuitem_bcnghiviec.Size = new System.Drawing.Size(234, 22);
             this.m_menuitem_bcnghiviec.Text = "Báo cáo nghỉ việc";
             // 
             // m_menuitem_biendongns
             // 
+            this.m_menuitem_biendongns.Enabled = false;
             this.m_menuitem_biendongns.Name = "m_menuitem_biendongns";
             this.m_menuitem_biendongns.Size = new System.Drawing.Size(234, 22);
             this.m_menuitem_biendongns.Text = "Biến động nhân sự";
             // 
             // m_menuitem_nhanvienmoi
             // 
+            this.m_menuitem_nhanvienmoi.Enabled = false;
             this.m_menuitem_nhanvienmoi.Name = "m_menuitem_nhanvienmoi";
             this.m_menuitem_nhanvienmoi.Size = new System.Drawing.Size(234, 22);
             this.m_menuitem_nhanvienmoi.Text = "Tình hình nhân viên mới";
             // 
             // m_menuitem_hopdonglaodong
             // 
+            this.m_menuitem_hopdonglaodong.Enabled = false;
             this.m_menuitem_hopdonglaodong.Name = "m_menuitem_hopdonglaodong";
             this.m_menuitem_hopdonglaodong.Size = new System.Drawing.Size(234, 22);
             this.m_menuitem_hopdonglaodong.Text = "Tình trạng hợp đồng lao động";
             // 
             // m_menuitem_bcheadcount
             // 
+            this.m_menuitem_bcheadcount.Enabled = false;
             this.m_menuitem_bcheadcount.Name = "m_menuitem_bcheadcount";
             this.m_menuitem_bcheadcount.Size = new System.Drawing.Size(234, 22);
             this.m_menuitem_bcheadcount.Text = "Headcount";
             // 
             // m_menuitem_bcbaohiem
             // 
+            this.m_menuitem_bcbaohiem.Enabled = false;
             this.m_menuitem_bcbaohiem.Name = "m_menuitem_bcbaohiem";
             this.m_menuitem_bcbaohiem.Size = new System.Drawing.Size(234, 22);
             this.m_menuitem_bcbaohiem.Text = "Tình trạng bảo hiểm";
             // 
             // m_menuitem_bccoche
             // 
+            this.m_menuitem_bccoche.Enabled = false;
             this.m_menuitem_bccoche.Name = "m_menuitem_bccoche";
             this.m_menuitem_bccoche.Size = new System.Drawing.Size(234, 22);
             this.m_menuitem_bccoche.Text = "Báo cáo cơ chế";
@@ -433,6 +447,7 @@ namespace BKI_HRM
             // 
             // m_menuitem_bctuyendung
             // 
+            this.m_menuitem_bctuyendung.Enabled = false;
             this.m_menuitem_bctuyendung.Name = "m_menuitem_bctuyendung";
             this.m_menuitem_bctuyendung.Size = new System.Drawing.Size(234, 22);
             this.m_menuitem_bctuyendung.Text = "Báo cáo tuyển dụng";
@@ -496,10 +511,10 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hop_dong_sap_het_han.ForeColor = System.Drawing.Color.Red;
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Location = new System.Drawing.Point(0, 377);
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Name = "m_lbl_thong_bao_hop_dong_sap_het_han";
-            this.m_lbl_thong_bao_hop_dong_sap_het_han.Size = new System.Drawing.Size(0, 18);
+            this.m_lbl_thong_bao_hop_dong_sap_het_han.Size = new System.Drawing.Size(165, 18);
             this.m_lbl_thong_bao_hop_dong_sap_het_han.TabIndex = 3;
-            this.m_lbl_thong_bao_hop_dong_sap_het_han.Click += new System.EventHandler(this.m_lbl_thong_bao_hop_dong_sap_het_han_Click);
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Text = "Hợp đồng sắp hết hạn";
+            this.m_lbl_thong_bao_hop_dong_sap_het_han.Click += new System.EventHandler(this.m_lbl_thong_bao_hop_dong_sap_het_han_Click);
             // 
             // f400_Main
             // 
