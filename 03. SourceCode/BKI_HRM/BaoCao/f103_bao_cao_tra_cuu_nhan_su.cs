@@ -358,7 +358,7 @@ namespace BKI_HRM {
         ITransferDataRow m_obj_trans;
         DS_V_DM_DU_LIEU_NHAN_VIEN m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
         US_V_DM_DU_LIEU_NHAN_VIEN m_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
-        private const String m_str_goi_y_tim_kiem = "Từ khoá tìm kiếm,...";
+        private const String m_str_goi_y_tim_kiem = "Nhập tên nhân viên, Mã nhân viên, Tên phòng ban, Mã phòng ban,...";
 
         #endregion
 
