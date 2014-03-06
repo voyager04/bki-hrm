@@ -38,7 +38,7 @@ namespace BKI_HRM
 		internal SIS.Controls.Button.SiSButton m_cmd_insert;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private Label label1;
-        private TextBox m_txt_thong_tin_nhan_vien;
+        private TextBox m_txt_tim_kiem;
         internal SIS.Controls.Button.SiSButton m_cmd_tim_nhan_vien;
         private C1FlexGrid m_grv_qua_trinh_lam_viec;
         internal SIS.Controls.Button.SiSButton m_cmd_view;
@@ -89,7 +89,7 @@ namespace BKI_HRM
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.m_txt_thong_tin_nhan_vien = new System.Windows.Forms.TextBox();
+            this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_cmd_tim_nhan_vien = new SIS.Controls.Button.SiSButton();
             this.m_grv_qua_trinh_lam_viec = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -204,6 +204,7 @@ namespace BKI_HRM
             this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
             this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
@@ -223,12 +224,13 @@ namespace BKI_HRM
             this.label1.TabIndex = 21;
             this.label1.Text = "Thông tin nhân viên";
             // 
-            // m_txt_thong_tin_nhan_vien
+            // m_txt_tim_kiem
             // 
-            this.m_txt_thong_tin_nhan_vien.Location = new System.Drawing.Point(212, 21);
-            this.m_txt_thong_tin_nhan_vien.Name = "m_txt_thong_tin_nhan_vien";
-            this.m_txt_thong_tin_nhan_vien.Size = new System.Drawing.Size(422, 20);
-            this.m_txt_thong_tin_nhan_vien.TabIndex = 22;
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(212, 21);
+            this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
+            this.m_txt_tim_kiem.Size = new System.Drawing.Size(422, 20);
+            this.m_txt_tim_kiem.TabIndex = 22;
+            this.m_txt_tim_kiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.m_txt_tim_kiem_KeyDown);
             // 
             // m_cmd_tim_nhan_vien
             // 
@@ -258,10 +260,11 @@ namespace BKI_HRM
             // f202_V_GD_QUA_TRINH_LAM_VIEC
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.CancelButton = this.m_cmd_exit;
             this.ClientSize = new System.Drawing.Size(893, 470);
             this.Controls.Add(this.m_grv_qua_trinh_lam_viec);
             this.Controls.Add(this.m_cmd_tim_nhan_vien);
-            this.Controls.Add(this.m_txt_thong_tin_nhan_vien);
+            this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f202_V_GD_QUA_TRINH_LAM_VIEC";
@@ -376,7 +379,7 @@ namespace BKI_HRM
         private void load_data_2_grid_search()
         {
             m_ds_qua_trinh_lam_viec = new DS_V_GD_QUA_TRINH_LAM_VIEC();
-            m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, m_txt_thong_tin_nhan_vien.Text.Trim());
+            m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, m_txt_tim_kiem.Text.Trim());
             m_grv_qua_trinh_lam_viec.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec, m_obj_trans);
             m_grv_qua_trinh_lam_viec.Redraw = true;
@@ -395,7 +398,7 @@ namespace BKI_HRM
             US_V_GD_QUA_TRINH_LAM_VIEC v_us = new US_V_GD_QUA_TRINH_LAM_VIEC();
             v_us.DataRow2Me((DataRow)m_grv_qua_trinh_lam_viec.Rows[1].UserData);
            
-            m_txt_thong_tin_nhan_vien.Text = ip_us_dm_nhan_su.strMA_NV + ", " + ip_us_dm_nhan_su.strHO_DEM + " " + ip_us_dm_nhan_su.strTEN;
+            m_txt_tim_kiem.Text = ip_us_dm_nhan_su.strMA_NV + ", " + ip_us_dm_nhan_su.strHO_DEM + " " + ip_us_dm_nhan_su.strTEN;
             
             load_data_2_grid(ip_us_dm_nhan_su);
           
@@ -472,7 +475,7 @@ namespace BKI_HRM
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-            m_txt_thong_tin_nhan_vien.KeyDown += new KeyEventHandler(m_txt_thong_tin_nhan_vien_KeyDown);
+           
 		}
 		#endregion
 
@@ -540,11 +543,23 @@ namespace BKI_HRM
             
         }
 
-        private void m_txt_thong_tin_nhan_vien_KeyDown(object sender, KeyEventArgs e)
+        private void m_txt_tim_kiem_KeyDown(object sender, KeyEventArgs e)
         {
-
+            try
+            {
+                if (e.KeyData == Keys.Enter)
+                {
+                    load_data_2_grid_search();
+                    
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
-        
+
+       
         
 	}
 }
