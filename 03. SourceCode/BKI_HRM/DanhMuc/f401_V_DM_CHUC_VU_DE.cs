@@ -78,6 +78,15 @@ namespace BKI_HRM
             form_2_us_object();
             switch (m_e_form_mode) {
                 case DataEntryFormMode.InsertDataState:
+                    if (check_trung_ma_nv(m_txt_macv.Text))
+                    {
+                        BaseMessages.MsgBox_Warning(212);
+                        m_txt_macv.BackColor = Color.Bisque;
+                        m_txt_macv.Focus();
+                        m_txt_macv.SelectAll();
+                        return;
+                    }
+                    else
                     m_us.Insert();
                     break;
                 case DataEntryFormMode.UpdateDataState:
@@ -100,7 +109,17 @@ namespace BKI_HRM
             else
                 m_rdb_khongsudung.Checked = true;
         }
+        private bool check_trung_ma_nv(string ip_str_ma_cv)
+        {
 
+            DS_DM_CHUC_VU v_ds = new DS_DM_CHUC_VU();
+            decimal count_ma_cv;
+            m_us.FillDataset(v_ds, ip_str_ma_cv);
+            count_ma_cv = v_ds.DM_CHUC_VU.Count;
+            if (count_ma_cv > 0)
+                return true;
+            return false;
+        }
         #endregion
 
         #region Events
