@@ -184,7 +184,8 @@ namespace BKI_HRM
             // 
             // m_dtp_thoidiem
             // 
-            this.m_dtp_thoidiem.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dtp_thoidiem.CustomFormat = "dd/MM/yyyy";
+            this.m_dtp_thoidiem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dtp_thoidiem.Location = new System.Drawing.Point(142, 12);
             this.m_dtp_thoidiem.Name = "m_dtp_thoidiem";
             this.m_dtp_thoidiem.Size = new System.Drawing.Size(176, 20);
