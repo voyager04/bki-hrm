@@ -373,14 +373,14 @@ namespace BKI_HRM
         }
         private void load_custom_source_2_m_txt_tim_kiem()
         {
-            DS_DM_NHAN_SU v_ds_dm_nhan_su = new DS_DM_NHAN_SU();
-            int count = v_ds_dm_nhan_su.Tables["DM_NHAN_SU"].Rows.Count;
+            
+            int count = m_ds.Tables["V_GD_TRANG_THAI_LAO_DONG"].Rows.Count;
             for (int i = 0; i < count; i++)
             {
-                DataRow dr = v_ds_dm_nhan_su.Tables["DM_NHAN_SU"].Rows[i];
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[1].ToString());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[2].ToString() + " " + dr[3].ToString());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[3].ToString());
+                DataRow dr = m_ds.Tables["V_GD_TRANG_THAI_LAO_DONG"].Rows[i];
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[0].ToString());
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[1].ToString() + " " + dr[2].ToString());
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[2].ToString());
             }
         }
 		private void grid2us_object(US_V_GD_TRANG_THAI_LAO_DONG i_us
