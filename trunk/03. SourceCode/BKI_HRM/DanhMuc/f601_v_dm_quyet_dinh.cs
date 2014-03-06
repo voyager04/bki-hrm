@@ -429,7 +429,9 @@ namespace BKI_HRM
         {
             F600_V_DM_QUYET_DINH_DE v_fDE = new F600_V_DM_QUYET_DINH_DE();
             v_fDE.display_for_insert();
+            m_txt_tim_kiem.Text = "";
             load_data_2_grid();
+            m_txt_tim_kiem.Text = m_str_tim_kiem;
         }
 
         private void update_v_dm_quyet_dinh()
@@ -439,7 +441,9 @@ namespace BKI_HRM
             grid2us_object(m_us, m_grv_dm_quyet_dinh.Row);
             F600_V_DM_QUYET_DINH_DE v_fDE = new F600_V_DM_QUYET_DINH_DE();
             v_fDE.display_for_update(m_us);
+            m_txt_tim_kiem.Text = "";
             load_data_2_grid();
+            m_txt_tim_kiem.Text = m_str_tim_kiem;
         }
 
         private void delete_v_dm_quyet_dinh()
