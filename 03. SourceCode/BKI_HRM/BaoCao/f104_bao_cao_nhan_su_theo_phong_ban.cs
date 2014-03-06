@@ -68,7 +68,7 @@ namespace BKI_HRM {
         ITransferDataRow m_obj_trans;
         DS_V_GD_QUA_TRINH_LAM_VIEC m_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC();
         US_V_GD_QUA_TRINH_LAM_VIEC m_us = new US_V_GD_QUA_TRINH_LAM_VIEC();
-        private const String m_str_goi_y_tim_kiem = "Nhập phòng ban, Mã phòng ban,...";
+        private const String m_str_goi_y_tim_kiem = "Nhập Tên đơn vị (Phòng, Trung tâm, Khối), Mã đơn vị, Loại đơn vị, Họ tên nhân viên...";
         #endregion
 
         #region Private Methods
@@ -87,14 +87,18 @@ namespace BKI_HRM {
         private void set_initial_form_load() {
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_grid();
-            set_format_txt_search();
-            
+            set_search_format_before();
+            load_custom_source_2_m_txt_tim_kiem();
         }
-        private void set_format_txt_search() {
-            if (m_txt_tim_kiem.Text.Trim().Equals(String.Empty)) {
-                m_txt_tim_kiem.Select(); //Đưa chuột vào ô tìm kiếm
-            } else {
-                m_txt_tim_kiem.SelectAll(); //Chọn tất cả dữ liệu trong ô tìm kiếm
+        private void load_custom_source_2_m_txt_tim_kiem() {
+            var count = m_ds.Tables["V_GD_QUA_TRINH_LAM_VIEC"].Rows.Count;
+            for (var i = 0; i < count; i++) {
+                var dr = m_ds.Tables["V_GD_QUA_TRINH_LAM_VIEC"].Rows[i];
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["MA_DON_VI"] + " - " + dr["TEN_DON_VI"]);
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TEN_DON_VI"] + " - " + dr["MA_DON_VI"]);
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["HO_DEM"] + " " + dr["TEN"]);
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TEN_CV"].ToString());
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["LOAI_DON_VI"].ToString());
             }
         }
         private ITransferDataRow get_trans_object(C1FlexGrid i_fg) {
@@ -122,14 +126,16 @@ namespace BKI_HRM {
             if (v_str_search.Equals(m_str_goi_y_tim_kiem)) {
                 v_str_search = "";
             }
-            DateTime v_dat_thoi_diem = DateTime.Now;
+            var v_dat_thoi_diem = DateTime.Now;
             if (m_dtp_thoidiem.Checked){
                 v_dat_thoi_diem = m_dtp_thoidiem.Value.Date;
             }
             m_us.FillDatase_NhanSu_TheoPhongBan(m_ds, v_str_search, v_dat_thoi_diem);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            /*Group (subtotal) trên grid.*/
+            /**
+             * Group (subtotal) trên grid.
+             */
             m_fg.Subtotal(AggregateEnum.Count
               , 0
               , (int)e_col_Number.TEN_DON_VI   // Group theo cột này
@@ -137,7 +143,9 @@ namespace BKI_HRM {
               , "{0}"
               );
             m_fg.Redraw = true;
-            /*Đếm số dòng dữ liệu trên Grid*/
+            /**
+             * Đếm số dòng dữ liệu trên Grid
+             */
             m_lbl_so_luong_ban_ghi.Text = m_ds.V_GD_QUA_TRINH_LAM_VIEC.Count.ToString();
         }
         private void set_search_format_before() {
@@ -152,6 +160,7 @@ namespace BKI_HRM {
             }
             m_txt_tim_kiem.ForeColor = Color.Black;
         }
+        
         #endregion
 
         //

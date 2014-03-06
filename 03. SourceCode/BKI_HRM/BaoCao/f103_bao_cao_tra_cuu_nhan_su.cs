@@ -5,6 +5,7 @@
 ///************************************************
 
 using System;
+using System.Data;
 using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
@@ -77,7 +78,7 @@ namespace BKI_HRM {
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            var resources = new System.ComponentModel.ComponentResourceManager(typeof(f103_bao_cao_tra_cuu_nhan_su));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f103_bao_cao_tra_cuu_nhan_su));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -156,7 +157,7 @@ namespace BKI_HRM {
             // 
             this.m_cbo_trang_thai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_trang_thai.FormattingEnabled = true;
-            this.m_cbo_trang_thai.Location = new System.Drawing.Point(333, 14);
+            this.m_cbo_trang_thai.Location = new System.Drawing.Point(266, 14);
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
             this.m_cbo_trang_thai.Size = new System.Drawing.Size(121, 22);
             this.m_cbo_trang_thai.TabIndex = 30;
@@ -164,7 +165,7 @@ namespace BKI_HRM {
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(210, 17);
+            this.label3.Location = new System.Drawing.Point(143, 17);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 14);
             this.label3.TabIndex = 29;
@@ -196,7 +197,7 @@ namespace BKI_HRM {
             "Tất cả",
             "Nam",
             "Nữ"});
-            this.m_cbo_gioi_tinh.Location = new System.Drawing.Point(531, 14);
+            this.m_cbo_gioi_tinh.Location = new System.Drawing.Point(464, 14);
             this.m_cbo_gioi_tinh.Name = "m_cbo_gioi_tinh";
             this.m_cbo_gioi_tinh.Size = new System.Drawing.Size(69, 22);
             this.m_cbo_gioi_tinh.TabIndex = 26;
@@ -204,7 +205,7 @@ namespace BKI_HRM {
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(477, 18);
+            this.label1.Location = new System.Drawing.Point(410, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 14);
             this.label1.TabIndex = 25;
@@ -218,7 +219,7 @@ namespace BKI_HRM {
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(1069, 50);
+            this.m_cmd_search.Location = new System.Drawing.Point(1069, 39);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 2;
@@ -228,16 +229,16 @@ namespace BKI_HRM {
             // 
             this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(333, 50);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(266, 50);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
-            this.m_txt_tim_kiem.Size = new System.Drawing.Size(698, 20);
+            this.m_txt_tim_kiem.Size = new System.Drawing.Size(766, 20);
             this.m_txt_tim_kiem.TabIndex = 1;
             this.m_tooltip.SetToolTip(this.m_txt_tim_kiem, "Để tìm kiếm nhân viên sinh nhật theo tháng, bạn gõ: Tháng 10");
             // 
             // m_lbl_tim_kiem
             // 
             this.m_lbl_tim_kiem.AutoSize = true;
-            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(222, 50);
+            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(155, 50);
             this.m_lbl_tim_kiem.Name = "m_lbl_tim_kiem";
             this.m_lbl_tim_kiem.Size = new System.Drawing.Size(87, 14);
             this.m_lbl_tim_kiem.TabIndex = 24;
@@ -358,7 +359,7 @@ namespace BKI_HRM {
         ITransferDataRow m_obj_trans;
         DS_V_DM_DU_LIEU_NHAN_VIEN m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
         US_V_DM_DU_LIEU_NHAN_VIEN m_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
-        private const String m_str_goi_y_tim_kiem = "Nhập tên nhân viên, Mã nhân viên, Tên phòng ban, Mã phòng ban,...";
+        private const String m_str_goi_y_tim_kiem = "Nhập Họ tên nhân viên, Mã nhân viên, Chức vụ, Trình độ,...";
 
         #endregion
 
@@ -383,7 +384,20 @@ namespace BKI_HRM {
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_LAO_DONG,
                 WinFormControls.eTAT_CA.YES,
                 m_cbo_trang_thai);
-
+            load_custom_source_2_m_txt_tim_kiem();
+        }
+        private void load_custom_source_2_m_txt_tim_kiem() {
+            var count = m_ds.Tables["V_DM_DU_LIEU_NHAN_VIEN"].Rows.Count;
+            for (var i = 0; i < count; i++) {
+                var dr = m_ds.Tables["V_DM_DU_LIEU_NHAN_VIEN"].Rows[i];
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["HO_DEM"].ToString());
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TEN"].ToString());
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["HO_DEM"] + " " + dr["TEN"]);
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["HO_DEM"] + " " + dr["TEN"] + " - " + dr["MA_NV"]);
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TRINH_DO"] + " - " + dr["TEN"]);
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TRINH_DO"].ToString());
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TEN_CV"].ToString());
+            }
         }
         private ITransferDataRow get_trans_object(C1FlexGrid i_fg) {
             var v_htb = new Hashtable();
@@ -437,14 +451,6 @@ namespace BKI_HRM {
         private int lay_so_ban_ghi() {
             return m_ds.V_DM_DU_LIEU_NHAN_VIEN.Count;
         }
-        /*private void set_search_textbox_style() {
-            if (m_txt_tim_kiem.Text.Trim().Equals(String.Empty)) {
-                m_txt_tim_kiem.Select(); //Đưa chuột vào ô tìm kiếm
-            } else {
-                m_txt_tim_kiem.SelectAll(); //Chọn tất cả dữ liệu trong ô tìm kiếm
-            }
-        }
-         * */
         private string get_gender() {
             if (m_cbo_gioi_tinh.SelectedIndex == 1) {
                 return "Nam";
