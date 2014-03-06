@@ -310,7 +310,7 @@ namespace BKI_HRM
                 v_us.FillDatasetSapKetThuc(v_ds, DateTime.Now.Date);
                 if (v_ds.Tables[0].Rows.Count > 0)
                 {
-                    m_lbl_du_an_sap_kt.Text = "Có " + v_ds.Tables[0].Rows.Count.ToString() + " dự án sắp kết thúc!";
+                    m_lbl_du_an_sap_kt.Text = "Có " + v_ds.Tables[0].Rows.Count.ToString() + " dự án sắp kết thúc. Click để xem chi tiết!";
                     m_lbl_du_an_sap_kt.Visible = true;
                 }
                 else
