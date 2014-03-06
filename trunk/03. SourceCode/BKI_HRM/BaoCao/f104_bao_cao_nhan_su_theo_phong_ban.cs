@@ -68,7 +68,7 @@ namespace BKI_HRM {
         ITransferDataRow m_obj_trans;
         DS_V_GD_QUA_TRINH_LAM_VIEC m_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC();
         US_V_GD_QUA_TRINH_LAM_VIEC m_us = new US_V_GD_QUA_TRINH_LAM_VIEC();
-        private const String m_str_goi_y_tim_kiem = "Nhập Tên đơn vị, Mã đơn vị,...";
+        private const String m_str_goi_y_tim_kiem = "Nhập phòng ban, Mã phòng ban,...";
         #endregion
 
         #region Private Methods
