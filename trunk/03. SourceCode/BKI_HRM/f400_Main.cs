@@ -300,7 +300,6 @@ namespace BKI_HRM
             }
         }
 
-
         private void f400_Main_Load(object sender, EventArgs e)
         {
             try
