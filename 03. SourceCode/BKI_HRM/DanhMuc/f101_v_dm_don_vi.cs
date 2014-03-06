@@ -401,10 +401,13 @@ namespace BKI_HRM {
             m_lbl_so_luong_ban_ghi.Text = m_v_ds.V_DM_DON_VI.Count.ToString();
         }
         private void load_custom_source_2_m_txt_tim_kiem() {
+            //var v_str_search = m_txt_tim_kiem.Text.Trim();
+            //m_v_us.FillDatasetByKeyWordTop(m_v_ds, v_str_search);
             var count = m_v_ds.Tables["V_DM_DON_VI"].Rows.Count;
             for (var i = 0; i < count; i++) {
                 var dr = m_v_ds.Tables["V_DM_DON_VI"].Rows[i];
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["MA_DON_VI"].ToString() );
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["MA_DON_VI"].ToString());
+                // m_txt_tim_kiem.AutoCompleteCustomSource.AddRange()
                 m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TEN_DON_VI"].ToString());
                 m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["MA_DON_VI"] + " - " + dr["TEN_DON_VI"]);
                 m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TEN_DON_VI"] + " - " + dr["MA_DON_VI"]);
@@ -469,7 +472,13 @@ namespace BKI_HRM {
             }
             m_txt_tim_kiem.ForeColor = Color.Black;
         }
-
+        private void set_m_fg_DoubleClick(object sender, EventArgs e) {
+            /**
+             * Double Click vào dòng group thì nó đóng mở
+             * */
+            if (m_fg.Rows[m_fg.Row].IsNode) CGridUtils.grid_Double_Click(sender, e);
+            else update_v_dm_don_vi();
+        }
         #endregion
 
         //
@@ -558,6 +567,8 @@ namespace BKI_HRM {
             try {
                 if (e.KeyData == Keys.Enter) {
                     load_data_2_grid();
+                } else {
+                    set_search_format_after();
                 }
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
@@ -566,18 +577,17 @@ namespace BKI_HRM {
 
         private void m_fg_DoubleClick(object sender, EventArgs e) {
             try {
-                update_v_dm_don_vi();
+                set_m_fg_DoubleClick(sender,e);
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
+
+
         private void m_fg_Click(object sender, EventArgs e) {
             try {
-                /**
-                 * Click vào dòng group thì nó đóng mở
-                 * */
-                if (m_fg.Rows[m_fg.Row].IsNode) CGridUtils.grid_Double_Click(sender, e);
+
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -598,15 +608,15 @@ namespace BKI_HRM {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        
+
         private void m_txt_tim_kiem_TextChanged(object sender, EventArgs e) {
             try {
-                //set_search_format_after();
+
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        
+
 
     }
 }
