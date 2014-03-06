@@ -58,7 +58,7 @@ Public Class CControlFormat
     End Function
 
     Private Shared Function getRegularBackColor() As System.Drawing.Color
-        Return System.Drawing.Color.Gainsboro
+        Return System.Drawing.Color.White
     End Function
 
     Private Shared Function getBoldFont() As System.Drawing.Font

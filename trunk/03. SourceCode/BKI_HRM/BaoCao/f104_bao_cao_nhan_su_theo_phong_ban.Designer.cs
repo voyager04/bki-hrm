@@ -83,13 +83,13 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1173, 63);
+            this.panel2.Size = new System.Drawing.Size(1173, 76);
             this.panel2.TabIndex = 25;
             // 
             // m_lbl_thoidiem
             // 
             this.m_lbl_thoidiem.AutoSize = true;
-            this.m_lbl_thoidiem.Location = new System.Drawing.Point(723, 24);
+            this.m_lbl_thoidiem.Location = new System.Drawing.Point(828, 16);
             this.m_lbl_thoidiem.Name = "m_lbl_thoidiem";
             this.m_lbl_thoidiem.Size = new System.Drawing.Size(56, 14);
             this.m_lbl_thoidiem.TabIndex = 36;
@@ -97,32 +97,30 @@
             // 
             // m_dtp_thoidiem
             // 
-            this.m_dtp_thoidiem.Checked = false;
             this.m_dtp_thoidiem.CustomFormat = "dd/MM/yyyy";
             this.m_dtp_thoidiem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_thoidiem.Location = new System.Drawing.Point(785, 22);
+            this.m_dtp_thoidiem.Location = new System.Drawing.Point(890, 14);
             this.m_dtp_thoidiem.Name = "m_dtp_thoidiem";
-            this.m_dtp_thoidiem.ShowCheckBox = true;
-            this.m_dtp_thoidiem.Size = new System.Drawing.Size(134, 20);
+            this.m_dtp_thoidiem.Size = new System.Drawing.Size(99, 20);
             this.m_dtp_thoidiem.TabIndex = 35;
             // 
             // m_lbl_so_luong_ban_ghi
             // 
             this.m_lbl_so_luong_ban_ghi.AutoSize = true;
-            this.m_lbl_so_luong_ban_ghi.Location = new System.Drawing.Point(105, 39);
+            this.m_lbl_so_luong_ban_ghi.Location = new System.Drawing.Point(195, 59);
             this.m_lbl_so_luong_ban_ghi.Name = "m_lbl_so_luong_ban_ghi";
-            this.m_lbl_so_luong_ban_ghi.Size = new System.Drawing.Size(13, 14);
+            this.m_lbl_so_luong_ban_ghi.Size = new System.Drawing.Size(25, 14);
             this.m_lbl_so_luong_ban_ghi.TabIndex = 28;
-            this.m_lbl_so_luong_ban_ghi.Text = "0";
+            this.m_lbl_so_luong_ban_ghi.Text = "000";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 39);
+            this.label4.Location = new System.Drawing.Point(7, 59);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 14);
+            this.label4.Size = new System.Drawing.Size(178, 14);
             this.label4.TabIndex = 27;
-            this.label4.Text = "Số nhân viên:";
+            this.label4.Text = "Số nhân viên viên trong danh sách:";
             // 
             // m_cmd_search
             // 
@@ -132,7 +130,7 @@
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(1025, 17);
+            this.m_cmd_search.Location = new System.Drawing.Point(1025, 12);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 2;
@@ -142,16 +140,16 @@
             // 
             this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(291, 21);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(201, 16);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
-            this.m_txt_tim_kiem.Size = new System.Drawing.Size(413, 20);
+            this.m_txt_tim_kiem.Size = new System.Drawing.Size(613, 20);
             this.m_txt_tim_kiem.TabIndex = 1;
             this.m_tooltip.SetToolTip(this.m_txt_tim_kiem, "Nhập Tên hoặc Mã sô phòng ban, trung tâm, khối để tìm kiếm");
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(187, 24);
+            this.label6.Location = new System.Drawing.Point(98, 19);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 14);
             this.label6.TabIndex = 24;
@@ -205,9 +203,9 @@
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 63);
+            this.m_fg.Location = new System.Drawing.Point(0, 76);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1173, 577);
+            this.m_fg.Size = new System.Drawing.Size(1173, 564);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 33;
             // 
