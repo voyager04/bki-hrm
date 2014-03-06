@@ -83,6 +83,7 @@ namespace BKI_HRM
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f202_V_GD_QUA_TRINH_LAM_VIEC));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
@@ -91,7 +92,6 @@ namespace BKI_HRM
             this.m_txt_thong_tin_nhan_vien = new System.Windows.Forms.TextBox();
             this.m_cmd_tim_nhan_vien = new SIS.Controls.Button.SiSButton();
             this.m_grv_qua_trinh_lam_viec = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_qua_trinh_lam_viec)).BeginInit();
             this.SuspendLayout();
@@ -136,6 +136,21 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(893, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
+            // 
+            // m_cmd_view
+            // 
+            this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_view.ImageIndex = 18;
+            this.m_cmd_view.ImageList = this.ImageList;
+            this.m_cmd_view.Location = new System.Drawing.Point(12, 4);
+            this.m_cmd_view.Name = "m_cmd_view";
+            this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_view.TabIndex = 25;
+            this.m_cmd_view.Text = "Xem";
+            this.m_cmd_view.Visible = false;
             // 
             // m_cmd_insert
             // 
@@ -239,21 +254,6 @@ namespace BKI_HRM
             this.m_grv_qua_trinh_lam_viec.Size = new System.Drawing.Size(893, 373);
             this.m_grv_qua_trinh_lam_viec.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_qua_trinh_lam_viec.Styles"));
             this.m_grv_qua_trinh_lam_viec.TabIndex = 24;
-            // 
-            // m_cmd_view
-            // 
-            this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_view.ImageIndex = 18;
-            this.m_cmd_view.ImageList = this.ImageList;
-            this.m_cmd_view.Location = new System.Drawing.Point(12, 4);
-            this.m_cmd_view.Name = "m_cmd_view";
-            this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_view.TabIndex = 25;
-            this.m_cmd_view.Text = "Xem";
-            this.m_cmd_view.Visible = false;
             // 
             // f202_V_GD_QUA_TRINH_LAM_VIEC
             // 
@@ -373,6 +373,14 @@ namespace BKI_HRM
 			CGridUtils.Dataset2C1Grid(m_ds_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec, m_obj_trans);
             m_grv_qua_trinh_lam_viec.Redraw = true;
         }
+        private void load_data_2_grid_search()
+        {
+            m_ds_qua_trinh_lam_viec = new DS_V_GD_QUA_TRINH_LAM_VIEC();
+            m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, m_txt_thong_tin_nhan_vien.Text.Trim());
+            m_grv_qua_trinh_lam_viec.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec, m_obj_trans);
+            m_grv_qua_trinh_lam_viec.Redraw = true;
+        }
         private void load_data_2_grid(US_DM_NHAN_SU ip_us_dm_nhan_su)
         {
             m_ds_qua_trinh_lam_viec = new DS_V_GD_QUA_TRINH_LAM_VIEC();
@@ -402,9 +410,8 @@ namespace BKI_HRM
 
         private void tim_kiem_nhan_vien()
         {
-            
-            //v_frm.select_data(ref m_us_dm_nhan_su);
-            //load_data(m_us_dm_nhan_su);
+
+            load_data_2_grid_search();
         }
         
 		private void us_object2grid(US_V_GD_QUA_TRINH_LAM_VIEC i_us
@@ -465,6 +472,7 @@ namespace BKI_HRM
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
+            m_txt_thong_tin_nhan_vien.KeyDown += new KeyEventHandler(m_txt_thong_tin_nhan_vien_KeyDown);
 		}
 		#endregion
 
@@ -532,6 +540,11 @@ namespace BKI_HRM
             
         }
 
+        private void m_txt_thong_tin_nhan_vien_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+        
         
 	}
 }

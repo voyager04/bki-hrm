@@ -503,6 +503,15 @@ public class US_V_GD_QUA_TRINH_LAM_VIEC : US_Object
             command.fillDataSetByCommand(this, op_ds);
 
 	}
+    public void FillDataset_search(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds,
+        string ip_str_tim_kiem)
+    {
+        var command = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_Search1");
+
+        command.addNVarcharInputParam("@TIM_KIEM", ip_str_tim_kiem);
+        command.fillDataSetByCommand(this, op_ds);
+
+    }
     public void FillDatasetByManhanvien(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds, 
         string ip_str_ma_nv,
         DateTime ip_dat_ngay_bat_dau,
