@@ -402,10 +402,9 @@ namespace BKI_HRM
 
         private void tim_kiem_nhan_vien()
         {
-            f201_dm_nhan_su v_frm = new f201_dm_nhan_su();
-
-            v_frm.select_data(ref m_us_dm_nhan_su);
-            load_data(m_us_dm_nhan_su);
+            
+            //v_frm.select_data(ref m_us_dm_nhan_su);
+            //load_data(m_us_dm_nhan_su);
         }
         
 		private void us_object2grid(US_V_GD_QUA_TRINH_LAM_VIEC i_us
@@ -522,7 +521,15 @@ namespace BKI_HRM
 
         private void m_cmd_tim_nhan_vien_Click(object sender, EventArgs e)
         {
-            tim_kiem_nhan_vien();
+            try
+            {
+                tim_kiem_nhan_vien();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+            
         }
 
         
