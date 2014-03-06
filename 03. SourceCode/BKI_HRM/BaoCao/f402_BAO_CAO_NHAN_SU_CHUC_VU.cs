@@ -406,8 +406,12 @@ namespace BKI_HRM
         {
             try
             {
-                if (m_txt_tim_kiem.Text == "Nhập mã chức vụ")
-                    load_data_2_grid();
+                if (m_txt_tim_kiem.Text.Trim() == "Nhập mã chức vụ")
+                {
+                    m_txt_tim_kiem.Text = "";
+                    load_data_2_grid_search();
+                    m_txt_tim_kiem.Text = "Nhập mã chức vụ";
+                }
                 else
                     load_data_2_grid_search();
             }
