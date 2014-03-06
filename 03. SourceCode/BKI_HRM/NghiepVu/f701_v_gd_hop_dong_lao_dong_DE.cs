@@ -212,7 +212,7 @@ namespace BKI_HRM.NghiepVu
             if (m_str_file_name == "")
                 return;
             string v_str_path_destination = m_str_destination + m_str_file_name;
-            m_str_path = m_str_destination + m_txt_ma_hop_dong.Text + "-" + m_str_file_name;
+            m_str_path = m_str_destination + "TOPICA" + "-" + m_str_file_name;
             File.Copy(m_str_origination, v_str_path_destination);
             File.Move(m_str_destination + m_str_file_name, m_str_path);
             if (File.Exists(m_str_old_path))
