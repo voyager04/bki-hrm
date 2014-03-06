@@ -499,6 +499,7 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Size = new System.Drawing.Size(0, 18);
             this.m_lbl_thong_bao_hop_dong_sap_het_han.TabIndex = 3;
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Click += new System.EventHandler(this.m_lbl_thong_bao_hop_dong_sap_het_han_Click);
+            this.m_lbl_thong_bao_hop_dong_sap_het_han.Text = "Hợp đồng sắp hết hạn";
             // 
             // f400_Main
             // 
