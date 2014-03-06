@@ -5,10 +5,10 @@
 ///************************************************
 
 using System;
-using System.Data;
 using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
+using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -23,12 +23,13 @@ using BKI_HRM.DS;
 using BKI_HRM.DS.CDBNames;
 
 using C1.Win.C1FlexGrid;
+using SIS.Controls.Button;
 
 namespace BKI_HRM {
 
-    public class f103_bao_cao_tra_cuu_nhan_su : System.Windows.Forms.Form {
-        internal System.Windows.Forms.ImageList ImageList;
-        private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
+    public class f103_bao_cao_tra_cuu_nhan_su : Form {
+        internal ImageList ImageList;
+        private C1FlexGrid m_fg;
         private Panel panel1;
         private ComboBox m_cbo_trang_thai;
         private Label label3;
@@ -36,14 +37,14 @@ namespace BKI_HRM {
         private Label label2;
         private ComboBox m_cbo_gioi_tinh;
         private Label label1;
-        internal SIS.Controls.Button.SiSButton m_cmd_search;
+        internal SiSButton m_cmd_search;
         private TextBox m_txt_tim_kiem;
         private Label m_lbl_tim_kiem;
         internal Panel m_pnl_out_place_dm;
-        internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
-        internal SIS.Controls.Button.SiSButton m_cmd_exit;
+        internal SiSButton m_cmd_xuat_excel;
+        internal SiSButton m_cmd_exit;
         private ToolTip m_tooltip;
-        private System.ComponentModel.IContainer components;
+        private IContainer components;
 
         public f103_bao_cao_tra_cuu_nhan_su() {
             //
@@ -76,7 +77,7 @@ namespace BKI_HRM {
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f103_bao_cao_tra_cuu_nhan_su));
+            var resources = new System.ComponentModel.ComponentResourceManager(typeof(f103_bao_cao_tra_cuu_nhan_su));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -307,7 +308,7 @@ namespace BKI_HRM {
 
         #region Public Interface
         public void display() {
-            this.ShowDialog();
+            ShowDialog();
         }
         #endregion
 
@@ -331,7 +332,7 @@ namespace BKI_HRM {
                 ,
             TRANG_THAI_HIEN_TAI = 19
                 ,
-            MA_DON_VI =2 //11
+            MA_DON_VI = 2 //11
                 ,
             HO_DEM = 4
                 ,
@@ -357,6 +358,8 @@ namespace BKI_HRM {
         ITransferDataRow m_obj_trans;
         DS_V_DM_DU_LIEU_NHAN_VIEN m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
         US_V_DM_DU_LIEU_NHAN_VIEN m_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
+        private const String m_str_goi_y_tim_kiem = "Từ khoá tìm kiếm,...";
+
         #endregion
 
         #region Private Methods
@@ -368,22 +371,22 @@ namespace BKI_HRM {
             m_fg.Tree.Column = (int)e_col_Number.TEN_DON_VI;
             m_fg.Tree.Style = TreeStyleFlags.Simple;
             set_define_events();
-            this.KeyPreview = true;
+            KeyPreview = true;
         }
         private void set_initial_form_load() {
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_grid();
-            if (m_cbo_gioi_tinh!=null) {
+            if (m_cbo_gioi_tinh != null) {
                 m_cbo_gioi_tinh.SelectedIndex = 0;
             }
             //Load combobox "Trạng thái"
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_LAO_DONG,
                 WinFormControls.eTAT_CA.YES,
                 m_cbo_trang_thai);
-            
+
         }
-        private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg) {
-            Hashtable v_htb = new Hashtable();
+        private ITransferDataRow get_trans_object(C1FlexGrid i_fg) {
+            var v_htb = new Hashtable();
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.LOAI_DON_VI, e_col_Number.LOAI_DON_VI);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN_DON_VI, e_col_Number.TEN_DON_VI);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_NV, e_col_Number.MA_NV);
@@ -411,54 +414,64 @@ namespace BKI_HRM {
             m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
             /*Xử lý tìm kiếm*/
             var v_str_search = m_txt_tim_kiem.Text.Trim();
+            if (v_str_search.Equals(m_str_goi_y_tim_kiem)) {
+                v_str_search = "";
+            }
             var v_str_month = Regex.Match(v_str_search, @"\d+").Value;
             if (!v_str_month.Equals("")) {
                 v_str_search = v_str_month;
             }
-            m_us.FillDatasetConditions(m_ds,v_str_search, get_gender(),get_trang_thai_lao_dong());
+            m_us.FillDatasetConditions(m_ds, v_str_search, get_gender(), get_trang_thai_lao_dong());
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;
             // Group (subtotal) trên grid.
-            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count
+            m_fg.Subtotal(AggregateEnum.Count
               , 0
               , (int)e_col_Number.TEN_DON_VI    // Group theo cột này
               , (int)e_col_Number.MA_NV     // Subtotal theo cột này
               , "{0}"
               );
-            set_search_textbox_style();
-            m_lbl_so_nhan_vien.Text = lay_so_ban_ghi().ToString();
+            set_search_format_before();
+            m_lbl_so_nhan_vien.Text = lay_so_ban_ghi().ToString(CultureInfo.InvariantCulture);
         }
         private int lay_so_ban_ghi() {
             return m_ds.V_DM_DU_LIEU_NHAN_VIEN.Count;
         }
-        private void set_search_textbox_style() {
+        /*private void set_search_textbox_style() {
             if (m_txt_tim_kiem.Text.Trim().Equals(String.Empty)) {
                 m_txt_tim_kiem.Select(); //Đưa chuột vào ô tìm kiếm
             } else {
                 m_txt_tim_kiem.SelectAll(); //Chọn tất cả dữ liệu trong ô tìm kiếm
             }
         }
+         * */
         private string get_gender() {
             if (m_cbo_gioi_tinh.SelectedIndex == 1) {
                 return "Nam";
-            } else if (m_cbo_gioi_tinh.SelectedIndex == 2) {
+            }
+            if (m_cbo_gioi_tinh.SelectedIndex == 2) {
                 return "Nữ";
             }
             return "";
         }
         private string get_trang_thai_lao_dong() {
-            if (m_cbo_trang_thai.SelectedIndex != 0){
+            if (m_cbo_trang_thai.SelectedIndex != 0) {
                 return m_cbo_trang_thai.Text;
             }
             return "";
         }
-        private void grid2us_object(US_V_DM_DU_LIEU_NHAN_VIEN i_us, int i_grid_row) {
-            DataRow v_dr;
-            v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
-            m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
-            i_us.DataRow2Me(v_dr);
+        private void set_search_format_before() {
+            if (m_txt_tim_kiem.Text == "") {
+                m_txt_tim_kiem.Text = m_str_goi_y_tim_kiem;
+                m_txt_tim_kiem.ForeColor = Color.Gray;
+            }
         }
-
+        private void set_search_format_after() {
+            if (m_txt_tim_kiem.Text == m_str_goi_y_tim_kiem) {
+                m_txt_tim_kiem.Text = "";
+            }
+            m_txt_tim_kiem.ForeColor = Color.Black;
+        }
         #endregion
 
         //
@@ -467,14 +480,16 @@ namespace BKI_HRM {
         //
         //
         private void set_define_events() {
-            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-            m_cmd_search.Click += new EventHandler(m_cmd_search_Click);
-            m_txt_tim_kiem.KeyDown += new KeyEventHandler(m_txt_tim_kiem_KeyDown);
-            m_cbo_trang_thai.SelectedIndexChanged += new System.EventHandler(this.m_cbo_trang_thai_SelectedIndexChanged);
-            m_txt_tim_kiem.KeyPress += new KeyPressEventHandler(CheckEnterKeyPress);
+            m_cmd_exit.Click += m_cmd_exit_Click;
+            m_cmd_search.Click += m_cmd_search_Click;
+            m_txt_tim_kiem.KeyDown += m_txt_tim_kiem_KeyDown;
+            m_cbo_trang_thai.SelectedIndexChanged += m_cbo_trang_thai_SelectedIndexChanged;
+            m_txt_tim_kiem.KeyPress += CheckEnterKeyPress;
+            m_txt_tim_kiem.MouseClick += m_txt_tim_kiem_MouseClick;
+            m_txt_tim_kiem.Leave += this.m_txt_tim_kiem_Leave;
         }
 
-        private void f103_bao_cao_tra_cuu_nhan_su_Load(object sender, System.EventArgs e) {
+        private void f103_bao_cao_tra_cuu_nhan_su_Load(object sender, EventArgs e) {
             try {
                 set_initial_form_load();
             } catch (Exception v_e) {
@@ -484,14 +499,14 @@ namespace BKI_HRM {
 
         private void m_cmd_exit_Click(object sender, EventArgs e) {
             try {
-                this.Close();
+                Close();
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
         private void m_cmd_search_Click(object sender, EventArgs e) {
-            try{
+            try {
                 load_data_2_grid();
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
@@ -506,7 +521,7 @@ namespace BKI_HRM {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        
+
         private void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e) {
 
         }
@@ -521,6 +536,21 @@ namespace BKI_HRM {
             }
         }
 
+        private void m_txt_tim_kiem_MouseClick(object sender, MouseEventArgs e) {
+            try {
+                set_search_format_after();
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_txt_tim_kiem_Leave(object sender, EventArgs e) {
+            try {
+                set_search_format_before();
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
 
