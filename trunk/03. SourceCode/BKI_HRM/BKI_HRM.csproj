@@ -130,6 +130,9 @@
     <Compile Include="DanhMuc\F600_V_DM_QUYET_DINH_DE.designer.cs">
       <DependentUpon>F600_V_DM_QUYET_DINH_DE.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\f601_v_dm_quyet_dinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="f400_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\F600_V_DM_QUYET_DINH_DE.resx">
       <DependentUpon>F600_V_DM_QUYET_DINH_DE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f601_v_dm_quyet_dinh.resx">
+      <DependentUpon>f601_v_dm_quyet_dinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f400_Main.resx">
       <DependentUpon>f400_Main.cs</DependentUpon>
