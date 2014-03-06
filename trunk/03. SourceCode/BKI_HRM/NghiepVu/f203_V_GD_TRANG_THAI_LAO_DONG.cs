@@ -416,7 +416,7 @@ namespace BKI_HRM
             }
             f203_v_gd_trang_thai_lao_dong_de v_fDE = new f203_v_gd_trang_thai_lao_dong_de();
             v_fDE.display_for_insert(m_us);
-            load_data_2_grid_search();
+            
 		}
 
 		private void update_v_gd_trang_thai_lao_dong(){			
@@ -504,6 +504,14 @@ namespace BKI_HRM
             try
             {
                 insert_v_gd_trang_thai_lao_dong();
+                if (m_txt_tim_kiem.Text == m_str_message_tim_kiem)
+                {
+                    m_txt_tim_kiem.Text = "";
+                    load_data_2_grid_search();
+                    m_txt_tim_kiem.Text = m_str_message_tim_kiem;
+                }
+                else
+                    load_data_2_grid_search();
             }
             catch (Exception v_e)
             {
@@ -516,6 +524,14 @@ namespace BKI_HRM
             try
             {
                 update_v_gd_trang_thai_lao_dong();
+                if (m_txt_tim_kiem.Text == m_str_message_tim_kiem)
+                {
+                    m_txt_tim_kiem.Text = "";
+                    load_data_2_grid_search();
+                    m_txt_tim_kiem.Text = m_str_message_tim_kiem;
+                }
+                else
+                    load_data_2_grid_search();
             }
             catch (Exception v_e)
             {
@@ -550,7 +566,14 @@ namespace BKI_HRM
         {
             try
             {
-                load_data_2_grid_search();
+                if (m_txt_tim_kiem.Text == m_str_message_tim_kiem)
+                {
+                    m_txt_tim_kiem.Text = "";
+                    load_data_2_grid_search();
+                    m_txt_tim_kiem.Text = m_str_message_tim_kiem;
+                }
+                else
+                    load_data_2_grid_search();
             }
             catch (Exception v_e)
             {
