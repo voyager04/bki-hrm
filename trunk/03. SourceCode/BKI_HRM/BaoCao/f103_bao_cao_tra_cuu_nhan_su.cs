@@ -492,7 +492,7 @@ namespace BKI_HRM {
             m_cbo_trang_thai.SelectedIndexChanged += m_cbo_trang_thai_SelectedIndexChanged;
             m_txt_tim_kiem.KeyPress += CheckEnterKeyPress;
             m_txt_tim_kiem.MouseClick += m_txt_tim_kiem_MouseClick;
-            m_txt_tim_kiem.Leave += this.m_txt_tim_kiem_Leave;
+            m_txt_tim_kiem.Leave += m_txt_tim_kiem_Leave;
         }
 
         private void f103_bao_cao_tra_cuu_nhan_su_Load(object sender, EventArgs e) {

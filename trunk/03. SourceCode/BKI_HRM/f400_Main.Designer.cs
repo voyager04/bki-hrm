@@ -495,7 +495,7 @@ namespace BKI_HRM
             this.m_lbl_du_an_sap_kt.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_lbl_du_an_sap_kt.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_du_an_sap_kt.ForeColor = System.Drawing.Color.Red;
-            this.m_lbl_du_an_sap_kt.Location = new System.Drawing.Point(0, 395);
+            this.m_lbl_du_an_sap_kt.Location = new System.Drawing.Point(0, 427);
             this.m_lbl_du_an_sap_kt.Name = "m_lbl_du_an_sap_kt";
             this.m_lbl_du_an_sap_kt.Size = new System.Drawing.Size(207, 18);
             this.m_lbl_du_an_sap_kt.TabIndex = 2;
@@ -509,7 +509,7 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold);
             this.m_lbl_thong_bao_hop_dong_sap_het_han.ForeColor = System.Drawing.Color.Red;
-            this.m_lbl_thong_bao_hop_dong_sap_het_han.Location = new System.Drawing.Point(0, 377);
+            this.m_lbl_thong_bao_hop_dong_sap_het_han.Location = new System.Drawing.Point(0, 409);
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Name = "m_lbl_thong_bao_hop_dong_sap_het_han";
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Size = new System.Drawing.Size(165, 18);
             this.m_lbl_thong_bao_hop_dong_sap_het_han.TabIndex = 3;
@@ -518,11 +518,11 @@ namespace BKI_HRM
             // 
             // f400_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(835, 413);
+            this.ClientSize = new System.Drawing.Size(835, 445);
             this.Controls.Add(this.m_lbl_thong_bao_hop_dong_sap_het_han);
             this.Controls.Add(this.m_lbl_du_an_sap_kt);
             this.Controls.Add(this.m_mst_menu);

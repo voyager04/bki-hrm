@@ -263,6 +263,9 @@
   <metadata name="m_tooltip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>223, 12</value>
   </metadata>
+  <metadata name="m_tooltip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>223, 12</value>
+  </metadata>
   <data name="m_fg.ColumnInfo" xml:space="preserve">
     <value>14,1,0,0,0,85,Columns:0{Width:13;}	1{Width:207;Caption:"ĐƠN VỊ";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	2{Caption:"MÃ ĐƠN VỊ";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	3{Width:100;Caption:"MÃ NHÂN VIÊN";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	4{Width:170;Caption:"HỌ ĐỆM";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	5{Width:102;Caption:"TÊN";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	6{Caption:"MÃ CHỨC VỤ";Visible:False;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	7{Width:120;Caption:"CHỨC VỤ";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	8{Width:147;Caption:"TRẠNG THÁI CÔNG VIỆC";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	9{Width:107;Caption:"NGÀY BẮT ĐẦU";DataType:System.DateTime;Format:"dd/MM/yyyy";TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	10{Width:103;Caption:"NGÀY KẾT THÚC";DataType:System.DateTime;Format:"dd/MM/yyyy";TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	11{Caption:"MÃ QUYẾT ĐỊNH";Visible:False;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	12{Caption:"NGÀY CÓ HIỆU LỰC";Visible:False;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	13{Caption:"NGÀY HẾT HIỆU LỰC";Visible:False;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	</value>
   </data>
