@@ -513,6 +513,13 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public V_GD_TRANG_THAI_LAO_DONGRow FindByID(decimal ID) {
+                return ((V_GD_TRANG_THAI_LAO_DONGRow)(this.Rows.Find(new object[] {
+                            ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public virtual global::System.Collections.IEnumerator GetEnumerator() {
                 return this.Rows.GetEnumerator();
             }
@@ -581,6 +588,8 @@ namespace BKI_HRM.DS {
                 base.Columns.Add(this.columnID_NHAN_SU);
                 this.columnROWNUM = new global::System.Data.DataColumn("ROWNUM", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnROWNUM);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("V_GD_TRANG_THAI_LAO_DONGKey", new global::System.Data.DataColumn[] {
+                                this.columnID}, true));
                 this.columnMA_NV.AllowDBNull = false;
                 this.columnMA_NV.MaxLength = 35;
                 this.columnHO_DEM.AllowDBNull = false;
@@ -594,6 +603,7 @@ namespace BKI_HRM.DS {
                 this.columnLOAI_QUYET_DINH.MaxLength = 250;
                 this.columnTRANG_THAI_HIEN_TAI.MaxLength = 19;
                 this.columnID.AllowDBNull = false;
+                this.columnID.Unique = true;
                 this.columnID_NHAN_SU.AllowDBNull = false;
             }
             

@@ -453,7 +453,7 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(438, 20);
             this.m_txt_tim_kiem.TabIndex = 1;
-            this.m_txt_tim_kiem.Text = m_str_message_tim_kiem;
+            this.m_txt_tim_kiem.Text = "Nhập vào thông tin muốn tìm kiếm: mã nhân viên, họ tên, ...";
             this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
             this.m_txt_tim_kiem.Leave += new System.EventHandler(this.m_txt_tim_kiem_Leave);
             // 
@@ -1786,7 +1786,7 @@ namespace BKI_HRM
             {
                 DataRow dr = m_ds.Tables["DM_NHAN_SU"].Rows[i];
                 m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[1].ToString());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[2].ToString());
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[2].ToString() + " " + dr[3].ToString());
                 m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[3].ToString());
             }
         }
