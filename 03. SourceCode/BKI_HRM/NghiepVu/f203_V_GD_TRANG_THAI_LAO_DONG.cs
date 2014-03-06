@@ -321,7 +321,8 @@ namespace BKI_HRM
             m_grv_trang_thai_ld.Tree.Column = (int)e_col_Number.MA_NV;
             m_grv_trang_thai_ld.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.SimpleLeaf;
 			set_define_events();
-			this.KeyPreview = true;		
+			this.KeyPreview = true;
+            m_txt_tim_kiem.ForeColor = Color.Gray;
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_grv_trang_thai_ld);
