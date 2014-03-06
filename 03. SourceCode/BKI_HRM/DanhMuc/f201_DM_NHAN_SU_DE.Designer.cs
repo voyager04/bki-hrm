@@ -282,7 +282,7 @@
             this.m_dat_ngay_sinh.Name = "m_dat_ngay_sinh";
             this.m_dat_ngay_sinh.ShowCheckBox = true;
             this.m_dat_ngay_sinh.Size = new System.Drawing.Size(121, 20);
-            this.m_dat_ngay_sinh.TabIndex = 6;
+            this.m_dat_ngay_sinh.TabIndex = 5;
             this.m_dat_ngay_sinh.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             // 
             // m_lbl_noi_sinh
@@ -301,7 +301,7 @@
             this.m_txt_noi_sinh.Multiline = true;
             this.m_txt_noi_sinh.Name = "m_txt_noi_sinh";
             this.m_txt_noi_sinh.Size = new System.Drawing.Size(358, 48);
-            this.m_txt_noi_sinh.TabIndex = 7;
+            this.m_txt_noi_sinh.TabIndex = 6;
             // 
             // m_txt_nguyen_quan
             // 
@@ -310,7 +310,7 @@
             this.m_txt_nguyen_quan.Multiline = true;
             this.m_txt_nguyen_quan.Name = "m_txt_nguyen_quan";
             this.m_txt_nguyen_quan.Size = new System.Drawing.Size(359, 48);
-            this.m_txt_nguyen_quan.TabIndex = 8;
+            this.m_txt_nguyen_quan.TabIndex = 7;
             // 
             // m_lbl_nguyen_quan
             // 
@@ -336,7 +336,7 @@
             this.m_txt_cmnd.Location = new System.Drawing.Point(121, 245);
             this.m_txt_cmnd.Name = "m_txt_cmnd";
             this.m_txt_cmnd.Size = new System.Drawing.Size(155, 20);
-            this.m_txt_cmnd.TabIndex = 9;
+            this.m_txt_cmnd.TabIndex = 8;
             this.m_txt_cmnd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.m_txt_cmnd_KeyPress);
             // 
             // m_dat_ngay_cap
@@ -347,7 +347,7 @@
             this.m_dat_ngay_cap.Name = "m_dat_ngay_cap";
             this.m_dat_ngay_cap.ShowCheckBox = true;
             this.m_dat_ngay_cap.Size = new System.Drawing.Size(121, 20);
-            this.m_dat_ngay_cap.TabIndex = 10;
+            this.m_dat_ngay_cap.TabIndex = 9;
             // 
             // m_lbl_ngay_cap
             // 
@@ -434,7 +434,7 @@
             this.m_txt_dan_toc.Location = new System.Drawing.Point(361, 287);
             this.m_txt_dan_toc.Name = "m_txt_dan_toc";
             this.m_txt_dan_toc.Size = new System.Drawing.Size(120, 20);
-            this.m_txt_dan_toc.TabIndex = 13;
+            this.m_txt_dan_toc.TabIndex = 12;
             this.m_txt_dan_toc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.m_txt_dan_toc_KeyPress);
             // 
             // m_lbl_ton_giao
@@ -452,7 +452,7 @@
             this.m_txt_ton_giao.Location = new System.Drawing.Point(122, 287);
             this.m_txt_ton_giao.Name = "m_txt_ton_giao";
             this.m_txt_ton_giao.Size = new System.Drawing.Size(156, 20);
-            this.m_txt_ton_giao.TabIndex = 12;
+            this.m_txt_ton_giao.TabIndex = 11;
             this.m_txt_ton_giao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.m_txt_ton_giao_KeyPress);
             // 
             // m_txt_noi_cap
@@ -461,7 +461,7 @@
             this.m_txt_noi_cap.Location = new System.Drawing.Point(564, 245);
             this.m_txt_noi_cap.Name = "m_txt_noi_cap";
             this.m_txt_noi_cap.Size = new System.Drawing.Size(197, 20);
-            this.m_txt_noi_cap.TabIndex = 11;
+            this.m_txt_noi_cap.TabIndex = 10;
             this.m_txt_noi_cap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.m_txt_noi_cap_KeyPress);
             // 
             // m_lbl_noi_cap
