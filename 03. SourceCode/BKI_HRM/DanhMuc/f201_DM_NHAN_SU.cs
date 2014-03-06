@@ -453,7 +453,7 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(438, 20);
             this.m_txt_tim_kiem.TabIndex = 1;
-            this.m_txt_tim_kiem.Text = "Nhập vào thông tin muốn tìm kiếm";
+            this.m_txt_tim_kiem.Text = m_str_message_tim_kiem;
             this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
             this.m_txt_tim_kiem.Leave += new System.EventHandler(this.m_txt_tim_kiem_Leave);
             // 
@@ -1576,6 +1576,7 @@ namespace BKI_HRM
 		US_DM_NHAN_SU m_us = new US_DM_NHAN_SU();
         US_V_GD_QUA_TRINH_LAM_VIEC m_us_qua_trinh_lam_viec = new US_V_GD_QUA_TRINH_LAM_VIEC();
         DS_V_GD_QUA_TRINH_LAM_VIEC m_ds_qua_trinh_lam_viec = new DS_V_GD_QUA_TRINH_LAM_VIEC();
+        string m_str_message_tim_kiem = "Nhập vào thông tin muốn tìm kiếm: mã nhân viên, họ tên, ...";
 		#endregion
 
 		#region Private Methods
@@ -2061,11 +2062,11 @@ namespace BKI_HRM
         {
             try
             {
-                if (m_txt_tim_kiem.Text.Trim() == "Nhập vào thông tin muốn tìm kiếm")
+                if (m_txt_tim_kiem.Text.Trim() == m_str_message_tim_kiem)
                 {
                     m_txt_tim_kiem.Text = "";
                     load_data_2_grid_search();
-                    m_txt_tim_kiem.Text = "Nhập vào thông tin muốn tìm kiếm";
+                    m_txt_tim_kiem.Text = m_str_message_tim_kiem;
                 }
                 else
                     load_data_2_grid_search();
@@ -2153,7 +2154,8 @@ namespace BKI_HRM
         {
             try
             {
-                m_txt_tim_kiem.Text = "";
+                if (m_txt_tim_kiem.Text == m_str_message_tim_kiem)
+                    m_txt_tim_kiem.Text = "";
                 m_txt_tim_kiem.ForeColor = Color.Black;
             }
             catch (Exception v_e)
@@ -2167,7 +2169,7 @@ namespace BKI_HRM
             {
                 if (m_txt_tim_kiem.Text == "")
                 {
-                    m_txt_tim_kiem.Text = "Nhập vào thông tin muốn tìm kiếm";
+                    m_txt_tim_kiem.Text = m_str_message_tim_kiem;
                     m_txt_tim_kiem.ForeColor = Color.Gray;
                 }
 
