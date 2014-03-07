@@ -462,6 +462,50 @@ public class US_V_GD_QUA_TRINH_LAM_VIEC : US_Object
         pm_objDR["NGAY_KET_THUC"] = System.Convert.DBNull;
     }
 
+    public decimal dcID_NHAN_SU
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "ID_NHAN_SU", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["ID_NHAN_SU"] = value;
+        }
+    }
+
+    public bool IsID_NHAN_SUNull()
+    {
+        return pm_objDR.IsNull("ID_NHAN_SU");
+    }
+
+    public void SetID_NHAN_SUNull()
+    {
+        pm_objDR["ID_NHAN_SU"] = System.Convert.DBNull;
+    }
+
+    public decimal dcID
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "ID", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["ID"] = value;
+        }
+    }
+
+    public bool IsIDNull()
+    {
+        return pm_objDR.IsNull("ID");
+    }
+
+    public void SetIDNull()
+    {
+        pm_objDR["ID"] = System.Convert.DBNull;
+    }
+
     #endregion
     #region "Init Functions"
     public US_V_GD_QUA_TRINH_LAM_VIEC()
