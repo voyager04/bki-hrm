@@ -61,7 +61,6 @@
     <Compile Include="US_GD_CHI_TIET_DU_AN.cs" />
     <Compile Include="US_GD_CHI_TIET_TRANG_THAI_LD.cs" />
     <Compile Include="US_GD_HOP_DONG.cs" />
-    <Compile Include="US_HT_NHOM_NGUOI_SU_DUNG.cs" />
     <Compile Include="US_HT_PHAN_QUYEN_CHO_NHOM.cs" />
     <Compile Include="US_HT_PHAN_QUYEN_HE_THONG.cs" />
     <Compile Include="US_HT_USER_GROUP.cs" />
