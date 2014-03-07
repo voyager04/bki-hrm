@@ -284,12 +284,12 @@ namespace BKI_HRM
             // 
             // m_chk_is_admin
             // 
-            this.m_chk_is_admin.Enabled = false;
-            this.m_chk_is_admin.Location = new System.Drawing.Point(312, 124);
+            this.m_chk_is_admin.Location = new System.Drawing.Point(312, 122);
             this.m_chk_is_admin.Name = "m_chk_is_admin";
             this.m_chk_is_admin.Size = new System.Drawing.Size(60, 20);
             this.m_chk_is_admin.TabIndex = 14;
             this.m_chk_is_admin.Text = "Không";
+            this.m_chk_is_admin.CheckedChanged += new System.EventHandler(this.m_chk_is_admin_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -408,14 +408,17 @@ namespace BKI_HRM
 		}
         private void load_data_2_cbo_nhom_nguoi_dung()
         {
-            US_HT_NHOM_NGUOI_SU_DUNG v_us_nhom_nguoi_dung = new US_HT_NHOM_NGUOI_SU_DUNG();
-            DS_HT_NHOM_NGUOI_SU_DUNG v_ds_nhom_nguoi_dung = new DS_HT_NHOM_NGUOI_SU_DUNG();
+            //US_HT_NHOM_NGUOI_SU_DUNG v_us_nhom_nguoi_dung = new US_HT_NHOM_NGUOI_SU_DUNG();
+            //DS_HT_NHOM_NGUOI_SU_DUNG v_ds_nhom_nguoi_dung = new DS_HT_NHOM_NGUOI_SU_DUNG();
+            //v_us_nhom_nguoi_dung.FillDataset(v_ds_nhom_nguoi_dung);
+            //v_ds_nhom_nguoi_dung.EnforceConstraints = false;
+            US_HT_USER_GROUP v_us_nhom_nguoi_dung = new US_HT_USER_GROUP();
+            DS_HT_USER_GROUP v_ds_nhom_nguoi_dung = new DS_HT_USER_GROUP();
             v_us_nhom_nguoi_dung.FillDataset(v_ds_nhom_nguoi_dung);
             v_ds_nhom_nguoi_dung.EnforceConstraints = false;
-
-            m_cbo_nhom_quyen.ValueMember = HT_NHOM_NGUOI_SU_DUNG.ID;
-            m_cbo_nhom_quyen.DisplayMember = HT_NHOM_NGUOI_SU_DUNG.MA_NHOM;
-            m_cbo_nhom_quyen.DataSource = v_ds_nhom_nguoi_dung.HT_NHOM_NGUOI_SU_DUNG;
+            m_cbo_nhom_quyen.ValueMember = HT_USER_GROUP.ID;
+            m_cbo_nhom_quyen.DisplayMember = HT_USER_GROUP.USER_GROUP_NAME;
+            m_cbo_nhom_quyen.DataSource = v_ds_nhom_nguoi_dung.HT_USER_GROUP;
         }			   
 		private void form_2_us_object(){
 			m_us_user.strBUILT_IN_YN 
@@ -427,7 +430,7 @@ namespace BKI_HRM
 			m_us_user.strTRANG_THAI  =
 				CIPConvert.ToStr(m_cbo_trang_thai.SelectedIndex);
 			m_us_user.strNGUOI_TAO = IP.Core.IPSystemAdmin.CAppContext_201.getCurrentUser();
-            //m_us_user.dcID_NHOM_NGUOI_DUNG = CIPConvert.ToDecimal( m_cbo_nhom_quyen.SelectedValue);
+            m_us_user.dcID_USER_GROUP = CIPConvert.ToDecimal( m_cbo_nhom_quyen.SelectedValue);
 		}
 		private void us_object_2_form(){
 			m_chk_is_admin.Checked = CIPConvert.ToBoolean(m_us_user.strBUILT_IN_YN);
@@ -569,5 +572,10 @@ namespace BKI_HRM
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
+
+        private void m_chk_is_admin_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
 	}
 }

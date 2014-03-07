@@ -64,6 +64,7 @@
     <Compile Include="US_HT_NHOM_NGUOI_SU_DUNG.cs" />
     <Compile Include="US_HT_PHAN_QUYEN_CHO_NHOM.cs" />
     <Compile Include="US_HT_PHAN_QUYEN_HE_THONG.cs" />
+    <Compile Include="US_HT_USER_GROUP.cs" />
     <Compile Include="US_V_DM_CHUC_VU.cs" />
     <Compile Include="US_V_DM_DON_VI.cs" />
     <Compile Include="US_V_DM_DU_AN_QUYET_DINH_TU_DIEN.cs" />
