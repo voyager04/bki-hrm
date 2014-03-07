@@ -777,6 +777,7 @@
             this.ClientSize = new System.Drawing.Size(812, 393);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.m_pnl_out_place_dm);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "f201_DM_NHAN_SU_DE";
             this.Text = "F201 - Chi tiết hồ sơ nhân sự";
             this.m_pnl_out_place_dm.ResumeLayout(false);

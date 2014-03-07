@@ -237,6 +237,7 @@ namespace BKI_HRM
             // 
             this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.m_txt_tim_kiem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_txt_tim_kiem.ForeColor = System.Drawing.Color.Gray;
             this.m_txt_tim_kiem.Location = new System.Drawing.Point(174, 22);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
@@ -272,6 +273,7 @@ namespace BKI_HRM
             this.Controls.Add(this.m_lbl_tim_kiem);
             this.Controls.Add(this.m_grv_trang_thai_ld);
             this.Controls.Add(this.m_pnl_out_place_dm);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "f203_v_gd_trang_thai_lao_dong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F203 - Thay đổi trạng thái lao động";
