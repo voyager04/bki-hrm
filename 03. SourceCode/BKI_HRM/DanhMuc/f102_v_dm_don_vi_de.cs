@@ -89,10 +89,15 @@ namespace BKI_HRM.DanhMuc {
             switch (m_cbo_cap_don_vi.SelectedIndex) {
                 case 0: // Khối
                     m_cbo_ten_don_vi_cap_tren.SelectedIndex = 0;
+                    m_cbo_ten_don_vi_cap_tren.Enabled = false;
                     v_us.FillDatasetByCapDonVi(v_ds, CAP_DON_VI.KHOI);
                     break;
                 case 1: // Trung Tâm
                     v_us.FillDatasetByCapDonVi(v_ds, CAP_DON_VI.KHOI);
+                    m_cbo_ten_don_vi_cap_tren.Enabled = true;
+                    break;
+                default:
+                    m_cbo_ten_don_vi_cap_tren.Enabled = true;
                     break;
             }
         }
@@ -215,7 +220,6 @@ namespace BKI_HRM.DanhMuc {
         }
 
         #endregion
-
 
     }
 }
