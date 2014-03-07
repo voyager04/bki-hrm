@@ -1430,6 +1430,7 @@ namespace BKI_HRM
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_tct_chi_tiet_nhan_vien);
             this.Controls.Add(this.m_pnl_out_place_dm);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "f201_dm_nhan_su";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F201 - Quản lý hồ sơ nhân sự";
