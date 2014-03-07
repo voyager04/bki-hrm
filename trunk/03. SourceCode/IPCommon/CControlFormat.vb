@@ -339,7 +339,7 @@ Public Class CControlFormat
             .Styles.Alternate.BackColor = System.Drawing.Color.FromArgb(CType(241, Byte), CType(252, Byte), CType(218, Byte))
             .Styles.EmptyArea.BackColor = .BackColor
             .Styles.EmptyArea.Border.Style = C1.Win.C1FlexGrid.BorderStyleEnum.None
-            .Styles("subtotal0").BackColor = System.Drawing.Color.Lavender
+            .Styles("subtotal0").BackColor = System.Drawing.Color.DarkKhaki
             .Styles("subtotal0").ForeColor = System.Drawing.Color.Maroon
             '= System.Drawing.Color.Yellow
         End With
