@@ -370,6 +370,19 @@ namespace BKI_HRM
             }
         }
 
+        private void m_menuitem_usergroup_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f997_ht_nhom_nguoi_su_dung frm = new f997_ht_nhom_nguoi_su_dung();
+                frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
 
     }
 }

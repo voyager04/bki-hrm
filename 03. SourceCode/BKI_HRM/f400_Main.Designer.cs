@@ -133,6 +133,7 @@ namespace BKI_HRM
             this.m_menuitem_usergroup.Name = "m_menuitem_usergroup";
             this.m_menuitem_usergroup.Size = new System.Drawing.Size(188, 22);
             this.m_menuitem_usergroup.Text = "Nhóm người sử dụng";
+            this.m_menuitem_usergroup.Click += new System.EventHandler(this.m_menuitem_usergroup_Click);
             // 
             // m_menu_nhatky
             // 
