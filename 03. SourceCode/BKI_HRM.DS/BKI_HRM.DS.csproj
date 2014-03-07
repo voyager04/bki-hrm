@@ -96,11 +96,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_GD_HOP_DONG.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DS_HT_NHOM_NGUOI_SU_DUNG1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_HT_NHOM_NGUOI_SU_DUNG.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DS_HT_PHAN_QUYEN_CHO_NHOM1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -287,17 +282,6 @@
     </None>
     <None Include="DS_GD_HOP_DONG.xss">
       <DependentUpon>DS_GD_HOP_DONG.xsd</DependentUpon>
-    </None>
-    <None Include="DS_HT_NHOM_NGUOI_SU_DUNG.xsc">
-      <DependentUpon>DS_HT_NHOM_NGUOI_SU_DUNG.xsd</DependentUpon>
-    </None>
-    <None Include="DS_HT_NHOM_NGUOI_SU_DUNG.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_HT_NHOM_NGUOI_SU_DUNG1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DS_HT_NHOM_NGUOI_SU_DUNG.xss">
-      <DependentUpon>DS_HT_NHOM_NGUOI_SU_DUNG.xsd</DependentUpon>
     </None>
     <None Include="DS_HT_PHAN_QUYEN_CHO_NHOM.xsc">
       <DependentUpon>DS_HT_PHAN_QUYEN_CHO_NHOM.xsd</DependentUpon>
