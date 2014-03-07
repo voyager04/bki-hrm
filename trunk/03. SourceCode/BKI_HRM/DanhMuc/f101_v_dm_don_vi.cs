@@ -83,13 +83,13 @@ namespace BKI_HRM {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f101_v_dm_don_vi));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_lbl_so_luong_ban_ghi = new System.Windows.Forms.Label();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
-            this.label2 = new System.Windows.Forms.Label();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            this.m_lbl_so_luong_ban_ghi = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
@@ -142,15 +142,6 @@ namespace BKI_HRM {
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1266, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
-            // m_lbl_so_luong_ban_ghi
-            // 
-            this.m_lbl_so_luong_ban_ghi.AutoSize = true;
-            this.m_lbl_so_luong_ban_ghi.Location = new System.Drawing.Point(179, 47);
-            this.m_lbl_so_luong_ban_ghi.Name = "m_lbl_so_luong_ban_ghi";
-            this.m_lbl_so_luong_ban_ghi.Size = new System.Drawing.Size(25, 14);
-            this.m_lbl_so_luong_ban_ghi.TabIndex = 28;
-            this.m_lbl_so_luong_ban_ghi.Text = "000";
-            // 
             // m_cmd_insert
             // 
             this.m_cmd_insert.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -165,15 +156,6 @@ namespace BKI_HRM {
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 5;
             this.m_cmd_insert.Text = "&Thêm";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 14);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "Số lượng đơn vị trong danh sách:";
             // 
             // m_cmd_update
             // 
@@ -234,6 +216,24 @@ namespace BKI_HRM {
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 8;
             this.m_cmd_exit.Text = "Thoát (Esc)";
+            // 
+            // m_lbl_so_luong_ban_ghi
+            // 
+            this.m_lbl_so_luong_ban_ghi.AutoSize = true;
+            this.m_lbl_so_luong_ban_ghi.Location = new System.Drawing.Point(179, 47);
+            this.m_lbl_so_luong_ban_ghi.Name = "m_lbl_so_luong_ban_ghi";
+            this.m_lbl_so_luong_ban_ghi.Size = new System.Drawing.Size(25, 14);
+            this.m_lbl_so_luong_ban_ghi.TabIndex = 28;
+            this.m_lbl_so_luong_ban_ghi.Text = "000";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(4, 47);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(169, 14);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Số lượng đơn vị trong danh sách:";
             // 
             // panel1
             // 
@@ -357,6 +357,9 @@ namespace BKI_HRM {
             CGridUtils.AddSearch_Handlers(m_fg);
             m_fg.Tree.Column = (int)e_col_Number.TEN_DON_VI_CAP_TREN;
             m_fg.Tree.Style = TreeStyleFlags.Simple;
+
+           
+            
             set_define_events();
             KeyPreview = true;
         }

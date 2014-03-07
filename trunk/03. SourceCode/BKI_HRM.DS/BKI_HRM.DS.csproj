@@ -42,6 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CDBNames.cs" />
+    <Compile Include="DS_CM_DM_TU_DIEN.cs">
+      <DependentUpon>DS_CM_DM_TU_DIEN.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DS_CM_DM_TU_DIEN.Designer.cs">
       <DependentUpon>DS_CM_DM_TU_DIEN.xsd</DependentUpon>
       <DesignTime>True</DesignTime>

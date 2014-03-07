@@ -325,20 +325,23 @@ Public Class CControlFormat
         '***************************************************
         With i_fg
             .AllowEditing = False
-            '.AllowMerging = C1.Win.C1FlexGrid.AllowMergingEnum.Free
             .AutoSearch = C1.Win.C1FlexGrid.AutoSearchEnum.FromTop
             .BackColor = System.Drawing.SystemColors.Window
             '.Dock = System.Windows.Forms.DockStyle.Fill
             .ExtendLastCol = False
-            .ForeColor = System.Drawing.SystemColors.WindowText
+            .ForeColor = System.Drawing.Color.Black
             .Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.Complete
             .Font = New System.Drawing.Font(C_FontName, C_FormFontSize, Drawing.FontStyle.Regular)
             .Styles.Fixed.Font = New System.Drawing.Font(C_FontName, C_FormFontSize, Drawing.FontStyle.Bold)
             .Styles.Fixed.TextAlign = C1.Win.C1FlexGrid.TextAlignEnum.CenterCenter
-            .Styles.Fixed.ForeColor = System.Drawing.SystemColors.Highlight
+            .Styles.Fixed.ForeColor = System.Drawing.Color.White
+            .Styles.Fixed.BackColor = System.Drawing.Color.Maroon
             .Styles.Alternate.BackColor = System.Drawing.Color.FromArgb(CType(241, Byte), CType(252, Byte), CType(218, Byte))
             .Styles.EmptyArea.BackColor = .BackColor
             .Styles.EmptyArea.Border.Style = C1.Win.C1FlexGrid.BorderStyleEnum.None
+            .Styles("subtotal0").BackColor = System.Drawing.Color.Lavender
+            .Styles("subtotal0").ForeColor = System.Drawing.Color.Maroon
+            '= System.Drawing.Color.Yellow
         End With
     End Sub
 
