@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f203_v_gd_trang_thai_lao_dong_de));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f202_v_gd_qua_trinh_lam_viec_de));
             this.m_ngay_ket_thuc = new System.Windows.Forms.DateTimePicker();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_lbl_ngay_ket_thuc = new System.Windows.Forms.Label();
@@ -475,7 +475,7 @@
             this.m_lbl_don_vi_moi.TabIndex = 81;
             this.m_lbl_don_vi_moi.Text = "Đơn vị mới";
             // 
-            // f202_v_qua_trinh_lam_viec_de
+            // f202_v_gd_qua_trinh_lam_viec_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -499,8 +499,8 @@
             this.Controls.Add(this.m_cmd_chon_don_vi);
             this.Controls.Add(this.m_txt_don_vi_moi);
             this.Controls.Add(this.m_lbl_don_vi_moi);
-            this.Name = "f202_v_qua_trinh_lam_viec_de";
-            this.Text = "f202_v_qua_trinh_lam_viec_de";
+            this.Name = "f202_v_gd_qua_trinh_lam_viec_de";
+            this.Text = "F202 - Chi tiết thay đổi";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.m_grb_quyet_dinh.ResumeLayout(false);
             this.m_grb_quyet_dinh.PerformLayout();
