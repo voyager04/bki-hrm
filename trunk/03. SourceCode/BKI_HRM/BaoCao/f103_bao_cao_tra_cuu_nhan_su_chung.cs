@@ -32,8 +32,6 @@ namespace BKI_HRM {
         internal ImageList ImageList;
         private C1FlexGrid m_fg;
         private Panel panel1;
-        private ComboBox m_cbo_trang_thai;
-        private Label label3;
         private Label m_lbl_so_nhan_vien;
         private Label label2;
         private ComboBox m_cbo_gioi_tinh;
@@ -45,6 +43,8 @@ namespace BKI_HRM {
         internal SiSButton m_cmd_xuat_excel;
         internal SiSButton m_cmd_exit;
         private ToolTip m_tooltip;
+        private ComboBox m_cbo_trang_thai;
+        private Label label3;
         private IContainer components;
 
         public f103_bao_cao_tra_cuu_nhan_su() {
@@ -295,6 +295,7 @@ namespace BKI_HRM {
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_fg);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "f103_bao_cao_tra_cuu_nhan_su";
             this.Text = "F103 - Tra cứu nhân sự chung";
             this.Load += new System.EventHandler(this.f103_bao_cao_tra_cuu_nhan_su_Load);
@@ -380,11 +381,39 @@ namespace BKI_HRM {
             if (m_cbo_gioi_tinh != null) {
                 m_cbo_gioi_tinh.SelectedIndex = 0;
             }
-            //Load combobox "Trạng thái"
+            /*
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_LAO_DONG,
-                WinFormControls.eTAT_CA.YES,
-                m_cbo_trang_thai);
+                                                    WinFormControls.eTAT_CA.YES,
+                                                    m_cbo_trang_thai);
+             * */
+            //Load combobox "Trạng thái"
+            load_data_to_cbo_trang_thai();
             load_custom_source_2_m_txt_tim_kiem();
+        }
+
+        private void load_data_to_cbo_trang_thai() {
+            var v_us_dm_tu_dien = new IP.Core.IPUserService.US_CM_DM_TU_DIEN();
+            var v_ds_dm_tu_dien = new IP.Core.IPData.DS_CM_DM_TU_DIEN();
+            var v_str_loai_tu_dien = "";
+            v_str_loai_tu_dien = MA_LOAI_TU_DIEN.TRANG_THAI_LAO_DONG;
+            v_us_dm_tu_dien.fill_tu_dien_cung_loai_ds(
+                v_str_loai_tu_dien
+                , CM_DM_TU_DIEN.GHI_CHU
+                , v_ds_dm_tu_dien);
+
+            m_cbo_trang_thai.DataSource = v_ds_dm_tu_dien.CM_DM_TU_DIEN;
+            m_cbo_trang_thai.DisplayMember = CM_DM_TU_DIEN.TEN;
+            m_cbo_trang_thai.ValueMember = CM_DM_TU_DIEN.ID;
+
+            DataRow v_dr = v_ds_dm_tu_dien.CM_DM_TU_DIEN.NewRow();
+            v_dr[CM_DM_TU_DIEN.ID] = -1;
+            v_dr[CM_DM_TU_DIEN.TEN] = "------ Tất cả ------";
+            v_dr[CM_DM_TU_DIEN.MA_TU_DIEN] = "";
+            v_dr[CM_DM_TU_DIEN.TEN_NGAN] = "";
+            v_dr[CM_DM_TU_DIEN.ID_LOAI_TU_DIEN] = 1;
+            v_dr[CM_DM_TU_DIEN.GHI_CHU] = "";
+            v_ds_dm_tu_dien.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
+            m_cbo_trang_thai.SelectedIndex = 0;
         }
         private void load_custom_source_2_m_txt_tim_kiem() {
             var count = m_ds.Tables["V_DM_DU_LIEU_NHAN_VIEN"].Rows.Count;
@@ -431,18 +460,24 @@ namespace BKI_HRM {
             if (v_str_search.Equals(m_str_goi_y_tim_kiem)) {
                 v_str_search = "";
             }
+            /*
+            var v_dat_thoi_diem = DateTime.Now;
+            if (m_dtp_thoidiem.Checked) {
+                v_dat_thoi_diem = m_dtp_thoidiem.Value.Date;
+            }
+            */
             var v_str_month = Regex.Match(v_str_search, @"\d+").Value;
             if (!v_str_month.Equals("")) {
                 v_str_search = v_str_month;
             }
-            m_us.FillDatasetConditions(m_ds, v_str_search, get_gender(), get_trang_thai_lao_dong());
+            m_us.FillDatasetTraCuuThongTinNhanVienChung(m_ds, v_str_search, get_gender(), get_trang_thai_lao_dong());
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;
             // Group (subtotal) trên grid.
             m_fg.Subtotal(AggregateEnum.Count
               , 0
               , (int)e_col_Number.TEN_DON_VI    // Group theo cột này
-              , (int)e_col_Number.MA_NV     // Subtotal theo cột này
+              , (int)e_col_Number.MA_NV         // Subtotal theo cột này
               , "{0}"
               );
             set_search_format_before();
@@ -478,6 +513,8 @@ namespace BKI_HRM {
             }
             m_txt_tim_kiem.ForeColor = Color.Black;
         }
+
+
         #endregion
 
         //
@@ -529,7 +566,11 @@ namespace BKI_HRM {
         }
 
         private void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e) {
-
+            try {
+                load_data_2_grid();
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void CheckEnterKeyPress(object sender, KeyPressEventArgs e) {
