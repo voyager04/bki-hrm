@@ -210,7 +210,7 @@ namespace BKI_HRM
 
 		#region Private Methods
 		private void format_controls(){
-			CControlFormat.setFormStyle(this);
+            CControlFormat.setFormStyle(this, new CAppContext_201());
 			CControlFormat.setC1FlexFormat(m_fg);
 			m_fg.Cols[(int)e_col_Number.TRANG_THAI].DataMap= get_mapping_col_trang_thai();
 			set_define_events();

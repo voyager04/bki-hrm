@@ -296,7 +296,7 @@ Public Class f101_Dang_Nhap
         Dim v_us_user As New US_HT_NGUOI_SU_DUNG
         Dim v_logonResult As US_HT_NGUOI_SU_DUNG.LogonResult
         Form2UsObject()
-        m_us_user.check_user(m_us_user.strTEN_TRUY_CAP, m_us_user.strMAT_KHAU, v_logonResult)
+        m_us_user.check_user(m_us_user.strTEN_TRUY_CAP, CIPConvert.Encoding(m_us_user.strMAT_KHAU), v_logonResult)
         Dim v_loginSucceeded As Boolean = False
 
         Select Case v_logonResult
