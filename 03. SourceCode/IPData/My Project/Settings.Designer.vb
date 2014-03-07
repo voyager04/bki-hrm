@@ -63,6 +63,17 @@ Namespace My
                 Return CType(Me("TRMConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=TRONGHV\SQLEXPRESS;Initial Catalog=BKI_HRM;Persist Security Info=True"& _ 
+            ";User ID=sa;Password=sa")>  _
+        Public ReadOnly Property BKI_HRMConnectionString() As String
+            Get
+                Return CType(Me("BKI_HRMConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

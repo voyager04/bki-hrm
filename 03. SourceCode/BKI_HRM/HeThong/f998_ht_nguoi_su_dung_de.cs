@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 using IP.Core.IPCommon;
 using IP.Core.IPException;
-using IP.Core.IPUserService;
+//using IP.Core.IPUserService;
 using IP.Core.IPData;
 using IP.Core.IPData.DBNames;
 using IP.Core.IPSystemAdmin;
@@ -289,7 +289,6 @@ namespace BKI_HRM
             this.m_chk_is_admin.Size = new System.Drawing.Size(60, 20);
             this.m_chk_is_admin.TabIndex = 14;
             this.m_chk_is_admin.Text = "Không";
-            this.m_chk_is_admin.CheckedChanged += new System.EventHandler(this.m_chk_is_admin_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -386,7 +385,7 @@ namespace BKI_HRM
 			m_e_form_mode = DataEntryFormMode.InsertDataState;
 			this.ShowDialog();
 		}
-		public void update_new_user(US_HT_NGUOI_SU_DUNG i_us_user){
+		public void update_new_user(BKI_HRM.US.US_HT_NGUOI_SU_DUNG i_us_user){
 			m_e_form_mode = DataEntryFormMode.UpdateDataState;
 			m_us_user = i_us_user;
 			this.ShowDialog();
@@ -573,9 +572,5 @@ namespace BKI_HRM
 			}
 		}
 
-        private void m_chk_is_admin_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
 	}
 }

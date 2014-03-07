@@ -15,10 +15,12 @@ using System.Windows.Forms;
 using IP.Core.IPCommon;
 using IP.Core.IPException;
 using IP.Core.IPData;
-using IP.Core.IPUserService;
+//using IP.Core.IPUserService;
 using IP.Core.IPSystemAdmin;
 
 using IP.Core.IPData.DBNames;
+using BKI_HRM.US;
+
 
 
 namespace BKI_HRM
