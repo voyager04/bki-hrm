@@ -12,6 +12,8 @@ using IP.Core.IPCommon;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
 using BKI_HRM.DS.CDBNames;
+using System.Collections;
+using IP.Core.IPSystemAdmin;
 
 namespace BKI_HRM.NghiepVu
 {
@@ -22,27 +24,6 @@ namespace BKI_HRM.NghiepVu
         {
             InitializeComponent();
             format_control();
-        }
-
-        
-        #endregion
-
-        #region Member
-        DataEntryFormMode m_e_form_mode;
-        US.US_DM_DU_AN m_us_dm_du_an = new US.US_DM_DU_AN();
-        US.US_DM_QUYET_DINH m_us_dm_quyet_dinh = new US.US_DM_QUYET_DINH();
-        enum cm_dm_tu_dien { 
-            TRANG_THAI = 10,
-            LOAI_DU_AN = 9,
-            CO_CHE =8,
-            THANH_LAP_DU_AN = 679
-        }
-        #endregion
-
-        #region privateMethod
-        private void format_control()
-        {
-            CControlFormat.setFormStyle(this);
         }
         public void display_for_insert()
         {
@@ -57,7 +38,106 @@ namespace BKI_HRM.NghiepVu
             load_data_2_control();
             ds_2_form(i_ds);
             load_data_2_form_chi_tiet_qd(m_txt_ma_quyet_dinh.Text);
-            this.ShowDialog();            
+            DataRow v_dr = i_ds.Tables[0].Rows[0];
+            load_data_2_grv_nhan_su(CIPConvert.ToDecimal(v_dr["ID"]));
+            this.ShowDialog();
+        }
+        
+        #endregion
+
+        #region Member
+        ITransferDataRow m_obj_trans;	
+        DataEntryFormMode m_e_form_mode;
+        US.US_DM_DU_AN m_us_dm_du_an = new US.US_DM_DU_AN();
+        US.US_DM_QUYET_DINH m_us_dm_quyet_dinh = new US.US_DM_QUYET_DINH();
+        DS.DS_V_DM_NHAN_SU_DU_AN m_ds_nsda = new DS.DS_V_DM_NHAN_SU_DU_AN();
+        US.US_V_DM_NHAN_SU_DU_AN m_us_nsda = new US.US_V_DM_NHAN_SU_DU_AN();
+        enum cm_dm_tu_dien { 
+            TRANG_THAI = 10,
+            LOAI_DU_AN = 9,
+            CO_CHE =8,
+            THANH_LAP_DU_AN = 679
+        }
+        private enum e_col_Number
+        {
+            VI_TRI = 12
+,
+            TEN_DON_VI = 11
+                ,
+            MA_NV = 5
+                ,
+            MA_DU_AN = 2
+                ,
+            DANH_HIEU = 16
+                ,
+            THOI_DIEM_KT = 14
+                ,
+            TEN = 7
+                ,
+            ID_DU_AN = 1
+                ,
+            MA_DON_VI = 10
+                ,
+            THOI_DIEM_TG = 13
+                ,
+            HO_DEM = 6
+                ,
+            ID_NHAN_SU = 4
+                ,
+            TEN_CV = 9
+                ,
+            ID = 17
+                ,
+            TEN_DU_AN = 3
+                ,
+            MA_CV = 8
+                , THOI_GIAN_TG = 15
+
+        }			
+        #endregion
+
+        #region privateMethod
+        private void format_control()
+        {
+            CControlFormat.setFormStyle(this, new CAppContext_201());
+            CControlFormat.setC1FlexFormat(m_grv_nhan_su);
+            CGridUtils.AddSave_Excel_Handlers(m_grv_nhan_su);
+            CGridUtils.AddSearch_Handlers(m_grv_nhan_su);
+        }
+        
+
+        private void load_data_2_grv_nhan_su(decimal i_dc_id_da)
+        {
+            m_obj_trans = get_trans_object(m_grv_nhan_su);
+            m_ds_nsda = new DS.DS_V_DM_NHAN_SU_DU_AN();
+            m_us_nsda.FillDatasetByIdDuAn(m_ds_nsda,i_dc_id_da);
+            m_grv_nhan_su.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds_nsda, m_grv_nhan_su, m_obj_trans);
+            m_grv_nhan_su.Redraw = true;
+        }
+        private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
+        {
+            Hashtable v_htb = new Hashtable();
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.VI_TRI, e_col_Number.VI_TRI);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.TEN_DON_VI, e_col_Number.TEN_DON_VI);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_NV, e_col_Number.MA_NV);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_DU_AN, e_col_Number.MA_DU_AN);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.DANH_HIEU, e_col_Number.DANH_HIEU);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_DIEM_KT, e_col_Number.THOI_DIEM_KT);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.TEN, e_col_Number.TEN);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.ID_DU_AN, e_col_Number.ID_DU_AN);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_DON_VI, e_col_Number.MA_DON_VI);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_DIEM_TG, e_col_Number.THOI_DIEM_TG);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.HO_DEM, e_col_Number.HO_DEM);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.ID_NHAN_SU, e_col_Number.ID_NHAN_SU);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.TEN_CV, e_col_Number.TEN_CV);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.ID, e_col_Number.ID);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.TEN_DU_AN, e_col_Number.TEN_DU_AN);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_CV, e_col_Number.MA_CV);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_GIAN_TG, e_col_Number.THOI_GIAN_TG);
+
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds_nsda.V_DM_NHAN_SU_DU_AN.NewRow());
+            return v_obj_trans;
         }
 
         private void load_data_2_form_chi_tiet_qd(string i_str_ma_qd)
