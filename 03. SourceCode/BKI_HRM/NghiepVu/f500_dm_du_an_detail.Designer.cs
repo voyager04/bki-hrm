@@ -65,9 +65,11 @@
             this.m_dat_ngay_het_hieu_luc = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.m_dat_ngay_co_hieu_luc = new System.Windows.Forms.DateTimePicker();
+            this.m_grv_nhan_su = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).BeginInit();
             this.SuspendLayout();
             // 
             // ImageList
@@ -103,7 +105,7 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_refresh);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 341);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 576);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1049, 36);
@@ -335,10 +337,9 @@
             this.groupBox1.Controls.Add(this.m_lbl_loai_du_an);
             this.groupBox1.Controls.Add(this.m_lbl_trang_thai);
             this.groupBox1.Controls.Add(this.m_txt_noi_dung);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox1.Location = new System.Drawing.Point(526, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(523, 341);
+            this.groupBox1.Size = new System.Drawing.Size(523, 334);
             this.groupBox1.TabIndex = 47;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi tiết dự án";
@@ -357,10 +358,9 @@
             this.groupBox2.Controls.Add(this.m_txt_ma_quyet_dinh);
             this.groupBox2.Controls.Add(this.m_dat_ngay_co_hieu_luc);
             this.groupBox2.Controls.Add(this.m_lbl_quyet_dinh);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(520, 341);
+            this.groupBox2.Size = new System.Drawing.Size(520, 334);
             this.groupBox2.TabIndex = 48;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Quyết định thành lập dự án";
@@ -457,11 +457,25 @@
             this.m_dat_ngay_co_hieu_luc.Size = new System.Drawing.Size(157, 20);
             this.m_dat_ngay_co_hieu_luc.TabIndex = 46;
             // 
+            // m_grv_nhan_su
+            // 
+            this.m_grv_nhan_su.AllowAddNew = true;
+            this.m_grv_nhan_su.AllowDelete = true;
+            this.m_grv_nhan_su.ColumnInfo = resources.GetString("m_grv_nhan_su.ColumnInfo");
+            this.m_grv_nhan_su.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_grv_nhan_su.Location = new System.Drawing.Point(0, 340);
+            this.m_grv_nhan_su.Name = "m_grv_nhan_su";
+            this.m_grv_nhan_su.Rows.Count = 51;
+            this.m_grv_nhan_su.Size = new System.Drawing.Size(1049, 236);
+            this.m_grv_nhan_su.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_nhan_su.Styles"));
+            this.m_grv_nhan_su.TabIndex = 49;
+            // 
             // f500_dm_du_an_detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1049, 377);
+            this.ClientSize = new System.Drawing.Size(1049, 612);
+            this.Controls.Add(this.m_grv_nhan_su);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_pnl_out_place_dm);
@@ -473,6 +487,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -514,6 +529,7 @@
         private System.Windows.Forms.DateTimePicker m_dat_ngay_het_hieu_luc;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker m_dat_ngay_co_hieu_luc;
+        private C1.Win.C1FlexGrid.C1FlexGrid m_grv_nhan_su;
 
     }
 }

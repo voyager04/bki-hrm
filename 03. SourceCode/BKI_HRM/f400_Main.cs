@@ -263,28 +263,12 @@ namespace BKI_HRM
 
         private void m_meuitem_nhansuduan_Click(object sender, EventArgs e)
         {
-            try
-            {
-                f501_v_dm_nhan_su_du_an frm = new f501_v_dm_nhan_su_du_an();
-                frm.Show();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
+
         }
 
         private void m_menuitem_bcduan_Click(object sender, EventArgs e)
         {
-            try
-            {
-                f502_bao_cao_du_an frm = new f502_bao_cao_du_an();
-                frm.Show();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
+
         }
 
         private void m_menuitem_traCuuNhanSuChung_Click(object sender, EventArgs e)
@@ -375,6 +359,32 @@ namespace BKI_HRM
             try
             {
                 f997_ht_nhom_nguoi_su_dung frm = new f997_ht_nhom_nguoi_su_dung();
+                frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_menuitem_bc_duan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f502_bao_cao_du_an frm = new f502_bao_cao_du_an();
+                frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_menuitem_tra_cuu_ns_du_an_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f501_v_dm_nhan_su_du_an frm = new f501_v_dm_nhan_su_du_an();
                 frm.Show();
             }
             catch (Exception v_e)
