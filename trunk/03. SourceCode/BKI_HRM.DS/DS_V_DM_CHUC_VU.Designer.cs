@@ -287,6 +287,10 @@ namespace BKI_HRM.DS {
             
             private global::System.Data.DataColumn columnTEN_CV_TA;
             
+            private global::System.Data.DataColumn columnID_NGACH;
+            
+            private global::System.Data.DataColumn columnTEN;
+            
             private global::System.Data.DataColumn columnTRANG_THAI;
             
             private global::System.Data.DataColumn columnNGAY_AP_DUNG;
@@ -362,6 +366,22 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_NGACHColumn {
+                get {
+                    return this.columnID_NGACH;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TENColumn {
+                get {
+                    return this.columnTEN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn TRANG_THAIColumn {
                 get {
                     return this.columnTRANG_THAI;
@@ -429,13 +449,15 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_DM_CHUC_VURow AddV_DM_CHUC_VURow(string MA_CV, string TEN_CV, string TEN_CV_TA, string TRANG_THAI, System.DateTime NGAY_AP_DUNG, System.DateTime NGAY_KET_THUC, string TRANG_THAI_SU_DUNG) {
+            public V_DM_CHUC_VURow AddV_DM_CHUC_VURow(decimal ID, string MA_CV, string TEN_CV, string TEN_CV_TA, decimal ID_NGACH, string TEN, string TRANG_THAI, System.DateTime NGAY_AP_DUNG, System.DateTime NGAY_KET_THUC, string TRANG_THAI_SU_DUNG) {
                 V_DM_CHUC_VURow rowV_DM_CHUC_VURow = ((V_DM_CHUC_VURow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        ID,
                         MA_CV,
                         TEN_CV,
                         TEN_CV_TA,
+                        ID_NGACH,
+                        TEN,
                         TRANG_THAI,
                         NGAY_AP_DUNG,
                         NGAY_KET_THUC,
@@ -479,6 +501,8 @@ namespace BKI_HRM.DS {
                 this.columnMA_CV = base.Columns["MA_CV"];
                 this.columnTEN_CV = base.Columns["TEN_CV"];
                 this.columnTEN_CV_TA = base.Columns["TEN_CV_TA"];
+                this.columnID_NGACH = base.Columns["ID_NGACH"];
+                this.columnTEN = base.Columns["TEN"];
                 this.columnTRANG_THAI = base.Columns["TRANG_THAI"];
                 this.columnNGAY_AP_DUNG = base.Columns["NGAY_AP_DUNG"];
                 this.columnNGAY_KET_THUC = base.Columns["NGAY_KET_THUC"];
@@ -496,6 +520,10 @@ namespace BKI_HRM.DS {
                 base.Columns.Add(this.columnTEN_CV);
                 this.columnTEN_CV_TA = new global::System.Data.DataColumn("TEN_CV_TA", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTEN_CV_TA);
+                this.columnID_NGACH = new global::System.Data.DataColumn("ID_NGACH", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_NGACH);
+                this.columnTEN = new global::System.Data.DataColumn("TEN", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTEN);
                 this.columnTRANG_THAI = new global::System.Data.DataColumn("TRANG_THAI", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTRANG_THAI);
                 this.columnNGAY_AP_DUNG = new global::System.Data.DataColumn("NGAY_AP_DUNG", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -506,16 +534,14 @@ namespace BKI_HRM.DS {
                 base.Columns.Add(this.columnTRANG_THAI_SU_DUNG);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
-                this.columnID.AutoIncrement = true;
-                this.columnID.AutoIncrementSeed = -1;
-                this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
-                this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
                 this.columnMA_CV.AllowDBNull = false;
                 this.columnMA_CV.MaxLength = 15;
                 this.columnTEN_CV.MaxLength = 250;
                 this.columnTEN_CV_TA.MaxLength = 250;
+                this.columnTEN.AllowDBNull = false;
+                this.columnTEN.MaxLength = 250;
                 this.columnTRANG_THAI.AllowDBNull = false;
                 this.columnTRANG_THAI.MaxLength = 1;
                 this.columnTRANG_THAI_SU_DUNG.ReadOnly = true;
@@ -716,6 +742,33 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ID_NGACH {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableV_DM_CHUC_VU.ID_NGACHColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID_NGACH\' in table \'V_DM_CHUC_VU\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_DM_CHUC_VU.ID_NGACHColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TEN {
+                get {
+                    return ((string)(this[this.tableV_DM_CHUC_VU.TENColumn]));
+                }
+                set {
+                    this[this.tableV_DM_CHUC_VU.TENColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string TRANG_THAI {
                 get {
                     return ((string)(this[this.tableV_DM_CHUC_VU.TRANG_THAIColumn]));
@@ -795,6 +848,18 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTEN_CV_TANull() {
                 this[this.tableV_DM_CHUC_VU.TEN_CV_TAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsID_NGACHNull() {
+                return this.IsNull(this.tableV_DM_CHUC_VU.ID_NGACHColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetID_NGACHNull() {
+                this[this.tableV_DM_CHUC_VU.ID_NGACHColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -997,6 +1062,8 @@ namespace BKI_HRM.DS.DS_V_DM_CHUC_VUTableAdapters {
             tableMapping.ColumnMappings.Add("MA_CV", "MA_CV");
             tableMapping.ColumnMappings.Add("TEN_CV", "TEN_CV");
             tableMapping.ColumnMappings.Add("TEN_CV_TA", "TEN_CV_TA");
+            tableMapping.ColumnMappings.Add("ID_NGACH", "ID_NGACH");
+            tableMapping.ColumnMappings.Add("TEN", "TEN");
             tableMapping.ColumnMappings.Add("TRANG_THAI", "TRANG_THAI");
             tableMapping.ColumnMappings.Add("NGAY_AP_DUNG", "NGAY_AP_DUNG");
             tableMapping.ColumnMappings.Add("NGAY_KET_THUC", "NGAY_KET_THUC");
@@ -1017,8 +1084,8 @@ namespace BKI_HRM.DS.DS_V_DM_CHUC_VUTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, MA_CV, TEN_CV, TEN_CV_TA, TRANG_THAI, NGAY_AP_DUNG, NGAY_KET_THUC, TRA" +
-                "NG_THAI_SU_DUNG FROM dbo.V_DM_CHUC_VU";
+            this._commandCollection[0].CommandText = "SELECT ID, MA_CV, TEN_CV, TEN_CV_TA, ID_NGACH, TEN, TRANG_THAI, NGAY_AP_DUNG, NGA" +
+                "Y_KET_THUC, TRANG_THAI_SU_DUNG FROM dbo.V_DM_CHUC_VU";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

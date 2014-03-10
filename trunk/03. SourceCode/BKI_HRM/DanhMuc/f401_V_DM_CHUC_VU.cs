@@ -30,8 +30,7 @@ namespace BKI_HRM
 	public class f401_V_DM_CHUC_VU : System.Windows.Forms.Form
 	{
 		internal System.Windows.Forms.ImageList ImageList;
-		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
-		private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
+        internal System.Windows.Forms.Panel m_pnl_out_place_dm;
 		internal SIS.Controls.Button.SiSButton m_cmd_delete;
 		internal SIS.Controls.Button.SiSButton m_cmd_update;
         internal SIS.Controls.Button.SiSButton m_cmd_insert;
@@ -39,6 +38,7 @@ namespace BKI_HRM
         private TextBox m_txt_tim_kiem;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
+        private C1FlexGrid m_fg;
 		private System.ComponentModel.IContainer components;
 
 		public f401_V_DM_CHUC_VU()
@@ -85,9 +85,9 @@ namespace BKI_HRM
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_cmd_view = new SIS.Controls.Button.SiSButton();
-            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
+            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -208,17 +208,6 @@ namespace BKI_HRM
             this.m_cmd_view.TabIndex = 21;
             this.m_cmd_view.Text = "Xem";
             // 
-            // m_fg
-            // 
-            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 41);
-            this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(686, 261);
-            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 20;
-            this.m_fg.Click += new System.EventHandler(this.m_fg_Click);
-            // 
             // m_txt_tim_kiem
             // 
             this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
@@ -246,13 +235,23 @@ namespace BKI_HRM
             this.m_cmd_search.Text = "Tìm kiếm";
             this.m_cmd_search.Click += new System.EventHandler(this.m_cmd_search_Click);
             // 
+            // m_fg
+            // 
+            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_fg.Location = new System.Drawing.Point(0, 38);
+            this.m_fg.Name = "m_fg";
+            this.m_fg.Size = new System.Drawing.Size(686, 264);
+            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
+            this.m_fg.TabIndex = 32;
+            // 
             // f401_V_DM_CHUC_VU
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(686, 338);
+            this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_cmd_search);
             this.Controls.Add(this.m_txt_tim_kiem);
-            this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f401_V_DM_CHUC_VU";
             this.Text = "f401_V_DM_CHUC_VU";
@@ -272,15 +271,22 @@ namespace BKI_HRM
 		#endregion
 
 		#region Data Structure
-		private enum e_col_Number{
-			NGAY_AP_DUNG = 4
-,TEN_CV_TA = 3
-,NGAY_KET_THUC = 5
-,TRANG_THAI_SU_DUNG = 6
-,MA_CV = 1
-,TEN_CV = 2
+        private enum e_col_Number
+        {
+            TEN = 4
+,
+            NGAY_AP_DUNG = 5
+                ,
+            TEN_CV_TA = 3
+                ,
+            NGAY_KET_THUC = 6
+                ,
+            TRANG_THAI_SU_DUNG = 7
+                ,
+            MA_CV = 1
+                , TEN_CV = 2
 
-		}
+        }	
         			
 		#endregion
 
@@ -307,12 +313,13 @@ namespace BKI_HRM
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
-			v_htb.Add(V_DM_CHUC_VU.NGAY_AP_DUNG, e_col_Number.NGAY_AP_DUNG);
-			v_htb.Add(V_DM_CHUC_VU.TEN_CV_TA, e_col_Number.TEN_CV_TA);
-			v_htb.Add(V_DM_CHUC_VU.NGAY_KET_THUC, e_col_Number.NGAY_KET_THUC);
-			v_htb.Add(V_DM_CHUC_VU.TRANG_THAI_SU_DUNG, e_col_Number.TRANG_THAI_SU_DUNG);
-			v_htb.Add(V_DM_CHUC_VU.MA_CV, e_col_Number.MA_CV);
-			v_htb.Add(V_DM_CHUC_VU.TEN_CV, e_col_Number.TEN_CV);
+            v_htb.Add(V_DM_CHUC_VU.TEN, e_col_Number.TEN);
+            v_htb.Add(V_DM_CHUC_VU.NGAY_AP_DUNG, e_col_Number.NGAY_AP_DUNG);
+            v_htb.Add(V_DM_CHUC_VU.TEN_CV_TA, e_col_Number.TEN_CV_TA);
+            v_htb.Add(V_DM_CHUC_VU.NGAY_KET_THUC, e_col_Number.NGAY_KET_THUC);
+            v_htb.Add(V_DM_CHUC_VU.TRANG_THAI_SU_DUNG, e_col_Number.TRANG_THAI_SU_DUNG);
+            v_htb.Add(V_DM_CHUC_VU.MA_CV, e_col_Number.MA_CV);
+            v_htb.Add(V_DM_CHUC_VU.TEN_CV, e_col_Number.TEN_CV);
 									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_v_ds.V_DM_CHUC_VU.NewRow());
 			return v_obj_trans;			

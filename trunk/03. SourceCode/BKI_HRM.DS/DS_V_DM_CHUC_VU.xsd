@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="BKI_HRMConnectionString3 (Settings)" DbObjectName="BKI_HRM.dbo.V_DM_CHUC_VU" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, MA_CV, TEN_CV, TEN_CV_TA, TRANG_THAI, NGAY_AP_DUNG, NGAY_KET_THUC, TRANG_THAI_SU_DUNG FROM dbo.V_DM_CHUC_VU</CommandText>
+                    <CommandText>SELECT ID, MA_CV, TEN_CV, TEN_CV_TA, ID_NGACH, TEN, TRANG_THAI, NGAY_AP_DUNG, NGAY_KET_THUC, TRANG_THAI_SU_DUNG FROM dbo.V_DM_CHUC_VU</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -23,6 +23,8 @@
               <Mapping SourceColumn="MA_CV" DataSetColumn="MA_CV" />
               <Mapping SourceColumn="TEN_CV" DataSetColumn="TEN_CV" />
               <Mapping SourceColumn="TEN_CV_TA" DataSetColumn="TEN_CV_TA" />
+              <Mapping SourceColumn="ID_NGACH" DataSetColumn="ID_NGACH" />
+              <Mapping SourceColumn="TEN" DataSetColumn="TEN" />
               <Mapping SourceColumn="TRANG_THAI" DataSetColumn="TRANG_THAI" />
               <Mapping SourceColumn="NGAY_AP_DUNG" DataSetColumn="NGAY_AP_DUNG" />
               <Mapping SourceColumn="NGAY_KET_THUC" DataSetColumn="NGAY_KET_THUC" />
@@ -41,7 +43,7 @@
         <xs:element name="V_DM_CHUC_VU" msprop:Generator_TableClassName="V_DM_CHUC_VUDataTable" msprop:Generator_TableVarName="tableV_DM_CHUC_VU" msprop:Generator_TablePropName="V_DM_CHUC_VU" msprop:Generator_RowDeletingName="V_DM_CHUC_VURowDeleting" msprop:Generator_RowChangingName="V_DM_CHUC_VURowChanging" msprop:Generator_RowEvHandlerName="V_DM_CHUC_VURowChangeEventHandler" msprop:Generator_RowDeletedName="V_DM_CHUC_VURowDeleted" msprop:Generator_UserTableName="V_DM_CHUC_VU" msprop:Generator_RowChangedName="V_DM_CHUC_VURowChanged" msprop:Generator_RowEvArgName="V_DM_CHUC_VURowChangeEvent" msprop:Generator_RowClassName="V_DM_CHUC_VURow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
               <xs:element name="MA_CV" msprop:Generator_ColumnVarNameInTable="columnMA_CV" msprop:Generator_ColumnPropNameInRow="MA_CV" msprop:Generator_ColumnPropNameInTable="MA_CVColumn" msprop:Generator_UserColumnName="MA_CV">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -57,6 +59,14 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="TEN_CV_TA" msprop:Generator_ColumnVarNameInTable="columnTEN_CV_TA" msprop:Generator_ColumnPropNameInRow="TEN_CV_TA" msprop:Generator_ColumnPropNameInTable="TEN_CV_TAColumn" msprop:Generator_UserColumnName="TEN_CV_TA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_NGACH" msprop:Generator_ColumnVarNameInTable="columnID_NGACH" msprop:Generator_ColumnPropNameInRow="ID_NGACH" msprop:Generator_ColumnPropNameInTable="ID_NGACHColumn" msprop:Generator_UserColumnName="ID_NGACH" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TEN" msprop:Generator_ColumnVarNameInTable="columnTEN" msprop:Generator_ColumnPropNameInRow="TEN" msprop:Generator_ColumnPropNameInTable="TENColumn" msprop:Generator_UserColumnName="TEN">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />

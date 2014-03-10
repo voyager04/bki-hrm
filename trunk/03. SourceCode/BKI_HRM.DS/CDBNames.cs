@@ -345,6 +345,8 @@ namespace BKI_HRM.DS.CDBNames
        public const string MA_CV = "MA_CV";
        public const string TEN_CV = "TEN_CV";
        public const string TEN_CV_TA = "TEN_CV_TA";
+       public const string ID_NGACH = "ID_NGACH";
+       public const string TEN = "TEN";
        public const string TRANG_THAI = "TRANG_THAI";
        public const string NGAY_AP_DUNG = "NGAY_AP_DUNG";
        public const string NGAY_KET_THUC = "NGAY_KET_THUC";
