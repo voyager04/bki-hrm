@@ -50,6 +50,9 @@ namespace BKI_HRM
         private void fomat_control() {
             CControlFormat.setFormStyle(this);
             set_define_events();
+            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.NGACH,
+                WinFormControls.eTAT_CA.NO,
+                m_cbo_ngach);
         }
 
         private bool check_data_is_ok() {
@@ -68,6 +71,7 @@ namespace BKI_HRM
             m_us.strTEN_CV_TA = m_txt_tenta.Text.Trim();
             m_us.datNGAY_AP_DUNG = m_dat_ngayapdung.Value.Date;
             m_us.datNGAY_KET_THUC = m_dat_ngayketthuc.Value.Date;
+            m_us.dcID_NGACH =  CIPConvert.ToDecimal(m_cbo_ngach.SelectedValue);
             m_us.strTRANG_THAI = m_rdb_khongsudung.Checked ? "n" : "y";
         }
 
@@ -104,6 +108,7 @@ namespace BKI_HRM
             m_txt_tenta.Text = ip_us_v_dm_chuc_vu.strTEN_CV_TA;
             m_dat_ngayapdung.Value = ip_us_v_dm_chuc_vu.datNGAY_AP_DUNG;
             m_dat_ngayketthuc.Value = ip_us_v_dm_chuc_vu.datNGAY_KET_THUC;
+            m_cbo_ngach.SelectedValue = ip_us_v_dm_chuc_vu.dcID_NGACH;
             if (ip_us_v_dm_chuc_vu.strTRANG_THAI == "y")
                 m_rdb_sudung.Checked = true;
             else
