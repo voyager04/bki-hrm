@@ -270,19 +270,19 @@ namespace BKI_HRM
 
 		#region Data Structure
 		private enum e_col_Number{
-            NGAY_CO_HIEU_LUC = 15
+            NGAY_CO_HIEU_LUC = 16
 ,
-            CAP_DON_VI = 11
+            CAP_DON_VI = 12
                 ,
             NGAY_BAT_DAU = 4
                 ,
             TEN_CV = 7
                 ,
-            TEN_DON_VI = 10
+            TEN_DON_VI = 11
                 ,
             MA_NV = 1
                 ,
-            MA_DON_VI = 9
+            MA_DON_VI = 10
                 ,
             NGAY_KET_THUC = 5
                 ,
@@ -290,17 +290,17 @@ namespace BKI_HRM
                 ,
             HO_DEM = 2
                 ,
-            LOAI_DON_VI = 12
+            LOAI_DON_VI = 13
                 ,
             TEN = 3
                 ,
-            TRANG_THAI_CV = 8
+            TRANG_THAI_CV = 9
                 ,
-            MA_QUYET_DINH = 14
+            MA_QUYET_DINH = 15
                 ,
-            NGAY_HET_HIEU_LUC = 16
-                , DIA_BAN = 13
-
+            NGAY_HET_HIEU_LUC = 17
+                , DIA_BAN = 14
+            , NGACH = 8
 		}			
 		#endregion
 
@@ -317,7 +317,9 @@ namespace BKI_HRM
 			CControlFormat.setFormStyle(this, new CAppContext_201());
 			CControlFormat.setC1FlexFormat(m_grv_qua_trinh_lam_viec);
 			CGridUtils.AddSave_Excel_Handlers(m_grv_qua_trinh_lam_viec);
-            			CGridUtils.AddSearch_Handlers(m_grv_qua_trinh_lam_viec);
+            CGridUtils.AddSearch_Handlers(m_grv_qua_trinh_lam_viec);
+            m_grv_qua_trinh_lam_viec.Tree.Column = (int)e_col_Number.MA_NV;
+            m_grv_qua_trinh_lam_viec.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.SimpleLeaf;
 			set_define_events();
             this.KeyPreview = true;
         }
@@ -346,6 +348,7 @@ namespace BKI_HRM
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_QUYET_DINH, e_col_Number.MA_QUYET_DINH);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.NGAY_HET_HIEU_LUC, e_col_Number.NGAY_HET_HIEU_LUC);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.DIA_BAN, e_col_Number.DIA_BAN);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.NGACH, e_col_Number.NGACH);
 									
 			
 									
@@ -356,7 +359,14 @@ namespace BKI_HRM
 			m_ds_qua_trinh_lam_viec = new DS_V_GD_QUA_TRINH_LAM_VIEC();			
 			m_us_qua_trinh_lam_viec.FillDataset(m_ds_qua_trinh_lam_viec);
 			m_grv_qua_trinh_lam_viec.Redraw = false;
+           
 			CGridUtils.Dataset2C1Grid(m_ds_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec, m_obj_trans);
+            m_grv_qua_trinh_lam_viec.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.None // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+             , 0
+             , (int)e_col_Number.MA_NV // chỗ này là tên trường mà mình nhóm
+             , (int)e_col_Number.TEN_CV // chỗ này là tên trường mà mình Count
+             , "{0}"
+             );
             m_grv_qua_trinh_lam_viec.Redraw = true;
         }
         private void load_data_2_grid_search()
@@ -364,7 +374,15 @@ namespace BKI_HRM
             m_ds_qua_trinh_lam_viec = new DS_V_GD_QUA_TRINH_LAM_VIEC();
             m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, m_txt_tim_kiem.Text.Trim());
             m_grv_qua_trinh_lam_viec.Redraw = false;
+            
+           
             CGridUtils.Dataset2C1Grid(m_ds_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec, m_obj_trans);
+            m_grv_qua_trinh_lam_viec.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.None // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+              , 0
+              , (int)e_col_Number.MA_NV // chỗ này là tên trường mà mình nhóm
+              , (int)e_col_Number.TEN_CV // chỗ này là tên trường mà mình Count
+              , "{0}"
+              );
             m_grv_qua_trinh_lam_viec.Redraw = true;
         }
         private void load_data_2_grid(US_DM_NHAN_SU ip_us_dm_nhan_su)
@@ -373,7 +391,14 @@ namespace BKI_HRM
             m_us_qua_trinh_lam_viec.FillDatasetByManhanvien(m_ds_qua_trinh_lam_viec, ip_us_dm_nhan_su.strMA_NV,CIPConvert.ToDatetime("01/01/1800"),DateTime.Now);
             m_grv_qua_trinh_lam_viec.Redraw = false;
             m_obj_trans = get_trans_object(m_grv_qua_trinh_lam_viec);
+            
             CGridUtils.Dataset2C1Grid(m_ds_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec, m_obj_trans);
+            m_grv_qua_trinh_lam_viec.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.None // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+              , 0
+              , (int)e_col_Number.MA_NV // chỗ này là tên trường mà mình nhóm
+              , (int)e_col_Number.TEN_CV // chỗ này là tên trường mà mình Count
+              , "{0}"
+              );
             m_grv_qua_trinh_lam_viec.Redraw = true;
         }
         private void load_data(US_DM_NHAN_SU ip_us_dm_nhan_su)

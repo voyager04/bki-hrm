@@ -223,6 +223,7 @@ namespace BKI_HRM.DS.CDBNames
         public const string NGAY_KET_THUC = "NGAY_KET_THUC";
         public const string ID_NHAN_SU = "ID_NHAN_SU";
         public const string ID = "ID";
+        public const string ROWNUM = "ROWNUM";
     }
 
 
