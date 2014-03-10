@@ -221,6 +221,8 @@ namespace BKI_HRM.DS.CDBNames
         public const string TRANG_THAI_CV = "TRANG_THAI_CV";
         public const string NGAY_BAT_DAU = "NGAY_BAT_DAU";
         public const string NGAY_KET_THUC = "NGAY_KET_THUC";
+        public const string ID = "ID";
+        public const string ID_NHAN_SU = "ID_NHAN_SU";
     }
 
 
