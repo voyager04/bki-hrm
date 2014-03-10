@@ -49,6 +49,9 @@
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_cmd_refresh = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_chon_file = new SIS.Controls.Button.SiSButton();
+            this.m_lbl_ten_file = new System.Windows.Forms.Label();
+            this.m_ofd_chon_file = new System.Windows.Forms.OpenFileDialog();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -170,7 +173,7 @@
             this.m_txt_noi_dung.Location = new System.Drawing.Point(109, 103);
             this.m_txt_noi_dung.Multiline = true;
             this.m_txt_noi_dung.Name = "m_txt_noi_dung";
-            this.m_txt_noi_dung.Size = new System.Drawing.Size(428, 58);
+            this.m_txt_noi_dung.Size = new System.Drawing.Size(305, 82);
             this.m_txt_noi_dung.TabIndex = 13;
             // 
             // m_pnl_out_place_dm
@@ -178,7 +181,7 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_refresh);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 183);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(1, 198);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(537, 28);
             this.m_pnl_out_place_dm.TabIndex = 14;
@@ -256,11 +259,36 @@
             this.m_cmd_exit.TabIndex = 32;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
+            // m_cmd_chon_file
+            // 
+            this.m_cmd_chon_file.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_chon_file.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_chon_file.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_chon_file.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_chon_file.ImageIndex = 18;
+            this.m_cmd_chon_file.ImageList = this.ImageList;
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(432, 109);
+            this.m_cmd_chon_file.Name = "m_cmd_chon_file";
+            this.m_cmd_chon_file.Size = new System.Drawing.Size(99, 28);
+            this.m_cmd_chon_file.TabIndex = 115;
+            this.m_cmd_chon_file.Text = "&Đính kèm";
+            this.m_cmd_chon_file.Click += new System.EventHandler(this.m_cmd_chon_file_Click);
+            // 
+            // m_lbl_ten_file
+            // 
+            this.m_lbl_ten_file.AutoSize = true;
+            this.m_lbl_ten_file.Location = new System.Drawing.Point(447, 155);
+            this.m_lbl_ten_file.Name = "m_lbl_ten_file";
+            this.m_lbl_ten_file.Size = new System.Drawing.Size(0, 13);
+            this.m_lbl_ten_file.TabIndex = 118;
+            // 
             // F600_V_DM_QUYET_DINH_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 216);
+            this.ClientSize = new System.Drawing.Size(550, 238);
+            this.Controls.Add(this.m_lbl_ten_file);
+            this.Controls.Add(this.m_cmd_chon_file);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_txt_noi_dung);
             this.Controls.Add(this.m_cbo_loai_quyet_dinh);
@@ -305,5 +333,9 @@
         internal SIS.Controls.Button.SiSButton m_cmd_refresh;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
+        internal SIS.Controls.Button.SiSButton m_cmd_chon_file;
+        private System.Windows.Forms.Label m_lbl_ten_file;
+        private System.Windows.Forms.OpenFileDialog m_ofd_chon_file;
+       
     }
 }
