@@ -13,7 +13,7 @@
               <DbSource ConnectionRef="BKI_HRMConnectionString3 (Settings)" DbObjectName="BKI_HRM.dbo.V_GD_QUA_TRINH_LAM_VIEC" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT MA_NV, HO_DEM, TEN, MA_CV, TEN_CV, MA_DON_VI, TEN_DON_VI, ID_CAP_DON_VI, CAP_DON_VI, ID_LOAI_DON_VI, LOAI_DON_VI, ID_DON_VI_CAP_TREN, DIA_BAN, MA_QUYET_DINH, NGAY_CO_HIEU_LUC, NGAY_HET_HIEU_LUC, ID_TRANG_THAI_CV, TRANG_THAI_CV, NGAY_BAT_DAU, NGAY_KET_THUC, ID_NHAN_SU, ID FROM dbo.V_GD_QUA_TRINH_LAM_VIEC</CommandText>
+                    <CommandText>SELECT MA_NV, HO_DEM, TEN, MA_CV, TEN_CV, ID_NGACH, NGACH, MA_DON_VI, TEN_DON_VI, ID_CAP_DON_VI, CAP_DON_VI, ID_LOAI_DON_VI, LOAI_DON_VI, ID_DON_VI_CAP_TREN, DIA_BAN, MA_QUYET_DINH, NGAY_CO_HIEU_LUC, NGAY_HET_HIEU_LUC, ID_TRANG_THAI_CV, TRANG_THAI_CV, NGAY_BAT_DAU, NGAY_KET_THUC FROM dbo.V_GD_QUA_TRINH_LAM_VIEC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -25,6 +25,8 @@
               <Mapping SourceColumn="TEN" DataSetColumn="TEN" />
               <Mapping SourceColumn="MA_CV" DataSetColumn="MA_CV" />
               <Mapping SourceColumn="TEN_CV" DataSetColumn="TEN_CV" />
+              <Mapping SourceColumn="ID_NGACH" DataSetColumn="ID_NGACH" />
+              <Mapping SourceColumn="NGACH" DataSetColumn="NGACH" />
               <Mapping SourceColumn="MA_DON_VI" DataSetColumn="MA_DON_VI" />
               <Mapping SourceColumn="TEN_DON_VI" DataSetColumn="TEN_DON_VI" />
               <Mapping SourceColumn="ID_CAP_DON_VI" DataSetColumn="ID_CAP_DON_VI" />
@@ -40,8 +42,6 @@
               <Mapping SourceColumn="TRANG_THAI_CV" DataSetColumn="TRANG_THAI_CV" />
               <Mapping SourceColumn="NGAY_BAT_DAU" DataSetColumn="NGAY_BAT_DAU" />
               <Mapping SourceColumn="NGAY_KET_THUC" DataSetColumn="NGAY_KET_THUC" />
-              <Mapping SourceColumn="ID_NHAN_SU" DataSetColumn="ID_NHAN_SU" />
-              <Mapping SourceColumn="ID" DataSetColumn="ID" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -85,6 +85,14 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="TEN_CV" msprop:Generator_ColumnVarNameInTable="columnTEN_CV" msprop:Generator_ColumnPropNameInRow="TEN_CV" msprop:Generator_ColumnPropNameInTable="TEN_CVColumn" msprop:Generator_UserColumnName="TEN_CV" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_NGACH" msprop:Generator_ColumnVarNameInTable="columnID_NGACH" msprop:Generator_ColumnPropNameInRow="ID_NGACH" msprop:Generator_ColumnPropNameInTable="ID_NGACHColumn" msprop:Generator_UserColumnName="ID_NGACH" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NGACH" msprop:Generator_ColumnVarNameInTable="columnNGACH" msprop:Generator_ColumnPropNameInRow="NGACH" msprop:Generator_ColumnPropNameInTable="NGACHColumn" msprop:Generator_UserColumnName="NGACH" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
@@ -148,16 +156,10 @@
               </xs:element>
               <xs:element name="NGAY_BAT_DAU" msprop:Generator_ColumnVarNameInTable="columnNGAY_BAT_DAU" msprop:Generator_ColumnPropNameInRow="NGAY_BAT_DAU" msprop:Generator_ColumnPropNameInTable="NGAY_BAT_DAUColumn" msprop:Generator_UserColumnName="NGAY_BAT_DAU" type="xs:dateTime" minOccurs="0" />
               <xs:element name="NGAY_KET_THUC" msprop:Generator_ColumnVarNameInTable="columnNGAY_KET_THUC" msprop:Generator_ColumnPropNameInRow="NGAY_KET_THUC" msprop:Generator_ColumnPropNameInTable="NGAY_KET_THUCColumn" msprop:Generator_UserColumnName="NGAY_KET_THUC" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="ID_NHAN_SU" msprop:Generator_ColumnVarNameInTable="columnID_NHAN_SU" msprop:Generator_ColumnPropNameInRow="ID_NHAN_SU" msprop:Generator_ColumnPropNameInTable="ID_NHAN_SUColumn" msprop:Generator_UserColumnName="ID_NHAN_SU" type="xs:decimal" />
-              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>
     </xs:complexType>
-    <xs:unique name="V_GD_QUA_TRINH_LAM_VIECKey1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:V_GD_QUA_TRINH_LAM_VIEC" />
-      <xs:field xpath="mstns:ID" />
-    </xs:unique>
   </xs:element>
 </xs:schema>

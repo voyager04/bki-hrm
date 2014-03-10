@@ -48,6 +48,8 @@
             this.m_lbl_ngayketthuc = new System.Windows.Forms.Label();
             this.m_rdb_khongsudung = new System.Windows.Forms.RadioButton();
             this.m_rdb_sudung = new System.Windows.Forms.RadioButton();
+            this.m_cbo_ngach = new System.Windows.Forms.ComboBox();
+            this.m_lbl_ngach = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +62,7 @@
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 122);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(616, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(736, 36);
             this.m_pnl_out_place_dm.TabIndex = 21;
             // 
             // m_cmd_save
@@ -72,7 +74,7 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(348, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(468, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 31;
@@ -114,7 +116,7 @@
             this.m_cmd_refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_refresh.ImageIndex = 9;
             this.m_cmd_refresh.ImageList = this.ImageList;
-            this.m_cmd_refresh.Location = new System.Drawing.Point(436, 4);
+            this.m_cmd_refresh.Location = new System.Drawing.Point(556, 4);
             this.m_cmd_refresh.Name = "m_cmd_refresh";
             this.m_cmd_refresh.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_refresh.TabIndex = 32;
@@ -130,7 +132,7 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(524, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(644, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 33;
@@ -159,8 +161,9 @@
             // 
             // m_dat_ngayapdung
             // 
+            this.m_dat_ngayapdung.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngayapdung.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.m_dat_ngayapdung.Location = new System.Drawing.Point(411, 54);
+            this.m_dat_ngayapdung.Location = new System.Drawing.Point(389, 54);
             this.m_dat_ngayapdung.Name = "m_dat_ngayapdung";
             this.m_dat_ngayapdung.ShowCheckBox = true;
             this.m_dat_ngayapdung.Size = new System.Drawing.Size(121, 20);
@@ -168,8 +171,9 @@
             // 
             // m_dat_ngayketthuc
             // 
+            this.m_dat_ngayketthuc.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngayketthuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.m_dat_ngayketthuc.Location = new System.Drawing.Point(411, 80);
+            this.m_dat_ngayketthuc.Location = new System.Drawing.Point(599, 54);
             this.m_dat_ngayketthuc.Name = "m_dat_ngayketthuc";
             this.m_dat_ngayketthuc.ShowCheckBox = true;
             this.m_dat_ngayketthuc.Size = new System.Drawing.Size(121, 20);
@@ -223,7 +227,7 @@
             // m_lbl_ngayketthuc
             // 
             this.m_lbl_ngayketthuc.AutoSize = true;
-            this.m_lbl_ngayketthuc.Location = new System.Drawing.Point(306, 83);
+            this.m_lbl_ngayketthuc.Location = new System.Drawing.Point(516, 57);
             this.m_lbl_ngayketthuc.Name = "m_lbl_ngayketthuc";
             this.m_lbl_ngayketthuc.Size = new System.Drawing.Size(77, 13);
             this.m_lbl_ngayketthuc.TabIndex = 33;
@@ -252,11 +256,30 @@
             this.m_rdb_sudung.Text = "Sử dụng";
             this.m_rdb_sudung.UseVisualStyleBackColor = true;
             // 
-            // f401_DM_CHUC_VU_DE
+            // m_cbo_ngach
+            // 
+            this.m_cbo_ngach.FormattingEnabled = true;
+            this.m_cbo_ngach.Location = new System.Drawing.Point(389, 79);
+            this.m_cbo_ngach.Name = "m_cbo_ngach";
+            this.m_cbo_ngach.Size = new System.Drawing.Size(175, 21);
+            this.m_cbo_ngach.TabIndex = 36;
+            // 
+            // m_lbl_ngach
+            // 
+            this.m_lbl_ngach.AutoSize = true;
+            this.m_lbl_ngach.Location = new System.Drawing.Point(306, 83);
+            this.m_lbl_ngach.Name = "m_lbl_ngach";
+            this.m_lbl_ngach.Size = new System.Drawing.Size(42, 13);
+            this.m_lbl_ngach.TabIndex = 37;
+            this.m_lbl_ngach.Text = "Ngạch:";
+            // 
+            // f401_V_DM_CHUC_VU_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 158);
+            this.ClientSize = new System.Drawing.Size(736, 158);
+            this.Controls.Add(this.m_lbl_ngach);
+            this.Controls.Add(this.m_cbo_ngach);
             this.Controls.Add(this.m_rdb_sudung);
             this.Controls.Add(this.m_rdb_khongsudung);
             this.Controls.Add(this.m_lbl_ngayketthuc);
@@ -271,7 +294,7 @@
             this.Controls.Add(this.m_txt_tencv);
             this.Controls.Add(this.m_txt_macv);
             this.Controls.Add(this.m_pnl_out_place_dm);
-            this.Name = "f401_DM_CHUC_VU_DE";
+            this.Name = "f401_V_DM_CHUC_VU_DE";
             this.Text = "f401_DM_CHUC_VU_DE";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -299,5 +322,7 @@
         internal System.Windows.Forms.ImageList ImageList;
         private System.Windows.Forms.RadioButton m_rdb_khongsudung;
         private System.Windows.Forms.RadioButton m_rdb_sudung;
+        private System.Windows.Forms.ComboBox m_cbo_ngach;
+        private System.Windows.Forms.Label m_lbl_ngach;
     }
 }
