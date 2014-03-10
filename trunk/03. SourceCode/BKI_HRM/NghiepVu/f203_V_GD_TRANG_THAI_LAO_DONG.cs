@@ -350,7 +350,7 @@ namespace BKI_HRM
 			m_us.FillDataset(m_ds);
 			m_grv_trang_thai_ld.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_grv_trang_thai_ld, m_obj_trans);
-            m_grv_trang_thai_ld.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+            m_grv_trang_thai_ld.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.None // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
               , 0
               , (int)e_col_Number.MA_NV // chỗ này là tên trường mà mình nhóm
               , (int)e_col_Number.TRANG_THAI_LAO_DONG // chỗ này là tên trường mà mình Count
