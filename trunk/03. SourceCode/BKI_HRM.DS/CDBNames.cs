@@ -215,6 +215,7 @@ namespace BKI_HRM.DS.CDBNames
         public const string TEN_CV = "TEN_CV";
         public const string ID_NGACH = "ID_NGACH";
         public const string NGACH = "NGACH";
+        public const string ID_DON_VI = "ID_DON_VI";
         public const string MA_DON_VI = "MA_DON_VI";
         public const string TEN_DON_VI = "TEN_DON_VI";
         public const string ID_CAP_DON_VI = "ID_CAP_DON_VI";
@@ -232,7 +233,6 @@ namespace BKI_HRM.DS.CDBNames
         public const string NGAY_KET_THUC = "NGAY_KET_THUC";
         public const string ID_NHAN_SU = "ID_NHAN_SU";
         public const string ID = "ID";
-        public const string ROWNUM = "ROWNUM";
     }
 
 
