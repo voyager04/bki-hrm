@@ -25,6 +25,7 @@ namespace BKI_HRM.NghiepVu
             auto_suggest_text();
             CControlFormat.setFormStyle(this);
             load_data_2_cbo_loai_hop_dong();
+            load_data_2_cbo_phap_nhan();
             m_cbo_trang_thai.SelectedIndex = 0;
         }
 
@@ -164,7 +165,12 @@ namespace BKI_HRM.NghiepVu
 
         private void load_data_2_cbo_phap_nhan()
         {
-            
+            DS_DM_PHAP_NHAN v_ds_dm_phap_nhan = new DS_DM_PHAP_NHAN();
+            US_DM_PHAP_NHAN v_us_dm_phap_nhan = new US_DM_PHAP_NHAN();
+            v_us_dm_phap_nhan.FillDataset(v_ds_dm_phap_nhan);
+            m_cbo_phap_nhan.DataSource = v_ds_dm_phap_nhan.Tables[0];
+            m_cbo_phap_nhan.DisplayMember = DM_PHAP_NHAN.TEN_PHAP_NHAN;
+            m_cbo_phap_nhan.ValueMember = DM_PHAP_NHAN.ID;
         }
 
         private void chon_nhan_su()

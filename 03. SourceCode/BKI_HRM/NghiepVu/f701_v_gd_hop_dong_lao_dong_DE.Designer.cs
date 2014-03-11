@@ -122,7 +122,7 @@
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 401);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(954, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1054, 36);
             this.m_pnl_out_place_dm.TabIndex = 113;
             // 
             // m_cmd_xuat_word
@@ -150,7 +150,7 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(774, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(874, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 35;
@@ -167,7 +167,7 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(862, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(962, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 34;
@@ -246,7 +246,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(23, 174);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(893, 220);
+            this.groupBox1.Size = new System.Drawing.Size(1000, 220);
             this.groupBox1.TabIndex = 98;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nhân sự";
@@ -295,7 +295,7 @@
             this.m_txt_tim_kiem_nhan_vien.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.m_txt_tim_kiem_nhan_vien.Location = new System.Drawing.Point(101, 28);
             this.m_txt_tim_kiem_nhan_vien.Name = "m_txt_tim_kiem_nhan_vien";
-            this.m_txt_tim_kiem_nhan_vien.Size = new System.Drawing.Size(750, 20);
+            this.m_txt_tim_kiem_nhan_vien.Size = new System.Drawing.Size(865, 20);
             this.m_txt_tim_kiem_nhan_vien.TabIndex = 0;
             this.m_txt_tim_kiem_nhan_vien.TextChanged += new System.EventHandler(this.m_txt_tim_kiem_nhan_vien_TextChanged);
             this.m_txt_tim_kiem_nhan_vien.Leave += new System.EventHandler(this.m_txt_tim_kiem_nhan_vien_Leave);
@@ -452,7 +452,7 @@
             "Hợp đồng cũ"});
             this.m_cbo_phap_nhan.Location = new System.Drawing.Point(726, 17);
             this.m_cbo_phap_nhan.Name = "m_cbo_phap_nhan";
-            this.m_cbo_phap_nhan.Size = new System.Drawing.Size(190, 21);
+            this.m_cbo_phap_nhan.Size = new System.Drawing.Size(297, 21);
             this.m_cbo_phap_nhan.TabIndex = 117;
             // 
             // label7
@@ -468,7 +468,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(954, 437);
+            this.ClientSize = new System.Drawing.Size(1054, 437);
             this.Controls.Add(this.m_cbo_phap_nhan);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.m_cbo_loai_hop_dong);
