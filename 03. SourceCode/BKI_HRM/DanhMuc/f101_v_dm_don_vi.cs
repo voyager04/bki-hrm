@@ -410,15 +410,14 @@ namespace BKI_HRM {
             var count = m_v_ds.Tables["V_DM_DON_VI"].Rows.Count;
             for (var i = 0; i < count; i++) {
                 var dr = m_v_ds.Tables["V_DM_DON_VI"].Rows[i];
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["MA_DON_VI"].ToString());
-                // m_txt_tim_kiem.AutoCompleteCustomSource.AddRange()
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TEN_DON_VI"].ToString());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["MA_DON_VI"] + " - " + dr["TEN_DON_VI"]);
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TEN_DON_VI"] + " - " + dr["MA_DON_VI"]);
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TEN_DON_VI_CAP_TREN"].ToString());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TEN_TIENG_ANH"].ToString());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["DIA_BAN"].ToString());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TRANG_THAI"].ToString());
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["MA_DON_VI"].ToString().Trim());
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TEN_DON_VI"].ToString().Trim());
+                //m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["MA_DON_VI"].ToString().Trim() + "-" + dr["TEN_DON_VI"].ToString().Trim());
+                //m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TEN_DON_VI"].ToString().Trim() + "-" + dr["MA_DON_VI"].ToString().Trim());
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TEN_DON_VI_CAP_TREN"].ToString().Trim());
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TEN_TIENG_ANH"].ToString().Trim());
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["DIA_BAN"].ToString().Trim());
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TRANG_THAI"].ToString().Trim());
             }
         }
         private void grid2us_object(US_DM_DON_VI i_us, int i_grid_row) {
