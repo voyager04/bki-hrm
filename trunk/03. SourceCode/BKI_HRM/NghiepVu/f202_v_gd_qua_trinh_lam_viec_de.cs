@@ -50,7 +50,7 @@ namespace BKI_HRM
         US_V_GD_QUA_TRINH_LAM_VIEC m_us_v_qua_trinh_lam_viec = new US_V_GD_QUA_TRINH_LAM_VIEC();
         DS_V_GD_QUA_TRINH_LAM_VIEC m_ds_v_qua_trinh_lam_viec = new DS_V_GD_QUA_TRINH_LAM_VIEC();
         US_GD_CHI_TIET_CHUC_VU m_us_chi_tiet_chuc_vu = new US_GD_CHI_TIET_CHUC_VU();
-
+        US_DM_DON_VI m_us_dm_don_vi = new US_DM_DON_VI();
         US_DM_QUYET_DINH m_us_quyet_dinh = new US_DM_QUYET_DINH();
         DS_DM_QUYET_DINH m_ds_quyet_dinh = new DS_DM_QUYET_DINH();
 #endregion
@@ -102,7 +102,15 @@ namespace BKI_HRM
                     
                     break;
                 case DataEntryFormMode.UpdateDataState:
+                    m_us_dm_don_vi.dcID = m_us_v_qua_trinh_lam_viec.dcID_DON_VI;
                     
+                    m_txt_don_vi_moi.Text = m_us_dm_don_vi.strMA_DON_VI + " - " + m_us_dm_don_vi.strTEN_DON_VI;
+
+                    m_dat_ngay_bat_dau.Value = m_us_v_qua_trinh_lam_viec.datNGAY_BAT_DAU;
+                    if (m_us_v_qua_trinh_lam_viec.datNGAY_KET_THUC > DateTime.Parse("01/01/1900"))
+                        m_dat_ngay_ket_thuc.Value = m_us_v_qua_trinh_lam_viec.datNGAY_KET_THUC;
+                    else
+                        m_dat_ngay_ket_thuc.Checked = false;
                     m_us_quyet_dinh.FillDataset_By_Ma_qd(m_ds_quyet_dinh, m_us_v_qua_trinh_lam_viec.strMA_QUYET_DINH);
                     if (m_ds_quyet_dinh.DM_QUYET_DINH.Select("MA_QUYET_DINH is not null").Length > 0)
                     {
@@ -140,6 +148,8 @@ namespace BKI_HRM
             m_us_chi_tiet_chuc_vu.dcID_NHAN_SU = m_us_v_qua_trinh_lam_viec.dcID_NHAN_SU;
             m_us_chi_tiet_chuc_vu.dcID_CHUC_VU = CIPConvert.ToDecimal(m_cbo_chuc_vu_moi.SelectedValue);
             m_us_chi_tiet_chuc_vu.dcID_TRANG_THAI_CV = CIPConvert.ToDecimal(m_cbo_trang_thai_chuc_vu.SelectedValue);
+            m_us_chi_tiet_chuc_vu.dcID_DON_VI = m_us_dm_don_vi.dcID;
+            
         }
         private void form_to_us_object_quyet_dinh()
         {
@@ -276,6 +286,20 @@ namespace BKI_HRM
             }
         }
 #endregion
+
+        private void m_cmd_chon_don_vi_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f101_v_dm_don_vi v_frm = new f101_v_dm_don_vi();
+                v_frm.select_data(ref m_us_dm_don_vi);
+                m_txt_don_vi_moi.Text = m_us_dm_don_vi.strMA_DON_VI + " - " + m_us_dm_don_vi.strTEN_DON_VI;
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
         
 
