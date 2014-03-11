@@ -76,6 +76,8 @@ namespace BKI_HRM
             this.m_menuitem_bcbaohiem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_bccoche = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_bcduan = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_menuitem_bc_duan = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_menuitem_tra_cuu_ns_du_an = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_bctuyendung = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_bcnhansu = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_traCuuNhanSuChung = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,8 +86,6 @@ namespace BKI_HRM
             this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_lbl_du_an_sap_kt = new System.Windows.Forms.Label();
             this.m_lbl_thong_bao_hop_dong_sap_het_han = new System.Windows.Forms.Label();
-            this.m_menuitem_bc_duan = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_menuitem_tra_cuu_ns_du_an = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -220,6 +220,7 @@ namespace BKI_HRM
             this.m_menuitem_qllevel.Name = "m_menuitem_qllevel";
             this.m_menuitem_qllevel.Size = new System.Drawing.Size(206, 22);
             this.m_menuitem_qllevel.Text = "Quản lý level tuyển dụng";
+            this.m_menuitem_qllevel.Click += new System.EventHandler(this.m_menuitem_qllevel_Click);
             // 
             // m_menuitem_nghiepvu
             // 
@@ -449,6 +450,20 @@ namespace BKI_HRM
             this.m_menuitem_bcduan.Size = new System.Drawing.Size(234, 22);
             this.m_menuitem_bcduan.Text = "Báo cáo dự án";
             // 
+            // m_menuitem_bc_duan
+            // 
+            this.m_menuitem_bc_duan.Name = "m_menuitem_bc_duan";
+            this.m_menuitem_bc_duan.Size = new System.Drawing.Size(192, 22);
+            this.m_menuitem_bc_duan.Text = "Báo cáo dự án";
+            this.m_menuitem_bc_duan.Click += new System.EventHandler(this.m_menuitem_bc_duan_Click);
+            // 
+            // m_menuitem_tra_cuu_ns_du_an
+            // 
+            this.m_menuitem_tra_cuu_ns_du_an.Name = "m_menuitem_tra_cuu_ns_du_an";
+            this.m_menuitem_tra_cuu_ns_du_an.Size = new System.Drawing.Size(192, 22);
+            this.m_menuitem_tra_cuu_ns_du_an.Text = "Tra cứu nhân sự dự án";
+            this.m_menuitem_tra_cuu_ns_du_an.Click += new System.EventHandler(this.m_menuitem_tra_cuu_ns_du_an_Click);
+            // 
             // m_menuitem_bctuyendung
             // 
             this.m_menuitem_bctuyendung.Enabled = false;
@@ -519,20 +534,6 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hop_dong_sap_het_han.TabIndex = 3;
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Text = "Hợp đồng sắp hết hạn";
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Click += new System.EventHandler(this.m_lbl_thong_bao_hop_dong_sap_het_han_Click);
-            // 
-            // m_menuitem_bc_duan
-            // 
-            this.m_menuitem_bc_duan.Name = "m_menuitem_bc_duan";
-            this.m_menuitem_bc_duan.Size = new System.Drawing.Size(192, 22);
-            this.m_menuitem_bc_duan.Text = "Báo cáo dự án";
-            this.m_menuitem_bc_duan.Click += new System.EventHandler(this.m_menuitem_bc_duan_Click);
-            // 
-            // m_menuitem_tra_cuu_ns_du_an
-            // 
-            this.m_menuitem_tra_cuu_ns_du_an.Name = "m_menuitem_tra_cuu_ns_du_an";
-            this.m_menuitem_tra_cuu_ns_du_an.Size = new System.Drawing.Size(192, 22);
-            this.m_menuitem_tra_cuu_ns_du_an.Text = "Tra cứu nhân sự dự án";
-            this.m_menuitem_tra_cuu_ns_du_an.Click += new System.EventHandler(this.m_menuitem_tra_cuu_ns_du_an_Click);
             // 
             // f400_Main
             // 
