@@ -426,6 +426,7 @@
             // 
             // m_dat_ngay_het_han
             // 
+            this.m_dat_ngay_het_han.Checked = false;
             this.m_dat_ngay_het_han.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_het_han.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_het_han.Location = new System.Drawing.Point(435, 107);
