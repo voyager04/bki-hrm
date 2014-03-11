@@ -62,7 +62,7 @@ namespace BKI_HRM.DanhMuc {
         }
         private void set_initial_form_load() {
             m_cbo_trang_thai.SelectedIndex = 0;
-            m_cbo_cap_don_vi.SelectedIndex = 2;
+            m_cbo_cap_don_vi.SelectedIndex = (int)CAP_DON_VI.PHONG_BAN-1;
         }
         private void load_data_2_cbo_don_vi_cap_tren() {
             var v_ds = new DS_V_DM_DON_VI();
@@ -87,13 +87,17 @@ namespace BKI_HRM.DanhMuc {
             v_ds.V_DM_DON_VI.Rows.InsertAt(v_row, 0);
 
             switch (m_cbo_cap_don_vi.SelectedIndex) {
-                case 0: // Khối
+                case 0: // Tổ Hợp
                     m_cbo_ten_don_vi_cap_tren.SelectedIndex = 0;
                     m_cbo_ten_don_vi_cap_tren.Enabled = false;
                     v_us.FillDatasetByCapDonVi(v_ds, CAP_DON_VI.KHOI);
                     break;
-                case 1: // Trung Tâm
-                    v_us.FillDatasetByCapDonVi(v_ds, CAP_DON_VI.KHOI);
+                case 1: // Khối
+                    v_us.FillDatasetByCapDonVi(v_ds, CAP_DON_VI.TRUNG_TAM);
+                    m_cbo_ten_don_vi_cap_tren.Enabled = true;
+                    break;
+                case 2: // Trung Tâm
+                    v_us.FillDatasetByCapDonVi(v_ds, CAP_DON_VI.TRUNG_TAM);
                     m_cbo_ten_don_vi_cap_tren.Enabled = true;
                     break;
                 default:
