@@ -528,4 +528,19 @@ namespace BKI_HRM.DS.CDBNames
        public const string NGAY_KET_THUC = "NGAY_KET_THUC";
    }
 
+   public class V_GD_CHI_TIET_CAP_BAC {
+       public const string MA_NV = "MA_NV";
+       public const string HO_DEM = "HO_DEM";
+       public const string TEN = "TEN";
+       public const string NGAY_BAT_DAU = "NGAY_BAT_DAU";
+       public const string NGAY_KET_THUC = "NGAY_KET_THUC";
+       public const string TRANG_THAI_CB = "TRANG_THAI_CB";
+       public const string MA_CAP = "MA_CAP";
+       public const string MA_BAC = "MA_BAC";
+       public const string MA_QUYET_DINH = "MA_QUYET_DINH";
+       public const string NGAY_CO_HIEU_LUC = "NGAY_CO_HIEU_LUC";
+       public const string NGAY_HET_HIEU_LUC = "NGAY_HET_HIEU_LUC";
+   }
+
+
 }
