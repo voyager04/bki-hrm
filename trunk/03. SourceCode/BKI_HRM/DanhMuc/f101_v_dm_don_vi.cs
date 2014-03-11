@@ -337,8 +337,7 @@ namespace BKI_HRM {
         public void display() {
             ShowDialog();
         }
-        public void select_data(ref US_DM_DON_VI op_us_dm_don_vi)
-        {
+        public void select_data(ref US_DM_DON_VI op_us_dm_don_vi) {
             m_e_form_mode = DataEntryFormMode.SelectDataState;
             this.ShowDialog();
             op_us_dm_don_vi = m_us;
@@ -400,15 +399,11 @@ namespace BKI_HRM {
             CGridUtils.AddSearch_Handlers(m_fg);
             m_fg.Tree.Column = (int)e_col_Number.TEN_DON_VI_CAP_TREN;
             m_fg.Tree.Style = TreeStyleFlags.Simple;
-
-           
-            
             set_define_events();
             KeyPreview = true;
         }
         private void set_initial_form_load() {
-            switch (m_e_form_mode)
-            {
+            switch (m_e_form_mode) {
                 case DataEntryFormMode.UpdateDataState:
                     m_cmd_chon_don_vi.Visible = false;
                     break;
@@ -425,7 +420,7 @@ namespace BKI_HRM {
                     m_cmd_update.Visible = false;
                     m_cmd_delete.Visible = false;
                     break;
-                
+
             }
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_grid();
@@ -469,7 +464,6 @@ namespace BKI_HRM {
               , (int)e_col_Number.MA_DON_VI             // Subtotal theo cột này
               , "{0}"
               );
-
             m_fg.Redraw = true;
             set_search_format_before();
             /*Đếm số dòng dữ liệu trên Grid*/
@@ -496,8 +490,7 @@ namespace BKI_HRM {
             v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
             i_us = new US_DM_DON_VI((decimal)v_dr.ItemArray[0]);
         }
-        private void grid2us_object( int i_grid_row)
-        {
+        private void grid2us_object(int i_grid_row) {
             DataRow v_dr;
             v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
             m_us = new US_DM_DON_VI((decimal)v_dr.ItemArray[0]);
@@ -508,23 +501,19 @@ namespace BKI_HRM {
             m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
             i_us.DataRow2Me(v_dr);
         }
-        private void select_data_2_us()
-        {
+        private void select_data_2_us() {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg))
                 return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row))
                 return;
-            
-            try
-            {
-                grid2us_object( m_fg.Row);
+
+            try {
+                grid2us_object(m_fg.Row);
                 this.Close();
-            }
-            catch (Exception v_e)
-            {
+            } catch (Exception v_e) {
                 MessageBox.Show("Dòng chọn không hợp lệ. Mời chọn dòng khác", "Cảnh báo");
             }
-            
+
         }
         private void insert_v_dm_don_vi() {
             var v_fDE = new f102_v_dm_don_vi_de();
@@ -597,9 +586,7 @@ namespace BKI_HRM {
             m_fg.Click += m_fg_Click;
             m_txt_tim_kiem.MouseClick += m_txt_tim_kiem_MouseClick;
             m_txt_tim_kiem.Leave += m_txt_tim_kiem_Leave;
-            m_txt_tim_kiem.TextChanged += this.m_txt_tim_kiem_TextChanged;
-
-
+            m_txt_tim_kiem.TextChanged += m_txt_tim_kiem_TextChanged;
         }
 
         private void f101_v_dm_don_vi_Load(object sender, EventArgs e) {
@@ -675,7 +662,7 @@ namespace BKI_HRM {
 
         private void m_fg_DoubleClick(object sender, EventArgs e) {
             try {
-                set_m_fg_DoubleClick(sender,e);
+                set_m_fg_DoubleClick(sender, e);
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -713,15 +700,11 @@ namespace BKI_HRM {
             }
         }
 
-        private void m_cmd_chon_don_vi_Click(object sender, EventArgs e)
-        {
-            try
-            {
+        private void m_cmd_chon_don_vi_Click(object sender, EventArgs e) {
+            try {
                 select_data_2_us();
-            }
-            catch (Exception v_e)
-            {
-            	CSystemLog_301.ExceptionHandle(v_e);
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 

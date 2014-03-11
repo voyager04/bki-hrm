@@ -279,6 +279,8 @@ namespace BKI_HRM.DS {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class V_GD_CHI_TIET_CAP_BACDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
             
+            private global::System.Data.DataColumn columnID;
+            
             private global::System.Data.DataColumn columnMA_NV;
             
             private global::System.Data.DataColumn columnHO_DEM;
@@ -332,6 +334,14 @@ namespace BKI_HRM.DS {
             protected V_GD_CHI_TIET_CAP_BACDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -459,9 +469,10 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_GD_CHI_TIET_CAP_BACRow AddV_GD_CHI_TIET_CAP_BACRow(string MA_NV, string HO_DEM, string TEN, System.DateTime NGAY_BAT_DAU, System.DateTime NGAY_KET_THUC, string TRANG_THAI_CB, string MA_CAP, string MA_BAC, string MA_QUYET_DINH, System.DateTime NGAY_CO_HIEU_LUC, System.DateTime NGAY_HET_HIEU_LUC) {
+            public V_GD_CHI_TIET_CAP_BACRow AddV_GD_CHI_TIET_CAP_BACRow(decimal ID, string MA_NV, string HO_DEM, string TEN, System.DateTime NGAY_BAT_DAU, System.DateTime NGAY_KET_THUC, string TRANG_THAI_CB, string MA_CAP, string MA_BAC, string MA_QUYET_DINH, System.DateTime NGAY_CO_HIEU_LUC, System.DateTime NGAY_HET_HIEU_LUC) {
                 V_GD_CHI_TIET_CAP_BACRow rowV_GD_CHI_TIET_CAP_BACRow = ((V_GD_CHI_TIET_CAP_BACRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        ID,
                         MA_NV,
                         HO_DEM,
                         TEN,
@@ -476,6 +487,13 @@ namespace BKI_HRM.DS {
                 rowV_GD_CHI_TIET_CAP_BACRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowV_GD_CHI_TIET_CAP_BACRow);
                 return rowV_GD_CHI_TIET_CAP_BACRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public V_GD_CHI_TIET_CAP_BACRow FindByID(decimal ID) {
+                return ((V_GD_CHI_TIET_CAP_BACRow)(this.Rows.Find(new object[] {
+                            ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -501,6 +519,7 @@ namespace BKI_HRM.DS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
+                this.columnID = base.Columns["ID"];
                 this.columnMA_NV = base.Columns["MA_NV"];
                 this.columnHO_DEM = base.Columns["HO_DEM"];
                 this.columnTEN = base.Columns["TEN"];
@@ -517,6 +536,8 @@ namespace BKI_HRM.DS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
                 this.columnMA_NV = new global::System.Data.DataColumn("MA_NV", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMA_NV);
                 this.columnHO_DEM = new global::System.Data.DataColumn("HO_DEM", typeof(string), null, global::System.Data.MappingType.Element);
@@ -539,6 +560,10 @@ namespace BKI_HRM.DS {
                 base.Columns.Add(this.columnNGAY_CO_HIEU_LUC);
                 this.columnNGAY_HET_HIEU_LUC = new global::System.Data.DataColumn("NGAY_HET_HIEU_LUC", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNGAY_HET_HIEU_LUC);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID}, true));
+                this.columnID.AllowDBNull = false;
+                this.columnID.Unique = true;
                 this.columnMA_NV.AllowDBNull = false;
                 this.columnMA_NV.MaxLength = 35;
                 this.columnHO_DEM.AllowDBNull = false;
@@ -690,6 +715,17 @@ namespace BKI_HRM.DS {
             internal V_GD_CHI_TIET_CAP_BACRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tableV_GD_CHI_TIET_CAP_BAC = ((V_GD_CHI_TIET_CAP_BACDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ID {
+                get {
+                    return ((decimal)(this[this.tableV_GD_CHI_TIET_CAP_BAC.IDColumn]));
+                }
+                set {
+                    this[this.tableV_GD_CHI_TIET_CAP_BAC.IDColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1060,6 +1096,7 @@ namespace BKI_HRM.DS.DS_V_GD_CHI_TIET_CAP_BACTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "V_GD_CHI_TIET_CAP_BAC";
+            tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("MA_NV", "MA_NV");
             tableMapping.ColumnMappings.Add("HO_DEM", "HO_DEM");
             tableMapping.ColumnMappings.Add("TEN", "TEN");
@@ -1087,9 +1124,9 @@ namespace BKI_HRM.DS.DS_V_GD_CHI_TIET_CAP_BACTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT MA_NV, HO_DEM, TEN, NGAY_BAT_DAU, NGAY_KET_THUC, TRANG_THAI_CB, MA_CAP, MA" +
-                "_BAC, MA_QUYET_DINH, NGAY_CO_HIEU_LUC, NGAY_HET_HIEU_LUC FROM dbo.V_GD_CHI_TIET_" +
-                "CAP_BAC";
+            this._commandCollection[0].CommandText = "SELECT ID, MA_NV, HO_DEM, TEN, NGAY_BAT_DAU, NGAY_KET_THUC, TRANG_THAI_CB, MA_CAP" +
+                ", MA_BAC, MA_QUYET_DINH, NGAY_CO_HIEU_LUC, NGAY_HET_HIEU_LUC FROM dbo.V_GD_CHI_T" +
+                "IET_CAP_BAC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

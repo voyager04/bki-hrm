@@ -166,6 +166,12 @@
     <Compile Include="HeThong\f999_ht_nguoi_su_dung.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="NghiepVu\f106_v_gd_chi_tiet_cap_bac_DE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f106_v_gd_chi_tiet_cap_bac_DE.Designer.cs">
+      <DependentUpon>f106_v_gd_chi_tiet_cap_bac_DE.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\f105_v_gd_chi_tiet_cap_bac.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -289,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HeThong\f999_ht_nguoi_su_dung.resx">
       <DependentUpon>f999_ht_nguoi_su_dung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f106_v_gd_chi_tiet_cap_bac_DE.resx">
+      <DependentUpon>f106_v_gd_chi_tiet_cap_bac_DE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f105_v_gd_chi_tiet_cap_bac.resx">
       <DependentUpon>f105_v_gd_chi_tiet_cap_bac.cs</DependentUpon>
