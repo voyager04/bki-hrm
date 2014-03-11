@@ -304,21 +304,8 @@ namespace BKI_HRM.US {
 
         #region Addtional
 
-        public void FillDatasetByKeyWord(DS_V_DM_DON_VI op_ds_v_v_dm_don_vi, string ip_str_key_word, DateTime ip_dat_tu_ngay) {
-            CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DON_VI_search");
-            v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_str_key_word);
-            v_stored_proc.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
-            v_stored_proc.fillDataSetByCommand(this, op_ds_v_v_dm_don_vi);
-        }
-
         public void FillDatasetByKeyWord(DS_V_DM_DON_VI op_ds_v_v_dm_don_vi, string ip_str_key_word) {
             CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DON_VI_search");
-            v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_str_key_word);
-            v_stored_proc.fillDataSetByCommand(this, op_ds_v_v_dm_don_vi);
-        }
-
-        public void FillDatasetByKeyWordTop(DS_V_DM_DON_VI op_ds_v_v_dm_don_vi, string ip_str_key_word) {
-            CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DON_VI_search_top");
             v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_str_key_word);
             v_stored_proc.fillDataSetByCommand(this, op_ds_v_v_dm_don_vi);
         }
@@ -329,6 +316,10 @@ namespace BKI_HRM.US {
             v_stored_proc.fillDataSetByCommand(this, op_ds_v_v_dm_don_vi);
         }
 
+        public void FillDatasetByKeyWord(DS_V_DM_DON_VI op_ds_v_v_dm_don_vi) {
+            CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DON_VI_search_all");
+            v_stored_proc.fillDataSetByCommand(this, op_ds_v_v_dm_don_vi);
+        }
 
         #endregion
     }

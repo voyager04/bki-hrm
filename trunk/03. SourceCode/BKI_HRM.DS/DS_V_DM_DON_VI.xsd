@@ -46,7 +46,7 @@
   <xs:element name="DS_V_DM_DON_VI" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_DM_DON_VI" msprop:Generator_UserDSName="DS_V_DM_DON_VI">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="V_DM_DON_VI" msprop:Generator_TableClassName="V_DM_DON_VIDataTable" msprop:Generator_TableVarName="tableV_DM_DON_VI" msprop:Generator_TablePropName="V_DM_DON_VI" msprop:Generator_RowDeletingName="V_DM_DON_VIRowDeleting" msprop:Generator_RowChangingName="V_DM_DON_VIRowChanging" msprop:Generator_RowEvHandlerName="V_DM_DON_VIRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DM_DON_VIRowDeleted" msprop:Generator_UserTableName="V_DM_DON_VI" msprop:Generator_RowChangedName="V_DM_DON_VIRowChanged" msprop:Generator_RowEvArgName="V_DM_DON_VIRowChangeEvent" msprop:Generator_RowClassName="V_DM_DON_VIRow">
+        <xs:element name="V_DM_DON_VI" msprop:Generator_TableClassName="V_DM_DON_VIDataTable" msprop:Generator_TableVarName="tableV_DM_DON_VI" msprop:Generator_RowChangedName="V_DM_DON_VIRowChanged" msprop:Generator_TablePropName="V_DM_DON_VI" msprop:Generator_RowDeletingName="V_DM_DON_VIRowDeleting" msprop:Generator_RowChangingName="V_DM_DON_VIRowChanging" msprop:Generator_RowEvHandlerName="V_DM_DON_VIRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DM_DON_VIRowDeleted" msprop:Generator_RowClassName="V_DM_DON_VIRow" msprop:Generator_UserTableName="V_DM_DON_VI" msprop:Generator_RowEvArgName="V_DM_DON_VIRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
@@ -95,7 +95,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="CAP_DON_VI" msprop:Generator_ColumnVarNameInTable="columnCAP_DON_VI" msprop:Generator_ColumnPropNameInRow="CAP_DON_VI" msprop:Generator_ColumnPropNameInTable="CAP_DON_VIColumn" msprop:Generator_UserColumnName="CAP_DON_VI">
+              <xs:element name="CAP_DON_VI" msprop:Generator_ColumnVarNameInTable="columnCAP_DON_VI" msprop:Generator_ColumnPropNameInRow="CAP_DON_VI" msprop:Generator_ColumnPropNameInTable="CAP_DON_VIColumn" msprop:Generator_UserColumnName="CAP_DON_VI" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
