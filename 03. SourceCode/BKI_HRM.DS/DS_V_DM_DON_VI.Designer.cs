@@ -605,7 +605,6 @@ namespace BKI_HRM.DS {
                 this.columnMA_DON_VI.MaxLength = 15;
                 this.columnTEN_DON_VI.MaxLength = 250;
                 this.columnTEN_TIENG_ANH.MaxLength = 250;
-                this.columnCAP_DON_VI.AllowDBNull = false;
                 this.columnCAP_DON_VI.MaxLength = 250;
                 this.columnLOAI_DON_VI.AllowDBNull = false;
                 this.columnLOAI_DON_VI.MaxLength = 250;
@@ -897,7 +896,12 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string CAP_DON_VI {
                 get {
-                    return ((string)(this[this.tableV_DM_DON_VI.CAP_DON_VIColumn]));
+                    try {
+                        return ((string)(this[this.tableV_DM_DON_VI.CAP_DON_VIColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CAP_DON_VI\' in table \'V_DM_DON_VI\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_DM_DON_VI.CAP_DON_VIColumn] = value;
@@ -1028,6 +1032,18 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTEN_TIENG_ANHNull() {
                 this[this.tableV_DM_DON_VI.TEN_TIENG_ANHColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCAP_DON_VINull() {
+                return this.IsNull(this.tableV_DM_DON_VI.CAP_DON_VIColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCAP_DON_VINull() {
+                this[this.tableV_DM_DON_VI.CAP_DON_VIColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

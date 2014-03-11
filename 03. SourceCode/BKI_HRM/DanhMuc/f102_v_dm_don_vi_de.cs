@@ -84,6 +84,10 @@ namespace BKI_HRM.DanhMuc {
             v_row[V_DM_DON_VI.TRANG_THAI] = "Y";
             v_row[V_DM_DON_VI.TU_NGAY] = "1/1/1800";
             v_row[V_DM_DON_VI.DIA_BAN] = "NULL";
+            v_row[V_DM_DON_VI.LOAI_DON_VI] = "NULL";
+            v_row[V_DM_DON_VI.MA_DON_VI_CAP_TREN] = "NULL";
+            v_row[V_DM_DON_VI.TEN_TIENG_ANH_DON_VI_CAP_TREN] = "NULL";
+            v_row[V_DM_DON_VI.CAP_DON_VI] = "NULL";
             v_ds.V_DM_DON_VI.Rows.InsertAt(v_row, 0);
 
             switch (m_cbo_cap_don_vi.SelectedIndex) {

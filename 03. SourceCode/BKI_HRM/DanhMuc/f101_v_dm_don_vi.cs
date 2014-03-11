@@ -459,6 +459,7 @@ namespace BKI_HRM {
                 v_str_search = "";
             }
             m_v_us.FillDatasetByKeyWord(m_v_ds, v_str_search);
+            //m_v_us.FillDatasetByKeyWord(m_v_ds);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_v_ds, m_fg, m_obj_trans);
             // Group (subtotal) trên grid.
@@ -680,8 +681,6 @@ namespace BKI_HRM {
             }
         }
 
-
-
         private void m_fg_Click(object sender, EventArgs e) {
             try {
 
@@ -725,7 +724,6 @@ namespace BKI_HRM {
             	CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
 
     }
 }
