@@ -68,11 +68,9 @@ namespace BKI_HRM.DanhMuc {
             var v_ds = new DS_V_DM_DON_VI();
             var v_us = new US_V_DM_DON_VI();
             v_us.FillDatasetByCapDonVi(v_ds, CAP_DON_VI.TRUNG_TAM);
-
             m_cbo_ten_don_vi_cap_tren.DisplayMember = DM_DON_VI.TEN_DON_VI;
             m_cbo_ten_don_vi_cap_tren.ValueMember = DM_DON_VI.ID;
             m_cbo_ten_don_vi_cap_tren.DataSource = v_ds.V_DM_DON_VI;
-
             DataRow v_row = v_ds.V_DM_DON_VI.NewRow();
             v_row[V_DM_DON_VI.ID] = -1;
             v_row[V_DM_DON_VI.ID_CAP_DON_VI] = 0;
