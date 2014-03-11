@@ -91,7 +91,16 @@ namespace BKI_HRM.DS.CDBNames
             , GIANG_VIEN = 6
     }
 
-
+    public class V_DM_TRANG_THAI_UNG_VIEN
+    {
+        public const string ID = "ID";
+        public const string ID_TRANG_THAI_CAP_TREN = "ID_TRANG_THAI_CAP_TREN";
+        public const string MA_TRANG_THAI_CAP_TREN = "MA_TRANG_THAI_CAP_TREN";
+        public const string MA_TRANG_THAI = "MA_TRANG_THAI";
+        public const string DINH_NGHIA = "DINH_NGHIA";
+        public const string DAU_HIEU = "DAU_HIEU";
+        public const string VIEC_CAN_LAM = "VIEC_CAN_LAM";
+    }
     public class HT_PHAN_QUYEN_HE_THONG {
         public const string ID = "ID";
         public const string MA_PHAN_QUYEN = "MA_PHAN_QUYEN";
