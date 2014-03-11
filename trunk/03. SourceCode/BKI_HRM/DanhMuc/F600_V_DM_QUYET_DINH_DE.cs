@@ -67,7 +67,7 @@ namespace BKI_HRM.DanhMuc
         {
             m_us.dcID = ip_us_v_dm_quyet_dinh.dcID;
             
-            m_txt_link.Text = ip_us_v_dm_quyet_dinh.strLINK;
+            //m_txt_link.Text = ip_us_v_dm_quyet_dinh.strLINK;
             m_txt_ma_quyet_dinh.Text = ip_us_v_dm_quyet_dinh.strMA_QUYET_DINH;
             m_txt_noi_dung.Text = ip_us_v_dm_quyet_dinh.strNOI_DUNG;
             if (ip_us_v_dm_quyet_dinh.datNGAY_CO_HIEU_LUC == null)
@@ -100,11 +100,11 @@ namespace BKI_HRM.DanhMuc
 
             if (ip_us_v_dm_quyet_dinh.strLINK == "") return;
             string[] v_strs = ip_us_v_dm_quyet_dinh.strLINK.Split('\\');
-            m_lbl_ten_file.Text = v_strs[v_strs.Length - 1];
+            //m_lbl_ten_file.Text = v_strs[v_strs.Length - 1];
         }
         private void chon_file()
         {
-            m_str_old_path = m_str_destination + m_lbl_ten_file.Text;
+            //m_str_old_path = m_str_destination + m_lbl_ten_file.Text;
             int v_i_file_size = 5096000;
             m_ofd_chon_file.Filter = "(*.*)|*.*";
             m_ofd_chon_file.Multiselect = false;
@@ -118,7 +118,7 @@ namespace BKI_HRM.DanhMuc
                 BaseMessages.MsgBox_Infor("File đính kèm có dung lượng quá lớn. \nVui lòng chọn file có dung lượng nhỏ hơn 5Mb");
                 return;
             }
-            m_lbl_ten_file.Text = m_ofd_chon_file.SafeFileName;
+           // m_lbl_ten_file.Text = m_ofd_chon_file.SafeFileName;
             m_str_file_name = m_ofd_chon_file.SafeFileName;
             m_str_origination = m_ofd_chon_file.FileName;
         }
@@ -148,7 +148,7 @@ namespace BKI_HRM.DanhMuc
         private void form_2_us_object()
         {
             m_us.strMA_QUYET_DINH = m_txt_ma_quyet_dinh.Text.Trim();
-            m_us.strLINK = m_txt_link.Text.Trim();
+            //m_us.strLINK = m_txt_link.Text.Trim();
             m_us.strNOI_DUNG = m_txt_noi_dung.Text.Trim();
             m_us.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value;
             m_us.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc.Value;
@@ -205,7 +205,7 @@ namespace BKI_HRM.DanhMuc
         #region Events
         protected void m_cmd_refresh_Click(object sender, EventArgs e)
         {
-            m_txt_link.Text = "";
+            //m_txt_link.Text = "";
             m_txt_ma_quyet_dinh.Text = "";
             m_txt_noi_dung.Text = "";
             m_dat_ngay_co_hieu_luc.Value = DateTime.Today;
