@@ -419,7 +419,7 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_DM_TRANG_THAI_UNG_VIENRow AddV_DM_TRANG_THAI_UNG_VIENRow(decimal ID, decimal ID_TRANG_THAI_CAP_TREN, decimal MA_TRANG_THAI_CAP_TREN, decimal MA_TRANG_THAI, string DINH_NGHIA, string DAU_HIEU, string VIEC_CAN_LAM) {
+            public V_DM_TRANG_THAI_UNG_VIENRow AddV_DM_TRANG_THAI_UNG_VIENRow(decimal ID, decimal ID_TRANG_THAI_CAP_TREN, string MA_TRANG_THAI_CAP_TREN, string MA_TRANG_THAI, string DINH_NGHIA, string DAU_HIEU, string VIEC_CAN_LAM) {
                 V_DM_TRANG_THAI_UNG_VIENRow rowV_DM_TRANG_THAI_UNG_VIENRow = ((V_DM_TRANG_THAI_UNG_VIENRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
@@ -473,9 +473,9 @@ namespace BKI_HRM.DS {
                 base.Columns.Add(this.columnID);
                 this.columnID_TRANG_THAI_CAP_TREN = new global::System.Data.DataColumn("ID_TRANG_THAI_CAP_TREN", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_TRANG_THAI_CAP_TREN);
-                this.columnMA_TRANG_THAI_CAP_TREN = new global::System.Data.DataColumn("MA_TRANG_THAI_CAP_TREN", typeof(decimal), null, global::System.Data.MappingType.Element);
+                this.columnMA_TRANG_THAI_CAP_TREN = new global::System.Data.DataColumn("MA_TRANG_THAI_CAP_TREN", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMA_TRANG_THAI_CAP_TREN);
-                this.columnMA_TRANG_THAI = new global::System.Data.DataColumn("MA_TRANG_THAI", typeof(decimal), null, global::System.Data.MappingType.Element);
+                this.columnMA_TRANG_THAI = new global::System.Data.DataColumn("MA_TRANG_THAI", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMA_TRANG_THAI);
                 this.columnDINH_NGHIA = new global::System.Data.DataColumn("DINH_NGHIA", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDINH_NGHIA);
@@ -484,7 +484,9 @@ namespace BKI_HRM.DS {
                 this.columnVIEC_CAN_LAM = new global::System.Data.DataColumn("VIEC_CAN_LAM", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnVIEC_CAN_LAM);
                 this.columnID.AllowDBNull = false;
+                this.columnMA_TRANG_THAI_CAP_TREN.MaxLength = 15;
                 this.columnMA_TRANG_THAI.AllowDBNull = false;
+                this.columnMA_TRANG_THAI.MaxLength = 15;
                 this.columnDINH_NGHIA.MaxLength = 250;
                 this.columnDAU_HIEU.MaxLength = 250;
                 this.columnVIEC_CAN_LAM.MaxLength = 250;
@@ -658,10 +660,10 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal MA_TRANG_THAI_CAP_TREN {
+            public string MA_TRANG_THAI_CAP_TREN {
                 get {
                     try {
-                        return ((decimal)(this[this.tableV_DM_TRANG_THAI_UNG_VIEN.MA_TRANG_THAI_CAP_TRENColumn]));
+                        return ((string)(this[this.tableV_DM_TRANG_THAI_UNG_VIEN.MA_TRANG_THAI_CAP_TRENColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'MA_TRANG_THAI_CAP_TREN\' in table \'V_DM_TRANG_THAI_UNG_VIEN\'" +
@@ -675,9 +677,9 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal MA_TRANG_THAI {
+            public string MA_TRANG_THAI {
                 get {
-                    return ((decimal)(this[this.tableV_DM_TRANG_THAI_UNG_VIEN.MA_TRANG_THAIColumn]));
+                    return ((string)(this[this.tableV_DM_TRANG_THAI_UNG_VIEN.MA_TRANG_THAIColumn]));
                 }
                 set {
                     this[this.tableV_DM_TRANG_THAI_UNG_VIEN.MA_TRANG_THAIColumn] = value;
