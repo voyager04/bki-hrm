@@ -80,6 +80,7 @@ namespace BKI_HRM.NghiepVu
         {
             m_us.strMA_HOP_DONG = m_txt_ma_hop_dong.Text;
             m_us.dcID_LOAI_HOP_DONG = (decimal)m_cbo_loai_hop_dong.SelectedValue;
+            m_us.dcID_PHAP_NHAN = (decimal) m_cbo_phap_nhan.SelectedValue;
             m_us.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value;
             m_us.strTRANG_THAI_HOP_DONG = m_cbo_trang_thai.SelectedIndex.Equals(0) ? "y" : "n";
             m_us.strLINK = m_str_destination + m_lbl_file_name.Text;
@@ -134,6 +135,7 @@ namespace BKI_HRM.NghiepVu
 
             m_cbo_loai_hop_dong.SelectedValue = ip_us_gd_hop_dong.dcID_LOAI_HOP_DONG;
             m_cbo_trang_thai.SelectedIndex = (ip_us_gd_hop_dong.strTRANG_THAI_HOP_DONG.Equals("y")) ? 0 : 1;
+            m_cbo_phap_nhan.SelectedValue = ip_us_gd_hop_dong.dcID_PHAP_NHAN;
 
             if (ip_us_gd_hop_dong.datNGAY_HET_HAN.Equals(DateTime.Parse("1/1/1900 12:00:00 AM")))
             {
@@ -160,16 +162,18 @@ namespace BKI_HRM.NghiepVu
             m_cbo_loai_hop_dong.ValueMember = CM_DM_TU_DIEN.ID;
         }
 
+        private void load_data_2_cbo_phap_nhan()
+        {
+            
+        }
+
         private void chon_nhan_su()
         {
             string[] v_strs = m_txt_tim_kiem_nhan_vien.Text.Split('-');
             DS_DM_NHAN_SU v_ds_dm_nhan_su = new DS_DM_NHAN_SU();
             m_us_dm_nhan_su.FillDataset_search_by_ma_nv(v_ds_dm_nhan_su, v_strs[v_strs.Length - 1].Trim());
             if (v_ds_dm_nhan_su.Tables[0].Rows.Count == 0)
-            {
-                BaseMessages.MsgBox_Error("Mã Nhân Sự không tồn tại. Vui lòng nhập lại!");
                 return;
-            }
             m_lbl_ma_nhan_vien.Text = v_ds_dm_nhan_su.Tables[0].Rows[0]["MA_NV"].ToString();
             m_lbl_ho_va_ten.Text = v_ds_dm_nhan_su.Tables[0].Rows[0]["HO_DEM"] + " " +
                                    v_ds_dm_nhan_su.Tables[0].Rows[0]["TEN"];
@@ -241,7 +245,7 @@ namespace BKI_HRM.NghiepVu
         }
         #endregion
 
-
+        #region Event
         private void f701_v_gd_hop_dong_lao_dong_DE_Load(object sender, EventArgs e)
         {
             generate_ma_hop_dong();
@@ -308,6 +312,19 @@ namespace BKI_HRM.NghiepVu
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_txt_tim_kiem_nhan_vien_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                chon_nhan_su();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        #endregion
     }
 }
 

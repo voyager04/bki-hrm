@@ -56,6 +56,7 @@
     <Compile Include="US_DM_DON_VI.cs" />
     <Compile Include="US_DM_DU_AN.cs" />
     <Compile Include="US_DM_NHAN_SU.cs" />
+    <Compile Include="US_DM_PHAP_NHAN.cs" />
     <Compile Include="US_DM_QUYET_DINH.cs" />
     <Compile Include="US_GD_CHI_TIET_CHUC_VU.cs" />
     <Compile Include="US_GD_CHI_TIET_DU_AN.cs" />
