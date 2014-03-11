@@ -39,13 +39,16 @@ namespace BKI_HRM.NghiepVu
             ds_2_form(i_ds);
             load_data_2_form_chi_tiet_qd(m_txt_ma_quyet_dinh.Text);
             DataRow v_dr = i_ds.Tables[0].Rows[0];
-            load_data_2_grv_nhan_su(CIPConvert.ToDecimal(v_dr["ID"]));
+            m_dc_id_du_an = CIPConvert.ToDecimal(v_dr["ID"]);
+            load_data_2_grv_nhan_su(m_dc_id_du_an);
             this.ShowDialog();
         }
         
         #endregion
 
         #region Member
+        decimal m_dc_id_du_an;
+        int m_dc_index_row;
         ITransferDataRow m_obj_trans;	
         DataEntryFormMode m_e_form_mode;
         US.US_DM_DU_AN m_us_dm_du_an = new US.US_DM_DU_AN();
@@ -362,7 +365,57 @@ namespace BKI_HRM.NghiepVu
             
         }
         #endregion        
-    
-        
+
+        private void m_grv_nhan_su_Click(object sender, EventArgs e)
+        {
+            m_dc_index_row = m_grv_nhan_su.Row;
+        }
+
+        private void m_grv_nhan_su_KeyUp(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.F5:
+                    if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
+                    delete_nhan_su_du_an();
+                    break;
+                case Keys.F3:
+                    DataRow v_dr = (DataRow)m_grv_nhan_su.Rows[m_dc_index_row].UserData;
+                    string v_str_ma_du_an = v_dr["MA_DU_AN"].ToString();
+                    F500_gd_chi_tiet_du_an_de v_fDE = new F500_gd_chi_tiet_du_an_de();
+                    v_fDE.display_for_insert(v_str_ma_du_an);
+                    load_data_2_grv_nhan_su(m_dc_id_du_an);
+                    break;
+                case Keys.F4:
+                    v_fDE = new F500_gd_chi_tiet_du_an_de();
+                    v_dr = (DataRow)m_grv_nhan_su.Rows[m_dc_index_row].UserData;
+                    decimal v_dc_id_chi_tiet_du_an = (decimal)v_dr["ID"];
+                    v_fDE.display_for_update(v_dc_id_chi_tiet_du_an);
+                    load_data_2_grv_nhan_su(m_dc_id_du_an);
+                    break;
+            }
+        }
+
+        private void delete_nhan_su_du_an() {
+            try
+            {
+                DataRow v_dr;
+                m_obj_trans = get_trans_object(m_grv_nhan_su);
+                US.US_GD_CHI_TIET_DU_AN v_us = new US.US_GD_CHI_TIET_DU_AN();
+                DS.DS_GD_CHI_TIET_DU_AN v_ds = new DS.DS_GD_CHI_TIET_DU_AN();
+                v_dr = (DataRow)m_grv_nhan_su.Rows[m_dc_index_row].UserData;
+                m_obj_trans.GridRow2DataRow(m_dc_index_row, v_dr);
+                decimal v_dc_id_ns = (decimal)v_dr["ID_NHAN_SU"];
+                v_us.FillDatasetByIDNS(v_ds, v_dc_id_ns);
+                v_dr = v_ds.Tables[0].Rows[0];
+                v_us.DataRow2Me(v_dr);
+                v_us.Delete();
+                m_grv_nhan_su.Rows.Remove(m_dc_index_row);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }

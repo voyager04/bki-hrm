@@ -66,6 +66,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.m_dat_ngay_co_hieu_luc = new System.Windows.Forms.DateTimePicker();
             this.m_grv_nhan_su = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_lbl = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -460,21 +461,31 @@
             // m_grv_nhan_su
             // 
             this.m_grv_nhan_su.AllowAddNew = true;
-            this.m_grv_nhan_su.AllowDelete = true;
             this.m_grv_nhan_su.ColumnInfo = resources.GetString("m_grv_nhan_su.ColumnInfo");
-            this.m_grv_nhan_su.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_nhan_su.Location = new System.Drawing.Point(0, 340);
             this.m_grv_nhan_su.Name = "m_grv_nhan_su";
             this.m_grv_nhan_su.Rows.Count = 51;
-            this.m_grv_nhan_su.Size = new System.Drawing.Size(1049, 236);
+            this.m_grv_nhan_su.Size = new System.Drawing.Size(1049, 217);
             this.m_grv_nhan_su.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_nhan_su.Styles"));
             this.m_grv_nhan_su.TabIndex = 49;
+            this.m_grv_nhan_su.Click += new System.EventHandler(this.m_grv_nhan_su_Click);
+            this.m_grv_nhan_su.KeyUp += new System.Windows.Forms.KeyEventHandler(this.m_grv_nhan_su_KeyUp);
+            // 
+            // m_lbl
+            // 
+            this.m_lbl.AutoSize = true;
+            this.m_lbl.Location = new System.Drawing.Point(12, 560);
+            this.m_lbl.Name = "m_lbl";
+            this.m_lbl.Size = new System.Drawing.Size(295, 13);
+            this.m_lbl.TabIndex = 50;
+            this.m_lbl.Text = "F3 - Thêm mới nhân sự ; F4 - Sửa nhân sự ; F5 - Xóa nhân sự";
             // 
             // f500_dm_du_an_detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1049, 612);
+            this.Controls.Add(this.m_lbl);
             this.Controls.Add(this.m_grv_nhan_su);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -489,6 +500,7 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -530,6 +542,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker m_dat_ngay_co_hieu_luc;
         private C1.Win.C1FlexGrid.C1FlexGrid m_grv_nhan_su;
+        private System.Windows.Forms.Label m_lbl;
 
     }
 }

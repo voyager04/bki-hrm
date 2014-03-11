@@ -430,6 +430,8 @@ namespace BKI_HRM
 				CIPConvert.ToStr(m_cbo_trang_thai.SelectedIndex);
 			m_us_user.strNGUOI_TAO = IP.Core.IPSystemAdmin.CAppContext_201.getCurrentUser();
             m_us_user.dcID_USER_GROUP = CIPConvert.ToDecimal( m_cbo_nhom_quyen.SelectedValue);
+            m_us_user.datNGAY_TAO = DateTime.Now.Date;
+            
 		}
 		private void us_object_2_form(){
 			m_chk_is_admin.Checked = CIPConvert.ToBoolean(m_us_user.strBUILT_IN_YN);

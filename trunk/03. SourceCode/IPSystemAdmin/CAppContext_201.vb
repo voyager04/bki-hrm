@@ -31,7 +31,7 @@ Public Class CAppContext_201
         v_us.FillDatasetByUserLogin(m_dsDecentralization, CAppContext_201.getCurrentUserName())
     End Sub
     Public Function CanUseControl(ByVal ip_strFormName As String, ByVal ip_strControlName As String, ByVal ip_strControlType As String) As Boolean Implements IPCommon.IControlerControl.CanUseControl
-        Return Me.CanUseThisControl(ip_strFormName, ip_strControlName, ip_strControlType)
+        Return CAppContext_201.CanUseThisControl(ip_strFormName, ip_strControlName, ip_strControlType)
     End Function
 
     Public Shared Function IsHavingQuyen(ByVal i_str_ma_quyen As String) As Boolean
