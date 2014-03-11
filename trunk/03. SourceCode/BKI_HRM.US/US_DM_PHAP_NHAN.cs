@@ -89,11 +89,11 @@ namespace BKI_HRM.US
             pm_objDR["TEN_PHAP_NHAN"] = System.Convert.DBNull;
         }
 
-        public decimal dcMA_SO_THUE
+        public string strMA_SO_THUE
         {
             get
             {
-                return CNull.RowNVLDecimal(pm_objDR, "MA_SO_THUE", IPConstants.c_DefaultDecimal);
+                return CNull.RowNVLString(pm_objDR, "MA_SO_THUE", IPConstants.c_DefaultString);
             }
             set
             {
@@ -111,11 +111,11 @@ namespace BKI_HRM.US
             pm_objDR["MA_SO_THUE"] = System.Convert.DBNull;
         }
 
-        public decimal dcMA_DK_KINH_DOANH
+        public string strMA_DK_KINH_DOANH
         {
             get
             {
-                return CNull.RowNVLDecimal(pm_objDR, "MA_DK_KINH_DOANH", IPConstants.c_DefaultDecimal);
+                return CNull.RowNVLString(pm_objDR, "MA_DK_KINH_DOANH", IPConstants.c_DefaultString);
             }
             set
             {
@@ -231,6 +231,13 @@ namespace BKI_HRM.US
         {
             CStoredProc v_sp = new CStoredProc("pr_DM_PHAP_NHAN_Search");
             v_sp.addNVarcharInputParam("@ip_str_keyword", ip_str_keyword);
+            v_sp.fillDataSetByCommand(this, op_ds);
+        }
+
+        public void FillDatasetSearchByMaPhapNhan(DS_DM_PHAP_NHAN op_ds, string ip_str_ma_phap_nhan)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_DM_PHAP_NHAN_Search_by_ma_phap_nhan");
+            v_sp.addNVarcharInputParam("@MA_PHAP_NHAN", ip_str_ma_phap_nhan);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
     }
