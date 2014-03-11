@@ -456,11 +456,13 @@
             this.m_cmd_chon_don_vi.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_chon_don_vi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_chon_don_vi.ImageIndex = 5;
+            this.m_cmd_chon_don_vi.ImageList = this.ImageList;
             this.m_cmd_chon_don_vi.Location = new System.Drawing.Point(115, 123);
             this.m_cmd_chon_don_vi.Name = "m_cmd_chon_don_vi";
             this.m_cmd_chon_don_vi.Size = new System.Drawing.Size(111, 28);
             this.m_cmd_chon_don_vi.TabIndex = 83;
             this.m_cmd_chon_don_vi.Text = "Chọn đơn vị";
+            this.m_cmd_chon_don_vi.Click += new System.EventHandler(this.m_cmd_chon_don_vi_Click);
             // 
             // m_txt_don_vi_moi
             // 
