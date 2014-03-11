@@ -267,6 +267,9 @@ namespace BKI_HRM.DS.CDBNames
         public const string CHUC_VU_NGUOI_KY = "CHUC_VU_NGUOI_KY";
         public const string NGUOI_KY = "NGUOI_KY";
         public const string NGAY_KY_HOP_DONG = "NGAY_KY_HOP_DONG";
+        public const string ID_PHAP_NHAN = "ID_PHAP_NHAN";
+        public const string MA_PHAP_NHAN = "MA_PHAP_NHAN";
+        public const string TEN_PHAP_NHAN = "TEN_PHAP_NHAN";
     }
 
     public class GD_HOP_DONG
@@ -282,6 +285,7 @@ namespace BKI_HRM.DS.CDBNames
         public const string CHUC_VU_NGUOI_KY = "CHUC_VU_NGUOI_KY";
         public const string NGUOI_KY = "NGUOI_KY";
         public const string NGAY_KY_HOP_DONG = "NGAY_KY_HOP_DONG";
+        public const string ID_PHAP_NHAN = "ID_PHAP_NHAN";
     }
 
     public class DM_DON_VI {
@@ -328,6 +332,7 @@ namespace BKI_HRM.DS.CDBNames
         public const string MA_SO_THUE = "MA_SO_THUE";
         public const string TRANG_THAI = "TRANG_THAI";
     }
+
     public class V_DM_DON_VI {
         public const string ID = "ID";
         public const string ID_DON_VI_CAP_TREN = "ID_DON_VI_CAP_TREN";
@@ -344,6 +349,18 @@ namespace BKI_HRM.DS.CDBNames
         public const string TU_NGAY = "TU_NGAY";
         public const string DIA_BAN = "DIA_BAN";
         public const string TRANG_THAI = "TRANG_THAI";
+    }
+
+    public class DM_PHAP_NHAN
+    {
+        public const string ID = "ID";
+        public const string MA_PHAP_NHAN = "MA_PHAP_NHAN";
+        public const string TEN_PHAP_NHAN = "TEN_PHAP_NHAN";
+        public const string MA_SO_THUE = "MA_SO_THUE";
+        public const string MA_DK_KINH_DOANH = "MA_DK_KINH_DOANH";
+        public const string NGAY_DK_KINH_DOANH = "NGAY_DK_KINH_DOANH";
+        public const string DIA_CHI = "DIA_CHI";
+        public const string NGUOI_DAI_DIEN = "NGUOI_DAI_DIEN";
     }
 
 

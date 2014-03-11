@@ -65,6 +65,8 @@
             this.m_ofd_chon_file = new System.Windows.Forms.OpenFileDialog();
             this.m_dat_ngay_het_han = new System.Windows.Forms.DateTimePicker();
             this.m_cbo_loai_hop_dong = new System.Windows.Forms.ComboBox();
+            this.m_cbo_phap_nhan = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -77,7 +79,7 @@
             this.m_cmd_chon_file.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_chon_file.ImageIndex = 18;
             this.m_cmd_chon_file.ImageList = this.ImageList;
-            this.m_cmd_chon_file.Location = new System.Drawing.Point(616, 116);
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(613, 137);
             this.m_cmd_chon_file.Name = "m_cmd_chon_file";
             this.m_cmd_chon_file.Size = new System.Drawing.Size(99, 28);
             this.m_cmd_chon_file.TabIndex = 114;
@@ -117,7 +119,7 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 379);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 401);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(954, 36);
@@ -184,14 +186,14 @@
             // m_lbl_file_name
             // 
             this.m_lbl_file_name.AutoSize = true;
-            this.m_lbl_file_name.Location = new System.Drawing.Point(743, 124);
+            this.m_lbl_file_name.Location = new System.Drawing.Point(723, 145);
             this.m_lbl_file_name.Name = "m_lbl_file_name";
             this.m_lbl_file_name.Size = new System.Drawing.Size(0, 13);
             this.m_lbl_file_name.TabIndex = 112;
             // 
             // m_txt_chuc_vu_nguoi_ky
             // 
-            this.m_txt_chuc_vu_nguoi_ky.Location = new System.Drawing.Point(717, 59);
+            this.m_txt_chuc_vu_nguoi_ky.Location = new System.Drawing.Point(726, 101);
             this.m_txt_chuc_vu_nguoi_ky.Name = "m_txt_chuc_vu_nguoi_ky";
             this.m_txt_chuc_vu_nguoi_ky.Size = new System.Drawing.Size(190, 20);
             this.m_txt_chuc_vu_nguoi_ky.TabIndex = 103;
@@ -199,7 +201,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(613, 62);
+            this.label6.Location = new System.Drawing.Point(622, 104);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 13);
             this.label6.TabIndex = 111;
@@ -207,7 +209,7 @@
             // 
             // m_txt_nguoi_ky
             // 
-            this.m_txt_nguoi_ky.Location = new System.Drawing.Point(717, 18);
+            this.m_txt_nguoi_ky.Location = new System.Drawing.Point(726, 60);
             this.m_txt_nguoi_ky.Name = "m_txt_nguoi_ky";
             this.m_txt_nguoi_ky.Size = new System.Drawing.Size(190, 20);
             this.m_txt_nguoi_ky.TabIndex = 102;
@@ -215,7 +217,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(613, 21);
+            this.label5.Location = new System.Drawing.Point(622, 63);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 110;
@@ -242,7 +244,7 @@
             this.groupBox1.Controls.Add(this.m_lbl_ma_nhan_vien);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(23, 154);
+            this.groupBox1.Location = new System.Drawing.Point(23, 174);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(893, 220);
             this.groupBox1.TabIndex = 98;
@@ -295,6 +297,7 @@
             this.m_txt_tim_kiem_nhan_vien.Name = "m_txt_tim_kiem_nhan_vien";
             this.m_txt_tim_kiem_nhan_vien.Size = new System.Drawing.Size(750, 20);
             this.m_txt_tim_kiem_nhan_vien.TabIndex = 0;
+            this.m_txt_tim_kiem_nhan_vien.TextChanged += new System.EventHandler(this.m_txt_tim_kiem_nhan_vien_TextChanged);
             this.m_txt_tim_kiem_nhan_vien.Leave += new System.EventHandler(this.m_txt_tim_kiem_nhan_vien_Leave);
             // 
             // label3
@@ -359,7 +362,7 @@
             // m_lbl_co_che
             // 
             this.m_lbl_co_che.AutoSize = true;
-            this.m_lbl_co_che.Location = new System.Drawing.Point(60, 109);
+            this.m_lbl_co_che.Location = new System.Drawing.Point(37, 109);
             this.m_lbl_co_che.Name = "m_lbl_co_che";
             this.m_lbl_co_che.Size = new System.Drawing.Size(55, 13);
             this.m_lbl_co_che.TabIndex = 108;
@@ -368,7 +371,7 @@
             // m_lbl_trang_thai
             // 
             this.m_lbl_trang_thai.AutoSize = true;
-            this.m_lbl_trang_thai.Location = new System.Drawing.Point(44, 62);
+            this.m_lbl_trang_thai.Location = new System.Drawing.Point(37, 62);
             this.m_lbl_trang_thai.Name = "m_lbl_trang_thai";
             this.m_lbl_trang_thai.Size = new System.Drawing.Size(76, 13);
             this.m_lbl_trang_thai.TabIndex = 107;
@@ -411,7 +414,7 @@
             // m_lbl_ma_du_an
             // 
             this.m_lbl_ma_du_an.AutoSize = true;
-            this.m_lbl_ma_du_an.Location = new System.Drawing.Point(49, 21);
+            this.m_lbl_ma_du_an.Location = new System.Drawing.Point(37, 20);
             this.m_lbl_ma_du_an.Name = "m_lbl_ma_du_an";
             this.m_lbl_ma_du_an.Size = new System.Drawing.Size(71, 13);
             this.m_lbl_ma_du_an.TabIndex = 104;
@@ -440,11 +443,34 @@
             this.m_cbo_loai_hop_dong.Size = new System.Drawing.Size(155, 21);
             this.m_cbo_loai_hop_dong.TabIndex = 116;
             // 
+            // m_cbo_phap_nhan
+            // 
+            this.m_cbo_phap_nhan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_phap_nhan.FormattingEnabled = true;
+            this.m_cbo_phap_nhan.Items.AddRange(new object[] {
+            "Hợp đồng hiện tại",
+            "Hợp đồng cũ"});
+            this.m_cbo_phap_nhan.Location = new System.Drawing.Point(726, 17);
+            this.m_cbo_phap_nhan.Name = "m_cbo_phap_nhan";
+            this.m_cbo_phap_nhan.Size = new System.Drawing.Size(190, 21);
+            this.m_cbo_phap_nhan.TabIndex = 117;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(622, 21);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(59, 13);
+            this.label7.TabIndex = 118;
+            this.label7.Text = "Pháp nhân";
+            // 
             // f701_v_gd_hop_dong_lao_dong_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(954, 415);
+            this.ClientSize = new System.Drawing.Size(954, 437);
+            this.Controls.Add(this.m_cbo_phap_nhan);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.m_cbo_loai_hop_dong);
             this.Controls.Add(this.m_dat_ngay_het_han);
             this.Controls.Add(this.m_cmd_chon_file);
@@ -513,5 +539,7 @@
         internal System.Windows.Forms.ImageList ImageList;
         private System.Windows.Forms.DateTimePicker m_dat_ngay_het_han;
         private System.Windows.Forms.ComboBox m_cbo_loai_hop_dong;
+        private System.Windows.Forms.ComboBox m_cbo_phap_nhan;
+        private System.Windows.Forms.Label label7;
     }
 }

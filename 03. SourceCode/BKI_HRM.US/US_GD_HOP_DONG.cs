@@ -265,6 +265,28 @@ namespace BKI_HRM.US
             pm_objDR["CHUC_VU_NGUOI_KY"] = System.Convert.DBNull;
         }
 
+        public decimal dcID_PHAP_NHAN
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_PHAP_NHAN", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_PHAP_NHAN"] = value;
+            }
+        }
+
+        public bool IsID_PHAP_NHANNull()
+        {
+            return pm_objDR.IsNull("ID_PHAP_NHAN");
+        }
+
+        public void SetID_PHAP_NHANNull()
+        {
+            pm_objDR["ID_PHAP_NHAN"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_GD_HOP_DONG()
