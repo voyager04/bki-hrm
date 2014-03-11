@@ -258,7 +258,7 @@ namespace BKI_HRM.US {
             v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_str_key_word);
             v_stored_proc.fillDataSetByCommand(this, op_ds_v_v_dm_don_vi);
         }
-        public void FillDatasetByKeyWord(DS_V_GD_CHI_TIET_CAP_BAC op_ds_v_gd_chi_tiet_cap_bac, string ip_str_key_word, DateTime ip_dat_thoi_diem)
+        public void FillDatasetSearchCapCacThoiDiem(DS_V_GD_CHI_TIET_CAP_BAC op_ds_v_gd_chi_tiet_cap_bac, string ip_str_key_word, DateTime ip_dat_thoi_diem)
         {
             CStoredProc v_stored_proc = new CStoredProc("pr_V_GD_CHI_TIET_CAP_BAC_select_by_MA_CAP_BAC_THOI_DIEM");
             v_stored_proc.addNVarcharInputParam("@MA_CAP_BAC", ip_str_key_word);
