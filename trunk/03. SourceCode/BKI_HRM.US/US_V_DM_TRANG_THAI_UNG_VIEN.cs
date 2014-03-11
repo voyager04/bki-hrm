@@ -21,7 +21,7 @@ namespace BKI_HRM.US{
 public class US_V_DM_TRANG_THAI_UNG_VIEN : US_Object
 {
 	private const string c_TableName = "V_DM_TRANG_THAI_UNG_VIEN";
-#region "Public Properties"
+    #region "Public Properties"
 	public decimal dcID 
 	{
 		get
