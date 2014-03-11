@@ -29,8 +29,6 @@ using SIS.Controls.Button;
 
 namespace BKI_HRM {
 
-
-
     public class f101_v_dm_don_vi : Form {
         internal ImageList ImageList;
         internal Panel m_pnl_out_place_dm;
@@ -84,6 +82,7 @@ namespace BKI_HRM {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f101_v_dm_don_vi));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_chon_don_vi = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_view = new SIS.Controls.Button.SiSButton();
@@ -97,7 +96,6 @@ namespace BKI_HRM {
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.m_cmd_chon_don_vi = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -144,6 +142,22 @@ namespace BKI_HRM {
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1266, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
+            // 
+            // m_cmd_chon_don_vi
+            // 
+            this.m_cmd_chon_don_vi.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_chon_don_vi.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_chon_don_vi.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_chon_don_vi.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_chon_don_vi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_chon_don_vi.ImageIndex = 13;
+            this.m_cmd_chon_don_vi.ImageList = this.ImageList;
+            this.m_cmd_chon_don_vi.Location = new System.Drawing.Point(813, 4);
+            this.m_cmd_chon_don_vi.Name = "m_cmd_chon_don_vi";
+            this.m_cmd_chon_don_vi.Size = new System.Drawing.Size(97, 28);
+            this.m_cmd_chon_don_vi.TabIndex = 34;
+            this.m_cmd_chon_don_vi.Text = "&Chọn đơn vị";
+            this.m_cmd_chon_don_vi.Click += new System.EventHandler(this.m_cmd_chon_don_vi_Click);
             // 
             // m_cmd_insert
             // 
@@ -226,7 +240,7 @@ namespace BKI_HRM {
             this.m_lbl_so_luong_ban_ghi.AutoSize = true;
             this.m_lbl_so_luong_ban_ghi.Location = new System.Drawing.Point(179, 47);
             this.m_lbl_so_luong_ban_ghi.Name = "m_lbl_so_luong_ban_ghi";
-            this.m_lbl_so_luong_ban_ghi.Size = new System.Drawing.Size(25, 13);
+            this.m_lbl_so_luong_ban_ghi.Size = new System.Drawing.Size(25, 14);
             this.m_lbl_so_luong_ban_ghi.TabIndex = 28;
             this.m_lbl_so_luong_ban_ghi.Text = "000";
             // 
@@ -235,7 +249,7 @@ namespace BKI_HRM {
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(4, 47);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(165, 13);
+            this.label2.Size = new System.Drawing.Size(169, 14);
             this.label2.TabIndex = 27;
             this.label2.Text = "Số lượng đơn vị trong danh sách:";
             // 
@@ -282,7 +296,7 @@ namespace BKI_HRM {
             this.m_lbl_tim_kiem.AutoSize = true;
             this.m_lbl_tim_kiem.Location = new System.Drawing.Point(205, 25);
             this.m_lbl_tim_kiem.Name = "m_lbl_tim_kiem";
-            this.m_lbl_tim_kiem.Size = new System.Drawing.Size(88, 13);
+            this.m_lbl_tim_kiem.Size = new System.Drawing.Size(87, 14);
             this.m_lbl_tim_kiem.TabIndex = 24;
             this.m_lbl_tim_kiem.Text = "Từ khoá tìm kiếm";
             // 
@@ -298,22 +312,6 @@ namespace BKI_HRM {
             this.m_fg.TabIndex = 29;
             this.m_tooltip.SetToolTip(this.m_fg, "\r\nNháy đúp vào dòng đơn vị cần chỉnh sửa\r\n");
             this.m_fg.Tree.LineColor = System.Drawing.Color.Maroon;
-            // 
-            // m_cmd_chon_don_vi
-            // 
-            this.m_cmd_chon_don_vi.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_chon_don_vi.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_chon_don_vi.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_chon_don_vi.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_chon_don_vi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_chon_don_vi.ImageIndex = 13;
-            this.m_cmd_chon_don_vi.ImageList = this.ImageList;
-            this.m_cmd_chon_don_vi.Location = new System.Drawing.Point(813, 4);
-            this.m_cmd_chon_don_vi.Name = "m_cmd_chon_don_vi";
-            this.m_cmd_chon_don_vi.Size = new System.Drawing.Size(97, 28);
-            this.m_cmd_chon_don_vi.TabIndex = 34;
-            this.m_cmd_chon_don_vi.Text = "&Chọn đơn vị";
-            this.m_cmd_chon_don_vi.Click += new System.EventHandler(this.m_cmd_chon_don_vi_Click);
             // 
             // f101_v_dm_don_vi
             // 
@@ -350,19 +348,36 @@ namespace BKI_HRM {
 
         #region Data Structure
         private enum e_col_Number {
-            TRANG_THAI = 7
-                ,
             TEN_DON_VI_CAP_TREN = 1
                 ,
-            TEN_DON_VI = 3
+            ID_CAP_DON_VI = 5
                 ,
-            DIA_BAN = 6
+            TEN_TIENG_ANH = 10
                 ,
-            TEN_TIENG_ANH = 4
+            ID = 3
+                ,
+            TEN_DON_VI = 9
+                ,
+            TEN_TIENG_ANH_DON_VI_CAP_TREN = 8
                 ,
             MA_DON_VI = 2
                 ,
-            TU_NGAY = 5
+            TRANG_THAI = 15
+                ,
+            CAP_DON_VI = 11
+                ,
+            MA_DON_VI_CAP_TREN = 7
+                ,
+            TU_NGAY = 13
+                ,
+            ID_DON_VI_CAP_TREN = 4
+                ,
+            LOAI_DON_VI = 12
+                ,
+            ID_LOAI_DON_VI = 6
+                ,
+            DIA_BAN = 14
+
         }
         #endregion
 
@@ -418,13 +433,21 @@ namespace BKI_HRM {
         }
         private ITransferDataRow get_trans_object(C1FlexGrid i_fg) {
             Hashtable v_htb = new Hashtable();
-            v_htb.Add(V_DM_DON_VI.TRANG_THAI, e_col_Number.TRANG_THAI);
             v_htb.Add(V_DM_DON_VI.TEN_DON_VI_CAP_TREN, e_col_Number.TEN_DON_VI_CAP_TREN);
-            v_htb.Add(V_DM_DON_VI.TEN_DON_VI, e_col_Number.TEN_DON_VI);
-            v_htb.Add(V_DM_DON_VI.DIA_BAN, e_col_Number.DIA_BAN);
+            v_htb.Add(V_DM_DON_VI.ID_CAP_DON_VI, e_col_Number.ID_CAP_DON_VI);
             v_htb.Add(V_DM_DON_VI.TEN_TIENG_ANH, e_col_Number.TEN_TIENG_ANH);
+            v_htb.Add(V_DM_DON_VI.ID, e_col_Number.ID);
+            v_htb.Add(V_DM_DON_VI.TEN_DON_VI, e_col_Number.TEN_DON_VI);
+            v_htb.Add(V_DM_DON_VI.TEN_TIENG_ANH_DON_VI_CAP_TREN, e_col_Number.TEN_TIENG_ANH_DON_VI_CAP_TREN);
             v_htb.Add(V_DM_DON_VI.MA_DON_VI, e_col_Number.MA_DON_VI);
+            v_htb.Add(V_DM_DON_VI.TRANG_THAI, e_col_Number.TRANG_THAI);
+            v_htb.Add(V_DM_DON_VI.CAP_DON_VI, e_col_Number.CAP_DON_VI);
+            v_htb.Add(V_DM_DON_VI.MA_DON_VI_CAP_TREN, e_col_Number.MA_DON_VI_CAP_TREN);
             v_htb.Add(V_DM_DON_VI.TU_NGAY, e_col_Number.TU_NGAY);
+            v_htb.Add(V_DM_DON_VI.ID_DON_VI_CAP_TREN, e_col_Number.ID_DON_VI_CAP_TREN);
+            v_htb.Add(V_DM_DON_VI.LOAI_DON_VI, e_col_Number.LOAI_DON_VI);
+            v_htb.Add(V_DM_DON_VI.ID_LOAI_DON_VI, e_col_Number.ID_LOAI_DON_VI);
+            v_htb.Add(V_DM_DON_VI.DIA_BAN, e_col_Number.DIA_BAN);
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_v_ds.V_DM_DON_VI.NewRow());
             return v_obj_trans;

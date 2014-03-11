@@ -90,6 +90,23 @@ namespace BKI_HRM.US {
             pm_objDR["ID_LOAI_DON_VI"] = System.Convert.DBNull;
         }
 
+        public string strMA_DON_VI_CAP_TREN {
+            get {
+                return CNull.RowNVLString(pm_objDR, "MA_DON_VI_CAP_TREN", IPConstants.c_DefaultString);
+            }
+            set {
+                pm_objDR["MA_DON_VI_CAP_TREN"] = value;
+            }
+        }
+
+        public bool IsMA_DON_VI_CAP_TRENNull() {
+            return pm_objDR.IsNull("MA_DON_VI_CAP_TREN");
+        }
+
+        public void SetMA_DON_VI_CAP_TRENNull() {
+            pm_objDR["MA_DON_VI_CAP_TREN"] = System.Convert.DBNull;
+        }
+
         public string strTEN_DON_VI_CAP_TREN {
             get {
                 return CNull.RowNVLString(pm_objDR, "TEN_DON_VI_CAP_TREN", IPConstants.c_DefaultString);
@@ -105,6 +122,23 @@ namespace BKI_HRM.US {
 
         public void SetTEN_DON_VI_CAP_TRENNull() {
             pm_objDR["TEN_DON_VI_CAP_TREN"] = System.Convert.DBNull;
+        }
+
+        public string strTEN_TIENG_ANH_DON_VI_CAP_TREN {
+            get {
+                return CNull.RowNVLString(pm_objDR, "TEN_TIENG_ANH_DON_VI_CAP_TREN", IPConstants.c_DefaultString);
+            }
+            set {
+                pm_objDR["TEN_TIENG_ANH_DON_VI_CAP_TREN"] = value;
+            }
+        }
+
+        public bool IsTEN_TIENG_ANH_DON_VI_CAP_TRENNull() {
+            return pm_objDR.IsNull("TEN_TIENG_ANH_DON_VI_CAP_TREN");
+        }
+
+        public void SetTEN_TIENG_ANH_DON_VI_CAP_TRENNull() {
+            pm_objDR["TEN_TIENG_ANH_DON_VI_CAP_TREN"] = System.Convert.DBNull;
         }
 
         public string strMA_DON_VI {
@@ -156,6 +190,40 @@ namespace BKI_HRM.US {
 
         public void SetTEN_TIENG_ANHNull() {
             pm_objDR["TEN_TIENG_ANH"] = System.Convert.DBNull;
+        }
+
+        public string strCAP_DON_VI {
+            get {
+                return CNull.RowNVLString(pm_objDR, "CAP_DON_VI", IPConstants.c_DefaultString);
+            }
+            set {
+                pm_objDR["CAP_DON_VI"] = value;
+            }
+        }
+
+        public bool IsCAP_DON_VINull() {
+            return pm_objDR.IsNull("CAP_DON_VI");
+        }
+
+        public void SetCAP_DON_VINull() {
+            pm_objDR["CAP_DON_VI"] = System.Convert.DBNull;
+        }
+
+        public string strLOAI_DON_VI {
+            get {
+                return CNull.RowNVLString(pm_objDR, "LOAI_DON_VI", IPConstants.c_DefaultString);
+            }
+            set {
+                pm_objDR["LOAI_DON_VI"] = value;
+            }
+        }
+
+        public bool IsLOAI_DON_VINull() {
+            return pm_objDR.IsNull("LOAI_DON_VI");
+        }
+
+        public void SetLOAI_DON_VINull() {
+            pm_objDR["LOAI_DON_VI"] = System.Convert.DBNull;
         }
 
         public DateTime datTU_NGAY {
