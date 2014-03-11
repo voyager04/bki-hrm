@@ -123,7 +123,7 @@
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1054, 36);
-            this.m_pnl_out_place_dm.TabIndex = 113;
+            this.m_pnl_out_place_dm.TabIndex = 10;
             // 
             // m_cmd_xuat_word
             // 
@@ -153,7 +153,7 @@
             this.m_cmd_save.Location = new System.Drawing.Point(874, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_save.TabIndex = 35;
+            this.m_cmd_save.TabIndex = 0;
             this.m_cmd_save.Text = "&Lưu";
             this.m_cmd_save.Click += new System.EventHandler(this.m_cmd_save_Click);
             // 
@@ -181,7 +181,7 @@
             this.m_dat_ngay_ky_hop_dong.Location = new System.Drawing.Point(435, 18);
             this.m_dat_ngay_ky_hop_dong.Name = "m_dat_ngay_ky_hop_dong";
             this.m_dat_ngay_ky_hop_dong.Size = new System.Drawing.Size(141, 20);
-            this.m_dat_ngay_ky_hop_dong.TabIndex = 99;
+            this.m_dat_ngay_ky_hop_dong.TabIndex = 3;
             // 
             // m_lbl_file_name
             // 
@@ -196,7 +196,7 @@
             this.m_txt_chuc_vu_nguoi_ky.Location = new System.Drawing.Point(726, 101);
             this.m_txt_chuc_vu_nguoi_ky.Name = "m_txt_chuc_vu_nguoi_ky";
             this.m_txt_chuc_vu_nguoi_ky.Size = new System.Drawing.Size(190, 20);
-            this.m_txt_chuc_vu_nguoi_ky.TabIndex = 103;
+            this.m_txt_chuc_vu_nguoi_ky.TabIndex = 8;
             // 
             // label6
             // 
@@ -212,7 +212,7 @@
             this.m_txt_nguoi_ky.Location = new System.Drawing.Point(726, 60);
             this.m_txt_nguoi_ky.Name = "m_txt_nguoi_ky";
             this.m_txt_nguoi_ky.Size = new System.Drawing.Size(190, 20);
-            this.m_txt_nguoi_ky.TabIndex = 102;
+            this.m_txt_nguoi_ky.TabIndex = 7;
             // 
             // label5
             // 
@@ -247,7 +247,7 @@
             this.groupBox1.Location = new System.Drawing.Point(23, 174);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1000, 220);
-            this.groupBox1.TabIndex = 98;
+            this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nhân sự";
             // 
@@ -357,7 +357,7 @@
             this.m_cbo_trang_thai.Location = new System.Drawing.Point(124, 106);
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
             this.m_cbo_trang_thai.Size = new System.Drawing.Size(157, 21);
-            this.m_cbo_trang_thai.TabIndex = 97;
+            this.m_cbo_trang_thai.TabIndex = 2;
             // 
             // m_lbl_co_che
             // 
@@ -393,7 +393,7 @@
             this.m_dat_ngay_co_hieu_luc.Location = new System.Drawing.Point(435, 60);
             this.m_dat_ngay_co_hieu_luc.Name = "m_dat_ngay_co_hieu_luc";
             this.m_dat_ngay_co_hieu_luc.Size = new System.Drawing.Size(141, 20);
-            this.m_dat_ngay_co_hieu_luc.TabIndex = 100;
+            this.m_dat_ngay_co_hieu_luc.TabIndex = 4;
             // 
             // m_lbl_ngay_ket_thuc
             // 
@@ -409,7 +409,7 @@
             this.m_txt_ma_hop_dong.Location = new System.Drawing.Point(124, 18);
             this.m_txt_ma_hop_dong.Name = "m_txt_ma_hop_dong";
             this.m_txt_ma_hop_dong.Size = new System.Drawing.Size(157, 20);
-            this.m_txt_ma_hop_dong.TabIndex = 95;
+            this.m_txt_ma_hop_dong.TabIndex = 0;
             // 
             // m_lbl_ma_du_an
             // 
@@ -432,7 +432,7 @@
             this.m_dat_ngay_het_han.Name = "m_dat_ngay_het_han";
             this.m_dat_ngay_het_han.ShowCheckBox = true;
             this.m_dat_ngay_het_han.Size = new System.Drawing.Size(141, 20);
-            this.m_dat_ngay_het_han.TabIndex = 115;
+            this.m_dat_ngay_het_han.TabIndex = 5;
             // 
             // m_cbo_loai_hop_dong
             // 
@@ -441,7 +441,7 @@
             this.m_cbo_loai_hop_dong.Location = new System.Drawing.Point(126, 59);
             this.m_cbo_loai_hop_dong.Name = "m_cbo_loai_hop_dong";
             this.m_cbo_loai_hop_dong.Size = new System.Drawing.Size(155, 21);
-            this.m_cbo_loai_hop_dong.TabIndex = 116;
+            this.m_cbo_loai_hop_dong.TabIndex = 1;
             // 
             // m_cbo_phap_nhan
             // 
@@ -453,7 +453,7 @@
             this.m_cbo_phap_nhan.Location = new System.Drawing.Point(726, 17);
             this.m_cbo_phap_nhan.Name = "m_cbo_phap_nhan";
             this.m_cbo_phap_nhan.Size = new System.Drawing.Size(297, 21);
-            this.m_cbo_phap_nhan.TabIndex = 117;
+            this.m_cbo_phap_nhan.TabIndex = 6;
             // 
             // label7
             // 
@@ -492,7 +492,7 @@
             this.Controls.Add(this.m_txt_ma_hop_dong);
             this.Controls.Add(this.m_lbl_ma_du_an);
             this.Name = "f701_v_gd_hop_dong_lao_dong_DE";
-            this.Text = "f701_v_gd_hop_dong_lao_dong_DE";
+            this.Text = "f701 Chi tiết hợp đồng lao động";
             this.Load += new System.EventHandler(this.f701_v_gd_hop_dong_lao_dong_DE_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
