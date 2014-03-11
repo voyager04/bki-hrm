@@ -393,6 +393,20 @@ namespace BKI_HRM
             }
         }
 
+        private void m_menuitem_qllevel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                F602_v_dm_trang_thai_ung_vien frm = new F602_v_dm_trang_thai_ung_vien();
+                frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
 
     }
 }
