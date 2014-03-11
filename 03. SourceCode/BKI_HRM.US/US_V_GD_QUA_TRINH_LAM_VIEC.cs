@@ -132,50 +132,6 @@ public class US_V_GD_QUA_TRINH_LAM_VIEC : US_Object
         pm_objDR["TEN_CV"] = System.Convert.DBNull;
     }
 
-    public decimal dcID_NGACH
-    {
-        get
-        {
-            return CNull.RowNVLDecimal(pm_objDR, "ID_NGACH", IPConstants.c_DefaultDecimal);
-        }
-        set
-        {
-            pm_objDR["ID_NGACH"] = value;
-        }
-    }
-
-    public bool IsID_NGACHNull()
-    {
-        return pm_objDR.IsNull("ID_NGACH");
-    }
-
-    public void SetID_NGACHNull()
-    {
-        pm_objDR["ID_NGACH"] = System.Convert.DBNull;
-    }
-
-    public string strNGACH
-    {
-        get
-        {
-            return CNull.RowNVLString(pm_objDR, "NGACH", IPConstants.c_DefaultString);
-        }
-        set
-        {
-            pm_objDR["NGACH"] = value;
-        }
-    }
-
-    public bool IsNGACHNull()
-    {
-        return pm_objDR.IsNull("NGACH");
-    }
-
-    public void SetNGACHNull()
-    {
-        pm_objDR["NGACH"] = System.Convert.DBNull;
-    }
-
     public string strMA_DON_VI
     {
         get
@@ -550,6 +506,72 @@ public class US_V_GD_QUA_TRINH_LAM_VIEC : US_Object
         pm_objDR["ID"] = System.Convert.DBNull;
     }
 
+    public decimal dcID_NGACH
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "ID_NGACH", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["ID_NGACH"] = value;
+        }
+    }
+
+    public bool IsID_NGACHNull()
+    {
+        return pm_objDR.IsNull("ID_NGACH");
+    }
+
+    public void SetID_NGACHNull()
+    {
+        pm_objDR["ID_NGACH"] = System.Convert.DBNull;
+    }
+
+    public decimal dcID_DON_VI
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "ID_DON_VI", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["ID_DON_VI"] = value;
+        }
+    }
+
+    public bool IsID_DON_VINull()
+    {
+        return pm_objDR.IsNull("ID_DON_VI");
+    }
+
+    public void SetID_DON_VINull()
+    {
+        pm_objDR["ID_DON_VI"] = System.Convert.DBNull;
+    }
+
+    public string strNGACH
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "NGACH", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["NGACH"] = value;
+        }
+    }
+
+    public bool IsNGACHNull()
+    {
+        return pm_objDR.IsNull("NGACH");
+    }
+
+    public void SetNGACHNull()
+    {
+        pm_objDR["NGACH"] = System.Convert.DBNull;
+    }
+
     #endregion
     #region "Init Functions"
     public US_V_GD_QUA_TRINH_LAM_VIEC()
@@ -577,7 +599,6 @@ public class US_V_GD_QUA_TRINH_LAM_VIEC : US_Object
         pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
     }
     #endregion
-
 
     public void FillDataset_search(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds, 
         string ip_str_tim_kiem, 
