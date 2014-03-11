@@ -196,10 +196,10 @@ namespace BKI_HRM
             // 
             // m_menuitem_qlphapnhan
             // 
-            this.m_menuitem_qlphapnhan.Enabled = false;
             this.m_menuitem_qlphapnhan.Name = "m_menuitem_qlphapnhan";
             this.m_menuitem_qlphapnhan.Size = new System.Drawing.Size(206, 22);
             this.m_menuitem_qlphapnhan.Text = "Quản lý pháp nhân";
+            this.m_menuitem_qlphapnhan.Click += new System.EventHandler(this.m_menuitem_qlphapnhan_Click);
             // 
             // m_menuitem_qlquyetdinh
             // 

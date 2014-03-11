@@ -394,5 +394,18 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_menuitem_qlphapnhan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f703_dm_phap_nhan frm = new f703_dm_phap_nhan();
+                frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
