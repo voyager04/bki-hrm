@@ -52,8 +52,9 @@ namespace BKI_HRM.US {
     }
 
     public class CAP_DON_VI {
-        public const decimal KHOI = 1;
-        public const decimal TRUNG_TAM = 2;
-        public const decimal PHONG_BAN = 3;
+        public const decimal TO_HOP = 1;
+        public const decimal KHOI = 2;
+        public const decimal TRUNG_TAM = 3;
+        public const decimal PHONG_BAN = 4;
     }
 }

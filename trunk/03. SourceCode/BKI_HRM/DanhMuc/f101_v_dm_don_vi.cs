@@ -302,6 +302,7 @@ namespace BKI_HRM {
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_pnl_out_place_dm);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "f101_v_dm_don_vi";
             this.Text = "F101 - Danh sách đơn vị";
             this.Load += new System.EventHandler(this.f101_v_dm_don_vi_Load);
