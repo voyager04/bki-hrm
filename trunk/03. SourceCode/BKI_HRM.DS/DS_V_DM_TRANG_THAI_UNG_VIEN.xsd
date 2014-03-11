@@ -42,8 +42,20 @@
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
               <xs:element name="ID_TRANG_THAI_CAP_TREN" msprop:Generator_ColumnVarNameInTable="columnID_TRANG_THAI_CAP_TREN" msprop:Generator_ColumnPropNameInRow="ID_TRANG_THAI_CAP_TREN" msprop:Generator_ColumnPropNameInTable="ID_TRANG_THAI_CAP_TRENColumn" msprop:Generator_UserColumnName="ID_TRANG_THAI_CAP_TREN" type="xs:decimal" minOccurs="0" />
-              <xs:element name="MA_TRANG_THAI_CAP_TREN" msprop:Generator_ColumnVarNameInTable="columnMA_TRANG_THAI_CAP_TREN" msprop:Generator_ColumnPropNameInRow="MA_TRANG_THAI_CAP_TREN" msprop:Generator_ColumnPropNameInTable="MA_TRANG_THAI_CAP_TRENColumn" msprop:Generator_UserColumnName="MA_TRANG_THAI_CAP_TREN" type="xs:decimal" minOccurs="0" />
-              <xs:element name="MA_TRANG_THAI" msprop:Generator_ColumnVarNameInTable="columnMA_TRANG_THAI" msprop:Generator_ColumnPropNameInRow="MA_TRANG_THAI" msprop:Generator_ColumnPropNameInTable="MA_TRANG_THAIColumn" msprop:Generator_UserColumnName="MA_TRANG_THAI" type="xs:decimal" />
+              <xs:element name="MA_TRANG_THAI_CAP_TREN" msprop:Generator_ColumnVarNameInTable="columnMA_TRANG_THAI_CAP_TREN" msprop:Generator_ColumnPropNameInRow="MA_TRANG_THAI_CAP_TREN" msprop:Generator_ColumnPropNameInTable="MA_TRANG_THAI_CAP_TRENColumn" msprop:Generator_UserColumnName="MA_TRANG_THAI_CAP_TREN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MA_TRANG_THAI" msprop:Generator_ColumnVarNameInTable="columnMA_TRANG_THAI" msprop:Generator_ColumnPropNameInRow="MA_TRANG_THAI" msprop:Generator_ColumnPropNameInTable="MA_TRANG_THAIColumn" msprop:Generator_UserColumnName="MA_TRANG_THAI">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="DINH_NGHIA" msprop:Generator_ColumnVarNameInTable="columnDINH_NGHIA" msprop:Generator_ColumnPropNameInRow="DINH_NGHIA" msprop:Generator_ColumnPropNameInTable="DINH_NGHIAColumn" msprop:Generator_UserColumnName="DINH_NGHIA" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
