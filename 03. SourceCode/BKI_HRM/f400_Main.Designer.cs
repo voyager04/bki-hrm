@@ -86,6 +86,7 @@ namespace BKI_HRM
             this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_lbl_du_an_sap_kt = new System.Windows.Forms.Label();
             this.m_lbl_thong_bao_hop_dong_sap_het_han = new System.Windows.Forms.Label();
+            this.nhânSựTheoCấpBậcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -476,7 +477,8 @@ namespace BKI_HRM
             this.m_menuitem_bcnhansu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.m_menuitem_traCuuNhanSuChung,
             this.m_menuitem_nhan_su_theo_phong_ban,
-            this.nhânSựTheoChứcVuToolStripMenuItem});
+            this.nhânSựTheoChứcVuToolStripMenuItem,
+            this.nhânSựTheoCấpBậcToolStripMenuItem});
             this.m_menuitem_bcnhansu.Name = "m_menuitem_bcnhansu";
             this.m_menuitem_bcnhansu.Size = new System.Drawing.Size(234, 22);
             this.m_menuitem_bcnhansu.Text = "Báo cáo nhân sự";
@@ -534,6 +536,13 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hop_dong_sap_het_han.TabIndex = 3;
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Text = "Hợp đồng sắp hết hạn";
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Click += new System.EventHandler(this.m_lbl_thong_bao_hop_dong_sap_het_han_Click);
+            // 
+            // nhânSựTheoCấpBậcToolStripMenuItem
+            // 
+            this.nhânSựTheoCấpBậcToolStripMenuItem.Name = "nhânSựTheoCấpBậcToolStripMenuItem";
+            this.nhânSựTheoCấpBậcToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.nhânSựTheoCấpBậcToolStripMenuItem.Text = "Nhân sự theo cấp bậc";
+            this.nhânSựTheoCấpBậcToolStripMenuItem.Click += new System.EventHandler(this.nhânSựTheoCấpBậcToolStripMenuItem_Click);
             // 
             // f400_Main
             // 
@@ -617,5 +626,6 @@ namespace BKI_HRM
         private ToolStripMenuItem m_menuitem_bc_duan;
         private ToolStripMenuItem m_menuitem_tra_cuu_ns_du_an;
         private ToolStripMenuItem m_menuitem_chiTietCapBac;
+        private ToolStripMenuItem nhânSựTheoCấpBậcToolStripMenuItem;
     }
 }

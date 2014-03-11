@@ -407,5 +407,18 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void nhânSựTheoCấpBậcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f403_BAO_CAO_NHAN_SU_CAP_BAC frm = new f403_BAO_CAO_NHAN_SU_CAP_BAC();
+                frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
