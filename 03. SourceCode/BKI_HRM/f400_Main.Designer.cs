@@ -53,6 +53,7 @@ namespace BKI_HRM
             this.m_menuitem_hopdong = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_quatrinhlamviec = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_trangthailaodong = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_menuitem_chiTietCapBac = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menu_tuyendung = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_hosouv = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_quatrinhtuyendung = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,7 +65,6 @@ namespace BKI_HRM
             this.m_meuitem_luongthang = new System.Windows.Forms.ToolStripMenuItem();
             this.dựÁnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_meuitem_ttduan = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_meuitem_nhansuduan = new System.Windows.Forms.ToolStripMenuItem();
             this.m_meuitem_headcount = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_baocao = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_soyeulilich = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,7 +86,6 @@ namespace BKI_HRM
             this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_lbl_du_an_sap_kt = new System.Windows.Forms.Label();
             this.m_lbl_thong_bao_hop_dong_sap_het_han = new System.Windows.Forms.Label();
-            this.m_menuitem_chiTietCapBac = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -274,6 +273,12 @@ namespace BKI_HRM
             this.m_menuitem_trangthailaodong.Text = "Trạng thái lao động";
             this.m_menuitem_trangthailaodong.Click += new System.EventHandler(this.m_menuitem_trangthailaodong_Click);
             // 
+            // m_menuitem_chiTietCapBac
+            // 
+            this.m_menuitem_chiTietCapBac.Name = "m_menuitem_chiTietCapBac";
+            this.m_menuitem_chiTietCapBac.Size = new System.Drawing.Size(178, 22);
+            this.m_menuitem_chiTietCapBac.Text = "Chi tiết cấp bậc";
+            // 
             // m_menu_tuyendung
             // 
             this.m_menu_tuyendung.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -342,8 +347,7 @@ namespace BKI_HRM
             // dựÁnToolStripMenuItem
             // 
             this.dựÁnToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_meuitem_ttduan,
-            this.m_meuitem_nhansuduan});
+            this.m_meuitem_ttduan});
             this.dựÁnToolStripMenuItem.Name = "dựÁnToolStripMenuItem";
             this.dựÁnToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.dựÁnToolStripMenuItem.Text = "Dự án";
@@ -354,12 +358,6 @@ namespace BKI_HRM
             this.m_meuitem_ttduan.Size = new System.Drawing.Size(159, 22);
             this.m_meuitem_ttduan.Text = "Thông tin dự án";
             this.m_meuitem_ttduan.Click += new System.EventHandler(this.m_meuitem_ttduan_Click);
-            // 
-            // m_meuitem_nhansuduan
-            // 
-            this.m_meuitem_nhansuduan.Name = "m_meuitem_nhansuduan";
-            this.m_meuitem_nhansuduan.Size = new System.Drawing.Size(159, 22);
-            this.m_meuitem_nhansuduan.Text = "Nhân sự dự án";
             // 
             // m_meuitem_headcount
             // 
@@ -516,7 +514,7 @@ namespace BKI_HRM
             this.m_lbl_du_an_sap_kt.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_lbl_du_an_sap_kt.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_du_an_sap_kt.ForeColor = System.Drawing.Color.Red;
-            this.m_lbl_du_an_sap_kt.Location = new System.Drawing.Point(0, 427);
+            this.m_lbl_du_an_sap_kt.Location = new System.Drawing.Point(0, 395);
             this.m_lbl_du_an_sap_kt.Name = "m_lbl_du_an_sap_kt";
             this.m_lbl_du_an_sap_kt.Size = new System.Drawing.Size(207, 18);
             this.m_lbl_du_an_sap_kt.TabIndex = 2;
@@ -530,26 +528,20 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold);
             this.m_lbl_thong_bao_hop_dong_sap_het_han.ForeColor = System.Drawing.Color.Red;
-            this.m_lbl_thong_bao_hop_dong_sap_het_han.Location = new System.Drawing.Point(0, 409);
+            this.m_lbl_thong_bao_hop_dong_sap_het_han.Location = new System.Drawing.Point(0, 377);
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Name = "m_lbl_thong_bao_hop_dong_sap_het_han";
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Size = new System.Drawing.Size(165, 18);
             this.m_lbl_thong_bao_hop_dong_sap_het_han.TabIndex = 3;
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Text = "Hợp đồng sắp hết hạn";
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Click += new System.EventHandler(this.m_lbl_thong_bao_hop_dong_sap_het_han_Click);
             // 
-            // m_menuitem_chiTietCapBac
-            // 
-            this.m_menuitem_chiTietCapBac.Name = "m_menuitem_chiTietCapBac";
-            this.m_menuitem_chiTietCapBac.Size = new System.Drawing.Size(178, 22);
-            this.m_menuitem_chiTietCapBac.Text = "Chi tiết cấp bậc";
-            // 
             // f400_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(835, 445);
+            this.ClientSize = new System.Drawing.Size(835, 413);
             this.Controls.Add(this.m_lbl_thong_bao_hop_dong_sap_het_han);
             this.Controls.Add(this.m_lbl_du_an_sap_kt);
             this.Controls.Add(this.m_mst_menu);
@@ -604,7 +596,6 @@ namespace BKI_HRM
         private System.Windows.Forms.ToolStripMenuItem m_meuitem_luongthang;
         private System.Windows.Forms.ToolStripMenuItem dựÁnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem m_meuitem_ttduan;
-        private System.Windows.Forms.ToolStripMenuItem m_meuitem_nhansuduan;
         private System.Windows.Forms.ToolStripMenuItem m_meuitem_headcount;
         private System.Windows.Forms.ToolStripMenuItem m_menuitem_soyeulilich;
         private System.Windows.Forms.ToolStripMenuItem m_menuitem_bcnghiviec;
