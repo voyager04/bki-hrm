@@ -201,6 +201,7 @@ namespace BKI_HRM
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 36;
             this.m_cmd_search.Text = "Tìm kiếm";
+            this.m_cmd_search.Click += new System.EventHandler(this.m_cmd_search_Click);
             // 
             // m_txt_tim_kiem
             // 
@@ -210,6 +211,8 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(223, 20);
             this.m_txt_tim_kiem.TabIndex = 35;
+            this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
+            this.m_txt_tim_kiem.Leave += new System.EventHandler(this.m_txt_tim_kiem_Leave);
             // 
             // f403_BAO_CAO_NHAN_SU_CAP_BAC
             // 
@@ -271,7 +274,9 @@ namespace BKI_HRM
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
-			load_data_2_grid();		
+            m_txt_tim_kiem.Text = "";
+            load_data_2_grid_search();
+            m_txt_tim_kiem.Text = "Nhập mã chức vụ";
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -300,6 +305,20 @@ namespace BKI_HRM
               );
 			m_fg.Redraw = true;
 		}
+        private void load_data_2_grid_search()
+        {
+            m_ds = new DS_V_GD_CHI_TIET_CAP_BAC();
+            m_us.FillDatasetSearchCapCacThoiDiem(m_ds, m_txt_tim_kiem.Text.Trim(), m_dtp_thoidiem.Value);
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count
+              , 0
+              , (int)e_col_Number.MA_CAP
+              , (int)e_col_Number.MA_BAC
+              , "{0}"
+              );
+            m_fg.Redraw = true;
+        }
 		private void grid2us_object(US_V_GD_CHI_TIET_CAP_BAC i_us
 			, int i_grid_row) {
 			DataRow v_dr;
@@ -327,6 +346,17 @@ namespace BKI_HRM
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
 		}
+        private void load_custom_source_2_m_txt_tim_kiem()
+        {
+            //m_v_us.FillDataset(m_v_ds);
+            int count = m_ds.Tables["V_GD_CHI_TIET_CAP_BAC"].Rows.Count;
+            for (int i = 0; i < count; i++)
+            {
+                DataRow dr = m_ds.Tables["V_GD_CHI_TIET_CAP_BAC"].Rows[i];
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[8].ToString());
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[7].ToString());
+            }
+        }
 		#endregion
 
 //
@@ -337,6 +367,7 @@ namespace BKI_HRM
 		private void f403_BAO_CAO_NHAN_SU_CAP_BAC_Load(object sender, System.EventArgs e) {
 			try{
 				set_initial_form_load();
+                load_custom_source_2_m_txt_tim_kiem();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
@@ -361,6 +392,43 @@ namespace BKI_HRM
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
+
+        private void m_cmd_search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_txt_tim_kiem.Text.Trim() == "Nhập mã cấp bậc")
+                {
+                    m_txt_tim_kiem.Text = "";
+                    load_data_2_grid_search();
+                    m_txt_tim_kiem.Text = "Nhập mã cấp bậc";
+                }
+                else
+                    load_data_2_grid_search();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_txt_tim_kiem_MouseClick(object sender, MouseEventArgs e)
+        {
+            m_txt_tim_kiem.Text = "";
+        }
+
+        private void m_txt_tim_kiem_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_txt_tim_kiem.Text.Trim() == "")
+                    m_txt_tim_kiem.Text = "Nhập mã cấp bậc";
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }		
 
 	}
 }
