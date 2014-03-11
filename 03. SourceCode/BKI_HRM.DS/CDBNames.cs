@@ -547,6 +547,7 @@ namespace BKI_HRM.DS.CDBNames
    }
 
    public class V_GD_CHI_TIET_CAP_BAC {
+       public const string ID = "ID";
        public const string MA_NV = "MA_NV";
        public const string HO_DEM = "HO_DEM";
        public const string TEN = "TEN";
@@ -559,6 +560,7 @@ namespace BKI_HRM.DS.CDBNames
        public const string NGAY_CO_HIEU_LUC = "NGAY_CO_HIEU_LUC";
        public const string NGAY_HET_HIEU_LUC = "NGAY_HET_HIEU_LUC";
    }
+
 
 
 }

@@ -12,13 +12,14 @@
               <DbSource ConnectionRef="BKI_HRMConnectionString3 (Settings)" DbObjectName="BKI_HRM.dbo.V_GD_CHI_TIET_CAP_BAC" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT MA_NV, HO_DEM, TEN, NGAY_BAT_DAU, NGAY_KET_THUC, TRANG_THAI_CB, MA_CAP, MA_BAC, MA_QUYET_DINH, NGAY_CO_HIEU_LUC, NGAY_HET_HIEU_LUC FROM dbo.V_GD_CHI_TIET_CAP_BAC</CommandText>
+                    <CommandText>SELECT ID, MA_NV, HO_DEM, TEN, NGAY_BAT_DAU, NGAY_KET_THUC, TRANG_THAI_CB, MA_CAP, MA_BAC, MA_QUYET_DINH, NGAY_CO_HIEU_LUC, NGAY_HET_HIEU_LUC FROM dbo.V_GD_CHI_TIET_CAP_BAC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
             </MainSource>
             <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
               <Mapping SourceColumn="MA_NV" DataSetColumn="MA_NV" />
               <Mapping SourceColumn="HO_DEM" DataSetColumn="HO_DEM" />
               <Mapping SourceColumn="TEN" DataSetColumn="TEN" />
@@ -44,6 +45,7 @@
         <xs:element name="V_GD_CHI_TIET_CAP_BAC" msprop:Generator_TableClassName="V_GD_CHI_TIET_CAP_BACDataTable" msprop:Generator_TableVarName="tableV_GD_CHI_TIET_CAP_BAC" msprop:Generator_TablePropName="V_GD_CHI_TIET_CAP_BAC" msprop:Generator_RowDeletingName="V_GD_CHI_TIET_CAP_BACRowDeleting" msprop:Generator_RowChangingName="V_GD_CHI_TIET_CAP_BACRowChanging" msprop:Generator_RowEvHandlerName="V_GD_CHI_TIET_CAP_BACRowChangeEventHandler" msprop:Generator_RowDeletedName="V_GD_CHI_TIET_CAP_BACRowDeleted" msprop:Generator_UserTableName="V_GD_CHI_TIET_CAP_BAC" msprop:Generator_RowChangedName="V_GD_CHI_TIET_CAP_BACRowChanged" msprop:Generator_RowEvArgName="V_GD_CHI_TIET_CAP_BACRowChangeEvent" msprop:Generator_RowClassName="V_GD_CHI_TIET_CAP_BACRow">
           <xs:complexType>
             <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
               <xs:element name="MA_NV" msprop:Generator_ColumnVarNameInTable="columnMA_NV" msprop:Generator_ColumnPropNameInRow="MA_NV" msprop:Generator_ColumnPropNameInTable="MA_NVColumn" msprop:Generator_UserColumnName="MA_NV">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -102,5 +104,9 @@
         </xs:element>
       </xs:choice>
     </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:V_GD_CHI_TIET_CAP_BAC" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
   </xs:element>
 </xs:schema>
