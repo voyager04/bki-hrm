@@ -137,11 +137,7 @@ namespace BKI_HRM.DanhMuc
                 BaseMessages.MsgBox_Infor("Bạn chưa nhập mã quyết định");
                 return false;
             }
-            if (m_txt_noi_dung.Text == "")
-            {
-                BaseMessages.MsgBox_Infor("Bạn chưa nhập nội dung");
-                return false;
-            }
+            
             
             return true;
         }
