@@ -52,6 +52,7 @@
     <Compile Include="US_CM_DM_TU_DIEN.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="US_DM_CAP_BAC.cs" />
     <Compile Include="US_DM_CHUC_VU.cs" />
     <Compile Include="US_DM_DON_VI.cs" />
     <Compile Include="US_DM_DU_AN.cs" />

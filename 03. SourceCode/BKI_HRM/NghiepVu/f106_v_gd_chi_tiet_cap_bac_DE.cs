@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -40,8 +41,8 @@ namespace BKI_HRM.DanhMuc {
 
         #region Members
         private DataEntryFormMode m_e_form_mode;
-        private US_DM_DON_VI m_us = new US_DM_DON_VI();
-        private DS_DM_DON_VI m_ds = new DS_DM_DON_VI();
+        private US_V_GD_CHI_TIET_CAP_BAC m_us = new US_V_GD_CHI_TIET_CAP_BAC();
+        private DS_V_GD_CHI_TIET_CAP_BAC m_ds = new DS_V_GD_CHI_TIET_CAP_BAC();
         private DS_V_DM_DON_VI m_v_ds = new DS_V_DM_DON_VI();
         #endregion
 
@@ -52,34 +53,31 @@ namespace BKI_HRM.DanhMuc {
             set_define_events();
         }
         private void set_initial_form_load() {
+            load_data_2_cbo_ma_cap_bac();
+        }
+
+        private void load_data_2_cbo_ma_cap_bac(){
+            var v_ds = new DS_DM_CAP_BAC();
+            var v_us = new US_DM_CAP_BAC();
         }
         private bool check_data_is_ok() {
-            if (!CValidateTextBox.IsValid(m_txt_dia_ban, DataType.StringType, allowNull.YES, true)) {
-                return false;
-            }
-            if (!CValidateTextBox.IsValid(m_txt_ma_don_vi, DataType.StringType, allowNull.NO, true)) {
-                return false;
-            }
-            if (!CValidateTextBox.IsValid(m_txt_ten_don_vi, DataType.StringType, allowNull.NO, true)) {
-                return false;
-            }
-            if (!CValidateTextBox.IsValid(m_txt_ten_tieng_anh, DataType.StringType, allowNull.YES, true)) {
-                return false;
-            }
+            //if (!CValidateTextBox.IsValid(m_txt_dia_ban, DataType.StringType, allowNull.YES, true)) {
+            //    return false;
+            //}
             return true;
         }
         private void form_2_us_object() {
-            m_us.dcID_DON_VI_CAP_TREN = CIPConvert.ToDecimal(m_cbo_ten_don_vi_cap_tren.SelectedValue);
-            m_us.dcID_LOAI_DON_VI = CIPConvert.ToDecimal(m_cbo_loai_don_vi.SelectedValue);
-            m_us.dcID_CAP_DON_VI = CIPConvert.ToDecimal(m_cbo_cap_don_vi.SelectedValue);
-            m_us.strMA_DON_VI = m_txt_ma_don_vi.Text.Trim();
-            m_us.strTEN_DON_VI = m_txt_ten_don_vi.Text.Trim();
-            m_us.strTEN_TA = m_txt_ten_tieng_anh.Text.Trim();
-            m_us.strDIA_BAN = m_txt_dia_ban.Text.Trim();
-            m_us.strTRANG_THAI = get_trang_thai(m_cbo_trang_thai);
-            m_us.dcID_LOAI_DON_VI = CIPConvert.ToDecimal(m_cbo_loai_don_vi.SelectedValue);
-            m_us.dcID_CAP_DON_VI = CIPConvert.ToDecimal(m_cbo_cap_don_vi.SelectedValue);
-            m_us.datTU_NGAY = m_dat_tu_ngay.Value.Date;
+            //m_us.dcID_DON_VI_CAP_TREN = CIPConvert.ToDecimal(m_cbo_ten_don_vi_cap_tren.SelectedValue);
+            //m_us.dcID_LOAI_DON_VI = CIPConvert.ToDecimal(m_cbo_loai_don_vi.SelectedValue);
+            //m_us.dcID_CAP_DON_VI = CIPConvert.ToDecimal(m_cbo_cap_don_vi.SelectedValue);
+            //m_us.strMA_DON_VI = m_txt_ma_don_vi.Text.Trim();
+            //m_us.strTEN_DON_VI = m_txt_ten_don_vi.Text.Trim();
+            //m_us.strTEN_TA = m_txt_ten_tieng_anh.Text.Trim();
+            //m_us.strDIA_BAN = m_txt_dia_ban.Text.Trim();
+            //m_us.strTRANG_THAI = get_trang_thai(m_cbo_trang_thai);
+            //m_us.dcID_LOAI_DON_VI = CIPConvert.ToDecimal(m_cbo_loai_don_vi.SelectedValue);
+            //m_us.dcID_CAP_DON_VI = CIPConvert.ToDecimal(m_cbo_cap_don_vi.SelectedValue);
+            //m_us.datTU_NGAY = m_dat_tu_ngay.Value.Date;
         }
         private static string get_trang_thai(ListControl ip_cbo) {
             return ip_cbo.SelectedIndex == 0 ? "y" : "n";
@@ -101,33 +99,36 @@ namespace BKI_HRM.DanhMuc {
             Close();
         }
         private void us_object_2_form(US_V_GD_CHI_TIET_CAP_BAC ip_us_gd_chi_tiet_cap_bac) {
-            //m_us.dcID = ip_us_gd_chi_tiet_cap_bac.;
-            //m_cbo_cap_don_vi.SelectedValue = ip_us_dm_don_vi.dcID_CAP_DON_VI;
-            //m_cbo_loai_don_vi.SelectedValue = ip_us_dm_don_vi.dcID_LOAI_DON_VI;
-            //if (ip_us_dm_don_vi.dcID_DON_VI_CAP_TREN == 0) {
-            //    m_cbo_ten_don_vi_cap_tren.SelectedIndex = 0;
-            //} else {
-            //    m_cbo_ten_don_vi_cap_tren.SelectedValue = ip_us_dm_don_vi.dcID_DON_VI_CAP_TREN;
-            //}
-            //m_txt_ma_don_vi.Text = ip_us_dm_don_vi.strMA_DON_VI;
-            //m_txt_ten_don_vi.Text = ip_us_dm_don_vi.strTEN_DON_VI;
-            //m_txt_ten_tieng_anh.Text = ip_us_dm_don_vi.strTEN_TIENG_ANH;
-            //m_txt_dia_ban.Text = ip_us_dm_don_vi.strDIA_BAN;
-            //m_cbo_trang_thai.SelectedIndex = ip_us_dm_don_vi.strTRANG_THAI.ToUpper().Equals("Y") ? 0 : 1;
-            //m_dat_tu_ngay.Value = ip_us_dm_don_vi.datTU_NGAY.Date;
+            m_us.dcID = ip_us_gd_chi_tiet_cap_bac.dcID;
+            m_lbl_ma_nhan_vien.Text = ip_us_gd_chi_tiet_cap_bac.strMA_NV;
+            m_lbl_ho_ten_nhan_vien.Text = ip_us_gd_chi_tiet_cap_bac.strHO_DEM.Trim() + @" " +
+                                          ip_us_gd_chi_tiet_cap_bac.strTEN.Trim();
+        }
+
+        private void choose_file(){
+            m_ofd_openfile.Filter = "(*.pdf)|*.pdf|(*.doc)|*.doc|(*.docx)|*.docx|(*.xls)|*.xls|(*.xlsx)|*.xlsx";
+            m_ofd_openfile.Multiselect = false;
+            m_ofd_openfile.Title = "Chọn tài liệu đính kèm";
+            DialogResult result = m_ofd_openfile.ShowDialog();
+        }
+
+        private void open_file(){
+            Process.Start("explorer.exe", m_ofd_openfile.FileName);
         }
 
         #endregion
 
-        #region Events
+        //
+        //
+        //		EVENT HANLDERS
+        //
+        //
 
         private void set_define_events() {
             m_cmd_save.Click += m_cmd_save_Click;
             m_cmd_exit.Click += m_cmd_exit_Click;
-            m_cbo_ten_don_vi_cap_tren.SelectedIndexChanged +=
-                m_cbo_ten_don_vi_cap_tren_SelectedIndexChanged;
-            m_cbo_cap_don_vi.SelectedIndexChanged +=
-                m_cbo_cap_don_vi_SelectedIndexChanged;
+            this.m_cmd_chon_file.Click += new System.EventHandler(this.m_cmd_chon_file_Click);
+
         }
 
         protected void m_cmd_save_Click(object sender, EventArgs e) {
@@ -136,16 +137,6 @@ namespace BKI_HRM.DanhMuc {
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
-        }
-
-        protected void m_cbo_ma_don_vi_cap_tren_SelectedIndexChanged(object sender, EventArgs e) {
-        }
-
-        protected void m_cbo_ten_don_vi_cap_tren_SelectedIndexChanged(object sender, EventArgs e) {
-        }
-
-        protected void m_cmd_refresh_Click(object sender, EventArgs e) {
-
         }
 
         protected void m_cmd_exit_Click(object sender, EventArgs e) {
@@ -163,14 +154,20 @@ namespace BKI_HRM.DanhMuc {
             }
         }
 
-        private void m_cbo_cap_don_vi_SelectedIndexChanged(object sender, EventArgs e) {
+        private void m_cmd_chon_file_Click(object sender, EventArgs e) {
             try {
+                choose_file();
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
-        #endregion
-
+        private void m_cmd_xem_file_Click(object sender, EventArgs e) {
+            try {
+                open_file();
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
