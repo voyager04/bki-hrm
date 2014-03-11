@@ -386,7 +386,7 @@ namespace BKI_HRM
 
 		private void insert_v_dm_nhan_su_du_an(){
             F500_gd_chi_tiet_du_an_de v_fDE = new F500_gd_chi_tiet_du_an_de();
-            v_fDE.display_for_insert();
+            v_fDE.display_for_insert("");
             load_data_2_grid();
 		}
 

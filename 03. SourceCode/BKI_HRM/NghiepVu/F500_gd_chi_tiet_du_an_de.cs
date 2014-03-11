@@ -18,10 +18,11 @@ namespace BKI_HRM.NghiepVu
     public partial class F500_gd_chi_tiet_du_an_de : Form
     {
         #region public Interface
-        public void display_for_insert()
+        public void display_for_insert(string ip_str_ma_du_an)
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             load_data_2_control();
+            m_txt_ma_du_an.Text = ip_str_ma_du_an;
             this.ShowDialog();
         }
 

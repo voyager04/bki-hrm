@@ -226,5 +226,12 @@ public class US_GD_CHI_TIET_DU_AN : US_Object
         v_sp.addDecimalInputParam("@ID", i_dc_id);
         v_sp.fillDataSetByCommand(this, v_ds); 
     }
+
+    public void FillDatasetByIDNS(DS_GD_CHI_TIET_DU_AN v_ds, decimal v_dc_id_ns)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_GD_CHI_TIET_DU_AN_select_by_ID_NS");
+        v_sp.addDecimalInputParam("@ID_NS", v_dc_id_ns);
+        v_sp.fillDataSetByCommand(this, v_ds); 
+    }
 }
 }
