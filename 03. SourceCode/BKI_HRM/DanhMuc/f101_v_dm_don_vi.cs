@@ -472,6 +472,12 @@ namespace BKI_HRM {
             v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
             i_us = new US_DM_DON_VI((decimal)v_dr.ItemArray[0]);
         }
+        private void grid2us_object( int i_grid_row)
+        {
+            DataRow v_dr;
+            v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
+            m_us = new US_DM_DON_VI((decimal)v_dr.ItemArray[0]);
+        }
         private void grid2us_object(US_V_DM_DON_VI i_us, int i_grid_row) {
             DataRow v_dr;
             v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
@@ -484,9 +490,10 @@ namespace BKI_HRM {
                 return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row))
                 return;
+            
             try
             {
-                grid2us_object(m_us, m_fg.Row);
+                grid2us_object( m_fg.Row);
                 this.Close();
             }
             catch (Exception v_e)
