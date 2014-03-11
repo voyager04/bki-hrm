@@ -137,7 +137,7 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 373);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(781, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(694, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_insert
@@ -149,7 +149,7 @@ namespace BKI_HRM
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(297, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(210, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(120, 28);
             this.m_cmd_insert.TabIndex = 12;
@@ -164,7 +164,7 @@ namespace BKI_HRM
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(417, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(330, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(120, 28);
             this.m_cmd_update.TabIndex = 13;
@@ -194,7 +194,7 @@ namespace BKI_HRM
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(537, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(450, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(120, 28);
             this.m_cmd_delete.TabIndex = 14;
@@ -209,7 +209,7 @@ namespace BKI_HRM
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(657, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(570, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(120, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -255,7 +255,7 @@ namespace BKI_HRM
             this.m_grv_dm_quyet_dinh.ColumnInfo = resources.GetString("m_grv_dm_quyet_dinh.ColumnInfo");
             this.m_grv_dm_quyet_dinh.Location = new System.Drawing.Point(0, 55);
             this.m_grv_dm_quyet_dinh.Name = "m_grv_dm_quyet_dinh";
-            this.m_grv_dm_quyet_dinh.Size = new System.Drawing.Size(781, 316);
+            this.m_grv_dm_quyet_dinh.Size = new System.Drawing.Size(694, 316);
             this.m_grv_dm_quyet_dinh.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_dm_quyet_dinh.Styles"));
             this.m_grv_dm_quyet_dinh.TabIndex = 20;
             this.m_grv_dm_quyet_dinh.KeyDown += new System.Windows.Forms.KeyEventHandler(this.m_grv_dm_quyet_dinh_KeyDown);
@@ -263,7 +263,7 @@ namespace BKI_HRM
             // f600_v_dm_quyet_dinh
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(781, 409);
+            this.ClientSize = new System.Drawing.Size(696, 409);
             this.Controls.Add(this.m_lbl_tim_kiem);
             this.Controls.Add(this.m_cmd_search);
             this.Controls.Add(this.m_txt_tim_kiem);
