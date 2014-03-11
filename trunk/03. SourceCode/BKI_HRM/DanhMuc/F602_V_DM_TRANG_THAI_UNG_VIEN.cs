@@ -146,30 +146,28 @@ namespace BKI_HRM
             this.m_cmd_insert.AdjustImageLocation = new System.Drawing.Point(0, 0);
             this.m_cmd_insert.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_insert.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(296, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(221, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_insert.Size = new System.Drawing.Size(114, 28);
             this.m_cmd_insert.TabIndex = 12;
-            this.m_cmd_insert.Text = "&Thêm";
+            this.m_cmd_insert.Text = "&Thêm trạng thái";
             // 
             // m_cmd_update
             // 
             this.m_cmd_update.AdjustImageLocation = new System.Drawing.Point(0, 0);
             this.m_cmd_update.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_update.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(384, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(338, 4);
             this.m_cmd_update.Name = "m_cmd_update";
-            this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_update.Size = new System.Drawing.Size(107, 28);
             this.m_cmd_update.TabIndex = 13;
-            this.m_cmd_update.Text = "&Sửa";
+            this.m_cmd_update.Text = "&Sửa trạng thái";
             // 
             // m_cmd_view
             // 
@@ -191,15 +189,14 @@ namespace BKI_HRM
             this.m_cmd_delete.AdjustImageLocation = new System.Drawing.Point(0, 0);
             this.m_cmd_delete.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_delete.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(472, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(449, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
-            this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_delete.Size = new System.Drawing.Size(109, 28);
             this.m_cmd_delete.TabIndex = 14;
-            this.m_cmd_delete.Text = "&Xoá";
+            this.m_cmd_delete.Text = "&Xoá trạng thái";
             // 
             // m_cmd_exit
             // 
@@ -284,6 +281,7 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(272, 20);
             this.m_txt_tim_kiem.TabIndex = 35;
+            this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
             // 
             // F602_v_dm_trang_thai_ung_vien
             // 
@@ -348,9 +346,8 @@ namespace BKI_HRM
             {
                 DataRow dr = m_ds.Tables["V_DM_TRANG_THAI_UNG_VIEN"].Rows[i];
                 m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[1].ToString());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[8].ToString());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[6].ToString());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[7].ToString());
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[2].ToString());
+                
 
             }
         }
