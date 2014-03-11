@@ -47,6 +47,7 @@ namespace BKI_HRM {
         private C1FlexGrid m_fg;
         private ToolTip m_tooltip;
         internal SiSButton m_cmd_view;
+        internal SiSButton m_cmd_chon_don_vi;
         private IContainer components;
 
         public f101_v_dm_don_vi() {
@@ -96,6 +97,7 @@ namespace BKI_HRM {
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
+            this.m_cmd_chon_don_vi = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -130,6 +132,7 @@ namespace BKI_HRM {
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_chon_don_vi);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
@@ -177,10 +180,11 @@ namespace BKI_HRM {
             this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
             this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_view.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_view.ImageIndex = 18;
             this.m_cmd_view.ImageList = this.ImageList;
-            this.m_cmd_view.Location = new System.Drawing.Point(798, 4);
+            this.m_cmd_view.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_view.Name = "m_cmd_view";
             this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_view.TabIndex = 4;
@@ -222,7 +226,7 @@ namespace BKI_HRM {
             this.m_lbl_so_luong_ban_ghi.AutoSize = true;
             this.m_lbl_so_luong_ban_ghi.Location = new System.Drawing.Point(179, 47);
             this.m_lbl_so_luong_ban_ghi.Name = "m_lbl_so_luong_ban_ghi";
-            this.m_lbl_so_luong_ban_ghi.Size = new System.Drawing.Size(25, 14);
+            this.m_lbl_so_luong_ban_ghi.Size = new System.Drawing.Size(25, 13);
             this.m_lbl_so_luong_ban_ghi.TabIndex = 28;
             this.m_lbl_so_luong_ban_ghi.Text = "000";
             // 
@@ -231,7 +235,7 @@ namespace BKI_HRM {
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(4, 47);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 14);
+            this.label2.Size = new System.Drawing.Size(165, 13);
             this.label2.TabIndex = 27;
             this.label2.Text = "Số lượng đơn vị trong danh sách:";
             // 
@@ -278,7 +282,7 @@ namespace BKI_HRM {
             this.m_lbl_tim_kiem.AutoSize = true;
             this.m_lbl_tim_kiem.Location = new System.Drawing.Point(205, 25);
             this.m_lbl_tim_kiem.Name = "m_lbl_tim_kiem";
-            this.m_lbl_tim_kiem.Size = new System.Drawing.Size(87, 14);
+            this.m_lbl_tim_kiem.Size = new System.Drawing.Size(88, 13);
             this.m_lbl_tim_kiem.TabIndex = 24;
             this.m_lbl_tim_kiem.Text = "Từ khoá tìm kiếm";
             // 
@@ -294,6 +298,22 @@ namespace BKI_HRM {
             this.m_fg.TabIndex = 29;
             this.m_tooltip.SetToolTip(this.m_fg, "\r\nNháy đúp vào dòng đơn vị cần chỉnh sửa\r\n");
             this.m_fg.Tree.LineColor = System.Drawing.Color.Maroon;
+            // 
+            // m_cmd_chon_don_vi
+            // 
+            this.m_cmd_chon_don_vi.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_chon_don_vi.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_chon_don_vi.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_chon_don_vi.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_chon_don_vi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_chon_don_vi.ImageIndex = 13;
+            this.m_cmd_chon_don_vi.ImageList = this.ImageList;
+            this.m_cmd_chon_don_vi.Location = new System.Drawing.Point(813, 4);
+            this.m_cmd_chon_don_vi.Name = "m_cmd_chon_don_vi";
+            this.m_cmd_chon_don_vi.Size = new System.Drawing.Size(97, 28);
+            this.m_cmd_chon_don_vi.TabIndex = 34;
+            this.m_cmd_chon_don_vi.Text = "&Chọn đơn vị";
+            this.m_cmd_chon_don_vi.Click += new System.EventHandler(this.m_cmd_chon_don_vi_Click);
             // 
             // f101_v_dm_don_vi
             // 
@@ -318,6 +338,13 @@ namespace BKI_HRM {
         #region Public Interface
         public void display() {
             ShowDialog();
+        }
+        public void select_data(ref US_DM_DON_VI op_us_dm_don_vi)
+        {
+            m_e_form_mode = DataEntryFormMode.SelectDataState;
+            this.ShowDialog();
+            op_us_dm_don_vi = m_us;
+
         }
         #endregion
 
@@ -346,7 +373,7 @@ namespace BKI_HRM {
         DS_DM_DON_VI m_ds = new DS_DM_DON_VI();
         US_DM_DON_VI m_us = new US_DM_DON_VI();
         private const String m_str_goi_y_tim_kiem = "Nhập Tên đơn vị, Mã đơn vị, Địa bạn, Trạng Thái...";
-
+        DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
         #endregion
 
         #region Private Methods
@@ -365,6 +392,26 @@ namespace BKI_HRM {
             KeyPreview = true;
         }
         private void set_initial_form_load() {
+            switch (m_e_form_mode)
+            {
+                case DataEntryFormMode.UpdateDataState:
+                    m_cmd_chon_don_vi.Visible = false;
+                    break;
+                case DataEntryFormMode.InsertDataState:
+                    m_cmd_chon_don_vi.Visible = false;
+                    break;
+                case DataEntryFormMode.ViewDataState:
+                    m_cmd_chon_don_vi.Visible = false;
+                    break;
+                case DataEntryFormMode.SelectDataState:
+                    m_cmd_chon_don_vi.Visible = true;
+                    m_cmd_chon_don_vi.Enabled = true;
+                    m_cmd_insert.Visible = false;
+                    m_cmd_update.Visible = false;
+                    m_cmd_delete.Visible = false;
+                    break;
+                
+            }
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_grid();
             load_custom_source_2_m_txt_tim_kiem();
@@ -430,6 +477,23 @@ namespace BKI_HRM {
             v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
             m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
             i_us.DataRow2Me(v_dr);
+        }
+        private void select_data_2_us()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg))
+                return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row))
+                return;
+            try
+            {
+                grid2us_object(m_us, m_fg.Row);
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+                MessageBox.Show("Dòng chọn không hợp lệ. Mời chọn dòng khác", "Cảnh báo");
+            }
+            
         }
         private void insert_v_dm_don_vi() {
             var v_fDE = new f102_v_dm_don_vi_de();
@@ -617,6 +681,18 @@ namespace BKI_HRM {
 
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_chon_don_vi_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                select_data_2_us();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
