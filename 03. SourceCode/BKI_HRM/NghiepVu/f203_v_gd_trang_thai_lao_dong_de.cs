@@ -14,6 +14,7 @@ using IP.Core.IPSystemAdmin;
 using BKI_HRM.US;
 using BKI_HRM.DS;
 using BKI_HRM.DS.CDBNames;
+using System.Diagnostics;
 namespace BKI_HRM
 {
     public partial class f203_v_gd_trang_thai_lao_dong_de : Form
@@ -169,7 +170,17 @@ namespace BKI_HRM
             
             m_us_trang_thai_ld.strTRANG_THAI_HIEN_TAI = "Y";
         }
-        
+        private void chon_file()
+        {
+            m_ofd_openfile.Filter = "(*.pdf)|*.pdf|(*.doc)|*.doc|(*.docx)|*.docx|(*.xls)|*.xls|(*.xlsx)|*.xlsx";
+            m_ofd_openfile.Multiselect = false;
+            m_ofd_openfile.Title = "Chọn tài liệu đính kèm";
+            DialogResult result = m_ofd_openfile.ShowDialog();
+        }
+        private void mo_file()
+        {
+            Process.Start("explorer.exe", m_ofd_openfile.FileName);
+        }
         private bool check_validate_data_is_ok(){
             
             return true;
@@ -308,6 +319,30 @@ namespace BKI_HRM
         }
         
     #endregion
+
+        private void m_cmd_chon_file_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                chon_file();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_xem_file_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                mo_file();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         
     }
 
