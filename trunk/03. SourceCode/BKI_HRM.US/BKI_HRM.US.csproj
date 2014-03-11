@@ -73,6 +73,7 @@
     <Compile Include="US_V_DM_QUYET_DINH.cs" />
     <Compile Include="US_V_DM_TRANG_THAI_UNG_VIEN.cs" />
     <Compile Include="US_V_GD_BAO_CAO_DU_AN_2.cs" />
+    <Compile Include="US_V_GD_CHI_TIET_CAP_BAC.cs" />
     <Compile Include="US_V_GD_HOP_DONG_LAO_DONG.cs" />
     <Compile Include="US_V_GD_QUA_TRINH_LAM_VIEC.cs" />
     <Compile Include="US_V_GD_TRANG_THAI_LAO_DONG.cs" />

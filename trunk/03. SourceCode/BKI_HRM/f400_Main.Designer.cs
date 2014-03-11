@@ -86,6 +86,7 @@ namespace BKI_HRM
             this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_lbl_du_an_sap_kt = new System.Windows.Forms.Label();
             this.m_lbl_thong_bao_hop_dong_sap_het_han = new System.Windows.Forms.Label();
+            this.m_menuitem_chiTietCapBac = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -240,7 +241,8 @@ namespace BKI_HRM
             this.m_menu_dsnhansu,
             this.m_menuitem_hopdong,
             this.m_menuitem_quatrinhlamviec,
-            this.m_menuitem_trangthailaodong});
+            this.m_menuitem_trangthailaodong,
+            this.m_menuitem_chiTietCapBac});
             this.m_menuitem_qlns.Name = "m_menuitem_qlns";
             this.m_menuitem_qlns.Size = new System.Drawing.Size(160, 22);
             this.m_menuitem_qlns.Text = "Quản lý nhân sự";
@@ -514,7 +516,7 @@ namespace BKI_HRM
             this.m_lbl_du_an_sap_kt.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_lbl_du_an_sap_kt.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_du_an_sap_kt.ForeColor = System.Drawing.Color.Red;
-            this.m_lbl_du_an_sap_kt.Location = new System.Drawing.Point(0, 395);
+            this.m_lbl_du_an_sap_kt.Location = new System.Drawing.Point(0, 427);
             this.m_lbl_du_an_sap_kt.Name = "m_lbl_du_an_sap_kt";
             this.m_lbl_du_an_sap_kt.Size = new System.Drawing.Size(207, 18);
             this.m_lbl_du_an_sap_kt.TabIndex = 2;
@@ -528,20 +530,26 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold);
             this.m_lbl_thong_bao_hop_dong_sap_het_han.ForeColor = System.Drawing.Color.Red;
-            this.m_lbl_thong_bao_hop_dong_sap_het_han.Location = new System.Drawing.Point(0, 377);
+            this.m_lbl_thong_bao_hop_dong_sap_het_han.Location = new System.Drawing.Point(0, 409);
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Name = "m_lbl_thong_bao_hop_dong_sap_het_han";
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Size = new System.Drawing.Size(165, 18);
             this.m_lbl_thong_bao_hop_dong_sap_het_han.TabIndex = 3;
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Text = "Hợp đồng sắp hết hạn";
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Click += new System.EventHandler(this.m_lbl_thong_bao_hop_dong_sap_het_han_Click);
             // 
+            // m_menuitem_chiTietCapBac
+            // 
+            this.m_menuitem_chiTietCapBac.Name = "m_menuitem_chiTietCapBac";
+            this.m_menuitem_chiTietCapBac.Size = new System.Drawing.Size(178, 22);
+            this.m_menuitem_chiTietCapBac.Text = "Chi tiết cấp bậc";
+            // 
             // f400_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(835, 413);
+            this.ClientSize = new System.Drawing.Size(835, 445);
             this.Controls.Add(this.m_lbl_thong_bao_hop_dong_sap_het_han);
             this.Controls.Add(this.m_lbl_du_an_sap_kt);
             this.Controls.Add(this.m_mst_menu);
@@ -617,5 +625,6 @@ namespace BKI_HRM
         private System.Windows.Forms.Label m_lbl_thong_bao_hop_dong_sap_het_han;
         private ToolStripMenuItem m_menuitem_bc_duan;
         private ToolStripMenuItem m_menuitem_tra_cuu_ns_du_an;
+        private ToolStripMenuItem m_menuitem_chiTietCapBac;
     }
 }

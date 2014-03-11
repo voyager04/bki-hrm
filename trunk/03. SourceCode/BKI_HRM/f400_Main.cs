@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using BKI_HRM;
+using BKI_HRM.DS;
 using BKI_HRM.US;
 using IP.Core.IPCommon;
 using IP.Core.IPExcelReport;
@@ -24,11 +25,11 @@ namespace BKI_HRM
 
         #region Public Interface
 
-        public void display(ref IP.Core.IPCommon.IPConstants.HowUserWantTo_Exit_MainForm v_exitmode)
+        public void display(ref IPConstants.HowUserWantTo_Exit_MainForm v_exitmode)
         {
             try
             {
-                this.ShowDialog();
+                ShowDialog();
             }
             catch (Exception v_e)
             {
@@ -46,7 +47,7 @@ namespace BKI_HRM
         {
             //CControlFormat.setFormStyle(this, new CAppContext_201());
             set_define_events();
-            this.ShowInTaskbar = true;
+            ShowInTaskbar = true;
         }
 
         #endregion
@@ -55,13 +56,14 @@ namespace BKI_HRM
 
         private void set_define_events()
         {
-            this.m_menuitem_tudien.Click += new EventHandler(m_mnu_tu_dien_he_thong_Click);
-            this.m_menuitem_user.Click += new EventHandler(m_mnu_quan_ly_nguoi_su_dung_Click);
-            this.m_menuitem_thoat.Click += new EventHandler(m_menuitem_thoat_Click);
-            this.m_menuitem_qldonvi.Click += new EventHandler(m_menuitem_qldonvi_Click);
-            this.m_menu_dsnhansu.Click += new EventHandler(m_menu_dsnhansu_Click);
-            this.m_menuitem_traCuuNhanSuChung.Click += new EventHandler(m_menuitem_traCuuNhanSuChung_Click);
-            m_menuitem_nhan_su_theo_phong_ban.Click += new System.EventHandler(m_menuitem_nhan_su_theo_phong_ban_Click);
+            m_menuitem_tudien.Click += m_mnu_tu_dien_he_thong_Click;
+            m_menuitem_user.Click += m_mnu_quan_ly_nguoi_su_dung_Click;
+            m_menuitem_thoat.Click += m_menuitem_thoat_Click;
+            m_menuitem_qldonvi.Click += m_menuitem_qldonvi_Click;
+            m_menu_dsnhansu.Click += m_menu_dsnhansu_Click;
+            m_menuitem_traCuuNhanSuChung.Click += m_menuitem_traCuuNhanSuChung_Click;
+            m_menuitem_nhan_su_theo_phong_ban.Click += m_menuitem_nhan_su_theo_phong_ban_Click;
+            m_menuitem_chiTietCapBac.Click += m_menuitem_chiTietCapBac_Click;
         }
 
         private void m_menu_dsnhansu_Click(object sender, EventArgs e)
@@ -94,7 +96,7 @@ namespace BKI_HRM
         {
             try
             {
-                IP.Core.IPSystemAdmin.f100_TuDien v_f100_td = new f100_TuDien();
+                f100_TuDien v_f100_td = new f100_TuDien();
                 v_f100_td.ShowDialog();
             }
             catch (Exception v_e)
@@ -161,19 +163,6 @@ namespace BKI_HRM
             try
             {
                 F500_DM_DU_AN frm = new F500_DM_DU_AN();
-                frm.Show();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void m_menuitem_bcnhansu_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                f103_bao_cao_tra_cuu_nhan_su frm = new f103_bao_cao_tra_cuu_nhan_su();
                 frm.Show();
             }
             catch (Exception v_e)
@@ -261,16 +250,6 @@ namespace BKI_HRM
             }
         }
 
-        private void m_meuitem_nhansuduan_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void m_menuitem_bcduan_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void m_menuitem_traCuuNhanSuChung_Click(object sender, EventArgs e)
         {
             try
@@ -288,8 +267,8 @@ namespace BKI_HRM
         {
             try
             {
-                US.US_DM_DU_AN v_us = new US.US_DM_DU_AN();
-                DS.DS_DM_DU_AN v_ds = new DS.DS_DM_DU_AN();
+                US_DM_DU_AN v_us = new US_DM_DU_AN();
+                DS_DM_DU_AN v_ds = new DS_DM_DU_AN();
                 v_us.FillDatasetSapKetThuc(v_ds, DateTime.Now.Date);
                 if (v_ds.Tables[0].Rows.Count > 0)
                 {
@@ -301,8 +280,8 @@ namespace BKI_HRM
                     m_lbl_du_an_sap_kt.Visible = false;
                 }
 
-                US.US_V_GD_HOP_DONG_LAO_DONG v_us_v_gd_hop_dong = new US.US_V_GD_HOP_DONG_LAO_DONG();
-                DS.DS_V_GD_HOP_DONG_LAO_DONG v_ds_v_gd_hop_dong = new DS.DS_V_GD_HOP_DONG_LAO_DONG();
+                US_V_GD_HOP_DONG_LAO_DONG v_us_v_gd_hop_dong = new US_V_GD_HOP_DONG_LAO_DONG();
+                DS_V_GD_HOP_DONG_LAO_DONG v_ds_v_gd_hop_dong = new DS_V_GD_HOP_DONG_LAO_DONG();
                 v_us_v_gd_hop_dong.FIllDataset_By_Hop_Dong_Sap_Het_Han(v_ds_v_gd_hop_dong);
                 if (v_ds_v_gd_hop_dong.Tables[0].Rows.Count > 0)
                 {
@@ -407,6 +386,13 @@ namespace BKI_HRM
             }
         }
 
-
+        private void m_menuitem_chiTietCapBac_Click(object sender, EventArgs e) {
+            try {
+                f105_v_gd_chi_tiet_cap_bac frm = new f105_v_gd_chi_tiet_cap_bac();
+                frm.Show();
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
