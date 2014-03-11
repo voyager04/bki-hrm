@@ -1612,7 +1612,9 @@ namespace BKI_HRM
                     m_cmd_update.Visible = false;
                     m_cmd_delete.Visible = false;
                     break;
-
+                default:
+                    m_cmd_chon_nhan_vien.Visible = false;
+                    break;
             }
 			m_obj_trans = get_trans_object(m_grv_nhan_su);
 			load_data_2_grid();
