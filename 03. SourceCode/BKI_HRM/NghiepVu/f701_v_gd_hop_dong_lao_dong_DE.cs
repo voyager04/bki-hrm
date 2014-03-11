@@ -39,6 +39,7 @@ namespace BKI_HRM.NghiepVu
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             us_object_2_form(ip_m_us_gd_hop_dong);
+            m_str_id_hop_dong_old = ip_m_us_gd_hop_dong.dcID;
             this.ShowDialog();
         }
         #endregion
@@ -58,6 +59,7 @@ namespace BKI_HRM.NghiepVu
         private string m_str_file_name = "";
         private string m_str_origination = "";
         private string m_str_old_path = "";
+        private decimal m_str_id_hop_dong_old;
         #endregion
 
         #region Private Methods
@@ -109,9 +111,25 @@ namespace BKI_HRM.NghiepVu
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.InsertDataState:
+                    if (check_trung_ma_hop_dong(m_txt_ma_hop_dong.Text))
+                    {
+                        BaseMessages.MsgBox_Error("Mã hợp đồng đã tồn tại.");
+                        m_txt_ma_hop_dong.Focus();
+                        return;
+                    }
                     m_us.Insert();
                     break;
                 case DataEntryFormMode.UpdateDataState:
+                    US_GD_HOP_DONG v_us_gd_hop_dong = new US_GD_HOP_DONG(m_str_id_hop_dong_old);
+                    if (!m_txt_ma_hop_dong.Text.Equals(v_us_gd_hop_dong.strMA_HOP_DONG))
+                    {
+                        if (check_trung_ma_hop_dong(m_txt_ma_hop_dong.Text))
+                        {
+                            BaseMessages.MsgBox_Error("Mã hợp đồng đã tồn tại.");
+                            m_txt_ma_hop_dong.Focus();
+                            return;
+                        }
+                    }
                     m_us.Update();
                     break;
             }
@@ -236,6 +254,17 @@ namespace BKI_HRM.NghiepVu
             if (File.Exists(m_str_old_path))
                 File.Delete(m_str_old_path);
             m_us.strLINK = m_str_path;
+        }
+
+        private bool check_trung_ma_hop_dong(string ip_str_ma_hop_dong)
+        {
+
+            DS_GD_HOP_DONG v_ds = new DS_GD_HOP_DONG();
+            m_us.FillDatasetSearchByMaHopDong(v_ds, ip_str_ma_hop_dong);
+            decimal count_ma_hop_dong = v_ds.GD_HOP_DONG.Count;
+            if (count_ma_hop_dong > 0)
+                return true;
+            return false;
         }
 
         //TODO : generate mã hợp đồng

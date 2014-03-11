@@ -30,6 +30,7 @@ namespace BKI_HRM.DanhMuc
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             us_object_2_form(ip_m_us_dm_phap_nhan);
+            m_str_id_phap_nhan_old = ip_m_us_dm_phap_nhan.dcID;
             this.ShowDialog();
         }
         #endregion
@@ -41,6 +42,7 @@ namespace BKI_HRM.DanhMuc
         private DataEntryFormMode m_e_form_mode;
         US_DM_PHAP_NHAN m_us = new US_DM_PHAP_NHAN();
         DS_DM_PHAP_NHAN m_ds = new DS_DM_PHAP_NHAN();
+        private decimal m_str_id_phap_nhan_old;
         #endregion
 
         #region Private Methods
@@ -91,6 +93,9 @@ namespace BKI_HRM.DanhMuc
 
         private void save_data()
         {
+            if (check_data_is_ok() == false)
+                return;
+            form_2_us_object();
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.InsertDataState:
@@ -100,16 +105,19 @@ namespace BKI_HRM.DanhMuc
                         m_txt_ma_phap_nhan.Focus();
                         return;
                     }
-                    m_txt_ma_phap_nhan.BackColor = Color.White;
-                    if (check_data_is_ok() == false)
-                        return;
-                    form_2_us_object();
                     m_us.Insert();
                     break;
                 case DataEntryFormMode.UpdateDataState:
-                    if (check_data_is_ok() == false)
-                        return;
-                    form_2_us_object();
+                    US_DM_PHAP_NHAN v_us_dm_phap_nhan = new US_DM_PHAP_NHAN(m_str_id_phap_nhan_old);
+                    if (!m_txt_ma_phap_nhan.Text.Equals(v_us_dm_phap_nhan.strMA_PHAP_NHAN))
+                    {
+                        if (check_trung_ma_phap_nhan(m_txt_ma_phap_nhan.Text))
+                        {
+                            BaseMessages.MsgBox_Error("Mã pháp nhân đã tồn tại.");
+                            m_txt_ma_phap_nhan.Focus();
+                            return;
+                        }
+                    }
                     m_us.Update();
                     break;
             }
@@ -133,8 +141,8 @@ namespace BKI_HRM.DanhMuc
         {
 
             DS_DM_PHAP_NHAN v_ds = new DS_DM_PHAP_NHAN();
-            decimal count_ma_phap_nhan = v_ds.DM_PHAP_NHAN.Count;
             m_us.FillDatasetSearchByMaPhapNhan(v_ds, ip_str_ma_phap_nhan);
+            decimal count_ma_phap_nhan = v_ds.DM_PHAP_NHAN.Count;
             if (count_ma_phap_nhan > 0)
                 return true;
             return false;

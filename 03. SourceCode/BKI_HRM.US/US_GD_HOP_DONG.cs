@@ -314,5 +314,12 @@ namespace BKI_HRM.US
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
+
+        public void FillDatasetSearchByMaHopDong(DS_GD_HOP_DONG op_ds, string ip_str_ma_hop_dong)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_GD_HOP_DONG_Search_by_ma_hop_dong");
+            v_sp.addNVarcharInputParam("@MA_HOP_DONG", ip_str_ma_hop_dong);
+            v_sp.fillDataSetByCommand(this, op_ds);
+        }
     }
 }
