@@ -1,20 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using BKI_HRM.DS;
 using BKI_HRM.DS.CDBNames;
 using BKI_HRM.US;
 using IP.Core.IPCommon;
-using IP.Core.IPData;
 using IP.Core.IPSystemAdmin;
-using IP.Core.IPUserService;
-using Encoder = System.Drawing.Imaging.Encoder;
 
 namespace BKI_HRM.DanhMuc {
     public partial class f106_v_gd_chi_tiet_cap_bac_DE : Form {
@@ -24,15 +15,12 @@ namespace BKI_HRM.DanhMuc {
             InitializeComponent();
             fomat_control();
         }
-        public void display_for_insert() {
+        public void display_for_insert(US_V_GD_CHI_TIET_CAP_BAC ip_us_gs_chi_tiet_cap_bac) {
             set_initial_form_load();
             m_e_form_mode = DataEntryFormMode.InsertDataState;
-            this.ShowDialog();
-        }
-        public void display_for_update(US_V_GD_CHI_TIET_CAP_BAC ip_v_us_gd_chi_tiet_cap_bac) {
-            m_e_form_mode = DataEntryFormMode.UpdateDataState;
-            us_object_2_form(ip_v_us_gd_chi_tiet_cap_bac);
-            this.ShowDialog();
+            m_us = ip_us_gs_chi_tiet_cap_bac;
+            us_object_2_form();
+            ShowDialog();
         }
         #endregion
 
@@ -53,17 +41,26 @@ namespace BKI_HRM.DanhMuc {
             set_define_events();
         }
         private void set_initial_form_load() {
-            load_data_2_cbo_ma_cap_bac();
+            load_data_to_cbo();
         }
 
-        private void load_data_2_cbo_ma_cap_bac(){
-            var v_ds = new DS_DM_CAP_BAC();
-            var v_us = new US_DM_CAP_BAC();
+        private bool check_data_is_ok(){
+            return CValidateTextBox.IsValid(m_txt_ma_quyet_dinh, DataType.StringType, allowNull.YES, true) && kiem_tra_ngay_truoc_sau();
         }
-        private bool check_data_is_ok() {
-            //if (!CValidateTextBox.IsValid(m_txt_dia_ban, DataType.StringType, allowNull.YES, true)) {
-            //    return false;
-            //}
+
+        private bool kiem_tra_ngay_truoc_sau(){
+            if (m_dat_ngay_ket_thuc.Value<m_dat_ngay_bat_dau.Value){
+                m_lbl_mesg.Text = @"Ngày kết thúc phải sau ngày bắt đầu!";
+                return false;
+            }
+            if (m_dat_ngay_het_hieu_luc_qd.Value < m_dat_ngay_co_hieu_luc_qd.Value) {
+                m_lbl_mesg.Text = @"Ngày hết hiệu lực quyết định phải sau ngày có hiệu lực quyết định!";
+                return false;
+            } 
+            if (m_dat_ngay_co_hieu_luc_qd.Value < m_dat_ngay_ky.Value) {
+                m_lbl_mesg.Text = @"Ngày có hiệu lực phải sau ngày ký!";
+                return false;
+            }
             return true;
         }
         private void form_2_us_object() {
@@ -79,9 +76,6 @@ namespace BKI_HRM.DanhMuc {
             //m_us.dcID_CAP_DON_VI = CIPConvert.ToDecimal(m_cbo_cap_don_vi.SelectedValue);
             //m_us.datTU_NGAY = m_dat_tu_ngay.Value.Date;
         }
-        private static string get_trang_thai(ListControl ip_cbo) {
-            return ip_cbo.SelectedIndex == 0 ? "y" : "n";
-        }
         private void save_data() {
             if (check_data_is_ok() == false) {
                 return;
@@ -90,6 +84,7 @@ namespace BKI_HRM.DanhMuc {
             switch (m_e_form_mode) {
                 case DataEntryFormMode.InsertDataState:
                     m_us.Insert();
+
                     break;
                 case DataEntryFormMode.UpdateDataState:
                     m_us.Update();
@@ -98,22 +93,57 @@ namespace BKI_HRM.DanhMuc {
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
             Close();
         }
-        private void us_object_2_form(US_V_GD_CHI_TIET_CAP_BAC ip_us_gd_chi_tiet_cap_bac) {
-            m_us.dcID = ip_us_gd_chi_tiet_cap_bac.dcID;
-            m_lbl_ma_nhan_vien.Text = ip_us_gd_chi_tiet_cap_bac.strMA_NV;
-            m_lbl_ho_ten_nhan_vien.Text = ip_us_gd_chi_tiet_cap_bac.strHO_DEM.Trim() + @" " +
-                                          ip_us_gd_chi_tiet_cap_bac.strTEN.Trim();
+        private void us_object_2_form() {
+            m_txt_ma_nv.Text = m_us.strMA_NV;
+            m_txt_ho_ten.Text = m_us.strHO_DEM.Trim() + @" " + m_us.strTEN.Trim();
         }
 
+        private void load_data_to_cbo() {
+            /**
+             * Load data to combobox Loại quyết định
+             */
+            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.LOAI_QUYET_DINH,
+              WinFormControls.eTAT_CA.NO,
+              m_cbo_loai_quyet_dinh);
+
+            var v_ds = new DS_DM_CAP_BAC();
+            var v_us = new US_DM_CAP_BAC();
+            v_us.FillDataset(v_ds);
+            /**
+             * Load data to combobox Mã cấp
+             */
+            m_cbo_ma_cap.DataSource = v_ds.DM_CAP_BAC;
+            m_cbo_ma_cap.DisplayMember = DM_CAP_BAC.MA_CAP;
+            m_cbo_ma_cap.ValueMember = DM_CAP_BAC.ID;
+            /**
+             * Load data to combobox Mã bậc
+             */
+            m_cbo_ma_bac.DataSource = v_ds.DM_CAP_BAC;
+            m_cbo_ma_bac.DisplayMember = DM_CAP_BAC.MA_BAC;
+            m_cbo_ma_bac.ValueMember = DM_CAP_BAC.ID;
+            
+        }
         private void choose_file(){
-            m_ofd_openfile.Filter = "(*.pdf)|*.pdf|(*.doc)|*.doc|(*.docx)|*.docx|(*.xls)|*.xls|(*.xlsx)|*.xlsx";
+            m_ofd_openfile.Filter = @"(*.pdf)|*.pdf|(*.doc)|*.doc|(*.docx)|*.docx|(*.xls)|*.xls|(*.xlsx)|*.xlsx";
             m_ofd_openfile.Multiselect = false;
-            m_ofd_openfile.Title = "Chọn tài liệu đính kèm";
-            DialogResult result = m_ofd_openfile.ShowDialog();
+            m_ofd_openfile.Title = @"Chọn tài liệu đính kèm";
+            m_ofd_openfile.ShowDialog();
         }
 
         private void open_file(){
             Process.Start("explorer.exe", m_ofd_openfile.FileName);
+        }
+
+        private void m_cbo_ma_cap_Changed(){
+            if (!m_cbo_ma_cap.SelectedValue.ToString().Equals("System.Data.DataRowView")) {
+                m_cbo_ma_bac.SelectedValue = m_cbo_ma_cap.SelectedValue;    
+            }
+        }
+
+        private void m_cbo_ma_bac_Changed() {
+            if (!m_cbo_ma_bac.SelectedValue.ToString().Equals("System.Data.DataRowView")) {
+                m_cbo_ma_cap.SelectedValue = m_cbo_ma_bac.SelectedValue;
+            }
         }
 
         #endregion
@@ -127,8 +157,10 @@ namespace BKI_HRM.DanhMuc {
         private void set_define_events() {
             m_cmd_save.Click += m_cmd_save_Click;
             m_cmd_exit.Click += m_cmd_exit_Click;
-            this.m_cmd_chon_file.Click += new System.EventHandler(this.m_cmd_chon_file_Click);
-
+            m_cmd_chon_file.Click += m_cmd_chon_file_Click;
+            m_cmd_xem_file.Click += m_cmd_xem_file_Click;
+            m_cbo_ma_cap.SelectedIndexChanged += m_cbo_ma_cap_SelectedIndexChanged;
+            m_cbo_ma_bac.SelectedIndexChanged += m_cbo_ma_bac_SelectedIndexChanged;
         }
 
         protected void m_cmd_save_Click(object sender, EventArgs e) {
@@ -165,6 +197,22 @@ namespace BKI_HRM.DanhMuc {
         private void m_cmd_xem_file_Click(object sender, EventArgs e) {
             try {
                 open_file();
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+       
+        private void m_cbo_ma_cap_SelectedIndexChanged(object sender, EventArgs e) {
+            try{
+                m_cbo_ma_cap_Changed();
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cbo_ma_bac_SelectedIndexChanged(object sender, EventArgs e) {
+            try {
+                m_cbo_ma_bac_Changed();
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
