@@ -310,7 +310,7 @@ namespace BKI_HRM.NghiepVu
                     break;
             }
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
-            this.Close();
+            //this.Close();
         }
 
         private bool check_data_is_ok()
@@ -381,7 +381,7 @@ namespace BKI_HRM.NghiepVu
                     break;
                 case Keys.F3:
                     DataRow v_dr = (DataRow)m_grv_nhan_su.Rows[m_dc_index_row].UserData;
-                    string v_str_ma_du_an = v_dr["MA_DU_AN"].ToString();
+                    string v_str_ma_du_an = m_txt_ma_du_an.Text; //v_dr["MA_DU_AN"].ToString();
                     F500_gd_chi_tiet_du_an_de v_fDE = new F500_gd_chi_tiet_du_an_de();
                     v_fDE.display_for_insert(v_str_ma_du_an);
                     load_data_2_grv_nhan_su(m_dc_id_du_an);
