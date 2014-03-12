@@ -126,6 +126,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_HT_USER_GROUP.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_DM_CAP_BAC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_DM_CAP_BAC.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_DM_CHUC_VU.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -373,6 +378,17 @@
     </None>
     <None Include="DS_HT_USER_GROUP.xss">
       <DependentUpon>DS_HT_USER_GROUP.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DM_CAP_BAC.xsc">
+      <DependentUpon>DS_V_DM_CAP_BAC.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DM_CAP_BAC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_DM_CAP_BAC.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_DM_CAP_BAC.xss">
+      <DependentUpon>DS_V_DM_CAP_BAC.xsd</DependentUpon>
     </None>
     <None Include="DS_V_DM_CHUC_VU.xsc">
       <DependentUpon>DS_V_DM_CHUC_VU.xsd</DependentUpon>
