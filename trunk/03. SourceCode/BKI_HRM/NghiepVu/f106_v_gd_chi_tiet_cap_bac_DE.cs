@@ -31,7 +31,8 @@ namespace BKI_HRM.DanhMuc {
         private DataEntryFormMode m_e_form_mode;
         private US_V_GD_CHI_TIET_CAP_BAC m_us = new US_V_GD_CHI_TIET_CAP_BAC();
         private DS_V_GD_CHI_TIET_CAP_BAC m_ds = new DS_V_GD_CHI_TIET_CAP_BAC();
-        private DS_V_DM_DON_VI m_v_ds = new DS_V_DM_DON_VI();
+        US_DM_QUYET_DINH m_us_quyet_dinh = new US_DM_QUYET_DINH();
+        DS_DM_QUYET_DINH m_ds_quyet_dinh = new DS_DM_QUYET_DINH();
         #endregion
 
         #region Private Methods
@@ -44,19 +45,19 @@ namespace BKI_HRM.DanhMuc {
             load_data_to_cbo();
         }
 
-        private bool check_data_is_ok(){
+        private bool check_data_is_ok() {
             return CValidateTextBox.IsValid(m_txt_ma_quyet_dinh, DataType.StringType, allowNull.YES, true) && kiem_tra_ngay_truoc_sau();
         }
 
-        private bool kiem_tra_ngay_truoc_sau(){
-            if (m_dat_ngay_ket_thuc.Value<m_dat_ngay_bat_dau.Value){
+        private bool kiem_tra_ngay_truoc_sau() {
+            if (m_dat_ngay_ket_thuc.Value < m_dat_ngay_bat_dau.Value) {
                 m_lbl_mesg.Text = @"Ngày kết thúc phải sau ngày bắt đầu!";
                 return false;
             }
             if (m_dat_ngay_het_hieu_luc_qd.Value < m_dat_ngay_co_hieu_luc_qd.Value) {
                 m_lbl_mesg.Text = @"Ngày hết hiệu lực quyết định phải sau ngày có hiệu lực quyết định!";
                 return false;
-            } 
+            }
             if (m_dat_ngay_co_hieu_luc_qd.Value < m_dat_ngay_ky.Value) {
                 m_lbl_mesg.Text = @"Ngày có hiệu lực phải sau ngày ký!";
                 return false;
@@ -64,22 +65,26 @@ namespace BKI_HRM.DanhMuc {
             return true;
         }
         private void form_2_us_object() {
-            //m_us.dcID_DON_VI_CAP_TREN = CIPConvert.ToDecimal(m_cbo_ten_don_vi_cap_tren.SelectedValue);
-            //m_us.dcID_LOAI_DON_VI = CIPConvert.ToDecimal(m_cbo_loai_don_vi.SelectedValue);
-            //m_us.dcID_CAP_DON_VI = CIPConvert.ToDecimal(m_cbo_cap_don_vi.SelectedValue);
-            //m_us.strMA_DON_VI = m_txt_ma_don_vi.Text.Trim();
-            //m_us.strTEN_DON_VI = m_txt_ten_don_vi.Text.Trim();
-            //m_us.strTEN_TA = m_txt_ten_tieng_anh.Text.Trim();
-            //m_us.strDIA_BAN = m_txt_dia_ban.Text.Trim();
-            //m_us.strTRANG_THAI = get_trang_thai(m_cbo_trang_thai);
-            //m_us.dcID_LOAI_DON_VI = CIPConvert.ToDecimal(m_cbo_loai_don_vi.SelectedValue);
-            //m_us.dcID_CAP_DON_VI = CIPConvert.ToDecimal(m_cbo_cap_don_vi.SelectedValue);
-            //m_us.datTU_NGAY = m_dat_tu_ngay.Value.Date;
+            /**
+             * Lấy dữ liệu từ form vào US_GD_CHI_TIET_CAP_BAC
+             */
+
+
+            /**
+             * Lấy dữ liệu từ form vào US_DM_QUYET_DINH
+             */
+            m_us_quyet_dinh.strMA_QUYET_DINH = m_txt_ma_quyet_dinh.Text;
+            m_us_quyet_dinh.strNOI_DUNG = m_txt_noi_dung.Text;
+            m_us_quyet_dinh.strLINK = m_ofd_openfile.FileName;
+            m_us_quyet_dinh.dcID_LOAI_QD = CIPConvert.ToDecimal(m_cbo_loai_quyet_dinh.SelectedValue);
+            m_us_quyet_dinh.datNGAY_KY = m_dat_ngay_ky.Value;
+            m_us_quyet_dinh.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc_qd.Value;
+            if (m_dat_ngay_het_hieu_luc_qd.Checked)
+                m_us_quyet_dinh.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc_qd.Value;
+
         }
         private void save_data() {
-            if (check_data_is_ok() == false) {
-                return;
-            }
+            if (check_data_is_ok() == false) return;
             form_2_us_object();
             switch (m_e_form_mode) {
                 case DataEntryFormMode.InsertDataState:
@@ -121,22 +126,22 @@ namespace BKI_HRM.DanhMuc {
             m_cbo_ma_bac.DataSource = v_ds.DM_CAP_BAC;
             m_cbo_ma_bac.DisplayMember = DM_CAP_BAC.MA_BAC;
             m_cbo_ma_bac.ValueMember = DM_CAP_BAC.ID;
-            
+
         }
-        private void choose_file(){
+        private void choose_file() {
             m_ofd_openfile.Filter = @"(*.pdf)|*.pdf|(*.doc)|*.doc|(*.docx)|*.docx|(*.xls)|*.xls|(*.xlsx)|*.xlsx";
             m_ofd_openfile.Multiselect = false;
             m_ofd_openfile.Title = @"Chọn tài liệu đính kèm";
             m_ofd_openfile.ShowDialog();
         }
 
-        private void open_file(){
+        private void open_file() {
             Process.Start("explorer.exe", m_ofd_openfile.FileName);
         }
 
-        private void m_cbo_ma_cap_Changed(){
+        private void m_cbo_ma_cap_Changed() {
             if (!m_cbo_ma_cap.SelectedValue.ToString().Equals("System.Data.DataRowView")) {
-                m_cbo_ma_bac.SelectedValue = m_cbo_ma_cap.SelectedValue;    
+                m_cbo_ma_bac.SelectedValue = m_cbo_ma_cap.SelectedValue;
             }
         }
 
@@ -201,9 +206,9 @@ namespace BKI_HRM.DanhMuc {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-       
+
         private void m_cbo_ma_cap_SelectedIndexChanged(object sender, EventArgs e) {
-            try{
+            try {
                 m_cbo_ma_cap_Changed();
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
