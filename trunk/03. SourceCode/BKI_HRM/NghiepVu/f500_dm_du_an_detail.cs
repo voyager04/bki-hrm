@@ -302,7 +302,12 @@ namespace BKI_HRM.NghiepVu
             {
                 case DataEntryFormMode.InsertDataState:
                     m_us_dm_quyet_dinh.Insert();
-                    m_us_dm_du_an.Insert();                    
+                    DS.DS_DM_QUYET_DINH v_ds_dm_qd = new DS.DS_DM_QUYET_DINH();
+                    m_us_dm_quyet_dinh.FillDataset_By_Ma_qd(v_ds_dm_qd, m_txt_ma_quyet_dinh.Text);
+                    DataRow v_dr = v_ds_dm_qd.Tables[0].Rows[0];
+                    m_us_dm_du_an.dcID_QUYET_DINH = (decimal)v_dr["ID"];
+                    m_us_dm_du_an.Insert();
+                    m_dc_id_du_an = m_us_dm_du_an.dcID;
                     break;
                 case DataEntryFormMode.UpdateDataState:
                     m_us_dm_quyet_dinh.Update();
