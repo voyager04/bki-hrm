@@ -243,6 +243,23 @@ namespace BKI_HRM.US {
             pm_objDR["NGAY_HET_HIEU_LUC"] = System.Convert.DBNull;
         }
 
+        public string strMA_CAP_BAC {
+            get {
+                return CNull.RowNVLString(pm_objDR, "MA_CAP_BAC", IPConstants.c_DefaultString);
+            }
+            set {
+                pm_objDR["MA_CAP_BAC"] = value;
+            }
+        }
+
+        public bool IsMA_CAP_BACNull() {
+            return pm_objDR.IsNull("MA_CAP_BAC");
+        }
+
+        public void SetMA_CAP_BACNull() {
+            pm_objDR["MA_CAP_BAC"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_V_GD_CHI_TIET_CAP_BAC() {
@@ -267,7 +284,7 @@ namespace BKI_HRM.US {
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
-	
+
         #region "Addtional"
 
         public void FillDatasetByKeyWord(DS_V_GD_CHI_TIET_CAP_BAC op_ds_v_v_dm_don_vi, string ip_str_key_word) {

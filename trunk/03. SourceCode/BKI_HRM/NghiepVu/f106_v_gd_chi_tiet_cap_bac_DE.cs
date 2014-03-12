@@ -45,10 +45,6 @@ namespace BKI_HRM.DanhMuc {
             return CValidateTextBox.IsValid(m_txt_ma_quyet_dinh, DataType.StringType, allowNull.YES, true) && kiem_tra_ngay_truoc_sau();
         }
         private bool kiem_tra_ngay_truoc_sau() {
-            if (m_dat_ngay_ket_thuc.Value < m_dat_ngay_bat_dau.Value) {
-                m_lbl_mesg.Text = @"Ngày kết thúc phải sau ngày bắt đầu!";
-                return false;
-            }
             if (m_dat_ngay_co_hieu_luc_qd.Value < m_dat_ngay_ky.Value) {
                 m_lbl_mesg.Text = @"Ngày có hiệu lực phải sau ngày ký!";
                 return false;
@@ -60,10 +56,9 @@ namespace BKI_HRM.DanhMuc {
              * Lấy dữ liệu từ form vào US_GD_CHI_TIET_CAP_BAC
              */
             m_us_chi_tiet_cap_bac.dcID_NHAN_SU = m_v_us_chi_tiet_cap_bac.dcID_NHAN_SU;
-            m_us_chi_tiet_cap_bac.dcID_CAP_BAC = CIPConvert.ToDecimal(m_cbo_ma_bac.SelectedValue);
+            m_us_chi_tiet_cap_bac.dcID_CAP_BAC = CIPConvert.ToDecimal(m_cbo_ma_cap_bac.SelectedValue);
             m_us_chi_tiet_cap_bac.strTRANG_THAI_CB = "Y";
             m_us_chi_tiet_cap_bac.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value.Date;
-            m_us_chi_tiet_cap_bac.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
             if (m_txt_ma_quyet_dinh.Text.Trim() != "") {
                 m_us_chi_tiet_cap_bac.dcID_QUYET_DINH = m_us_quyet_dinh.dcID;
             }
@@ -101,22 +96,16 @@ namespace BKI_HRM.DanhMuc {
               WinFormControls.eTAT_CA.NO,
               m_cbo_loai_quyet_dinh);
 
-            var v_ds = new DS_DM_CAP_BAC();
-            var v_us = new US_DM_CAP_BAC();
+            var v_ds = new DS_V_DM_CAP_BAC();
+            var v_us = new US_V_DM_CAP_BAC();
             v_us.FillDataset(v_ds);
             /**
-             * Load data to combobox Mã cấp
+             * Load data to combobox Mã cấp bậc
              */
-            m_cbo_ma_cap.DataSource = v_ds.DM_CAP_BAC;
-            m_cbo_ma_cap.DisplayMember = DM_CAP_BAC.MA_CAP;
-            m_cbo_ma_cap.ValueMember = DM_CAP_BAC.ID;
-            /**
-             * Load data to combobox Mã bậc
-             */
-            m_cbo_ma_bac.DataSource = v_ds.DM_CAP_BAC;
-            m_cbo_ma_bac.DisplayMember = DM_CAP_BAC.MA_BAC;
-            m_cbo_ma_bac.ValueMember = DM_CAP_BAC.ID;
-
+            m_cbo_ma_cap_bac.DataSource = v_ds.V_DM_CAP_BAC;
+            m_cbo_ma_cap_bac.DisplayMember = V_DM_CAP_BAC.MA_CAP_BAC;
+            m_cbo_ma_cap_bac.ValueMember = V_DM_CAP_BAC.ID;
+           
         }
         private void choose_file() {
             m_ofd_openfile.Filter = @"(*.pdf)|*.pdf|(*.doc)|*.doc|(*.docx)|*.docx|(*.xls)|*.xls|(*.xlsx)|*.xlsx";
@@ -127,17 +116,7 @@ namespace BKI_HRM.DanhMuc {
         private void open_file() {
             Process.Start("explorer.exe", m_ofd_openfile.FileName);
         }
-        private void m_cbo_ma_cap_Changed() {
-            if (!m_cbo_ma_cap.SelectedValue.ToString().Equals("System.Data.DataRowView")) {
-                m_cbo_ma_bac.SelectedValue = m_cbo_ma_cap.SelectedValue;
-            }
-        }
-        private void m_cbo_ma_bac_Changed() {
-            if (!m_cbo_ma_bac.SelectedValue.ToString().Equals("System.Data.DataRowView")) {
-                m_cbo_ma_cap.SelectedValue = m_cbo_ma_bac.SelectedValue;
-            }
-        }
-
+       
         #endregion
 
         //
@@ -150,8 +129,6 @@ namespace BKI_HRM.DanhMuc {
             m_cmd_exit.Click += m_cmd_exit_Click;
             m_cmd_chon_file.Click += m_cmd_chon_file_Click;
             m_cmd_xem_file.Click += m_cmd_xem_file_Click;
-            m_cbo_ma_cap.SelectedIndexChanged += m_cbo_ma_cap_SelectedIndexChanged;
-            m_cbo_ma_bac.SelectedIndexChanged += m_cbo_ma_bac_SelectedIndexChanged;
         }
 
         protected void m_cmd_save_Click(object sender, EventArgs e) {
@@ -193,20 +170,6 @@ namespace BKI_HRM.DanhMuc {
             }
         }
 
-        private void m_cbo_ma_cap_SelectedIndexChanged(object sender, EventArgs e) {
-            try {
-                m_cbo_ma_cap_Changed();
-            } catch (Exception v_e) {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void m_cbo_ma_bac_SelectedIndexChanged(object sender, EventArgs e) {
-            try {
-                m_cbo_ma_bac_Changed();
-            } catch (Exception v_e) {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
+        
     }
 }

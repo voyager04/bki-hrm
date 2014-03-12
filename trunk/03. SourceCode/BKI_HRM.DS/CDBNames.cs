@@ -551,6 +551,7 @@
        public const string MA_QUYET_DINH = "MA_QUYET_DINH";
        public const string NGAY_CO_HIEU_LUC = "NGAY_CO_HIEU_LUC";
        public const string NGAY_HET_HIEU_LUC = "NGAY_HET_HIEU_LUC";
+       public const string MA_CAP_BAC = "MA_CAP_BAC";
    }
 
    public class DM_CAP_BAC {
@@ -562,5 +563,14 @@
        public const string NGAY_KET_THUC = "NGAY_KET_THUC";
    }
 
+   public class V_DM_CAP_BAC {
+       public const string ID = "ID";
+       public const string MA_CAP = "MA_CAP";
+       public const string MA_BAC = "MA_BAC";
+       public const string TRANG_THAI = "TRANG_THAI";
+       public const string NGAY_AP_DUNG = "NGAY_AP_DUNG";
+       public const string NGAY_KET_THUC = "NGAY_KET_THUC";
+       public const string MA_CAP_BAC = "MA_CAP_BAC";
+   }
 
 }
