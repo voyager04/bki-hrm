@@ -14,8 +14,6 @@ using System.Windows.Forms;
 using BKI_HRM.DanhMuc;
 using IP.Core.IPCommon;
 using IP.Core.IPException;
-using IP.Core.IPData;
-using IP.Core.IPUserService;
 using IP.Core.IPSystemAdmin;
 
 using BKI_HRM.US;
@@ -411,19 +409,15 @@ namespace BKI_HRM {
             m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
         }
         private void insert_v_gd_chi_tiet_cap_bac() {
-            f106_v_gd_chi_tiet_cap_bac_DE v_fDE = new f106_v_gd_chi_tiet_cap_bac_DE();
-            v_fDE.display_for_insert();
-            load_data_2_grid();
-        }
-        private void update_v_gd_chi_tiet_cap_bac() {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             if (m_fg.Rows[m_fg.Row].IsNode) return;
             grid2us_object(m_v_us, m_fg.Row);
             var v_fDE = new f106_v_gd_chi_tiet_cap_bac_DE();
-            v_fDE.display_for_update(m_v_us);
+            v_fDE.display_for_insert(m_v_us);
             load_data_2_grid();
         }
+
         private void delete_v_gd_chi_tiet_cap_bac() {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
@@ -459,7 +453,7 @@ namespace BKI_HRM {
              * Double Click vào dòng group thì nó đóng mở
              * */
             if (m_fg.Rows[m_fg.Row].IsNode) CGridUtils.grid_Double_Click(sender, e);
-            else update_v_gd_chi_tiet_cap_bac();
+            //else update_v_gd_chi_tiet_cap_bac();
         }
         #endregion
 
@@ -471,7 +465,6 @@ namespace BKI_HRM {
         private void set_define_events() {
             m_cmd_exit.Click += m_cmd_exit_Click;
             m_cmd_insert.Click += m_cmd_insert_Click;
-            m_cmd_update.Click += m_cmd_update_Click;
             m_cmd_delete.Click += m_cmd_delete_Click;
             m_cmd_search.Click += m_cmd_search_Click;
             m_txt_tim_kiem.KeyPress += CheckEnterKeyPress;
@@ -502,15 +495,7 @@ namespace BKI_HRM {
 
         private void m_cmd_insert_Click(object sender, EventArgs e) {
             try {
-                update_v_gd_chi_tiet_cap_bac();
-            } catch (Exception v_e) {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void m_cmd_update_Click(object sender, EventArgs e) {
-            try {
-                update_v_gd_chi_tiet_cap_bac();
+                insert_v_gd_chi_tiet_cap_bac();
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }

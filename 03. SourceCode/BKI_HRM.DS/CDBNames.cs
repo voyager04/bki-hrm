@@ -56,9 +56,6 @@ namespace BKI_HRM.DS.CDBNames
             , DV_TO_CHUC_SK = 27
     }
 
-    
-    
-    
     public class LOAI_TU_DIEN
     {
         public const string PHAN_QUYEN = "PHAN_QUYEN";
@@ -133,7 +130,6 @@ namespace BKI_HRM.DS.CDBNames
         public const string ID_TRANG_THAI = "ID_TRANG_THAI";
         public const string MO_TA = "MO_TA";
     }
-
 
     public class CM_DM_TU_DIEN
     {
@@ -235,7 +231,6 @@ namespace BKI_HRM.DS.CDBNames
         public const string ID = "ID";
         public const string ROWNUM = "ROWNUM";
     }
-
 
     public class V_GD_TRANG_THAI_LAO_DONG {
         public const string MA_NV = "MA_NV";
@@ -561,6 +556,14 @@ namespace BKI_HRM.DS.CDBNames
        public const string NGAY_HET_HIEU_LUC = "NGAY_HET_HIEU_LUC";
    }
 
+   public class DM_CAP_BAC {
+       public const string ID = "ID";
+       public const string MA_CAP = "MA_CAP";
+       public const string MA_BAC = "MA_BAC";
+       public const string TRANG_THAI = "TRANG_THAI";
+       public const string NGAY_AP_DUNG = "NGAY_AP_DUNG";
+       public const string NGAY_KET_THUC = "NGAY_KET_THUC";
+   }
 
 
 }
