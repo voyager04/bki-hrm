@@ -591,7 +591,7 @@ namespace BKI_HRM
         {
             if (!char.IsControl(e.KeyChar)
         && !char.IsLetterOrDigit(e.KeyChar) 
-        && e.KeyChar != '.' && e.KeyChar != '@')
+        && e.KeyChar != '.' && e.KeyChar != '@' && e.KeyChar != '_')
             {
                 e.Handled = true;
             }
@@ -601,6 +601,7 @@ namespace BKI_HRM
             {
                 e.Handled = true;
             }
+            
         }
         private void m_ptb_anh_MouseHover(object sender, EventArgs e)
         {
