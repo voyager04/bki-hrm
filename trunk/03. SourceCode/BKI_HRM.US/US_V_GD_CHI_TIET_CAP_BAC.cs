@@ -22,6 +22,23 @@ namespace BKI_HRM.US {
         private const string c_TableName = "V_GD_CHI_TIET_CAP_BAC";
 
         #region "Public Properties"
+        public decimal dcID_NHAN_SU {
+            get {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_NHAN_SU", IPConstants.c_DefaultDecimal);
+            }
+            set {
+                pm_objDR["ID_NHAN_SU"] = value;
+            }
+        }
+
+        public bool IsID_NHAN_SUNull() {
+            return pm_objDR.IsNull("ID_NHAN_SU");
+        }
+
+        public void SetID_NHAN_SUNull() {
+            pm_objDR["ID_NHAN_SU"] = System.Convert.DBNull;
+        }
+
         public decimal dcID {
             get {
                 return CNull.RowNVLDecimal(pm_objDR, "ID", IPConstants.c_DefaultDecimal);
@@ -250,7 +267,7 @@ namespace BKI_HRM.US {
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
-
+	
         #region "Addtional"
 
         public void FillDatasetByKeyWord(DS_V_GD_CHI_TIET_CAP_BAC op_ds_v_v_dm_don_vi, string ip_str_key_word) {
