@@ -538,6 +538,7 @@
    }
 
    public class V_GD_CHI_TIET_CAP_BAC {
+       public const string ID_NHAN_SU = "ID_NHAN_SU";
        public const string ID = "ID";
        public const string MA_NV = "MA_NV";
        public const string HO_DEM = "HO_DEM";
