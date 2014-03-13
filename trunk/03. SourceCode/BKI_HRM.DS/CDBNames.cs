@@ -205,9 +205,6 @@
         public const string TEN = "TEN";
         public const string MA_CV = "MA_CV";
         public const string TEN_CV = "TEN_CV";
-        public const string ID_NGACH = "ID_NGACH";
-        public const string NGACH = "NGACH";
-        public const string ID_DON_VI = "ID_DON_VI";
         public const string MA_DON_VI = "MA_DON_VI";
         public const string TEN_DON_VI = "TEN_DON_VI";
         public const string ID_CAP_DON_VI = "ID_CAP_DON_VI";
@@ -225,8 +222,11 @@
         public const string NGAY_KET_THUC = "NGAY_KET_THUC";
         public const string ID_NHAN_SU = "ID_NHAN_SU";
         public const string ID = "ID";
-        public const string ROWNUM = "ROWNUM";
+        public const string ID_NGACH = "ID_NGACH";
+        public const string ID_DON_VI = "ID_DON_VI";
+        public const string NGACH = "NGACH";
     }
+
 
     public class V_GD_TRANG_THAI_LAO_DONG {
         public const string MA_NV = "MA_NV";
@@ -242,7 +242,6 @@
         public const string TRANG_THAI_HIEN_TAI = "TRANG_THAI_HIEN_TAI";
         public const string ID = "ID";
         public const string ID_NHAN_SU = "ID_NHAN_SU";
-        public const string ROWNUM = "ROWNUM";
     }
 
     public class V_GD_HOP_DONG_LAO_DONG
