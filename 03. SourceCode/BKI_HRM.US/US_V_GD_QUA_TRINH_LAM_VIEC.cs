@@ -599,21 +599,22 @@ public class US_V_GD_QUA_TRINH_LAM_VIEC : US_Object
         pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
     }
     #endregion
-
-    public void FillDataset_search(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds, 
-        string ip_str_tim_kiem, 
+#region Addtional
+    public void FillDataset_search(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds,
+        string ip_str_tim_kiem,
         decimal ip_dc_trang_thai,
         DateTime ip_dat_ngay_bat_dau,
-        DateTime ip_dat_ngay_ket_thuc){
-            var command = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_Search");
-            
-            command.addNVarcharInputParam("@TIM_KIEM", ip_str_tim_kiem);
-            command.addDecimalInputParam("@ID_TRANG_THAI_CV", ip_dc_trang_thai);
-            command.addDatetimeInputParam("@NGAY_BAT_DAU", ip_dat_ngay_bat_dau);
-            command.addDatetimeInputParam("@NGAY_KET_THUC", ip_dat_ngay_ket_thuc);
-            command.fillDataSetByCommand(this, op_ds);
+        DateTime ip_dat_ngay_ket_thuc)
+    {
+        var command = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_Search");
 
-	}
+        command.addNVarcharInputParam("@TIM_KIEM", ip_str_tim_kiem);
+        command.addDecimalInputParam("@ID_TRANG_THAI_CV", ip_dc_trang_thai);
+        command.addDatetimeInputParam("@NGAY_BAT_DAU", ip_dat_ngay_bat_dau);
+        command.addDatetimeInputParam("@NGAY_KET_THUC", ip_dat_ngay_ket_thuc);
+        command.fillDataSetByCommand(this, op_ds);
+
+    }
     public void FillDataset_search(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds,
         string ip_str_tim_kiem)
     {
@@ -623,7 +624,7 @@ public class US_V_GD_QUA_TRINH_LAM_VIEC : US_Object
         command.fillDataSetByCommand(this, op_ds);
 
     }
-    public void FillDatasetByManhanvien(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds, 
+    public void FillDatasetByManhanvien(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds,
         string ip_str_ma_nv,
         DateTime ip_dat_ngay_bat_dau,
         DateTime ip_dat_ngay_ket_thuc)
@@ -635,12 +636,14 @@ public class US_V_GD_QUA_TRINH_LAM_VIEC : US_Object
         v_sp.fillDataSetByCommand(this, op_ds);
     }
 
-    public void FillDatase_All(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds) {
+    public void FillDatase_All(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds)
+    {
         CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_All");
         v_sp.fillDataSetByCommand(this, op_ds);
     }
 
-    public void FillDatase_NhanSu_TheoPhongBan(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds, string ip_str_search, DateTime ip_dat_thoi_diem) {
+    public void FillDatase_NhanSu_TheoPhongBan(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds, string ip_str_search, DateTime ip_dat_thoi_diem)
+    {
         CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_Search_NhanVien_TheoPhongBanTaiMotThoiDiem");
         v_sp.addNVarcharInputParam("@ip_str_tim_kiem", ip_str_search);
         v_sp.addDatetimeInputParam("@ip_dat_thoi_diem", ip_dat_thoi_diem);
@@ -662,5 +665,15 @@ public class US_V_GD_QUA_TRINH_LAM_VIEC : US_Object
         v_sp.addNVarcharInputParam("@MA_NHAN_VIEN", ip_str_ma_nv);
         v_sp.fillDataSetByCommand(this, op_ds);
     }
+
+
+    public void delete_by_id_gd_chi_tiet_chuc_vu(decimal ip_dc_id_chi_tiet_chuc_vu)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_Delete");
+        v_sp.addDecimalInputParam("@ID", ip_dc_id_chi_tiet_chuc_vu);
+        v_sp.ExecuteCommand(this);
+    }
+#endregion
+    
 }
 }

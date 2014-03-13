@@ -335,7 +335,6 @@ public class US_V_GD_TRANG_THAI_LAO_DONG : US_Object
         pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
     }
     #endregion
-
     #region Addtional
 
     public void FillDataset(string ip_txt_search,DS_V_GD_TRANG_THAI_LAO_DONG op_ds_v_gd_trang_thai_lao_dong){
@@ -369,6 +368,13 @@ public class US_V_GD_TRANG_THAI_LAO_DONG : US_Object
         CStoredProc v_sp = new CStoredProc("pr_V_GD_TRANG_THAI_LAO_DONG_search");
         v_sp.addNVarcharInputParam("@ip_str_search", ip_str_search);
         v_sp.fillDataSetByCommand(this, op_ds);
+    }
+
+    public void delete_by_id_gd_chi_tiet_trang_thai_ld(decimal ip_dc_id_chi_tiet_trang_thai_lao_dong)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_V_GD_TRANG_THAI_LAO_DONG_Delete");
+        v_sp.addDecimalInputParam("@ID", ip_dc_id_chi_tiet_trang_thai_lao_dong);
+        v_sp.ExecuteCommand(this);
     }
     #endregion
 }
