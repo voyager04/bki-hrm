@@ -446,9 +446,10 @@ namespace BKI_HRM
 			grid2us_object(v_us, m_grv_trang_thai_ld.Row);
 			try {			
 				v_us.BeginTransaction();    											
-				v_us.Delete();                      								
+				v_us.delete_by_id_gd_chi_tiet_trang_thai_ld(v_us.dcID);                      								
 				v_us.CommitTransaction();
-				m_grv_trang_thai_ld.Rows.Remove(m_grv_trang_thai_ld.Row);				
+				m_grv_trang_thai_ld.Rows.Remove(m_grv_trang_thai_ld.Row);
+                BaseMessages.MsgBox_Infor("Đã xóa thành công!");
 			}
 			catch (Exception v_e) {
 				v_us.Rollback();

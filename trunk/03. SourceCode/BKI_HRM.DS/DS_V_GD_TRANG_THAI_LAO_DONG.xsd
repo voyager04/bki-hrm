@@ -13,7 +13,7 @@
               <DbSource ConnectionRef="BKI_HRMConnectionString3 (Settings)" DbObjectName="BKI_HRM.dbo.V_GD_TRANG_THAI_LAO_DONG" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT MA_NV, HO_DEM, TEN, ID_TRANG_LAO_DONG, TRANG_THAI_LAO_DONG, MA_QUYET_DINH, NGAY_CO_HIEU_LUC, NGAY_HET_HIEU_LUC, ID_LOAI_QD, LOAI_QUYET_DINH, TRANG_THAI_HIEN_TAI, ID, ID_NHAN_SU, ROWNUM FROM dbo.V_GD_TRANG_THAI_LAO_DONG</CommandText>
+                    <CommandText>SELECT MA_NV, HO_DEM, TEN, ID_TRANG_LAO_DONG, TRANG_THAI_LAO_DONG, MA_QUYET_DINH, NGAY_CO_HIEU_LUC, NGAY_HET_HIEU_LUC, ID_LOAI_QD, LOAI_QUYET_DINH, TRANG_THAI_HIEN_TAI, ID, ID_NHAN_SU FROM dbo.V_GD_TRANG_THAI_LAO_DONG</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -33,7 +33,6 @@
               <Mapping SourceColumn="TRANG_THAI_HIEN_TAI" DataSetColumn="TRANG_THAI_HIEN_TAI" />
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
               <Mapping SourceColumn="ID_NHAN_SU" DataSetColumn="ID_NHAN_SU" />
-              <Mapping SourceColumn="ROWNUM" DataSetColumn="ROWNUM" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -69,8 +68,8 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ID_TRANG_LAO_DONG" msprop:Generator_ColumnVarNameInTable="columnID_TRANG_LAO_DONG" msprop:Generator_ColumnPropNameInRow="ID_TRANG_LAO_DONG" msprop:Generator_ColumnPropNameInTable="ID_TRANG_LAO_DONGColumn" msprop:Generator_UserColumnName="ID_TRANG_LAO_DONG" type="xs:decimal" />
-              <xs:element name="TRANG_THAI_LAO_DONG" msprop:Generator_ColumnVarNameInTable="columnTRANG_THAI_LAO_DONG" msprop:Generator_ColumnPropNameInRow="TRANG_THAI_LAO_DONG" msprop:Generator_ColumnPropNameInTable="TRANG_THAI_LAO_DONGColumn" msprop:Generator_UserColumnName="TRANG_THAI_LAO_DONG">
+              <xs:element name="ID_TRANG_LAO_DONG" msprop:Generator_ColumnVarNameInTable="columnID_TRANG_LAO_DONG" msprop:Generator_ColumnPropNameInRow="ID_TRANG_LAO_DONG" msprop:Generator_ColumnPropNameInTable="ID_TRANG_LAO_DONGColumn" msprop:Generator_UserColumnName="ID_TRANG_LAO_DONG" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TRANG_THAI_LAO_DONG" msprop:Generator_ColumnVarNameInTable="columnTRANG_THAI_LAO_DONG" msprop:Generator_ColumnPropNameInRow="TRANG_THAI_LAO_DONG" msprop:Generator_ColumnPropNameInTable="TRANG_THAI_LAO_DONGColumn" msprop:Generator_UserColumnName="TRANG_THAI_LAO_DONG" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
@@ -101,17 +100,12 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" minOccurs="0" />
               <xs:element name="ID_NHAN_SU" msprop:Generator_ColumnVarNameInTable="columnID_NHAN_SU" msprop:Generator_ColumnPropNameInRow="ID_NHAN_SU" msprop:Generator_ColumnPropNameInTable="ID_NHAN_SUColumn" msprop:Generator_UserColumnName="ID_NHAN_SU" type="xs:decimal" />
-              <xs:element name="ROWNUM" msprop:Generator_ColumnVarNameInTable="columnROWNUM" msprop:Generator_ColumnPropNameInRow="ROWNUM" msprop:Generator_ColumnPropNameInTable="ROWNUMColumn" msprop:Generator_UserColumnName="ROWNUM" type="xs:long" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>
     </xs:complexType>
-    <xs:unique name="V_GD_TRANG_THAI_LAO_DONGKey" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:V_GD_TRANG_THAI_LAO_DONG" />
-      <xs:field xpath="mstns:ID" />
-    </xs:unique>
   </xs:element>
 </xs:schema>

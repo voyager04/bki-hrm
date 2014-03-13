@@ -458,10 +458,15 @@ namespace BKI_HRM
 			US_V_GD_QUA_TRINH_LAM_VIEC v_us = new US_V_GD_QUA_TRINH_LAM_VIEC();
 			grid2us_object(v_us, m_grv_qua_trinh_lam_viec.Row);
 			try {			
-				v_us.BeginTransaction();    											
-				v_us.Delete();                      								
-				v_us.CommitTransaction();
-				m_grv_qua_trinh_lam_viec.Rows.Remove(m_grv_qua_trinh_lam_viec.Row);				
+                //v_us.BeginTransaction();    											
+                //v_us.Delete();                      								
+                //v_us.CommitTransaction();
+                //m_grv_qua_trinh_lam_viec.Rows.Remove(m_grv_qua_trinh_lam_viec.Row);				
+                v_us.BeginTransaction();
+                v_us.delete_by_id_gd_chi_tiet_chuc_vu(v_us.dcID);
+                v_us.CommitTransaction();
+                m_grv_qua_trinh_lam_viec.Rows.Remove(m_grv_qua_trinh_lam_viec.Row);
+                BaseMessages.MsgBox_Infor("Đã xóa thành công!");
 			}
 			catch (Exception v_e) {
 				v_us.Rollback();
