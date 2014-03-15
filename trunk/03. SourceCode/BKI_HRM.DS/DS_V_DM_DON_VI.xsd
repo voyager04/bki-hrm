@@ -53,7 +53,7 @@
               <xs:element name="ID_DON_VI_CAP_TREN" msprop:Generator_ColumnVarNameInTable="columnID_DON_VI_CAP_TREN" msprop:Generator_ColumnPropNameInRow="ID_DON_VI_CAP_TREN" msprop:Generator_ColumnPropNameInTable="ID_DON_VI_CAP_TRENColumn" msprop:Generator_UserColumnName="ID_DON_VI_CAP_TREN" type="xs:decimal" minOccurs="0" />
               <xs:element name="ID_CAP_DON_VI" msprop:Generator_ColumnVarNameInTable="columnID_CAP_DON_VI" msprop:Generator_ColumnPropNameInRow="ID_CAP_DON_VI" msprop:Generator_ColumnPropNameInTable="ID_CAP_DON_VIColumn" msprop:Generator_UserColumnName="ID_CAP_DON_VI" type="xs:decimal" />
               <xs:element name="ID_LOAI_DON_VI" msprop:Generator_ColumnVarNameInTable="columnID_LOAI_DON_VI" msprop:Generator_ColumnPropNameInRow="ID_LOAI_DON_VI" msprop:Generator_ColumnPropNameInTable="ID_LOAI_DON_VIColumn" msprop:Generator_UserColumnName="ID_LOAI_DON_VI" type="xs:decimal" minOccurs="0" />
-              <xs:element name="MA_DON_VI_CAP_TREN" msprop:Generator_ColumnVarNameInTable="columnMA_DON_VI_CAP_TREN" msprop:Generator_ColumnPropNameInRow="MA_DON_VI_CAP_TREN" msprop:Generator_ColumnPropNameInTable="MA_DON_VI_CAP_TRENColumn" msprop:Generator_UserColumnName="MA_DON_VI_CAP_TREN">
+              <xs:element name="MA_DON_VI_CAP_TREN" msprop:Generator_ColumnVarNameInTable="columnMA_DON_VI_CAP_TREN" msprop:Generator_ColumnPropNameInRow="MA_DON_VI_CAP_TREN" msprop:Generator_ColumnPropNameInTable="MA_DON_VI_CAP_TRENColumn" msprop:Generator_UserColumnName="MA_DON_VI_CAP_TREN" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="15" />
@@ -102,7 +102,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="LOAI_DON_VI" msprop:Generator_ColumnVarNameInTable="columnLOAI_DON_VI" msprop:Generator_ColumnPropNameInRow="LOAI_DON_VI" msprop:Generator_ColumnPropNameInTable="LOAI_DON_VIColumn" msprop:Generator_UserColumnName="LOAI_DON_VI">
+              <xs:element name="LOAI_DON_VI" msprop:Generator_ColumnVarNameInTable="columnLOAI_DON_VI" msprop:Generator_ColumnPropNameInRow="LOAI_DON_VI" msprop:Generator_ColumnPropNameInTable="LOAI_DON_VIColumn" msprop:Generator_UserColumnName="LOAI_DON_VI" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
@@ -117,7 +117,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="TRANG_THAI" msprop:Generator_ColumnVarNameInTable="columnTRANG_THAI" msprop:Generator_ColumnPropNameInRow="TRANG_THAI" msprop:Generator_ColumnPropNameInTable="TRANG_THAIColumn" msprop:Generator_UserColumnName="TRANG_THAI">
+              <xs:element name="TRANG_THAI" msprop:Generator_ColumnVarNameInTable="columnTRANG_THAI" msprop:Generator_ColumnPropNameInRow="TRANG_THAI" msprop:Generator_ColumnPropNameInTable="TRANG_THAIColumn" msprop:Generator_UserColumnName="TRANG_THAI" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="12" />
