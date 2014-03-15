@@ -1,0 +1,43 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DB_DOC
+</name>
+</assembly>
+<members>
+<member name="T:DB_DOC.DS_TABLE_COMMENT.DOC_TABLE_COMMENTDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DB_DOC.DS_TABLE_COMMENT.DOC_TABLE_COMMENTRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DB_DOC.DS_TABLE_COMMENT.DOC_TABLE_COMMENTRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DB_DOC.DS_TABLE_COMMENT">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:DB_DOC.DS_COLUMN_COMMENT.DOC_COLUMN_COMMENTDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DB_DOC.DS_COLUMN_COMMENT.DOC_COLUMN_COMMENTRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DB_DOC.DS_COLUMN_COMMENT.DOC_COLUMN_COMMENTRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DB_DOC.DS_COLUMN_COMMENT">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+</members>
+</doc>
