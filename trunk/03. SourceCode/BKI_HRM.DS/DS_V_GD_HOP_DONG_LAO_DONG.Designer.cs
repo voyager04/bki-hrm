@@ -684,7 +684,6 @@ namespace BKI_HRM.DS {
                 this.columnTRANG_THAI.MaxLength = 1;
                 this.columnNGUOI_KY.MaxLength = 50;
                 this.columnCHUC_VU_NGUOI_KY.MaxLength = 50;
-                this.columnMA_PHAP_NHAN.AllowDBNull = false;
                 this.columnMA_PHAP_NHAN.MaxLength = 35;
                 this.columnTEN_PHAP_NHAN.MaxLength = 250;
             }
@@ -1046,7 +1045,12 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string MA_PHAP_NHAN {
                 get {
-                    return ((string)(this[this.tableV_GD_HOP_DONG_LAO_DONG.MA_PHAP_NHANColumn]));
+                    try {
+                        return ((string)(this[this.tableV_GD_HOP_DONG_LAO_DONG.MA_PHAP_NHANColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MA_PHAP_NHAN\' in table \'V_GD_HOP_DONG_LAO_DONG\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_GD_HOP_DONG_LAO_DONG.MA_PHAP_NHANColumn] = value;
@@ -1152,6 +1156,18 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetID_PHAP_NHANNull() {
                 this[this.tableV_GD_HOP_DONG_LAO_DONG.ID_PHAP_NHANColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMA_PHAP_NHANNull() {
+                return this.IsNull(this.tableV_GD_HOP_DONG_LAO_DONG.MA_PHAP_NHANColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMA_PHAP_NHANNull() {
+                this[this.tableV_GD_HOP_DONG_LAO_DONG.MA_PHAP_NHANColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
