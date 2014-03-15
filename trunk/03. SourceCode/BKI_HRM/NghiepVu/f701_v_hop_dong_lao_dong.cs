@@ -251,6 +251,7 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Text = "Nhập Mã nhân viên, Họ đệm, Tên, Mã hợp đồng, Loại hợp đồng, Ngày tháng, Trạng thá" +
     "i";
             this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
+            this.m_txt_tim_kiem.TextChanged += new System.EventHandler(this.m_txt_tim_kiem_TextChanged);
             this.m_txt_tim_kiem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.m_txt_tim_kiem_KeyPress);
             this.m_txt_tim_kiem.Leave += new System.EventHandler(this.m_txt_tim_kiem_Leave);
             // 
@@ -337,6 +338,8 @@ namespace BKI_HRM
         US_V_GD_HOP_DONG_LAO_DONG m_us = new US_V_GD_HOP_DONG_LAO_DONG();
         private US_GD_HOP_DONG m_us_gd_hop_dong;
         private bool m_b_is_report = true;
+
+        private string m_str_suggest = "Nhập Mã nhân viên, Họ đệm, Tên, Mã hợp đồng, Loại hợp đồng, Ngày tháng, Trạng thái";
         #endregion
 
         #region Private Methods
@@ -381,7 +384,14 @@ namespace BKI_HRM
         private void load_data_2_grid()
         {
             m_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
-            m_us.FillDataset(m_ds);
+            var v_str_search = m_txt_tim_kiem.Text.Trim();
+            var v_str_month = Regex.Match(v_str_search, @"\d+").Value;
+            if (!v_str_month.Equals(""))
+                v_str_search = v_str_month;
+            if (v_str_search == m_str_suggest)
+                m_us.FillDatasetSearchAll(m_ds, "");
+            m_us.FillDatasetSearchAll(m_ds, v_str_search);
+
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.None // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
@@ -474,17 +484,7 @@ namespace BKI_HRM
 
         private void tim_kiem()
         {
-            if (m_txt_tim_kiem.Text == "")
-                return;
-            m_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
-            var v_str_search = m_txt_tim_kiem.Text.Trim();
-            var v_str_month = Regex.Match(v_str_search, @"\d+").Value;
-            if (!v_str_month.Equals(""))
-                v_str_search = v_str_month;
-            m_us.FillDatasetSearchAll(m_ds, v_str_search);
-            m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            m_fg.Redraw = true;
+
         }
         #endregion
 
@@ -574,7 +574,7 @@ namespace BKI_HRM
         {
             try
             {
-                tim_kiem();
+                load_data_2_grid();
             }
             catch (Exception v_e)
             {
@@ -586,7 +586,7 @@ namespace BKI_HRM
         {
             try
             {
-                tim_kiem();
+                load_data_2_grid();
             }
             catch (Exception v_e)
             {
@@ -600,7 +600,7 @@ namespace BKI_HRM
             {
                 if (m_txt_tim_kiem.Text == "")
                 {
-                    m_txt_tim_kiem.Text = "Nhập Mã nhân viên, Họ đệm, Tên, Mã hợp đồng, Loại hợp đồng, Ngày tháng, Trạng thái";
+                    m_txt_tim_kiem.Text = m_str_suggest;
                     m_txt_tim_kiem.ForeColor = Color.Gray;
                 }
 
@@ -624,6 +624,18 @@ namespace BKI_HRM
             }
         }
         #endregion
+
+        private void m_txt_tim_kiem_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
 
