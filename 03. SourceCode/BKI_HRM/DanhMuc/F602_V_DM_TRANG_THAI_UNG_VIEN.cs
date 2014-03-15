@@ -40,11 +40,11 @@ namespace BKI_HRM
 		internal SIS.Controls.Button.SiSButton m_cmd_update;
 		internal SIS.Controls.Button.SiSButton m_cmd_insert;
 		internal SIS.Controls.Button.SiSButton m_cmd_exit;
-		internal SIS.Controls.Button.SiSButton m_cmd_view;
-        private Label m_lbl_tim_kiem;
-        internal SIS.Controls.Button.SiSButton m_cmd_search;
+        internal SIS.Controls.Button.SiSButton m_cmd_view;
         internal ImageList imageList1;
+        internal SIS.Controls.Button.SiSButton m_cmd_search;
         private TextBox m_txt_tim_kiem;
+        private Label m_lbl_tim_kiem;
 		private System.ComponentModel.IContainer components;
 
 		public F602_v_dm_trang_thai_ung_vien()
@@ -92,10 +92,10 @@ namespace BKI_HRM
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
-            this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
+            this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -134,11 +134,10 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
-            this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 373);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 425);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(652, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(780, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_insert
@@ -146,10 +145,11 @@ namespace BKI_HRM
             this.m_cmd_insert.AdjustImageLocation = new System.Drawing.Point(0, 0);
             this.m_cmd_insert.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_insert.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(221, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(358, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(114, 28);
             this.m_cmd_insert.TabIndex = 12;
@@ -160,10 +160,11 @@ namespace BKI_HRM
             this.m_cmd_update.AdjustImageLocation = new System.Drawing.Point(0, 0);
             this.m_cmd_update.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_update.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(338, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(472, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(107, 28);
             this.m_cmd_update.TabIndex = 13;
@@ -189,10 +190,11 @@ namespace BKI_HRM
             this.m_cmd_delete.AdjustImageLocation = new System.Drawing.Point(0, 0);
             this.m_cmd_delete.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_delete.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(449, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(579, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(109, 28);
             this.m_cmd_delete.TabIndex = 14;
@@ -207,7 +209,7 @@ namespace BKI_HRM
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(560, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(688, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -216,34 +218,11 @@ namespace BKI_HRM
             // m_fg
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Location = new System.Drawing.Point(0, 67);
+            this.m_fg.Location = new System.Drawing.Point(0, 50);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(648, 306);
+            this.m_fg.Size = new System.Drawing.Size(780, 356);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
-            // 
-            // m_lbl_tim_kiem
-            // 
-            this.m_lbl_tim_kiem.AutoSize = true;
-            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(102, 15);
-            this.m_lbl_tim_kiem.Name = "m_lbl_tim_kiem";
-            this.m_lbl_tim_kiem.Size = new System.Drawing.Size(49, 13);
-            this.m_lbl_tim_kiem.TabIndex = 37;
-            this.m_lbl_tim_kiem.Text = "Tìm kiếm";
-            // 
-            // m_cmd_search
-            // 
-            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_search.ImageIndex = 5;
-            this.m_cmd_search.ImageList = this.imageList1;
-            this.m_cmd_search.Location = new System.Drawing.Point(482, 7);
-            this.m_cmd_search.Name = "m_cmd_search";
-            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_search.TabIndex = 36;
-            this.m_cmd_search.Text = "Tìm kiếm";
             // 
             // imageList1
             // 
@@ -272,21 +251,45 @@ namespace BKI_HRM
             this.imageList1.Images.SetKeyName(20, "");
             this.imageList1.Images.SetKeyName(21, "");
             // 
+            // m_cmd_search
+            // 
+            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_search.ImageIndex = 5;
+            this.m_cmd_search.ImageList = this.imageList1;
+            this.m_cmd_search.Location = new System.Drawing.Point(548, 12);
+            this.m_cmd_search.Name = "m_cmd_search";
+            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_search.TabIndex = 36;
+            this.m_cmd_search.Text = "Tìm kiếm";
+            this.m_cmd_search.Click += new System.EventHandler(this.m_cmd_search_Click);
+            // 
             // m_txt_tim_kiem
             // 
             this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.m_txt_tim_kiem.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(173, 12);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(185, 17);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
-            this.m_txt_tim_kiem.Size = new System.Drawing.Size(272, 20);
+            this.m_txt_tim_kiem.Size = new System.Drawing.Size(342, 20);
             this.m_txt_tim_kiem.TabIndex = 35;
             this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
+            // 
+            // m_lbl_tim_kiem
+            // 
+            this.m_lbl_tim_kiem.AutoSize = true;
+            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(120, 20);
+            this.m_lbl_tim_kiem.Name = "m_lbl_tim_kiem";
+            this.m_lbl_tim_kiem.Size = new System.Drawing.Size(49, 13);
+            this.m_lbl_tim_kiem.TabIndex = 37;
+            this.m_lbl_tim_kiem.Text = "Tìm kiếm";
             // 
             // F602_v_dm_trang_thai_ung_vien
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(652, 409);
+            this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.m_lbl_tim_kiem);
             this.Controls.Add(this.m_cmd_search);
             this.Controls.Add(this.m_txt_tim_kiem);
@@ -345,8 +348,8 @@ namespace BKI_HRM
             for (int i = 0; i < count; i++)
             {
                 DataRow dr = m_ds.Tables["V_DM_TRANG_THAI_UNG_VIEN"].Rows[i];
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[1].ToString());
                 m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[2].ToString());
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[3].ToString());
                 
 
             }
@@ -579,12 +582,12 @@ namespace BKI_HRM
 
         private void m_cmd_search_Click(object sender, EventArgs e)
         {
-            //m_obj_trans = get_trans_object(m_grv_dm_quyet_dinh);
-            //m_ds.Clear();
-            //m_us.FillDatasetSearch(m_ds, m_txt_tim_kiem.Text);
-            //m_grv_dm_quyet_dinh.Redraw = false;
-            //CGridUtils.Dataset2C1Grid(m_ds, m_grv_dm_quyet_dinh, m_obj_trans);
-            //m_grv_dm_quyet_dinh.Redraw = true;
+            m_obj_trans = get_trans_object(m_fg);
+            m_ds.Clear();
+            m_us.FillDatasetSearch(m_ds, m_txt_tim_kiem.Text);
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            m_fg.Redraw = true;
             try
             {
                 load_data_2_grid();
@@ -638,6 +641,9 @@ namespace BKI_HRM
             }
         }
 
+        
+
+       
     }
 }
 
