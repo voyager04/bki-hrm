@@ -20,6 +20,7 @@ namespace BKI_HRM.US {
 
     public class US_DM_DON_VI : US_Object {
         private const string c_TableName = "DM_DON_VI";
+
         #region "Public Properties"
         public decimal dcID {
             get {
@@ -215,5 +216,6 @@ namespace BKI_HRM.US {
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
+
     }
 }

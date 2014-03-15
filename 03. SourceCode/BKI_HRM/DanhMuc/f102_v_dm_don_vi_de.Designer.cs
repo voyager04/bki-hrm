@@ -131,10 +131,10 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 360);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 322);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(801, 39);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(784, 39);
             this.m_pnl_out_place_dm.TabIndex = 21;
             // 
             // m_cmd_save
@@ -147,7 +147,7 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(555, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(538, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(131, 31);
             this.m_cmd_save.TabIndex = 12;
@@ -189,7 +189,7 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(686, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(669, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(111, 31);
             this.m_cmd_exit.TabIndex = 14;
@@ -290,7 +290,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 399);
+            this.ClientSize = new System.Drawing.Size(784, 361);
             this.Controls.Add(this.m_cbo_trang_thai);
             this.Controls.Add(this.m_dat_tu_ngay);
             this.Controls.Add(this.label10);

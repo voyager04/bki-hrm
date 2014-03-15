@@ -136,7 +136,7 @@ namespace BKI_HRM.DanhMuc {
             m_us.datTU_NGAY = m_dat_tu_ngay.Value.Date;
         }
         private static string get_trang_thai(ListControl ip_cbo) {
-            return ip_cbo.SelectedIndex == 0 ? "y" : "n";
+            return ip_cbo.SelectedIndex == 0 ? "Y" : "N";
         }
         private void save_data() {
             if (check_data_is_ok() == false) {
@@ -167,7 +167,7 @@ namespace BKI_HRM.DanhMuc {
             m_txt_ten_don_vi.Text = ip_us_dm_don_vi.strTEN_DON_VI;
             m_txt_ten_tieng_anh.Text = ip_us_dm_don_vi.strTEN_TIENG_ANH;
             m_txt_dia_ban.Text = ip_us_dm_don_vi.strDIA_BAN;
-            m_cbo_trang_thai.SelectedIndex = ip_us_dm_don_vi.strTRANG_THAI.ToUpper().Equals("Y") ? 0 : 1;
+            m_cbo_trang_thai.SelectedIndex = ip_us_dm_don_vi.strTRANG_THAI.ToUpper().Equals("ĐANG SỬ DỤNG") ? 0 : 1;
             m_dat_tu_ngay.Value = ip_us_dm_don_vi.datTU_NGAY.Date;
         }
 
