@@ -30,7 +30,7 @@ namespace BKI_HRM
 
 
 
-    public class f702_bao_cao_hdld_het_han : System.Windows.Forms.Form
+    public class f702_bao_cao_hdld : System.Windows.Forms.Form
     {
         internal System.Windows.Forms.ImageList ImageList;
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
@@ -42,7 +42,7 @@ namespace BKI_HRM
         private Label label1;
         private System.ComponentModel.IContainer components;
 
-        public f702_bao_cao_hdld_het_han()
+        public f702_bao_cao_hdld()
         {
             //
             // Required for Windows Form Designer support
@@ -78,7 +78,7 @@ namespace BKI_HRM
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f702_bao_cao_hdld_het_han));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f702_bao_cao_hdld));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
@@ -123,10 +123,10 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 401);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 474);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1209, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1331, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_xuat_excel
@@ -156,7 +156,7 @@ namespace BKI_HRM
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(1117, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(1239, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -167,7 +167,7 @@ namespace BKI_HRM
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Location = new System.Drawing.Point(0, 72);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1209, 327);
+            this.m_fg.Size = new System.Drawing.Size(1331, 400);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -208,17 +208,17 @@ namespace BKI_HRM
             this.label1.TabIndex = 30;
             this.label1.Text = "Từ khoá tìm kiếm";
             // 
-            // f702_bao_cao_hdld_het_han
+            // f702_bao_cao_hdld
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(1209, 437);
+            this.ClientSize = new System.Drawing.Size(1331, 510);
             this.Controls.Add(this.m_cmd_tim_kiem);
             this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
-            this.Name = "f702_bao_cao_hdld_het_han";
-            this.Text = "f702 Báo cáo hợp đồng đã hết hạn";
+            this.Name = "f702_bao_cao_hdld";
+            this.Text = "f702 Báo cáo Hợp Đồng Lao Động";
             this.Load += new System.EventHandler(this.f702_bao_cao_hdld_het_han_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
@@ -233,20 +233,35 @@ namespace BKI_HRM
         {
             this.ShowDialog();
         }
+
+        public void set_form_mode_for_report(int ip_i_form_mode)
+        {
+            if (ip_i_form_mode == 1)
+            {
+                m_i_form_mode = 1;
+                m_fg.Text = "f702 Báo cáo Hợp Đồng Lao Động đã hết hạn";
+            }
+            if (ip_i_form_mode == 2)
+            {
+                m_i_form_mode = 2;
+                m_fg.Text = "f702 Báo cáo Hợp Đồng Lao Động sắp hết hạn (30 ngày)";
+            }
+        }
         #endregion
 
         #region Data Structure
         private enum e_col_Number
         {
-            TRANG_THAI_HOP_DONG = 11
+            TRANG_THAI_HOP_DONG = 12
 ,
-            CHUC_VU_NGUOI_KY = 10
+            CHUC_VU_NGUOI_KY = 11
                 ,
             NGAY_HET_HAN = 8
                 ,
+            TEN_PHAP_NHAN = 9,
             MA_NV = 1
                 ,
-            NGUOI_KY = 9
+            NGUOI_KY = 10
                 ,
             NGAY_KY_HOP_DONG = 6
                 ,
@@ -266,6 +281,7 @@ namespace BKI_HRM
         ITransferDataRow m_obj_trans;
         DS_V_GD_HOP_DONG_LAO_DONG m_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
         US_V_GD_HOP_DONG_LAO_DONG m_us = new US_V_GD_HOP_DONG_LAO_DONG();
+        private int m_i_form_mode;
         #endregion
 
         #region Private Methods
@@ -297,14 +313,21 @@ namespace BKI_HRM
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.MA_HOP_DONG, e_col_Number.MA_HOP_DONG);
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.HO_DEM, e_col_Number.HO_DEM);
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.NGAY_CO_HIEU_LUC, e_col_Number.NGAY_CO_HIEU_LUC);
-
+            v_htb.Add(V_GD_HOP_DONG_LAO_DONG.TEN_PHAP_NHAN, e_col_Number.TEN_PHAP_NHAN);
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_GD_HOP_DONG_LAO_DONG.NewRow());
             return v_obj_trans;
         }
         private void load_data_2_grid()
         {
             m_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
-            m_us.FIllDataset_By_Hop_Dong_Het_Han(m_ds);
+            if (m_i_form_mode == 1)
+            {
+                m_us.FIllDataset_By_Hop_Dong_Da_Het_Han(m_ds);
+            }
+            if (m_i_form_mode == 2)
+            {
+                m_us.FIllDataset_By_Hop_Dong_Sap_Het_Han(m_ds);
+            }
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;

@@ -311,8 +311,9 @@ namespace BKI_HRM
         {
             try
             {
-                f702_bao_cao_hdld_het_han frm = new f702_bao_cao_hdld_het_han();
-                frm.Show();
+                f702_bao_cao_hdld frm = new f702_bao_cao_hdld();
+                frm.set_form_mode_for_report(1);
+                frm.ShowDialog();
             }
             catch (Exception v_e)
             {
@@ -324,8 +325,9 @@ namespace BKI_HRM
         {
             try
             {
-                f701_v_hop_dong_lao_dong frm = new f701_v_hop_dong_lao_dong();
-                frm.Display_Hop_Dong_Sap_Het_Han();
+                f702_bao_cao_hdld frm = new f702_bao_cao_hdld();
+                frm.set_form_mode_for_report(2);
+                frm.ShowDialog();
             }
             catch (Exception v_e)
             {
