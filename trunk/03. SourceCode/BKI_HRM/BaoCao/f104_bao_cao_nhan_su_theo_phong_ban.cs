@@ -78,7 +78,7 @@ namespace BKI_HRM {
             CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
-            m_fg.Tree.Column = (int)e_col_Number.TEN_DON_VI;
+            m_fg.Tree.Column = (int)e_col_Number.MA_DON_VI;
             m_fg.Tree.Style = TreeStyleFlags.Simple;
 
             set_define_events();
