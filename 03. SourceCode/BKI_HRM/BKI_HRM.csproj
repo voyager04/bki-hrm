@@ -100,7 +100,7 @@
     <Compile Include="BaoCao\f502_bao_cao_du_an.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BaoCao\f702_bao_cao_hdld_het_han.cs">
+    <Compile Include="BaoCao\f702_bao_cao_hdld.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DanhMuc\f101_v_dm_don_vi.cs">
@@ -261,8 +261,8 @@
     <EmbeddedResource Include="BaoCao\f502_bao_cao_du_an.resx">
       <DependentUpon>f502_bao_cao_du_an.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\f702_bao_cao_hdld_het_han.resx">
-      <DependentUpon>f702_bao_cao_hdld_het_han.cs</DependentUpon>
+    <EmbeddedResource Include="BaoCao\f702_bao_cao_hdld.resx">
+      <DependentUpon>f702_bao_cao_hdld.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f101_v_dm_don_vi.resx">
       <DependentUpon>f101_v_dm_don_vi.cs</DependentUpon>
