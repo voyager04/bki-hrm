@@ -294,38 +294,38 @@ namespace BKI_HRM.US {
             pm_objDR["NGAY_HET_HIEU_LUC"] = System.Convert.DBNull;
         }
 
-        public decimal dcID_TRANG_THAI_CV {
+        public decimal dcID_LOAI_CV {
             get {
-                return CNull.RowNVLDecimal(pm_objDR, "ID_TRANG_THAI_CV", IPConstants.c_DefaultDecimal);
+                return CNull.RowNVLDecimal(pm_objDR, "ID_LOAI_CV", IPConstants.c_DefaultDecimal);
             }
             set {
-                pm_objDR["ID_TRANG_THAI_CV"] = value;
+                pm_objDR["ID_LOAI_CV"] = value;
             }
         }
 
-        public bool IsID_TRANG_THAI_CVNull() {
-            return pm_objDR.IsNull("ID_TRANG_THAI_CV");
+        public bool IsID_LOAI_CVNull() {
+            return pm_objDR.IsNull("ID_LOAI_CV");
         }
 
-        public void SetID_TRANG_THAI_CVNull() {
-            pm_objDR["ID_TRANG_THAI_CV"] = System.Convert.DBNull;
+        public void SetID_LOAI_CVNull() {
+            pm_objDR["ID_LOAI_CV"] = System.Convert.DBNull;
         }
 
-        public string strTRANG_THAI_CV {
+        public string strLOAI_CV {
             get {
-                return CNull.RowNVLString(pm_objDR, "TRANG_THAI_CV", IPConstants.c_DefaultString);
+                return CNull.RowNVLString(pm_objDR, "LOAI_CV", IPConstants.c_DefaultString);
             }
             set {
-                pm_objDR["TRANG_THAI_CV"] = value;
+                pm_objDR["LOAI_CV"] = value;
             }
         }
 
-        public bool IsTRANG_THAI_CVNull() {
-            return pm_objDR.IsNull("TRANG_THAI_CV");
+        public bool IsLOAI_CVNull() {
+            return pm_objDR.IsNull("LOAI_CV");
         }
 
-        public void SetTRANG_THAI_CVNull() {
-            pm_objDR["TRANG_THAI_CV"] = System.Convert.DBNull;
+        public void SetLOAI_CVNull() {
+            pm_objDR["LOAI_CV"] = System.Convert.DBNull;
         }
 
         public DateTime datNGAY_BAT_DAU {
@@ -445,6 +445,23 @@ namespace BKI_HRM.US {
 
         public void SetNGACHNull() {
             pm_objDR["NGACH"] = System.Convert.DBNull;
+        }
+
+        public string strTRANG_THAI_CV {
+            get {
+                return CNull.RowNVLString(pm_objDR, "TRANG_THAI_CV", IPConstants.c_DefaultString);
+            }
+            set {
+                pm_objDR["TRANG_THAI_CV"] = value;
+            }
+        }
+
+        public bool IsTRANG_THAI_CVNull() {
+            return pm_objDR.IsNull("TRANG_THAI_CV");
+        }
+
+        public void SetTRANG_THAI_CVNull() {
+            pm_objDR["TRANG_THAI_CV"] = System.Convert.DBNull;
         }
 
         #endregion
