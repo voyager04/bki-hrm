@@ -469,23 +469,17 @@ namespace BKI_HRM.US
             v_sp.fillDataSetByCommand(this, op_ds);
         }
 
-        public void FillDatasetSearchAll(DS_V_GD_HOP_DONG_LAO_DONG op_ds, string ip_str_keyword)
+        public void FillDatasetSearchAll(DS_V_GD_HOP_DONG_LAO_DONG op_ds, string ip_str_keyword, string ip_str_trang_thai)
         {
             CStoredProc v_sp = new CStoredProc("pr_GD_HOP_DONG_Search");
             v_sp.addNVarcharInputParam("@ip_str_keyword", ip_str_keyword);
+            v_sp.addNVarcharInputParam("@ip_str_trang_thai", ip_str_trang_thai);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
 
         public void FIllDataset_By_Hop_Dong_Het_Han(DS_V_GD_HOP_DONG_LAO_DONG op_ds)
         {
             CStoredProc v_sp = new CStoredProc("pr_V_GD_HOP_DONG_LAO_DONG_By_Da_Het_Han");
-            v_sp.fillDataSetByCommand(this, op_ds);
-        }
-
-        public void FillDatasetSearch_In_View_Hop_Dong_Het_Han(DS_V_GD_HOP_DONG_LAO_DONG op_ds, string ip_str_keyword)
-        {
-            CStoredProc v_sp = new CStoredProc("pr_V_GD_HOP_DONG_LAO_DONG_Search_In_View_Hop_Dong_Het_Han");
-            v_sp.addNVarcharInputParam("@ip_str_keyword", ip_str_keyword);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
 
