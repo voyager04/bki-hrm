@@ -85,7 +85,7 @@ namespace BKI_HRM.NghiepVu
             m_us.dcID_LOAI_HOP_DONG = (decimal)m_cbo_loai_hop_dong.SelectedValue;
             m_us.dcID_PHAP_NHAN = (decimal) m_cbo_phap_nhan.SelectedValue;
             m_us.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value;
-            m_us.strTRANG_THAI_HOP_DONG = m_cbo_trang_thai.SelectedIndex.Equals(0) ? "y" : "n";
+            m_us.strTRANG_THAI_HOP_DONG = m_cbo_trang_thai.SelectedIndex.Equals(0) ? "Y" : "N";
             m_us.strLINK = m_str_destination + m_lbl_file_name.Text;
             m_us.strNGUOI_KY = m_txt_nguoi_ky.Text;
             m_us.strCHUC_VU_NGUOI_KY = m_txt_chuc_vu_nguoi_ky.Text;
@@ -153,7 +153,7 @@ namespace BKI_HRM.NghiepVu
             m_lbl_dia_chi.Text = v_us_dm_nhan_su.strCHO_O;
 
             m_cbo_loai_hop_dong.SelectedValue = ip_us_gd_hop_dong.dcID_LOAI_HOP_DONG;
-            m_cbo_trang_thai.SelectedIndex = (ip_us_gd_hop_dong.strTRANG_THAI_HOP_DONG.Equals("y")) ? 0 : 1;
+            m_cbo_trang_thai.SelectedIndex = (ip_us_gd_hop_dong.strTRANG_THAI_HOP_DONG.Equals("Y")) ? 0 : 1;
             m_cbo_phap_nhan.SelectedValue = ip_us_gd_hop_dong.dcID_PHAP_NHAN;
 
             if (ip_us_gd_hop_dong.datNGAY_HET_HAN.Equals(DateTime.Parse("1/1/1900 12:00:00 AM")))
