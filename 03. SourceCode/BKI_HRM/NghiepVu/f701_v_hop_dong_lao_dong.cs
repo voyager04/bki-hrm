@@ -289,19 +289,6 @@ namespace BKI_HRM
         {
             this.ShowDialog();
         }
-
-        public void Display_Hop_Dong_Sap_Het_Han()
-        {
-            m_obj_trans = get_trans_object(m_fg);
-            US_V_GD_HOP_DONG_LAO_DONG v_us = new US_V_GD_HOP_DONG_LAO_DONG();
-            DS_V_GD_HOP_DONG_LAO_DONG v_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
-            v_us.FIllDataset_By_Hop_Dong_Sap_Het_Han(v_ds);
-            m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(v_ds, m_fg, m_obj_trans);
-            m_fg.Redraw = true;
-            m_b_is_report = false;
-            this.Show();
-        }
         #endregion
 
         #region Data Structure
@@ -337,7 +324,6 @@ namespace BKI_HRM
         DS_V_GD_HOP_DONG_LAO_DONG m_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
         US_V_GD_HOP_DONG_LAO_DONG m_us = new US_V_GD_HOP_DONG_LAO_DONG();
         private US_GD_HOP_DONG m_us_gd_hop_dong;
-        private bool m_b_is_report = true;
 
         private string m_str_suggest = "Nhập Mã nhân viên, Họ đệm, Tên, Mã hợp đồng, Loại hợp đồng, Ngày tháng, Trạng thái";
         #endregion
@@ -493,13 +479,6 @@ namespace BKI_HRM
         {
             try
             {
-                if (m_b_is_report == false)
-                {
-                    m_cmd_insert.Visible = false;
-                    m_cmd_update.Visible = false;
-                    m_cmd_delete.Visible = false;
-                    return;
-                }
                 m_txt_tim_kiem.ForeColor = Color.Gray;
                 set_initial_form_load();
             }
