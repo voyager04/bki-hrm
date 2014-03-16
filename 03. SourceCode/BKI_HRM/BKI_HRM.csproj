@@ -411,6 +411,21 @@
       <Project>{B490EA92-2990-4CBB-B58B-12901AFCCCB5}</Project>
       <Name>IPUserService</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IPWordReport\IPWordReport.vbproj">
+      <Project>{0ADF180C-9644-4B81-ABB6-93FEE0C11A01}</Project>
+      <Name>IPWordReport</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
