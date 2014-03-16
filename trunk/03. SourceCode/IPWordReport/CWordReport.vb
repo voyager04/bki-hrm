@@ -19,12 +19,13 @@ Public Class CWordReport
     Private m_o_missing As Object = System.Reflection.Missing.Value
     Private m_hst_FindAndReplaceCollection As Hashtable
 #Region "Public Interface"
-    Public Sub New(ByVal i_strTemplateFileWithoutPath As String)
+    Public Sub New(ByVal i_strTemplateFileWithoutPath As String, ByVal i_strFileOutputPath As String)
         InitPaths()
         m_strTemplateFileNameWithPath = m_strTemplatesPath & i_strTemplateFileWithoutPath
         m_objWordlApp = New Word.Application
         m_hst_FindAndReplaceCollection = New Hashtable
         m_init_successful = False
+        m_strOutputPath = i_strFileOutputPath
         InitWord()
     End Sub
     Public Sub Export2Word(Optional ByVal i_b_show As Boolean = True)
@@ -45,7 +46,7 @@ Public Class CWordReport
     Public Function GetOutputFileNameWithPath() As String
         Dim v_strRandomName As String
         Randomize()
-        v_strRandomName = m_strOutputPath & "~" & CType(Rnd() * 1000000000000, Int64) & ".doc"
+        v_strRandomName = m_strOutputPath
         Return v_strRandomName
     End Function
 #End Region

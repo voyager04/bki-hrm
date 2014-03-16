@@ -133,6 +133,7 @@ namespace BKI_HRM
         private C1FlexGrid m_grv_chuc_vu_hien_tai;
         private TabPage m_tpg_qua_trinh_lam_viec;
         private C1FlexGrid m_grv_hop_dong_ld;
+        private SaveFileDialog m_sfd_save_cv;
 		private System.ComponentModel.IContainer components;
 
 		
@@ -258,6 +259,7 @@ namespace BKI_HRM
             this.m_txt_trang_thai_hien_tai = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.m_ofd_chon_anh = new System.Windows.Forms.OpenFileDialog();
+            this.m_sfd_save_cv = new System.Windows.Forms.SaveFileDialog();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).BeginInit();
             this.panel1.SuspendLayout();
@@ -1514,11 +1516,18 @@ namespace BKI_HRM
         private void print_cv()
         {
             grid2us_object(m_us, m_grv_nhan_su.Row);
+            m_sfd_save_cv.Filter = "(*.docx)|*.docx|(*.doc)|*.doc";
+            m_sfd_save_cv.Title = "Lưu CV";
+            DialogResult result = m_sfd_save_cv.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                CWordReport v_obj_word = new CWordReport("CV.docx", m_sfd_save_cv.FileName);
+                v_obj_word.AddFindAndReplace("<Hoten>", m_us.strHO_DEM + " " + m_us.strTEN);
+                v_obj_word.AddFindAndReplace("<Gioitinh>", m_us.strGIOI_TINH);
+                v_obj_word.Export2Word(false);
+            }
 
-            CWordReport v_obj_word = new CWordReport("CV.docx");
-            v_obj_word.AddFindAndReplace("<Hoten>", m_us.strHO_DEM + " " + m_us.strTEN);
-            v_obj_word.AddFindAndReplace("<Gioitinh>", m_us.strGIOI_TINH);
-            v_obj_word.Export2Word();
+            
         }
 		private void set_initial_form_load(){
             switch (m_e_form_mode)
@@ -1971,7 +1980,6 @@ namespace BKI_HRM
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-			m_cmd_print_cv.Click += new EventHandler(m_cmd_view_Click);
             m_cmd_search.Click += new EventHandler(m_cmd_search_Click);
             m_txt_tim_kiem.KeyDown += new KeyEventHandler(m_txt_tim_kiem_KeyDown);
 		}
@@ -2029,14 +2037,14 @@ namespace BKI_HRM
 			}
 		}
 
-		private void m_cmd_view_Click(object sender, EventArgs e) {
-			try{
-				view_dm_nhan_su();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
+        //private void m_cmd_view_Click(object sender, EventArgs e) {
+        //    try{
+        //        view_dm_nhan_su();
+        //    }
+        //    catch (Exception v_e){
+        //        CSystemLog_301.ExceptionHandle(v_e);
+        //    }
+        //}
         private void m_cmd_search_Click(object sender, EventArgs e)
         {
             try
