@@ -1521,9 +1521,25 @@ namespace BKI_HRM
             DialogResult result = m_sfd_save_cv.ShowDialog();
             if (result == DialogResult.OK)
             {
-                CWordReport v_obj_word = new CWordReport("CV.docx", m_sfd_save_cv.FileName);
+                CWordReport v_obj_word = new CWordReport("CVTemplate.doc", m_sfd_save_cv.FileName);
                 v_obj_word.AddFindAndReplace("<Hoten>", m_us.strHO_DEM + " " + m_us.strTEN);
                 v_obj_word.AddFindAndReplace("<Gioitinh>", m_us.strGIOI_TINH);
+                if(m_us.datNGAY_SINH > DateTime.Parse("1/1/1900"))
+                    v_obj_word.AddFindAndReplace("<Ngaysinh>", m_us.datNGAY_SINH.ToShortDateString());
+                else
+                {
+                    v_obj_word.AddFindAndReplace("<Ngaysinh>", "");
+                }
+                v_obj_word.AddFindAndReplace("<Quequan>", m_us.strNGUYEN_QUAN);
+                v_obj_word.AddFindAndReplace("<Cutru>", m_us.strCHO_O);
+                v_obj_word.AddFindAndReplace("<CMND>", m_us.strCMND);
+                v_obj_word.AddFindAndReplace("<NgaycapCMND>", m_us.datNGAY_CAP_CMND.ToShortDateString());
+                v_obj_word.AddFindAndReplace("<NoicapCMND>", m_us.strNOI_CAP_CMND);
+                v_obj_word.AddFindAndReplace("<DTDD>", m_us.strDI_DONG);
+                v_obj_word.AddFindAndReplace("<Dantoc>", m_us.strDAN_TOC);
+                v_obj_word.AddFindAndReplace("<Tongiao>", m_us.strTON_GIAO);
+                v_obj_word.AddFindAndReplace("<Trinhdo>", m_us.strTRINH_DO);
+                v_obj_word.AddFindAndReplace("<Chuyennganh>", m_us.strCHUYEN_NGANH);
                 v_obj_word.Export2Word(false);
             }
 
