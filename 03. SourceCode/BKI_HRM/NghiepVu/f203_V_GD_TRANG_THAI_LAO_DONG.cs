@@ -320,7 +320,8 @@ namespace BKI_HRM
 			CControlFormat.setC1FlexFormat(m_grv_trang_thai_ld);
 			CGridUtils.AddSave_Excel_Handlers(m_grv_trang_thai_ld);
             CGridUtils.AddSearch_Handlers(m_grv_trang_thai_ld);
-            m_grv_trang_thai_ld.Tree.Column = (int)e_col_Number.MA_NV;
+            m_grv_trang_thai_ld.Tree.Column = (int)e_col_Number.HO_DEM;
+            m_grv_trang_thai_ld.Cols[(int)e_col_Number.MA_NV].Visible = false;
             m_grv_trang_thai_ld.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.SimpleLeaf;
 			set_define_events();
 			this.KeyPreview = true;
