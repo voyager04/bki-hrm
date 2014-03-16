@@ -420,5 +420,10 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_lbl_het_han_thu_viec_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
