@@ -341,7 +341,8 @@ Public Class CControlFormat
             .Styles.EmptyArea.Border.Style = C1.Win.C1FlexGrid.BorderStyleEnum.None
             .Styles("subtotal0").BackColor = System.Drawing.Color.DarkKhaki
             .Styles("subtotal0").ForeColor = System.Drawing.Color.Maroon
-            '= System.Drawing.Color.Yellow
+            .Rows(0).Height = 2 * i_fg.Rows.DefaultSize
+            .Styles("Fixed").WordWrap = True
         End With
     End Sub
 

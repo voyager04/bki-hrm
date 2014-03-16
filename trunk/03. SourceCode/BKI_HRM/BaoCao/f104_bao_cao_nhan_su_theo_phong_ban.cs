@@ -88,7 +88,7 @@ namespace BKI_HRM {
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_grid();
             set_search_format_before();
-            load_custom_source_2_m_txt_tim_kiem();
+            //load_custom_source_2_m_txt_tim_kiem();
         }
         private void load_custom_source_2_m_txt_tim_kiem() {
             var count = m_ds.Tables["V_GD_QUA_TRINH_LAM_VIEC"].Rows.Count;

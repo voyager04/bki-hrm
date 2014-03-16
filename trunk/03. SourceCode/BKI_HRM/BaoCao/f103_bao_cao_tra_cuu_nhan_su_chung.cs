@@ -132,7 +132,7 @@ namespace BKI_HRM {
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Location = new System.Drawing.Point(0, 94);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1189, 478);
+            this.m_fg.Size = new System.Drawing.Size(1189, 440);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -370,7 +370,7 @@ namespace BKI_HRM {
             CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
-            m_fg.Tree.Column = (int)e_col_Number.TEN_DON_VI;
+            m_fg.Tree.Column = (int)e_col_Number.MA_DON_VI;
             m_fg.Tree.Style = TreeStyleFlags.Simple;
             set_define_events();
             KeyPreview = true;
@@ -388,7 +388,7 @@ namespace BKI_HRM {
              * */
             //Load combobox "Trạng thái"
             load_data_to_cbo_trang_thai();
-            load_custom_source_2_m_txt_tim_kiem();
+            //load_custom_source_2_m_txt_tim_kiem();
         }
 
         private void load_data_to_cbo_trang_thai() {
