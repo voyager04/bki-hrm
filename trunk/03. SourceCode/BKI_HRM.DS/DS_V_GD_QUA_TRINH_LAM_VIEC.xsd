@@ -13,7 +13,7 @@
               <DbSource ConnectionRef="BKI_HRMConnectionString3 (Settings)" DbObjectName="BKI_HRM.dbo.V_GD_QUA_TRINH_LAM_VIEC" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT MA_NV, HO_DEM, TEN, MA_CV, TEN_CV, MA_DON_VI, TEN_DON_VI, ID_CAP_DON_VI, CAP_DON_VI, ID_LOAI_DON_VI, LOAI_DON_VI, ID_DON_VI_CAP_TREN, DIA_BAN, MA_QUYET_DINH, NGAY_CO_HIEU_LUC, NGAY_HET_HIEU_LUC, ID_TRANG_THAI_CV, TRANG_THAI_CV, NGAY_BAT_DAU, NGAY_KET_THUC, ID_NHAN_SU, ID, ID_NGACH, ID_DON_VI, NGACH FROM dbo.V_GD_QUA_TRINH_LAM_VIEC</CommandText>
+                    <CommandText>SELECT MA_NV, HO_DEM, TEN, MA_CV, TEN_CV, MA_DON_VI, TEN_DON_VI, ID_CAP_DON_VI, CAP_DON_VI, ID_LOAI_DON_VI, LOAI_DON_VI, ID_DON_VI_CAP_TREN, DIA_BAN, MA_QUYET_DINH, NGAY_CO_HIEU_LUC, NGAY_HET_HIEU_LUC, ID_LOAI_CV, LOAI_CV, NGAY_BAT_DAU, NGAY_KET_THUC, ID_NHAN_SU, ID, ID_NGACH, ID_DON_VI, NGACH, TRANG_THAI_CV FROM dbo.V_GD_QUA_TRINH_LAM_VIEC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -36,8 +36,8 @@
               <Mapping SourceColumn="MA_QUYET_DINH" DataSetColumn="MA_QUYET_DINH" />
               <Mapping SourceColumn="NGAY_CO_HIEU_LUC" DataSetColumn="NGAY_CO_HIEU_LUC" />
               <Mapping SourceColumn="NGAY_HET_HIEU_LUC" DataSetColumn="NGAY_HET_HIEU_LUC" />
-              <Mapping SourceColumn="ID_TRANG_THAI_CV" DataSetColumn="ID_TRANG_THAI_CV" />
-              <Mapping SourceColumn="TRANG_THAI_CV" DataSetColumn="TRANG_THAI_CV" />
+              <Mapping SourceColumn="ID_LOAI_CV" DataSetColumn="ID_LOAI_CV" />
+              <Mapping SourceColumn="LOAI_CV" DataSetColumn="LOAI_CV" />
               <Mapping SourceColumn="NGAY_BAT_DAU" DataSetColumn="NGAY_BAT_DAU" />
               <Mapping SourceColumn="NGAY_KET_THUC" DataSetColumn="NGAY_KET_THUC" />
               <Mapping SourceColumn="ID_NHAN_SU" DataSetColumn="ID_NHAN_SU" />
@@ -45,6 +45,7 @@
               <Mapping SourceColumn="ID_NGACH" DataSetColumn="ID_NGACH" />
               <Mapping SourceColumn="ID_DON_VI" DataSetColumn="ID_DON_VI" />
               <Mapping SourceColumn="NGACH" DataSetColumn="NGACH" />
+              <Mapping SourceColumn="TRANG_THAI_CV" DataSetColumn="TRANG_THAI_CV" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -56,7 +57,7 @@
   <xs:element name="DS_V_GD_QUA_TRINH_LAM_VIEC" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_GD_QUA_TRINH_LAM_VIEC" msprop:Generator_UserDSName="DS_V_GD_QUA_TRINH_LAM_VIEC">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="V_GD_QUA_TRINH_LAM_VIEC" msprop:Generator_TableClassName="V_GD_QUA_TRINH_LAM_VIECDataTable" msprop:Generator_TableVarName="tableV_GD_QUA_TRINH_LAM_VIEC" msprop:Generator_TablePropName="V_GD_QUA_TRINH_LAM_VIEC" msprop:Generator_RowDeletingName="V_GD_QUA_TRINH_LAM_VIECRowDeleting" msprop:Generator_RowChangingName="V_GD_QUA_TRINH_LAM_VIECRowChanging" msprop:Generator_RowEvHandlerName="V_GD_QUA_TRINH_LAM_VIECRowChangeEventHandler" msprop:Generator_RowDeletedName="V_GD_QUA_TRINH_LAM_VIECRowDeleted" msprop:Generator_UserTableName="V_GD_QUA_TRINH_LAM_VIEC" msprop:Generator_RowChangedName="V_GD_QUA_TRINH_LAM_VIECRowChanged" msprop:Generator_RowEvArgName="V_GD_QUA_TRINH_LAM_VIECRowChangeEvent" msprop:Generator_RowClassName="V_GD_QUA_TRINH_LAM_VIECRow">
+        <xs:element name="V_GD_QUA_TRINH_LAM_VIEC" msprop:Generator_TableClassName="V_GD_QUA_TRINH_LAM_VIECDataTable" msprop:Generator_TableVarName="tableV_GD_QUA_TRINH_LAM_VIEC" msprop:Generator_RowChangedName="V_GD_QUA_TRINH_LAM_VIECRowChanged" msprop:Generator_TablePropName="V_GD_QUA_TRINH_LAM_VIEC" msprop:Generator_RowDeletingName="V_GD_QUA_TRINH_LAM_VIECRowDeleting" msprop:Generator_RowChangingName="V_GD_QUA_TRINH_LAM_VIECRowChanging" msprop:Generator_RowEvHandlerName="V_GD_QUA_TRINH_LAM_VIECRowChangeEventHandler" msprop:Generator_RowDeletedName="V_GD_QUA_TRINH_LAM_VIECRowDeleted" msprop:Generator_RowClassName="V_GD_QUA_TRINH_LAM_VIECRow" msprop:Generator_UserTableName="V_GD_QUA_TRINH_LAM_VIEC" msprop:Generator_RowEvArgName="V_GD_QUA_TRINH_LAM_VIECRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MA_NV" msprop:Generator_ColumnVarNameInTable="columnMA_NV" msprop:Generator_ColumnPropNameInRow="MA_NV" msprop:Generator_ColumnPropNameInTable="MA_NVColumn" msprop:Generator_UserColumnName="MA_NV" minOccurs="0">
@@ -141,8 +142,8 @@
               </xs:element>
               <xs:element name="NGAY_CO_HIEU_LUC" msprop:Generator_ColumnVarNameInTable="columnNGAY_CO_HIEU_LUC" msprop:Generator_ColumnPropNameInRow="NGAY_CO_HIEU_LUC" msprop:Generator_ColumnPropNameInTable="NGAY_CO_HIEU_LUCColumn" msprop:Generator_UserColumnName="NGAY_CO_HIEU_LUC" type="xs:dateTime" minOccurs="0" />
               <xs:element name="NGAY_HET_HIEU_LUC" msprop:Generator_ColumnVarNameInTable="columnNGAY_HET_HIEU_LUC" msprop:Generator_ColumnPropNameInRow="NGAY_HET_HIEU_LUC" msprop:Generator_ColumnPropNameInTable="NGAY_HET_HIEU_LUCColumn" msprop:Generator_UserColumnName="NGAY_HET_HIEU_LUC" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="ID_TRANG_THAI_CV" msprop:Generator_ColumnVarNameInTable="columnID_TRANG_THAI_CV" msprop:Generator_ColumnPropNameInRow="ID_TRANG_THAI_CV" msprop:Generator_ColumnPropNameInTable="ID_TRANG_THAI_CVColumn" msprop:Generator_UserColumnName="ID_TRANG_THAI_CV" type="xs:decimal" minOccurs="0" />
-              <xs:element name="TRANG_THAI_CV" msprop:Generator_ColumnVarNameInTable="columnTRANG_THAI_CV" msprop:Generator_ColumnPropNameInRow="TRANG_THAI_CV" msprop:Generator_ColumnPropNameInTable="TRANG_THAI_CVColumn" msprop:Generator_UserColumnName="TRANG_THAI_CV" minOccurs="0">
+              <xs:element name="ID_LOAI_CV" msprop:Generator_ColumnVarNameInTable="columnID_LOAI_CV" msprop:Generator_ColumnPropNameInRow="ID_LOAI_CV" msprop:Generator_ColumnPropNameInTable="ID_LOAI_CVColumn" msprop:Generator_UserColumnName="ID_LOAI_CV" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LOAI_CV" msprop:Generator_ColumnVarNameInTable="columnLOAI_CV" msprop:Generator_ColumnPropNameInRow="LOAI_CV" msprop:Generator_ColumnPropNameInTable="LOAI_CVColumn" msprop:Generator_UserColumnName="LOAI_CV" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
@@ -159,6 +160,13 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TRANG_THAI_CV" msprop:Generator_ColumnVarNameInTable="columnTRANG_THAI_CV" msprop:Generator_ColumnPropNameInRow="TRANG_THAI_CV" msprop:Generator_ColumnPropNameInTable="TRANG_THAI_CVColumn" msprop:Generator_UserColumnName="TRANG_THAI_CV" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
