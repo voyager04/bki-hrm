@@ -425,5 +425,18 @@ namespace BKI_HRM
         {
 
         }
+
+        private void quáTrìnhLàmViệcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f404_GD_QUA_TRINH_CONG_TAC frm = new f404_GD_QUA_TRINH_CONG_TAC();
+                frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
