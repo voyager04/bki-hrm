@@ -477,7 +477,7 @@ namespace BKI_HRM.US
             v_sp.fillDataSetByCommand(this, op_ds);
         }
 
-        public void FIllDataset_By_Hop_Dong_Het_Han(DS_V_GD_HOP_DONG_LAO_DONG op_ds)
+        public void FIllDataset_By_Hop_Dong_Da_Het_Han(DS_V_GD_HOP_DONG_LAO_DONG op_ds)
         {
             CStoredProc v_sp = new CStoredProc("pr_V_GD_HOP_DONG_LAO_DONG_By_Da_Het_Han");
             v_sp.fillDataSetByCommand(this, op_ds);
