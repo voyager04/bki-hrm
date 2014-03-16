@@ -88,6 +88,7 @@ namespace BKI_HRM
             this.m_lbl_du_an_sap_kt = new System.Windows.Forms.Label();
             this.m_lbl_thong_bao_hop_dong_sap_het_han = new System.Windows.Forms.Label();
             this.m_lbl_het_han_thu_viec = new System.Windows.Forms.Label();
+            this.quáTrìnhLàmViệcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -479,7 +480,8 @@ namespace BKI_HRM
             this.m_menuitem_traCuuNhanSuChung,
             this.m_menuitem_nhan_su_theo_phong_ban,
             this.nhânSựTheoChứcVuToolStripMenuItem,
-            this.nhânSựTheoCấpBậcToolStripMenuItem});
+            this.nhânSựTheoCấpBậcToolStripMenuItem,
+            this.quáTrìnhLàmViệcToolStripMenuItem});
             this.m_menuitem_bcnhansu.Name = "m_menuitem_bcnhansu";
             this.m_menuitem_bcnhansu.Size = new System.Drawing.Size(234, 22);
             this.m_menuitem_bcnhansu.Text = "Báo cáo nhân sự";
@@ -558,6 +560,13 @@ namespace BKI_HRM
             this.m_lbl_het_han_thu_viec.TabIndex = 4;
             this.m_lbl_het_han_thu_viec.Text = "Thử việc sắp hết hạn";
             this.m_lbl_het_han_thu_viec.Click += new System.EventHandler(this.m_lbl_het_han_thu_viec_Click);
+            // 
+            // quáTrìnhLàmViệcToolStripMenuItem
+            // 
+            this.quáTrìnhLàmViệcToolStripMenuItem.Name = "quáTrìnhLàmViệcToolStripMenuItem";
+            this.quáTrìnhLàmViệcToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.quáTrìnhLàmViệcToolStripMenuItem.Text = "Quá trình làm việc";
+            this.quáTrìnhLàmViệcToolStripMenuItem.Click += new System.EventHandler(this.quáTrìnhLàmViệcToolStripMenuItem_Click);
             // 
             // f400_Main
             // 
@@ -644,5 +653,6 @@ namespace BKI_HRM
         private ToolStripMenuItem m_menuitem_chiTietCapBac;
         private ToolStripMenuItem nhânSựTheoCấpBậcToolStripMenuItem;
         private Label m_lbl_het_han_thu_viec;
+        private ToolStripMenuItem quáTrìnhLàmViệcToolStripMenuItem;
     }
 }

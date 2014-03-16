@@ -571,5 +571,19 @@
        public const string NGAY_KET_THUC = "NGAY_KET_THUC";
        public const string MA_CAP_BAC = "MA_CAP_BAC";
    }
-
+   public class GD_QUA_TRINH_CONG_TAC
+   {
+       public const string ID_NHAN_SU = "ID_NHAN_SU";
+       public const string MA_NV = "MA_NV";
+       public const string HO_DEM = "HO_DEM";
+       public const string TEN = "TEN";
+       public const string TU_NGAY = "TU_NGAY";
+       public const string DEN_NGAY = "DEN_NGAY";
+       public const string MA_LAM_GI = "MA_LAM_GI";
+       public const string LAM_GI = "LAM_GI";
+       public const string MA_O_DAU = "MA_O_DAU";
+       public const string O_DAU = "O_DAU";
+       public const string VAI_TRO = "VAI_TRO";
+       public const string MA_QUYET_DINH = "MA_QUYET_DINH";
+   }
 }
