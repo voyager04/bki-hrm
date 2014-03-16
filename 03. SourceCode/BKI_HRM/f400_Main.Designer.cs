@@ -83,10 +83,11 @@ namespace BKI_HRM
             this.m_menuitem_traCuuNhanSuChung = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_nhan_su_theo_phong_ban = new System.Windows.Forms.ToolStripMenuItem();
             this.nhânSựTheoChứcVuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nhânSựTheoCấpBậcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_lbl_du_an_sap_kt = new System.Windows.Forms.Label();
             this.m_lbl_thong_bao_hop_dong_sap_het_han = new System.Windows.Forms.Label();
-            this.nhânSựTheoCấpBậcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_lbl_het_han_thu_viec = new System.Windows.Forms.Label();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -502,6 +503,13 @@ namespace BKI_HRM
             this.nhânSựTheoChứcVuToolStripMenuItem.Text = "Nhân sự theo chức vụ";
             this.nhânSựTheoChứcVuToolStripMenuItem.Click += new System.EventHandler(this.nhânSựTheoChứcVuToolStripMenuItem_Click);
             // 
+            // nhânSựTheoCấpBậcToolStripMenuItem
+            // 
+            this.nhânSựTheoCấpBậcToolStripMenuItem.Name = "nhânSựTheoCấpBậcToolStripMenuItem";
+            this.nhânSựTheoCấpBậcToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.nhânSựTheoCấpBậcToolStripMenuItem.Text = "Nhân sự theo cấp bậc";
+            this.nhânSựTheoCấpBậcToolStripMenuItem.Click += new System.EventHandler(this.nhânSựTheoCấpBậcToolStripMenuItem_Click);
+            // 
             // báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem
             // 
             this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem.Name = "báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem";
@@ -537,12 +545,19 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Text = "Hợp đồng sắp hết hạn";
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Click += new System.EventHandler(this.m_lbl_thong_bao_hop_dong_sap_het_han_Click);
             // 
-            // nhânSựTheoCấpBậcToolStripMenuItem
+            // m_lbl_het_han_thu_viec
             // 
-            this.nhânSựTheoCấpBậcToolStripMenuItem.Name = "nhânSựTheoCấpBậcToolStripMenuItem";
-            this.nhânSựTheoCấpBậcToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.nhânSựTheoCấpBậcToolStripMenuItem.Text = "Nhân sự theo cấp bậc";
-            this.nhânSựTheoCấpBậcToolStripMenuItem.Click += new System.EventHandler(this.nhânSựTheoCấpBậcToolStripMenuItem_Click);
+            this.m_lbl_het_han_thu_viec.AutoSize = true;
+            this.m_lbl_het_han_thu_viec.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.m_lbl_het_han_thu_viec.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_lbl_het_han_thu_viec.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold);
+            this.m_lbl_het_han_thu_viec.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_het_han_thu_viec.Location = new System.Drawing.Point(0, 359);
+            this.m_lbl_het_han_thu_viec.Name = "m_lbl_het_han_thu_viec";
+            this.m_lbl_het_han_thu_viec.Size = new System.Drawing.Size(158, 18);
+            this.m_lbl_het_han_thu_viec.TabIndex = 4;
+            this.m_lbl_het_han_thu_viec.Text = "Thử việc sắp hết hạn";
+            this.m_lbl_het_han_thu_viec.Click += new System.EventHandler(this.m_lbl_het_han_thu_viec_Click);
             // 
             // f400_Main
             // 
@@ -551,6 +566,7 @@ namespace BKI_HRM
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(835, 413);
+            this.Controls.Add(this.m_lbl_het_han_thu_viec);
             this.Controls.Add(this.m_lbl_thong_bao_hop_dong_sap_het_han);
             this.Controls.Add(this.m_lbl_du_an_sap_kt);
             this.Controls.Add(this.m_mst_menu);
@@ -627,5 +643,6 @@ namespace BKI_HRM
         private ToolStripMenuItem m_menuitem_tra_cuu_ns_du_an;
         private ToolStripMenuItem m_menuitem_chiTietCapBac;
         private ToolStripMenuItem nhânSựTheoCấpBậcToolStripMenuItem;
+        private Label m_lbl_het_han_thu_viec;
     }
 }
