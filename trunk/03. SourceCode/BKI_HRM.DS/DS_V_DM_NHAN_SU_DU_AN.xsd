@@ -13,7 +13,7 @@
               <DbSource ConnectionRef="BKI_HRMConnectionString3 (Settings)" DbObjectName="BKI_HRM.dbo.V_DM_NHAN_SU_DU_AN" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID_DU_AN, MA_DU_AN, TEN_DU_AN, ID_NHAN_SU, MA_NV, HO_DEM, TEN, MA_CV, TEN_CV, MA_DON_VI, TEN_DON_VI, VI_TRI, THOI_DIEM_TG, THOI_DIEM_KT, THOI_GIAN_TG, DANH_HIEU, ID FROM dbo.V_DM_NHAN_SU_DU_AN</CommandText>
+                    <CommandText>SELECT ID_DU_AN, MA_DU_AN, TEN_DU_AN, ID_NHAN_SU, MA_NV, HO_DEM, TEN, MA_CV, TEN_CV, MA_DON_VI, TEN_DON_VI, VI_TRI, THOI_DIEM_TG, THOI_DIEM_KT, THOI_GIAN_TG, DANH_HIEU, ID, ID_LOAI_CV, MO_TA, TRANG_THAI_CV FROM dbo.V_DM_NHAN_SU_DU_AN</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -37,6 +37,9 @@
               <Mapping SourceColumn="THOI_GIAN_TG" DataSetColumn="THOI_GIAN_TG" />
               <Mapping SourceColumn="DANH_HIEU" DataSetColumn="DANH_HIEU" />
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="ID_LOAI_CV" DataSetColumn="ID_LOAI_CV" />
+              <Mapping SourceColumn="MO_TA" DataSetColumn="MO_TA" />
+              <Mapping SourceColumn="TRANG_THAI_CV" DataSetColumn="TRANG_THAI_CV" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -134,6 +137,21 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="ID_LOAI_CV" msprop:Generator_ColumnVarNameInTable="columnID_LOAI_CV" msprop:Generator_ColumnPropNameInRow="ID_LOAI_CV" msprop:Generator_ColumnPropNameInTable="ID_LOAI_CVColumn" msprop:Generator_UserColumnName="ID_LOAI_CV" type="xs:decimal" />
+              <xs:element name="MO_TA" msprop:Generator_ColumnVarNameInTable="columnMO_TA" msprop:Generator_ColumnPropNameInRow="MO_TA" msprop:Generator_ColumnPropNameInTable="MO_TAColumn" msprop:Generator_UserColumnName="MO_TA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TRANG_THAI_CV" msprop:Generator_ColumnVarNameInTable="columnTRANG_THAI_CV" msprop:Generator_ColumnPropNameInRow="TRANG_THAI_CV" msprop:Generator_ColumnPropNameInTable="TRANG_THAI_CVColumn" msprop:Generator_UserColumnName="TRANG_THAI_CV" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
