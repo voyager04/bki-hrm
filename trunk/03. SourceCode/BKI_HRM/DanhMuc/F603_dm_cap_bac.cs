@@ -254,6 +254,8 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(342, 20);
             this.m_txt_tim_kiem.TabIndex = 38;
+            this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
+            
             // 
             // F603_dm_cap_bac
             // 
