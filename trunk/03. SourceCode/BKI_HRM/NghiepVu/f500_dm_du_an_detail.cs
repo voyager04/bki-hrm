@@ -63,39 +63,37 @@ namespace BKI_HRM.NghiepVu
         }
         private enum e_col_Number
         {
-            VI_TRI = 12
-,
-            TEN_DON_VI = 11
+            MA_DU_AN = 1
                 ,
-            MA_NV = 5
+            TEN_DU_AN = 2
                 ,
-            MA_DU_AN = 2
+            MA_NV = 4
                 ,
-            DANH_HIEU = 16
+            HO_DEM = 5
                 ,
-            THOI_DIEM_KT = 14
+            TEN = 6
                 ,
-            TEN = 7
+            MA_CV = 7
                 ,
-            ID_DU_AN = 1
+            TEN_CV = 8
                 ,
-            MA_DON_VI = 10
+            MA_DON_VI = 9
                 ,
-            THOI_DIEM_TG = 13
+            TEN_DON_VI = 10
+                , 
+            VI_TRI = 11
                 ,
-            HO_DEM = 6
+            THOI_DIEM_TG = 12
+                ,          
+            THOI_DIEM_KT = 13
                 ,
-            ID_NHAN_SU = 4
+            THOI_GIAN_TG = 14
                 ,
-            TEN_CV = 9
+            DANH_HIEU = 15
                 ,
-            ID = 17
+            MO_TA = 18
                 ,
-            TEN_DU_AN = 3
-                ,
-            MA_CV = 8
-                , THOI_GIAN_TG = 15
-
+            TRANG_THAI_CV = 19
         }			
         #endregion
 
@@ -122,22 +120,44 @@ namespace BKI_HRM.NghiepVu
         {
             Hashtable v_htb = new Hashtable();
             v_htb.Add(V_DM_NHAN_SU_DU_AN.VI_TRI, e_col_Number.VI_TRI);
+
             v_htb.Add(V_DM_NHAN_SU_DU_AN.TEN_DON_VI, e_col_Number.TEN_DON_VI);
+
             v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_NV, e_col_Number.MA_NV);
+
             v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_DU_AN, e_col_Number.MA_DU_AN);
+
             v_htb.Add(V_DM_NHAN_SU_DU_AN.DANH_HIEU, e_col_Number.DANH_HIEU);
+
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.MO_TA, e_col_Number.MO_TA);
+
             v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_DIEM_KT, e_col_Number.THOI_DIEM_KT);
+
             v_htb.Add(V_DM_NHAN_SU_DU_AN.TEN, e_col_Number.TEN);
-            v_htb.Add(V_DM_NHAN_SU_DU_AN.ID_DU_AN, e_col_Number.ID_DU_AN);
+
+            
+
             v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_DON_VI, e_col_Number.MA_DON_VI);
+
             v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_DIEM_TG, e_col_Number.THOI_DIEM_TG);
+
             v_htb.Add(V_DM_NHAN_SU_DU_AN.HO_DEM, e_col_Number.HO_DEM);
-            v_htb.Add(V_DM_NHAN_SU_DU_AN.ID_NHAN_SU, e_col_Number.ID_NHAN_SU);
+
+            
+
             v_htb.Add(V_DM_NHAN_SU_DU_AN.TEN_CV, e_col_Number.TEN_CV);
-            v_htb.Add(V_DM_NHAN_SU_DU_AN.ID, e_col_Number.ID);
+
+            
+
             v_htb.Add(V_DM_NHAN_SU_DU_AN.TEN_DU_AN, e_col_Number.TEN_DU_AN);
+
+            
+
             v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_CV, e_col_Number.MA_CV);
+
             v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_GIAN_TG, e_col_Number.THOI_GIAN_TG);
+
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.TRANG_THAI_CV, e_col_Number.TRANG_THAI_CV);
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds_nsda.V_DM_NHAN_SU_DU_AN.NewRow());
             return v_obj_trans;
