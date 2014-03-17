@@ -64,8 +64,8 @@
             this.m_lbl_chuc_vu_moi = new System.Windows.Forms.Label();
             this.m_cbo_ma_chuc_vu_moi = new System.Windows.Forms.ComboBox();
             this.m_lbl_ma_chuc_vu_moi = new System.Windows.Forms.Label();
-            this.m_cbo_trang_thai_chuc_vu = new System.Windows.Forms.ComboBox();
-            this.m_lbl_trang_thai_chuc_vu = new System.Windows.Forms.Label();
+            this.m_cbo_loai_chuc_vu = new System.Windows.Forms.ComboBox();
+            this.m_lbl_loai_chuc_vu = new System.Windows.Forms.Label();
             this.m_cmd_chon_don_vi = new SIS.Controls.Button.SiSButton();
             this.m_txt_don_vi_moi = new System.Windows.Forms.TextBox();
             this.m_lbl_don_vi_moi = new System.Windows.Forms.Label();
@@ -112,7 +112,7 @@
             // m_lbl_ngay_ket_thuc
             // 
             this.m_lbl_ngay_ket_thuc.AutoSize = true;
-            this.m_lbl_ngay_ket_thuc.Location = new System.Drawing.Point(297, 165);
+            this.m_lbl_ngay_ket_thuc.Location = new System.Drawing.Point(306, 165);
             this.m_lbl_ngay_ket_thuc.Name = "m_lbl_ngay_ket_thuc";
             this.m_lbl_ngay_ket_thuc.Size = new System.Drawing.Size(74, 13);
             this.m_lbl_ngay_ket_thuc.TabIndex = 98;
@@ -129,7 +129,7 @@
             // m_lbl_ngay_bat_dau
             // 
             this.m_lbl_ngay_bat_dau.AutoSize = true;
-            this.m_lbl_ngay_bat_dau.Location = new System.Drawing.Point(17, 164);
+            this.m_lbl_ngay_bat_dau.Location = new System.Drawing.Point(28, 164);
             this.m_lbl_ngay_bat_dau.Name = "m_lbl_ngay_bat_dau";
             this.m_lbl_ngay_bat_dau.Size = new System.Drawing.Size(72, 13);
             this.m_lbl_ngay_bat_dau.TabIndex = 96;
@@ -303,7 +303,7 @@
             // m_lbl_noi_dung
             // 
             this.m_lbl_noi_dung.AutoSize = true;
-            this.m_lbl_noi_dung.Location = new System.Drawing.Point(47, 168);
+            this.m_lbl_noi_dung.Location = new System.Drawing.Point(41, 168);
             this.m_lbl_noi_dung.Name = "m_lbl_noi_dung";
             this.m_lbl_noi_dung.Size = new System.Drawing.Size(50, 13);
             this.m_lbl_noi_dung.TabIndex = 20;
@@ -312,7 +312,7 @@
             // m_lbl_link
             // 
             this.m_lbl_link.AutoSize = true;
-            this.m_lbl_link.Location = new System.Drawing.Point(2, 128);
+            this.m_lbl_link.Location = new System.Drawing.Point(1, 128);
             this.m_lbl_link.Name = "m_lbl_link";
             this.m_lbl_link.Size = new System.Drawing.Size(90, 13);
             this.m_lbl_link.TabIndex = 19;
@@ -321,7 +321,7 @@
             // m_lbl_ngay_het_hieu_luc_qd
             // 
             this.m_lbl_ngay_het_hieu_luc_qd.AutoSize = true;
-            this.m_lbl_ngay_het_hieu_luc_qd.Location = new System.Drawing.Point(285, 91);
+            this.m_lbl_ngay_het_hieu_luc_qd.Location = new System.Drawing.Point(278, 91);
             this.m_lbl_ngay_het_hieu_luc_qd.Name = "m_lbl_ngay_het_hieu_luc_qd";
             this.m_lbl_ngay_het_hieu_luc_qd.Size = new System.Drawing.Size(90, 13);
             this.m_lbl_ngay_het_hieu_luc_qd.TabIndex = 18;
@@ -330,7 +330,7 @@
             // m_lbl_ngay_ky
             // 
             this.m_lbl_ngay_ky.AutoSize = true;
-            this.m_lbl_ngay_ky.Location = new System.Drawing.Point(39, 63);
+            this.m_lbl_ngay_ky.Location = new System.Drawing.Point(45, 63);
             this.m_lbl_ngay_ky.Name = "m_lbl_ngay_ky";
             this.m_lbl_ngay_ky.Size = new System.Drawing.Size(46, 13);
             this.m_lbl_ngay_ky.TabIndex = 17;
@@ -339,7 +339,7 @@
             // m_lbl_ngay_co_hieu_luc_qd
             // 
             this.m_lbl_ngay_co_hieu_luc_qd.AutoSize = true;
-            this.m_lbl_ngay_co_hieu_luc_qd.Location = new System.Drawing.Point(10, 91);
+            this.m_lbl_ngay_co_hieu_luc_qd.Location = new System.Drawing.Point(4, 91);
             this.m_lbl_ngay_co_hieu_luc_qd.Name = "m_lbl_ngay_co_hieu_luc_qd";
             this.m_lbl_ngay_co_hieu_luc_qd.Size = new System.Drawing.Size(87, 13);
             this.m_lbl_ngay_co_hieu_luc_qd.TabIndex = 16;
@@ -348,7 +348,7 @@
             // m_lbl_loai_quyet_dinh
             // 
             this.m_lbl_loai_quyet_dinh.AutoSize = true;
-            this.m_lbl_loai_quyet_dinh.Location = new System.Drawing.Point(297, 32);
+            this.m_lbl_loai_quyet_dinh.Location = new System.Drawing.Point(288, 32);
             this.m_lbl_loai_quyet_dinh.Name = "m_lbl_loai_quyet_dinh";
             this.m_lbl_loai_quyet_dinh.Size = new System.Drawing.Size(80, 13);
             this.m_lbl_loai_quyet_dinh.TabIndex = 15;
@@ -357,7 +357,7 @@
             // m_lbl_ma_quyet_dinh
             // 
             this.m_lbl_ma_quyet_dinh.AutoSize = true;
-            this.m_lbl_ma_quyet_dinh.Location = new System.Drawing.Point(22, 32);
+            this.m_lbl_ma_quyet_dinh.Location = new System.Drawing.Point(16, 32);
             this.m_lbl_ma_quyet_dinh.Name = "m_lbl_ma_quyet_dinh";
             this.m_lbl_ma_quyet_dinh.Size = new System.Drawing.Size(75, 13);
             this.m_lbl_ma_quyet_dinh.TabIndex = 14;
@@ -391,7 +391,7 @@
             // m_lbl_ma_nv
             // 
             this.m_lbl_ma_nv.AutoSize = true;
-            this.m_lbl_ma_nv.Location = new System.Drawing.Point(37, 13);
+            this.m_lbl_ma_nv.Location = new System.Drawing.Point(28, 13);
             this.m_lbl_ma_nv.Name = "m_lbl_ma_nv";
             this.m_lbl_ma_nv.Size = new System.Drawing.Size(72, 13);
             this.m_lbl_ma_nv.TabIndex = 91;
@@ -409,7 +409,7 @@
             // m_lbl_chuc_vu_moi
             // 
             this.m_lbl_chuc_vu_moi.AutoSize = true;
-            this.m_lbl_chuc_vu_moi.Location = new System.Drawing.Point(313, 45);
+            this.m_lbl_chuc_vu_moi.Location = new System.Drawing.Point(318, 45);
             this.m_lbl_chuc_vu_moi.Name = "m_lbl_chuc_vu_moi";
             this.m_lbl_chuc_vu_moi.Size = new System.Drawing.Size(66, 13);
             this.m_lbl_chuc_vu_moi.TabIndex = 86;
@@ -427,29 +427,29 @@
             // m_lbl_ma_chuc_vu_moi
             // 
             this.m_lbl_ma_chuc_vu_moi.AutoSize = true;
-            this.m_lbl_ma_chuc_vu_moi.Location = new System.Drawing.Point(23, 42);
+            this.m_lbl_ma_chuc_vu_moi.Location = new System.Drawing.Point(17, 42);
             this.m_lbl_ma_chuc_vu_moi.Name = "m_lbl_ma_chuc_vu_moi";
             this.m_lbl_ma_chuc_vu_moi.Size = new System.Drawing.Size(83, 13);
             this.m_lbl_ma_chuc_vu_moi.TabIndex = 87;
             this.m_lbl_ma_chuc_vu_moi.Text = "Mã chức vụ mới";
             // 
-            // m_cbo_trang_thai_chuc_vu
+            // m_cbo_loai_chuc_vu
             // 
-            this.m_cbo_trang_thai_chuc_vu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_trang_thai_chuc_vu.FormattingEnabled = true;
-            this.m_cbo_trang_thai_chuc_vu.Location = new System.Drawing.Point(396, 66);
-            this.m_cbo_trang_thai_chuc_vu.Name = "m_cbo_trang_thai_chuc_vu";
-            this.m_cbo_trang_thai_chuc_vu.Size = new System.Drawing.Size(176, 21);
-            this.m_cbo_trang_thai_chuc_vu.TabIndex = 85;
+            this.m_cbo_loai_chuc_vu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_loai_chuc_vu.FormattingEnabled = true;
+            this.m_cbo_loai_chuc_vu.Location = new System.Drawing.Point(396, 66);
+            this.m_cbo_loai_chuc_vu.Name = "m_cbo_loai_chuc_vu";
+            this.m_cbo_loai_chuc_vu.Size = new System.Drawing.Size(176, 21);
+            this.m_cbo_loai_chuc_vu.TabIndex = 85;
             // 
-            // m_lbl_trang_thai_chuc_vu
+            // m_lbl_loai_chuc_vu
             // 
-            this.m_lbl_trang_thai_chuc_vu.AutoSize = true;
-            this.m_lbl_trang_thai_chuc_vu.Location = new System.Drawing.Point(263, 69);
-            this.m_lbl_trang_thai_chuc_vu.Name = "m_lbl_trang_thai_chuc_vu";
-            this.m_lbl_trang_thai_chuc_vu.Size = new System.Drawing.Size(116, 13);
-            this.m_lbl_trang_thai_chuc_vu.TabIndex = 84;
-            this.m_lbl_trang_thai_chuc_vu.Text = "Trạng thái chức vụ mới";
+            this.m_lbl_loai_chuc_vu.AutoSize = true;
+            this.m_lbl_loai_chuc_vu.Location = new System.Drawing.Point(296, 69);
+            this.m_lbl_loai_chuc_vu.Name = "m_lbl_loai_chuc_vu";
+            this.m_lbl_loai_chuc_vu.Size = new System.Drawing.Size(88, 13);
+            this.m_lbl_loai_chuc_vu.TabIndex = 84;
+            this.m_lbl_loai_chuc_vu.Text = "Loại chức vụ mới";
             // 
             // m_cmd_chon_don_vi
             // 
@@ -477,7 +477,7 @@
             // m_lbl_don_vi_moi
             // 
             this.m_lbl_don_vi_moi.AutoSize = true;
-            this.m_lbl_don_vi_moi.Location = new System.Drawing.Point(49, 101);
+            this.m_lbl_don_vi_moi.Location = new System.Drawing.Point(43, 101);
             this.m_lbl_don_vi_moi.Name = "m_lbl_don_vi_moi";
             this.m_lbl_don_vi_moi.Size = new System.Drawing.Size(57, 13);
             this.m_lbl_don_vi_moi.TabIndex = 81;
@@ -502,8 +502,8 @@
             this.Controls.Add(this.m_lbl_chuc_vu_moi);
             this.Controls.Add(this.m_cbo_ma_chuc_vu_moi);
             this.Controls.Add(this.m_lbl_ma_chuc_vu_moi);
-            this.Controls.Add(this.m_cbo_trang_thai_chuc_vu);
-            this.Controls.Add(this.m_lbl_trang_thai_chuc_vu);
+            this.Controls.Add(this.m_cbo_loai_chuc_vu);
+            this.Controls.Add(this.m_lbl_loai_chuc_vu);
             this.Controls.Add(this.m_cmd_chon_don_vi);
             this.Controls.Add(this.m_txt_don_vi_moi);
             this.Controls.Add(this.m_lbl_don_vi_moi);
@@ -555,8 +555,8 @@
         private System.Windows.Forms.Label m_lbl_chuc_vu_moi;
         private System.Windows.Forms.ComboBox m_cbo_ma_chuc_vu_moi;
         private System.Windows.Forms.Label m_lbl_ma_chuc_vu_moi;
-        private System.Windows.Forms.ComboBox m_cbo_trang_thai_chuc_vu;
-        private System.Windows.Forms.Label m_lbl_trang_thai_chuc_vu;
+        private System.Windows.Forms.ComboBox m_cbo_loai_chuc_vu;
+        private System.Windows.Forms.Label m_lbl_loai_chuc_vu;
         internal SIS.Controls.Button.SiSButton m_cmd_chon_don_vi;
         private System.Windows.Forms.TextBox m_txt_don_vi_moi;
         private System.Windows.Forms.Label m_lbl_don_vi_moi;

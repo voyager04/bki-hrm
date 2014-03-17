@@ -41,7 +41,8 @@ namespace BKI_HRM
             TRANG_THAI_DU_AN,
             LOAI_QUYET_DINH,
             TRANG_THAI_LAO_DONG,
-            NGACH
+            NGACH,
+            LOAI_CHUC_VU
         }
         public static void load_data_to_cbo_tu_dien(
              eLOAI_TU_DIEN ip_e
@@ -75,7 +76,9 @@ namespace BKI_HRM
                 case eLOAI_TU_DIEN.NGACH:
                     v_str_loai_tu_dien = MA_LOAI_TU_DIEN.NGACH;
                     break;
-
+                case eLOAI_TU_DIEN.LOAI_CHUC_VU:
+                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.LOAI_CHUC_VU;
+                    break;
             }
             v_us_dm_tu_dien.fill_tu_dien_cung_loai_ds(
                 v_str_loai_tu_dien
