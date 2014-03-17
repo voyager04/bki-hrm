@@ -301,5 +301,13 @@ public class US_GD_QUA_TRINH_CONG_TAC : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+    #region Addtional
+    public void FillDatasetByProc(DS_GD_QUA_TRINH_CONG_TAC op_ds_v_qua_trinh_cong_tac)
+    {
+        CStoredProc v_stored_proc = new CStoredProc("pr_GD_QUA_TRINH_CONG_TAC");
+        v_stored_proc.fillDataSetByCommand(this, op_ds_v_qua_trinh_cong_tac);
+    }
+    #endregion
+}
+
 }
