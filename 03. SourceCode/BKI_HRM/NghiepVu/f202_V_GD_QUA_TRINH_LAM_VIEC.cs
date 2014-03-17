@@ -270,38 +270,24 @@ namespace BKI_HRM
 
 		#region Data Structure
 		private enum e_col_Number{
-            NGAY_CO_HIEU_LUC = 17
-,
-            CAP_DON_VI = 13
-                ,
-            NGAY_BAT_DAU = 4
-                ,
-            TEN_CV = 7
-                ,
-            TEN_DON_VI = 12
-                ,
-            MA_NV = 1
-                ,
-            MA_DON_VI = 11
-                ,
-            NGAY_KET_THUC = 5
-                ,
-            MA_CV = 6
-                ,
-            HO_DEM = 2
-                ,
-            LOAI_DON_VI = 14
-                ,
-            TEN = 3
-                ,
+            NGAY_CO_HIEU_LUC = 17,
+            CAP_DON_VI = 13,
+            NGAY_BAT_DAU = 4,
+            TEN_CV = 7,
+            TEN_DON_VI = 12,
+            MA_NV = 1,
+            MA_DON_VI = 11 ,
+            NGAY_KET_THUC = 5,
+            MA_CV = 6,
+            HO_DEM = 2,
+            LOAI_DON_VI = 14,
+            TEN = 3 ,
             LOAI_CV = 9,
-            TRANG_THAI_CV = 10
-                ,
-            MA_QUYET_DINH = 16
-                ,
-            NGAY_HET_HIEU_LUC = 18
-                , DIA_BAN = 15
-            , NGACH = 8
+            TRANG_THAI_CV = 10,
+            MA_QUYET_DINH = 16 ,
+            NGAY_HET_HIEU_LUC = 18,
+            DIA_BAN = 15 ,
+            NGACH = 8
 		}			
 		#endregion
 

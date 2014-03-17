@@ -710,6 +710,7 @@ namespace BKI_HRM
             // 
             this.m_grv_chuc_vu_hien_tai.AllowEditing = false;
             this.m_grv_chuc_vu_hien_tai.ColumnInfo = resources.GetString("m_grv_chuc_vu_hien_tai.ColumnInfo");
+            this.m_grv_chuc_vu_hien_tai.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_chuc_vu_hien_tai.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_grv_chuc_vu_hien_tai.Location = new System.Drawing.Point(0, 0);
             this.m_grv_chuc_vu_hien_tai.Name = "m_grv_chuc_vu_hien_tai";
@@ -1444,30 +1445,20 @@ namespace BKI_HRM
 		}
         private enum e_col_Number_of_qua_trinh_lam_viec
         {
-            NGAY_CO_HIEU_LUC = 12
-,
-            TEN_CV = 4
-                ,
-            TEN_DON_VI = 7
-                ,
-            NGAY_BAT_DAU = 1
-                ,
-            MA_DON_VI = 6
-                ,
-            NGAY_KET_THUC = 2
-                ,
-            MA_CV = 3
-                ,
-            CAP_DON_VI = 8
-                ,
-            LOAI_DON_VI = 9
-                ,
-            TRANG_THAI_CV = 5
-                ,
-            MA_QUYET_DINH = 11
-                ,
-            NGAY_HET_HIEU_LUC = 13
-                , DIA_BAN = 10
+            NGAY_CO_HIEU_LUC = 13,
+            TEN_CV = 4,
+            TEN_DON_VI = 8 ,
+            NGAY_BAT_DAU = 1,
+            MA_DON_VI = 7 ,
+            NGAY_KET_THUC = 2   ,
+            MA_CV = 3,
+            CAP_DON_VI = 9 ,
+            LOAI_DON_VI = 10 ,
+            LOAI_CV = 5,
+            TRANG_THAI_CV = 6,
+            MA_QUYET_DINH = 12 ,
+            NGAY_HET_HIEU_LUC = 14,
+            DIA_BAN = 11
         }
         private enum e_col_Number_of_trang_thai_lao_dong
         {
@@ -1622,6 +1613,7 @@ namespace BKI_HRM
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_CV, e_col_Number_of_qua_trinh_lam_viec.MA_CV);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.CAP_DON_VI, e_col_Number_of_qua_trinh_lam_viec.CAP_DON_VI);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.LOAI_DON_VI, e_col_Number_of_qua_trinh_lam_viec.LOAI_DON_VI);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.LOAI_CV, e_col_Number_of_qua_trinh_lam_viec.LOAI_CV);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.TRANG_THAI_CV, e_col_Number_of_qua_trinh_lam_viec.TRANG_THAI_CV);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_QUYET_DINH, e_col_Number_of_qua_trinh_lam_viec.MA_QUYET_DINH);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.NGAY_HET_HIEU_LUC, e_col_Number_of_qua_trinh_lam_viec.NGAY_HET_HIEU_LUC);
@@ -1800,7 +1792,8 @@ namespace BKI_HRM
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;
             grid2us_object(m_us, m_grv_nhan_su.Row);
            // us_object_to_form();
-
+            m_lbl_ho_ten.Text = m_us.strHO_DEM + " " + m_us.strTEN;
+            m_lbl_ma_nhan_vien.Text = m_us.strMA_NV;
             switch (m_tct_chi_tiet_nhan_vien.SelectedIndex)
             {
                 case 1:
@@ -1864,8 +1857,6 @@ namespace BKI_HRM
         private void load_thong_tin_ca_nhan()
         {
             // Load thông tin nhân viên
-            m_lbl_ho_ten.Text = m_us.strHO_DEM + " " + m_us.strTEN;
-            m_lbl_ma_nhan_vien.Text = m_us.strMA_NV;
             m_txt_ho_dem.Text = m_us.strHO_DEM;
             m_txt_ten.Text = m_us.strTEN;
             m_txt_gioi_tinh.Text = m_us.strGIOI_TINH;
