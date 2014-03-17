@@ -387,22 +387,22 @@ namespace BKI_HRM
         }
         private void insert_dm_cap_bac()
         {
-            //F602_v_dm_trang_thai_ung_vien_de v_fDE = new F602_v_dm_trang_thai_ung_vien_de();
+            F603_dm_cap_bac_de v_fDE = new F603_dm_cap_bac_de();
             //v_fDE.display_for_insert();
-            //m_txt_tim_kiem.Text = "";
-            //load_data_2_grid();
-            //m_txt_tim_kiem.Text = m_str_tim_kiem;
+            m_txt_tim_kiem.Text = "";
+            load_data_2_grid();
+            m_txt_tim_kiem.Text = m_str_tim_kiem;
         }
         private void update_dm_cap_bac()
         {
-            //if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-            //if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            //grid2us_object(m_us, m_fg.Row);
-            //F602_v_dm_trang_thai_ung_vien_de v_fDE = new F602_v_dm_trang_thai_ung_vien_de();
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us, m_fg.Row);
+            F603_dm_cap_bac_de v_fDE = new F603_dm_cap_bac_de();
             //v_fDE.display_for_update(m_us);
-            //m_txt_tim_kiem.Text = "";
-            //load_data_2_grid();
-            //m_txt_tim_kiem.Text = m_str_tim_kiem;
+            m_txt_tim_kiem.Text = "";
+            load_data_2_grid();
+            m_txt_tim_kiem.Text = m_str_tim_kiem;
         }
         private void grid2us_object(US_DM_CAP_BAC i_us
             , int i_grid_row)
@@ -417,7 +417,7 @@ namespace BKI_HRM
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
-            US_V_DM_TRANG_THAI_UNG_VIEN v_us = new US_V_DM_TRANG_THAI_UNG_VIEN();
+            US_DM_CAP_BAC v_us = new US_DM_CAP_BAC();
             grid2us_object(m_us, m_fg.Row);
             try
             {
@@ -437,10 +437,10 @@ namespace BKI_HRM
 
         private void view_dm_cap_bac()
         {
-            //if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-            //if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            //grid2us_object(m_us, m_fg.Row);
-            //F602_v_dm_trang_thai_ung_vien_de v_fDE = new F602_v_dm_trang_thai_ung_vien_de();
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us, m_fg.Row);
+            F603_dm_cap_bac_de v_fDE = new F603_dm_cap_bac_de();
             //v_fDE.display(m_us);
         }
 
