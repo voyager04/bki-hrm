@@ -807,7 +807,6 @@ namespace BKI_HRM.DS {
                 this.columnLOAI_CV.MaxLength = 250;
                 this.columnNGACH.MaxLength = 250;
                 this.columnTRANG_THAI_CHUC_VU_YN.MaxLength = 1;
-                this.columnTRANG_THAI_CV.ReadOnly = true;
                 this.columnTRANG_THAI_CV.MaxLength = 16;
             }
             
