@@ -492,6 +492,7 @@
        public const string THOI_DIEM_TG = "THOI_DIEM_TG";
        public const string THOI_DIEM_KT = "THOI_DIEM_KT";
        public const string THOI_GIAN_TG = "THOI_GIAN_TG";
+       public const string MO_TA = "MO_TA";
    }
    public class V_DM_QUYET_DINH
    {
