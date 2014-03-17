@@ -56,8 +56,15 @@ namespace BKI_HRM.DanhMuc
             m_us.dcID = ip_us_dm_cap_bac.dcID;
             m_txt_ma_cap.Text = ip_us_dm_cap_bac.strMA_CAP;
             m_txt_ma_bac.Text = ip_us_dm_cap_bac.strMA_BAC;
-            m_dat_ngay_ap_dung.Value = ip_us_dm_cap_bac.datNGAY_AP_DUNG;
-            m_dat_ngay_ket_thuc.Value = ip_us_dm_cap_bac.datNGAY_KET_THUC;
+            if (ip_us_dm_cap_bac.datNGAY_AP_DUNG == null)
+                m_dat_ngay_ap_dung.Checked = false;
+            else
+                m_dat_ngay_ap_dung.Value = ip_us_dm_cap_bac.datNGAY_AP_DUNG;
+            if (ip_us_dm_cap_bac.datNGAY_KET_THUC == null)
+                m_dat_ngay_ket_thuc.Checked = false;
+            else
+                m_dat_ngay_ket_thuc.Value = ip_us_dm_cap_bac.datNGAY_KET_THUC;
+
             if (ip_us_dm_cap_bac.strTRANG_THAI == "y" || ip_us_dm_cap_bac.strTRANG_THAI == "Y")
                 m_rdb_su_dung.Checked = true;
             else
