@@ -51,7 +51,7 @@ namespace BKI_HRM
             this.m_menuitem_qlns = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menu_dsnhansu = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_hopdong = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_menuitem_quatrinhlamviec = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_menuitem_thaydoi_chucvu_donvi = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_trangthailaodong = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_chiTietCapBac = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menu_tuyendung = new System.Windows.Forms.ToolStripMenuItem();
@@ -242,7 +242,7 @@ namespace BKI_HRM
             this.m_menuitem_qlns.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.m_menu_dsnhansu,
             this.m_menuitem_hopdong,
-            this.m_menuitem_quatrinhlamviec,
+            this.m_menuitem_thaydoi_chucvu_donvi,
             this.m_menuitem_trangthailaodong,
             this.m_menuitem_chiTietCapBac});
             this.m_menuitem_qlns.Name = "m_menuitem_qlns";
@@ -252,34 +252,34 @@ namespace BKI_HRM
             // m_menu_dsnhansu
             // 
             this.m_menu_dsnhansu.Name = "m_menu_dsnhansu";
-            this.m_menu_dsnhansu.Size = new System.Drawing.Size(178, 22);
+            this.m_menu_dsnhansu.Size = new System.Drawing.Size(204, 22);
             this.m_menu_dsnhansu.Text = "Hồ sơ nhân sự";
             // 
             // m_menuitem_hopdong
             // 
             this.m_menuitem_hopdong.Name = "m_menuitem_hopdong";
-            this.m_menuitem_hopdong.Size = new System.Drawing.Size(178, 22);
+            this.m_menuitem_hopdong.Size = new System.Drawing.Size(204, 22);
             this.m_menuitem_hopdong.Text = "Hợp đồng lao động";
             this.m_menuitem_hopdong.Click += new System.EventHandler(this.m_menuitem_hopdong_Click);
             // 
-            // m_menuitem_quatrinhlamviec
+            // m_menuitem_thaydoi_chucvu_donvi
             // 
-            this.m_menuitem_quatrinhlamviec.Name = "m_menuitem_quatrinhlamviec";
-            this.m_menuitem_quatrinhlamviec.Size = new System.Drawing.Size(178, 22);
-            this.m_menuitem_quatrinhlamviec.Text = "Quá trình làm việc";
-            this.m_menuitem_quatrinhlamviec.Click += new System.EventHandler(this.m_menuitem_quatrinhlamviec_Click);
+            this.m_menuitem_thaydoi_chucvu_donvi.Name = "m_menuitem_thaydoi_chucvu_donvi";
+            this.m_menuitem_thaydoi_chucvu_donvi.Size = new System.Drawing.Size(204, 22);
+            this.m_menuitem_thaydoi_chucvu_donvi.Text = "Thay đổi chức vụ, đơn vị";
+            this.m_menuitem_thaydoi_chucvu_donvi.Click += new System.EventHandler(this.m_menuitem_quatrinhlamviec_Click);
             // 
             // m_menuitem_trangthailaodong
             // 
             this.m_menuitem_trangthailaodong.Name = "m_menuitem_trangthailaodong";
-            this.m_menuitem_trangthailaodong.Size = new System.Drawing.Size(178, 22);
+            this.m_menuitem_trangthailaodong.Size = new System.Drawing.Size(204, 22);
             this.m_menuitem_trangthailaodong.Text = "Trạng thái lao động";
             this.m_menuitem_trangthailaodong.Click += new System.EventHandler(this.m_menuitem_trangthailaodong_Click);
             // 
             // m_menuitem_chiTietCapBac
             // 
             this.m_menuitem_chiTietCapBac.Name = "m_menuitem_chiTietCapBac";
-            this.m_menuitem_chiTietCapBac.Size = new System.Drawing.Size(178, 22);
+            this.m_menuitem_chiTietCapBac.Size = new System.Drawing.Size(204, 22);
             this.m_menuitem_chiTietCapBac.Text = "Chi tiết cấp bậc";
             // 
             // m_menu_tuyendung
@@ -618,7 +618,7 @@ namespace BKI_HRM
         private System.Windows.Forms.ToolStripMenuItem m_menuitem_qlcoche;
         private System.Windows.Forms.ToolStripMenuItem m_menuitem_qllevel;
         private System.Windows.Forms.ToolStripMenuItem m_menuitem_hopdong;
-        private System.Windows.Forms.ToolStripMenuItem m_menuitem_quatrinhlamviec;
+        private System.Windows.Forms.ToolStripMenuItem m_menuitem_thaydoi_chucvu_donvi;
         private System.Windows.Forms.ToolStripMenuItem m_menuitem_trangthailaodong;
         private System.Windows.Forms.ToolStripMenuItem m_menuitem_hosouv;
         private System.Windows.Forms.ToolStripMenuItem m_menuitem_quatrinhtuyendung;
