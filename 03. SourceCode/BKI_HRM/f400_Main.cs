@@ -432,8 +432,8 @@ namespace BKI_HRM
         {
             try
             {
-                //f404_GD_QUA_TRINH_CONG_TAC frm = new f404_GD_QUA_TRINH_CONG_TAC();
-                //frm.Show();
+                f404_GD_QUA_TRINH_CONG_TAC frm = new f404_GD_QUA_TRINH_CONG_TAC();
+                frm.Show();
             }
             catch (Exception v_e)
             {
