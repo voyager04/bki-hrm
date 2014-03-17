@@ -56,22 +56,18 @@ namespace BKI_HRM.DanhMuc
         private string m_str_old_path = "";
         #endregion
         #region Private Methods
-        #endregion
-
-
-
         private void us_object_2_form(US_V_DM_TRANG_THAI_UNG_VIEN ip_us_v_dm_trang_thai_ung_vien)
         {
             m_us.dcID = ip_us_v_dm_trang_thai_ung_vien.dcID;
-            m_txt_ma_trang_thai_cap_tren.Text= ip_us_v_dm_trang_thai_ung_vien.strMA_TRANG_THAI_CAP_TREN;
-            m_txt_ma_trang_thai.Text=ip_us_v_dm_trang_thai_ung_vien.strMA_TRANG_THAI;
-            m_txt_dinh_nghia.Text=ip_us_v_dm_trang_thai_ung_vien.strDINH_NGHIA;
-            m_txt_dau_hieu.Text=ip_us_v_dm_trang_thai_ung_vien.strDAU_HIEU;
-            m_txt_viec_can_lam.Text=ip_us_v_dm_trang_thai_ung_vien.strVIEC_CAN_LAM;
+            m_txt_ma_trang_thai_cap_tren.Text = ip_us_v_dm_trang_thai_ung_vien.strMA_TRANG_THAI_CAP_TREN;
+            m_txt_ma_trang_thai.Text = ip_us_v_dm_trang_thai_ung_vien.strMA_TRANG_THAI;
+            m_txt_dinh_nghia.Text = ip_us_v_dm_trang_thai_ung_vien.strDINH_NGHIA;
+            m_txt_dau_hieu.Text = ip_us_v_dm_trang_thai_ung_vien.strDAU_HIEU;
+            m_txt_viec_can_lam.Text = ip_us_v_dm_trang_thai_ung_vien.strVIEC_CAN_LAM;
 
-          
+
         }
-        
+
         private void format_control()
         {
             CControlFormat.setFormStyle(this);
@@ -90,20 +86,25 @@ namespace BKI_HRM.DanhMuc
         }
         private void form_2_us_object()
         {
-            m_us.strMA_TRANG_THAI_CAP_TREN=m_txt_ma_trang_thai_cap_tren.Text.Trim();
-            m_us.strMA_TRANG_THAI=m_txt_ma_trang_thai.Text.Trim();
-            m_us.strDINH_NGHIA=m_txt_dinh_nghia.Text.Trim();
-            m_us.strDAU_HIEU=m_txt_dau_hieu.Text.Trim();
-            m_us.strVIEC_CAN_LAM=m_txt_viec_can_lam.Text.Trim();
+            m_us.strMA_TRANG_THAI_CAP_TREN = m_txt_ma_trang_thai_cap_tren.Text.Trim();
+            m_us.strMA_TRANG_THAI = m_txt_ma_trang_thai.Text.Trim();
+            m_us.strDINH_NGHIA = m_txt_dinh_nghia.Text.Trim();
+            m_us.strDAU_HIEU = m_txt_dau_hieu.Text.Trim();
+            m_us.strVIEC_CAN_LAM = m_txt_viec_can_lam.Text.Trim();
 
         }
-        
-        
+
+
         private void fomat_control()
         {
             CControlFormat.setFormStyle(this);
             set_define_events();
         }
+        #endregion
+
+
+
+        
         #region Events
         protected void m_cmd_refresh_Click(object sender, EventArgs e)
         {
