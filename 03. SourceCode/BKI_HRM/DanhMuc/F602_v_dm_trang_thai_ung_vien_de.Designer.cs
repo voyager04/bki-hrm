@@ -80,7 +80,7 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_refresh);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(12, 282);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(8, 275);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(641, 28);
             this.m_pnl_out_place_dm.TabIndex = 15;
@@ -195,7 +195,7 @@
             this.m_txt_dinh_nghia.Location = new System.Drawing.Point(164, 110);
             this.m_txt_dinh_nghia.Multiline = true;
             this.m_txt_dinh_nghia.Name = "m_txt_dinh_nghia";
-            this.m_txt_dinh_nghia.Size = new System.Drawing.Size(192, 102);
+            this.m_txt_dinh_nghia.Size = new System.Drawing.Size(192, 134);
             this.m_txt_dinh_nghia.TabIndex = 23;
             // 
             // m_txt_dau_hieu
@@ -211,14 +211,14 @@
             this.m_txt_viec_can_lam.Location = new System.Drawing.Point(461, 110);
             this.m_txt_viec_can_lam.Multiline = true;
             this.m_txt_viec_can_lam.Name = "m_txt_viec_can_lam";
-            this.m_txt_viec_can_lam.Size = new System.Drawing.Size(192, 66);
+            this.m_txt_viec_can_lam.Size = new System.Drawing.Size(192, 134);
             this.m_txt_viec_can_lam.TabIndex = 25;
             // 
             // F602_v_dm_trang_thai_ung_vien_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(672, 313);
+            this.ClientSize = new System.Drawing.Size(670, 308);
             this.Controls.Add(this.m_txt_viec_can_lam);
             this.Controls.Add(this.m_txt_dau_hieu);
             this.Controls.Add(this.m_txt_dinh_nghia);
