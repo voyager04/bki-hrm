@@ -37,8 +37,6 @@
             this.m_lbl_ngay_ap_dung = new System.Windows.Forms.Label();
             this.m_txt_ma_cap = new System.Windows.Forms.TextBox();
             this.m_txt_ma_bac = new System.Windows.Forms.TextBox();
-            this.m_chk_trang_thai = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.m_dat_ngay_ap_dung = new System.Windows.Forms.DateTimePicker();
             this.m_dat_ngay_ket_thuc = new System.Windows.Forms.DateTimePicker();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
@@ -46,6 +44,8 @@
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.m_cmd_refresh = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            this.m_rdb_khong_su_dung = new System.Windows.Forms.RadioButton();
+            this.m_rdb_su_dung = new System.Windows.Forms.RadioButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,26 +107,6 @@
             this.m_txt_ma_bac.Name = "m_txt_ma_bac";
             this.m_txt_ma_bac.Size = new System.Drawing.Size(309, 20);
             this.m_txt_ma_bac.TabIndex = 23;
-            // 
-            // m_chk_trang_thai
-            // 
-            this.m_chk_trang_thai.AutoSize = true;
-            this.m_chk_trang_thai.Location = new System.Drawing.Point(141, 104);
-            this.m_chk_trang_thai.Name = "m_chk_trang_thai";
-            this.m_chk_trang_thai.Size = new System.Drawing.Size(44, 17);
-            this.m_chk_trang_thai.TabIndex = 24;
-            this.m_chk_trang_thai.Text = "Yes";
-            this.m_chk_trang_thai.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(217, 104);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(40, 17);
-            this.checkBox2.TabIndex = 25;
-            this.checkBox2.Text = "No";
-            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // m_dat_ngay_ap_dung
             // 
@@ -227,16 +207,38 @@
             this.m_cmd_exit.TabIndex = 32;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
-            // F602_dm_cap_bac_de
+            // m_rdb_khong_su_dung
+            // 
+            this.m_rdb_khong_su_dung.AutoSize = true;
+            this.m_rdb_khong_su_dung.Checked = true;
+            this.m_rdb_khong_su_dung.Location = new System.Drawing.Point(141, 103);
+            this.m_rdb_khong_su_dung.Name = "m_rdb_khong_su_dung";
+            this.m_rdb_khong_su_dung.Size = new System.Drawing.Size(97, 17);
+            this.m_rdb_khong_su_dung.TabIndex = 29;
+            this.m_rdb_khong_su_dung.TabStop = true;
+            this.m_rdb_khong_su_dung.Text = "Không sử dụng";
+            this.m_rdb_khong_su_dung.UseVisualStyleBackColor = true;
+            // 
+            // m_rdb_su_dung
+            // 
+            this.m_rdb_su_dung.AutoSize = true;
+            this.m_rdb_su_dung.Location = new System.Drawing.Point(265, 103);
+            this.m_rdb_su_dung.Name = "m_rdb_su_dung";
+            this.m_rdb_su_dung.Size = new System.Drawing.Size(65, 17);
+            this.m_rdb_su_dung.TabIndex = 30;
+            this.m_rdb_su_dung.Text = "Sử dụng";
+            this.m_rdb_su_dung.UseVisualStyleBackColor = true;
+            // 
+            // F603_dm_cap_bac_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(480, 326);
+            this.Controls.Add(this.m_rdb_su_dung);
+            this.Controls.Add(this.m_rdb_khong_su_dung);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_dat_ngay_ket_thuc);
             this.Controls.Add(this.m_dat_ngay_ap_dung);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.m_chk_trang_thai);
             this.Controls.Add(this.m_txt_ma_bac);
             this.Controls.Add(this.m_txt_ma_cap);
             this.Controls.Add(this.m_lbl_ngay_ap_dung);
@@ -244,7 +246,7 @@
             this.Controls.Add(this.m_lbl_trang_thai);
             this.Controls.Add(this.m_lbl_ma_bac);
             this.Controls.Add(this.m_lbl_ma_cap);
-            this.Name = "F602_dm_cap_bac_de";
+            this.Name = "F603_dm_cap_bac_de";
             this.Text = "F602_dm_cap_bac_de";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -261,8 +263,6 @@
         private System.Windows.Forms.Label m_lbl_ngay_ap_dung;
         private System.Windows.Forms.TextBox m_txt_ma_cap;
         private System.Windows.Forms.TextBox m_txt_ma_bac;
-        private System.Windows.Forms.CheckBox m_chk_trang_thai;
-        private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.DateTimePicker m_dat_ngay_ap_dung;
         private System.Windows.Forms.DateTimePicker m_dat_ngay_ket_thuc;
         internal System.Windows.Forms.ImageList ImageList;
@@ -270,6 +270,8 @@
         internal SIS.Controls.Button.SiSButton m_cmd_save;
         internal SIS.Controls.Button.SiSButton m_cmd_refresh;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
+        private System.Windows.Forms.RadioButton m_rdb_khong_su_dung;
+        private System.Windows.Forms.RadioButton m_rdb_su_dung;
 
     }
 }
