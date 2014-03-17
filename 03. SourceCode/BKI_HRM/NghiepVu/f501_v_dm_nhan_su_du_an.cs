@@ -322,7 +322,7 @@ namespace BKI_HRM
 			CControlFormat.setC1FlexFormat(m_grv_nhan_su);
 			CGridUtils.AddSave_Excel_Handlers(m_grv_nhan_su);
             CGridUtils.AddSearch_Handlers(m_grv_nhan_su);
-            m_grv_nhan_su.Tree.Column = (int)e_col_Number.MA_DU_AN;
+            m_grv_nhan_su.Tree.Column = (int)e_col_Number.TEN_DU_AN;
             m_grv_nhan_su.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.SimpleLeaf;
 			set_define_events();
 			this.KeyPreview = true;		
