@@ -270,19 +270,19 @@ namespace BKI_HRM
 
 		#region Data Structure
 		private enum e_col_Number{
-            NGAY_CO_HIEU_LUC = 16
+            NGAY_CO_HIEU_LUC = 17
 ,
-            CAP_DON_VI = 12
+            CAP_DON_VI = 13
                 ,
             NGAY_BAT_DAU = 4
                 ,
             TEN_CV = 7
                 ,
-            TEN_DON_VI = 11
+            TEN_DON_VI = 12
                 ,
             MA_NV = 1
                 ,
-            MA_DON_VI = 10
+            MA_DON_VI = 11
                 ,
             NGAY_KET_THUC = 5
                 ,
@@ -290,16 +290,17 @@ namespace BKI_HRM
                 ,
             HO_DEM = 2
                 ,
-            LOAI_DON_VI = 13
+            LOAI_DON_VI = 14
                 ,
             TEN = 3
                 ,
-            TRANG_THAI_CV = 9
+            LOAI_CV = 9,
+            TRANG_THAI_CV = 10
                 ,
-            MA_QUYET_DINH = 15
+            MA_QUYET_DINH = 16
                 ,
-            NGAY_HET_HIEU_LUC = 17
-                , DIA_BAN = 14
+            NGAY_HET_HIEU_LUC = 18
+                , DIA_BAN = 15
             , NGACH = 8
 		}			
 		#endregion
@@ -345,6 +346,7 @@ namespace BKI_HRM
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.HO_DEM, e_col_Number.HO_DEM);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.LOAI_DON_VI, e_col_Number.LOAI_DON_VI);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.TEN, e_col_Number.TEN);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.LOAI_CV, e_col_Number.LOAI_CV);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.TRANG_THAI_CV, e_col_Number.TRANG_THAI_CV);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_QUYET_DINH, e_col_Number.MA_QUYET_DINH);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.NGAY_HET_HIEU_LUC, e_col_Number.NGAY_HET_HIEU_LUC);

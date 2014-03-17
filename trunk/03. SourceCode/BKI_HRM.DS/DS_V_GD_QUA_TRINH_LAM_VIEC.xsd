@@ -183,9 +183,5 @@
         </xs:element>
       </xs:choice>
     </xs:complexType>
-    <xs:unique name="Constraint1">
-      <xs:selector xpath=".//mstns:V_GD_QUA_TRINH_LAM_VIEC" />
-      <xs:field xpath="mstns:ID" />
-    </xs:unique>
   </xs:element>
 </xs:schema>
