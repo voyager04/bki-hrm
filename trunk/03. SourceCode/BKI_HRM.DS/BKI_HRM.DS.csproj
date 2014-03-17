@@ -111,6 +111,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_GD_HOP_DONG.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_GD_QUA_TRINH_CONG_TAC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_GD_QUA_TRINH_CONG_TAC.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_HT_PHAN_QUYEN_CHO_NHOM1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -125,11 +130,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_HT_USER_GROUP.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DS_GD_QUA_TRINH_CONG_TAC.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_GD_QUA_TRINH_CONG_TAC.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS_V_DM_CAP_BAC.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -351,6 +351,17 @@
     <None Include="DS_GD_HOP_DONG.xss">
       <DependentUpon>DS_GD_HOP_DONG.xsd</DependentUpon>
     </None>
+    <None Include="DS_GD_QUA_TRINH_CONG_TAC.xsc">
+      <DependentUpon>DS_GD_QUA_TRINH_CONG_TAC.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_QUA_TRINH_CONG_TAC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_GD_QUA_TRINH_CONG_TAC.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_GD_QUA_TRINH_CONG_TAC.xss">
+      <DependentUpon>DS_GD_QUA_TRINH_CONG_TAC.xsd</DependentUpon>
+    </None>
     <None Include="DS_HT_PHAN_QUYEN_CHO_NHOM.xsc">
       <DependentUpon>DS_HT_PHAN_QUYEN_CHO_NHOM.xsd</DependentUpon>
     </None>
@@ -383,17 +394,6 @@
     </None>
     <None Include="DS_HT_USER_GROUP.xss">
       <DependentUpon>DS_HT_USER_GROUP.xsd</DependentUpon>
-    </None>
-    <None Include="DS_GD_QUA_TRINH_CONG_TAC.xsc">
-      <DependentUpon>DS_GD_QUA_TRINH_CONG_TAC.xsd</DependentUpon>
-    </None>
-    <None Include="DS_GD_QUA_TRINH_CONG_TAC.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_GD_QUA_TRINH_CONG_TAC.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_GD_QUA_TRINH_CONG_TAC.xss">
-      <DependentUpon>DS_GD_QUA_TRINH_CONG_TAC.xsd</DependentUpon>
     </None>
     <None Include="DS_V_DM_CAP_BAC.xsc">
       <DependentUpon>DS_V_DM_CAP_BAC.xsd</DependentUpon>
