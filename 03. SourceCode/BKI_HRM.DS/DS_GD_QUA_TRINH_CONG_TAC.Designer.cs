@@ -20,7 +20,7 @@ namespace BKI_HRM.DS {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DS_QUA_TRINH_CONG_TAC")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DS_GD_QUA_TRINH_CONG_TAC")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class DS_GD_QUA_TRINH_CONG_TAC : global::System.Data.DataSet {
         
@@ -199,9 +199,9 @@ namespace BKI_HRM.DS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DS_QUA_TRINH_CONG_TAC";
+            this.DataSetName = "DS_GD_QUA_TRINH_CONG_TAC";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DS_QUA_TRINH_CONG_TAC.xsd";
+            this.Namespace = "http://tempuri.org/DS_GD_QUA_TRINH_CONG_TAC.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableGD_QUA_TRINH_CONG_TAC = new GD_QUA_TRINH_CONG_TACDataTable();
@@ -291,11 +291,7 @@ namespace BKI_HRM.DS {
             
             private global::System.Data.DataColumn columnDEN_NGAY;
             
-            private global::System.Data.DataColumn columnMA_LAM_GI;
-            
             private global::System.Data.DataColumn columnLAM_GI;
-            
-            private global::System.Data.DataColumn columnMA_O_DAU;
             
             private global::System.Data.DataColumn columnO_DAU;
             
@@ -386,25 +382,9 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn MA_LAM_GIColumn {
-                get {
-                    return this.columnMA_LAM_GI;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn LAM_GIColumn {
                 get {
                     return this.columnLAM_GI;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn MA_O_DAUColumn {
-                get {
-                    return this.columnMA_O_DAU;
                 }
             }
             
@@ -469,7 +449,7 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GD_QUA_TRINH_CONG_TACRow AddGD_QUA_TRINH_CONG_TACRow(decimal ID_NHAN_SU, string MA_NV, string HO_DEM, string TEN, System.DateTime TU_NGAY, System.DateTime DEN_NGAY, string MA_LAM_GI, string LAM_GI, string MA_O_DAU, string O_DAU, string VAI_TRO, string MA_QUYET_DINH) {
+            public GD_QUA_TRINH_CONG_TACRow AddGD_QUA_TRINH_CONG_TACRow(decimal ID_NHAN_SU, string MA_NV, string HO_DEM, string TEN, System.DateTime TU_NGAY, System.DateTime DEN_NGAY, string LAM_GI, string O_DAU, string VAI_TRO, string MA_QUYET_DINH) {
                 GD_QUA_TRINH_CONG_TACRow rowGD_QUA_TRINH_CONG_TACRow = ((GD_QUA_TRINH_CONG_TACRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID_NHAN_SU,
@@ -478,9 +458,7 @@ namespace BKI_HRM.DS {
                         TEN,
                         TU_NGAY,
                         DEN_NGAY,
-                        MA_LAM_GI,
                         LAM_GI,
-                        MA_O_DAU,
                         O_DAU,
                         VAI_TRO,
                         MA_QUYET_DINH};
@@ -518,9 +496,7 @@ namespace BKI_HRM.DS {
                 this.columnTEN = base.Columns["TEN"];
                 this.columnTU_NGAY = base.Columns["TU_NGAY"];
                 this.columnDEN_NGAY = base.Columns["DEN_NGAY"];
-                this.columnMA_LAM_GI = base.Columns["MA_LAM_GI"];
                 this.columnLAM_GI = base.Columns["LAM_GI"];
-                this.columnMA_O_DAU = base.Columns["MA_O_DAU"];
                 this.columnO_DAU = base.Columns["O_DAU"];
                 this.columnVAI_TRO = base.Columns["VAI_TRO"];
                 this.columnMA_QUYET_DINH = base.Columns["MA_QUYET_DINH"];
@@ -541,12 +517,8 @@ namespace BKI_HRM.DS {
                 base.Columns.Add(this.columnTU_NGAY);
                 this.columnDEN_NGAY = new global::System.Data.DataColumn("DEN_NGAY", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDEN_NGAY);
-                this.columnMA_LAM_GI = new global::System.Data.DataColumn("MA_LAM_GI", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMA_LAM_GI);
                 this.columnLAM_GI = new global::System.Data.DataColumn("LAM_GI", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLAM_GI);
-                this.columnMA_O_DAU = new global::System.Data.DataColumn("MA_O_DAU", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMA_O_DAU);
                 this.columnO_DAU = new global::System.Data.DataColumn("O_DAU", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnO_DAU);
                 this.columnVAI_TRO = new global::System.Data.DataColumn("VAI_TRO", typeof(string), null, global::System.Data.MappingType.Element);
@@ -559,9 +531,7 @@ namespace BKI_HRM.DS {
                 this.columnHO_DEM.MaxLength = 50;
                 this.columnTEN.AllowDBNull = false;
                 this.columnTEN.MaxLength = 50;
-                this.columnMA_LAM_GI.MaxLength = 15;
                 this.columnLAM_GI.MaxLength = 250;
-                this.columnMA_O_DAU.MaxLength = 15;
                 this.columnO_DAU.MaxLength = 250;
                 this.columnVAI_TRO.MaxLength = 250;
                 this.columnMA_QUYET_DINH.MaxLength = 50;
@@ -788,22 +758,6 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string MA_LAM_GI {
-                get {
-                    try {
-                        return ((string)(this[this.tableGD_QUA_TRINH_CONG_TAC.MA_LAM_GIColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MA_LAM_GI\' in table \'GD_QUA_TRINH_CONG_TAC\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGD_QUA_TRINH_CONG_TAC.MA_LAM_GIColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string LAM_GI {
                 get {
                     try {
@@ -815,22 +769,6 @@ namespace BKI_HRM.DS {
                 }
                 set {
                     this[this.tableGD_QUA_TRINH_CONG_TAC.LAM_GIColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string MA_O_DAU {
-                get {
-                    try {
-                        return ((string)(this[this.tableGD_QUA_TRINH_CONG_TAC.MA_O_DAUColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MA_O_DAU\' in table \'GD_QUA_TRINH_CONG_TAC\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGD_QUA_TRINH_CONG_TAC.MA_O_DAUColumn] = value;
                 }
             }
             
@@ -920,18 +858,6 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsMA_LAM_GINull() {
-                return this.IsNull(this.tableGD_QUA_TRINH_CONG_TAC.MA_LAM_GIColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetMA_LAM_GINull() {
-                this[this.tableGD_QUA_TRINH_CONG_TAC.MA_LAM_GIColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsLAM_GINull() {
                 return this.IsNull(this.tableGD_QUA_TRINH_CONG_TAC.LAM_GIColumn);
             }
@@ -940,18 +866,6 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetLAM_GINull() {
                 this[this.tableGD_QUA_TRINH_CONG_TAC.LAM_GIColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsMA_O_DAUNull() {
-                return this.IsNull(this.tableGD_QUA_TRINH_CONG_TAC.MA_O_DAUColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetMA_O_DAUNull() {
-                this[this.tableGD_QUA_TRINH_CONG_TAC.MA_O_DAUColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1026,7 +940,7 @@ namespace BKI_HRM.DS {
         }
     }
 }
-namespace BKI_HRM.DS.DS_QUA_TRINH_CONG_TACTableAdapters {
+namespace BKI_HRM.DS.DS_GD_QUA_TRINH_CONG_TACTableAdapters {
     
     
     /// <summary>
@@ -1156,16 +1070,14 @@ namespace BKI_HRM.DS.DS_QUA_TRINH_CONG_TACTableAdapters {
             tableMapping.ColumnMappings.Add("TEN", "TEN");
             tableMapping.ColumnMappings.Add("TU_NGAY", "TU_NGAY");
             tableMapping.ColumnMappings.Add("DEN_NGAY", "DEN_NGAY");
-            tableMapping.ColumnMappings.Add("MA_LAM_GI", "MA_LAM_GI");
             tableMapping.ColumnMappings.Add("LAM_GI", "LAM_GI");
-            tableMapping.ColumnMappings.Add("MA_O_DAU", "MA_O_DAU");
             tableMapping.ColumnMappings.Add("O_DAU", "O_DAU");
             tableMapping.ColumnMappings.Add("VAI_TRO", "VAI_TRO");
             tableMapping.ColumnMappings.Add("MA_QUYET_DINH", "MA_QUYET_DINH");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[GD_QUA_TRINH_CONG_TAC] ([ID_NHAN_SU], [MA_NV], [HO_DEM], [TEN], [TU_NGAY], [DEN_NGAY], [MA_LAM_GI], [LAM_GI], [MA_O_DAU], [O_DAU], [VAI_TRO], [MA_QUYET_DINH]) VALUES (@ID_NHAN_SU, @MA_NV, @HO_DEM, @TEN, @TU_NGAY, @DEN_NGAY, @MA_LAM_GI, @LAM_GI, @MA_O_DAU, @O_DAU, @VAI_TRO, @MA_QUYET_DINH)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[GD_QUA_TRINH_CONG_TAC] ([ID_NHAN_SU], [MA_NV], [HO_DEM], [TEN], [TU_NGAY], [DEN_NGAY], [LAM_GI], [O_DAU], [VAI_TRO], [MA_QUYET_DINH]) VALUES (@ID_NHAN_SU, @MA_NV, @HO_DEM, @TEN, @TU_NGAY, @DEN_NGAY, @LAM_GI, @O_DAU, @VAI_TRO, @MA_QUYET_DINH)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_NHAN_SU", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_NHAN_SU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MA_NV", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_NV", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1173,9 +1085,7 @@ namespace BKI_HRM.DS.DS_QUA_TRINH_CONG_TACTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TEN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TU_NGAY", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TU_NGAY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DEN_NGAY", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DEN_NGAY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MA_LAM_GI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_LAM_GI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LAM_GI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LAM_GI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MA_O_DAU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_O_DAU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@O_DAU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "O_DAU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VAI_TRO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VAI_TRO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MA_QUYET_DINH", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_QUYET_DINH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1194,8 +1104,8 @@ namespace BKI_HRM.DS.DS_QUA_TRINH_CONG_TACTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_NHAN_SU, MA_NV, HO_DEM, TEN, TU_NGAY, DEN_NGAY, MA_LAM_GI, LAM_GI, MA_O" +
-                "_DAU, O_DAU, VAI_TRO, MA_QUYET_DINH FROM dbo.GD_QUA_TRINH_CONG_TAC";
+            this._commandCollection[0].CommandText = "SELECT ID_NHAN_SU, MA_NV, HO_DEM, TEN, TU_NGAY, DEN_NGAY, LAM_GI, O_DAU, VAI_TRO," +
+                " MA_QUYET_DINH FROM dbo.GD_QUA_TRINH_CONG_TAC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1256,7 +1166,7 @@ namespace BKI_HRM.DS.DS_QUA_TRINH_CONG_TACTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<decimal> ID_NHAN_SU, string MA_NV, string HO_DEM, string TEN, global::System.Nullable<global::System.DateTime> TU_NGAY, global::System.Nullable<global::System.DateTime> DEN_NGAY, string MA_LAM_GI, string LAM_GI, string MA_O_DAU, string O_DAU, string VAI_TRO, string MA_QUYET_DINH) {
+        public virtual int Insert(global::System.Nullable<decimal> ID_NHAN_SU, string MA_NV, string HO_DEM, string TEN, global::System.Nullable<global::System.DateTime> TU_NGAY, global::System.Nullable<global::System.DateTime> DEN_NGAY, string LAM_GI, string O_DAU, string VAI_TRO, string MA_QUYET_DINH) {
             if ((ID_NHAN_SU.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(ID_NHAN_SU.Value));
             }
@@ -1293,41 +1203,29 @@ namespace BKI_HRM.DS.DS_QUA_TRINH_CONG_TACTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((MA_LAM_GI == null)) {
+            if ((LAM_GI == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(MA_LAM_GI));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(LAM_GI));
             }
-            if ((LAM_GI == null)) {
+            if ((O_DAU == null)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(LAM_GI));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(O_DAU));
             }
-            if ((MA_O_DAU == null)) {
+            if ((VAI_TRO == null)) {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(MA_O_DAU));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(VAI_TRO));
             }
-            if ((O_DAU == null)) {
+            if ((MA_QUYET_DINH == null)) {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(O_DAU));
-            }
-            if ((VAI_TRO == null)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(VAI_TRO));
-            }
-            if ((MA_QUYET_DINH == null)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(MA_QUYET_DINH));
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(MA_QUYET_DINH));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
