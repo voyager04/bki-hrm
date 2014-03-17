@@ -113,7 +113,8 @@
             this.m_dat_ngay_ap_dung.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.m_dat_ngay_ap_dung.Location = new System.Drawing.Point(141, 139);
             this.m_dat_ngay_ap_dung.Name = "m_dat_ngay_ap_dung";
-            this.m_dat_ngay_ap_dung.Size = new System.Drawing.Size(309, 20);
+            this.m_dat_ngay_ap_dung.ShowCheckBox = true;
+            this.m_dat_ngay_ap_dung.Size = new System.Drawing.Size(189, 20);
             this.m_dat_ngay_ap_dung.TabIndex = 26;
             // 
             // m_dat_ngay_ket_thuc
@@ -121,7 +122,8 @@
             this.m_dat_ngay_ket_thuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.m_dat_ngay_ket_thuc.Location = new System.Drawing.Point(141, 171);
             this.m_dat_ngay_ket_thuc.Name = "m_dat_ngay_ket_thuc";
-            this.m_dat_ngay_ket_thuc.Size = new System.Drawing.Size(309, 20);
+            this.m_dat_ngay_ket_thuc.ShowCheckBox = true;
+            this.m_dat_ngay_ket_thuc.Size = new System.Drawing.Size(189, 20);
             this.m_dat_ngay_ket_thuc.TabIndex = 27;
             // 
             // ImageList
