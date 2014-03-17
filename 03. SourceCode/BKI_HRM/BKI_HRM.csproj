@@ -148,6 +148,9 @@
     <Compile Include="DanhMuc\F602_v_dm_trang_thai_ung_vien_de.Designer.cs">
       <DependentUpon>F602_v_dm_trang_thai_ung_vien_de.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\F603_dm_cap_bac.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DanhMuc\f703_dm_phap_nhan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +298,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\F602_v_dm_trang_thai_ung_vien_de.resx">
       <DependentUpon>F602_v_dm_trang_thai_ung_vien_de.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\F603_dm_cap_bac.resx">
+      <DependentUpon>F603_dm_cap_bac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f703_dm_phap_nhan.resx">
       <DependentUpon>f703_dm_phap_nhan.cs</DependentUpon>
