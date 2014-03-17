@@ -151,7 +151,13 @@ public class US_DM_CAP_BAC : US_Object
 
 #endregion
 #region "Init Functions"
-	public US_DM_CAP_BAC() 
+    public void FillDatasetSearch(DS_DM_CAP_BAC op_ds, string i_str_search)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_DM_CAP_BAC_search");
+        v_sp.addNVarcharInputParam("@STR_SEARCH", i_str_search);
+        v_sp.fillDataSetByCommand(this, op_ds);
+    }
+    public US_DM_CAP_BAC() 
 	{
 		pm_objDS = new DS_DM_CAP_BAC();
 		pm_strTableName = c_TableName;
