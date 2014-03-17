@@ -59,14 +59,10 @@ namespace BKI_HRM.DanhMuc
         private string m_str_old_path = "";
         #endregion
         #region Private Methods
-        #endregion
-        
-        
-
         private void us_object_2_form(US_V_DM_QUYET_DINH ip_us_v_dm_quyet_dinh)
         {
             m_us.dcID = ip_us_v_dm_quyet_dinh.dcID;
-            
+
             //m_txt_link.Text = ip_us_v_dm_quyet_dinh.strLINK;
             m_txt_ma_quyet_dinh.Text = ip_us_v_dm_quyet_dinh.strMA_QUYET_DINH;
             m_txt_noi_dung.Text = ip_us_v_dm_quyet_dinh.strNOI_DUNG;
@@ -77,17 +73,17 @@ namespace BKI_HRM.DanhMuc
             if (ip_us_v_dm_quyet_dinh.datNGAY_KY == null)
                 m_dat_ngay_ky.Checked = false;
             else
-            m_dat_ngay_ky.Value = ip_us_v_dm_quyet_dinh.datNGAY_KY;
+                m_dat_ngay_ky.Value = ip_us_v_dm_quyet_dinh.datNGAY_KY;
             if (ip_us_v_dm_quyet_dinh.datNGAY_HET_HIEU_LUC == null)
                 m_dat_ngay_het_hieu_luc.Checked = false;
             else
-            m_dat_ngay_het_hieu_luc.Value = ip_us_v_dm_quyet_dinh.datNGAY_HET_HIEU_LUC;
+                m_dat_ngay_het_hieu_luc.Value = ip_us_v_dm_quyet_dinh.datNGAY_HET_HIEU_LUC;
             m_cbo_loai_quyet_dinh.SelectedValue = ip_us_v_dm_quyet_dinh.dcID_LOAI_QD;
 
-         
-           
 
-           
+
+
+
             //if (ip_us_v_dm_quyet_dinh.datNGAY_HET_HIEU_LUC.Equals(DateTime.Parse("1/1/1900 12:00:00 AM")))
             //{
             //    m_dat_ngay_het_hieu_luc.Checked = false;
@@ -118,7 +114,7 @@ namespace BKI_HRM.DanhMuc
                 BaseMessages.MsgBox_Infor("File đính kèm có dung lượng quá lớn. \nVui lòng chọn file có dung lượng nhỏ hơn 5Mb");
                 return;
             }
-           // m_lbl_ten_file.Text = m_ofd_chon_file.SafeFileName;
+            // m_lbl_ten_file.Text = m_ofd_chon_file.SafeFileName;
             m_str_file_name = m_ofd_chon_file.SafeFileName;
             m_str_origination = m_ofd_chon_file.FileName;
         }
@@ -127,8 +123,8 @@ namespace BKI_HRM.DanhMuc
         {
             CControlFormat.setFormStyle(this);
             set_define_events();
-           
-        
+
+
         }
         private bool check_data_is_ok()
         {
@@ -137,8 +133,8 @@ namespace BKI_HRM.DanhMuc
                 BaseMessages.MsgBox_Infor("Bạn chưa nhập mã quyết định");
                 return false;
             }
-            
-            
+
+
             return true;
         }
         private void form_2_us_object()
@@ -150,14 +146,14 @@ namespace BKI_HRM.DanhMuc
             m_us.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc.Value;
             m_us.datNGAY_KY = m_dat_ngay_ky.Value;
             m_us.dcID_LOAI_QD = CIPConvert.ToDecimal(m_cbo_loai_quyet_dinh.SelectedValue.ToString());
-            
-            
+
+
 
             //if (m_dat_ngay_het_hieu_luc.Checked == false)
             //    m_us.SetNGAY_HET_HIEU_LUCNull();
             //else
             //    m_us.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc.Value;
-			
+
         }
         private void save_data()
         {
@@ -196,8 +192,10 @@ namespace BKI_HRM.DanhMuc
             CControlFormat.setFormStyle(this);
             set_define_events();
         }
+
         //TODO: Xuất Excel
         //TODO: Gen mã quyết đinh tự động
+        #endregion
         #region Events
         protected void m_cmd_refresh_Click(object sender, EventArgs e)
         {
@@ -215,6 +213,11 @@ namespace BKI_HRM.DanhMuc
             this.m_cmd_refresh.Click += new EventHandler(m_cmd_refresh_Click);
             this.m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
         }
+        
+        
+        
+
+        
         protected void m_cmd_save_Click(object sender, EventArgs e)
         {
             try
@@ -237,8 +240,7 @@ namespace BKI_HRM.DanhMuc
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        #endregion
-
+        
 
 
         internal void display(US_V_DM_QUYET_DINH m_us)
@@ -258,13 +260,14 @@ namespace BKI_HRM.DanhMuc
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        
 
-      
 
-       
 
-       
-        
+
+        #endregion
+
+
+
+
     }
 }
