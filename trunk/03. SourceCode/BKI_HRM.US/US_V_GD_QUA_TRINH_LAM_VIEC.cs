@@ -20,7 +20,6 @@ namespace BKI_HRM.US {
 
     public class US_V_GD_QUA_TRINH_LAM_VIEC : US_Object {
         private const string c_TableName = "V_GD_QUA_TRINH_LAM_VIEC";
-
         #region "Public Properties"
         public string strMA_NV
         {

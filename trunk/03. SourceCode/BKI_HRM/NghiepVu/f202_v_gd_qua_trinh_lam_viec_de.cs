@@ -80,9 +80,9 @@ namespace BKI_HRM
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.LOAI_QUYET_DINH,
               WinFormControls.eTAT_CA.NO,
               m_cbo_loai_quyet_dinh);
-            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_CHUC_VU,
+            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.LOAI_CHUC_VU,
                 WinFormControls.eTAT_CA.NO,
-                m_cbo_trang_thai_chuc_vu);
+                m_cbo_loai_chuc_vu);
 
             DS_DM_CHUC_VU v_ds_chuc_vu = new DS_DM_CHUC_VU();
             US_DM_CHUC_VU v_us_chuc_vu = new US_DM_CHUC_VU();
@@ -161,7 +161,7 @@ namespace BKI_HRM
             m_us_chi_tiet_chuc_vu = new US_GD_CHI_TIET_CHUC_VU();
             m_us_chi_tiet_chuc_vu.dcID_NHAN_SU = m_us_v_qua_trinh_lam_viec.dcID_NHAN_SU;
             m_us_chi_tiet_chuc_vu.dcID_CHUC_VU = CIPConvert.ToDecimal(m_cbo_chuc_vu_moi.SelectedValue);
-            m_us_chi_tiet_chuc_vu.dcID_TRANG_THAI_CV = CIPConvert.ToDecimal(m_cbo_trang_thai_chuc_vu.SelectedValue);
+            m_us_chi_tiet_chuc_vu.dcID_LOAI_CV = CIPConvert.ToDecimal(m_cbo_loai_chuc_vu.SelectedValue);
             m_us_chi_tiet_chuc_vu.dcID_DON_VI = m_us_dm_don_vi.dcID;
             if (m_txt_ma_quyet_dinh.Text != "")
                 m_us_chi_tiet_chuc_vu.dcID_QUYET_DINH = m_us_quyet_dinh.dcID;
@@ -231,7 +231,7 @@ namespace BKI_HRM
             m_cbo_chuc_vu_moi.SelectedIndex = 0;
             m_cbo_loai_quyet_dinh.SelectedIndex = 0;
             m_cbo_ma_chuc_vu_moi.SelectedIndex = 0;
-            m_cbo_trang_thai_chuc_vu.SelectedIndex = 0;
+            m_cbo_loai_chuc_vu.SelectedIndex = 0;
             m_txt_don_vi_moi.Text = "";
             m_txt_ma_quyet_dinh.Text = "";
             m_txt_noi_dung.Text = "";
