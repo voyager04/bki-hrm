@@ -416,7 +416,11 @@
        public const string THOI_GIAN_TG = "THOI_GIAN_TG";
        public const string DANH_HIEU = "DANH_HIEU";
        public const string ID = "ID";
+       public const string ID_LOAI_CV = "ID_LOAI_CV";
+       public const string MO_TA = "MO_TA";
+       public const string TRANG_THAI_CV = "TRANG_THAI_CV";
    }
+
    public class V_BAO_CAO_NHAN_SU {
        public const string ID = "ID";
        public const string MA_NV = "MA_NV";
