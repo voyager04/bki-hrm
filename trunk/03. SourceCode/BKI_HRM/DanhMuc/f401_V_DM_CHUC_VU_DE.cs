@@ -109,7 +109,7 @@ namespace BKI_HRM
             m_dat_ngayapdung.Value = ip_us_v_dm_chuc_vu.datNGAY_AP_DUNG;
             m_dat_ngayketthuc.Value = ip_us_v_dm_chuc_vu.datNGAY_KET_THUC;
             m_cbo_ngach.SelectedValue = ip_us_v_dm_chuc_vu.dcID_NGACH;
-            if (ip_us_v_dm_chuc_vu.strTRANG_THAI == "y")
+            if (ip_us_v_dm_chuc_vu.strTRANG_THAI == "y" || ip_us_v_dm_chuc_vu.strTRANG_THAI == "Y")
                 m_rdb_sudung.Checked = true;
             else
                 m_rdb_khongsudung.Checked = true;
