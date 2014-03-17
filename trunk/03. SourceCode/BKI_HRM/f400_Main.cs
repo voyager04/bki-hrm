@@ -440,5 +440,19 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_menuitem_qlbac_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                F603_dm_cap_bac frm = new F603_dm_cap_bac();
+                frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }

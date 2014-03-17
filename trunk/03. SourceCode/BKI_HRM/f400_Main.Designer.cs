@@ -189,6 +189,7 @@ namespace BKI_HRM
             this.m_menuitem_qlbac.Name = "m_menuitem_qlbac";
             this.m_menuitem_qlbac.Size = new System.Drawing.Size(206, 22);
             this.m_menuitem_qlbac.Text = "Quản lý cấp bậc";
+            this.m_menuitem_qlbac.Click += new System.EventHandler(this.m_menuitem_qlbac_Click);
             // 
             // m_menuitem_qldonvi
             // 
