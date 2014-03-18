@@ -44,6 +44,7 @@ namespace BKI_HRM
         private TextBox m_txt_tim_kiem;
         private Label label1;
         internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
+        private Label m_lbl_count_record;
         private System.ComponentModel.IContainer components;
 
         public f701_v_hop_dong_lao_dong()
@@ -94,6 +95,7 @@ namespace BKI_HRM
             this.m_cmd_tim_kiem = new SIS.Controls.Button.SiSButton();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.m_lbl_count_record = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -220,9 +222,9 @@ namespace BKI_HRM
             // m_fg
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Location = new System.Drawing.Point(0, 69);
+            this.m_fg.Location = new System.Drawing.Point(0, 106);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1355, 484);
+            this.m_fg.Size = new System.Drawing.Size(1355, 447);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -264,10 +266,19 @@ namespace BKI_HRM
             this.label1.TabIndex = 27;
             this.label1.Text = "Từ khoá tìm kiếm";
             // 
+            // m_lbl_count_record
+            // 
+            this.m_lbl_count_record.AutoSize = true;
+            this.m_lbl_count_record.Location = new System.Drawing.Point(41, 66);
+            this.m_lbl_count_record.Name = "m_lbl_count_record";
+            this.m_lbl_count_record.Size = new System.Drawing.Size(0, 13);
+            this.m_lbl_count_record.TabIndex = 34;
+            // 
             // f701_v_hop_dong_lao_dong
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(1355, 591);
+            this.Controls.Add(this.m_lbl_count_record);
             this.Controls.Add(this.m_cmd_tim_kiem);
             this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.label1);
@@ -379,6 +390,7 @@ namespace BKI_HRM
                 m_us.FillDatasetSearchAll(m_ds, "");
             m_us.FillDatasetSearchAll(m_ds, v_str_search);
 
+            m_lbl_count_record.Text = string.Format("Có {0} Hợp Đồng Lao Động.", m_ds.Tables[0].Rows.Count);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.None // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
