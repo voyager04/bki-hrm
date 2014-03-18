@@ -221,28 +221,6 @@ namespace BKI_HRM.US
             pm_objDR["TRANG_THAI_HOP_DONG"] = System.Convert.DBNull;
         }
 
-        public decimal dcID
-        {
-            get
-            {
-                return CNull.RowNVLDecimal(pm_objDR, "ID", IPConstants.c_DefaultDecimal);
-            }
-            set
-            {
-                pm_objDR["ID"] = value;
-            }
-        }
-
-        public bool IsIDNull()
-        {
-            return pm_objDR.IsNull("ID");
-        }
-
-        public void SetIDNull()
-        {
-            pm_objDR["ID"] = System.Convert.DBNull;
-        }
-
         public decimal dcID_NHAN_SU
         {
             get
