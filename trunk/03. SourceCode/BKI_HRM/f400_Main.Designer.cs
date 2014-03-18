@@ -89,6 +89,7 @@ namespace BKI_HRM
             this.m_lbl_du_an_sap_kt = new System.Windows.Forms.Label();
             this.m_lbl_thong_bao_hop_dong_sap_het_han = new System.Windows.Forms.Label();
             this.m_lbl_het_han_thu_viec = new System.Windows.Forms.Label();
+            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky = new System.Windows.Forms.Label();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -568,6 +569,20 @@ namespace BKI_HRM
             this.m_lbl_het_han_thu_viec.Text = "Thử việc sắp hết hạn";
             this.m_lbl_het_han_thu_viec.Click += new System.EventHandler(this.m_lbl_het_han_thu_viec_Click);
             // 
+            // m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky
+            // 
+            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.AutoSize = true;
+            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold);
+            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Location = new System.Drawing.Point(0, 341);
+            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Name = "m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky";
+            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Size = new System.Drawing.Size(268, 18);
+            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.TabIndex = 5;
+            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text = "Hợp đồng đã hết hạn nhưng chưa ký";
+            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Click += new System.EventHandler(this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky_Click);
+            // 
             // f400_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -575,6 +590,7 @@ namespace BKI_HRM
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(835, 413);
+            this.Controls.Add(this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky);
             this.Controls.Add(this.m_lbl_het_han_thu_viec);
             this.Controls.Add(this.m_lbl_thong_bao_hop_dong_sap_het_han);
             this.Controls.Add(this.m_lbl_du_an_sap_kt);
@@ -654,5 +670,6 @@ namespace BKI_HRM
         private ToolStripMenuItem nhânSựTheoCấpBậcToolStripMenuItem;
         private Label m_lbl_het_han_thu_viec;
         private ToolStripMenuItem quáTrìnhLàmViệcToolStripMenuItem;
+        private Label m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky;
     }
 }

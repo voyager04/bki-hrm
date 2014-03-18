@@ -374,9 +374,10 @@ namespace BKI_HRM
             var v_str_month = Regex.Match(v_str_search, @"\d+").Value;
             if (!v_str_month.Equals(""))
                 v_str_search = v_str_month;
+
             if (v_str_search == m_str_suggest)
-                m_us.FillDatasetSearchAll(m_ds, "", "N");
-            m_us.FillDatasetSearchAll(m_ds, v_str_search, "N");
+                m_us.FillDatasetSearchAll(m_ds, "");
+            m_us.FillDatasetSearchAll(m_ds, v_str_search);
 
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);

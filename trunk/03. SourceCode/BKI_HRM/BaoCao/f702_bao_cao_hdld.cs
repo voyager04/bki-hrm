@@ -40,6 +40,7 @@ namespace BKI_HRM
         internal SIS.Controls.Button.SiSButton m_cmd_tim_kiem;
         private TextBox m_txt_tim_kiem;
         private Label label1;
+        private Label m_lbl_count_record;
         private System.ComponentModel.IContainer components;
 
         public f702_bao_cao_hdld()
@@ -87,6 +88,7 @@ namespace BKI_HRM
             this.m_cmd_tim_kiem = new SIS.Controls.Button.SiSButton();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.m_lbl_count_record = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -123,7 +125,7 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 474);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 575);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1331, 36);
@@ -165,9 +167,9 @@ namespace BKI_HRM
             // m_fg
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Location = new System.Drawing.Point(0, 72);
+            this.m_fg.Location = new System.Drawing.Point(0, 97);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1331, 400);
+            this.m_fg.Size = new System.Drawing.Size(1331, 472);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -179,7 +181,7 @@ namespace BKI_HRM
             this.m_cmd_tim_kiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_tim_kiem.ImageIndex = 5;
             this.m_cmd_tim_kiem.ImageList = this.ImageList;
-            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(1070, 18);
+            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(1120, 24);
             this.m_cmd_tim_kiem.Name = "m_cmd_tim_kiem";
             this.m_cmd_tim_kiem.Size = new System.Drawing.Size(101, 28);
             this.m_cmd_tim_kiem.TabIndex = 32;
@@ -189,29 +191,39 @@ namespace BKI_HRM
             // m_txt_tim_kiem
             // 
             this.m_txt_tim_kiem.ForeColor = System.Drawing.Color.Gray;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(136, 23);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(186, 29);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(928, 20);
             this.m_txt_tim_kiem.TabIndex = 31;
             this.m_txt_tim_kiem.Text = "Nhập Mã nhân viên, Họ đệm, Tên, Mã hợp đồng, Loại hợp đồng, Ngày tháng, Trạng thá" +
     "i";
             this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
+            this.m_txt_tim_kiem.TextChanged += new System.EventHandler(this.m_txt_tim_kiem_TextChanged);
             this.m_txt_tim_kiem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.m_txt_tim_kiem_KeyPress);
             this.m_txt_tim_kiem.Leave += new System.EventHandler(this.m_txt_tim_kiem_Leave);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 26);
+            this.label1.Location = new System.Drawing.Point(82, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 30;
             this.label1.Text = "Từ khoá tìm kiếm";
             // 
+            // m_lbl_count_record
+            // 
+            this.m_lbl_count_record.AutoSize = true;
+            this.m_lbl_count_record.Location = new System.Drawing.Point(32, 68);
+            this.m_lbl_count_record.Name = "m_lbl_count_record";
+            this.m_lbl_count_record.Size = new System.Drawing.Size(0, 13);
+            this.m_lbl_count_record.TabIndex = 33;
+            // 
             // f702_bao_cao_hdld
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(1331, 510);
+            this.ClientSize = new System.Drawing.Size(1331, 611);
+            this.Controls.Add(this.m_lbl_count_record);
             this.Controls.Add(this.m_cmd_tim_kiem);
             this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.label1);
@@ -239,12 +251,14 @@ namespace BKI_HRM
             if (ip_i_form_mode == 1)
             {
                 m_i_form_mode = 1;
-                m_fg.Text = "f702 Báo cáo Hợp Đồng Lao Động đã hết hạn";
             }
             if (ip_i_form_mode == 2)
             {
                 m_i_form_mode = 2;
-                m_fg.Text = "f702 Báo cáo Hợp Đồng Lao Động sắp hết hạn (30 ngày)";
+            }
+            if (ip_i_form_mode == 3)
+            {
+                m_i_form_mode = 3;
             }
         }
         #endregion
@@ -282,6 +296,7 @@ namespace BKI_HRM
         DS_V_GD_HOP_DONG_LAO_DONG m_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
         US_V_GD_HOP_DONG_LAO_DONG m_us = new US_V_GD_HOP_DONG_LAO_DONG();
         private int m_i_form_mode;
+        private string m_str_suggest = "Nhập Mã nhân viên, Họ đệm, Tên, Mã hợp đồng, Loại hợp đồng, Ngày tháng, Trạng thái";
         #endregion
 
         #region Private Methods
@@ -319,15 +334,50 @@ namespace BKI_HRM
         }
         private void load_data_2_grid()
         {
+            var v_str_search = m_txt_tim_kiem.Text.Trim();
+            var v_str_month = Regex.Match(v_str_search, @"\d+").Value;
+            if (!v_str_month.Equals(""))
+                v_str_search = v_str_month;
+
             m_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
-            if (m_i_form_mode == 1)
+
+            if (v_str_search == m_str_suggest)
             {
-                m_us.FIllDataset_By_Hop_Dong_Da_Het_Han(m_ds);
+                if (m_i_form_mode == 1)
+                {
+                    m_us.FIllDataset_By_Hop_Dong_Da_Het_Han(m_ds, "");
+                    m_lbl_count_record.Text = string.Format("Có {0} Hợp Đồng Lao Động đã hết hạn.", m_ds.Tables[0].Rows.Count);
+                }
+                if (m_i_form_mode == 2)
+                {
+                    m_us.FIllDataset_By_Hop_Dong_Sap_Het_Han(m_ds, "");
+                    m_lbl_count_record.Text = string.Format("Có {0} Hợp Đồng Lao Động sắp hết hạn (dưới 30 ngày).", m_ds.Tables[0].Rows.Count);
+                }
+                if (m_i_form_mode == 3)
+                {
+                    m_us.FillDataSet_Search_HDLD_da_het_han_nhung_chua_ky(m_ds, "");
+                    m_lbl_count_record.Text = string.Format("Có {0} Hợp Đồng Lao Động đã hết hạn nhưng chưa ký mới.", m_ds.Tables[0].Rows.Count);
+                }
             }
-            if (m_i_form_mode == 2)
+            else
             {
-                m_us.FIllDataset_By_Hop_Dong_Sap_Het_Han(m_ds);
+                if (m_i_form_mode == 1)
+                {
+                    m_us.FIllDataset_By_Hop_Dong_Da_Het_Han(m_ds, v_str_search);
+                    m_lbl_count_record.Text = string.Format("Có {0} Hợp Đồng Lao Động đã hết hạn.", m_ds.Tables[0].Rows.Count);
+                }
+                if (m_i_form_mode == 2)
+                {
+                    m_us.FIllDataset_By_Hop_Dong_Sap_Het_Han(m_ds, v_str_search);
+                    m_lbl_count_record.Text = string.Format("Có {0} Hợp Đồng Lao Động sắp hết hạn (dưới 30 ngày).", m_ds.Tables[0].Rows.Count);
+                }
+                if (m_i_form_mode == 3)
+                {
+                    m_us.FillDataSet_Search_HDLD_da_het_han_nhung_chua_ky(m_ds, v_str_search);
+                    m_lbl_count_record.Text = string.Format("Có {0} Hợp Đồng Lao Động đã hết hạn nhưng chưa ký mới.", m_ds.Tables[0].Rows.Count);
+                }
             }
+
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;
@@ -404,18 +454,6 @@ namespace BKI_HRM
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
         }
 
-        private void tim_kiem()
-        {
-            m_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
-            var v_str_search = m_txt_tim_kiem.Text.Trim();
-            var v_str_month = Regex.Match(v_str_search, @"\d+").Value;
-            if (!v_str_month.Equals(""))
-                v_str_search = v_str_month;
-            m_us.FillDatasetSearchAll(m_ds, v_str_search, "N");
-            m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            m_fg.Redraw = true;
-        }
         #endregion
 
         //
@@ -453,7 +491,7 @@ namespace BKI_HRM
         {
             try
             {
-                tim_kiem();
+                load_data_2_grid();
             }
             catch (Exception v_e)
             {
@@ -465,7 +503,7 @@ namespace BKI_HRM
         {
             try
             {
-                tim_kiem();
+                load_data_2_grid();
             }
             catch (Exception v_e)
             {
@@ -492,10 +530,22 @@ namespace BKI_HRM
             {
                 if (m_txt_tim_kiem.Text == "")
                 {
-                    m_txt_tim_kiem.Text = "Nhập Mã nhân viên, Họ đệm, Tên, Mã hợp đồng, Loại hợp đồng, Ngày tháng, Trạng thái";
+                    m_txt_tim_kiem.Text = m_str_suggest;
                     m_txt_tim_kiem.ForeColor = Color.Gray;
                 }
 
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_txt_tim_kiem_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
             }
             catch (Exception v_e)
             {

@@ -419,6 +419,50 @@ namespace BKI_HRM.US
             pm_objDR["TEN_PHAP_NHAN"] = System.Convert.DBNull;
         }
 
+        public decimal dcID_TRANG_LAO_DONG
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_TRANG_LAO_DONG", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_TRANG_LAO_DONG"] = value;
+            }
+        }
+
+        public bool IsID_TRANG_LAO_DONGNull()
+        {
+            return pm_objDR.IsNull("ID_TRANG_LAO_DONG");
+        }
+
+        public void SetID_TRANG_LAO_DONGNull()
+        {
+            pm_objDR["ID_TRANG_LAO_DONG"] = System.Convert.DBNull;
+        }
+
+        public string strTRANG_THAI_HIEN_TAI
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "TRANG_THAI_HIEN_TAI", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["TRANG_THAI_HIEN_TAI"] = value;
+            }
+        }
+
+        public bool IsTRANG_THAI_HIEN_TAINull()
+        {
+            return pm_objDR.IsNull("TRANG_THAI_HIEN_TAI");
+        }
+
+        public void SetTRANG_THAI_HIEN_TAINull()
+        {
+            pm_objDR["TRANG_THAI_HIEN_TAI"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_V_GD_HOP_DONG_LAO_DONG()
@@ -469,23 +513,31 @@ namespace BKI_HRM.US
             v_sp.fillDataSetByCommand(this, op_ds);
         }
 
-        public void FillDatasetSearchAll(DS_V_GD_HOP_DONG_LAO_DONG op_ds, string ip_str_keyword, string ip_str_trang_thai)
+        public void FillDatasetSearchAll(DS_V_GD_HOP_DONG_LAO_DONG op_ds, string ip_str_keyword)
         {
             CStoredProc v_sp = new CStoredProc("pr_GD_HOP_DONG_Search");
             v_sp.addNVarcharInputParam("@ip_str_keyword", ip_str_keyword);
-            v_sp.addNVarcharInputParam("@ip_str_trang_thai", ip_str_trang_thai);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
 
-        public void FIllDataset_By_Hop_Dong_Da_Het_Han(DS_V_GD_HOP_DONG_LAO_DONG op_ds)
+        public void FIllDataset_By_Hop_Dong_Da_Het_Han(DS_V_GD_HOP_DONG_LAO_DONG op_ds, string ip_str_keyword)
         {
             CStoredProc v_sp = new CStoredProc("pr_V_GD_HOP_DONG_LAO_DONG_By_Da_Het_Han");
+            v_sp.addNVarcharInputParam("@ip_str_keyword", ip_str_keyword);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
 
-        public void FIllDataset_By_Hop_Dong_Sap_Het_Han(DS_V_GD_HOP_DONG_LAO_DONG op_ds)
+        public void FIllDataset_By_Hop_Dong_Sap_Het_Han(DS_V_GD_HOP_DONG_LAO_DONG op_ds, string ip_str_keyword)
         {
             CStoredProc v_sp = new CStoredProc("pr_V_GD_HOP_DONG_LAO_DONG_By_Ngay_Het_Han");
+            v_sp.addNVarcharInputParam("@ip_str_keyword", ip_str_keyword);
+            v_sp.fillDataSetByCommand(this, op_ds);
+        }
+
+        public void FillDataSet_Search_HDLD_da_het_han_nhung_chua_ky(DS_V_GD_HOP_DONG_LAO_DONG op_ds, string ip_str_keyword)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_V_GD_HOP_DONG_LAO_DONG_Search_HDLD_da_het_han_nhung_chua_ky");
+            v_sp.addNVarcharInputParam("@ip_str_keyword", ip_str_keyword);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
     }

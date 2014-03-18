@@ -281,11 +281,18 @@ namespace BKI_HRM
                 }
 
                 US_V_GD_HOP_DONG_LAO_DONG v_us_v_gd_hop_dong = new US_V_GD_HOP_DONG_LAO_DONG();
-                DS_V_GD_HOP_DONG_LAO_DONG v_ds_v_gd_hop_dong = new DS_V_GD_HOP_DONG_LAO_DONG();
-                v_us_v_gd_hop_dong.FIllDataset_By_Hop_Dong_Sap_Het_Han(v_ds_v_gd_hop_dong);
-                if (v_ds_v_gd_hop_dong.Tables[0].Rows.Count > 0)
+                DS_V_GD_HOP_DONG_LAO_DONG v_ds_v_gd_hop_dong_sap_het_han = new DS_V_GD_HOP_DONG_LAO_DONG();
+                v_us_v_gd_hop_dong.FIllDataset_By_Hop_Dong_Sap_Het_Han(v_ds_v_gd_hop_dong_sap_het_han, "");
+                if (v_ds_v_gd_hop_dong_sap_het_han.Tables[0].Rows.Count > 0)
                 {
-                    m_lbl_thong_bao_hop_dong_sap_het_han.Text = string.Format("Có {0} hợp đồng sắp hết hạn. Click để xem chi tiết!", v_ds_v_gd_hop_dong.Tables[0].Rows.Count);
+                    m_lbl_thong_bao_hop_dong_sap_het_han.Text = string.Format("Có {0} hợp đồng sắp hết hạn. Click để xem chi tiết!", v_ds_v_gd_hop_dong_sap_het_han.Tables[0].Rows.Count);
+                }
+
+                DS_V_GD_HOP_DONG_LAO_DONG v_ds_v_gd_hop_dong_da_het_han = new DS_V_GD_HOP_DONG_LAO_DONG();
+                v_us_v_gd_hop_dong.FillDataSet_Search_HDLD_da_het_han_nhung_chua_ky(v_ds_v_gd_hop_dong_da_het_han, "");
+                if (v_ds_v_gd_hop_dong_da_het_han.Tables[0].Rows.Count > 0)
+                {
+                    m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text = string.Format("Có {0} hợp đồng đã quá hạn và chưa ký mới. Click để xem chi tiết!", v_ds_v_gd_hop_dong_da_het_han.Tables[0].Rows.Count);
                 }
             }
             catch (Exception v_e)
@@ -451,6 +458,20 @@ namespace BKI_HRM
             catch (Exception v_e)
             {
                 
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f702_bao_cao_hdld frm = new f702_bao_cao_hdld();
+                frm.set_form_mode_for_report(3);
+                frm.ShowDialog();
+            }
+            catch (Exception v_e)
+            {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
