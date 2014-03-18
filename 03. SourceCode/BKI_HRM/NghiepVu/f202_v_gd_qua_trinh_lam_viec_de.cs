@@ -179,6 +179,7 @@ namespace BKI_HRM
             m_us_chi_tiet_chuc_vu.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value;
             if(m_dat_ngay_ket_thuc.Checked)
                 m_us_chi_tiet_chuc_vu.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value;
+            m_us_chi_tiet_chuc_vu.strTRANG_THAI_CV = "Y";
 
         }
         private void form_to_us_object_quyet_dinh()

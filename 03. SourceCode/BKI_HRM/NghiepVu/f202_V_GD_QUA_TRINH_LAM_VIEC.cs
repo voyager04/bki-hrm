@@ -364,7 +364,7 @@ namespace BKI_HRM
 		}
 		private void load_data_2_grid(){						
 			m_ds_qua_trinh_lam_viec = new DS_V_GD_QUA_TRINH_LAM_VIEC();			
-			m_us_qua_trinh_lam_viec.FillDataset(m_ds_qua_trinh_lam_viec);
+			m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec,"");
 			m_grv_qua_trinh_lam_viec.Redraw = false;
            
 			CGridUtils.Dataset2C1Grid(m_ds_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec, m_obj_trans);
@@ -391,6 +391,18 @@ namespace BKI_HRM
               , "{0}"
               );
             m_grv_qua_trinh_lam_viec.Redraw = true;
+        }
+        private void load_custom_source_2_m_txt_tim_kiem()
+        {
+            int count = m_ds_qua_trinh_lam_viec.Tables["V_GD_QUA_TRINH_LAM_VIEC"].Rows.Count;
+            AutoCompleteStringCollection v_acsc_search = new AutoCompleteStringCollection();
+            foreach (DataRow dr in m_ds_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC)
+            {
+                v_acsc_search.Add(dr[V_GD_QUA_TRINH_LAM_VIEC.MA_NV].ToString());
+                v_acsc_search.Add(dr[V_GD_QUA_TRINH_LAM_VIEC.HO_DEM].ToString() + " " + dr[V_GD_QUA_TRINH_LAM_VIEC.TEN].ToString());
+                v_acsc_search.Add(dr[V_GD_QUA_TRINH_LAM_VIEC.TEN].ToString());
+            }
+            m_txt_tim_kiem.AutoCompleteCustomSource = v_acsc_search;
         }
         private void load_data_2_grid(US_DM_NHAN_SU ip_us_dm_nhan_su)
         {
@@ -507,6 +519,7 @@ namespace BKI_HRM
 		private void f202_V_GD_QUA_TRINH_LAM_VIEC_Load(object sender, System.EventArgs e) {
 			try{
 				set_initial_form_load();
+                load_custom_source_2_m_txt_tim_kiem();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
