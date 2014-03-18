@@ -30,18 +30,18 @@ namespace BKI_HRM
             InitializeComponent();
             format_controls();
         }
-        public void display_for_insert(US_V_GD_QUA_TRINH_LAM_VIEC ip_us_qua_trinh_lam_viec)
+        public void display_for_insert(US_V_GD_QUA_TRINH_LAM_VIEC ip_us_qua_trinh_lam_viec,string ip_str_loai_cv)
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             m_us_v_qua_trinh_lam_viec = ip_us_qua_trinh_lam_viec;
-            us_object_to_form();
+            us_object_to_form(ip_str_loai_cv);
             this.ShowDialog();
         }
         public void display_for_update(US_V_GD_QUA_TRINH_LAM_VIEC ip_us_qua_trinh_lam_viec)
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             m_us_v_qua_trinh_lam_viec = ip_us_qua_trinh_lam_viec;
-            us_object_to_form();
+            us_object_to_form("");
             this.ShowDialog();
         }
 #endregion
@@ -95,7 +95,7 @@ namespace BKI_HRM
             m_cbo_ma_chuc_vu_moi.DisplayMember = DM_CHUC_VU.MA_CV;
             m_cbo_ma_chuc_vu_moi.ValueMember = DM_CHUC_VU.ID;
         }
-        private void us_object_to_form()
+        private void us_object_to_form(string i_str_loai_cv)
         {
             m_txt_ma_nv.Text = m_us_v_qua_trinh_lam_viec.strMA_NV;
             m_txt_ho_ten.Text = m_us_v_qua_trinh_lam_viec.strHO_DEM + " " + m_us_v_qua_trinh_lam_viec.strTEN;
@@ -110,8 +110,19 @@ namespace BKI_HRM
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.InsertDataState:
+                    if (i_str_loai_cv == "thang_chuc")
+                    {
+                        m_cbo_loai_chuc_vu.SelectedValue = 650;
 
-                    
+                    }
+                    else
+                    {
+                        if (i_str_loai_cv == "bo_nhiem")
+                        {
+                            m_cbo_loai_chuc_vu.SelectedValue = 651;
+                        }
+                    }
+                    m_cbo_loai_chuc_vu.Enabled = false;
                     break;
                 case DataEntryFormMode.UpdateDataState:
                     m_us_dm_don_vi.dcID = m_us_v_qua_trinh_lam_viec.dcID_DON_VI;
@@ -248,7 +259,7 @@ namespace BKI_HRM
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.UpdateDataState:
-                    us_object_to_form();
+                    us_object_to_form("");
                     break;
                 case DataEntryFormMode.ViewDataState:
                     break;
