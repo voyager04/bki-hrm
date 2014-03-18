@@ -56,6 +56,7 @@ namespace BKI_HRM.NghiepVu
         private void format_control()
         {
             CControlFormat.setFormStyle(this);
+            m_txt_ma_du_an.Enabled = false;
         }
         private void us_obj_2_form(decimal i_dc_id_gd_chi_tiet_du_an)
         {
@@ -63,6 +64,7 @@ namespace BKI_HRM.NghiepVu
             DS_GD_CHI_TIET_DU_AN v_ds = new DS_GD_CHI_TIET_DU_AN();
             v_us.FillDatasetByID(v_ds, i_dc_id_gd_chi_tiet_du_an);
             DataRow v_dr = v_ds.Tables[0].Rows[0];
+            m_txt_mo_ta.Text = v_dr["MO_TA"].ToString();
             m_cbo_vi_tri.SelectedValue = CIPConvert.ToDecimal(v_dr["ID_VI_TRI"].ToString());
             if (v_dr["ID_DANH_HIEU"].ToString() != "")
             {
@@ -116,6 +118,7 @@ namespace BKI_HRM.NghiepVu
             m_us.dcID_VI_TRI = CIPConvert.ToDecimal(m_cbo_vi_tri.SelectedValue.ToString());
             m_us.datTHOI_DIEM_KT = m_dat_ngay_kt.Value;
             m_us.datTHOI_DIEM_TG = m_dat_tham_gia.Value;
+            m_us.strMO_TA = m_txt_mo_ta.Text;
         }
 
         private bool check_data_is_ok()

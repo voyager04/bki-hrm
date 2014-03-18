@@ -49,6 +49,8 @@
             this.m_dat_ngay_kt = new System.Windows.Forms.DateTimePicker();
             this.m_dat_tham_gia = new System.Windows.Forms.DateTimePicker();
             this.m_cbo_danh_hieu = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.m_txt_mo_ta = new System.Windows.Forms.TextBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,7 +106,7 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_refresh);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 172);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 227);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(697, 36);
@@ -269,11 +271,32 @@
             this.m_cbo_danh_hieu.Size = new System.Drawing.Size(157, 21);
             this.m_cbo_danh_hieu.TabIndex = 44;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(28, 175);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(84, 13);
+            this.label5.TabIndex = 46;
+            this.label5.Text = "Mô tả công việc";
+            // 
+            // m_txt_mo_ta
+            // 
+            this.m_txt_mo_ta.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_txt_mo_ta.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.m_txt_mo_ta.Location = new System.Drawing.Point(144, 168);
+            this.m_txt_mo_ta.Multiline = true;
+            this.m_txt_mo_ta.Name = "m_txt_mo_ta";
+            this.m_txt_mo_ta.Size = new System.Drawing.Size(483, 53);
+            this.m_txt_mo_ta.TabIndex = 45;
+            // 
             // F500_gd_chi_tiet_du_an_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 208);
+            this.ClientSize = new System.Drawing.Size(697, 263);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.m_txt_mo_ta);
             this.Controls.Add(this.m_cbo_danh_hieu);
             this.Controls.Add(this.m_dat_tham_gia);
             this.Controls.Add(this.m_cbo_vi_tri);
@@ -318,6 +341,8 @@
         private System.Windows.Forms.DateTimePicker m_dat_ngay_kt;
         private System.Windows.Forms.DateTimePicker m_dat_tham_gia;
         private System.Windows.Forms.ComboBox m_cbo_danh_hieu;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox m_txt_mo_ta;
 
     }
 }
