@@ -1903,13 +1903,14 @@ namespace BKI_HRM
         private void load_custom_source_2_m_txt_tim_kiem()
         {
             int count = m_ds.Tables["DM_NHAN_SU"].Rows.Count;
-            for (int i = 0; i < count; i++)
+            AutoCompleteStringCollection v_acsc_search = new AutoCompleteStringCollection();
+            foreach (DataRow dr in m_ds.DM_NHAN_SU)
             {
-                DataRow dr = m_ds.Tables["DM_NHAN_SU"].Rows[i];
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[1].ToString());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[2].ToString() + " " + dr[3].ToString());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[3].ToString());
+                v_acsc_search.Add(dr[DM_NHAN_SU.MA_NV].ToString());
+                v_acsc_search.Add(dr[DM_NHAN_SU.HO_DEM].ToString() + dr[DM_NHAN_SU.TEN].ToString());
+                v_acsc_search.Add(dr[DM_NHAN_SU.TEN].ToString());
             }
+            m_txt_tim_kiem.AutoCompleteCustomSource = v_acsc_search;
         }
         
 		private void grid2us_object(US_DM_NHAN_SU i_us
@@ -2000,7 +2001,7 @@ namespace BKI_HRM
         private void f201_DM_NHAN_SU_Load(object sender, System.EventArgs e) {
 			try{
 				set_initial_form_load();
-                //load_custom_source_2_m_txt_tim_kiem();
+                load_custom_source_2_m_txt_tim_kiem();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
