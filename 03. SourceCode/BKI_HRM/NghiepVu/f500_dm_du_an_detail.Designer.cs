@@ -67,6 +67,7 @@
             this.m_dat_ngay_co_hieu_luc = new System.Windows.Forms.DateTimePicker();
             this.m_lbl = new System.Windows.Forms.Label();
             this.m_grv_nhan_su = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.label6 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -106,7 +107,7 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_refresh);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 576);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 612);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1049, 36);
@@ -471,7 +472,7 @@
             // 
             this.m_grv_nhan_su.ColumnInfo = resources.GetString("m_grv_nhan_su.ColumnInfo");
             this.m_grv_nhan_su.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_grv_nhan_su.Location = new System.Drawing.Point(0, 340);
+            this.m_grv_nhan_su.Location = new System.Drawing.Point(0, 376);
             this.m_grv_nhan_su.Name = "m_grv_nhan_su";
             this.m_grv_nhan_su.Size = new System.Drawing.Size(1049, 236);
             this.m_grv_nhan_su.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_nhan_su.Styles"));
@@ -479,11 +480,21 @@
             this.m_grv_nhan_su.Click += new System.EventHandler(this.m_grv_nhan_su_Click);
             this.m_grv_nhan_su.KeyUp += new System.Windows.Forms.KeyEventHandler(this.m_grv_nhan_su_KeyUp);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 349);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(270, 13);
+            this.label6.TabIndex = 52;
+            this.label6.Text = "Thêm nhân sự - F3; Sửa nhân sự - F4; Xóa nhân sự - F5";
+            // 
             // f500_dm_du_an_detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1049, 612);
+            this.ClientSize = new System.Drawing.Size(1049, 648);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.m_grv_nhan_su);
             this.Controls.Add(this.m_lbl);
             this.Controls.Add(this.groupBox2);
@@ -542,6 +553,7 @@
         private System.Windows.Forms.DateTimePicker m_dat_ngay_co_hieu_luc;
         private System.Windows.Forms.Label m_lbl;
         private C1.Win.C1FlexGrid.C1FlexGrid m_grv_nhan_su;
+        private System.Windows.Forms.Label label6;
 
     }
 }
