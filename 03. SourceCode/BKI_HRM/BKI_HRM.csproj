@@ -172,6 +172,13 @@
     <Compile Include="f400_Main.Designer.cs">
       <DependentUpon>f400_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="HeThong\collection.cs" />
+    <Compile Include="HeThong\f995_ht_phan_quyen_cho_nhom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeThong\f995_ht_phan_quyen_cho_nhom.Designer.cs">
+      <DependentUpon>f995_ht_phan_quyen_cho_nhom.cs</DependentUpon>
+    </Compile>
     <Compile Include="HeThong\f996_ht_nhom_nguoi_su_dung_de.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -319,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="f400_Main.resx">
       <DependentUpon>f400_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeThong\f995_ht_phan_quyen_cho_nhom.resx">
+      <DependentUpon>f995_ht_phan_quyen_cho_nhom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HeThong\f996_ht_nhom_nguoi_su_dung_de.resx">
       <DependentUpon>f996_ht_nhom_nguoi_su_dung_de.cs</DependentUpon>

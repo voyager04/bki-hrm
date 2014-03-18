@@ -157,7 +157,8 @@ namespace BKI_HRM.NghiepVu
 
             v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_GIAN_TG, e_col_Number.THOI_GIAN_TG);
 
-            v_htb.Add(V_DM_NHAN_SU_DU_AN.TRANG_THAI_CV, e_col_Number.TRANG_THAI_CV);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.TRANG_THAI_CV, e_col_Number.TRANG_THAI_CV);
+
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds_nsda.V_DM_NHAN_SU_DU_AN.NewRow());
             return v_obj_trans;
