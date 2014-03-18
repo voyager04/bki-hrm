@@ -270,9 +270,10 @@ public class US_GD_QUA_TRINH_CONG_TAC : US_Object
     }
     #endregion
     #region Addtional
-    public void FillDatasetByProc(DS_GD_QUA_TRINH_CONG_TAC op_ds_v_qua_trinh_cong_tac)
+    public void FillDatasetByProc(DS_GD_QUA_TRINH_CONG_TAC op_ds_v_qua_trinh_cong_tac, string ip_str_key_word)
     {
         CStoredProc v_stored_proc = new CStoredProc("pr_GD_QUA_TRINH_CONG_TAC");
+        v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_str_key_word);
         v_stored_proc.fillDataSetByCommand(this, op_ds_v_qua_trinh_cong_tac);
     }
     #endregion
