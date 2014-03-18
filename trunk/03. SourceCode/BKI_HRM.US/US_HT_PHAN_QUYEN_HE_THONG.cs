@@ -139,5 +139,26 @@ namespace BKI_HRM.US
         }
         #endregion
 
+
+        public void FillDatasetQuyenChuaCapByIdUserGroup(DS_HT_PHAN_QUYEN_HE_THONG op_ds, decimal ip_dc_id)
+        {
+            CStoredProc v_stored_proc = new CStoredProc("pr_HT_PHAN_QUYEN_HE_THONG_quyen_chua_cap_select_by_id_nhom_quyen");
+            v_stored_proc.addDecimalInputParam("@ID_USER_GROUP", ip_dc_id);
+            v_stored_proc.fillDataSetByCommand(this, op_ds);
+        }
+
+        public void FillDatasetQuyenDaCapByIdUserGroup(DS_HT_PHAN_QUYEN_HE_THONG op_ds, decimal ip_dc_id)
+        {
+            CStoredProc v_stored_proc = new CStoredProc("pr_HT_PHAN_QUYEN_HE_THONG_quyen_da_cap_select_by_id_nhom_quyen");
+            v_stored_proc.addDecimalInputParam("@ID_USER_GROUP", ip_dc_id);
+            v_stored_proc.fillDataSetByCommand(this, op_ds);
+        }
+
+        public void FillDatasetByMaPhanQuyen(DS_HT_PHAN_QUYEN_HE_THONG op_ds, string ip_str)
+        {
+            CStoredProc v_stored_proc = new CStoredProc("pr_HT_PHAN_QUYEN_HE_THONG_select_by_ma_pq");
+            v_stored_proc.addNVarcharInputParam("@MA_PHAN_QUYEN", ip_str);
+            v_stored_proc.fillDataSetByCommand(this, op_ds);
+        }
     }
 }

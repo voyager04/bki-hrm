@@ -36,6 +36,7 @@ namespace BKI_HRM
             this.m_menuitem_user = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_usergroup = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menu_nhatky = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_menuitem_phan_quyen_cho_nhom = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_tudien = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.m_menuitem_thoat = new System.Windows.Forms.ToolStripMenuItem();
@@ -122,7 +123,8 @@ namespace BKI_HRM
             this.m_menuitem_quantri.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.m_menuitem_user,
             this.m_menuitem_usergroup,
-            this.m_menu_nhatky});
+            this.m_menu_nhatky,
+            this.m_menuitem_phan_quyen_cho_nhom});
             this.m_menuitem_quantri.Name = "m_menuitem_quantri";
             this.m_menuitem_quantri.Size = new System.Drawing.Size(165, 22);
             this.m_menuitem_quantri.Text = "Quản trị";
@@ -130,22 +132,29 @@ namespace BKI_HRM
             // m_menuitem_user
             // 
             this.m_menuitem_user.Name = "m_menuitem_user";
-            this.m_menuitem_user.Size = new System.Drawing.Size(188, 22);
+            this.m_menuitem_user.Size = new System.Drawing.Size(195, 22);
             this.m_menuitem_user.Text = "Người sử dụng";
             this.m_menuitem_user.Click += new System.EventHandler(this.m_menuitem_user_Click);
             // 
             // m_menuitem_usergroup
             // 
             this.m_menuitem_usergroup.Name = "m_menuitem_usergroup";
-            this.m_menuitem_usergroup.Size = new System.Drawing.Size(188, 22);
+            this.m_menuitem_usergroup.Size = new System.Drawing.Size(195, 22);
             this.m_menuitem_usergroup.Text = "Nhóm người sử dụng";
             this.m_menuitem_usergroup.Click += new System.EventHandler(this.m_menuitem_usergroup_Click);
             // 
             // m_menu_nhatky
             // 
             this.m_menu_nhatky.Name = "m_menu_nhatky";
-            this.m_menu_nhatky.Size = new System.Drawing.Size(188, 22);
+            this.m_menu_nhatky.Size = new System.Drawing.Size(195, 22);
             this.m_menu_nhatky.Text = "Nhật ký hệ thống";
+            // 
+            // m_menuitem_phan_quyen_cho_nhom
+            // 
+            this.m_menuitem_phan_quyen_cho_nhom.Name = "m_menuitem_phan_quyen_cho_nhom";
+            this.m_menuitem_phan_quyen_cho_nhom.Size = new System.Drawing.Size(195, 22);
+            this.m_menuitem_phan_quyen_cho_nhom.Text = "Phân quyền cho nhóm";
+            this.m_menuitem_phan_quyen_cho_nhom.Click += new System.EventHandler(this.m_menuitem_phan_quyen_cho_nhom_Click);
             // 
             // m_menuitem_tudien
             // 
@@ -578,7 +587,7 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.ForeColor = System.Drawing.Color.Red;
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Location = new System.Drawing.Point(0, 341);
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Name = "m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky";
-            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Size = new System.Drawing.Size(268, 18);
+            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Size = new System.Drawing.Size(267, 18);
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.TabIndex = 5;
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text = "Hợp đồng đã hết hạn nhưng chưa ký";
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Click += new System.EventHandler(this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky_Click);
@@ -671,5 +680,6 @@ namespace BKI_HRM
         private Label m_lbl_het_han_thu_viec;
         private ToolStripMenuItem quáTrìnhLàmViệcToolStripMenuItem;
         private Label m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky;
+        private ToolStripMenuItem m_menuitem_phan_quyen_cho_nhom;
     }
 }

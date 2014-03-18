@@ -12,6 +12,7 @@ using BKI_HRM.US;
 using IP.Core.IPCommon;
 using IP.Core.IPExcelReport;
 using IP.Core.IPSystemAdmin;
+using BKI_HRM.HeThong;
 
 namespace BKI_HRM
 {
@@ -468,6 +469,19 @@ namespace BKI_HRM
             {
                 f702_bao_cao_hdld frm = new f702_bao_cao_hdld();
                 frm.set_form_mode_for_report(3);
+                frm.ShowDialog();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_menuitem_phan_quyen_cho_nhom_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f995_ht_phan_quyen_cho_nhom frm = new f995_ht_phan_quyen_cho_nhom();
                 frm.ShowDialog();
             }
             catch (Exception v_e)
