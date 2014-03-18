@@ -30,8 +30,8 @@ namespace BKI_HRM.HeThong
         US_HT_USER_GROUP m_us_ht_user_group = new US_HT_USER_GROUP();
         DS_HT_USER_GROUP m_ds_ht_user_group = new DS_HT_USER_GROUP();
         Boolean m_bool_load_data_complete = false;
-        int m_dc_index_in_left;
-        int m_dc_index_in_right;
+        int m_dc_index_in_left = 0;
+        int m_dc_index_in_right = 0;
         decimal m_dc_id_user_group;
         #endregion
 
@@ -103,14 +103,18 @@ namespace BKI_HRM.HeThong
 
         private void m_cmd_left_2_right_Click(object sender, EventArgs e)
         {
+            m_lbox_quyen_chua_cap.SelectedIndex = m_dc_index_in_left;
             m_lbox_quyen_da_cap.Items.Add(m_lbox_quyen_chua_cap.SelectedItem);
             m_lbox_quyen_chua_cap.Items.RemoveAt(m_lbox_quyen_chua_cap.SelectedIndex);
+            m_dc_index_in_left = 0;
         }
 
         private void m_cmd_right_2_left_Click(object sender, EventArgs e)
         {
+            m_lbox_quyen_da_cap.SelectedIndex = m_dc_index_in_right;
             m_lbox_quyen_chua_cap.Items.Add(m_lbox_quyen_da_cap.SelectedItem);
             m_lbox_quyen_da_cap.Items.RemoveAt(m_lbox_quyen_da_cap.SelectedIndex);
+            m_dc_index_in_right = 0;
         }
 
         private void m_cmd_left_2_right_all_Click(object sender, EventArgs e)
@@ -143,7 +147,6 @@ namespace BKI_HRM.HeThong
                 load_data_2_rtxt_quyen_chua_cap(v_dc_id);
             }
         }
-        #endregion
 
         private void m_cmd_exit_Click(object sender, EventArgs e)
         {
@@ -152,46 +155,60 @@ namespace BKI_HRM.HeThong
 
         private void m_cmd_save_Click(object sender, EventArgs e)
         {
-            US_HT_PHAN_QUYEN_CHO_NHOM v_us_ht_phan_quyen_cho_nhom;
-            DS_HT_PHAN_QUYEN_CHO_NHOM v_ds_ht_phan_quyen_cho_nhom = new DS_HT_PHAN_QUYEN_CHO_NHOM();
-
-            collection v_coll_new = new collection(m_lbox_quyen_da_cap.Items.Count);
-            for (int i = 0; i < m_lbox_quyen_da_cap.Items.Count; i++)
+            try
             {
-                v_coll_new.insert(m_lbox_quyen_da_cap.Items[i].ToString());
+                US_HT_PHAN_QUYEN_CHO_NHOM v_us_ht_phan_quyen_cho_nhom;
+                DS_HT_PHAN_QUYEN_CHO_NHOM v_ds_ht_phan_quyen_cho_nhom = new DS_HT_PHAN_QUYEN_CHO_NHOM();
+
+                collection v_coll_new = new collection(m_lbox_quyen_da_cap.Items.Count);
+                for (int i = 0; i < m_lbox_quyen_da_cap.Items.Count; i++)
+                {
+                    v_coll_new.insert(m_lbox_quyen_da_cap.Items[i].ToString());
+                }
+
+                US_HT_PHAN_QUYEN_HE_THONG v_us_pqht = new US_HT_PHAN_QUYEN_HE_THONG();
+                DS_HT_PHAN_QUYEN_HE_THONG v_ds_pqht = new DS_HT_PHAN_QUYEN_HE_THONG();
+                v_us_pqht.FillDatasetQuyenDaCapByIdUserGroup(v_ds_pqht, m_dc_id_user_group);
+                collection v_coll_old = new collection(v_ds_pqht.Tables[0].Rows.Count);
+                for (int i = 0; i < v_ds_pqht.Tables[0].Rows.Count; i++)
+                {
+                    DataRow v_dr = v_ds_pqht.Tables[0].Rows[i];
+                    v_coll_old.insert(v_dr[HT_PHAN_QUYEN_HE_THONG.MA_PHAN_QUYEN].ToString());
+                }
+
+                collection v_coll_quyen_insert = new collection(v_coll_new.countInANotInB(v_coll_old));
+                v_coll_quyen_insert = v_coll_new.InANotInB(v_coll_old);
+                for (int i = 0; i < v_coll_quyen_insert.getIndex(); i++)
+                {
+                    v_us_ht_phan_quyen_cho_nhom = new US_HT_PHAN_QUYEN_CHO_NHOM();
+                    v_us_ht_phan_quyen_cho_nhom.dcID_USER_GROUP = m_dc_id_user_group;
+                    v_ds_pqht.Clear();
+                    v_us_pqht.FillDatasetByMaPhanQuyen(v_ds_pqht, v_coll_quyen_insert.s[i]);
+                    v_us_ht_phan_quyen_cho_nhom.dcID_PHAN_QUYEN_HE_THONG = CIPConvert.ToDecimal(v_ds_pqht.Tables[0].Rows[0][HT_PHAN_QUYEN_HE_THONG.ID]);
+                    v_us_ht_phan_quyen_cho_nhom.Insert();
+                }
+
+                collection v_coll_quyen_delete = new collection(v_coll_new.countNotInAInB(v_coll_old));
+                v_coll_quyen_delete = v_coll_new.NotInAInB(v_coll_old);
+                for (int i = 0; i < v_coll_quyen_delete.getIndex(); i++)
+                {
+                    v_ds_ht_phan_quyen_cho_nhom.Clear();
+                    v_us_ht_phan_quyen_cho_nhom = new US_HT_PHAN_QUYEN_CHO_NHOM();
+                    v_us_ht_phan_quyen_cho_nhom.FillDatasetByIdUserGroupAndMaPhanQuyen(v_ds_ht_phan_quyen_cho_nhom, m_dc_id_user_group, v_coll_quyen_delete.s[i]);
+                    v_us_ht_phan_quyen_cho_nhom.dcID = CIPConvert.ToDecimal(v_ds_ht_phan_quyen_cho_nhom.Tables[0].Rows[0][HT_PHAN_QUYEN_CHO_NHOM.ID]);
+                    v_us_ht_phan_quyen_cho_nhom.Delete();
+                }
+                BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
             }
 
-            US_HT_PHAN_QUYEN_HE_THONG v_us_pqht = new US_HT_PHAN_QUYEN_HE_THONG();
-            DS_HT_PHAN_QUYEN_HE_THONG v_ds_pqht = new DS_HT_PHAN_QUYEN_HE_THONG();
-            v_us_pqht.FillDatasetQuyenDaCapByIdUserGroup(v_ds_pqht, m_dc_id_user_group);
-            collection v_coll_old = new collection(v_ds_pqht.Tables[0].Rows.Count);
-            for (int i = 0; i < v_ds_pqht.Tables[0].Rows.Count; i++)
-            {
-                DataRow v_dr = v_ds_pqht.Tables[0].Rows[i];
-                v_coll_old.insert(v_dr[HT_PHAN_QUYEN_HE_THONG.MA_PHAN_QUYEN].ToString());
-            }
-
-            collection v_coll_quyen_insert = new collection(v_coll_new.countInANotInB(v_coll_old));
-            v_coll_quyen_insert = v_coll_new.InANotInB(v_coll_old);
-            for (int i = 0; i < v_coll_quyen_insert.getIndex(); i++)
-            {
-                v_us_ht_phan_quyen_cho_nhom = new US_HT_PHAN_QUYEN_CHO_NHOM();
-                v_us_ht_phan_quyen_cho_nhom.dcID_USER_GROUP = m_dc_id_user_group;
-                v_ds_pqht.Clear();
-                v_us_pqht.FillDatasetByMaPhanQuyen(v_ds_pqht, v_coll_quyen_insert.s[i]);
-                v_us_ht_phan_quyen_cho_nhom.dcID_PHAN_QUYEN_HE_THONG =CIPConvert.ToDecimal(v_ds_pqht.Tables[0].Rows[0][HT_PHAN_QUYEN_HE_THONG.ID]);
-                v_us_ht_phan_quyen_cho_nhom.Insert();
-            }
-
-            collection v_coll_quyen_delete = new collection(v_coll_new.countNotInAInB(v_coll_old));
-            v_coll_quyen_delete = v_coll_new.NotInAInB(v_coll_old);
-            for (int i = 0; i < v_coll_quyen_delete.getIndex(); i++)
-            {
-                v_us_ht_phan_quyen_cho_nhom = new US_HT_PHAN_QUYEN_CHO_NHOM();
-                v_us_ht_phan_quyen_cho_nhom.FillDatasetByIdUserGroupAndMaPhanQuyen(v_ds_ht_phan_quyen_cho_nhom, m_dc_id_user_group, v_coll_quyen_delete.s[i]);
-                v_us_ht_phan_quyen_cho_nhom.dcID = CIPConvert.ToDecimal(v_ds_ht_phan_quyen_cho_nhom.Tables[0].Rows[0][HT_PHAN_QUYEN_CHO_NHOM.ID]);
-                v_us_ht_phan_quyen_cho_nhom.Delete();
-            }
         }
+        #endregion
+
+        
     }
 }
