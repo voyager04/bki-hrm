@@ -1907,7 +1907,7 @@ namespace BKI_HRM
             foreach (DataRow dr in m_ds.DM_NHAN_SU)
             {
                 v_acsc_search.Add(dr[DM_NHAN_SU.MA_NV].ToString());
-                v_acsc_search.Add(dr[DM_NHAN_SU.HO_DEM].ToString() + dr[DM_NHAN_SU.TEN].ToString());
+                v_acsc_search.Add(dr[DM_NHAN_SU.HO_DEM].ToString() + " " + dr[DM_NHAN_SU.TEN].ToString());
                 v_acsc_search.Add(dr[DM_NHAN_SU.TEN].ToString());
             }
             m_txt_tim_kiem.AutoCompleteCustomSource = v_acsc_search;
