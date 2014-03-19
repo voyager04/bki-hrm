@@ -194,8 +194,10 @@ namespace BKI_HRM
                 m_us_quyet_dinh.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc_qd.Value;
             
         }
+        
         private bool check_validate_data_is_ok()
         {
+            
             return true;
         }
         private void save_data()
