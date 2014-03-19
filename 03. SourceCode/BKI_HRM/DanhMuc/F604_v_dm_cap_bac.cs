@@ -344,7 +344,7 @@ namespace BKI_HRM
         {
             m_ds = new DS_V_DM_CAP_BAC();
 
-            m_us.FillDataset(m_ds);
+            m_us.FillDatasetSearch(m_ds,m_txt_tim_kiem.Text.Trim());
             //m_us.FillDataset(m_ds);
             var v_str_search = m_txt_tim_kiem.Text.Trim();
             if (v_str_search.Equals(m_str_tim_kiem))
@@ -373,15 +373,7 @@ namespace BKI_HRM
             }
             m_txt_tim_kiem.ForeColor = Color.Black;
         }
-        //private void load_data_2_grid_search()
-        //{
-        //    m_obj_trans = get_trans_object(m_fg);
-        //    m_v_ds.Clear();
-        //    m_v_us.FillDatasetSearch(m_v_ds, m_txt_tim_kiem.Text.Trim());
-        //    m_fg.Redraw = false;
-        //    CGridUtils.Dataset2C1Grid(m_v_ds, m_fg, m_obj_trans);
-        //    m_fg.Redraw = true;
-        //}
+       
         private void grid2us_object(US_V_DM_CAP_BAC i_us
             , int i_grid_row)
         {
