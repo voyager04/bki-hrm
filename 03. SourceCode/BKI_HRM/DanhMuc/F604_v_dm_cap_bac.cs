@@ -254,6 +254,8 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(324, 20);
             this.m_txt_tim_kiem.TabIndex = 35;
+            this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
+
             // 
             // F604_v_dm_cap_bac
             // 
@@ -294,11 +296,11 @@ namespace BKI_HRM
 		#endregion
 
 		#region Members
-		ITransferDataRow m_obj_trans;		
-		DS_V_DM_CAP_BAC m_v_ds = new DS_V_DM_CAP_BAC();
-		US_V_DM_CAP_BAC m_v_us = new US_V_DM_CAP_BAC();
-        DS_DM_CAP_BAC m_ds = new DS_DM_CAP_BAC();
-        US_DM_CAP_BAC m_us = new US_DM_CAP_BAC();
+		ITransferDataRow m_obj_trans;
+        DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
+        DS_V_DM_CAP_BAC m_ds = new DS_V_DM_CAP_BAC();
+        US_V_DM_CAP_BAC m_us = new US_V_DM_CAP_BAC();
+        private const String m_str_tim_kiem = "Nhập thông tin cần tìm kiếm";
 		#endregion
 
 		#region Private Methods
@@ -326,34 +328,67 @@ namespace BKI_HRM
             v_htb.Add(V_DM_CAP_BAC.TRANG_THAI_SU_DUNG, e_col_Number.TRANG_THAI_SU_DUNG);
             v_htb.Add(V_DM_CAP_BAC.NGAY_AP_DUNG, e_col_Number.NGAY_AP_DUNG);
             
-            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_v_ds.V_DM_CAP_BAC.NewRow());
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_DM_CAP_BAC.NewRow());
             return v_obj_trans;
         }
+        private void select_data_2_us()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us, m_fg.Row);
+                this.Close();
+        }
+
+        
         private void load_data_2_grid()
         {
-            m_v_ds = new DS_V_DM_CAP_BAC();
-            m_v_us.FillDataset(m_v_ds);
+            m_ds = new DS_V_DM_CAP_BAC();
+
+            m_us.FillDataset(m_ds);
+            //m_us.FillDataset(m_ds);
+            var v_str_search = m_txt_tim_kiem.Text.Trim();
+            if (v_str_search.Equals(m_str_tim_kiem))
+            {
+                v_str_search = "";
+            }
             m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_v_ds, m_fg, m_obj_trans);
+            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+
             m_fg.Redraw = true;
+            set_search_format_before();
         }
-        private void load_data_2_grid_search()
+        private void set_search_format_before()
         {
-            m_obj_trans = get_trans_object(m_fg);
-            m_v_ds.Clear();
-            //m_v_us.FillDatasetSearch(m_v_ds, m_txt_tim_kiem.Text.Trim());
-            m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_v_ds, m_fg, m_obj_trans);
-            m_fg.Redraw = true;
+            if (m_txt_tim_kiem.Text == "")
+            {
+                m_txt_tim_kiem.Text = m_str_tim_kiem;
+                m_txt_tim_kiem.ForeColor = Color.Gray;
+            }
         }
-        private void grid2us_object(US_DM_CAP_BAC i_us
+        private void set_search_format_after()
+        {
+            if (m_txt_tim_kiem.Text == m_str_tim_kiem)
+            {
+                m_txt_tim_kiem.Text = "";
+            }
+            m_txt_tim_kiem.ForeColor = Color.Black;
+        }
+        //private void load_data_2_grid_search()
+        //{
+        //    m_obj_trans = get_trans_object(m_fg);
+        //    m_v_ds.Clear();
+        //    m_v_us.FillDatasetSearch(m_v_ds, m_txt_tim_kiem.Text.Trim());
+        //    m_fg.Redraw = false;
+        //    CGridUtils.Dataset2C1Grid(m_v_ds, m_fg, m_obj_trans);
+        //    m_fg.Redraw = true;
+        //}
+        private void grid2us_object(US_V_DM_CAP_BAC i_us
             , int i_grid_row)
         {
             DataRow v_dr;
             v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
-            m_us = new US_DM_CAP_BAC((decimal)v_dr.ItemArray[0]);
-            //m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
-            //i_us.DataRow2Me(v_dr);
+            m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
+            i_us.DataRow2Me(v_dr);
         }
 
 
@@ -368,9 +403,11 @@ namespace BKI_HRM
 
         private void insert_v_dm_cap_bac()
         {
-            //f401_V_DM_CAP_BAC_DE v_fDE = new f401_V_DM_CAP_BAC_DE();
+            //F603_dm_cap_bac_de v_fDE = new F603_dm_cap_bac_de();
             //v_fDE.display_for_insert();
+            m_txt_tim_kiem.Text = "";
             load_data_2_grid();
+            m_txt_tim_kiem.Text = m_str_tim_kiem;
         }
 
         private void update_v_dm_cap_bac()
@@ -378,9 +415,11 @@ namespace BKI_HRM
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             grid2us_object(m_us, m_fg.Row);
-            //f401_V_DM_CAP_BAC_DE v_fDE = new f401_V_DM_CAP_BAC_DE();
+            //F603_dm_cap_bac_de v_fDE = new F603_dm_cap_bac_de();
             //v_fDE.display_for_update(m_us);
+            m_txt_tim_kiem.Text = "";
             load_data_2_grid();
+            m_txt_tim_kiem.Text = m_str_tim_kiem;
         }
 
         private void delete_v_dm_cap_bac()
@@ -388,8 +427,8 @@ namespace BKI_HRM
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
-            US_DM_CAP_BAC v_us = new US_DM_CAP_BAC();
-            grid2us_object(v_us, m_fg.Row);
+            US_V_DM_CAP_BAC v_us = new US_V_DM_CAP_BAC();
+            grid2us_object(m_us, m_fg.Row);
             try
             {
                 v_us.BeginTransaction();
@@ -410,9 +449,9 @@ namespace BKI_HRM
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            //grid2us_object(m_v_us, m_fg.Row);
-            //	f401_V_DM_CAP_BAC_DE v_fDE = new f401_V_DM_CAP_BAC_DE();			
-            //	v_fDE.display(m_v_us);
+            grid2us_object(m_us, m_fg.Row);
+            //F603_dm_cap_bac_de v_fDE = new F603_dm_cap_bac_de();
+            //v_fDE.display(m_us);
         }
         private void set_define_events()
         {
@@ -425,13 +464,14 @@ namespace BKI_HRM
 
         private void load_custom_source_2_m_txt_tim_kiem()
         {
-            //m_v_us.FillDataset(m_v_ds);
-            int count = m_v_ds.Tables["V_DM_CAP_BAC"].Rows.Count;
+            int count = m_ds.Tables["V_DM_CAP_BAC"].Rows.Count;
             for (int i = 0; i < count; i++)
             {
-                DataRow dr = m_v_ds.Tables["V_DM_CAP_BAC"].Rows[i];
+                DataRow dr = m_ds.Tables["V_DM_CAP_BAC"].Rows[i];
                 m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[1].ToString());
                 m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[2].ToString());
+                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[6].ToString());
+
             }
         }
 		#endregion
@@ -441,61 +481,139 @@ namespace BKI_HRM
 		//		EVENT HANLDERS
 		//
 		//
-		private void F604_v_dm_cap_bac_Load(object sender, System.EventArgs e) {
-			try{
-				set_initial_form_load();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		
-		}
+        private void F604_v_dm_cap_bac_Load(object sender, System.EventArgs e)
+        {
+            try
+            {
+                set_initial_form_load();
+                load_custom_source_2_m_txt_tim_kiem();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_exit_Click(object sender, EventArgs e) {
-			try{
-				this.Close();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_insert_Click(object sender, EventArgs e) {
-			try{
-				insert_v_dm_cap_bac();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_insert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                insert_v_dm_cap_bac();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_update_Click(object sender, EventArgs e) {
-			try{
-				update_v_dm_cap_bac();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                update_v_dm_cap_bac();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_delete_Click(object sender, EventArgs e) {
-			try{
-				delete_v_dm_cap_bac();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                delete_v_dm_cap_bac();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_view_Click(object sender, EventArgs e) {
-			try{
-				view_v_dm_cap_bac();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_view_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                view_v_dm_cap_bac();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-	}
+        
+        private void m_cmd_search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_txt_tim_kiem_MouseClick(object sender, MouseEventArgs e)
+        {
+            m_txt_tim_kiem.Text = "";
+        }
+
+        private void m_txt_tim_kiem_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_txt_tim_kiem.Text.Trim() == "")
+                    m_txt_tim_kiem.Text = "Nhập thông tin cần tìm kiếm ";
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_fg_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.Enter:
+                        if (m_fg.Focused)
+                        {
+                            switch (m_e_form_mode)
+                            {
+
+                                case DataEntryFormMode.ViewDataState:
+                                    update_v_dm_cap_bac();
+                                    break;
+                                case DataEntryFormMode.SelectDataState:
+                                    select_data_2_us();
+                                    break;
+
+                            }
+                        }
+                        break;
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+    }
 }
 
