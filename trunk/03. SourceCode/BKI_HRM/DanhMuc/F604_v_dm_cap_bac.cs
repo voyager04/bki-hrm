@@ -245,6 +245,7 @@ namespace BKI_HRM
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 36;
             this.m_cmd_search.Text = "Tìm kiếm";
+            this.m_cmd_search.Click += new System.EventHandler(this.m_cmd_search_Click);
             // 
             // m_txt_tim_kiem
             // 
@@ -256,7 +257,6 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(324, 20);
             this.m_txt_tim_kiem.TabIndex = 35;
             this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
-
             // 
             // F604_v_dm_cap_bac
             // 
