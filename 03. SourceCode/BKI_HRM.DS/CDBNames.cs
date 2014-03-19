@@ -51,6 +51,16 @@
         LOAI_HO_SO_GV_HD = 26
             , DV_TO_CHUC_SK = 27
     }
+    public class V_DM_CAP_BAC
+    {
+        public const string ID = "ID";
+        public const string MA_CAP = "MA_CAP";
+        public const string MA_BAC = "MA_BAC";
+        public const string TRANG_THAI_SU_DUNG = "TRANG_THAI_SU_DUNG";
+        public const string NGAY_AP_DUNG = "NGAY_AP_DUNG";
+        public const string NGAY_KET_THUC = "NGAY_KET_THUC";
+        public const string MA_CAP_BAC = "MA_CAP_BAC";
+    }
 
     public class LOAI_TU_DIEN
     {
