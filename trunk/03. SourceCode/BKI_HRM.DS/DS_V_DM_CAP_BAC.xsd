@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="BKI_HRMConnectionString3 (Settings)" DbObjectName="BKI_HRM.dbo.V_DM_CAP_BAC" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, MA_CAP, MA_BAC, TRANG_THAI, NGAY_AP_DUNG, NGAY_KET_THUC, MA_CAP_BAC FROM dbo.V_DM_CAP_BAC</CommandText>
+                    <CommandText>SELECT ID, MA_CAP, MA_BAC, TRANG_THAI_SU_DUNG, NGAY_AP_DUNG, NGAY_KET_THUC, MA_CAP_BAC FROM dbo.V_DM_CAP_BAC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -22,7 +22,7 @@
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
               <Mapping SourceColumn="MA_CAP" DataSetColumn="MA_CAP" />
               <Mapping SourceColumn="MA_BAC" DataSetColumn="MA_BAC" />
-              <Mapping SourceColumn="TRANG_THAI" DataSetColumn="TRANG_THAI" />
+              <Mapping SourceColumn="TRANG_THAI_SU_DUNG" DataSetColumn="TRANG_THAI_SU_DUNG" />
               <Mapping SourceColumn="NGAY_AP_DUNG" DataSetColumn="NGAY_AP_DUNG" />
               <Mapping SourceColumn="NGAY_KET_THUC" DataSetColumn="NGAY_KET_THUC" />
               <Mapping SourceColumn="MA_CAP_BAC" DataSetColumn="MA_CAP_BAC" />
@@ -55,10 +55,10 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="TRANG_THAI" msprop:Generator_ColumnVarNameInTable="columnTRANG_THAI" msprop:Generator_ColumnPropNameInRow="TRANG_THAI" msprop:Generator_ColumnPropNameInTable="TRANG_THAIColumn" msprop:Generator_UserColumnName="TRANG_THAI" minOccurs="0">
+              <xs:element name="TRANG_THAI_SU_DUNG" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTRANG_THAI_SU_DUNG" msprop:Generator_ColumnPropNameInRow="TRANG_THAI_SU_DUNG" msprop:Generator_ColumnPropNameInTable="TRANG_THAI_SU_DUNGColumn" msprop:Generator_UserColumnName="TRANG_THAI_SU_DUNG" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="1" />
+                    <xs:maxLength value="13" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
