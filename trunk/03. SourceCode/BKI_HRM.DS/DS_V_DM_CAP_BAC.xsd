@@ -37,7 +37,7 @@
   <xs:element name="DS_V_DM_CAP_BAC" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_DM_CAP_BAC" msprop:Generator_UserDSName="DS_V_DM_CAP_BAC">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="V_DM_CAP_BAC" msprop:Generator_TableClassName="V_DM_CAP_BACDataTable" msprop:Generator_TableVarName="tableV_DM_CAP_BAC" msprop:Generator_TablePropName="V_DM_CAP_BAC" msprop:Generator_RowDeletingName="V_DM_CAP_BACRowDeleting" msprop:Generator_RowChangingName="V_DM_CAP_BACRowChanging" msprop:Generator_RowEvHandlerName="V_DM_CAP_BACRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DM_CAP_BACRowDeleted" msprop:Generator_UserTableName="V_DM_CAP_BAC" msprop:Generator_RowChangedName="V_DM_CAP_BACRowChanged" msprop:Generator_RowEvArgName="V_DM_CAP_BACRowChangeEvent" msprop:Generator_RowClassName="V_DM_CAP_BACRow">
+        <xs:element name="V_DM_CAP_BAC" msprop:Generator_TableClassName="V_DM_CAP_BACDataTable" msprop:Generator_TableVarName="tableV_DM_CAP_BAC" msprop:Generator_RowChangedName="V_DM_CAP_BACRowChanged" msprop:Generator_TablePropName="V_DM_CAP_BAC" msprop:Generator_RowDeletingName="V_DM_CAP_BACRowDeleting" msprop:Generator_RowChangingName="V_DM_CAP_BACRowChanging" msprop:Generator_RowEvHandlerName="V_DM_CAP_BACRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DM_CAP_BACRowDeleted" msprop:Generator_RowClassName="V_DM_CAP_BACRow" msprop:Generator_UserTableName="V_DM_CAP_BAC" msprop:Generator_RowEvArgName="V_DM_CAP_BACRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
@@ -55,7 +55,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="TRANG_THAI_SU_DUNG" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTRANG_THAI_SU_DUNG" msprop:Generator_ColumnPropNameInRow="TRANG_THAI_SU_DUNG" msprop:Generator_ColumnPropNameInTable="TRANG_THAI_SU_DUNGColumn" msprop:Generator_UserColumnName="TRANG_THAI_SU_DUNG" minOccurs="0">
+              <xs:element name="TRANG_THAI_SU_DUNG" msprop:Generator_ColumnVarNameInTable="columnTRANG_THAI_SU_DUNG" msprop:Generator_ColumnPropNameInRow="TRANG_THAI_SU_DUNG" msprop:Generator_ColumnPropNameInTable="TRANG_THAI_SU_DUNGColumn" msprop:Generator_UserColumnName="TRANG_THAI_SU_DUNG" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="13" />
@@ -64,7 +64,7 @@
               </xs:element>
               <xs:element name="NGAY_AP_DUNG" msprop:Generator_ColumnVarNameInTable="columnNGAY_AP_DUNG" msprop:Generator_ColumnPropNameInRow="NGAY_AP_DUNG" msprop:Generator_ColumnPropNameInTable="NGAY_AP_DUNGColumn" msprop:Generator_UserColumnName="NGAY_AP_DUNG" type="xs:dateTime" minOccurs="0" />
               <xs:element name="NGAY_KET_THUC" msprop:Generator_ColumnVarNameInTable="columnNGAY_KET_THUC" msprop:Generator_ColumnPropNameInRow="NGAY_KET_THUC" msprop:Generator_ColumnPropNameInTable="NGAY_KET_THUCColumn" msprop:Generator_UserColumnName="NGAY_KET_THUC" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="MA_CAP_BAC" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMA_CAP_BAC" msprop:Generator_ColumnPropNameInRow="MA_CAP_BAC" msprop:Generator_ColumnPropNameInTable="MA_CAP_BACColumn" msprop:Generator_UserColumnName="MA_CAP_BAC" minOccurs="0">
+              <xs:element name="MA_CAP_BAC" msprop:Generator_ColumnVarNameInTable="columnMA_CAP_BAC" msprop:Generator_ColumnPropNameInRow="MA_CAP_BAC" msprop:Generator_ColumnPropNameInTable="MA_CAP_BACColumn" msprop:Generator_UserColumnName="MA_CAP_BAC" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="31" />
