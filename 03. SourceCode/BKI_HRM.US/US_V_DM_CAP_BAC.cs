@@ -172,7 +172,7 @@ public class US_V_DM_CAP_BAC : US_Object
 
 #endregion
 #region "Init Functions"
-    public void FillDatasetSearch(DS_V_DM_CHUC_VU op_ds, string i_str_search)
+    public void FillDatasetSearch(DS_V_DM_CAP_BAC op_ds, string i_str_search)
     {
         CStoredProc v_sp = new CStoredProc("pr_V_DM_CAP_BAC_search");
         v_sp.addNVarcharInputParam("@STR_SEARCH", i_str_search);
