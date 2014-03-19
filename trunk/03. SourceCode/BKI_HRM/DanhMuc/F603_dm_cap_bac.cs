@@ -400,8 +400,8 @@ namespace BKI_HRM
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             grid2us_object(m_us, m_fg.Row);
-            F603_dm_cap_bac_de v_fDE = new F603_dm_cap_bac_de();
-            v_fDE.display_for_update(m_us);
+            //F603_dm_cap_bac_de v_fDE = new F603_dm_cap_bac_de();
+            //v_fDE.display_for_update(m_us);
             m_txt_tim_kiem.Text = "";
             load_data_2_grid();
             m_txt_tim_kiem.Text = m_str_tim_kiem;
