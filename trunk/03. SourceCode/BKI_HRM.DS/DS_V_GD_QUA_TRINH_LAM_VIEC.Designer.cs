@@ -805,6 +805,7 @@ namespace BKI_HRM.DS {
                 this.columnDIA_BAN.MaxLength = 250;
                 this.columnMA_QUYET_DINH.MaxLength = 50;
                 this.columnLOAI_CV.MaxLength = 250;
+                this.columnID_NHAN_SU.AllowDBNull = false;
                 this.columnNGACH.MaxLength = 250;
                 this.columnTRANG_THAI_CHUC_VU_YN.MaxLength = 1;
                 this.columnTRANG_THAI_CV.MaxLength = 16;
@@ -1265,12 +1266,7 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal ID_NHAN_SU {
                 get {
-                    try {
-                        return ((decimal)(this[this.tableV_GD_QUA_TRINH_LAM_VIEC.ID_NHAN_SUColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ID_NHAN_SU\' in table \'V_GD_QUA_TRINH_LAM_VIEC\' is DBNull.", e);
-                    }
+                    return ((decimal)(this[this.tableV_GD_QUA_TRINH_LAM_VIEC.ID_NHAN_SUColumn]));
                 }
                 set {
                     this[this.tableV_GD_QUA_TRINH_LAM_VIEC.ID_NHAN_SUColumn] = value;
@@ -1577,18 +1573,6 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNGAY_KET_THUCNull() {
                 this[this.tableV_GD_QUA_TRINH_LAM_VIEC.NGAY_KET_THUCColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsID_NHAN_SUNull() {
-                return this.IsNull(this.tableV_GD_QUA_TRINH_LAM_VIEC.ID_NHAN_SUColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetID_NHAN_SUNull() {
-                this[this.tableV_GD_QUA_TRINH_LAM_VIEC.ID_NHAN_SUColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
