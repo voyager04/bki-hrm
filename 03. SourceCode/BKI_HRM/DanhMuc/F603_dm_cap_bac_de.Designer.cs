@@ -72,9 +72,9 @@
             this.m_lbl_trang_thai.AutoSize = true;
             this.m_lbl_trang_thai.Location = new System.Drawing.Point(36, 105);
             this.m_lbl_trang_thai.Name = "m_lbl_trang_thai";
-            this.m_lbl_trang_thai.Size = new System.Drawing.Size(55, 13);
+            this.m_lbl_trang_thai.Size = new System.Drawing.Size(96, 13);
             this.m_lbl_trang_thai.TabIndex = 19;
-            this.m_lbl_trang_thai.Text = "Trạng thái";
+            this.m_lbl_trang_thai.Text = "Trạng thái sử dụng";
             // 
             // m_
             // 
@@ -226,9 +226,9 @@
             this.m_rdb_su_dung.AutoSize = true;
             this.m_rdb_su_dung.Location = new System.Drawing.Point(265, 103);
             this.m_rdb_su_dung.Name = "m_rdb_su_dung";
-            this.m_rdb_su_dung.Size = new System.Drawing.Size(65, 17);
+            this.m_rdb_su_dung.Size = new System.Drawing.Size(92, 17);
             this.m_rdb_su_dung.TabIndex = 30;
-            this.m_rdb_su_dung.Text = "Sử dụng";
+            this.m_rdb_su_dung.Text = "Đang sử dụng";
             this.m_rdb_su_dung.UseVisualStyleBackColor = true;
             // 
             // F603_dm_cap_bac_de
