@@ -32,11 +32,11 @@ namespace BKI_HRM.DanhMuc
 
             this.ShowDialog();
         }
-        public void display_for_update(US_DM_CAP_BAC ip_m_us_dm_cap_bac)
+        public void display_for_update(US_V_DM_CAP_BAC ip_m_us_v_dm_cap_bac)
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
 
-            us_object_2_form(ip_m_us_dm_cap_bac);
+            us_object_2_form(ip_m_us_v_dm_cap_bac);
             this.ShowDialog();
         }
         #endregion
@@ -44,31 +44,32 @@ namespace BKI_HRM.DanhMuc
         #endregion
         #region Members
         private DataEntryFormMode m_e_form_mode;
-        private US_DM_CAP_BAC m_us = new US_DM_CAP_BAC();
-        private DS_DM_CAP_BAC m_ds = new DS_DM_CAP_BAC();
+        private US_V_DM_CAP_BAC m_us = new US_V_DM_CAP_BAC();
+        private DS_V_DM_CAP_BAC m_ds = new DS_V_DM_CAP_BAC();
         #endregion
 
         #region Private Methods
 
 
-        private void us_object_2_form(US_DM_CAP_BAC ip_us_dm_cap_bac)
+        private void us_object_2_form(US_V_DM_CAP_BAC ip_us_v_dm_cap_bac)
         {
-            m_us.dcID = ip_us_dm_cap_bac.dcID;
-            m_txt_ma_cap.Text = ip_us_dm_cap_bac.strMA_CAP;
-            m_txt_ma_bac.Text = ip_us_dm_cap_bac.strMA_BAC;
-            if (ip_us_dm_cap_bac.datNGAY_AP_DUNG == null)
+            m_us.dcID = ip_us_v_dm_cap_bac.dcID;
+            m_txt_ma_cap.Text = ip_us_v_dm_cap_bac.strMA_CAP;
+            m_txt_ma_bac.Text = ip_us_v_dm_cap_bac.strMA_BAC;
+            if (ip_us_v_dm_cap_bac.datNGAY_AP_DUNG == null)
                 m_dat_ngay_ap_dung.Checked = false;
             else
-                m_dat_ngay_ap_dung.Value = ip_us_dm_cap_bac.datNGAY_AP_DUNG;
-            if (ip_us_dm_cap_bac.datNGAY_KET_THUC == null)
+                m_dat_ngay_ap_dung.Value = ip_us_v_dm_cap_bac.datNGAY_AP_DUNG;
+            if (ip_us_v_dm_cap_bac.datNGAY_KET_THUC == null)
                 m_dat_ngay_ket_thuc.Checked = false;
             else
-                m_dat_ngay_ket_thuc.Value = ip_us_dm_cap_bac.datNGAY_KET_THUC;
+                m_dat_ngay_ket_thuc.Value = ip_us_v_dm_cap_bac.datNGAY_KET_THUC;
 
-            if (ip_us_dm_cap_bac.strTRANG_THAI == "y" || ip_us_dm_cap_bac.strTRANG_THAI == "Y")
+            if (ip_us_v_dm_cap_bac.strTRANG_THAI_SU_DUNG == "Đang sử dụng" || ip_us_v_dm_cap_bac.strTRANG_THAI_SU_DUNG == "đang sử dụng")
                 m_rdb_su_dung.Checked = true;
             else
                 m_rdb_khong_su_dung.Checked = true;
+            
         }
 
         private void format_control()
@@ -96,7 +97,7 @@ namespace BKI_HRM.DanhMuc
             m_us.strMA_CAP = m_txt_ma_cap.Text.Trim();
             m_us.datNGAY_AP_DUNG = m_dat_ngay_ap_dung.Value.Date;
             m_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
-            m_us.strTRANG_THAI = m_rdb_khong_su_dung.Checked ? "n" : "y";
+            m_us.strTRANG_THAI_SU_DUNG = m_rdb_khong_su_dung.Checked ? "Đang sử dụng" : "Không sử dụng";
 
         }
 
@@ -138,10 +139,10 @@ namespace BKI_HRM.DanhMuc
         private bool check_trung_ma_cap(string ip_str_ma_cap)
         {
 
-            DS_DM_CAP_BAC v_ds = new DS_DM_CAP_BAC();
+            DS_V_DM_CAP_BAC v_ds = new DS_V_DM_CAP_BAC();
             decimal count_ma_cap;
             m_us.FillDataset(v_ds, ip_str_ma_cap);
-            count_ma_cap = v_ds.DM_CAP_BAC.Count;
+            count_ma_cap = v_ds.V_DM_CAP_BAC.Count;
             if (count_ma_cap > 0)
                 return true;
             return false;
@@ -149,10 +150,10 @@ namespace BKI_HRM.DanhMuc
         private bool check_trung_ma_bac(string ip_str_ma_bac)
         {
 
-            DS_DM_CAP_BAC v_ds = new DS_DM_CAP_BAC();
+            DS_V_DM_CAP_BAC v_ds = new DS_V_DM_CAP_BAC();
             decimal count_ma_bac;
             m_us.FillDataset(v_ds, ip_str_ma_bac);
-            count_ma_bac = v_ds.DM_CAP_BAC.Count;
+            count_ma_bac = v_ds.V_DM_CAP_BAC.Count;
             if (count_ma_bac > 0)
                 return true;
             return false;
