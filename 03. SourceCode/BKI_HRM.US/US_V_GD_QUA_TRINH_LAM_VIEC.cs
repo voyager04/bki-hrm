@@ -615,6 +615,72 @@ namespace BKI_HRM.US {
             pm_objDR["TRANG_THAI_CV"] = System.Convert.DBNull;
         }
 
+        public string strMA_QUYET_DINH_MIEN_NHIEM
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "MA_QUYET_DINH_MIEN_NHIEM", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["MA_QUYET_DINH_MIEN_NHIEM"] = value;
+            }
+        }
+
+        public bool IsMA_QUYET_DINH_MIEN_NHIEMNull()
+        {
+            return pm_objDR.IsNull("MA_QUYET_DINH_MIEN_NHIEM");
+        }
+
+        public void SetMA_QUYET_DINH_MIEN_NHIEMNull()
+        {
+            pm_objDR["MA_QUYET_DINH_MIEN_NHIEM"] = System.Convert.DBNull;
+        }
+
+        public decimal dcID_QUYET_DINH
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_QUYET_DINH", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_QUYET_DINH"] = value;
+            }
+        }
+
+        public bool IsID_QUYET_DINHNull()
+        {
+            return pm_objDR.IsNull("ID_QUYET_DINH");
+        }
+
+        public void SetID_QUYET_DINHNull()
+        {
+            pm_objDR["ID_QUYET_DINH"] = System.Convert.DBNull;
+        }
+
+        public decimal dcID_QUYET_DINH_MIEN_NHIEM
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_QUYET_DINH_MIEN_NHIEM", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_QUYET_DINH_MIEN_NHIEM"] = value;
+            }
+        }
+
+        public bool IsID_QUYET_DINH_MIEN_NHIEMNull()
+        {
+            return pm_objDR.IsNull("ID_QUYET_DINH_MIEN_NHIEM");
+        }
+
+        public void SetID_QUYET_DINH_MIEN_NHIEMNull()
+        {
+            pm_objDR["ID_QUYET_DINH_MIEN_NHIEM"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_V_GD_QUA_TRINH_LAM_VIEC()
@@ -642,7 +708,6 @@ namespace BKI_HRM.US {
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
-
 
         #region Addtional
         public void FillDataset_search(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds,
