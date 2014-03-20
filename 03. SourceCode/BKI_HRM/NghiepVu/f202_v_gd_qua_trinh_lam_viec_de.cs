@@ -54,6 +54,7 @@ namespace BKI_HRM
         US_DM_DON_VI m_us_dm_don_vi = new US_DM_DON_VI();
         US_DM_QUYET_DINH m_us_quyet_dinh = new US_DM_QUYET_DINH();
         DS_DM_QUYET_DINH m_ds_quyet_dinh = new DS_DM_QUYET_DINH();
+        bool check_quyet_dinh_null = false;
 #endregion
 
 #region Private Methods
@@ -125,43 +126,50 @@ namespace BKI_HRM
                     m_cbo_loai_chuc_vu.Enabled = false;
                     break;
                 case DataEntryFormMode.UpdateDataState:
-                    m_us_dm_don_vi.dcID = m_us_v_qua_trinh_lam_viec.dcID_DON_VI;
+                    //m_us_dm_don_vi.dcID = m_us_v_qua_trinh_lam_viec.dcID_DON_VI;
                     
-                    m_txt_don_vi_moi.Text = m_us_dm_don_vi.strMA_DON_VI + " - " + m_us_dm_don_vi.strTEN_DON_VI;
+                    //m_txt_don_vi_moi.Text = m_us_dm_don_vi.strMA_DON_VI + " - " + m_us_dm_don_vi.strTEN_DON_VI;
 
                     m_dat_ngay_bat_dau.Value = m_us_v_qua_trinh_lam_viec.datNGAY_BAT_DAU;
-                    if (m_us_v_qua_trinh_lam_viec.datNGAY_KET_THUC > DateTime.Parse("01/01/1900"))
-                        m_dat_ngay_ket_thuc.Value = m_us_v_qua_trinh_lam_viec.datNGAY_KET_THUC;
-                    else
-                        m_dat_ngay_ket_thuc.Checked = false;
-                    m_us_quyet_dinh.FillDataset_By_Ma_qd(m_ds_quyet_dinh, m_us_v_qua_trinh_lam_viec.strMA_QUYET_DINH);
-                    if (m_ds_quyet_dinh.DM_QUYET_DINH.Select("MA_QUYET_DINH is not null").Length > 0)
+                    //if (m_us_v_qua_trinh_lam_viec.datNGAY_KET_THUC > DateTime.Parse("01/01/1900"))
+                    //    m_dat_ngay_ket_thuc.Value = m_us_v_qua_trinh_lam_viec.datNGAY_KET_THUC;
+                    //else
+                    //    m_dat_ngay_ket_thuc.Checked = false;
+                    if (m_us_v_qua_trinh_lam_viec.dcID_QUYET_DINH != null)
                     {
-                        m_ofd_openfile.FileName = m_us_quyet_dinh.strLINK;
-                        m_txt_ma_quyet_dinh.Text = m_us_v_qua_trinh_lam_viec.strMA_QUYET_DINH;
-                        m_us_quyet_dinh.DataRow2Me((DataRow)m_ds_quyet_dinh.DM_QUYET_DINH.Rows[0]);
-                        m_cbo_loai_quyet_dinh.SelectedValue = m_us_quyet_dinh.dcID_LOAI_QD;
-                        m_dat_ngay_ky.Value = m_us_quyet_dinh.datNGAY_KY;
-                        if (m_us_quyet_dinh.datNGAY_CO_HIEU_LUC > DateTime.Parse("01/01/1900"))
-                            m_dat_ngay_co_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_CO_HIEU_LUC;
+                        m_us_quyet_dinh.FillDataset_By_Ma_qd(m_ds_quyet_dinh, m_us_v_qua_trinh_lam_viec.strMA_QUYET_DINH);
+                        if (m_ds_quyet_dinh.DM_QUYET_DINH.Select("MA_QUYET_DINH is not null").Length > 0)
+                        {
+                            m_ofd_openfile.FileName = m_us_quyet_dinh.strLINK;
+                            m_txt_ma_quyet_dinh.Text = m_us_v_qua_trinh_lam_viec.strMA_QUYET_DINH;
+                            m_us_quyet_dinh.DataRow2Me((DataRow)m_ds_quyet_dinh.DM_QUYET_DINH.Rows[0]);
+                            m_cbo_loai_quyet_dinh.SelectedValue = m_us_quyet_dinh.dcID_LOAI_QD;
+                            m_dat_ngay_ky.Value = m_us_quyet_dinh.datNGAY_KY;
+                            if (m_us_quyet_dinh.datNGAY_CO_HIEU_LUC > DateTime.Parse("01/01/1900"))
+                                m_dat_ngay_co_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_CO_HIEU_LUC;
+                            else
+                                m_dat_ngay_co_hieu_luc_qd.Checked = false;
+                            //if (m_us_quyet_dinh.datNGAY_HET_HIEU_LUC > DateTime.Parse("01/01/1900"))
+                            //    m_dat_ngay_het_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_HET_HIEU_LUC;
+                            //else
+                            //    m_dat_ngay_het_hieu_luc_qd.Checked = false;
+                            m_txt_noi_dung.Text = m_us_quyet_dinh.strNOI_DUNG;
+                            m_ofd_openfile.FileName = m_us_quyet_dinh.strLINK;
+                        }
                         else
+                        {
+                            m_txt_ma_quyet_dinh.Text = "";
+                            m_cbo_loai_quyet_dinh.SelectedIndex = 0;
+                            m_dat_ngay_ky.Checked = false;
                             m_dat_ngay_co_hieu_luc_qd.Checked = false;
-                        if (m_us_quyet_dinh.datNGAY_HET_HIEU_LUC > DateTime.Parse("01/01/1900"))
-                            m_dat_ngay_het_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_HET_HIEU_LUC;
-                        else
-                            m_dat_ngay_het_hieu_luc_qd.Checked = false;
-                        m_txt_noi_dung.Text = m_us_quyet_dinh.strNOI_DUNG;
-                        m_ofd_openfile.FileName = m_us_quyet_dinh.strLINK;
+                            //m_dat_ngay_het_hieu_luc_qd.Checked = false;
+                            m_txt_noi_dung.Text = "";
+                            m_ofd_openfile.FileName = "";
+                        }
                     }
                     else
                     {
-                        m_txt_ma_quyet_dinh.Text = "";
-                        m_cbo_loai_quyet_dinh.SelectedIndex = 0;
-                        m_dat_ngay_ky.Checked = false;
-                        m_dat_ngay_co_hieu_luc_qd.Checked = false;
-                        m_dat_ngay_het_hieu_luc_qd.Checked = false;
-                        m_txt_noi_dung.Text = "";
-                        m_ofd_openfile.FileName = "";
+                        check_quyet_dinh_null = true;
                     }
                     break;
                 default: break;
@@ -170,6 +178,7 @@ namespace BKI_HRM
         private void form_to_us_object_chi_tiet_chuc_vu()
         {
             m_us_chi_tiet_chuc_vu = new US_GD_CHI_TIET_CHUC_VU();
+            m_us_chi_tiet_chuc_vu.dcID = m_us_v_qua_trinh_lam_viec.dcID;
             m_us_chi_tiet_chuc_vu.dcID_NHAN_SU = m_us_v_qua_trinh_lam_viec.dcID_NHAN_SU;
             m_us_chi_tiet_chuc_vu.dcID_CHUC_VU = CIPConvert.ToDecimal(m_cbo_chuc_vu_moi.SelectedValue);
             m_us_chi_tiet_chuc_vu.dcID_LOAI_CV = CIPConvert.ToDecimal(m_cbo_loai_chuc_vu.SelectedValue);
@@ -177,8 +186,10 @@ namespace BKI_HRM
             if (m_txt_ma_quyet_dinh.Text != "")
                 m_us_chi_tiet_chuc_vu.dcID_QUYET_DINH = m_us_quyet_dinh.dcID;
             m_us_chi_tiet_chuc_vu.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value;
-            if(m_dat_ngay_ket_thuc.Checked)
+            if (m_dat_ngay_ket_thuc.Checked)
                 m_us_chi_tiet_chuc_vu.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value;
+            //else
+            //    m_us_chi_tiet_chuc_vu.datNGAY_KET_THUC = System.DBNull.Value;
             m_us_chi_tiet_chuc_vu.strTRANG_THAI_CV = "Y";
 
         }
@@ -210,9 +221,20 @@ namespace BKI_HRM
                         return;
                     else
                     {
+                        
                         form_to_us_object_quyet_dinh();
-                        m_us_quyet_dinh.Update();
+                        if (check_quyet_dinh_null)
+                        {
+                            m_us_quyet_dinh.Insert();
+                        }
+                        else
+                        {
+                            m_us_quyet_dinh.Update();
+                        }
+                        
                         form_to_us_object_chi_tiet_chuc_vu();
+                        m_us_chi_tiet_chuc_vu.dcID_QUYET_DINH_MIEN_NHIEM = m_us_quyet_dinh.dcID;
+                        m_us_chi_tiet_chuc_vu.strTRANG_THAI_CV = "N";
                         m_us_chi_tiet_chuc_vu.Update();
 
                     }
@@ -319,8 +341,6 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-#endregion
-
         private void m_cmd_chon_don_vi_Click(object sender, EventArgs e)
         {
             try
@@ -331,7 +351,7 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle(v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
@@ -343,7 +363,7 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle(v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
@@ -355,12 +375,12 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle(v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+#endregion
 
         
 
-        
     }
 }
