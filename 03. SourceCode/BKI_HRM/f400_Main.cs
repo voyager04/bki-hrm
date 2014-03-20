@@ -46,7 +46,7 @@ namespace BKI_HRM
 
         private void format_controls()
         {
-            CControlFormat.setFormStyle(this, new CAppContext_201());
+            //CControlFormat.setFormStyle(this, new CAppContext_201());
             set_define_events();
             ShowInTaskbar = true;
         }
