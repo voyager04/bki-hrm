@@ -135,6 +135,16 @@ namespace BKI_HRM
                     //    m_dat_ngay_ket_thuc.Value = m_us_v_qua_trinh_lam_viec.datNGAY_KET_THUC;
                     //else
                     //    m_dat_ngay_ket_thuc.Checked = false;
+                    m_lbl_ngay_ket_thuc.Text = "Ngày miễn nhiệm";
+                    m_lbl_chuc_vu_moi.Text = "Chức vụ miễn nhiệm";
+                    m_cbo_chuc_vu_moi.Enabled = false;
+                    m_cbo_ma_chuc_vu_moi.Enabled = false;
+                    m_lbl_ma_chuc_vu_moi.Text = "Mã chức vụ miễn nhiệm";
+                    m_lbl_don_vi_moi.Text = "Đơn vị hiện tại";
+                    m_txt_don_vi_moi.Enabled = false;
+                    m_cmd_chon_don_vi.Enabled = false;
+                    m_cbo_loai_chuc_vu.Enabled = false;
+                    m_dat_ngay_bat_dau.Enabled = false;
                     if (m_us_v_qua_trinh_lam_viec.dcID_QUYET_DINH != null)
                     {
                         m_us_quyet_dinh.FillDataset_By_Ma_qd(m_ds_quyet_dinh, m_us_v_qua_trinh_lam_viec.strMA_QUYET_DINH);
