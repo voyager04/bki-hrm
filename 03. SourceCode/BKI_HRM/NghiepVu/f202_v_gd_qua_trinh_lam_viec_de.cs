@@ -178,7 +178,7 @@ namespace BKI_HRM
         private void form_to_us_object_chi_tiet_chuc_vu()
         {
             m_us_chi_tiet_chuc_vu = new US_GD_CHI_TIET_CHUC_VU();
-            m_us_chi_tiet_chuc_vu.dcID = m_us_v_qua_trinh_lam_viec.dcID;
+           
             m_us_chi_tiet_chuc_vu.dcID_NHAN_SU = m_us_v_qua_trinh_lam_viec.dcID_NHAN_SU;
             m_us_chi_tiet_chuc_vu.dcID_CHUC_VU = CIPConvert.ToDecimal(m_cbo_chuc_vu_moi.SelectedValue);
             m_us_chi_tiet_chuc_vu.dcID_LOAI_CV = CIPConvert.ToDecimal(m_cbo_loai_chuc_vu.SelectedValue);
@@ -191,7 +191,18 @@ namespace BKI_HRM
             //else
             //    m_us_chi_tiet_chuc_vu.datNGAY_KET_THUC = System.DBNull.Value;
             m_us_chi_tiet_chuc_vu.strTRANG_THAI_CV = "Y";
+            switch (m_e_form_mode)
+            {
 
+                case DataEntryFormMode.UpdateDataState:
+                    m_us_chi_tiet_chuc_vu.dcID = m_us_v_qua_trinh_lam_viec.dcID;
+                    m_us_chi_tiet_chuc_vu.dcID_QUYET_DINH_MIEN_NHIEM = m_us_quyet_dinh.dcID;
+                    m_us_chi_tiet_chuc_vu.strTRANG_THAI_CV = "N";
+                    break;
+                
+                default:
+                    break;
+            }
         }
         private void form_to_us_object_quyet_dinh()
         {
@@ -233,8 +244,7 @@ namespace BKI_HRM
                         }
                         
                         form_to_us_object_chi_tiet_chuc_vu();
-                        m_us_chi_tiet_chuc_vu.dcID_QUYET_DINH_MIEN_NHIEM = m_us_quyet_dinh.dcID;
-                        m_us_chi_tiet_chuc_vu.strTRANG_THAI_CV = "N";
+                        
                         m_us_chi_tiet_chuc_vu.Update();
 
                     }
