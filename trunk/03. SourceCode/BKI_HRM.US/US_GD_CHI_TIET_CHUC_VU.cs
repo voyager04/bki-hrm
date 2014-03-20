@@ -132,6 +132,28 @@ public class US_GD_CHI_TIET_CHUC_VU : US_Object
         pm_objDR["ID_QUYET_DINH"] = System.Convert.DBNull;
     }
 
+    public decimal dcID_QUYET_DINH_MIEN_NHIEM
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "ID_QUYET_DINH_MIEN_NHIEM", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["ID_QUYET_DINH_MIEN_NHIEM"] = value;
+        }
+    }
+
+    public bool IsID_QUYET_DINH_MIEN_NHIEMNull()
+    {
+        return pm_objDR.IsNull("ID_QUYET_DINH_MIEN_NHIEM");
+    }
+
+    public void SetID_QUYET_DINH_MIEN_NHIEMNull()
+    {
+        pm_objDR["ID_QUYET_DINH_MIEN_NHIEM"] = System.Convert.DBNull;
+    }
+
     public decimal dcID_LOAI_CV
     {
         get
