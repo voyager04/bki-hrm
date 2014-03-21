@@ -5,11 +5,14 @@
 ///************************************************
 
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using System.Globalization;
+using System.IO;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -25,6 +28,8 @@ using BKI_HRM.DS.CDBNames;
 
 using C1.Win.C1FlexGrid;
 using SIS.Controls.Button;
+using DS_CM_DM_TU_DIEN = IP.Core.IPData.DS_CM_DM_TU_DIEN;
+using US_CM_DM_TU_DIEN = IP.Core.IPUserService.US_CM_DM_TU_DIEN;
 
 namespace BKI_HRM {
 
@@ -161,6 +166,7 @@ namespace BKI_HRM {
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
             this.m_cbo_trang_thai.Size = new System.Drawing.Size(121, 22);
             this.m_cbo_trang_thai.TabIndex = 30;
+            this.m_cbo_trang_thai.Visible = false;
             // 
             // label3
             // 
@@ -170,6 +176,7 @@ namespace BKI_HRM {
             this.label3.Size = new System.Drawing.Size(99, 14);
             this.label3.TabIndex = 29;
             this.label3.Text = "Trạng thái lao động";
+            this.label3.Visible = false;
             // 
             // m_lbl_so_nhan_vien
             // 
@@ -201,6 +208,7 @@ namespace BKI_HRM {
             this.m_cbo_gioi_tinh.Name = "m_cbo_gioi_tinh";
             this.m_cbo_gioi_tinh.Size = new System.Drawing.Size(69, 22);
             this.m_cbo_gioi_tinh.TabIndex = 26;
+            this.m_cbo_gioi_tinh.Visible = false;
             // 
             // label1
             // 
@@ -210,6 +218,7 @@ namespace BKI_HRM {
             this.label1.Size = new System.Drawing.Size(47, 14);
             this.label1.TabIndex = 25;
             this.label1.Text = "Giới tính";
+            this.label1.Visible = false;
             // 
             // m_cmd_search
             // 
@@ -219,7 +228,7 @@ namespace BKI_HRM {
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(1069, 39);
+            this.m_cmd_search.Location = new System.Drawing.Point(1069, 33);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 2;
@@ -229,16 +238,17 @@ namespace BKI_HRM {
             // 
             this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(266, 50);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(266, 44);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
-            this.m_txt_tim_kiem.Size = new System.Drawing.Size(766, 20);
+            this.m_txt_tim_kiem.Size = new System.Drawing.Size(633, 20);
             this.m_txt_tim_kiem.TabIndex = 1;
-            this.m_tooltip.SetToolTip(this.m_txt_tim_kiem, "Để tìm kiếm nhân viên sinh nhật theo tháng, bạn gõ: Tháng 10");
+            this.m_tooltip.SetToolTip(this.m_txt_tim_kiem, "Gợi ý tìm kiếm:\r\nGiới tính: nữ, đơn vị: Phòng hành chính\r\nhoặc Nguyễn Danh Tú, gi" +
+                    "ới tính: Nam");
             // 
             // m_lbl_tim_kiem
             // 
             this.m_lbl_tim_kiem.AutoSize = true;
-            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(155, 50);
+            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(155, 44);
             this.m_lbl_tim_kiem.Name = "m_lbl_tim_kiem";
             this.m_lbl_tim_kiem.Size = new System.Drawing.Size(87, 14);
             this.m_lbl_tim_kiem.TabIndex = 24;
@@ -312,6 +322,17 @@ namespace BKI_HRM {
         public void display() {
             ShowDialog();
         }
+
+
+        public void danh_sach_thu_viec_sap_het_han(int ip_so_ngay_truoc_het_han_thu_viec) {
+
+        }
+
+        public int get_so_luong_thu_viec_sap_het_han(int ip_so_ngay_truoc_het_han_thu_viec) {
+            var v_so_luong = 0;
+            m_us.FillDatasetTraCuuThongTinNhanVienChung(m_ds, "", "", "");
+            return v_so_luong;
+        }
         #endregion
 
         #region Data Structure
@@ -360,7 +381,43 @@ namespace BKI_HRM {
         ITransferDataRow m_obj_trans;
         DS_V_DM_DU_LIEU_NHAN_VIEN m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
         US_V_DM_DU_LIEU_NHAN_VIEN m_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
-        private const String m_str_goi_y_tim_kiem = "Nhập Họ tên nhân viên, Mã nhân viên, Chức vụ, Trình độ,...";
+        private const String m_str_goi_y_tim_kiem = "Giới tính: nữ, đơn vị: Phòng hành chính hoặc Nguyễn Danh Tú, giới tính: Nam, Trình độ: Đại học";
+        private IList<KeyValuePair<string, string>> m_list_key_value = new List<KeyValuePair<string, string>>();
+        private string m_str_search = "";
+        private string m_str_ma_nhan_vien = "";
+        private string m_str_ho_va_ten = "";
+        private string m_str_gioi_tinh = "";
+        private string m_str_ngay_sinh = "";
+        private string m_str_thang_sinh = "";
+        private string m_str_nam_sinh = "";
+        private string m_str_trinh_do = "";
+        private string m_str_ma_chuc_vu = "";
+        private string m_str_ten_chuc_vu = "";
+        private string m_str_loai_chuc_vu = "";
+        private string m_str_ty_le_tham_gia = "";
+        private string m_str_ma_don_vi = "";
+        private string m_str_ten_don_vi = "";
+        private string m_str_loai_don_vi = "";
+        private string m_str_cap_don_vi = "";
+        private string m_str_dia_ban = "";
+        private string m_str_ngay_bat_dau = "";
+        private string m_str_thang_bat_dau = "";
+        private string m_str_nam_bat_dau = "";
+        private string m_str_ngay_ket_thuc = "";
+        private string m_str_thang_ket_thuc = "";
+        private string m_str_nam_ket_thuc = "";
+        private string m_str_trang_thai_lao_dong = "";
+        private string m_str_ngay_co_hieu_luc = "";
+        private string m_str_thang_co_hieu_luc = "";
+        private string m_str_nam_co_hieu_luc = "";
+        private string m_str_trang_thai_hien_tai = "";
+        private string m_str_oderby_01 = "";
+        private string m_str_oderby_02 = "";
+        private string m_str_oderby_03 = "";
+        private string m_str_ngay_het_hieu_luc = "";
+        private string m_str_thang_het_hieu_luc = "";
+        private string m_str_nam_het_hieu_luc = "";
+
 
         #endregion
 
@@ -386,14 +443,16 @@ namespace BKI_HRM {
                                                     WinFormControls.eTAT_CA.YES,
                                                     m_cbo_trang_thai);
              * */
-            //Load combobox "Trạng thái"
-            load_data_to_cbo_trang_thai();
+            /*
+             * Load combobox "Trạng thái"
+             * */
+            //load_data_to_cbo_trang_thai();
             //load_custom_source_2_m_txt_tim_kiem();
         }
 
         private void load_data_to_cbo_trang_thai() {
-            var v_us_dm_tu_dien = new IP.Core.IPUserService.US_CM_DM_TU_DIEN();
-            var v_ds_dm_tu_dien = new IP.Core.IPData.DS_CM_DM_TU_DIEN();
+            var v_us_dm_tu_dien = new US_CM_DM_TU_DIEN();
+            var v_ds_dm_tu_dien = new DS_CM_DM_TU_DIEN();
             var v_str_loai_tu_dien = "";
             v_str_loai_tu_dien = MA_LOAI_TU_DIEN.TRANG_THAI_LAO_DONG;
             v_us_dm_tu_dien.fill_tu_dien_cung_loai_ds(
@@ -405,7 +464,7 @@ namespace BKI_HRM {
             m_cbo_trang_thai.DisplayMember = CM_DM_TU_DIEN.TEN;
             m_cbo_trang_thai.ValueMember = CM_DM_TU_DIEN.ID;
 
-            DataRow v_dr = v_ds_dm_tu_dien.CM_DM_TU_DIEN.NewRow();
+            var v_dr = v_ds_dm_tu_dien.CM_DM_TU_DIEN.NewRow();
             v_dr[CM_DM_TU_DIEN.ID] = -1;
             v_dr[CM_DM_TU_DIEN.TEN] = "------ Tất cả ------";
             v_dr[CM_DM_TU_DIEN.MA_TU_DIEN] = "";
@@ -416,17 +475,30 @@ namespace BKI_HRM {
             m_cbo_trang_thai.SelectedIndex = 0;
         }
         private void load_custom_source_2_m_txt_tim_kiem() {
-            var count = m_ds.Tables["V_DM_DU_LIEU_NHAN_VIEN"].Rows.Count;
-            for (var i = 0; i < count; i++) {
-                var dr = m_ds.Tables["V_DM_DU_LIEU_NHAN_VIEN"].Rows[i];
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["HO_DEM"].ToString());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TEN"].ToString());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["HO_DEM"] + " " + dr["TEN"]);
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["HO_DEM"] + " " + dr["TEN"] + " - " + dr["MA_NV"]);
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TRINH_DO"] + " - " + dr["TEN"]);
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TRINH_DO"].ToString());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TEN_CV"].ToString());
+            //var count = m_ds.Tables["V_DM_DU_LIEU_NHAN_VIEN"].Rows.Count;
+            //for (var i = 0; i < count; i++) {
+            //    var dr = m_ds.Tables["V_DM_DU_LIEU_NHAN_VIEN"].Rows[i];
+            //    m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["HO_DEM"].ToString());
+            //    m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TEN"].ToString());
+            //    m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["HO_DEM"] + " " + dr["TEN"]);
+            //    m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["HO_DEM"] + " " + dr["TEN"] + " - " + dr["MA_NV"]);
+            //    m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TRINH_DO"] + " - " + dr["TEN"]);
+            //    m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TRINH_DO"].ToString());
+            //    m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TEN_CV"].ToString());
+            //}
+
+            m_txt_tim_kiem.AutoCompleteMode = AutoCompleteMode.Suggest;
+            m_txt_tim_kiem.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            AutoCompleteStringCollection coll = new AutoCompleteStringCollection();
+            US_V_DM_DU_LIEU_NHAN_VIEN v_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
+            DS_V_DM_DU_LIEU_NHAN_VIEN v_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
+            v_us.FillDatasetTraCuuThongTinNhanVienChung(v_ds, m_txt_tim_kiem.Text, "", "");
+            var v_rows = v_ds.Tables[0].Rows;
+            for (int i = 0; i < v_rows.Count - 1; i++) {
+                coll.Add(v_rows[i]["HO_DEM"] + " - " + v_rows[i]["TEN"] + " - " + v_rows[i]["MA_NV"]);
+                coll.Add(v_rows[i]["TEN"] + " - " + v_rows[i]["HO_DEM"] + " " + v_rows[i]["TEN"] + " - " + v_rows[i]["MA_NV"]);
             }
+            m_txt_tim_kiem.AutoCompleteCustomSource = coll;
         }
         private ITransferDataRow get_trans_object(C1FlexGrid i_fg) {
             var v_htb = new Hashtable();
@@ -453,26 +525,269 @@ namespace BKI_HRM {
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_DM_DU_LIEU_NHAN_VIEN.NewRow());
             return v_obj_trans;
         }
+
         private void load_data_2_grid() {
             m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
-            /*Xử lý tìm kiếm*/
-            var v_str_search = m_txt_tim_kiem.Text.Trim();
-            if (v_str_search.Equals(m_str_goi_y_tim_kiem)) {
-                v_str_search = "";
+            if (m_txt_tim_kiem.Text.Equals(m_str_goi_y_tim_kiem)) {
+                m_txt_tim_kiem.Text = "";
             }
-            /*
-            var v_dat_thoi_diem = DateTime.Now;
-            if (m_dtp_thoidiem.Checked) {
-                v_dat_thoi_diem = m_dtp_thoidiem.Value.Date;
-            }
-            */
-            var v_str_month = Regex.Match(v_str_search, @"\d+").Value;
-            if (!v_str_month.Equals("")) {
-                v_str_search = v_str_month;
-            }
-            m_us.FillDatasetTraCuuThongTinNhanVienChung(m_ds, v_str_search, get_gender(), get_trang_thai_lao_dong());
+            //m_us.FillDatasetTraCuuThongTinNhanVienChung(m_ds, m_txt_tim_kiem.Text, "", "");
+            m_list_key_value = get_list_key_value(m_txt_tim_kiem.Text);
+            init_value();
+            get_value();
+            m_us.FillDatasetAll(m_ds
+                    , m_str_search
+                    , m_str_ma_nhan_vien
+                    , m_str_ho_va_ten
+                    , m_str_gioi_tinh
+                    , m_str_ngay_sinh
+                    , m_str_thang_sinh
+                    , m_str_nam_sinh
+                    , m_str_trinh_do
+                    , m_str_ma_chuc_vu
+                    , m_str_ten_chuc_vu
+                    , m_str_loai_chuc_vu
+                    , m_str_ty_le_tham_gia
+                    , m_str_ma_don_vi
+                    , m_str_ten_don_vi
+                    , m_str_loai_don_vi
+                    , m_str_cap_don_vi
+                    , m_str_dia_ban
+                    , m_str_ngay_bat_dau
+                    , m_str_thang_bat_dau
+                    , m_str_nam_bat_dau
+                    , m_str_ngay_ket_thuc
+                    , m_str_thang_ket_thuc
+                    , m_str_nam_ket_thuc
+                    , m_str_trang_thai_lao_dong
+                    , m_str_ngay_co_hieu_luc
+                    , m_str_thang_co_hieu_luc
+                    , m_str_nam_co_hieu_luc
+                    , m_str_ngay_het_hieu_luc
+                    , m_str_thang_het_hieu_luc
+                    , m_str_nam_het_hieu_luc
+                    , m_str_trang_thai_hien_tai
+                    , m_str_oderby_01
+                    , m_str_oderby_02
+                    , m_str_oderby_03
+                );
+
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;
+            tao_tree();
+        }
+
+        private void get_value() {
+            foreach (KeyValuePair<string, string> v_key_value_pair in m_list_key_value) {
+                switch (v_key_value_pair.Key) {
+                    case "SEARCH":
+                        m_str_search = v_key_value_pair.Value;
+                        break;
+                    case "MA NHAN VIEN":
+                        m_str_ma_nhan_vien = v_key_value_pair.Value;
+                        break;
+                    case "HO VA TEN":
+                        m_str_ho_va_ten = v_key_value_pair.Value;
+                        break;
+                    case "HO TEN":
+                        m_str_ho_va_ten = v_key_value_pair.Value;
+                        break;
+                    case "GIOI TINH":
+                        m_str_gioi_tinh = v_key_value_pair.Value;
+                        break;
+                    case "NGAY SINH":
+                        m_str_ngay_sinh = v_key_value_pair.Value;
+                        break;
+                    case "THANG SINH":
+                        m_str_thang_sinh = v_key_value_pair.Value;
+                        break;
+                    case "NAM SINH":
+                        m_str_nam_sinh = v_key_value_pair.Value;
+                        break;
+                    case "TRINH DO":
+                        m_str_trinh_do = v_key_value_pair.Value;
+                        break;
+                    case "MA CHUC VU":
+                        m_str_ma_chuc_vu = v_key_value_pair.Value;
+                        break;
+                    case "TEN CHUC VU":
+                        m_str_ten_chuc_vu = v_key_value_pair.Value;
+                        break;
+                    case "LOAI CHUC VU":
+                        m_str_loai_chuc_vu = v_key_value_pair.Value;
+                        break;
+                    case "TY LE THAM GIA":
+                        m_str_ty_le_tham_gia = v_key_value_pair.Value;
+                        break;
+                    case "MA DON VI":
+                        m_str_ma_don_vi = v_key_value_pair.Value;
+                        break;
+                    case "TEN DON VI":
+                        m_str_ten_don_vi = v_key_value_pair.Value;
+                        break;
+                    case "DON VI":
+                        m_str_ten_don_vi = v_key_value_pair.Value;
+                        break;
+                    case "LOAI DON VI":
+                        m_str_loai_don_vi = v_key_value_pair.Value;
+                        break;
+                    case "CAP DON VI":
+                        m_str_cap_don_vi = v_key_value_pair.Value;
+                        break;
+                    case "DIA BAN":
+                        m_str_dia_ban = v_key_value_pair.Value;
+                        break;
+                    case "NGAY BAT DAU":
+                        m_str_ngay_bat_dau = v_key_value_pair.Value;
+                        break;
+                    case "THANG BAT DAU":
+                        m_str_thang_bat_dau = v_key_value_pair.Value;
+                        break;
+                    case "NAM BAT DAU":
+                        m_str_nam_bat_dau = v_key_value_pair.Value;
+                        break;
+                    case "NGAY KET THUC":
+                        m_str_ngay_ket_thuc = v_key_value_pair.Value;
+                        break;
+                    case "THANG KET THUC":
+                        m_str_thang_ket_thuc = v_key_value_pair.Value;
+                        break;
+                    case "NAM KET THUC":
+                        m_str_nam_ket_thuc = v_key_value_pair.Value;
+                        break;
+                    case "TRANG THAI LAO DONG":
+                        m_str_trang_thai_lao_dong = v_key_value_pair.Value;
+                        break;
+                    case "NGAY CO HIEU LUC":
+                        m_str_ngay_co_hieu_luc = v_key_value_pair.Value;
+                        break;
+                    case "THANG CO HIEU LUC":
+                        m_str_thang_co_hieu_luc = v_key_value_pair.Value;
+                        break;
+                    case "NAM CO HIEU LUC":
+                        m_str_nam_co_hieu_luc = v_key_value_pair.Value;
+                        break;
+                    case "TRANG THAI HIEN TAI":
+                        m_str_trang_thai_hien_tai = v_key_value_pair.Value;
+                        break;
+                    case "NGAY HET HIEU LUC":
+                        m_str_ngay_het_hieu_luc = v_key_value_pair.Value;
+                        break;
+                    case "THANG HET HIEU LUC":
+                        m_str_thang_het_hieu_luc = v_key_value_pair.Value;
+                        break;
+                    case "NAM HET HIEU LUC":
+                        m_str_nam_het_hieu_luc = v_key_value_pair.Value;
+                        break;
+                    case "ODERBY 01":
+                        m_str_oderby_01 = v_key_value_pair.Value;
+                        break;
+                    case "ODERBY 02":
+                        m_str_oderby_02 = v_key_value_pair.Value;
+                        break;
+                    case "ODERBY03":
+                        m_str_oderby_03 = v_key_value_pair.Value;
+                        break;
+                }
+            }
+
+        }
+        private void init_value() {
+            m_str_search = "";
+            m_str_ma_nhan_vien = "";
+            m_str_ho_va_ten = "";
+            m_str_gioi_tinh = "";
+            m_str_ngay_sinh = "";
+            m_str_thang_sinh = "";
+            m_str_nam_sinh = "";
+            m_str_trinh_do = "";
+            m_str_ma_chuc_vu = "";
+            m_str_ten_chuc_vu = "";
+            m_str_loai_chuc_vu = "";
+            m_str_ty_le_tham_gia = "";
+            m_str_ma_don_vi = "";
+            m_str_ten_don_vi = "";
+            m_str_loai_don_vi = "";
+            m_str_cap_don_vi = "";
+            m_str_dia_ban = "";
+            m_str_ngay_bat_dau = "";
+            m_str_thang_bat_dau = "";
+            m_str_nam_bat_dau = "";
+            m_str_ngay_ket_thuc = "";
+            m_str_thang_ket_thuc = "";
+            m_str_nam_ket_thuc = "";
+            m_str_trang_thai_lao_dong = "";
+            m_str_ngay_co_hieu_luc = "";
+            m_str_thang_co_hieu_luc = "";
+            m_str_nam_co_hieu_luc = "";
+            m_str_trang_thai_hien_tai = "";
+            m_str_oderby_01 = "";
+            m_str_oderby_02 = "";
+            m_str_oderby_03 = "";
+            m_str_ngay_het_hieu_luc = "";
+            m_str_thang_het_hieu_luc = "";
+            m_str_nam_het_hieu_luc = "";
+        }
+        /*
+         * Hàm lọc dấu tiếng việt
+         */
+
+        public static string loc_dau(string s) {
+            Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
+            string temp = s.Normalize(NormalizationForm.FormD);
+            return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D');
+        }
+        private IList<KeyValuePair<string, string>> get_list_key_value(string ip_str_search) {
+            const string COLON = ":";
+            const string COMMAS = ",";
+            var v_str_sub = ip_str_search.Trim();
+            const int START = 0;
+            var v_da_co_seach = false;
+            KeyValuePair<string, string> v_key_value = new KeyValuePair<string, string>();
+            IList<KeyValuePair<string, string>> v_list_key_value = new List<KeyValuePair<string, string>>();
+            if (v_str_sub.IndexOf(COLON, StringComparison.Ordinal) == -1) {
+                v_list_key_value.Add(new KeyValuePair<string, string>("SEARCH", v_str_sub.ToUpper().Trim()));
+
+                return v_list_key_value;
+            }
+            try {
+                while (!v_str_sub.Equals("")) {
+                    var v_colon_index = v_str_sub.IndexOf(COLON, StringComparison.Ordinal);
+                    var v_commas_index = v_str_sub.IndexOf(COMMAS, StringComparison.Ordinal);
+                    var v_len_sub = v_str_sub.Length;
+                    if (v_colon_index == -1) continue;
+                    string v_key;
+                    string v_value;
+                    if (v_colon_index > v_commas_index && !v_da_co_seach && v_commas_index != -1) {
+                        v_key = "SEARCH";
+                        v_value = v_str_sub.Substring(0, v_commas_index).Trim();
+                        v_list_key_value.Add(new KeyValuePair<string, string>(v_key, v_value.ToUpper().Trim()));
+                        v_str_sub = v_str_sub.Substring(v_commas_index + 1, v_str_sub.Length - v_commas_index - 1).Trim();
+                        v_colon_index = v_str_sub.IndexOf(COLON, StringComparison.Ordinal);
+                        v_commas_index = v_str_sub.IndexOf(COMMAS, StringComparison.Ordinal);
+                        v_len_sub = v_str_sub.Length;
+                        v_da_co_seach = true;
+                    }
+                    v_key = v_str_sub.Substring(START, v_colon_index);
+                    if (v_commas_index != -1) {
+                        v_value = v_str_sub.Substring(v_colon_index + 1, v_commas_index - v_colon_index - 1).Trim();
+                        v_str_sub = v_str_sub.Substring(v_commas_index + 1, v_len_sub - v_commas_index - 1).Trim();
+                    } else {
+                        v_value = v_str_sub.Substring(v_colon_index + 1, v_str_sub.Length - v_colon_index - 1);
+                        v_str_sub = "";
+                    }
+                    v_list_key_value.Add(new KeyValuePair<string, string>(loc_dau(v_key).ToUpper(), v_value.ToUpper().Trim()));
+                }
+            } catch (Exception) {
+                return v_list_key_value;
+            }
+            return v_list_key_value;
+
+        }
+
+
+
+        private void tao_tree() {
             // Group (subtotal) trên grid.
             m_fg.Subtotal(AggregateEnum.Count
               , 0
@@ -483,6 +798,7 @@ namespace BKI_HRM {
             set_search_format_before();
             m_lbl_so_nhan_vien.Text = lay_so_ban_ghi().ToString(CultureInfo.InvariantCulture);
         }
+
         private int lay_so_ban_ghi() {
             return m_ds.V_DM_DU_LIEU_NHAN_VIEN.Count;
         }
