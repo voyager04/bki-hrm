@@ -27,6 +27,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "IPWordReport", "IPWordRepor
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "IPUserService", "IPUserService\IPUserService.vbproj", "{B490EA92-2990-4CBB-B58B-12901AFCCCB5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPControls", "IPControls\IPControls.csproj", "{B8827ABC-7590-466E-AED2-6ED3943B0DC5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		BondDebug|Any CPU = BondDebug|Any CPU
@@ -439,6 +441,36 @@ Global
 		{B490EA92-2990-4CBB-B58B-12901AFCCCB5}.SIPDebug|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{B490EA92-2990-4CBB-B58B-12901AFCCCB5}.SIPDebug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{B490EA92-2990-4CBB-B58B-12901AFCCCB5}.SIPDebug|x86.ActiveCfg = Debug|Any CPU
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.BondDebug|Any CPU.ActiveCfg = Debug|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.BondDebug|Mixed Platforms.ActiveCfg = Debug|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.BondDebug|Mixed Platforms.Build.0 = Debug|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.BondDebug|x86.ActiveCfg = Debug|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.BondDebug|x86.Build.0 = Debug|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.Debug|x86.ActiveCfg = Debug|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.Debug|x86.Build.0 = Debug|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.iFASDebug|Any CPU.ActiveCfg = Debug|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.iFASDebug|Mixed Platforms.ActiveCfg = Debug|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.iFASDebug|Mixed Platforms.Build.0 = Debug|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.iFASDebug|x86.ActiveCfg = Debug|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.iFASDebug|x86.Build.0 = Debug|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.PersonalBuild|Any CPU.ActiveCfg = Release|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.PersonalBuild|Mixed Platforms.ActiveCfg = Release|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.PersonalBuild|Mixed Platforms.Build.0 = Release|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.PersonalBuild|x86.ActiveCfg = Release|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.PersonalBuild|x86.Build.0 = Release|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.Release|Any CPU.ActiveCfg = Release|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.Release|Mixed Platforms.Build.0 = Release|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.Release|x86.ActiveCfg = Release|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.Release|x86.Build.0 = Release|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.SIPDebug|Any CPU.ActiveCfg = Debug|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.SIPDebug|Mixed Platforms.ActiveCfg = Debug|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.SIPDebug|Mixed Platforms.Build.0 = Debug|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.SIPDebug|x86.ActiveCfg = Debug|x86
+		{B8827ABC-7590-466E-AED2-6ED3943B0DC5}.SIPDebug|x86.Build.0 = Debug|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
