@@ -22,7 +22,6 @@ using IP.Core.IPData;
 using IP.Core.IPUserService;
 using IP.Core.IPSystemAdmin;
 
-
 using BKI_HRM.US;
 using BKI_HRM.DS;
 using BKI_HRM.DS.CDBNames;
@@ -40,8 +39,6 @@ namespace BKI_HRM {
         private Panel panel1;
         private Label m_lbl_so_nhan_vien;
         private Label label2;
-        private ComboBox m_cbo_gioi_tinh;
-        private Label label1;
         internal SiSButton m_cmd_search;
         private TextBox m_txt_tim_kiem;
         private Label m_lbl_tim_kiem;
@@ -49,9 +46,7 @@ namespace BKI_HRM {
         internal SiSButton m_cmd_xuat_excel;
         internal SiSButton m_cmd_exit;
         private ToolTip m_tooltip;
-        private ComboBox m_cbo_trang_thai;
-        private Label label3;
-        private IP.Core.IPControls.CheckBoxComboBox checkBoxComboBox2;
+        private IP.Core.IPControls.CheckBoxComboBox checkBoxComboBox1;
         private IContainer components;
 
         public f103_bao_cao_tra_cuu_nhan_su() {
@@ -90,12 +85,8 @@ namespace BKI_HRM {
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.m_cbo_trang_thai = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.m_lbl_so_nhan_vien = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.m_cbo_gioi_tinh = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
@@ -103,7 +94,7 @@ namespace BKI_HRM {
             this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.checkBoxComboBox2 = new IP.Core.IPControls.CheckBoxComboBox();
+            this.checkBoxComboBox1 = new IP.Core.IPControls.CheckBoxComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -147,13 +138,9 @@ namespace BKI_HRM {
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.checkBoxComboBox2);
-            this.panel1.Controls.Add(this.m_cbo_trang_thai);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.checkBoxComboBox1);
             this.panel1.Controls.Add(this.m_lbl_so_nhan_vien);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.m_cbo_gioi_tinh);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.m_cmd_search);
             this.panel1.Controls.Add(this.m_txt_tim_kiem);
             this.panel1.Controls.Add(this.m_lbl_tim_kiem);
@@ -162,26 +149,6 @@ namespace BKI_HRM {
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1189, 95);
             this.panel1.TabIndex = 24;
-            // 
-            // m_cbo_trang_thai
-            // 
-            this.m_cbo_trang_thai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_trang_thai.FormattingEnabled = true;
-            this.m_cbo_trang_thai.Location = new System.Drawing.Point(266, 14);
-            this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
-            this.m_cbo_trang_thai.Size = new System.Drawing.Size(121, 22);
-            this.m_cbo_trang_thai.TabIndex = 30;
-            this.m_cbo_trang_thai.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(143, 17);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 14);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Trạng thái lao động";
-            this.label3.Visible = false;
             // 
             // m_lbl_so_nhan_vien
             // 
@@ -201,30 +168,6 @@ namespace BKI_HRM {
             this.label2.TabIndex = 27;
             this.label2.Text = "Số lượng nhân viên trong danh sách:";
             // 
-            // m_cbo_gioi_tinh
-            // 
-            this.m_cbo_gioi_tinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_gioi_tinh.FormattingEnabled = true;
-            this.m_cbo_gioi_tinh.Items.AddRange(new object[] {
-            "Tất cả",
-            "Nam",
-            "Nữ"});
-            this.m_cbo_gioi_tinh.Location = new System.Drawing.Point(464, 14);
-            this.m_cbo_gioi_tinh.Name = "m_cbo_gioi_tinh";
-            this.m_cbo_gioi_tinh.Size = new System.Drawing.Size(69, 22);
-            this.m_cbo_gioi_tinh.TabIndex = 26;
-            this.m_cbo_gioi_tinh.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(410, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 14);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Giới tính";
-            this.label1.Visible = false;
-            // 
             // m_cmd_search
             // 
             this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -233,7 +176,7 @@ namespace BKI_HRM {
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(1069, 33);
+            this.m_cmd_search.Location = new System.Drawing.Point(974, 33);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 2;
@@ -243,7 +186,7 @@ namespace BKI_HRM {
             // 
             this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(266, 44);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(266, 37);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(633, 20);
             this.m_txt_tim_kiem.TabIndex = 1;
@@ -253,7 +196,7 @@ namespace BKI_HRM {
             // m_lbl_tim_kiem
             // 
             this.m_lbl_tim_kiem.AutoSize = true;
-            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(155, 44);
+            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(155, 37);
             this.m_lbl_tim_kiem.Name = "m_lbl_tim_kiem";
             this.m_lbl_tim_kiem.Size = new System.Drawing.Size(87, 14);
             this.m_lbl_tim_kiem.TabIndex = 24;
@@ -303,16 +246,16 @@ namespace BKI_HRM {
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
-            // checkBoxComboBox2
+            // checkBoxComboBox1
             // 
             checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxComboBox2.CheckBoxProperties = checkBoxProperties1;
-            this.checkBoxComboBox2.DisplayMemberSingleItem = "";
-            this.checkBoxComboBox2.FormattingEnabled = true;
-            this.checkBoxComboBox2.Location = new System.Drawing.Point(588, 9);
-            this.checkBoxComboBox2.Name = "checkBoxComboBox2";
-            this.checkBoxComboBox2.Size = new System.Drawing.Size(121, 22);
-            this.checkBoxComboBox2.TabIndex = 31;
+            this.checkBoxComboBox1.CheckBoxProperties = checkBoxProperties1;
+            this.checkBoxComboBox1.DisplayMemberSingleItem = "";
+            this.checkBoxComboBox1.FormattingEnabled = true;
+            this.checkBoxComboBox1.Location = new System.Drawing.Point(1097, 67);
+            this.checkBoxComboBox1.Name = "checkBoxComboBox1";
+            this.checkBoxComboBox1.Size = new System.Drawing.Size(88, 22);
+            this.checkBoxComboBox1.TabIndex = 29;
             // 
             // f103_bao_cao_tra_cuu_nhan_su
             // 
@@ -451,45 +394,9 @@ namespace BKI_HRM {
         private void set_initial_form_load() {
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_grid();
-            if (m_cbo_gioi_tinh != null) {
-                m_cbo_gioi_tinh.SelectedIndex = 0;
-            }
-            /*
-            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_LAO_DONG,
-                                                    WinFormControls.eTAT_CA.YES,
-                                                    m_cbo_trang_thai);
-             * */
-            /*
-             * Load combobox "Trạng thái"
-             * */
-            //load_data_to_cbo_trang_thai();
-            //load_custom_source_2_m_txt_tim_kiem();
+            load_custom_source_2_m_txt_tim_kiem();
         }
 
-        private void load_data_to_cbo_trang_thai() {
-            var v_us_dm_tu_dien = new US_CM_DM_TU_DIEN();
-            var v_ds_dm_tu_dien = new DS_CM_DM_TU_DIEN();
-            var v_str_loai_tu_dien = "";
-            v_str_loai_tu_dien = MA_LOAI_TU_DIEN.TRANG_THAI_LAO_DONG;
-            v_us_dm_tu_dien.fill_tu_dien_cung_loai_ds(
-                v_str_loai_tu_dien
-                , CM_DM_TU_DIEN.GHI_CHU
-                , v_ds_dm_tu_dien);
-
-            m_cbo_trang_thai.DataSource = v_ds_dm_tu_dien.CM_DM_TU_DIEN;
-            m_cbo_trang_thai.DisplayMember = CM_DM_TU_DIEN.TEN;
-            m_cbo_trang_thai.ValueMember = CM_DM_TU_DIEN.ID;
-
-            var v_dr = v_ds_dm_tu_dien.CM_DM_TU_DIEN.NewRow();
-            v_dr[CM_DM_TU_DIEN.ID] = -1;
-            v_dr[CM_DM_TU_DIEN.TEN] = "------ Tất cả ------";
-            v_dr[CM_DM_TU_DIEN.MA_TU_DIEN] = "";
-            v_dr[CM_DM_TU_DIEN.TEN_NGAN] = "";
-            v_dr[CM_DM_TU_DIEN.ID_LOAI_TU_DIEN] = 1;
-            v_dr[CM_DM_TU_DIEN.GHI_CHU] = "";
-            v_ds_dm_tu_dien.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
-            m_cbo_trang_thai.SelectedIndex = 0;
-        }
         private void load_custom_source_2_m_txt_tim_kiem() {
             //var count = m_ds.Tables["V_DM_DU_LIEU_NHAN_VIEN"].Rows.Count;
             //for (var i = 0; i < count; i++) {
@@ -818,21 +725,6 @@ namespace BKI_HRM {
         private int lay_so_ban_ghi() {
             return m_ds.V_DM_DU_LIEU_NHAN_VIEN.Count;
         }
-        private string get_gender() {
-            if (m_cbo_gioi_tinh.SelectedIndex == 1) {
-                return "Nam";
-            }
-            if (m_cbo_gioi_tinh.SelectedIndex == 2) {
-                return "Nữ";
-            }
-            return "";
-        }
-        private string get_trang_thai_lao_dong() {
-            if (m_cbo_trang_thai.SelectedIndex != 0) {
-                return m_cbo_trang_thai.Text;
-            }
-            return "";
-        }
         private void set_search_format_before() {
             if (m_txt_tim_kiem.Text == "") {
                 m_txt_tim_kiem.Text = m_str_goi_y_tim_kiem;
@@ -858,7 +750,6 @@ namespace BKI_HRM {
             m_cmd_exit.Click += m_cmd_exit_Click;
             m_cmd_search.Click += m_cmd_search_Click;
             m_txt_tim_kiem.KeyDown += m_txt_tim_kiem_KeyDown;
-            m_cbo_trang_thai.SelectedIndexChanged += m_cbo_trang_thai_SelectedIndexChanged;
             m_txt_tim_kiem.KeyPress += CheckEnterKeyPress;
             m_txt_tim_kiem.MouseClick += m_txt_tim_kiem_MouseClick;
             m_txt_tim_kiem.Leave += m_txt_tim_kiem_Leave;
@@ -890,16 +781,11 @@ namespace BKI_HRM {
 
         private void m_txt_tim_kiem_KeyDown(object sender, KeyEventArgs e) {
             try {
-                if (e.KeyData == Keys.Enter)
+                if (e.KeyData == Keys.Enter) {
                     load_data_2_grid();
-            } catch (Exception v_e) {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e) {
-            try {
-                load_data_2_grid();
+                } else {
+                    set_search_format_after();
+                }
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
