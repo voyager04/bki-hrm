@@ -207,8 +207,11 @@ namespace BKI_HRM {
 
         private void m_txt_tim_kiem_KeyDown(object sender, KeyEventArgs e) {
             try {
-                if (e.KeyData == Keys.Enter)
-                   load_data_2_grid();
+                if (e.KeyData == Keys.Enter) {
+                    load_data_2_grid();
+                } else {
+                    set_search_format_after();
+                }
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
