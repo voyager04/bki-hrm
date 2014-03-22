@@ -22,6 +22,7 @@ using IP.Core.IPData;
 using IP.Core.IPUserService;
 using IP.Core.IPSystemAdmin;
 
+
 using BKI_HRM.US;
 using BKI_HRM.DS;
 using BKI_HRM.DS.CDBNames;
@@ -50,6 +51,7 @@ namespace BKI_HRM {
         private ToolTip m_tooltip;
         private ComboBox m_cbo_trang_thai;
         private Label label3;
+        private IP.Core.IPControls.CheckBoxComboBox checkBoxComboBox2;
         private IContainer components;
 
         public f103_bao_cao_tra_cuu_nhan_su() {
@@ -84,6 +86,7 @@ namespace BKI_HRM {
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f103_bao_cao_tra_cuu_nhan_su));
+            IP.Core.IPControls.CheckBoxProperties checkBoxProperties1 = new IP.Core.IPControls.CheckBoxProperties();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -100,6 +103,7 @@ namespace BKI_HRM {
             this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
+            this.checkBoxComboBox2 = new IP.Core.IPControls.CheckBoxComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -143,6 +147,7 @@ namespace BKI_HRM {
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.checkBoxComboBox2);
             this.panel1.Controls.Add(this.m_cbo_trang_thai);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.m_lbl_so_nhan_vien);
@@ -297,6 +302,17 @@ namespace BKI_HRM {
             this.m_cmd_exit.Size = new System.Drawing.Size(118, 28);
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
+            // 
+            // checkBoxComboBox2
+            // 
+            checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.checkBoxComboBox2.CheckBoxProperties = checkBoxProperties1;
+            this.checkBoxComboBox2.DisplayMemberSingleItem = "";
+            this.checkBoxComboBox2.FormattingEnabled = true;
+            this.checkBoxComboBox2.Location = new System.Drawing.Point(588, 9);
+            this.checkBoxComboBox2.Name = "checkBoxComboBox2";
+            this.checkBoxComboBox2.Size = new System.Drawing.Size(121, 22);
+            this.checkBoxComboBox2.TabIndex = 31;
             // 
             // f103_bao_cao_tra_cuu_nhan_su
             // 
