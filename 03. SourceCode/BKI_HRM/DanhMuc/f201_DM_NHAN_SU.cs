@@ -1544,7 +1544,7 @@ namespace BKI_HRM
         private void print_cv()
         {
             grid2us_object(m_us, m_grv_nhan_su.Row);
-            m_sfd_save_cv.Filter = "(*.docx)|*.docx|(*.doc)|*.doc";
+            m_sfd_save_cv.Filter = "(*.doc)|*.doc";
             m_sfd_save_cv.Title = "Lưu CV";
             DialogResult result = m_sfd_save_cv.ShowDialog();
             if (result == DialogResult.OK)
@@ -1568,7 +1568,10 @@ namespace BKI_HRM
                 v_obj_word.AddFindAndReplace("<Tongiao>", m_us.strTON_GIAO);
                 v_obj_word.AddFindAndReplace("<Trinhdo>", m_us.strTRINH_DO);
                 v_obj_word.AddFindAndReplace("<Chuyennganh>", m_us.strCHUYEN_NGANH);
+                
                 v_obj_word.Export2Word(false);
+                
+            
             }
 
             
@@ -1859,7 +1862,7 @@ namespace BKI_HRM
                     load_thong_tin_ca_nhan();
                     break;
                 case 2:
-                    load_data_2_grv_qua_trinh_lam_viec();
+                  //  load_data_2_grv_qua_trinh_lam_viec();
                     break;
                 case 4:
                     load_data_2_grv_trang_thai_lao_dong();
