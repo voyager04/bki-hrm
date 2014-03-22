@@ -29,16 +29,21 @@ Public Class CWordReport
         InitWord()
     End Sub
     Public Sub Export2Word(Optional ByVal i_b_show As Boolean = True)
+        If My.Computer.FileSystem.FileExists(m_strOutputPath) Then
+            My.Computer.FileSystem.DeleteFile(m_strOutputPath)
+        End If
         Dim v_str_replace As Object
         For Each v_str_find As Object In Me.m_hst_FindAndReplaceCollection.Keys
             v_str_replace = Me.m_hst_FindAndReplaceCollection.Item(v_str_find).ToString()
             Me.FindAndReplace(v_str_find, v_str_replace)
         Next
-        m_objWordDocument.Save()
-        If i_b_show Then
-            m_objWordlApp.Visible = True
-            Unmount()
-        End If
+        
+            m_objWordDocument.Save()
+            If i_b_show Then
+                m_objWordlApp.Visible = True
+                Unmount()
+            End If
+            m_objWordlApp.Quit()
     End Sub
     Public Sub AddFindAndReplace(ByVal i_str_find As String, ByVal i_str_replace As String)
         m_hst_FindAndReplaceCollection.Add(i_str_find, i_str_replace)
