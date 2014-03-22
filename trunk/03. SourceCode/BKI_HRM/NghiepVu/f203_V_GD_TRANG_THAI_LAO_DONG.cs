@@ -628,12 +628,6 @@ namespace BKI_HRM
             }
         }
 #endregion
-
-       
-        
-
-		
-
 	}
 }
 

@@ -456,31 +456,39 @@ namespace BKI_HRM
 		private void insert_v_gd_qua_trinh_lam_viec(string ip_str_loai_cv){
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_qua_trinh_lam_viec)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row)) return;
-            grid2us_object(m_us_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row);
+            
+            
+			load_data_2_grid_search();
+
+            if (m_grv_qua_trinh_lam_viec.Rows[m_grv_qua_trinh_lam_viec.Row].UserData != null)
+            {
+                grid2us_object(m_us_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row);
+            }
+            else
+            {
+                grid2us_object(m_us_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row + 1);
+            }
             f202_v_gd_qua_trinh_lam_viec_de v_fDE = new f202_v_gd_qua_trinh_lam_viec_de();
             v_fDE.display_for_insert(m_us_qua_trinh_lam_viec, ip_str_loai_cv);
-			load_data_2_grid_search();
 		}
 
 		private void update_v_gd_qua_trinh_lam_viec(){			
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_qua_trinh_lam_viec)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row)) return;			
-			grid2us_object(m_us_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row);
-            f202_v_gd_qua_trinh_lam_viec_de v_fDE = new f202_v_gd_qua_trinh_lam_viec_de();
-            v_fDE.display_for_update(m_us_qua_trinh_lam_viec);
-			load_data_2_grid_search();
+            if (m_grv_qua_trinh_lam_viec.Rows[m_grv_qua_trinh_lam_viec.Row].UserData != null)
+            {
+                grid2us_object(m_us_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row);
+                f202_v_gd_qua_trinh_lam_viec_de v_fDE = new f202_v_gd_qua_trinh_lam_viec_de();
+                v_fDE.display_for_update(m_us_qua_trinh_lam_viec);
+                load_data_2_grid_search();
+            }
+            else
+            {
+                MessageBox.Show("Chọn dòng khác để sửa.");
+            }
 		}
 
-        private void mien_nhiem()
-        {
-            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_qua_trinh_lam_viec)) return;
-            if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row)) return;
-            grid2us_object(m_us_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row);
-            f202_v_gd_qua_trinh_lam_viec_de v_fDE = new f202_v_gd_qua_trinh_lam_viec_de();
-            v_fDE.display_for_update(m_us_qua_trinh_lam_viec);
-            load_data_2_grid_search();
-        }
-
+       
 		private void delete_v_gd_qua_trinh_lam_viec(){
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_qua_trinh_lam_viec)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row)) return;
@@ -607,7 +615,7 @@ namespace BKI_HRM
         {
             try
             {
-                mien_nhiem();
+                update_v_gd_qua_trinh_lam_viec();
             }
             catch (Exception v_e)
             {
