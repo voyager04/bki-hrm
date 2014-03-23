@@ -279,6 +279,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f502_bao_cao_du_an.resx">
       <DependentUpon>f502_bao_cao_du_an.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f702_bao_cao_hdld.resx">
       <DependentUpon>f702_bao_cao_hdld.cs</DependentUpon>
@@ -335,15 +336,19 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HeThong\f995_ht_phan_quyen_cho_nhom.resx">
       <DependentUpon>f995_ht_phan_quyen_cho_nhom.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="HeThong\f996_ht_nhom_nguoi_su_dung_de.resx">
       <DependentUpon>f996_ht_nhom_nguoi_su_dung_de.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="HeThong\f997_ht_nhom_nguoi_su_dung.resx">
       <DependentUpon>f997_ht_nhom_nguoi_su_dung.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="HeThong\f998_ht_nguoi_su_dung_de.resx">
       <DependentUpon>f998_ht_nguoi_su_dung_de.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="HeThong\f999_ht_nguoi_su_dung.resx">
       <DependentUpon>f999_ht_nguoi_su_dung.cs</DependentUpon>
@@ -368,15 +373,19 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\F500_DM_DU_AN.resx">
       <DependentUpon>F500_DM_DU_AN.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f500_dm_du_an_detail.resx">
       <DependentUpon>f500_dm_du_an_detail.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\F500_gd_chi_tiet_du_an_de.resx">
       <DependentUpon>F500_gd_chi_tiet_du_an_de.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f501_v_dm_nhan_su_du_an.resx">
       <DependentUpon>f501_v_dm_nhan_su_du_an.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f701_v_gd_hop_dong_lao_dong_DE.resx">
       <DependentUpon>f701_v_gd_hop_dong_lao_dong_DE.cs</DependentUpon>
