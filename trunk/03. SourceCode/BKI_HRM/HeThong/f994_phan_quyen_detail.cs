@@ -17,8 +17,8 @@ namespace BKI_HRM.HeThong
 {
     public partial class f994_phan_quyen_detail : Form
     {
-        public void load_data_2_txt_form(string ip_str){
-            m_txt_form.Text = ip_str;
+        public void load_data_2_txt_form(US_HT_FORM ip_us){
+            m_txt_form.Text = ip_us.strDISPLAY_NAME;
         }
 
         public f994_phan_quyen_detail()
@@ -29,7 +29,7 @@ namespace BKI_HRM.HeThong
 
         private void format_control()
         {
-            CControlFormat.setFormStyle(this, new CAppContext_201());
+            //CControlFormat.setFormStyle(this, new CAppContext_201());
         }
 
         private void m_cmd_exit_Click(object sender, EventArgs e)
@@ -84,6 +84,12 @@ namespace BKI_HRM.HeThong
             m_cbo_nhom_quyen.DataSource = v_ds.Tables[0];
             m_cbo_nhom_quyen.ValueMember = HT_PHAN_QUYEN_HE_THONG.ID;
             m_cbo_nhom_quyen.DisplayMember = HT_PHAN_QUYEN_HE_THONG.MA_PHAN_QUYEN;
+        }
+
+        private void m_cmd_chon_form_Click(object sender, EventArgs e)
+        {
+            f990_ht_form v_frm = new f990_ht_form();
+            v_frm.show_2_choose(this);
         }
     }
 }

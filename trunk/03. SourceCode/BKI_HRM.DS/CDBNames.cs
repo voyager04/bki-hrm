@@ -632,4 +632,11 @@
        public const string DISPLAY_NAME = "DISPLAY_NAME";
        public const string ID_TU_DIEN = "ID_TU_DIEN";
    }
+
+   public class HT_FORM
+   {
+       public const string ID = "ID";
+       public const string FORM_NAME = "FORM_NAME";
+       public const string DISPLAY_NAME = "DISPLAY_NAME";
+   }
 }
