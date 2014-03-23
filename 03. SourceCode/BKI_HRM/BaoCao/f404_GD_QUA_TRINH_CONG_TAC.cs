@@ -38,6 +38,8 @@ namespace BKI_HRM
 		internal SIS.Controls.Button.SiSButton m_cmd_view;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         private TextBox m_txt_tim_kiem;
+        private CheckedListBox m_clb_luachon;
+        private Button button1;
 		private System.ComponentModel.IContainer components;
 
 		public f404_GD_QUA_TRINH_CONG_TAC()
@@ -84,6 +86,8 @@ namespace BKI_HRM
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
+            this.m_clb_luachon = new System.Windows.Forms.CheckedListBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -190,10 +194,38 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(437, 20);
             this.m_txt_tim_kiem.TabIndex = 33;
             // 
+            // m_clb_luachon
+            // 
+            this.m_clb_luachon.CheckOnClick = true;
+            this.m_clb_luachon.FormattingEnabled = true;
+            this.m_clb_luachon.Items.AddRange(new object[] {
+            "Chức vụ",
+            "Cấp bậc",
+            "Dự án"});
+            this.m_clb_luachon.Location = new System.Drawing.Point(90, 12);
+            this.m_clb_luachon.MultiColumn = true;
+            this.m_clb_luachon.Name = "m_clb_luachon";
+            this.m_clb_luachon.Size = new System.Drawing.Size(120, 49);
+            this.m_clb_luachon.TabIndex = 35;
+            this.m_clb_luachon.ThreeDCheckBoxes = true;
+            this.m_clb_luachon.SelectedIndexChanged += new System.EventHandler(this.m_clb_luachon_SelectedIndexChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(499, 44);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 36;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // f404_GD_QUA_TRINH_CONG_TAC
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(1001, 426);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.m_clb_luachon);
             this.Controls.Add(this.m_cmd_search);
             this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.m_fg);
@@ -234,6 +266,7 @@ namespace BKI_HRM
 		ITransferDataRow m_obj_trans;		
 		DS_GD_QUA_TRINH_CONG_TAC m_ds = new DS_GD_QUA_TRINH_CONG_TAC();
 		US_GD_QUA_TRINH_CONG_TAC m_us = new US_GD_QUA_TRINH_CONG_TAC();
+        string m_str_lua_chon = "D";
 		#endregion
 
 		#region Private Methods
@@ -245,7 +278,10 @@ namespace BKI_HRM
                         m_fg.Tree.Column = (int)e_col_Number.MA_NV;
                         m_fg.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.SimpleLeaf;
 			set_define_events();
-			this.KeyPreview = true;		
+			this.KeyPreview = true;
+            m_clb_luachon.SetItemChecked(0, true);
+            m_clb_luachon.SetItemChecked(1, true);
+            m_clb_luachon.SetItemChecked(2, true);
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
@@ -268,7 +304,7 @@ namespace BKI_HRM
 		}
 		private void load_data_2_grid(){						
 			m_ds = new DS_GD_QUA_TRINH_CONG_TAC();			
-			m_us.FillDatasetByProc(m_ds,m_txt_tim_kiem.Text.Trim());
+			m_us.FillDatasetByProc(m_ds,m_txt_tim_kiem.Text.Trim(), m_str_lua_chon);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count
@@ -294,7 +330,7 @@ namespace BKI_HRM
 			i_us.Me2DataRow(v_dr);
 			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
 		}
-
+        
 		private void view_gd_qua_trinh_cong_tac(){			
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
@@ -306,6 +342,48 @@ namespace BKI_HRM
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
 		}
+        private void WhatIsChecked_Click()
+        {
+            // Display in a message box all the items that are checked. 
+
+            // First show the index and check state of all selected items. 
+           
+            switch (m_clb_luachon.CheckedItems.Count)
+            {
+                case 1:
+                    if (m_clb_luachon.GetItemChecked(0) == true)
+                        m_str_lua_chon = "ABD";
+                    else if (m_clb_luachon.GetItemChecked(1) == true)
+                        m_str_lua_chon = "BCD";
+                    else
+                        m_str_lua_chon = "CAD";
+                    break;
+                case 2:
+                    if ((m_clb_luachon.GetItemChecked(0) == true) && (m_clb_luachon.GetItemChecked(1) == true))
+                        m_str_lua_chon = "B";
+                    else if ((m_clb_luachon.GetItemChecked(1) == true) && (m_clb_luachon.GetItemChecked(2) == true))
+                        m_str_lua_chon = "C";
+                    else
+                        m_str_lua_chon = "A";
+                    break;
+                case 3:
+                    m_str_lua_chon = "D";
+                    break;
+                default:
+                    m_str_lua_chon = "E";
+                    break;
+            }
+            // Next show the object title and check state for each item selected. 
+            /*foreach (object itemChecked in m_clb_luachon.CheckedItems)
+            {
+
+                // Use the IndexOf method to get the index of an item.
+                MessageBox.Show("Item with title: \"" + itemChecked.ToString() +
+                                "\", is checked. Checked state is: " +
+                                m_clb_luachon.GetItemCheckState(m_clb_luachon.Items.IndexOf(itemChecked)).ToString() + ".");
+            }*/
+
+        }
 		#endregion
 
 //
@@ -340,11 +418,12 @@ namespace BKI_HRM
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
-
+        
         private void m_cmd_search_Click(object sender, EventArgs e)
         {
             try
             {
+                WhatIsChecked_Click();
                     load_data_2_grid();
             }
             catch (Exception v_e)
@@ -353,6 +432,23 @@ namespace BKI_HRM
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            WhatIsChecked_Click();
+        }
+
+        private void m_clb_luachon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                WhatIsChecked_Click();
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 	}
 }
 
