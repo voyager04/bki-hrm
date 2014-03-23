@@ -405,7 +405,12 @@ namespace BKI_HRM
         private void grid2us_object(int i_grid_row)
         {
             DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
-            m_us_gd_hop_dong = new US_GD_HOP_DONG((decimal)v_dr.ItemArray[9]);
+
+            DS_GD_HOP_DONG v_ds = new DS_GD_HOP_DONG();
+            US_GD_HOP_DONG v_us = new US_GD_HOP_DONG();
+            v_us.FillDatasetSearchByMaHopDong(v_ds, v_dr.ItemArray[3].ToString());
+
+            m_us_gd_hop_dong = new US_GD_HOP_DONG((decimal)v_ds.Tables[0].Rows[0]["ID"]);
             //m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
             //i_us.DataRow2Me(v_dr);
         }
@@ -479,11 +484,22 @@ namespace BKI_HRM
             m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
             m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
+            m_fg.Click += new EventHandler(m_fg_Click);
         }
 
-        private void tim_kiem()
+        void m_fg_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (m_fg.Col == 12)
+                {
+                    MessageBox.Show("Test");
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
         #endregion
 
