@@ -39,7 +39,6 @@ namespace BKI_HRM
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         private TextBox m_txt_tim_kiem;
         private CheckedListBox m_clb_luachon;
-        private Button button1;
 		private System.ComponentModel.IContainer components;
 
 		public f404_GD_QUA_TRINH_CONG_TAC()
@@ -87,7 +86,6 @@ namespace BKI_HRM
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_clb_luachon = new System.Windows.Forms.CheckedListBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -196,6 +194,8 @@ namespace BKI_HRM
             // 
             // m_clb_luachon
             // 
+            this.m_clb_luachon.BackColor = System.Drawing.SystemColors.Window;
+            this.m_clb_luachon.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.m_clb_luachon.CheckOnClick = true;
             this.m_clb_luachon.FormattingEnabled = true;
             this.m_clb_luachon.Items.AddRange(new object[] {
@@ -205,26 +205,15 @@ namespace BKI_HRM
             this.m_clb_luachon.Location = new System.Drawing.Point(90, 12);
             this.m_clb_luachon.MultiColumn = true;
             this.m_clb_luachon.Name = "m_clb_luachon";
-            this.m_clb_luachon.Size = new System.Drawing.Size(120, 49);
+            this.m_clb_luachon.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.m_clb_luachon.Size = new System.Drawing.Size(120, 45);
             this.m_clb_luachon.TabIndex = 35;
-            this.m_clb_luachon.ThreeDCheckBoxes = true;
             this.m_clb_luachon.SelectedIndexChanged += new System.EventHandler(this.m_clb_luachon_SelectedIndexChanged);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(499, 44);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // f404_GD_QUA_TRINH_CONG_TAC
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(1001, 426);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.m_clb_luachon);
             this.Controls.Add(this.m_cmd_search);
             this.Controls.Add(this.m_txt_tim_kiem);
