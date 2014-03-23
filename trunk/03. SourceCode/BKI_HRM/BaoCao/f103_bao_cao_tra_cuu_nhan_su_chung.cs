@@ -305,8 +305,11 @@ namespace BKI_HRM {
             ShowDialog();
         }
 
-        internal int SapHetHanThuViec() {
-            return 0;
+        internal int SapHetHanThuViec(){
+            var v_ngay_truoc_het_han = 7;
+            m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
+            m_us.FillDatasetSapHetHanThuViec(m_ds, "", v_ngay_truoc_het_han.ToString());
+            return m_ds.V_DM_DU_LIEU_NHAN_VIEN.Rows.Count;
         }
 
         #endregion

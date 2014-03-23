@@ -677,7 +677,16 @@ namespace BKI_HRM.US {
             v_sp.fillDataSetByCommand(this, op_ds_nhan_su);
         }
 
+        public void FillDatasetSapHetHanThuViec(DS_V_DM_DU_LIEU_NHAN_VIEN m_ds, string ip_str_key_word, string ip_str_ngay_truoc_het_han) {
+            CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_sap_het_han_thu_viec");
+            v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_str_key_word);
+            v_stored_proc.addNVarcharInputParam("@ip_str_ngay_truoc_het_han", ip_str_ngay_truoc_het_han);
+        }
 
         #endregion
+
+
+
+        public object ip_str_ngay_truoc_het_han { get; set; }
     }
 }
