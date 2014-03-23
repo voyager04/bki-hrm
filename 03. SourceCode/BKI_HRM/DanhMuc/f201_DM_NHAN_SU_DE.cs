@@ -16,6 +16,9 @@ using BKI_HRM.DS;
 using BKI_HRM.DS.CDBNames;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
+using System.Drawing.Imaging;
+
+using System.IO;
 
 namespace BKI_HRM
 {
@@ -126,7 +129,7 @@ namespace BKI_HRM
             m_txt_noi_cap.Text = m_us_dm_nhan_su.strNOI_CAP_CMND;
             m_txt_ton_giao.Text = m_us_dm_nhan_su.strTON_GIAO;
             m_txt_dan_toc.Text = m_us_dm_nhan_su.strDAN_TOC;
-            
+
             m_ofd_chon_anh.FileName = m_us_dm_nhan_su.strANH;
             if (m_us_dm_nhan_su.strANH != "")
                 m_ptb_anh.Image = new Bitmap(m_ofd_chon_anh.FileName);
@@ -151,7 +154,10 @@ namespace BKI_HRM
             m_us_dm_nhan_su.strHO_DEM = m_txt_ho_dem.Text;
             m_us_dm_nhan_su.strTEN = m_txt_ten.Text;
             m_us_dm_nhan_su.strGIOI_TINH = ((m_cbo_gioi_tinh.SelectedIndex == 1) ? "Nam" : "Nữ");
-            m_us_dm_nhan_su.strANH = m_ofd_chon_anh.FileName;
+        
+            //m_us_dm_nhan_su.strANH = m_ofd_chon_anh.FileName;
+           
+
             if(m_dat_ngay_sinh.Checked == true)
                 m_us_dm_nhan_su.datNGAY_SINH = m_dat_ngay_sinh.Value;
             m_us_dm_nhan_su.strNOI_SINH = m_txt_noi_sinh.Text;
@@ -283,9 +289,46 @@ namespace BKI_HRM
                 return false;
             return true;
         }
-
-        private void save_data(){
+        private void save_image(string ip_str_pathimage)
+        {
+            if (File.Exists("E:\\00.CV\\" + m_us_dm_nhan_su.strMA_NV + ".jpg"))
+            {
+                File.Delete("E:\\00.CV\\" + m_us_dm_nhan_su.strMA_NV + ".jpg");
+            }
             
+            int maxWidth = 120,
+                maxHeight = 160;
+            Bitmap image = new Bitmap(ip_str_pathimage);
+            // Get the image's original width and height
+            int originalWidth = image.Width;
+            int originalHeight = image.Height;
+
+            // To preserve the aspect ratio
+            float ratioX = (float)maxWidth / (float)originalWidth;
+            float ratioY = (float)maxHeight / (float)originalHeight;
+            float ratio = Math.Min(ratioX, ratioY);
+
+            // New width and height based on aspect ratio
+            int newWidth = (int)(originalWidth * ratio);
+            int newHeight = (int)(originalHeight * ratio);
+
+            // Convert other formats (including CMYK) to RGB.
+            Bitmap newImage = new Bitmap(newWidth, newHeight, PixelFormat.Format24bppRgb);
+
+            // Draws the image in the specified size with quality mode set to HighQuality
+            using (Graphics graphics = Graphics.FromImage(newImage))
+            {
+                //graphics.CompositingQuality = CompositingQuality.HighQuality;
+                //graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                //graphics.SmoothingMode = SmoothingMode.HighQuality;
+                graphics.DrawImage(image, 0, 0, newWidth, newHeight);
+            }
+            
+            newImage.Save("E:\\00.CV\\"+m_us_dm_nhan_su.strMA_NV+".jpg",ImageFormat.Jpeg);
+            m_us_dm_nhan_su.strANH = "E:\\00.CV\\" + m_us_dm_nhan_su.strMA_NV + ".jpg";
+        }
+        private void save_data(){
+            save_image(m_ofd_chon_anh.FileName);
             switch (m_e_form_mode)
             {
                     
