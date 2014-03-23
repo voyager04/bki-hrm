@@ -2011,7 +2011,9 @@ namespace BKI_HRM
             load_chi_tiet_nhan_vien();
 		}
 
-		private void update_dm_nhan_su(){			
+		private void update_dm_nhan_su()
+        {
+           // m_ptb_anh.Image = null;
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_nhan_su)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;			
 			grid2us_object(m_us, m_grv_nhan_su.Row);
