@@ -598,6 +598,7 @@ namespace BKI_HRM.US {
                                             , string ip_str_thang_het_hieu_luc
                                             , string ip_str_nam_het_hieu_luc
                                             , string ip_str_trang_thai_hien_tai
+                                            , string ip_str_trang_thai_chuc_vu
                                             , string ip_str_oderby_01
                                             , string ip_str_oderby_02
                                             , string ip_str_oderby_03
@@ -635,6 +636,7 @@ namespace BKI_HRM.US {
             v_stored_proc.addNVarcharInputParam("@ip_str_29_thang_het_hieu_luc", ip_str_thang_het_hieu_luc);
             v_stored_proc.addNVarcharInputParam("@ip_str_30_nam_het_hieu_luc", ip_str_nam_het_hieu_luc);
             v_stored_proc.addNVarcharInputParam("@ip_str_31_trang_thai_hien_tai", ip_str_trang_thai_hien_tai);
+            v_stored_proc.addNVarcharInputParam("@ip_str_32_trang_thai_chuc_vu", ip_str_trang_thai_chuc_vu);
             v_stored_proc.addNVarcharInputParam("@ip_oderby_01", "");
             v_stored_proc.addNVarcharInputParam("@ip_oderby_02", "");
             v_stored_proc.addNVarcharInputParam("@ip_oderby_03", "");

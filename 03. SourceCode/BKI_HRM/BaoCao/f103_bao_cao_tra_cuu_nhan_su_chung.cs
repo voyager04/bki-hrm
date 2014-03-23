@@ -47,6 +47,8 @@ namespace BKI_HRM {
         internal SiSButton m_cmd_exit;
         private ToolTip m_tooltip;
         private IP.Core.IPControls.CheckBoxComboBox m_cbc_add_columns;
+        private Label m_lbl_thong_bao;
+        private TextBox m_txt_test;
         private IContainer components;
 
         public f103_bao_cao_tra_cuu_nhan_su() {
@@ -81,7 +83,7 @@ namespace BKI_HRM {
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f103_bao_cao_tra_cuu_nhan_su));
-            IP.Core.IPControls.CheckBoxProperties checkBoxProperties1 = new IP.Core.IPControls.CheckBoxProperties();
+            IP.Core.IPControls.CheckBoxProperties checkBoxProperties2 = new IP.Core.IPControls.CheckBoxProperties();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -95,6 +97,8 @@ namespace BKI_HRM {
             this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
+            this.m_lbl_thong_bao = new System.Windows.Forms.Label();
+            this.m_txt_test = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -138,6 +142,8 @@ namespace BKI_HRM {
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_txt_test);
+            this.panel1.Controls.Add(this.m_lbl_thong_bao);
             this.panel1.Controls.Add(this.m_cbc_add_columns);
             this.panel1.Controls.Add(this.m_lbl_so_nhan_vien);
             this.panel1.Controls.Add(this.label2);
@@ -152,8 +158,8 @@ namespace BKI_HRM {
             // 
             // m_cbc_add_columns
             // 
-            checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.m_cbc_add_columns.CheckBoxProperties = checkBoxProperties1;
+            checkBoxProperties2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.m_cbc_add_columns.CheckBoxProperties = checkBoxProperties2;
             this.m_cbc_add_columns.DisplayMemberSingleItem = "";
             this.m_cbc_add_columns.FormattingEnabled = true;
             this.m_cbc_add_columns.Location = new System.Drawing.Point(1097, 67);
@@ -257,6 +263,23 @@ namespace BKI_HRM {
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
+            // m_lbl_thong_bao
+            // 
+            this.m_lbl_thong_bao.AutoSize = true;
+            this.m_lbl_thong_bao.Location = new System.Drawing.Point(15, 4);
+            this.m_lbl_thong_bao.Name = "m_lbl_thong_bao";
+            this.m_lbl_thong_bao.Size = new System.Drawing.Size(116, 14);
+            this.m_lbl_thong_bao.TabIndex = 30;
+            this.m_lbl_thong_bao.Text = "Thông báo - cảnh báo ";
+            // 
+            // m_txt_test
+            // 
+            this.m_txt_test.Location = new System.Drawing.Point(18, 33);
+            this.m_txt_test.Multiline = true;
+            this.m_txt_test.Name = "m_txt_test";
+            this.m_txt_test.Size = new System.Drawing.Size(68, 27);
+            this.m_txt_test.TabIndex = 31;
+            // 
             // f103_bao_cao_tra_cuu_nhan_su
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -282,16 +305,10 @@ namespace BKI_HRM {
             ShowDialog();
         }
 
-
-        public void danh_sach_thu_viec_sap_het_han(int ip_so_ngay_truoc_het_han_thu_viec) {
-
+        internal int SapHetHanThuViec() {
+            return 0;
         }
 
-        public int get_so_luong_thu_viec_sap_het_han(int ip_so_ngay_truoc_het_han_thu_viec) {
-            var v_so_luong = 0;
-            m_us.FillDatasetTraCuuThongTinNhanVienChung(m_ds, "", "", "");
-            return v_so_luong;
-        }
         #endregion
 
         #region Data Structure
@@ -376,8 +393,8 @@ namespace BKI_HRM {
         private string m_str_ngay_het_hieu_luc = "";
         private string m_str_thang_het_hieu_luc = "";
         private string m_str_nam_het_hieu_luc = "";
-
-
+        private string m_str_trang_thai_chuc_vu = "";
+        
         #endregion
 
         #region Private Methods
@@ -386,7 +403,7 @@ namespace BKI_HRM {
             CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
-            m_fg.Tree.Column = (int)e_col_Number.MA_DON_VI;
+            m_fg.Tree.Column = (int)e_col_Number.MA_DON_VI;//Cột chứa tree
             m_fg.Tree.Style = TreeStyleFlags.Simple;
             set_define_events();
             KeyPreview = true;
@@ -489,6 +506,7 @@ namespace BKI_HRM {
                     , m_str_thang_het_hieu_luc
                     , m_str_nam_het_hieu_luc
                     , m_str_trang_thai_hien_tai
+                    , m_str_trang_thai_chuc_vu
                     , m_str_oderby_01
                     , m_str_oderby_02
                     , m_str_oderby_03
@@ -497,6 +515,7 @@ namespace BKI_HRM {
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;
             tao_tree();
+            //load_data_to_CheckboxCombobox();
         }
         /*
          * Phần xử lý tìm kiếm
@@ -649,6 +668,9 @@ namespace BKI_HRM {
                     case "TRANG THAI HIEN TAI":
                         m_str_trang_thai_hien_tai = v_key_value_pair.Value;
                         break;
+                    case "TRANG THAI CHUC VU":
+                        m_str_trang_thai_chuc_vu = v_key_value_pair.Value;
+                        break;
                     case "NGAY HET HIEU LUC":
                         m_str_ngay_het_hieu_luc = v_key_value_pair.Value;
                         break;
@@ -708,13 +730,15 @@ namespace BKI_HRM {
             m_str_nam_het_hieu_luc = "";
         }
         private void init_key_value() {
+            if (m_str_loai_chuc_vu.Equals("")) {
+                m_str_loai_chuc_vu = "Chức vụ chính";
+            }
             if (m_str_trang_thai_hien_tai.Equals("")) {
                 m_str_trang_thai_hien_tai = "Y";
             }
-            if (m_str_trang_thai_lao_dong.Equals("")) {
-                m_str_trang_thai_lao_dong = "Nghỉ việc";
+            if (m_str_trang_thai_chuc_vu.Equals("")) {
+                m_str_trang_thai_chuc_vu = "Y";
             }
-
         }
         /*
          * Kết thúc Phần xử lý tìm kiếm
@@ -746,14 +770,16 @@ namespace BKI_HRM {
         /*
          * Phần xử lý Thêm cột hiển thị
          */
-
         private void load_data_to_CheckboxCombobox(){
-            
+            m_lbl_thong_bao.Text = m_fg.ColumnInfo;
+            m_txt_test.Text = m_fg.ColumnInfo;
         }
-
         /*
          * Kết thúc Phần xử lý Thêm cột hiển thị
          */
+
+        
+
         #endregion
 
         //
@@ -831,6 +857,9 @@ namespace BKI_HRM {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        
+        
     }
 }
 

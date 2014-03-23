@@ -3,6 +3,7 @@ Option Strict On
 
 Imports C1.Win.C1FlexGrid
 Imports System.Windows.Forms
+Imports C1.Win.C1FlexGrid.Classic
 
 Public Class CGridUtils
 
@@ -152,9 +153,7 @@ Public Class CGridUtils
     Public Shared Sub grid_Double_Click(ByVal sender As Object, _
                              ByVal e As EventArgs)
         Dim v_fg As C1FlexGrid = CType(sender, C1.Win.C1FlexGrid.C1FlexGrid)
-        If v_fg.Tree.Column = v_fg.Col Then
             ToggleNodeState(v_fg)
-        End If
     End Sub
 
     Public Shared Sub AddSearch_Handlers(ByVal i_fg As C1FlexGrid)
@@ -246,6 +245,14 @@ Public Class CGridUtils
             i_fg(v_RowIndex, i_col) = i_strValue
         Next
     End Sub
+
+    Public Shared Sub grid_Keydown_toggle_all(ByVal sender As Object, _
+                           ByVal e As System.Windows.Forms.KeyEventArgs)
+        Dim v_fg As C1.Win.C1FlexGrid.C1FlexGrid = CType(sender, C1.Win.C1FlexGrid.C1FlexGrid)
+        If e.KeyCode = Windows.Forms.Keys.F5 Then
+            ToggleAllNodeState(v_fg)
+        End If
+    End Sub
 #End Region
 
 #Region "PRIVATES"
@@ -324,6 +331,22 @@ Public Class CGridUtils
         If Not v_row.IsNode Then Exit Sub
         ' toggle collapsed state
         v_row.Node.Collapsed = Not v_row.Node.Collapsed
+    End Sub
+
+
+    Private Shared Sub ToggleAllNodeState(ByVal i_fg As C1FlexGrid)
+        'if in edit mode , no work
+        If Not (i_fg.Editor) Is Nothing Then Exit Sub
+        ' if the current row is not a node, no work
+        For Each v_row As Row In i_fg.Rows
+            If v_row.IsNode Then
+                If v_row.Node.Collapsed = False Then v_row.Node.Collapsed = True
+            End If
+        Next
+        'Dim v_row As Row = i_fg.Rows(i_fg.Row)
+        'If Not v_row.IsNode Then Exit Sub
+        ' toggle collapsed state
+        'v_row.Node.Collapsed = Not v_row.Node.Collapsed
     End Sub
 
     Private Shared Sub startSearchForm(ByVal i_fg As C1FlexGrid, ByVal i_form As Form)
