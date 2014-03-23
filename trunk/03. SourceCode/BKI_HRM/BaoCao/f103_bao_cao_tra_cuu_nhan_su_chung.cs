@@ -46,7 +46,7 @@ namespace BKI_HRM {
         internal SiSButton m_cmd_xuat_excel;
         internal SiSButton m_cmd_exit;
         private ToolTip m_tooltip;
-        private IP.Core.IPControls.CheckBoxComboBox checkBoxComboBox1;
+        private IP.Core.IPControls.CheckBoxComboBox m_cbc_add_columns;
         private IContainer components;
 
         public f103_bao_cao_tra_cuu_nhan_su() {
@@ -85,6 +85,7 @@ namespace BKI_HRM {
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cbc_add_columns = new IP.Core.IPControls.CheckBoxComboBox();
             this.m_lbl_so_nhan_vien = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
@@ -94,7 +95,6 @@ namespace BKI_HRM {
             this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.checkBoxComboBox1 = new IP.Core.IPControls.CheckBoxComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -138,7 +138,7 @@ namespace BKI_HRM {
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.checkBoxComboBox1);
+            this.panel1.Controls.Add(this.m_cbc_add_columns);
             this.panel1.Controls.Add(this.m_lbl_so_nhan_vien);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.m_cmd_search);
@@ -149,6 +149,17 @@ namespace BKI_HRM {
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1189, 95);
             this.panel1.TabIndex = 24;
+            // 
+            // m_cbc_add_columns
+            // 
+            checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.m_cbc_add_columns.CheckBoxProperties = checkBoxProperties1;
+            this.m_cbc_add_columns.DisplayMemberSingleItem = "";
+            this.m_cbc_add_columns.FormattingEnabled = true;
+            this.m_cbc_add_columns.Location = new System.Drawing.Point(1097, 67);
+            this.m_cbc_add_columns.Name = "m_cbc_add_columns";
+            this.m_cbc_add_columns.Size = new System.Drawing.Size(88, 22);
+            this.m_cbc_add_columns.TabIndex = 29;
             // 
             // m_lbl_so_nhan_vien
             // 
@@ -245,17 +256,6 @@ namespace BKI_HRM {
             this.m_cmd_exit.Size = new System.Drawing.Size(118, 28);
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
-            // 
-            // checkBoxComboBox1
-            // 
-            checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxComboBox1.CheckBoxProperties = checkBoxProperties1;
-            this.checkBoxComboBox1.DisplayMemberSingleItem = "";
-            this.checkBoxComboBox1.FormattingEnabled = true;
-            this.checkBoxComboBox1.Location = new System.Drawing.Point(1097, 67);
-            this.checkBoxComboBox1.Name = "checkBoxComboBox1";
-            this.checkBoxComboBox1.Size = new System.Drawing.Size(88, 22);
-            this.checkBoxComboBox1.TabIndex = 29;
             // 
             // f103_bao_cao_tra_cuu_nhan_su
             // 
@@ -396,7 +396,6 @@ namespace BKI_HRM {
             load_data_2_grid();
             load_custom_source_2_m_txt_tim_kiem();
         }
-
         private void load_custom_source_2_m_txt_tim_kiem() {
             //var count = m_ds.Tables["V_DM_DU_LIEU_NHAN_VIEN"].Rows.Count;
             //for (var i = 0; i < count; i++) {
@@ -412,16 +411,16 @@ namespace BKI_HRM {
 
             m_txt_tim_kiem.AutoCompleteMode = AutoCompleteMode.Suggest;
             m_txt_tim_kiem.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            AutoCompleteStringCollection coll = new AutoCompleteStringCollection();
-            US_V_DM_DU_LIEU_NHAN_VIEN v_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
-            DS_V_DM_DU_LIEU_NHAN_VIEN v_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
+            var v_coll = new AutoCompleteStringCollection();
+            var v_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
+            var v_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
             v_us.FillDatasetTraCuuThongTinNhanVienChung(v_ds, m_txt_tim_kiem.Text, "", "");
             var v_rows = v_ds.Tables[0].Rows;
-            for (int i = 0; i < v_rows.Count - 1; i++) {
-                coll.Add(v_rows[i]["HO_DEM"] + " - " + v_rows[i]["TEN"] + " - " + v_rows[i]["MA_NV"]);
-                coll.Add(v_rows[i]["TEN"] + " - " + v_rows[i]["HO_DEM"] + " " + v_rows[i]["TEN"] + " - " + v_rows[i]["MA_NV"]);
+            for (var i = 0; i < v_rows.Count - 1; i++) {
+                v_coll.Add(v_rows[i]["HO_DEM"] + " - " + v_rows[i]["TEN"] + " - " + v_rows[i]["MA_NV"]);
+                v_coll.Add(v_rows[i]["TEN"] + " - " + v_rows[i]["HO_DEM"] + " " + v_rows[i]["TEN"] + " - " + v_rows[i]["MA_NV"]);
             }
-            m_txt_tim_kiem.AutoCompleteCustomSource = coll;
+            m_txt_tim_kiem.AutoCompleteCustomSource = v_coll;
         }
         private ITransferDataRow get_trans_object(C1FlexGrid i_fg) {
             var v_htb = new Hashtable();
@@ -448,7 +447,6 @@ namespace BKI_HRM {
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_DM_DU_LIEU_NHAN_VIEN.NewRow());
             return v_obj_trans;
         }
-
         private void load_data_2_grid() {
             m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
             if (m_txt_tim_kiem.Text.Equals(m_str_goi_y_tim_kiem)) {
@@ -456,8 +454,9 @@ namespace BKI_HRM {
             }
             //m_us.FillDatasetTraCuuThongTinNhanVienChung(m_ds, m_txt_tim_kiem.Text, "", "");
             m_list_key_value = get_list_key_value(m_txt_tim_kiem.Text);
-            init_value();
-            get_value();
+            refresh_key_value();
+            get_key_value_from_txt_search();
+            init_key_value();
             m_us.FillDatasetAll(m_ds
                     , m_str_search
                     , m_str_ma_nhan_vien
@@ -494,14 +493,71 @@ namespace BKI_HRM {
                     , m_str_oderby_02
                     , m_str_oderby_03
                 );
-
+            refresh_key_value();
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;
             tao_tree();
         }
+        /*
+         * Phần xử lý tìm kiếm
+         */
+        //Hàm lọc dấu tiếng việt
+        public static string loc_dau(string s) {
+            var v_regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
+            var v_temp = s.Normalize(NormalizationForm.FormD);
+            return v_regex.Replace(v_temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D');
+        }
+        private IList<KeyValuePair<string, string>> get_list_key_value(string ip_str_search) {
+            const string COLON = ":";
+            const string COMMAS = ",";
+            var v_str_sub = ip_str_search.Trim();
+            const int START = 0;
+            var v_da_co_seach = false;
+            IList<KeyValuePair<string, string>> v_list_key_value = new List<KeyValuePair<string, string>>();
+            if (v_str_sub.IndexOf(COLON, StringComparison.Ordinal) == -1) {
+                v_list_key_value.Add(new KeyValuePair<string, string>("SEARCH", v_str_sub.ToUpper().Trim()));
 
-        private void get_value() {
-            foreach (KeyValuePair<string, string> v_key_value_pair in m_list_key_value) {
+                return v_list_key_value;
+            }
+            try {
+                while (!v_str_sub.Equals("")) {
+                    var v_colon_index = v_str_sub.IndexOf(COLON, StringComparison.Ordinal);
+                    var v_commas_index = v_str_sub.IndexOf(COMMAS, StringComparison.Ordinal);
+                    var v_len_sub = v_str_sub.Length;
+                    if (v_colon_index == -1) continue;
+                    string v_key;
+                    string v_value;
+                    if (v_colon_index > v_commas_index && !v_da_co_seach && v_commas_index != -1) {
+                        v_key = "SEARCH";
+                        v_value = v_str_sub.Substring(0, v_commas_index).Trim();
+                        v_list_key_value.Add(new KeyValuePair<string, string>(v_key, v_value.ToUpper().Trim()));
+                        v_str_sub = v_str_sub.Substring(v_commas_index + 1, v_str_sub.Length - v_commas_index - 1).Trim();
+                        v_colon_index = v_str_sub.IndexOf(COLON, StringComparison.Ordinal);
+                        v_commas_index = v_str_sub.IndexOf(COMMAS, StringComparison.Ordinal);
+                        v_len_sub = v_str_sub.Length;
+                        v_da_co_seach = true;
+                    }
+                    v_key = v_str_sub.Substring(START, v_colon_index);
+                    if (v_commas_index != -1) {
+                        v_value = v_str_sub.Substring(v_colon_index + 1, v_commas_index - v_colon_index - 1).Trim();
+                        v_str_sub = v_str_sub.Substring(v_commas_index + 1, v_len_sub - v_commas_index - 1).Trim();
+                    } else {
+                        v_value = v_str_sub.Substring(v_colon_index + 1, v_str_sub.Length - v_colon_index - 1);
+                        v_str_sub = "";
+                    }
+                    v_list_key_value.Add(new KeyValuePair<string, string>(loc_dau(v_key).ToUpper(), v_value.ToUpper().Trim()));
+                }
+            } catch (Exception) {
+                return v_list_key_value;
+            }
+            return v_list_key_value;
+
+        }
+        private int lay_so_ban_ghi() {
+            return m_ds.V_DM_DU_LIEU_NHAN_VIEN.Count;
+        }
+        private void get_key_value_from_txt_search() {
+            foreach (var v_key_value_pair in m_list_key_value) {
                 switch (v_key_value_pair.Key) {
                     case "SEARCH":
                         m_str_search = v_key_value_pair.Value;
@@ -615,7 +671,7 @@ namespace BKI_HRM {
             }
 
         }
-        private void init_value() {
+        private void refresh_key_value() {
             m_str_search = "";
             m_str_ma_nhan_vien = "";
             m_str_ho_va_ten = "";
@@ -651,80 +707,18 @@ namespace BKI_HRM {
             m_str_thang_het_hieu_luc = "";
             m_str_nam_het_hieu_luc = "";
         }
+        private void init_key_value() {
+            if (m_str_trang_thai_hien_tai.Equals("")) {
+                m_str_trang_thai_hien_tai = "Y";
+            }
+            if (m_str_trang_thai_lao_dong.Equals("")) {
+                m_str_trang_thai_lao_dong = "Nghỉ việc";
+            }
+
+        }
         /*
-         * Hàm lọc dấu tiếng việt
+         * Kết thúc Phần xử lý tìm kiếm
          */
-
-        public static string loc_dau(string s) {
-            Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
-            string temp = s.Normalize(NormalizationForm.FormD);
-            return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D');
-        }
-        private IList<KeyValuePair<string, string>> get_list_key_value(string ip_str_search) {
-            const string COLON = ":";
-            const string COMMAS = ",";
-            var v_str_sub = ip_str_search.Trim();
-            const int START = 0;
-            var v_da_co_seach = false;
-            KeyValuePair<string, string> v_key_value = new KeyValuePair<string, string>();
-            IList<KeyValuePair<string, string>> v_list_key_value = new List<KeyValuePair<string, string>>();
-            if (v_str_sub.IndexOf(COLON, StringComparison.Ordinal) == -1) {
-                v_list_key_value.Add(new KeyValuePair<string, string>("SEARCH", v_str_sub.ToUpper().Trim()));
-
-                return v_list_key_value;
-            }
-            try {
-                while (!v_str_sub.Equals("")) {
-                    var v_colon_index = v_str_sub.IndexOf(COLON, StringComparison.Ordinal);
-                    var v_commas_index = v_str_sub.IndexOf(COMMAS, StringComparison.Ordinal);
-                    var v_len_sub = v_str_sub.Length;
-                    if (v_colon_index == -1) continue;
-                    string v_key;
-                    string v_value;
-                    if (v_colon_index > v_commas_index && !v_da_co_seach && v_commas_index != -1) {
-                        v_key = "SEARCH";
-                        v_value = v_str_sub.Substring(0, v_commas_index).Trim();
-                        v_list_key_value.Add(new KeyValuePair<string, string>(v_key, v_value.ToUpper().Trim()));
-                        v_str_sub = v_str_sub.Substring(v_commas_index + 1, v_str_sub.Length - v_commas_index - 1).Trim();
-                        v_colon_index = v_str_sub.IndexOf(COLON, StringComparison.Ordinal);
-                        v_commas_index = v_str_sub.IndexOf(COMMAS, StringComparison.Ordinal);
-                        v_len_sub = v_str_sub.Length;
-                        v_da_co_seach = true;
-                    }
-                    v_key = v_str_sub.Substring(START, v_colon_index);
-                    if (v_commas_index != -1) {
-                        v_value = v_str_sub.Substring(v_colon_index + 1, v_commas_index - v_colon_index - 1).Trim();
-                        v_str_sub = v_str_sub.Substring(v_commas_index + 1, v_len_sub - v_commas_index - 1).Trim();
-                    } else {
-                        v_value = v_str_sub.Substring(v_colon_index + 1, v_str_sub.Length - v_colon_index - 1);
-                        v_str_sub = "";
-                    }
-                    v_list_key_value.Add(new KeyValuePair<string, string>(loc_dau(v_key).ToUpper(), v_value.ToUpper().Trim()));
-                }
-            } catch (Exception) {
-                return v_list_key_value;
-            }
-            return v_list_key_value;
-
-        }
-
-
-
-        private void tao_tree() {
-            // Group (subtotal) trên grid.
-            m_fg.Subtotal(AggregateEnum.Count
-              , 0
-              , (int)e_col_Number.TEN_DON_VI    // Group theo cột này
-              , (int)e_col_Number.MA_NV         // Subtotal theo cột này
-              , "{0}"
-              );
-            set_search_format_before();
-            m_lbl_so_nhan_vien.Text = lay_so_ban_ghi().ToString(CultureInfo.InvariantCulture);
-        }
-
-        private int lay_so_ban_ghi() {
-            return m_ds.V_DM_DU_LIEU_NHAN_VIEN.Count;
-        }
         private void set_search_format_before() {
             if (m_txt_tim_kiem.Text == "") {
                 m_txt_tim_kiem.Text = m_str_goi_y_tim_kiem;
@@ -737,8 +731,29 @@ namespace BKI_HRM {
             }
             m_txt_tim_kiem.ForeColor = Color.Black;
         }
+        private void tao_tree() {
+            // Group (subtotal) trên grid.
+            m_fg.Subtotal(AggregateEnum.Count
+              , 0
+              , (int)e_col_Number.TEN_DON_VI    // Group theo cột này
+              , (int)e_col_Number.MA_NV         // Subtotal theo cột này
+              , "{0}"
+              );
+            set_search_format_before();
+            m_lbl_so_nhan_vien.Text = lay_so_ban_ghi().ToString(CultureInfo.InvariantCulture);
+        }
 
+        /*
+         * Phần xử lý Thêm cột hiển thị
+         */
 
+        private void load_data_to_CheckboxCombobox(){
+            
+        }
+
+        /*
+         * Kết thúc Phần xử lý Thêm cột hiển thị
+         */
         #endregion
 
         //
