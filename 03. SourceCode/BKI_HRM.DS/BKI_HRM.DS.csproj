@@ -116,6 +116,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_GD_QUA_TRINH_CONG_TAC.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_HT_FORM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_HT_FORM.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_HT_PHAN_QUYEN_CHO_NHOM1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -375,6 +380,17 @@
     </None>
     <None Include="DS_GD_QUA_TRINH_CONG_TAC.xss">
       <DependentUpon>DS_GD_QUA_TRINH_CONG_TAC.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_FORM.xsc">
+      <DependentUpon>DS_HT_FORM.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_FORM.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_HT_FORM.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_HT_FORM.xss">
+      <DependentUpon>DS_HT_FORM.xsd</DependentUpon>
     </None>
     <None Include="DS_HT_PHAN_QUYEN_CHO_NHOM.xsc">
       <DependentUpon>DS_HT_PHAN_QUYEN_CHO_NHOM.xsd</DependentUpon>
