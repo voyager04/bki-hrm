@@ -681,6 +681,50 @@ namespace BKI_HRM.US {
             pm_objDR["ID_QUYET_DINH_MIEN_NHIEM"] = System.Convert.DBNull;
         }
 
+        public string strLUA_CHON
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "LUA_CHON", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["LUA_CHON"] = value;
+            }
+        }
+
+        public bool IsLUA_CHONNull()
+        {
+            return pm_objDR.IsNull("LUA_CHON");
+        }
+
+        public void SetLUA_CHONNull()
+        {
+            pm_objDR["LUA_CHON"] = System.Convert.DBNull;
+        }
+
+        public decimal dcTY_LE_THAM_GIA
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "TY_LE_THAM_GIA", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["TY_LE_THAM_GIA"] = value;
+            }
+        }
+
+        public bool IsTY_LE_THAM_GIANull()
+        {
+            return pm_objDR.IsNull("TY_LE_THAM_GIA");
+        }
+
+        public void SetTY_LE_THAM_GIANull()
+        {
+            pm_objDR["TY_LE_THAM_GIA"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_V_GD_QUA_TRINH_LAM_VIEC()
@@ -708,7 +752,6 @@ namespace BKI_HRM.US {
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
-
         #region Addtional
         public void FillDataset_search(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds,
             string ip_str_tim_kiem,
