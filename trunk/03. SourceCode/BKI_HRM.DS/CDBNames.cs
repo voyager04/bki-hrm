@@ -241,6 +241,7 @@
         public const string MA_QUYET_DINH_MIEN_NHIEM = "MA_QUYET_DINH_MIEN_NHIEM";
         public const string ID_QUYET_DINH = "ID_QUYET_DINH";
         public const string ID_QUYET_DINH_MIEN_NHIEM = "ID_QUYET_DINH_MIEN_NHIEM";
+        public const string TY_LE_THAM_GIA = "TY_LE_THAM_GIA";
     }
 
 

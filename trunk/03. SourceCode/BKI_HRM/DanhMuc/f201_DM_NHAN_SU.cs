@@ -239,6 +239,7 @@ namespace BKI_HRM
             this.m_lbl_cmnd = new System.Windows.Forms.Label();
             this.m_tct_chi_tiet_nhan_vien = new System.Windows.Forms.TabControl();
             this.m_tpg_qua_trinh_lam_viec = new System.Windows.Forms.TabPage();
+            this.m_grv_qua_trinh_cong_tac = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_tpg_hop_dong = new System.Windows.Forms.TabPage();
             this.m_grv_hop_dong_ld = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_tpg_trang_thai = new System.Windows.Forms.TabPage();
@@ -261,7 +262,6 @@ namespace BKI_HRM
             this.label11 = new System.Windows.Forms.Label();
             this.m_ofd_chon_anh = new System.Windows.Forms.OpenFileDialog();
             this.m_sfd_save_cv = new System.Windows.Forms.SaveFileDialog();
-            this.m_grv_qua_trinh_cong_tac = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).BeginInit();
             this.panel1.SuspendLayout();
@@ -275,11 +275,11 @@ namespace BKI_HRM
             ((System.ComponentModel.ISupportInitialize)(this.m_ptb_anh)).BeginInit();
             this.m_tct_chi_tiet_nhan_vien.SuspendLayout();
             this.m_tpg_qua_trinh_lam_viec.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv_qua_trinh_cong_tac)).BeginInit();
             this.m_tpg_hop_dong.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_hop_dong_ld)).BeginInit();
             this.m_tpg_trang_thai.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grv_qua_trinh_cong_tac)).BeginInit();
             this.SuspendLayout();
             // 
             // ImageList
@@ -1137,6 +1137,18 @@ namespace BKI_HRM
             this.m_tpg_qua_trinh_lam_viec.ToolTipText = "Quá trình làm việc";
             this.m_tpg_qua_trinh_lam_viec.UseVisualStyleBackColor = true;
             // 
+            // m_grv_qua_trinh_cong_tac
+            // 
+            this.m_grv_qua_trinh_cong_tac.AllowEditing = false;
+            this.m_grv_qua_trinh_cong_tac.ColumnInfo = resources.GetString("m_grv_qua_trinh_cong_tac.ColumnInfo");
+            this.m_grv_qua_trinh_cong_tac.Cursor = System.Windows.Forms.Cursors.Default;
+            this.m_grv_qua_trinh_cong_tac.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_grv_qua_trinh_cong_tac.Location = new System.Drawing.Point(3, 3);
+            this.m_grv_qua_trinh_cong_tac.Name = "m_grv_qua_trinh_cong_tac";
+            this.m_grv_qua_trinh_cong_tac.Size = new System.Drawing.Size(994, 227);
+            this.m_grv_qua_trinh_cong_tac.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_qua_trinh_cong_tac.Styles"));
+            this.m_grv_qua_trinh_cong_tac.TabIndex = 21;
+            // 
             // m_tpg_hop_dong
             // 
             this.m_tpg_hop_dong.Controls.Add(this.m_grv_hop_dong_ld);
@@ -1151,6 +1163,7 @@ namespace BKI_HRM
             // m_grv_hop_dong_ld
             // 
             this.m_grv_hop_dong_ld.ColumnInfo = resources.GetString("m_grv_hop_dong_ld.ColumnInfo");
+            this.m_grv_hop_dong_ld.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_hop_dong_ld.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_grv_hop_dong_ld.Location = new System.Drawing.Point(0, 0);
             this.m_grv_hop_dong_ld.Name = "m_grv_hop_dong_ld";
@@ -1343,18 +1356,6 @@ namespace BKI_HRM
             // 
             this.m_ofd_chon_anh.FileName = "openFileDialog1";
             // 
-            // m_grv_qua_trinh_cong_tac
-            // 
-            this.m_grv_qua_trinh_cong_tac.AllowEditing = false;
-            this.m_grv_qua_trinh_cong_tac.ColumnInfo = resources.GetString("m_grv_qua_trinh_cong_tac.ColumnInfo");
-            this.m_grv_qua_trinh_cong_tac.Cursor = System.Windows.Forms.Cursors.Default;
-            this.m_grv_qua_trinh_cong_tac.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grv_qua_trinh_cong_tac.Location = new System.Drawing.Point(3, 3);
-            this.m_grv_qua_trinh_cong_tac.Name = "m_grv_qua_trinh_cong_tac";
-            this.m_grv_qua_trinh_cong_tac.Size = new System.Drawing.Size(994, 227);
-            this.m_grv_qua_trinh_cong_tac.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_qua_trinh_cong_tac.Styles"));
-            this.m_grv_qua_trinh_cong_tac.TabIndex = 21;
-            // 
             // f201_dm_nhan_su
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -1390,13 +1391,13 @@ namespace BKI_HRM
             ((System.ComponentModel.ISupportInitialize)(this.m_ptb_anh)).EndInit();
             this.m_tct_chi_tiet_nhan_vien.ResumeLayout(false);
             this.m_tpg_qua_trinh_lam_viec.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv_qua_trinh_cong_tac)).EndInit();
             this.m_tpg_hop_dong.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_hop_dong_ld)).EndInit();
             this.m_tpg_trang_thai.ResumeLayout(false);
             this.m_tpg_trang_thai.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grv_qua_trinh_cong_tac)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1480,20 +1481,21 @@ namespace BKI_HRM
         }		
         private enum e_col_Number_of_qua_trinh_lam_viec
         {
-            NGAY_CO_HIEU_LUC = 13,
+            NGAY_CO_HIEU_LUC = 14,
             TEN_CV = 4,
-            TEN_DON_VI = 8 ,
+            TEN_DON_VI = 9 ,
             NGAY_BAT_DAU = 1,
-            MA_DON_VI = 7 ,
+            MA_DON_VI = 8 ,
             NGAY_KET_THUC = 2   ,
             MA_CV = 3,
-            CAP_DON_VI = 9 ,
-            LOAI_DON_VI = 10 ,
+            CAP_DON_VI = 10 ,
+            LOAI_DON_VI = 11 ,
             LOAI_CV = 5,
             TRANG_THAI_CV = 6,
-            MA_QUYET_DINH = 12 ,
-            NGAY_HET_HIEU_LUC = 14,
-            DIA_BAN = 11
+            MA_QUYET_DINH = 13 ,
+            NGAY_HET_HIEU_LUC = 15,
+            DIA_BAN = 12,
+            TY_LE_THAM_GIA = 7
         }
         private enum e_col_Number_of_trang_thai_lao_dong
         {
@@ -1679,6 +1681,7 @@ namespace BKI_HRM
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_QUYET_DINH, e_col_Number_of_qua_trinh_lam_viec.MA_QUYET_DINH);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.NGAY_HET_HIEU_LUC, e_col_Number_of_qua_trinh_lam_viec.NGAY_HET_HIEU_LUC);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.DIA_BAN, e_col_Number_of_qua_trinh_lam_viec.DIA_BAN);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.TY_LE_THAM_GIA, e_col_Number_of_qua_trinh_lam_viec.TY_LE_THAM_GIA);
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.NewRow());
             return v_obj_trans;
@@ -1966,12 +1969,12 @@ namespace BKI_HRM
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;
             grid2us_object(m_us, m_grv_nhan_su.Row);
 
-            //v_us.FillDatasetByProc(v_ds, m_us.strMA_NV);
-            //m_grv_qua_trinh_cong_tac.Redraw = false;
-            //// phai viet 1 ham get_trans_object khac
-            //ITransferDataRow v_obj_trans = get_trans_object_qua_trinh_cong_tac(m_grv_qua_trinh_cong_tac);
-            //CGridUtils.Dataset2C1Grid(v_ds, m_grv_qua_trinh_cong_tac, v_obj_trans);
-            //m_grv_qua_trinh_cong_tac.Redraw = true;
+            v_us.FillDatasetByProc(v_ds, m_us.strMA_NV,"D");
+            m_grv_qua_trinh_cong_tac.Redraw = false;
+            // phai viet 1 ham get_trans_object khac
+            ITransferDataRow v_obj_trans = get_trans_object_qua_trinh_cong_tac(m_grv_qua_trinh_cong_tac);
+            CGridUtils.Dataset2C1Grid(v_ds, m_grv_qua_trinh_cong_tac, v_obj_trans);
+            m_grv_qua_trinh_cong_tac.Redraw = true;
              
         }
         private void load_custom_source_2_m_txt_tim_kiem()
