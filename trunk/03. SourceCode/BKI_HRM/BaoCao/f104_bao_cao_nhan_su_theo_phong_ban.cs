@@ -147,6 +147,8 @@ namespace BKI_HRM {
              * Đếm số dòng dữ liệu trên Grid
              */
             m_lbl_so_luong_ban_ghi.Text = m_ds.V_GD_QUA_TRINH_LAM_VIEC.Count.ToString();
+
+            m_lbl_thong_bao.Text = m_fg.ColumnInfo;
         }
         private void set_search_format_before() {
             if (m_txt_tim_kiem.Text == "") {

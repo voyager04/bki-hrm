@@ -39,6 +39,7 @@
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_lbl_thong_bao = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -73,6 +74,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.m_lbl_thong_bao);
             this.panel2.Controls.Add(this.m_lbl_thoidiem);
             this.panel2.Controls.Add(this.m_dtp_thoidiem);
             this.panel2.Controls.Add(this.m_lbl_so_luong_ban_ghi);
@@ -89,7 +91,7 @@
             // m_lbl_thoidiem
             // 
             this.m_lbl_thoidiem.AutoSize = true;
-            this.m_lbl_thoidiem.Location = new System.Drawing.Point(782, 23);
+            this.m_lbl_thoidiem.Location = new System.Drawing.Point(782, 33);
             this.m_lbl_thoidiem.Name = "m_lbl_thoidiem";
             this.m_lbl_thoidiem.Size = new System.Drawing.Size(56, 14);
             this.m_lbl_thoidiem.TabIndex = 36;
@@ -99,7 +101,7 @@
             // 
             this.m_dtp_thoidiem.CustomFormat = "dd/MM/yyyy";
             this.m_dtp_thoidiem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_thoidiem.Location = new System.Drawing.Point(844, 21);
+            this.m_dtp_thoidiem.Location = new System.Drawing.Point(844, 31);
             this.m_dtp_thoidiem.Name = "m_dtp_thoidiem";
             this.m_dtp_thoidiem.Size = new System.Drawing.Size(99, 20);
             this.m_dtp_thoidiem.TabIndex = 35;
@@ -130,7 +132,7 @@
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(961, 16);
+            this.m_cmd_search.Location = new System.Drawing.Point(961, 26);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 2;
@@ -140,7 +142,7 @@
             // 
             this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(226, 19);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(226, 29);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(541, 20);
             this.m_txt_tim_kiem.TabIndex = 1;
@@ -149,7 +151,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(123, 22);
+            this.label6.Location = new System.Drawing.Point(123, 32);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 14);
             this.label6.TabIndex = 24;
@@ -209,6 +211,15 @@
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 33;
             // 
+            // m_lbl_thong_bao
+            // 
+            this.m_lbl_thong_bao.AutoSize = true;
+            this.m_lbl_thong_bao.Location = new System.Drawing.Point(13, 5);
+            this.m_lbl_thong_bao.Name = "m_lbl_thong_bao";
+            this.m_lbl_thong_bao.Size = new System.Drawing.Size(116, 14);
+            this.m_lbl_thong_bao.TabIndex = 37;
+            this.m_lbl_thong_bao.Text = "Thông báo - cảnh báo ";
+            // 
             // f104_bao_cao_nhan_su_theo_phong_ban
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -248,5 +259,6 @@
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
         private System.Windows.Forms.Label m_lbl_thoidiem;
         private System.Windows.Forms.DateTimePicker m_dtp_thoidiem;
+        private System.Windows.Forms.Label m_lbl_thong_bao;
     }
 }
