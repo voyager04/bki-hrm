@@ -596,7 +596,7 @@ namespace BKI_HRM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::BKI_HRM.Properties.Resources.Human_resources_management_v2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(835, 413);
             this.Controls.Add(this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky);
