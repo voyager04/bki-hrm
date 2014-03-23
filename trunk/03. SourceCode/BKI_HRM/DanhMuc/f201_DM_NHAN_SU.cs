@@ -1550,6 +1550,7 @@ namespace BKI_HRM
             if (result == DialogResult.OK)
             {
                 CWordReport v_obj_word = new CWordReport("CVTemplate.doc", m_sfd_save_cv.FileName);
+                
                 v_obj_word.AddFindAndReplace("<Hoten>", m_us.strHO_DEM + " " + m_us.strTEN);
                 v_obj_word.AddFindAndReplace("<Gioitinh>", m_us.strGIOI_TINH);
                 if(m_us.datNGAY_SINH > DateTime.Parse("1/1/1900"))
@@ -1568,9 +1569,16 @@ namespace BKI_HRM
                 v_obj_word.AddFindAndReplace("<Tongiao>", m_us.strTON_GIAO);
                 v_obj_word.AddFindAndReplace("<Trinhdo>", m_us.strTRINH_DO);
                 v_obj_word.AddFindAndReplace("<Chuyennganh>", m_us.strCHUYEN_NGANH);
-                
-                v_obj_word.Export2Word(false);
-                
+                if (m_us.strANH != "")
+                {
+                    v_obj_word.AddFindAndReplace("<Anh>", "");
+                   
+                }
+                else
+                {
+                    v_obj_word.AddFindAndReplace("<Anh>", "Dán Ảnh");
+                }
+                v_obj_word.Export2Word(m_us.strANH, false);
             
             }
 

@@ -1,4 +1,4 @@
-Option Explicit On 
+﻿Option Explicit On 
 Option Strict On
 Imports System.IO
 
@@ -14,12 +14,18 @@ Public Class CWordReport
 
     Private m_objWordlApp As Word.Application
     Private m_objWordDocument As Word.Document
+    Private m_obj_doc As Word.Document
+
+
 
     Private m_init_successful As Boolean
     Private m_o_missing As Object = System.Reflection.Missing.Value
     Private m_hst_FindAndReplaceCollection As Hashtable
 #Region "Public Interface"
     Public Sub New(ByVal i_strTemplateFileWithoutPath As String, ByVal i_strFileOutputPath As String)
+        If My.Computer.FileSystem.FileExists(i_strFileOutputPath) Then
+            My.Computer.FileSystem.DeleteFile(i_strFileOutputPath)
+        End If
         InitPaths()
         m_strTemplateFileNameWithPath = m_strTemplatesPath & i_strTemplateFileWithoutPath
         m_objWordlApp = New Word.Application
@@ -28,22 +34,25 @@ Public Class CWordReport
         m_strOutputPath = i_strFileOutputPath
         InitWord()
     End Sub
-    Public Sub Export2Word(Optional ByVal i_b_show As Boolean = True)
-        If My.Computer.FileSystem.FileExists(m_strOutputPath) Then
-            My.Computer.FileSystem.DeleteFile(m_strOutputPath)
+    Public Sub Export2Word(ByVal i_b_image As String, Optional ByVal i_b_show As Boolean = True)
+        
+
+        m_obj_doc = m_objWordlApp.ActiveDocument
+        If i_b_image <> "" Then
+            m_obj_doc.InlineShapes.AddPicture(i_b_image, Type.Missing, Type.Missing, Type.Missing)
         End If
         Dim v_str_replace As Object
         For Each v_str_find As Object In Me.m_hst_FindAndReplaceCollection.Keys
             v_str_replace = Me.m_hst_FindAndReplaceCollection.Item(v_str_find).ToString()
             Me.FindAndReplace(v_str_find, v_str_replace)
         Next
-        
-            m_objWordDocument.Save()
-            If i_b_show Then
-                m_objWordlApp.Visible = True
-                Unmount()
-            End If
-            m_objWordlApp.Quit()
+
+        m_objWordDocument.Save()
+        If i_b_show Then
+            m_objWordlApp.Visible = True
+            Unmount()
+        End If
+        m_objWordlApp.Quit()
     End Sub
     Public Sub AddFindAndReplace(ByVal i_str_find As String, ByVal i_str_replace As String)
         m_hst_FindAndReplaceCollection.Add(i_str_find, i_str_replace)
