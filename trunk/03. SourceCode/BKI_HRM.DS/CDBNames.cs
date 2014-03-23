@@ -612,4 +612,24 @@
        public const string VAI_TRO = "VAI_TRO";
        public const string MA_QUYET_DINH = "MA_QUYET_DINH";
    }
+
+   public class HT_CONTROL_IN_FORM
+   {
+       public const string ID = "ID";
+       public const string ID_FORM = "ID_FORM";
+       public const string CONTROL_NAME = "CONTROL_NAME";
+       public const string CONTROL_TYPE = "CONTROL_TYPE";
+       public const string ID_CHUC_NANG = "ID_CHUC_NANG";
+   }
+
+   public class V_HT_CONTROL_IN_FORM
+   {
+       public const string ID = "ID";
+       public const string CONTROL_NAME = "CONTROL_NAME";
+       public const string CONTROL_TYPE = "CONTROL_TYPE";
+       public const string MA_TU_DIEN = "MA_TU_DIEN";
+       public const string FORM_NAME = "FORM_NAME";
+       public const string DISPLAY_NAME = "DISPLAY_NAME";
+       public const string ID_TU_DIEN = "ID_TU_DIEN";
+   }
 }

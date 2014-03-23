@@ -121,6 +121,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_HT_PHAN_QUYEN_CHO_NHOM.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_HT_PHAN_QUYEN_DETAIL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_HT_PHAN_QUYEN_DETAIL.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_HT_PHAN_QUYEN_HE_THONG1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -199,6 +204,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_GD_TRANG_THAI_LAO_DONG.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_V_HT_CONTROL_IN_FORM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_HT_CONTROL_IN_FORM.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -377,6 +387,17 @@
     <None Include="DS_HT_PHAN_QUYEN_CHO_NHOM.xss">
       <DependentUpon>DS_HT_PHAN_QUYEN_CHO_NHOM.xsd</DependentUpon>
     </None>
+    <None Include="DS_HT_PHAN_QUYEN_DETAIL.xsc">
+      <DependentUpon>DS_HT_PHAN_QUYEN_DETAIL.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_PHAN_QUYEN_DETAIL.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_HT_PHAN_QUYEN_DETAIL.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_HT_PHAN_QUYEN_DETAIL.xss">
+      <DependentUpon>DS_HT_PHAN_QUYEN_DETAIL.xsd</DependentUpon>
+    </None>
     <None Include="DS_HT_PHAN_QUYEN_HE_THONG.xsc">
       <DependentUpon>DS_HT_PHAN_QUYEN_HE_THONG.xsd</DependentUpon>
     </None>
@@ -541,6 +562,17 @@
     </None>
     <None Include="DS_V_GD_TRANG_THAI_LAO_DONG.xss">
       <DependentUpon>DS_V_GD_TRANG_THAI_LAO_DONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_HT_CONTROL_IN_FORM.xsc">
+      <DependentUpon>DS_V_HT_CONTROL_IN_FORM.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_HT_CONTROL_IN_FORM.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_HT_CONTROL_IN_FORM.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_HT_CONTROL_IN_FORM.xss">
+      <DependentUpon>DS_V_HT_CONTROL_IN_FORM.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

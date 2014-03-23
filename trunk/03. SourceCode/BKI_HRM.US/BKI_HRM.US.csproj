@@ -67,6 +67,7 @@
     <Compile Include="US_GD_QUA_TRINH_CONG_TAC.cs" />
     <Compile Include="US_HT_NGUOI_SU_DUNG.cs" />
     <Compile Include="US_HT_PHAN_QUYEN_CHO_NHOM.cs" />
+    <Compile Include="US_HT_PHAN_QUYEN_DETAIL.cs" />
     <Compile Include="US_HT_PHAN_QUYEN_HE_THONG.cs" />
     <Compile Include="US_HT_USER_GROUP.cs" />
     <Compile Include="US_V_DM_CAP_BAC.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="US_V_GD_HOP_DONG_LAO_DONG.cs" />
     <Compile Include="US_V_GD_QUA_TRINH_LAM_VIEC.cs" />
     <Compile Include="US_V_GD_TRANG_THAI_LAO_DONG.cs" />
+    <Compile Include="US_V_HT_CONTROL_IN_FORM.cs" />
     <Compile Include="Windows.cs" />
   </ItemGroup>
   <ItemGroup>

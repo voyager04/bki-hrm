@@ -499,5 +499,44 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_menuitem_phan_quyen_chi_tiet_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f994_phan_quyen_detail frm = new f994_phan_quyen_detail();
+                frm.ShowDialog();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_menuitem_phan_quyen_he_thong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f993_phan_quyen_he_thong frm = new f993_phan_quyen_he_thong();
+                frm.ShowDialog();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_menuitem_dm_control_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f991_v_ht_control_in_form frm = new f991_v_ht_control_in_form();
+                frm.ShowDialog();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }

@@ -33,10 +33,12 @@ namespace BKI_HRM
             this.m_mst_menu = new System.Windows.Forms.MenuStrip();
             this.m_menuitem_hethong = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_quantri = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_menuitem_user = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_menuitem_phan_quyen_chi_tiet = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_menuitem_phan_quyen_he_thong = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_usergroup = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_menu_nhatky = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_phan_quyen_cho_nhom = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_menuitem_user = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_menu_nhatky = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_tudien = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.m_menuitem_thoat = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,6 +93,7 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hop_dong_sap_het_han = new System.Windows.Forms.Label();
             this.m_lbl_het_han_thu_viec = new System.Windows.Forms.Label();
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky = new System.Windows.Forms.Label();
+            this.m_menuitem_dm_control = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,20 +124,30 @@ namespace BKI_HRM
             // m_menuitem_quantri
             // 
             this.m_menuitem_quantri.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_menuitem_user,
+            this.m_menuitem_phan_quyen_chi_tiet,
+            this.m_menuitem_phan_quyen_he_thong,
             this.m_menuitem_usergroup,
+            this.m_menuitem_phan_quyen_cho_nhom,
+            this.m_menuitem_user,
             this.m_menu_nhatky,
-            this.m_menuitem_phan_quyen_cho_nhom});
+            this.m_menuitem_dm_control});
             this.m_menuitem_quantri.Name = "m_menuitem_quantri";
             this.m_menuitem_quantri.Size = new System.Drawing.Size(165, 22);
             this.m_menuitem_quantri.Text = "Quản trị";
             // 
-            // m_menuitem_user
+            // m_menuitem_phan_quyen_chi_tiet
             // 
-            this.m_menuitem_user.Name = "m_menuitem_user";
-            this.m_menuitem_user.Size = new System.Drawing.Size(195, 22);
-            this.m_menuitem_user.Text = "Người sử dụng";
-            this.m_menuitem_user.Click += new System.EventHandler(this.m_menuitem_user_Click);
+            this.m_menuitem_phan_quyen_chi_tiet.Name = "m_menuitem_phan_quyen_chi_tiet";
+            this.m_menuitem_phan_quyen_chi_tiet.Size = new System.Drawing.Size(195, 22);
+            this.m_menuitem_phan_quyen_chi_tiet.Text = "Phân quyền chi tiết";
+            this.m_menuitem_phan_quyen_chi_tiet.Click += new System.EventHandler(this.m_menuitem_phan_quyen_chi_tiet_Click);
+            // 
+            // m_menuitem_phan_quyen_he_thong
+            // 
+            this.m_menuitem_phan_quyen_he_thong.Name = "m_menuitem_phan_quyen_he_thong";
+            this.m_menuitem_phan_quyen_he_thong.Size = new System.Drawing.Size(195, 22);
+            this.m_menuitem_phan_quyen_he_thong.Text = "Phân quyền hệ thống";
+            this.m_menuitem_phan_quyen_he_thong.Click += new System.EventHandler(this.m_menuitem_phan_quyen_he_thong_Click);
             // 
             // m_menuitem_usergroup
             // 
@@ -143,18 +156,25 @@ namespace BKI_HRM
             this.m_menuitem_usergroup.Text = "Nhóm người sử dụng";
             this.m_menuitem_usergroup.Click += new System.EventHandler(this.m_menuitem_usergroup_Click);
             // 
-            // m_menu_nhatky
-            // 
-            this.m_menu_nhatky.Name = "m_menu_nhatky";
-            this.m_menu_nhatky.Size = new System.Drawing.Size(195, 22);
-            this.m_menu_nhatky.Text = "Nhật ký hệ thống";
-            // 
             // m_menuitem_phan_quyen_cho_nhom
             // 
             this.m_menuitem_phan_quyen_cho_nhom.Name = "m_menuitem_phan_quyen_cho_nhom";
             this.m_menuitem_phan_quyen_cho_nhom.Size = new System.Drawing.Size(195, 22);
             this.m_menuitem_phan_quyen_cho_nhom.Text = "Phân quyền cho nhóm";
             this.m_menuitem_phan_quyen_cho_nhom.Click += new System.EventHandler(this.m_menuitem_phan_quyen_cho_nhom_Click);
+            // 
+            // m_menuitem_user
+            // 
+            this.m_menuitem_user.Name = "m_menuitem_user";
+            this.m_menuitem_user.Size = new System.Drawing.Size(195, 22);
+            this.m_menuitem_user.Text = "Người sử dụng";
+            this.m_menuitem_user.Click += new System.EventHandler(this.m_menuitem_user_Click);
+            // 
+            // m_menu_nhatky
+            // 
+            this.m_menu_nhatky.Name = "m_menu_nhatky";
+            this.m_menu_nhatky.Size = new System.Drawing.Size(195, 22);
+            this.m_menu_nhatky.Text = "Nhật ký hệ thống";
             // 
             // m_menuitem_tudien
             // 
@@ -592,6 +612,13 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text = "Hợp đồng đã hết hạn nhưng chưa ký";
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Click += new System.EventHandler(this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky_Click);
             // 
+            // m_menuitem_dm_control
+            // 
+            this.m_menuitem_dm_control.Name = "m_menuitem_dm_control";
+            this.m_menuitem_dm_control.Size = new System.Drawing.Size(195, 22);
+            this.m_menuitem_dm_control.Text = "Danh mục control";
+            this.m_menuitem_dm_control.Click += new System.EventHandler(this.m_menuitem_dm_control_Click);
+            // 
             // f400_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -681,5 +708,8 @@ namespace BKI_HRM
         private ToolStripMenuItem quáTrìnhLàmViệcToolStripMenuItem;
         private Label m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky;
         private ToolStripMenuItem m_menuitem_phan_quyen_cho_nhom;
+        private ToolStripMenuItem m_menuitem_phan_quyen_chi_tiet;
+        private ToolStripMenuItem m_menuitem_phan_quyen_he_thong;
+        private ToolStripMenuItem m_menuitem_dm_control;
     }
 }
