@@ -20,17 +20,17 @@ namespace BKI_HRM.DS {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DS_HT_PHAN_QUYEN_HE_THONG")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DS_V_HT_CONTROL_IN_FORM")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DS_HT_PHAN_QUYEN_HE_THONG : global::System.Data.DataSet {
+    public partial class DS_V_HT_CONTROL_IN_FORM : global::System.Data.DataSet {
         
-        private HT_PHAN_QUYEN_HE_THONGDataTable tableHT_PHAN_QUYEN_HE_THONG;
+        private V_HT_CONTROL_IN_FORMDataTable tableV_HT_CONTROL_IN_FORM;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public DS_HT_PHAN_QUYEN_HE_THONG() {
+        public DS_V_HT_CONTROL_IN_FORM() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace BKI_HRM.DS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected DS_HT_PHAN_QUYEN_HE_THONG(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DS_V_HT_CONTROL_IN_FORM(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace BKI_HRM.DS {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["HT_PHAN_QUYEN_HE_THONG"] != null)) {
-                    base.Tables.Add(new HT_PHAN_QUYEN_HE_THONGDataTable(ds.Tables["HT_PHAN_QUYEN_HE_THONG"]));
+                if ((ds.Tables["V_HT_CONTROL_IN_FORM"] != null)) {
+                    base.Tables.Add(new V_HT_CONTROL_IN_FORMDataTable(ds.Tables["V_HT_CONTROL_IN_FORM"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace BKI_HRM.DS {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public HT_PHAN_QUYEN_HE_THONGDataTable HT_PHAN_QUYEN_HE_THONG {
+        public V_HT_CONTROL_IN_FORMDataTable V_HT_CONTROL_IN_FORM {
             get {
-                return this.tableHT_PHAN_QUYEN_HE_THONG;
+                return this.tableV_HT_CONTROL_IN_FORM;
             }
         }
         
@@ -127,7 +127,7 @@ namespace BKI_HRM.DS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DS_HT_PHAN_QUYEN_HE_THONG cln = ((DS_HT_PHAN_QUYEN_HE_THONG)(base.Clone()));
+            DS_V_HT_CONTROL_IN_FORM cln = ((DS_V_HT_CONTROL_IN_FORM)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace BKI_HRM.DS {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["HT_PHAN_QUYEN_HE_THONG"] != null)) {
-                    base.Tables.Add(new HT_PHAN_QUYEN_HE_THONGDataTable(ds.Tables["HT_PHAN_QUYEN_HE_THONG"]));
+                if ((ds.Tables["V_HT_CONTROL_IN_FORM"] != null)) {
+                    base.Tables.Add(new V_HT_CONTROL_IN_FORMDataTable(ds.Tables["V_HT_CONTROL_IN_FORM"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace BKI_HRM.DS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableHT_PHAN_QUYEN_HE_THONG = ((HT_PHAN_QUYEN_HE_THONGDataTable)(base.Tables["HT_PHAN_QUYEN_HE_THONG"]));
+            this.tableV_HT_CONTROL_IN_FORM = ((V_HT_CONTROL_IN_FORMDataTable)(base.Tables["V_HT_CONTROL_IN_FORM"]));
             if ((initTable == true)) {
-                if ((this.tableHT_PHAN_QUYEN_HE_THONG != null)) {
-                    this.tableHT_PHAN_QUYEN_HE_THONG.InitVars();
+                if ((this.tableV_HT_CONTROL_IN_FORM != null)) {
+                    this.tableV_HT_CONTROL_IN_FORM.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace BKI_HRM.DS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DS_HT_PHAN_QUYEN_HE_THONG";
+            this.DataSetName = "DS_V_HT_CONTROL_IN_FORM";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DS_HT_PHAN_QUYEN_HE_THONG.xsd";
+            this.Namespace = "http://tempuri.org/DS_V_HT_CONTROL_IN_FORM.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableHT_PHAN_QUYEN_HE_THONG = new HT_PHAN_QUYEN_HE_THONGDataTable();
-            base.Tables.Add(this.tableHT_PHAN_QUYEN_HE_THONG);
+            this.tableV_HT_CONTROL_IN_FORM = new V_HT_CONTROL_IN_FORMDataTable();
+            base.Tables.Add(this.tableV_HT_CONTROL_IN_FORM);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeHT_PHAN_QUYEN_HE_THONG() {
+        private bool ShouldSerializeV_HT_CONTROL_IN_FORM() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace BKI_HRM.DS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DS_HT_PHAN_QUYEN_HE_THONG ds = new DS_HT_PHAN_QUYEN_HE_THONG();
+            DS_V_HT_CONTROL_IN_FORM ds = new DS_V_HT_CONTROL_IN_FORM();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,27 +270,33 @@ namespace BKI_HRM.DS {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void HT_PHAN_QUYEN_HE_THONGRowChangeEventHandler(object sender, HT_PHAN_QUYEN_HE_THONGRowChangeEvent e);
+        public delegate void V_HT_CONTROL_IN_FORMRowChangeEventHandler(object sender, V_HT_CONTROL_IN_FORMRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class HT_PHAN_QUYEN_HE_THONGDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
+        public partial class V_HT_CONTROL_IN_FORMDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
             
             private global::System.Data.DataColumn columnID;
             
-            private global::System.Data.DataColumn columnMA_PHAN_QUYEN;
+            private global::System.Data.DataColumn columnFORM_NAME;
             
-            private global::System.Data.DataColumn columnGHI_CHU;
+            private global::System.Data.DataColumn columnDISPLAY_NAME;
             
-            private global::System.Data.DataColumn columnLOAI_PHAN_QUYEN;
+            private global::System.Data.DataColumn columnCONTROL_NAME;
+            
+            private global::System.Data.DataColumn columnCONTROL_TYPE;
+            
+            private global::System.Data.DataColumn columnMA_TU_DIEN;
+            
+            private global::System.Data.DataColumn columnID_TU_DIEN;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HT_PHAN_QUYEN_HE_THONGDataTable() {
-                this.TableName = "HT_PHAN_QUYEN_HE_THONG";
+            public V_HT_CONTROL_IN_FORMDataTable() {
+                this.TableName = "V_HT_CONTROL_IN_FORM";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -298,7 +304,7 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal HT_PHAN_QUYEN_HE_THONGDataTable(global::System.Data.DataTable table) {
+            internal V_HT_CONTROL_IN_FORMDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -315,7 +321,7 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected HT_PHAN_QUYEN_HE_THONGDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected V_HT_CONTROL_IN_FORMDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -330,25 +336,49 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn MA_PHAN_QUYENColumn {
+            public global::System.Data.DataColumn FORM_NAMEColumn {
                 get {
-                    return this.columnMA_PHAN_QUYEN;
+                    return this.columnFORM_NAME;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn GHI_CHUColumn {
+            public global::System.Data.DataColumn DISPLAY_NAMEColumn {
                 get {
-                    return this.columnGHI_CHU;
+                    return this.columnDISPLAY_NAME;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn LOAI_PHAN_QUYENColumn {
+            public global::System.Data.DataColumn CONTROL_NAMEColumn {
                 get {
-                    return this.columnLOAI_PHAN_QUYEN;
+                    return this.columnCONTROL_NAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CONTROL_TYPEColumn {
+                get {
+                    return this.columnCONTROL_TYPE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MA_TU_DIENColumn {
+                get {
+                    return this.columnMA_TU_DIEN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_TU_DIENColumn {
+                get {
+                    return this.columnID_TU_DIEN;
                 }
             }
             
@@ -363,49 +393,45 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HT_PHAN_QUYEN_HE_THONGRow this[int index] {
+            public V_HT_CONTROL_IN_FORMRow this[int index] {
                 get {
-                    return ((HT_PHAN_QUYEN_HE_THONGRow)(this.Rows[index]));
+                    return ((V_HT_CONTROL_IN_FORMRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event HT_PHAN_QUYEN_HE_THONGRowChangeEventHandler HT_PHAN_QUYEN_HE_THONGRowChanging;
+            public event V_HT_CONTROL_IN_FORMRowChangeEventHandler V_HT_CONTROL_IN_FORMRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event HT_PHAN_QUYEN_HE_THONGRowChangeEventHandler HT_PHAN_QUYEN_HE_THONGRowChanged;
+            public event V_HT_CONTROL_IN_FORMRowChangeEventHandler V_HT_CONTROL_IN_FORMRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event HT_PHAN_QUYEN_HE_THONGRowChangeEventHandler HT_PHAN_QUYEN_HE_THONGRowDeleting;
+            public event V_HT_CONTROL_IN_FORMRowChangeEventHandler V_HT_CONTROL_IN_FORMRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event HT_PHAN_QUYEN_HE_THONGRowChangeEventHandler HT_PHAN_QUYEN_HE_THONGRowDeleted;
+            public event V_HT_CONTROL_IN_FORMRowChangeEventHandler V_HT_CONTROL_IN_FORMRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddHT_PHAN_QUYEN_HE_THONGRow(HT_PHAN_QUYEN_HE_THONGRow row) {
+            public void AddV_HT_CONTROL_IN_FORMRow(V_HT_CONTROL_IN_FORMRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HT_PHAN_QUYEN_HE_THONGRow AddHT_PHAN_QUYEN_HE_THONGRow(string MA_PHAN_QUYEN, string GHI_CHU, string LOAI_PHAN_QUYEN) {
-                HT_PHAN_QUYEN_HE_THONGRow rowHT_PHAN_QUYEN_HE_THONGRow = ((HT_PHAN_QUYEN_HE_THONGRow)(this.NewRow()));
+            public V_HT_CONTROL_IN_FORMRow AddV_HT_CONTROL_IN_FORMRow(decimal ID, string FORM_NAME, string DISPLAY_NAME, string CONTROL_NAME, string CONTROL_TYPE, string MA_TU_DIEN, decimal ID_TU_DIEN) {
+                V_HT_CONTROL_IN_FORMRow rowV_HT_CONTROL_IN_FORMRow = ((V_HT_CONTROL_IN_FORMRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
-                        MA_PHAN_QUYEN,
-                        GHI_CHU,
-                        LOAI_PHAN_QUYEN};
-                rowHT_PHAN_QUYEN_HE_THONGRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowHT_PHAN_QUYEN_HE_THONGRow);
-                return rowHT_PHAN_QUYEN_HE_THONGRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HT_PHAN_QUYEN_HE_THONGRow FindByID(decimal ID) {
-                return ((HT_PHAN_QUYEN_HE_THONGRow)(this.Rows.Find(new object[] {
-                            ID})));
+                        ID,
+                        FORM_NAME,
+                        DISPLAY_NAME,
+                        CONTROL_NAME,
+                        CONTROL_TYPE,
+                        MA_TU_DIEN,
+                        ID_TU_DIEN};
+                rowV_HT_CONTROL_IN_FORMRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowV_HT_CONTROL_IN_FORMRow);
+                return rowV_HT_CONTROL_IN_FORMRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -417,7 +443,7 @@ namespace BKI_HRM.DS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                HT_PHAN_QUYEN_HE_THONGDataTable cln = ((HT_PHAN_QUYEN_HE_THONGDataTable)(base.Clone()));
+                V_HT_CONTROL_IN_FORMDataTable cln = ((V_HT_CONTROL_IN_FORMDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -425,16 +451,19 @@ namespace BKI_HRM.DS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new HT_PHAN_QUYEN_HE_THONGDataTable();
+                return new V_HT_CONTROL_IN_FORMDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
-                this.columnMA_PHAN_QUYEN = base.Columns["MA_PHAN_QUYEN"];
-                this.columnGHI_CHU = base.Columns["GHI_CHU"];
-                this.columnLOAI_PHAN_QUYEN = base.Columns["LOAI_PHAN_QUYEN"];
+                this.columnFORM_NAME = base.Columns["FORM_NAME"];
+                this.columnDISPLAY_NAME = base.Columns["DISPLAY_NAME"];
+                this.columnCONTROL_NAME = base.Columns["CONTROL_NAME"];
+                this.columnCONTROL_TYPE = base.Columns["CONTROL_TYPE"];
+                this.columnMA_TU_DIEN = base.Columns["MA_TU_DIEN"];
+                this.columnID_TU_DIEN = base.Columns["ID_TU_DIEN"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -442,48 +471,55 @@ namespace BKI_HRM.DS {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
-                this.columnMA_PHAN_QUYEN = new global::System.Data.DataColumn("MA_PHAN_QUYEN", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMA_PHAN_QUYEN);
-                this.columnGHI_CHU = new global::System.Data.DataColumn("GHI_CHU", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGHI_CHU);
-                this.columnLOAI_PHAN_QUYEN = new global::System.Data.DataColumn("LOAI_PHAN_QUYEN", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLOAI_PHAN_QUYEN);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID}, true));
-                this.columnID.AutoIncrement = true;
-                this.columnID.AutoIncrementSeed = -1;
-                this.columnID.AutoIncrementStep = -1;
+                this.columnFORM_NAME = new global::System.Data.DataColumn("FORM_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFORM_NAME);
+                this.columnDISPLAY_NAME = new global::System.Data.DataColumn("DISPLAY_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDISPLAY_NAME);
+                this.columnCONTROL_NAME = new global::System.Data.DataColumn("CONTROL_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCONTROL_NAME);
+                this.columnCONTROL_TYPE = new global::System.Data.DataColumn("CONTROL_TYPE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCONTROL_TYPE);
+                this.columnMA_TU_DIEN = new global::System.Data.DataColumn("MA_TU_DIEN", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMA_TU_DIEN);
+                this.columnID_TU_DIEN = new global::System.Data.DataColumn("ID_TU_DIEN", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_TU_DIEN);
                 this.columnID.AllowDBNull = false;
-                this.columnID.Unique = true;
-                this.columnMA_PHAN_QUYEN.MaxLength = 35;
-                this.columnGHI_CHU.MaxLength = 250;
-                this.columnLOAI_PHAN_QUYEN.MaxLength = 35;
+                this.columnFORM_NAME.AllowDBNull = false;
+                this.columnFORM_NAME.MaxLength = 250;
+                this.columnDISPLAY_NAME.MaxLength = 250;
+                this.columnCONTROL_NAME.AllowDBNull = false;
+                this.columnCONTROL_NAME.MaxLength = 250;
+                this.columnCONTROL_TYPE.AllowDBNull = false;
+                this.columnCONTROL_TYPE.MaxLength = 35;
+                this.columnMA_TU_DIEN.AllowDBNull = false;
+                this.columnMA_TU_DIEN.MaxLength = 50;
+                this.columnID_TU_DIEN.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HT_PHAN_QUYEN_HE_THONGRow NewHT_PHAN_QUYEN_HE_THONGRow() {
-                return ((HT_PHAN_QUYEN_HE_THONGRow)(this.NewRow()));
+            public V_HT_CONTROL_IN_FORMRow NewV_HT_CONTROL_IN_FORMRow() {
+                return ((V_HT_CONTROL_IN_FORMRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new HT_PHAN_QUYEN_HE_THONGRow(builder);
+                return new V_HT_CONTROL_IN_FORMRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(HT_PHAN_QUYEN_HE_THONGRow);
+                return typeof(V_HT_CONTROL_IN_FORMRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.HT_PHAN_QUYEN_HE_THONGRowChanged != null)) {
-                    this.HT_PHAN_QUYEN_HE_THONGRowChanged(this, new HT_PHAN_QUYEN_HE_THONGRowChangeEvent(((HT_PHAN_QUYEN_HE_THONGRow)(e.Row)), e.Action));
+                if ((this.V_HT_CONTROL_IN_FORMRowChanged != null)) {
+                    this.V_HT_CONTROL_IN_FORMRowChanged(this, new V_HT_CONTROL_IN_FORMRowChangeEvent(((V_HT_CONTROL_IN_FORMRow)(e.Row)), e.Action));
                 }
             }
             
@@ -491,8 +527,8 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.HT_PHAN_QUYEN_HE_THONGRowChanging != null)) {
-                    this.HT_PHAN_QUYEN_HE_THONGRowChanging(this, new HT_PHAN_QUYEN_HE_THONGRowChangeEvent(((HT_PHAN_QUYEN_HE_THONGRow)(e.Row)), e.Action));
+                if ((this.V_HT_CONTROL_IN_FORMRowChanging != null)) {
+                    this.V_HT_CONTROL_IN_FORMRowChanging(this, new V_HT_CONTROL_IN_FORMRowChangeEvent(((V_HT_CONTROL_IN_FORMRow)(e.Row)), e.Action));
                 }
             }
             
@@ -500,8 +536,8 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.HT_PHAN_QUYEN_HE_THONGRowDeleted != null)) {
-                    this.HT_PHAN_QUYEN_HE_THONGRowDeleted(this, new HT_PHAN_QUYEN_HE_THONGRowChangeEvent(((HT_PHAN_QUYEN_HE_THONGRow)(e.Row)), e.Action));
+                if ((this.V_HT_CONTROL_IN_FORMRowDeleted != null)) {
+                    this.V_HT_CONTROL_IN_FORMRowDeleted(this, new V_HT_CONTROL_IN_FORMRowChangeEvent(((V_HT_CONTROL_IN_FORMRow)(e.Row)), e.Action));
                 }
             }
             
@@ -509,14 +545,14 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.HT_PHAN_QUYEN_HE_THONGRowDeleting != null)) {
-                    this.HT_PHAN_QUYEN_HE_THONGRowDeleting(this, new HT_PHAN_QUYEN_HE_THONGRowChangeEvent(((HT_PHAN_QUYEN_HE_THONGRow)(e.Row)), e.Action));
+                if ((this.V_HT_CONTROL_IN_FORMRowDeleting != null)) {
+                    this.V_HT_CONTROL_IN_FORMRowDeleting(this, new V_HT_CONTROL_IN_FORMRowChangeEvent(((V_HT_CONTROL_IN_FORMRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveHT_PHAN_QUYEN_HE_THONGRow(HT_PHAN_QUYEN_HE_THONGRow row) {
+            public void RemoveV_HT_CONTROL_IN_FORMRow(V_HT_CONTROL_IN_FORMRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -525,7 +561,7 @@ namespace BKI_HRM.DS {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DS_HT_PHAN_QUYEN_HE_THONG ds = new DS_HT_PHAN_QUYEN_HE_THONG();
+                DS_V_HT_CONTROL_IN_FORM ds = new DS_V_HT_CONTROL_IN_FORM();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -543,7 +579,7 @@ namespace BKI_HRM.DS {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "HT_PHAN_QUYEN_HE_THONGDataTable";
+                attribute2.FixedValue = "V_HT_CONTROL_IN_FORMDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -587,112 +623,109 @@ namespace BKI_HRM.DS {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class HT_PHAN_QUYEN_HE_THONGRow : global::System.Data.DataRow {
+        public partial class V_HT_CONTROL_IN_FORMRow : global::System.Data.DataRow {
             
-            private HT_PHAN_QUYEN_HE_THONGDataTable tableHT_PHAN_QUYEN_HE_THONG;
+            private V_HT_CONTROL_IN_FORMDataTable tableV_HT_CONTROL_IN_FORM;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal HT_PHAN_QUYEN_HE_THONGRow(global::System.Data.DataRowBuilder rb) : 
+            internal V_HT_CONTROL_IN_FORMRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableHT_PHAN_QUYEN_HE_THONG = ((HT_PHAN_QUYEN_HE_THONGDataTable)(this.Table));
+                this.tableV_HT_CONTROL_IN_FORM = ((V_HT_CONTROL_IN_FORMDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal ID {
                 get {
-                    return ((decimal)(this[this.tableHT_PHAN_QUYEN_HE_THONG.IDColumn]));
+                    return ((decimal)(this[this.tableV_HT_CONTROL_IN_FORM.IDColumn]));
                 }
                 set {
-                    this[this.tableHT_PHAN_QUYEN_HE_THONG.IDColumn] = value;
+                    this[this.tableV_HT_CONTROL_IN_FORM.IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string MA_PHAN_QUYEN {
+            public string FORM_NAME {
+                get {
+                    return ((string)(this[this.tableV_HT_CONTROL_IN_FORM.FORM_NAMEColumn]));
+                }
+                set {
+                    this[this.tableV_HT_CONTROL_IN_FORM.FORM_NAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DISPLAY_NAME {
                 get {
                     try {
-                        return ((string)(this[this.tableHT_PHAN_QUYEN_HE_THONG.MA_PHAN_QUYENColumn]));
+                        return ((string)(this[this.tableV_HT_CONTROL_IN_FORM.DISPLAY_NAMEColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MA_PHAN_QUYEN\' in table \'HT_PHAN_QUYEN_HE_THONG\' is DBNull." +
-                                "", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DISPLAY_NAME\' in table \'V_HT_CONTROL_IN_FORM\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableHT_PHAN_QUYEN_HE_THONG.MA_PHAN_QUYENColumn] = value;
+                    this[this.tableV_HT_CONTROL_IN_FORM.DISPLAY_NAMEColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string GHI_CHU {
+            public string CONTROL_NAME {
                 get {
-                    try {
-                        return ((string)(this[this.tableHT_PHAN_QUYEN_HE_THONG.GHI_CHUColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'GHI_CHU\' in table \'HT_PHAN_QUYEN_HE_THONG\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableV_HT_CONTROL_IN_FORM.CONTROL_NAMEColumn]));
                 }
                 set {
-                    this[this.tableHT_PHAN_QUYEN_HE_THONG.GHI_CHUColumn] = value;
+                    this[this.tableV_HT_CONTROL_IN_FORM.CONTROL_NAMEColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string LOAI_PHAN_QUYEN {
+            public string CONTROL_TYPE {
                 get {
-                    try {
-                        return ((string)(this[this.tableHT_PHAN_QUYEN_HE_THONG.LOAI_PHAN_QUYENColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'LOAI_PHAN_QUYEN\' in table \'HT_PHAN_QUYEN_HE_THONG\' is DBNul" +
-                                "l.", e);
-                    }
+                    return ((string)(this[this.tableV_HT_CONTROL_IN_FORM.CONTROL_TYPEColumn]));
                 }
                 set {
-                    this[this.tableHT_PHAN_QUYEN_HE_THONG.LOAI_PHAN_QUYENColumn] = value;
+                    this[this.tableV_HT_CONTROL_IN_FORM.CONTROL_TYPEColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsMA_PHAN_QUYENNull() {
-                return this.IsNull(this.tableHT_PHAN_QUYEN_HE_THONG.MA_PHAN_QUYENColumn);
+            public string MA_TU_DIEN {
+                get {
+                    return ((string)(this[this.tableV_HT_CONTROL_IN_FORM.MA_TU_DIENColumn]));
+                }
+                set {
+                    this[this.tableV_HT_CONTROL_IN_FORM.MA_TU_DIENColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetMA_PHAN_QUYENNull() {
-                this[this.tableHT_PHAN_QUYEN_HE_THONG.MA_PHAN_QUYENColumn] = global::System.Convert.DBNull;
+            public decimal ID_TU_DIEN {
+                get {
+                    return ((decimal)(this[this.tableV_HT_CONTROL_IN_FORM.ID_TU_DIENColumn]));
+                }
+                set {
+                    this[this.tableV_HT_CONTROL_IN_FORM.ID_TU_DIENColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsGHI_CHUNull() {
-                return this.IsNull(this.tableHT_PHAN_QUYEN_HE_THONG.GHI_CHUColumn);
+            public bool IsDISPLAY_NAMENull() {
+                return this.IsNull(this.tableV_HT_CONTROL_IN_FORM.DISPLAY_NAMEColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetGHI_CHUNull() {
-                this[this.tableHT_PHAN_QUYEN_HE_THONG.GHI_CHUColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsLOAI_PHAN_QUYENNull() {
-                return this.IsNull(this.tableHT_PHAN_QUYEN_HE_THONG.LOAI_PHAN_QUYENColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetLOAI_PHAN_QUYENNull() {
-                this[this.tableHT_PHAN_QUYEN_HE_THONG.LOAI_PHAN_QUYENColumn] = global::System.Convert.DBNull;
+            public void SetDISPLAY_NAMENull() {
+                this[this.tableV_HT_CONTROL_IN_FORM.DISPLAY_NAMEColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -700,22 +733,22 @@ namespace BKI_HRM.DS {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class HT_PHAN_QUYEN_HE_THONGRowChangeEvent : global::System.EventArgs {
+        public class V_HT_CONTROL_IN_FORMRowChangeEvent : global::System.EventArgs {
             
-            private HT_PHAN_QUYEN_HE_THONGRow eventRow;
+            private V_HT_CONTROL_IN_FORMRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HT_PHAN_QUYEN_HE_THONGRowChangeEvent(HT_PHAN_QUYEN_HE_THONGRow row, global::System.Data.DataRowAction action) {
+            public V_HT_CONTROL_IN_FORMRowChangeEvent(V_HT_CONTROL_IN_FORMRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HT_PHAN_QUYEN_HE_THONGRow Row {
+            public V_HT_CONTROL_IN_FORMRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -731,7 +764,7 @@ namespace BKI_HRM.DS {
         }
     }
 }
-namespace BKI_HRM.DS.DS_HT_PHAN_QUYEN_HE_THONGTableAdapters {
+namespace BKI_HRM.DS.DS_V_HT_CONTROL_IN_FORMTableAdapters {
     
     
     /// <summary>
@@ -743,7 +776,7 @@ namespace BKI_HRM.DS.DS_HT_PHAN_QUYEN_HE_THONGTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class HT_PHAN_QUYEN_HE_THONGTableAdapter : global::System.ComponentModel.Component {
+    public partial class V_HT_CONTROL_IN_FORMTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -757,7 +790,7 @@ namespace BKI_HRM.DS.DS_HT_PHAN_QUYEN_HE_THONGTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public HT_PHAN_QUYEN_HE_THONGTableAdapter() {
+        public V_HT_CONTROL_IN_FORMTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -854,49 +887,15 @@ namespace BKI_HRM.DS.DS_HT_PHAN_QUYEN_HE_THONGTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "HT_PHAN_QUYEN_HE_THONG";
+            tableMapping.DataSetTable = "V_HT_CONTROL_IN_FORM";
             tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("MA_PHAN_QUYEN", "MA_PHAN_QUYEN");
-            tableMapping.ColumnMappings.Add("GHI_CHU", "GHI_CHU");
-            tableMapping.ColumnMappings.Add("LOAI_PHAN_QUYEN", "LOAI_PHAN_QUYEN");
+            tableMapping.ColumnMappings.Add("FORM_NAME", "FORM_NAME");
+            tableMapping.ColumnMappings.Add("DISPLAY_NAME", "DISPLAY_NAME");
+            tableMapping.ColumnMappings.Add("CONTROL_NAME", "CONTROL_NAME");
+            tableMapping.ColumnMappings.Add("CONTROL_TYPE", "CONTROL_TYPE");
+            tableMapping.ColumnMappings.Add("MA_TU_DIEN", "MA_TU_DIEN");
+            tableMapping.ColumnMappings.Add("ID_TU_DIEN", "ID_TU_DIEN");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[HT_PHAN_QUYEN_HE_THONG] WHERE (([ID] = @Original_ID) AND ((@IsNull_MA_PHAN_QUYEN = 1 AND [MA_PHAN_QUYEN] IS NULL) OR ([MA_PHAN_QUYEN] = @Original_MA_PHAN_QUYEN)) AND ((@IsNull_GHI_CHU = 1 AND [GHI_CHU] IS NULL) OR ([GHI_CHU] = @Original_GHI_CHU)) AND ((@IsNull_LOAI_PHAN_QUYEN = 1 AND [LOAI_PHAN_QUYEN] IS NULL) OR ([LOAI_PHAN_QUYEN] = @Original_LOAI_PHAN_QUYEN)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MA_PHAN_QUYEN", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_PHAN_QUYEN", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MA_PHAN_QUYEN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_PHAN_QUYEN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_GHI_CHU", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GHI_CHU", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GHI_CHU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GHI_CHU", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LOAI_PHAN_QUYEN", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOAI_PHAN_QUYEN", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LOAI_PHAN_QUYEN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOAI_PHAN_QUYEN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[HT_PHAN_QUYEN_HE_THONG] ([MA_PHAN_QUYEN], [GHI_CHU], [LOAI_PHA" +
-                "N_QUYEN]) VALUES (@MA_PHAN_QUYEN, @GHI_CHU, @LOAI_PHAN_QUYEN);\r\nSELECT ID, MA_PH" +
-                "AN_QUYEN, GHI_CHU, LOAI_PHAN_QUYEN FROM HT_PHAN_QUYEN_HE_THONG WHERE (ID = SCOPE" +
-                "_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MA_PHAN_QUYEN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_PHAN_QUYEN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GHI_CHU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GHI_CHU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LOAI_PHAN_QUYEN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOAI_PHAN_QUYEN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[HT_PHAN_QUYEN_HE_THONG] SET [MA_PHAN_QUYEN] = @MA_PHAN_QUYEN, [GHI_CHU] = @GHI_CHU, [LOAI_PHAN_QUYEN] = @LOAI_PHAN_QUYEN WHERE (([ID] = @Original_ID) AND ((@IsNull_MA_PHAN_QUYEN = 1 AND [MA_PHAN_QUYEN] IS NULL) OR ([MA_PHAN_QUYEN] = @Original_MA_PHAN_QUYEN)) AND ((@IsNull_GHI_CHU = 1 AND [GHI_CHU] IS NULL) OR ([GHI_CHU] = @Original_GHI_CHU)) AND ((@IsNull_LOAI_PHAN_QUYEN = 1 AND [LOAI_PHAN_QUYEN] IS NULL) OR ([LOAI_PHAN_QUYEN] = @Original_LOAI_PHAN_QUYEN)));
-SELECT ID, MA_PHAN_QUYEN, GHI_CHU, LOAI_PHAN_QUYEN FROM HT_PHAN_QUYEN_HE_THONG WHERE (ID = @ID)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MA_PHAN_QUYEN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_PHAN_QUYEN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GHI_CHU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GHI_CHU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LOAI_PHAN_QUYEN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOAI_PHAN_QUYEN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MA_PHAN_QUYEN", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_PHAN_QUYEN", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MA_PHAN_QUYEN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MA_PHAN_QUYEN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_GHI_CHU", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GHI_CHU", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GHI_CHU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GHI_CHU", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LOAI_PHAN_QUYEN", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOAI_PHAN_QUYEN", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LOAI_PHAN_QUYEN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LOAI_PHAN_QUYEN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -912,8 +911,8 @@ SELECT ID, MA_PHAN_QUYEN, GHI_CHU, LOAI_PHAN_QUYEN FROM HT_PHAN_QUYEN_HE_THONG W
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, MA_PHAN_QUYEN, GHI_CHU, LOAI_PHAN_QUYEN FROM dbo.HT_PHAN_QUYEN_HE_THON" +
-                "G";
+            this._commandCollection[0].CommandText = "SELECT ID, FORM_NAME, DISPLAY_NAME, CONTROL_NAME, CONTROL_TYPE, MA_TU_DIEN, ID_TU" +
+                "_DIEN FROM dbo.V_HT_CONTROL_IN_FORM";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -921,7 +920,7 @@ SELECT ID, MA_PHAN_QUYEN, GHI_CHU, LOAI_PHAN_QUYEN FROM HT_PHAN_QUYEN_HE_THONG W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_HT_PHAN_QUYEN_HE_THONG.HT_PHAN_QUYEN_HE_THONGDataTable dataTable) {
+        public virtual int Fill(DS_V_HT_CONTROL_IN_FORM.V_HT_CONTROL_IN_FORMDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -934,198 +933,11 @@ SELECT ID, MA_PHAN_QUYEN, GHI_CHU, LOAI_PHAN_QUYEN FROM HT_PHAN_QUYEN_HE_THONG W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_HT_PHAN_QUYEN_HE_THONG.HT_PHAN_QUYEN_HE_THONGDataTable GetData() {
+        public virtual DS_V_HT_CONTROL_IN_FORM.V_HT_CONTROL_IN_FORMDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DS_HT_PHAN_QUYEN_HE_THONG.HT_PHAN_QUYEN_HE_THONGDataTable dataTable = new DS_HT_PHAN_QUYEN_HE_THONG.HT_PHAN_QUYEN_HE_THONGDataTable();
+            DS_V_HT_CONTROL_IN_FORM.V_HT_CONTROL_IN_FORMDataTable dataTable = new DS_V_HT_CONTROL_IN_FORM.V_HT_CONTROL_IN_FORMDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_HT_PHAN_QUYEN_HE_THONG.HT_PHAN_QUYEN_HE_THONGDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_HT_PHAN_QUYEN_HE_THONG dataSet) {
-            return this.Adapter.Update(dataSet, "HT_PHAN_QUYEN_HE_THONG");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(decimal Original_ID, string Original_MA_PHAN_QUYEN, string Original_GHI_CHU, string Original_LOAI_PHAN_QUYEN) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_ID));
-            if ((Original_MA_PHAN_QUYEN == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_MA_PHAN_QUYEN));
-            }
-            if ((Original_GHI_CHU == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_GHI_CHU));
-            }
-            if ((Original_LOAI_PHAN_QUYEN == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_LOAI_PHAN_QUYEN));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string MA_PHAN_QUYEN, string GHI_CHU, string LOAI_PHAN_QUYEN) {
-            if ((MA_PHAN_QUYEN == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(MA_PHAN_QUYEN));
-            }
-            if ((GHI_CHU == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(GHI_CHU));
-            }
-            if ((LOAI_PHAN_QUYEN == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(LOAI_PHAN_QUYEN));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string MA_PHAN_QUYEN, string GHI_CHU, string LOAI_PHAN_QUYEN, decimal Original_ID, string Original_MA_PHAN_QUYEN, string Original_GHI_CHU, string Original_LOAI_PHAN_QUYEN, decimal ID) {
-            if ((MA_PHAN_QUYEN == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(MA_PHAN_QUYEN));
-            }
-            if ((GHI_CHU == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(GHI_CHU));
-            }
-            if ((LOAI_PHAN_QUYEN == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(LOAI_PHAN_QUYEN));
-            }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(Original_ID));
-            if ((Original_MA_PHAN_QUYEN == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_MA_PHAN_QUYEN));
-            }
-            if ((Original_GHI_CHU == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_GHI_CHU));
-            }
-            if ((Original_LOAI_PHAN_QUYEN == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_LOAI_PHAN_QUYEN));
-            }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(ID));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string MA_PHAN_QUYEN, string GHI_CHU, string LOAI_PHAN_QUYEN, decimal Original_ID, string Original_MA_PHAN_QUYEN, string Original_GHI_CHU, string Original_LOAI_PHAN_QUYEN) {
-            return this.Update(MA_PHAN_QUYEN, GHI_CHU, LOAI_PHAN_QUYEN, Original_ID, Original_MA_PHAN_QUYEN, Original_GHI_CHU, Original_LOAI_PHAN_QUYEN, Original_ID);
         }
     }
     
@@ -1141,8 +953,6 @@ SELECT ID, MA_PHAN_QUYEN, GHI_CHU, LOAI_PHAN_QUYEN FROM HT_PHAN_QUYEN_HE_THONG W
         
         private UpdateOrderOption _updateOrder;
         
-        private HT_PHAN_QUYEN_HE_THONGTableAdapter _hT_PHAN_QUYEN_HE_THONGTableAdapter;
-        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -1155,20 +965,6 @@ SELECT ID, MA_PHAN_QUYEN, GHI_CHU, LOAI_PHAN_QUYEN FROM HT_PHAN_QUYEN_HE_THONG W
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public HT_PHAN_QUYEN_HE_THONGTableAdapter HT_PHAN_QUYEN_HE_THONGTableAdapter {
-            get {
-                return this._hT_PHAN_QUYEN_HE_THONGTableAdapter;
-            }
-            set {
-                this._hT_PHAN_QUYEN_HE_THONGTableAdapter = value;
             }
         }
         
@@ -1191,10 +987,6 @@ SELECT ID, MA_PHAN_QUYEN, GHI_CHU, LOAI_PHAN_QUYEN FROM HT_PHAN_QUYEN_HE_THONG W
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._hT_PHAN_QUYEN_HE_THONGTableAdapter != null) 
-                            && (this._hT_PHAN_QUYEN_HE_THONGTableAdapter.Connection != null))) {
-                    return this._hT_PHAN_QUYEN_HE_THONGTableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -1208,9 +1000,6 @@ SELECT ID, MA_PHAN_QUYEN, GHI_CHU, LOAI_PHAN_QUYEN FROM HT_PHAN_QUYEN_HE_THONG W
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._hT_PHAN_QUYEN_HE_THONGTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 return count;
             }
         }
@@ -1220,17 +1009,8 @@ SELECT ID, MA_PHAN_QUYEN, GHI_CHU, LOAI_PHAN_QUYEN FROM HT_PHAN_QUYEN_HE_THONG W
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(DS_HT_PHAN_QUYEN_HE_THONG dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DS_V_HT_CONTROL_IN_FORM dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._hT_PHAN_QUYEN_HE_THONGTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.HT_PHAN_QUYEN_HE_THONG.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._hT_PHAN_QUYEN_HE_THONGTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -1239,16 +1019,8 @@ SELECT ID, MA_PHAN_QUYEN, GHI_CHU, LOAI_PHAN_QUYEN FROM HT_PHAN_QUYEN_HE_THONG W
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(DS_HT_PHAN_QUYEN_HE_THONG dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DS_V_HT_CONTROL_IN_FORM dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._hT_PHAN_QUYEN_HE_THONGTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.HT_PHAN_QUYEN_HE_THONG.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._hT_PHAN_QUYEN_HE_THONGTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -1257,16 +1029,8 @@ SELECT ID, MA_PHAN_QUYEN, GHI_CHU, LOAI_PHAN_QUYEN FROM HT_PHAN_QUYEN_HE_THONG W
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(DS_HT_PHAN_QUYEN_HE_THONG dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DS_V_HT_CONTROL_IN_FORM dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._hT_PHAN_QUYEN_HE_THONGTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.HT_PHAN_QUYEN_HE_THONG.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._hT_PHAN_QUYEN_HE_THONGTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             return result;
         }
         
@@ -1299,17 +1063,12 @@ SELECT ID, MA_PHAN_QUYEN, GHI_CHU, LOAI_PHAN_QUYEN FROM HT_PHAN_QUYEN_HE_THONG W
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(DS_HT_PHAN_QUYEN_HE_THONG dataSet) {
+        public virtual int UpdateAll(DS_V_HT_CONTROL_IN_FORM dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
-            }
-            if (((this._hT_PHAN_QUYEN_HE_THONGTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._hT_PHAN_QUYEN_HE_THONGTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
@@ -1343,15 +1102,6 @@ SELECT ID, MA_PHAN_QUYEN, GHI_CHU, LOAI_PHAN_QUYEN FROM HT_PHAN_QUYEN_HE_THONG W
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._hT_PHAN_QUYEN_HE_THONGTableAdapter != null)) {
-                    revertConnections.Add(this._hT_PHAN_QUYEN_HE_THONGTableAdapter, this._hT_PHAN_QUYEN_HE_THONGTableAdapter.Connection);
-                    this._hT_PHAN_QUYEN_HE_THONGTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._hT_PHAN_QUYEN_HE_THONGTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._hT_PHAN_QUYEN_HE_THONGTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._hT_PHAN_QUYEN_HE_THONGTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._hT_PHAN_QUYEN_HE_THONGTableAdapter.Adapter);
-                    }
-                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -1409,10 +1159,6 @@ SELECT ID, MA_PHAN_QUYEN, GHI_CHU, LOAI_PHAN_QUYEN FROM HT_PHAN_QUYEN_HE_THONG W
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
-                }
-                if ((this._hT_PHAN_QUYEN_HE_THONGTableAdapter != null)) {
-                    this._hT_PHAN_QUYEN_HE_THONGTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._hT_PHAN_QUYEN_HE_THONGTableAdapter]));
-                    this._hT_PHAN_QUYEN_HE_THONGTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
