@@ -38,7 +38,10 @@ namespace BKI_HRM
 		internal SIS.Controls.Button.SiSButton m_cmd_view;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         private TextBox m_txt_tim_kiem;
-        private CheckedListBox m_clb_luachon;
+        private CheckBox m_ckb_chucvu;
+        private CheckBox m_ckb_capbac;
+        private CheckBox m_ckb_duan;
+        private Label label1;
 		private System.ComponentModel.IContainer components;
 
 		public f404_GD_QUA_TRINH_CONG_TAC()
@@ -85,7 +88,10 @@ namespace BKI_HRM
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
-            this.m_clb_luachon = new System.Windows.Forms.CheckedListBox();
+            this.m_ckb_chucvu = new System.Windows.Forms.CheckBox();
+            this.m_ckb_capbac = new System.Windows.Forms.CheckBox();
+            this.m_ckb_duan = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -162,9 +168,9 @@ namespace BKI_HRM
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 81);
+            this.m_fg.Location = new System.Drawing.Point(0, 66);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1001, 309);
+            this.m_fg.Size = new System.Drawing.Size(1001, 324);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -192,29 +198,62 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(437, 20);
             this.m_txt_tim_kiem.TabIndex = 33;
             // 
-            // m_clb_luachon
+            // m_ckb_chucvu
             // 
-            this.m_clb_luachon.BackColor = System.Drawing.SystemColors.Window;
-            this.m_clb_luachon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.m_clb_luachon.CheckOnClick = true;
-            this.m_clb_luachon.FormattingEnabled = true;
-            this.m_clb_luachon.Items.AddRange(new object[] {
-            "Chức vụ",
-            "Cấp bậc",
-            "Dự án"});
-            this.m_clb_luachon.Location = new System.Drawing.Point(90, 12);
-            this.m_clb_luachon.MultiColumn = true;
-            this.m_clb_luachon.Name = "m_clb_luachon";
-            this.m_clb_luachon.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.m_clb_luachon.Size = new System.Drawing.Size(120, 45);
-            this.m_clb_luachon.TabIndex = 35;
-            this.m_clb_luachon.SelectedIndexChanged += new System.EventHandler(this.m_clb_luachon_SelectedIndexChanged);
+            this.m_ckb_chucvu.AutoSize = true;
+            this.m_ckb_chucvu.Checked = true;
+            this.m_ckb_chucvu.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.m_ckb_chucvu.Location = new System.Drawing.Point(296, 43);
+            this.m_ckb_chucvu.Name = "m_ckb_chucvu";
+            this.m_ckb_chucvu.Size = new System.Drawing.Size(66, 17);
+            this.m_ckb_chucvu.TabIndex = 35;
+            this.m_ckb_chucvu.Text = "Chức vụ";
+            this.m_ckb_chucvu.UseVisualStyleBackColor = true;
+            this.m_ckb_chucvu.CheckedChanged += new System.EventHandler(this.m_ckb_chucvu_CheckedChanged);
+            // 
+            // m_ckb_capbac
+            // 
+            this.m_ckb_capbac.AutoSize = true;
+            this.m_ckb_capbac.Checked = true;
+            this.m_ckb_capbac.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.m_ckb_capbac.Location = new System.Drawing.Point(368, 44);
+            this.m_ckb_capbac.Name = "m_ckb_capbac";
+            this.m_ckb_capbac.Size = new System.Drawing.Size(66, 17);
+            this.m_ckb_capbac.TabIndex = 36;
+            this.m_ckb_capbac.Text = "Cấp bậc";
+            this.m_ckb_capbac.UseVisualStyleBackColor = true;
+            this.m_ckb_capbac.CheckedChanged += new System.EventHandler(this.m_ckb_capbac_CheckedChanged);
+            // 
+            // m_ckb_duan
+            // 
+            this.m_ckb_duan.AutoSize = true;
+            this.m_ckb_duan.Checked = true;
+            this.m_ckb_duan.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.m_ckb_duan.Location = new System.Drawing.Point(440, 43);
+            this.m_ckb_duan.Name = "m_ckb_duan";
+            this.m_ckb_duan.Size = new System.Drawing.Size(55, 17);
+            this.m_ckb_duan.TabIndex = 37;
+            this.m_ckb_duan.Text = "Dự án";
+            this.m_ckb_duan.UseVisualStyleBackColor = true;
+            this.m_ckb_duan.CheckedChanged += new System.EventHandler(this.m_ckb_duan_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(244, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "Hiển thị:";
             // 
             // f404_GD_QUA_TRINH_CONG_TAC
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(1001, 426);
-            this.Controls.Add(this.m_clb_luachon);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.m_ckb_duan);
+            this.Controls.Add(this.m_ckb_capbac);
+            this.Controls.Add(this.m_ckb_chucvu);
             this.Controls.Add(this.m_cmd_search);
             this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.m_fg);
@@ -268,9 +307,6 @@ namespace BKI_HRM
                         m_fg.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.SimpleLeaf;
 			set_define_events();
 			this.KeyPreview = true;
-            m_clb_luachon.SetItemChecked(0, true);
-            m_clb_luachon.SetItemChecked(1, true);
-            m_clb_luachon.SetItemChecked(2, true);
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
@@ -327,52 +363,29 @@ namespace BKI_HRM
 		//	f404_GD_QUA_TRINH_CONG_TAC_DE v_fDE = new f404_GD_QUA_TRINH_CONG_TAC_DE();			
 		//	v_fDE.display(m_us);
 		}
+        private void what_is_checked()
+        {
+            if ((m_ckb_chucvu.Checked) && (m_ckb_capbac.Checked) && (m_ckb_duan.Checked))
+                m_str_lua_chon = "D";
+            else if ((m_ckb_chucvu.Checked) && (m_ckb_capbac.Checked))
+                m_str_lua_chon = "B";
+            else if ((m_ckb_chucvu.Checked) && (m_ckb_duan.Checked))
+                m_str_lua_chon = "A";
+            else if ((m_ckb_capbac.Checked) && (m_ckb_duan.Checked))
+                m_str_lua_chon = "C";
+            else if ((m_ckb_chucvu.Checked))
+                m_str_lua_chon = "ABD";
+            else if ((m_ckb_capbac.Checked))
+                m_str_lua_chon = "BCD";
+            else
+                m_str_lua_chon = "CAD";
+        }
+
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
 		}
-        private void WhatIsChecked_Click()
-        {
-            // Display in a message box all the items that are checked. 
-
-            // First show the index and check state of all selected items. 
-           
-            switch (m_clb_luachon.CheckedItems.Count)
-            {
-                case 1:
-                    if (m_clb_luachon.GetItemChecked(0) == true)
-                        m_str_lua_chon = "ABD";
-                    else if (m_clb_luachon.GetItemChecked(1) == true)
-                        m_str_lua_chon = "BCD";
-                    else
-                        m_str_lua_chon = "CAD";
-                    break;
-                case 2:
-                    if ((m_clb_luachon.GetItemChecked(0) == true) && (m_clb_luachon.GetItemChecked(1) == true))
-                        m_str_lua_chon = "B";
-                    else if ((m_clb_luachon.GetItemChecked(1) == true) && (m_clb_luachon.GetItemChecked(2) == true))
-                        m_str_lua_chon = "C";
-                    else
-                        m_str_lua_chon = "A";
-                    break;
-                case 3:
-                    m_str_lua_chon = "D";
-                    break;
-                default:
-                    m_str_lua_chon = "E";
-                    break;
-            }
-            // Next show the object title and check state for each item selected. 
-            /*foreach (object itemChecked in m_clb_luachon.CheckedItems)
-            {
-
-                // Use the IndexOf method to get the index of an item.
-                MessageBox.Show("Item with title: \"" + itemChecked.ToString() +
-                                "\", is checked. Checked state is: " +
-                                m_clb_luachon.GetItemCheckState(m_clb_luachon.Items.IndexOf(itemChecked)).ToString() + ".");
-            }*/
-
-        }
+        
 		#endregion
 
 //
@@ -412,7 +425,7 @@ namespace BKI_HRM
         {
             try
             {
-                WhatIsChecked_Click();
+                what_is_checked();
                     load_data_2_grid();
             }
             catch (Exception v_e)
@@ -421,16 +434,37 @@ namespace BKI_HRM
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            WhatIsChecked_Click();
-        }
-
-        private void m_clb_luachon_SelectedIndexChanged(object sender, EventArgs e)
+        private void m_ckb_chucvu_CheckedChanged(object sender, EventArgs e)
         {
             try
             {
-                WhatIsChecked_Click();
+                what_is_checked();
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_ckb_capbac_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                what_is_checked();
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_ckb_duan_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                what_is_checked();
                 load_data_2_grid();
             }
             catch (Exception v_e)
