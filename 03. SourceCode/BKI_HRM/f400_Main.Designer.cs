@@ -572,9 +572,9 @@ namespace BKI_HRM
             this.m_lbl_du_an_sap_kt.ForeColor = System.Drawing.Color.Red;
             this.m_lbl_du_an_sap_kt.Location = new System.Drawing.Point(0, 427);
             this.m_lbl_du_an_sap_kt.Name = "m_lbl_du_an_sap_kt";
-            this.m_lbl_du_an_sap_kt.Size = new System.Drawing.Size(207, 18);
+            this.m_lbl_du_an_sap_kt.Size = new System.Drawing.Size(287, 18);
             this.m_lbl_du_an_sap_kt.TabIndex = 2;
-            this.m_lbl_du_an_sap_kt.Text = "dự án sắp đến ngày kết thúc";
+            this.m_lbl_du_an_sap_kt.Text = "Danh sách Dự án sắp đến ngày kết thúc";
             this.m_lbl_du_an_sap_kt.Click += new System.EventHandler(this.m_lbl_du_an_sap_kt_Click);
             // 
             // m_lbl_thong_bao_hop_dong_sap_het_han
@@ -586,9 +586,9 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hop_dong_sap_het_han.ForeColor = System.Drawing.Color.Red;
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Location = new System.Drawing.Point(0, 409);
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Name = "m_lbl_thong_bao_hop_dong_sap_het_han";
-            this.m_lbl_thong_bao_hop_dong_sap_het_han.Size = new System.Drawing.Size(165, 18);
+            this.m_lbl_thong_bao_hop_dong_sap_het_han.Size = new System.Drawing.Size(243, 18);
             this.m_lbl_thong_bao_hop_dong_sap_het_han.TabIndex = 3;
-            this.m_lbl_thong_bao_hop_dong_sap_het_han.Text = "Hợp đồng sắp hết hạn";
+            this.m_lbl_thong_bao_hop_dong_sap_het_han.Text = "Danh sách Hợp đồng sắp hết hạn";
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Click += new System.EventHandler(this.m_lbl_thong_bao_hop_dong_sap_het_han_Click);
             // 
             // m_lbl_thu_viec_sap_het_han
@@ -600,9 +600,9 @@ namespace BKI_HRM
             this.m_lbl_thu_viec_sap_het_han.ForeColor = System.Drawing.Color.Red;
             this.m_lbl_thu_viec_sap_het_han.Location = new System.Drawing.Point(0, 391);
             this.m_lbl_thu_viec_sap_het_han.Name = "m_lbl_thu_viec_sap_het_han";
-            this.m_lbl_thu_viec_sap_het_han.Size = new System.Drawing.Size(158, 18);
+            this.m_lbl_thu_viec_sap_het_han.Size = new System.Drawing.Size(236, 18);
             this.m_lbl_thu_viec_sap_het_han.TabIndex = 4;
-            this.m_lbl_thu_viec_sap_het_han.Text = "Thử việc sắp hết hạn";
+            this.m_lbl_thu_viec_sap_het_han.Text = "Danh sách Thử việc sắp hết hạn";
             this.m_lbl_thu_viec_sap_het_han.Click += new System.EventHandler(this.m_lbl_het_han_thu_viec_Click);
             // 
             // m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky
@@ -614,9 +614,9 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.ForeColor = System.Drawing.Color.Red;
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Location = new System.Drawing.Point(0, 373);
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Name = "m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky";
-            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Size = new System.Drawing.Size(268, 18);
+            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Size = new System.Drawing.Size(346, 18);
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.TabIndex = 5;
-            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text = "Hợp đồng đã hết hạn nhưng chưa ký";
+            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text = "Danh sách Hợp đồng đã hết hạn nhưng chưa ký";
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Click += new System.EventHandler(this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky_Click);
             // 
             // f400_Main

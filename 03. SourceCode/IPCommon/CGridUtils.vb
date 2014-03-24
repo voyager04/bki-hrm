@@ -4,6 +4,7 @@ Option Strict On
 Imports C1.Win.C1FlexGrid
 Imports System.Windows.Forms
 Imports C1.Win.C1FlexGrid.Classic
+Imports System.Web
 
 Public Class CGridUtils
 
@@ -153,11 +154,13 @@ Public Class CGridUtils
     Public Shared Sub grid_Double_Click(ByVal sender As Object, _
                              ByVal e As EventArgs)
         Dim v_fg As C1FlexGrid = CType(sender, C1.Win.C1FlexGrid.C1FlexGrid)
-            ToggleNodeState(v_fg)
+        ToggleNodeState(v_fg)
     End Sub
 
     Public Shared Sub AddSearch_Handlers(ByVal i_fg As C1FlexGrid)
         AddHandler i_fg.KeyDown, AddressOf grid_Keydown_Search
+        AddHandler i_fg.KeyUp, AddressOf grid_Keydown_toggle_all
+        AddHandler i_fg.MouseDoubleClick, AddressOf grid_Double_Click
     End Sub
 
     ''' -----------------------------------------------------------------------------
@@ -246,11 +249,14 @@ Public Class CGridUtils
         Next
     End Sub
 
-    Public Shared Sub grid_Keydown_toggle_all(ByVal sender As Object)
+
+
+    Public Shared Sub grid_Keydown_toggle_all(ByVal sender As Object, _
+                            ByVal e As System.Windows.Forms.KeyEventArgs)
         Dim v_fg As C1.Win.C1FlexGrid.C1FlexGrid = CType(sender, C1.Win.C1FlexGrid.C1FlexGrid)
-        'If e.KeyCode = Windows.Forms.Keys.F5 Then
-        ToggleAllNodeState(v_fg)
-        'End If
+        If e.KeyCode = Windows.Forms.Keys.F6 Then
+            ToggleAllNodeState(v_fg)
+        End If
     End Sub
 #End Region
 
@@ -330,13 +336,16 @@ Public Class CGridUtils
         v_row.Node.Collapsed = Not v_row.Node.Collapsed
     End Sub
 
+    Shared v_flag_bool_toggle As Boolean = True
     Private Shared Sub ToggleAllNodeState(ByVal i_fg As C1FlexGrid)
+        v_flag_bool_toggle = Not v_flag_bool_toggle
         'if in edit mode , no work
         If Not (i_fg.Editor) Is Nothing Then Exit Sub
         ' if the current row is not a node, no work
         For Each v_row As Row In i_fg.Rows
             If v_row.IsNode Then
-                If v_row.Node.Collapsed = False Then v_row.Node.Collapsed = True
+                If v_flag_bool_toggle Then v_row.Node.Collapsed = True
+                If Not v_flag_bool_toggle Then v_row.Node.Collapsed = False
             End If
         Next
         'Dim v_row As Row = i_fg.Rows(i_fg.Row)
