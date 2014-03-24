@@ -475,6 +475,10 @@
       <Project>{2A74F1D1-C0EE-41FE-A708-A83B285ACCF2}</Project>
       <Name>IPCommon</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IPComponent\IPComponent.csproj">
+      <Project>{5A01BAA7-983C-46F7-BBEB-722E5344996A}</Project>
+      <Name>IPComponent</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IPData\IPData.vbproj">
       <Project>{9ACEDD70-FDA2-44D8-A004-3A7EAF86A954}</Project>
       <Name>IPData</Name>

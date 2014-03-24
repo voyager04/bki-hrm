@@ -40,6 +40,7 @@ namespace BKI_HRM {
         internal SiSButton m_cmd_exit;
         private ToolTip m_tooltip;
         private Label m_lbl_thong_bao;
+        private Checkbox_Combobox.CheckBoxComboBox checkBoxComboBox1;
         private IContainer components;
 
         public f103_bao_cao_tra_cuu_nhan_su() {
@@ -74,6 +75,7 @@ namespace BKI_HRM {
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f103_bao_cao_tra_cuu_nhan_su));
+            Checkbox_Combobox.CheckBoxProperties checkBoxProperties1 = new Checkbox_Combobox.CheckBoxProperties();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -87,6 +89,7 @@ namespace BKI_HRM {
             this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
+            this.checkBoxComboBox1 = new Checkbox_Combobox.CheckBoxComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -130,6 +133,7 @@ namespace BKI_HRM {
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.checkBoxComboBox1);
             this.panel1.Controls.Add(this.m_lbl_thong_bao);
             this.panel1.Controls.Add(this.m_lbl_so_nhan_vien);
             this.panel1.Controls.Add(this.label2);
@@ -247,6 +251,17 @@ namespace BKI_HRM {
             this.m_cmd_exit.Size = new System.Drawing.Size(118, 28);
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
+            // 
+            // checkBoxComboBox1
+            // 
+            checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.checkBoxComboBox1.CheckBoxProperties = checkBoxProperties1;
+            this.checkBoxComboBox1.DisplayMemberSingleItem = "";
+            this.checkBoxComboBox1.FormattingEnabled = true;
+            this.checkBoxComboBox1.Location = new System.Drawing.Point(1064, 68);
+            this.checkBoxComboBox1.Name = "checkBoxComboBox1";
+            this.checkBoxComboBox1.Size = new System.Drawing.Size(121, 22);
+            this.checkBoxComboBox1.TabIndex = 31;
             // 
             // f103_bao_cao_tra_cuu_nhan_su
             // 
