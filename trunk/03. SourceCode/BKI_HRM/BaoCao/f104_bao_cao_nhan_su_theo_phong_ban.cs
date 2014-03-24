@@ -178,7 +178,6 @@ namespace BKI_HRM {
             m_cmd_search.Click += m_cmd_search_Click;
             m_txt_tim_kiem.MouseClick += m_txt_tim_kiem_MouseClick;
             m_txt_tim_kiem.Leave += m_txt_tim_kiem_Leave;
-            KeyUp += form_v_KeyUp_Toggle;
         }
 
         private void f104_bao_cao_nhan_su_theo_phong_ban_Load(object sender, EventArgs e) {
@@ -244,14 +243,5 @@ namespace BKI_HRM {
             }
         }
 
-        private void form_v_KeyUp_Toggle(object sender, KeyEventArgs e) {
-            try {
-                if (e.KeyCode == Keys.F6) {
-                    CGridUtils.grid_Keydown_toggle_all(m_fg);
-                }
-            } catch (Exception v_e) {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
     }
 }

@@ -289,9 +289,10 @@ namespace BKI_HRM {
         }
 
         internal int SapHetHanThuViec(DataEntryFormMode ip_e_form_mode){
+            this.Text = "F103 - Danh sách Thử việc sắp hết hạn";
             m_e_form_mode = ip_e_form_mode;
             m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
-            m_us.FillDatasetSapHetHanThuViec(m_ds, "", m_ngay_truoc_het_han_thu_viec.ToString());
+            m_us.FillDatasetSapHetHanThuViec(m_ds, "");
             m_so_luong_thu_viec_sap_het_han = m_ds.V_DM_DU_LIEU_NHAN_VIEN.Rows.Count;
             return m_so_luong_thu_viec_sap_het_han;
         }
@@ -401,29 +402,18 @@ namespace BKI_HRM {
         private void set_initial_form_load() {
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_grid();
-            load_custom_source_2_m_txt_tim_kiem();
+            
         }
-        private void load_custom_source_2_m_txt_tim_kiem() {
-            //var count = m_ds.Tables["V_DM_DU_LIEU_NHAN_VIEN"].Rows.Count;
-            //for (var i = 0; i < count; i++) {
-            //    var dr = m_ds.Tables["V_DM_DU_LIEU_NHAN_VIEN"].Rows[i];
-            //    m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["HO_DEM"].ToString());
-            //    m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TEN"].ToString());
-            //    m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["HO_DEM"] + " " + dr["TEN"]);
-            //    m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["HO_DEM"] + " " + dr["TEN"] + " - " + dr["MA_NV"]);
-            //    m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TRINH_DO"] + " - " + dr["TEN"]);
-            //    m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TRINH_DO"].ToString());
-            //    m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TEN_CV"].ToString());
-            //}
-
+        private void load_custom_source_2_m_txt_tim_kiem(DS_V_DM_DU_LIEU_NHAN_VIEN ip_ds) {
             m_txt_tim_kiem.AutoCompleteMode = AutoCompleteMode.Suggest;
             m_txt_tim_kiem.AutoCompleteSource = AutoCompleteSource.CustomSource;
             var v_coll = new AutoCompleteStringCollection();
-            var v_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
-            var v_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
-            v_us.FillDatasetTraCuuThongTinNhanVienChung(v_ds, m_txt_tim_kiem.Text, "", "");
-            var v_rows = v_ds.Tables[0].Rows;
-            for (var i = 0; i < v_rows.Count - 1; i++) {
+            var v_rows = ip_ds.Tables[0].Rows;
+            for (var i = 0; i < v_rows.Count - 1; i++){
+                v_coll.Add(v_rows[i]["HO_DEM"]+"");
+                v_coll.Add(v_rows[i]["TEN"] + "");
+                v_coll.Add( v_rows[i]["HO_DEM"]+ " " + v_rows[i]["TEN"]);
+                v_coll.Add(v_rows[i]["TEN_CV"] + "");
                 v_coll.Add(v_rows[i]["HO_DEM"] + " - " + v_rows[i]["TEN"] + " - " + v_rows[i]["MA_NV"]);
                 v_coll.Add(v_rows[i]["TEN"] + " - " + v_rows[i]["HO_DEM"] + " " + v_rows[i]["TEN"] + " - " + v_rows[i]["MA_NV"]);
             }
@@ -458,10 +448,9 @@ namespace BKI_HRM {
             m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
             if (m_txt_tim_kiem.Text.Equals(m_str_goi_y_tim_kiem)) {
                 m_txt_tim_kiem.Text = "";
-                
             }
             if (m_e_form_mode == DataEntryFormMode.ViewDataState){
-                m_us.FillDatasetSapHetHanThuViec(m_ds, "", m_ngay_truoc_het_han_thu_viec.ToString());
+                m_us.FillDatasetSapHetHanThuViec(m_ds, "");
                 m_so_luong_thu_viec_sap_het_han = m_ds.V_DM_DU_LIEU_NHAN_VIEN.Rows.Count;
             }
             else{
@@ -507,6 +496,7 @@ namespace BKI_HRM {
                         , m_str_oderby_03
                     );
                 refresh_key_value();
+                load_custom_source_2_m_txt_tim_kiem(m_ds);
             }
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;
@@ -773,8 +763,6 @@ namespace BKI_HRM {
          * Kết thúc Phần xử lý Thêm cột hiển thị
          */
 
-        
-
         #endregion
 
         //
@@ -789,7 +777,6 @@ namespace BKI_HRM {
             m_txt_tim_kiem.KeyPress += CheckEnterKeyPress;
             m_txt_tim_kiem.MouseClick += m_txt_tim_kiem_MouseClick;
             m_txt_tim_kiem.Leave += m_txt_tim_kiem_Leave;
-            KeyUp += form_v_KeyUp_Toggle;
         }
 
         private void f103_bao_cao_tra_cuu_nhan_su_Load(object sender, EventArgs e) {
@@ -854,15 +841,6 @@ namespace BKI_HRM {
             }
         }
 
-        private void form_v_KeyUp_Toggle(object sender, KeyEventArgs e) {
-            try {
-                if (e.KeyCode == Keys.F6) {
-                    CGridUtils.grid_Keydown_toggle_all(m_fg);
-                }
-            } catch (Exception v_e) {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
     }
 }
 
