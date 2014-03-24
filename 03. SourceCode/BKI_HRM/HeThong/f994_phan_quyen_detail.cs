@@ -18,7 +18,7 @@ namespace BKI_HRM.HeThong
     public partial class f994_phan_quyen_detail : Form
     {
         public void load_data_2_txt_form(US_HT_FORM ip_us){
-            m_txt_form.Text = ip_us.strDISPLAY_NAME;
+            m_txt_form.Text = ip_us.strFORM_NAME;
         }
 
         public f994_phan_quyen_detail()
