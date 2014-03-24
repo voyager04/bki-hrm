@@ -6,20 +6,15 @@
 
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using System.Globalization;
-using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 using IP.Core.IPCommon;
-using IP.Core.IPException;
-using IP.Core.IPData;
-using IP.Core.IPUserService;
 using IP.Core.IPSystemAdmin;
 
 using BKI_HRM.US;
@@ -28,8 +23,6 @@ using BKI_HRM.DS.CDBNames;
 
 using C1.Win.C1FlexGrid;
 using SIS.Controls.Button;
-using DS_CM_DM_TU_DIEN = IP.Core.IPData.DS_CM_DM_TU_DIEN;
-using US_CM_DM_TU_DIEN = IP.Core.IPUserService.US_CM_DM_TU_DIEN;
 
 namespace BKI_HRM {
 
@@ -46,7 +39,6 @@ namespace BKI_HRM {
         internal SiSButton m_cmd_xuat_excel;
         internal SiSButton m_cmd_exit;
         private ToolTip m_tooltip;
-        private IP.Core.IPControls.CheckBoxComboBox m_cbc_add_columns;
         private Label m_lbl_thong_bao;
         private IContainer components;
 
@@ -82,12 +74,10 @@ namespace BKI_HRM {
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f103_bao_cao_tra_cuu_nhan_su));
-            IP.Core.IPControls.CheckBoxProperties checkBoxProperties2 = new IP.Core.IPControls.CheckBoxProperties();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_lbl_thong_bao = new System.Windows.Forms.Label();
-            this.m_cbc_add_columns = new IP.Core.IPControls.CheckBoxComboBox();
             this.m_lbl_so_nhan_vien = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
@@ -141,7 +131,6 @@ namespace BKI_HRM {
             // panel1
             // 
             this.panel1.Controls.Add(this.m_lbl_thong_bao);
-            this.panel1.Controls.Add(this.m_cbc_add_columns);
             this.panel1.Controls.Add(this.m_lbl_so_nhan_vien);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.m_cmd_search);
@@ -162,17 +151,6 @@ namespace BKI_HRM {
             this.m_lbl_thong_bao.TabIndex = 30;
             this.m_lbl_thong_bao.Text = "Thông báo - cảnh báo ";
             this.m_lbl_thong_bao.Visible = false;
-            // 
-            // m_cbc_add_columns
-            // 
-            checkBoxProperties2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.m_cbc_add_columns.CheckBoxProperties = checkBoxProperties2;
-            this.m_cbc_add_columns.DisplayMemberSingleItem = "";
-            this.m_cbc_add_columns.FormattingEnabled = true;
-            this.m_cbc_add_columns.Location = new System.Drawing.Point(1097, 67);
-            this.m_cbc_add_columns.Name = "m_cbc_add_columns";
-            this.m_cbc_add_columns.Size = new System.Drawing.Size(88, 22);
-            this.m_cbc_add_columns.TabIndex = 29;
             // 
             // m_lbl_so_nhan_vien
             // 
