@@ -1,0 +1,15 @@
+E:\3.D_Extend\2.Study\3.C#\Test\Checkbox_Combobox\IPComponent\bin\Debug\IPComponent.exe
+E:\3.D_Extend\2.Study\3.C#\Test\Checkbox_Combobox\IPComponent\bin\Debug\IPComponent.pdb
+E:\3.D_Extend\2.Study\3.C#\Test\Checkbox_Combobox\IPComponent\obj\x86\Debug\IPComponent.Properties.Resources.resources
+E:\3.D_Extend\2.Study\3.C#\Test\Checkbox_Combobox\IPComponent\obj\x86\Debug\IPComponent.csproj.GenerateResource.Cache
+E:\3.D_Extend\2.Study\3.C#\Test\Checkbox_Combobox\IPComponent\obj\x86\Debug\IPComponent.exe
+E:\3.D_Extend\2.Study\3.C#\Test\Checkbox_Combobox\IPComponent\obj\x86\Debug\IPComponent.pdb
+E:\3.D_Extend\2.Study\3.C#\Test\Checkbox_Combobox\IPComponent\obj\x86\Debug\IPComponent.Form1.resources
+D:\4. Work\1. BKI\3. Project\BKI_HRM_V1\03. SourceCode\IPComponent\bin\Debug\IPComponent.dll.config
+D:\4. Work\1. BKI\3. Project\BKI_HRM_V1\03. SourceCode\IPComponent\bin\Debug\IPComponent.dll
+D:\4. Work\1. BKI\3. Project\BKI_HRM_V1\03. SourceCode\IPComponent\bin\Debug\IPComponent.pdb
+D:\4. Work\1. BKI\3. Project\BKI_HRM_V1\03. SourceCode\IPComponent\obj\x86\Debug\IPComponent.Form1.resources
+D:\4. Work\1. BKI\3. Project\BKI_HRM_V1\03. SourceCode\IPComponent\obj\x86\Debug\IP.Core.IPComponent.Properties.Resources.resources
+D:\4. Work\1. BKI\3. Project\BKI_HRM_V1\03. SourceCode\IPComponent\obj\x86\Debug\IPComponent.csproj.GenerateResource.Cache
+D:\4. Work\1. BKI\3. Project\BKI_HRM_V1\03. SourceCode\IPComponent\obj\x86\Debug\IPComponent.dll
+D:\4. Work\1. BKI\3. Project\BKI_HRM_V1\03. SourceCode\IPComponent\obj\x86\Debug\IPComponent.pdb
