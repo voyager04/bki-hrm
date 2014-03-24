@@ -883,7 +883,6 @@ namespace BKI_HRM.DS {
                 this.columnID_NHAN_SU.AllowDBNull = false;
                 this.columnNGACH.MaxLength = 250;
                 this.columnTRANG_THAI_CHUC_VU_YN.MaxLength = 1;
-                this.columnTRANG_THAI_CV.ReadOnly = true;
                 this.columnTRANG_THAI_CV.MaxLength = 16;
                 this.columnMA_QUYET_DINH_MIEN_NHIEM.MaxLength = 50;
                 this.columnLUA_CHON.MaxLength = 15;
