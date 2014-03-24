@@ -472,6 +472,8 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+     
 	}
 }
 
