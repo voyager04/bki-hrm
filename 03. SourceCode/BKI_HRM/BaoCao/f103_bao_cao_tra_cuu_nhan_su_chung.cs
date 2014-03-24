@@ -48,7 +48,6 @@ namespace BKI_HRM {
         private ToolTip m_tooltip;
         private IP.Core.IPControls.CheckBoxComboBox m_cbc_add_columns;
         private Label m_lbl_thong_bao;
-        private TextBox m_txt_test;
         private IContainer components;
 
         public f103_bao_cao_tra_cuu_nhan_su() {
@@ -87,6 +86,7 @@ namespace BKI_HRM {
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_lbl_thong_bao = new System.Windows.Forms.Label();
             this.m_cbc_add_columns = new IP.Core.IPControls.CheckBoxComboBox();
             this.m_lbl_so_nhan_vien = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -97,8 +97,6 @@ namespace BKI_HRM {
             this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.m_lbl_thong_bao = new System.Windows.Forms.Label();
-            this.m_txt_test = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -142,7 +140,6 @@ namespace BKI_HRM {
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.m_txt_test);
             this.panel1.Controls.Add(this.m_lbl_thong_bao);
             this.panel1.Controls.Add(this.m_cbc_add_columns);
             this.panel1.Controls.Add(this.m_lbl_so_nhan_vien);
@@ -155,6 +152,16 @@ namespace BKI_HRM {
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1189, 95);
             this.panel1.TabIndex = 24;
+            // 
+            // m_lbl_thong_bao
+            // 
+            this.m_lbl_thong_bao.AutoSize = true;
+            this.m_lbl_thong_bao.Location = new System.Drawing.Point(15, 4);
+            this.m_lbl_thong_bao.Name = "m_lbl_thong_bao";
+            this.m_lbl_thong_bao.Size = new System.Drawing.Size(116, 14);
+            this.m_lbl_thong_bao.TabIndex = 30;
+            this.m_lbl_thong_bao.Text = "Thông báo - cảnh báo ";
+            this.m_lbl_thong_bao.Visible = false;
             // 
             // m_cbc_add_columns
             // 
@@ -263,23 +270,6 @@ namespace BKI_HRM {
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
-            // m_lbl_thong_bao
-            // 
-            this.m_lbl_thong_bao.AutoSize = true;
-            this.m_lbl_thong_bao.Location = new System.Drawing.Point(15, 4);
-            this.m_lbl_thong_bao.Name = "m_lbl_thong_bao";
-            this.m_lbl_thong_bao.Size = new System.Drawing.Size(116, 14);
-            this.m_lbl_thong_bao.TabIndex = 30;
-            this.m_lbl_thong_bao.Text = "Thông báo - cảnh báo ";
-            // 
-            // m_txt_test
-            // 
-            this.m_txt_test.Location = new System.Drawing.Point(18, 33);
-            this.m_txt_test.Multiline = true;
-            this.m_txt_test.Name = "m_txt_test";
-            this.m_txt_test.Size = new System.Drawing.Size(68, 27);
-            this.m_txt_test.TabIndex = 31;
-            // 
             // f103_bao_cao_tra_cuu_nhan_su
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -305,11 +295,12 @@ namespace BKI_HRM {
             ShowDialog();
         }
 
-        internal int SapHetHanThuViec(){
-            var v_ngay_truoc_het_han = 7;
+        internal int SapHetHanThuViec(DataEntryFormMode ip_e_form_mode){
+            m_e_form_mode = ip_e_form_mode;
             m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
-            m_us.FillDatasetSapHetHanThuViec(m_ds, "", v_ngay_truoc_het_han.ToString());
-            return m_ds.V_DM_DU_LIEU_NHAN_VIEN.Rows.Count;
+            m_us.FillDatasetSapHetHanThuViec(m_ds, "", m_ngay_truoc_het_han_thu_viec.ToString());
+            m_so_luong_thu_viec_sap_het_han = m_ds.V_DM_DU_LIEU_NHAN_VIEN.Rows.Count;
+            return m_so_luong_thu_viec_sap_het_han;
         }
 
         #endregion
@@ -358,6 +349,9 @@ namespace BKI_HRM {
 
         #region Members
         ITransferDataRow m_obj_trans;
+        private DataEntryFormMode m_e_form_mode;
+        int m_ngay_truoc_het_han_thu_viec = 7;
+        int m_so_luong_thu_viec_sap_het_han = 0;
         DS_V_DM_DU_LIEU_NHAN_VIEN m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
         US_V_DM_DU_LIEU_NHAN_VIEN m_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
         private const String m_str_goi_y_tim_kiem = "Giới tính: nữ, đơn vị: Phòng hành chính hoặc Nguyễn Danh Tú, giới tính: Nam, Trình độ: Đại học";
@@ -471,50 +465,56 @@ namespace BKI_HRM {
             m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
             if (m_txt_tim_kiem.Text.Equals(m_str_goi_y_tim_kiem)) {
                 m_txt_tim_kiem.Text = "";
+                
             }
-            //m_us.FillDatasetTraCuuThongTinNhanVienChung(m_ds, m_txt_tim_kiem.Text, "", "");
-            m_list_key_value = get_list_key_value(m_txt_tim_kiem.Text);
-            refresh_key_value();
-            get_key_value_from_txt_search();
-            init_key_value();
-            m_us.FillDatasetAll(m_ds
-                    , m_str_search
-                    , m_str_ma_nhan_vien
-                    , m_str_ho_va_ten
-                    , m_str_gioi_tinh
-                    , m_str_ngay_sinh
-                    , m_str_thang_sinh
-                    , m_str_nam_sinh
-                    , m_str_trinh_do
-                    , m_str_ma_chuc_vu
-                    , m_str_ten_chuc_vu
-                    , m_str_loai_chuc_vu
-                    , m_str_ty_le_tham_gia
-                    , m_str_ma_don_vi
-                    , m_str_ten_don_vi
-                    , m_str_loai_don_vi
-                    , m_str_cap_don_vi
-                    , m_str_dia_ban
-                    , m_str_ngay_bat_dau
-                    , m_str_thang_bat_dau
-                    , m_str_nam_bat_dau
-                    , m_str_ngay_ket_thuc
-                    , m_str_thang_ket_thuc
-                    , m_str_nam_ket_thuc
-                    , m_str_trang_thai_lao_dong
-                    , m_str_ngay_co_hieu_luc
-                    , m_str_thang_co_hieu_luc
-                    , m_str_nam_co_hieu_luc
-                    , m_str_ngay_het_hieu_luc
-                    , m_str_thang_het_hieu_luc
-                    , m_str_nam_het_hieu_luc
-                    , m_str_trang_thai_hien_tai
-                    , m_str_trang_thai_chuc_vu
-                    , m_str_oderby_01
-                    , m_str_oderby_02
-                    , m_str_oderby_03
-                );
-            refresh_key_value();
+            if (m_e_form_mode == DataEntryFormMode.ViewDataState){
+                m_us.FillDatasetSapHetHanThuViec(m_ds, "", m_ngay_truoc_het_han_thu_viec.ToString());
+                m_so_luong_thu_viec_sap_het_han = m_ds.V_DM_DU_LIEU_NHAN_VIEN.Rows.Count;
+            }
+            else{
+                m_list_key_value = get_list_key_value(m_txt_tim_kiem.Text);
+                refresh_key_value();
+                get_key_value_from_txt_search();
+                init_key_value();
+                m_us.FillDatasetAll(m_ds
+                        , m_str_search
+                        , m_str_ma_nhan_vien
+                        , m_str_ho_va_ten
+                        , m_str_gioi_tinh
+                        , m_str_ngay_sinh
+                        , m_str_thang_sinh
+                        , m_str_nam_sinh
+                        , m_str_trinh_do
+                        , m_str_ma_chuc_vu
+                        , m_str_ten_chuc_vu
+                        , m_str_loai_chuc_vu
+                        , m_str_ty_le_tham_gia
+                        , m_str_ma_don_vi
+                        , m_str_ten_don_vi
+                        , m_str_loai_don_vi
+                        , m_str_cap_don_vi
+                        , m_str_dia_ban
+                        , m_str_ngay_bat_dau
+                        , m_str_thang_bat_dau
+                        , m_str_nam_bat_dau
+                        , m_str_ngay_ket_thuc
+                        , m_str_thang_ket_thuc
+                        , m_str_nam_ket_thuc
+                        , m_str_trang_thai_lao_dong
+                        , m_str_ngay_co_hieu_luc
+                        , m_str_thang_co_hieu_luc
+                        , m_str_nam_co_hieu_luc
+                        , m_str_ngay_het_hieu_luc
+                        , m_str_thang_het_hieu_luc
+                        , m_str_nam_het_hieu_luc
+                        , m_str_trang_thai_hien_tai
+                        , m_str_trang_thai_chuc_vu
+                        , m_str_oderby_01
+                        , m_str_oderby_02
+                        , m_str_oderby_03
+                    );
+                refresh_key_value();
+            }
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;
             tao_tree();
@@ -775,7 +775,6 @@ namespace BKI_HRM {
          */
         private void load_data_to_CheckboxCombobox(){
             m_lbl_thong_bao.Text = m_fg.ColumnInfo;
-            m_txt_test.Text = m_fg.ColumnInfo;
         }
         /*
          * Kết thúc Phần xử lý Thêm cột hiển thị

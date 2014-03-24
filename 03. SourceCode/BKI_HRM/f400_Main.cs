@@ -45,18 +45,20 @@ namespace BKI_HRM {
 
         private f103_bao_cao_tra_cuu_nhan_su thong_bao_thu_viec_sap_het_han() {
             var frm = new f103_bao_cao_tra_cuu_nhan_su();
-            var v_count = frm.SapHetHanThuViec();
+            var v_count = frm.SapHetHanThuViec(DataEntryFormMode.ViewDataState);
             if (v_count <= 0) {
                 m_lbl_thu_viec_sap_het_han.Text = @"Không có Thử việc sắp hết hạn";
             } else {
                 m_lbl_thu_viec_sap_het_han.Text = @"Có " + v_count.ToString() + " Thử việc sắp hết hạn. Click để xem chi tiết!";
             }
-
             return frm;
         }
 
         #endregion
 
+        #region Members
+        private DataEntryFormMode m_e_form_mode;
+        #endregion
         // Event handlers
 
         private void set_define_events() {
@@ -419,4 +421,4 @@ namespace BKI_HRM {
             }
         }
     }
-}
+} 
