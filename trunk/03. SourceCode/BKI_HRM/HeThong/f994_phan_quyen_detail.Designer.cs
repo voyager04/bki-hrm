@@ -38,9 +38,9 @@
             this.m_cbo_chuc_nang = new System.Windows.Forms.ComboBox();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
-            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_cmd_chon_form = new System.Windows.Forms.Button();
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,6 +121,35 @@
             this.m_cmd_save.Text = "&Lưu";
             this.m_cmd_save.Click += new System.EventHandler(this.m_cmd_save_Click);
             // 
+            // m_cmd_exit
+            // 
+            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_exit.ImageIndex = 11;
+            this.m_cmd_exit.ImageList = this.ImageList;
+            this.m_cmd_exit.Location = new System.Drawing.Point(357, 4);
+            this.m_cmd_exit.Name = "m_cmd_exit";
+            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_exit.TabIndex = 1;
+            this.m_cmd_exit.Text = "Trở về (Esc)";
+            this.m_cmd_exit.Click += new System.EventHandler(this.m_cmd_exit_Click);
+            // 
+            // m_cmd_chon_form
+            // 
+            this.m_cmd_chon_form.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_chon_form.ImageIndex = 5;
+            this.m_cmd_chon_form.ImageList = this.ImageList;
+            this.m_cmd_chon_form.Location = new System.Drawing.Point(335, 38);
+            this.m_cmd_chon_form.Name = "m_cmd_chon_form";
+            this.m_cmd_chon_form.Size = new System.Drawing.Size(102, 23);
+            this.m_cmd_chon_form.TabIndex = 2;
+            this.m_cmd_chon_form.Text = "Chọn Form";
+            this.m_cmd_chon_form.UseVisualStyleBackColor = true;
+            this.m_cmd_chon_form.Click += new System.EventHandler(this.m_cmd_chon_form_Click);
+            // 
             // ImageList
             // 
             this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
@@ -147,33 +176,6 @@
             this.ImageList.Images.SetKeyName(19, "");
             this.ImageList.Images.SetKeyName(20, "");
             this.ImageList.Images.SetKeyName(21, "");
-            // 
-            // m_cmd_exit
-            // 
-            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_exit.ImageIndex = 11;
-            this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(357, 4);
-            this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 1;
-            this.m_cmd_exit.Text = "Trở về (Esc)";
-            this.m_cmd_exit.Click += new System.EventHandler(this.m_cmd_exit_Click);
-            // 
-            // m_cmd_chon_form
-            // 
-            this.m_cmd_chon_form.ImageList = this.ImageList;
-            this.m_cmd_chon_form.Location = new System.Drawing.Point(346, 38);
-            this.m_cmd_chon_form.Name = "m_cmd_chon_form";
-            this.m_cmd_chon_form.Size = new System.Drawing.Size(75, 23);
-            this.m_cmd_chon_form.TabIndex = 2;
-            this.m_cmd_chon_form.Text = "Chọn Form";
-            this.m_cmd_chon_form.UseVisualStyleBackColor = true;
-            this.m_cmd_chon_form.Click += new System.EventHandler(this.m_cmd_chon_form_Click);
             // 
             // f994_phan_quyen_detail
             // 
