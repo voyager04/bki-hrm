@@ -588,8 +588,7 @@ namespace BKI_HRM {
             m_txt_tim_kiem.MouseClick += m_txt_tim_kiem_MouseClick;
             m_txt_tim_kiem.Leave += m_txt_tim_kiem_Leave;
             m_txt_tim_kiem.TextChanged += m_txt_tim_kiem_TextChanged;
-            //m_fg.KeyUp += CheckF5KeyPress;
-            KeyUp += f101_v_dm_don_vi_KeyUp;
+            KeyUp += form_v_KeyUp_Toggle;
         }
 
         private void f101_v_dm_don_vi_Load(object sender, EventArgs e) {
@@ -645,16 +644,6 @@ namespace BKI_HRM {
             try {
                 if (e.KeyChar == (char)Keys.Return) {
                     load_data_2_grid();
-                }
-            } catch (Exception v_e) {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void CheckF5KeyPress(object sender, KeyEventArgs e) {
-            try {
-                if (e.KeyCode == Keys.F5) {
-                    CGridUtils.grid_Keydown_toggle_all(sender,e);
                 }
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
@@ -721,10 +710,10 @@ namespace BKI_HRM {
             }
         }
         
-        private void f101_v_dm_don_vi_KeyUp(object sender, KeyEventArgs e) {
+        private void form_v_KeyUp_Toggle(object sender, KeyEventArgs e) {
             try {
-                if (e.KeyCode == Keys.F5) {
-                    CGridUtils.grid_Keydown_toggle_all(m_fg, e);
+                if (e.KeyCode == Keys.F6) {
+                    CGridUtils.grid_Keydown_toggle_all(m_fg);
                 }
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);

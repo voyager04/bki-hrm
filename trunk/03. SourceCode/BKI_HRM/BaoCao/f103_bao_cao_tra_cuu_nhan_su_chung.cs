@@ -789,6 +789,7 @@ namespace BKI_HRM {
             m_txt_tim_kiem.KeyPress += CheckEnterKeyPress;
             m_txt_tim_kiem.MouseClick += m_txt_tim_kiem_MouseClick;
             m_txt_tim_kiem.Leave += m_txt_tim_kiem_Leave;
+            KeyUp += form_v_KeyUp_Toggle;
         }
 
         private void f103_bao_cao_tra_cuu_nhan_su_Load(object sender, EventArgs e) {
@@ -853,8 +854,15 @@ namespace BKI_HRM {
             }
         }
 
-        
-        
+        private void form_v_KeyUp_Toggle(object sender, KeyEventArgs e) {
+            try {
+                if (e.KeyCode == Keys.F6) {
+                    CGridUtils.grid_Keydown_toggle_all(m_fg);
+                }
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
 
