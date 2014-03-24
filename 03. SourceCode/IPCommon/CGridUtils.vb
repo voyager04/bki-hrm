@@ -246,12 +246,11 @@ Public Class CGridUtils
         Next
     End Sub
 
-    Public Shared Sub grid_Keydown_toggle_all(ByVal sender As Object, _
-                           ByVal e As System.Windows.Forms.KeyEventArgs)
+    Public Shared Sub grid_Keydown_toggle_all(ByVal sender As Object)
         Dim v_fg As C1.Win.C1FlexGrid.C1FlexGrid = CType(sender, C1.Win.C1FlexGrid.C1FlexGrid)
-        If e.KeyCode = Windows.Forms.Keys.F5 Then
-            ToggleAllNodeState(v_fg)
-        End If
+        'If e.KeyCode = Windows.Forms.Keys.F5 Then
+        ToggleAllNodeState(v_fg)
+        'End If
     End Sub
 #End Region
 
@@ -305,8 +304,6 @@ Public Class CGridUtils
         End If
     End Sub
 
-
-
     Private Shared Sub grid_KeydownEnter_In_Tree(ByVal sender As Object, _
                            ByVal e As System.Windows.Forms.KeyEventArgs)
         Dim v_fg As C1.Win.C1FlexGrid.C1FlexGrid = CType(sender, C1.Win.C1FlexGrid.C1FlexGrid)
@@ -332,7 +329,6 @@ Public Class CGridUtils
         ' toggle collapsed state
         v_row.Node.Collapsed = Not v_row.Node.Collapsed
     End Sub
-
 
     Private Shared Sub ToggleAllNodeState(ByVal i_fg As C1FlexGrid)
         'if in edit mode , no work
