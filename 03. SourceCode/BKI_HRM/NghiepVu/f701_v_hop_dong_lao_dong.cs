@@ -305,28 +305,19 @@ namespace BKI_HRM
         #region Data Structure
         private enum e_col_Number
         {
-            TRANG_THAI_HOP_DONG = 12
-,
-            CHUC_VU_NGUOI_KY = 11
-                ,
-            NGAY_HET_HAN = 8
-                ,
-            MA_NV = 1
-                ,
+            MA_NV = 1,
+            HO_DEM = 2,
+            TEN = 3,
+            MA_HOP_DONG = 4,
+            LOAI_HOP_DONG = 5,
+            NGAY_KY_HOP_DONG = 6,
+            NGAY_CO_HIEU_LUC = 7,
+            NGAY_HET_HAN = 8,
             TEN_PHAP_NHAN = 9,
-            NGUOI_KY = 10
-                ,
-            NGAY_KY_HOP_DONG = 6
-                ,
-            LOAI_HOP_DONG = 5
-                ,
-            TEN = 3
-                ,
-            MA_HOP_DONG = 4
-                ,
-            HO_DEM = 2
-                , NGAY_CO_HIEU_LUC = 7
-
+            TRANG_THAI_HOP_DONG = 10,
+            LINK = 11,
+            NGUOI_KY = 12,
+            CHUC_VU_NGUOI_KY = 13
         }
         #endregion
 
@@ -373,6 +364,7 @@ namespace BKI_HRM
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.HO_DEM, e_col_Number.HO_DEM);
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.NGAY_CO_HIEU_LUC, e_col_Number.NGAY_CO_HIEU_LUC);
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.TEN_PHAP_NHAN, e_col_Number.TEN_PHAP_NHAN);
+            v_htb.Add(V_GD_HOP_DONG_LAO_DONG.LINK, e_col_Number.LINK);
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_GD_HOP_DONG_LAO_DONG.NewRow());
             return v_obj_trans;
@@ -400,12 +392,16 @@ namespace BKI_HRM
              , "{0}"
              );
             m_fg.Redraw = true;
+            m_fg.Focus();
         }
 
         private void grid2us_object(int i_grid_row)
         {
             DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
-
+            if (v_dr == null)
+            {
+                return;
+            }
             DS_GD_HOP_DONG v_ds = new DS_GD_HOP_DONG();
             US_GD_HOP_DONG v_us = new US_GD_HOP_DONG();
             v_us.FillDatasetSearchByMaHopDong(v_ds, v_dr.ItemArray[3].ToString());
@@ -478,6 +474,31 @@ namespace BKI_HRM
             //	v_fDE.display(m_us);
         }
 
+        private bool view_hop_dong_saved()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return true;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return true;
+            grid2us_object(m_fg.Row);
+            if (m_us_gd_hop_dong == null)
+                return true;
+            if (m_us_gd_hop_dong.strLINK == "")
+                return true;
+            if (m_fg.Col == 11)
+            {
+                f701_v_gd_hop_dong_lao_dong_View frm = new f701_v_gd_hop_dong_lao_dong_View();
+                frm.display_for_view(m_us_gd_hop_dong);
+                load_data_2_grid();
+            }
+            return false;
+        }
+        private void toggle_group(object sender, EventArgs e)
+        {
+            if (m_fg.Rows[m_fg.Row].IsNode) CGridUtils.grid_Double_Click(sender, e);
+            else update_v_gd_hop_dong_lao_dong();
+        }
+        #endregion
+
+        #region Event
         private void set_define_events()
         {
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
@@ -485,25 +506,31 @@ namespace BKI_HRM
             m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             m_fg.Click += new EventHandler(m_fg_Click);
+            m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
         }
-
-        void m_fg_Click(object sender, EventArgs e)
+        void m_fg_DoubleClick(object sender, EventArgs e)
         {
             try
             {
-                if (m_fg.Col == 12)
-                {
-                    MessageBox.Show("Test");
-                }
+                toggle_group(sender,e);
             }
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        #endregion
 
-        #region Event
+        void m_fg_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (view_hop_dong_saved()) return;
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         private void f701_v_hop_dong_lao_dong_Load(object sender, System.EventArgs e)
         {
             try
@@ -517,7 +544,6 @@ namespace BKI_HRM
             }
 
         }
-
         private void m_cmd_exit_Click(object sender, EventArgs e)
         {
             try
@@ -529,7 +555,6 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
         private void m_cmd_insert_Click(object sender, EventArgs e)
         {
             try
@@ -541,7 +566,6 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
         private void m_cmd_update_Click(object sender, EventArgs e)
         {
             try
@@ -553,7 +577,6 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
         private void m_cmd_delete_Click(object sender, EventArgs e)
         {
             try
@@ -565,7 +588,6 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
         private void m_cmd_view_Click(object sender, EventArgs e)
         {
             try
@@ -577,7 +599,6 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
         private void m_txt_tim_kiem_KeyPress(object sender, KeyPressEventArgs e)
         {
             try
@@ -589,7 +610,6 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
         private void m_cmd_tim_kiem_Click(object sender, EventArgs e)
         {
             try
@@ -601,7 +621,6 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
         private void m_txt_tim_kiem_Leave(object sender, EventArgs e)
         {
             try
@@ -618,7 +637,6 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
         private void m_txt_tim_kiem_MouseClick(object sender, MouseEventArgs e)
         {
             try
@@ -631,8 +649,6 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        #endregion
-
         private void m_txt_tim_kiem_TextChanged(object sender, EventArgs e)
         {
             try
@@ -644,6 +660,7 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        #endregion
     }
 }
 

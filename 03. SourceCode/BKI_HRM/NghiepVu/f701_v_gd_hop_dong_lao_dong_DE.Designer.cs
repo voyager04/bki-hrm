@@ -136,9 +136,9 @@
             this.m_cmd_xuat_word.ImageList = this.ImageList;
             this.m_cmd_xuat_word.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_xuat_word.Name = "m_cmd_xuat_word";
-            this.m_cmd_xuat_word.Size = new System.Drawing.Size(104, 28);
+            this.m_cmd_xuat_word.Size = new System.Drawing.Size(116, 28);
             this.m_cmd_xuat_word.TabIndex = 36;
-            this.m_cmd_xuat_word.Text = "&Xuất Word";
+            this.m_cmd_xuat_word.Text = "&In hợp đồng";
             this.m_cmd_xuat_word.Click += new System.EventHandler(this.m_cmd_xuat_word_Click);
             // 
             // m_cmd_save
