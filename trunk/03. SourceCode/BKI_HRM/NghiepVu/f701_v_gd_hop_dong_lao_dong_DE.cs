@@ -253,7 +253,7 @@ namespace BKI_HRM.NghiepVu
             File.Move(m_str_destination + m_str_file_name, m_str_path);
             if (File.Exists(m_str_old_path))
                 File.Delete(m_str_old_path);
-            m_us.strLINK = m_str_path;
+            m_us.strLINK = m_str_file_name;
         }
 
         private bool check_trung_ma_hop_dong(string ip_str_ma_hop_dong)

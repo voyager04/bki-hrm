@@ -282,6 +282,7 @@
         public const string TEN_PHAP_NHAN = "TEN_PHAP_NHAN";
         public const string ID_TRANG_LAO_DONG = "ID_TRANG_LAO_DONG";
         public const string TRANG_THAI_HIEN_TAI = "TRANG_THAI_HIEN_TAI";
+        public const string LINK = "LINK";
     }
 
     public class GD_HOP_DONG
