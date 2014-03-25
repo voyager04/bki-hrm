@@ -57,7 +57,7 @@ namespace BKI_HRM.HeThong
                 v_us_ht_pq_detail.Insert();
             }
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
-            this.Close();
+         //   this.Close();
         }
 
         private void f994_phan_quyen_detail_Load(object sender, EventArgs e)
