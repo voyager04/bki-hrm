@@ -326,6 +326,7 @@ namespace BKI_HRM
 			set_define_events();
 			this.KeyPreview = true;
             m_txt_tim_kiem.ForeColor = Color.Gray;
+            m_cmd_update.Visible = false;
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_grv_trang_thai_ld);
