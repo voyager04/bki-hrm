@@ -33,7 +33,7 @@ namespace BKI_HRM {
         private Label m_lbl_so_nhan_vien;
         private Label label2;
         internal SiSButton m_cmd_search;
-        private TextBox m_txt_tim_kiem;
+        private TextBox m_txt_search;
         private Label m_lbl_tim_kiem;
         internal Panel m_pnl_out_place_dm;
         internal SiSButton m_cmd_xuat_excel;
@@ -79,17 +79,17 @@ namespace BKI_HRM {
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBoxComboBox1 = new Checkbox_Combobox.CheckBoxComboBox();
             this.m_lbl_thong_bao = new System.Windows.Forms.Label();
             this.m_lbl_so_nhan_vien = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
-            this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
+            this.m_txt_search = new System.Windows.Forms.TextBox();
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.checkBoxComboBox1 = new Checkbox_Combobox.CheckBoxComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -138,13 +138,24 @@ namespace BKI_HRM {
             this.panel1.Controls.Add(this.m_lbl_so_nhan_vien);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.m_cmd_search);
-            this.panel1.Controls.Add(this.m_txt_tim_kiem);
+            this.panel1.Controls.Add(this.m_txt_search);
             this.panel1.Controls.Add(this.m_lbl_tim_kiem);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1189, 95);
             this.panel1.TabIndex = 24;
+            // 
+            // checkBoxComboBox1
+            // 
+            checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.checkBoxComboBox1.CheckBoxProperties = checkBoxProperties1;
+            this.checkBoxComboBox1.DisplayMemberSingleItem = "";
+            this.checkBoxComboBox1.FormattingEnabled = true;
+            this.checkBoxComboBox1.Location = new System.Drawing.Point(1064, 68);
+            this.checkBoxComboBox1.Name = "checkBoxComboBox1";
+            this.checkBoxComboBox1.Size = new System.Drawing.Size(121, 22);
+            this.checkBoxComboBox1.TabIndex = 31;
             // 
             // m_lbl_thong_bao
             // 
@@ -188,15 +199,15 @@ namespace BKI_HRM {
             this.m_cmd_search.TabIndex = 2;
             this.m_cmd_search.Text = "Tìm kiếm";
             // 
-            // m_txt_tim_kiem
+            // m_txt_search
             // 
-            this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(266, 37);
-            this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
-            this.m_txt_tim_kiem.Size = new System.Drawing.Size(633, 20);
-            this.m_txt_tim_kiem.TabIndex = 1;
-            this.m_tooltip.SetToolTip(this.m_txt_tim_kiem, "Gợi ý tìm kiếm:\r\nGiới tính: nữ, đơn vị: Phòng hành chính\r\nhoặc Nguyễn Danh Tú, gi" +
+            this.m_txt_search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_txt_search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.m_txt_search.Location = new System.Drawing.Point(266, 37);
+            this.m_txt_search.Name = "m_txt_search";
+            this.m_txt_search.Size = new System.Drawing.Size(633, 20);
+            this.m_txt_search.TabIndex = 1;
+            this.m_tooltip.SetToolTip(this.m_txt_search, "Gợi ý tìm kiếm:\r\nGiới tính: nữ, đơn vị: Phòng hành chính\r\nhoặc Nguyễn Danh Tú, gi" +
                     "ới tính: Nam");
             // 
             // m_lbl_tim_kiem
@@ -232,7 +243,7 @@ namespace BKI_HRM {
             this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
             this.m_cmd_xuat_excel.Size = new System.Drawing.Size(118, 28);
-            this.m_cmd_xuat_excel.TabIndex = 12;
+            this.m_cmd_xuat_excel.TabIndex = 3;
             this.m_cmd_xuat_excel.Text = "Xuất Excel";
             // 
             // m_cmd_exit
@@ -249,19 +260,8 @@ namespace BKI_HRM {
             this.m_cmd_exit.Location = new System.Drawing.Point(1067, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(118, 28);
-            this.m_cmd_exit.TabIndex = 11;
+            this.m_cmd_exit.TabIndex = 4;
             this.m_cmd_exit.Text = "Thoát (Esc)";
-            // 
-            // checkBoxComboBox1
-            // 
-            checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxComboBox1.CheckBoxProperties = checkBoxProperties1;
-            this.checkBoxComboBox1.DisplayMemberSingleItem = "";
-            this.checkBoxComboBox1.FormattingEnabled = true;
-            this.checkBoxComboBox1.Location = new System.Drawing.Point(1064, 68);
-            this.checkBoxComboBox1.Name = "checkBoxComboBox1";
-            this.checkBoxComboBox1.Size = new System.Drawing.Size(121, 22);
-            this.checkBoxComboBox1.TabIndex = 31;
             // 
             // f103_bao_cao_tra_cuu_nhan_su
             // 
@@ -404,11 +404,11 @@ namespace BKI_HRM {
             load_data_2_grid();
             
         }
-        private void load_custom_source_2_m_txt_tim_kiem(DS_V_DM_DU_LIEU_NHAN_VIEN ip_ds) {
-            m_txt_tim_kiem.AutoCompleteMode = AutoCompleteMode.Suggest;
-            m_txt_tim_kiem.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        private void load_custom_source_2_m_txt_search() {
+            m_txt_search.AutoCompleteMode = AutoCompleteMode.Suggest;
+            m_txt_search.AutoCompleteSource = AutoCompleteSource.CustomSource;
             var v_coll = new AutoCompleteStringCollection();
-            var v_rows = ip_ds.Tables[0].Rows;
+            var v_rows =m_ds.Tables[0].Rows;
             for (var i = 0; i < v_rows.Count - 1; i++){
                 v_coll.Add(v_rows[i]["HO_DEM"]+"");
                 v_coll.Add(v_rows[i]["TEN"] + "");
@@ -417,7 +417,7 @@ namespace BKI_HRM {
                 v_coll.Add(v_rows[i]["HO_DEM"] + " - " + v_rows[i]["TEN"] + " - " + v_rows[i]["MA_NV"]);
                 v_coll.Add(v_rows[i]["TEN"] + " - " + v_rows[i]["HO_DEM"] + " " + v_rows[i]["TEN"] + " - " + v_rows[i]["MA_NV"]);
             }
-            m_txt_tim_kiem.AutoCompleteCustomSource = v_coll;
+            m_txt_search.AutoCompleteCustomSource = v_coll;
         }
         private ITransferDataRow get_trans_object(C1FlexGrid i_fg) {
             var v_htb = new Hashtable();
@@ -446,15 +446,15 @@ namespace BKI_HRM {
         }
         private void load_data_2_grid() {
             m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
-            if (m_txt_tim_kiem.Text.Equals(m_str_goi_y_tim_kiem)) {
-                m_txt_tim_kiem.Text = "";
+            if (m_txt_search.Text.Equals(m_str_goi_y_tim_kiem)) {
+                m_txt_search.Text = "";
             }
             if (m_e_form_mode == DataEntryFormMode.ViewDataState){
                 m_us.FillDatasetSapHetHanThuViec(m_ds, "");
                 m_so_luong_thu_viec_sap_het_han = m_ds.V_DM_DU_LIEU_NHAN_VIEN.Rows.Count;
             }
             else{
-                m_list_key_value = get_list_key_value(m_txt_tim_kiem.Text);
+                m_list_key_value = get_list_key_value(m_txt_search.Text);
                 refresh_key_value();
                 get_key_value_from_txt_search();
                 init_key_value();
@@ -496,7 +496,7 @@ namespace BKI_HRM {
                         , m_str_oderby_03
                     );
                 refresh_key_value();
-                load_custom_source_2_m_txt_tim_kiem(m_ds);
+                load_custom_source_2_m_txt_search();
             }
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;
@@ -730,16 +730,16 @@ namespace BKI_HRM {
          * Kết thúc Phần xử lý tìm kiếm
          */
         private void set_search_format_before() {
-            if (m_txt_tim_kiem.Text == "") {
-                m_txt_tim_kiem.Text = m_str_goi_y_tim_kiem;
-                m_txt_tim_kiem.ForeColor = Color.Gray;
+            if (m_txt_search.Text == "") {
+                m_txt_search.Text = m_str_goi_y_tim_kiem;
+                m_txt_search.ForeColor = Color.Gray;
             }
         }
         private void set_search_format_after() {
-            if (m_txt_tim_kiem.Text == m_str_goi_y_tim_kiem) {
-                m_txt_tim_kiem.Text = "";
+            if (m_txt_search.Text == m_str_goi_y_tim_kiem) {
+                m_txt_search.Text = "";
             }
-            m_txt_tim_kiem.ForeColor = Color.Black;
+            m_txt_search.ForeColor = Color.Black;
         }
         private void tao_tree() {
             // Group (subtotal) trên grid.
@@ -773,10 +773,9 @@ namespace BKI_HRM {
         private void set_define_events() {
             m_cmd_exit.Click += m_cmd_exit_Click;
             m_cmd_search.Click += m_cmd_search_Click;
-            m_txt_tim_kiem.KeyDown += m_txt_tim_kiem_KeyDown;
-            m_txt_tim_kiem.KeyPress += CheckEnterKeyPress;
-            m_txt_tim_kiem.MouseClick += m_txt_tim_kiem_MouseClick;
-            m_txt_tim_kiem.Leave += m_txt_tim_kiem_Leave;
+            m_txt_search.KeyDown += m_txt_search_KeyDown;
+            m_txt_search.MouseClick += m_txt_search_MouseClick;
+            m_txt_search.Leave += m_txt_search_Leave;
         }
 
         private void f103_bao_cao_tra_cuu_nhan_su_Load(object sender, EventArgs e) {
@@ -803,7 +802,7 @@ namespace BKI_HRM {
             }
         }
 
-        private void m_txt_tim_kiem_KeyDown(object sender, KeyEventArgs e) {
+        private void m_txt_search_KeyDown(object sender, KeyEventArgs e) {
             try {
                 if (e.KeyData == Keys.Enter) {
                     load_data_2_grid();
@@ -815,17 +814,7 @@ namespace BKI_HRM {
             }
         }
 
-        private void CheckEnterKeyPress(object sender, KeyPressEventArgs e) {
-            try {
-                if (e.KeyChar == (char)Keys.Return) {
-                    load_data_2_grid();
-                }
-            } catch (Exception v_e) {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void m_txt_tim_kiem_MouseClick(object sender, MouseEventArgs e) {
+        private void m_txt_search_MouseClick(object sender, MouseEventArgs e) {
             try {
                 set_search_format_after();
             } catch (Exception v_e) {
@@ -833,7 +822,7 @@ namespace BKI_HRM {
             }
         }
 
-        private void m_txt_tim_kiem_Leave(object sender, EventArgs e) {
+        private void m_txt_search_Leave(object sender, EventArgs e) {
             try {
                 set_search_format_before();
             } catch (Exception v_e) {

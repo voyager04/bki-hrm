@@ -38,7 +38,7 @@ namespace BKI_HRM {
         internal SiSButton m_cmd_exit;
         private Panel panel1;
         internal SiSButton m_cmd_search;
-        private TextBox m_txt_tim_kiem;
+        private TextBox m_txt_search;
         private Label m_lbl_tim_kiem;
         private Label m_lbl_so_luong_ban_ghi;
         private Label label2;
@@ -92,7 +92,7 @@ namespace BKI_HRM {
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
-            this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
+            this.m_txt_search = new System.Windows.Forms.TextBox();
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
@@ -155,7 +155,7 @@ namespace BKI_HRM {
             this.m_cmd_chon_don_vi.Location = new System.Drawing.Point(736, 4);
             this.m_cmd_chon_don_vi.Name = "m_cmd_chon_don_vi";
             this.m_cmd_chon_don_vi.Size = new System.Drawing.Size(97, 28);
-            this.m_cmd_chon_don_vi.TabIndex = 34;
+            this.m_cmd_chon_don_vi.TabIndex = 5;
             this.m_cmd_chon_don_vi.Text = "&Chọn đơn vị";
             this.m_cmd_chon_don_vi.Click += new System.EventHandler(this.m_cmd_chon_don_vi_Click);
             // 
@@ -257,7 +257,7 @@ namespace BKI_HRM {
             // 
             this.panel1.Controls.Add(this.m_lbl_so_luong_ban_ghi);
             this.panel1.Controls.Add(this.m_cmd_search);
-            this.panel1.Controls.Add(this.m_txt_tim_kiem);
+            this.panel1.Controls.Add(this.m_txt_search);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.m_lbl_tim_kiem);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -280,16 +280,16 @@ namespace BKI_HRM {
             this.m_cmd_search.TabIndex = 2;
             this.m_cmd_search.Text = "Tìm kiếm";
             // 
-            // m_txt_tim_kiem
+            // m_txt_search
             // 
-            this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_tim_kiem.ForeColor = System.Drawing.Color.DimGray;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(235, 16);
-            this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
-            this.m_txt_tim_kiem.Size = new System.Drawing.Size(653, 20);
-            this.m_txt_tim_kiem.TabIndex = 1;
-            this.m_tooltip.SetToolTip(this.m_txt_tim_kiem, "Tìm kiếm theo tên đơn vị, mã đơn vị");
+            this.m_txt_search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_txt_search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.m_txt_search.ForeColor = System.Drawing.Color.DimGray;
+            this.m_txt_search.Location = new System.Drawing.Point(235, 16);
+            this.m_txt_search.Name = "m_txt_search";
+            this.m_txt_search.Size = new System.Drawing.Size(653, 20);
+            this.m_txt_search.TabIndex = 1;
+            this.m_tooltip.SetToolTip(this.m_txt_search, "Tìm kiếm theo tên đơn vị, mã đơn vị");
             // 
             // m_lbl_tim_kiem
             // 
@@ -425,7 +425,7 @@ namespace BKI_HRM {
             }
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_grid();
-            //load_custom_source_2_m_txt_tim_kiem();
+            //load_custom_source_2_m_txt_search();
         }
         private ITransferDataRow get_trans_object(C1FlexGrid i_fg) {
             Hashtable v_htb = new Hashtable();
@@ -450,12 +450,11 @@ namespace BKI_HRM {
         }
         private void load_data_2_grid() {
             m_v_ds = new DS_V_DM_DON_VI();
-            var v_str_search = m_txt_tim_kiem.Text.Trim();
+            var v_str_search = m_txt_search.Text.Trim();
             if (v_str_search.Equals(m_str_goi_y_tim_kiem)) {
                 v_str_search = "";
             }
             m_v_us.FillDatasetByKeyWord(m_v_ds, v_str_search);
-            //m_v_us.FillDatasetByKeyWord(m_v_ds);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_v_ds, m_fg, m_obj_trans);
             // Group (subtotal) trên grid.
@@ -465,32 +464,28 @@ namespace BKI_HRM {
               , (int)e_col_Number.TEN_DON_VI             // Subtotal theo cột này
               , "{0}"
               );
+            load_custom_source_2_m_txt_search();
             m_fg.Redraw = true;
             set_search_format_before();
             /*Đếm số dòng dữ liệu trên Grid*/
             m_lbl_so_luong_ban_ghi.Text = m_v_ds.V_DM_DON_VI.Count.ToString();
         }
-        private void load_custom_source_2_m_txt_tim_kiem() {
-            //var v_str_search = m_txt_tim_kiem.Text.Trim();
-            //m_v_us.FillDatasetByKeyWordTop(m_v_ds, v_str_search);
-            var count = m_v_ds.Tables["V_DM_DON_VI"].Rows.Count;
-            for (var i = 0; i < count; i++) {
-                var dr = m_v_ds.Tables["V_DM_DON_VI"].Rows[i];
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["MA_DON_VI"].ToString().Trim());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TEN_DON_VI"].ToString().Trim());
-                //m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["MA_DON_VI"].ToString().Trim() + "-" + dr["TEN_DON_VI"].ToString().Trim());
-                //m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TEN_DON_VI"].ToString().Trim() + "-" + dr["MA_DON_VI"].ToString().Trim());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TEN_DON_VI_CAP_TREN"].ToString().Trim());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TEN_TIENG_ANH"].ToString().Trim());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["DIA_BAN"].ToString().Trim());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TRANG_THAI"].ToString().Trim());
+        private void load_custom_source_2_m_txt_search() {
+            m_txt_search.AutoCompleteMode = AutoCompleteMode.Suggest;
+            m_txt_search.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            var v_coll = new AutoCompleteStringCollection();
+            var v_rows = m_v_ds.Tables[0].Rows;
+            for (var i = 0; i < v_rows.Count - 1; i++) {
+                v_coll.Add(v_rows[i]["MA_DON_VI"] + "");
+                v_coll.Add(v_rows[i]["TEN_DON_VI"] + "");
+                v_coll.Add(v_rows[i]["TEN_DON_VI_CAP_TREN"] + " " );
+                v_coll.Add(v_rows[i]["TEN_TIENG_ANH"] + "");
+                v_coll.Add(v_rows[i]["DIA_BAN"]+"" );
+                v_coll.Add(v_rows[i]["TRANG_THAI"] +"");
+                v_coll.Add(v_rows[i]["LOAI_DON_VI"] + "");
             }
+            m_txt_search.AutoCompleteCustomSource = v_coll;
         }
-        //private void grid2us_object(US_DM_DON_VI i_us, int i_grid_row) {
-        //    DataRow v_dr;
-        //    v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
-        //    i_us = new US_DM_DON_VI((decimal)v_dr.ItemArray[0]);
-        //}
         private void grid2us_object(int i_grid_row) {
             DataRow v_dr;
             v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
@@ -549,24 +544,19 @@ namespace BKI_HRM {
             }
         }
         private void set_search_format_before() {
-            if (m_txt_tim_kiem.Text == "") {
-                m_txt_tim_kiem.Text = m_str_goi_y_tim_kiem;
-                m_txt_tim_kiem.ForeColor = Color.Gray;
+            if (m_txt_search.Text == "") {
+                m_txt_search.Text = m_str_goi_y_tim_kiem;
+                m_txt_search.ForeColor = Color.Gray;
             }
         }
         private void set_search_format_after() {
-            if (m_txt_tim_kiem.Text == m_str_goi_y_tim_kiem) {
-                m_txt_tim_kiem.Text = "";
+            if (m_txt_search.Text == m_str_goi_y_tim_kiem) {
+                m_txt_search.Text = "";
             }
-            m_txt_tim_kiem.ForeColor = Color.Black;
+            m_txt_search.ForeColor = Color.Black;
         }
-        private void set_m_fg_DoubleClick(object sender, EventArgs e) {
-            /**
-             * Double Click vào dòng group thì nó đóng mở
-             * */
-            if (m_fg.Rows[m_fg.Row].IsNode) CGridUtils.grid_Double_Click(sender, e);
-            else update_v_dm_don_vi();
-        }
+        
+        
         #endregion
 
         //
@@ -581,11 +571,9 @@ namespace BKI_HRM {
             m_cmd_update.Click += m_cmd_update_Click;
             m_cmd_delete.Click += m_cmd_delete_Click;
             m_cmd_search.Click += m_cmd_search_Click;
-            m_txt_tim_kiem.KeyPress += CheckEnterKeyPress;
-            m_txt_tim_kiem.KeyDown += m_txt_tim_kiem_KeyDown;
-            m_txt_tim_kiem.MouseClick += m_txt_tim_kiem_MouseClick;
-            m_txt_tim_kiem.Leave += m_txt_tim_kiem_Leave;
-            m_txt_tim_kiem.TextChanged += m_txt_tim_kiem_TextChanged;
+            m_txt_search.KeyDown += m_txt_search_KeyDown;
+            m_txt_search.MouseClick += m_txt_search_MouseClick;
+            m_txt_search.Leave += m_txt_search_Leave;
         }
 
         private void f101_v_dm_don_vi_Load(object sender, EventArgs e) {
@@ -637,17 +625,15 @@ namespace BKI_HRM {
             }
         }
 
-        private void CheckEnterKeyPress(object sender, KeyPressEventArgs e) {
+        private void m_cmd_chon_don_vi_Click(object sender, EventArgs e) {
             try {
-                if (e.KeyChar == (char)Keys.Return) {
-                    load_data_2_grid();
-                }
+                select_data_2_us();
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
-        private void m_txt_tim_kiem_KeyDown(object sender, KeyEventArgs e) {
+        private void m_txt_search_KeyDown(object sender, KeyEventArgs e) {
             try {
                 if (e.KeyData == Keys.Enter) {
                     load_data_2_grid();
@@ -659,7 +645,7 @@ namespace BKI_HRM {
             }
         }
 
-        private void m_txt_tim_kiem_MouseClick(object sender, MouseEventArgs e) {
+        private void m_txt_search_MouseClick(object sender, MouseEventArgs e) {
             try {
                 set_search_format_after();
             } catch (Exception v_e) {
@@ -667,30 +653,14 @@ namespace BKI_HRM {
             }
         }
 
-        private void m_txt_tim_kiem_Leave(object sender, EventArgs e) {
+        private void m_txt_search_Leave(object sender, EventArgs e) {
             try {
                 set_search_format_before();
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
-        private void m_txt_tim_kiem_TextChanged(object sender, EventArgs e) {
-            try {
-
-            } catch (Exception v_e) {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void m_cmd_chon_don_vi_Click(object sender, EventArgs e) {
-            try {
-                select_data_2_us();
-            } catch (Exception v_e) {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-        
+    
     }
 }
 

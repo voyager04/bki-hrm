@@ -27,19 +27,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f104_bao_cao_nhan_su_theo_phong_ban));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.m_lbl_thong_bao = new System.Windows.Forms.Label();
             this.m_lbl_thoidiem = new System.Windows.Forms.Label();
             this.m_dtp_thoidiem = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_so_luong_ban_ghi = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
-            this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
+            this.m_txt_search = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_lbl_thong_bao = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -80,13 +80,22 @@
             this.panel2.Controls.Add(this.m_lbl_so_luong_ban_ghi);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.m_cmd_search);
-            this.panel2.Controls.Add(this.m_txt_tim_kiem);
+            this.panel2.Controls.Add(this.m_txt_search);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1189, 76);
             this.panel2.TabIndex = 25;
+            // 
+            // m_lbl_thong_bao
+            // 
+            this.m_lbl_thong_bao.AutoSize = true;
+            this.m_lbl_thong_bao.Location = new System.Drawing.Point(13, 5);
+            this.m_lbl_thong_bao.Name = "m_lbl_thong_bao";
+            this.m_lbl_thong_bao.Size = new System.Drawing.Size(116, 14);
+            this.m_lbl_thong_bao.TabIndex = 37;
+            this.m_lbl_thong_bao.Text = "Thông báo - cảnh báo ";
             // 
             // m_lbl_thoidiem
             // 
@@ -104,7 +113,7 @@
             this.m_dtp_thoidiem.Location = new System.Drawing.Point(844, 31);
             this.m_dtp_thoidiem.Name = "m_dtp_thoidiem";
             this.m_dtp_thoidiem.Size = new System.Drawing.Size(99, 20);
-            this.m_dtp_thoidiem.TabIndex = 35;
+            this.m_dtp_thoidiem.TabIndex = 2;
             // 
             // m_lbl_so_luong_ban_ghi
             // 
@@ -135,18 +144,18 @@
             this.m_cmd_search.Location = new System.Drawing.Point(961, 26);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_search.TabIndex = 2;
+            this.m_cmd_search.TabIndex = 3;
             this.m_cmd_search.Text = "Tìm kiếm";
             // 
-            // m_txt_tim_kiem
+            // m_txt_search
             // 
-            this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(226, 29);
-            this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
-            this.m_txt_tim_kiem.Size = new System.Drawing.Size(541, 20);
-            this.m_txt_tim_kiem.TabIndex = 1;
-            this.m_tooltip.SetToolTip(this.m_txt_tim_kiem, "Nhập Tên hoặc Mã sô phòng ban, trung tâm, khối để tìm kiếm");
+            this.m_txt_search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_txt_search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.m_txt_search.Location = new System.Drawing.Point(226, 29);
+            this.m_txt_search.Name = "m_txt_search";
+            this.m_txt_search.Size = new System.Drawing.Size(541, 20);
+            this.m_txt_search.TabIndex = 1;
+            this.m_tooltip.SetToolTip(this.m_txt_search, "Nhập Tên hoặc Mã sô phòng ban, trung tâm, khối để tìm kiếm");
             // 
             // label6
             // 
@@ -181,7 +190,7 @@
             this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
             this.m_cmd_xuat_excel.Size = new System.Drawing.Size(118, 28);
-            this.m_cmd_xuat_excel.TabIndex = 12;
+            this.m_cmd_xuat_excel.TabIndex = 4;
             this.m_cmd_xuat_excel.Text = "Xuất Excel";
             // 
             // m_cmd_exit
@@ -198,7 +207,7 @@
             this.m_cmd_exit.Location = new System.Drawing.Point(1067, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(118, 28);
-            this.m_cmd_exit.TabIndex = 11;
+            this.m_cmd_exit.TabIndex = 5;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // m_fg
@@ -210,15 +219,6 @@
             this.m_fg.Size = new System.Drawing.Size(1189, 460);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 33;
-            // 
-            // m_lbl_thong_bao
-            // 
-            this.m_lbl_thong_bao.AutoSize = true;
-            this.m_lbl_thong_bao.Location = new System.Drawing.Point(13, 5);
-            this.m_lbl_thong_bao.Name = "m_lbl_thong_bao";
-            this.m_lbl_thong_bao.Size = new System.Drawing.Size(116, 14);
-            this.m_lbl_thong_bao.TabIndex = 37;
-            this.m_lbl_thong_bao.Text = "Thông báo - cảnh báo ";
             // 
             // f104_bao_cao_nhan_su_theo_phong_ban
             // 
@@ -249,7 +249,7 @@
         private System.Windows.Forms.Label m_lbl_so_luong_ban_ghi;
         private System.Windows.Forms.Label label4;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
-        private System.Windows.Forms.TextBox m_txt_tim_kiem;
+        private System.Windows.Forms.TextBox m_txt_search;
         private System.Windows.Forms.Label label6;
         internal System.Windows.Forms.ImageList ImageList;
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;

@@ -88,18 +88,24 @@ namespace BKI_HRM {
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_grid();
             set_search_format_before();
-            //load_custom_source_2_m_txt_tim_kiem();
+            load_custom_source_2_m_txt_search();
         }
-        private void load_custom_source_2_m_txt_tim_kiem() {
-            var count = m_ds.Tables["V_GD_QUA_TRINH_LAM_VIEC"].Rows.Count;
-            for (var i = 0; i < count; i++) {
-                var dr = m_ds.Tables["V_GD_QUA_TRINH_LAM_VIEC"].Rows[i];
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["MA_DON_VI"] + " - " + dr["TEN_DON_VI"]);
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TEN_DON_VI"] + " - " + dr["MA_DON_VI"]);
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["HO_DEM"] + " " + dr["TEN"]);
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["TEN_CV"].ToString());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr["LOAI_DON_VI"].ToString());
+
+        private void load_custom_source_2_m_txt_search() {
+            m_txt_search.AutoCompleteMode = AutoCompleteMode.Suggest;
+            m_txt_search.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            var v_coll = new AutoCompleteStringCollection();
+            var v_rows = m_ds.Tables[0].Rows;
+            for (var i = 0; i < v_rows.Count - 1; i++) {
+                v_coll.Add(v_rows[i]["MA_DON_VI"] + "");
+                v_coll.Add(v_rows[i]["HO_DEM"] + "");
+                v_coll.Add(v_rows[i]["TEN"] + "");
+                v_coll.Add(v_rows[i]["HO_DEM"] + " " + v_rows[i]["TEN"]);
+                v_coll.Add(v_rows[i]["TEN_CV"] + "");
+                v_coll.Add(v_rows[i]["HO_DEM"] + " - " + v_rows[i]["TEN"] + " - " + v_rows[i]["MA_NV"]);
+                v_coll.Add(v_rows[i]["TEN"] + " - " + v_rows[i]["HO_DEM"] + " " + v_rows[i]["TEN"] + " - " + v_rows[i]["MA_NV"]);
             }
+            m_txt_search.AutoCompleteCustomSource = v_coll;
         }
         private ITransferDataRow get_trans_object(C1FlexGrid i_fg) {
             Hashtable v_htb = new Hashtable();
@@ -122,7 +128,7 @@ namespace BKI_HRM {
         }
         private void load_data_2_grid() {
             m_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC();
-            var v_str_search = m_txt_tim_kiem.Text.Trim();
+            var v_str_search = m_txt_search.Text.Trim();
             if (v_str_search.Equals(m_str_goi_y_tim_kiem)) {
                 v_str_search = "";
             }
@@ -138,8 +144,8 @@ namespace BKI_HRM {
              */
             m_fg.Subtotal(AggregateEnum.Count
               , 0
-              , (int)e_col_Number.TEN_DON_VI   // Group theo cột này
-              , (int)e_col_Number.MA_NV    // Subtotal theo cột này
+              , (int)e_col_Number.TEN_DON_VI    // Group theo cột này
+              , (int)e_col_Number.MA_NV         // Subtotal theo cột này
               , "{0}"
               );
             m_fg.Redraw = true;
@@ -148,19 +154,19 @@ namespace BKI_HRM {
              */
             m_lbl_so_luong_ban_ghi.Text = m_ds.V_GD_QUA_TRINH_LAM_VIEC.Count.ToString();
 
-            m_lbl_thong_bao.Text = m_fg.ColumnInfo;
+           // m_lbl_thong_bao.Text = m_fg.ColumnInfo;
         }
         private void set_search_format_before() {
-            if (m_txt_tim_kiem.Text == "") {
-                m_txt_tim_kiem.Text = m_str_goi_y_tim_kiem;
-                m_txt_tim_kiem.ForeColor = Color.Gray;
+            if (m_txt_search.Text == "") {
+                m_txt_search.Text = m_str_goi_y_tim_kiem;
+                m_txt_search.ForeColor = Color.Gray;
             }
         }
         private void set_search_format_after() {
-            if (m_txt_tim_kiem.Text == m_str_goi_y_tim_kiem) {
-                m_txt_tim_kiem.Text = "";
+            if (m_txt_search.Text == m_str_goi_y_tim_kiem) {
+                m_txt_search.Text = "";
             }
-            m_txt_tim_kiem.ForeColor = Color.Black;
+            m_txt_search.ForeColor = Color.Black;
         }
         
         #endregion
@@ -173,11 +179,10 @@ namespace BKI_HRM {
 
         private void set_define_events() {
             m_cmd_exit.Click += m_cmd_exit_Click;
-            m_txt_tim_kiem.KeyPress += CheckEnterKeyPress;
-            m_txt_tim_kiem.KeyDown += m_txt_tim_kiem_KeyDown;
             m_cmd_search.Click += m_cmd_search_Click;
-            m_txt_tim_kiem.MouseClick += m_txt_tim_kiem_MouseClick;
-            m_txt_tim_kiem.Leave += m_txt_tim_kiem_Leave;
+            m_txt_search.KeyDown += m_txt_search_KeyDown;
+            m_txt_search.MouseClick += m_txt_search_MouseClick;
+            m_txt_search.Leave += m_txt_search_Leave;
         }
 
         private void f104_bao_cao_nhan_su_theo_phong_ban_Load(object sender, EventArgs e) {
@@ -197,17 +202,15 @@ namespace BKI_HRM {
             }
         }
 
-        private void CheckEnterKeyPress(object sender, KeyPressEventArgs e) {
+        private void m_cmd_search_Click(object sender, EventArgs e) {
             try {
-                if (e.KeyChar == (char)Keys.Return) {
-                    load_data_2_grid();
-                }
+                load_data_2_grid();
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
-        private void m_txt_tim_kiem_KeyDown(object sender, KeyEventArgs e) {
+        
+        private void m_txt_search_KeyDown(object sender, KeyEventArgs e) {
             try {
                 if (e.KeyData == Keys.Enter) {
                     load_data_2_grid();
@@ -219,15 +222,7 @@ namespace BKI_HRM {
             }
         }
 
-        private void m_cmd_search_Click(object sender, EventArgs e) {
-            try {
-                load_data_2_grid();
-            } catch (Exception v_e) {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void m_txt_tim_kiem_MouseClick(object sender, MouseEventArgs e) {
+        private void m_txt_search_MouseClick(object sender, MouseEventArgs e) {
             try {
                 set_search_format_after();
             } catch (Exception v_e) {
@@ -235,13 +230,12 @@ namespace BKI_HRM {
             }
         }
 
-        private void m_txt_tim_kiem_Leave(object sender, EventArgs e) {
+        private void m_txt_search_Leave(object sender, EventArgs e) {
             try {
                 set_search_format_before();
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
     }
 }
