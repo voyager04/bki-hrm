@@ -216,6 +216,7 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(223, 20);
             this.m_txt_tim_kiem.TabIndex = 35;
             this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
+            this.m_txt_tim_kiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.m_txt_tim_kiem_KeyDown);
             this.m_txt_tim_kiem.Leave += new System.EventHandler(this.m_txt_tim_kiem_Leave);
             // 
             // m_lbl_soluongns
@@ -302,7 +303,7 @@ namespace BKI_HRM
 			m_obj_trans = get_trans_object(m_fg);
             m_txt_tim_kiem.Text = "";
             load_data_2_grid_search();
-            m_txt_tim_kiem.Text = "Nhập mã chức vụ";
+            m_txt_tim_kiem.Text = "Nhập mã cấp bậc";
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -377,12 +378,14 @@ namespace BKI_HRM
         {
             //m_v_us.FillDataset(m_v_ds);
             int count = m_ds.Tables["V_GD_CHI_TIET_CAP_BAC"].Rows.Count;
-            for (int i = 0; i < count; i++)
+            AutoCompleteStringCollection v_acsc_search = new AutoCompleteStringCollection();
+            foreach (DataRow dr in m_ds.V_GD_CHI_TIET_CAP_BAC)
             {
-                DataRow dr = m_ds.Tables["V_GD_CHI_TIET_CAP_BAC"].Rows[i];
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[8].ToString());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[7].ToString());
+                v_acsc_search.Add(dr[V_GD_CHI_TIET_CAP_BAC.MA_BAC].ToString());
+                v_acsc_search.Add(dr[V_GD_CHI_TIET_CAP_BAC.MA_BAC].ToString() + " - " + dr[V_GD_CHI_TIET_CAP_BAC.MA_CAP].ToString());
+
             }
+            m_txt_tim_kiem.AutoCompleteCustomSource = v_acsc_search;
         }
 		#endregion
 
@@ -450,6 +453,22 @@ namespace BKI_HRM
             {
                 if (m_txt_tim_kiem.Text.Trim() == "")
                     m_txt_tim_kiem.Text = "Nhập mã cấp bậc";
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_txt_tim_kiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Enter)
+                {
+                    load_data_2_grid_search();
+
+                }
             }
             catch (Exception v_e)
             {

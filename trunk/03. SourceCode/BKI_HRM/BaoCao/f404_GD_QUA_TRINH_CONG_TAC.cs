@@ -197,6 +197,9 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(437, 20);
             this.m_txt_tim_kiem.TabIndex = 33;
+            this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
+            this.m_txt_tim_kiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.m_txt_tim_kiem_KeyDown);
+            this.m_txt_tim_kiem.Leave += new System.EventHandler(this.m_txt_tim_kiem_Leave);
             // 
             // m_ckb_chucvu
             // 
@@ -312,7 +315,9 @@ namespace BKI_HRM
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
-			load_data_2_grid();		
+            m_txt_tim_kiem.Text = "";
+			load_data_2_grid();
+            m_txt_tim_kiem.Text = "Nhập mã nhân viên, họ đệm, tên";
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -382,6 +387,21 @@ namespace BKI_HRM
             else
                 m_str_lua_chon = "CAD";
         }
+        private void load_custom_source_2_m_txt_tim_kiem()
+        {
+            //m_v_us.FillDataset(m_v_ds);
+            int count = m_ds.Tables["GD_QUA_TRINH_CONG_TAC"].Rows.Count;
+            AutoCompleteStringCollection v_acsc_search = new AutoCompleteStringCollection();
+            foreach (DataRow dr in m_ds.GD_QUA_TRINH_CONG_TAC)
+            {
+                v_acsc_search.Add(dr[GD_QUA_TRINH_CONG_TAC.MA_NV].ToString());
+                v_acsc_search.Add(dr[GD_QUA_TRINH_CONG_TAC.TEN].ToString());
+                v_acsc_search.Add(dr[GD_QUA_TRINH_CONG_TAC.HO_DEM].ToString());
+                v_acsc_search.Add(dr[GD_QUA_TRINH_CONG_TAC.HO_DEM].ToString() + " " + dr[GD_QUA_TRINH_CONG_TAC.TEN].ToString());
+
+            }
+            m_txt_tim_kiem.AutoCompleteCustomSource = v_acsc_search;
+        }
 
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
@@ -398,6 +418,7 @@ namespace BKI_HRM
 		private void f404_GD_QUA_TRINH_CONG_TAC_Load(object sender, System.EventArgs e) {
 			try{
 				set_initial_form_load();
+                load_custom_source_2_m_txt_tim_kiem();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
@@ -427,8 +448,16 @@ namespace BKI_HRM
         {
             try
             {
-                what_is_checked();
+                if (m_txt_tim_kiem.Text.Trim() == "Nhập mã nhân viên, họ đệm, tên")
+                {
+                    m_txt_tim_kiem.Text = "";
+                    what_is_checked();
                     load_data_2_grid();
+                    m_txt_tim_kiem.Text = "Nhập mã nhân viên, họ đệm, tên";
+                }
+                else
+                    what_is_checked();
+                load_data_2_grid();
             }
             catch (Exception v_e)
             {
@@ -468,6 +497,41 @@ namespace BKI_HRM
             {
                 what_is_checked();
                 load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_txt_tim_kiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Enter)
+                {
+                    load_data_2_grid();
+
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+
+        }
+
+        private void m_txt_tim_kiem_MouseClick(object sender, MouseEventArgs e)
+        {
+            m_txt_tim_kiem.Text = "";
+        }
+
+        private void m_txt_tim_kiem_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_txt_tim_kiem.Text.Trim() == "")
+                    m_txt_tim_kiem.Text = "Nhập mã nhân viên, họ đệm, tên";
             }
             catch (Exception v_e)
             {
