@@ -180,5 +180,12 @@ public class US_CM_DM_TU_DIEN : US_Object
         v_sp.addDecimalInputParam("@ID_LOAI_TD", i_dc_id_loai_tu_dien);
         v_sp.fillDataSetByCommand(this, v_ds_cm_dm_td);
     }
+    public void FillDataset_load_loai_quyet_dinh(DS_CM_DM_TU_DIEN v_op_ds, string i_str_loai, string i_str_mien_nhiem_yn)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_CM_DM_TU_DIEN_Load_loai_quyet_dinh");
+        v_sp.addNVarcharInputParam("@LOAI", i_str_loai);
+        v_sp.addNVarcharInputParam("@MIEN_NHIEM_YN", i_str_mien_nhiem_yn);
+        v_sp.fillDataSetByCommand(this, v_op_ds);
+    }
 }
 }
