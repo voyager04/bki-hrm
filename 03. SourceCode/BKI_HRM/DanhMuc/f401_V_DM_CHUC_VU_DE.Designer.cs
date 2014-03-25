@@ -162,7 +162,7 @@
             // m_dat_ngayapdung
             // 
             this.m_dat_ngayapdung.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_ngayapdung.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_ngayapdung.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngayapdung.Location = new System.Drawing.Point(389, 54);
             this.m_dat_ngayapdung.Name = "m_dat_ngayapdung";
             this.m_dat_ngayapdung.ShowCheckBox = true;
@@ -172,7 +172,7 @@
             // m_dat_ngayketthuc
             // 
             this.m_dat_ngayketthuc.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_ngayketthuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_ngayketthuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngayketthuc.Location = new System.Drawing.Point(599, 54);
             this.m_dat_ngayketthuc.Name = "m_dat_ngayketthuc";
             this.m_dat_ngayketthuc.ShowCheckBox = true;
