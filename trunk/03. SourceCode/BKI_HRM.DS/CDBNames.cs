@@ -641,4 +641,13 @@
        public const string FORM_NAME = "FORM_NAME";
        public const string DISPLAY_NAME = "DISPLAY_NAME";
    }
+   public class DM_HEADCOUNT
+   {
+       public const string ID = "ID";
+       public const string MA_HEADCOUNT = "MA_HEADCOUNT";
+       public const string TRANG_THAI = "TRANG_THAI";
+       public const string ACTIONS = "ACTIONS";
+       public const string MO_TA = "MO_TA";
+   }
+
 }

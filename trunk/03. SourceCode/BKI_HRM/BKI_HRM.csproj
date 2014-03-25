@@ -118,6 +118,9 @@
     <Compile Include="DanhMuc\f201_dm_nhan_su_de.Designer.cs">
       <DependentUpon>f201_dm_nhan_su_de.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\f204_dm_headcount.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DanhMuc\f401_V_DM_CHUC_VU_DE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -317,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f201_dm_nhan_su_de.resx">
       <DependentUpon>f201_dm_nhan_su_de.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f204_dm_headcount.resx">
+      <DependentUpon>f204_dm_headcount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f401_V_DM_CHUC_VU_DE.resx">
       <DependentUpon>f401_V_DM_CHUC_VU_DE.cs</DependentUpon>
