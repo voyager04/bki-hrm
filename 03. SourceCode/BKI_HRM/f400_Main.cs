@@ -420,5 +420,18 @@ namespace BKI_HRM {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_menuitem_headcount_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f204_dm_headcount frm = new f204_dm_headcount();
+                frm.display();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 } 

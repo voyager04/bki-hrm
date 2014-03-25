@@ -94,6 +94,7 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hop_dong_sap_het_han = new System.Windows.Forms.Label();
             this.m_lbl_thu_viec_sap_het_han = new System.Windows.Forms.Label();
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky = new System.Windows.Forms.Label();
+            this.m_menuitem_headcount = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -209,7 +210,8 @@ namespace BKI_HRM
             this.m_menuitem_qlphapnhan,
             this.m_menuitem_qlquyetdinh,
             this.m_menuitem_qlcoche,
-            this.m_menuitem_qllevel});
+            this.m_menuitem_qllevel,
+            this.m_menuitem_headcount});
             this.m_menuitem_danhmuc.Name = "m_menuitem_danhmuc";
             this.m_menuitem_danhmuc.Size = new System.Drawing.Size(74, 20);
             this.m_menuitem_danhmuc.Text = "Danh mục";
@@ -570,7 +572,7 @@ namespace BKI_HRM
             this.m_lbl_du_an_sap_kt.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_lbl_du_an_sap_kt.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_du_an_sap_kt.ForeColor = System.Drawing.Color.Red;
-            this.m_lbl_du_an_sap_kt.Location = new System.Drawing.Point(0, 427);
+            this.m_lbl_du_an_sap_kt.Location = new System.Drawing.Point(0, 395);
             this.m_lbl_du_an_sap_kt.Name = "m_lbl_du_an_sap_kt";
             this.m_lbl_du_an_sap_kt.Size = new System.Drawing.Size(287, 18);
             this.m_lbl_du_an_sap_kt.TabIndex = 2;
@@ -584,7 +586,7 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold);
             this.m_lbl_thong_bao_hop_dong_sap_het_han.ForeColor = System.Drawing.Color.Red;
-            this.m_lbl_thong_bao_hop_dong_sap_het_han.Location = new System.Drawing.Point(0, 409);
+            this.m_lbl_thong_bao_hop_dong_sap_het_han.Location = new System.Drawing.Point(0, 377);
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Name = "m_lbl_thong_bao_hop_dong_sap_het_han";
             this.m_lbl_thong_bao_hop_dong_sap_het_han.Size = new System.Drawing.Size(243, 18);
             this.m_lbl_thong_bao_hop_dong_sap_het_han.TabIndex = 3;
@@ -598,7 +600,7 @@ namespace BKI_HRM
             this.m_lbl_thu_viec_sap_het_han.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_lbl_thu_viec_sap_het_han.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold);
             this.m_lbl_thu_viec_sap_het_han.ForeColor = System.Drawing.Color.Red;
-            this.m_lbl_thu_viec_sap_het_han.Location = new System.Drawing.Point(0, 391);
+            this.m_lbl_thu_viec_sap_het_han.Location = new System.Drawing.Point(0, 359);
             this.m_lbl_thu_viec_sap_het_han.Name = "m_lbl_thu_viec_sap_het_han";
             this.m_lbl_thu_viec_sap_het_han.Size = new System.Drawing.Size(236, 18);
             this.m_lbl_thu_viec_sap_het_han.TabIndex = 4;
@@ -612,20 +614,27 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold);
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.ForeColor = System.Drawing.Color.Red;
-            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Location = new System.Drawing.Point(0, 373);
+            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Location = new System.Drawing.Point(0, 341);
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Name = "m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky";
-            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Size = new System.Drawing.Size(346, 18);
+            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Size = new System.Drawing.Size(345, 18);
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.TabIndex = 5;
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text = "Danh sách Hợp đồng đã hết hạn nhưng chưa ký";
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Click += new System.EventHandler(this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky_Click);
             // 
+            // m_menuitem_headcount
+            // 
+            this.m_menuitem_headcount.Name = "m_menuitem_headcount";
+            this.m_menuitem_headcount.Size = new System.Drawing.Size(206, 22);
+            this.m_menuitem_headcount.Text = "Quản lý Headcount";
+            this.m_menuitem_headcount.Click += new System.EventHandler(this.m_menuitem_headcount_Click);
+            // 
             // f400_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BKI_HRM.Properties.Resources.Human_resources_management_v2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(835, 445);
+            this.ClientSize = new System.Drawing.Size(835, 413);
             this.Controls.Add(this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky);
             this.Controls.Add(this.m_lbl_thu_viec_sap_het_han);
             this.Controls.Add(this.m_lbl_thong_bao_hop_dong_sap_het_han);
@@ -711,5 +720,6 @@ namespace BKI_HRM
         private ToolStripMenuItem m_menuitem_phan_quyen_chi_tiet;
         private ToolStripMenuItem m_menuitem_phan_quyen_he_thong;
         private ToolStripMenuItem m_menuitem_dm_control;
+        private ToolStripMenuItem m_menuitem_headcount;
     }
 }

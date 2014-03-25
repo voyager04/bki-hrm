@@ -71,6 +71,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_DM_DU_AN.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_DM_HEADCOUNT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_DM_HEADCOUNT.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_DM_NHAN_SU.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -281,6 +286,17 @@
     </None>
     <None Include="DS_DM_DU_AN.xss">
       <DependentUpon>DS_DM_DU_AN.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_HEADCOUNT.xsc">
+      <DependentUpon>DS_DM_HEADCOUNT.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_HEADCOUNT.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_DM_HEADCOUNT.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_DM_HEADCOUNT.xss">
+      <DependentUpon>DS_DM_HEADCOUNT.xsd</DependentUpon>
     </None>
     <None Include="DS_DM_NHAN_SU.xsc">
       <DependentUpon>DS_DM_NHAN_SU.xsd</DependentUpon>
