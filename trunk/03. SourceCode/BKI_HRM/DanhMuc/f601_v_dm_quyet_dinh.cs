@@ -316,7 +316,7 @@ namespace BKI_HRM
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
         DS_V_DM_QUYET_DINH m_ds = new DS_V_DM_QUYET_DINH();
         US_V_DM_QUYET_DINH m_us = new US_V_DM_QUYET_DINH();
-        private const String m_str_tim_kiem = "Nhập thông tin cần tìm kiếm";
+        private const String m_str_tim_kiem = "Nhập loại quyết định, mã quyết định, nội dung cần tìm";
 
         #endregion
 
@@ -397,6 +397,7 @@ namespace BKI_HRM
                 m_txt_tim_kiem.Text = m_str_tim_kiem;
                 m_txt_tim_kiem.ForeColor = Color.Gray;
             }
+            
         }
         private void set_search_format_after()
         {
@@ -491,7 +492,10 @@ namespace BKI_HRM
             m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
             m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-            m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            //m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_txt_tim_kiem.KeyDown += m_txt_tim_kiem_KeyDown;
+            m_txt_tim_kiem.MouseClick+= m_txt_tim_kiem_MouseClick;
+            m_txt_tim_kiem.Leave += m_txt_tim_kiem_Leave;
         }
         #endregion
 
@@ -576,12 +580,7 @@ namespace BKI_HRM
 
         private void m_cmd_search_Click(object sender, EventArgs e)
         {
-            //m_obj_trans = get_trans_object(m_grv_dm_quyet_dinh);
-            //m_ds.Clear();
-            //m_us.FillDatasetSearch(m_ds, m_txt_tim_kiem.Text);
-            //m_grv_dm_quyet_dinh.Redraw = false;
-            //CGridUtils.Dataset2C1Grid(m_ds, m_grv_dm_quyet_dinh, m_obj_trans);
-            //m_grv_dm_quyet_dinh.Redraw = true;
+            
             try
             {
                 load_data_2_grid();
@@ -595,16 +594,44 @@ namespace BKI_HRM
 
         private void m_txt_tim_kiem_MouseClick(object sender, MouseEventArgs e)
         {
-            m_txt_tim_kiem.Text = "";
+            try
+            {
+                set_search_format_after();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
-        //private void m_txt_tim_kiem_Leave(object sender, EventArgs e)
-        //{
-        //    if (m_txt_tim_kiem.Text == "")
-        //    {
-        //        m_txt_tim_kiem.Text = "Nhập mã quyết định";
-        //    }
-        //}
-
+        private void m_txt_tim_kiem_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                set_search_format_before();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_txt_tim_kiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Enter)
+                {
+                    load_data_2_grid();
+                }
+                else
+                {
+                    set_search_format_after();
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         private void m_grv_dm_quyet_dinh_KeyDown(object sender, KeyEventArgs e)
         {
             try
