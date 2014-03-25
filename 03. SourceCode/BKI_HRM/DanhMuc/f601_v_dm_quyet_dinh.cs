@@ -44,6 +44,7 @@ namespace BKI_HRM
         private TextBox m_txt_tim_kiem;
         private Label m_lbl_tim_kiem;
         private C1.Win.C1FlexGrid.C1FlexGrid m_grv_dm_quyet_dinh;
+        private ToolTip m_tooltip;
 
         private System.ComponentModel.IContainer components;
 
@@ -96,6 +97,7 @@ namespace BKI_HRM
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
             this.m_grv_dm_quyet_dinh = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_quyet_dinh)).BeginInit();
             this.SuspendLayout();
@@ -239,7 +241,8 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(352, 20);
             this.m_txt_tim_kiem.TabIndex = 32;
-            this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
+            
+            
             // 
             // m_lbl_tim_kiem
             // 
@@ -370,8 +373,8 @@ namespace BKI_HRM
         private void load_data_2_grid()
         {
             m_ds = new DS_V_DM_QUYET_DINH();
-            
-            m_us.FillDatasetSearch(m_ds, m_txt_tim_kiem.Text.Trim());
+            if (m_txt_tim_kiem.Text.Trim() == m_str_tim_kiem || m_txt_tim_kiem.Text.Trim()=="") m_us.FillDataset(m_ds);
+            else m_us.FillDatasetSearch(m_ds, m_txt_tim_kiem.Text.Trim());
             //m_us.FillDataset(m_ds);
             var v_str_search = m_txt_tim_kiem.Text.Trim();
             if (v_str_search.Equals(m_str_tim_kiem))
