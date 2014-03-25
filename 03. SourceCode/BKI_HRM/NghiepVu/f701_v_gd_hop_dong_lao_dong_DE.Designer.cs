@@ -67,6 +67,7 @@
             this.m_cbo_loai_hop_dong = new System.Windows.Forms.ComboBox();
             this.m_cbo_phap_nhan = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.m_cmd_refresh = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -115,6 +116,7 @@
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_refresh);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_word);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
@@ -465,6 +467,22 @@
             this.label7.TabIndex = 118;
             this.label7.Text = "Pháp nhân";
             // 
+            // m_cmd_refresh
+            // 
+            this.m_cmd_refresh.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_refresh.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_refresh.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_refresh.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_refresh.ImageIndex = 9;
+            this.m_cmd_refresh.ImageList = this.ImageList;
+            this.m_cmd_refresh.Location = new System.Drawing.Point(786, 4);
+            this.m_cmd_refresh.Name = "m_cmd_refresh";
+            this.m_cmd_refresh.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_refresh.TabIndex = 37;
+            this.m_cmd_refresh.Text = "L&àm lại";
+            this.m_cmd_refresh.Click += new System.EventHandler(this.m_cmd_refresh_Click);
+            // 
             // f701_v_gd_hop_dong_lao_dong_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -542,5 +560,6 @@
         private System.Windows.Forms.ComboBox m_cbo_loai_hop_dong;
         private System.Windows.Forms.ComboBox m_cbo_phap_nhan;
         private System.Windows.Forms.Label label7;
+        internal SIS.Controls.Button.SiSButton m_cmd_refresh;
     }
 }
