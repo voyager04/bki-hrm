@@ -406,7 +406,6 @@ namespace BKI_HRM
 
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
 		}
         
 		#endregion
