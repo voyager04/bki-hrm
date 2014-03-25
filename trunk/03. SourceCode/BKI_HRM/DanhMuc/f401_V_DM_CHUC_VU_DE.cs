@@ -30,6 +30,7 @@ namespace BKI_HRM
         public void display_for_update(US_DM_CHUC_VU ip_m_us_v_dm_chuc_vu) {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             us_object_2_form(ip_m_us_v_dm_chuc_vu);
+            m_us_1 = ip_m_us_v_dm_chuc_vu;
             this.ShowDialog();
         }
         #endregion
@@ -39,6 +40,7 @@ namespace BKI_HRM
 
         #region Members
         private DataEntryFormMode m_e_form_mode;
+        private US_DM_CHUC_VU m_us_1 = new US_DM_CHUC_VU();
         private US_V_DM_CHUC_VU m_v_us = new US_V_DM_CHUC_VU();
         private DS_V_DM_CHUC_VU m_v_ds = new DS_V_DM_CHUC_VU();
         private US_DM_CHUC_VU m_us = new US_DM_CHUC_VU();
@@ -72,9 +74,22 @@ namespace BKI_HRM
             m_us.datNGAY_AP_DUNG = m_dat_ngayapdung.Value.Date;
             m_us.datNGAY_KET_THUC = m_dat_ngayketthuc.Value.Date;
             m_us.dcID_NGACH =  CIPConvert.ToDecimal(m_cbo_ngach.SelectedValue);
-            m_us.strTRANG_THAI = m_rdb_khongsudung.Checked ? "n" : "y";
+            m_us.strTRANG_THAI = m_rdb_khongsudung.Checked ? "N" : "Y";
         }
-
+        private void refresh_control() {
+            if (m_e_form_mode == DataEntryFormMode.InsertDataState)
+            {
+                m_txt_macv.Text = "";
+                m_txt_tencv.Text = "";
+                m_txt_tenta.Text = "";
+                m_dat_ngayapdung.Value = DateTime.Now;
+                m_dat_ngayketthuc.Value = DateTime.Now;
+                m_rdb_sudung.Checked = true;
+                m_cbo_ngach.SelectedIndex = 0;
+            }
+            else
+                us_object_2_form(m_us_1);
+        }
         private void save_data() {
             if (check_data_is_ok() == false) {
                 return;
@@ -82,9 +97,9 @@ namespace BKI_HRM
             form_2_us_object();
             switch (m_e_form_mode) {
                 case DataEntryFormMode.InsertDataState:
-                    if (check_trung_ma_nv(m_txt_macv.Text))
+                    if (check_trung_ma_cv(m_txt_macv.Text.Trim()))
                     {
-                        BaseMessages.MsgBox_Warning(212);
+                        BaseMessages.MsgBox_Infor("Mã chức vụ đã bị trùng");
                         m_txt_macv.BackColor = Color.Bisque;
                         m_txt_macv.Focus();
                         m_txt_macv.SelectAll();
@@ -109,12 +124,12 @@ namespace BKI_HRM
             m_dat_ngayapdung.Value = ip_us_v_dm_chuc_vu.datNGAY_AP_DUNG;
             m_dat_ngayketthuc.Value = ip_us_v_dm_chuc_vu.datNGAY_KET_THUC;
             m_cbo_ngach.SelectedValue = ip_us_v_dm_chuc_vu.dcID_NGACH;
-            if (ip_us_v_dm_chuc_vu.strTRANG_THAI == "y" || ip_us_v_dm_chuc_vu.strTRANG_THAI == "Y")
+            if (ip_us_v_dm_chuc_vu.strTRANG_THAI == "Y")
                 m_rdb_sudung.Checked = true;
             else
                 m_rdb_khongsudung.Checked = true;
         }
-        private bool check_trung_ma_nv(string ip_str_ma_cv)
+        private bool check_trung_ma_cv(string ip_str_ma_cv)
         {
 
             DS_DM_CHUC_VU v_ds = new DS_DM_CHUC_VU();
@@ -122,8 +137,8 @@ namespace BKI_HRM
             m_us.FillDataset(v_ds, ip_str_ma_cv);
             count_ma_cv = v_ds.DM_CHUC_VU.Count;
             if (count_ma_cv > 0)
-                return true;
-            return false;
+                return false;
+            return true;
         }
         #endregion
 
@@ -144,7 +159,12 @@ namespace BKI_HRM
         }
 
         protected void m_cmd_refresh_Click(object sender, EventArgs e) {
-
+            try
+            {
+                refresh_control();
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         protected void m_cmd_exit_Click(object sender, EventArgs e) {

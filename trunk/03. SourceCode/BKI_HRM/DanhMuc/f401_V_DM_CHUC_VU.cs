@@ -145,7 +145,7 @@ namespace BKI_HRM
             this.m_cmd_insert.Location = new System.Drawing.Point(330, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_insert.TabIndex = 12;
+            this.m_cmd_insert.TabIndex = 3;
             this.m_cmd_insert.Text = "&Thêm";
             // 
             // m_cmd_delete
@@ -160,7 +160,7 @@ namespace BKI_HRM
             this.m_cmd_delete.Location = new System.Drawing.Point(418, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_delete.TabIndex = 14;
+            this.m_cmd_delete.TabIndex = 4;
             this.m_cmd_delete.Text = "&Xoá";
             // 
             // m_cmd_update
@@ -175,7 +175,7 @@ namespace BKI_HRM
             this.m_cmd_update.Location = new System.Drawing.Point(506, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_update.TabIndex = 13;
+            this.m_cmd_update.TabIndex = 5;
             this.m_cmd_update.Text = "&Sửa";
             // 
             // m_cmd_exit
@@ -190,7 +190,7 @@ namespace BKI_HRM
             this.m_cmd_exit.Location = new System.Drawing.Point(594, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 22;
+            this.m_cmd_exit.TabIndex = 6;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // m_cmd_view
@@ -215,7 +215,7 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Location = new System.Drawing.Point(162, 12);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(272, 20);
-            this.m_txt_tim_kiem.TabIndex = 30;
+            this.m_txt_tim_kiem.TabIndex = 1;
             this.m_txt_tim_kiem.Text = "Nhập mã chức vụ, tên chức vụ";
             this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
             this.m_txt_tim_kiem.Leave += new System.EventHandler(this.m_txt_tim_kiem_Leave);
@@ -231,7 +231,7 @@ namespace BKI_HRM
             this.m_cmd_search.Location = new System.Drawing.Point(471, 7);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_search.TabIndex = 31;
+            this.m_cmd_search.TabIndex = 2;
             this.m_cmd_search.Text = "Tìm kiếm";
             this.m_cmd_search.Click += new System.EventHandler(this.m_cmd_search_Click);
             // 
@@ -377,16 +377,15 @@ namespace BKI_HRM
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
 			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			US_DM_CHUC_VU v_us = new US_DM_CHUC_VU();
-			grid2us_object(v_us, m_fg.Row);
+			grid2us_object(m_us, m_fg.Row);
 			try {			
-				v_us.BeginTransaction();    											
-				v_us.Delete();                      								
-				v_us.CommitTransaction();
+				m_us.BeginTransaction();    											
+				m_us.Delete();                      								
+				m_us.CommitTransaction();
 				m_fg.Rows.Remove(m_fg.Row);				
 			}
 			catch (Exception v_e) {
-				v_us.Rollback();
+				m_us.Rollback();
 				CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
 					new CDBClientDBExceptionInterpret());
 				v_objErrHandler.showErrorMessage();
