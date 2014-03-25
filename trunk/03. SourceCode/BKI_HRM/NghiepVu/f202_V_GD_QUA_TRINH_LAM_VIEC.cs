@@ -452,6 +452,7 @@ namespace BKI_HRM
             }
             f202_v_gd_qua_trinh_lam_viec_de v_fDE = new f202_v_gd_qua_trinh_lam_viec_de();
             v_fDE.display_for_insert(m_us_qua_trinh_lam_viec);
+            load_data_2_grid_search();
 		}
 
 		private void update_v_gd_qua_trinh_lam_viec(){			

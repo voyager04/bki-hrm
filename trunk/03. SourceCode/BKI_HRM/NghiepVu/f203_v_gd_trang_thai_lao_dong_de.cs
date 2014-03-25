@@ -70,9 +70,17 @@ namespace BKI_HRM
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_LAO_DONG,
               WinFormControls.eTAT_CA.NO,
               m_cbo_trang_thai_moi);
-            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.LOAI_QUYET_DINH,
-              WinFormControls.eTAT_CA.NO,
-              m_cbo_loai_quyet_dinh);
+            //WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.LOAI_QUYET_DINH,
+            //  WinFormControls.eTAT_CA.NO,
+            //  m_cbo_loai_quyet_dinh);
+            //  
+            BKI_HRM.DS.DS_CM_DM_TU_DIEN v_ds_loai_quyet_dinh = new BKI_HRM.DS.DS_CM_DM_TU_DIEN();
+            BKI_HRM.US.US_CM_DM_TU_DIEN v_us_loai_quyet_dinh = new BKI_HRM.US.US_CM_DM_TU_DIEN();
+            v_us_loai_quyet_dinh.FillDataset_load_loai_quyet_dinh(v_ds_loai_quyet_dinh, "Trạng thái", "N");
+            m_cbo_loai_quyet_dinh.DataSource = v_ds_loai_quyet_dinh.CM_DM_TU_DIEN;
+            m_cbo_loai_quyet_dinh.DisplayMember = CM_DM_TU_DIEN.TEN;
+            m_cbo_loai_quyet_dinh.ValueMember = CM_DM_TU_DIEN.ID;
+
             m_cmd_save.Visible = true;
             m_cmd_refresh.Visible = true;
             m_cmd_exit.Visible = true;
