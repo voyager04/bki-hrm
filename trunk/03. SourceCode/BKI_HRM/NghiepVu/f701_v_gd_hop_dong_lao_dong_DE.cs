@@ -278,6 +278,21 @@ namespace BKI_HRM.NghiepVu
         {
 
         }
+
+        private void xoatrang()
+        {
+            m_txt_ma_hop_dong.Text = "";
+            m_txt_nguoi_ky.Text = "";
+            m_txt_chuc_vu_nguoi_ky.Text = "";
+            m_txt_tim_kiem_nhan_vien.Text = "";
+
+            m_cbo_loai_hop_dong.SelectedIndex = 0;
+            m_cbo_trang_thai.SelectedIndex = 0;
+            m_cbo_phap_nhan.SelectedIndex = 0;
+            m_dat_ngay_co_hieu_luc.Value = DateTime.Now;
+            m_dat_ngay_het_han.Value = DateTime.Now;
+            m_dat_ngay_ky_hop_dong.Value = DateTime.Now;
+        }
         #endregion
 
         #region Event
@@ -353,6 +368,18 @@ namespace BKI_HRM.NghiepVu
             try
             {
                 chon_nhan_su();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_refresh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                xoatrang();
             }
             catch (Exception v_e)
             {
