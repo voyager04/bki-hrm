@@ -64,6 +64,8 @@
             // 
             // m_txt_form
             // 
+            this.m_txt_form.BackColor = System.Drawing.SystemColors.Info;
+            this.m_txt_form.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_txt_form.Location = new System.Drawing.Point(122, 41);
             this.m_txt_form.Name = "m_txt_form";
             this.m_txt_form.ReadOnly = true;
