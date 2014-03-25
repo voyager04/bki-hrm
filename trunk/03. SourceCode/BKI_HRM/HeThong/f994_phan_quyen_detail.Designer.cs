@@ -38,9 +38,9 @@
             this.m_cbo_chuc_nang = new System.Windows.Forms.ComboBox();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_cmd_chon_form = new System.Windows.Forms.Button();
-            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +55,7 @@
             // 
             // m_cbo_nhom_quyen
             // 
+            this.m_cbo_nhom_quyen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_nhom_quyen.FormattingEnabled = true;
             this.m_cbo_nhom_quyen.Location = new System.Drawing.Point(122, 87);
             this.m_cbo_nhom_quyen.Name = "m_cbo_nhom_quyen";
@@ -65,6 +66,7 @@
             // 
             this.m_txt_form.Location = new System.Drawing.Point(122, 41);
             this.m_txt_form.Name = "m_txt_form";
+            this.m_txt_form.ReadOnly = true;
             this.m_txt_form.Size = new System.Drawing.Size(207, 20);
             this.m_txt_form.TabIndex = 2;
             // 
@@ -88,6 +90,7 @@
             // 
             // m_cbo_chuc_nang
             // 
+            this.m_cbo_chuc_nang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_chuc_nang.FormattingEnabled = true;
             this.m_cbo_chuc_nang.Location = new System.Drawing.Point(122, 132);
             this.m_cbo_chuc_nang.Name = "m_cbo_chuc_nang";
@@ -121,6 +124,33 @@
             this.m_cmd_save.Text = "&Lưu";
             this.m_cmd_save.Click += new System.EventHandler(this.m_cmd_save_Click);
             // 
+            // ImageList
+            // 
+            this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
+            this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.ImageList.Images.SetKeyName(0, "");
+            this.ImageList.Images.SetKeyName(1, "");
+            this.ImageList.Images.SetKeyName(2, "");
+            this.ImageList.Images.SetKeyName(3, "");
+            this.ImageList.Images.SetKeyName(4, "");
+            this.ImageList.Images.SetKeyName(5, "");
+            this.ImageList.Images.SetKeyName(6, "");
+            this.ImageList.Images.SetKeyName(7, "");
+            this.ImageList.Images.SetKeyName(8, "");
+            this.ImageList.Images.SetKeyName(9, "");
+            this.ImageList.Images.SetKeyName(10, "");
+            this.ImageList.Images.SetKeyName(11, "");
+            this.ImageList.Images.SetKeyName(12, "");
+            this.ImageList.Images.SetKeyName(13, "");
+            this.ImageList.Images.SetKeyName(14, "");
+            this.ImageList.Images.SetKeyName(15, "");
+            this.ImageList.Images.SetKeyName(16, "");
+            this.ImageList.Images.SetKeyName(17, "");
+            this.ImageList.Images.SetKeyName(18, "");
+            this.ImageList.Images.SetKeyName(19, "");
+            this.ImageList.Images.SetKeyName(20, "");
+            this.ImageList.Images.SetKeyName(21, "");
+            // 
             // m_cmd_exit
             // 
             this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -149,33 +179,6 @@
             this.m_cmd_chon_form.Text = "Chọn Form";
             this.m_cmd_chon_form.UseVisualStyleBackColor = true;
             this.m_cmd_chon_form.Click += new System.EventHandler(this.m_cmd_chon_form_Click);
-            // 
-            // ImageList
-            // 
-            this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
-            this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.ImageList.Images.SetKeyName(0, "");
-            this.ImageList.Images.SetKeyName(1, "");
-            this.ImageList.Images.SetKeyName(2, "");
-            this.ImageList.Images.SetKeyName(3, "");
-            this.ImageList.Images.SetKeyName(4, "");
-            this.ImageList.Images.SetKeyName(5, "");
-            this.ImageList.Images.SetKeyName(6, "");
-            this.ImageList.Images.SetKeyName(7, "");
-            this.ImageList.Images.SetKeyName(8, "");
-            this.ImageList.Images.SetKeyName(9, "");
-            this.ImageList.Images.SetKeyName(10, "");
-            this.ImageList.Images.SetKeyName(11, "");
-            this.ImageList.Images.SetKeyName(12, "");
-            this.ImageList.Images.SetKeyName(13, "");
-            this.ImageList.Images.SetKeyName(14, "");
-            this.ImageList.Images.SetKeyName(15, "");
-            this.ImageList.Images.SetKeyName(16, "");
-            this.ImageList.Images.SetKeyName(17, "");
-            this.ImageList.Images.SetKeyName(18, "");
-            this.ImageList.Images.SetKeyName(19, "");
-            this.ImageList.Images.SetKeyName(20, "");
-            this.ImageList.Images.SetKeyName(21, "");
             // 
             // f994_phan_quyen_detail
             // 
