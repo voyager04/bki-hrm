@@ -34,14 +34,14 @@ namespace BKI_HRM
 		internal System.Windows.Forms.ImageList ImageList;
 		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
-		internal SIS.Controls.Button.SiSButton m_cmd_exit;
-		internal SIS.Controls.Button.SiSButton m_cmd_view;
+        internal SIS.Controls.Button.SiSButton m_cmd_exit;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         private TextBox m_txt_tim_kiem;
         private CheckBox m_ckb_chucvu;
         private CheckBox m_ckb_capbac;
         private CheckBox m_ckb_duan;
         private Label label1;
+        internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
 		private System.ComponentModel.IContainer components;
 
 		public f404_GD_QUA_TRINH_CONG_TAC()
@@ -83,7 +83,6 @@ namespace BKI_HRM
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f404_GD_QUA_TRINH_CONG_TAC));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
@@ -92,6 +91,7 @@ namespace BKI_HRM
             this.m_ckb_capbac = new System.Windows.Forms.CheckBox();
             this.m_ckb_duan = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -125,7 +125,7 @@ namespace BKI_HRM
             // 
             // m_pnl_out_place_dm
             // 
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 390);
@@ -133,21 +133,6 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1001, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
-            // 
-            // m_cmd_view
-            // 
-            this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_view.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_view.ImageIndex = 18;
-            this.m_cmd_view.ImageList = this.ImageList;
-            this.m_cmd_view.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_view.Name = "m_cmd_view";
-            this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_view.TabIndex = 21;
-            this.m_cmd_view.Text = "Xem";
             // 
             // m_cmd_exit
             // 
@@ -161,7 +146,7 @@ namespace BKI_HRM
             this.m_cmd_exit.Location = new System.Drawing.Point(909, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 11;
+            this.m_cmd_exit.TabIndex = 7;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // m_fg
@@ -185,7 +170,7 @@ namespace BKI_HRM
             this.m_cmd_search.Location = new System.Drawing.Point(687, 12);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_search.TabIndex = 34;
+            this.m_cmd_search.TabIndex = 2;
             this.m_cmd_search.Text = "Tìm kiếm";
             this.m_cmd_search.Click += new System.EventHandler(this.m_cmd_search_Click);
             // 
@@ -196,7 +181,7 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Location = new System.Drawing.Point(244, 17);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(437, 20);
-            this.m_txt_tim_kiem.TabIndex = 33;
+            this.m_txt_tim_kiem.TabIndex = 1;
             this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
             this.m_txt_tim_kiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.m_txt_tim_kiem_KeyDown);
             this.m_txt_tim_kiem.Leave += new System.EventHandler(this.m_txt_tim_kiem_Leave);
@@ -209,7 +194,7 @@ namespace BKI_HRM
             this.m_ckb_chucvu.Location = new System.Drawing.Point(296, 43);
             this.m_ckb_chucvu.Name = "m_ckb_chucvu";
             this.m_ckb_chucvu.Size = new System.Drawing.Size(66, 17);
-            this.m_ckb_chucvu.TabIndex = 35;
+            this.m_ckb_chucvu.TabIndex = 3;
             this.m_ckb_chucvu.Text = "Chức vụ";
             this.m_ckb_chucvu.UseVisualStyleBackColor = true;
             this.m_ckb_chucvu.CheckedChanged += new System.EventHandler(this.m_ckb_chucvu_CheckedChanged);
@@ -222,7 +207,7 @@ namespace BKI_HRM
             this.m_ckb_capbac.Location = new System.Drawing.Point(368, 44);
             this.m_ckb_capbac.Name = "m_ckb_capbac";
             this.m_ckb_capbac.Size = new System.Drawing.Size(66, 17);
-            this.m_ckb_capbac.TabIndex = 36;
+            this.m_ckb_capbac.TabIndex = 4;
             this.m_ckb_capbac.Text = "Cấp bậc";
             this.m_ckb_capbac.UseVisualStyleBackColor = true;
             this.m_ckb_capbac.CheckedChanged += new System.EventHandler(this.m_ckb_capbac_CheckedChanged);
@@ -235,7 +220,7 @@ namespace BKI_HRM
             this.m_ckb_duan.Location = new System.Drawing.Point(440, 43);
             this.m_ckb_duan.Name = "m_ckb_duan";
             this.m_ckb_duan.Size = new System.Drawing.Size(55, 17);
-            this.m_ckb_duan.TabIndex = 37;
+            this.m_ckb_duan.TabIndex = 5;
             this.m_ckb_duan.Text = "Dự án";
             this.m_ckb_duan.UseVisualStyleBackColor = true;
             this.m_ckb_duan.CheckedChanged += new System.EventHandler(this.m_ckb_duan_CheckedChanged);
@@ -248,6 +233,22 @@ namespace BKI_HRM
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 38;
             this.label1.Text = "Hiển thị:";
+            // 
+            // m_cmd_xuat_excel
+            // 
+            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xuat_excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xuat_excel.ImageIndex = 19;
+            this.m_cmd_xuat_excel.ImageList = this.ImageList;
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(93, 28);
+            this.m_cmd_xuat_excel.TabIndex = 6;
+            this.m_cmd_xuat_excel.Text = "Xuất Excel";
             // 
             // f404_GD_QUA_TRINH_CONG_TAC
             // 

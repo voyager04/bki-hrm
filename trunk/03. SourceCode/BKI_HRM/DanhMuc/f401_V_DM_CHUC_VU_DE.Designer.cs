@@ -77,7 +77,7 @@
             this.m_cmd_save.Location = new System.Drawing.Point(468, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_save.TabIndex = 31;
+            this.m_cmd_save.TabIndex = 9;
             this.m_cmd_save.Text = "&Lưu";
             // 
             // ImageList
@@ -119,7 +119,7 @@
             this.m_cmd_refresh.Location = new System.Drawing.Point(556, 4);
             this.m_cmd_refresh.Name = "m_cmd_refresh";
             this.m_cmd_refresh.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_refresh.TabIndex = 32;
+            this.m_cmd_refresh.TabIndex = 10;
             this.m_cmd_refresh.Text = "L&àm lại";
             // 
             // m_cmd_exit
@@ -135,7 +135,7 @@
             this.m_cmd_exit.Location = new System.Drawing.Point(644, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 33;
+            this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // m_txt_macv
@@ -143,21 +143,21 @@
             this.m_txt_macv.Location = new System.Drawing.Point(109, 28);
             this.m_txt_macv.Name = "m_txt_macv";
             this.m_txt_macv.Size = new System.Drawing.Size(176, 20);
-            this.m_txt_macv.TabIndex = 22;
+            this.m_txt_macv.TabIndex = 1;
             // 
             // m_txt_tencv
             // 
             this.m_txt_tencv.Location = new System.Drawing.Point(109, 54);
             this.m_txt_tencv.Name = "m_txt_tencv";
             this.m_txt_tencv.Size = new System.Drawing.Size(176, 20);
-            this.m_txt_tencv.TabIndex = 23;
+            this.m_txt_tencv.TabIndex = 2;
             // 
             // m_txt_tenta
             // 
             this.m_txt_tenta.Location = new System.Drawing.Point(109, 80);
             this.m_txt_tenta.Name = "m_txt_tenta";
             this.m_txt_tenta.Size = new System.Drawing.Size(176, 20);
-            this.m_txt_tenta.TabIndex = 24;
+            this.m_txt_tenta.TabIndex = 3;
             // 
             // m_dat_ngayapdung
             // 
@@ -167,7 +167,7 @@
             this.m_dat_ngayapdung.Name = "m_dat_ngayapdung";
             this.m_dat_ngayapdung.ShowCheckBox = true;
             this.m_dat_ngayapdung.Size = new System.Drawing.Size(121, 20);
-            this.m_dat_ngayapdung.TabIndex = 26;
+            this.m_dat_ngayapdung.TabIndex = 6;
             // 
             // m_dat_ngayketthuc
             // 
@@ -177,7 +177,7 @@
             this.m_dat_ngayketthuc.Name = "m_dat_ngayketthuc";
             this.m_dat_ngayketthuc.ShowCheckBox = true;
             this.m_dat_ngayketthuc.Size = new System.Drawing.Size(121, 20);
-            this.m_dat_ngayketthuc.TabIndex = 27;
+            this.m_dat_ngayketthuc.TabIndex = 7;
             // 
             // m_lbl_tencv
             // 
@@ -239,7 +239,7 @@
             this.m_rdb_khongsudung.Location = new System.Drawing.Point(411, 30);
             this.m_rdb_khongsudung.Name = "m_rdb_khongsudung";
             this.m_rdb_khongsudung.Size = new System.Drawing.Size(97, 17);
-            this.m_rdb_khongsudung.TabIndex = 34;
+            this.m_rdb_khongsudung.TabIndex = 4;
             this.m_rdb_khongsudung.TabStop = true;
             this.m_rdb_khongsudung.Text = "Không sử dụng";
             this.m_rdb_khongsudung.UseVisualStyleBackColor = true;
@@ -251,7 +251,7 @@
             this.m_rdb_sudung.Location = new System.Drawing.Point(514, 31);
             this.m_rdb_sudung.Name = "m_rdb_sudung";
             this.m_rdb_sudung.Size = new System.Drawing.Size(65, 17);
-            this.m_rdb_sudung.TabIndex = 35;
+            this.m_rdb_sudung.TabIndex = 5;
             this.m_rdb_sudung.TabStop = true;
             this.m_rdb_sudung.Text = "Sử dụng";
             this.m_rdb_sudung.UseVisualStyleBackColor = true;
@@ -262,7 +262,7 @@
             this.m_cbo_ngach.Location = new System.Drawing.Point(389, 79);
             this.m_cbo_ngach.Name = "m_cbo_ngach";
             this.m_cbo_ngach.Size = new System.Drawing.Size(175, 21);
-            this.m_cbo_ngach.TabIndex = 36;
+            this.m_cbo_ngach.TabIndex = 8;
             // 
             // m_lbl_ngach
             // 

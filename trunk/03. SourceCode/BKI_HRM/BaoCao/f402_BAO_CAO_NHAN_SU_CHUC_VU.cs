@@ -41,6 +41,7 @@ namespace BKI_HRM
         private Label m_lbl_thoidiem;
         private Label label1;
         private Label m_lbl_soluongns;
+        internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
 		private System.ComponentModel.IContainer components;
 
 		public f402_BAO_CAO_NHAN_SU_CHUC_VU()
@@ -90,6 +91,7 @@ namespace BKI_HRM
             this.m_lbl_thoidiem = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.m_lbl_soluongns = new System.Windows.Forms.Label();
+            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -123,6 +125,7 @@ namespace BKI_HRM
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 495);
@@ -143,7 +146,7 @@ namespace BKI_HRM
             this.m_cmd_exit.Location = new System.Drawing.Point(892, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 11;
+            this.m_cmd_exit.TabIndex = 5;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // m_fg
@@ -160,10 +163,10 @@ namespace BKI_HRM
             // 
             this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(324, 12);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(142, 12);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
-            this.m_txt_tim_kiem.Size = new System.Drawing.Size(354, 20);
-            this.m_txt_tim_kiem.TabIndex = 31;
+            this.m_txt_tim_kiem.Size = new System.Drawing.Size(462, 20);
+            this.m_txt_tim_kiem.TabIndex = 1;
             this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
             this.m_txt_tim_kiem.TextChanged += new System.EventHandler(this.m_txt_tim_kiem_TextChanged);
             this.m_txt_tim_kiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.m_txt_tim_kiem_KeyDown);
@@ -177,10 +180,10 @@ namespace BKI_HRM
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(684, 7);
+            this.m_cmd_search.Location = new System.Drawing.Point(610, 7);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_search.TabIndex = 32;
+            this.m_cmd_search.TabIndex = 2;
             this.m_cmd_search.Text = "Tìm kiếm";
             this.m_cmd_search.Click += new System.EventHandler(this.m_cmd_search_Click);
             // 
@@ -188,15 +191,15 @@ namespace BKI_HRM
             // 
             this.m_dtp_thoidiem.CustomFormat = "dd/MM/yyyy";
             this.m_dtp_thoidiem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_thoidiem.Location = new System.Drawing.Point(142, 12);
+            this.m_dtp_thoidiem.Location = new System.Drawing.Point(778, 9);
             this.m_dtp_thoidiem.Name = "m_dtp_thoidiem";
             this.m_dtp_thoidiem.Size = new System.Drawing.Size(176, 20);
-            this.m_dtp_thoidiem.TabIndex = 33;
+            this.m_dtp_thoidiem.TabIndex = 3;
             // 
             // m_lbl_thoidiem
             // 
             this.m_lbl_thoidiem.AutoSize = true;
-            this.m_lbl_thoidiem.Location = new System.Drawing.Point(79, 15);
+            this.m_lbl_thoidiem.Location = new System.Drawing.Point(715, 15);
             this.m_lbl_thoidiem.Name = "m_lbl_thoidiem";
             this.m_lbl_thoidiem.Size = new System.Drawing.Size(57, 13);
             this.m_lbl_thoidiem.TabIndex = 34;
@@ -219,6 +222,22 @@ namespace BKI_HRM
             this.m_lbl_soluongns.Size = new System.Drawing.Size(35, 13);
             this.m_lbl_soluongns.TabIndex = 36;
             this.m_lbl_soluongns.Text = "label2";
+            // 
+            // m_cmd_xuat_excel
+            // 
+            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xuat_excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xuat_excel.ImageIndex = 19;
+            this.m_cmd_xuat_excel.ImageList = this.ImageList;
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(93, 28);
+            this.m_cmd_xuat_excel.TabIndex = 4;
+            this.m_cmd_xuat_excel.Text = "Xuất Excel";
             // 
             // f402_BAO_CAO_NHAN_SU_CHUC_VU
             // 
