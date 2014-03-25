@@ -125,10 +125,10 @@ namespace BKI_HRM
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 503);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 495);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(987, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(984, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_exit
@@ -140,7 +140,7 @@ namespace BKI_HRM
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(895, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(892, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -150,9 +150,9 @@ namespace BKI_HRM
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 72);
+            this.m_fg.Location = new System.Drawing.Point(0, 64);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(987, 431);
+            this.m_fg.Size = new System.Drawing.Size(984, 431);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -222,7 +222,7 @@ namespace BKI_HRM
             // f402_BAO_CAO_NHAN_SU_CHUC_VU
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(987, 539);
+            this.ClientSize = new System.Drawing.Size(984, 531);
             this.Controls.Add(this.m_lbl_soluongns);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_lbl_thoidiem);
@@ -231,6 +231,8 @@ namespace BKI_HRM
             this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
+            this.MaximumSize = new System.Drawing.Size(1000, 570);
+            this.MinimumSize = new System.Drawing.Size(1000, 570);
             this.Name = "f402_BAO_CAO_NHAN_SU_CHUC_VU";
             this.Text = "f402_BAO_CAO_NHAN_SU_CHUC_VU";
             this.Load += new System.EventHandler(this.f402_BAO_CAO_NHAN_SU_CHUC_VU_Load);

@@ -128,10 +128,10 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 373);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 375);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(686, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(684, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_view
@@ -158,7 +158,7 @@ namespace BKI_HRM
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(594, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(592, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -168,9 +168,9 @@ namespace BKI_HRM
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 73);
+            this.m_fg.Location = new System.Drawing.Point(0, 75);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(686, 300);
+            this.m_fg.Size = new System.Drawing.Size(684, 300);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -239,7 +239,7 @@ namespace BKI_HRM
             // f403_BAO_CAO_NHAN_SU_CAP_BAC
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(686, 409);
+            this.ClientSize = new System.Drawing.Size(684, 411);
             this.Controls.Add(this.m_lbl_soluongns);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_lbl_thoidiem);
@@ -248,6 +248,8 @@ namespace BKI_HRM
             this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
+            this.MaximumSize = new System.Drawing.Size(700, 450);
+            this.MinimumSize = new System.Drawing.Size(700, 450);
             this.Name = "f403_BAO_CAO_NHAN_SU_CAP_BAC";
             this.Text = "f403_BAO_CAO_NHAN_SU_CAP_BAC";
             this.Load += new System.EventHandler(this.f403_BAO_CAO_NHAN_SU_CAP_BAC_Load);

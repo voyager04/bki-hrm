@@ -258,6 +258,8 @@ namespace BKI_HRM
             this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
+            this.MaximumSize = new System.Drawing.Size(1017, 465);
+            this.MinimumSize = new System.Drawing.Size(1017, 465);
             this.Name = "f404_GD_QUA_TRINH_CONG_TAC";
             this.Text = "f404_GD_QUA_TRINH_CONG_TAC";
             this.Load += new System.EventHandler(this.f404_GD_QUA_TRINH_CONG_TAC_Load);
