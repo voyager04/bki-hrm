@@ -253,8 +253,6 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Text = "Nhập Mã nhân viên, Họ đệm, Tên, Mã hợp đồng, Loại hợp đồng, Ngày tháng, Trạng thá" +
     "i";
             this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
-            this.m_txt_tim_kiem.TextChanged += new System.EventHandler(this.m_txt_tim_kiem_TextChanged);
-            this.m_txt_tim_kiem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.m_txt_tim_kiem_KeyPress);
             this.m_txt_tim_kiem.Leave += new System.EventHandler(this.m_txt_tim_kiem_Leave);
             // 
             // label1
@@ -508,6 +506,23 @@ namespace BKI_HRM
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             m_fg.Click += new EventHandler(m_fg_Click);
             m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
+            m_txt_tim_kiem.KeyDown += new KeyEventHandler(m_txt_tim_kiem_KeyDown);
+        }
+
+        void m_txt_tim_kiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Enter)
+                {
+                    load_data_2_grid();
+                }
+                m_txt_tim_kiem.Focus();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
         void m_fg_DoubleClick(object sender, EventArgs e)
         {
@@ -538,6 +553,7 @@ namespace BKI_HRM
             {
                 m_txt_tim_kiem.ForeColor = Color.Gray;
                 set_initial_form_load();
+                m_txt_tim_kiem.Focus();
             }
             catch (Exception v_e)
             {
@@ -600,17 +616,6 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        private void m_txt_tim_kiem_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            try
-            {
-                load_data_2_grid();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
         private void m_cmd_tim_kiem_Click(object sender, EventArgs e)
         {
             try
@@ -631,7 +636,6 @@ namespace BKI_HRM
                     m_txt_tim_kiem.Text = m_str_suggest;
                     m_txt_tim_kiem.ForeColor = Color.Gray;
                 }
-
             }
             catch (Exception v_e)
             {
@@ -644,17 +648,6 @@ namespace BKI_HRM
             {
                 m_txt_tim_kiem.Text = "";
                 m_txt_tim_kiem.ForeColor = Color.Black;
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-        private void m_txt_tim_kiem_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                load_data_2_grid();
             }
             catch (Exception v_e)
             {
