@@ -343,16 +343,15 @@ namespace BKI_HRM
 
         private void load_custom_source_2_m_txt_tim_kiem()
         {
-            //m_us.FillDataset(m_ds);
             int count = m_ds.Tables["V_DM_TRANG_THAI_UNG_VIEN"].Rows.Count;
-            for (int i = 0; i < count; i++)
+            AutoCompleteStringCollection v_acsc_search = new AutoCompleteStringCollection();
+            foreach (DataRow dr in m_ds.V_DM_TRANG_THAI_UNG_VIEN)
             {
-                DataRow dr = m_ds.Tables["V_DM_TRANG_THAI_UNG_VIEN"].Rows[i];
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[2].ToString());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[3].ToString());
-                
-
+                v_acsc_search.Add(dr[V_DM_TRANG_THAI_UNG_VIEN.MA_TRANG_THAI_CAP_TREN].ToString());
+                v_acsc_search.Add(dr[V_DM_TRANG_THAI_UNG_VIEN.MA_TRANG_THAI].ToString());
+                //v_acsc_search.Add(dr[V_DM_TRANG_THAI_UNG_VIEN.VIEC_CAN_LAM].ToString());
             }
+            m_txt_tim_kiem.AutoCompleteCustomSource = v_acsc_search;
         }
         private void format_controls()
         {
