@@ -328,15 +328,14 @@ namespace BKI_HRM
         {
             //m_us.FillDataset(m_ds);
             int count = m_ds.Tables["V_DM_QUYET_DINH"].Rows.Count;
-            for (int i = 0; i < count; i++)
+            AutoCompleteStringCollection v_acsc_search = new AutoCompleteStringCollection();
+            foreach (DataRow dr in m_ds.V_DM_QUYET_DINH)
             {
-                DataRow dr = m_ds.Tables["V_DM_QUYET_DINH"].Rows[i];
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[1].ToString());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[8].ToString());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[6].ToString());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[7].ToString());
-
+                v_acsc_search.Add(dr[V_DM_QUYET_DINH.TEN].ToString());
+                v_acsc_search.Add(dr[V_DM_QUYET_DINH.MA_QUYET_DINH].ToString());
+                v_acsc_search.Add(dr[V_DM_QUYET_DINH.NOI_DUNG].ToString());
             }
+            m_txt_tim_kiem.AutoCompleteCustomSource = v_acsc_search;
         }
         private void format_controls()
         {
