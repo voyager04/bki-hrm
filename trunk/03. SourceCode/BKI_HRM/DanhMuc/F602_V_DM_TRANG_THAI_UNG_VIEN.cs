@@ -134,7 +134,7 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 425);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 442);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(780, 36);
@@ -220,7 +220,7 @@ namespace BKI_HRM
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Location = new System.Drawing.Point(0, 50);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(780, 356);
+            this.m_fg.Size = new System.Drawing.Size(780, 386);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -275,7 +275,7 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(342, 20);
             this.m_txt_tim_kiem.TabIndex = 35;
-            this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
+            //this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
             // 
             // m_lbl_tim_kiem
             // 
@@ -289,7 +289,7 @@ namespace BKI_HRM
             // F602_v_dm_trang_thai_ung_vien
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(784, 461);
+            this.ClientSize = new System.Drawing.Size(784, 481);
             this.Controls.Add(this.m_lbl_tim_kiem);
             this.Controls.Add(this.m_cmd_search);
             this.Controls.Add(this.m_txt_tim_kiem);
@@ -311,12 +311,12 @@ namespace BKI_HRM
         {
             this.ShowDialog();
         }
-        //public void select_data(ref US_V_DM_QUYET_DINH op_us)
-        //{
-        //    m_e_form_mode = DataEntryFormMode.SelectDataState;
-        //    this.ShowDialog();
-        //    op_us = m_us;
-        //}
+        public void select_data(ref US_V_DM_TRANG_THAI_UNG_VIEN op_us)
+        {
+            m_e_form_mode = DataEntryFormMode.SelectDataState;
+            this.ShowDialog();
+            op_us = m_us;
+        }
 		#endregion
 
 		#region Data Structure
@@ -335,7 +335,7 @@ namespace BKI_HRM
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
 		DS_V_DM_TRANG_THAI_UNG_VIEN m_ds = new DS_V_DM_TRANG_THAI_UNG_VIEN();
 		US_V_DM_TRANG_THAI_UNG_VIEN m_us = new US_V_DM_TRANG_THAI_UNG_VIEN();
-        private const String m_str_tim_kiem = "Nhập thông tin cần tìm kiếm";
+        private const String m_str_tim_kiem = "Nhập mã trạng thái, mã trạng thái cấp trên cần tìm kiếm";
 		#endregion
 
 		#region Private Methods
@@ -386,8 +386,8 @@ namespace BKI_HRM
         private void load_data_2_grid()
         {
             m_ds = new DS_V_DM_TRANG_THAI_UNG_VIEN();
-
-            m_us.FillDatasetSearch(m_ds, m_txt_tim_kiem.Text.Trim());
+            if (m_txt_tim_kiem.Text.Trim() == m_str_tim_kiem || m_txt_tim_kiem.Text.Trim() == "") m_us.FillDataset(m_ds);
+            else m_us.FillDatasetSearch(m_ds, m_txt_tim_kiem.Text.Trim());
             //m_us.FillDataset(m_ds);
             var v_str_search = m_txt_tim_kiem.Text.Trim();
             if (v_str_search.Equals(m_str_tim_kiem))
@@ -414,8 +414,8 @@ namespace BKI_HRM
                 m_txt_tim_kiem.Text = m_str_tim_kiem;
                 m_txt_tim_kiem.ForeColor = Color.Gray;
             }
-        }
 
+        }
         private void set_search_format_after()
         {
             if (m_txt_tim_kiem.Text == m_str_tim_kiem)
@@ -504,6 +504,9 @@ namespace BKI_HRM
             m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_txt_tim_kiem.KeyDown += m_txt_tim_kiem_KeyDown;
+            m_txt_tim_kiem.MouseClick += m_txt_tim_kiem_MouseClick;
+            m_txt_tim_kiem.Leave += m_txt_tim_kiem_Leave;
         }
         #endregion
         private void f602_v_dm_trang_thai_ung_vien_Load(object sender, System.EventArgs e)
@@ -582,12 +585,6 @@ namespace BKI_HRM
 
         private void m_cmd_search_Click(object sender, EventArgs e)
         {
-            m_obj_trans = get_trans_object(m_fg);
-            m_ds.Clear();
-            m_us.FillDatasetSearch(m_ds, m_txt_tim_kiem.Text);
-            m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            m_fg.Redraw = true;
             try
             {
                 load_data_2_grid();
@@ -601,16 +598,44 @@ namespace BKI_HRM
 
         private void m_txt_tim_kiem_MouseClick(object sender, MouseEventArgs e)
         {
-            m_txt_tim_kiem.Text = "";
+            try
+            {
+                set_search_format_after();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
-        //private void m_txt_tim_kiem_Leave(object sender, EventArgs e)
-        //{
-        //    if (m_txt_tim_kiem.Text == "")
-        //    {
-        //        m_txt_tim_kiem.Text = "Nhập mã quyết định";
-        //    }
-        //}
-
+        private void m_txt_tim_kiem_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                set_search_format_before();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_txt_tim_kiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Enter)
+                {
+                    load_data_2_grid();
+                }
+                else
+                {
+                    set_search_format_after();
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         private void m_fg_KeyDown(object sender, KeyEventArgs e)
         {
             try
@@ -640,6 +665,7 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
 
         
 
