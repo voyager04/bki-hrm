@@ -714,7 +714,6 @@ namespace BKI_HRM
             // 
             this.m_grv_chuc_vu_hien_tai.AllowEditing = false;
             this.m_grv_chuc_vu_hien_tai.ColumnInfo = resources.GetString("m_grv_chuc_vu_hien_tai.ColumnInfo");
-            this.m_grv_chuc_vu_hien_tai.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_chuc_vu_hien_tai.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_grv_chuc_vu_hien_tai.Location = new System.Drawing.Point(0, 0);
             this.m_grv_chuc_vu_hien_tai.Name = "m_grv_chuc_vu_hien_tai";
@@ -1141,7 +1140,6 @@ namespace BKI_HRM
             // 
             this.m_grv_qua_trinh_cong_tac.AllowEditing = false;
             this.m_grv_qua_trinh_cong_tac.ColumnInfo = resources.GetString("m_grv_qua_trinh_cong_tac.ColumnInfo");
-            this.m_grv_qua_trinh_cong_tac.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_qua_trinh_cong_tac.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_grv_qua_trinh_cong_tac.Location = new System.Drawing.Point(3, 3);
             this.m_grv_qua_trinh_cong_tac.Name = "m_grv_qua_trinh_cong_tac";
@@ -1163,7 +1161,6 @@ namespace BKI_HRM
             // m_grv_hop_dong_ld
             // 
             this.m_grv_hop_dong_ld.ColumnInfo = resources.GetString("m_grv_hop_dong_ld.ColumnInfo");
-            this.m_grv_hop_dong_ld.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_hop_dong_ld.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_grv_hop_dong_ld.Location = new System.Drawing.Point(0, 0);
             this.m_grv_hop_dong_ld.Name = "m_grv_hop_dong_ld";
@@ -1369,6 +1366,7 @@ namespace BKI_HRM
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_tct_chi_tiet_nhan_vien);
             this.Controls.Add(this.m_pnl_out_place_dm);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "f201_dm_nhan_su";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1406,7 +1404,7 @@ namespace BKI_HRM
 
 		#region Public Interface
 		public void display(){			
-			this.ShowDialog();
+			this.Show();
 		}
         
         public void select_data(ref US_DM_NHAN_SU op_us_dm_nhan_su)
