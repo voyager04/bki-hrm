@@ -344,8 +344,8 @@ namespace BKI_HRM
         private void load_data_2_grid()
         {
             m_ds = new DS_V_DM_CAP_BAC();
-
-            m_us.FillDatasetSearch(m_ds,m_txt_tim_kiem.Text.Trim());
+            if (m_txt_tim_kiem.Text.Trim() == m_str_tim_kiem || m_txt_tim_kiem.Text.Trim() == "") m_us.FillDataset(m_ds);
+            else m_us.FillDatasetSearch(m_ds,m_txt_tim_kiem.Text.Trim());
             //m_us.FillDataset(m_ds);
             var v_str_search = m_txt_tim_kiem.Text.Trim();
             if (v_str_search.Equals(m_str_tim_kiem))
@@ -366,6 +366,7 @@ namespace BKI_HRM
                 m_txt_tim_kiem.ForeColor = Color.Gray;
             }
         }
+
         private void set_search_format_after()
         {
             if (m_txt_tim_kiem.Text == m_str_tim_kiem)
@@ -374,7 +375,6 @@ namespace BKI_HRM
             }
             m_txt_tim_kiem.ForeColor = Color.Black;
         }
-       
         private void grid2us_object(US_V_DM_CAP_BAC i_us
             , int i_grid_row)
         {
@@ -454,6 +454,9 @@ namespace BKI_HRM
             m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             //m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_txt_tim_kiem.KeyDown += m_txt_tim_kiem_KeyDown;
+            m_txt_tim_kiem.MouseClick += m_txt_tim_kiem_MouseClick;
+            m_txt_tim_kiem.Leave += m_txt_tim_kiem_Leave;
         }
 
         private void load_custom_source_2_m_txt_tim_kiem()
@@ -548,7 +551,7 @@ namespace BKI_HRM
         //    }
         //}
 
-        
+
         private void m_cmd_search_Click(object sender, EventArgs e)
         {
             try
@@ -557,21 +560,45 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
+
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
         private void m_txt_tim_kiem_MouseClick(object sender, MouseEventArgs e)
         {
-            m_txt_tim_kiem.Text = "";
+            try
+            {
+                set_search_format_after();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
-
         private void m_txt_tim_kiem_Leave(object sender, EventArgs e)
         {
             try
             {
-                if (m_txt_tim_kiem.Text.Trim() == "")
-                    m_txt_tim_kiem.Text = "Nhập thông tin cần tìm kiếm ";
+                set_search_format_before();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_txt_tim_kiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Enter)
+                {
+                    load_data_2_grid();
+                }
+                else
+                {
+                    set_search_format_after();
+                }
             }
             catch (Exception v_e)
             {
@@ -607,6 +634,9 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+
+
 
     }
 }
