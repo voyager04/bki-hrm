@@ -462,14 +462,14 @@ namespace BKI_HRM
         private void load_custom_source_2_m_txt_tim_kiem()
         {
             int count = m_ds.Tables["V_DM_CAP_BAC"].Rows.Count;
-            for (int i = 0; i < count; i++)
+            AutoCompleteStringCollection v_acsc_search = new AutoCompleteStringCollection();
+            foreach (DataRow dr in m_ds.V_DM_CAP_BAC)
             {
-                DataRow dr = m_ds.Tables["V_DM_CAP_BAC"].Rows[i];
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[1].ToString());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[2].ToString());
-                m_txt_tim_kiem.AutoCompleteCustomSource.Add(dr[6].ToString());
-
+                v_acsc_search.Add(dr[V_DM_CAP_BAC.MA_BAC].ToString());
+                v_acsc_search.Add(dr[V_DM_CAP_BAC.MA_CAP].ToString());
+                v_acsc_search.Add(dr[V_DM_CAP_BAC.MA_CAP_BAC].ToString()); 
             }
+            m_txt_tim_kiem.AutoCompleteCustomSource = v_acsc_search;
         }
 		#endregion
 
