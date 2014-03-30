@@ -81,7 +81,7 @@ SELECT ID, MA_HEADCOUNT, TRANG_THAI, ACTIONS, MO_TA FROM DM_HEADCOUNT WHERE (ID 
   <xs:element name="DS_DM_HEADCOUNT" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_DM_HEADCOUNT" msprop:Generator_UserDSName="DS_DM_HEADCOUNT">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DM_HEADCOUNT" msprop:Generator_TableClassName="DM_HEADCOUNTDataTable" msprop:Generator_TableVarName="tableDM_HEADCOUNT" msprop:Generator_TablePropName="DM_HEADCOUNT" msprop:Generator_RowDeletingName="DM_HEADCOUNTRowDeleting" msprop:Generator_RowChangingName="DM_HEADCOUNTRowChanging" msprop:Generator_RowEvHandlerName="DM_HEADCOUNTRowChangeEventHandler" msprop:Generator_RowDeletedName="DM_HEADCOUNTRowDeleted" msprop:Generator_UserTableName="DM_HEADCOUNT" msprop:Generator_RowChangedName="DM_HEADCOUNTRowChanged" msprop:Generator_RowEvArgName="DM_HEADCOUNTRowChangeEvent" msprop:Generator_RowClassName="DM_HEADCOUNTRow">
+        <xs:element name="DM_HEADCOUNT" msprop:Generator_TableClassName="DM_HEADCOUNTDataTable" msprop:Generator_TableVarName="tableDM_HEADCOUNT" msprop:Generator_RowChangedName="DM_HEADCOUNTRowChanged" msprop:Generator_TablePropName="DM_HEADCOUNT" msprop:Generator_RowDeletingName="DM_HEADCOUNTRowDeleting" msprop:Generator_RowChangingName="DM_HEADCOUNTRowChanging" msprop:Generator_RowEvHandlerName="DM_HEADCOUNTRowChangeEventHandler" msprop:Generator_RowDeletedName="DM_HEADCOUNTRowDeleted" msprop:Generator_RowClassName="DM_HEADCOUNTRow" msprop:Generator_UserTableName="DM_HEADCOUNT" msprop:Generator_RowEvArgName="DM_HEADCOUNTRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
@@ -121,6 +121,10 @@ SELECT ID, MA_HEADCOUNT, TRANG_THAI, ACTIONS, MO_TA FROM DM_HEADCOUNT WHERE (ID 
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:DM_HEADCOUNT" />
       <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="Constraint2">
+      <xs:selector xpath=".//mstns:DM_HEADCOUNT" />
+      <xs:field xpath="mstns:MA_HEADCOUNT" />
     </xs:unique>
   </xs:element>
 </xs:schema>

@@ -344,6 +344,7 @@
         public const string DAN_TOC = "DAN_TOC";
         public const string MA_SO_THUE = "MA_SO_THUE";
         public const string TRANG_THAI = "TRANG_THAI";
+        public const string ID_HEADCOUNT = "ID_HEADCOUNT";
     }
 
     public class V_DM_DON_VI {

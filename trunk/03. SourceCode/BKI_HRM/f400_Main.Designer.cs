@@ -51,6 +51,7 @@ namespace BKI_HRM
             this.m_menuitem_qlquyetdinh = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_qlcoche = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_qllevel = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_menuitem_headcount = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_nghiepvu = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_qlns = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menu_dsnhansu = new System.Windows.Forms.ToolStripMenuItem();
@@ -94,7 +95,6 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hop_dong_sap_het_han = new System.Windows.Forms.Label();
             this.m_lbl_thu_viec_sap_het_han = new System.Windows.Forms.Label();
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky = new System.Windows.Forms.Label();
-            this.m_menuitem_headcount = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -263,6 +263,13 @@ namespace BKI_HRM
             this.m_menuitem_qllevel.Size = new System.Drawing.Size(206, 22);
             this.m_menuitem_qllevel.Text = "Quản lý level tuyển dụng";
             this.m_menuitem_qllevel.Click += new System.EventHandler(this.m_menuitem_qllevel_Click);
+            // 
+            // m_menuitem_headcount
+            // 
+            this.m_menuitem_headcount.Name = "m_menuitem_headcount";
+            this.m_menuitem_headcount.Size = new System.Drawing.Size(206, 22);
+            this.m_menuitem_headcount.Text = "Quản lý Headcount";
+            this.m_menuitem_headcount.Click += new System.EventHandler(this.m_menuitem_headcount_Click);
             // 
             // m_menuitem_nghiepvu
             // 
@@ -620,13 +627,6 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.TabIndex = 5;
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text = "Danh sách Hợp đồng đã hết hạn nhưng chưa ký";
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Click += new System.EventHandler(this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky_Click);
-            // 
-            // m_menuitem_headcount
-            // 
-            this.m_menuitem_headcount.Name = "m_menuitem_headcount";
-            this.m_menuitem_headcount.Size = new System.Drawing.Size(206, 22);
-            this.m_menuitem_headcount.Text = "Quản lý Headcount";
-            this.m_menuitem_headcount.Click += new System.EventHandler(this.m_menuitem_headcount_Click);
             // 
             // f400_Main
             // 

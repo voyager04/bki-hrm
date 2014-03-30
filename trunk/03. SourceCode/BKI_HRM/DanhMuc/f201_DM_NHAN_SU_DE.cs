@@ -291,41 +291,45 @@ namespace BKI_HRM
         }
         private void save_image(string ip_str_pathimage)
         {
-            if (File.Exists("E:\\00.CV\\" + m_us_dm_nhan_su.strMA_NV + ".jpg"))
+            if (ip_str_pathimage != "")
             {
-                File.Delete("E:\\00.CV\\" + m_us_dm_nhan_su.strMA_NV + ".jpg");
+                if (File.Exists("E:\\00.CV\\" + m_us_dm_nhan_su.strMA_NV + ".jpg"))
+                {
+                    File.Delete("E:\\00.CV\\" + m_us_dm_nhan_su.strMA_NV + ".jpg");
+                }
+
+                int maxWidth = 120,
+                    maxHeight = 160;
+                Bitmap image = new Bitmap(ip_str_pathimage);
+                // Get the image's original width and height
+                int originalWidth = image.Width;
+                int originalHeight = image.Height;
+
+                // To preserve the aspect ratio
+                float ratioX = (float)maxWidth / (float)originalWidth;
+                float ratioY = (float)maxHeight / (float)originalHeight;
+                float ratio = Math.Min(ratioX, ratioY);
+
+                // New width and height based on aspect ratio
+                int newWidth = (int)(originalWidth * ratio);
+                int newHeight = (int)(originalHeight * ratio);
+
+                // Convert other formats (including CMYK) to RGB.
+                Bitmap newImage = new Bitmap(newWidth, newHeight, PixelFormat.Format24bppRgb);
+
+                // Draws the image in the specified size with quality mode set to HighQuality
+                using (Graphics graphics = Graphics.FromImage(newImage))
+                {
+                    //graphics.CompositingQuality = CompositingQuality.HighQuality;
+                    //graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    //graphics.SmoothingMode = SmoothingMode.HighQuality;
+                    graphics.DrawImage(image, 0, 0, newWidth, newHeight);
+                }
+
+                newImage.Save("E:\\00.CV\\" + m_us_dm_nhan_su.strMA_NV + ".jpg", ImageFormat.Jpeg);
+                m_us_dm_nhan_su.strANH = "E:\\00.CV\\" + m_us_dm_nhan_su.strMA_NV + ".jpg";
             }
-            
-            int maxWidth = 120,
-                maxHeight = 160;
-            Bitmap image = new Bitmap(ip_str_pathimage);
-            // Get the image's original width and height
-            int originalWidth = image.Width;
-            int originalHeight = image.Height;
-
-            // To preserve the aspect ratio
-            float ratioX = (float)maxWidth / (float)originalWidth;
-            float ratioY = (float)maxHeight / (float)originalHeight;
-            float ratio = Math.Min(ratioX, ratioY);
-
-            // New width and height based on aspect ratio
-            int newWidth = (int)(originalWidth * ratio);
-            int newHeight = (int)(originalHeight * ratio);
-
-            // Convert other formats (including CMYK) to RGB.
-            Bitmap newImage = new Bitmap(newWidth, newHeight, PixelFormat.Format24bppRgb);
-
-            // Draws the image in the specified size with quality mode set to HighQuality
-            using (Graphics graphics = Graphics.FromImage(newImage))
-            {
-                //graphics.CompositingQuality = CompositingQuality.HighQuality;
-                //graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                //graphics.SmoothingMode = SmoothingMode.HighQuality;
-                graphics.DrawImage(image, 0, 0, newWidth, newHeight);
-            }
-            
-            newImage.Save("E:\\00.CV\\"+m_us_dm_nhan_su.strMA_NV+".jpg",ImageFormat.Jpeg);
-            m_us_dm_nhan_su.strANH = "E:\\00.CV\\" + m_us_dm_nhan_su.strMA_NV + ".jpg";
+                
         }
         private void save_data(){
             save_image(m_ofd_chon_anh.FileName);
