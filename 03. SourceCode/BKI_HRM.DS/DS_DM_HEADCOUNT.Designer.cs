@@ -464,6 +464,8 @@ namespace BKI_HRM.DS {
                 base.Columns.Add(this.columnMO_TA);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint2", new global::System.Data.DataColumn[] {
+                                this.columnMA_HEADCOUNT}, false));
                 this.columnID.AutoIncrement = true;
                 this.columnID.AutoIncrementSeed = -1;
                 this.columnID.AutoIncrementStep = -1;
@@ -471,6 +473,7 @@ namespace BKI_HRM.DS {
                 this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
                 this.columnMA_HEADCOUNT.AllowDBNull = false;
+                this.columnMA_HEADCOUNT.Unique = true;
                 this.columnMA_HEADCOUNT.MaxLength = 50;
                 this.columnTRANG_THAI.AllowDBNull = false;
                 this.columnTRANG_THAI.MaxLength = 250;

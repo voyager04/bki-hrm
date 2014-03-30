@@ -135,6 +135,10 @@ namespace BKI_HRM
         private C1FlexGrid m_grv_hop_dong_ld;
         private SaveFileDialog m_sfd_save_cv;
         private C1FlexGrid m_grv_qua_trinh_cong_tac;
+        private Label m_lbl_headcount;
+        private Label label3;
+        internal SIS.Controls.Button.SiSButton m_cmd_thay_headcount;
+        private ComboBox m_cbo_ma_headcount;
 		private System.ComponentModel.IContainer components;
 
 		
@@ -262,6 +266,10 @@ namespace BKI_HRM
             this.label11 = new System.Windows.Forms.Label();
             this.m_ofd_chon_anh = new System.Windows.Forms.OpenFileDialog();
             this.m_sfd_save_cv = new System.Windows.Forms.SaveFileDialog();
+            this.m_lbl_headcount = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.m_cmd_thay_headcount = new SIS.Controls.Button.SiSButton();
+            this.m_cbo_ma_headcount = new System.Windows.Forms.ComboBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).BeginInit();
             this.panel1.SuspendLayout();
@@ -333,9 +341,9 @@ namespace BKI_HRM
             this.m_cmd_chon_nhan_vien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_chon_nhan_vien.ImageIndex = 13;
             this.m_cmd_chon_nhan_vien.ImageList = this.ImageList;
-            this.m_cmd_chon_nhan_vien.Location = new System.Drawing.Point(393, 4);
+            this.m_cmd_chon_nhan_vien.Location = new System.Drawing.Point(479, 4);
             this.m_cmd_chon_nhan_vien.Name = "m_cmd_chon_nhan_vien";
-            this.m_cmd_chon_nhan_vien.Size = new System.Drawing.Size(138, 28);
+            this.m_cmd_chon_nhan_vien.Size = new System.Drawing.Size(113, 28);
             this.m_cmd_chon_nhan_vien.TabIndex = 33;
             this.m_cmd_chon_nhan_vien.Text = "&Chọn nhân viên";
             this.m_cmd_chon_nhan_vien.Click += new System.EventHandler(this.m_cmd_chon_nhan_vien_Click);
@@ -349,9 +357,9 @@ namespace BKI_HRM
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(531, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(592, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(122, 28);
+            this.m_cmd_insert.Size = new System.Drawing.Size(115, 28);
             this.m_cmd_insert.TabIndex = 29;
             this.m_cmd_insert.Text = "&Thêm nhân viên";
             // 
@@ -364,9 +372,9 @@ namespace BKI_HRM
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(653, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(707, 4);
             this.m_cmd_update.Name = "m_cmd_update";
-            this.m_cmd_update.Size = new System.Drawing.Size(122, 28);
+            this.m_cmd_update.Size = new System.Drawing.Size(102, 28);
             this.m_cmd_update.TabIndex = 30;
             this.m_cmd_update.Text = "&Sửa nhân viên";
             // 
@@ -395,9 +403,9 @@ namespace BKI_HRM
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(775, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(809, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
-            this.m_cmd_delete.Size = new System.Drawing.Size(118, 28);
+            this.m_cmd_delete.Size = new System.Drawing.Size(103, 28);
             this.m_cmd_delete.TabIndex = 31;
             this.m_cmd_delete.Text = "&Xoá nhân viên";
             // 
@@ -411,9 +419,9 @@ namespace BKI_HRM
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(893, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(912, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(111, 28);
+            this.m_cmd_exit.Size = new System.Drawing.Size(92, 28);
             this.m_cmd_exit.TabIndex = 32;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
@@ -511,7 +519,7 @@ namespace BKI_HRM
             // m_lbl_ma_nhan_vien
             // 
             this.m_lbl_ma_nhan_vien.AutoSize = true;
-            this.m_lbl_ma_nhan_vien.Location = new System.Drawing.Point(597, 275);
+            this.m_lbl_ma_nhan_vien.Location = new System.Drawing.Point(487, 275);
             this.m_lbl_ma_nhan_vien.Name = "m_lbl_ma_nhan_vien";
             this.m_lbl_ma_nhan_vien.Size = new System.Drawing.Size(35, 13);
             this.m_lbl_ma_nhan_vien.TabIndex = 27;
@@ -520,7 +528,7 @@ namespace BKI_HRM
             // m_lbl2
             // 
             this.m_lbl2.AutoSize = true;
-            this.m_lbl2.Location = new System.Drawing.Point(511, 275);
+            this.m_lbl2.Location = new System.Drawing.Point(401, 275);
             this.m_lbl2.Name = "m_lbl2";
             this.m_lbl2.Size = new System.Drawing.Size(75, 13);
             this.m_lbl2.TabIndex = 28;
@@ -1353,13 +1361,61 @@ namespace BKI_HRM
             // 
             this.m_ofd_chon_anh.FileName = "openFileDialog1";
             // 
+            // m_lbl_headcount
+            // 
+            this.m_lbl_headcount.AutoSize = true;
+            this.m_lbl_headcount.Location = new System.Drawing.Point(772, 275);
+            this.m_lbl_headcount.Name = "m_lbl_headcount";
+            this.m_lbl_headcount.Size = new System.Drawing.Size(35, 13);
+            this.m_lbl_headcount.TabIndex = 27;
+            this.m_lbl_headcount.Text = "label4";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(679, 275);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(81, 13);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "Mã Headcount:";
+            // 
+            // m_cmd_thay_headcount
+            // 
+            this.m_cmd_thay_headcount.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_thay_headcount.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_thay_headcount.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_thay_headcount.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_thay_headcount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_thay_headcount.ImageIndex = 21;
+            this.m_cmd_thay_headcount.ImageList = this.ImageList;
+            this.m_cmd_thay_headcount.Location = new System.Drawing.Point(893, 265);
+            this.m_cmd_thay_headcount.Name = "m_cmd_thay_headcount";
+            this.m_cmd_thay_headcount.Size = new System.Drawing.Size(115, 33);
+            this.m_cmd_thay_headcount.TabIndex = 34;
+            this.m_cmd_thay_headcount.Text = "Thay Headcount";
+            this.m_cmd_thay_headcount.Click += new System.EventHandler(this.m_cmd_thay_headcount_Click);
+            // 
+            // m_cbo_ma_headcount
+            // 
+            this.m_cbo_ma_headcount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_ma_headcount.FormattingEnabled = true;
+            this.m_cbo_ma_headcount.Location = new System.Drawing.Point(766, 272);
+            this.m_cbo_ma_headcount.Name = "m_cbo_ma_headcount";
+            this.m_cbo_ma_headcount.Size = new System.Drawing.Size(121, 21);
+            this.m_cbo_ma_headcount.TabIndex = 35;
+            this.m_cbo_ma_headcount.Visible = false;
+            // 
             // f201_dm_nhan_su
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.AutoSize = true;
             this.CancelButton = this.m_cmd_exit;
             this.ClientSize = new System.Drawing.Size(1008, 593);
+            this.Controls.Add(this.m_cbo_ma_headcount);
+            this.Controls.Add(this.m_cmd_thay_headcount);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.m_lbl2);
+            this.Controls.Add(this.m_lbl_headcount);
             this.Controls.Add(this.m_lbl_ma_nhan_vien);
             this.Controls.Add(this.m_lbl_ho_ten);
             this.Controls.Add(this.m_lbl);
@@ -1526,6 +1582,7 @@ namespace BKI_HRM
         US_GD_QUA_TRINH_CONG_TAC m_us_qua_trinh_cong_tac = new US_GD_QUA_TRINH_CONG_TAC();
         DS_GD_QUA_TRINH_CONG_TAC m_ds_qua_trinh_cong_tac = new DS_GD_QUA_TRINH_CONG_TAC();
         string m_str_message_tim_kiem = "Nhập vào thông tin muốn tìm kiếm: mã nhân viên, họ tên, ...";
+        string m_str_trang_thai_cmd = "creat";
 		#endregion
 
 		#region Private Methods
@@ -1737,7 +1794,39 @@ namespace BKI_HRM
             m_grv_chuc_vu_hien_tai.Redraw = true;
             
         }
-
+        private void load_data_2_cbo_ma_headcount()
+        {
+            DS_DM_HEADCOUNT v_ds_headcount = new DS_DM_HEADCOUNT();
+            US_DM_HEADCOUNT v_us_headcount = new US_DM_HEADCOUNT();
+            v_us_headcount.FillDataset(v_ds_headcount);
+            m_cbo_ma_headcount.DataSource = v_ds_headcount.DM_HEADCOUNT;
+            m_cbo_ma_headcount.DisplayMember = DM_HEADCOUNT.MA_HEADCOUNT;
+            m_cbo_ma_headcount.ValueMember = DM_HEADCOUNT.ID;
+        }
+        private void thay_headcount()
+        {
+            if (m_str_trang_thai_cmd == "creat")
+            {
+                m_cbo_ma_headcount.Visible = true;
+                m_str_trang_thai_cmd = "save";
+                m_lbl_headcount.Visible = false;
+                m_cmd_thay_headcount.Text = "Lưu Headcount";
+                load_data_2_cbo_ma_headcount();
+                
+            }
+            else
+            {
+                m_cbo_ma_headcount.Visible = false;
+                m_str_trang_thai_cmd = "creat";
+                m_cmd_thay_headcount.Text = "Thay Headcount";
+                m_lbl_headcount.Visible = true;
+                grid2us_object(m_us, m_grv_nhan_su.Row);
+                m_us.dcID_HEADCOUNT = CIPConvert.ToDecimal(m_cbo_ma_headcount.SelectedValue);
+                m_us.Update();
+                load_data_2_grid_search();
+                load_chi_tiet_nhan_vien();
+            }
+        }
         private void load_data_2_grv_hop_dong_lao_dong()
         {
             DS_V_GD_HOP_DONG_LAO_DONG v_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
@@ -1856,6 +1945,16 @@ namespace BKI_HRM
            // us_object_to_form();
             m_lbl_ho_ten.Text = m_us.strHO_DEM + " " + m_us.strTEN;
             m_lbl_ma_nhan_vien.Text = m_us.strMA_NV;
+
+            if (m_us.dcID_HEADCOUNT != 0)
+            {
+                US_DM_HEADCOUNT v_us_headcount = new US_DM_HEADCOUNT(m_us.dcID_HEADCOUNT);
+                m_lbl_headcount.Text = v_us_headcount.strMA_HEADCOUNT;
+            }
+            else
+            {
+                m_lbl_headcount.Text = "Chưa có mã Headcount.";
+            }
             switch (m_tct_chi_tiet_nhan_vien.SelectedIndex)
             {
                 case 1:
@@ -2313,8 +2412,17 @@ namespace BKI_HRM
             }
         }
 
-        
-
+        private void m_cmd_thay_headcount_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                thay_headcount();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
 

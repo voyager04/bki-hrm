@@ -660,6 +660,28 @@ public class US_DM_NHAN_SU : US_Object
         pm_objDR["TRANG_THAI"] = System.Convert.DBNull;
     }
 
+    public decimal dcID_HEADCOUNT
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "ID_HEADCOUNT", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["ID_HEADCOUNT"] = value;
+        }
+    }
+
+    public bool IsID_HEADCOUNTNull()
+    {
+        return pm_objDR.IsNull("ID_HEADCOUNT");
+    }
+
+    public void SetID_HEADCOUNTNull()
+    {
+        pm_objDR["ID_HEADCOUNT"] = System.Convert.DBNull;
+    }
+
     #endregion
     #region "Init Functions"
     public US_DM_NHAN_SU()
