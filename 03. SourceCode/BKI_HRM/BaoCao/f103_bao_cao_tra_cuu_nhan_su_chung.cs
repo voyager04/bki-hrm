@@ -40,7 +40,7 @@ namespace BKI_HRM {
         internal SiSButton m_cmd_exit;
         private ToolTip m_tooltip;
         private Label m_lbl_thong_bao;
-        private Checkbox_Combobox.CheckBoxComboBox checkBoxComboBox1;
+        private Checkbox_Combobox.CheckBoxComboBox m_cbc_choose_columns;
         private IContainer components;
 
         public f103_bao_cao_tra_cuu_nhan_su() {
@@ -79,7 +79,7 @@ namespace BKI_HRM {
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBoxComboBox1 = new Checkbox_Combobox.CheckBoxComboBox();
+            this.m_cbc_choose_columns = new Checkbox_Combobox.CheckBoxComboBox();
             this.m_lbl_thong_bao = new System.Windows.Forms.Label();
             this.m_lbl_so_nhan_vien = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -133,7 +133,7 @@ namespace BKI_HRM {
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.checkBoxComboBox1);
+            this.panel1.Controls.Add(this.m_cbc_choose_columns);
             this.panel1.Controls.Add(this.m_lbl_thong_bao);
             this.panel1.Controls.Add(this.m_lbl_so_nhan_vien);
             this.panel1.Controls.Add(this.label2);
@@ -146,16 +146,17 @@ namespace BKI_HRM {
             this.panel1.Size = new System.Drawing.Size(1189, 95);
             this.panel1.TabIndex = 24;
             // 
-            // checkBoxComboBox1
+            // m_cbc_choose_columns
             // 
             checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxComboBox1.CheckBoxProperties = checkBoxProperties1;
-            this.checkBoxComboBox1.DisplayMemberSingleItem = "";
-            this.checkBoxComboBox1.FormattingEnabled = true;
-            this.checkBoxComboBox1.Location = new System.Drawing.Point(1064, 68);
-            this.checkBoxComboBox1.Name = "checkBoxComboBox1";
-            this.checkBoxComboBox1.Size = new System.Drawing.Size(121, 22);
-            this.checkBoxComboBox1.TabIndex = 31;
+            this.m_cbc_choose_columns.CheckBoxProperties = checkBoxProperties1;
+            this.m_cbc_choose_columns.DisplayMemberSingleItem = "";
+            this.m_cbc_choose_columns.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbc_choose_columns.FormattingEnabled = true;
+            this.m_cbc_choose_columns.Location = new System.Drawing.Point(998, 68);
+            this.m_cbc_choose_columns.Name = "m_cbc_choose_columns";
+            this.m_cbc_choose_columns.Size = new System.Drawing.Size(183, 22);
+            this.m_cbc_choose_columns.TabIndex = 31;
             // 
             // m_lbl_thong_bao
             // 
@@ -193,7 +194,7 @@ namespace BKI_HRM {
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(974, 33);
+            this.m_cmd_search.Location = new System.Drawing.Point(950, 33);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 2;
@@ -288,7 +289,7 @@ namespace BKI_HRM {
             ShowDialog();
         }
 
-        internal int SapHetHanThuViec(DataEntryFormMode ip_e_form_mode){
+        internal int SapHetHanThuViec(DataEntryFormMode ip_e_form_mode) {
             this.Text = "F103 - Danh sách Thử việc sắp hết hạn";
             m_e_form_mode = ip_e_form_mode;
             m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
@@ -385,7 +386,7 @@ namespace BKI_HRM {
         private string m_str_thang_het_hieu_luc = "";
         private string m_str_nam_het_hieu_luc = "";
         private string m_str_trang_thai_chuc_vu = "";
-        
+
         #endregion
 
         #region Private Methods
@@ -402,17 +403,17 @@ namespace BKI_HRM {
         private void set_initial_form_load() {
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_grid();
-            
+
         }
         private void load_custom_source_2_m_txt_search() {
             m_txt_search.AutoCompleteMode = AutoCompleteMode.Suggest;
             m_txt_search.AutoCompleteSource = AutoCompleteSource.CustomSource;
             var v_coll = new AutoCompleteStringCollection();
-            var v_rows =m_ds.Tables[0].Rows;
-            for (var i = 0; i < v_rows.Count - 1; i++){
-                v_coll.Add(v_rows[i]["HO_DEM"]+"");
+            var v_rows = m_ds.Tables[0].Rows;
+            for (var i = 0; i < v_rows.Count - 1; i++) {
+                v_coll.Add(v_rows[i]["HO_DEM"] + "");
                 v_coll.Add(v_rows[i]["TEN"] + "");
-                v_coll.Add( v_rows[i]["HO_DEM"]+ " " + v_rows[i]["TEN"]);
+                v_coll.Add(v_rows[i]["HO_DEM"] + " " + v_rows[i]["TEN"]);
                 v_coll.Add(v_rows[i]["TEN_CV"] + "");
                 v_coll.Add(v_rows[i]["HO_DEM"] + " - " + v_rows[i]["TEN"] + " - " + v_rows[i]["MA_NV"]);
                 v_coll.Add(v_rows[i]["TEN"] + " - " + v_rows[i]["HO_DEM"] + " " + v_rows[i]["TEN"] + " - " + v_rows[i]["MA_NV"]);
@@ -449,11 +450,10 @@ namespace BKI_HRM {
             if (m_txt_search.Text.Equals(m_str_goi_y_tim_kiem)) {
                 m_txt_search.Text = "";
             }
-            if (m_e_form_mode == DataEntryFormMode.ViewDataState){
+            if (m_e_form_mode == DataEntryFormMode.ViewDataState) {
                 m_us.FillDatasetSapHetHanThuViec(m_ds, "");
                 m_so_luong_thu_viec_sap_het_han = m_ds.V_DM_DU_LIEU_NHAN_VIEN.Rows.Count;
-            }
-            else{
+            } else {
                 m_list_key_value = get_list_key_value(m_txt_search.Text);
                 refresh_key_value();
                 get_key_value_from_txt_search();
@@ -497,11 +497,21 @@ namespace BKI_HRM {
                     );
                 refresh_key_value();
                 load_custom_source_2_m_txt_search();
+                //test();
             }
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;
             tao_tree();
-            //load_data_to_CheckboxCombobox();
+            load_data_to_CheckboxCombobox();
+        }
+
+        void test() {
+            int v_count = m_fg.Cols.Count;
+            if (v_count >= 2) {
+                for (int i = 2; i < v_count; i++) {
+                    //m_fg.Cols[i].Visible = true;
+                }
+            }
         }
         /*
          * Phần xử lý tìm kiếm
@@ -556,7 +566,6 @@ namespace BKI_HRM {
                 return v_list_key_value;
             }
             return v_list_key_value;
-
         }
         private int lay_so_ban_ghi() {
             return m_ds.V_DM_DU_LIEU_NHAN_VIEN.Count;
@@ -756,12 +765,29 @@ namespace BKI_HRM {
         /*
          * Phần xử lý Thêm cột hiển thị
          */
-        private void load_data_to_CheckboxCombobox(){
-            m_lbl_thong_bao.Text = m_fg.ColumnInfo;
+
+        private void load_data_to_CheckboxCombobox() {
+            int v_count = m_fg.Cols.Count;
+            for (int i = 0; i < v_count - 2; i++) {
+                m_cbc_choose_columns.Items.Add(m_fg.Cols[i + 2].Caption);//Bỏ 2 cột đầu tiên của C1Grid
+                /* m_cbc_choose_columns tự động thêm một Item giá trị = "" vào đầu nên phải bỏ đi Item đó. */
+                m_cbc_choose_columns.CheckBoxItems[i + 1].Checked = m_fg.Cols[i + 2].Visible;
+            }
+        }
+
+        private void hien_thi_cot_duoc_check() {
+            int v_count = m_fg.Cols.Count;
+            if (v_count >= 2 && (m_cbc_choose_columns.Items.Count == v_count-1)) {
+                for (int i = 0; i < v_count-2; i++) {
+                    m_fg.Cols[i + 2].Visible = m_cbc_choose_columns.CheckBoxItems[i + 1].Checked;
+                }
+            }
         }
         /*
          * Kết thúc Phần xử lý Thêm cột hiển thị
          */
+
+
 
         #endregion
 
@@ -776,6 +802,7 @@ namespace BKI_HRM {
             m_txt_search.KeyDown += m_txt_search_KeyDown;
             m_txt_search.MouseClick += m_txt_search_MouseClick;
             m_txt_search.Leave += m_txt_search_Leave;
+            m_cbc_choose_columns.CheckBoxItems.CheckBoxCheckedChanged += m_cbc_choose_columns_SelectedIndexChange;
         }
 
         private void f103_bao_cao_tra_cuu_nhan_su_Load(object sender, EventArgs e) {
@@ -830,6 +857,13 @@ namespace BKI_HRM {
             }
         }
 
+        private void m_cbc_choose_columns_SelectedIndexChange(object sender, EventArgs e) {
+            try {
+                hien_thi_cot_duoc_check();
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
 
