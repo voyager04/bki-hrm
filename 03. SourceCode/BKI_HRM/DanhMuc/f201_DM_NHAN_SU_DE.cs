@@ -19,6 +19,10 @@ using System.Text.RegularExpressions;
 using System.Drawing.Imaging;
 
 using System.IO;
+using System.Drawing.Drawing2D;
+using System.Drawing.Drawing2D;
+
+
 
 namespace BKI_HRM
 {
@@ -291,6 +295,11 @@ namespace BKI_HRM
         }
         private void save_image(string ip_str_pathimage)
         {
+            MessageBox.Show(Application.CommonAppDataPath + "\n" 
+                + Application.ExecutablePath + "\n" 
+                + Application.LocalUserAppDataPath + "\n"
+                + Application.UserAppDataPath);
+            
             if (ip_str_pathimage != "")
             {
                 if (File.Exists("E:\\00.CV\\" + m_us_dm_nhan_su.strMA_NV + ".jpg"))
@@ -320,14 +329,15 @@ namespace BKI_HRM
                 // Draws the image in the specified size with quality mode set to HighQuality
                 using (Graphics graphics = Graphics.FromImage(newImage))
                 {
-                    //graphics.CompositingQuality = CompositingQuality.HighQuality;
-                    //graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                    //graphics.SmoothingMode = SmoothingMode.HighQuality;
+                    graphics.CompositingQuality = CompositingQuality.HighQuality;
+                    graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                    graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
                     graphics.DrawImage(image, 0, 0, newWidth, newHeight);
                 }
 
                 newImage.Save("E:\\00.CV\\" + m_us_dm_nhan_su.strMA_NV + ".jpg", ImageFormat.Jpeg);
                 m_us_dm_nhan_su.strANH = "E:\\00.CV\\" + m_us_dm_nhan_su.strMA_NV + ".jpg";
+               
             }
                 
         }
