@@ -90,6 +90,7 @@ namespace BKI_HRM
             this.nhânSựTheoChứcVuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nhânSựTheoCấpBậcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quáTrìnhLàmViệcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_lbl_du_an_sap_kt = new System.Windows.Forms.Label();
             this.m_lbl_thong_bao_hop_dong_sap_het_han = new System.Windows.Forms.Label();
@@ -527,7 +528,8 @@ namespace BKI_HRM
             this.m_menuitem_nhan_su_theo_phong_ban,
             this.nhânSựTheoChứcVuToolStripMenuItem,
             this.nhânSựTheoCấpBậcToolStripMenuItem,
-            this.quáTrìnhLàmViệcToolStripMenuItem});
+            this.quáTrìnhLàmViệcToolStripMenuItem,
+            this.chToolStripMenuItem});
             this.m_menuitem_bcnhansu.Name = "m_menuitem_bcnhansu";
             this.m_menuitem_bcnhansu.Size = new System.Drawing.Size(234, 22);
             this.m_menuitem_bcnhansu.Text = "Báo cáo nhân sự";
@@ -564,6 +566,13 @@ namespace BKI_HRM
             this.quáTrìnhLàmViệcToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.quáTrìnhLàmViệcToolStripMenuItem.Text = "Quá trình làm việc";
             this.quáTrìnhLàmViệcToolStripMenuItem.Click += new System.EventHandler(this.quáTrìnhLàmViệcToolStripMenuItem_Click);
+            // 
+            // chToolStripMenuItem
+            // 
+            this.chToolStripMenuItem.Name = "chToolStripMenuItem";
+            this.chToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.chToolStripMenuItem.Text = "Chức vụ trạng thái";
+            this.chToolStripMenuItem.Click += new System.EventHandler(this.chToolStripMenuItem_Click);
             // 
             // báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem
             // 
@@ -721,5 +730,6 @@ namespace BKI_HRM
         private ToolStripMenuItem m_menuitem_phan_quyen_he_thong;
         private ToolStripMenuItem m_menuitem_dm_control;
         private ToolStripMenuItem m_menuitem_headcount;
+        private ToolStripMenuItem chToolStripMenuItem;
     }
 }
