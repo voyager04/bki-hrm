@@ -650,5 +650,13 @@
        public const string ACTIONS = "ACTIONS";
        public const string MO_TA = "MO_TA";
    }
-
+   public class RPT_CHUC_VU_TRANG_THAI
+   {
+       public const string ID = "ID";
+       public const string ID_CV = "ID_CV";
+       public const string MA_CV = "MA_CV";
+       public const string ID_TRANG_THAI = "ID_TRANG_THAI";
+       public const string MA_TU_DIEN = "MA_TU_DIEN";
+       public const string SO_LUONG = "SO_LUONG";
+   }
 }

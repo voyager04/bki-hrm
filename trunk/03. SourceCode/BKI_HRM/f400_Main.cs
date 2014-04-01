@@ -433,5 +433,18 @@ namespace BKI_HRM {
             	CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void chToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f405_bao_cao_chuc_vu_trang_thai frm = new f405_bao_cao_chuc_vu_trang_thai();
+                frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 } 
