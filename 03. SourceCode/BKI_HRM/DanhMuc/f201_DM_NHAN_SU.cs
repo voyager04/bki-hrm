@@ -1802,6 +1802,7 @@ namespace BKI_HRM
             m_cbo_ma_headcount.DataSource = v_ds_headcount.DM_HEADCOUNT;
             m_cbo_ma_headcount.DisplayMember = DM_HEADCOUNT.MA_HEADCOUNT;
             m_cbo_ma_headcount.ValueMember = DM_HEADCOUNT.ID;
+            m_cbo_ma_headcount.SelectedValue = m_us.dcID_HEADCOUNT;
         }
         private void thay_headcount()
         {
@@ -1945,7 +1946,10 @@ namespace BKI_HRM
            // us_object_to_form();
             m_lbl_ho_ten.Text = m_us.strHO_DEM + " " + m_us.strTEN;
             m_lbl_ma_nhan_vien.Text = m_us.strMA_NV;
-
+            m_cbo_ma_headcount.Visible = false;
+            m_cmd_thay_headcount.Text = "Thay Headcount";
+            m_lbl_headcount.Visible = true;
+            m_str_trang_thai_cmd = "creat";
             if (m_us.dcID_HEADCOUNT != 0)
             {
                 US_DM_HEADCOUNT v_us_headcount = new US_DM_HEADCOUNT(m_us.dcID_HEADCOUNT);
