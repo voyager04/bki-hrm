@@ -343,6 +343,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox m_txt_mo_ta;
         internal System.Windows.Forms.ImageList ImageList;
+       // internal System.Windows.Forms.ImageList ImageList;
 
     }
 }
