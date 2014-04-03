@@ -7,6 +7,7 @@
 
 using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
@@ -326,6 +327,7 @@ namespace BKI_HRM
         private US_GD_HOP_DONG m_us_gd_hop_dong;
 
         private string m_str_suggest = "Nhập Mã nhân viên, Họ đệm, Tên, Mã hợp đồng, Loại hợp đồng, Ngày tháng, Trạng thái";
+        public static string m_str_ma_hop_dong;
         #endregion
 
         #region Private Methods
@@ -373,14 +375,14 @@ namespace BKI_HRM
         {
             m_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
             var v_str_search = m_txt_tim_kiem.Text.Trim();
-            var v_str_month = Regex.Match(v_str_search, @"\d+").Value;
-            if (!v_str_month.Equals(""))
-                v_str_search = v_str_month;
+            //var v_str_month = Regex.Match(v_str_search, @"\d+").Value;
+            //if (!v_str_month.Equals(""))
+            //    v_str_search = v_str_month;
 
             if (v_str_search == m_str_suggest)
                 m_us.FillDatasetSearchAll(m_ds, "");
             m_us.FillDatasetSearchAll(m_ds, v_str_search);
-
+            
             m_lbl_count_record.Text = string.Format("Có {0} Hợp Đồng Lao Động.", m_ds.Tables[0].Rows.Count);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
@@ -422,6 +424,11 @@ namespace BKI_HRM
             f701_v_gd_hop_dong_lao_dong_DE v_fDE = new f701_v_gd_hop_dong_lao_dong_DE();
             v_fDE.display_for_insert();
             load_data_2_grid();
+
+            m_fg.Focus();
+            var s = m_fg.FindRow(m_str_ma_hop_dong, m_fg.Row, 4, true);
+            m_fg.Row = s;
+            m_fg.Rows[s].Selected = true;
         }
 
         private void update_v_gd_hop_dong_lao_dong()
@@ -432,6 +439,11 @@ namespace BKI_HRM
             f701_v_gd_hop_dong_lao_dong_DE v_fDE = new f701_v_gd_hop_dong_lao_dong_DE();
             v_fDE.display_for_update(m_us_gd_hop_dong);
             load_data_2_grid();
+
+            m_fg.Focus();
+            var s = m_fg.FindRow(m_str_ma_hop_dong, m_fg.Row, 4, true);
+            m_fg.Row = s;
+            m_fg.Rows[s].Selected = true;
         }
 
         private void delete_v_gd_hop_dong_lao_dong()

@@ -133,6 +133,7 @@ namespace BKI_HRM.NghiepVu
                     m_us.Update();
                     break;
             }
+            f701_v_hop_dong_lao_dong.m_str_ma_hop_dong = m_txt_ma_hop_dong.Text;
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
             this.Close();
         }

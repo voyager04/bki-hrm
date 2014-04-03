@@ -321,5 +321,12 @@ namespace BKI_HRM.US
             v_sp.addNVarcharInputParam("@MA_HOP_DONG", ip_str_ma_hop_dong);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
+
+        public void FillDataSet_Search_like_ma_hop_dong(DS_GD_HOP_DONG op_ds, string ma_hop_dong)
+        {
+            CStoredProc v_sp = new CStoredProc("GD_HOP_DONG_Search_like_ma_hop_dong");
+            v_sp.addNVarcharInputParam("@MA_HOP_DONG", ma_hop_dong);
+            v_sp.fillDataSetByCommand(this, op_ds);
+        }
     }
 }
