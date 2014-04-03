@@ -333,6 +333,9 @@
     <EmbeddedResource Include="DanhMuc\f102_v_dm_don_vi_DE.resx">
       <DependentUpon>f102_v_dm_don_vi_DE.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f107_tach_nhap_don_vi.resx">
+      <DependentUpon>f107_tach_nhap_don_vi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f201_dm_nhan_su.resx">
       <DependentUpon>f201_dm_nhan_su.cs</DependentUpon>
     </EmbeddedResource>
