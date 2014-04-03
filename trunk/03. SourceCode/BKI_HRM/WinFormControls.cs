@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
-
+using C1.Win.C1FlexGrid;
 using IP.Core.IPCommon;
 using IP.Core.IPException;
 using IP.Core.IPData;
@@ -15,23 +15,18 @@ using BKI_HRM.US;
 using BKI_HRM.DS.CDBNames;
 
 
-namespace BKI_HRM
-{
-    public class WinFormControls
-    {
-        public WinFormControls()
-        {
+namespace BKI_HRM {
+    public class WinFormControls {
+        public WinFormControls() {
             //
             // TODO: Add constructor logic here
             //
         }
-        public enum eTAT_CA
-        {
+        public enum eTAT_CA {
             YES,
             NO
         }
-        public enum eLOAI_TU_DIEN
-        {
+        public enum eLOAI_TU_DIEN {
             TRANG_THAI_CHUC_VU,
             LOAI_HOP_DONG,
             LOAI_DON_VI,
@@ -47,14 +42,12 @@ namespace BKI_HRM
         public static void load_data_to_cbo_tu_dien(
              eLOAI_TU_DIEN ip_e
             , eTAT_CA ip_e_tat_ca
-            , ComboBox ip_obj_cbo_trang_thai)
-        {
+            , ComboBox ip_obj_cbo_trang_thai) {
 
             IP.Core.IPUserService.US_CM_DM_TU_DIEN v_us_dm_tu_dien = new IP.Core.IPUserService.US_CM_DM_TU_DIEN();
             IP.Core.IPData.DS_CM_DM_TU_DIEN v_ds_dm_tu_dien = new IP.Core.IPData.DS_CM_DM_TU_DIEN();
             string v_str_loai_tu_dien = "";
-            switch (ip_e)
-            {
+            switch (ip_e) {
                 case eLOAI_TU_DIEN.TRANG_THAI_CHUC_VU:
                     v_str_loai_tu_dien = MA_LOAI_TU_DIEN.TRANG_THAI_CHUC_VU;
                     break;
@@ -89,8 +82,7 @@ namespace BKI_HRM
             ip_obj_cbo_trang_thai.DisplayMember = CM_DM_TU_DIEN.TEN;
             ip_obj_cbo_trang_thai.ValueMember = CM_DM_TU_DIEN.ID;
 
-            if (ip_e_tat_ca == eTAT_CA.YES)
-            {
+            if (ip_e_tat_ca == eTAT_CA.YES) {
                 DataRow v_dr = v_ds_dm_tu_dien.CM_DM_TU_DIEN.NewRow();
                 v_dr[CM_DM_TU_DIEN.ID] = -1;
                 v_dr[CM_DM_TU_DIEN.TEN] = "------ Tất cả ------";
@@ -102,5 +94,28 @@ namespace BKI_HRM
                 ip_obj_cbo_trang_thai.SelectedIndex = 0;
             }
         }
+
+        public static void load_data_to_CheckboxCombobox(C1FlexGrid ip_fg, Checkbox_Combobox.CheckBoxComboBox ip_cbc
+                                                                , bool load_invisible) {
+            int v_count = ip_fg.Cols.Count;
+            if (load_invisible) {
+                for (int i = 0; i < v_count - 2; i++) {
+                    ip_cbc.Items.Add(ip_fg.Cols[i + 2].Caption);//Bỏ 2 cột đầu tiên của C1Grid
+                    /* 
+                     * m_cbc_choose_columns tự động thêm một Item giá trị = "" vào đầu nên phải bỏ đi Item đó. 
+                     */
+                    ip_cbc.CheckBoxItems[i + 1].Checked = ip_fg.Cols[i + 2].Visible;
+                }
+            } else {
+                for (int i = 0; i < v_count - 2; i++) {
+                    if (ip_fg.Cols[i + 2].Visible) {
+                        ip_cbc.Items.Add(ip_fg.Cols[i + 2].Caption);//Bỏ 2 cột đầu tiên của C1Grid
+                        ip_cbc.CheckBoxItems[i + 1].Checked = ip_fg.Cols[i + 2].Visible;
+                    }
+                }
+            }
+
+        }
+
     }
 }

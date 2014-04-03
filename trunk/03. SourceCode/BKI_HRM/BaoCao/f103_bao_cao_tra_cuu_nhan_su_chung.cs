@@ -41,6 +41,7 @@ namespace BKI_HRM {
         private ToolTip m_tooltip;
         private Label m_lbl_thong_bao;
         private Checkbox_Combobox.CheckBoxComboBox m_cbc_choose_columns;
+        private Label m_lbl_phim_tat;
         private IContainer components;
 
         public f103_bao_cao_tra_cuu_nhan_su() {
@@ -90,6 +91,7 @@ namespace BKI_HRM {
             this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
+            this.m_lbl_phim_tat = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -209,7 +211,7 @@ namespace BKI_HRM {
             this.m_txt_search.Size = new System.Drawing.Size(633, 20);
             this.m_txt_search.TabIndex = 1;
             this.m_tooltip.SetToolTip(this.m_txt_search, "Gợi ý tìm kiếm:\r\nGiới tính: nữ, đơn vị: Phòng hành chính\r\nhoặc Nguyễn Danh Tú, gi" +
-                    "ới tính: Nam");
+        "ới tính: Nam");
             // 
             // m_lbl_tim_kiem
             // 
@@ -222,6 +224,7 @@ namespace BKI_HRM {
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_lbl_phim_tat);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -264,6 +267,15 @@ namespace BKI_HRM {
             this.m_cmd_exit.TabIndex = 4;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
+            // m_lbl_phim_tat
+            // 
+            this.m_lbl_phim_tat.AutoSize = true;
+            this.m_lbl_phim_tat.Location = new System.Drawing.Point(207, 10);
+            this.m_lbl_phim_tat.Name = "m_lbl_phim_tat";
+            this.m_lbl_phim_tat.Size = new System.Drawing.Size(206, 14);
+            this.m_lbl_phim_tat.TabIndex = 999;
+            this.m_lbl_phim_tat.Text = "Phím tắt: F6_Mở rộng-Thu gọn danh sách";
+            // 
             // f103_bao_cao_tra_cuu_nhan_su
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -279,6 +291,7 @@ namespace BKI_HRM {
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.m_pnl_out_place_dm.ResumeLayout(false);
+            this.m_pnl_out_place_dm.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -347,6 +360,7 @@ namespace BKI_HRM {
         private DataEntryFormMode m_e_form_mode;
         int m_ngay_truoc_het_han_thu_viec = 7;
         int m_so_luong_thu_viec_sap_het_han = 0;
+        private bool load_invisible = false;
         DS_V_DM_DU_LIEU_NHAN_VIEN m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
         US_V_DM_DU_LIEU_NHAN_VIEN m_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
         private const String m_str_goi_y_tim_kiem = "Giới tính: nữ, đơn vị: Phòng hành chính hoặc Nguyễn Danh Tú, giới tính: Nam, Trình độ: Đại học";
@@ -502,7 +516,8 @@ namespace BKI_HRM {
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;
             tao_tree();
-            load_data_to_CheckboxCombobox();
+            WinFormControls.load_data_to_CheckboxCombobox(m_fg, m_cbc_choose_columns, load_invisible);
+            //load_data_to_CheckboxCombobox();
         }
 
         void test() {
@@ -775,13 +790,28 @@ namespace BKI_HRM {
             }
         }
 
-        private void hien_thi_cot_duoc_check() {
+        private void hien_thi_cot_duoc_check(bool load_invisible) {
             int v_count = m_fg.Cols.Count;
-            if (v_count >= 2 && (m_cbc_choose_columns.Items.Count == v_count-1)) {
-                for (int i = 0; i < v_count-2; i++) {
-                    m_fg.Cols[i + 2].Visible = m_cbc_choose_columns.CheckBoxItems[i + 1].Checked;
+            int v_count_visible = 0;
+            for (int i = 0; i < v_count; i++) {
+                if (m_fg.Cols[i].Visible) {
+                    v_count_visible = v_count_visible + 1;
                 }
             }
+            if (load_invisible) {
+                if (v_count >= 2 && (m_cbc_choose_columns.Items.Count == v_count - 1)) {
+                    for (int i = 0; i < v_count - 2; i++) {
+                        m_fg.Cols[i + 2].Visible = m_cbc_choose_columns.CheckBoxItems[i + 1].Checked;
+                    }
+                }
+            } else {
+                if (v_count_visible >= 2 && (m_cbc_choose_columns.Items.Count == v_count_visible - 1)) {
+                    for (int i = 0; i < v_count_visible - 2; i++) {
+                        m_fg.Cols[i + 2].Visible = m_cbc_choose_columns.CheckBoxItems[i + 1].Checked;
+                    }
+                }
+            }
+
         }
         /*
          * Kết thúc Phần xử lý Thêm cột hiển thị
@@ -859,7 +889,7 @@ namespace BKI_HRM {
 
         private void m_cbc_choose_columns_SelectedIndexChange(object sender, EventArgs e) {
             try {
-                hien_thi_cot_duoc_check();
+                hien_thi_cot_duoc_check(load_invisible);
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
