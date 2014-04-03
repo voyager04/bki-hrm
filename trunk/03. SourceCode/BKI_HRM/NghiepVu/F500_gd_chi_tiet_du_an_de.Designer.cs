@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F500_gd_chi_tiet_du_an_de));
             this.m_txt_ma_ns = new System.Windows.Forms.TextBox();
             this.m_lbl_ma_du_an = new System.Windows.Forms.Label();
-            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.m_cmd_refresh = new SIS.Controls.Button.SiSButton();
@@ -73,33 +70,6 @@
             this.m_lbl_ma_du_an.TabIndex = 25;
             this.m_lbl_ma_du_an.Text = "Mã dự án :";
             // 
-            // ImageList
-            // 
-            this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
-            this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.ImageList.Images.SetKeyName(0, "");
-            this.ImageList.Images.SetKeyName(1, "");
-            this.ImageList.Images.SetKeyName(2, "");
-            this.ImageList.Images.SetKeyName(3, "");
-            this.ImageList.Images.SetKeyName(4, "");
-            this.ImageList.Images.SetKeyName(5, "");
-            this.ImageList.Images.SetKeyName(6, "");
-            this.ImageList.Images.SetKeyName(7, "");
-            this.ImageList.Images.SetKeyName(8, "");
-            this.ImageList.Images.SetKeyName(9, "");
-            this.ImageList.Images.SetKeyName(10, "");
-            this.ImageList.Images.SetKeyName(11, "");
-            this.ImageList.Images.SetKeyName(12, "");
-            this.ImageList.Images.SetKeyName(13, "");
-            this.ImageList.Images.SetKeyName(14, "");
-            this.ImageList.Images.SetKeyName(15, "");
-            this.ImageList.Images.SetKeyName(16, "");
-            this.ImageList.Images.SetKeyName(17, "");
-            this.ImageList.Images.SetKeyName(18, "");
-            this.ImageList.Images.SetKeyName(19, "");
-            this.ImageList.Images.SetKeyName(20, "");
-            this.ImageList.Images.SetKeyName(21, "");
-            // 
             // m_pnl_out_place_dm
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
@@ -120,7 +90,6 @@
             this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
-            this.m_cmd_save.ImageList = this.ImageList;
             this.m_cmd_save.Location = new System.Drawing.Point(429, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
@@ -136,7 +105,6 @@
             this.m_cmd_refresh.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_refresh.ImageIndex = 9;
-            this.m_cmd_refresh.ImageList = this.ImageList;
             this.m_cmd_refresh.Location = new System.Drawing.Point(517, 4);
             this.m_cmd_refresh.Name = "m_cmd_refresh";
             this.m_cmd_refresh.Size = new System.Drawing.Size(88, 28);
@@ -153,7 +121,6 @@
             this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
-            this.m_cmd_exit.ImageList = this.ImageList;
             this.m_cmd_exit.Location = new System.Drawing.Point(605, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
@@ -324,7 +291,6 @@
 
         private System.Windows.Forms.TextBox m_txt_ma_ns;
         private System.Windows.Forms.Label m_lbl_ma_du_an;
-        internal System.Windows.Forms.ImageList ImageList;
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         internal SIS.Controls.Button.SiSButton m_cmd_save;
         internal SIS.Controls.Button.SiSButton m_cmd_refresh;
