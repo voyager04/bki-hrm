@@ -114,7 +114,7 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 432);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 431);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(890, 36);
@@ -199,7 +199,7 @@ namespace BKI_HRM
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 83);
+            this.m_fg.Location = new System.Drawing.Point(0, 82);
             this.m_fg.Name = "m_fg";
             this.m_fg.Size = new System.Drawing.Size(890, 349);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
@@ -262,6 +262,7 @@ namespace BKI_HRM
             this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
+            this.m_cmd_search.ImageList = this.ImageList;
             this.m_cmd_search.Location = new System.Drawing.Point(790, 14);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
@@ -309,7 +310,7 @@ namespace BKI_HRM
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(890, 468);
+            this.ClientSize = new System.Drawing.Size(890, 467);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_lbl_tu_ngay);
             this.Controls.Add(this.m_dat_den_ngay);

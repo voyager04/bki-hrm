@@ -205,6 +205,7 @@ namespace BKI_HRM
             this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
+            this.m_cmd_search.ImageList = this.ImageList;
             this.m_cmd_search.Location = new System.Drawing.Point(685, 23);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
