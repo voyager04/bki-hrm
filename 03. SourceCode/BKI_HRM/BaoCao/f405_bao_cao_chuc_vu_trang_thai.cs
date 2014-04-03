@@ -59,17 +59,21 @@ namespace BKI_HRM
             m_us_1.FillDataset(m_ds_1);
             v_us_dm_tu_dien.FillDatasetByIdLoaiTuDien(v_ds_dm_tu_dien, 5);
             //1.tạo danh sách cột chức vụ
-            m_fg.Cols.Count = m_ds_1.DM_CHUC_VU.Rows.Count + 1;
-            m_fg.Cols[0].Width = 80;
+            m_fg.Cols.Count = m_ds_1.DM_CHUC_VU.Rows.Count + 2;
+            m_fg.Cols[0].Width = 100;
             //m_fg.Cols[1].Caption = "Trạng thái/Chức vụ";
-
-            for (int i = 1; i < m_fg.Cols.Count; i++)
+            m_fg.Cols[1].Caption = "Tổng";
+            m_fg.Cols[1].UserData = 0;
+            //m_fg.Cols[1].Style.ForeColor = Color.Black; 
+            for (int i = 2; i < m_fg.Cols.Count; i++)
             {
-                m_fg.Cols[i].Caption = m_ds_1.DM_CHUC_VU.Rows[i - 1][1].ToString();
-                m_fg.Cols[i].UserData = m_ds_1.DM_CHUC_VU.Rows[i - 1][0];
+                m_fg.Cols[i].Caption = m_ds_1.DM_CHUC_VU.Rows[i - 2][1].ToString();
+                m_fg.Cols[i].UserData = m_ds_1.DM_CHUC_VU.Rows[i - 2][0];
             }
             //2. tạo danh sách dòng trạng thái
             m_fg.Rows.Count = v_ds_dm_tu_dien.CM_DM_TU_DIEN.Rows.Count + 1;
+            m_fg.Rows[1][0] = "Tổng";
+            m_fg.Rows[1].UserData = 0;
             for (int j = 1; j < m_fg.Rows.Count; j++)
             {
                 m_fg.Rows[j][0] = v_ds_dm_tu_dien.CM_DM_TU_DIEN.Rows[j - 1][3].ToString();
@@ -100,6 +104,21 @@ namespace BKI_HRM
                             m_fg[v_i_cur_row,v_i_cur_col]= v_arr_dr[0][RPT_CHUC_VU_TRANG_THAI.SO_LUONG];
                         }
                 }
+                for (int v = 1; v < m_fg.Rows.Count; v++)
+                {
+                    int sum = 0;
+                    for (int t = 2; t < m_fg.Cols.Count; t++)
+                        sum += Convert.ToInt32(m_fg.Rows[v][t]);
+                    m_fg.Rows[v][1] = sum;
+                }
+                m_fg.SubtotalPosition = SubtotalPositionEnum.AboveData;
+            m_fg.Tree.Column = 0;
+            m_fg.Tree.Style = TreeStyleFlags.Simple;
+            m_fg.Subtotal(AggregateEnum.Clear);
+            for (int u = 1; u < m_fg.Cols.Count;u++ )
+                m_fg.Subtotal(AggregateEnum.Sum, -1, -1, u, "Tổng");
+            
+            
         }
         #endregion
 
@@ -111,6 +130,29 @@ namespace BKI_HRM
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
+        }
+
+        private void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            
+			try{
+				this.Close();
+			}
+			catch (Exception v_e){
+				CSystemLog_301.ExceptionHandle(v_e);
+			}
+        }
+
+        private void m_dat_thoidiem_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
     }
     
