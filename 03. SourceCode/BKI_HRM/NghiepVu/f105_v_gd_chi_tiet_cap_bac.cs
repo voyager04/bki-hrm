@@ -39,6 +39,7 @@ namespace BKI_HRM {
         private TextBox m_txt_search;
         private Label label2;
         private Label m_lbl_tim_kiem;
+        private Label m_lbl_phim_tat;
         private IContainer components;
 
         public f105_v_gd_chi_tiet_cap_bac() {
@@ -86,6 +87,7 @@ namespace BKI_HRM {
             this.m_txt_search = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
+            this.m_lbl_phim_tat = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
@@ -120,6 +122,7 @@ namespace BKI_HRM {
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_lbl_phim_tat);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
@@ -265,6 +268,15 @@ namespace BKI_HRM {
             this.m_lbl_tim_kiem.TabIndex = 24;
             this.m_lbl_tim_kiem.Text = "Từ khoá tìm kiếm";
             // 
+            // m_lbl_phim_tat
+            // 
+            this.m_lbl_phim_tat.AutoSize = true;
+            this.m_lbl_phim_tat.Location = new System.Drawing.Point(331, 11);
+            this.m_lbl_phim_tat.Name = "m_lbl_phim_tat";
+            this.m_lbl_phim_tat.Size = new System.Drawing.Size(206, 14);
+            this.m_lbl_phim_tat.TabIndex = 1000;
+            this.m_lbl_phim_tat.Text = "Phím tắt: F6_Mở rộng-Thu gọn danh sách";
+            // 
             // f105_v_gd_chi_tiet_cap_bac
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -277,6 +289,7 @@ namespace BKI_HRM {
             this.Text = "F105 - Chi tết cấp bậc";
             this.Load += new System.EventHandler(this.f105_v_gd_chi_tiet_cap_bac_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
+            this.m_pnl_out_place_dm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -331,7 +344,7 @@ namespace BKI_HRM {
             CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
-            m_fg.Tree.Column = (int)e_col_Number.MA_BAC; //Cột chứa tiêu đề tree
+            m_fg.Tree.Column = (int)e_col_Number.MA_NV; //Cột chứa tiêu đề tree
             m_fg.Tree.Style = TreeStyleFlags.Simple;
             set_define_events();
             KeyPreview = true;
