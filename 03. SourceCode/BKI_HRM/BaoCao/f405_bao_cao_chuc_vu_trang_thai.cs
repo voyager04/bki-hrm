@@ -10,6 +10,7 @@ using IP.Core.IPException;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
 using IP.Core.IPSystemAdmin;
+using IP.Core.IPExcelReport;
 
 using BKI_HRM.US;
 using BKI_HRM.DS;
@@ -119,6 +120,10 @@ namespace BKI_HRM
                 m_fg.Subtotal(AggregateEnum.Sum, -1, -1, u, "Tổng");
             
             
+        }
+        private void xuat_excel()
+        {
+       
         }
         #endregion
 
