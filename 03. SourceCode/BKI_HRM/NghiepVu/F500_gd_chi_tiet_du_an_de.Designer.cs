@@ -51,8 +51,6 @@
             this.m_cbo_danh_hieu = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.m_txt_mo_ta = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.m_chk_trang_thai_hien_tai = new System.Windows.Forms.CheckBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,7 +79,7 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_refresh);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 272);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 239);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(697, 36);
@@ -276,7 +274,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(28, 220);
+            this.label5.Location = new System.Drawing.Point(28, 181);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 13);
             this.label5.TabIndex = 46;
@@ -286,39 +284,17 @@
             // 
             this.m_txt_mo_ta.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_mo_ta.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_mo_ta.Location = new System.Drawing.Point(144, 213);
+            this.m_txt_mo_ta.Location = new System.Drawing.Point(144, 174);
             this.m_txt_mo_ta.Multiline = true;
             this.m_txt_mo_ta.Name = "m_txt_mo_ta";
             this.m_txt_mo_ta.Size = new System.Drawing.Size(483, 53);
             this.m_txt_mo_ta.TabIndex = 45;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 180);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 13);
-            this.label6.TabIndex = 47;
-            this.label6.Text = "Trạng thái hiện tại";
-            // 
-            // m_chk_trang_thai_hien_tai
-            // 
-            this.m_chk_trang_thai_hien_tai.AutoSize = true;
-            this.m_chk_trang_thai_hien_tai.Location = new System.Drawing.Point(144, 180);
-            this.m_chk_trang_thai_hien_tai.Name = "m_chk_trang_thai_hien_tai";
-            this.m_chk_trang_thai_hien_tai.Size = new System.Drawing.Size(38, 17);
-            this.m_chk_trang_thai_hien_tai.TabIndex = 48;
-            this.m_chk_trang_thai_hien_tai.Text = "no";
-            this.m_chk_trang_thai_hien_tai.UseVisualStyleBackColor = true;
-            this.m_chk_trang_thai_hien_tai.CheckedChanged += new System.EventHandler(this.m_chk_trang_thai_hien_tai_CheckedChanged);
-            // 
             // F500_gd_chi_tiet_du_an_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 308);
-            this.Controls.Add(this.m_chk_trang_thai_hien_tai);
-            this.Controls.Add(this.label6);
+            this.ClientSize = new System.Drawing.Size(697, 275);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.m_txt_mo_ta);
             this.Controls.Add(this.m_cbo_danh_hieu);
@@ -367,8 +343,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox m_txt_mo_ta;
         internal System.Windows.Forms.ImageList ImageList;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox m_chk_trang_thai_hien_tai;
        // internal System.Windows.Forms.ImageList ImageList;
 
     }

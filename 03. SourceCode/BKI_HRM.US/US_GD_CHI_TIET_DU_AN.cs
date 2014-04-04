@@ -314,5 +314,12 @@ namespace BKI_HRM.US
         v_sp.fillDataSetByCommand(this, v_ds);
     }
     #endregion    
-}
+
+    public void FillDatasetTrangThaiYes(DS_GD_CHI_TIET_DU_AN v_ds, decimal dc_id_nv)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_GD_CHI_TIET_DU_AN_select_trang_thai_yes");
+        v_sp.addDecimalInputParam("@ID_NV", dc_id_nv);
+        v_sp.fillDataSetByCommand(this, v_ds);
+    }
+    }
 }
