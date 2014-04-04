@@ -2,17 +2,18 @@
 <xs:schema id="DS_V_GD_CHI_TIET_CAP_BAC" targetNamespace="http://tempuri.org/DS_V_GD_CHI_TIET_CAP_BAC.xsd" xmlns:mstns="http://tempuri.org/DS_V_GD_CHI_TIET_CAP_BAC.xsd" xmlns="http://tempuri.org/DS_V_GD_CHI_TIET_CAP_BAC.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BKI_HRMConnectionString3" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BKI_HRMConnectionString3 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_HRM.DS.Properties.Settings.GlobalReference.Default.BKI_HRMConnectionString3" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BKI_HRMConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BKI_HRMConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_HRM.DS.Properties.Settings.GlobalReference.Default.BKI_HRMConnectionString1" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_GD_CHI_TIET_CAP_BACTableAdapter" GeneratorDataComponentClassName="V_GD_CHI_TIET_CAP_BACTableAdapter" Name="V_GD_CHI_TIET_CAP_BAC" UserDataComponentName="V_GD_CHI_TIET_CAP_BACTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BKI_HRMConnectionString3 (Settings)" DbObjectName="BKI_HRM.dbo.V_GD_CHI_TIET_CAP_BAC" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BKI_HRMConnectionString1 (Settings)" DbObjectName="BKI_HRM.dbo.V_GD_CHI_TIET_CAP_BAC" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID_NHAN_SU, ID, MA_NV, HO_DEM, TEN, NGAY_BAT_DAU, NGAY_KET_THUC, TRANG_THAI_CB, MA_CAP, MA_BAC, MA_QUYET_DINH, NGAY_CO_HIEU_LUC, NGAY_HET_HIEU_LUC, MA_CAP_BAC FROM dbo.V_GD_CHI_TIET_CAP_BAC</CommandText>
+                    <CommandText>SELECT ID_NHAN_SU, ID, MA_NV, HO_DEM, TEN, NGAY_BAT_DAU, NGAY_KET_THUC, TRANG_THAI_CB, MA_CAP, MA_BAC, MA_QUYET_DINH, NGAY_CO_HIEU_LUC, NGAY_HET_HIEU_LUC, MA_CAP_BAC, LUA_CHON FROM dbo.V_GD_CHI_TIET_CAP_BAC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -33,6 +34,7 @@
               <Mapping SourceColumn="NGAY_CO_HIEU_LUC" DataSetColumn="NGAY_CO_HIEU_LUC" />
               <Mapping SourceColumn="NGAY_HET_HIEU_LUC" DataSetColumn="NGAY_HET_HIEU_LUC" />
               <Mapping SourceColumn="MA_CAP_BAC" DataSetColumn="MA_CAP_BAC" />
+              <Mapping SourceColumn="LUA_CHON" DataSetColumn="LUA_CHON" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -56,14 +58,14 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="HO_DEM" msprop:Generator_ColumnVarNameInTable="columnHO_DEM" msprop:Generator_ColumnPropNameInRow="HO_DEM" msprop:Generator_ColumnPropNameInTable="HO_DEMColumn" msprop:Generator_UserColumnName="HO_DEM">
+              <xs:element name="HO_DEM" msprop:Generator_ColumnVarNameInTable="columnHO_DEM" msprop:Generator_ColumnPropNameInRow="HO_DEM" msprop:Generator_ColumnPropNameInTable="HO_DEMColumn" msprop:Generator_UserColumnName="HO_DEM" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="TEN" msprop:Generator_ColumnVarNameInTable="columnTEN" msprop:Generator_ColumnPropNameInRow="TEN" msprop:Generator_ColumnPropNameInTable="TENColumn" msprop:Generator_UserColumnName="TEN">
+              <xs:element name="TEN" msprop:Generator_ColumnVarNameInTable="columnTEN" msprop:Generator_ColumnPropNameInRow="TEN" msprop:Generator_ColumnPropNameInTable="TENColumn" msprop:Generator_UserColumnName="TEN" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -72,21 +74,21 @@
               </xs:element>
               <xs:element name="NGAY_BAT_DAU" msprop:Generator_ColumnVarNameInTable="columnNGAY_BAT_DAU" msprop:Generator_ColumnPropNameInRow="NGAY_BAT_DAU" msprop:Generator_ColumnPropNameInTable="NGAY_BAT_DAUColumn" msprop:Generator_UserColumnName="NGAY_BAT_DAU" type="xs:dateTime" minOccurs="0" />
               <xs:element name="NGAY_KET_THUC" msprop:Generator_ColumnVarNameInTable="columnNGAY_KET_THUC" msprop:Generator_ColumnPropNameInRow="NGAY_KET_THUC" msprop:Generator_ColumnPropNameInTable="NGAY_KET_THUCColumn" msprop:Generator_UserColumnName="NGAY_KET_THUC" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="TRANG_THAI_CB" msprop:Generator_ColumnVarNameInTable="columnTRANG_THAI_CB" msprop:Generator_ColumnPropNameInRow="TRANG_THAI_CB" msprop:Generator_ColumnPropNameInTable="TRANG_THAI_CBColumn" msprop:Generator_UserColumnName="TRANG_THAI_CB">
+              <xs:element name="TRANG_THAI_CB" msprop:Generator_ColumnVarNameInTable="columnTRANG_THAI_CB" msprop:Generator_ColumnPropNameInRow="TRANG_THAI_CB" msprop:Generator_ColumnPropNameInTable="TRANG_THAI_CBColumn" msprop:Generator_UserColumnName="TRANG_THAI_CB" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="1" />
+                    <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="MA_CAP" msprop:Generator_ColumnVarNameInTable="columnMA_CAP" msprop:Generator_ColumnPropNameInRow="MA_CAP" msprop:Generator_ColumnPropNameInTable="MA_CAPColumn" msprop:Generator_UserColumnName="MA_CAP">
+              <xs:element name="MA_CAP" msprop:Generator_ColumnVarNameInTable="columnMA_CAP" msprop:Generator_ColumnPropNameInRow="MA_CAP" msprop:Generator_ColumnPropNameInTable="MA_CAPColumn" msprop:Generator_UserColumnName="MA_CAP" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="15" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="MA_BAC" msprop:Generator_ColumnVarNameInTable="columnMA_BAC" msprop:Generator_ColumnPropNameInRow="MA_BAC" msprop:Generator_ColumnPropNameInTable="MA_BACColumn" msprop:Generator_UserColumnName="MA_BAC">
+              <xs:element name="MA_BAC" msprop:Generator_ColumnVarNameInTable="columnMA_BAC" msprop:Generator_ColumnPropNameInRow="MA_BAC" msprop:Generator_ColumnPropNameInTable="MA_BACColumn" msprop:Generator_UserColumnName="MA_BAC" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="15" />
@@ -102,10 +104,17 @@
               </xs:element>
               <xs:element name="NGAY_CO_HIEU_LUC" msprop:Generator_ColumnVarNameInTable="columnNGAY_CO_HIEU_LUC" msprop:Generator_ColumnPropNameInRow="NGAY_CO_HIEU_LUC" msprop:Generator_ColumnPropNameInTable="NGAY_CO_HIEU_LUCColumn" msprop:Generator_UserColumnName="NGAY_CO_HIEU_LUC" type="xs:dateTime" minOccurs="0" />
               <xs:element name="NGAY_HET_HIEU_LUC" msprop:Generator_ColumnVarNameInTable="columnNGAY_HET_HIEU_LUC" msprop:Generator_ColumnPropNameInRow="NGAY_HET_HIEU_LUC" msprop:Generator_ColumnPropNameInTable="NGAY_HET_HIEU_LUCColumn" msprop:Generator_UserColumnName="NGAY_HET_HIEU_LUC" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="MA_CAP_BAC" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMA_CAP_BAC" msprop:Generator_ColumnPropNameInRow="MA_CAP_BAC" msprop:Generator_ColumnPropNameInTable="MA_CAP_BACColumn" msprop:Generator_UserColumnName="MA_CAP_BAC" minOccurs="0">
+              <xs:element name="MA_CAP_BAC" msprop:Generator_ColumnVarNameInTable="columnMA_CAP_BAC" msprop:Generator_ColumnPropNameInRow="MA_CAP_BAC" msprop:Generator_ColumnPropNameInTable="MA_CAP_BACColumn" msprop:Generator_UserColumnName="MA_CAP_BAC" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="31" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LUA_CHON" msprop:Generator_ColumnVarNameInTable="columnLUA_CHON" msprop:Generator_ColumnPropNameInRow="LUA_CHON" msprop:Generator_ColumnPropNameInTable="LUA_CHONColumn" msprop:Generator_UserColumnName="LUA_CHON" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

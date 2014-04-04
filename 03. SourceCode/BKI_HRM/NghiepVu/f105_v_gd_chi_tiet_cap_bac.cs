@@ -28,7 +28,6 @@ namespace BKI_HRM {
     public class f105_v_gd_chi_tiet_cap_bac : Form {
         internal ImageList ImageList;
         internal Panel m_pnl_out_place_dm;
-        private C1FlexGrid m_fg;
         internal SiSButton m_cmd_delete;
         internal SiSButton m_cmd_update;
         internal SiSButton m_cmd_insert;
@@ -40,6 +39,7 @@ namespace BKI_HRM {
         private Label label2;
         private Label m_lbl_tim_kiem;
         private Label m_lbl_phim_tat;
+        private C1FlexGrid m_fg;
         private IContainer components;
 
         public f105_v_gd_chi_tiet_cap_bac() {
@@ -81,16 +81,16 @@ namespace BKI_HRM {
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_lbl_so_luong_ban_ghi = new System.Windows.Forms.Label();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_txt_search = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
+            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
             // 
             // ImageList
@@ -128,16 +128,16 @@ namespace BKI_HRM {
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 536);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 426);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1189, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(845, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_lbl_phim_tat
             // 
             this.m_lbl_phim_tat.AutoSize = true;
-            this.m_lbl_phim_tat.Location = new System.Drawing.Point(331, 11);
+            this.m_lbl_phim_tat.Location = new System.Drawing.Point(116, 13);
             this.m_lbl_phim_tat.Name = "m_lbl_phim_tat";
             this.m_lbl_phim_tat.Size = new System.Drawing.Size(206, 14);
             this.m_lbl_phim_tat.TabIndex = 1000;
@@ -152,7 +152,7 @@ namespace BKI_HRM {
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 21;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(784, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(440, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(137, 28);
             this.m_cmd_insert.TabIndex = 3;
@@ -167,7 +167,7 @@ namespace BKI_HRM {
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(921, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(577, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 4;
@@ -183,7 +183,7 @@ namespace BKI_HRM {
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(1009, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(665, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 5;
@@ -198,20 +198,11 @@ namespace BKI_HRM {
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(1097, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(753, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 6;
             this.m_cmd_exit.Text = "Thoát (Esc)";
-            // 
-            // m_fg
-            // 
-            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Location = new System.Drawing.Point(0, 78);
-            this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1189, 448);
-            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 20;
             // 
             // panel1
             // 
@@ -223,7 +214,7 @@ namespace BKI_HRM {
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1189, 72);
+            this.panel1.Size = new System.Drawing.Size(845, 72);
             this.panel1.TabIndex = 22;
             // 
             // m_lbl_so_luong_ban_ghi
@@ -243,7 +234,7 @@ namespace BKI_HRM {
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(934, 17);
+            this.m_cmd_search.Location = new System.Drawing.Point(697, 17);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 2;
@@ -254,9 +245,9 @@ namespace BKI_HRM {
             this.m_txt_search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.m_txt_search.ForeColor = System.Drawing.Color.DimGray;
-            this.m_txt_search.Location = new System.Drawing.Point(304, 21);
+            this.m_txt_search.Location = new System.Drawing.Point(149, 21);
             this.m_txt_search.Name = "m_txt_search";
-            this.m_txt_search.Size = new System.Drawing.Size(568, 20);
+            this.m_txt_search.Size = new System.Drawing.Size(517, 20);
             this.m_txt_search.TabIndex = 1;
             // 
             // label2
@@ -271,18 +262,28 @@ namespace BKI_HRM {
             // m_lbl_tim_kiem
             // 
             this.m_lbl_tim_kiem.AutoSize = true;
-            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(199, 24);
+            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(52, 24);
             this.m_lbl_tim_kiem.Name = "m_lbl_tim_kiem";
             this.m_lbl_tim_kiem.Size = new System.Drawing.Size(87, 14);
             this.m_lbl_tim_kiem.TabIndex = 24;
             this.m_lbl_tim_kiem.Text = "Từ khoá tìm kiếm";
             // 
+            // m_fg
+            // 
+            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_fg.Location = new System.Drawing.Point(0, 72);
+            this.m_fg.Name = "m_fg";
+            this.m_fg.Size = new System.Drawing.Size(845, 354);
+            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
+            this.m_fg.TabIndex = 23;
+            // 
             // f105_v_gd_chi_tiet_cap_bac
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(1189, 572);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(845, 462);
             this.Controls.Add(this.m_fg);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "f105_v_gd_chi_tiet_cap_bac";
@@ -290,9 +291,9 @@ namespace BKI_HRM {
             this.Load += new System.EventHandler(this.f105_v_gd_chi_tiet_cap_bac_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.m_pnl_out_place_dm.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -306,28 +307,23 @@ namespace BKI_HRM {
 
         #region Data Structure
         private enum e_col_Number {
-            MA_CAP = 4
+            MA_CAP_BAC = 4
                 ,
-            NGAY_KET_THUC = 7
-                ,
-            NGAY_BAT_DAU = 6
+            NGAY_BAT_DAU = 5
                 ,
             MA_NV = 1
                 ,
-            MA_BAC = 5
+            NGAY_KET_THUC = 6
                 ,
             HO_DEM = 2
                 ,
-            NGAY_HET_HIEU_LUC = 11
-                ,
             TEN = 3
                 ,
-            MA_QUYET_DINH = 8//9
+            LUA_CHON = 9
                 ,
-            TRANG_THAI_CB = 10//8
-                ,
-            NGAY_CO_HIEU_LUC = 9//10
-
+            MA_QUYET_DINH = 7
+                , 
+            TRANG_THAI_CB = 8
         }
         #endregion
 
@@ -352,21 +348,18 @@ namespace BKI_HRM {
         private void set_initial_form_load() {
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_grid();
-            //load_custom_source_2_m_txt_search();
         }
         private ITransferDataRow get_trans_object(C1FlexGrid i_fg) {
             Hashtable v_htb = new Hashtable();
-            v_htb.Add(V_GD_CHI_TIET_CAP_BAC.MA_CAP, e_col_Number.MA_CAP);
-            v_htb.Add(V_GD_CHI_TIET_CAP_BAC.NGAY_KET_THUC, e_col_Number.NGAY_KET_THUC);
+            v_htb.Add(V_GD_CHI_TIET_CAP_BAC.MA_CAP_BAC, e_col_Number.MA_CAP_BAC);
             v_htb.Add(V_GD_CHI_TIET_CAP_BAC.NGAY_BAT_DAU, e_col_Number.NGAY_BAT_DAU);
             v_htb.Add(V_GD_CHI_TIET_CAP_BAC.MA_NV, e_col_Number.MA_NV);
-            v_htb.Add(V_GD_CHI_TIET_CAP_BAC.MA_BAC, e_col_Number.MA_BAC);
+            v_htb.Add(V_GD_CHI_TIET_CAP_BAC.NGAY_KET_THUC, e_col_Number.NGAY_KET_THUC);
             v_htb.Add(V_GD_CHI_TIET_CAP_BAC.HO_DEM, e_col_Number.HO_DEM);
-            v_htb.Add(V_GD_CHI_TIET_CAP_BAC.NGAY_HET_HIEU_LUC, e_col_Number.NGAY_HET_HIEU_LUC);
             v_htb.Add(V_GD_CHI_TIET_CAP_BAC.TEN, e_col_Number.TEN);
+            v_htb.Add(V_GD_CHI_TIET_CAP_BAC.LUA_CHON, e_col_Number.LUA_CHON);
             v_htb.Add(V_GD_CHI_TIET_CAP_BAC.MA_QUYET_DINH, e_col_Number.MA_QUYET_DINH);
             v_htb.Add(V_GD_CHI_TIET_CAP_BAC.TRANG_THAI_CB, e_col_Number.TRANG_THAI_CB);
-            v_htb.Add(V_GD_CHI_TIET_CAP_BAC.NGAY_CO_HIEU_LUC, e_col_Number.NGAY_CO_HIEU_LUC);
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_GD_CHI_TIET_CAP_BAC.NewRow());
             return v_obj_trans;
@@ -420,7 +413,7 @@ namespace BKI_HRM {
             if (m_fg.Rows[m_fg.Row].IsNode) return;
             grid2us_object(m_us, m_fg.Row);
             var v_fDE = new f106_v_gd_chi_tiet_cap_bac_DE();
-            v_fDE.display_for_insert(m_us);
+            v_fDE.display_for_insert(m_us, m_ds);
             load_data_2_grid();
         }
         private void delete_v_gd_chi_tiet_cap_bac() {
