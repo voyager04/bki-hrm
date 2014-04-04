@@ -425,7 +425,6 @@ namespace BKI_HRM {
             }
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_grid();
-            //load_custom_source_2_m_txt_search();
         }
         private ITransferDataRow get_trans_object(C1FlexGrid i_fg) {
             Hashtable v_htb = new Hashtable();
