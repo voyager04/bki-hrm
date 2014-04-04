@@ -47,8 +47,8 @@ namespace BKI_HRM.DanhMuc
         private DataEntryFormMode m_e_form_mode;
         private US_V_DM_TRANG_THAI_UNG_VIEN m_v_us = new US_V_DM_TRANG_THAI_UNG_VIEN();
         private DS_V_DM_TRANG_THAI_UNG_VIEN m_v_ds = new DS_V_DM_TRANG_THAI_UNG_VIEN();
-        private US_V_DM_TRANG_THAI_UNG_VIEN m_us = new US_V_DM_TRANG_THAI_UNG_VIEN();
-        private DS_V_DM_TRANG_THAI_UNG_VIEN m_ds=new DS_V_DM_TRANG_THAI_UNG_VIEN();
+        private US_DM_TRANG_THAI_UNG_VIEN m_us = new US_DM_TRANG_THAI_UNG_VIEN();
+        private DS_DM_TRANG_THAI_UNG_VIEN m_ds=new DS_DM_TRANG_THAI_UNG_VIEN();
         private string m_str_destination = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
         private string m_str_path = "";
         private string m_str_file_name = "";
@@ -86,7 +86,7 @@ namespace BKI_HRM.DanhMuc
         }
         private void form_2_us_object()
         {
-            m_us.strMA_TRANG_THAI_CAP_TREN = m_txt_ma_trang_thai_cap_tren.Text.Trim();
+            //m_us.strMA_TRANG_THAI_CAP_TREN = m_txt_ma_trang_thai_cap_tren.Text.Trim();
             m_us.strMA_TRANG_THAI = m_txt_ma_trang_thai.Text.Trim();
             m_us.strDINH_NGHIA = m_txt_dinh_nghia.Text.Trim();
             m_us.strDAU_HIEU = m_txt_dau_hieu.Text.Trim();
