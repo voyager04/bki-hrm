@@ -267,6 +267,8 @@ namespace BKI_HRM
             this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
+            this.MaximumSize = new System.Drawing.Size(702, 448);
+            this.MinimumSize = new System.Drawing.Size(702, 448);
             this.Name = "F604_v_dm_cap_bac";
             this.Text = "F604_v_dm_cap_bac";
             this.Load += new System.EventHandler(this.F604_v_dm_cap_bac_Load);
