@@ -306,8 +306,9 @@
             this.m_chk_trang_thai_hien_tai.AutoSize = true;
             this.m_chk_trang_thai_hien_tai.Location = new System.Drawing.Point(144, 180);
             this.m_chk_trang_thai_hien_tai.Name = "m_chk_trang_thai_hien_tai";
-            this.m_chk_trang_thai_hien_tai.Size = new System.Drawing.Size(15, 14);
+            this.m_chk_trang_thai_hien_tai.Size = new System.Drawing.Size(38, 17);
             this.m_chk_trang_thai_hien_tai.TabIndex = 48;
+            this.m_chk_trang_thai_hien_tai.Text = "no";
             this.m_chk_trang_thai_hien_tai.UseVisualStyleBackColor = true;
             this.m_chk_trang_thai_hien_tai.CheckedChanged += new System.EventHandler(this.m_chk_trang_thai_hien_tai_CheckedChanged);
             // 
