@@ -248,6 +248,8 @@
             this.Controls.Add(this.m_lbl_trang_thai);
             this.Controls.Add(this.m_lbl_ma_bac);
             this.Controls.Add(this.m_lbl_ma_cap);
+            this.MaximumSize = new System.Drawing.Size(496, 365);
+            this.MinimumSize = new System.Drawing.Size(496, 365);
             this.Name = "F603_dm_cap_bac_de";
             this.Text = "F602_dm_cap_bac_de";
             this.m_pnl_out_place_dm.ResumeLayout(false);
