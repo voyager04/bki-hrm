@@ -34,6 +34,7 @@
             this.m_lbl_ma_du_an = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_cmd_refresh = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_lbl_ma_nhan_su = new System.Windows.Forms.Label();
@@ -50,7 +51,8 @@
             this.m_cbo_danh_hieu = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.m_txt_mo_ta = new System.Windows.Forms.TextBox();
-            this.ImageList = new System.Windows.Forms.ImageList(this.components);
+            this.label6 = new System.Windows.Forms.Label();
+            this.m_chk_trang_thai_hien_tai = new System.Windows.Forms.CheckBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,7 +81,7 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_refresh);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 227);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 272);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(697, 36);
@@ -100,6 +102,33 @@
             this.m_cmd_save.TabIndex = 31;
             this.m_cmd_save.Text = "&Lưu";
             this.m_cmd_save.Click += new System.EventHandler(this.m_cmd_save_Click);
+            // 
+            // ImageList
+            // 
+            this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
+            this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.ImageList.Images.SetKeyName(0, "");
+            this.ImageList.Images.SetKeyName(1, "");
+            this.ImageList.Images.SetKeyName(2, "");
+            this.ImageList.Images.SetKeyName(3, "");
+            this.ImageList.Images.SetKeyName(4, "");
+            this.ImageList.Images.SetKeyName(5, "");
+            this.ImageList.Images.SetKeyName(6, "");
+            this.ImageList.Images.SetKeyName(7, "");
+            this.ImageList.Images.SetKeyName(8, "");
+            this.ImageList.Images.SetKeyName(9, "");
+            this.ImageList.Images.SetKeyName(10, "");
+            this.ImageList.Images.SetKeyName(11, "");
+            this.ImageList.Images.SetKeyName(12, "");
+            this.ImageList.Images.SetKeyName(13, "");
+            this.ImageList.Images.SetKeyName(14, "");
+            this.ImageList.Images.SetKeyName(15, "");
+            this.ImageList.Images.SetKeyName(16, "");
+            this.ImageList.Images.SetKeyName(17, "");
+            this.ImageList.Images.SetKeyName(18, "");
+            this.ImageList.Images.SetKeyName(19, "");
+            this.ImageList.Images.SetKeyName(20, "");
+            this.ImageList.Images.SetKeyName(21, "");
             // 
             // m_cmd_refresh
             // 
@@ -247,7 +276,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(28, 175);
+            this.label5.Location = new System.Drawing.Point(28, 220);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 13);
             this.label5.TabIndex = 46;
@@ -257,44 +286,38 @@
             // 
             this.m_txt_mo_ta.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_mo_ta.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_mo_ta.Location = new System.Drawing.Point(144, 168);
+            this.m_txt_mo_ta.Location = new System.Drawing.Point(144, 213);
             this.m_txt_mo_ta.Multiline = true;
             this.m_txt_mo_ta.Name = "m_txt_mo_ta";
             this.m_txt_mo_ta.Size = new System.Drawing.Size(483, 53);
             this.m_txt_mo_ta.TabIndex = 45;
             // 
-            // ImageList
+            // label6
             // 
-            this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
-            this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.ImageList.Images.SetKeyName(0, "");
-            this.ImageList.Images.SetKeyName(1, "");
-            this.ImageList.Images.SetKeyName(2, "");
-            this.ImageList.Images.SetKeyName(3, "");
-            this.ImageList.Images.SetKeyName(4, "");
-            this.ImageList.Images.SetKeyName(5, "");
-            this.ImageList.Images.SetKeyName(6, "");
-            this.ImageList.Images.SetKeyName(7, "");
-            this.ImageList.Images.SetKeyName(8, "");
-            this.ImageList.Images.SetKeyName(9, "");
-            this.ImageList.Images.SetKeyName(10, "");
-            this.ImageList.Images.SetKeyName(11, "");
-            this.ImageList.Images.SetKeyName(12, "");
-            this.ImageList.Images.SetKeyName(13, "");
-            this.ImageList.Images.SetKeyName(14, "");
-            this.ImageList.Images.SetKeyName(15, "");
-            this.ImageList.Images.SetKeyName(16, "");
-            this.ImageList.Images.SetKeyName(17, "");
-            this.ImageList.Images.SetKeyName(18, "");
-            this.ImageList.Images.SetKeyName(19, "");
-            this.ImageList.Images.SetKeyName(20, "");
-            this.ImageList.Images.SetKeyName(21, "");
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(28, 180);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(92, 13);
+            this.label6.TabIndex = 47;
+            this.label6.Text = "Trạng thái hiện tại";
+            // 
+            // m_chk_trang_thai_hien_tai
+            // 
+            this.m_chk_trang_thai_hien_tai.AutoSize = true;
+            this.m_chk_trang_thai_hien_tai.Location = new System.Drawing.Point(144, 180);
+            this.m_chk_trang_thai_hien_tai.Name = "m_chk_trang_thai_hien_tai";
+            this.m_chk_trang_thai_hien_tai.Size = new System.Drawing.Size(15, 14);
+            this.m_chk_trang_thai_hien_tai.TabIndex = 48;
+            this.m_chk_trang_thai_hien_tai.UseVisualStyleBackColor = true;
+            this.m_chk_trang_thai_hien_tai.CheckedChanged += new System.EventHandler(this.m_chk_trang_thai_hien_tai_CheckedChanged);
             // 
             // F500_gd_chi_tiet_du_an_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 263);
+            this.ClientSize = new System.Drawing.Size(697, 308);
+            this.Controls.Add(this.m_chk_trang_thai_hien_tai);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.m_txt_mo_ta);
             this.Controls.Add(this.m_cbo_danh_hieu);
@@ -343,6 +366,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox m_txt_mo_ta;
         internal System.Windows.Forms.ImageList ImageList;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox m_chk_trang_thai_hien_tai;
        // internal System.Windows.Forms.ImageList ImageList;
 
     }
