@@ -51,6 +51,15 @@
         LOAI_HO_SO_GV_HD = 26
             , DV_TO_CHUC_SK = 27
     }
+    public class DM_TRANG_THAI_UNG_VIEN
+    {
+        public const string ID = "ID";
+        public const string MA_TRANG_THAI = "MA_TRANG_THAI";
+        public const string ID_TRANG_THAI_PARENT = "ID_TRANG_THAI_PARENT";
+        public const string DINH_NGHIA = "DINH_NGHIA";
+        public const string DAU_HIEU = "DAU_HIEU";
+        public const string VIEC_CAN_LAM = "VIEC_CAN_LAM";
+    }
     public class V_DM_CAP_BAC
     {
         public const string ID = "ID";
