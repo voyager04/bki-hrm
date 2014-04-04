@@ -77,6 +77,15 @@ namespace BKI_HRM.NghiepVu
             }
             m_dat_tham_gia.Value = (DateTime)v_dr["THOI_DIEM_TG"];
 
+            if (v_dr[GD_CHI_TIET_DU_AN.TRANG_THAI_HIEN_TAI].ToString() == "Y")
+            {
+                m_chk_trang_thai_hien_tai.Checked = true;
+            }
+            else
+            {
+                m_chk_trang_thai_hien_tai.Checked = false;
+            }
+
             US_DM_NHAN_SU v_us_dm_ns = new US_DM_NHAN_SU();
             DS_DM_NHAN_SU v_ds_dm_ns = new DS_DM_NHAN_SU();
             US_DM_DU_AN v_us_dm_du_an = new US_DM_DU_AN();
@@ -119,6 +128,14 @@ namespace BKI_HRM.NghiepVu
             m_us.datTHOI_DIEM_KT = m_dat_ngay_kt.Value;
             m_us.datTHOI_DIEM_TG = m_dat_tham_gia.Value;
             m_us.strMO_TA = m_txt_mo_ta.Text;
+            if (m_chk_trang_thai_hien_tai.Checked)
+            {
+                m_us.strTRANG_THAI_HIEN_TAI = "Y";
+            }
+            else
+            {
+                m_us.strTRANG_THAI_HIEN_TAI = "N";
+            }            
         }
 
         private bool check_data_is_ok()
@@ -228,5 +245,17 @@ namespace BKI_HRM.NghiepVu
             }
         }
         #endregion                
+
+        private void m_chk_trang_thai_hien_tai_CheckedChanged(object sender, EventArgs e)
+        {
+            if (m_chk_trang_thai_hien_tai.Checked)
+            {
+                m_chk_trang_thai_hien_tai.Text = "yes";
+            }
+            else
+            {
+                m_chk_trang_thai_hien_tai.Text = "no";
+            }
+        }
     }
 }

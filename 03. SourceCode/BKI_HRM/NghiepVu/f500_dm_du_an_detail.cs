@@ -406,7 +406,7 @@ namespace BKI_HRM.NghiepVu
                     delete_nhan_su_du_an();
                     break;
                 case Keys.F3:
-                    DataRow v_dr = (DataRow)m_grv_nhan_su.Rows[m_dc_index_row].UserData;
+                    //DataRow v_dr = (DataRow)m_grv_nhan_su.Rows[m_dc_index_row].UserData;
                     string v_str_ma_du_an = m_txt_ma_du_an.Text; //v_dr["MA_DU_AN"].ToString();
                     F500_gd_chi_tiet_du_an_de v_fDE = new F500_gd_chi_tiet_du_an_de();
                     v_fDE.display_for_insert(v_str_ma_du_an);
@@ -414,7 +414,7 @@ namespace BKI_HRM.NghiepVu
                     break;
                 case Keys.F4:
                     v_fDE = new F500_gd_chi_tiet_du_an_de();
-                    v_dr = (DataRow)m_grv_nhan_su.Rows[m_dc_index_row].UserData;
+                    DataRow v_dr = (DataRow)m_grv_nhan_su.Rows[m_dc_index_row].UserData;
                     decimal v_dc_id_chi_tiet_du_an = (decimal)v_dr["ID"];
                     v_fDE.display_for_update(v_dc_id_chi_tiet_du_an);
                     load_data_2_grv_nhan_su(m_dc_id_du_an);
