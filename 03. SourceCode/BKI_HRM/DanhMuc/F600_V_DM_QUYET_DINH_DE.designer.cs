@@ -284,6 +284,8 @@
             this.Controls.Add(this.m_lbl_ngay_co_hieu_luc);
             this.Controls.Add(this.m_lbl_loai_quyet_dinh);
             this.Controls.Add(this.m_lbl_ma_quyet_dinh);
+            this.MaximumSize = new System.Drawing.Size(636, 312);
+            this.MinimumSize = new System.Drawing.Size(636, 312);
             this.Name = "F600_V_DM_QUYET_DINH_DE";
             this.Text = "F600_V_DM_QUYET_DINH_DE";
             this.m_pnl_out_place_dm.ResumeLayout(false);
