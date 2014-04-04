@@ -275,7 +275,6 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(342, 20);
             this.m_txt_tim_kiem.TabIndex = 35;
-            //this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
             // 
             // m_lbl_tim_kiem
             // 
@@ -295,6 +294,8 @@ namespace BKI_HRM
             this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
+            this.MaximumSize = new System.Drawing.Size(800, 520);
+            this.MinimumSize = new System.Drawing.Size(800, 520);
             this.Name = "F602_v_dm_trang_thai_ung_vien";
             this.Text = "F602_v_dm_trang_thai_ung_vien";
             this.Load += new System.EventHandler(this.f602_v_dm_trang_thai_ung_vien_Load);
