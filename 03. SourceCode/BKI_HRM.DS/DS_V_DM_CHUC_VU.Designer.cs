@@ -540,7 +540,6 @@ namespace BKI_HRM.DS {
                 this.columnMA_CV.MaxLength = 15;
                 this.columnTEN_CV.MaxLength = 250;
                 this.columnTEN_CV_TA.MaxLength = 250;
-                this.columnTEN.AllowDBNull = false;
                 this.columnTEN.MaxLength = 250;
                 this.columnTRANG_THAI.AllowDBNull = false;
                 this.columnTRANG_THAI.MaxLength = 1;
@@ -760,7 +759,12 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string TEN {
                 get {
-                    return ((string)(this[this.tableV_DM_CHUC_VU.TENColumn]));
+                    try {
+                        return ((string)(this[this.tableV_DM_CHUC_VU.TENColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TEN\' in table \'V_DM_CHUC_VU\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_DM_CHUC_VU.TENColumn] = value;
@@ -860,6 +864,18 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetID_NGACHNull() {
                 this[this.tableV_DM_CHUC_VU.ID_NGACHColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTENNull() {
+                return this.IsNull(this.tableV_DM_CHUC_VU.TENColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTENNull() {
+                this[this.tableV_DM_CHUC_VU.TENColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1075,7 +1091,7 @@ namespace BKI_HRM.DS.DS_V_DM_CHUC_VUTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BKI_HRM.DS.Properties.Settings.Default.BKI_HRMConnectionString3;
+            this._connection.ConnectionString = global::BKI_HRM.DS.Properties.Settings.Default.BKI_HRMConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
