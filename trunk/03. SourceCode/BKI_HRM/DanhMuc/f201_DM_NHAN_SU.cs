@@ -27,6 +27,7 @@ using BKI_HRM.DS.CDBNames;
 
 using C1.Win.C1FlexGrid;
 using System.Threading;
+using BKI_HRM.NghiepVu;
 
 namespace BKI_HRM
 {
@@ -1481,6 +1482,7 @@ namespace BKI_HRM
             this.Controls.Add(this.m_tct_chi_tiet_nhan_vien);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(1014, 622);
             this.Name = "f201_dm_nhan_su";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F201 - Quản lý hồ sơ nhân sự";
@@ -1879,7 +1881,7 @@ namespace BKI_HRM
             load_data_2_grv_chuc_vu_hien_tai();
         }
 
-        private void thay_trang_thai()
+        private void them_trang_thai()
         {
             US_V_GD_TRANG_THAI_LAO_DONG v_us = new US_V_GD_TRANG_THAI_LAO_DONG();
             DS_V_GD_TRANG_THAI_LAO_DONG v_ds = new DS_V_GD_TRANG_THAI_LAO_DONG();
@@ -1888,6 +1890,13 @@ namespace BKI_HRM
             f203_v_gd_trang_thai_lao_dong_de v_frm = new f203_v_gd_trang_thai_lao_dong_de();
             v_frm.display_for_insert(v_us);
             load_data_2_grv_trang_thai_lao_dong();
+        }
+        private void them_hop_dong()
+        {
+
+
+            f701_v_gd_hop_dong_lao_dong_DE v_frm = new f701_v_gd_hop_dong_lao_dong_DE();
+            v_frm.display_for_insert();
         }
 
         private void thay_headcount()
@@ -2203,8 +2212,20 @@ namespace BKI_HRM
 		private void insert_dm_nhan_su(){			
 			f201_DM_NHAN_SU_DE v_fDE = new  f201_DM_NHAN_SU_DE();								
 			v_fDE.display_for_insert();
-			load_data_2_grid_search();
+            load_data_2_grid_search();
             load_chi_tiet_nhan_vien();
+            m_grv_nhan_su.Focus();
+            var s = m_grv_nhan_su.FindRow(m_us.strMA_NV, m_grv_nhan_su.Row, 1, true);
+            m_grv_nhan_su.Row = s;
+            m_grv_nhan_su.Rows[s].Selected = true;
+
+			
+            f201_dm_nhan_su_dialog v_frm = new f201_dm_nhan_su_dialog();
+
+           
+            v_frm.display(m_us);
+
+            
 		}
 
 		private void update_dm_nhan_su()
@@ -2494,7 +2515,6 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        #endregion
 
         private void m_cmd_print_cv_Click(object sender, EventArgs e)
         {
@@ -2504,7 +2524,7 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle(v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
@@ -2516,7 +2536,7 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle(v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
@@ -2528,7 +2548,7 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle(v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
@@ -2536,13 +2556,21 @@ namespace BKI_HRM
         {
             try
             {
-                thay_trang_thai();
+                them_trang_thai();
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle(v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_cmd_them_hop_dong_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+        
     }
 }
 
