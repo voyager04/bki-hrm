@@ -216,6 +216,7 @@ namespace BKI_HRM
             // 
             // m_grv_trang_thai_ld
             // 
+            this.m_grv_trang_thai_ld.AllowEditing = false;
             this.m_grv_trang_thai_ld.ColumnInfo = resources.GetString("m_grv_trang_thai_ld.ColumnInfo");
             this.m_grv_trang_thai_ld.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_trang_thai_ld.Location = new System.Drawing.Point(0, 60);
@@ -349,7 +350,7 @@ namespace BKI_HRM
 		}
 		private void load_data_2_grid(){						
 			m_ds = new DS_V_GD_TRANG_THAI_LAO_DONG();			
-			m_us.FillDataset(m_ds);
+			m_us.FillDataset_Search(m_ds, "");
 			m_grv_trang_thai_ld.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_grv_trang_thai_ld, m_obj_trans);
             m_grv_trang_thai_ld.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.None // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
