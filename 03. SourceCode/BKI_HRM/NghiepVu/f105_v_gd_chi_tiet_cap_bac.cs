@@ -76,6 +76,7 @@ namespace BKI_HRM {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f105_v_gd_chi_tiet_cap_bac));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_lbl_phim_tat = new System.Windows.Forms.Label();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
@@ -87,7 +88,6 @@ namespace BKI_HRM {
             this.m_txt_search = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
-            this.m_lbl_phim_tat = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
@@ -134,6 +134,15 @@ namespace BKI_HRM {
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1189, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
+            // m_lbl_phim_tat
+            // 
+            this.m_lbl_phim_tat.AutoSize = true;
+            this.m_lbl_phim_tat.Location = new System.Drawing.Point(331, 11);
+            this.m_lbl_phim_tat.Name = "m_lbl_phim_tat";
+            this.m_lbl_phim_tat.Size = new System.Drawing.Size(206, 14);
+            this.m_lbl_phim_tat.TabIndex = 1000;
+            this.m_lbl_phim_tat.Text = "Phím tắt: F6_Mở rộng-Thu gọn danh sách";
+            // 
             // m_cmd_insert
             // 
             this.m_cmd_insert.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -141,13 +150,13 @@ namespace BKI_HRM {
             this.m_cmd_insert.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_insert.ImageIndex = 2;
+            this.m_cmd_insert.ImageIndex = 21;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(833, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(784, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_insert.Size = new System.Drawing.Size(137, 28);
             this.m_cmd_insert.TabIndex = 3;
-            this.m_cmd_insert.Text = "&Thêm";
+            this.m_cmd_insert.Text = "&Thay đổi cấp bậc";
             // 
             // m_cmd_update
             // 
@@ -268,15 +277,6 @@ namespace BKI_HRM {
             this.m_lbl_tim_kiem.TabIndex = 24;
             this.m_lbl_tim_kiem.Text = "Từ khoá tìm kiếm";
             // 
-            // m_lbl_phim_tat
-            // 
-            this.m_lbl_phim_tat.AutoSize = true;
-            this.m_lbl_phim_tat.Location = new System.Drawing.Point(331, 11);
-            this.m_lbl_phim_tat.Name = "m_lbl_phim_tat";
-            this.m_lbl_phim_tat.Size = new System.Drawing.Size(206, 14);
-            this.m_lbl_phim_tat.TabIndex = 1000;
-            this.m_lbl_phim_tat.Text = "Phím tắt: F6_Mở rộng-Thu gọn danh sách";
-            // 
             // f105_v_gd_chi_tiet_cap_bac
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -306,27 +306,27 @@ namespace BKI_HRM {
 
         #region Data Structure
         private enum e_col_Number {
-            MA_CAP = 1
+            MA_CAP = 4
                 ,
             NGAY_KET_THUC = 7
                 ,
             NGAY_BAT_DAU = 6
                 ,
-            MA_NV = 3
+            MA_NV = 1
                 ,
-            MA_BAC = 2
+            MA_BAC = 5
                 ,
-            HO_DEM = 4
+            HO_DEM = 2
                 ,
             NGAY_HET_HIEU_LUC = 11
                 ,
-            TEN = 5
+            TEN = 3
                 ,
-            MA_QUYET_DINH = 9
+            MA_QUYET_DINH = 8//9
                 ,
-            TRANG_THAI_CB = 8
+            TRANG_THAI_CB = 10//8
                 ,
-            NGAY_CO_HIEU_LUC = 10
+            NGAY_CO_HIEU_LUC = 9//10
 
         }
         #endregion
@@ -344,7 +344,7 @@ namespace BKI_HRM {
             CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
-            m_fg.Tree.Column = (int)e_col_Number.MA_NV; //Cột chứa tiêu đề tree
+            m_fg.Tree.Column = (int)e_col_Number.HO_DEM; //Cột chứa tiêu đề tree
             m_fg.Tree.Style = TreeStyleFlags.Simple;
             set_define_events();
             KeyPreview = true;
@@ -383,8 +383,8 @@ namespace BKI_HRM {
             m_fg.Redraw = true;
             m_fg.Subtotal(AggregateEnum.Count
               , 0
-              , (int)e_col_Number.MA_CAP             // Cột lấy tiêu đề tree
-              , (int)e_col_Number.HO_DEM               // Subtotal theo cột này
+              , (int)e_col_Number.MA_NV             // Cột lấy tiêu đề tree
+              , (int)e_col_Number.TEN               // Subtotal theo cột này
               , "{0}"
               );
             load_custom_source_2_m_txt_search();
@@ -392,7 +392,6 @@ namespace BKI_HRM {
             /*Đếm số dòng dữ liệu trên Grid*/
             m_lbl_so_luong_ban_ghi.Text = m_ds.V_GD_CHI_TIET_CAP_BAC.Count.ToString();
         }
-
         private void load_custom_source_2_m_txt_search() {
             m_txt_search.AutoCompleteMode = AutoCompleteMode.Suggest;
             m_txt_search.AutoCompleteSource = AutoCompleteSource.CustomSource;
@@ -513,7 +512,6 @@ namespace BKI_HRM {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
 
         private void m_txt_search_KeyDown(object sender, KeyEventArgs e) {
             try {

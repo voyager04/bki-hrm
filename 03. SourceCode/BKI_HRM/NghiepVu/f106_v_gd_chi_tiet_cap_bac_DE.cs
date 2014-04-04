@@ -87,6 +87,9 @@ namespace BKI_HRM.DanhMuc {
         private void us_object_2_form() {
             m_txt_ma_nv.Text = m_v_us_chi_tiet_cap_bac.strMA_NV;
             m_txt_ho_ten.Text = m_v_us_chi_tiet_cap_bac.strHO_DEM.Trim() + @" " + m_v_us_chi_tiet_cap_bac.strTEN.Trim();
+            m_txt_cap_bac_hien_tai.Text = m_v_us_chi_tiet_cap_bac.strMA_CAP;
+            m_dat_ngay_bat_dau.Value = m_v_us_chi_tiet_cap_bac.datNGAY_BAT_DAU.Date;
+            m_dat_ngay_ket_thuc.Value = m_v_us_chi_tiet_cap_bac.datNGAY_KET_THUC.Date;
         }
         private void load_data_to_cbo() {
             /**
