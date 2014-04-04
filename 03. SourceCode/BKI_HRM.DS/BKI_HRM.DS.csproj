@@ -91,11 +91,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_DM_QUYET_DINH.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DS_DM_TRANG_THAI_UNG_VIEN.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_DM_TRANG_THAI_UNG_VIEN.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DS_GD_CHI_TIET_CAP_BAC.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -340,17 +335,6 @@
     </None>
     <None Include="DS_DM_QUYET_DINH.xss">
       <DependentUpon>DS_DM_QUYET_DINH.xsd</DependentUpon>
-    </None>
-    <None Include="DS_DM_TRANG_THAI_UNG_VIEN.xsc">
-      <DependentUpon>DS_DM_TRANG_THAI_UNG_VIEN.xsd</DependentUpon>
-    </None>
-    <None Include="DS_DM_TRANG_THAI_UNG_VIEN.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_DM_TRANG_THAI_UNG_VIEN.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_DM_TRANG_THAI_UNG_VIEN.xss">
-      <DependentUpon>DS_DM_TRANG_THAI_UNG_VIEN.xsd</DependentUpon>
     </None>
     <None Include="DS_GD_CHI_TIET_CAP_BAC.xsc">
       <DependentUpon>DS_GD_CHI_TIET_CAP_BAC.xsd</DependentUpon>
