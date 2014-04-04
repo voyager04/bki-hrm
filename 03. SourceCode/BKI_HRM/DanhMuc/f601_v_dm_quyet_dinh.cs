@@ -241,8 +241,6 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(352, 20);
             this.m_txt_tim_kiem.TabIndex = 32;
-            
-            
             // 
             // m_lbl_tim_kiem
             // 
@@ -272,6 +270,8 @@ namespace BKI_HRM
             this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.m_grv_dm_quyet_dinh);
             this.Controls.Add(this.m_pnl_out_place_dm);
+            this.MaximumSize = new System.Drawing.Size(800, 500);
+            this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "f600_v_dm_quyet_dinh";
             this.Text = "f600_v_dm_quyet_dinh";
             this.Load += new System.EventHandler(this.f600_v_dm_quyet_dinh_Load);
