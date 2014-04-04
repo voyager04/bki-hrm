@@ -439,8 +439,6 @@ namespace BKI_HRM
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_qua_trinh_lam_viec)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row)) return;
             
-            
-			load_data_2_grid_search();
 
             if (m_grv_qua_trinh_lam_viec.Rows[m_grv_qua_trinh_lam_viec.Row].UserData != null)
             {
