@@ -785,7 +785,7 @@ namespace BKI_HRM.US {
             v_sp.addDatetimeInputParam("@NGAY_KET_THUC", ip_dat_ngay_ket_thuc);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
-
+        
         public void FillDatase_All(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds) {
             CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_All");
             v_sp.fillDataSetByCommand(this, op_ds);
