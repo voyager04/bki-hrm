@@ -77,14 +77,7 @@ namespace BKI_HRM.NghiepVu
             }
             m_dat_tham_gia.Value = (DateTime)v_dr["THOI_DIEM_TG"];
 
-            if (v_dr[GD_CHI_TIET_DU_AN.TRANG_THAI_HIEN_TAI].ToString() == "Y")
-            {
-                m_chk_trang_thai_hien_tai.Checked = true;
-            }
-            else
-            {
-                m_chk_trang_thai_hien_tai.Checked = false;
-            }
+            
 
             US_DM_NHAN_SU v_us_dm_ns = new US_DM_NHAN_SU();
             DS_DM_NHAN_SU v_ds_dm_ns = new DS_DM_NHAN_SU();
@@ -111,6 +104,8 @@ namespace BKI_HRM.NghiepVu
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.InsertDataState:
+                    chuyen_trang_thai_ve_no(m_us.dcID_NHAN_SU);
+                    m_us.strTRANG_THAI_HIEN_TAI = "Y";
                     m_us.Insert();
                     break;
                 case DataEntryFormMode.UpdateDataState:
@@ -121,6 +116,40 @@ namespace BKI_HRM.NghiepVu
             this.Close();
         }
 
+        private void chuyen_trang_thai_ve_no(decimal dc_id_nv)
+        {
+            US_GD_CHI_TIET_DU_AN v_us = new US_GD_CHI_TIET_DU_AN();
+            DS_GD_CHI_TIET_DU_AN v_ds = new DS_GD_CHI_TIET_DU_AN();
+            v_us.FillDatasetTrangThaiYes(v_ds,dc_id_nv);
+            for (int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
+            {
+                DataRow v_dr = v_ds.Tables[0].Rows[i];
+                datarow_2_us_obj(v_dr, v_us);
+                v_us.strTRANG_THAI_HIEN_TAI = "N";
+                v_us.Update();
+            }
+        }
+
+        private void datarow_2_us_obj(DataRow v_dr, US_GD_CHI_TIET_DU_AN v_us)
+        {
+            v_us.dcID = CIPConvert.ToDecimal(v_dr[GD_CHI_TIET_DU_AN.ID]);
+            v_us.dcID_DU_AN = CIPConvert.ToDecimal(v_dr[GD_CHI_TIET_DU_AN.ID_DU_AN]);
+            v_us.dcID_NHAN_SU = CIPConvert.ToDecimal(v_dr[GD_CHI_TIET_DU_AN.ID_NHAN_SU]);
+            v_us.dcID_VI_TRI = CIPConvert.ToDecimal(v_dr[GD_CHI_TIET_DU_AN.ID_VI_TRI]);
+            v_us.dcID_DANH_HIEU = CIPConvert.ToDecimal(v_dr[GD_CHI_TIET_DU_AN.ID_DANH_HIEU]);
+            if (v_dr[GD_CHI_TIET_DU_AN.THOI_GIAN_TG].ToString() != "")
+            {
+                v_us.dcTHOI_GIAN_TG = CIPConvert.ToDecimal(v_dr[GD_CHI_TIET_DU_AN.THOI_GIAN_TG]);    
+            }           
+
+            v_us.strLUA_CHON = v_dr[GD_CHI_TIET_DU_AN.LUA_CHON].ToString();
+            v_us.strMO_TA = v_dr[GD_CHI_TIET_DU_AN.MO_TA].ToString();
+            v_us.strTRANG_THAI_HIEN_TAI = v_dr[GD_CHI_TIET_DU_AN.TRANG_THAI_HIEN_TAI].ToString();
+
+            v_us.datTHOI_DIEM_KT = (DateTime)v_dr[GD_CHI_TIET_DU_AN.THOI_DIEM_KT];
+            v_us.datTHOI_DIEM_TG = (DateTime)v_dr[GD_CHI_TIET_DU_AN.THOI_DIEM_TG];
+        }
+
         private void form_2_us_object()
         {
             m_us.dcID_DANH_HIEU =CIPConvert.ToDecimal(m_cbo_danh_hieu.SelectedValue.ToString());
@@ -128,14 +157,7 @@ namespace BKI_HRM.NghiepVu
             m_us.datTHOI_DIEM_KT = m_dat_ngay_kt.Value;
             m_us.datTHOI_DIEM_TG = m_dat_tham_gia.Value;
             m_us.strMO_TA = m_txt_mo_ta.Text;
-            if (m_chk_trang_thai_hien_tai.Checked)
-            {
-                m_us.strTRANG_THAI_HIEN_TAI = "Y";
-            }
-            else
-            {
-                m_us.strTRANG_THAI_HIEN_TAI = "N";
-            }            
+                       
         }
 
         private bool check_data_is_ok()
@@ -246,16 +268,6 @@ namespace BKI_HRM.NghiepVu
         }
         #endregion                
 
-        private void m_chk_trang_thai_hien_tai_CheckedChanged(object sender, EventArgs e)
-        {
-            if (m_chk_trang_thai_hien_tai.Checked)
-            {
-                m_chk_trang_thai_hien_tai.Text = "yes";
-            }
-            else
-            {
-                m_chk_trang_thai_hien_tai.Text = "no";
-            }
-        }
+        
     }
 }
