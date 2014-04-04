@@ -594,6 +594,7 @@
        public const string NGAY_CO_HIEU_LUC = "NGAY_CO_HIEU_LUC";
        public const string NGAY_HET_HIEU_LUC = "NGAY_HET_HIEU_LUC";
        public const string MA_CAP_BAC = "MA_CAP_BAC";
+       public const string LUA_CHON = "LUA_CHON";
    }
 
    public class DM_CAP_BAC {
