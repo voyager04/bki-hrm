@@ -488,6 +488,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\Reports\Templates\CVTemplate.doc" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BKI_HRM.DS\BKI_HRM.DS.csproj">
@@ -553,6 +554,7 @@
   <ItemGroup>
     <None Include="Resources\Human resources management v2.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
