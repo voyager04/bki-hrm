@@ -424,7 +424,7 @@ namespace BKI_HRM
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
             US_V_DM_CAP_BAC v_us = new US_V_DM_CAP_BAC();
-            grid2us_object(m_us, m_fg.Row);
+            grid2us_object(v_us, m_fg.Row);
             try
             {
                 v_us.BeginTransaction();
