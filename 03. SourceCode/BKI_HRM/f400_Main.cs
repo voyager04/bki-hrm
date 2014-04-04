@@ -76,9 +76,8 @@ namespace BKI_HRM {
             m_menuitem_traCuuNhanSuChung.Click += m_menuitem_traCuuNhanSuChung_Click;
             m_menuitem_nhan_su_theo_phong_ban.Click += m_menuitem_nhan_su_theo_phong_ban_Click;
             m_menuitem_chiTietCapBac.Click += m_menuitem_chiTietCapBac_Click;
-            m_menuitem_danh_sach_don_vi.Click += m_menuitem_danh_sach_don_vi_Click;
+            m_menuitem_qldonvi.Click += m_menuitem_quan_ly_don_vi_Click;
             m_lbl_thu_viec_sap_het_han.Click += m_lbl_thu_viec_sap_het_han_Click;
-            m_menuitem_tach_nhap_don_vi.Click += m_menuitem_tach_nhap_don_vi_Click;
         }
 
         private void m_menu_dsnhansu_Click(object sender, EventArgs e){
@@ -487,7 +486,7 @@ namespace BKI_HRM {
             }
         }
 
-        private void m_menuitem_danh_sach_don_vi_Click(object sender, EventArgs e){
+        private void m_menuitem_quan_ly_don_vi_Click(object sender, EventArgs e){
             try
             {
                 f101_v_dm_don_vi frm = new f101_v_dm_don_vi();
@@ -499,17 +498,6 @@ namespace BKI_HRM {
             }
         }
 
-        private void m_menuitem_tach_nhap_don_vi_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                f107_tach_nhap_don_vi frm = new f107_tach_nhap_don_vi();
-                frm.Show();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
+        
     }
 } 

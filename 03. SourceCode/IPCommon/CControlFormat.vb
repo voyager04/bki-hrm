@@ -120,6 +120,11 @@ Public Class CControlFormat
                 formatToolStripMenuItem(ip_str_form_name, i_objControlerControl, v_obj_tool_strip)
             Next
         End If
+        If TypeOf ip_control Is TabControl Then
+            ip_control.Font = getRegularFont()
+            ip_control.ForeColor = getRegularForeColor()
+        End If
+
         Dim v_control As System.Windows.Forms.Control
         For Each v_control In ip_control.Controls
             formatControlInForms(ip_str_form_name, i_objControlerControl, v_control)

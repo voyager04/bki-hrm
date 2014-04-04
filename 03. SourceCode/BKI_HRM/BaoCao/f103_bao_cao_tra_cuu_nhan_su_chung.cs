@@ -360,7 +360,7 @@ namespace BKI_HRM {
         private DataEntryFormMode m_e_form_mode;
         int m_ngay_truoc_het_han_thu_viec = 7;
         int m_so_luong_thu_viec_sap_het_han = 0;
-        private bool load_invisible = false;
+        private bool load_invisible = true;
         DS_V_DM_DU_LIEU_NHAN_VIEN m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
         US_V_DM_DU_LIEU_NHAN_VIEN m_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
         private const String m_str_goi_y_tim_kiem = "Giới tính: nữ, đơn vị: Phòng hành chính hoặc Nguyễn Danh Tú, giới tính: Nam, Trình độ: Đại học";

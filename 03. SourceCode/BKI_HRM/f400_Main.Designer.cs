@@ -96,8 +96,6 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hop_dong_sap_het_han = new System.Windows.Forms.Label();
             this.m_lbl_thu_viec_sap_het_han = new System.Windows.Forms.Label();
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky = new System.Windows.Forms.Label();
-            this.m_menuitem_danh_sach_don_vi = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_menuitem_tach_nhap_don_vi = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -235,9 +233,6 @@ namespace BKI_HRM
             // 
             // m_menuitem_qldonvi
             // 
-            this.m_menuitem_qldonvi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.m_menuitem_danh_sach_don_vi,
-            this.m_menuitem_tach_nhap_don_vi});
             this.m_menuitem_qldonvi.Name = "m_menuitem_qldonvi";
             this.m_menuitem_qldonvi.Size = new System.Drawing.Size(206, 22);
             this.m_menuitem_qldonvi.Text = "Quản lý đơn vị";
@@ -642,18 +637,6 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text = "Danh sách Hợp đồng đã hết hạn nhưng chưa ký";
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Click += new System.EventHandler(this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky_Click);
             // 
-            // m_menuitem_danh_sach_don_vi
-            // 
-            this.m_menuitem_danh_sach_don_vi.Name = "m_menuitem_danh_sach_don_vi";
-            this.m_menuitem_danh_sach_don_vi.Size = new System.Drawing.Size(166, 22);
-            this.m_menuitem_danh_sach_don_vi.Text = "Danh sách đơn vị";
-            // 
-            // m_menuitem_tach_nhap_don_vi
-            // 
-            this.m_menuitem_tach_nhap_don_vi.Name = "m_menuitem_tach_nhap_don_vi";
-            this.m_menuitem_tach_nhap_don_vi.Size = new System.Drawing.Size(166, 22);
-            this.m_menuitem_tach_nhap_don_vi.Text = "Tách nhập đơn vị";
-            // 
             // f400_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -748,7 +731,5 @@ namespace BKI_HRM
         private ToolStripMenuItem m_menuitem_dm_control;
         private ToolStripMenuItem m_menuitem_headcount;
         private ToolStripMenuItem chToolStripMenuItem;
-        private ToolStripMenuItem m_menuitem_danh_sach_don_vi;
-        private ToolStripMenuItem m_menuitem_tach_nhap_don_vi;
     }
 }
