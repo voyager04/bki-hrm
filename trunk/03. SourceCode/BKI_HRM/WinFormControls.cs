@@ -93,8 +93,16 @@ namespace BKI_HRM {
                 v_ds_dm_tu_dien.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
                 ip_obj_cbo_trang_thai.SelectedIndex = 0;
             }
+            }
+        public static void set_focus_for_grid(C1FlexGrid ip_fg, // Grid cần tạo focus
+                                                string ip_str_search, // Từ khóa để tìm ra dòng cần focus VD: Mã nhân viên là '100002' ,...
+                                                int ip_i_col_search) // Cột chứa thông tin cần search VD: Cột Mã nhân viên
+        {
+            ip_fg.Focus();
+            var s = ip_fg.FindRow(ip_str_search, ip_fg.Row, ip_i_col_search, true);
+            ip_fg.Row = s;
+            ip_fg.Rows[s].Selected = true;
         }
-
         public static void load_data_to_CheckboxCombobox(C1FlexGrid ip_fg, Checkbox_Combobox.CheckBoxComboBox ip_cbc
                                                                 , bool load_invisible) {
             int v_count = ip_fg.Cols.Count;
