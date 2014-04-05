@@ -64,6 +64,9 @@ namespace BKI_HRM.NghiepVu
             DS_GD_CHI_TIET_DU_AN v_ds = new DS_GD_CHI_TIET_DU_AN();
             v_us.FillDatasetByID(v_ds, i_dc_id_gd_chi_tiet_du_an);
             DataRow v_dr = v_ds.Tables[0].Rows[0];
+
+            m_us.strTRANG_THAI_HIEN_TAI = v_dr[GD_CHI_TIET_DU_AN.TRANG_THAI_HIEN_TAI].ToString();
+
             m_txt_mo_ta.Text = v_dr["MO_TA"].ToString();
             m_cbo_vi_tri.SelectedValue = CIPConvert.ToDecimal(v_dr["ID_VI_TRI"].ToString());
             if (v_dr["ID_DANH_HIEU"].ToString() != "")
@@ -71,9 +74,14 @@ namespace BKI_HRM.NghiepVu
                 m_cbo_danh_hieu.SelectedValue = CIPConvert.ToDecimal(v_dr["ID_DANH_HIEU"].ToString());
             }
 
-            if (v_dr["THOI_DIEM_KT"].ToString() != "")
+            DateTime v_dat = (DateTime)v_dr[GD_CHI_TIET_DU_AN.THOI_DIEM_KT];
+            if (v_dat.Year < 2030)
             {
                 m_dat_ngay_kt.Value = (DateTime)v_dr["THOI_DIEM_KT"];
+            }
+            else
+            {
+                m_dat_ngay_kt.Checked = false;
             }
             m_dat_tham_gia.Value = (DateTime)v_dr["THOI_DIEM_TG"];
 
@@ -154,10 +162,23 @@ namespace BKI_HRM.NghiepVu
         {
             m_us.dcID_DANH_HIEU =CIPConvert.ToDecimal(m_cbo_danh_hieu.SelectedValue.ToString());
             m_us.dcID_VI_TRI = CIPConvert.ToDecimal(m_cbo_vi_tri.SelectedValue.ToString());
-            m_us.datTHOI_DIEM_KT = m_dat_ngay_kt.Value;
-            m_us.datTHOI_DIEM_TG = m_dat_tham_gia.Value;
-            m_us.strMO_TA = m_txt_mo_ta.Text;
-                       
+            if (m_dat_ngay_kt.Checked)
+            {
+                m_us.datTHOI_DIEM_KT = m_dat_ngay_kt.Value.Date;    
+            }
+            else
+            {
+                //m_us.datTHOI_DIEM_KT = DateTime.Parse("12/31/2099");
+                m_us.SetTHOI_DIEM_KTNull();
+            }
+            if (m_dat_tham_gia.Checked)
+            {
+                m_us.datTHOI_DIEM_TG = m_dat_tham_gia.Value;    
+            }
+            else
+            {
+                m_us.datTHOI_DIEM_TG = DateTime.Parse("01/01/1900");
+            }                  
         }
 
         private bool check_data_is_ok()
