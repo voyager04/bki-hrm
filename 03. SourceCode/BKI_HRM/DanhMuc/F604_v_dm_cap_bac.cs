@@ -301,8 +301,10 @@ namespace BKI_HRM
 		#region Members
 		ITransferDataRow m_obj_trans;
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
-        DS_V_DM_CAP_BAC m_ds = new DS_V_DM_CAP_BAC();
-        US_V_DM_CAP_BAC m_us = new US_V_DM_CAP_BAC();
+        DS_DM_CAP_BAC m_ds = new DS_DM_CAP_BAC();
+        US_DM_CAP_BAC m_us = new US_DM_CAP_BAC();
+        DS_V_DM_CAP_BAC m_v_ds = new DS_V_DM_CAP_BAC();
+        US_V_DM_CAP_BAC m_v_us = new US_V_DM_CAP_BAC();
         private const String m_str_tim_kiem = "Nhập thông tin cần tìm kiếm";
 		#endregion
 
@@ -331,7 +333,7 @@ namespace BKI_HRM
             v_htb.Add(V_DM_CAP_BAC.TRANG_THAI_SU_DUNG, e_col_Number.TRANG_THAI_SU_DUNG);
             v_htb.Add(V_DM_CAP_BAC.NGAY_AP_DUNG, e_col_Number.NGAY_AP_DUNG);
             
-            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_DM_CAP_BAC.NewRow());
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_v_ds.V_DM_CAP_BAC.NewRow());
             return v_obj_trans;
         }
         private void select_data_2_us()
@@ -345,9 +347,9 @@ namespace BKI_HRM
         
         private void load_data_2_grid()
         {
-            m_ds = new DS_V_DM_CAP_BAC();
-            if (m_txt_tim_kiem.Text.Trim() == m_str_tim_kiem || m_txt_tim_kiem.Text.Trim() == "") m_us.FillDataset(m_ds);
-            else m_us.FillDatasetSearch(m_ds,m_txt_tim_kiem.Text.Trim());
+            m_v_ds = new DS_V_DM_CAP_BAC();
+            if (m_txt_tim_kiem.Text.Trim() == m_str_tim_kiem || m_txt_tim_kiem.Text.Trim() == "") m_v_us.FillDataset(m_v_ds);
+            else m_v_us.FillDatasetSearch(m_v_ds,m_txt_tim_kiem.Text.Trim());
             //m_us.FillDataset(m_ds);
             var v_str_search = m_txt_tim_kiem.Text.Trim();
             if (v_str_search.Equals(m_str_tim_kiem))
@@ -355,7 +357,7 @@ namespace BKI_HRM
                 v_str_search = "";
             }
             m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.Dataset2C1Grid(m_v_ds, m_fg, m_obj_trans);
 
             m_fg.Redraw = true;
             set_search_format_before();
@@ -377,13 +379,14 @@ namespace BKI_HRM
             }
             m_txt_tim_kiem.ForeColor = Color.Black;
         }
-        private void grid2us_object(US_V_DM_CAP_BAC i_us
+        private void grid2us_object(US_DM_CAP_BAC i_us
             , int i_grid_row)
         {
             DataRow v_dr;
             v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
-            m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
-            i_us.DataRow2Me(v_dr);
+            m_us = new US_DM_CAP_BAC((decimal)v_dr.ItemArray[0]);
+            //m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
+            //i_us.DataRow2Me(v_dr);
         }
 
 
@@ -423,18 +426,18 @@ namespace BKI_HRM
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
-            US_V_DM_CAP_BAC v_us = new US_V_DM_CAP_BAC();
-            grid2us_object(v_us, m_fg.Row);
+            
+            grid2us_object(m_us, m_fg.Row);
             try
             {
-                v_us.BeginTransaction();
-                v_us.Delete();
-                v_us.CommitTransaction();
+                m_us.BeginTransaction();
+                m_us.Delete();
+                m_us.CommitTransaction();
                 m_fg.Rows.Remove(m_fg.Row);
             }
             catch (Exception v_e)
             {
-                v_us.Rollback();
+                m_us.Rollback();
                 CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
                     new CDBClientDBExceptionInterpret());
                 v_objErrHandler.showErrorMessage();
@@ -463,9 +466,9 @@ namespace BKI_HRM
 
         private void load_custom_source_2_m_txt_tim_kiem()
         {
-            int count = m_ds.Tables["V_DM_CAP_BAC"].Rows.Count;
+            int count = m_v_ds.Tables["V_DM_CAP_BAC"].Rows.Count;
             AutoCompleteStringCollection v_acsc_search = new AutoCompleteStringCollection();
-            foreach (DataRow dr in m_ds.V_DM_CAP_BAC)
+            foreach (DataRow dr in m_v_ds.V_DM_CAP_BAC)
             {
                 v_acsc_search.Add(dr[V_DM_CAP_BAC.MA_BAC].ToString());
                 v_acsc_search.Add(dr[V_DM_CAP_BAC.MA_CAP].ToString());
