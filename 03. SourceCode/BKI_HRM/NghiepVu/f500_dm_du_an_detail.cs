@@ -33,7 +33,7 @@ namespace BKI_HRM.NghiepVu
         }
 
         public void display_for_update(DS.DS_DM_DU_AN i_ds)
-        {
+        {            
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             load_data_2_control();
             ds_2_form(i_ds);
@@ -223,7 +223,14 @@ namespace BKI_HRM.NghiepVu
             m_cbo_trang_thai.SelectedValue = CIPConvert.ToDecimal(dr["ID_TRANG_THAI"].ToString());
 
             m_dat_ngay_bd.Value = (DateTime)dr["NGAY_BAT_DAU"];
-            m_dat_ngay_kt.Value = (DateTime)dr["NGAY_KET_THUC"];
+            if (dr["NGAY_KET_THUC"].ToString() == "")
+            {
+                m_dat_ngay_kt.Checked = false;
+            }
+            else
+            {
+                m_dat_ngay_kt.Value = (DateTime)dr["NGAY_KET_THUC"];
+            }
 
             US.US_DM_QUYET_DINH v_us_qd = new US.US_DM_QUYET_DINH();
             DS.DS_DM_QUYET_DINH v_ds_qd = new DS.DS_DM_QUYET_DINH();
@@ -282,12 +289,12 @@ namespace BKI_HRM.NghiepVu
 
             if (m_dat_ngay_co_hieu_luc.Checked)
             {
-                m_us_dm_quyet_dinh.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value;
+                m_us_dm_quyet_dinh.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value.Date;
             }
 
             if (m_dat_ngay_het_hieu_luc.Checked)
             {
-                m_us_dm_quyet_dinh.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc.Value;
+                m_us_dm_quyet_dinh.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc.Value.Date;
             }
 
             if (m_dat_ngay_ki.Checked)
@@ -323,7 +330,7 @@ namespace BKI_HRM.NghiepVu
             }
             else
             {
-                m_us_dm_du_an.datNGAY_KET_THUC = DateTime.Parse("12/31/2090");
+                m_us_dm_du_an.SetNGAY_KET_THUCNull();
             }            
         }
 
