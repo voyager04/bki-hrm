@@ -104,6 +104,8 @@ namespace BKI_HRM.NghiepVu
             CControlFormat.setC1FlexFormat(m_grv_nhan_su);
             CGridUtils.AddSave_Excel_Handlers(m_grv_nhan_su);
             CGridUtils.AddSearch_Handlers(m_grv_nhan_su);
+            m_grv_nhan_su.Tree.Column = (int)e_col_Number.HO_DEM;
+            m_grv_nhan_su.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.SimpleLeaf;            
         }
         
 
@@ -114,6 +116,12 @@ namespace BKI_HRM.NghiepVu
             m_us_nsda.FillDatasetByIdDuAn(m_ds_nsda,i_dc_id_da);
             m_grv_nhan_su.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds_nsda, m_grv_nhan_su, m_obj_trans);
+            m_grv_nhan_su.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.None // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+             , 0
+             , (int)e_col_Number.MA_NV // chỗ này là tên trường mà mình nhóm
+             , (int)e_col_Number.MA_NV // chỗ này là tên trường mà mình Count
+             , "{0}"
+             );
             m_grv_nhan_su.Redraw = true;
         }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
@@ -309,7 +317,14 @@ namespace BKI_HRM.NghiepVu
             m_us_dm_du_an.strTEN_DU_AN = m_txt_ten_du_an.Text;
 
             m_us_dm_du_an.datNGAY_BAT_DAU = m_dat_ngay_bd.Value;
-            m_us_dm_du_an.datNGAY_KET_THUC = m_dat_ngay_kt.Value;
+            if (m_dat_ngay_kt.Checked)
+            {
+                m_us_dm_du_an.datNGAY_KET_THUC = m_dat_ngay_kt.Value;
+            }
+            else
+            {
+                m_us_dm_du_an.datNGAY_KET_THUC = DateTime.Parse("12/31/2090");
+            }            
         }
 
         private void save_data()
