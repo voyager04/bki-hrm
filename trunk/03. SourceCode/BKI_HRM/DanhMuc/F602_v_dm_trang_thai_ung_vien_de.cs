@@ -49,13 +49,33 @@ namespace BKI_HRM.DanhMuc
         private DS_V_DM_TRANG_THAI_UNG_VIEN m_v_ds = new DS_V_DM_TRANG_THAI_UNG_VIEN();
         private US_DM_TRANG_THAI_UNG_VIEN m_us = new US_DM_TRANG_THAI_UNG_VIEN();
         private DS_DM_TRANG_THAI_UNG_VIEN m_ds=new DS_DM_TRANG_THAI_UNG_VIEN();
-        private string m_str_destination = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
-        private string m_str_path = "";
-        private string m_str_file_name = "";
-        private string m_str_origination = "";
-        private string m_str_old_path = "";
+        //private string m_str_destination = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
+        //private string m_str_path = "";
+        //private string m_str_file_name = "";
+        //private string m_str_origination = "";
+        //private string m_str_old_path = "";
         #endregion
         #region Private Methods
+        private void save_data()
+        {
+            if (check_data_is_ok() == false)
+            {
+                return;
+            }
+            form_2_us_object();
+          
+            switch (m_e_form_mode)
+            {
+                case DataEntryFormMode.InsertDataState:
+                    m_us.Insert();
+                    break;
+                case DataEntryFormMode.UpdateDataState:
+                    m_us.Update();
+                    break;
+            }
+            BaseMessages.MsgBox_Infor("Cập nhật dữ liệu thành công!");
+            this.Close();
+        }
         private void us_object_2_form(US_V_DM_TRANG_THAI_UNG_VIEN ip_us_v_dm_trang_thai_ung_vien)
         {
             m_us.dcID = ip_us_v_dm_trang_thai_ung_vien.dcID;
@@ -106,6 +126,17 @@ namespace BKI_HRM.DanhMuc
 
         
         #region Events
+        protected void m_cmd_save_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                save_data();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         protected void m_cmd_refresh_Click(object sender, EventArgs e)
         {
             m_txt_dau_hieu.Text="";
@@ -116,9 +147,12 @@ namespace BKI_HRM.DanhMuc
         }
         private void set_define_events()
         {
+            this.m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
             this.m_cmd_refresh.Click += new EventHandler(m_cmd_refresh_Click);
             this.m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
         }
+        
+        
         protected void m_cmd_exit_Click(object sender, EventArgs e)
         {
             try
