@@ -133,10 +133,10 @@ namespace BKI_HRM
                     //m_txt_don_vi_moi.Text = m_us_dm_don_vi.strMA_DON_VI + " - " + m_us_dm_don_vi.strTEN_DON_VI;
 
                     m_dat_ngay_bat_dau.Value = m_us_v_qua_trinh_lam_viec.datNGAY_BAT_DAU;
-                    //if (m_us_v_qua_trinh_lam_viec.datNGAY_KET_THUC > DateTime.Parse("01/01/1900"))
-                    //    m_dat_ngay_ket_thuc.Value = m_us_v_qua_trinh_lam_viec.datNGAY_KET_THUC;
-                    //else
-                    //    m_dat_ngay_ket_thuc.Checked = false;
+                    if (m_us_v_qua_trinh_lam_viec.datNGAY_KET_THUC != null)
+                        m_dat_ngay_ket_thuc.Value = m_us_v_qua_trinh_lam_viec.datNGAY_KET_THUC;
+                    else
+                        m_dat_ngay_ket_thuc.Checked = false;
                     m_lbl_ngay_ket_thuc.Text = "Ngày miễn nhiệm";
                     m_lbl_chuc_vu_moi.Text = "Chức vụ miễn nhiệm";
                     m_cbo_chuc_vu_moi.Enabled = false;
@@ -161,10 +161,10 @@ namespace BKI_HRM
                                 m_dat_ngay_co_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_CO_HIEU_LUC;
                             else
                                 m_dat_ngay_co_hieu_luc_qd.Checked = false;
-                            //if (m_us_quyet_dinh.datNGAY_HET_HIEU_LUC > DateTime.Parse("01/01/1900"))
-                            //    m_dat_ngay_het_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_HET_HIEU_LUC;
-                            //else
-                            //    m_dat_ngay_het_hieu_luc_qd.Checked = false;
+                            if (m_us_quyet_dinh.datNGAY_HET_HIEU_LUC != null)
+                                m_dat_ngay_het_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_HET_HIEU_LUC;
+                            else
+                                m_dat_ngay_het_hieu_luc_qd.Checked = false;
                             m_txt_noi_dung.Text = m_us_quyet_dinh.strNOI_DUNG;
                             m_ofd_openfile.FileName = m_us_quyet_dinh.strLINK;
                         }
@@ -174,7 +174,7 @@ namespace BKI_HRM
                             m_cbo_loai_quyet_dinh.SelectedIndex = 0;
                             m_dat_ngay_ky.Checked = false;
                             m_dat_ngay_co_hieu_luc_qd.Checked = false;
-                            //m_dat_ngay_het_hieu_luc_qd.Checked = false;
+                            m_dat_ngay_het_hieu_luc_qd.Checked = false;
                             m_txt_noi_dung.Text = "";
                             m_ofd_openfile.FileName = "";
                         }
@@ -200,8 +200,8 @@ namespace BKI_HRM
             m_us_chi_tiet_chuc_vu.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value;
             if (m_dat_ngay_ket_thuc.Checked)
                 m_us_chi_tiet_chuc_vu.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value;
-            //else
-            //    m_us_chi_tiet_chuc_vu.datNGAY_KET_THUC = System.DBNull.Value;
+            else
+                m_us_chi_tiet_chuc_vu.SetNGAY_KET_THUCNull();
             m_us_chi_tiet_chuc_vu.strTRANG_THAI_CV = "Y";
             switch (m_e_form_mode)
             {
@@ -226,7 +226,8 @@ namespace BKI_HRM
             m_us_quyet_dinh.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc_qd.Value;
             if (m_dat_ngay_het_hieu_luc_qd.Checked)
                 m_us_quyet_dinh.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc_qd.Value;
-            
+            else
+                m_us_quyet_dinh.SetNGAY_HET_HIEU_LUCNull();
         }
         
         private bool check_validate_data_is_ok()
