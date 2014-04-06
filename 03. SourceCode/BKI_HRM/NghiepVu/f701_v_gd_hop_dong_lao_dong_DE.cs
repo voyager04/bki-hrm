@@ -39,6 +39,7 @@ namespace BKI_HRM.NghiepVu
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             m_us_dm_nhan_su = ip_m_us_dm_nhan_su;
+            view_info_Nhan_Su();
             this.ShowDialog();
         }
 
@@ -144,6 +145,14 @@ namespace BKI_HRM.NghiepVu
             f701_v_hop_dong_lao_dong.m_str_ma_hop_dong = m_txt_ma_hop_dong.Text;
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
             this.Close();
+        }
+
+        private void view_info_Nhan_Su()
+        {
+            m_lbl_ma_nhan_vien.Text = m_us_dm_nhan_su.strMA_NV;
+            m_lbl_ho_va_ten.Text = m_us_dm_nhan_su.strHO_DEM + " " + m_us_dm_nhan_su.strTEN;
+            m_lbl_ngay_sinh.Text = m_us_dm_nhan_su.datNGAY_SINH.ToShortDateString();
+            m_lbl_dia_chi.Text = m_us_dm_nhan_su.strCHO_O;
         }
 
         private void us_object_2_form(US_GD_HOP_DONG ip_us_gd_hop_dong)
