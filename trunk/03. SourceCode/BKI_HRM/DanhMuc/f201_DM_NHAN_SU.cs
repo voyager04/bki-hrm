@@ -138,11 +138,11 @@ namespace BKI_HRM
         private C1FlexGrid m_grv_qua_trinh_cong_tac;
         private Label m_lbl_headcount;
         private Label label3;
-        internal SIS.Controls.Button.SiSButton m_cmd_thay_headcount;
-        private ComboBox m_cbo_ma_headcount;
         internal SIS.Controls.Button.SiSButton m_cmd_them_chuc_vu;
         internal SIS.Controls.Button.SiSButton m_cmd_them_hop_dong;
         internal SIS.Controls.Button.SiSButton m_cmd_thay_trang_thai;
+        private TextBox m_txt_ma_headcount;
+        private Label m_lbl_ma_headcount;
 		private System.ComponentModel.IContainer components;
 
 		
@@ -275,8 +275,8 @@ namespace BKI_HRM
             this.m_sfd_save_cv = new System.Windows.Forms.SaveFileDialog();
             this.m_lbl_headcount = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.m_cmd_thay_headcount = new SIS.Controls.Button.SiSButton();
-            this.m_cbo_ma_headcount = new System.Windows.Forms.ComboBox();
+            this.m_lbl_ma_headcount = new System.Windows.Forms.Label();
+            this.m_txt_ma_headcount = new System.Windows.Forms.TextBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).BeginInit();
             this.panel1.SuspendLayout();
@@ -745,6 +745,7 @@ namespace BKI_HRM
             // 
             this.m_grv_chuc_vu_hien_tai.AllowEditing = false;
             this.m_grv_chuc_vu_hien_tai.ColumnInfo = resources.GetString("m_grv_chuc_vu_hien_tai.ColumnInfo");
+            this.m_grv_chuc_vu_hien_tai.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_chuc_vu_hien_tai.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_grv_chuc_vu_hien_tai.Location = new System.Drawing.Point(0, 0);
             this.m_grv_chuc_vu_hien_tai.Name = "m_grv_chuc_vu_hien_tai";
@@ -756,6 +757,7 @@ namespace BKI_HRM
             // 
             this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.m_txt_ho_khau);
             this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.m_txt_dia_chi);
+            this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.m_txt_ma_headcount);
             this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.m_txt_ma_so_thue);
             this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.m_txt_sdt_nha_rieng);
             this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.m_txt_so_dtdd);
@@ -773,6 +775,7 @@ namespace BKI_HRM
             this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.m_txt_nguyen_quan);
             this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.m_txt_cmnd);
             this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.m_lbl_ho_khau);
+            this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.m_lbl_ma_headcount);
             this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.m_lbl_dia_chi);
             this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.m_lbl_ma_so_thue);
             this.m_tpg_thong_tin_ca_nhan.Controls.Add(this.m_lbl_sdt_nha_rieng);
@@ -1209,7 +1212,6 @@ namespace BKI_HRM
             // m_grv_hop_dong_ld
             // 
             this.m_grv_hop_dong_ld.ColumnInfo = resources.GetString("m_grv_hop_dong_ld.ColumnInfo");
-            this.m_grv_hop_dong_ld.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_hop_dong_ld.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_grv_hop_dong_ld.Location = new System.Drawing.Point(0, 0);
             this.m_grv_hop_dong_ld.Name = "m_grv_hop_dong_ld";
@@ -1436,30 +1438,23 @@ namespace BKI_HRM
             this.label3.TabIndex = 28;
             this.label3.Text = "Mã Headcount:";
             // 
-            // m_cmd_thay_headcount
+            // m_lbl_ma_headcount
             // 
-            this.m_cmd_thay_headcount.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_thay_headcount.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_thay_headcount.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_thay_headcount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_thay_headcount.ImageIndex = 21;
-            this.m_cmd_thay_headcount.ImageList = this.ImageList;
-            this.m_cmd_thay_headcount.Location = new System.Drawing.Point(893, 307);
-            this.m_cmd_thay_headcount.Name = "m_cmd_thay_headcount";
-            this.m_cmd_thay_headcount.Size = new System.Drawing.Size(115, 28);
-            this.m_cmd_thay_headcount.TabIndex = 34;
-            this.m_cmd_thay_headcount.Text = "Thay Headcount";
-            this.m_cmd_thay_headcount.Click += new System.EventHandler(this.m_cmd_thay_headcount_Click);
+            this.m_lbl_ma_headcount.AutoSize = true;
+            this.m_lbl_ma_headcount.Location = new System.Drawing.Point(592, 205);
+            this.m_lbl_ma_headcount.Name = "m_lbl_ma_headcount";
+            this.m_lbl_ma_headcount.Size = new System.Drawing.Size(78, 13);
+            this.m_lbl_ma_headcount.TabIndex = 73;
+            this.m_lbl_ma_headcount.Text = "Mã Headcount";
             // 
-            // m_cbo_ma_headcount
+            // m_txt_ma_headcount
             // 
-            this.m_cbo_ma_headcount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_ma_headcount.FormattingEnabled = true;
-            this.m_cbo_ma_headcount.Location = new System.Drawing.Point(766, 309);
-            this.m_cbo_ma_headcount.Name = "m_cbo_ma_headcount";
-            this.m_cbo_ma_headcount.Size = new System.Drawing.Size(121, 21);
-            this.m_cbo_ma_headcount.TabIndex = 35;
-            this.m_cbo_ma_headcount.Visible = false;
+            this.m_txt_ma_headcount.BackColor = System.Drawing.SystemColors.Info;
+            this.m_txt_ma_headcount.Location = new System.Drawing.Point(677, 202);
+            this.m_txt_ma_headcount.Name = "m_txt_ma_headcount";
+            this.m_txt_ma_headcount.ReadOnly = true;
+            this.m_txt_ma_headcount.Size = new System.Drawing.Size(155, 20);
+            this.m_txt_ma_headcount.TabIndex = 23;
             // 
             // f201_dm_nhan_su
             // 
@@ -1467,8 +1462,6 @@ namespace BKI_HRM
             this.AutoSize = true;
             this.CancelButton = this.m_cmd_exit;
             this.ClientSize = new System.Drawing.Size(1008, 593);
-            this.Controls.Add(this.m_cbo_ma_headcount);
-            this.Controls.Add(this.m_cmd_thay_headcount);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.m_lbl2);
@@ -1852,16 +1845,16 @@ namespace BKI_HRM
             m_grv_chuc_vu_hien_tai.Redraw = true;
             
         }
-        private void load_data_2_cbo_ma_headcount()
-        {
-            DS_DM_HEADCOUNT v_ds_headcount = new DS_DM_HEADCOUNT();
-            US_DM_HEADCOUNT v_us_headcount = new US_DM_HEADCOUNT();
-            v_us_headcount.FillDataset(v_ds_headcount);
-            m_cbo_ma_headcount.DataSource = v_ds_headcount.DM_HEADCOUNT;
-            m_cbo_ma_headcount.DisplayMember = DM_HEADCOUNT.MA_HEADCOUNT;
-            m_cbo_ma_headcount.ValueMember = DM_HEADCOUNT.ID;
-            m_cbo_ma_headcount.SelectedValue = m_us.dcID_HEADCOUNT;
-        }
+        //private void load_data_2_cbo_ma_headcount()
+        //{
+        //    DS_DM_HEADCOUNT v_ds_headcount = new DS_DM_HEADCOUNT();
+        //    US_DM_HEADCOUNT v_us_headcount = new US_DM_HEADCOUNT();
+        //    v_us_headcount.FillDataset(v_ds_headcount);
+        //    m_cbo_ma_headcount.DataSource = v_ds_headcount.DM_HEADCOUNT;
+        //    m_cbo_ma_headcount.DisplayMember = DM_HEADCOUNT.MA_HEADCOUNT;
+        //    m_cbo_ma_headcount.ValueMember = DM_HEADCOUNT.ID;
+        //    m_cbo_ma_headcount.SelectedValue = m_us.dcID_HEADCOUNT;
+        //}
 
         private void them_chuc_vu()
         {
@@ -1897,30 +1890,30 @@ namespace BKI_HRM
             v_frm.display_for_insert(m_us);
         }
 
-        private void thay_headcount()
-        {
-            if (m_str_trang_thai_cmd == "creat")
-            {
-                m_cbo_ma_headcount.Visible = true;
-                m_str_trang_thai_cmd = "save";
-                m_lbl_headcount.Visible = false;
-                m_cmd_thay_headcount.Text = "Lưu Headcount";
-                load_data_2_cbo_ma_headcount();
+        //private void thay_headcount()
+        //{
+        //    if (m_str_trang_thai_cmd == "creat")
+        //    {
+        //        m_cbo_ma_headcount.Visible = true;
+        //        m_str_trang_thai_cmd = "save";
+        //        m_lbl_headcount.Visible = false;
+        //        m_cmd_thay_headcount.Text = "Lưu Headcount";
+        //        load_data_2_cbo_ma_headcount();
                 
-            }
-            else
-            {
-                m_cbo_ma_headcount.Visible = false;
-                m_str_trang_thai_cmd = "creat";
-                m_cmd_thay_headcount.Text = "Thay Headcount";
-                m_lbl_headcount.Visible = true;
-                grid2us_object(m_us, m_grv_nhan_su.Row);
-                m_us.dcID_HEADCOUNT = CIPConvert.ToDecimal(m_cbo_ma_headcount.SelectedValue);
-                m_us.Update();
-                load_data_2_grid_search();
-                load_chi_tiet_nhan_vien();
-            }
-        }
+        //    }
+        //    else
+        //    {
+        //        m_cbo_ma_headcount.Visible = false;
+        //        m_str_trang_thai_cmd = "creat";
+        //        m_cmd_thay_headcount.Text = "Thay Headcount";
+        //        m_lbl_headcount.Visible = true;
+        //        grid2us_object(m_us, m_grv_nhan_su.Row);
+        //        m_us.dcID_HEADCOUNT = CIPConvert.ToDecimal(m_cbo_ma_headcount.SelectedValue);
+        //        m_us.Update();
+        //        load_data_2_grid_search();
+        //        load_chi_tiet_nhan_vien();
+        //    }
+        //}
         private void load_data_2_grv_hop_dong_lao_dong()
         {
             DS_V_GD_HOP_DONG_LAO_DONG v_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
@@ -2039,8 +2032,8 @@ namespace BKI_HRM
            // us_object_to_form();
             m_lbl_ho_ten.Text = m_us.strHO_DEM + " " + m_us.strTEN;
             m_lbl_ma_nhan_vien.Text = m_us.strMA_NV;
-            m_cbo_ma_headcount.Visible = false;
-            m_cmd_thay_headcount.Text = "Thay Headcount";
+           // m_cbo_ma_headcount.Visible = false;
+          //  m_cmd_thay_headcount.Text = "Thay Headcount";
             m_lbl_headcount.Visible = true;
             m_str_trang_thai_cmd = "creat";
             if (m_us.dcID_HEADCOUNT != 0)
@@ -2153,6 +2146,7 @@ namespace BKI_HRM
 
             else
                 m_ptb_anh.Image = m_ptb_anh.ErrorImage;
+            m_txt_ma_headcount.Text = m_us.strMA_HEADCOUNT;
         }
         private void load_data_2_grv_qua_trinh_lam_viec()
         {
@@ -2528,17 +2522,17 @@ namespace BKI_HRM
             }
         }
 
-        private void m_cmd_thay_headcount_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                thay_headcount();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
+//         private void m_cmd_thay_headcount_Click(object sender, EventArgs e)
+//         {
+//             try
+//             {
+//                 thay_headcount();
+//             }
+//             catch (Exception v_e)
+//             {
+//                 CSystemLog_301.ExceptionHandle(v_e);
+//             }
+//         }
 
         private void m_cmd_thay_chuc_vu_Click(object sender, EventArgs e)
         {
