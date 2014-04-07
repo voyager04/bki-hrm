@@ -304,6 +304,7 @@
             this.m_txt_noi_sinh.Name = "m_txt_noi_sinh";
             this.m_txt_noi_sinh.Size = new System.Drawing.Size(358, 48);
             this.m_txt_noi_sinh.TabIndex = 6;
+            this.m_txt_noi_sinh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.m_txt_noi_sinh_KeyPress);
             // 
             // m_txt_nguyen_quan
             // 
@@ -313,6 +314,7 @@
             this.m_txt_nguyen_quan.Name = "m_txt_nguyen_quan";
             this.m_txt_nguyen_quan.Size = new System.Drawing.Size(359, 48);
             this.m_txt_nguyen_quan.TabIndex = 7;
+            this.m_txt_nguyen_quan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.m_txt_noi_sinh_KeyPress);
             // 
             // m_lbl_nguyen_quan
             // 
