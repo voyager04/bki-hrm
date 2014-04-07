@@ -368,12 +368,12 @@ Public Class f100_TuDien
         Try
             Dim v_CalledForm As New f102_TuDien_DE
             v_usTuDien.BeginTransaction()
-            If v_usTuDien.isUpdatable() Then
-                If v_CalledForm.UpdateObj(v_usTuDien) = DialogResult.OK Then
-                    v_usTuDien.Me2DataRow(v_drTuDien)
-                    Me.TuDienDataRow_2_GridRow(v_drTuDien, m_fg.Row)
-                End If
+            'If v_usTuDien.isUpdatable() Then
+            If v_CalledForm.UpdateObj(v_usTuDien) = DialogResult.OK Then
+                v_usTuDien.Me2DataRow(v_drTuDien)
+                Me.TuDienDataRow_2_GridRow(v_drTuDien, m_fg.Row)
             End If
+            'End If
             v_usTuDien.CommitTransaction()
         Catch v_e As System.Exception
             v_usTuDien.Rollback()
