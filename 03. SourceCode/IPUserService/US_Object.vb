@@ -81,7 +81,7 @@ Public Class US_Object
 
     Public Overridable Sub Me2DataRow(ByVal i_objDR As DataRow)
         Dim v_i As Integer
-        For v_i = 0 To pm_objDR.Table.Columns.Count - 1
+        For v_i = 1 To pm_objDR.Table.Columns.Count - 1
             i_objDR.Item(getColName(v_i)) = pm_objDR.Item(getColName(v_i))
         Next
     End Sub

@@ -90,6 +90,10 @@ namespace BKI_HRM
             else
                 us_object_2_form(m_us_1);
         }
+        public void get_us(ref US_DM_CHUC_VU op_us)
+        {
+            op_us = m_us;
+        }
         private void save_data() {
             if (check_data_is_ok() == false) {
                 return;

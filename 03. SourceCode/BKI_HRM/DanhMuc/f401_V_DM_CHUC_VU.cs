@@ -368,6 +368,8 @@ namespace BKI_HRM
 			f401_V_DM_CHUC_VU_DE v_fDE = new  f401_V_DM_CHUC_VU_DE();								
 			v_fDE.display_for_insert();
 			load_data_2_grid();
+            v_fDE.get_us(ref m_us);
+            WinFormControls.set_focus_for_grid(m_fg, m_us.strMA_CV, 1);
 		}
 
 		private void update_v_dm_chuc_vu(){			
