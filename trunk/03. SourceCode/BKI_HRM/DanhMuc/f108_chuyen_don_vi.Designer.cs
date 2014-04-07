@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f108_chuyen_don_vi));
             this.SuspendLayout();
             // 
             // f108_chuyen_don_vi
@@ -35,6 +36,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 376);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "f108_chuyen_don_vi";
             this.Text = "F108 - Chuyển đơn vị";
             this.ResumeLayout(false);
