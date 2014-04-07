@@ -46,7 +46,6 @@ namespace BKI_HRM {
         private ToolTip m_tooltip;
         internal SiSButton m_cmd_view;
         internal SiSButton m_cmd_chon_don_vi;
-        internal SiSButton m_cmd_nhap_tach_don_vi;
         private IContainer components;
 
         public f101_v_dm_don_vi() {
@@ -97,7 +96,6 @@ namespace BKI_HRM {
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.m_cmd_nhap_tach_don_vi = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -132,7 +130,6 @@ namespace BKI_HRM {
             // 
             // m_pnl_out_place_dm
             // 
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_nhap_tach_don_vi);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_chon_don_vi);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
@@ -315,21 +312,6 @@ namespace BKI_HRM {
             this.m_fg.TabIndex = 29;
             this.m_tooltip.SetToolTip(this.m_fg, "Nháy đúp vào dòng đơn vị cần chỉnh sửa");
             this.m_fg.Tree.LineColor = System.Drawing.Color.Maroon;
-            // 
-            // m_cmd_nhap_tach_don_vi
-            // 
-            this.m_cmd_nhap_tach_don_vi.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_nhap_tach_don_vi.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_nhap_tach_don_vi.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_nhap_tach_don_vi.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_nhap_tach_don_vi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_nhap_tach_don_vi.ImageIndex = 0;
-            this.m_cmd_nhap_tach_don_vi.ImageList = this.ImageList;
-            this.m_cmd_nhap_tach_don_vi.Location = new System.Drawing.Point(92, 4);
-            this.m_cmd_nhap_tach_don_vi.Name = "m_cmd_nhap_tach_don_vi";
-            this.m_cmd_nhap_tach_don_vi.Size = new System.Drawing.Size(157, 28);
-            this.m_cmd_nhap_tach_don_vi.TabIndex = 9;
-            this.m_cmd_nhap_tach_don_vi.Text = "Nhập - Tách đơn vị";
             // 
             // f101_v_dm_don_vi
             // 
@@ -591,7 +573,6 @@ namespace BKI_HRM {
             m_txt_search.KeyDown += m_txt_search_KeyDown;
             m_txt_search.MouseClick += m_txt_search_MouseClick;
             m_txt_search.Leave += m_txt_search_Leave;
-            m_cmd_nhap_tach_don_vi.Click += m_cmd_nhap_tach_don_vi_Click;
         }
 
         private void f101_v_dm_don_vi_Load(object sender, EventArgs e) {
@@ -679,18 +660,6 @@ namespace BKI_HRM {
             }
         }
 
-        private void m_cmd_nhap_tach_don_vi_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                f107_chuyen_nhan_vien frm = new f107_chuyen_nhan_vien();
-                frm.Show();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
     }
 }
 
