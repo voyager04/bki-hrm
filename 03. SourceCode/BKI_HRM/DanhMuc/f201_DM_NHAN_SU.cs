@@ -1990,11 +1990,14 @@ namespace BKI_HRM
             else
                 m_txt_trang_thai_hien_tai.Text = "";
             string v_str_ngay_het_hieu_luc2 = "";
-            if (v_us_trang_thai_lao_dong.datNGAY_HET_HIEU_LUC > DateTime.Parse("01/01/1900"))
+            if (v_us_trang_thai_lao_dong.datNGAY_HET_HIEU_LUC != null && v_us_trang_thai_lao_dong.datNGAY_HET_HIEU_LUC > DateTime.Parse("1/1/1900"))
                 v_str_ngay_het_hieu_luc2 += " đến ngày " + v_us_trang_thai_lao_dong.datNGAY_HET_HIEU_LUC.ToShortDateString();
-            m_txt_hieu_luc_trang_thai_ld.Text = "Từ ngày "
-                + v_us_trang_thai_lao_dong.datNGAY_CO_HIEU_LUC.ToShortDateString()
-                + v_str_ngay_het_hieu_luc2;
+            if (v_us_trang_thai_lao_dong.datNGAY_CO_HIEU_LUC != null && v_us_trang_thai_lao_dong.datNGAY_CO_HIEU_LUC > DateTime.Parse("1/1/1900"))
+                m_txt_hieu_luc_trang_thai_ld.Text = "Từ ngày "
+                    + v_us_trang_thai_lao_dong.datNGAY_CO_HIEU_LUC.ToShortDateString()
+                    + v_str_ngay_het_hieu_luc2;
+            else
+                m_txt_hieu_luc_qd_trang_thai_ld.Text = "Từ ngày ... " + v_str_ngay_het_hieu_luc2;
             m_txt_ma_qd_trang_thai_ld.Text = v_us_trang_thai_lao_dong.strMA_QUYET_DINH;
             m_txt_loai_qd.Text = v_us_trang_thai_lao_dong.strLOAI_QUYET_DINH;
             US_V_DM_QUYET_DINH v_us_quyet_dinh = new US_V_DM_QUYET_DINH();
