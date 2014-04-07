@@ -222,9 +222,11 @@ namespace BKI_HRM
             // 
             // m_fg
             // 
+            this.m_fg.AllowEditing = false;
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Location = new System.Drawing.Point(0, 106);
             this.m_fg.Name = "m_fg";
+            this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Row;
             this.m_fg.Size = new System.Drawing.Size(1355, 447);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
@@ -428,13 +430,13 @@ namespace BKI_HRM
             m_fg.Focus();
             var s = m_fg.FindRow(m_str_ma_hop_dong, m_fg.Row, 4, true);
             m_fg.Row = s;
-            m_fg.Rows[s].Selected = true;
         }
 
         private void update_v_gd_hop_dong_lao_dong()
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if (m_fg.Rows[m_fg.Row].IsNode) return;
             grid2us_object(m_fg.Row);
             f701_v_gd_hop_dong_lao_dong_DE v_fDE = new f701_v_gd_hop_dong_lao_dong_DE();
             v_fDE.display_for_update(m_us_gd_hop_dong);
@@ -443,7 +445,6 @@ namespace BKI_HRM
             m_fg.Focus();
             var s = m_fg.FindRow(m_str_ma_hop_dong, m_fg.Row, 4, true);
             m_fg.Row = s;
-            m_fg.Rows[s].Selected = true;
         }
 
         private void delete_v_gd_hop_dong_lao_dong()
@@ -502,11 +503,7 @@ namespace BKI_HRM
             }
             return false;
         }
-        private void toggle_group(object sender, EventArgs e)
-        {
-            if (m_fg.Rows[m_fg.Row].IsNode) CGridUtils.grid_Double_Click(sender, e);
-            else update_v_gd_hop_dong_lao_dong();
-        }
+
         #endregion
 
         #region Event
@@ -517,7 +514,6 @@ namespace BKI_HRM
             m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             m_fg.Click += new EventHandler(m_fg_Click);
-            m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
             m_txt_tim_kiem.KeyDown += new KeyEventHandler(m_txt_tim_kiem_KeyDown);
         }
 
@@ -530,17 +526,6 @@ namespace BKI_HRM
                     load_data_2_grid();
                 }
                 m_txt_tim_kiem.Focus();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-        void m_fg_DoubleClick(object sender, EventArgs e)
-        {
-            try
-            {
-                toggle_group(sender,e);
             }
             catch (Exception v_e)
             {
