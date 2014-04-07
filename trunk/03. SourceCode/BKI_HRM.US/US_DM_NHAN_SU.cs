@@ -682,6 +682,28 @@ public class US_DM_NHAN_SU : US_Object
         pm_objDR["ID_HEADCOUNT"] = System.Convert.DBNull;
     }
 
+    public string strMA_HEADCOUNT
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "MA_HEADCOUNT", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["MA_HEADCOUNT"] = value;
+        }
+    }
+
+    public bool IsMA_HEADCOUNTNull()
+    {
+        return pm_objDR.IsNull("MA_HEADCOUNT");
+    }
+
+    public void SetMA_HEADCOUNTNull()
+    {
+        pm_objDR["MA_HEADCOUNT"] = System.Convert.DBNull;
+    }
+
     #endregion
     #region "Init Functions"
     public US_DM_NHAN_SU()
