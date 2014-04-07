@@ -426,6 +426,8 @@ namespace BKI_HRM
             f701_v_gd_hop_dong_lao_dong_DE v_fDE = new f701_v_gd_hop_dong_lao_dong_DE();
             v_fDE.display_for_insert();
             load_data_2_grid();
+            if (m_str_ma_hop_dong == null)
+                return;
             WinFormControls.set_focus_for_grid(m_fg, m_str_ma_hop_dong, 4);
         }
 
@@ -438,6 +440,8 @@ namespace BKI_HRM
             f701_v_gd_hop_dong_lao_dong_DE v_fDE = new f701_v_gd_hop_dong_lao_dong_DE();
             v_fDE.display_for_update(m_us_gd_hop_dong);
             load_data_2_grid();
+            if (m_str_ma_hop_dong == null)
+                return;
             WinFormControls.set_focus_for_grid(m_fg, m_str_ma_hop_dong, 4);
         }
 
