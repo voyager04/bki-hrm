@@ -404,7 +404,7 @@ namespace BKI_HRM {
         US_V_DM_DON_VI m_v_us = new US_V_DM_DON_VI();
         DS_DM_DON_VI m_ds = new DS_DM_DON_VI();
         US_DM_DON_VI m_us = new US_DM_DON_VI();
-        private const String m_str_goi_y_tim_kiem = "Nhập Tên đơn vị, Mã đơn vị, Địa bạn, Trạng Thái...";
+        private const String m_str_goi_y_tim_kiem = "Nhập Tên đơn vị, Mã đơn vị, Địa bàn, Cấp đơn vị...";
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
         #endregion
 
@@ -683,7 +683,7 @@ namespace BKI_HRM {
         {
             try
             {
-                f107_tach_nhap_don_vi frm = new f107_tach_nhap_don_vi();
+                f107_chuyen_nhan_vien frm = new f107_chuyen_nhan_vien();
                 frm.Show();
             }
             catch (Exception v_e)

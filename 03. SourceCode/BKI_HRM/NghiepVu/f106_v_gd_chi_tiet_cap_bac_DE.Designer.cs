@@ -1,4 +1,4 @@
-﻿namespace BKI_HRM.DanhMuc {
+﻿namespace BKI_HRM{
     partial class f106_v_gd_chi_tiet_cap_bac_DE {
         /// <summary>
         /// Required designer variable.
@@ -53,11 +53,9 @@
             this.m_txt_ho_ten = new System.Windows.Forms.TextBox();
             this.m_txt_cap_bac_hien_tai = new System.Windows.Forms.TextBox();
             this.m_txt_ma_nv = new System.Windows.Forms.TextBox();
-            this.m_dat_ngay_ket_thuc = new System.Windows.Forms.DateTimePicker();
             this.m_cbo_ma_cap_bac = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.m_ofd_openfile = new System.Windows.Forms.OpenFileDialog();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.m_grb_quyet_dinh.SuspendLayout();
@@ -345,13 +343,11 @@
             this.panel1.Controls.Add(this.m_txt_cap_bac_hien_tai);
             this.panel1.Controls.Add(this.m_txt_ma_nv);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.m_dat_ngay_ket_thuc);
             this.panel1.Controls.Add(this.m_dat_ngay_bat_dau);
             this.panel1.Controls.Add(this.m_cbo_ma_cap_bac);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.m_lbl_mesg);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -390,15 +386,6 @@
             this.m_txt_ma_nv.Size = new System.Drawing.Size(140, 20);
             this.m_txt_ma_nv.TabIndex = 1002;
             // 
-            // m_dat_ngay_ket_thuc
-            // 
-            this.m_dat_ngay_ket_thuc.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_ngay_ket_thuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_ket_thuc.Location = new System.Drawing.Point(473, 137);
-            this.m_dat_ngay_ket_thuc.Name = "m_dat_ngay_ket_thuc";
-            this.m_dat_ngay_ket_thuc.Size = new System.Drawing.Size(181, 20);
-            this.m_dat_ngay_ket_thuc.TabIndex = 8;
-            // 
             // m_cbo_ma_cap_bac
             // 
             this.m_cbo_ma_cap_bac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -425,15 +412,6 @@
             this.label2.Size = new System.Drawing.Size(67, 14);
             this.label2.TabIndex = 999;
             this.label2.Text = "Cấp bậc mới";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(381, 137);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 14);
-            this.label6.TabIndex = 999;
-            this.label6.Text = "Ngày kết thúc";
             // 
             // f106_v_gd_chi_tiet_cap_bac_DE
             // 
@@ -491,8 +469,6 @@
         private System.Windows.Forms.Label m_lbl_loai_quyet_dinh;
         private System.Windows.Forms.Label m_lbl_ma_quyet_dinh;
         private System.Windows.Forms.TextBox m_txt_cap_bac_hien_tai;
-        private System.Windows.Forms.DateTimePicker m_dat_ngay_ket_thuc;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
     }
 }

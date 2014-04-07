@@ -8,7 +8,7 @@ using BKI_HRM.US;
 using IP.Core.IPCommon;
 using IP.Core.IPSystemAdmin;
 
-namespace BKI_HRM.DanhMuc {
+namespace BKI_HRM {
     public partial class f106_v_gd_chi_tiet_cap_bac_DE : Form {
 
         #region Public Interfaces
@@ -46,7 +46,25 @@ namespace BKI_HRM.DanhMuc {
             load_data_to_cbo();
         }
         private bool check_data_is_ok() {
+            // Kiem tra nhap trung Ma Quyet Dinh
+            if (trung_ma_quyet_dinh(m_txt_ma_quyet_dinh.Text.Trim()))
+            {
+                BaseMessages.MsgBox_Error("Đã có mã Quyết định này!");
+                return false;
+            }
             return CValidateTextBox.IsValid(m_txt_ma_quyet_dinh, DataType.StringType, allowNull.YES, true) && kiem_tra_ngay_truoc_sau();
+        }
+        private bool trung_ma_quyet_dinh(string ip_str_ma_don_vi)
+        {
+            var v_ds = new DS_V_DM_QUYET_DINH();
+            var v_us = new US_V_DM_QUYET_DINH();
+            v_us.FillDataset_By_Ma_qd(v_ds, ip_str_ma_don_vi);
+            decimal v_count = v_ds.V_DM_QUYET_DINH.Count;
+            if (v_count > 0)
+            {
+                return true;
+            }
+            return false;
         }
         private bool kiem_tra_ngay_truoc_sau() {
             if (m_dat_ngay_co_hieu_luc_qd.Value < m_dat_ngay_ky.Value) {
@@ -93,10 +111,10 @@ namespace BKI_HRM.DanhMuc {
             m_txt_ma_nv.Text = m_v_us_chi_tiet_cap_bac.strMA_NV;
             m_txt_ho_ten.Text = m_v_us_chi_tiet_cap_bac.strHO_DEM.Trim() + @" " + m_v_us_chi_tiet_cap_bac.strTEN.Trim();
             m_dat_ngay_bat_dau.Value = m_v_us_chi_tiet_cap_bac.datNGAY_BAT_DAU.Date;
-            m_dat_ngay_ket_thuc.Value = m_v_us_chi_tiet_cap_bac.datNGAY_KET_THUC.Date;
-            if (m_ds_gd_chi_tiet_cap_bac.V_GD_CHI_TIET_CAP_BAC.Select("MA_NV is not null").Length > 0)
+            var test = m_ds_gd_chi_tiet_cap_bac.V_GD_CHI_TIET_CAP_BAC.Select("MA_NV = " + m_v_us_chi_tiet_cap_bac.strMA_NV,"TRANG_THAI_CB DESC")[0];
+            if (m_ds_gd_chi_tiet_cap_bac.V_GD_CHI_TIET_CAP_BAC.Select("MA_NV = " + m_v_us_chi_tiet_cap_bac.strMA_NV).Length > 0)
             {
-                m_v_us_chi_tiet_cap_bac.DataRow2Me((DataRow)m_ds_gd_chi_tiet_cap_bac.V_GD_CHI_TIET_CAP_BAC.Rows[0]);
+                m_v_us_chi_tiet_cap_bac.DataRow2Me(m_ds_gd_chi_tiet_cap_bac.V_GD_CHI_TIET_CAP_BAC.Select("MA_NV = " + m_v_us_chi_tiet_cap_bac.strMA_NV)[0]);
                 m_txt_cap_bac_hien_tai.Text = m_v_us_chi_tiet_cap_bac.strMA_CAP_BAC;
             }
         }

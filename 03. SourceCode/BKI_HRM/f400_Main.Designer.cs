@@ -58,7 +58,7 @@ namespace BKI_HRM
             this.m_menuitem_hopdong = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_thaydoi_chucvu_donvi = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_trangthailaodong = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_menuitem_chiTietCapBac = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_menuitem_chi_tiet_cap_bac = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menu_tuyendung = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_hosouv = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_quatrinhtuyendung = new System.Windows.Forms.ToolStripMenuItem();
@@ -96,6 +96,9 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hop_dong_sap_het_han = new System.Windows.Forms.Label();
             this.m_lbl_thu_viec_sap_het_han = new System.Windows.Forms.Label();
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky = new System.Windows.Forms.Label();
+            this.táchGộpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_menuitem_chuyen_nhan_vien = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_menuitem_chuyen_don_vi = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -279,7 +282,8 @@ namespace BKI_HRM
             this.m_menu_tuyendung,
             this.m_menuitem_luong,
             this.dựÁnToolStripMenuItem,
-            this.m_meuitem_headcount});
+            this.m_meuitem_headcount,
+            this.táchGộpToolStripMenuItem});
             this.m_menuitem_nghiepvu.Name = "m_menuitem_nghiepvu";
             this.m_menuitem_nghiepvu.Size = new System.Drawing.Size(74, 20);
             this.m_menuitem_nghiepvu.Text = "Nghiệp vụ";
@@ -291,7 +295,7 @@ namespace BKI_HRM
             this.m_menuitem_hopdong,
             this.m_menuitem_thaydoi_chucvu_donvi,
             this.m_menuitem_trangthailaodong,
-            this.m_menuitem_chiTietCapBac});
+            this.m_menuitem_chi_tiet_cap_bac});
             this.m_menuitem_qlns.Name = "m_menuitem_qlns";
             this.m_menuitem_qlns.Size = new System.Drawing.Size(160, 22);
             this.m_menuitem_qlns.Text = "Quản lý nhân sự";
@@ -325,9 +329,9 @@ namespace BKI_HRM
             // 
             // m_menuitem_chiTietCapBac
             // 
-            this.m_menuitem_chiTietCapBac.Name = "m_menuitem_chiTietCapBac";
-            this.m_menuitem_chiTietCapBac.Size = new System.Drawing.Size(204, 22);
-            this.m_menuitem_chiTietCapBac.Text = "Chi tiết cấp bậc";
+            this.m_menuitem_chi_tiet_cap_bac.Name = "m_menuitem_chiTietCapBac";
+            this.m_menuitem_chi_tiet_cap_bac.Size = new System.Drawing.Size(204, 22);
+            this.m_menuitem_chi_tiet_cap_bac.Text = "Chi tiết cấp bậc";
             // 
             // m_menu_tuyendung
             // 
@@ -637,6 +641,27 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text = "Danh sách Hợp đồng đã hết hạn nhưng chưa ký";
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Click += new System.EventHandler(this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky_Click);
             // 
+            // táchGộpToolStripMenuItem
+            // 
+            this.táchGộpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.m_menuitem_chuyen_nhan_vien,
+            this.m_menuitem_chuyen_don_vi});
+            this.táchGộpToolStripMenuItem.Name = "táchGộpToolStripMenuItem";
+            this.táchGộpToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.táchGộpToolStripMenuItem.Text = "Tách gộp";
+            // 
+            // m_menuitem_chuyen_nhan_vien
+            // 
+            this.m_menuitem_chuyen_nhan_vien.Name = "m_menuitem_chuyen_nhan_vien";
+            this.m_menuitem_chuyen_nhan_vien.Size = new System.Drawing.Size(170, 22);
+            this.m_menuitem_chuyen_nhan_vien.Text = "Chuyển nhân viên";
+            // 
+            // m_menuitem_chuyen_don_vi
+            // 
+            this.m_menuitem_chuyen_don_vi.Name = "m_menuitem_chuyen_don_vi";
+            this.m_menuitem_chuyen_don_vi.Size = new System.Drawing.Size(170, 22);
+            this.m_menuitem_chuyen_don_vi.Text = "Chuyển đơn vị";
+            // 
             // f400_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -720,7 +745,7 @@ namespace BKI_HRM
         private System.Windows.Forms.Label m_lbl_thong_bao_hop_dong_sap_het_han;
         private ToolStripMenuItem m_menuitem_bc_duan;
         private ToolStripMenuItem m_menuitem_tra_cuu_ns_du_an;
-        private ToolStripMenuItem m_menuitem_chiTietCapBac;
+        private ToolStripMenuItem m_menuitem_chi_tiet_cap_bac;
         private ToolStripMenuItem nhânSựTheoCấpBậcToolStripMenuItem;
         private Label m_lbl_thu_viec_sap_het_han;
         private ToolStripMenuItem quáTrìnhLàmViệcToolStripMenuItem;
@@ -731,5 +756,8 @@ namespace BKI_HRM
         private ToolStripMenuItem m_menuitem_dm_control;
         private ToolStripMenuItem m_menuitem_headcount;
         private ToolStripMenuItem chToolStripMenuItem;
+        private ToolStripMenuItem táchGộpToolStripMenuItem;
+        private ToolStripMenuItem m_menuitem_chuyen_nhan_vien;
+        private ToolStripMenuItem m_menuitem_chuyen_don_vi;
     }
 }
