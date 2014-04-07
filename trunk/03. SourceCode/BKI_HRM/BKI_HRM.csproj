@@ -115,16 +115,16 @@
     <Compile Include="DanhMuc\f102_v_dm_don_vi_DE.Designer.cs">
       <DependentUpon>f102_v_dm_don_vi_DE.cs</DependentUpon>
     </Compile>
-    <Compile Include="DanhMuc\f107_chuyen_nhan_vien.cs">
+    <Compile Include="NghiepVu\f107_chuyen_nhan_vien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DanhMuc\f107_chuyen_nhan_vien.Designer.cs">
+    <Compile Include="NghiepVu\f107_chuyen_nhan_vien.Designer.cs">
       <DependentUpon>f107_chuyen_nhan_vien.cs</DependentUpon>
     </Compile>
-    <Compile Include="DanhMuc\f108_chuyen_don_vi.cs">
+    <Compile Include="NghiepVu\f108_chuyen_don_vi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DanhMuc\f108_chuyen_don_vi.Designer.cs">
+    <Compile Include="NghiepVu\f108_chuyen_don_vi.Designer.cs">
       <DependentUpon>f108_chuyen_don_vi.cs</DependentUpon>
     </Compile>
     <Compile Include="DanhMuc\f201_dm_nhan_su.cs">
@@ -345,10 +345,10 @@
     <EmbeddedResource Include="DanhMuc\f102_v_dm_don_vi_DE.resx">
       <DependentUpon>f102_v_dm_don_vi_DE.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DanhMuc\f107_chuyen_nhan_vien.resx">
+    <EmbeddedResource Include="NghiepVu\f107_chuyen_nhan_vien.resx">
       <DependentUpon>f107_chuyen_nhan_vien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DanhMuc\f108_chuyen_don_vi.resx">
+    <EmbeddedResource Include="NghiepVu\f108_chuyen_don_vi.resx">
       <DependentUpon>f108_chuyen_don_vi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f201_dm_nhan_su.resx">
