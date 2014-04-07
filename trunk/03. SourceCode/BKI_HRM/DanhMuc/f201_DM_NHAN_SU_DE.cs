@@ -679,6 +679,17 @@ namespace BKI_HRM
 
     #endregion
 
+        private void m_txt_noi_sinh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+        && !char.IsLetterOrDigit(e.KeyChar)
+        && e.KeyChar != '.' && e.KeyChar != '-' && e.KeyChar != '/' && e.KeyChar != ',')
+            {
+                e.Handled = true;
+            }
+           
+        }
+
        
         
         
