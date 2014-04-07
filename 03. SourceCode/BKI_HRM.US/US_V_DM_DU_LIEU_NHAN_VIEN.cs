@@ -661,19 +661,6 @@ namespace BKI_HRM.US {
             v_stored_proc.fillDataSetByCommand(this, op_ds_v_dm_du_lieu_nhan_vien);
         }
 
-        public void FillDataset_By_ID_Don_Vi(DS_V_DM_DU_LIEU_NHAN_VIEN op_ds_v_dm_du_lieu_nhan_vien, decimal ip_dc_id_don_vi) {
-            CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_Search_by_id_don_vi");
-            v_stored_proc.addNVarcharInputParam("@ip_dc_don_vi", ip_dc_id_don_vi);
-            v_stored_proc.fillDataSetByCommand(this, op_ds_v_dm_du_lieu_nhan_vien);
-        }
-
-        public void FillDatasetByIdCV_ThoiDiem(DS_V_DM_DU_LIEU_NHAN_VIEN op_ds_nhan_su, decimal i_dc_id, DateTime thoi_diem) {
-            CStoredProc v_sp = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_select_by_ID_CHUC_VU_THOI_DIEM");
-            v_sp.addDecimalInputParam("@ID_CHUC_VU", i_dc_id);
-            v_sp.addDatetimeInputParam("@THOI_DIEM", thoi_diem);
-            v_sp.fillDataSetByCommand(this, op_ds_nhan_su);
-        }
-
         public void FillDatasetSapHetHanThuViec(DS_V_DM_DU_LIEU_NHAN_VIEN op_m_ds, string ip_str_key_word) {
             CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_sap_het_han_thu_viec");
             v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_str_key_word);
