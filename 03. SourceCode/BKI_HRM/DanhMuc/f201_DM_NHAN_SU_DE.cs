@@ -157,6 +157,7 @@ namespace BKI_HRM
             m_txt_nguoi_lien_he.Text = m_us_dm_nhan_su.strNGUOI_LIEN_HE;
             m_txt_sdt_lien_he.Text = m_us_dm_nhan_su.strDI_DONG_LIEN_HE;
             m_txt_quan_he.Text = m_us_dm_nhan_su.strQUAN_HE;
+            m_txt_ma_headcount.Text = m_us_dm_nhan_su.strMA_HEADCOUNT;
         }
         private void form_to_us_object(){
             m_us_dm_nhan_su.strMA_NV = m_txt_ma_nhan_vien.Text;
@@ -192,6 +193,7 @@ namespace BKI_HRM
             m_us_dm_nhan_su.strNGUOI_LIEN_HE = m_txt_nguoi_lien_he.Text;
             m_us_dm_nhan_su.strDI_DONG_LIEN_HE = m_txt_sdt_lien_he.Text;
             m_us_dm_nhan_su.strQUAN_HE = m_txt_quan_he.Text;
+            m_us_dm_nhan_su.strMA_HEADCOUNT = m_txt_ma_headcount.Text;
         }
         private bool check_trung_ma_nv(string ip_str_ma_nv)
         {  

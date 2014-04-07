@@ -93,6 +93,8 @@
             this.m_txt_ma_so_thue = new System.Windows.Forms.TextBox();
             this.m_ma_so_thue = new System.Windows.Forms.Label();
             this.m_ofd_chon_anh = new System.Windows.Forms.OpenFileDialog();
+            this.m_txt_ma_headcount = new System.Windows.Forms.TextBox();
+            this.m_lbl_ma_headcount = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -373,7 +375,9 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.m_ptb_anh);
+            this.tabPage1.Controls.Add(this.m_lbl_ma_headcount);
             this.tabPage1.Controls.Add(this.m_lbl_dan_toc);
+            this.tabPage1.Controls.Add(this.m_txt_ma_headcount);
             this.tabPage1.Controls.Add(this.m_cbo_gioi_tinh);
             this.tabPage1.Controls.Add(this.m_txt_dan_toc);
             this.tabPage1.Controls.Add(this.m_lbl_gioi_tinh);
@@ -458,7 +462,7 @@
             // m_txt_noi_cap
             // 
             this.m_txt_noi_cap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_noi_cap.Location = new System.Drawing.Point(564, 245);
+            this.m_txt_noi_cap.Location = new System.Drawing.Point(599, 245);
             this.m_txt_noi_cap.Name = "m_txt_noi_cap";
             this.m_txt_noi_cap.Size = new System.Drawing.Size(197, 20);
             this.m_txt_noi_cap.TabIndex = 10;
@@ -769,6 +773,24 @@
             this.m_ma_so_thue.TabIndex = 44;
             this.m_ma_so_thue.Text = "Mã số thuế";
             // 
+            // m_txt_ma_headcount
+            // 
+            this.m_txt_ma_headcount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_ma_headcount.Location = new System.Drawing.Point(599, 288);
+            this.m_txt_ma_headcount.Name = "m_txt_ma_headcount";
+            this.m_txt_ma_headcount.Size = new System.Drawing.Size(120, 20);
+            this.m_txt_ma_headcount.TabIndex = 12;
+            this.m_txt_ma_headcount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.m_txt_dan_toc_KeyPress);
+            // 
+            // m_lbl_ma_headcount
+            // 
+            this.m_lbl_ma_headcount.AutoSize = true;
+            this.m_lbl_ma_headcount.Location = new System.Drawing.Point(513, 290);
+            this.m_lbl_ma_headcount.Name = "m_lbl_ma_headcount";
+            this.m_lbl_ma_headcount.Size = new System.Drawing.Size(78, 13);
+            this.m_lbl_ma_headcount.TabIndex = 47;
+            this.m_lbl_ma_headcount.Text = "Mã Headcount";
+            // 
             // f201_DM_NHAN_SU_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -858,5 +880,7 @@
         private System.Windows.Forms.TextBox m_txt_nam_tot_nghiep;
         private System.Windows.Forms.PictureBox m_ptb_anh;
         private System.Windows.Forms.OpenFileDialog m_ofd_chon_anh;
+        private System.Windows.Forms.Label m_lbl_ma_headcount;
+        private System.Windows.Forms.TextBox m_txt_ma_headcount;
     }
 }
