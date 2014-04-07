@@ -21,7 +21,7 @@ using BKI_HRM.DS.CDBNames;
 using C1.Win.C1FlexGrid;
 using System.Threading;
 using BKI_HRM.NghiepVu;
-
+using BKI_HRM.DanhMuc;
 
 namespace BKI_HRM
 {
@@ -71,6 +71,19 @@ namespace BKI_HRM
             v_frm.display_for_insert(v_us);
             
         }
+        private void them_hop_dong()
+        {
+            f701_v_gd_hop_dong_lao_dong_DE v_frm = new f701_v_gd_hop_dong_lao_dong_DE();
+            v_frm.display_for_insert(m_us_nhan_su);
+        }
+        private void them_cap_bac()
+        {
+            US_V_GD_CHI_TIET_CAP_BAC v_us = new US_V_GD_CHI_TIET_CAP_BAC();
+            DS_V_GD_CHI_TIET_CAP_BAC v_ds = new DS_V_GD_CHI_TIET_CAP_BAC();
+            v_us.FillDatasetSearchCapCacThoiDiem(v_ds, m_us_nhan_su.strMA_NV, DateTime.Today);
+            f106_v_gd_chi_tiet_cap_bac_DE v_frm = new f106_v_gd_chi_tiet_cap_bac_DE();
+            v_frm.display_for_insert(v_us, v_ds);
+        }
 #endregion
 
         private void m_cmd_them_chuc_vu_Click(object sender, EventArgs e)
@@ -95,6 +108,30 @@ namespace BKI_HRM
             try
             {
                 them_trang_thai();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_them_hop_dong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                them_hop_dong();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_them_cap_bac_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                them_cap_bac();
             }
             catch (Exception v_e)
             {

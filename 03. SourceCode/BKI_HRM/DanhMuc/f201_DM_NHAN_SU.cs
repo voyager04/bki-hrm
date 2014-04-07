@@ -250,8 +250,10 @@ namespace BKI_HRM
             this.m_tpg_qua_trinh_lam_viec = new System.Windows.Forms.TabPage();
             this.m_grv_qua_trinh_cong_tac = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_tpg_hop_dong = new System.Windows.Forms.TabPage();
+            this.m_cmd_them_hop_dong = new SIS.Controls.Button.SiSButton();
             this.m_grv_hop_dong_ld = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_tpg_trang_thai = new System.Windows.Forms.TabPage();
+            this.m_cmd_thay_trang_thai = new SIS.Controls.Button.SiSButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.m_txt_noi_dung = new System.Windows.Forms.TextBox();
             this.m_txt_link = new System.Windows.Forms.TextBox();
@@ -275,8 +277,6 @@ namespace BKI_HRM
             this.label3 = new System.Windows.Forms.Label();
             this.m_cmd_thay_headcount = new SIS.Controls.Button.SiSButton();
             this.m_cbo_ma_headcount = new System.Windows.Forms.ComboBox();
-            this.m_cmd_them_hop_dong = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_thay_trang_thai = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).BeginInit();
             this.panel1.SuspendLayout();
@@ -435,7 +435,6 @@ namespace BKI_HRM
             // 
             this.m_grv_nhan_su.AllowEditing = false;
             this.m_grv_nhan_su.ColumnInfo = resources.GetString("m_grv_nhan_su.ColumnInfo");
-            this.m_grv_nhan_su.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_nhan_su.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_nhan_su.Location = new System.Drawing.Point(0, 57);
             this.m_grv_nhan_su.Name = "m_grv_nhan_su";
@@ -746,7 +745,6 @@ namespace BKI_HRM
             // 
             this.m_grv_chuc_vu_hien_tai.AllowEditing = false;
             this.m_grv_chuc_vu_hien_tai.ColumnInfo = resources.GetString("m_grv_chuc_vu_hien_tai.ColumnInfo");
-            this.m_grv_chuc_vu_hien_tai.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_chuc_vu_hien_tai.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_grv_chuc_vu_hien_tai.Location = new System.Drawing.Point(0, 0);
             this.m_grv_chuc_vu_hien_tai.Name = "m_grv_chuc_vu_hien_tai";
@@ -1173,7 +1171,6 @@ namespace BKI_HRM
             // 
             this.m_grv_qua_trinh_cong_tac.AllowEditing = false;
             this.m_grv_qua_trinh_cong_tac.ColumnInfo = resources.GetString("m_grv_qua_trinh_cong_tac.ColumnInfo");
-            this.m_grv_qua_trinh_cong_tac.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_qua_trinh_cong_tac.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_grv_qua_trinh_cong_tac.Location = new System.Drawing.Point(3, 3);
             this.m_grv_qua_trinh_cong_tac.Name = "m_grv_qua_trinh_cong_tac";
@@ -1192,6 +1189,22 @@ namespace BKI_HRM
             this.m_tpg_hop_dong.Text = "Hợp đồng lao động";
             this.m_tpg_hop_dong.ToolTipText = "Hợp đồng lao động";
             this.m_tpg_hop_dong.UseVisualStyleBackColor = true;
+            // 
+            // m_cmd_them_hop_dong
+            // 
+            this.m_cmd_them_hop_dong.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_them_hop_dong.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_them_hop_dong.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_them_hop_dong.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_them_hop_dong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_them_hop_dong.ImageIndex = 2;
+            this.m_cmd_them_hop_dong.ImageList = this.ImageList;
+            this.m_cmd_them_hop_dong.Location = new System.Drawing.Point(885, 204);
+            this.m_cmd_them_hop_dong.Name = "m_cmd_them_hop_dong";
+            this.m_cmd_them_hop_dong.Size = new System.Drawing.Size(115, 29);
+            this.m_cmd_them_hop_dong.TabIndex = 34;
+            this.m_cmd_them_hop_dong.Text = "Thêm hợp đồng";
+            this.m_cmd_them_hop_dong.Click += new System.EventHandler(this.m_cmd_them_hop_dong_Click);
             // 
             // m_grv_hop_dong_ld
             // 
@@ -1220,6 +1233,21 @@ namespace BKI_HRM
             this.m_tpg_trang_thai.Text = "Trạng thái lao động";
             this.m_tpg_trang_thai.ToolTipText = "Trạng thái lao động";
             this.m_tpg_trang_thai.UseVisualStyleBackColor = true;
+            // 
+            // m_cmd_thay_trang_thai
+            // 
+            this.m_cmd_thay_trang_thai.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_thay_trang_thai.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_thay_trang_thai.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_thay_trang_thai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_thay_trang_thai.ImageIndex = 2;
+            this.m_cmd_thay_trang_thai.ImageList = this.ImageList;
+            this.m_cmd_thay_trang_thai.Location = new System.Drawing.Point(879, 198);
+            this.m_cmd_thay_trang_thai.Name = "m_cmd_thay_trang_thai";
+            this.m_cmd_thay_trang_thai.Size = new System.Drawing.Size(115, 29);
+            this.m_cmd_thay_trang_thai.TabIndex = 35;
+            this.m_cmd_thay_trang_thai.Text = "Thay trạng thái";
+            this.m_cmd_thay_trang_thai.Click += new System.EventHandler(this.m_cmd_thay_trang_thai_Click);
             // 
             // groupBox1
             // 
@@ -1432,36 +1460,6 @@ namespace BKI_HRM
             this.m_cbo_ma_headcount.Size = new System.Drawing.Size(121, 21);
             this.m_cbo_ma_headcount.TabIndex = 35;
             this.m_cbo_ma_headcount.Visible = false;
-            // 
-            // m_cmd_them_hop_dong
-            // 
-            this.m_cmd_them_hop_dong.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_them_hop_dong.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_them_hop_dong.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_them_hop_dong.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_them_hop_dong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_them_hop_dong.ImageIndex = 2;
-            this.m_cmd_them_hop_dong.ImageList = this.ImageList;
-            this.m_cmd_them_hop_dong.Location = new System.Drawing.Point(885, 204);
-            this.m_cmd_them_hop_dong.Name = "m_cmd_them_hop_dong";
-            this.m_cmd_them_hop_dong.Size = new System.Drawing.Size(115, 29);
-            this.m_cmd_them_hop_dong.TabIndex = 34;
-            this.m_cmd_them_hop_dong.Text = "Thêm hợp đồng";
-            // 
-            // m_cmd_thay_trang_thai
-            // 
-            this.m_cmd_thay_trang_thai.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_thay_trang_thai.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_thay_trang_thai.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_thay_trang_thai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_thay_trang_thai.ImageIndex = 2;
-            this.m_cmd_thay_trang_thai.ImageList = this.ImageList;
-            this.m_cmd_thay_trang_thai.Location = new System.Drawing.Point(879, 198);
-            this.m_cmd_thay_trang_thai.Name = "m_cmd_thay_trang_thai";
-            this.m_cmd_thay_trang_thai.Size = new System.Drawing.Size(115, 29);
-            this.m_cmd_thay_trang_thai.TabIndex = 35;
-            this.m_cmd_thay_trang_thai.Text = "Thay trạng thái";
-            this.m_cmd_thay_trang_thai.Click += new System.EventHandler(this.m_cmd_thay_trang_thai_Click);
             // 
             // f201_dm_nhan_su
             // 
@@ -1880,7 +1878,7 @@ namespace BKI_HRM
             v_frm.display_for_insert(v_us);
             load_data_2_grv_chuc_vu_hien_tai();
         }
-
+        
         private void them_trang_thai()
         {
             US_V_GD_TRANG_THAI_LAO_DONG v_us = new US_V_GD_TRANG_THAI_LAO_DONG();
@@ -1894,9 +1892,9 @@ namespace BKI_HRM
         private void them_hop_dong()
         {
 
-
             f701_v_gd_hop_dong_lao_dong_DE v_frm = new f701_v_gd_hop_dong_lao_dong_DE();
-            v_frm.display_for_insert();
+            grid2us_object(m_us, m_grv_nhan_su.Row);
+            v_frm.display_for_insert(m_us);
         }
 
         private void thay_headcount()
@@ -2210,16 +2208,18 @@ namespace BKI_HRM
 
 
 		private void insert_dm_nhan_su(){			
-			f201_DM_NHAN_SU_DE v_fDE = new  f201_DM_NHAN_SU_DE();								
-			v_fDE.display_for_insert();
+			f201_DM_NHAN_SU_DE v_fDE = new  f201_DM_NHAN_SU_DE();
+            v_fDE.display_for_insert();
             load_data_2_grid_search();
             load_chi_tiet_nhan_vien();
-            m_grv_nhan_su.Focus();
-            var s = m_grv_nhan_su.FindRow(m_us.strMA_NV, m_grv_nhan_su.Row, 1, true);
-            m_grv_nhan_su.Row = s;
-            m_grv_nhan_su.Rows[s].Selected = true;
-
-			
+            v_fDE.get_us(ref m_us);
+           
+            //m_grv_nhan_su.Focus();
+            //var s = m_grv_nhan_su.FindRow(m_us.strMA_NV, m_grv_nhan_su.Row, 1, true);
+            //m_grv_nhan_su.Row = s;
+            //m_grv_nhan_su.Rows[s].Selected = true;
+            WinFormControls.set_focus_for_grid(m_grv_nhan_su, m_us.strMA_NV , 1);
+          
             f201_dm_nhan_su_dialog v_frm = new f201_dm_nhan_su_dialog();
 
            
@@ -2566,9 +2566,18 @@ namespace BKI_HRM
 
         private void m_cmd_them_hop_dong_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                them_hop_dong();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
         #endregion
+
+        
 
         
     }
