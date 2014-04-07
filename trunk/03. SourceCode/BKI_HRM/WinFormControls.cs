@@ -101,7 +101,6 @@ namespace BKI_HRM {
             ip_fg.Focus();
             var s = ip_fg.FindRow(ip_str_search, ip_fg.Row, ip_i_col_search, true);
             ip_fg.Row = s;
-            ip_fg.Rows[s].Selected = true;
         }
         public static void load_data_to_CheckboxCombobox(C1FlexGrid ip_fg, Checkbox_Combobox.CheckBoxComboBox ip_cbc
                                                                 , bool load_invisible) {
