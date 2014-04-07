@@ -56,7 +56,9 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.m_ptb_anh = new System.Windows.Forms.PictureBox();
+            this.m_lbl_ma_headcount = new System.Windows.Forms.Label();
             this.m_lbl_dan_toc = new System.Windows.Forms.Label();
+            this.m_txt_ma_headcount = new System.Windows.Forms.TextBox();
             this.m_txt_dan_toc = new System.Windows.Forms.TextBox();
             this.m_lbl_ton_giao = new System.Windows.Forms.Label();
             this.m_txt_ton_giao = new System.Windows.Forms.TextBox();
@@ -93,8 +95,6 @@
             this.m_txt_ma_so_thue = new System.Windows.Forms.TextBox();
             this.m_ma_so_thue = new System.Windows.Forms.Label();
             this.m_ofd_chon_anh = new System.Windows.Forms.OpenFileDialog();
-            this.m_txt_ma_headcount = new System.Windows.Forms.TextBox();
-            this.m_lbl_ma_headcount = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -423,6 +423,15 @@
             this.m_ptb_anh.MouseLeave += new System.EventHandler(this.m_ptb_anh_MouseLeave);
             this.m_ptb_anh.MouseHover += new System.EventHandler(this.m_ptb_anh_MouseHover);
             // 
+            // m_lbl_ma_headcount
+            // 
+            this.m_lbl_ma_headcount.AutoSize = true;
+            this.m_lbl_ma_headcount.Location = new System.Drawing.Point(513, 290);
+            this.m_lbl_ma_headcount.Name = "m_lbl_ma_headcount";
+            this.m_lbl_ma_headcount.Size = new System.Drawing.Size(78, 13);
+            this.m_lbl_ma_headcount.TabIndex = 47;
+            this.m_lbl_ma_headcount.Text = "Mã Headcount";
+            // 
             // m_lbl_dan_toc
             // 
             this.m_lbl_dan_toc.AutoSize = true;
@@ -431,6 +440,14 @@
             this.m_lbl_dan_toc.Size = new System.Drawing.Size(45, 13);
             this.m_lbl_dan_toc.TabIndex = 47;
             this.m_lbl_dan_toc.Text = "Dân tộc";
+            // 
+            // m_txt_ma_headcount
+            // 
+            this.m_txt_ma_headcount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_ma_headcount.Location = new System.Drawing.Point(599, 288);
+            this.m_txt_ma_headcount.Name = "m_txt_ma_headcount";
+            this.m_txt_ma_headcount.Size = new System.Drawing.Size(120, 20);
+            this.m_txt_ma_headcount.TabIndex = 12;
             // 
             // m_txt_dan_toc
             // 
@@ -471,7 +488,7 @@
             // m_lbl_noi_cap
             // 
             this.m_lbl_noi_cap.AutoSize = true;
-            this.m_lbl_noi_cap.Location = new System.Drawing.Point(513, 248);
+            this.m_lbl_noi_cap.Location = new System.Drawing.Point(547, 248);
             this.m_lbl_noi_cap.Name = "m_lbl_noi_cap";
             this.m_lbl_noi_cap.Size = new System.Drawing.Size(44, 13);
             this.m_lbl_noi_cap.TabIndex = 39;
@@ -772,24 +789,6 @@
             this.m_ma_so_thue.Size = new System.Drawing.Size(60, 13);
             this.m_ma_so_thue.TabIndex = 44;
             this.m_ma_so_thue.Text = "Mã số thuế";
-            // 
-            // m_txt_ma_headcount
-            // 
-            this.m_txt_ma_headcount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_ma_headcount.Location = new System.Drawing.Point(599, 288);
-            this.m_txt_ma_headcount.Name = "m_txt_ma_headcount";
-            this.m_txt_ma_headcount.Size = new System.Drawing.Size(120, 20);
-            this.m_txt_ma_headcount.TabIndex = 12;
-            this.m_txt_ma_headcount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.m_txt_dan_toc_KeyPress);
-            // 
-            // m_lbl_ma_headcount
-            // 
-            this.m_lbl_ma_headcount.AutoSize = true;
-            this.m_lbl_ma_headcount.Location = new System.Drawing.Point(513, 290);
-            this.m_lbl_ma_headcount.Name = "m_lbl_ma_headcount";
-            this.m_lbl_ma_headcount.Size = new System.Drawing.Size(78, 13);
-            this.m_lbl_ma_headcount.TabIndex = 47;
-            this.m_lbl_ma_headcount.Text = "Mã Headcount";
             // 
             // f201_DM_NHAN_SU_DE
             // 
