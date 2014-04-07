@@ -384,7 +384,7 @@ namespace BKI_HRM
             if (v_str_search == m_str_suggest)
                 m_us.FillDatasetSearchAll(m_ds, "");
             m_us.FillDatasetSearchAll(m_ds, v_str_search);
-            
+
             m_lbl_count_record.Text = string.Format("Có {0} Hợp Đồng Lao Động.", m_ds.Tables[0].Rows.Count);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
@@ -426,10 +426,7 @@ namespace BKI_HRM
             f701_v_gd_hop_dong_lao_dong_DE v_fDE = new f701_v_gd_hop_dong_lao_dong_DE();
             v_fDE.display_for_insert();
             load_data_2_grid();
-
-            m_fg.Focus();
-            var s = m_fg.FindRow(m_str_ma_hop_dong, m_fg.Row, 4, true);
-            m_fg.Row = s;
+            WinFormControls.set_focus_for_grid(m_fg, m_str_ma_hop_dong, 4);
         }
 
         private void update_v_gd_hop_dong_lao_dong()
@@ -441,10 +438,7 @@ namespace BKI_HRM
             f701_v_gd_hop_dong_lao_dong_DE v_fDE = new f701_v_gd_hop_dong_lao_dong_DE();
             v_fDE.display_for_update(m_us_gd_hop_dong);
             load_data_2_grid();
-
-            m_fg.Focus();
-            var s = m_fg.FindRow(m_str_ma_hop_dong, m_fg.Row, 4, true);
-            m_fg.Row = s;
+            WinFormControls.set_focus_for_grid(m_fg, m_str_ma_hop_dong, 4);
         }
 
         private void delete_v_gd_hop_dong_lao_dong()
