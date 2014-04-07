@@ -115,6 +115,7 @@
             this.m_cmd_them_hop_dong.Size = new System.Drawing.Size(454, 51);
             this.m_cmd_them_hop_dong.TabIndex = 36;
             this.m_cmd_them_hop_dong.Text = "Thêm hợp đồng lao động";
+            this.m_cmd_them_hop_dong.Click += new System.EventHandler(this.m_cmd_them_hop_dong_Click);
             // 
             // m_cmd_them_cap_bac
             // 
@@ -131,6 +132,7 @@
             this.m_cmd_them_cap_bac.Size = new System.Drawing.Size(454, 51);
             this.m_cmd_them_cap_bac.TabIndex = 37;
             this.m_cmd_them_cap_bac.Text = "Thêm cấp bậc";
+            this.m_cmd_them_cap_bac.Click += new System.EventHandler(this.m_cmd_them_cap_bac_Click);
             // 
             // m_cmd_them_du_an
             // 

@@ -38,12 +38,17 @@ namespace BKI_HRM
             InitializeComponent();
             format_controls();
         }
-        public void display_for_insert(){
+        public void display_for_insert()
+        {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             m_cbo_gioi_tinh.SelectedIndex = 0;
             m_txt_ma_nhan_vien.Focus();
             this.ShowDialog();
             
+        }
+        public void get_us(ref US_DM_NHAN_SU op_us)
+        {
+            op_us = m_us_dm_nhan_su;
         }
         public void display_for_update(US_DM_NHAN_SU ip_us_dm_nhan_su){
             m_us_dm_nhan_su = ip_us_dm_nhan_su;
@@ -189,8 +194,7 @@ namespace BKI_HRM
             m_us_dm_nhan_su.strQUAN_HE = m_txt_quan_he.Text;
         }
         private bool check_trung_ma_nv(string ip_str_ma_nv)
-        {
-           
+        {  
             DS_DM_NHAN_SU v_ds = new DS_DM_NHAN_SU();
             decimal count_ma_nv;
             m_us_dm_nhan_su.FillDataset_search_by_ma_nv(v_ds, ip_str_ma_nv);
@@ -295,10 +299,10 @@ namespace BKI_HRM
         }
         private void save_image(string ip_str_pathimage)
         {
-            MessageBox.Show(Application.CommonAppDataPath + "\n" 
-                + Application.ExecutablePath + "\n" 
-                + Application.LocalUserAppDataPath + "\n"
-                + Application.UserAppDataPath);
+            //MessageBox.Show(Application.CommonAppDataPath + "\n" 
+            //    + Application.ExecutablePath + "\n" 
+            //    + Application.LocalUserAppDataPath + "\n"
+            //    + Application.UserAppDataPath);
             
             if (ip_str_pathimage != "")
             {
