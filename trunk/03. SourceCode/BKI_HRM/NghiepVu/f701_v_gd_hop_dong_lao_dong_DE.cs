@@ -99,10 +99,20 @@ namespace BKI_HRM.NghiepVu
             m_us.strCHUC_VU_NGUOI_KY = m_txt_chuc_vu_nguoi_ky.Text;
             m_us.datNGAY_KY_HOP_DONG = m_dat_ngay_ky_hop_dong.Value;
 
+            if (m_us_dm_nhan_su.dcID == -1)
+            {
+                DS_DM_NHAN_SU m_ds_dm_nhan_su = new DS_DM_NHAN_SU();
+                m_us_dm_nhan_su.FillDataset_search_by_ma_nv(m_ds_dm_nhan_su, m_lbl_ma_nhan_vien.Text);
+                m_us.dcID_NHAN_SU = (decimal)m_ds_dm_nhan_su.Tables[0].Rows[0].ItemArray[0];
+            }
             //DS_DM_NHAN_SU m_ds_dm_nhan_su = new DS_DM_NHAN_SU();
             //m_us_dm_nhan_su.FillDataset_search_by_ma_nv(m_ds_dm_nhan_su, m_lbl_ma_nhan_vien.Text);
             //m_us.dcID_NHAN_SU = (decimal)m_ds_dm_nhan_su.Tables[0].Rows[0].ItemArray[0];
-            m_us.dcID_NHAN_SU = m_us_dm_nhan_su.dcID;
+            else
+            {
+                m_us.dcID_NHAN_SU = m_us_dm_nhan_su.dcID;
+            }
+            
 
             if (m_dat_ngay_het_han.Checked == false)
                 m_us.SetNGAY_HET_HANNull();
