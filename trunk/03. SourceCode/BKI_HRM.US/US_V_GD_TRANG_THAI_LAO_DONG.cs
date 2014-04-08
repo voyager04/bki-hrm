@@ -380,5 +380,11 @@ public class US_V_GD_TRANG_THAI_LAO_DONG : US_Object
         v_sp.ExecuteCommand(this);
     }
     #endregion
+
+    public void FillDatasetNVSapQuayLai(DS_V_GD_TRANG_THAI_LAO_DONG m_ds)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_V_GD_TRANG_THAI_LAO_DONG_Nhan_vien_sap_quay_lai");
+        v_sp.fillDataSetByCommand(this, m_ds);
+    }
 }
 }

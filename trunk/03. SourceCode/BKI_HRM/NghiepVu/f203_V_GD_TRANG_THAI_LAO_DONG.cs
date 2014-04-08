@@ -309,6 +309,7 @@ namespace BKI_HRM
 		#endregion
 
 		#region Members
+        DataEntryFormMode m_e_form_mode = new DataEntryFormMode();
 		ITransferDataRow m_obj_trans;		
 		DS_V_GD_TRANG_THAI_LAO_DONG m_ds = new DS_V_GD_TRANG_THAI_LAO_DONG();
 		US_V_GD_TRANG_THAI_LAO_DONG m_us = new US_V_GD_TRANG_THAI_LAO_DONG();
@@ -331,8 +332,31 @@ namespace BKI_HRM
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_grv_trang_thai_ld);
+            if (m_e_form_mode == DataEntryFormMode.ViewDataState)
+            {
+                load_data_2_grid_nv_sap_quay_lai();
+                return;
+            }
 			load_data_2_grid();		
-		}	
+		}
+
+        private void load_data_2_grid_nv_sap_quay_lai()
+        {
+            m_ds = new DS_V_GD_TRANG_THAI_LAO_DONG();
+            m_us.FillDatasetNVSapQuayLai(m_ds);
+            m_grv_trang_thai_ld.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_grv_trang_thai_ld, m_obj_trans);
+            m_grv_trang_thai_ld.Tree.Column = (int)e_col_Number.TRANG_THAI_LAO_DONG;
+            m_grv_trang_thai_ld.Cols[(int)e_col_Number.MA_NV].Visible = true;
+            m_grv_trang_thai_ld.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.None // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+              , 0
+              , (int)e_col_Number.TRANG_THAI_HIEN_TAI // chỗ này là tên trường mà mình nhóm
+              , (int)e_col_Number.TRANG_THAI_LAO_DONG // chỗ này là tên trường mà mình Count
+              , "{0}"
+              );
+
+            m_grv_trang_thai_ld.Redraw = true;
+        }	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
 			v_htb.Add(V_GD_TRANG_THAI_LAO_DONG.LOAI_QUYET_DINH, e_col_Number.LOAI_QUYET_DINH);
@@ -630,6 +654,16 @@ namespace BKI_HRM
             }
         }
 #endregion
-	}
+
+        public void displaySapQuayLai()
+        {
+            m_cmd_delete.Visible = false;
+            m_cmd_update.Visible = false;
+            m_cmd_insert.Visible = false;
+            m_cmd_view.Visible = false;
+            m_e_form_mode = DataEntryFormMode.ViewDataState;
+            this.ShowDialog();
+        }
+    }
 }
 
