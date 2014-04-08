@@ -37,7 +37,7 @@
   <xs:element name="DS_V_DM_TRANG_THAI_UNG_VIEN" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_DM_TRANG_THAI_UNG_VIEN" msprop:Generator_UserDSName="DS_V_DM_TRANG_THAI_UNG_VIEN">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="V_DM_TRANG_THAI_UNG_VIEN" msprop:Generator_TableClassName="V_DM_TRANG_THAI_UNG_VIENDataTable" msprop:Generator_TableVarName="tableV_DM_TRANG_THAI_UNG_VIEN" msprop:Generator_TablePropName="V_DM_TRANG_THAI_UNG_VIEN" msprop:Generator_RowDeletingName="V_DM_TRANG_THAI_UNG_VIENRowDeleting" msprop:Generator_RowChangingName="V_DM_TRANG_THAI_UNG_VIENRowChanging" msprop:Generator_RowEvHandlerName="V_DM_TRANG_THAI_UNG_VIENRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DM_TRANG_THAI_UNG_VIENRowDeleted" msprop:Generator_UserTableName="V_DM_TRANG_THAI_UNG_VIEN" msprop:Generator_RowChangedName="V_DM_TRANG_THAI_UNG_VIENRowChanged" msprop:Generator_RowEvArgName="V_DM_TRANG_THAI_UNG_VIENRowChangeEvent" msprop:Generator_RowClassName="V_DM_TRANG_THAI_UNG_VIENRow">
+        <xs:element name="V_DM_TRANG_THAI_UNG_VIEN" msprop:Generator_TableClassName="V_DM_TRANG_THAI_UNG_VIENDataTable" msprop:Generator_TableVarName="tableV_DM_TRANG_THAI_UNG_VIEN" msprop:Generator_RowChangedName="V_DM_TRANG_THAI_UNG_VIENRowChanged" msprop:Generator_TablePropName="V_DM_TRANG_THAI_UNG_VIEN" msprop:Generator_RowDeletingName="V_DM_TRANG_THAI_UNG_VIENRowDeleting" msprop:Generator_RowChangingName="V_DM_TRANG_THAI_UNG_VIENRowChanging" msprop:Generator_RowEvHandlerName="V_DM_TRANG_THAI_UNG_VIENRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DM_TRANG_THAI_UNG_VIENRowDeleted" msprop:Generator_RowClassName="V_DM_TRANG_THAI_UNG_VIENRow" msprop:Generator_UserTableName="V_DM_TRANG_THAI_UNG_VIEN" msprop:Generator_RowEvArgName="V_DM_TRANG_THAI_UNG_VIENRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
@@ -82,5 +82,9 @@
         </xs:element>
       </xs:choice>
     </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:V_DM_TRANG_THAI_UNG_VIEN" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
   </xs:element>
 </xs:schema>
