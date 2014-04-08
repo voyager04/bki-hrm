@@ -169,6 +169,13 @@ public class US_V_DM_TRANG_THAI_UNG_VIEN : US_Object
 
 #endregion
 #region "Init Functions"
+    public void FillDatasetByID_TRANG_THAI_PARENT(DS_V_DM_TRANG_THAI_UNG_VIEN op_ds)
+    {
+        CStoredProc cstored = new CStoredProc("pr_V_DM_TRANG_THAI_UNG_VIEN_Select_by_ID_Parent");
+        //cstored.addDecimalInputParam("@ID_NS", i_str_search);
+        cstored.fillDataSetByCommand(this, op_ds);
+    }
+    
     public void FillDatasetSearch(DS_V_DM_TRANG_THAI_UNG_VIEN op_ds, string i_str_search)
     {
         CStoredProc v_sp = new CStoredProc("pr_V_DM_TRANG_THAI_UNG_VIEN_search");
