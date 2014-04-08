@@ -24,7 +24,7 @@ namespace BKI_HRM.DanhMuc
         public F602_v_dm_trang_thai_ung_vien_de()
         {
             InitializeComponent();
-            format_control();
+              format_control();
 
         }
         public void display_for_insert()
@@ -56,6 +56,7 @@ namespace BKI_HRM.DanhMuc
         //private string m_str_old_path = "";
         #endregion
         #region Private Methods
+        
         private void save_data()
         {
             if (check_data_is_ok() == false)
@@ -76,24 +77,55 @@ namespace BKI_HRM.DanhMuc
             BaseMessages.MsgBox_Infor("Cập nhật dữ liệu thành công!");
             this.Close();
         }
+        
+
         private void us_object_2_form(US_V_DM_TRANG_THAI_UNG_VIEN ip_us_v_dm_trang_thai_ung_vien)
         {
             m_us.dcID = ip_us_v_dm_trang_thai_ung_vien.dcID;
-            m_txt_ma_trang_thai_cap_tren.Text = ip_us_v_dm_trang_thai_ung_vien.strMA_TRANG_THAI_CAP_TREN;
-            m_txt_ma_trang_thai.Text = ip_us_v_dm_trang_thai_ung_vien.strMA_TRANG_THAI;
-            m_txt_dinh_nghia.Text = ip_us_v_dm_trang_thai_ung_vien.strDINH_NGHIA;
             m_txt_dau_hieu.Text = ip_us_v_dm_trang_thai_ung_vien.strDAU_HIEU;
+            m_txt_dinh_nghia.Text = ip_us_v_dm_trang_thai_ung_vien.strDINH_NGHIA;
+            m_txt_ma_trang_thai.Text = ip_us_v_dm_trang_thai_ung_vien.strMA_TRANG_THAI;
             m_txt_viec_can_lam.Text = ip_us_v_dm_trang_thai_ung_vien.strVIEC_CAN_LAM;
-
-
+            //m_cbo_ma_trang_thai_cap_tren.SelectedValue = ip_us_v_dm_trang_thai_ung_vien.dcID_TRANG_THAI_CAP_TREN;
+            if (ip_us_v_dm_trang_thai_ung_vien.dcID_TRANG_THAI_CAP_TREN == 0)
+            {
+                m_cbo_ma_trang_thai_cap_tren.SelectedIndex = 0;
+            }
+            else
+            {
+                m_cbo_ma_trang_thai_cap_tren.SelectedValue = ip_us_v_dm_trang_thai_ung_vien.dcID_TRANG_THAI_CAP_TREN;
+            }
         }
 
         private void format_control()
         {
             CControlFormat.setFormStyle(this);
+
             set_define_events();
+            load_data_2_cbo_ma_trang_thai_cap_tren();
 
+        }
+        private void load_data_2_cbo_ma_trang_thai_cap_tren()
+        {
 
+            var v_ds = new DS_V_DM_TRANG_THAI_UNG_VIEN();
+            var v_us = new US_V_DM_TRANG_THAI_UNG_VIEN();
+            
+            v_us.FillDatasetByID_TRANG_THAI_PARENT(v_ds);
+            //v_us.FillDatasetSearch(v_ds, "");
+            m_cbo_ma_trang_thai_cap_tren.DisplayMember = V_DM_TRANG_THAI_UNG_VIEN.MA_TRANG_THAI_CAP_TREN;
+            m_cbo_ma_trang_thai_cap_tren.ValueMember = V_DM_TRANG_THAI_UNG_VIEN.ID_TRANG_THAI_CAP_TREN;
+            m_cbo_ma_trang_thai_cap_tren.DataSource = v_ds.V_DM_TRANG_THAI_UNG_VIEN;
+            var v_row = v_ds.V_DM_TRANG_THAI_UNG_VIEN.NewRow();
+            v_row[V_DM_TRANG_THAI_UNG_VIEN.ID] = -1;
+            v_row[V_DM_TRANG_THAI_UNG_VIEN.MA_TRANG_THAI] = "NULL";
+            v_row[V_DM_TRANG_THAI_UNG_VIEN.ID_TRANG_THAI_CAP_TREN] = -1;
+            v_row[V_DM_TRANG_THAI_UNG_VIEN.DINH_NGHIA] = "";
+            v_row[V_DM_TRANG_THAI_UNG_VIEN.DAU_HIEU] = "";
+            v_row[V_DM_TRANG_THAI_UNG_VIEN.VIEC_CAN_LAM] = "";
+            v_ds.V_DM_TRANG_THAI_UNG_VIEN.Rows.InsertAt(v_row, 0);
+
+            
         }
         private bool check_data_is_ok()
         {
@@ -111,15 +143,18 @@ namespace BKI_HRM.DanhMuc
             m_us.strDINH_NGHIA = m_txt_dinh_nghia.Text.Trim();
             m_us.strDAU_HIEU = m_txt_dau_hieu.Text.Trim();
             m_us.strVIEC_CAN_LAM = m_txt_viec_can_lam.Text.Trim();
-
+            m_us.dcID_TRANG_THAI_PARENT = CIPConvert.ToDecimal(m_cbo_ma_trang_thai_cap_tren.SelectedValue.ToString());
         }
 
-
-        private void fomat_control()
+        private void refresh()
         {
-            CControlFormat.setFormStyle(this);
-            set_define_events();
+            m_txt_viec_can_lam.Text = "";
+            m_txt_ma_trang_thai.Text = "";
+            m_txt_dinh_nghia.Text = "";
+            m_txt_dau_hieu.Text = "";
+            m_cbo_ma_trang_thai_cap_tren.SelectedIndex = 0;
         }
+
         #endregion
 
 
@@ -139,11 +174,15 @@ namespace BKI_HRM.DanhMuc
         }
         protected void m_cmd_refresh_Click(object sender, EventArgs e)
         {
-            m_txt_dau_hieu.Text="";
-            m_txt_dinh_nghia.Text="";
-            m_txt_ma_trang_thai.Text="";
-            m_txt_ma_trang_thai_cap_tren.Text="";
-            m_txt_viec_can_lam.Text="";
+            try
+            {
+                refresh();
+            }
+            catch (Exception v_e)
+            {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            } 
         }
         private void set_define_events()
         {
