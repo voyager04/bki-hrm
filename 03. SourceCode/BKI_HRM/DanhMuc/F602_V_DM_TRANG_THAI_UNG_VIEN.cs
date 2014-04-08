@@ -4,7 +4,6 @@
 /// Goal: Create Form for V_DM_TRANG_THAI_UNG_VIEN
 ///************************************************
 
-
 using System;
 using System.Data;
 using System.Drawing;
@@ -24,6 +23,8 @@ using BKI_HRM.DS.CDBNames;
 
 using C1.Win.C1FlexGrid;
 using BKI_HRM.DanhMuc;
+
+
 
 
 namespace BKI_HRM
@@ -340,17 +341,18 @@ namespace BKI_HRM
 		#endregion
 
 		#region Private Methods
-		
+
 
         private void load_custom_source_2_m_txt_tim_kiem()
         {
+            //m_us.FillDataset(m_ds);
             int count = m_ds.Tables["V_DM_TRANG_THAI_UNG_VIEN"].Rows.Count;
             AutoCompleteStringCollection v_acsc_search = new AutoCompleteStringCollection();
             foreach (DataRow dr in m_ds.V_DM_TRANG_THAI_UNG_VIEN)
             {
-                v_acsc_search.Add(dr[V_DM_TRANG_THAI_UNG_VIEN.MA_TRANG_THAI_CAP_TREN].ToString());
                 v_acsc_search.Add(dr[V_DM_TRANG_THAI_UNG_VIEN.MA_TRANG_THAI].ToString());
-                //v_acsc_search.Add(dr[V_DM_TRANG_THAI_UNG_VIEN.VIEC_CAN_LAM].ToString());
+                v_acsc_search.Add(dr[V_DM_TRANG_THAI_UNG_VIEN.MA_TRANG_THAI_CAP_TREN].ToString());
+               
             }
             m_txt_tim_kiem.AutoCompleteCustomSource = v_acsc_search;
         }
@@ -377,16 +379,16 @@ namespace BKI_HRM
             Hashtable v_htb = new Hashtable();
             v_htb.Add(V_DM_TRANG_THAI_UNG_VIEN.MA_TRANG_THAI_CAP_TREN, e_col_Number.MA_TRANG_THAI_CAP_TREN);
             v_htb.Add(V_DM_TRANG_THAI_UNG_VIEN.MA_TRANG_THAI, e_col_Number.MA_TRANG_THAI);
+            v_htb.Add(V_DM_TRANG_THAI_UNG_VIEN.VIEC_CAN_LAM, e_col_Number.VIEC_CAN_LAM);
             v_htb.Add(V_DM_TRANG_THAI_UNG_VIEN.DINH_NGHIA, e_col_Number.DINH_NGHIA);
             v_htb.Add(V_DM_TRANG_THAI_UNG_VIEN.DAU_HIEU, e_col_Number.DAU_HIEU);
-            v_htb.Add(V_DM_TRANG_THAI_UNG_VIEN.VIEC_CAN_LAM, e_col_Number.VIEC_CAN_LAM);
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_DM_TRANG_THAI_UNG_VIEN.NewRow());
             return v_obj_trans;
         }
         private void load_data_2_grid()
         {
             m_ds = new DS_V_DM_TRANG_THAI_UNG_VIEN();
-            if (m_txt_tim_kiem.Text.Trim() == m_str_tim_kiem || m_txt_tim_kiem.Text.Trim() == "") m_us.FillDataset(m_ds);
+            if (m_txt_tim_kiem.Text.Trim() == m_str_tim_kiem || m_txt_tim_kiem.Text.Trim() == "") m_us.FillDatasetSearch(m_ds,"");
             else m_us.FillDatasetSearch(m_ds, m_txt_tim_kiem.Text.Trim());
             //m_us.FillDataset(m_ds);
             var v_str_search = m_txt_tim_kiem.Text.Trim();
@@ -424,21 +426,27 @@ namespace BKI_HRM
             }
             m_txt_tim_kiem.ForeColor = Color.Black;
         }
-        private void us_object2grid(US_V_DM_TRANG_THAI_UNG_VIEN i_us
+
+        private void grid2us_object(US_V_DM_TRANG_THAI_UNG_VIEN i_us
             , int i_grid_row)
         {
-            DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
-            i_us.Me2DataRow(v_dr);
-            m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
+            DataRow v_dr;
+            v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
+            m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
+            i_us.DataRow2Me(v_dr);
         }
+
+
         private void insert_v_dm_trang_thai_ung_vien()
         {
-            F602_v_dm_trang_thai_ung_vien_de v_fDE = new F602_v_dm_trang_thai_ung_vien_de(); 
+            F602_v_dm_trang_thai_ung_vien_de v_fDE = new F602_v_dm_trang_thai_ung_vien_de();
             v_fDE.display_for_insert();
             m_txt_tim_kiem.Text = "";
             load_data_2_grid();
             m_txt_tim_kiem.Text = m_str_tim_kiem;
         }
+
+
         private void update_v_dm_trang_thai_ung_vien()
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
@@ -450,14 +458,7 @@ namespace BKI_HRM
             load_data_2_grid();
             m_txt_tim_kiem.Text = m_str_tim_kiem;
         }
-        private void grid2us_object(US_V_DM_TRANG_THAI_UNG_VIEN i_us
-            , int i_grid_row)
-        {
-            DataRow v_dr;
-            v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
-            m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
-            i_us.DataRow2Me(v_dr);
-        }
+
         private void delete_v_dm_trang_thai_ung_vien()
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
@@ -497,13 +498,14 @@ namespace BKI_HRM
             grid2us_object(m_us, m_fg.Row);
             this.Close();
         }
+
         private void set_define_events()
         {
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
             m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-            m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            //m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
             m_txt_tim_kiem.KeyDown += m_txt_tim_kiem_KeyDown;
             m_txt_tim_kiem.MouseClick += m_txt_tim_kiem_MouseClick;
             m_txt_tim_kiem.Leave += m_txt_tim_kiem_Leave;
