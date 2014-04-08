@@ -99,6 +99,7 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hop_dong_sap_het_han = new System.Windows.Forms.Label();
             this.m_lbl_thu_viec_sap_het_han = new System.Windows.Forms.Label();
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky = new System.Windows.Forms.Label();
+            this.m_lbl_sap_quay_lai = new System.Windows.Forms.Label();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -662,6 +663,20 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text = "Danh sách Hợp đồng đã hết hạn nhưng chưa ký";
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Click += new System.EventHandler(this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky_Click);
             // 
+            // m_lbl_sap_quay_lai
+            // 
+            this.m_lbl_sap_quay_lai.AutoSize = true;
+            this.m_lbl_sap_quay_lai.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.m_lbl_sap_quay_lai.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_lbl_sap_quay_lai.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold);
+            this.m_lbl_sap_quay_lai.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_sap_quay_lai.Location = new System.Drawing.Point(0, 323);
+            this.m_lbl_sap_quay_lai.Name = "m_lbl_sap_quay_lai";
+            this.m_lbl_sap_quay_lai.Size = new System.Drawing.Size(306, 18);
+            this.m_lbl_sap_quay_lai.TabIndex = 6;
+            this.m_lbl_sap_quay_lai.Text = "Danh sách nhân viên sắp quay lại sau nghỉ";
+            this.m_lbl_sap_quay_lai.Click += new System.EventHandler(this.m_lbl_sap_quay_lai_Click);
+            // 
             // f400_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -669,6 +684,7 @@ namespace BKI_HRM
             this.BackgroundImage = global::BKI_HRM.Properties.Resources.Human_resources_management_v2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(835, 413);
+            this.Controls.Add(this.m_lbl_sap_quay_lai);
             this.Controls.Add(this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky);
             this.Controls.Add(this.m_lbl_thu_viec_sap_het_han);
             this.Controls.Add(this.m_lbl_thong_bao_hop_dong_sap_het_han);
@@ -759,5 +775,6 @@ namespace BKI_HRM
         private ToolStripMenuItem táchGộpToolStripMenuItem;
         private ToolStripMenuItem m_menuitem_chuyen_nhan_vien;
         private ToolStripMenuItem m_menuitem_chuyen_don_vi;
+        private Label m_lbl_sap_quay_lai;
     }
 }
