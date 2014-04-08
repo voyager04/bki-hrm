@@ -524,6 +524,19 @@ namespace BKI_HRM {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_lbl_sap_quay_lai_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f203_v_gd_trang_thai_lao_dong frm = new f203_v_gd_trang_thai_lao_dong();
+                frm.displaySapQuayLai();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         
     }
 } 
