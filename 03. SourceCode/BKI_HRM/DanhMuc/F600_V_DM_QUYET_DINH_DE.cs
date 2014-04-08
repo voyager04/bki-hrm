@@ -119,13 +119,7 @@ namespace BKI_HRM.DanhMuc
             m_str_origination = m_ofd_chon_file.FileName;
         }
 
-        private void format_control()
-        {
-            CControlFormat.setFormStyle(this);
-            set_define_events();
-
-
-        }
+        
         private bool check_data_is_ok()
         {
             if (m_txt_ma_quyet_dinh.Text == "")
@@ -146,8 +140,6 @@ namespace BKI_HRM.DanhMuc
             m_us.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc.Value;
             m_us.datNGAY_KY = m_dat_ngay_ky.Value;
             m_us.dcID_LOAI_QD = CIPConvert.ToDecimal(m_cbo_loai_quyet_dinh.SelectedValue.ToString());
-
-
 
             //if (m_dat_ngay_het_hieu_luc.Checked == false)
             //    m_us.SetNGAY_HET_HIEU_LUCNull();
@@ -187,7 +179,7 @@ namespace BKI_HRM.DanhMuc
                 File.Delete(m_str_old_path);
             m_us.strLINK = m_str_path;
         }
-        private void fomat_control()
+        private void format_control()
         {
             CControlFormat.setFormStyle(this);
             set_define_events();
