@@ -321,5 +321,12 @@ namespace BKI_HRM.US
         v_sp.addDecimalInputParam("@ID_NV", dc_id_nv);
         v_sp.fillDataSetByCommand(this, v_ds);
     }
+
+    public void FillDatasetByIDDuAn(DS_GD_CHI_TIET_DU_AN v_ds, decimal i_dc_id)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_GD_CHI_TIET_DU_AN_select_by_id_du_an");
+        v_sp.addDecimalInputParam("@ID_DA", i_dc_id);
+        v_sp.fillDataSetByCommand(this, v_ds);
+    }
     }
 }

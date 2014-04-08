@@ -357,8 +357,27 @@ namespace BKI_HRM.NghiepVu
                     m_us_dm_du_an.Update();                    
                     break;
             }
+            if (m_us_dm_du_an.datNGAY_KET_THUC != null)
+            {
+                DateTime v_dat = m_us_dm_du_an.datNGAY_KET_THUC;
+                cap_nhat_ngay_ket_thuc_cho_thanh_vien(m_us_dm_du_an.dcID, v_dat);
+            }
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
             //this.Close();
+        }
+
+        private void cap_nhat_ngay_ket_thuc_cho_thanh_vien(decimal i_dc_id, DateTime i_dat)
+        {
+            US.US_GD_CHI_TIET_DU_AN v_us = new US.US_GD_CHI_TIET_DU_AN();
+            DS.DS_GD_CHI_TIET_DU_AN v_ds = new DS.DS_GD_CHI_TIET_DU_AN();
+            v_us.FillDatasetByIDDuAn(v_ds, i_dc_id);
+            for (int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
+            {
+                DataRow v_dr = v_ds.Tables[0].Rows[i];
+                v_us = new US.US_GD_CHI_TIET_DU_AN(CIPConvert.ToDecimal(v_dr[GD_CHI_TIET_DU_AN.ID]));
+                v_us.datTHOI_DIEM_KT = i_dat;
+                v_us.Update();
+            }
         }
 
         private bool check_data_is_ok()
