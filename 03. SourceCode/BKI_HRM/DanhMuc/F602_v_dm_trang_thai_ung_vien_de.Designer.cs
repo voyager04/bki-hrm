@@ -40,11 +40,11 @@
             this.m_lbl_dinh_nghia = new System.Windows.Forms.Label();
             this.m_lbl_dau_hieu = new System.Windows.Forms.Label();
             this.m_lbl_viec_can_lam = new System.Windows.Forms.Label();
-            this.m_txt_ma_trang_thai_cap_tren = new System.Windows.Forms.TextBox();
             this.m_txt_ma_trang_thai = new System.Windows.Forms.TextBox();
             this.m_txt_dinh_nghia = new System.Windows.Forms.TextBox();
             this.m_txt_dau_hieu = new System.Windows.Forms.TextBox();
             this.m_txt_viec_can_lam = new System.Windows.Forms.TextBox();
+            this.m_cbo_ma_trang_thai_cap_tren = new System.Windows.Forms.ComboBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -176,13 +176,6 @@
             this.m_lbl_viec_can_lam.TabIndex = 20;
             this.m_lbl_viec_can_lam.Text = "Việc cần làm";
             // 
-            // m_txt_ma_trang_thai_cap_tren
-            // 
-            this.m_txt_ma_trang_thai_cap_tren.Location = new System.Drawing.Point(164, 35);
-            this.m_txt_ma_trang_thai_cap_tren.Name = "m_txt_ma_trang_thai_cap_tren";
-            this.m_txt_ma_trang_thai_cap_tren.Size = new System.Drawing.Size(192, 20);
-            this.m_txt_ma_trang_thai_cap_tren.TabIndex = 21;
-            // 
             // m_txt_ma_trang_thai
             // 
             this.m_txt_ma_trang_thai.Location = new System.Drawing.Point(164, 71);
@@ -214,16 +207,24 @@
             this.m_txt_viec_can_lam.Size = new System.Drawing.Size(192, 134);
             this.m_txt_viec_can_lam.TabIndex = 25;
             // 
+            // m_cbo_ma_trang_thai_cap_tren
+            // 
+            this.m_cbo_ma_trang_thai_cap_tren.FormattingEnabled = true;
+            this.m_cbo_ma_trang_thai_cap_tren.Location = new System.Drawing.Point(164, 35);
+            this.m_cbo_ma_trang_thai_cap_tren.Name = "m_cbo_ma_trang_thai_cap_tren";
+            this.m_cbo_ma_trang_thai_cap_tren.Size = new System.Drawing.Size(192, 21);
+            this.m_cbo_ma_trang_thai_cap_tren.TabIndex = 26;
+            // 
             // F602_v_dm_trang_thai_ung_vien_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(670, 308);
+            this.Controls.Add(this.m_cbo_ma_trang_thai_cap_tren);
             this.Controls.Add(this.m_txt_viec_can_lam);
             this.Controls.Add(this.m_txt_dau_hieu);
             this.Controls.Add(this.m_txt_dinh_nghia);
             this.Controls.Add(this.m_txt_ma_trang_thai);
-            this.Controls.Add(this.m_txt_ma_trang_thai_cap_tren);
             this.Controls.Add(this.m_lbl_viec_can_lam);
             this.Controls.Add(this.m_lbl_dau_hieu);
             this.Controls.Add(this.m_lbl_dinh_nghia);
@@ -252,10 +253,10 @@
         private System.Windows.Forms.Label m_lbl_dinh_nghia;
         private System.Windows.Forms.Label m_lbl_dau_hieu;
         private System.Windows.Forms.Label m_lbl_viec_can_lam;
-        private System.Windows.Forms.TextBox m_txt_ma_trang_thai_cap_tren;
         private System.Windows.Forms.TextBox m_txt_ma_trang_thai;
         private System.Windows.Forms.TextBox m_txt_dinh_nghia;
         private System.Windows.Forms.TextBox m_txt_dau_hieu;
         private System.Windows.Forms.TextBox m_txt_viec_can_lam;
+        private System.Windows.Forms.ComboBox m_cbo_ma_trang_thai_cap_tren;
     }
 }
