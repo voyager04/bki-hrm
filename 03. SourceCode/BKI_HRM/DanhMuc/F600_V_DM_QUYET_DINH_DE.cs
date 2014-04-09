@@ -123,11 +123,17 @@ namespace BKI_HRM.DanhMuc
         
         private bool check_data_is_ok()
         {
-            if (m_txt_ma_quyet_dinh.Text == "")
+
+            if (!CValidateTextBox.IsValid(m_txt_ma_quyet_dinh, DataType.StringType, allowNull.NO, true))
             {
                 BaseMessages.MsgBox_Infor("Bạn chưa nhập mã quyết định");
                 return false;
             }
+            //if (m_txt_ma_quyet_dinh.Text == "")
+            //{
+            //    BaseMessages.MsgBox_Infor("Bạn chưa nhập mã quyết định");
+            //    return false;
+            //}
 
 
             return true;
