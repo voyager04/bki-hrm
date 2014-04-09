@@ -517,17 +517,8 @@ namespace BKI_HRM {
             m_fg.Redraw = true;
             tao_tree();
             WinFormControls.load_data_to_CheckboxCombobox(m_fg, m_cbc_choose_columns, load_invisible);
-            //load_data_to_CheckboxCombobox();
         }
 
-        void test() {
-            int v_count = m_fg.Cols.Count;
-            if (v_count >= 2) {
-                for (int i = 2; i < v_count; i++) {
-                    //m_fg.Cols[i].Visible = true;
-                }
-            }
-        }
         /*
          * Phần xử lý tìm kiếm
          */
@@ -781,15 +772,6 @@ namespace BKI_HRM {
          * Phần xử lý Thêm cột hiển thị
          */
 
-        private void load_data_to_CheckboxCombobox() {
-            int v_count = m_fg.Cols.Count;
-            for (int i = 0; i < v_count - 2; i++) {
-                m_cbc_choose_columns.Items.Add(m_fg.Cols[i + 2].Caption);//Bỏ 2 cột đầu tiên của C1Grid
-                /* m_cbc_choose_columns tự động thêm một Item giá trị = "" vào đầu nên phải bỏ đi Item đó. */
-                m_cbc_choose_columns.CheckBoxItems[i + 1].Checked = m_fg.Cols[i + 2].Visible;
-            }
-        }
-
         private void hien_thi_cot_duoc_check(bool load_invisible) {
             int v_count = m_fg.Cols.Count;
             int v_count_visible = 0;
@@ -816,8 +798,6 @@ namespace BKI_HRM {
         /*
          * Kết thúc Phần xử lý Thêm cột hiển thị
          */
-
-
 
         #endregion
 
