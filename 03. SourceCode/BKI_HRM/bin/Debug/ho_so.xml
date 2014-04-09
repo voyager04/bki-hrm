@@ -48,4 +48,16 @@
     <Message>Email không hợp lệ.</Message>
     <ID>211</ID>
   </Message>
+  <Message>
+    <Message>Mã quyết định đã tồn tại</Message>
+    <ID>213</ID>
+  </Message>
+  <Message>
+    <Message>Mã cấp đã tồn tại</Message>
+    <ID>214</ID>
+  </Message>
+  <Message>
+    <Message>Mã bậc đã tồn tại</Message>
+    <ID>215</ID>
+  </Message>
 </DatasetMsg>
