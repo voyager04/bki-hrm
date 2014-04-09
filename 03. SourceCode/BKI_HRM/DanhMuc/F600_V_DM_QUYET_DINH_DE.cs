@@ -66,18 +66,19 @@ namespace BKI_HRM.DanhMuc
             //m_txt_link.Text = ip_us_v_dm_quyet_dinh.strLINK;
             m_txt_ma_quyet_dinh.Text = ip_us_v_dm_quyet_dinh.strMA_QUYET_DINH;
             m_txt_noi_dung.Text = ip_us_v_dm_quyet_dinh.strNOI_DUNG;
-            if (ip_us_v_dm_quyet_dinh.datNGAY_CO_HIEU_LUC == null)
-                m_dat_ngay_co_hieu_luc.Checked = false;
-            else
-                m_dat_ngay_co_hieu_luc.Value = ip_us_v_dm_quyet_dinh.datNGAY_CO_HIEU_LUC;
-            if (ip_us_v_dm_quyet_dinh.datNGAY_KY == null)
-                m_dat_ngay_ky.Checked = false;
-            else
-                m_dat_ngay_ky.Value = ip_us_v_dm_quyet_dinh.datNGAY_KY;
-            if (ip_us_v_dm_quyet_dinh.datNGAY_HET_HIEU_LUC == null)
-                m_dat_ngay_het_hieu_luc.Checked = false;
-            else
+            if (ip_us_v_dm_quyet_dinh.datNGAY_HET_HIEU_LUC.Year > 1900)
                 m_dat_ngay_het_hieu_luc.Value = ip_us_v_dm_quyet_dinh.datNGAY_HET_HIEU_LUC;
+            else
+                m_dat_ngay_het_hieu_luc.Checked = false;
+            if (ip_us_v_dm_quyet_dinh.datNGAY_CO_HIEU_LUC.Year > 1900)
+                m_dat_ngay_co_hieu_luc.Value = ip_us_v_dm_quyet_dinh.datNGAY_CO_HIEU_LUC;
+            else
+                m_dat_ngay_co_hieu_luc.Checked = false;
+            if (ip_us_v_dm_quyet_dinh.datNGAY_KY.Year > 1900)
+                m_dat_ngay_ky.Value = ip_us_v_dm_quyet_dinh.datNGAY_KY;
+            else
+                m_dat_ngay_ky.Checked = false;
+            
             m_cbo_loai_quyet_dinh.SelectedValue = ip_us_v_dm_quyet_dinh.dcID_LOAI_QD;
 
 
@@ -136,9 +137,34 @@ namespace BKI_HRM.DanhMuc
             m_us.strMA_QUYET_DINH = m_txt_ma_quyet_dinh.Text.Trim();
             //m_us.strLINK = m_txt_link.Text.Trim();
             m_us.strNOI_DUNG = m_txt_noi_dung.Text.Trim();
-            m_us.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value;
-            m_us.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc.Value;
-            m_us.datNGAY_KY = m_dat_ngay_ky.Value;
+            if (m_dat_ngay_co_hieu_luc.Checked)
+            {
+                m_us.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value.Date;
+            }
+            else
+            {
+                m_us.SetNGAY_CO_HIEU_LUCNull();
+            }
+            if (m_dat_ngay_het_hieu_luc.Checked)
+            {
+                m_us.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc.Value.Date;
+            }
+            else
+            {
+                m_us.SetNGAY_HET_HIEU_LUCNull();
+            }
+            if (m_dat_ngay_ky.Checked)
+            {
+                m_us.datNGAY_KY = m_dat_ngay_ky.Value.Date;
+            }
+            else
+            {
+                m_us.SetNGAY_KYNull();
+            }
+
+            //m_us.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value;
+            //m_us.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc.Value;
+            //m_us.datNGAY_KY = m_dat_ngay_ky.Value;
             m_us.dcID_LOAI_QD = CIPConvert.ToDecimal(m_cbo_loai_quyet_dinh.SelectedValue.ToString());
 
             //if (m_dat_ngay_het_hieu_luc.Checked == false)
