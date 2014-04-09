@@ -59,6 +59,16 @@ namespace BKI_HRM.DanhMuc
         private string m_str_old_path = "";
         #endregion
         #region Private Methods
+        private bool check_trung_ma_quyet_dinh(string ip_str_ma_quyet_dinh)
+        {
+            DS_V_DM_QUYET_DINH v_ds = new DS_V_DM_QUYET_DINH();
+            decimal count_ma_nv;
+            m_v_us.FillDataset_By_Ma_qd(v_ds, ip_str_ma_quyet_dinh);
+            count_ma_nv = v_ds.V_DM_QUYET_DINH.Count;
+            if (count_ma_nv > 0)
+                return true;
+            return false;
+        }
         private void us_object_2_form(US_V_DM_QUYET_DINH ip_us_v_dm_quyet_dinh)
         {
             m_us.dcID = ip_us_v_dm_quyet_dinh.dcID;
@@ -181,19 +191,45 @@ namespace BKI_HRM.DanhMuc
         }
         private void save_data()
         {
-            if (check_data_is_ok() == false)
-            {
-                return;
-            }
-            form_2_us_object();
+           
             upload_file();
             switch (m_e_form_mode)
             {
-                case DataEntryFormMode.InsertDataState:
-                    m_us.Insert();
-                    break;
+
                 case DataEntryFormMode.UpdateDataState:
-                    m_us.Update();
+                    if (check_data_is_ok() == false)
+                        return;
+                    else
+                    {
+                        form_2_us_object();
+                        m_us.Update();
+                    }
+
+                    break;
+                case DataEntryFormMode.InsertDataState:
+                    if (check_trung_ma_quyet_dinh(m_txt_ma_quyet_dinh.Text))
+                    {
+                        BaseMessages.MsgBox_Warning(212);
+                        m_txt_ma_quyet_dinh.BackColor = Color.Bisque;
+                        m_txt_ma_quyet_dinh.Focus();
+                        m_txt_ma_quyet_dinh.SelectAll();
+                        return;
+                    }
+                    else
+                    {
+                        m_txt_ma_quyet_dinh.BackColor = Color.White;
+                        if (check_data_is_ok() == false)
+                            return;
+                        else
+                        {
+                            form_2_us_object();
+                            m_us.Insert();
+                        }
+
+                    }
+
+                    break;
+                default:
                     break;
             }
             BaseMessages.MsgBox_Infor("Cập nhật dữ liệu thành công!");
