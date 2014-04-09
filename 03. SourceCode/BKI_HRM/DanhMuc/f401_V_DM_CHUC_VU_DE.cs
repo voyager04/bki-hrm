@@ -64,6 +64,12 @@ namespace BKI_HRM
             if (!CValidateTextBox.IsValid(m_txt_tencv, DataType.StringType, allowNull.NO, true)) {
                 return false;
             }
+            if (m_dat_ngayketthuc.Checked && m_dat_ngayapdung.Checked)
+                if (m_dat_ngayapdung.Value > m_dat_ngayketthuc.Value)
+                {
+                    MessageBox.Show("Ngày kết thúc phải lớn hơn ngày áp dụng");
+                    return false;
+                }
             return true;
         }
 
@@ -141,8 +147,14 @@ namespace BKI_HRM
             m_txt_macv.Text = ip_us_v_dm_chuc_vu.strMA_CV;
             m_txt_tencv.Text = ip_us_v_dm_chuc_vu.strTEN_CV;
             m_txt_tenta.Text = ip_us_v_dm_chuc_vu.strTEN_CV_TA;
-            m_dat_ngayapdung.Value = ip_us_v_dm_chuc_vu.datNGAY_AP_DUNG;
-            m_dat_ngayketthuc.Value = ip_us_v_dm_chuc_vu.datNGAY_KET_THUC;
+            if (ip_us_v_dm_chuc_vu.datNGAY_AP_DUNG == DateTime.Parse("1/1/1900"))
+                m_dat_ngayapdung.Value = DateTime.Now;
+            else
+                m_dat_ngayapdung.Value = ip_us_v_dm_chuc_vu.datNGAY_AP_DUNG;
+            if (ip_us_v_dm_chuc_vu.datNGAY_KET_THUC == DateTime.Parse("1/1/1900"))
+                m_dat_ngayketthuc.Value = DateTime.Now;
+            else
+                m_dat_ngayketthuc.Value = ip_us_v_dm_chuc_vu.datNGAY_KET_THUC;
             m_cbo_ngach.SelectedValue = ip_us_v_dm_chuc_vu.dcID_NGACH;
             if (ip_us_v_dm_chuc_vu.strTRANG_THAI == "Y")
                 m_rdb_sudung.Checked = true;
