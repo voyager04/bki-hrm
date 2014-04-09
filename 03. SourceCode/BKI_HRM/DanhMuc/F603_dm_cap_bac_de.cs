@@ -73,14 +73,14 @@ namespace BKI_HRM.DanhMuc
             m_us.dcID = ip_us_v_dm_cap_bac.dcID;
             m_txt_ma_cap.Text = ip_us_v_dm_cap_bac.strMA_CAP;
             m_txt_ma_bac.Text = ip_us_v_dm_cap_bac.strMA_BAC;
-            if (ip_us_v_dm_cap_bac.datNGAY_AP_DUNG == null)
-                m_dat_ngay_ap_dung.Checked = false;
-            else
+            if (ip_us_v_dm_cap_bac.datNGAY_AP_DUNG.Year > 1900)
                 m_dat_ngay_ap_dung.Value = ip_us_v_dm_cap_bac.datNGAY_AP_DUNG;
-            if (ip_us_v_dm_cap_bac.datNGAY_KET_THUC == null)
-                m_dat_ngay_ket_thuc.Checked = false;
             else
+                m_dat_ngay_ap_dung.Checked = false;
+            if (ip_us_v_dm_cap_bac.datNGAY_KET_THUC.Year > 1900)
                 m_dat_ngay_ket_thuc.Value = ip_us_v_dm_cap_bac.datNGAY_KET_THUC;
+            else
+                m_dat_ngay_ket_thuc.Checked = false;
 
             if (ip_us_v_dm_cap_bac.strTRANG_THAI == "Y")
                 m_rdb_su_dung.Checked = true;
@@ -114,7 +114,22 @@ namespace BKI_HRM.DanhMuc
             m_us.strMA_CAP = m_txt_ma_cap.Text.Trim();
             m_us.datNGAY_AP_DUNG = m_dat_ngay_ap_dung.Value.Date;
             m_us.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value.Date;
-            
+            if (m_dat_ngay_ap_dung.Checked)
+            {
+                m_us.datNGAY_AP_DUNG = m_dat_ngay_ap_dung.Value.Date;
+            }
+            else
+            {
+                m_us.SetNGAY_AP_DUNGNull();
+            }
+            if (m_dat_ngay_ket_thuc.Checked)
+            {
+                m_us.datNGAY_KET_THUC= m_dat_ngay_ket_thuc.Value.Date;
+            }
+            else
+            {
+                m_us.SetNGAY_KET_THUCNull();
+            }
             //m_us.strTRANG_THAI
             //Fail
             m_us.strTRANG_THAI = m_rdb_khong_su_dung.Checked ? "N" : "Y";
