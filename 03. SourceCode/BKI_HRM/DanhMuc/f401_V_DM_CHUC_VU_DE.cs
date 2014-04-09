@@ -72,7 +72,23 @@ namespace BKI_HRM
             m_us.strTEN_CV = m_txt_tencv.Text.Trim();
             m_us.strTEN_CV_TA = m_txt_tenta.Text.Trim();
             m_us.datNGAY_AP_DUNG = m_dat_ngayapdung.Value.Date;
+            if (m_dat_ngayapdung.Checked)
+            {
+                m_us.datNGAY_AP_DUNG = m_dat_ngayapdung.Value;
+            }
+            else
+            {
+                m_us.SetNGAY_AP_DUNGNull();
+            }
             m_us.datNGAY_KET_THUC = m_dat_ngayketthuc.Value.Date;
+            if (m_dat_ngayketthuc.Checked)
+            {
+                m_us.datNGAY_KET_THUC = m_dat_ngayketthuc.Value;
+            }
+            else
+            {
+                m_us.SetNGAY_KET_THUCNull();
+            }
             m_us.dcID_NGACH =  CIPConvert.ToDecimal(m_cbo_ngach.SelectedValue);
             m_us.strTRANG_THAI = m_rdb_khongsudung.Checked ? "N" : "Y";
         }
