@@ -643,10 +643,9 @@ namespace BKI_HRM.US {
             v_stored_proc.fillDataSetByCommand(this, op_ds_v_dm_du_lieu_nhan_vien);
         }
 
-        public void FillDatasetGender(string ip_str_key_word, string ip_str_gender, DS_V_DM_DU_LIEU_NHAN_VIEN op_ds_v_dm_du_lieu_nhan_vien) {
-            CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_search_gioi_tinh");
-            v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_str_key_word);
-            v_stored_proc.addNVarcharInputParam("@ip_str_gioi_tinh", ip_str_gender);
+        public void FillDatasetByIdDonVi(DS_V_DM_DU_LIEU_NHAN_VIEN op_ds_v_dm_du_lieu_nhan_vien, decimal ip_dc_id_don_vi) {
+            CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_search_by_id_don_vi");
+            v_stored_proc.addDecimalInputParam("@ip_dc_id_don_vi", ip_dc_id_don_vi);
             v_stored_proc.fillDataSetByCommand(this, op_ds_v_dm_du_lieu_nhan_vien);
         }
 
