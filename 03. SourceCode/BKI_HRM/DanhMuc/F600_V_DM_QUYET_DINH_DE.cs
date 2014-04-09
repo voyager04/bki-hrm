@@ -209,7 +209,7 @@ namespace BKI_HRM.DanhMuc
                 case DataEntryFormMode.InsertDataState:
                     if (check_trung_ma_quyet_dinh(m_txt_ma_quyet_dinh.Text))
                     {
-                        BaseMessages.MsgBox_Warning(212);
+                        BaseMessages.MsgBox_Warning(213);
                         m_txt_ma_quyet_dinh.BackColor = Color.Bisque;
                         m_txt_ma_quyet_dinh.Focus();
                         m_txt_ma_quyet_dinh.SelectAll();
