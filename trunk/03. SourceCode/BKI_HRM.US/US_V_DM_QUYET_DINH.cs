@@ -22,6 +22,7 @@ public class US_V_DM_QUYET_DINH : US_Object
 {
 	private const string c_TableName = "V_DM_QUYET_DINH";
 #region "Public Properties"
+    
 	public decimal dcID 
 	{
 		get
