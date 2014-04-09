@@ -100,10 +100,24 @@ namespace BKI_HRM.DanhMuc
         {
             if (!CValidateTextBox.IsValid(m_txt_ma_cap, DataType.StringType, allowNull.NO, true))
             {
+                BaseMessages.MsgBox_Infor("Bạn chưa nhập mã cấp");
+                //    return false;
                 return false;
             }
-            //if (!CValidateTextBox.IsValid(m_txt_ma_bac, DataType.StringType, allowNull.NO, true))
+            if (!CValidateTextBox.IsValid(m_txt_ma_bac, DataType.StringType, allowNull.NO, true))
+            {
+                BaseMessages.MsgBox_Infor("Bạn chưa nhập mã bậc");
+                //    return false;
+                return false;
+            }
+            //if (m_txt_ma_bac.Text == "")
             //{
+            //    BaseMessages.MsgBox_Infor("Bạn chưa nhập mã bậc");
+            //    return false;
+            //}
+            //if (m_txt_ma_cap.Text == "")
+            //{
+            //    BaseMessages.MsgBox_Infor("Bạn chưa nhập mã cấp");
             //    return false;
             //}
             return true;
