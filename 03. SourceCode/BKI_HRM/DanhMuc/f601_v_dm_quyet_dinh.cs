@@ -372,7 +372,7 @@ namespace BKI_HRM
         private void load_data_2_grid()
         {
             m_ds = new DS_V_DM_QUYET_DINH();
-            if (m_txt_tim_kiem.Text.Trim() == m_str_tim_kiem || m_txt_tim_kiem.Text.Trim()=="") m_us.FillDataset(m_ds);
+            if (m_txt_tim_kiem.Text.Trim() == m_str_tim_kiem || m_txt_tim_kiem.Text.Trim()=="") m_us.FillDatasetSearch(m_ds,"");
             else m_us.FillDatasetSearch(m_ds, m_txt_tim_kiem.Text.Trim());
             //m_us.FillDataset(m_ds);
             var v_str_search = m_txt_tim_kiem.Text.Trim();
