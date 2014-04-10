@@ -58,7 +58,7 @@ namespace BKI_HRM
         private void load_data_2_grid()
         {
             m_us_1.FillDataset(m_ds_1);
-            v_us_dm_tu_dien.FillDatasetByIdLoaiTuDien(v_ds_dm_tu_dien, 5);
+            v_us_dm_tu_dien.FillDataset(v_ds_dm_tu_dien, "WHERE Id_loai_tu_dien = 5 AND ID <> 655");
             //1.tạo danh sách cột chức vụ
             m_fg.Cols.Count = m_ds_1.DM_CHUC_VU.Rows.Count + 2;
             m_fg.Cols[0].Width = 100;
