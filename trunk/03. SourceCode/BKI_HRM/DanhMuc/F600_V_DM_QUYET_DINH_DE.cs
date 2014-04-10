@@ -139,6 +139,11 @@ namespace BKI_HRM.DanhMuc
                 BaseMessages.MsgBox_Infor("Bạn chưa nhập mã quyết định");
                 return false;
             }
+            if (m_v_us.datNGAY_CO_HIEU_LUC.Date>m_v_us.datNGAY_HET_HIEU_LUC.Date)
+            {
+                BaseMessages.MsgBox_Infor("Ngày có hiệu lực phải trước ngày hết hiệu lực");
+                return false;
+            }
             //if (m_txt_ma_quyet_dinh.Text == "")
             //{
             //    BaseMessages.MsgBox_Infor("Bạn chưa nhập mã quyết định");
