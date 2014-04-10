@@ -33,6 +33,7 @@
             this.m_cmd_chon_file = new SIS.Controls.Button.SiSButton();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_refresh = new SIS.Controls.Button.SiSButton();
             this.m_cmd_xuat_word = new SIS.Controls.Button.SiSButton();
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
@@ -67,7 +68,6 @@
             this.m_cbo_loai_hop_dong = new System.Windows.Forms.ComboBox();
             this.m_cbo_phap_nhan = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.m_cmd_refresh = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -126,6 +126,22 @@
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1054, 36);
             this.m_pnl_out_place_dm.TabIndex = 10;
+            // 
+            // m_cmd_refresh
+            // 
+            this.m_cmd_refresh.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_refresh.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_refresh.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_refresh.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_refresh.ImageIndex = 9;
+            this.m_cmd_refresh.ImageList = this.ImageList;
+            this.m_cmd_refresh.Location = new System.Drawing.Point(786, 4);
+            this.m_cmd_refresh.Name = "m_cmd_refresh";
+            this.m_cmd_refresh.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_refresh.TabIndex = 37;
+            this.m_cmd_refresh.Text = "L&àm lại";
+            this.m_cmd_refresh.Click += new System.EventHandler(this.m_cmd_refresh_Click);
             // 
             // m_cmd_xuat_word
             // 
@@ -466,22 +482,6 @@
             this.label7.Size = new System.Drawing.Size(59, 13);
             this.label7.TabIndex = 118;
             this.label7.Text = "Pháp nhân";
-            // 
-            // m_cmd_refresh
-            // 
-            this.m_cmd_refresh.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_refresh.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_refresh.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_refresh.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_refresh.ImageIndex = 9;
-            this.m_cmd_refresh.ImageList = this.ImageList;
-            this.m_cmd_refresh.Location = new System.Drawing.Point(786, 4);
-            this.m_cmd_refresh.Name = "m_cmd_refresh";
-            this.m_cmd_refresh.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_refresh.TabIndex = 37;
-            this.m_cmd_refresh.Text = "L&àm lại";
-            this.m_cmd_refresh.Click += new System.EventHandler(this.m_cmd_refresh_Click);
             // 
             // f701_v_gd_hop_dong_lao_dong_DE
             // 
