@@ -49,15 +49,15 @@
     <ID>211</ID>
   </Message>
   <Message>
-    <Message>Mã quyết định đã tồn tại</Message>
+    <Message>Chưa có Mã quyết định</Message>
     <ID>213</ID>
   </Message>
   <Message>
-    <Message>Mã cấp đã tồn tại</Message>
+    <Message>Chưa có Mã cấp</Message>
     <ID>214</ID>
   </Message>
   <Message>
-    <Message>Mã bậc đã tồn tại</Message>
+    <Message>Chưa có Mã bậc</Message>
     <ID>215</ID>
   </Message>
 </DatasetMsg>
