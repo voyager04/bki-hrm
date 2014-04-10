@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -62,10 +63,10 @@ namespace BKI_HRM.DanhMuc
         private bool check_trung_ma_quyet_dinh(string ip_str_ma_quyet_dinh)
         {
             DS_V_DM_QUYET_DINH v_ds = new DS_V_DM_QUYET_DINH();
-            decimal count_ma_nv;
+            decimal count_ma_quyet_dinh;
             m_v_us.FillDataset_By_Ma_qd(v_ds, ip_str_ma_quyet_dinh);
-            count_ma_nv = v_ds.V_DM_QUYET_DINH.Count;
-            if (count_ma_nv > 0)
+            count_ma_quyet_dinh = v_ds.V_DM_QUYET_DINH.Count;
+            if (count_ma_quyet_dinh > 0)
                 return true;
             return false;
         }
@@ -111,39 +112,54 @@ namespace BKI_HRM.DanhMuc
         }
         private void chon_file()
         {
-            //m_str_old_path = m_str_destination + m_lbl_ten_file.Text;
-            int v_i_file_size = 5096000;
-            m_ofd_chon_file.Filter = "(*.*)|*.*";
+            m_ofd_chon_file.Filter = @"(*.pdf)|*.pdf|(*.doc)|*.doc|(*.docx)|*.docx|(*.xls)|*.xls|(*.xlsx)|*.xlsx";
             m_ofd_chon_file.Multiselect = false;
-            m_ofd_chon_file.Title = "Chọn file";
-            m_ofd_chon_file.FileName = "";
-            DialogResult result = m_ofd_chon_file.ShowDialog();
-            if (result != DialogResult.OK) return;
+            m_ofd_chon_file.Title = @"Chọn tài liệu đính kèm";
+            m_ofd_chon_file.ShowDialog();
+            
+            //int v_i_file_size = 5096000;
+            //m_ofd_chon_file.Filter = "(*.*)|*.*";
+            //m_ofd_chon_file.Multiselect = false;
+            //m_ofd_chon_file.Title = "Chọn file";
+            //m_ofd_chon_file.FileName = "";
+            //DialogResult result = m_ofd_chon_file.ShowDialog();
+            //if (result != DialogResult.OK) return;
 
-            if (new FileInfo(m_ofd_chon_file.FileName).Length > v_i_file_size)
-            {
-                BaseMessages.MsgBox_Infor("File đính kèm có dung lượng quá lớn. \nVui lòng chọn file có dung lượng nhỏ hơn 5Mb");
-                return;
-            }
+            //if (new FileInfo(m_ofd_chon_file.FileName).Length > v_i_file_size)
+            //{
+            //    BaseMessages.MsgBox_Infor("File đính kèm có dung lượng quá lớn. \nVui lòng chọn file có dung lượng nhỏ hơn 5Mb");
+            //    return;
+            //}
             // m_lbl_ten_file.Text = m_ofd_chon_file.SafeFileName;
-            m_str_file_name = m_ofd_chon_file.SafeFileName;
-            m_str_origination = m_ofd_chon_file.FileName;
+            //m_str_file_name = m_ofd_chon_file.SafeFileName;
+            //m_str_origination = m_ofd_chon_file.FileName;
         }
-
+        private void open_file()
+        {
+            Process.Start("explorer.exe", m_ofd_chon_file.FileName);
+        }
         
         private bool check_data_is_ok()
         {
+            //if (check_trung_ma_quyet_dinh(m_txt_ma_quyet_dinh.Text.Trim()))
+            //{
+            //    BaseMessages.MsgBox_Error("Đã có mã Quyết định này!");
+            //    return false;
+            //}
+            //return CValidateTextBox.IsValid(m_txt_ma_quyet_dinh, DataType.StringType, allowNull.NO, true) && kiem_tra_ngay_truoc_sau();
 
             if (!CValidateTextBox.IsValid(m_txt_ma_quyet_dinh, DataType.StringType, allowNull.NO, true))
             {
                 BaseMessages.MsgBox_Infor("Bạn chưa nhập mã quyết định");
                 return false;
             }
-            if (m_v_us.datNGAY_CO_HIEU_LUC.Date>m_v_us.datNGAY_HET_HIEU_LUC.Date)
-            {
-                BaseMessages.MsgBox_Infor("Ngày có hiệu lực phải trước ngày hết hiệu lực");
-                return false;
-            }
+            
+
+            //if (m_us.datNGAY_CO_HIEU_LUC.Date>m_us.datNGAY_HET_HIEU_LUC.Date)
+            //{
+            //    BaseMessages.MsgBox_Infor("Ngày có hiệu lực phải trước ngày hết hiệu lực");
+            //    return false;
+            //}
             //if (m_txt_ma_quyet_dinh.Text == "")
             //{
             //    BaseMessages.MsgBox_Infor("Bạn chưa nhập mã quyết định");
@@ -151,6 +167,15 @@ namespace BKI_HRM.DanhMuc
             //}
 
 
+            return true && kiem_tra_ngay_truoc_sau(); 
+        }
+        private bool kiem_tra_ngay_truoc_sau()
+        {
+            if (m_dat_ngay_co_hieu_luc.Value >= m_dat_ngay_het_hieu_luc.Value)
+            {
+                m_lbl_mesg.Text = @"Ngày có hiệu lực phải trước ngày hết hiệu lực!";
+                return false;
+            }
             return true;
         }
         private void form_2_us_object()
@@ -325,11 +350,23 @@ namespace BKI_HRM.DanhMuc
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
-
+        private void m_cmd_xem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                open_file();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        
 
 
         #endregion
+
+  
 
 
 
