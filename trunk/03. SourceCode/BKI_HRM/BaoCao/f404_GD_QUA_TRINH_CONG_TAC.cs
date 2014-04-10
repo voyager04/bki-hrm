@@ -456,8 +456,10 @@ namespace BKI_HRM
                     m_txt_tim_kiem.Text = "Nhập mã nhân viên, họ đệm, tên";
                 }
                 else
+                {
                     what_is_checked();
-                load_data_2_grid();
+                    load_data_2_grid();
+                }
             }
             catch (Exception v_e)
             {
@@ -469,8 +471,20 @@ namespace BKI_HRM
         {
             try
             {
-                what_is_checked();
-                load_data_2_grid();
+                {
+                    if (m_txt_tim_kiem.Text.Trim() == "Nhập mã nhân viên, họ đệm, tên")
+                    {
+                        m_txt_tim_kiem.Text = "";
+                        what_is_checked();
+                        load_data_2_grid();
+                        m_txt_tim_kiem.Text = "Nhập mã nhân viên, họ đệm, tên";
+                    }
+                    else
+                    {
+                        what_is_checked();
+                        load_data_2_grid();
+                    }
+                }
             }
             catch (Exception v_e)
             {
@@ -482,8 +496,20 @@ namespace BKI_HRM
         {
             try
             {
-                what_is_checked();
-                load_data_2_grid();
+                {
+                    if (m_txt_tim_kiem.Text.Trim() == "Nhập mã nhân viên, họ đệm, tên")
+                    {
+                        m_txt_tim_kiem.Text = "";
+                        what_is_checked();
+                        load_data_2_grid();
+                        m_txt_tim_kiem.Text = "Nhập mã nhân viên, họ đệm, tên";
+                    }
+                    else
+                    {
+                        what_is_checked();
+                        load_data_2_grid();
+                    }
+                }
             }
             catch (Exception v_e)
             {
@@ -495,8 +521,20 @@ namespace BKI_HRM
         {
             try
             {
-                what_is_checked();
-                load_data_2_grid();
+                {
+                    if (m_txt_tim_kiem.Text.Trim() == "Nhập mã nhân viên, họ đệm, tên")
+                    {
+                        m_txt_tim_kiem.Text = "";
+                        what_is_checked();
+                        load_data_2_grid();
+                        m_txt_tim_kiem.Text = "Nhập mã nhân viên, họ đệm, tên";
+                    }
+                    else
+                    {
+                        what_is_checked();
+                        load_data_2_grid();
+                    }
+                }
             }
             catch (Exception v_e)
             {
