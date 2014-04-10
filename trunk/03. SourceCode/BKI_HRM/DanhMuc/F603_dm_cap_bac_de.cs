@@ -67,7 +67,26 @@ namespace BKI_HRM.DanhMuc
 
         #region Private Methods
 
-
+        //private bool check_trung_ma_cap(string ip_str_ma_cap)
+        //{
+        //    DS_V_DM_CAP_BAC v_ds = new DS_V_DM_CAP_BAC();
+        //    decimal count_ma_cap_bac;
+        //    m_v_us.FillDataset(v_ds, ip_str_ma_cap);
+        //    count_ma_cap_bac = v_ds.V_DM_CAP_BAC.Count;
+        //    if (count_ma_cap_bac > 0)
+        //        return true;
+        //    return false;
+        //}
+        //private bool check_trung_ma_bac(string ip_str_ma_bac)
+        //{
+        //    DS_V_DM_CAP_BAC v_ds = new DS_V_DM_CAP_BAC();
+        //    decimal count_ma_cap_bac;
+        //    m_v_us.FillDataset(v_ds, ip_str_ma_bac);
+        //    count_ma_cap_bac = v_ds.V_DM_CAP_BAC.Count;
+        //    if (count_ma_cap_bac > 0)
+        //        return true;
+        //    return false;
+        //}
         private void us_object_2_form(US_DM_CAP_BAC ip_us_v_dm_cap_bac)
         {
             m_us.dcID = ip_us_v_dm_cap_bac.dcID;
