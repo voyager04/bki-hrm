@@ -291,10 +291,24 @@ namespace BKI_HRM.NghiepVu
             {
                 m_us_dm_quyet_dinh.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value.Date;
             }
+            else
+            {
+                MessageBox.Show("Phải nhập ngày có hiệu lực");
+                return;
+            }
 
             if (m_dat_ngay_het_hieu_luc.Checked)
             {
+                if (m_dat_ngay_co_hieu_luc.Value.Date > m_dat_ngay_het_hieu_luc.Value.Date)
+                {
+                    MessageBox.Show("Ngày hết hiệu lực phải sau ngày có hiệu lực");
+                    return;
+                }
                 m_us_dm_quyet_dinh.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc.Value.Date;
+            }
+            else
+            {
+                m_us_dm_quyet_dinh.SetNGAY_HET_HIEU_LUCNull();
             }
 
             if (m_dat_ngay_ki.Checked)
@@ -382,6 +396,34 @@ namespace BKI_HRM.NghiepVu
 
         private bool check_data_is_ok()
         {
+            if (!m_dat_ngay_bd.Checked)
+            {
+                MessageBox.Show("Phải có ngày bắt đầu dự án");
+                return false;
+            }
+            if (m_dat_ngay_kt.Checked)
+            {
+                if (m_dat_ngay_bd.Value.Date > m_dat_ngay_kt.Value.Date)
+                {
+                    MessageBox.Show("Ngày bắt đầu dự án phải trước ngày kết thúc dự án");
+                    return false;
+                }
+            }
+            if (m_txt_ma_du_an.Text =="")
+            {
+                MessageBox.Show("Phải có mã dự án");
+                return false;
+            }
+            if (m_txt_ma_quyet_dinh.Text == "")
+            {
+                MessageBox.Show("Phải có mã quyết định");
+                return false;
+            }
+            if (m_txt_ten_du_an.Text == "")
+            {
+                MessageBox.Show("Phải có tên dự án");
+                return false;
+            }
             return true;
         }
 
@@ -431,7 +473,7 @@ namespace BKI_HRM.NghiepVu
         {
             
         }
-        #endregion        
+        #endregion
 
         private void m_grv_nhan_su_Click(object sender, EventArgs e)
         {

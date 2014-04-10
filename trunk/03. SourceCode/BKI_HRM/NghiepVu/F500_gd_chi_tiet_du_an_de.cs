@@ -183,6 +183,29 @@ namespace BKI_HRM.NghiepVu
 
         private bool check_data_is_ok()
         {
+            if (!m_dat_tham_gia.Checked)
+            {
+                MessageBox.Show("Phải có ngày tham gia");
+                return false;
+            }
+            if (m_dat_ngay_kt.Checked)
+            {
+                if (m_dat_ngay_kt.Value.Date < m_dat_tham_gia.Value.Date)
+                {
+                    MessageBox.Show("Ngày tham gia phải có trước ngày kết thúc");
+                    return false;
+                }
+            }
+            if (m_txt_ma_du_an.Text == "")
+            {
+                MessageBox.Show("Phải có mã dự án");
+                return false;
+            }
+            if (m_txt_ma_ns.Text == "")
+            {
+                MessageBox.Show("Phải có mã nhân sự");
+                return false;
+            }
             return true;
         }
 
