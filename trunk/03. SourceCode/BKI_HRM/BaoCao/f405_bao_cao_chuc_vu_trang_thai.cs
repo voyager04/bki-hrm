@@ -61,7 +61,7 @@ namespace BKI_HRM
             v_us_dm_tu_dien.FillDataset(v_ds_dm_tu_dien, "WHERE Id_loai_tu_dien = 5 AND ID <> 655");
             //1.tạo danh sách cột chức vụ
             m_fg.Cols.Count = m_ds_1.DM_CHUC_VU.Rows.Count + 2;
-            m_fg.Cols[0].Width = 100;
+            m_fg.Cols[0].Width = 150;
             //m_fg.Cols[1].Caption = "Trạng thái/Chức vụ";
             m_fg.Cols[1].Caption = "Tổng";
             m_fg.Cols[1].UserData = 0;
