@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using BKI_HRM.DS.CDBNames;
 using BKI_HRM.US;
@@ -48,6 +49,7 @@ namespace BKI_HRM.NghiepVu
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             us_object_2_form(ip_m_us_gd_hop_dong);
             m_str_id_hop_dong_old = ip_m_us_gd_hop_dong.dcID;
+            m_txt_tim_kiem_nhan_vien.Enabled = false;
             this.ShowDialog();
         }
         #endregion
@@ -75,13 +77,37 @@ namespace BKI_HRM.NghiepVu
         {
             if (m_txt_ma_hop_dong.Text == "")
             {
-                BaseMessages.MsgBox_Infor("Bạn chưa nhập Mã Hợp Đồng");
+                BaseMessages.MsgBox_Infor("Bạn chưa nhập Mã Hợp Đồng.");
                 return false;
             }
 
+            //if (!Regex.IsMatch(m_txt_ma_hop_dong.Text, @"[\d\w]+[-/]*?"))
+            //{
+            //    BaseMessages.MsgBox_Infor("Bạn nhập Mã Hợp Đồng chưa đúng định dạng");
+            //    return false;
+            //}
+
             if (m_lbl_ma_nhan_vien.Text == "")
             {
-                BaseMessages.MsgBox_Infor("Bạn chưa nhập Mã Nhân Viên");
+                BaseMessages.MsgBox_Infor("Bạn chưa nhập Mã Nhân Viên.");
+                return false;
+            }
+
+            if ((m_dat_ngay_ky_hop_dong.Value - m_dat_ngay_co_hieu_luc.Value).TotalHours > 0 )
+            {
+                BaseMessages.MsgBox_Infor("Ngày ký Hợp Đồng không thể lớn hơn ngày Hợp Đồng có hiệu lực.");
+                return false;
+            }
+
+            if ((m_dat_ngay_ky_hop_dong.Value - m_dat_ngay_het_han.Value).TotalHours > 0)
+            {
+                BaseMessages.MsgBox_Infor("Ngày ký Hợp Đồng không thể lớn hơn ngày Hợp Đồng hết hạn.");
+                return false;
+            }
+
+            if ((m_dat_ngay_co_hieu_luc.Value - m_dat_ngay_het_han.Value).TotalHours > 0)
+            {
+                BaseMessages.MsgBox_Infor("Ngày Hợp Đồng có hiệu lực không thể lớn hơn ngày Hợp Đồng hết hạn.");
                 return false;
             }
             return true;
@@ -89,14 +115,14 @@ namespace BKI_HRM.NghiepVu
 
         private void form_2_us_object()
         {
-            m_us.strMA_HOP_DONG = m_txt_ma_hop_dong.Text;
+            m_us.strMA_HOP_DONG = m_txt_ma_hop_dong.Text.Trim();
             m_us.dcID_LOAI_HOP_DONG = (decimal)m_cbo_loai_hop_dong.SelectedValue;
             m_us.dcID_PHAP_NHAN = (decimal) m_cbo_phap_nhan.SelectedValue;
             m_us.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value;
             m_us.strTRANG_THAI_HOP_DONG = m_cbo_trang_thai.SelectedIndex.Equals(0) ? "Y" : "N";
-            m_us.strLINK = m_str_destination + m_lbl_file_name.Text;
-            m_us.strNGUOI_KY = m_txt_nguoi_ky.Text;
-            m_us.strCHUC_VU_NGUOI_KY = m_txt_chuc_vu_nguoi_ky.Text;
+            m_us.strLINK = m_lbl_file_name.Text;
+            m_us.strNGUOI_KY = m_txt_nguoi_ky.Text.Trim();
+            m_us.strCHUC_VU_NGUOI_KY = m_txt_chuc_vu_nguoi_ky.Text.Trim();
             m_us.datNGAY_KY_HOP_DONG = m_dat_ngay_ky_hop_dong.Value;
 
             if (m_us_dm_nhan_su.dcID == -1)

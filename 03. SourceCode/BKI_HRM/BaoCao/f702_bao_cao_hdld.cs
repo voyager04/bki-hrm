@@ -306,6 +306,9 @@ namespace BKI_HRM
             CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
+            m_fg.Tree.Column = (int)e_col_Number.HO_DEM;
+            m_fg.Cols[(int)e_col_Number.MA_NV].Visible = false;
+            m_fg.Tree.Style = TreeStyleFlags.SimpleLeaf;
             set_define_events();
             this.KeyPreview = true;
         }
@@ -380,7 +383,14 @@ namespace BKI_HRM
 
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+             , 0
+             , (int)e_col_Number.MA_NV // chỗ này là tên trường mà mình nhóm
+             , (int)e_col_Number.MA_HOP_DONG // chỗ này là tên trường mà mình Count
+             , "{0}"
+             );
             m_fg.Redraw = true;
+            m_fg.Focus();
         }
         private void grid2us_object(US_V_GD_HOP_DONG_LAO_DONG i_us
             , int i_grid_row)

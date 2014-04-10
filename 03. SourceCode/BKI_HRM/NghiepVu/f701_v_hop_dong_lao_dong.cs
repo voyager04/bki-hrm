@@ -248,6 +248,7 @@ namespace BKI_HRM
             // 
             // m_txt_tim_kiem
             // 
+            this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.m_txt_tim_kiem.ForeColor = System.Drawing.Color.Gray;
             this.m_txt_tim_kiem.Location = new System.Drawing.Point(226, 22);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
@@ -377,9 +378,6 @@ namespace BKI_HRM
         {
             m_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
             var v_str_search = m_txt_tim_kiem.Text.Trim();
-            //var v_str_month = Regex.Match(v_str_search, @"\d+").Value;
-            //if (!v_str_month.Equals(""))
-            //    v_str_search = v_str_month;
 
             if (v_str_search == m_str_suggest)
                 m_us.FillDatasetSearchAll(m_ds, "");
@@ -388,10 +386,10 @@ namespace BKI_HRM
             m_lbl_count_record.Text = string.Format("Có {0} Hợp Đồng Lao Động.", m_ds.Tables[0].Rows.Count);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.None // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
              , 0
              , (int)e_col_Number.MA_NV // chỗ này là tên trường mà mình nhóm
-             , (int)e_col_Number.TEN_PHAP_NHAN // chỗ này là tên trường mà mình Count
+             , (int)e_col_Number.MA_HOP_DONG // chỗ này là tên trường mà mình Count
              , "{0}"
              );
             m_fg.Redraw = true;
