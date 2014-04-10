@@ -288,6 +288,7 @@
             this.m_cmd_xem.Size = new System.Drawing.Size(99, 28);
             this.m_cmd_xem.TabIndex = 120;
             this.m_cmd_xem.Text = "&Xem tài liệu";
+            this.m_cmd_xem.Visible = false;
             this.m_cmd_xem.Click += new System.EventHandler(this.m_cmd_xem_Click);
             // 
             // F600_V_DM_QUYET_DINH_DE
