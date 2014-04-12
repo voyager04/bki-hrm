@@ -627,6 +627,7 @@
        public const string LAM_GI = "LAM_GI";
        public const string O_DAU = "O_DAU";
        public const string VAI_TRO = "VAI_TRO";
+       public const string TY_LE_THAM_GIA = "TY_LE_THAM_GIA";
        public const string MA_QUYET_DINH = "MA_QUYET_DINH";
    }
 
