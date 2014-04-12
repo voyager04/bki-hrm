@@ -31,6 +31,10 @@ namespace BKI_HRM.DanhMuc
             m_cbo_loai_quyet_dinh.SelectedIndex = 0;
             format_control();
         }
+        public void get_us(ref US_DM_QUYET_DINH op_us)
+        {
+            op_us = m_us;
+        }
         public void display_for_insert()
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
@@ -173,7 +177,7 @@ namespace BKI_HRM.DanhMuc
         {
             if (m_dat_ngay_co_hieu_luc.Value >= m_dat_ngay_het_hieu_luc.Value)
             {
-                m_lbl_mesg.Text = @"Ngày có hiệu lực phải trước ngày hết hiệu lực!";
+               BaseMessages.MsgBox_Error("Ngày có hiệu lực phải trước ngày hết hiệu lực!");
                 return false;
             }
             return true;
@@ -228,7 +232,9 @@ namespace BKI_HRM.DanhMuc
 
                 case DataEntryFormMode.UpdateDataState:
                     if (check_data_is_ok() == false)
+                    
                         return;
+                   
                     else
                     {
                         form_2_us_object();
@@ -239,7 +245,7 @@ namespace BKI_HRM.DanhMuc
                 case DataEntryFormMode.InsertDataState:
                     if (check_trung_ma_quyet_dinh(m_txt_ma_quyet_dinh.Text))
                     {
-                        BaseMessages.MsgBox_Warning(213);
+                        BaseMessages.MsgBox_Warning(216);
                         m_txt_ma_quyet_dinh.BackColor = Color.Bisque;
                         m_txt_ma_quyet_dinh.Focus();
                         m_txt_ma_quyet_dinh.SelectAll();
@@ -259,8 +265,7 @@ namespace BKI_HRM.DanhMuc
                     }
 
                     break;
-                default:
-                    break;
+                default: break;
             }
             BaseMessages.MsgBox_Infor("Cập nhật dữ liệu thành công!");
             this.Close();
