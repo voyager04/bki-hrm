@@ -32,8 +32,7 @@ namespace BKI_HRM
 	public class f404_GD_QUA_TRINH_CONG_TAC : System.Windows.Forms.Form
 	{
 		internal System.Windows.Forms.ImageList ImageList;
-		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
-        private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
+        internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         private TextBox m_txt_tim_kiem;
@@ -42,6 +41,7 @@ namespace BKI_HRM
         private CheckBox m_ckb_duan;
         private Label label1;
         internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
+        private C1FlexGrid m_fg;
 		private System.ComponentModel.IContainer components;
 
 		public f404_GD_QUA_TRINH_CONG_TAC()
@@ -83,15 +83,15 @@ namespace BKI_HRM
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f404_GD_QUA_TRINH_CONG_TAC));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_ckb_chucvu = new System.Windows.Forms.CheckBox();
             this.m_ckb_capbac = new System.Windows.Forms.CheckBox();
             this.m_ckb_duan = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
+            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -134,6 +134,22 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1001, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
+            // m_cmd_xuat_excel
+            // 
+            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xuat_excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xuat_excel.ImageIndex = 19;
+            this.m_cmd_xuat_excel.ImageList = this.ImageList;
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(93, 28);
+            this.m_cmd_xuat_excel.TabIndex = 6;
+            this.m_cmd_xuat_excel.Text = "Xuất Excel";
+            // 
             // m_cmd_exit
             // 
             this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -148,16 +164,6 @@ namespace BKI_HRM
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 7;
             this.m_cmd_exit.Text = "Thoát (Esc)";
-            // 
-            // m_fg
-            // 
-            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 66);
-            this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1001, 324);
-            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 20;
             // 
             // m_cmd_search
             // 
@@ -234,33 +240,27 @@ namespace BKI_HRM
             this.label1.TabIndex = 38;
             this.label1.Text = "Hiển thị:";
             // 
-            // m_cmd_xuat_excel
+            // m_fg
             // 
-            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_xuat_excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_xuat_excel.ImageIndex = 19;
-            this.m_cmd_xuat_excel.ImageList = this.ImageList;
-            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
-            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(93, 28);
-            this.m_cmd_xuat_excel.TabIndex = 6;
-            this.m_cmd_xuat_excel.Text = "Xuất Excel";
+            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_fg.Location = new System.Drawing.Point(0, 67);
+            this.m_fg.Name = "m_fg";
+            this.m_fg.Size = new System.Drawing.Size(1001, 323);
+            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
+            this.m_fg.TabIndex = 39;
             // 
             // f404_GD_QUA_TRINH_CONG_TAC
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(1001, 426);
+            this.Controls.Add(this.m_fg);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_ckb_duan);
             this.Controls.Add(this.m_ckb_capbac);
             this.Controls.Add(this.m_ckb_chucvu);
             this.Controls.Add(this.m_cmd_search);
             this.Controls.Add(this.m_txt_tim_kiem);
-            this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.MaximumSize = new System.Drawing.Size(1017, 465);
             this.MinimumSize = new System.Drawing.Size(1017, 465);
@@ -282,18 +282,28 @@ namespace BKI_HRM
 		#endregion
 
 		#region Data Structure
-		private enum e_col_Number{
-			DEN_NGAY = 5
-,MA_NV = 1
-,HO_DEM = 2
-,VAI_TRO = 8
-,TEN = 3
-,TU_NGAY = 4
-,LAM_GI = 6
-,MA_QUYET_DINH = 9
-,O_DAU = 7
+        private enum e_col_Number
+        {
+            DEN_NGAY = 5
+,
+            MA_NV = 1
+                ,
+            TY_LE_THAM_GIA = 9
+                ,
+            HO_DEM = 2
+                ,
+            VAI_TRO = 8
+                ,
+            TEN = 3
+                ,
+            TU_NGAY = 4
+                ,
+            LAM_GI = 6
+                ,
+            MA_QUYET_DINH = 10
+                , O_DAU = 7
 
-		}			
+        }			
 		#endregion
 
 		#region Members
