@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f405_bao_cao_chuc_vu_trang_thai));
+            Checkbox_Combobox.CheckBoxProperties checkBoxProperties1 = new Checkbox_Combobox.CheckBoxProperties();
             this.m_dat_thoidiem = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
@@ -37,6 +38,7 @@
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_cbc_choose_columns = new Checkbox_Combobox.CheckBoxComboBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -140,11 +142,25 @@
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 37;
             // 
+            // m_cbc_choose_columns
+            // 
+            checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.m_cbc_choose_columns.CheckBoxProperties = checkBoxProperties1;
+            this.m_cbc_choose_columns.DisplayMemberSingleItem = "";
+            this.m_cbc_choose_columns.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbc_choose_columns.FormattingEnabled = true;
+            this.m_cbc_choose_columns.Location = new System.Drawing.Point(589, 26);
+            this.m_cbc_choose_columns.Name = "m_cbc_choose_columns";
+            this.m_cbc_choose_columns.Size = new System.Drawing.Size(183, 21);
+            this.m_cbc_choose_columns.TabIndex = 38;
+            this.m_cbc_choose_columns.SelectedIndexChanged += new System.EventHandler(this.m_cbc_choose_columns_SelectedIndexChanged);
+            // 
             // f405_bao_cao_chuc_vu_trang_thai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 311);
+            this.Controls.Add(this.m_cbc_choose_columns);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.label1);
@@ -170,6 +186,7 @@
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         internal System.Windows.Forms.ImageList ImageList;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
+        private Checkbox_Combobox.CheckBoxComboBox m_cbc_choose_columns;
 
 
     }

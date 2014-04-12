@@ -30,6 +30,7 @@ namespace BKI_HRM
         }
         #region Members
         ITransferDataRow m_obj_trans;
+        private bool load_invisible = true;
         DS_DM_CHUC_VU m_ds_1 = new DS_DM_CHUC_VU();
         US_DM_CHUC_VU m_us_1 = new US_DM_CHUC_VU();
         IP.Core.IPUserService.US_CM_DM_TU_DIEN v_us_dm_tu_dien = new IP.Core.IPUserService.US_CM_DM_TU_DIEN();
@@ -118,9 +119,44 @@ namespace BKI_HRM
             m_fg.Subtotal(AggregateEnum.Clear);
             for (int u = 1; u < m_fg.Cols.Count;u++ )
                 m_fg.Subtotal(AggregateEnum.Sum, -1, -1, u, "Tổng");
-            
+            WinFormControls.load_data_to_CheckboxCombobox(m_fg, m_cbc_choose_columns, load_invisible);
             
         }
+
+        private void hien_thi_cot_duoc_check(bool load_invisible)
+        {
+            int v_count = m_fg.Cols.Count;
+            int v_count_visible = 0;
+            for (int i = 0; i < v_count; i++)
+            {
+                if (m_fg.Cols[i].Visible)
+                {
+                    v_count_visible = v_count_visible + 1;
+                }
+            }
+            if (load_invisible)
+            {
+                if (v_count >= 2 && (m_cbc_choose_columns.Items.Count == v_count - 1))
+                {
+                    for (int i = 0; i < v_count - 2; i++)
+                    {
+                        m_fg.Cols[i + 2].Visible = m_cbc_choose_columns.CheckBoxItems[i + 1].Checked;
+                    }
+                }
+            }
+            else
+            {
+                if (v_count_visible >= 2 && (m_cbc_choose_columns.Items.Count == v_count_visible - 1))
+                {
+                    for (int i = 0; i < v_count_visible - 2; i++)
+                    {
+                        m_fg.Cols[i + 2].Visible = m_cbc_choose_columns.CheckBoxItems[i + 1].Checked;
+                    }
+                }
+            }
+
+        }
+
         private void xuat_excel()
         {
        
@@ -153,6 +189,18 @@ namespace BKI_HRM
             try
             {
                 load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cbc_choose_columns_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                hien_thi_cot_duoc_check(load_invisible);
             }
             catch (Exception v_e)
             {
