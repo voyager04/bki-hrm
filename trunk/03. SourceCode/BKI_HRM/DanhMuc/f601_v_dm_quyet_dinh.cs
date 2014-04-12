@@ -291,7 +291,7 @@ namespace BKI_HRM
         {
             m_e_form_mode = DataEntryFormMode.SelectDataState;
             this.ShowDialog();
-            op_us = m_us;
+            op_us = m_v_us;
         }
         #endregion
 
@@ -317,8 +317,10 @@ namespace BKI_HRM
         #region Members
         ITransferDataRow m_obj_trans;
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
-        DS_V_DM_QUYET_DINH m_ds = new DS_V_DM_QUYET_DINH();
-        US_V_DM_QUYET_DINH m_us = new US_V_DM_QUYET_DINH();
+        DS_V_DM_QUYET_DINH m_v_ds = new DS_V_DM_QUYET_DINH();
+        US_V_DM_QUYET_DINH m_v_us = new US_V_DM_QUYET_DINH();
+        US_DM_QUYET_DINH m_us = new US_DM_QUYET_DINH();
+        DS_DM_QUYET_DINH m_ds = new DS_DM_QUYET_DINH();
         private const String m_str_tim_kiem = "Nhập loại quyết định, mã quyết định, nội dung cần tìm";
 
         #endregion
@@ -327,9 +329,9 @@ namespace BKI_HRM
         private void load_custom_source_2_m_txt_tim_kiem()
         {
             //m_us.FillDataset(m_ds);
-            int count = m_ds.Tables["V_DM_QUYET_DINH"].Rows.Count;
+            int count = m_v_ds.Tables["V_DM_QUYET_DINH"].Rows.Count;
             AutoCompleteStringCollection v_acsc_search = new AutoCompleteStringCollection();
-            foreach (DataRow dr in m_ds.V_DM_QUYET_DINH)
+            foreach (DataRow dr in m_v_ds.V_DM_QUYET_DINH)
             {
                 v_acsc_search.Add(dr[V_DM_QUYET_DINH.TEN].ToString());
                 v_acsc_search.Add(dr[V_DM_QUYET_DINH.MA_QUYET_DINH].ToString());
@@ -366,14 +368,14 @@ namespace BKI_HRM
             v_htb.Add(V_DM_QUYET_DINH.NGAY_CO_HIEU_LUC, e_col_Number.NGAY_CO_HIEU_LUC);
             v_htb.Add(V_DM_QUYET_DINH.MA_QUYET_DINH, e_col_Number.MA_QUYET_DINH);
 
-            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_DM_QUYET_DINH.NewRow());
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_v_ds.V_DM_QUYET_DINH.NewRow());
             return v_obj_trans;
         }
         private void load_data_2_grid()
         {
-            m_ds = new DS_V_DM_QUYET_DINH();
-            if (m_txt_tim_kiem.Text.Trim() == m_str_tim_kiem || m_txt_tim_kiem.Text.Trim()=="") m_us.FillDatasetSearch(m_ds,"");
-            else m_us.FillDatasetSearch(m_ds, m_txt_tim_kiem.Text.Trim());
+            m_v_ds = new DS_V_DM_QUYET_DINH();
+            if (m_txt_tim_kiem.Text.Trim() == m_str_tim_kiem || m_txt_tim_kiem.Text.Trim()=="") m_v_us.FillDatasetSearch(m_v_ds,"");
+            else m_v_us.FillDatasetSearch(m_v_ds, m_txt_tim_kiem.Text.Trim());
             //m_us.FillDataset(m_ds);
             var v_str_search = m_txt_tim_kiem.Text.Trim();
             if (v_str_search.Equals(m_str_tim_kiem))
@@ -381,7 +383,7 @@ namespace BKI_HRM
                 v_str_search = "";
             }
             m_grv_dm_quyet_dinh.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds, m_grv_dm_quyet_dinh, m_obj_trans);
+            CGridUtils.Dataset2C1Grid(m_v_ds, m_grv_dm_quyet_dinh, m_obj_trans);
             m_grv_dm_quyet_dinh.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
               , 0
               , (int)e_col_Number.TEN // chỗ này là tên trường mà mình nhóm
@@ -432,18 +434,23 @@ namespace BKI_HRM
         {
             F600_V_DM_QUYET_DINH_DE v_fDE = new F600_V_DM_QUYET_DINH_DE();
             v_fDE.display_for_insert();
-            m_txt_tim_kiem.Text = "";
+            
             load_data_2_grid();
-            m_txt_tim_kiem.Text = m_str_tim_kiem;
+            v_fDE.get_us(ref m_us);
+            WinFormControls.set_focus_for_grid(m_grv_dm_quyet_dinh, m_us.strMA_QUYET_DINH, 1);
+            //m_txt_tim_kiem.Text = m_str_tim_kiem;
+            
+            
+           
         }
 
         private void update_v_dm_quyet_dinh()
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_dm_quyet_dinh)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_dm_quyet_dinh, m_grv_dm_quyet_dinh.Row)) return;
-            grid2us_object(m_us, m_grv_dm_quyet_dinh.Row);
+            grid2us_object(m_v_us, m_grv_dm_quyet_dinh.Row);
             F600_V_DM_QUYET_DINH_DE v_fDE = new F600_V_DM_QUYET_DINH_DE();
-            v_fDE.display_for_update(m_us);
+            v_fDE.display_for_update(m_v_us);
             m_txt_tim_kiem.Text = "";
             load_data_2_grid();
             m_txt_tim_kiem.Text = m_str_tim_kiem;
@@ -476,16 +483,16 @@ namespace BKI_HRM
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_dm_quyet_dinh)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_dm_quyet_dinh, m_grv_dm_quyet_dinh.Row)) return;
-            grid2us_object(m_us, m_grv_dm_quyet_dinh.Row);
+            grid2us_object(m_v_us, m_grv_dm_quyet_dinh.Row);
             F600_V_DM_QUYET_DINH_DE v_fDE = new F600_V_DM_QUYET_DINH_DE();
-            v_fDE.display(m_us);
+            v_fDE.display(m_v_us);
         }
 
         private void select_data_2_us()
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_dm_quyet_dinh)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_dm_quyet_dinh, m_grv_dm_quyet_dinh.Row)) return;
-            grid2us_object(m_us, m_grv_dm_quyet_dinh.Row);
+            grid2us_object(m_v_us, m_grv_dm_quyet_dinh.Row);
             this.Close();
         }
         private void set_define_events()
