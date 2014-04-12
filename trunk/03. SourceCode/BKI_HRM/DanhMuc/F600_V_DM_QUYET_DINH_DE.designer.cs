@@ -50,7 +50,6 @@
             this.m_cmd_chon_file = new SIS.Controls.Button.SiSButton();
             this.m_lbl_ten_file = new System.Windows.Forms.Label();
             this.m_ofd_chon_file = new System.Windows.Forms.OpenFileDialog();
-            this.m_lbl_mesg = new System.Windows.Forms.Label();
             this.m_cmd_xem = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
@@ -266,15 +265,6 @@
             this.m_lbl_ten_file.Size = new System.Drawing.Size(0, 13);
             this.m_lbl_ten_file.TabIndex = 118;
             // 
-            // m_lbl_mesg
-            // 
-            this.m_lbl_mesg.AutoSize = true;
-            this.m_lbl_mesg.Location = new System.Drawing.Point(367, 201);
-            this.m_lbl_mesg.Name = "m_lbl_mesg";
-            this.m_lbl_mesg.Size = new System.Drawing.Size(59, 13);
-            this.m_lbl_mesg.TabIndex = 119;
-            this.m_lbl_mesg.Text = "Thông báo";
-            // 
             // m_cmd_xem
             // 
             this.m_cmd_xem.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -297,7 +287,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(620, 273);
             this.Controls.Add(this.m_cmd_xem);
-            this.Controls.Add(this.m_lbl_mesg);
             this.Controls.Add(this.m_lbl_ten_file);
             this.Controls.Add(this.m_cmd_chon_file);
             this.Controls.Add(this.m_pnl_out_place_dm);
@@ -345,7 +334,6 @@
         internal SIS.Controls.Button.SiSButton m_cmd_chon_file;
         private System.Windows.Forms.Label m_lbl_ten_file;
         private System.Windows.Forms.OpenFileDialog m_ofd_chon_file;
-        private System.Windows.Forms.Label m_lbl_mesg;
         internal SIS.Controls.Button.SiSButton m_cmd_xem;
        
     }
