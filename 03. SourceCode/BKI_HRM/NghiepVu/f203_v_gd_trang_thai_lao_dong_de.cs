@@ -191,7 +191,16 @@ namespace BKI_HRM
             Process.Start("explorer.exe", m_ofd_openfile.FileName);
         }
         private bool check_validate_data_is_ok(){
-            
+            if (m_dat_ngay_co_hieu_luc.Value.Date < m_dat_ngay_het_hieu_luc.Value.Date)
+            {
+                BaseMessages.MsgBox_Infor("Ngày hết hiệu lực không thể trước ngày có hiệu lực.");
+                return false;
+            }
+            if (m_dat_ngay_het_hieu_luc_qd.Value.Date < m_dat_ngay_co_hieu_luc_qd.Value.Date)
+            {
+                BaseMessages.MsgBox_Infor("Ngày hết hiệu lực quyết định không thể trước ngày có hiệu lực quyết định.");
+                return false;
+            }
             return true;
         }
 
