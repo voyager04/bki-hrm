@@ -178,6 +178,20 @@ public class US_V_DM_CAP_BAC : US_Object
         v_sp.addNVarcharInputParam("@STR_SEARCH", i_str_search);
         v_sp.fillDataSetByCommand(this, op_ds);
     }
+    public void FillDataset_By_Ma_bac(DS_V_DM_CAP_BAC op_ds, string ip_str_ma_bac)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_V_DM_CAP_BAC_By_Ma_bac");
+        v_sp.addNVarcharInputParam("@ip_str_ma_bac", ip_str_ma_bac);
+        v_sp.fillDataSetByCommand(this, op_ds);
+    }
+    public void FillDataset_By_Ma_cap(DS_V_DM_CAP_BAC op_ds, string ip_str_ma_cap)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_V_DM_CAP_BAC_By_Ma_cap");
+        v_sp.addNVarcharInputParam("@ip_str_ma_cap", ip_str_ma_cap);
+        v_sp.fillDataSetByCommand(this, op_ds);
+    }
+	
+
 	public US_V_DM_CAP_BAC() 
 	{
 		pm_objDS = new DS_V_DM_CAP_BAC();
