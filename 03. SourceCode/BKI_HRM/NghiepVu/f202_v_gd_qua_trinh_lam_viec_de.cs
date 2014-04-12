@@ -232,7 +232,11 @@ namespace BKI_HRM
         
         private bool check_validate_data_is_ok()
         {
-            
+            if (m_us_dm_don_vi.dcID == null)
+            {
+                BaseMessages.MsgBox_Infor("Bạn chưa chọn đơn vị của nhân viên.");
+                return false;
+            }
             return true;
         }
         private void save_data()
