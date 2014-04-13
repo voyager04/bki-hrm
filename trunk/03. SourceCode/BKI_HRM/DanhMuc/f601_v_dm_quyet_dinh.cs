@@ -256,6 +256,7 @@ namespace BKI_HRM
             this.m_grv_dm_quyet_dinh.ColumnInfo = resources.GetString("m_grv_dm_quyet_dinh.ColumnInfo");
             this.m_grv_dm_quyet_dinh.Location = new System.Drawing.Point(0, 50);
             this.m_grv_dm_quyet_dinh.Name = "m_grv_dm_quyet_dinh";
+            this.m_grv_dm_quyet_dinh.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Row;
             this.m_grv_dm_quyet_dinh.Size = new System.Drawing.Size(778, 367);
             this.m_grv_dm_quyet_dinh.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_dm_quyet_dinh.Styles"));
             this.m_grv_dm_quyet_dinh.TabIndex = 20;
@@ -434,10 +435,11 @@ namespace BKI_HRM
         {
             F600_V_DM_QUYET_DINH_DE v_fDE = new F600_V_DM_QUYET_DINH_DE();
             v_fDE.display_for_insert();
-            
+
             load_data_2_grid();
             v_fDE.get_us(ref m_us);
-            WinFormControls.set_focus_for_grid(m_grv_dm_quyet_dinh, m_us.strMA_QUYET_DINH, 1);
+            WinFormControls.set_focus_for_grid(m_grv_dm_quyet_dinh, m_us.strMA_QUYET_DINH, 2);
+            
             //m_txt_tim_kiem.Text = m_str_tim_kiem;
             
             
