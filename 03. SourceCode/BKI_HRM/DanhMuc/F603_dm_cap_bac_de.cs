@@ -239,6 +239,15 @@ namespace BKI_HRM.DanhMuc
         //        return true;
         //    return false;
         //}
+        private bool kiem_tra_ngay_truoc_sau()
+        {
+            if (m_dat_ngay_ap_dung.Value.Date >= m_dat_ngay_ket_thuc.Value.Date)
+            {
+                BaseMessages.MsgBox_Error("Ngày áp dụng phải trước ngày hết hiệu lực!");
+                return false;
+            }
+            return true;
+        }
         private bool check_trung_ma_bac(string ip_str_ma_bac)
         {
 
