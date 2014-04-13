@@ -363,7 +363,7 @@ public class US_V_GD_TRANG_THAI_LAO_DONG : US_Object
     {
         CStoredProc v_sp = new CStoredProc("pr_V_GD_TRANG_THAI_LAO_DONG_hien_tai_By_Ma_nhan_vien");
       //  CStoredProc v_sp = new CStoredProc("pr_V_GD_TRANG_THAI_LAO_DONG_By_Ma_nhan_vien");
-        v_sp.addDecimalInputParam("@MA_NHAN_VIEN", ip_str_ma_nv);
+        v_sp.addNVarcharInputParam("@MA_NHAN_VIEN", ip_str_ma_nv);
         v_sp.fillDataSetByCommand(this, op_ds);
     }
     public void FillDataset_Search(DS_V_GD_TRANG_THAI_LAO_DONG op_ds, string ip_str_search)
