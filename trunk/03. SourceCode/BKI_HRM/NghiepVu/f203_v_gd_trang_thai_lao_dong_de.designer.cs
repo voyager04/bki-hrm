@@ -70,6 +70,7 @@
             // 
             // m_dat_ngay_het_hieu_luc
             // 
+            this.m_dat_ngay_het_hieu_luc.Checked = false;
             this.m_dat_ngay_het_hieu_luc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.m_dat_ngay_het_hieu_luc.Location = new System.Drawing.Point(404, 82);
             this.m_dat_ngay_het_hieu_luc.Name = "m_dat_ngay_het_hieu_luc";
@@ -335,6 +336,7 @@
             // 
             // m_dat_ngay_het_hieu_luc_qd
             // 
+            this.m_dat_ngay_het_hieu_luc_qd.Checked = false;
             this.m_dat_ngay_het_hieu_luc_qd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.m_dat_ngay_het_hieu_luc_qd.Location = new System.Drawing.Point(393, 84);
             this.m_dat_ngay_het_hieu_luc_qd.Name = "m_dat_ngay_het_hieu_luc_qd";
