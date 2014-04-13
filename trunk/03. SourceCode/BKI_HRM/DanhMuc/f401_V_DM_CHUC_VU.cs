@@ -259,7 +259,7 @@ namespace BKI_HRM
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(700, 380);
             this.Name = "f401_V_DM_CHUC_VU";
-            this.Text = "f401_V_DM_CHUC_VU";
+            this.Text = "F401 - Danh mục chức vụ";
             this.Load += new System.EventHandler(this.f401_V_DM_CHUC_VU_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
