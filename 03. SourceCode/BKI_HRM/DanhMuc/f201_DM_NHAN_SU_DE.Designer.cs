@@ -259,7 +259,6 @@
             this.m_cbo_gioi_tinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_gioi_tinh.FormattingEnabled = true;
             this.m_cbo_gioi_tinh.Items.AddRange(new object[] {
-            "Chọn giới tính",
             "Nam",
             "Nữ"});
             this.m_cbo_gioi_tinh.Location = new System.Drawing.Point(123, 93);
@@ -285,7 +284,7 @@
             this.m_dat_ngay_sinh.ShowCheckBox = true;
             this.m_dat_ngay_sinh.Size = new System.Drawing.Size(121, 20);
             this.m_dat_ngay_sinh.TabIndex = 5;
-            this.m_dat_ngay_sinh.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
+            this.m_dat_ngay_sinh.Value = new System.DateTime(2014, 4, 10, 0, 0, 0, 0);
             // 
             // m_lbl_noi_sinh
             // 

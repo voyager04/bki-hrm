@@ -211,6 +211,7 @@ namespace BKI_HRM
             this.m_tpg_thong_tin_ca_nhan = new System.Windows.Forms.TabPage();
             this.m_txt_ho_khau = new System.Windows.Forms.TextBox();
             this.m_txt_dia_chi = new System.Windows.Forms.TextBox();
+            this.m_txt_ma_headcount = new System.Windows.Forms.TextBox();
             this.m_txt_ma_so_thue = new System.Windows.Forms.TextBox();
             this.m_txt_sdt_nha_rieng = new System.Windows.Forms.TextBox();
             this.m_txt_so_dtdd = new System.Windows.Forms.TextBox();
@@ -228,6 +229,7 @@ namespace BKI_HRM
             this.m_txt_nguyen_quan = new System.Windows.Forms.TextBox();
             this.m_txt_cmnd = new System.Windows.Forms.TextBox();
             this.m_lbl_ho_khau = new System.Windows.Forms.Label();
+            this.m_lbl_ma_headcount = new System.Windows.Forms.Label();
             this.m_lbl_dia_chi = new System.Windows.Forms.Label();
             this.m_lbl_ma_so_thue = new System.Windows.Forms.Label();
             this.m_lbl_sdt_nha_rieng = new System.Windows.Forms.Label();
@@ -275,8 +277,6 @@ namespace BKI_HRM
             this.m_sfd_save_cv = new System.Windows.Forms.SaveFileDialog();
             this.m_lbl_headcount = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.m_lbl_ma_headcount = new System.Windows.Forms.Label();
-            this.m_txt_ma_headcount = new System.Windows.Forms.TextBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).BeginInit();
             this.panel1.SuspendLayout();
@@ -821,6 +821,15 @@ namespace BKI_HRM
             this.m_txt_dia_chi.Size = new System.Drawing.Size(337, 20);
             this.m_txt_dia_chi.TabIndex = 24;
             // 
+            // m_txt_ma_headcount
+            // 
+            this.m_txt_ma_headcount.BackColor = System.Drawing.SystemColors.Info;
+            this.m_txt_ma_headcount.Location = new System.Drawing.Point(677, 202);
+            this.m_txt_ma_headcount.Name = "m_txt_ma_headcount";
+            this.m_txt_ma_headcount.ReadOnly = true;
+            this.m_txt_ma_headcount.Size = new System.Drawing.Size(155, 20);
+            this.m_txt_ma_headcount.TabIndex = 23;
+            // 
             // m_txt_ma_so_thue
             // 
             this.m_txt_ma_so_thue.BackColor = System.Drawing.SystemColors.Info;
@@ -977,6 +986,15 @@ namespace BKI_HRM
             this.m_lbl_ho_khau.Size = new System.Drawing.Size(48, 13);
             this.m_lbl_ho_khau.TabIndex = 75;
             this.m_lbl_ho_khau.Text = "Hộ khẩu";
+            // 
+            // m_lbl_ma_headcount
+            // 
+            this.m_lbl_ma_headcount.AutoSize = true;
+            this.m_lbl_ma_headcount.Location = new System.Drawing.Point(592, 205);
+            this.m_lbl_ma_headcount.Name = "m_lbl_ma_headcount";
+            this.m_lbl_ma_headcount.Size = new System.Drawing.Size(78, 13);
+            this.m_lbl_ma_headcount.TabIndex = 73;
+            this.m_lbl_ma_headcount.Text = "Mã Headcount";
             // 
             // m_lbl_dia_chi
             // 
@@ -1174,6 +1192,7 @@ namespace BKI_HRM
             // 
             this.m_grv_qua_trinh_cong_tac.AllowEditing = false;
             this.m_grv_qua_trinh_cong_tac.ColumnInfo = resources.GetString("m_grv_qua_trinh_cong_tac.ColumnInfo");
+            this.m_grv_qua_trinh_cong_tac.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_qua_trinh_cong_tac.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_grv_qua_trinh_cong_tac.Location = new System.Drawing.Point(3, 3);
             this.m_grv_qua_trinh_cong_tac.Name = "m_grv_qua_trinh_cong_tac";
@@ -1211,7 +1230,9 @@ namespace BKI_HRM
             // 
             // m_grv_hop_dong_ld
             // 
+            this.m_grv_hop_dong_ld.AllowEditing = false;
             this.m_grv_hop_dong_ld.ColumnInfo = resources.GetString("m_grv_hop_dong_ld.ColumnInfo");
+            this.m_grv_hop_dong_ld.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_hop_dong_ld.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_grv_hop_dong_ld.Location = new System.Drawing.Point(0, 0);
             this.m_grv_hop_dong_ld.Name = "m_grv_hop_dong_ld";
@@ -1437,24 +1458,6 @@ namespace BKI_HRM
             this.label3.Size = new System.Drawing.Size(81, 13);
             this.label3.TabIndex = 28;
             this.label3.Text = "Mã Headcount:";
-            // 
-            // m_lbl_ma_headcount
-            // 
-            this.m_lbl_ma_headcount.AutoSize = true;
-            this.m_lbl_ma_headcount.Location = new System.Drawing.Point(592, 205);
-            this.m_lbl_ma_headcount.Name = "m_lbl_ma_headcount";
-            this.m_lbl_ma_headcount.Size = new System.Drawing.Size(78, 13);
-            this.m_lbl_ma_headcount.TabIndex = 73;
-            this.m_lbl_ma_headcount.Text = "Mã Headcount";
-            // 
-            // m_txt_ma_headcount
-            // 
-            this.m_txt_ma_headcount.BackColor = System.Drawing.SystemColors.Info;
-            this.m_txt_ma_headcount.Location = new System.Drawing.Point(677, 202);
-            this.m_txt_ma_headcount.Name = "m_txt_ma_headcount";
-            this.m_txt_ma_headcount.ReadOnly = true;
-            this.m_txt_ma_headcount.Size = new System.Drawing.Size(155, 20);
-            this.m_txt_ma_headcount.TabIndex = 23;
             // 
             // f201_dm_nhan_su
             // 
@@ -2518,9 +2521,11 @@ namespace BKI_HRM
             try
             {
                 print_cv();
+                BaseMessages.MsgBox_Infor("Lưu CV thành công.");
             }
             catch (Exception v_e)
             {
+                BaseMessages.MsgBox_Infor("Lỗi. Không lưu được.");
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }

@@ -298,6 +298,11 @@ namespace BKI_HRM
             if (!CValidateTextBox.IsValid(m_txt_quan_he, DataType.StringType, allowNull.YES, true))
                 return false;
             return true;
+            if (m_dat_ngay_cap.Value.Year - m_dat_ngay_sinh.Value.Year < 10)
+            {
+                BaseMessages.MsgBox_Infor("Ngày cấp CMND không phù hợp với ngày sinh đã nhập.");
+                return false;
+            }
         }
         private void save_image(string ip_str_pathimage)
         {
@@ -392,32 +397,48 @@ namespace BKI_HRM
             this.Close();
         }
         private void xoa_trang(){
-            m_txt_ma_nhan_vien.Text = "";
-            m_txt_ho_dem.Text = "";
-            m_txt_ten.Text = "";
-            m_cbo_gioi_tinh.SelectedIndex = 0;
-            m_dat_ngay_sinh.Value = DateTime.Today;
-            m_txt_noi_sinh.Text = "";
-            m_txt_nguyen_quan.Text = "";
-            m_txt_cmnd.Text = "";
-            m_dat_ngay_cap.Value = DateTime.Today;
-            m_txt_noi_cap.Text = "";
-            m_txt_ton_giao.Text = "";
-            m_txt_dan_toc.Text = "";
-            m_txt_trinh_do.Text = "";
-            m_txt_noi_dao_tao.Text = "";
-            m_txt_chuyen_nganh.Text = "";
-            m_txt_nam_tot_nghiep.Text = "";
-            m_txt_email_co_quan.Text = "";
-            m_txt_email_ca_nhan.Text = "";
-            m_txt_so_dtdd.Text = "";
-            m_txt_sdt_nha_rieng.Text = "";
-            m_txt_ma_so_thue.Text = "";
-            m_txt_dia_chi.Text = "";
-            m_txt_ho_khau.Text = "";
-            m_txt_nguoi_lien_he.Text = "";
-            m_txt_sdt_lien_he.Text = "";
-            m_txt_quan_he.Text = "";
+            switch (m_e_form_mode)
+            {
+                case DataEntryFormMode.InsertDataState:
+                    m_txt_ma_nhan_vien.Text = "";
+                    m_txt_ho_dem.Text = "";
+                    m_txt_ten.Text = "";
+                    m_cbo_gioi_tinh.SelectedIndex = 0;
+                    m_dat_ngay_sinh.Value = DateTime.Today;
+                    m_dat_ngay_sinh.Checked = false;
+                    m_txt_noi_sinh.Text = "";
+                    m_txt_nguyen_quan.Text = "";
+                    m_txt_cmnd.Text = "";
+                    m_dat_ngay_cap.Value = DateTime.Today;
+                    m_dat_ngay_cap.Checked = false;
+                    m_txt_noi_cap.Text = "";
+                    m_txt_ton_giao.Text = "";
+                    m_txt_dan_toc.Text = "";
+                    m_txt_trinh_do.Text = "";
+                    m_txt_noi_dao_tao.Text = "";
+                    m_txt_chuyen_nganh.Text = "";
+                    m_txt_nam_tot_nghiep.Text = "";
+                    m_txt_email_co_quan.Text = "";
+                    m_txt_email_ca_nhan.Text = "";
+                    m_txt_so_dtdd.Text = "";
+                    m_txt_sdt_nha_rieng.Text = "";
+                    m_txt_ma_so_thue.Text = "";
+                    m_txt_dia_chi.Text = "";
+                    m_txt_ho_khau.Text = "";
+                    m_txt_nguoi_lien_he.Text = "";
+                    m_txt_sdt_lien_he.Text = "";
+                    m_txt_quan_he.Text = "";
+                    break;
+                case DataEntryFormMode.SelectDataState:
+                    break;
+                case DataEntryFormMode.UpdateDataState:
+                    us_object_to_form();
+                    break;
+                case DataEntryFormMode.ViewDataState:
+                    break;
+                default:
+                    break;
+            }
         }
         private void set_inital_form_load()
         {

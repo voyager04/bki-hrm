@@ -44,10 +44,14 @@ namespace BKI_HRM
             us_object_to_form();
             this.ShowDialog();
         }
-        public void display_for_view(US_DM_NHAN_SU ip_us_dm_nhan_su)
+        public void display_for_view(US_V_GD_TRANG_THAI_LAO_DONG ip_us_trang_thai_ld)
         {
+            m_us_v_trang_thai_ld = ip_us_trang_thai_ld;
+            m_e_form_mode = DataEntryFormMode.ViewDataState;
             m_cmd_refresh.Visible = false;
             m_cmd_save.Visible = false;
+            m_cmd_chon_file.Visible = false;
+            us_object_to_form();
             this.ShowDialog();
         }
     #endregion
@@ -151,6 +155,58 @@ namespace BKI_HRM
                         m_ofd_openfile.FileName = "";
                     }
                     break;
+                case DataEntryFormMode.ViewDataState:
+                    if (m_us_v_trang_thai_ld.datNGAY_CO_HIEU_LUC > DateTime.Parse("01/01/1900"))
+                        m_dat_ngay_co_hieu_luc.Value = m_us_v_trang_thai_ld.datNGAY_CO_HIEU_LUC;
+                    else
+                        m_dat_ngay_co_hieu_luc.Checked = false;
+                    if (m_us_v_trang_thai_ld.datNGAY_HET_HIEU_LUC != null)
+                        m_dat_ngay_het_hieu_luc.Value = m_us_v_trang_thai_ld.datNGAY_HET_HIEU_LUC;
+                    else
+                        m_dat_ngay_het_hieu_luc.Checked = false;
+                    m_us_quyet_dinh.FillDataset_By_Ma_qd(m_ds_quyet_dinh, m_us_v_trang_thai_ld.strMA_QUYET_DINH);
+                    if (m_ds_quyet_dinh.DM_QUYET_DINH.Select("MA_QUYET_DINH is not null").Length > 0)
+                    {
+                        m_txt_ma_quyet_dinh.Text = m_us_v_trang_thai_ld.strMA_QUYET_DINH;
+                        m_us_quyet_dinh.DataRow2Me((DataRow)m_ds_quyet_dinh.DM_QUYET_DINH.Rows[0]);
+                        m_cbo_loai_quyet_dinh.SelectedValue = m_us_quyet_dinh.dcID_LOAI_QD;
+                        m_dat_ngay_ky.Value = m_us_quyet_dinh.datNGAY_KY;
+                        if (m_us_quyet_dinh.datNGAY_CO_HIEU_LUC > DateTime.Parse("01/01/1900"))
+                            m_dat_ngay_co_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_CO_HIEU_LUC;
+                        else
+                            m_dat_ngay_co_hieu_luc_qd.Checked = false;
+                        if (m_us_quyet_dinh.datNGAY_HET_HIEU_LUC != null)
+                            m_dat_ngay_het_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_HET_HIEU_LUC;
+                        else
+                            m_dat_ngay_het_hieu_luc_qd.Checked = false;
+                        m_txt_noi_dung.Text = m_us_quyet_dinh.strNOI_DUNG;
+                        m_ofd_openfile.FileName = m_us_quyet_dinh.strLINK;
+                    }
+                    else
+                    {
+                        m_txt_ma_quyet_dinh.Text = "";
+                        m_cbo_loai_quyet_dinh.SelectedIndex = 0;
+                        m_dat_ngay_ky.Checked = false;
+                        m_dat_ngay_co_hieu_luc_qd.Checked = false;
+                        m_dat_ngay_het_hieu_luc_qd.Checked = false;
+                        m_txt_noi_dung.Text = "";
+                        m_ofd_openfile.FileName = "";
+                    }
+                    m_txt_noi_dung.ReadOnly = true;
+                    m_txt_noi_dung.BackColor = SystemColors.Info;
+                    m_txt_ma_quyet_dinh.ReadOnly = true;
+                    m_txt_ma_quyet_dinh.BackColor = SystemColors.Info;
+                    m_txt_trang_thai_hien_tai.ReadOnly = true;
+                    m_txt_trang_thai_hien_tai.BackColor = SystemColors.Info;
+                    m_cbo_loai_quyet_dinh.Enabled = false;
+                    m_cbo_trang_thai_moi.Visible = false;
+                    m_lbl_trang_thai_moi.Visible = false;
+                    m_dat_ngay_co_hieu_luc.Enabled = false;
+                    m_dat_ngay_co_hieu_luc_qd.Enabled = false;
+                    m_dat_ngay_co_hieu_luc.Enabled = false;
+                    m_dat_ngay_ky.Enabled = false;
+
+                    break;
                 default: break;
             }
         }
@@ -191,14 +247,16 @@ namespace BKI_HRM
             Process.Start("explorer.exe", m_ofd_openfile.FileName);
         }
         private bool check_validate_data_is_ok(){
-            if (m_dat_ngay_co_hieu_luc.Value.Date < m_dat_ngay_het_hieu_luc.Value.Date)
+            if (m_dat_ngay_co_hieu_luc.Value.Date > m_dat_ngay_het_hieu_luc.Value.Date)
             {
                 BaseMessages.MsgBox_Infor("Ngày hết hiệu lực không thể trước ngày có hiệu lực.");
                 return false;
             }
-            if (m_dat_ngay_het_hieu_luc_qd.Value.Date < m_dat_ngay_co_hieu_luc_qd.Value.Date)
+            if ((m_dat_ngay_het_hieu_luc_qd.Value.Date < m_dat_ngay_co_hieu_luc_qd.Value.Date)
+                || (m_dat_ngay_ky.Value.Date > m_dat_ngay_het_hieu_luc_qd.Value.Date)
+                )
             {
-                BaseMessages.MsgBox_Infor("Ngày hết hiệu lực quyết định không thể trước ngày có hiệu lực quyết định.");
+                BaseMessages.MsgBox_Infor("Ngày hết hiệu lực quyết định không thể trước ngày có hiệu lực quyết định hoặc ngày ký.");
                 return false;
             }
             return true;
@@ -245,8 +303,35 @@ namespace BKI_HRM
             this.Close();
         }
         private void xoa_trang(){
+            switch (m_e_form_mode)
+            {
+                case DataEntryFormMode.InsertDataState:
+                    m_cbo_trang_thai_moi.SelectedIndex = 0;
+                    m_us_quyet_dinh = null;
+                    m_txt_ma_quyet_dinh.Text = "";
+                    m_cbo_loai_quyet_dinh.SelectedIndex = 0;
+                    m_txt_noi_dung.Text = "";
+                    m_dat_ngay_co_hieu_luc.Value = DateTime.Today;
+                    m_dat_ngay_co_hieu_luc_qd.Value = DateTime.Today;
+                    m_dat_ngay_het_hieu_luc.Value = DateTime.Today;
+                    m_dat_ngay_het_hieu_luc_qd.Value = DateTime.Today;
+                    m_dat_ngay_het_hieu_luc.Checked = false;
+                    m_dat_ngay_co_hieu_luc_qd.Checked = false;
+                    m_dat_ngay_ky.Value = DateTime.Today;
+
+                    break;
+                case DataEntryFormMode.SelectDataState:
+                    break;
+                case DataEntryFormMode.UpdateDataState:
+                    us_object_to_form();
+                    break;
+                case DataEntryFormMode.ViewDataState:
+                    break;
+                default:
+                    break;
+            }
+
             
-            m_txt_ho_ten.Text = "";
             
             
         }
