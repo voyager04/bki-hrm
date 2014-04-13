@@ -128,9 +128,9 @@ namespace BKI_HRM
                     m_cbo_loai_quyet_dinh.DataSource = v_ds_loai_quyet_dinh.CM_DM_TU_DIEN;
                     m_cbo_loai_quyet_dinh.DisplayMember = CM_DM_TU_DIEN.TEN;
                     m_cbo_loai_quyet_dinh.ValueMember = CM_DM_TU_DIEN.ID;
-                    //m_us_dm_don_vi.dcID = m_us_v_qua_trinh_lam_viec.dcID_DON_VI;
+                    m_us_dm_don_vi = new US_DM_DON_VI(m_us_v_qua_trinh_lam_viec.dcID_DON_VI);
                     
-                    //m_txt_don_vi_moi.Text = m_us_dm_don_vi.strMA_DON_VI + " - " + m_us_dm_don_vi.strTEN_DON_VI;
+                    m_txt_don_vi_moi.Text = m_us_dm_don_vi.strMA_DON_VI + " - " + m_us_dm_don_vi.strTEN_DON_VI;
 
                     m_dat_ngay_bat_dau.Value = m_us_v_qua_trinh_lam_viec.datNGAY_BAT_DAU;
                     if (m_us_v_qua_trinh_lam_viec.datNGAY_KET_THUC != null)
@@ -143,46 +143,48 @@ namespace BKI_HRM
                     m_cbo_ma_chuc_vu_moi.Enabled = false;
                     m_lbl_ma_chuc_vu_moi.Text = "Mã chức vụ miễn nhiệm";
                     m_lbl_don_vi_moi.Text = "Đơn vị hiện tại";
-                    m_txt_don_vi_moi.Enabled = false;
-                    m_cmd_chon_don_vi.Enabled = false;
+                    m_txt_don_vi_moi.ReadOnly = true;
+                    m_txt_don_vi_moi.BackColor = SystemColors.Info;
+                //    m_txt_don_vi_moi.Text = m_us_dm_don_vi.strMA_DON_VI + " - " + m_us_dm_don_vi.strTEN_DON_VI;
+                    m_cmd_chon_don_vi.Visible = false;
                     m_cbo_loai_chuc_vu.Enabled = false;
                     m_dat_ngay_bat_dau.Enabled = false;
-                    if (m_us_v_qua_trinh_lam_viec.dcID_QUYET_DINH != null)
-                    {
-                        m_us_quyet_dinh.FillDataset_By_Ma_qd(m_ds_quyet_dinh, m_us_v_qua_trinh_lam_viec.strMA_QUYET_DINH);
-                        if (m_ds_quyet_dinh.DM_QUYET_DINH.Select("MA_QUYET_DINH is not null").Length > 0)
-                        {
-                            m_ofd_openfile.FileName = m_us_quyet_dinh.strLINK;
-                            m_txt_ma_quyet_dinh.Text = m_us_v_qua_trinh_lam_viec.strMA_QUYET_DINH;
-                            m_us_quyet_dinh.DataRow2Me((DataRow)m_ds_quyet_dinh.DM_QUYET_DINH.Rows[0]);
-                            m_cbo_loai_quyet_dinh.SelectedValue = m_us_quyet_dinh.dcID_LOAI_QD;
-                            m_dat_ngay_ky.Value = m_us_quyet_dinh.datNGAY_KY;
-                            if (m_us_quyet_dinh.datNGAY_CO_HIEU_LUC > DateTime.Parse("01/01/1900"))
-                                m_dat_ngay_co_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_CO_HIEU_LUC;
-                            else
-                                m_dat_ngay_co_hieu_luc_qd.Checked = false;
-                            if (m_us_quyet_dinh.datNGAY_HET_HIEU_LUC != null)
-                                m_dat_ngay_het_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_HET_HIEU_LUC;
-                            else
-                                m_dat_ngay_het_hieu_luc_qd.Checked = false;
-                            m_txt_noi_dung.Text = m_us_quyet_dinh.strNOI_DUNG;
-                            m_ofd_openfile.FileName = m_us_quyet_dinh.strLINK;
-                        }
-                        else
-                        {
-                            m_txt_ma_quyet_dinh.Text = "";
-                            m_cbo_loai_quyet_dinh.SelectedIndex = 0;
-                            m_dat_ngay_ky.Checked = false;
-                            m_dat_ngay_co_hieu_luc_qd.Checked = false;
-                            m_dat_ngay_het_hieu_luc_qd.Checked = false;
-                            m_txt_noi_dung.Text = "";
-                            m_ofd_openfile.FileName = "";
-                        }
-                    }
-                    else
-                    {
-                        check_quyet_dinh_null = true;
-                    }
+                    //if (m_us_v_qua_trinh_lam_viec.dcID_QUYET_DINH != null)
+                    //{
+                    //    m_us_quyet_dinh.FillDataset_By_Ma_qd(m_ds_quyet_dinh, m_us_v_qua_trinh_lam_viec.strMA_QUYET_DINH);
+                    //    if (m_ds_quyet_dinh.DM_QUYET_DINH.Select("MA_QUYET_DINH is not null").Length > 0)
+                    //    {
+                    //        m_ofd_openfile.FileName = m_us_quyet_dinh.strLINK;
+                    //        m_txt_ma_quyet_dinh.Text = m_us_v_qua_trinh_lam_viec.strMA_QUYET_DINH;
+                    //        m_us_quyet_dinh.DataRow2Me((DataRow)m_ds_quyet_dinh.DM_QUYET_DINH.Rows[0]);
+                    //        m_cbo_loai_quyet_dinh.SelectedValue = m_us_quyet_dinh.dcID_LOAI_QD;
+                    //        m_dat_ngay_ky.Value = m_us_quyet_dinh.datNGAY_KY;
+                    //        if (m_us_quyet_dinh.datNGAY_CO_HIEU_LUC > DateTime.Parse("01/01/1900"))
+                    //            m_dat_ngay_co_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_CO_HIEU_LUC;
+                    //        else
+                    //            m_dat_ngay_co_hieu_luc_qd.Checked = false;
+                    //        if (m_us_quyet_dinh.datNGAY_HET_HIEU_LUC != null)
+                    //            m_dat_ngay_het_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_HET_HIEU_LUC;
+                    //        else
+                    //            m_dat_ngay_het_hieu_luc_qd.Checked = false;
+                    //        m_txt_noi_dung.Text = m_us_quyet_dinh.strNOI_DUNG;
+                    //        m_ofd_openfile.FileName = m_us_quyet_dinh.strLINK;
+                    //    }
+                    //    else
+                    //    {
+                    //        m_txt_ma_quyet_dinh.Text = "";
+                    //        m_cbo_loai_quyet_dinh.SelectedIndex = 0;
+                    //        m_dat_ngay_ky.Checked = false;
+                    //        m_dat_ngay_co_hieu_luc_qd.Checked = false;
+                    //        m_dat_ngay_het_hieu_luc_qd.Checked = false;
+                    //        m_txt_noi_dung.Text = "";
+                    //        m_ofd_openfile.FileName = "";
+                    //    }
+                    //}
+                    //else
+                    //{
+                    //    check_quyet_dinh_null = true;
+                    //}
                     break;
                 default: break;
             }

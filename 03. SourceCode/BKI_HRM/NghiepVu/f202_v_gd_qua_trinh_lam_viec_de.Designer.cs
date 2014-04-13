@@ -75,6 +75,7 @@
             // 
             // m_dat_ngay_ket_thuc
             // 
+            this.m_dat_ngay_ket_thuc.Checked = false;
             this.m_dat_ngay_ket_thuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.m_dat_ngay_ket_thuc.Location = new System.Drawing.Point(404, 161);
             this.m_dat_ngay_ket_thuc.Name = "m_dat_ngay_ket_thuc";
@@ -269,6 +270,7 @@
             // 
             // m_dat_ngay_het_hieu_luc_qd
             // 
+            this.m_dat_ngay_het_hieu_luc_qd.Checked = false;
             this.m_dat_ngay_het_hieu_luc_qd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.m_dat_ngay_het_hieu_luc_qd.Location = new System.Drawing.Point(392, 87);
             this.m_dat_ngay_het_hieu_luc_qd.Name = "m_dat_ngay_het_hieu_luc_qd";
