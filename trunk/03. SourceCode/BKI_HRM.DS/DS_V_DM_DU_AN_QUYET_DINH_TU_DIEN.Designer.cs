@@ -469,6 +469,13 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public V_DM_DU_AN_QUYET_DINH_TU_DIENRow FindByID(decimal ID) {
+                return ((V_DM_DU_AN_QUYET_DINH_TU_DIENRow)(this.Rows.Find(new object[] {
+                            ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public virtual global::System.Collections.IEnumerator GetEnumerator() {
                 return this.Rows.GetEnumerator();
             }
@@ -525,7 +532,10 @@ namespace BKI_HRM.DS {
                 base.Columns.Add(this.columnCO_CHE);
                 this.columnMA_QUYET_DINH = new global::System.Data.DataColumn("MA_QUYET_DINH", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMA_QUYET_DINH);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID}, true));
                 this.columnID.AllowDBNull = false;
+                this.columnID.Unique = true;
                 this.columnMA_DU_AN.AllowDBNull = false;
                 this.columnMA_DU_AN.MaxLength = 35;
                 this.columnTEN_DU_AN.MaxLength = 250;
@@ -535,7 +545,6 @@ namespace BKI_HRM.DS {
                 this.columnLOAI_DU_AN.MaxLength = 250;
                 this.columnNGAY_BAT_DAU.AllowDBNull = false;
                 this.columnNOI_DUNG.MaxLength = 250;
-                this.columnCO_CHE.AllowDBNull = false;
                 this.columnCO_CHE.MaxLength = 250;
                 this.columnMA_QUYET_DINH.AllowDBNull = false;
                 this.columnMA_QUYET_DINH.MaxLength = 50;
@@ -789,7 +798,13 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string CO_CHE {
                 get {
-                    return ((string)(this[this.tableV_DM_DU_AN_QUYET_DINH_TU_DIEN.CO_CHEColumn]));
+                    try {
+                        return ((string)(this[this.tableV_DM_DU_AN_QUYET_DINH_TU_DIEN.CO_CHEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CO_CHE\' in table \'V_DM_DU_AN_QUYET_DINH_TU_DIEN\' is DBNull." +
+                                "", e);
+                    }
                 }
                 set {
                     this[this.tableV_DM_DU_AN_QUYET_DINH_TU_DIEN.CO_CHEColumn] = value;
@@ -841,6 +856,18 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNOI_DUNGNull() {
                 this[this.tableV_DM_DU_AN_QUYET_DINH_TU_DIEN.NOI_DUNGColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCO_CHENull() {
+                return this.IsNull(this.tableV_DM_DU_AN_QUYET_DINH_TU_DIEN.CO_CHEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCO_CHENull() {
+                this[this.tableV_DM_DU_AN_QUYET_DINH_TU_DIEN.CO_CHEColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1020,7 +1047,7 @@ namespace BKI_HRM.DS.DS_V_DM_DU_AN_QUYET_DINH_TU_DIENTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BKI_HRM.DS.Properties.Settings.Default.BKI_HRMConnectionString4;
+            this._connection.ConnectionString = global::BKI_HRM.DS.Properties.Settings.Default.BKI_HRMConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

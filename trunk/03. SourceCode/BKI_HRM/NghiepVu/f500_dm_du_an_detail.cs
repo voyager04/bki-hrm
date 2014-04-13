@@ -217,8 +217,10 @@ namespace BKI_HRM.NghiepVu
             //m_txt_ma_quyet_dinh.Text = dr["TEN_DU_AN"].ToString();
             m_txt_noi_dung.Text = dr["NOI_DUNG"].ToString();
             m_txt_ten_du_an.Text = dr["TEN_DU_AN"].ToString();
-
-            m_cbo_co_che.SelectedValue = CIPConvert.ToDecimal(dr["ID_CO_CHE"].ToString());
+            if (dr["ID_CO_CHE"].ToString() != "")
+            {
+                m_cbo_co_che.SelectedValue = CIPConvert.ToDecimal(dr["ID_CO_CHE"].ToString());    
+            }            
             m_cbo_loai_du_an.SelectedValue = CIPConvert.ToDecimal(dr["ID_LOAI_DU_AN"].ToString());
             m_cbo_trang_thai.SelectedValue = CIPConvert.ToDecimal(dr["ID_TRANG_THAI"].ToString());
 

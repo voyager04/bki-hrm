@@ -503,7 +503,6 @@ namespace BKI_HRM.DS {
                 this.columnNGAY_BAT_DAU.AllowDBNull = false;
                 this.columnTRUONG_DU_AN.ReadOnly = true;
                 this.columnTRUONG_DU_AN.MaxLength = 101;
-                this.columnCO_CHE.AllowDBNull = false;
                 this.columnCO_CHE.MaxLength = 250;
                 this.columnGHI_CHU.MaxLength = 250;
             }
@@ -736,7 +735,12 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string CO_CHE {
                 get {
-                    return ((string)(this[this.tableV_GD_BAO_CAO_DU_AN_2.CO_CHEColumn]));
+                    try {
+                        return ((string)(this[this.tableV_GD_BAO_CAO_DU_AN_2.CO_CHEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CO_CHE\' in table \'V_GD_BAO_CAO_DU_AN_2\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_GD_BAO_CAO_DU_AN_2.CO_CHEColumn] = value;
@@ -805,6 +809,18 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNGAY_KET_THUCNull() {
                 this[this.tableV_GD_BAO_CAO_DU_AN_2.NGAY_KET_THUCColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCO_CHENull() {
+                return this.IsNull(this.tableV_GD_BAO_CAO_DU_AN_2.CO_CHEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCO_CHENull() {
+                this[this.tableV_GD_BAO_CAO_DU_AN_2.CO_CHEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -994,7 +1010,7 @@ namespace BKI_HRM.DS.DS_V_GD_BAO_CAO_DU_AN_2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BKI_HRM.DS.Properties.Settings.Default.BKI_HRMConnectionString3;
+            this._connection.ConnectionString = global::BKI_HRM.DS.Properties.Settings.Default.BKI_HRMConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
