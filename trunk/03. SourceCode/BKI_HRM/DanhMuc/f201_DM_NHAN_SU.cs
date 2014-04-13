@@ -1614,11 +1614,14 @@ namespace BKI_HRM
         }
         private enum e_col_Number_of_hop_dong_lao_dong
         {
-            NGAY_HET_HAN = 4,
-            LOAI_HOP_DONG = 3,
-            MA_HOP_DONG = 1,
-            TRANG_THAI_HOP_DONG = 5,
-            NGAY_CO_HIEU_LUC = 2
+            NGAY_HET_HAN = 8,
+            LOAI_HOP_DONG = 5,
+            MA_HOP_DONG = 4,
+            TRANG_THAI_HOP_DONG = 12,
+            NGAY_CO_HIEU_LUC = 7,
+            NGAY_KY_HOP_DONG = 6,
+            NGUOI_KY = 10,
+            CHUC_VU_NGUOI_KY = 11
 
         }	
 		#endregion
@@ -1803,7 +1806,9 @@ namespace BKI_HRM
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.LOAI_HOP_DONG, e_col_Number_of_hop_dong_lao_dong.LOAI_HOP_DONG);
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.NGAY_CO_HIEU_LUC, e_col_Number_of_hop_dong_lao_dong.NGAY_CO_HIEU_LUC);
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.NGAY_HET_HAN, e_col_Number_of_hop_dong_lao_dong.NGAY_HET_HAN);
-          
+            v_htb.Add(V_GD_HOP_DONG_LAO_DONG.CHUC_VU_NGUOI_KY, e_col_Number_of_hop_dong_lao_dong.CHUC_VU_NGUOI_KY);
+            v_htb.Add(V_GD_HOP_DONG_LAO_DONG.NGAY_KY_HOP_DONG, e_col_Number_of_hop_dong_lao_dong.NGAY_KY_HOP_DONG);
+            v_htb.Add(V_GD_HOP_DONG_LAO_DONG.NGUOI_KY, e_col_Number_of_hop_dong_lao_dong.NGUOI_KY);
             DS_V_GD_HOP_DONG_LAO_DONG v_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, v_ds.V_GD_HOP_DONG_LAO_DONG.NewRow());
             return v_obj_trans;
