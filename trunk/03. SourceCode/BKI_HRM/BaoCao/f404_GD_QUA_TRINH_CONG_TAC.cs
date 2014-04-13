@@ -265,7 +265,7 @@ namespace BKI_HRM
             this.MaximumSize = new System.Drawing.Size(1017, 465);
             this.MinimumSize = new System.Drawing.Size(1017, 465);
             this.Name = "f404_GD_QUA_TRINH_CONG_TAC";
-            this.Text = "f404_GD_QUA_TRINH_CONG_TAC";
+            this.Text = "F404 - Báo cáo quá trình công tác";
             this.Load += new System.EventHandler(this.f404_GD_QUA_TRINH_CONG_TAC_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
@@ -341,7 +341,7 @@ namespace BKI_HRM
 			v_htb.Add(GD_QUA_TRINH_CONG_TAC.LAM_GI, e_col_Number.LAM_GI);
 			v_htb.Add(GD_QUA_TRINH_CONG_TAC.MA_QUYET_DINH, e_col_Number.MA_QUYET_DINH);
 			v_htb.Add(GD_QUA_TRINH_CONG_TAC.O_DAU, e_col_Number.O_DAU);
-									
+            v_htb.Add(GD_QUA_TRINH_CONG_TAC.TY_LE_THAM_GIA, e_col_Number.TY_LE_THAM_GIA);						
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.GD_QUA_TRINH_CONG_TAC.NewRow());
 			return v_obj_trans;			
 		}
