@@ -123,7 +123,7 @@ namespace BKI_HRM
             m_txt_ma_nhan_vien.Text = m_us_dm_nhan_su.strMA_NV;
             m_txt_ho_dem.Text = m_us_dm_nhan_su.strHO_DEM;
             m_txt_ten.Text = m_us_dm_nhan_su.strTEN;
-            m_cbo_gioi_tinh.SelectedIndex = (m_us_dm_nhan_su.strGIOI_TINH.Equals("Nam") == true) ? 1 : 2;
+            m_cbo_gioi_tinh.SelectedIndex = (m_us_dm_nhan_su.strGIOI_TINH.Equals("Nam") == true) ? 0 : 1;
             if (m_us_dm_nhan_su.datNGAY_SINH.Year > 1900)
                 m_dat_ngay_sinh.Value = m_us_dm_nhan_su.datNGAY_SINH;
             else
@@ -220,13 +220,25 @@ namespace BKI_HRM
                 BaseMessages.MsgBox_Warning(203);
                 return false;
             }
-            if (m_cbo_gioi_tinh.SelectedIndex == 0)
-            {
-                BaseMessages.MsgBox_Warning(204);
-                return false;
-            }
+            //if (m_cbo_gioi_tinh.SelectedIndex == 0)
+            //{
+            //    BaseMessages.MsgBox_Warning(204);
+            //    return false;
+            //}
             if ((m_dat_ngay_sinh.Checked == true) && (DateTime.Today.Year - m_dat_ngay_sinh.Value.Year) < 15){
                 BaseMessages.MsgBox_Warning(205);
+                return false;
+            }
+            if ((m_dat_ngay_sinh.Checked == true)
+                && (m_dat_ngay_cap.Checked == true)
+                && (m_dat_ngay_cap.Value.Year - m_dat_ngay_sinh.Value.Year < 10))
+            {
+                BaseMessages.MsgBox_Warning(219);
+                return false;
+            }
+            if ((m_dat_ngay_cap.Checked = true) && (m_dat_ngay_cap.Value.Date > DateTime.Today))
+            {
+                BaseMessages.MsgBox_Warning(220);
                 return false;
             }
             if (!CValidateTextBox.IsValid(m_txt_noi_sinh, DataType.StringType, allowNull.YES, true)){
@@ -428,11 +440,20 @@ namespace BKI_HRM
                     m_txt_nguoi_lien_he.Text = "";
                     m_txt_sdt_lien_he.Text = "";
                     m_txt_quan_he.Text = "";
+                    m_ptb_anh.Image = m_ptb_anh.ErrorImage;
+                    m_ofd_chon_anh.FileName = "";
                     break;
                 case DataEntryFormMode.SelectDataState:
                     break;
                 case DataEntryFormMode.UpdateDataState:
                     us_object_to_form();
+                    if (m_us_dm_nhan_su.strANH != "")
+                        m_ptb_anh.Image = new Bitmap(m_us_dm_nhan_su.strANH);
+                    else
+                    {
+                        m_ptb_anh.Image = m_ptb_anh.ErrorImage;
+                    }
+                    m_ofd_chon_anh.FileName = "";
                     break;
                 case DataEntryFormMode.ViewDataState:
                     break;
