@@ -435,19 +435,14 @@
        public const string MA_NV = "MA_NV";
        public const string HO_DEM = "HO_DEM";
        public const string TEN = "TEN";
-       public const string MA_CV = "MA_CV";
-       public const string TEN_CV = "TEN_CV";
-       public const string MA_DON_VI = "MA_DON_VI";
-       public const string TEN_DON_VI = "TEN_DON_VI";
        public const string VI_TRI = "VI_TRI";
        public const string THOI_DIEM_TG = "THOI_DIEM_TG";
        public const string THOI_DIEM_KT = "THOI_DIEM_KT";
        public const string THOI_GIAN_TG = "THOI_GIAN_TG";
        public const string DANH_HIEU = "DANH_HIEU";
        public const string ID = "ID";
-       public const string ID_LOAI_CV = "ID_LOAI_CV";
        public const string MO_TA = "MO_TA";
-       public const string TRANG_THAI_CV = "TRANG_THAI_CV";
+       public const string LUA_CHON = "LUA_CHON";
    }
 
    public class V_BAO_CAO_NHAN_SU {

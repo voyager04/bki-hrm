@@ -129,8 +129,6 @@ namespace BKI_HRM.NghiepVu
             Hashtable v_htb = new Hashtable();
             v_htb.Add(V_DM_NHAN_SU_DU_AN.VI_TRI, e_col_Number.VI_TRI);
 
-            v_htb.Add(V_DM_NHAN_SU_DU_AN.TEN_DON_VI, e_col_Number.TEN_DON_VI);
-
             v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_NV, e_col_Number.MA_NV);
 
             v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_DU_AN, e_col_Number.MA_DU_AN);
@@ -141,32 +139,15 @@ namespace BKI_HRM.NghiepVu
 
             v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_DIEM_KT, e_col_Number.THOI_DIEM_KT);
 
-            v_htb.Add(V_DM_NHAN_SU_DU_AN.TEN, e_col_Number.TEN);
-
-            
-
-            v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_DON_VI, e_col_Number.MA_DON_VI);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.TEN, e_col_Number.TEN);        
 
             v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_DIEM_TG, e_col_Number.THOI_DIEM_TG);
 
-            v_htb.Add(V_DM_NHAN_SU_DU_AN.HO_DEM, e_col_Number.HO_DEM);
-
-            
-
-            v_htb.Add(V_DM_NHAN_SU_DU_AN.TEN_CV, e_col_Number.TEN_CV);
-
-            
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.HO_DEM, e_col_Number.HO_DEM);         
 
             v_htb.Add(V_DM_NHAN_SU_DU_AN.TEN_DU_AN, e_col_Number.TEN_DU_AN);
 
-            
-
-            v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_CV, e_col_Number.MA_CV);
-
             v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_GIAN_TG, e_col_Number.THOI_GIAN_TG);
-
-            v_htb.Add(V_DM_NHAN_SU_DU_AN.TRANG_THAI_CV, e_col_Number.TRANG_THAI_CV);
-
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds_nsda.V_DM_NHAN_SU_DU_AN.NewRow());
             return v_obj_trans;
