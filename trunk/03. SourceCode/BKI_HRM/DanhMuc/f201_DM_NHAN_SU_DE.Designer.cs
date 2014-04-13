@@ -277,6 +277,7 @@
             // 
             // m_dat_ngay_sinh
             // 
+            this.m_dat_ngay_sinh.Checked = false;
             this.m_dat_ngay_sinh.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_sinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.m_dat_ngay_sinh.Location = new System.Drawing.Point(360, 96);
@@ -344,6 +345,7 @@
             // 
             // m_dat_ngay_cap
             // 
+            this.m_dat_ngay_cap.Checked = false;
             this.m_dat_ngay_cap.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_cap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_cap.Location = new System.Drawing.Point(360, 245);
