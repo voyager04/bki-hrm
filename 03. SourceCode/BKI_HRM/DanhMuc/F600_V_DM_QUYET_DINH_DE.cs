@@ -175,7 +175,7 @@ namespace BKI_HRM.DanhMuc
         }
         private bool kiem_tra_ngay_truoc_sau()
         {
-            if (m_dat_ngay_co_hieu_luc.Value >= m_dat_ngay_het_hieu_luc.Value)
+            if (m_dat_ngay_co_hieu_luc.Value.Date >= m_dat_ngay_het_hieu_luc.Value.Date)
             {
                BaseMessages.MsgBox_Error("Ngày có hiệu lực phải trước ngày hết hiệu lực!");
                 return false;
