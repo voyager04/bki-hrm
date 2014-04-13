@@ -51,6 +51,9 @@
             this.m_cbo_danh_hieu = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.m_txt_mo_ta = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.m_txt_thoi_gian_tham_gia = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,7 +82,7 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_refresh);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 239);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 282);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(697, 36);
@@ -274,7 +277,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(28, 181);
+            this.label5.Location = new System.Drawing.Point(28, 213);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 13);
             this.label5.TabIndex = 46;
@@ -284,17 +287,47 @@
             // 
             this.m_txt_mo_ta.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_mo_ta.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_mo_ta.Location = new System.Drawing.Point(144, 174);
+            this.m_txt_mo_ta.Location = new System.Drawing.Point(144, 206);
             this.m_txt_mo_ta.Multiline = true;
             this.m_txt_mo_ta.Name = "m_txt_mo_ta";
             this.m_txt_mo_ta.Size = new System.Drawing.Size(483, 53);
             this.m_txt_mo_ta.TabIndex = 45;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(28, 177);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(94, 13);
+            this.label6.TabIndex = 48;
+            this.label6.Text = "Thời gian tham gia";
+            // 
+            // m_txt_thoi_gian_tham_gia
+            // 
+            this.m_txt_thoi_gian_tham_gia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_txt_thoi_gian_tham_gia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.m_txt_thoi_gian_tham_gia.Location = new System.Drawing.Point(144, 170);
+            this.m_txt_thoi_gian_tham_gia.Name = "m_txt_thoi_gian_tham_gia";
+            this.m_txt_thoi_gian_tham_gia.Size = new System.Drawing.Size(170, 20);
+            this.m_txt_thoi_gian_tham_gia.TabIndex = 47;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(317, 173);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(21, 13);
+            this.label7.TabIndex = 49;
+            this.label7.Text = "(%)";
+            // 
             // F500_gd_chi_tiet_du_an_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 275);
+            this.ClientSize = new System.Drawing.Size(697, 318);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.m_txt_thoi_gian_tham_gia);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.m_txt_mo_ta);
             this.Controls.Add(this.m_cbo_danh_hieu);
@@ -343,6 +376,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox m_txt_mo_ta;
         internal System.Windows.Forms.ImageList ImageList;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox m_txt_thoi_gian_tham_gia;
+        private System.Windows.Forms.Label label7;
        // internal System.Windows.Forms.ImageList ImageList;
 
     }

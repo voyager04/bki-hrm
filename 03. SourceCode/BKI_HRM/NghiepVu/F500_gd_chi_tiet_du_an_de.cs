@@ -77,14 +77,6 @@ namespace BKI_HRM.NghiepVu
             {
                 DateTime v_dat = (DateTime)v_dr[GD_CHI_TIET_DU_AN.THOI_DIEM_KT];
                 m_dat_ngay_kt.Value = (DateTime)v_dr["THOI_DIEM_KT"];
-                //if (v_dat.Year < 2030)
-                //{
-                    
-                //}
-                //else
-                //{
-                    
-                //}
             }
             else
             {
@@ -93,6 +85,7 @@ namespace BKI_HRM.NghiepVu
             
             m_dat_tham_gia.Value = (DateTime)v_dr["THOI_DIEM_TG"];
 
+            m_txt_thoi_gian_tham_gia.Text = v_dr[GD_CHI_TIET_DU_AN.THOI_GIAN_TG].ToString();
             
 
             US_DM_NHAN_SU v_us_dm_ns = new US_DM_NHAN_SU();
@@ -175,8 +168,7 @@ namespace BKI_HRM.NghiepVu
                 m_us.datTHOI_DIEM_KT = m_dat_ngay_kt.Value.Date;    
             }
             else
-            {
-                //m_us.datTHOI_DIEM_KT = DateTime.Parse("12/31/2099");
+            { 
                 m_us.SetTHOI_DIEM_KTNull();
             }
             if (m_dat_tham_gia.Checked)
@@ -186,7 +178,16 @@ namespace BKI_HRM.NghiepVu
             else
             {
                 m_us.datTHOI_DIEM_TG = DateTime.Parse("01/01/1900");
-            }                  
+            }
+            if (m_txt_thoi_gian_tham_gia.Text != "")
+            {
+                m_us.dcTHOI_GIAN_TG = CIPConvert.ToDecimal(m_txt_thoi_gian_tham_gia.Text);
+            }
+            else
+            {
+                m_us.SetTHOI_GIAN_TGNull();
+            }
+
         }
 
         private bool check_data_is_ok()
