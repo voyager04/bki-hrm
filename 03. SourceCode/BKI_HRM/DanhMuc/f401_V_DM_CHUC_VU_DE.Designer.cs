@@ -295,7 +295,7 @@
             this.Controls.Add(this.m_txt_macv);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f401_V_DM_CHUC_VU_DE";
-            this.Text = "f401_DM_CHUC_VU_DE";
+            this.Text = "F401 - Chi tiết chức vụ";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
