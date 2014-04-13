@@ -714,6 +714,9 @@ namespace BKI_HRM
         {
             try
             {
+                m_cmd_delete.Visible = false;
+                m_cmd_insert.Visible = false;
+                m_cmd_update.Visible = false;
                 m_obj_trans = get_trans_object(m_grv_du_an);
                 US.US_V_DM_DU_AN_QUYET_DINH_TU_DIEN v_us = new US_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
                 DS.DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN v_ds = new DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
