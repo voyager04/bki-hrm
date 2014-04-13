@@ -68,6 +68,8 @@
             this.m_cbo_loai_hop_dong = new System.Windows.Forms.ComboBox();
             this.m_cbo_phap_nhan = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.m_cmd_bo_dinh_kem = new SIS.Controls.Button.SiSButton();
+            this.m_sfd_in_hop_dong = new System.Windows.Forms.SaveFileDialog();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -78,7 +80,7 @@
             this.m_cmd_chon_file.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_chon_file.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_chon_file.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_chon_file.ImageIndex = 18;
+            this.m_cmd_chon_file.ImageIndex = 3;
             this.m_cmd_chon_file.ImageList = this.ImageList;
             this.m_cmd_chon_file.Location = new System.Drawing.Point(613, 137);
             this.m_cmd_chon_file.Name = "m_cmd_chon_file";
@@ -483,11 +485,27 @@
             this.label7.TabIndex = 118;
             this.label7.Text = "Pháp nhân";
             // 
+            // m_cmd_bo_dinh_kem
+            // 
+            this.m_cmd_bo_dinh_kem.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_bo_dinh_kem.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_bo_dinh_kem.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_bo_dinh_kem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_bo_dinh_kem.ImageIndex = 4;
+            this.m_cmd_bo_dinh_kem.ImageList = this.ImageList;
+            this.m_cmd_bo_dinh_kem.Location = new System.Drawing.Point(512, 137);
+            this.m_cmd_bo_dinh_kem.Name = "m_cmd_bo_dinh_kem";
+            this.m_cmd_bo_dinh_kem.Size = new System.Drawing.Size(95, 28);
+            this.m_cmd_bo_dinh_kem.TabIndex = 119;
+            this.m_cmd_bo_dinh_kem.Text = "Gỡ đính kèm";
+            this.m_cmd_bo_dinh_kem.Click += new System.EventHandler(this.m_cmd_bo_dinh_kem_Click);
+            // 
             // f701_v_gd_hop_dong_lao_dong_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1054, 437);
+            this.Controls.Add(this.m_cmd_bo_dinh_kem);
             this.Controls.Add(this.m_cbo_phap_nhan);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.m_cbo_loai_hop_dong);
@@ -561,5 +579,7 @@
         private System.Windows.Forms.ComboBox m_cbo_phap_nhan;
         private System.Windows.Forms.Label label7;
         internal SIS.Controls.Button.SiSButton m_cmd_refresh;
+        internal SIS.Controls.Button.SiSButton m_cmd_bo_dinh_kem;
+        private System.Windows.Forms.SaveFileDialog m_sfd_in_hop_dong;
     }
 }

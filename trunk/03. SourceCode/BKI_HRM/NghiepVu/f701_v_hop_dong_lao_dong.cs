@@ -249,6 +249,7 @@ namespace BKI_HRM
             // m_txt_tim_kiem
             // 
             this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.m_txt_tim_kiem.ForeColor = System.Drawing.Color.Gray;
             this.m_txt_tim_kiem.Location = new System.Drawing.Point(226, 22);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
@@ -500,6 +501,19 @@ namespace BKI_HRM
             return false;
         }
 
+        private void auto_suggest_text()
+        {
+            US_V_GD_HOP_DONG_LAO_DONG v_us_v_gd_hop_dong = new US_V_GD_HOP_DONG_LAO_DONG();
+            DS_V_GD_HOP_DONG_LAO_DONG v_ds_v_gd_hop_dong = new DS_V_GD_HOP_DONG_LAO_DONG();
+            v_us_v_gd_hop_dong.FillDataset(v_ds_v_gd_hop_dong);
+            var v_acsc_search = new AutoCompleteStringCollection();
+            foreach (DataRow dr in v_ds_v_gd_hop_dong.V_GD_HOP_DONG_LAO_DONG)
+            {
+                v_acsc_search.Add(dr[V_GD_HOP_DONG_LAO_DONG.HO_DEM].ToString() + " " + dr[V_GD_HOP_DONG_LAO_DONG.TEN].ToString());
+            }
+            m_txt_tim_kiem.AutoCompleteCustomSource = v_acsc_search;
+        }
+
         #endregion
 
         #region Event
@@ -547,6 +561,7 @@ namespace BKI_HRM
                 m_txt_tim_kiem.ForeColor = Color.Gray;
                 set_initial_form_load();
                 m_txt_tim_kiem.Focus();
+                auto_suggest_text();
             }
             catch (Exception v_e)
             {

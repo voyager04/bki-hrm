@@ -13,6 +13,7 @@ using BKI_HRM.DS.CDBNames;
 using BKI_HRM.US;
 using BKI_HRM.DS;
 using IP.Core.IPCommon;
+using IP.Core.IPWordReport;
 
 namespace BKI_HRM.NghiepVu
 {
@@ -67,6 +68,7 @@ namespace BKI_HRM.NghiepVu
         private string m_str_destination = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
         private string m_str_path = "";
         private string m_str_file_name = "";
+        private string m_str_file_name_old = "";
         private string m_str_origination = "";
         private string m_str_old_path = "";
         private decimal m_str_id_hop_dong_old;
@@ -81,11 +83,11 @@ namespace BKI_HRM.NghiepVu
                 return false;
             }
 
-            //if (!Regex.IsMatch(m_txt_ma_hop_dong.Text, @"[\d\w]+[-/]*?"))
-            //{
-            //    BaseMessages.MsgBox_Infor("Bạn nhập Mã Hợp Đồng chưa đúng định dạng");
-            //    return false;
-            //}
+            if (!Regex.IsMatch(m_txt_ma_hop_dong.Text, "^[\\w-/\\s]+$"))
+            {
+                BaseMessages.MsgBox_Infor("Bạn nhập Mã Hợp Đồng chưa đúng định dạng");
+                return false;
+            }
 
             if (m_lbl_ma_nhan_vien.Text == "")
             {
@@ -93,19 +95,19 @@ namespace BKI_HRM.NghiepVu
                 return false;
             }
 
-            if ((m_dat_ngay_ky_hop_dong.Value - m_dat_ngay_co_hieu_luc.Value).TotalHours > 0 )
+            if (m_dat_ngay_ky_hop_dong.Value > m_dat_ngay_co_hieu_luc.Value)
             {
                 BaseMessages.MsgBox_Infor("Ngày ký Hợp Đồng không thể lớn hơn ngày Hợp Đồng có hiệu lực.");
                 return false;
             }
 
-            if ((m_dat_ngay_ky_hop_dong.Value - m_dat_ngay_het_han.Value).TotalHours > 0)
+            if (m_dat_ngay_ky_hop_dong.Value > m_dat_ngay_het_han.Value)
             {
                 BaseMessages.MsgBox_Infor("Ngày ký Hợp Đồng không thể lớn hơn ngày Hợp Đồng hết hạn.");
                 return false;
             }
 
-            if ((m_dat_ngay_co_hieu_luc.Value - m_dat_ngay_het_han.Value).TotalHours > 0)
+            if (m_dat_ngay_co_hieu_luc.Value > m_dat_ngay_het_han.Value)
             {
                 BaseMessages.MsgBox_Infor("Ngày Hợp Đồng có hiệu lực không thể lớn hơn ngày Hợp Đồng hết hạn.");
                 return false;
@@ -117,7 +119,7 @@ namespace BKI_HRM.NghiepVu
         {
             m_us.strMA_HOP_DONG = m_txt_ma_hop_dong.Text.Trim();
             m_us.dcID_LOAI_HOP_DONG = (decimal)m_cbo_loai_hop_dong.SelectedValue;
-            m_us.dcID_PHAP_NHAN = (decimal) m_cbo_phap_nhan.SelectedValue;
+            m_us.dcID_PHAP_NHAN = (decimal)m_cbo_phap_nhan.SelectedValue;
             m_us.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value;
             m_us.strTRANG_THAI_HOP_DONG = m_cbo_trang_thai.SelectedIndex.Equals(0) ? "Y" : "N";
             m_us.strLINK = m_lbl_file_name.Text;
@@ -138,7 +140,7 @@ namespace BKI_HRM.NghiepVu
             {
                 m_us.dcID_NHAN_SU = m_us_dm_nhan_su.dcID;
             }
-            
+
 
             if (m_dat_ngay_het_han.Checked == false)
                 m_us.SetNGAY_HET_HANNull();
@@ -153,6 +155,10 @@ namespace BKI_HRM.NghiepVu
 
             form_2_us_object();
             upload_file();
+            if (File.Exists(m_str_destination + "TOPICA-" + m_str_file_name_old) && m_lbl_file_name.Text.Trim().Length.Equals(0))
+            {
+                File.Delete(m_str_destination + "TOPICA-" + m_str_file_name_old);
+            }
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.InsertDataState:
@@ -327,10 +333,49 @@ namespace BKI_HRM.NghiepVu
 
         }
 
-        //TODO : xuất word
         private void xuat_word()
         {
+            US_GD_HOP_DONG v_us_gd_hop_dong = new US_GD_HOP_DONG(m_us.dcID);
+            US_DM_NHAN_SU v_us_dm_nhan_su = new US_DM_NHAN_SU(v_us_gd_hop_dong.dcID_NHAN_SU);
+            US_CM_DM_TU_DIEN v_us_tu_dien = new US_CM_DM_TU_DIEN(v_us_gd_hop_dong.dcID_LOAI_HOP_DONG);
+            m_sfd_in_hop_dong.Filter = "(*.doc)|*.doc|(*.docx)|*.docx";
+            m_sfd_in_hop_dong.Title = "Lưu Hợp Đồng Lao Động";
+            DialogResult result = m_sfd_in_hop_dong.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                CWordReport v_obj_word = new CWordReport("THR_Hopdonglaodong_KTH_v2_TU.docx", m_sfd_in_hop_dong.FileName);
 
+                v_obj_word.AddFindAndReplace("<HO_TEN>", v_us_dm_nhan_su.strHO_DEM + " " + v_us_dm_nhan_su.strTEN);
+                if (v_us_dm_nhan_su.datNGAY_SINH > DateTime.Parse("1/1/1900") && v_us_dm_nhan_su.datNGAY_SINH != null)
+                    v_obj_word.AddFindAndReplace("<NGAY_SINH>", v_us_dm_nhan_su.datNGAY_SINH.ToShortDateString());
+                else
+                    v_obj_word.AddFindAndReplace("<NGAY_SINH>", "");
+                v_obj_word.AddFindAndReplace("<CHO_O>", v_us_dm_nhan_su.strCHO_O);
+                v_obj_word.AddFindAndReplace("<CMTND>", v_us_dm_nhan_su.strCMND);
+                v_obj_word.AddFindAndReplace("<NGAY_CAP>", v_us_dm_nhan_su.datNGAY_CAP_CMND.ToShortDateString());
+                v_obj_word.AddFindAndReplace("<NOI_CAP>", v_us_dm_nhan_su.strNOI_CAP_CMND);
+                v_obj_word.AddFindAndReplace("<MOBILE>", v_us_dm_nhan_su.strDI_DONG);
+                v_obj_word.AddFindAndReplace("<LOAI_HOP_DONG>", v_us_tu_dien.strTEN);
+                v_obj_word.AddFindAndReplace("<NGAY_KY>", v_us_gd_hop_dong.datNGAY_KY_HOP_DONG.ToShortDateString());
+                v_obj_word.AddFindAndReplace("<CHUYEN_NGANH>", v_us_dm_nhan_su.strCHUYEN_NGANH);
+                v_obj_word.AddFindAndReplace("<MA_PHONG>", "...");
+                v_obj_word.AddFindAndReplace("<MA_BAN>", "...");
+                v_obj_word.AddFindAndReplace("<MA_NHAN_VIEN>", v_us_dm_nhan_su.strMA_NV);
+
+                if (v_us_gd_hop_dong.datNGAY_KY_HOP_DONG > DateTime.Parse("1/1/1900") && v_us_gd_hop_dong.datNGAY_KY_HOP_DONG != null)
+                {
+                    v_obj_word.AddFindAndReplace("<NGAY>", v_us_gd_hop_dong.datNGAY_KY_HOP_DONG.Day.ToString());
+                    v_obj_word.AddFindAndReplace("<THANG>", v_us_gd_hop_dong.datNGAY_KY_HOP_DONG.Month.ToString());
+                    v_obj_word.AddFindAndReplace("<NAM>", v_us_gd_hop_dong.datNGAY_KY_HOP_DONG.Year.ToString());
+                }
+                else
+                {
+                    v_obj_word.AddFindAndReplace("<NGAY>", "...");
+                    v_obj_word.AddFindAndReplace("<THANG>", "...");
+                    v_obj_word.AddFindAndReplace("<NAM>", "...");
+                    v_obj_word.Export2Word("", false);
+                }
+            }
         }
 
         private void xoatrang()
@@ -438,6 +483,15 @@ namespace BKI_HRM.NghiepVu
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_bo_dinh_kem_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(m_str_destination + "TOPICA-" + m_lbl_file_name.Text))
+            {
+                m_str_file_name_old = m_lbl_file_name.Text;
+                m_lbl_file_name.Text = "";
             }
         }
         #endregion
