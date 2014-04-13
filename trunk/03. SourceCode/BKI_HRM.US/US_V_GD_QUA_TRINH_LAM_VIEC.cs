@@ -767,14 +767,14 @@ namespace BKI_HRM.US {
             command.fillDataSetByCommand(this, op_ds);
 
         }
-        public void FillDataset_search(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds,
-            string ip_str_tim_kiem) {
+        public void FillDataset_search(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds,string ip_str_tim_kiem) {
             var command = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_Search1");
 
             command.addNVarcharInputParam("@TIM_KIEM", ip_str_tim_kiem);
             command.fillDataSetByCommand(this, op_ds);
 
         }
+        
         public void FillDatasetByManhanvien(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds,
             string ip_str_ma_nv,
             DateTime ip_dat_ngay_bat_dau,
@@ -806,18 +806,25 @@ namespace BKI_HRM.US {
             v_sp.addDatetimeInputParam("@THOI_DIEM", ip_dat_thoi_diem);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
+        
         public void FillDataset_chuc_vu_hien_tai(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds, string ip_str_ma_nv) {
             CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_chuc_vu_hien_tai");
             v_sp.addNVarcharInputParam("@MA_NHAN_VIEN", ip_str_ma_nv);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
 
-
         public void delete_by_id_gd_chi_tiet_chuc_vu(decimal ip_dc_id_chi_tiet_chuc_vu) {
             CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_Delete");
             v_sp.addDecimalInputParam("@ID", ip_dc_id_chi_tiet_chuc_vu);
             v_sp.ExecuteCommand(this);
         }
+
+        public void FillDatasetByIdDonVi(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds_qua_trinh_lam_viec, decimal ip_id_don_vi){
+            CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_load_by_id_don_vi");
+            v_sp.addDecimalInputParam("@ID_DON_VI", ip_id_don_vi);
+            v_sp.fillDataSetByCommand(this, op_ds_qua_trinh_lam_viec);
+        }
+        
         #endregion
 
     }
