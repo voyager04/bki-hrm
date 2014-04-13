@@ -405,7 +405,7 @@ namespace BKI_HRM
         }
         private void export_2_excel()
         {
-            CExcelReport v_obj_excel_rpt = new CExcelReport("f402_bao_cao_nhan_su_chuc_vu.xlsx", 2, 1);
+            CExcelReport v_obj_excel_rpt = new CExcelReport("f402_bao_cao_nhan_su_chuc_vu.xlsx", 3, 1);
             v_obj_excel_rpt.AddFindAndReplaceItem("<thoi_diem>", m_dtp_thoidiem.Value.Date);
             v_obj_excel_rpt.FindAndReplace(false);
             v_obj_excel_rpt.Export2ExcelWithoutFixedRows(m_fg, 1, m_fg.Cols.Count - 1, true);
