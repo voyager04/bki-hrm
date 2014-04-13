@@ -17,6 +17,7 @@ using IP.Core.IPException;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
 using IP.Core.IPSystemAdmin;
+using IP.Core.IPExcelReport;
 
 using BKI_HRM.US;
 using BKI_HRM.DS;
@@ -149,6 +150,7 @@ namespace BKI_HRM
             this.m_cmd_xuat_excel.Size = new System.Drawing.Size(93, 28);
             this.m_cmd_xuat_excel.TabIndex = 4;
             this.m_cmd_xuat_excel.Text = "Xuất Excel";
+            this.m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
             // 
             // m_cmd_exit
             // 
@@ -401,6 +403,13 @@ namespace BKI_HRM
             }
             m_txt_tim_kiem.AutoCompleteCustomSource = v_acsc_search;
         }
+        private void export_2_excel()
+        {
+            CExcelReport v_obj_excel_rpt = new CExcelReport("f402_bao_cao_nhan_su_chuc_vu.xlsx", 2, 1);
+            v_obj_excel_rpt.AddFindAndReplaceItem("<thoi_diem>", m_dtp_thoidiem.Value.Date);
+            v_obj_excel_rpt.FindAndReplace(false);
+            v_obj_excel_rpt.Export2ExcelWithoutFixedRows(m_fg, 1, m_fg.Cols.Count - 1, true);
+        }
 		#endregion
 
 //
@@ -479,6 +488,18 @@ namespace BKI_HRM
                     load_data_2_grid_search();
 
                 }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                export_2_excel();
             }
             catch (Exception v_e)
             {
