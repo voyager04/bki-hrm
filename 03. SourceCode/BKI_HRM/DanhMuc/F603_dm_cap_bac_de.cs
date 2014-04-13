@@ -26,6 +26,10 @@ namespace BKI_HRM.DanhMuc
             format_control();
 
         }
+        public void get_us(ref US_DM_CAP_BAC op_us)
+        {
+            op_us = m_us;
+        }
         public void display_for_insert()
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
