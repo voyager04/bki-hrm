@@ -219,6 +219,7 @@ namespace BKI_HRM
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Location = new System.Drawing.Point(0, 53);
             this.m_fg.Name = "m_fg";
+            this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Row;
             this.m_fg.Size = new System.Drawing.Size(686, 314);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
@@ -403,9 +404,11 @@ namespace BKI_HRM
         {
             F603_dm_cap_bac_de v_fDE = new F603_dm_cap_bac_de();
             v_fDE.display_for_insert();
-            m_txt_tim_kiem.Text = "";
+            //m_txt_tim_kiem.Text = "";
             load_data_2_grid();
-            m_txt_tim_kiem.Text = m_str_tim_kiem;
+            v_fDE.get_us(ref m_us);
+            WinFormControls.set_focus_for_grid(m_fg, m_us.strMA_BAC, 2);
+            //m_txt_tim_kiem.Text = m_str_tim_kiem;
         }
 
         private void update_v_dm_cap_bac()
