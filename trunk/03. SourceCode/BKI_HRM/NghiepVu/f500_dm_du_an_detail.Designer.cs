@@ -192,7 +192,7 @@
             // m_lbl_ngay_bat_dau
             // 
             this.m_lbl_ngay_bat_dau.AutoSize = true;
-            this.m_lbl_ngay_bat_dau.Location = new System.Drawing.Point(261, 80);
+            this.m_lbl_ngay_bat_dau.Location = new System.Drawing.Point(14, 82);
             this.m_lbl_ngay_bat_dau.Name = "m_lbl_ngay_bat_dau";
             this.m_lbl_ngay_bat_dau.Size = new System.Drawing.Size(72, 13);
             this.m_lbl_ngay_bat_dau.TabIndex = 35;
@@ -211,7 +211,7 @@
             // 
             this.m_dat_ngay_bd.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_bd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_bd.Location = new System.Drawing.Point(341, 73);
+            this.m_dat_ngay_bd.Location = new System.Drawing.Point(94, 75);
             this.m_dat_ngay_bd.Name = "m_dat_ngay_bd";
             this.m_dat_ngay_bd.ShowCheckBox = true;
             this.m_dat_ngay_bd.Size = new System.Drawing.Size(157, 20);
@@ -229,7 +229,7 @@
             // m_lbl_ngay_ket_thuc
             // 
             this.m_lbl_ngay_ket_thuc.AutoSize = true;
-            this.m_lbl_ngay_ket_thuc.Location = new System.Drawing.Point(14, 80);
+            this.m_lbl_ngay_ket_thuc.Location = new System.Drawing.Point(261, 82);
             this.m_lbl_ngay_ket_thuc.Name = "m_lbl_ngay_ket_thuc";
             this.m_lbl_ngay_ket_thuc.Size = new System.Drawing.Size(74, 13);
             this.m_lbl_ngay_ket_thuc.TabIndex = 33;
@@ -248,7 +248,7 @@
             // 
             this.m_dat_ngay_kt.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_kt.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_kt.Location = new System.Drawing.Point(94, 73);
+            this.m_dat_ngay_kt.Location = new System.Drawing.Point(341, 75);
             this.m_dat_ngay_kt.Name = "m_dat_ngay_kt";
             this.m_dat_ngay_kt.ShowCheckBox = true;
             this.m_dat_ngay_kt.Size = new System.Drawing.Size(157, 20);
