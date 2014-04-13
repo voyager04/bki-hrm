@@ -181,6 +181,7 @@ namespace BKI_HRM
             this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_view.TabIndex = 21;
             this.m_cmd_view.Text = "Xem";
+            this.m_cmd_view.Click += new System.EventHandler(this.m_cmd_view_Click);
             // 
             // m_cmd_delete
             // 
@@ -490,15 +491,16 @@ namespace BKI_HRM
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_trang_thai_ld)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_trang_thai_ld, m_grv_trang_thai_ld.Row)) return;
 			grid2us_object(m_us, m_grv_trang_thai_ld.Row);
-		//	f203_v_gd_trang_thai_lao_dong_DE v_fDE = new f203_v_gd_trang_thai_lao_dong_DE();			
-		//	v_fDE.display(m_us);
+            f203_v_gd_trang_thai_lao_dong_de v_fDE = new f203_v_gd_trang_thai_lao_dong_de();
+          //  US_DM_NHAN_SU v_us_dm_nhan_su = new US_DM_NHAN_SU(m_us.dcID_NHAN_SU);
+            v_fDE.display_for_view(m_us);
 		}
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+		//	m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
 		}
 		#endregion
 
@@ -589,8 +591,9 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
-                CSystemLog_301.ExceptionHandle(v_e);
+            	CSystemLog_301.ExceptionHandle(v_e);
             }
+            
         }
         private void m_cmd_tim_kiem_Click(object sender, EventArgs e)
         {

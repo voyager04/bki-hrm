@@ -232,10 +232,19 @@ namespace BKI_HRM
         
         private bool check_validate_data_is_ok()
         {
-            if (m_us_dm_don_vi.dcID == null)
+            if (m_us_dm_don_vi.dcID == -1 )
             {
                 BaseMessages.MsgBox_Infor("Bạn chưa chọn đơn vị của nhân viên.");
                 return false;
+            }
+            if (m_dat_ngay_bat_dau.Value.Date > m_dat_ngay_ket_thuc.Value.Date)
+            {
+                BaseMessages.MsgBox_Infor("Ngày bắt đầu không thể sau ngày kết thúc.");
+                return false;
+            }
+            if (m_dat_ngay_co_hieu_luc_qd.Value.Date > m_dat_ngay_het_hieu_luc_qd.Value.Date)
+            {
+                BaseMessages.MsgBox_Infor("Ngày có hiều lực không thể sau ngày hết hiệu lực.");
             }
             return true;
         }
@@ -291,20 +300,29 @@ namespace BKI_HRM
         }
         private void xoa_trang()
         {
-            m_cbo_chuc_vu_moi.SelectedIndex = 0;
-            m_cbo_loai_quyet_dinh.SelectedIndex = 0;
-            m_cbo_ma_chuc_vu_moi.SelectedIndex = 0;
-            m_cbo_loai_chuc_vu.SelectedIndex = 0;
-            m_txt_don_vi_moi.Text = "";
-            m_txt_ma_quyet_dinh.Text = "";
-            m_txt_noi_dung.Text = "";
-            m_dat_ngay_bat_dau.Value = DateTime.Today;
-            m_dat_ngay_co_hieu_luc_qd.Value = DateTime.Today;
-            m_dat_ngay_het_hieu_luc_qd.Value = DateTime.Today;
-            m_dat_ngay_ky.Value = DateTime.Today;
-            m_dat_ngay_ket_thuc.Value = DateTime.Today;
-            m_dat_ngay_ket_thuc.Checked = false;
-            m_dat_ngay_het_hieu_luc_qd.Checked = false;
+            switch (m_e_form_mode)
+            {
+                case DataEntryFormMode.InsertDataState:
+                    m_cbo_chuc_vu_moi.SelectedIndex = 0;
+                    m_cbo_loai_quyet_dinh.SelectedIndex = 0;
+                    m_cbo_ma_chuc_vu_moi.SelectedIndex = 0;
+                    m_cbo_loai_chuc_vu.SelectedIndex = 0;
+                    m_txt_don_vi_moi.Text = "";
+                    m_txt_ma_quyet_dinh.Text = "";
+                    m_txt_noi_dung.Text = "";
+                    m_dat_ngay_bat_dau.Value = DateTime.Today;
+                    m_dat_ngay_co_hieu_luc_qd.Value = DateTime.Today;
+                    m_dat_ngay_het_hieu_luc_qd.Value = DateTime.Today;
+                    m_dat_ngay_ky.Value = DateTime.Today;
+                    m_dat_ngay_ket_thuc.Value = DateTime.Today;
+                    m_dat_ngay_ket_thuc.Checked = false;
+                    m_dat_ngay_het_hieu_luc_qd.Checked = false;
+                    break;
+                case DataEntryFormMode.UpdateDataState:
+                    us_object_to_form();
+                    break;
+            }
+            
         }
         private void set_inital_form_load()
         {

@@ -208,6 +208,7 @@ namespace BKI_HRM
             // 
             // m_fg
             // 
+            this.m_fg.AllowEditing = false;
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.Location = new System.Drawing.Point(0, 0);
