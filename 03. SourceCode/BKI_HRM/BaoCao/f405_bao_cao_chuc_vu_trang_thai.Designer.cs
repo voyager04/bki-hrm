@@ -168,7 +168,7 @@
             this.MaximumSize = new System.Drawing.Size(800, 350);
             this.MinimumSize = new System.Drawing.Size(800, 350);
             this.Name = "f405_bao_cao_chuc_vu_trang_thai";
-            this.Text = "f405_bao_cao_chuc_vu_trang_thai";
+            this.Text = "F405 - Báo cáo biến động nhân sự theo chức vụ trạng thái lao động";
             this.Load += new System.EventHandler(this.f405_bao_cao_chuc_vu_trang_thai_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
