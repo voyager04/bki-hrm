@@ -397,8 +397,7 @@ namespace BKI_HRM
             v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_NV, e_col_Number_of_nhan_su_du_an.MA_NV);
             v_htb.Add(V_DM_NHAN_SU_DU_AN.HO_DEM, e_col_Number_of_nhan_su_du_an.HO_DEM);
             v_htb.Add(V_DM_NHAN_SU_DU_AN.TEN, e_col_Number_of_nhan_su_du_an.TEN);
-            v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_CV, e_col_Number_of_nhan_su_du_an.MA_CV);
-            v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_DON_VI, e_col_Number_of_nhan_su_du_an.MA_DON_VI);
+
             v_htb.Add(V_DM_NHAN_SU_DU_AN.VI_TRI, e_col_Number_of_nhan_su_du_an.VI_TRI);
             v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_DIEM_TG, e_col_Number_of_nhan_su_du_an.THOI_DIEM_TG);
             v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_DIEM_KT, e_col_Number_of_nhan_su_du_an.THOI_DIEM_KT);

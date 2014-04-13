@@ -73,16 +73,24 @@ namespace BKI_HRM.NghiepVu
             {
                 m_cbo_danh_hieu.SelectedValue = CIPConvert.ToDecimal(v_dr["ID_DANH_HIEU"].ToString());
             }
-
-            DateTime v_dat = (DateTime)v_dr[GD_CHI_TIET_DU_AN.THOI_DIEM_KT];
-            if (v_dat.Year < 2030)
+            if (v_dr[GD_CHI_TIET_DU_AN.THOI_DIEM_KT].ToString() != "")
             {
+                DateTime v_dat = (DateTime)v_dr[GD_CHI_TIET_DU_AN.THOI_DIEM_KT];
                 m_dat_ngay_kt.Value = (DateTime)v_dr["THOI_DIEM_KT"];
+                //if (v_dat.Year < 2030)
+                //{
+                    
+                //}
+                //else
+                //{
+                    
+                //}
             }
             else
             {
                 m_dat_ngay_kt.Checked = false;
             }
+            
             m_dat_tham_gia.Value = (DateTime)v_dr["THOI_DIEM_TG"];
 
             
