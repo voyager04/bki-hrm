@@ -1586,21 +1586,21 @@ namespace BKI_HRM
         }		
         private enum e_col_Number_of_qua_trinh_lam_viec
         {
-            NGAY_CO_HIEU_LUC = 14,
+            NGAY_CO_HIEU_LUC = 13,
             TEN_CV = 4,
-            TEN_DON_VI = 9 ,
+            TEN_DON_VI = 8 ,
             NGAY_BAT_DAU = 1,
-            MA_DON_VI = 8 ,
+            MA_DON_VI = 7 ,
             NGAY_KET_THUC = 2   ,
             MA_CV = 3,
-            CAP_DON_VI = 10 ,
-            LOAI_DON_VI = 11 ,
-            LOAI_CV = 5,
-            TRANG_THAI_CV = 6,
-            MA_QUYET_DINH = 13 ,
-            NGAY_HET_HIEU_LUC = 15,
-            DIA_BAN = 12,
-            TY_LE_THAM_GIA = 7
+            CAP_DON_VI = 9 ,
+            LOAI_DON_VI = 10,
+            
+            TRANG_THAI_CV = 5,
+            MA_QUYET_DINH = 12 ,
+            NGAY_HET_HIEU_LUC = 14,
+            DIA_BAN = 11,
+            TY_LE_THAM_GIA = 6
         }
         private enum e_col_Number_of_trang_thai_lao_dong
         {
@@ -1786,7 +1786,7 @@ namespace BKI_HRM
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_CV, e_col_Number_of_qua_trinh_lam_viec.MA_CV);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.CAP_DON_VI, e_col_Number_of_qua_trinh_lam_viec.CAP_DON_VI);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.LOAI_DON_VI, e_col_Number_of_qua_trinh_lam_viec.LOAI_DON_VI);
-            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.LOAI_CV, e_col_Number_of_qua_trinh_lam_viec.LOAI_CV);
+          //  v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.LOAI_CV, e_col_Number_of_qua_trinh_lam_viec.LOAI_CV);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.TRANG_THAI_CV, e_col_Number_of_qua_trinh_lam_viec.TRANG_THAI_CV);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_QUYET_DINH, e_col_Number_of_qua_trinh_lam_viec.MA_QUYET_DINH);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.NGAY_HET_HIEU_LUC, e_col_Number_of_qua_trinh_lam_viec.NGAY_HET_HIEU_LUC);
@@ -2211,6 +2211,7 @@ namespace BKI_HRM
 
 
 		private void insert_dm_nhan_su(){
+            load_data_2_grid_search();
             m_us.FillDataset_search(m_ds, "");
             int v_i_count = m_ds.DM_NHAN_SU.Count;
 			f201_DM_NHAN_SU_DE v_fDE = new  f201_DM_NHAN_SU_DE();
