@@ -394,6 +394,7 @@ namespace BKI_HRM {
                 v_coll.Add(v_rows[i]["MA_NV"] + "");
                 v_coll.Add(v_rows[i]["HO_DEM"] + "");
                 v_coll.Add(v_rows[i]["TEN"] + " ");
+                v_coll.Add(v_rows[i]["HO_DEM"] + " " + v_rows[i]["TEN"]);
                 v_coll.Add(v_rows[i]["TRANG_THAI_CB"] + "");
                 v_coll.Add(v_rows[i]["MA_BAC"] + "");
                 v_coll.Add(v_rows[i]["MA_QUYET_DINH"] + "");
