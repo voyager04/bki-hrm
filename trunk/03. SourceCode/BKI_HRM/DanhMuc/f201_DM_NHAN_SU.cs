@@ -1192,7 +1192,6 @@ namespace BKI_HRM
             // 
             this.m_grv_qua_trinh_cong_tac.AllowEditing = false;
             this.m_grv_qua_trinh_cong_tac.ColumnInfo = resources.GetString("m_grv_qua_trinh_cong_tac.ColumnInfo");
-            this.m_grv_qua_trinh_cong_tac.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_qua_trinh_cong_tac.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_grv_qua_trinh_cong_tac.Location = new System.Drawing.Point(3, 3);
             this.m_grv_qua_trinh_cong_tac.Name = "m_grv_qua_trinh_cong_tac";
@@ -1232,7 +1231,6 @@ namespace BKI_HRM
             // 
             this.m_grv_hop_dong_ld.AllowEditing = false;
             this.m_grv_hop_dong_ld.ColumnInfo = resources.GetString("m_grv_hop_dong_ld.ColumnInfo");
-            this.m_grv_hop_dong_ld.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_hop_dong_ld.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_grv_hop_dong_ld.Location = new System.Drawing.Point(0, 0);
             this.m_grv_hop_dong_ld.Name = "m_grv_hop_dong_ld";
@@ -1876,7 +1874,7 @@ namespace BKI_HRM
                 v_us.DataRow2Me((DataRow)v_ds.V_GD_QUA_TRINH_LAM_VIEC.Rows[0]);
             //}
             f202_v_gd_qua_trinh_lam_viec_de v_frm = new f202_v_gd_qua_trinh_lam_viec_de();
-            v_frm.display_for_insert(v_us);
+            v_frm.display_for_insert(v_us, "thang_chuc");
             load_data_2_grv_chuc_vu_hien_tai();
         }
         
@@ -2212,23 +2210,25 @@ namespace BKI_HRM
 		}
 
 
-		private void insert_dm_nhan_su(){			
+		private void insert_dm_nhan_su(){
+            m_us.FillDataset_search(m_ds, "");
+            int v_i_count = m_ds.DM_NHAN_SU.Count;
 			f201_DM_NHAN_SU_DE v_fDE = new  f201_DM_NHAN_SU_DE();
             v_fDE.display_for_insert();
             load_data_2_grid_search();
             load_chi_tiet_nhan_vien();
-            v_fDE.get_us(ref m_us);
+            
+            
+            m_us.FillDataset_search(m_ds, "");
+            if (m_ds.DM_NHAN_SU.Count > v_i_count)
+            {
+                v_fDE.get_us(ref m_us);
+                WinFormControls.set_focus_for_grid(m_grv_nhan_su, m_us.strMA_NV, 1);
+                f201_dm_nhan_su_dialog v_frm = new f201_dm_nhan_su_dialog();
+                v_frm.display(m_us);
+            }
            
-            //m_grv_nhan_su.Focus();
-            //var s = m_grv_nhan_su.FindRow(m_us.strMA_NV, m_grv_nhan_su.Row, 1, true);
-            //m_grv_nhan_su.Row = s;
-            //m_grv_nhan_su.Rows[s].Selected = true;
-            WinFormControls.set_focus_for_grid(m_grv_nhan_su, m_us.strMA_NV , 1);
-          
-            f201_dm_nhan_su_dialog v_frm = new f201_dm_nhan_su_dialog();
-
            
-            v_frm.display(m_us);
 
             
 		}
