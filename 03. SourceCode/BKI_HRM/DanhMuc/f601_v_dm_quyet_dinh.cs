@@ -378,7 +378,10 @@ namespace BKI_HRM
             m_obj_trans = get_trans_object(m_grv_dm_quyet_dinh);
             load_data_2_grid();
             if (m_e_form_mode == DataEntryFormMode.SelectDataState)
+            {
                 m_cmd_chon_quyet_dinh.Visible = true;
+                m_cmd_chon_quyet_dinh.Enabled = true;
+            }
         }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
