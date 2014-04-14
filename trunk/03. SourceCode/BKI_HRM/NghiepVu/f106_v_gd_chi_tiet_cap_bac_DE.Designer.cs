@@ -57,6 +57,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.m_ofd_openfile = new System.Windows.Forms.OpenFileDialog();
+            this.m_cmd_them_quyet_dinh = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_chon_quyet_dinh = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.m_grb_quyet_dinh.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -86,7 +88,7 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 461);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 485);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(753, 39);
@@ -182,9 +184,9 @@
             this.m_grb_quyet_dinh.Controls.Add(this.panel2);
             this.m_grb_quyet_dinh.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grb_quyet_dinh.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_grb_quyet_dinh.Location = new System.Drawing.Point(0, 191);
+            this.m_grb_quyet_dinh.Location = new System.Drawing.Point(0, 227);
             this.m_grb_quyet_dinh.Name = "m_grb_quyet_dinh";
-            this.m_grb_quyet_dinh.Size = new System.Drawing.Size(753, 270);
+            this.m_grb_quyet_dinh.Size = new System.Drawing.Size(753, 258);
             this.m_grb_quyet_dinh.TabIndex = 1003;
             this.m_grb_quyet_dinh.TabStop = false;
             this.m_grb_quyet_dinh.Text = "Quyết định đi kèm";
@@ -208,7 +210,7 @@
             this.panel2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(3, 19);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(747, 248);
+            this.panel2.Size = new System.Drawing.Size(747, 236);
             this.panel2.TabIndex = 0;
             // 
             // m_cmd_xem_file
@@ -245,7 +247,7 @@
             this.m_txt_noi_dung.Location = new System.Drawing.Point(135, 150);
             this.m_txt_noi_dung.Multiline = true;
             this.m_txt_noi_dung.Name = "m_txt_noi_dung";
-            this.m_txt_noi_dung.Size = new System.Drawing.Size(518, 91);
+            this.m_txt_noi_dung.Size = new System.Drawing.Size(518, 83);
             this.m_txt_noi_dung.TabIndex = 41;
             // 
             // m_cbo_loai_quyet_dinh
@@ -353,7 +355,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(753, 185);
+            this.panel1.Size = new System.Drawing.Size(753, 172);
             this.panel1.TabIndex = 1004;
             // 
             // m_txt_ho_ten
@@ -413,11 +415,41 @@
             this.label2.TabIndex = 999;
             this.label2.Text = "Cấp bậc mới";
             // 
+            // m_cmd_them_quyet_dinh
+            // 
+            this.m_cmd_them_quyet_dinh.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_them_quyet_dinh.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_them_quyet_dinh.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_them_quyet_dinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_them_quyet_dinh.ImageIndex = 6;
+            this.m_cmd_them_quyet_dinh.ImageList = this.ImageList;
+            this.m_cmd_them_quyet_dinh.Location = new System.Drawing.Point(243, 191);
+            this.m_cmd_them_quyet_dinh.Name = "m_cmd_them_quyet_dinh";
+            this.m_cmd_them_quyet_dinh.Size = new System.Drawing.Size(134, 30);
+            this.m_cmd_them_quyet_dinh.TabIndex = 1006;
+            this.m_cmd_them_quyet_dinh.Text = "Tạo mới quyết định";
+            // 
+            // m_cmd_chon_quyet_dinh
+            // 
+            this.m_cmd_chon_quyet_dinh.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_chon_quyet_dinh.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_chon_quyet_dinh.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_chon_quyet_dinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_chon_quyet_dinh.ImageIndex = 5;
+            this.m_cmd_chon_quyet_dinh.ImageList = this.ImageList;
+            this.m_cmd_chon_quyet_dinh.Location = new System.Drawing.Point(380, 191);
+            this.m_cmd_chon_quyet_dinh.Name = "m_cmd_chon_quyet_dinh";
+            this.m_cmd_chon_quyet_dinh.Size = new System.Drawing.Size(134, 30);
+            this.m_cmd_chon_quyet_dinh.TabIndex = 1005;
+            this.m_cmd_chon_quyet_dinh.Text = "Chọn quyết định";
+            // 
             // f106_v_gd_chi_tiet_cap_bac_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 500);
+            this.ClientSize = new System.Drawing.Size(753, 524);
+            this.Controls.Add(this.m_cmd_them_quyet_dinh);
+            this.Controls.Add(this.m_cmd_chon_quyet_dinh);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_grb_quyet_dinh);
             this.Controls.Add(this.m_pnl_out_place_dm);
@@ -470,5 +502,7 @@
         private System.Windows.Forms.Label m_lbl_ma_quyet_dinh;
         private System.Windows.Forms.TextBox m_txt_cap_bac_hien_tai;
         private System.Windows.Forms.Label label5;
+        internal SIS.Controls.Button.SiSButton m_cmd_them_quyet_dinh;
+        internal SIS.Controls.Button.SiSButton m_cmd_chon_quyet_dinh;
     }
 }

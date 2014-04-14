@@ -152,7 +152,7 @@ namespace BKI_HRM {
             this.m_cmd_chon_don_vi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_chon_don_vi.ImageIndex = 13;
             this.m_cmd_chon_don_vi.ImageList = this.ImageList;
-            this.m_cmd_chon_don_vi.Location = new System.Drawing.Point(736, 4);
+            this.m_cmd_chon_don_vi.Location = new System.Drawing.Point(725, 4);
             this.m_cmd_chon_don_vi.Name = "m_cmd_chon_don_vi";
             this.m_cmd_chon_don_vi.Size = new System.Drawing.Size(97, 28);
             this.m_cmd_chon_don_vi.TabIndex = 5;
@@ -168,7 +168,7 @@ namespace BKI_HRM {
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(833, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(822, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 5;
@@ -183,7 +183,7 @@ namespace BKI_HRM {
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(921, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(910, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 6;
@@ -214,7 +214,7 @@ namespace BKI_HRM {
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(1009, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(998, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 7;
@@ -229,9 +229,9 @@ namespace BKI_HRM {
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(1097, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(1086, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_exit.Size = new System.Drawing.Size(99, 28);
             this.m_cmd_exit.TabIndex = 8;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
@@ -307,6 +307,7 @@ namespace BKI_HRM {
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.Location = new System.Drawing.Point(0, 64);
             this.m_fg.Name = "m_fg";
+            this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Row;
             this.m_fg.Size = new System.Drawing.Size(1189, 472);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 29;
@@ -477,7 +478,7 @@ namespace BKI_HRM {
             for (var i = 0; i < v_rows.Count - 1; i++) {
                 v_coll.Add(v_rows[i]["MA_DON_VI"] + "");
                 v_coll.Add(v_rows[i]["TEN_DON_VI"] + "");
-                v_coll.Add(v_rows[i]["TEN_DON_VI_CAP_TREN"] + " " );
+                v_coll.Add(v_rows[i]["TEN_DON_VI_CAP_TREN"] + "" );
                 v_coll.Add(v_rows[i]["TEN_TIENG_ANH"] + "");
                 v_coll.Add(v_rows[i]["DIA_BAN"]+"" );
                 v_coll.Add(v_rows[i]["TRANG_THAI"] +"");
@@ -514,6 +515,9 @@ namespace BKI_HRM {
             var v_fDE = new f102_v_dm_don_vi_de();
             v_fDE.display_for_insert();
             load_data_2_grid();
+            //-- Focus to row edited
+            //m_us.FillDataset(m_ds, "");
+            WinFormControls.set_focus_for_grid(m_fg, m_us.strMA_DON_VI, (int)e_col_Number.MA_DON_VI);
         }
         private void update_v_dm_don_vi() {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;

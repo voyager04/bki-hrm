@@ -137,7 +137,7 @@ namespace BKI_HRM {
             // m_lbl_phim_tat
             // 
             this.m_lbl_phim_tat.AutoSize = true;
-            this.m_lbl_phim_tat.Location = new System.Drawing.Point(116, 13);
+            this.m_lbl_phim_tat.Location = new System.Drawing.Point(12, 11);
             this.m_lbl_phim_tat.Name = "m_lbl_phim_tat";
             this.m_lbl_phim_tat.Size = new System.Drawing.Size(206, 14);
             this.m_lbl_phim_tat.TabIndex = 1000;
@@ -220,7 +220,7 @@ namespace BKI_HRM {
             // m_lbl_so_luong_ban_ghi
             // 
             this.m_lbl_so_luong_ban_ghi.AutoSize = true;
-            this.m_lbl_so_luong_ban_ghi.Location = new System.Drawing.Point(200, 56);
+            this.m_lbl_so_luong_ban_ghi.Location = new System.Drawing.Point(179, 56);
             this.m_lbl_so_luong_ban_ghi.Name = "m_lbl_so_luong_ban_ghi";
             this.m_lbl_so_luong_ban_ghi.Size = new System.Drawing.Size(25, 14);
             this.m_lbl_so_luong_ban_ghi.TabIndex = 1;
@@ -255,9 +255,9 @@ namespace BKI_HRM {
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(9, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(186, 14);
+            this.label2.Size = new System.Drawing.Size(163, 14);
             this.label2.TabIndex = 27;
-            this.label2.Text = "Số lượng nhân viên trong danh sách:";
+            this.label2.Text = "Số lượng dòng trong danh sách:";
             // 
             // m_lbl_tim_kiem
             // 
@@ -274,6 +274,7 @@ namespace BKI_HRM {
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.Location = new System.Drawing.Point(0, 72);
             this.m_fg.Name = "m_fg";
+            this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Row;
             this.m_fg.Size = new System.Drawing.Size(845, 354);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 23;
@@ -401,8 +402,7 @@ namespace BKI_HRM {
             }
             m_txt_search.AutoCompleteCustomSource = v_coll;
         }
-        private void grid2us_object(US_V_GD_CHI_TIET_CAP_BAC i_v_us
-            , int i_grid_row) {
+        private void grid2us_object(US_V_GD_CHI_TIET_CAP_BAC i_v_us, int i_grid_row) {
             DataRow v_dr;
             v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
             m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
@@ -416,6 +416,7 @@ namespace BKI_HRM {
             var v_fDE = new f106_v_gd_chi_tiet_cap_bac_DE();
             v_fDE.display_for_insert(m_us, m_ds);
             load_data_2_grid();
+            WinFormControls.set_focus_for_grid(m_fg,m_us.strMA_NV,(int)e_col_Number.MA_NV);
         }
         private void delete_v_gd_chi_tiet_cap_bac() {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
@@ -452,9 +453,7 @@ namespace BKI_HRM {
         #endregion
 
         //
-        //
         //		EVENT HANLDERS
-        //
         //
         private void set_define_events() {
             m_cmd_exit.Click += m_cmd_exit_Click;
