@@ -149,6 +149,7 @@
             this.m_cmd_them_du_an.Size = new System.Drawing.Size(454, 51);
             this.m_cmd_them_du_an.TabIndex = 38;
             this.m_cmd_them_du_an.Text = "Thêm dự án";
+            this.m_cmd_them_du_an.Click += new System.EventHandler(this.m_cmd_them_du_an_Click);
             // 
             // m_cmd_exit
             // 
