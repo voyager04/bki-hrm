@@ -45,6 +45,7 @@ namespace BKI_HRM
         private Label m_lbl_tim_kiem;
         private C1.Win.C1FlexGrid.C1FlexGrid m_grv_dm_quyet_dinh;
         private ToolTip m_tooltip;
+        internal SIS.Controls.Button.SiSButton m_cmd_chon_quyet_dinh;
 
         private System.ComponentModel.IContainer components;
 
@@ -98,6 +99,7 @@ namespace BKI_HRM
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
             this.m_grv_dm_quyet_dinh = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
+            this.m_cmd_chon_quyet_dinh = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_dm_quyet_dinh)).BeginInit();
             this.SuspendLayout();
@@ -131,6 +133,7 @@ namespace BKI_HRM
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_chon_quyet_dinh);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
@@ -262,6 +265,23 @@ namespace BKI_HRM
             this.m_grv_dm_quyet_dinh.TabIndex = 20;
             this.m_grv_dm_quyet_dinh.KeyDown += new System.Windows.Forms.KeyEventHandler(this.m_grv_dm_quyet_dinh_KeyDown);
             // 
+            // m_cmd_chon_quyet_dinh
+            // 
+            this.m_cmd_chon_quyet_dinh.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_chon_quyet_dinh.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_chon_quyet_dinh.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_chon_quyet_dinh.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_chon_quyet_dinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_chon_quyet_dinh.ImageIndex = 13;
+            this.m_cmd_chon_quyet_dinh.ImageList = this.ImageList;
+            this.m_cmd_chon_quyet_dinh.Location = new System.Drawing.Point(178, 4);
+            this.m_cmd_chon_quyet_dinh.Name = "m_cmd_chon_quyet_dinh";
+            this.m_cmd_chon_quyet_dinh.Size = new System.Drawing.Size(120, 28);
+            this.m_cmd_chon_quyet_dinh.TabIndex = 22;
+            this.m_cmd_chon_quyet_dinh.Text = "&Chọn quyết định";
+            this.m_cmd_chon_quyet_dinh.Visible = false;
+            this.m_cmd_chon_quyet_dinh.Click += new System.EventHandler(this.m_cmd_chon_quyet_dinh_Click);
+            // 
             // f600_v_dm_quyet_dinh
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -288,11 +308,11 @@ namespace BKI_HRM
         {
             this.ShowDialog();
         }
-        public void select_data(ref US_V_DM_QUYET_DINH op_us)
+        public void select_data(ref US_DM_QUYET_DINH op_us)
         {
             m_e_form_mode = DataEntryFormMode.SelectDataState;
             this.ShowDialog();
-            op_us = m_v_us;
+            op_us = m_us; 
         }
         #endregion
 
@@ -356,7 +376,9 @@ namespace BKI_HRM
         private void set_initial_form_load()
         {
             m_obj_trans = get_trans_object(m_grv_dm_quyet_dinh);
-            load_data_2_grid();	
+            load_data_2_grid();
+            if (m_e_form_mode == DataEntryFormMode.SelectDataState)
+                m_cmd_chon_quyet_dinh.Visible = true;
         }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
@@ -495,6 +517,7 @@ namespace BKI_HRM
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_dm_quyet_dinh)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_dm_quyet_dinh, m_grv_dm_quyet_dinh.Row)) return;
             grid2us_object(m_v_us, m_grv_dm_quyet_dinh.Row);
+            m_us = new US_DM_QUYET_DINH(m_v_us.dcID);
             this.Close();
         }
         private void set_define_events()
@@ -673,17 +696,17 @@ namespace BKI_HRM
             }
         }
 
-        //private void m_cmd_chon_quyet_dinh_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        select_data_2_us();
-        //    }
-        //    catch (Exception v_e)
-        //    {
-        //        CSystemLog_301.ExceptionHandle(v_e);
-        //    }
-        //}
+        private void m_cmd_chon_quyet_dinh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                select_data_2_us();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
 
 
