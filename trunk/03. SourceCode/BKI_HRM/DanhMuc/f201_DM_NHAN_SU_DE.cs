@@ -163,7 +163,7 @@ namespace BKI_HRM
             m_us_dm_nhan_su.strMA_NV = m_txt_ma_nhan_vien.Text.Trim();
             m_us_dm_nhan_su.strHO_DEM = m_txt_ho_dem.Text.Trim();
             m_us_dm_nhan_su.strTEN = m_txt_ten.Text.Trim();
-            m_us_dm_nhan_su.strGIOI_TINH = ((m_cbo_gioi_tinh.SelectedIndex == 1) ? "Nam" : "Nữ");
+            m_us_dm_nhan_su.strGIOI_TINH = ((m_cbo_gioi_tinh.SelectedIndex == 0) ? "Nam" : "Nữ");
         
             //m_us_dm_nhan_su.strANH = m_ofd_chon_anh.FileName;
            
