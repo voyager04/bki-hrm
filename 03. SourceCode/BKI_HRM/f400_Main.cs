@@ -262,6 +262,19 @@ namespace BKI_HRM {
                             v_ds_v_gd_hop_dong_da_het_han.Tables[0].Rows.Count);
                 }
                 thong_bao_thu_viec_sap_het_han();
+
+                US_V_GD_TRANG_THAI_LAO_DONG m_us = new US_V_GD_TRANG_THAI_LAO_DONG();
+                DS_V_GD_TRANG_THAI_LAO_DONG m_ds = new DS_V_GD_TRANG_THAI_LAO_DONG();
+                m_us.FillDatasetNVSapQuayLai(m_ds);
+                if (m_ds.Tables[0].Rows.Count > 0)
+                {
+                    m_lbl_sap_quay_lai.Text = "Có "+m_ds.Tables[0].Rows.Count.ToString()+" nhân viên sắp quay lại sau khi nghỉ. Click để xem chi tiết!";
+                    m_lbl_sap_quay_lai.Visible = true;
+                }
+                else
+                {
+                    m_lbl_sap_quay_lai.Visible = false;
+                }
             }
             catch (Exception v_e){
                 CSystemLog_301.ExceptionHandle(v_e);
