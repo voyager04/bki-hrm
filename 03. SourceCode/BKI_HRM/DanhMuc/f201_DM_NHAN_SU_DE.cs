@@ -160,9 +160,9 @@ namespace BKI_HRM
             m_txt_ma_headcount.Text = m_us_dm_nhan_su.strMA_HEADCOUNT;
         }
         private void form_to_us_object(){
-            m_us_dm_nhan_su.strMA_NV = m_txt_ma_nhan_vien.Text;
-            m_us_dm_nhan_su.strHO_DEM = m_txt_ho_dem.Text;
-            m_us_dm_nhan_su.strTEN = m_txt_ten.Text;
+            m_us_dm_nhan_su.strMA_NV = m_txt_ma_nhan_vien.Text.Trim();
+            m_us_dm_nhan_su.strHO_DEM = m_txt_ho_dem.Text.Trim();
+            m_us_dm_nhan_su.strTEN = m_txt_ten.Text.Trim();
             m_us_dm_nhan_su.strGIOI_TINH = ((m_cbo_gioi_tinh.SelectedIndex == 1) ? "Nam" : "Nữ");
         
             //m_us_dm_nhan_su.strANH = m_ofd_chon_anh.FileName;
@@ -170,30 +170,30 @@ namespace BKI_HRM
 
             if(m_dat_ngay_sinh.Checked == true)
                 m_us_dm_nhan_su.datNGAY_SINH = m_dat_ngay_sinh.Value;
-            m_us_dm_nhan_su.strNOI_SINH = m_txt_noi_sinh.Text;
-            m_us_dm_nhan_su.strNGUYEN_QUAN = m_txt_nguyen_quan.Text;
-            m_us_dm_nhan_su.strCMND = m_txt_cmnd.Text;
+            m_us_dm_nhan_su.strNOI_SINH = m_txt_noi_sinh.Text.Trim();
+            m_us_dm_nhan_su.strNGUYEN_QUAN = m_txt_nguyen_quan.Text.Trim();
+            m_us_dm_nhan_su.strCMND = m_txt_cmnd.Text.Trim();
             if(m_dat_ngay_cap.Checked == true)
                 m_us_dm_nhan_su.datNGAY_CAP_CMND = m_dat_ngay_cap.Value;
-            m_us_dm_nhan_su.strNOI_CAP_CMND = m_txt_noi_cap.Text;
-            m_us_dm_nhan_su.strTON_GIAO = m_txt_ton_giao.Text;
-            m_us_dm_nhan_su.strDAN_TOC = m_txt_dan_toc.Text;
-            m_us_dm_nhan_su.strTRINH_DO = m_txt_trinh_do.Text;
-            m_us_dm_nhan_su.strNOI_DAO_TAO = m_txt_noi_dao_tao.Text;
-            m_us_dm_nhan_su.strCHUYEN_NGANH = m_txt_chuyen_nganh.Text;
+            m_us_dm_nhan_su.strNOI_CAP_CMND = m_txt_noi_cap.Text.Trim();
+            m_us_dm_nhan_su.strTON_GIAO = m_txt_ton_giao.Text.Trim();
+            m_us_dm_nhan_su.strDAN_TOC = m_txt_dan_toc.Text.Trim();
+            m_us_dm_nhan_su.strTRINH_DO = m_txt_trinh_do.Text.Trim();
+            m_us_dm_nhan_su.strNOI_DAO_TAO = m_txt_noi_dao_tao.Text.Trim();
+            m_us_dm_nhan_su.strCHUYEN_NGANH = m_txt_chuyen_nganh.Text.Trim();
             if (m_txt_nam_tot_nghiep.Text.Trim().Length > 0)
-                m_us_dm_nhan_su.dcNAM_TOT_NGHIEP = CIPConvert.ToDecimal(m_txt_nam_tot_nghiep.Text);
-            m_us_dm_nhan_su.strEMAIL_CQ = m_txt_email_co_quan.Text;
-            m_us_dm_nhan_su.strEMAIL_CA_NHAN = m_txt_email_ca_nhan.Text;
-            m_us_dm_nhan_su.strDI_DONG = m_txt_so_dtdd.Text;
-            m_us_dm_nhan_su.strDT_NHA = m_txt_sdt_nha_rieng.Text;
-            m_us_dm_nhan_su.strMA_SO_THUE = m_txt_ma_so_thue.Text;
-            m_us_dm_nhan_su.strCHO_O = m_txt_dia_chi.Text;
-            m_us_dm_nhan_su.strHO_KHAU = m_txt_ho_khau.Text;
-            m_us_dm_nhan_su.strNGUOI_LIEN_HE = m_txt_nguoi_lien_he.Text;
-            m_us_dm_nhan_su.strDI_DONG_LIEN_HE = m_txt_sdt_lien_he.Text;
-            m_us_dm_nhan_su.strQUAN_HE = m_txt_quan_he.Text;
-            m_us_dm_nhan_su.strMA_HEADCOUNT = m_txt_ma_headcount.Text;
+                m_us_dm_nhan_su.dcNAM_TOT_NGHIEP = CIPConvert.ToDecimal(m_txt_nam_tot_nghiep.Text.Trim());
+            m_us_dm_nhan_su.strEMAIL_CQ = m_txt_email_co_quan.Text.Trim();
+            m_us_dm_nhan_su.strEMAIL_CA_NHAN = m_txt_email_ca_nhan.Text.Trim();
+            m_us_dm_nhan_su.strDI_DONG = m_txt_so_dtdd.Text.Trim();
+            m_us_dm_nhan_su.strDT_NHA = m_txt_sdt_nha_rieng.Text.Trim();
+            m_us_dm_nhan_su.strMA_SO_THUE = m_txt_ma_so_thue.Text.Trim();
+            m_us_dm_nhan_su.strCHO_O = m_txt_dia_chi.Text.Trim();
+            m_us_dm_nhan_su.strHO_KHAU = m_txt_ho_khau.Text.Trim();
+            m_us_dm_nhan_su.strNGUOI_LIEN_HE = m_txt_nguoi_lien_he.Text.Trim();
+            m_us_dm_nhan_su.strDI_DONG_LIEN_HE = m_txt_sdt_lien_he.Text.Trim();
+            m_us_dm_nhan_su.strQUAN_HE = m_txt_quan_he.Text.Trim();
+            m_us_dm_nhan_su.strMA_HEADCOUNT = m_txt_ma_headcount.Text.Trim();
         }
         private bool check_trung_ma_nv(string ip_str_ma_nv)
         {  
@@ -236,7 +236,7 @@ namespace BKI_HRM
                 BaseMessages.MsgBox_Warning(219);
                 return false;
             }
-            if ((m_dat_ngay_cap.Checked = true) && (m_dat_ngay_cap.Value.Date > DateTime.Today))
+            if ((m_dat_ngay_cap.Checked == true) && (m_dat_ngay_cap.Value.Date > DateTime.Today))
             {
                 BaseMessages.MsgBox_Warning(220);
                 return false;
@@ -318,8 +318,8 @@ namespace BKI_HRM
         }
         private void save_image(string ip_str_pathimage)
         {
-            //MessageBox.Show(Application.CommonAppDataPath + "\n" 
-            //    + Application.ExecutablePath + "\n" 
+            //MessageBox.Show(Application.CommonAppDataPath + "\n"
+            //    + Application.ExecutablePath + "\n"
             //    + Application.LocalUserAppDataPath + "\n"
             //    + Application.UserAppDataPath);
             
@@ -357,9 +357,9 @@ namespace BKI_HRM
                     graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
                     graphics.DrawImage(image, 0, 0, newWidth, newHeight);
                 }
-
-                newImage.Save("E:\\00.CV\\" + m_us_dm_nhan_su.strMA_NV + ".jpg", ImageFormat.Jpeg);
-                m_us_dm_nhan_su.strANH = "E:\\00.CV\\" + m_us_dm_nhan_su.strMA_NV + ".jpg";
+                BaseMessages.MsgBox_Infor(Path.GetDirectoryName(Application.ExecutablePath));
+                newImage.Save(Path.GetDirectoryName(Application.ExecutablePath) + "\\" + m_us_dm_nhan_su.strMA_NV + ".jpg", ImageFormat.Jpeg);
+                m_us_dm_nhan_su.strANH = Path.GetDirectoryName(Application.ExecutablePath) + "\\" + m_us_dm_nhan_su.strMA_NV + ".jpg";
                
             }
                 
@@ -421,7 +421,7 @@ namespace BKI_HRM
                     m_txt_noi_sinh.Text = "";
                     m_txt_nguyen_quan.Text = "";
                     m_txt_cmnd.Text = "";
-                    m_dat_ngay_cap.Value = DateTime.Today;
+                  //  m_dat_ngay_cap.Value = DateTime.Today;
                     m_dat_ngay_cap.Checked = false;
                     m_txt_noi_cap.Text = "";
                     m_txt_ton_giao.Text = "";
