@@ -529,7 +529,7 @@ namespace BKI_HRM {
         {
             try
             {
-                f203_v_gd_trang_thai_lao_dong frm = new f203_v_gd_trang_thai_lao_dong();
+                f503_nhan_vien_sap_quay_tro_lai frm = new f503_nhan_vien_sap_quay_tro_lai();
                 frm.displaySapQuayLai();
             }
             catch (Exception v_e)
