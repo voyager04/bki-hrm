@@ -95,19 +95,20 @@ namespace BKI_HRM.NghiepVu
                 return false;
             }
 
-            if (m_dat_ngay_ky_hop_dong.Value > m_dat_ngay_co_hieu_luc.Value)
+
+            if ((m_dat_ngay_co_hieu_luc.Value - m_dat_ngay_ky_hop_dong.Value).TotalHours < -1)
             {
                 BaseMessages.MsgBox_Infor("Ngày ký Hợp Đồng không thể lớn hơn ngày Hợp Đồng có hiệu lực.");
                 return false;
             }
 
-            if (m_dat_ngay_ky_hop_dong.Value > m_dat_ngay_het_han.Value)
+            if ((m_dat_ngay_het_han.Value - m_dat_ngay_ky_hop_dong.Value).TotalHours < -1)
             {
                 BaseMessages.MsgBox_Infor("Ngày ký Hợp Đồng không thể lớn hơn ngày Hợp Đồng hết hạn.");
                 return false;
             }
 
-            if (m_dat_ngay_co_hieu_luc.Value > m_dat_ngay_het_han.Value)
+            if ((m_dat_ngay_het_han.Value - m_dat_ngay_co_hieu_luc.Value).TotalHours < -1)
             {
                 BaseMessages.MsgBox_Infor("Ngày Hợp Đồng có hiệu lực không thể lớn hơn ngày Hợp Đồng hết hạn.");
                 return false;
