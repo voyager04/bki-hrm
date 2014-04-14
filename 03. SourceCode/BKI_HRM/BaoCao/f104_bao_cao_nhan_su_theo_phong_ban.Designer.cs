@@ -93,9 +93,8 @@
             this.m_lbl_thong_bao.AutoSize = true;
             this.m_lbl_thong_bao.Location = new System.Drawing.Point(13, 5);
             this.m_lbl_thong_bao.Name = "m_lbl_thong_bao";
-            this.m_lbl_thong_bao.Size = new System.Drawing.Size(116, 14);
+            this.m_lbl_thong_bao.Size = new System.Drawing.Size(0, 14);
             this.m_lbl_thong_bao.TabIndex = 37;
-            this.m_lbl_thong_bao.Text = "Thông báo - cảnh báo ";
             // 
             // m_lbl_thoidiem
             // 

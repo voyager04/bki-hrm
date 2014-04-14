@@ -88,10 +88,10 @@ namespace BKI_HRM {
             this.m_txt_search = new System.Windows.Forms.TextBox();
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_lbl_phim_tat = new System.Windows.Forms.Label();
             this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.m_lbl_phim_tat = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -234,6 +234,15 @@ namespace BKI_HRM {
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1189, 36);
             this.m_pnl_out_place_dm.TabIndex = 31;
             // 
+            // m_lbl_phim_tat
+            // 
+            this.m_lbl_phim_tat.AutoSize = true;
+            this.m_lbl_phim_tat.Location = new System.Drawing.Point(207, 10);
+            this.m_lbl_phim_tat.Name = "m_lbl_phim_tat";
+            this.m_lbl_phim_tat.Size = new System.Drawing.Size(206, 14);
+            this.m_lbl_phim_tat.TabIndex = 999;
+            this.m_lbl_phim_tat.Text = "Phím tắt: F6_Mở rộng-Thu gọn danh sách";
+            // 
             // m_cmd_xuat_excel
             // 
             this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -266,15 +275,6 @@ namespace BKI_HRM {
             this.m_cmd_exit.Size = new System.Drawing.Size(118, 28);
             this.m_cmd_exit.TabIndex = 4;
             this.m_cmd_exit.Text = "Thoát (Esc)";
-            // 
-            // m_lbl_phim_tat
-            // 
-            this.m_lbl_phim_tat.AutoSize = true;
-            this.m_lbl_phim_tat.Location = new System.Drawing.Point(207, 10);
-            this.m_lbl_phim_tat.Name = "m_lbl_phim_tat";
-            this.m_lbl_phim_tat.Size = new System.Drawing.Size(206, 14);
-            this.m_lbl_phim_tat.TabIndex = 999;
-            this.m_lbl_phim_tat.Text = "Phím tắt: F6_Mở rộng-Thu gọn danh sách";
             // 
             // f103_bao_cao_tra_cuu_nhan_su
             // 
@@ -409,7 +409,7 @@ namespace BKI_HRM {
             CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
-            m_fg.Tree.Column = (int)e_col_Number.MA_DON_VI;//Cột chứa tree
+            m_fg.Tree.Column = (int)e_col_Number.MA_NV;//Cột chứa tree
             m_fg.Tree.Style = TreeStyleFlags.Simple;
             set_define_events();
             KeyPreview = true;
@@ -731,9 +731,6 @@ namespace BKI_HRM {
             m_str_nam_het_hieu_luc = "";
         }
         private void init_key_value() {
-            if (m_str_loai_chuc_vu.Equals("")) {
-                m_str_loai_chuc_vu = "Chức vụ chính";
-            }
             if (m_str_trang_thai_hien_tai.Equals("")) {
                 m_str_trang_thai_hien_tai = "Y";
             }
@@ -761,7 +758,7 @@ namespace BKI_HRM {
             m_fg.Subtotal(AggregateEnum.Count
               , 0
               , (int)e_col_Number.TEN_DON_VI    // Group theo cột này
-              , (int)e_col_Number.MA_NV         // Subtotal theo cột này
+              , (int)e_col_Number.TEN         // Subtotal theo cột này
               , "{0}"
               );
             set_search_format_before();

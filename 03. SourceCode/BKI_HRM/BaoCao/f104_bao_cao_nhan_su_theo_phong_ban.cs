@@ -78,7 +78,7 @@ namespace BKI_HRM {
             CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
-            m_fg.Tree.Column = (int)e_col_Number.MA_DON_VI;
+            m_fg.Tree.Column = (int)e_col_Number.MA_NV;
             m_fg.Tree.Style = TreeStyleFlags.Simple;
 
             set_define_events();
@@ -97,13 +97,14 @@ namespace BKI_HRM {
             var v_coll = new AutoCompleteStringCollection();
             var v_rows = m_ds.Tables[0].Rows;
             for (var i = 0; i < v_rows.Count - 1; i++) {
-                v_coll.Add(v_rows[i]["MA_DON_VI"] + "");
-                v_coll.Add(v_rows[i]["HO_DEM"] + "");
-                v_coll.Add(v_rows[i]["TEN"] + "");
-                v_coll.Add(v_rows[i]["HO_DEM"] + " " + v_rows[i]["TEN"]);
-                v_coll.Add(v_rows[i]["TEN_CV"] + "");
-                v_coll.Add(v_rows[i]["HO_DEM"] + " - " + v_rows[i]["TEN"] + " - " + v_rows[i]["MA_NV"]);
-                v_coll.Add(v_rows[i]["TEN"] + " - " + v_rows[i]["HO_DEM"] + " " + v_rows[i]["TEN"] + " - " + v_rows[i]["MA_NV"]);
+                v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.HO_DEM] + " " + v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.TEN]);
+                v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.TEN] + "");
+                v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.MA_DON_VI] + "");
+                v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.TEN_DON_VI] + "");
+                v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.MA_DON_VI] + "-" + v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.TEN_DON_VI]);
+                v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.TEN_DON_VI]+"-"+v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.MA_DON_VI]);
+                v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.TEN_CV] + "");
+                v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.LOAI_DON_VI] + "");
             }
             m_txt_search.AutoCompleteCustomSource = v_coll;
         }
@@ -145,7 +146,7 @@ namespace BKI_HRM {
             m_fg.Subtotal(AggregateEnum.Count
               , 0
               , (int)e_col_Number.TEN_DON_VI    // Group theo cột này
-              , (int)e_col_Number.MA_NV         // Subtotal theo cột này
+              , (int)e_col_Number.TEN         // Subtotal theo cột này
               , "{0}"
               );
             m_fg.Redraw = true;
