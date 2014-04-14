@@ -347,9 +347,9 @@ namespace BKI_HRM
             this.m_cmd_chon_nhan_vien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_chon_nhan_vien.ImageIndex = 13;
             this.m_cmd_chon_nhan_vien.ImageList = this.ImageList;
-            this.m_cmd_chon_nhan_vien.Location = new System.Drawing.Point(479, 4);
+            this.m_cmd_chon_nhan_vien.Location = new System.Drawing.Point(430, 4);
             this.m_cmd_chon_nhan_vien.Name = "m_cmd_chon_nhan_vien";
-            this.m_cmd_chon_nhan_vien.Size = new System.Drawing.Size(113, 28);
+            this.m_cmd_chon_nhan_vien.Size = new System.Drawing.Size(128, 28);
             this.m_cmd_chon_nhan_vien.TabIndex = 33;
             this.m_cmd_chon_nhan_vien.Text = "&Chọn nhân viên";
             this.m_cmd_chon_nhan_vien.Click += new System.EventHandler(this.m_cmd_chon_nhan_vien_Click);
@@ -363,9 +363,9 @@ namespace BKI_HRM
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(592, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(558, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(115, 28);
+            this.m_cmd_insert.Size = new System.Drawing.Size(119, 28);
             this.m_cmd_insert.TabIndex = 29;
             this.m_cmd_insert.Text = "&Thêm nhân viên";
             // 
@@ -378,9 +378,9 @@ namespace BKI_HRM
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(707, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(677, 4);
             this.m_cmd_update.Name = "m_cmd_update";
-            this.m_cmd_update.Size = new System.Drawing.Size(102, 28);
+            this.m_cmd_update.Size = new System.Drawing.Size(115, 28);
             this.m_cmd_update.TabIndex = 30;
             this.m_cmd_update.Text = "&Sửa nhân viên";
             // 
@@ -409,9 +409,9 @@ namespace BKI_HRM
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(809, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(792, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
-            this.m_cmd_delete.Size = new System.Drawing.Size(103, 28);
+            this.m_cmd_delete.Size = new System.Drawing.Size(112, 28);
             this.m_cmd_delete.TabIndex = 31;
             this.m_cmd_delete.Text = "&Xoá nhân viên";
             // 
@@ -425,9 +425,9 @@ namespace BKI_HRM
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(912, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(904, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(92, 28);
+            this.m_cmd_exit.Size = new System.Drawing.Size(100, 28);
             this.m_cmd_exit.TabIndex = 32;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
@@ -745,7 +745,6 @@ namespace BKI_HRM
             // 
             this.m_grv_chuc_vu_hien_tai.AllowEditing = false;
             this.m_grv_chuc_vu_hien_tai.ColumnInfo = resources.GetString("m_grv_chuc_vu_hien_tai.ColumnInfo");
-            this.m_grv_chuc_vu_hien_tai.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_chuc_vu_hien_tai.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_grv_chuc_vu_hien_tai.Location = new System.Drawing.Point(0, 0);
             this.m_grv_chuc_vu_hien_tai.Name = "m_grv_chuc_vu_hien_tai";
