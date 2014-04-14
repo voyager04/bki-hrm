@@ -33,6 +33,7 @@ namespace BKI_HRM.NghiepVu
             m_txt_ma_ns.BackColor = SystemColors.Info;
             m_txt_ma_ns.ReadOnly = true;
             m_txt_ma_du_an.ReadOnly = false;
+            m_txt_ma_du_an.Enabled = true;
             //m_lbl_ho_dem.Text = ip_us_dm_nhan_su.strHO_DEM;
             //m_lbl_ten.Text = ip_us_dm_nhan_su.strTEN;
             this.ShowDialog();
