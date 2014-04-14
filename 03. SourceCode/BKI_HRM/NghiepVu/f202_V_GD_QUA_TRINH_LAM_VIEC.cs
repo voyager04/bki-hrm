@@ -225,6 +225,8 @@ namespace BKI_HRM
             // 
             // m_txt_tim_kiem
             // 
+            this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.m_txt_tim_kiem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_txt_tim_kiem.Location = new System.Drawing.Point(315, 17);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
@@ -526,6 +528,7 @@ namespace BKI_HRM
 			}
 		}
 
+        
 		private void view_v_gd_qua_trinh_lam_viec(){			
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_qua_trinh_lam_viec)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row)) return;
