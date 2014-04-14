@@ -306,7 +306,7 @@ namespace BKI_HRM
 			m_obj_trans = get_trans_object(m_fg);
             m_txt_tim_kiem.Text = "";
             load_data_2_grid_search();
-            m_txt_tim_kiem.Text = "Nhập mã cấp bậc";
+            m_txt_tim_kiem.Text = "Nhập mã cấp bậc, mã nhân viên, họ tên";
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -385,7 +385,8 @@ namespace BKI_HRM
             {
                 v_acsc_search.Add(dr[V_GD_CHI_TIET_CAP_BAC.MA_BAC].ToString());
                 v_acsc_search.Add(dr[V_GD_CHI_TIET_CAP_BAC.MA_BAC].ToString() + " - " + dr[V_GD_CHI_TIET_CAP_BAC.MA_CAP].ToString());
-
+                v_acsc_search.Add(dr[V_GD_CHI_TIET_CAP_BAC.MA_NV].ToString());
+                v_acsc_search.Add(dr[V_GD_CHI_TIET_CAP_BAC.HO_DEM].ToString() + " " + dr[V_GD_CHI_TIET_CAP_BAC.TEN].ToString());
             }
             m_txt_tim_kiem.AutoCompleteCustomSource = v_acsc_search;
         }
@@ -436,11 +437,11 @@ namespace BKI_HRM
         {
             try
             {
-                if (m_txt_tim_kiem.Text.Trim() == "Nhập mã cấp bậc")
+                if (m_txt_tim_kiem.Text.Trim() == "Nhập mã cấp bậc, mã nhân viên, họ tên")
                 {
                     m_txt_tim_kiem.Text = "";
                     load_data_2_grid_search();
-                    m_txt_tim_kiem.Text = "Nhập mã cấp bậc";
+                    m_txt_tim_kiem.Text = "Nhập mã cấp bậc, mã nhân viên, họ tên";
                 }
                 else
                     load_data_2_grid_search();
@@ -461,7 +462,7 @@ namespace BKI_HRM
             try
             {
                 if (m_txt_tim_kiem.Text.Trim() == "")
-                    m_txt_tim_kiem.Text = "Nhập mã cấp bậc";
+                    m_txt_tim_kiem.Text = "Nhập mã cấp bậc, mã nhân viên, họ tên";
             }
             catch (Exception v_e)
             {
