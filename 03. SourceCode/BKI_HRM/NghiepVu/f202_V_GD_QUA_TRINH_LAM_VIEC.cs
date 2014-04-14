@@ -301,8 +301,8 @@ namespace BKI_HRM
             HO_DEM = 2,
             LOAI_DON_VI = 14,
             TEN = 3 ,
-            LOAI_CV = 9,
-            TRANG_THAI_CV = 10,
+            TY_LE_THAM_GIA = 10,
+            TRANG_THAI_CV = 9,
             MA_QUYET_DINH = 16 ,
             NGAY_HET_HIEU_LUC = 18,
             DIA_BAN = 15 ,
@@ -352,7 +352,8 @@ namespace BKI_HRM
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.HO_DEM, e_col_Number.HO_DEM);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.LOAI_DON_VI, e_col_Number.LOAI_DON_VI);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.TEN, e_col_Number.TEN);
-            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.LOAI_CV, e_col_Number.LOAI_CV);
+           // v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.LOAI_CV, e_col_Number.LOAI_CV);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.TY_LE_THAM_GIA, e_col_Number.TY_LE_THAM_GIA);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.TRANG_THAI_CV, e_col_Number.TRANG_THAI_CV);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_QUYET_DINH, e_col_Number.MA_QUYET_DINH);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.NGAY_HET_HIEU_LUC, e_col_Number.NGAY_HET_HIEU_LUC);
@@ -467,9 +468,20 @@ namespace BKI_HRM
             {
                 grid2us_object(m_us_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row + 1);
             }
+
+            //load_data_2_grid_search();
+            //m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, "");
+            //int v_i_count = m_ds_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Count;
             f202_v_gd_qua_trinh_lam_viec_de v_fDE = new f202_v_gd_qua_trinh_lam_viec_de();
             v_fDE.display_for_insert(m_us_qua_trinh_lam_viec, ip_str_loai_thay_doi);
             load_data_2_grid_search();
+            //m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, "");
+            //if (m_ds_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Count > v_i_count)
+            //{
+            //    v_fDE.get_us(ref m_us_qua_trinh_lam_viec);
+            // //   WinFormControls.set_focus_for_grid(m_grv_qua_trinh_lam_viec, m_us_qua_trinh_lam_viec.str, 1);
+                
+            //}
 		}
 
 		private void update_v_gd_qua_trinh_lam_viec(){			
