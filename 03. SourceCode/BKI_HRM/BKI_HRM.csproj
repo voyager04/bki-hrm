@@ -478,6 +478,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f503_nhan_vien_sap_quay_tro_lai.resx">
       <DependentUpon>f503_nhan_vien_sap_quay_tro_lai.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f701_v_gd_hop_dong_lao_dong_DE.resx">
       <DependentUpon>f701_v_gd_hop_dong_lao_dong_DE.cs</DependentUpon>

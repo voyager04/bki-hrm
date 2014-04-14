@@ -16,6 +16,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using BKI_HRM.NghiepVu;
 using IP.Core.IPCommon;
+using IP.Core.IPExcelReport;
 using IP.Core.IPException;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
@@ -44,7 +45,6 @@ namespace BKI_HRM
         internal SIS.Controls.Button.SiSButton m_cmd_tim_kiem;
         private TextBox m_txt_tim_kiem;
         private Label label1;
-        internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
         private Label m_lbl_count_record;
         private System.ComponentModel.IContainer components;
 
@@ -87,7 +87,6 @@ namespace BKI_HRM
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f701_v_hop_dong_lao_dong));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
@@ -130,7 +129,6 @@ namespace BKI_HRM
             // 
             // m_pnl_out_place_dm
             // 
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
@@ -141,24 +139,6 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1355, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
-            // 
-            // m_cmd_xuat_excel
-            // 
-            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_xuat_excel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_xuat_excel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_cmd_xuat_excel.ForeColor = System.Drawing.Color.Maroon;
-            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_xuat_excel.ImageIndex = 19;
-            this.m_cmd_xuat_excel.ImageList = this.ImageList;
-            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
-            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(113, 28);
-            this.m_cmd_xuat_excel.TabIndex = 39;
-            this.m_cmd_xuat_excel.Text = "Xuất Excel";
             // 
             // m_cmd_insert
             // 
