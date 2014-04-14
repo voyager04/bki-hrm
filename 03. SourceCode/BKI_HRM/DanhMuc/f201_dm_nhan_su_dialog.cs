@@ -84,8 +84,15 @@ namespace BKI_HRM
             f106_v_gd_chi_tiet_cap_bac_DE v_frm = new f106_v_gd_chi_tiet_cap_bac_DE();
             v_frm.display_for_insert(v_us, v_ds);
         }
+        private void them_du_an()
+        {
+            F500_gd_chi_tiet_du_an_de v_frm = new F500_gd_chi_tiet_du_an_de();
+            v_frm.display_for_insert(m_us_nhan_su);
+        }
 #endregion
 
+        
+#region "Events"
         private void m_cmd_them_chuc_vu_Click(object sender, EventArgs e)
         {
             try
@@ -94,7 +101,7 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle(v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
@@ -111,7 +118,7 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle(v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
@@ -123,7 +130,7 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle(v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
@@ -135,12 +142,22 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+#endregion
+
+        private void m_cmd_them_du_an_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                them_du_an();
+            }
+            catch (Exception v_e)
+            {
             	CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-#region "Events"
-
-#endregion
         
     }
 }
