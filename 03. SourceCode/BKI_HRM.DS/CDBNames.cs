@@ -487,6 +487,7 @@
        public const string ID_CHUC_VU = "ID_CHUC_VU";
        public const string MA_CV = "MA_CV";
        public const string TEN_CV = "TEN_CV";
+       public const string LOAI_CV = "LOAI_CV";
        public const string ID_TRANG_THAI_CV = "ID_TRANG_THAI_CV";
        public const string TRANG_THAI_CV = "TRANG_THAI_CV";
        public const string TY_LE_THAM_GIA = "TY_LE_THAM_GIA";

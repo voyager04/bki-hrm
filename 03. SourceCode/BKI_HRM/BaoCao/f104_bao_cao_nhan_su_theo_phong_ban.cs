@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using BKI_HRM.DanhMuc;
 using IP.Core.IPCommon;
+using IP.Core.IPExcelReport;
 using IP.Core.IPException;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
@@ -169,6 +170,15 @@ namespace BKI_HRM {
             }
             m_txt_search.ForeColor = Color.Black;
         }
+
+        private void xuat_excel(){
+            var v_start_row = 8;
+            var v_start_col = 1;
+            var v_obj_excel_rpt = new CExcelReport("f104_bao_cao_nhan_su_theo_phong_ban.xlsx", v_start_row, v_start_col);
+            v_obj_excel_rpt.AddFindAndReplaceItem("<ngay_thang>", string.Format("{0}/{1}/{2}", DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year));
+            v_obj_excel_rpt.FindAndReplace(false);
+            v_obj_excel_rpt.Export2ExcelWithoutFixedRows(m_fg, 1, m_fg.Cols.Count - 1, true);
+        }
         
         #endregion
 
@@ -184,6 +194,7 @@ namespace BKI_HRM {
             m_txt_search.KeyDown += m_txt_search_KeyDown;
             m_txt_search.MouseClick += m_txt_search_MouseClick;
             m_txt_search.Leave += m_txt_search_Leave;
+            m_cmd_xuat_excel.Click += m_cmd_xuat_excel_Click;
         }
 
         private void f104_bao_cao_nhan_su_theo_phong_ban_Load(object sender, EventArgs e) {
@@ -234,6 +245,14 @@ namespace BKI_HRM {
         private void m_txt_search_Leave(object sender, EventArgs e) {
             try {
                 set_search_format_before();
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_xuat_excel_Click(object sender, EventArgs e) {
+            try{
+                xuat_excel();
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }

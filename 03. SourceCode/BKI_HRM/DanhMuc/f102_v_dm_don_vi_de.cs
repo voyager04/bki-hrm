@@ -62,7 +62,7 @@ namespace BKI_HRM.DanhMuc {
         }
         private void set_initial_form_load() {
             m_cbo_trang_thai.SelectedIndex = 0;
-            m_cbo_cap_don_vi.SelectedIndex = (int)CAP_DON_VI.PHONG_BAN-1;
+            m_cbo_cap_don_vi.SelectedIndex = (int)CAP_DON_VI.PHONG_BAN - 1;
         }
         private void load_data_2_cbo_don_vi_cap_tren() {
             var v_ds = new DS_V_DM_DON_VI();
@@ -121,10 +121,13 @@ namespace BKI_HRM.DanhMuc {
                 return false;
             }
             // Kiem tra nhap trung Ma Don Vi
-            if (trung_ma_don_vi(m_txt_ma_don_vi.Text.Trim())){
-                BaseMessages.MsgBox_Error("Đã có mã đơn vị này!");
-                return false;
+            if (m_e_form_mode == DataEntryFormMode.InsertDataState) {
+                if (trung_ma_don_vi(m_txt_ma_don_vi.Text.Trim())) {
+                    BaseMessages.MsgBox_Error("Đã có mã đơn vị này!");
+                    return false;
+                }
             }
+
             return true;
         }
         private void form_2_us_object() {
@@ -180,7 +183,7 @@ namespace BKI_HRM.DanhMuc {
             var v_us = new US_V_DM_DON_VI();
             v_us.FillDatasetByKeyWord(v_ds, ip_str_ma_don_vi);
             decimal v_count = v_ds.V_DM_DON_VI.Count;
-            if (v_count > 0){
+            if (v_count > 0) {
                 return true;
             }
             return false;

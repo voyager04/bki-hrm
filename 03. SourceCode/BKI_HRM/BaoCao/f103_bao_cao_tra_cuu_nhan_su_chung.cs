@@ -13,8 +13,9 @@ using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-
+using Checkbox_Combobox;
 using IP.Core.IPCommon;
+using IP.Core.IPExcelReport;
 using IP.Core.IPSystemAdmin;
 
 using BKI_HRM.US;
@@ -40,7 +41,7 @@ namespace BKI_HRM {
         internal SiSButton m_cmd_exit;
         private ToolTip m_tooltip;
         private Label m_lbl_thong_bao;
-        private Checkbox_Combobox.CheckBoxComboBox m_cbc_choose_columns;
+        private CheckBoxComboBox m_cbc_choose_columns;
         private Label m_lbl_phim_tat;
         private IContainer components;
 
@@ -75,8 +76,8 @@ namespace BKI_HRM {
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f103_bao_cao_tra_cuu_nhan_su));
-            Checkbox_Combobox.CheckBoxProperties checkBoxProperties1 = new Checkbox_Combobox.CheckBoxProperties();
+            var resources = new System.ComponentModel.ComponentResourceManager(typeof(f103_bao_cao_tra_cuu_nhan_su));
+            var checkBoxProperties1 = new Checkbox_Combobox.CheckBoxProperties();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -303,7 +304,7 @@ namespace BKI_HRM {
         }
 
         internal int SapHetHanThuViec(DataEntryFormMode ip_e_form_mode) {
-            this.Text = "F103 - Danh sách Thử việc sắp hết hạn";
+            Text = "F103 - Danh sách Thử việc sắp hết hạn";
             m_e_form_mode = ip_e_form_mode;
             m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
             m_us.FillDatasetSapHetHanThuViec(m_ds, "");
@@ -425,12 +426,16 @@ namespace BKI_HRM {
             var v_coll = new AutoCompleteStringCollection();
             var v_rows = m_ds.Tables[0].Rows;
             for (var i = 0; i < v_rows.Count - 1; i++) {
-                v_coll.Add(v_rows[i]["HO_DEM"] + "");
-                v_coll.Add(v_rows[i]["TEN"] + "");
-                v_coll.Add(v_rows[i]["HO_DEM"] + " " + v_rows[i]["TEN"]);
-                v_coll.Add(v_rows[i]["TEN_CV"] + "");
-                v_coll.Add(v_rows[i]["HO_DEM"] + " - " + v_rows[i]["TEN"] + " - " + v_rows[i]["MA_NV"]);
-                v_coll.Add(v_rows[i]["TEN"] + " - " + v_rows[i]["HO_DEM"] + " " + v_rows[i]["TEN"] + " - " + v_rows[i]["MA_NV"]);
+                v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.TEN] + "");
+                v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.TEN_CV] + "");
+                v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.TRINH_DO] + "");
+                v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.MA_CV] + "");
+                v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.TEN_CV] + "");
+                v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.LOAI_CV] + "");
+                v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.MA_DON_VI] + "");
+                v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.TEN_DON_VI] + "");
+                v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.DIA_BAN] + "");
+                v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.HO_DEM] + " " + v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.TEN]);
             }
             m_txt_search.AutoCompleteCustomSource = v_coll;
         }
@@ -519,6 +524,14 @@ namespace BKI_HRM {
             WinFormControls.load_data_to_CheckboxCombobox(m_fg, m_cbc_choose_columns, load_invisible);
         }
 
+        private void xuat_excel(){
+            var v_start_row = 8;
+            var v_start_col = 1;
+            var v_obj_excel_rpt = new CExcelReport("f103_bao_cao_nhan_su_chung.xlsx", v_start_row, v_start_col);
+            v_obj_excel_rpt.AddFindAndReplaceItem("<ngay_thang>", string.Format("{0}/{1}/{2}", DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year));
+            v_obj_excel_rpt.FindAndReplace(false);
+            v_obj_excel_rpt.Export2ExcelWithoutFixedRows(m_fg, 1, m_fg.Cols.Count - 1, true);
+        }
         /*
          * Phần xử lý tìm kiếm
          */
@@ -770,22 +783,22 @@ namespace BKI_HRM {
          */
 
         private void hien_thi_cot_duoc_check(bool load_invisible) {
-            int v_count = m_fg.Cols.Count;
-            int v_count_visible = 0;
-            for (int i = 0; i < v_count; i++) {
+            var v_count = m_fg.Cols.Count;
+            var v_count_visible = 0;
+            for (var i = 0; i < v_count; i++) {
                 if (m_fg.Cols[i].Visible) {
                     v_count_visible = v_count_visible + 1;
                 }
             }
             if (load_invisible) {
                 if (v_count >= 2 && (m_cbc_choose_columns.Items.Count == v_count - 1)) {
-                    for (int i = 0; i < v_count - 2; i++) {
+                    for (var i = 0; i < v_count - 2; i++) {
                         m_fg.Cols[i + 2].Visible = m_cbc_choose_columns.CheckBoxItems[i + 1].Checked;
                     }
                 }
             } else {
                 if (v_count_visible >= 2 && (m_cbc_choose_columns.Items.Count == v_count_visible - 1)) {
-                    for (int i = 0; i < v_count_visible - 2; i++) {
+                    for (var i = 0; i < v_count_visible - 2; i++) {
                         m_fg.Cols[i + 2].Visible = m_cbc_choose_columns.CheckBoxItems[i + 1].Checked;
                     }
                 }
@@ -810,6 +823,7 @@ namespace BKI_HRM {
             m_txt_search.MouseClick += m_txt_search_MouseClick;
             m_txt_search.Leave += m_txt_search_Leave;
             m_cbc_choose_columns.CheckBoxItems.CheckBoxCheckedChanged += m_cbc_choose_columns_SelectedIndexChange;
+            m_cmd_xuat_excel.Click += m_cmd_xuat_excel_Click;
         }
 
         private void f103_bao_cao_tra_cuu_nhan_su_Load(object sender, EventArgs e) {
@@ -867,6 +881,14 @@ namespace BKI_HRM {
         private void m_cbc_choose_columns_SelectedIndexChange(object sender, EventArgs e) {
             try {
                 hien_thi_cot_duoc_check(load_invisible);
+            } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        
+        private void m_cmd_xuat_excel_Click(object sender, EventArgs e) {
+            try {
+                xuat_excel();
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
