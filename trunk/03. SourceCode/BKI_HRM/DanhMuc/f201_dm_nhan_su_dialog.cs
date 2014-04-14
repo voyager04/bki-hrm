@@ -80,7 +80,8 @@ namespace BKI_HRM
         {
             US_V_GD_CHI_TIET_CAP_BAC v_us = new US_V_GD_CHI_TIET_CAP_BAC();
             DS_V_GD_CHI_TIET_CAP_BAC v_ds = new DS_V_GD_CHI_TIET_CAP_BAC();
-            v_us.FillDatasetSearchCapCacThoiDiem(v_ds, m_us_nhan_su.strMA_NV, DateTime.Today);
+            v_us.FillDatasetByManhanvien(v_ds, m_us_nhan_su.strMA_NV);
+            v_us.DataRow2Me((DataRow)v_ds.V_GD_CHI_TIET_CAP_BAC.Rows[0]);
             f106_v_gd_chi_tiet_cap_bac_DE v_frm = new f106_v_gd_chi_tiet_cap_bac_DE();
             v_frm.display_for_insert(v_us, v_ds);
         }
