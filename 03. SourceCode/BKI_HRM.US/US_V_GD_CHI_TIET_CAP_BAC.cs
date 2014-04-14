@@ -396,6 +396,13 @@ namespace BKI_HRM.US {
             v_stored_proc.addDatetimeInputParam("@THOI_DIEM", ip_dat_thoi_diem);
             v_stored_proc.fillDataSetByCommand(this, op_ds_v_gd_chi_tiet_cap_bac);
         }
+        public void FillDatasetByManhanvien(DS_V_GD_CHI_TIET_CAP_BAC op_ds_v_gd_chi_tiet_cap_bac, string ip_str_search)
+        {
+            CStoredProc v_stored_proc = new CStoredProc("pr_V_GD_CHI_TIET_CAP_BAC_by_Ma_nhan_vien");
+            v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_str_search);
+           
+            v_stored_proc.fillDataSetByCommand(this, op_ds_v_gd_chi_tiet_cap_bac);
+        }
         #endregion
     }
 }
