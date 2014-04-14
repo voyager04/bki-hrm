@@ -30,8 +30,9 @@ namespace BKI_HRM
             InitializeComponent();
             format_controls();
         }
-        public void display_for_insert(US_V_GD_QUA_TRINH_LAM_VIEC ip_us_qua_trinh_lam_viec)
+        public void display_for_insert(US_V_GD_QUA_TRINH_LAM_VIEC ip_us_qua_trinh_lam_viec, string ip_str_loai_thay_doi)
         {
+            m_str_loai_thay_doi = ip_str_loai_thay_doi;
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             m_us_v_qua_trinh_lam_viec = ip_us_qua_trinh_lam_viec;
             us_object_to_form();
@@ -54,7 +55,9 @@ namespace BKI_HRM
         US_DM_DON_VI m_us_dm_don_vi = new US_DM_DON_VI();
         US_DM_QUYET_DINH m_us_quyet_dinh = new US_DM_QUYET_DINH();
         DS_DM_QUYET_DINH m_ds_quyet_dinh = new DS_DM_QUYET_DINH();
-        bool check_quyet_dinh_null = false;
+        bool m_b_check_quyet_dinh_null = false;
+        bool m_b_check_quyet_dinh_save;
+        string m_str_loai_thay_doi;
 #endregion
 
 #region Private Methods
@@ -191,6 +194,14 @@ namespace BKI_HRM
         }
         private void form_to_us_object_chi_tiet_chuc_vu()
         {
+            if (m_str_loai_thay_doi == "thang_chuc")
+            {
+                m_us_chi_tiet_chuc_vu.dcID_LOAI_CV = 650;
+            }
+            else if (m_str_loai_thay_doi == "kiem_nhiem")
+            {
+                m_us_chi_tiet_chuc_vu.dcID_LOAI_CV = 651;
+            }
             m_us_chi_tiet_chuc_vu = new US_GD_CHI_TIET_CHUC_VU();
            
             m_us_chi_tiet_chuc_vu.dcID_NHAN_SU = m_us_v_qua_trinh_lam_viec.dcID_NHAN_SU;
@@ -220,8 +231,8 @@ namespace BKI_HRM
         }
         private void form_to_us_object_quyet_dinh()
         {
-            m_us_quyet_dinh.strMA_QUYET_DINH = m_txt_ma_quyet_dinh.Text;
-            m_us_quyet_dinh.strNOI_DUNG = m_txt_noi_dung.Text;
+            m_us_quyet_dinh.strMA_QUYET_DINH = m_txt_ma_quyet_dinh.Text.Trim();
+            m_us_quyet_dinh.strNOI_DUNG = m_txt_noi_dung.Text.Trim();
             m_us_quyet_dinh.strLINK = m_ofd_openfile.FileName;
             m_us_quyet_dinh.dcID_LOAI_QD = CIPConvert.ToDecimal(m_cbo_loai_quyet_dinh.SelectedValue);
             m_us_quyet_dinh.datNGAY_KY = m_dat_ngay_ky.Value;
@@ -256,20 +267,25 @@ namespace BKI_HRM
             {
 
                 case DataEntryFormMode.UpdateDataState:
+                    
                     if (check_validate_data_is_ok() == false)
                         return;
                     else
                     {
                         
                         form_to_us_object_quyet_dinh();
-                        if (check_quyet_dinh_null)
+                        if (m_b_check_quyet_dinh_save)
                         {
-                            m_us_quyet_dinh.Insert();
+                            if (m_b_check_quyet_dinh_null)
+                            {
+                                m_us_quyet_dinh.Insert();
+                            }
+                            else
+                            {
+                                m_us_quyet_dinh.Update();
+                            }
                         }
-                        else
-                        {
-                            m_us_quyet_dinh.Update();
-                        }
+                        
                         
                         form_to_us_object_chi_tiet_chuc_vu();
                         
@@ -287,7 +303,11 @@ namespace BKI_HRM
                         if (m_txt_ma_quyet_dinh.Text != "")
                         {
                             form_to_us_object_quyet_dinh();
-                            m_us_quyet_dinh.Insert();
+                            if (m_b_check_quyet_dinh_save)
+                            {
+                                m_us_quyet_dinh.Insert();
+                            }
+                            
                         }
                         form_to_us_object_chi_tiet_chuc_vu();
                         m_us_chi_tiet_chuc_vu.Insert();
@@ -344,6 +364,12 @@ namespace BKI_HRM
         private void set_define_event()
         {
 
+        }
+        private void them_quyet_dinh()
+        {
+            m_b_check_quyet_dinh_save = true;  
+            m_grb_quyet_dinh.Enabled = true;
+            m_txt_ma_quyet_dinh.Focus();
         }
 #endregion
 
@@ -425,6 +451,60 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        private void m_cmd_chon_quyet_dinh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                m_b_check_quyet_dinh_save = false;
+                m_grb_quyet_dinh.Enabled = true; 
+                f600_v_dm_quyet_dinh v_frm = new f600_v_dm_quyet_dinh();
+                v_frm.select_data(ref m_us_quyet_dinh);
+                if (m_us_quyet_dinh.dcID != -1)
+                {
+
+                    m_ofd_openfile.FileName = m_us_quyet_dinh.strLINK;
+                    m_txt_ma_quyet_dinh.Text = m_us_quyet_dinh.strMA_QUYET_DINH;
+
+                    m_cbo_loai_quyet_dinh.SelectedValue = m_us_quyet_dinh.dcID_LOAI_QD;
+                    m_dat_ngay_ky.Value = m_us_quyet_dinh.datNGAY_KY;
+                    if (m_us_quyet_dinh.datNGAY_CO_HIEU_LUC > DateTime.Parse("01/01/1900") && 
+                        m_us_quyet_dinh.datNGAY_CO_HIEU_LUC != null)
+                        m_dat_ngay_co_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_CO_HIEU_LUC;
+                    else
+                        m_dat_ngay_co_hieu_luc_qd.Checked = false;
+                    if (m_us_quyet_dinh.datNGAY_HET_HIEU_LUC != null &&
+                        m_us_quyet_dinh.datNGAY_HET_HIEU_LUC > DateTime.Parse("1/1/1900"))
+                        m_dat_ngay_het_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_HET_HIEU_LUC;
+                    else
+                        m_dat_ngay_het_hieu_luc_qd.Checked = false;
+                    m_txt_noi_dung.Text = m_us_quyet_dinh.strNOI_DUNG;
+                    m_ofd_openfile.FileName = m_us_quyet_dinh.strLINK;
+                   
+                }
+                else
+                {
+                    m_b_check_quyet_dinh_null = true;
+                }
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_them_quyet_dinh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                them_quyet_dinh();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        
 #endregion
 
         
