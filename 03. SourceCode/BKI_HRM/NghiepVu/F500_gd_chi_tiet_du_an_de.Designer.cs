@@ -34,11 +34,11 @@
             this.m_lbl_ma_du_an = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_cmd_refresh = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_lbl_ma_nhan_su = new System.Windows.Forms.Label();
             this.m_lbl_ho_dem = new System.Windows.Forms.Label();
-            this.m_lbl_ten = new System.Windows.Forms.Label();
             this.m_txt_ma_du_an = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,7 +53,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.m_txt_thoi_gian_tham_gia = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,6 +103,33 @@
             this.m_cmd_save.Text = "&Lưu";
             this.m_cmd_save.Click += new System.EventHandler(this.m_cmd_save_Click);
             // 
+            // ImageList
+            // 
+            this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
+            this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.ImageList.Images.SetKeyName(0, "");
+            this.ImageList.Images.SetKeyName(1, "");
+            this.ImageList.Images.SetKeyName(2, "");
+            this.ImageList.Images.SetKeyName(3, "");
+            this.ImageList.Images.SetKeyName(4, "");
+            this.ImageList.Images.SetKeyName(5, "");
+            this.ImageList.Images.SetKeyName(6, "");
+            this.ImageList.Images.SetKeyName(7, "");
+            this.ImageList.Images.SetKeyName(8, "");
+            this.ImageList.Images.SetKeyName(9, "");
+            this.ImageList.Images.SetKeyName(10, "");
+            this.ImageList.Images.SetKeyName(11, "");
+            this.ImageList.Images.SetKeyName(12, "");
+            this.ImageList.Images.SetKeyName(13, "");
+            this.ImageList.Images.SetKeyName(14, "");
+            this.ImageList.Images.SetKeyName(15, "");
+            this.ImageList.Images.SetKeyName(16, "");
+            this.ImageList.Images.SetKeyName(17, "");
+            this.ImageList.Images.SetKeyName(18, "");
+            this.ImageList.Images.SetKeyName(19, "");
+            this.ImageList.Images.SetKeyName(20, "");
+            this.ImageList.Images.SetKeyName(21, "");
+            // 
             // m_cmd_refresh
             // 
             this.m_cmd_refresh.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -150,18 +176,9 @@
             this.m_lbl_ho_dem.AutoSize = true;
             this.m_lbl_ho_dem.Location = new System.Drawing.Point(350, 63);
             this.m_lbl_ho_dem.Name = "m_lbl_ho_dem";
-            this.m_lbl_ho_dem.Size = new System.Drawing.Size(45, 13);
+            this.m_lbl_ho_dem.Size = new System.Drawing.Size(39, 13);
             this.m_lbl_ho_dem.TabIndex = 28;
-            this.m_lbl_ho_dem.Text = "Họ đệm";
-            // 
-            // m_lbl_ten
-            // 
-            this.m_lbl_ten.AutoSize = true;
-            this.m_lbl_ten.Location = new System.Drawing.Point(445, 63);
-            this.m_lbl_ten.Name = "m_lbl_ten";
-            this.m_lbl_ten.Size = new System.Drawing.Size(26, 13);
-            this.m_lbl_ten.TabIndex = 29;
-            this.m_lbl_ten.Text = "Tên";
+            this.m_lbl_ho_dem.Text = "Họ tên";
             // 
             // m_txt_ma_du_an
             // 
@@ -293,33 +310,6 @@
             this.label7.TabIndex = 49;
             this.label7.Text = "(%)";
             // 
-            // ImageList
-            // 
-            this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
-            this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.ImageList.Images.SetKeyName(0, "");
-            this.ImageList.Images.SetKeyName(1, "");
-            this.ImageList.Images.SetKeyName(2, "");
-            this.ImageList.Images.SetKeyName(3, "");
-            this.ImageList.Images.SetKeyName(4, "");
-            this.ImageList.Images.SetKeyName(5, "");
-            this.ImageList.Images.SetKeyName(6, "");
-            this.ImageList.Images.SetKeyName(7, "");
-            this.ImageList.Images.SetKeyName(8, "");
-            this.ImageList.Images.SetKeyName(9, "");
-            this.ImageList.Images.SetKeyName(10, "");
-            this.ImageList.Images.SetKeyName(11, "");
-            this.ImageList.Images.SetKeyName(12, "");
-            this.ImageList.Images.SetKeyName(13, "");
-            this.ImageList.Images.SetKeyName(14, "");
-            this.ImageList.Images.SetKeyName(15, "");
-            this.ImageList.Images.SetKeyName(16, "");
-            this.ImageList.Images.SetKeyName(17, "");
-            this.ImageList.Images.SetKeyName(18, "");
-            this.ImageList.Images.SetKeyName(19, "");
-            this.ImageList.Images.SetKeyName(20, "");
-            this.ImageList.Images.SetKeyName(21, "");
-            // 
             // F500_gd_chi_tiet_du_an_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -339,7 +329,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_txt_ma_du_an);
-            this.Controls.Add(this.m_lbl_ten);
             this.Controls.Add(this.m_lbl_ho_dem);
             this.Controls.Add(this.m_lbl_ma_nhan_su);
             this.Controls.Add(this.m_pnl_out_place_dm);
@@ -363,7 +352,6 @@
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private System.Windows.Forms.Label m_lbl_ma_nhan_su;
         private System.Windows.Forms.Label m_lbl_ho_dem;
-        private System.Windows.Forms.Label m_lbl_ten;
         private System.Windows.Forms.TextBox m_txt_ma_du_an;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
