@@ -212,8 +212,8 @@ namespace BKI_HRM
         }
         private void form_to_us_object_quyet_dinh()
         {
-            m_us_quyet_dinh.strMA_QUYET_DINH = m_txt_ma_quyet_dinh.Text;
-            m_us_quyet_dinh.strNOI_DUNG = m_txt_noi_dung.Text;
+            m_us_quyet_dinh.strMA_QUYET_DINH = m_txt_ma_quyet_dinh.Text.Trim();
+            m_us_quyet_dinh.strNOI_DUNG = m_txt_noi_dung.Text.Trim();
             m_us_quyet_dinh.strLINK = m_ofd_openfile.FileName;
             m_us_quyet_dinh.dcID_LOAI_QD = CIPConvert.ToDecimal(m_cbo_loai_quyet_dinh.SelectedValue);
             m_us_quyet_dinh.datNGAY_KY = m_dat_ngay_ky.Value;
