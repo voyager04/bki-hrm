@@ -394,5 +394,14 @@ namespace BKI_HRM.US
         v_sp.addNVarcharInputParam("@STR_DU_AN", v_str_tu_khoa);
         v_sp.fillDataSetByCommand(this, op_ds_nhan_su);
     }
+
+    public void FillDatasetTuNgayDenNgay(DS_V_DM_NHAN_SU_DU_AN op_ds_nhan_su, DateTime v_dat_tu_ngay, DateTime v_dat_den_ngay, string v_str_tu_khoa)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_V_NHAN_SU_DU_AN_tu_ngay_den_ngay");
+        v_sp.addNVarcharInputParam("@STR_DU_AN", v_str_tu_khoa);
+        v_sp.addDatetimeInputParam("@DAT_TU_NGAY", v_dat_tu_ngay);
+        v_sp.addDatetimeInputParam("@DAT_DEN_NGAY", v_dat_den_ngay);
+        v_sp.fillDataSetByCommand(this, op_ds_nhan_su);
+    }
     }
 }

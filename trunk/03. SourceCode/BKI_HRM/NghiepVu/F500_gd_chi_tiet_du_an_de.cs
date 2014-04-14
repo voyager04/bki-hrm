@@ -296,8 +296,8 @@ namespace BKI_HRM.NghiepVu
             if (v_ds.Tables[0].Rows.Count > 0)
             {
                 DataRow dr = v_ds.Tables[0].Rows[0];
-                m_lbl_ho_dem.Text = dr["HO_DEM"].ToString();
-                m_lbl_ten.Text = dr["TEN"].ToString();
+                m_lbl_ho_dem.Text = dr["HO_DEM"].ToString() +" "+dr["TEN"].ToString();
+                //m_lbl_ten.Text = dr["TEN"].ToString();
                 m_us.dcID_NHAN_SU = CIPConvert.ToDecimal(dr["ID"].ToString());
             }
         }
@@ -331,8 +331,6 @@ namespace BKI_HRM.NghiepVu
                 m_us.dcID_DU_AN = CIPConvert.ToDecimal(dr["ID"].ToString());
             }
         }
-        #endregion                
-
-        
+        #endregion                        
     }
 }
