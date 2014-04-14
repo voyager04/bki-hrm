@@ -25,7 +25,17 @@ namespace BKI_HRM.NghiepVu
             m_txt_ma_du_an.Text = ip_str_ma_du_an;
             this.ShowDialog();
         }
-
+        public void display_for_insert(US_DM_NHAN_SU ip_us_dm_nhan_su)
+        {
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            load_data_2_control();
+            m_txt_ma_ns.Text = ip_us_dm_nhan_su.strMA_NV;
+            m_txt_ma_ns.BackColor = SystemColors.Info;
+            m_txt_ma_ns.ReadOnly = true;
+            //m_lbl_ho_dem.Text = ip_us_dm_nhan_su.strHO_DEM;
+            //m_lbl_ten.Text = ip_us_dm_nhan_su.strTEN;
+            this.ShowDialog();
+        }
         public void display_for_update(decimal i_dc_id_gd_chi_tiet_du_an)
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
