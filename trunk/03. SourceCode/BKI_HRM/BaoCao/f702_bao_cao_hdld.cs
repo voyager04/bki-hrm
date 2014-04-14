@@ -14,6 +14,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 using IP.Core.IPCommon;
+using IP.Core.IPExcelReport;
 using IP.Core.IPException;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
@@ -128,7 +129,7 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 575);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1331, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1357, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_xuat_excel
@@ -148,6 +149,7 @@ namespace BKI_HRM
             this.m_cmd_xuat_excel.Size = new System.Drawing.Size(113, 28);
             this.m_cmd_xuat_excel.TabIndex = 40;
             this.m_cmd_xuat_excel.Text = "Xuất Excel";
+            this.m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
             // 
             // m_cmd_exit
             // 
@@ -158,7 +160,7 @@ namespace BKI_HRM
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(1239, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(1265, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -169,7 +171,7 @@ namespace BKI_HRM
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Location = new System.Drawing.Point(0, 97);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1331, 472);
+            this.m_fg.Size = new System.Drawing.Size(1357, 472);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -190,6 +192,8 @@ namespace BKI_HRM
             // 
             // m_txt_tim_kiem
             // 
+            this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.m_txt_tim_kiem.ForeColor = System.Drawing.Color.Gray;
             this.m_txt_tim_kiem.Location = new System.Drawing.Point(186, 29);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
@@ -198,8 +202,6 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Text = "Nhập Mã nhân viên, Họ đệm, Tên, Mã hợp đồng, Loại hợp đồng, Ngày tháng, Trạng thá" +
     "i";
             this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
-            this.m_txt_tim_kiem.TextChanged += new System.EventHandler(this.m_txt_tim_kiem_TextChanged);
-            this.m_txt_tim_kiem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.m_txt_tim_kiem_KeyPress);
             this.m_txt_tim_kiem.Leave += new System.EventHandler(this.m_txt_tim_kiem_Leave);
             // 
             // label1
@@ -222,7 +224,7 @@ namespace BKI_HRM
             // f702_bao_cao_hdld
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(1331, 611);
+            this.ClientSize = new System.Drawing.Size(1357, 611);
             this.Controls.Add(this.m_lbl_count_record);
             this.Controls.Add(this.m_cmd_tim_kiem);
             this.Controls.Add(this.m_txt_tim_kiem);
@@ -266,28 +268,19 @@ namespace BKI_HRM
         #region Data Structure
         private enum e_col_Number
         {
-            TRANG_THAI_HOP_DONG = 12
-,
-            CHUC_VU_NGUOI_KY = 11
-                ,
-            NGAY_HET_HAN = 8
-                ,
+            MA_NV = 1,
+            HO_DEM = 2,
+            TEN = 3,
+            MA_HOP_DONG = 4,
+            LOAI_HOP_DONG = 5,
+            NGAY_KY_HOP_DONG = 6,
+            NGAY_CO_HIEU_LUC = 7,
+            NGAY_HET_HAN = 8,
             TEN_PHAP_NHAN = 9,
-            MA_NV = 1
-                ,
-            NGUOI_KY = 10
-                ,
-            NGAY_KY_HOP_DONG = 6
-                ,
-            LOAI_HOP_DONG = 5
-                ,
-            TEN = 3
-                ,
-            MA_HOP_DONG = 4
-                ,
-            HO_DEM = 2
-                , NGAY_CO_HIEU_LUC = 7
-
+            TRANG_THAI_HOP_DONG = 10,
+            LINK = 11,
+            NGUOI_KY = 12,
+            CHUC_VU_NGUOI_KY = 13
         }
         #endregion
 
@@ -329,6 +322,7 @@ namespace BKI_HRM
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.LOAI_HOP_DONG, e_col_Number.LOAI_HOP_DONG);
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.TEN, e_col_Number.TEN);
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.MA_HOP_DONG, e_col_Number.MA_HOP_DONG);
+            v_htb.Add(V_GD_HOP_DONG_LAO_DONG.LINK, e_col_Number.LINK);
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.HO_DEM, e_col_Number.HO_DEM);
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.NGAY_CO_HIEU_LUC, e_col_Number.NGAY_CO_HIEU_LUC);
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.TEN_PHAP_NHAN, e_col_Number.TEN_PHAP_NHAN);
@@ -459,24 +453,43 @@ namespace BKI_HRM
             //	f702_bao_cao_hdld_het_han_DE v_fDE = new f702_bao_cao_hdld_het_han_DE();			
             //	v_fDE.display(m_us);
         }
+
         private void set_define_events()
         {
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
         }
 
+        private void xuat_excel()
+        {
+            CExcelReport v_obj_excel_rpt = new CExcelReport("f701_bao_cao_hop_dong_lao_dong.xlsx", 8, 1);
+            v_obj_excel_rpt.AddFindAndReplaceItem("<ngay_thang>", string.Format("{0}/{1}/{2}", DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year));
+            v_obj_excel_rpt.FindAndReplace(false);
+            v_obj_excel_rpt.Export2ExcelWithoutFixedRows(m_fg, 1, m_fg.Cols.Count - 1, true);
+        }
+
+        private void auto_suggest_text()
+        {
+            US_V_GD_HOP_DONG_LAO_DONG v_us_v_gd_hop_dong = new US_V_GD_HOP_DONG_LAO_DONG();
+            DS_V_GD_HOP_DONG_LAO_DONG v_ds_v_gd_hop_dong = new DS_V_GD_HOP_DONG_LAO_DONG();
+            v_us_v_gd_hop_dong.FillDataset(v_ds_v_gd_hop_dong);
+            var v_acsc_search = new AutoCompleteStringCollection();
+            foreach (DataRow dr in v_ds_v_gd_hop_dong.V_GD_HOP_DONG_LAO_DONG)
+            {
+                v_acsc_search.Add(dr[V_GD_HOP_DONG_LAO_DONG.HO_DEM].ToString() + " " + dr[V_GD_HOP_DONG_LAO_DONG.TEN].ToString());
+            }
+            m_txt_tim_kiem.AutoCompleteCustomSource = v_acsc_search;
+        }
+
         #endregion
 
-        //
-        //
-        //		EVENT HANLDERS
-        //
-        //
         private void f702_bao_cao_hdld_het_han_Load(object sender, System.EventArgs e)
         {
             try
             {
-                set_initial_form_load();
                 m_txt_tim_kiem.ForeColor = Color.Gray;
+                set_initial_form_load();
+                m_txt_tim_kiem.Focus();
+                auto_suggest_text();
             }
             catch (Exception v_e)
             {
@@ -498,18 +511,6 @@ namespace BKI_HRM
         }
 
         private void m_cmd_tim_kiem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                load_data_2_grid();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void m_txt_tim_kiem_KeyPress(object sender, KeyPressEventArgs e)
         {
             try
             {
@@ -551,11 +552,11 @@ namespace BKI_HRM
             }
         }
 
-        private void m_txt_tim_kiem_TextChanged(object sender, EventArgs e)
+        private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
         {
             try
             {
-                load_data_2_grid();
+                xuat_excel();
             }
             catch (Exception v_e)
             {
