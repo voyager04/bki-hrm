@@ -312,6 +312,8 @@ namespace BKI_HRM
         {
             m_e_form_mode = DataEntryFormMode.SelectDataState;
             this.ShowDialog();
+            m_cmd_insert.Visible = false;
+            m_cmd_update.Visible = false;
             op_us = m_us; 
         }
         #endregion
