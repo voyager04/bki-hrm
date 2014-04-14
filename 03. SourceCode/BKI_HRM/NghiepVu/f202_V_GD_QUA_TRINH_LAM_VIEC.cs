@@ -146,11 +146,12 @@ namespace BKI_HRM
             this.m_cmd_thang_chuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_thang_chuc.ImageIndex = 9;
             this.m_cmd_thang_chuc.ImageList = this.ImageList;
-            this.m_cmd_thang_chuc.Location = new System.Drawing.Point(652, 4);
+            this.m_cmd_thang_chuc.Location = new System.Drawing.Point(593, 4);
             this.m_cmd_thang_chuc.Name = "m_cmd_thang_chuc";
-            this.m_cmd_thang_chuc.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_thang_chuc.Size = new System.Drawing.Size(107, 28);
             this.m_cmd_thang_chuc.TabIndex = 18;
             this.m_cmd_thang_chuc.Text = "&Thăng chức";
+            this.m_cmd_thang_chuc.Visible = false;
             this.m_cmd_thang_chuc.Click += new System.EventHandler(this.m_cmd_thang_chuc_Click);
             // 
             // m_cmd_kiem_nhiem
@@ -162,11 +163,11 @@ namespace BKI_HRM
             this.m_cmd_kiem_nhiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_kiem_nhiem.ImageIndex = 6;
             this.m_cmd_kiem_nhiem.ImageList = this.ImageList;
-            this.m_cmd_kiem_nhiem.Location = new System.Drawing.Point(740, 4);
+            this.m_cmd_kiem_nhiem.Location = new System.Drawing.Point(700, 4);
             this.m_cmd_kiem_nhiem.Name = "m_cmd_kiem_nhiem";
-            this.m_cmd_kiem_nhiem.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_kiem_nhiem.Size = new System.Drawing.Size(105, 28);
             this.m_cmd_kiem_nhiem.TabIndex = 17;
-            this.m_cmd_kiem_nhiem.Text = "&Kiêm nhiệm";
+            this.m_cmd_kiem_nhiem.Text = "&Bổ nhiệm";
             // 
             // m_cmd_mien_nhiem
             // 
@@ -177,9 +178,9 @@ namespace BKI_HRM
             this.m_cmd_mien_nhiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_mien_nhiem.ImageIndex = 11;
             this.m_cmd_mien_nhiem.ImageList = this.ImageList;
-            this.m_cmd_mien_nhiem.Location = new System.Drawing.Point(828, 4);
+            this.m_cmd_mien_nhiem.Location = new System.Drawing.Point(805, 4);
             this.m_cmd_mien_nhiem.Name = "m_cmd_mien_nhiem";
-            this.m_cmd_mien_nhiem.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_mien_nhiem.Size = new System.Drawing.Size(111, 28);
             this.m_cmd_mien_nhiem.TabIndex = 16;
             this.m_cmd_mien_nhiem.Text = "&Miễn nhiệm";
             // 
