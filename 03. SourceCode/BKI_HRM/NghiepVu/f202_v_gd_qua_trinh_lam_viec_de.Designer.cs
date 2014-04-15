@@ -71,6 +71,8 @@
             this.m_lbl_don_vi_moi = new System.Windows.Forms.Label();
             this.m_cmd_chon_quyet_dinh = new SIS.Controls.Button.SiSButton();
             this.m_cmd_them_quyet_dinh = new SIS.Controls.Button.SiSButton();
+            this.m_txt_ty_le_tham_gia = new System.Windows.Forms.TextBox();
+            this.m_lbl_ty_le_tham_gia = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.m_grb_quyet_dinh.SuspendLayout();
             this.SuspendLayout();
@@ -520,11 +522,30 @@
             this.m_cmd_them_quyet_dinh.Text = "Tạo mới quyết định";
             this.m_cmd_them_quyet_dinh.Click += new System.EventHandler(this.m_cmd_them_quyet_dinh_Click);
             // 
+            // m_txt_ty_le_tham_gia
+            // 
+            this.m_txt_ty_le_tham_gia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_ty_le_tham_gia.Location = new System.Drawing.Point(115, 67);
+            this.m_txt_ty_le_tham_gia.Name = "m_txt_ty_le_tham_gia";
+            this.m_txt_ty_le_tham_gia.Size = new System.Drawing.Size(100, 20);
+            this.m_txt_ty_le_tham_gia.TabIndex = 103;
+            // 
+            // m_lbl_ty_le_tham_gia
+            // 
+            this.m_lbl_ty_le_tham_gia.AutoSize = true;
+            this.m_lbl_ty_le_tham_gia.Location = new System.Drawing.Point(27, 70);
+            this.m_lbl_ty_le_tham_gia.Name = "m_lbl_ty_le_tham_gia";
+            this.m_lbl_ty_le_tham_gia.Size = new System.Drawing.Size(73, 13);
+            this.m_lbl_ty_le_tham_gia.TabIndex = 102;
+            this.m_lbl_ty_le_tham_gia.Text = "Tỷ lệ tham gia";
+            // 
             // f202_v_gd_qua_trinh_lam_viec_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(630, 489);
+            this.Controls.Add(this.m_txt_ty_le_tham_gia);
+            this.Controls.Add(this.m_lbl_ty_le_tham_gia);
             this.Controls.Add(this.m_cmd_them_quyet_dinh);
             this.Controls.Add(this.m_dat_ngay_ket_thuc);
             this.Controls.Add(this.m_cmd_chon_quyet_dinh);
@@ -601,5 +622,7 @@
         private System.Windows.Forms.Label m_lbl_don_vi_moi;
         internal SIS.Controls.Button.SiSButton m_cmd_chon_quyet_dinh;
         internal SIS.Controls.Button.SiSButton m_cmd_them_quyet_dinh;
+        private System.Windows.Forms.TextBox m_txt_ty_le_tham_gia;
+        private System.Windows.Forms.Label m_lbl_ty_le_tham_gia;
     }
 }
