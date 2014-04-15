@@ -239,6 +239,8 @@ namespace BKI_HRM
             // 
             // m_txt_tim_kiem
             // 
+            this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.m_txt_tim_kiem.ForeColor = System.Drawing.Color.Gray;
             this.m_txt_tim_kiem.Location = new System.Drawing.Point(179, 28);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
@@ -247,7 +249,6 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Text = "Nhập Mã pháp nhân, Tên pháp nhân, Mã số thuế, Mã đăng ký kinh doanh, Tháng đăng k" +
     "ý kinh doanh, Địa chỉ, Người đại diện";
             this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
-            this.m_txt_tim_kiem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.m_txt_tim_kiem_KeyPress);
             this.m_txt_tim_kiem.Leave += new System.EventHandler(this.m_txt_tim_kiem_Leave);
             // 
             // label1
@@ -440,6 +441,20 @@ namespace BKI_HRM
             m_fg.Redraw = true;
         }
 
+        private void auto_suggest_text()
+        {
+            US_DM_PHAP_NHAN v_us_dm_phap_nhan = new US_DM_PHAP_NHAN();
+            DS_DM_PHAP_NHAN v_ds_dm_phap_nhan = new DS_DM_PHAP_NHAN();
+            v_us_dm_phap_nhan.FillDataset(v_ds_dm_phap_nhan);
+            var v_acsc_search = new AutoCompleteStringCollection();
+            foreach (DataRow dr in v_ds_dm_phap_nhan.DM_PHAP_NHAN)
+            {
+                v_acsc_search.Add(dr[DM_PHAP_NHAN.TEN_PHAP_NHAN].ToString());
+                v_acsc_search.Add(dr[DM_PHAP_NHAN.MA_PHAP_NHAN].ToString());
+            }
+            m_txt_tim_kiem.AutoCompleteCustomSource = v_acsc_search;
+        }
+
         #endregion
 
         #region Event
@@ -449,6 +464,8 @@ namespace BKI_HRM
             {
                 m_txt_tim_kiem.ForeColor = Color.Gray;
                 set_initial_form_load();
+                m_txt_tim_kiem.Focus();
+                auto_suggest_text();
             }
             catch (Exception v_e)
             {
@@ -518,18 +535,6 @@ namespace BKI_HRM
         }
 
         private void m_cmd_tim_kiem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                tim_kiem();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void m_txt_tim_kiem_KeyPress(object sender, KeyPressEventArgs e)
         {
             try
             {

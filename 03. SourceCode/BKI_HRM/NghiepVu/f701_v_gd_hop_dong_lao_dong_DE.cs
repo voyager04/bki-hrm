@@ -385,6 +385,7 @@ namespace BKI_HRM.NghiepVu
             m_txt_nguoi_ky.Text = "";
             m_txt_chuc_vu_nguoi_ky.Text = "";
             m_txt_tim_kiem_nhan_vien.Text = "";
+            m_lbl_file_name.Text = "";
 
             m_cbo_loai_hop_dong.SelectedIndex = 0;
             m_cbo_trang_thai.SelectedIndex = 0;
