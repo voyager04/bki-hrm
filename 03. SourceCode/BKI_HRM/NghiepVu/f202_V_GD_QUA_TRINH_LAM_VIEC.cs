@@ -42,6 +42,8 @@ namespace BKI_HRM
         internal SIS.Controls.Button.SiSButton m_cmd_kiem_nhiem;
         internal SIS.Controls.Button.SiSButton m_cmd_mien_nhiem;
         internal SIS.Controls.Button.SiSButton m_cmd_thang_chuc;
+        private Label m_lbl_mess;
+        private Label m_lbl_so_nhan_vien;
 		private System.ComponentModel.IContainer components;
 
 		public f202_V_GD_QUA_TRINH_LAM_VIEC()
@@ -92,6 +94,8 @@ namespace BKI_HRM
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_cmd_tim_nhan_vien = new SIS.Controls.Button.SiSButton();
             this.m_grv_qua_trinh_lam_viec = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_lbl_mess = new System.Windows.Forms.Label();
+            this.m_lbl_so_nhan_vien = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_qua_trinh_lam_viec)).BeginInit();
             this.SuspendLayout();
@@ -258,14 +262,33 @@ namespace BKI_HRM
             this.m_grv_qua_trinh_lam_viec.Location = new System.Drawing.Point(0, 61);
             this.m_grv_qua_trinh_lam_viec.Name = "m_grv_qua_trinh_lam_viec";
             this.m_grv_qua_trinh_lam_viec.Size = new System.Drawing.Size(1096, 373);
-            this.m_grv_qua_trinh_lam_viec.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_qua_trinh_lam_viec.Styles"));
             this.m_grv_qua_trinh_lam_viec.TabIndex = 24;
+            // 
+            // m_lbl_mess
+            // 
+            this.m_lbl_mess.AutoSize = true;
+            this.m_lbl_mess.Location = new System.Drawing.Point(12, 45);
+            this.m_lbl_mess.Name = "m_lbl_mess";
+            this.m_lbl_mess.Size = new System.Drawing.Size(156, 13);
+            this.m_lbl_mess.TabIndex = 25;
+            this.m_lbl_mess.Text = "Số nhân viên ( hiện tại/tổng số)";
+            // 
+            // m_lbl_so_nhan_vien
+            // 
+            this.m_lbl_so_nhan_vien.AutoSize = true;
+            this.m_lbl_so_nhan_vien.Location = new System.Drawing.Point(180, 45);
+            this.m_lbl_so_nhan_vien.Name = "m_lbl_so_nhan_vien";
+            this.m_lbl_so_nhan_vien.Size = new System.Drawing.Size(13, 13);
+            this.m_lbl_so_nhan_vien.TabIndex = 26;
+            this.m_lbl_so_nhan_vien.Text = "_";
             // 
             // f202_V_GD_QUA_TRINH_LAM_VIEC
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.CancelButton = this.m_cmd_exit;
             this.ClientSize = new System.Drawing.Size(1096, 470);
+            this.Controls.Add(this.m_lbl_so_nhan_vien);
+            this.Controls.Add(this.m_lbl_mess);
             this.Controls.Add(this.m_grv_qua_trinh_lam_viec);
             this.Controls.Add(this.m_cmd_tim_nhan_vien);
             this.Controls.Add(this.m_txt_tim_kiem);
@@ -320,6 +343,8 @@ namespace BKI_HRM
 		US_V_GD_QUA_TRINH_LAM_VIEC m_us_qua_trinh_lam_viec = new US_V_GD_QUA_TRINH_LAM_VIEC();
         US_V_DM_QUYET_DINH m_us_dm_quyet_dinh = new US_V_DM_QUYET_DINH();
         US_DM_NHAN_SU m_us_dm_nhan_su = new US_DM_NHAN_SU();
+        decimal tong_so;
+        decimal hien_tai;
 		#endregion
 
 		#region Private Methods
@@ -381,6 +406,9 @@ namespace BKI_HRM
              , "{0}"
              );
             m_grv_qua_trinh_lam_viec.Redraw = true;
+           
+            m_us_qua_trinh_lam_viec.Count_Nhan_vien(ref tong_so,ref  hien_tai);
+            m_lbl_so_nhan_vien.Text = hien_tai.ToString() + "/" + tong_so.ToString();
         }
         private void load_data_2_grid_search()
         {
@@ -388,7 +416,6 @@ namespace BKI_HRM
             m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, m_txt_tim_kiem.Text.Trim());
             m_grv_qua_trinh_lam_viec.Redraw = false;
             
-           
             CGridUtils.Dataset2C1Grid(m_ds_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec, m_obj_trans);
             m_grv_qua_trinh_lam_viec.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.None // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
               , 0
@@ -397,6 +424,9 @@ namespace BKI_HRM
               , "{0}"
               );
             m_grv_qua_trinh_lam_viec.Redraw = true;
+           
+            m_us_qua_trinh_lam_viec.Count_Nhan_vien(ref tong_so,ref hien_tai);
+            m_lbl_so_nhan_vien.Text = tong_so.ToString() + "/" + hien_tai.ToString();
         }
         private void load_custom_source_2_m_txt_tim_kiem()
         {
@@ -477,6 +507,15 @@ namespace BKI_HRM
             //int v_i_count = m_ds_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Count;
             f202_v_gd_qua_trinh_lam_viec_de v_fDE = new f202_v_gd_qua_trinh_lam_viec_de();
             v_fDE.display_for_insert(m_us_qua_trinh_lam_viec, ip_str_loai_thay_doi);
+            DialogResult v_dlr = BaseMessages.MsgBox_YES_NO_CANCEL("Bạn có muốn miễn nhiệm chức vũ cũ không?");
+            if (v_dlr == DialogResult.Yes)
+            {
+                US_V_GD_QUA_TRINH_LAM_VIEC v_us_qua_trinh_lam_viec = new US_V_GD_QUA_TRINH_LAM_VIEC();
+                v_fDE.get_us(ref v_us_qua_trinh_lam_viec);
+                m_txt_tim_kiem.Text = v_us_qua_trinh_lam_viec.strMA_NV;
+                load_data_2_grid_search();
+                m_cmd_kiem_nhiem.Visible = false;
+            }
             load_data_2_grid_search();
             //m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, "");
             //if (m_ds_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Count > v_i_count)
@@ -487,7 +526,8 @@ namespace BKI_HRM
             //}
 		}
 
-		private void update_v_gd_qua_trinh_lam_viec(){			
+		private void update_v_gd_qua_trinh_lam_viec(){
+            m_cmd_kiem_nhiem.Visible = true;
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_qua_trinh_lam_viec)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row)) return;			
             if (m_grv_qua_trinh_lam_viec.Rows[m_grv_qua_trinh_lam_viec.Row].UserData != null)
