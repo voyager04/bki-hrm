@@ -38,6 +38,10 @@ namespace BKI_HRM
             us_object_to_form();
             this.ShowDialog();
         }
+        public void get_us(ref US_V_GD_QUA_TRINH_LAM_VIEC op_us)
+        {
+            op_us = m_us_v_qua_trinh_lam_viec;
+        }
         public void display_for_update(US_V_GD_QUA_TRINH_LAM_VIEC ip_us_qua_trinh_lam_viec)
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
@@ -126,7 +130,7 @@ namespace BKI_HRM
                     break;
                 case DataEntryFormMode.UpdateDataState:
 
-                    
+                    m_txt_ty_le_tham_gia.Text = CIPConvert.ToStr(m_us_v_qua_trinh_lam_viec.dcTY_LE_THAM_GIA);
                     v_us_loai_quyet_dinh.FillDataset_load_loai_quyet_dinh(v_ds_loai_quyet_dinh, "Chức vụ", "Y");
                     m_cbo_loai_quyet_dinh.DataSource = v_ds_loai_quyet_dinh.CM_DM_TU_DIEN;
                     m_cbo_loai_quyet_dinh.DisplayMember = CM_DM_TU_DIEN.TEN;
@@ -203,7 +207,7 @@ namespace BKI_HRM
                 m_us_chi_tiet_chuc_vu.dcID_LOAI_CV = 651;
             }
             m_us_chi_tiet_chuc_vu = new US_GD_CHI_TIET_CHUC_VU();
-           
+            m_us_chi_tiet_chuc_vu.dcTY_LE_THAM_GIA = CIPConvert.ToDecimal(m_txt_ty_le_tham_gia.Text.Trim());
             m_us_chi_tiet_chuc_vu.dcID_NHAN_SU = m_us_v_qua_trinh_lam_viec.dcID_NHAN_SU;
             m_us_chi_tiet_chuc_vu.dcID_CHUC_VU = CIPConvert.ToDecimal(m_cbo_chuc_vu_moi.SelectedValue);
             m_us_chi_tiet_chuc_vu.dcID_LOAI_CV = CIPConvert.ToDecimal(m_cbo_loai_chuc_vu.SelectedValue);
@@ -263,6 +267,12 @@ namespace BKI_HRM
         }
         private void save_data()
         {
+            if (get_tong_ty_le_tham_gia() + m_us_v_qua_trinh_lam_viec.dcTY_LE_THAM_GIA > 100)
+            {
+                BaseMessages.MsgBox_Infor("Tỷ lệ tham gia đã đã vượt quá 100%.");
+                return;
+            }
+            else
             switch (m_e_form_mode)
             {
 
@@ -370,6 +380,18 @@ namespace BKI_HRM
             m_b_check_quyet_dinh_save = true;  
             m_grb_quyet_dinh.Enabled = true;
             m_txt_ma_quyet_dinh.Focus();
+        }
+        private decimal get_tong_ty_le_tham_gia()
+        {
+            decimal v_dc_return = 0;
+            m_us_v_qua_trinh_lam_viec.FillDataset_chuc_vu_hien_tai(m_ds_v_qua_trinh_lam_viec, 
+                        m_us_v_qua_trinh_lam_viec.strMA_NV
+                        );
+           foreach (DataRow row in m_ds_v_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows)
+           {
+               v_dc_return += CIPConvert.ToDecimal(row[10]);
+           }
+           return v_dc_return;
         }
 #endregion
 
