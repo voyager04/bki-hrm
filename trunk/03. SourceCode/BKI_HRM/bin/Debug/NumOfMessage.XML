@@ -76,16 +76,16 @@
     <FileName>tuy_chon.xml</FileName>
     <UserName>common</UserName>
     <Description>tuy_chon</Description>
-    <FromNum>221</FromNum>
-    <ToNum>222</ToNum>
+    <FromNum>521</FromNum>
+    <ToNum>522</ToNum>
     <AppName>8</AppName>
   </Users_DataSet>
   <Users_DataSet>
     <FileName>ho_so.xml</FileName>
     <UserName>common</UserName>
-    <Description>Hồ sơ nhân sự</Description>
+    <Description>Quản lý nhân sự</Description>
     <FromNum>200</FromNum>
-    <ToNum>220</ToNum>
+    <ToNum>300</ToNum>
     <AppName>HRM</AppName>
   </Users_DataSet>
 </Users_DataSet>
