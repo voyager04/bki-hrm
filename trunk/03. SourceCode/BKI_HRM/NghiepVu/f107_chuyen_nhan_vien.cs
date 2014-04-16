@@ -242,7 +242,6 @@ namespace BKI_HRM {
                     m_dc_id_don_vi_left = CIPConvert.ToDecimal(m_cbo_don_vi_left.SelectedValue);
                     load_data_2_lbox_nhan_vien_left(m_dc_id_don_vi_left);
                 }
-
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
