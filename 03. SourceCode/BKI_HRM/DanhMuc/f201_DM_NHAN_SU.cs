@@ -1873,7 +1873,7 @@ namespace BKI_HRM
                 v_us.DataRow2Me((DataRow)v_ds.V_GD_QUA_TRINH_LAM_VIEC.Rows[0]);
             //}
             f202_v_gd_qua_trinh_lam_viec_de v_frm = new f202_v_gd_qua_trinh_lam_viec_de();
-            v_frm.display_for_insert(v_us, "thang_chuc");
+            v_frm.display_for_insert(v_us, "kiem_nhiem");
             load_data_2_grv_chuc_vu_hien_tai();
         }
         
@@ -2255,7 +2255,8 @@ namespace BKI_HRM
 				v_us.BeginTransaction();    											
 				v_us.Delete();                      								
 				v_us.CommitTransaction();
-				m_grv_nhan_su.Rows.Remove(m_grv_nhan_su.Row);				
+				m_grv_nhan_su.Rows.Remove(m_grv_nhan_su.Row);
+                BaseMessages.MsgBox_Infor("Đã xóa thành công.");
 			}
 			catch (Exception v_e) {
 				v_us.Rollback();
