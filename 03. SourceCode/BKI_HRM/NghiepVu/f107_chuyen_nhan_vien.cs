@@ -172,36 +172,39 @@ namespace BKI_HRM {
             var v_count_right = m_lbox_nhan_vien_right.Items.Count;
             var v_id_don_vi_left = m_cbo_don_vi_left.SelectedValue;
             var v_id_don_vi_right = m_cbo_don_vi_right.SelectedValue;
-            var v_us_gd_chi_tiet_chuc_vu = new US_GD_CHI_TIET_CHUC_VU();
-            var v_ds_gd_chi_tiet_chuc_vu = new DS_GD_CHI_TIET_CHUC_VU();
             var v_us_dm_du_lieu_nhan_vien = new US_V_DM_DU_LIEU_NHAN_VIEN();
             var v_ds_dm_du_lieu_nhan_vien = new DS_V_DM_DU_LIEU_NHAN_VIEN();
             var v_us_dm_nhan_su = new US_DM_NHAN_SU();
             var v_ds_dm_nhan_su = new DS_DM_NHAN_SU();
-            var v_danh_sach_nhan_vien_new = new collection(1);
-            var v_danh_sach_nhan_vien_old = new collection(1);
-            var v_danh_sach_nhan_vien_insert = new collection(1);
-            var v_danh_sach_nhan_vien_delete = new collection(1);
+            var v_danh_sach_nhan_vien_left_new = new collection(1);
+            var v_danh_sach_nhan_vien_left_old = new collection(1);
+            var v_danh_sach_nhan_vien_left_insert = new collection(1);
+            var v_danh_sach_nhan_vien_left_delete = new collection(1);
+            var v_danh_sach_nhan_vien_right_new = new collection(1);
+            var v_danh_sach_nhan_vien_right_old = new collection(1);
+            var v_danh_sach_nhan_vien_right_insert = new collection(1);
+            var v_danh_sach_nhan_vien_right_delete = new collection(1);
             v_us_dm_nhan_su.FillDataset(v_ds_dm_nhan_su);
             v_us_dm_du_lieu_nhan_vien.FillDatasetByIdDonVi(v_ds_dm_du_lieu_nhan_vien,CIPConvert.ToDecimal(v_id_don_vi_left));
+            //-- Lưu nhân sự đơn vị LEFT
             if (v_count_left > 0){
-                v_danh_sach_nhan_vien_new = new collection(v_count_left);
+                v_danh_sach_nhan_vien_left_new = new collection(v_count_left);
                 foreach (var v_item in m_lbox_nhan_vien_left.Items){
                     var v_ma_nhan_vien = get_ma_nhan_vien(v_item.ToString());
                     var v_nhan_vien = (DS_DM_NHAN_SU.DM_NHAN_SURow)(v_ds_dm_nhan_su.DM_NHAN_SU.Select("MA_NV = "+v_ma_nhan_vien)[0]);
-                    v_danh_sach_nhan_vien_new.insert(v_nhan_vien.ID.ToString());
+                    v_danh_sach_nhan_vien_left_new.insert(v_nhan_vien.ID.ToString());
                 }
             }
             var v_count_nhan_vien = v_ds_dm_du_lieu_nhan_vien.V_DM_DU_LIEU_NHAN_VIEN.Count;
             if (v_count_nhan_vien > 0) {
                 var v_nhan_vien =
                         (v_ds_dm_du_lieu_nhan_vien.V_DM_DU_LIEU_NHAN_VIEN.Rows);
-                v_danh_sach_nhan_vien_old = new collection(v_count_nhan_vien);
+                v_danh_sach_nhan_vien_left_old = new collection(v_count_nhan_vien);
                 foreach (DS_V_DM_DU_LIEU_NHAN_VIEN.V_DM_DU_LIEU_NHAN_VIENRow v_item in v_nhan_vien){
-                    v_danh_sach_nhan_vien_old.insert(v_item.ID.ToString());
+                    v_danh_sach_nhan_vien_left_old.insert(v_item.ID.ToString());
                 }
             }
-            v_danh_sach_nhan_vien_delete = v_danh_sach_nhan_vien_old.InANotInB(v_danh_sach_nhan_vien_new);
+            v_danh_sach_nhan_vien_left_delete = v_danh_sach_nhan_vien_left_old.InANotInB(v_danh_sach_nhan_vien_left_new);
         }
 
         private string get_ma_nhan_vien(string ip_str_listbox_item){
