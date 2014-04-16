@@ -263,7 +263,7 @@ namespace BKI_HRM
             }
             if (m_dat_ngay_co_hieu_luc_qd.Value.Date > m_dat_ngay_het_hieu_luc_qd.Value.Date && m_dat_ngay_het_hieu_luc_qd.Checked = true)
             {
-                BaseMessages.MsgBox_Infor("Ngày có hiều lực không thể sau ngày hết hiệu lực.");
+                BaseMessages.MsgBox_Infor("Ngày có hiệu lực không thể sau ngày hết hiệu lực.");
             }
 
             return true;
