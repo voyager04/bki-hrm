@@ -833,6 +833,7 @@ namespace BKI_HRM.US {
             SqlParameter v_pa_ty_le = v_sp.addDecimalOutputParam("@TONG_TY_LE", v_dc_ty_le);
             
             v_sp.ExecuteCommand(this);
+            if (CIPConvert.is_valid_number(v_pa_ty_le.Value) == false) return 0;
             
             return CIPConvert.ToDecimal(v_pa_ty_le.Value);
             
