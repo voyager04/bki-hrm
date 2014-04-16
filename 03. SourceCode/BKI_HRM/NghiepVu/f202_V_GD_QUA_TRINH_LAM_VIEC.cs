@@ -262,6 +262,7 @@ namespace BKI_HRM
             this.m_grv_qua_trinh_lam_viec.Location = new System.Drawing.Point(0, 61);
             this.m_grv_qua_trinh_lam_viec.Name = "m_grv_qua_trinh_lam_viec";
             this.m_grv_qua_trinh_lam_viec.Size = new System.Drawing.Size(1096, 373);
+            this.m_grv_qua_trinh_lam_viec.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_qua_trinh_lam_viec.Styles"));
             this.m_grv_qua_trinh_lam_viec.TabIndex = 24;
             // 
             // m_lbl_mess
@@ -272,6 +273,7 @@ namespace BKI_HRM
             this.m_lbl_mess.Size = new System.Drawing.Size(156, 13);
             this.m_lbl_mess.TabIndex = 25;
             this.m_lbl_mess.Text = "Số nhân viên ( hiện tại/tổng số)";
+            this.m_lbl_mess.Visible = false;
             // 
             // m_lbl_so_nhan_vien
             // 
@@ -281,6 +283,7 @@ namespace BKI_HRM
             this.m_lbl_so_nhan_vien.Size = new System.Drawing.Size(13, 13);
             this.m_lbl_so_nhan_vien.TabIndex = 26;
             this.m_lbl_so_nhan_vien.Text = "_";
+            this.m_lbl_so_nhan_vien.Visible = false;
             // 
             // f202_V_GD_QUA_TRINH_LAM_VIEC
             // 
