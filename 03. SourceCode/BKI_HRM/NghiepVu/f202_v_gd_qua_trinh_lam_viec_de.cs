@@ -256,12 +256,12 @@ namespace BKI_HRM
                 BaseMessages.MsgBox_Infor("Bạn chưa chọn đơn vị của nhân viên.");
                 return false;
             }
-            if (m_dat_ngay_bat_dau.Value.Date > m_dat_ngay_ket_thuc.Value.Date)
+            if (m_dat_ngay_bat_dau.Value.Date > m_dat_ngay_ket_thuc.Value.Date && m_dat_ngay_ket_thuc.Checked = true)
             {
                 BaseMessages.MsgBox_Infor("Ngày bắt đầu không thể sau ngày kết thúc.");
                 return false;
             }
-            if (m_dat_ngay_co_hieu_luc_qd.Value.Date > m_dat_ngay_het_hieu_luc_qd.Value.Date)
+            if (m_dat_ngay_co_hieu_luc_qd.Value.Date > m_dat_ngay_het_hieu_luc_qd.Value.Date && m_dat_ngay_het_hieu_luc_qd.Checked = true)
             {
                 BaseMessages.MsgBox_Infor("Ngày có hiều lực không thể sau ngày hết hiệu lực.");
             }
