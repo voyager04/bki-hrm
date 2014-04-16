@@ -207,7 +207,9 @@ namespace BKI_HRM
                 m_us_chi_tiet_chuc_vu.dcID_LOAI_CV = 651;
             }
             m_us_chi_tiet_chuc_vu = new US_GD_CHI_TIET_CHUC_VU();
-            m_us_chi_tiet_chuc_vu.dcTY_LE_THAM_GIA = CIPConvert.ToDecimal(m_txt_ty_le_tham_gia.Text.Trim());
+            if (CIPConvert.is_valid_number(m_txt_ty_le_tham_gia.Text.Trim()))
+                m_us_chi_tiet_chuc_vu.dcTY_LE_THAM_GIA = CIPConvert.ToDecimal(m_txt_ty_le_tham_gia.Text.Trim());
+            else m_us_chi_tiet_chuc_vu.dcTY_LE_THAM_GIA = 0;
             m_us_chi_tiet_chuc_vu.dcID_NHAN_SU = m_us_v_qua_trinh_lam_viec.dcID_NHAN_SU;
             m_us_chi_tiet_chuc_vu.dcID_CHUC_VU = CIPConvert.ToDecimal(m_cbo_chuc_vu_moi.SelectedValue);
             m_us_chi_tiet_chuc_vu.dcID_LOAI_CV = CIPConvert.ToDecimal(m_cbo_loai_chuc_vu.SelectedValue);
