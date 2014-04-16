@@ -82,6 +82,10 @@ namespace BKI_HRM {
             /**
              * Lấy dữ liệu từ form vào US_GD_CHI_TIET_CAP_BAC
              */
+            //-- Cập nhật ngày kết thúc cho chức vụ cũ.
+            m_us_chi_tiet_cap_bac.datNGAY_KET_THUC = m_dat_ngay_bat_dau.Value.Date;
+            m_us_chi_tiet_cap_bac.Update();
+            //-- Thêm 1 bản ghi mới
             m_us_chi_tiet_cap_bac.dcID_NHAN_SU = m_v_us_chi_tiet_cap_bac.dcID_NHAN_SU;
             m_us_chi_tiet_cap_bac.dcID_CAP_BAC = CIPConvert.ToDecimal(m_cbo_ma_cap_bac.SelectedValue);
             m_us_chi_tiet_cap_bac.strTRANG_THAI_CB = "Y";
@@ -89,6 +93,7 @@ namespace BKI_HRM {
             if (m_txt_ma_quyet_dinh.Text.Trim() != "") {
                 m_us_chi_tiet_cap_bac.dcID_QUYET_DINH = m_us_quyet_dinh.dcID;
             }
+            m_us_chi_tiet_cap_bac.SetNGAY_KET_THUCNull();
         }
         private void form_2_us_object_quyet_dinh() {
             /**
@@ -116,11 +121,16 @@ namespace BKI_HRM {
         private void us_object_2_form() {
             m_txt_ma_nv.Text = m_v_us_chi_tiet_cap_bac.strMA_NV;
             m_txt_ho_ten.Text = m_v_us_chi_tiet_cap_bac.strHO_DEM.Trim() + @" " + m_v_us_chi_tiet_cap_bac.strTEN.Trim();
-            m_dat_ngay_bat_dau.Value = m_v_us_chi_tiet_cap_bac.datNGAY_BAT_DAU.Date;
-            if (m_ds_gd_chi_tiet_cap_bac.V_GD_CHI_TIET_CAP_BAC.Select("MA_NV = " + m_v_us_chi_tiet_cap_bac.strMA_NV).Length > 0) {
-                m_v_us_chi_tiet_cap_bac.DataRow2Me(m_ds_gd_chi_tiet_cap_bac.V_GD_CHI_TIET_CAP_BAC.Select("MA_NV = " + m_v_us_chi_tiet_cap_bac.strMA_NV)[0]);
-                m_txt_cap_bac_hien_tai.Text = m_v_us_chi_tiet_cap_bac.strMA_CAP_BAC;
-            }
+            if (m_v_us_chi_tiet_cap_bac.datNGAY_BAT_DAU == DateTime.Parse("1/1/1900"))
+                m_dat_ngay_bat_dau.Value = DateTime.Now;
+            else
+                m_dat_ngay_bat_dau.Value = m_v_us_chi_tiet_cap_bac.datNGAY_BAT_DAU;
+            //m_dat_ngay_bat_dau.Value = m_v_us_chi_tiet_cap_bac.datNGAY_BAT_DAU.Date;
+            var v_ds = new DS_V_GD_CHI_TIET_CAP_BAC();
+            var v_us = new US_V_GD_CHI_TIET_CAP_BAC();
+            v_us.FillDatasetByManhanvien(v_ds, m_v_us_chi_tiet_cap_bac.strMA_NV);
+            var t = v_ds.V_GD_CHI_TIET_CAP_BAC.Rows[0][13];
+            m_txt_cap_bac_hien_tai.Text = v_ds.V_GD_CHI_TIET_CAP_BAC.Rows[0][13].ToString();
         }
 
 

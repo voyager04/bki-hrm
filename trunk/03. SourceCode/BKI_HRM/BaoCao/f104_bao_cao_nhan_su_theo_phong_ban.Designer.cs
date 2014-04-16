@@ -99,7 +99,7 @@
             // m_lbl_thoidiem
             // 
             this.m_lbl_thoidiem.AutoSize = true;
-            this.m_lbl_thoidiem.Location = new System.Drawing.Point(782, 33);
+            this.m_lbl_thoidiem.Location = new System.Drawing.Point(782, 30);
             this.m_lbl_thoidiem.Name = "m_lbl_thoidiem";
             this.m_lbl_thoidiem.Size = new System.Drawing.Size(56, 14);
             this.m_lbl_thoidiem.TabIndex = 36;
@@ -109,7 +109,7 @@
             // 
             this.m_dtp_thoidiem.CustomFormat = "dd/MM/yyyy";
             this.m_dtp_thoidiem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_thoidiem.Location = new System.Drawing.Point(844, 31);
+            this.m_dtp_thoidiem.Location = new System.Drawing.Point(844, 25);
             this.m_dtp_thoidiem.Name = "m_dtp_thoidiem";
             this.m_dtp_thoidiem.Size = new System.Drawing.Size(99, 20);
             this.m_dtp_thoidiem.TabIndex = 2;
@@ -140,7 +140,7 @@
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(961, 26);
+            this.m_cmd_search.Location = new System.Drawing.Point(961, 20);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 3;
@@ -150,7 +150,7 @@
             // 
             this.m_txt_search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_search.Location = new System.Drawing.Point(226, 29);
+            this.m_txt_search.Location = new System.Drawing.Point(226, 23);
             this.m_txt_search.Name = "m_txt_search";
             this.m_txt_search.Size = new System.Drawing.Size(541, 20);
             this.m_txt_search.TabIndex = 1;
@@ -159,7 +159,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(123, 32);
+            this.label6.Location = new System.Drawing.Point(123, 26);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 14);
             this.label6.TabIndex = 24;
@@ -245,8 +245,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label m_lbl_so_luong_ban_ghi;
-        private System.Windows.Forms.Label label4;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         private System.Windows.Forms.TextBox m_txt_search;
         private System.Windows.Forms.Label label6;
@@ -255,9 +253,11 @@
         internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private System.Windows.Forms.ToolTip m_tooltip;
-        private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
         private System.Windows.Forms.Label m_lbl_thoidiem;
         private System.Windows.Forms.DateTimePicker m_dtp_thoidiem;
         private System.Windows.Forms.Label m_lbl_thong_bao;
+        private System.Windows.Forms.Label m_lbl_so_luong_ban_ghi;
+        private System.Windows.Forms.Label label4;
+        private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
     }
 }

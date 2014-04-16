@@ -261,7 +261,7 @@
     <Compile Include="NghiepVu\f202_v_gd_qua_trinh_lam_viec_de.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NghiepVu\f202_v_gd_qua_trinh_lam_viec_de.Designer.cs">
+    <Compile Include="NghiepVu\f202_v_gd_qua_trinh_lam_viec_de.designer.cs">
       <DependentUpon>f202_v_gd_qua_trinh_lam_viec_de.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\f203_v_gd_trang_thai_lao_dong.cs">
