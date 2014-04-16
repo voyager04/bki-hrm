@@ -20,6 +20,7 @@ namespace BKI_HRM.US {
 
     public class US_V_GD_QUA_TRINH_LAM_VIEC : US_Object {
         private const string c_TableName = "V_GD_QUA_TRINH_LAM_VIEC";
+        SqlCommand cmd;
         #region "Public Properties"
         public string strMA_NV
         {
@@ -815,11 +816,14 @@ namespace BKI_HRM.US {
         public void Count_Nhan_vien(ref decimal op_dc_tong_so,ref decimal op_dc_hien_tai)
         {
             CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_Count");
-            v_sp.addDecimalOutputParam("@SO_LUONG_HIEN_TAI", op_dc_hien_tai);
-            v_sp.addDecimalOutputParam("@TONG_SO", op_dc_tong_so);
+            SqlParameter v_pa1 = v_sp.addDecimalOutputParam("@SO_LUONG_HIEN_TAI", op_dc_hien_tai);
+            SqlParameter v_pa2 = v_sp.addDecimalOutputParam("@TONG_SO", op_dc_tong_so);
             v_sp.ExecuteCommand(this);
-
-          
+            op_dc_tong_so = CIPConvert.ToDecimal(v_pa2.Value);
+            op_dc_hien_tai = CIPConvert.ToDecimal(v_pa1.Value);
+            //op_dc_hien_tai = CIPConvert.ToDecimal(cmd.Parameters["@SO_LUONG_HIEN_TAI"].Value.ToString());
+            //op_dc_tong_so = CIPConvert.ToDecimal(cmd.Parameters["@TONG_SO"].Value.ToString());
+            
         }
         public void delete_by_id_gd_chi_tiet_chuc_vu(decimal ip_dc_id_chi_tiet_chuc_vu) {
             CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_Delete");
