@@ -305,7 +305,7 @@ namespace BKI_HRM
                     decimal v_dc = 0;
                     if (CIPConvert.is_valid_number(m_txt_ty_le_tham_gia.Text.Trim()))
                         v_dc = CIPConvert.ToDecimal(m_txt_ty_le_tham_gia.Text.Trim());
-                    if (get_tong_ty_le_tham_gia() + v_dc > 100)
+                    if (m_us_v_qua_trinh_lam_viec.Sum_ty_le_tham_gia(m_us_v_qua_trinh_lam_viec.strMA_NV) + v_dc > 100)
                     {
                         BaseMessages.MsgBox_Infor("Tỷ lệ tham gia đã đã vượt quá 100%.");
                         return;
