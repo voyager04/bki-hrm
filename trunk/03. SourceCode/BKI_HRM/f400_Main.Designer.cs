@@ -315,6 +315,7 @@ namespace BKI_HRM
             this.táchGộpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.m_menuitem_chuyen_nhan_vien,
             this.m_menuitem_chuyen_don_vi});
+            this.táchGộpToolStripMenuItem.Enabled = false;
             this.táchGộpToolStripMenuItem.Name = "táchGộpToolStripMenuItem";
             this.táchGộpToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.táchGộpToolStripMenuItem.Text = "Tách gộp";
