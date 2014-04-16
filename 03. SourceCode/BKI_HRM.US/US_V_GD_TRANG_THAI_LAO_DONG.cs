@@ -386,5 +386,15 @@ public class US_V_GD_TRANG_THAI_LAO_DONG : US_Object
         CStoredProc v_sp = new CStoredProc("pr_V_GD_TRANG_THAI_LAO_DONG_Nhan_vien_sap_quay_lai");
         v_sp.fillDataSetByCommand(this, m_ds);
     }
+    public void Count_Nhan_vien(ref decimal op_dc_hien_tai)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_V_GD_TRANG_THAI_LD_Count");
+        SqlParameter v_pa1 = v_sp.addDecimalOutputParam("@SO_LUONG_HIEN_TAI", op_dc_hien_tai);
+        v_sp.ExecuteCommand(this);
+        op_dc_hien_tai = CIPConvert.ToDecimal(v_pa1.Value);
+        //op_dc_hien_tai = CIPConvert.ToDecimal(cmd.Parameters["@SO_LUONG_HIEN_TAI"].Value.ToString());
+        //op_dc_tong_so = CIPConvert.ToDecimal(cmd.Parameters["@TONG_SO"].Value.ToString());
+
+    }
 }
 }
