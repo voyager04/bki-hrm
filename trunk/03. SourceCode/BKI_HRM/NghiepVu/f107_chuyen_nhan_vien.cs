@@ -185,29 +185,43 @@ namespace BKI_HRM {
             var v_danh_sach_nhan_vien_right_insert = new collection(1);
             var v_danh_sach_nhan_vien_right_delete = new collection(1);
             v_us_dm_nhan_su.FillDataset(v_ds_dm_nhan_su);
-            v_us_dm_du_lieu_nhan_vien.FillDatasetByIdDonVi(v_ds_dm_du_lieu_nhan_vien,CIPConvert.ToDecimal(v_id_don_vi_left));
-            //-- Lưu nhân sự đơn vị LEFT
-            if (v_count_left > 0){
+            v_us_dm_du_lieu_nhan_vien.FillDatasetByIdDonVi(v_ds_dm_du_lieu_nhan_vien, CIPConvert.ToDecimal(v_id_don_vi_left));
+            ////-- Lưu nhân sự đơn vị LEFT
+            //+ Danh sách nhân viên mới trong ListBox
+            if (v_count_left > 0) {
                 v_danh_sach_nhan_vien_left_new = new collection(v_count_left);
-                foreach (var v_item in m_lbox_nhan_vien_left.Items){
+                foreach (var v_item in m_lbox_nhan_vien_left.Items) {
                     var v_ma_nhan_vien = get_ma_nhan_vien(v_item.ToString());
-                    var v_nhan_vien = (DS_DM_NHAN_SU.DM_NHAN_SURow)(v_ds_dm_nhan_su.DM_NHAN_SU.Select("MA_NV = "+v_ma_nhan_vien)[0]);
+                    var v_nhan_vien = (DS_DM_NHAN_SU.DM_NHAN_SURow)(v_ds_dm_nhan_su.DM_NHAN_SU.Select("MA_NV = " + v_ma_nhan_vien)[0]);
                     v_danh_sach_nhan_vien_left_new.insert(v_nhan_vien.ID.ToString());
                 }
-            }
-            var v_count_nhan_vien = v_ds_dm_du_lieu_nhan_vien.V_DM_DU_LIEU_NHAN_VIEN.Count;
-            if (v_count_nhan_vien > 0) {
-                var v_nhan_vien =
-                        (v_ds_dm_du_lieu_nhan_vien.V_DM_DU_LIEU_NHAN_VIEN.Rows);
-                v_danh_sach_nhan_vien_left_old = new collection(v_count_nhan_vien);
-                foreach (DS_V_DM_DU_LIEU_NHAN_VIEN.V_DM_DU_LIEU_NHAN_VIENRow v_item in v_nhan_vien){
-                    v_danh_sach_nhan_vien_left_old.insert(v_item.ID.ToString());
+
+                //+ Danh sách nhân viên cũ trước khi thay đổi ListBox
+                var v_count_nhan_vien = v_ds_dm_du_lieu_nhan_vien.V_DM_DU_LIEU_NHAN_VIEN.Count;
+                if (v_count_nhan_vien > 0) {
+                    var v_nhan_vien =
+                            (v_ds_dm_du_lieu_nhan_vien.V_DM_DU_LIEU_NHAN_VIEN.Rows);
+                    v_danh_sach_nhan_vien_left_old = new collection(v_count_nhan_vien);
+                    foreach (DS_V_DM_DU_LIEU_NHAN_VIEN.V_DM_DU_LIEU_NHAN_VIENRow v_item in v_nhan_vien) {
+                        v_danh_sach_nhan_vien_left_old.insert(v_item.ID.ToString());
+                    }
+                }
+                //+ Danh sách nhân viên thêm mới
+                v_danh_sach_nhan_vien_left_insert =
+                    new collection(v_danh_sach_nhan_vien_left_new.countInANotInB(v_danh_sach_nhan_vien_left_old));
+                v_danh_sach_nhan_vien_left_insert =
+                    v_danh_sach_nhan_vien_left_new.InANotInB(v_danh_sach_nhan_vien_left_old);
+                for (int i = 0; i < v_danh_sach_nhan_vien_left_insert.getIndex(); i++){
+                    decimal v_id = CIPConvert.ToDecimal(v_danh_sach_nhan_vien_left_insert.s[i]);
+                    v_us_dm_du_lieu_nhan_vien.FillDatasetByIdDonVi(v_ds_dm_du_lieu_nhan_vien,v_id);
+
                 }
             }
+            //+ Danh sách nhân viên sẽ bị xoá
             v_danh_sach_nhan_vien_left_delete = v_danh_sach_nhan_vien_left_old.InANotInB(v_danh_sach_nhan_vien_left_new);
         }
 
-        private string get_ma_nhan_vien(string ip_str_listbox_item){
+        private string get_ma_nhan_vien(string ip_str_listbox_item) {
             string kq = "";
             var length = ip_str_listbox_item.IndexOf('-');
             kq = ip_str_listbox_item.Trim().Substring(0, length);
@@ -241,7 +255,7 @@ namespace BKI_HRM {
 
         private void m_cbo_don_vi_left_SelectedIndexChanged(object sender, EventArgs e) {
             try {
-                if (m_load_lbox_left){
+                if (m_load_lbox_left) {
                     m_dc_id_don_vi_left = CIPConvert.ToDecimal(m_cbo_don_vi_left.SelectedValue);
                     load_data_2_lbox_nhan_vien_left(m_dc_id_don_vi_left);
                 }
@@ -252,7 +266,7 @@ namespace BKI_HRM {
 
         private void m_cbo_don_vi_right_SelectedIndexChanged(object sender, EventArgs e) {
             try {
-                if (m_load_lbox_right){
+                if (m_load_lbox_right) {
                     m_dc_id_don_vi_right = CIPConvert.ToDecimal(m_cbo_don_vi_right.SelectedValue);
                     load_data_2_lbox_nhan_vien_right(m_dc_id_don_vi_right);
                 }
