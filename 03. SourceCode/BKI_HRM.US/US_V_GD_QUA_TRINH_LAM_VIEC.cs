@@ -812,7 +812,15 @@ namespace BKI_HRM.US {
             v_sp.addNVarcharInputParam("@MA_NHAN_VIEN", ip_str_ma_nv);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
+        public void Count_Nhan_vien(ref decimal op_dc_tong_so,ref decimal op_dc_hien_tai)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_Count");
+            v_sp.addDecimalOutputParam("@SO_LUONG_HIEN_TAI", op_dc_hien_tai);
+            v_sp.addDecimalOutputParam("@TONG_SO", op_dc_tong_so);
+            v_sp.ExecuteCommand(this);
 
+          
+        }
         public void delete_by_id_gd_chi_tiet_chuc_vu(decimal ip_dc_id_chi_tiet_chuc_vu) {
             CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_Delete");
             v_sp.addDecimalInputParam("@ID", ip_dc_id_chi_tiet_chuc_vu);
