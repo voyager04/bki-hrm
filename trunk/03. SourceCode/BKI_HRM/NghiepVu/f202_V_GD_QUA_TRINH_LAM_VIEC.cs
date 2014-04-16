@@ -502,28 +502,27 @@ namespace BKI_HRM
                 grid2us_object(m_us_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row + 1);
             }
 
-            //load_data_2_grid_search();
-            //m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, "");
-            //int v_i_count = m_ds_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Count;
+            load_data_2_grid_search();
+            m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, "");
+            int v_i_count = m_ds_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Count;
             f202_v_gd_qua_trinh_lam_viec_de v_fDE = new f202_v_gd_qua_trinh_lam_viec_de();
             v_fDE.display_for_insert(m_us_qua_trinh_lam_viec, ip_str_loai_thay_doi);
-            DialogResult v_dlr = BaseMessages.MsgBox_YES_NO_CANCEL("Bạn có muốn miễn nhiệm chức vũ cũ không?");
-            if (v_dlr == DialogResult.Yes)
-            {
-                US_V_GD_QUA_TRINH_LAM_VIEC v_us_qua_trinh_lam_viec = new US_V_GD_QUA_TRINH_LAM_VIEC();
-                v_fDE.get_us(ref v_us_qua_trinh_lam_viec);
-                m_txt_tim_kiem.Text = v_us_qua_trinh_lam_viec.strMA_NV;
-                load_data_2_grid_search();
-                m_cmd_kiem_nhiem.Visible = false;
-            }
+
+            
             load_data_2_grid_search();
-            //m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, "");
-            //if (m_ds_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Count > v_i_count)
-            //{
-            //    v_fDE.get_us(ref m_us_qua_trinh_lam_viec);
-            // //   WinFormControls.set_focus_for_grid(m_grv_qua_trinh_lam_viec, m_us_qua_trinh_lam_viec.str, 1);
-                
-            //}
+            m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, "");
+            if (m_ds_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Count > v_i_count)
+            {
+                bool v_dlr = BaseMessages.MsgBox_Confirm("Có miễn nhiệm chức vũ cũ không?");
+                if (v_dlr)
+                {
+                    US_V_GD_QUA_TRINH_LAM_VIEC v_us_qua_trinh_lam_viec = new US_V_GD_QUA_TRINH_LAM_VIEC();
+                    v_fDE.get_us(ref v_us_qua_trinh_lam_viec);
+                    m_txt_tim_kiem.Text = v_us_qua_trinh_lam_viec.strMA_NV;
+                    load_data_2_grid_search();
+                    m_cmd_kiem_nhiem.Visible = false;
+                }
+            }
 		}
 
 		private void update_v_gd_qua_trinh_lam_viec(){
