@@ -263,16 +263,13 @@ namespace BKI_HRM
             {
                 BaseMessages.MsgBox_Infor("Ngày có hiều lực không thể sau ngày hết hiệu lực.");
             }
+
             return true;
         }
         private void save_data()
         {
-            if (get_tong_ty_le_tham_gia() + m_us_v_qua_trinh_lam_viec.dcTY_LE_THAM_GIA > 100)
-            {
-                BaseMessages.MsgBox_Infor("Tỷ lệ tham gia đã đã vượt quá 100%.");
-                return;
-            }
-            else
+            
+            
             switch (m_e_form_mode)
             {
 
@@ -305,7 +302,14 @@ namespace BKI_HRM
 
                     break;
                 case DataEntryFormMode.InsertDataState:
-
+                    decimal v_dc = 0;
+                    if (CIPConvert.is_valid_number(m_txt_ty_le_tham_gia.Text.Trim()))
+                        v_dc = CIPConvert.ToDecimal(m_txt_ty_le_tham_gia.Text.Trim());
+                    if (get_tong_ty_le_tham_gia() + v_dc > 100)
+                    {
+                        BaseMessages.MsgBox_Infor("Tỷ lệ tham gia đã đã vượt quá 100%.");
+                        return;
+                    }
                     if (check_validate_data_is_ok() == false)
                         return;
                     else
@@ -389,7 +393,8 @@ namespace BKI_HRM
                         );
            foreach (DataRow row in m_ds_v_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows)
            {
-               v_dc_return += CIPConvert.ToDecimal(row[10]);
+               if (CIPConvert.is_valid_number(row[31]))
+                   v_dc_return += CIPConvert.ToDecimal(row[31]);
            }
            return v_dc_return;
         }
@@ -528,6 +533,16 @@ namespace BKI_HRM
 
         
 #endregion
+
+        private void m_txt_ty_le_tham_gia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+                && !char.IsDigit(e.KeyChar)
+                )
+            {
+                e.Handled = true;
+            }
+        }
 
         
 
