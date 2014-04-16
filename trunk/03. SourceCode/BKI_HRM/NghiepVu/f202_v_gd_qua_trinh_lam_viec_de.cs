@@ -385,19 +385,7 @@ namespace BKI_HRM
             m_grb_quyet_dinh.Enabled = true;
             m_txt_ma_quyet_dinh.Focus();
         }
-        private decimal get_tong_ty_le_tham_gia()
-        {
-            decimal v_dc_return = 0;
-            m_us_v_qua_trinh_lam_viec.FillDataset_chuc_vu_hien_tai(m_ds_v_qua_trinh_lam_viec, 
-                        m_us_v_qua_trinh_lam_viec.strMA_NV
-                        );
-           foreach (DataRow row in m_ds_v_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows)
-           {
-               if (CIPConvert.is_valid_number(row[31]))
-                   v_dc_return += CIPConvert.ToDecimal(row[31]);
-           }
-           return v_dc_return;
-        }
+       
 #endregion
 
        
