@@ -230,6 +230,7 @@ namespace BKI_HRM
             this.m_lbl_soluongns.Size = new System.Drawing.Size(35, 13);
             this.m_lbl_soluongns.TabIndex = 40;
             this.m_lbl_soluongns.Text = "label2";
+            this.m_lbl_soluongns.Visible = false;
             // 
             // label1
             // 
@@ -239,6 +240,7 @@ namespace BKI_HRM
             this.label1.Size = new System.Drawing.Size(93, 13);
             this.label1.TabIndex = 39;
             this.label1.Text = "Số lượng nhân sự:";
+            this.label1.Visible = false;
             // 
             // f403_BAO_CAO_NHAN_SU_CAP_BAC
             // 
