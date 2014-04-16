@@ -477,9 +477,11 @@
             // 
             // m_txt_don_vi_moi
             // 
+            this.m_txt_don_vi_moi.BackColor = System.Drawing.SystemColors.Info;
             this.m_txt_don_vi_moi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_txt_don_vi_moi.Location = new System.Drawing.Point(115, 97);
             this.m_txt_don_vi_moi.Name = "m_txt_don_vi_moi";
+            this.m_txt_don_vi_moi.ReadOnly = true;
             this.m_txt_don_vi_moi.Size = new System.Drawing.Size(457, 20);
             this.m_txt_don_vi_moi.TabIndex = 82;
             // 
@@ -529,6 +531,7 @@
             this.m_txt_ty_le_tham_gia.Name = "m_txt_ty_le_tham_gia";
             this.m_txt_ty_le_tham_gia.Size = new System.Drawing.Size(100, 20);
             this.m_txt_ty_le_tham_gia.TabIndex = 103;
+            this.m_txt_ty_le_tham_gia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.m_txt_ty_le_tham_gia_KeyPress);
             // 
             // m_lbl_ty_le_tham_gia
             // 
