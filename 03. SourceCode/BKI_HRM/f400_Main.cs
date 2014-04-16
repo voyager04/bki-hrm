@@ -42,6 +42,8 @@ namespace BKI_HRM {
             //CControlFormat.setFormStyle(this, new CAppContext_201());
             set_define_events();
             ShowInTaskbar = true;
+            m_us_trang_thai_lao_dong.Count_Nhan_vien(ref  hien_tai);
+            m_lbl_so_luong_nv_hien_tai.Text = "Số lượng nhân viên hiện tại: " + hien_tai.ToString();
         }
 
         private f103_bao_cao_tra_cuu_nhan_su thong_bao_thu_viec_sap_het_han(){
@@ -62,6 +64,9 @@ namespace BKI_HRM {
         #region Members
 
         private DataEntryFormMode m_e_form_mode;
+        decimal hien_tai;
+        DS_V_GD_TRANG_THAI_LAO_DONG m_ds_trang_thai_lao_dong = new DS_V_GD_TRANG_THAI_LAO_DONG();
+        US_V_GD_TRANG_THAI_LAO_DONG m_us_trang_thai_lao_dong = new US_V_GD_TRANG_THAI_LAO_DONG();
 
         #endregion
 

@@ -79,6 +79,7 @@ namespace BKI_HRM
             this.m_lbl_thu_viec_sap_het_han = new System.Windows.Forms.Label();
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky = new System.Windows.Forms.Label();
             this.m_lbl_sap_quay_lai = new System.Windows.Forms.Label();
+            this.m_lbl_so_luong_nv_hien_tai = new System.Windows.Forms.Label();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -493,6 +494,18 @@ namespace BKI_HRM
             this.m_lbl_sap_quay_lai.Text = "Danh sách nhân viên sắp quay lại sau nghỉ";
             this.m_lbl_sap_quay_lai.Click += new System.EventHandler(this.m_lbl_sap_quay_lai_Click);
             // 
+            // m_lbl_so_luong_nv_hien_tai
+            // 
+            this.m_lbl_so_luong_nv_hien_tai.AutoSize = true;
+            this.m_lbl_so_luong_nv_hien_tai.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_lbl_so_luong_nv_hien_tai.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_so_luong_nv_hien_tai.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_so_luong_nv_hien_tai.Location = new System.Drawing.Point(0, 305);
+            this.m_lbl_so_luong_nv_hien_tai.Name = "m_lbl_so_luong_nv_hien_tai";
+            this.m_lbl_so_luong_nv_hien_tai.Size = new System.Drawing.Size(143, 18);
+            this.m_lbl_so_luong_nv_hien_tai.TabIndex = 7;
+            this.m_lbl_so_luong_nv_hien_tai.Text = "so luong nhan vien";
+            // 
             // f400_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -500,6 +513,7 @@ namespace BKI_HRM
             this.BackgroundImage = global::BKI_HRM.Properties.Resources.Human_resources_management_v2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(835, 413);
+            this.Controls.Add(this.m_lbl_so_luong_nv_hien_tai);
             this.Controls.Add(this.m_lbl_sap_quay_lai);
             this.Controls.Add(this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky);
             this.Controls.Add(this.m_lbl_thu_viec_sap_het_han);
@@ -571,5 +585,6 @@ namespace BKI_HRM
         private ToolStripMenuItem m_menuitem_chuyen_nhan_vien;
         private ToolStripMenuItem m_menuitem_chuyen_don_vi;
         private Label m_lbl_sap_quay_lai;
+        private Label m_lbl_so_luong_nv_hien_tai;
     }
 }
