@@ -825,6 +825,19 @@ namespace BKI_HRM.US {
             //op_dc_tong_so = CIPConvert.ToDecimal(cmd.Parameters["@TONG_SO"].Value.ToString());
             
         }
+        public decimal Sum_ty_le_tham_gia(string ip_str_ma_nv )
+        {
+            decimal v_dc_ty_le = 0;
+            CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_Sum_Ty_le_tham_gia");
+            v_sp.addNVarcharInputParam("@MA_NV", ip_str_ma_nv);
+            SqlParameter v_pa_ty_le = v_sp.addDecimalOutputParam("@TONG_TY_LE", v_dc_ty_le);
+            
+            v_sp.ExecuteCommand(this);
+            
+            return CIPConvert.ToDecimal(v_pa_ty_le.Value);
+            
+
+        }
         public void delete_by_id_gd_chi_tiet_chuc_vu(decimal ip_dc_id_chi_tiet_chuc_vu) {
             CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_Delete");
             v_sp.addDecimalInputParam("@ID", ip_dc_id_chi_tiet_chuc_vu);
