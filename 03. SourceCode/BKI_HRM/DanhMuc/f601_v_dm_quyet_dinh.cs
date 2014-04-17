@@ -367,6 +367,9 @@ namespace BKI_HRM {
             if (m_e_form_mode == DataEntryFormMode.SelectDataState) {
                 m_cmd_chon_quyet_dinh.Visible = true;
                 m_cmd_chon_quyet_dinh.Enabled = true;
+                m_cmd_insert.Visible = false;
+                m_cmd_update.Visible = false;
+                m_cmd_delete.Visible = false;
             }
         }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg) {
