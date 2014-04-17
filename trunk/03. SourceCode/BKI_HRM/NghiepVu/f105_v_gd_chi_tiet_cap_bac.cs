@@ -139,7 +139,7 @@ namespace BKI_HRM {
             this.m_lbl_phim_tat.AutoSize = true;
             this.m_lbl_phim_tat.Location = new System.Drawing.Point(12, 11);
             this.m_lbl_phim_tat.Name = "m_lbl_phim_tat";
-            this.m_lbl_phim_tat.Size = new System.Drawing.Size(206, 14);
+            this.m_lbl_phim_tat.Size = new System.Drawing.Size(206, 13);
             this.m_lbl_phim_tat.TabIndex = 1000;
             this.m_lbl_phim_tat.Text = "Phím tắt: F6_Mở rộng-Thu gọn danh sách";
             // 
@@ -222,9 +222,10 @@ namespace BKI_HRM {
             this.m_lbl_so_luong_ban_ghi.AutoSize = true;
             this.m_lbl_so_luong_ban_ghi.Location = new System.Drawing.Point(179, 56);
             this.m_lbl_so_luong_ban_ghi.Name = "m_lbl_so_luong_ban_ghi";
-            this.m_lbl_so_luong_ban_ghi.Size = new System.Drawing.Size(25, 14);
+            this.m_lbl_so_luong_ban_ghi.Size = new System.Drawing.Size(25, 13);
             this.m_lbl_so_luong_ban_ghi.TabIndex = 1;
             this.m_lbl_so_luong_ban_ghi.Text = "000";
+            this.m_lbl_so_luong_ban_ghi.Visible = false;
             // 
             // m_cmd_search
             // 
@@ -255,16 +256,17 @@ namespace BKI_HRM {
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(9, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 14);
+            this.label2.Size = new System.Drawing.Size(159, 13);
             this.label2.TabIndex = 27;
             this.label2.Text = "Số lượng dòng trong danh sách:";
+            this.label2.Visible = false;
             // 
             // m_lbl_tim_kiem
             // 
             this.m_lbl_tim_kiem.AutoSize = true;
             this.m_lbl_tim_kiem.Location = new System.Drawing.Point(52, 24);
             this.m_lbl_tim_kiem.Name = "m_lbl_tim_kiem";
-            this.m_lbl_tim_kiem.Size = new System.Drawing.Size(87, 14);
+            this.m_lbl_tim_kiem.Size = new System.Drawing.Size(88, 13);
             this.m_lbl_tim_kiem.TabIndex = 24;
             this.m_lbl_tim_kiem.Text = "Từ khoá tìm kiếm";
             // 
