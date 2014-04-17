@@ -240,18 +240,20 @@ namespace BKI_HRM {
             this.m_lbl_so_luong_ban_ghi.AutoSize = true;
             this.m_lbl_so_luong_ban_ghi.Location = new System.Drawing.Point(179, 47);
             this.m_lbl_so_luong_ban_ghi.Name = "m_lbl_so_luong_ban_ghi";
-            this.m_lbl_so_luong_ban_ghi.Size = new System.Drawing.Size(25, 14);
+            this.m_lbl_so_luong_ban_ghi.Size = new System.Drawing.Size(25, 13);
             this.m_lbl_so_luong_ban_ghi.TabIndex = 28;
             this.m_lbl_so_luong_ban_ghi.Text = "000";
+            this.m_lbl_so_luong_ban_ghi.Visible = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(4, 47);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 14);
+            this.label2.Size = new System.Drawing.Size(165, 13);
             this.label2.TabIndex = 27;
             this.label2.Text = "Số lượng đơn vị trong danh sách:";
+            this.label2.Visible = false;
             // 
             // panel1
             // 
@@ -296,7 +298,7 @@ namespace BKI_HRM {
             this.m_lbl_tim_kiem.AutoSize = true;
             this.m_lbl_tim_kiem.Location = new System.Drawing.Point(130, 19);
             this.m_lbl_tim_kiem.Name = "m_lbl_tim_kiem";
-            this.m_lbl_tim_kiem.Size = new System.Drawing.Size(87, 14);
+            this.m_lbl_tim_kiem.Size = new System.Drawing.Size(88, 13);
             this.m_lbl_tim_kiem.TabIndex = 24;
             this.m_lbl_tim_kiem.Text = "Từ khoá tìm kiếm";
             // 
