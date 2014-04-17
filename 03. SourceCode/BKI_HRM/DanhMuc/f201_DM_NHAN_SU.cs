@@ -138,11 +138,12 @@ namespace BKI_HRM
         private C1FlexGrid m_grv_qua_trinh_cong_tac;
         private Label m_lbl_headcount;
         private Label label3;
-        internal SIS.Controls.Button.SiSButton m_cmd_them_chuc_vu;
         internal SIS.Controls.Button.SiSButton m_cmd_them_hop_dong;
         internal SIS.Controls.Button.SiSButton m_cmd_thay_trang_thai;
         private TextBox m_txt_ma_headcount;
         private Label m_lbl_ma_headcount;
+        internal SIS.Controls.Button.SiSButton m_cmd_them_chuc_vu;
+        internal SIS.Controls.Button.SiSButton m_cmd_mien_nhiem;
 		private System.ComponentModel.IContainer components;
 
 		
@@ -206,7 +207,6 @@ namespace BKI_HRM
             this.label1 = new System.Windows.Forms.Label();
             this.m_lbl_trinh_do = new System.Windows.Forms.Label();
             this.m_tpg_chuc_vu = new System.Windows.Forms.TabPage();
-            this.m_cmd_them_chuc_vu = new SIS.Controls.Button.SiSButton();
             this.m_grv_chuc_vu_hien_tai = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_tpg_thong_tin_ca_nhan = new System.Windows.Forms.TabPage();
             this.m_txt_ho_khau = new System.Windows.Forms.TextBox();
@@ -277,6 +277,8 @@ namespace BKI_HRM
             this.m_sfd_save_cv = new System.Windows.Forms.SaveFileDialog();
             this.m_lbl_headcount = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.m_cmd_mien_nhiem = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_them_chuc_vu = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).BeginInit();
             this.panel1.SuspendLayout();
@@ -716,6 +718,7 @@ namespace BKI_HRM
             // m_tpg_chuc_vu
             // 
             this.m_tpg_chuc_vu.Controls.Add(this.m_cmd_them_chuc_vu);
+            this.m_tpg_chuc_vu.Controls.Add(this.m_cmd_mien_nhiem);
             this.m_tpg_chuc_vu.Controls.Add(this.m_grv_chuc_vu_hien_tai);
             this.m_tpg_chuc_vu.Location = new System.Drawing.Point(4, 22);
             this.m_tpg_chuc_vu.Name = "m_tpg_chuc_vu";
@@ -725,26 +728,11 @@ namespace BKI_HRM
             this.m_tpg_chuc_vu.ToolTipText = "Chức vụ hiện tại";
             this.m_tpg_chuc_vu.UseVisualStyleBackColor = true;
             // 
-            // m_cmd_them_chuc_vu
-            // 
-            this.m_cmd_them_chuc_vu.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_them_chuc_vu.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_them_chuc_vu.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_them_chuc_vu.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_them_chuc_vu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_them_chuc_vu.ImageIndex = 2;
-            this.m_cmd_them_chuc_vu.ImageList = this.ImageList;
-            this.m_cmd_them_chuc_vu.Location = new System.Drawing.Point(885, 205);
-            this.m_cmd_them_chuc_vu.Name = "m_cmd_them_chuc_vu";
-            this.m_cmd_them_chuc_vu.Size = new System.Drawing.Size(115, 28);
-            this.m_cmd_them_chuc_vu.TabIndex = 30;
-            this.m_cmd_them_chuc_vu.Text = "Thêm chức vụ";
-            this.m_cmd_them_chuc_vu.Click += new System.EventHandler(this.m_cmd_thay_chuc_vu_Click);
-            // 
             // m_grv_chuc_vu_hien_tai
             // 
             this.m_grv_chuc_vu_hien_tai.AllowEditing = false;
             this.m_grv_chuc_vu_hien_tai.ColumnInfo = resources.GetString("m_grv_chuc_vu_hien_tai.ColumnInfo");
+            this.m_grv_chuc_vu_hien_tai.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_chuc_vu_hien_tai.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_grv_chuc_vu_hien_tai.Location = new System.Drawing.Point(0, 0);
             this.m_grv_chuc_vu_hien_tai.Name = "m_grv_chuc_vu_hien_tai";
@@ -1456,6 +1444,38 @@ namespace BKI_HRM
             this.label3.TabIndex = 28;
             this.label3.Text = "Mã Headcount:";
             // 
+            // m_cmd_mien_nhiem
+            // 
+            this.m_cmd_mien_nhiem.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_mien_nhiem.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_mien_nhiem.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_mien_nhiem.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_mien_nhiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_mien_nhiem.ImageIndex = 4;
+            this.m_cmd_mien_nhiem.ImageList = this.ImageList;
+            this.m_cmd_mien_nhiem.Location = new System.Drawing.Point(885, 205);
+            this.m_cmd_mien_nhiem.Name = "m_cmd_mien_nhiem";
+            this.m_cmd_mien_nhiem.Size = new System.Drawing.Size(115, 28);
+            this.m_cmd_mien_nhiem.TabIndex = 31;
+            this.m_cmd_mien_nhiem.Text = "Miễn nhiệm";
+            this.m_cmd_mien_nhiem.Click += new System.EventHandler(this.m_cmd_mien_nhiem_Click);
+            // 
+            // m_cmd_them_chuc_vu
+            // 
+            this.m_cmd_them_chuc_vu.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_them_chuc_vu.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_them_chuc_vu.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_them_chuc_vu.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_them_chuc_vu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_them_chuc_vu.ImageIndex = 2;
+            this.m_cmd_them_chuc_vu.ImageList = this.ImageList;
+            this.m_cmd_them_chuc_vu.Location = new System.Drawing.Point(770, 205);
+            this.m_cmd_them_chuc_vu.Name = "m_cmd_them_chuc_vu";
+            this.m_cmd_them_chuc_vu.Size = new System.Drawing.Size(115, 28);
+            this.m_cmd_them_chuc_vu.TabIndex = 32;
+            this.m_cmd_them_chuc_vu.Text = "Bổ nhiệm";
+            this.m_cmd_them_chuc_vu.Click += new System.EventHandler(this.m_cmd_thay_chuc_vu_Click);
+            // 
             // f201_dm_nhan_su
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -1861,7 +1881,7 @@ namespace BKI_HRM
         //    m_cbo_ma_headcount.SelectedValue = m_us.dcID_HEADCOUNT;
         //}
 
-        private void them_chuc_vu()
+        private void bo_nhiem()
         {
             US_V_GD_QUA_TRINH_LAM_VIEC v_us = new US_V_GD_QUA_TRINH_LAM_VIEC();
             DS_V_GD_QUA_TRINH_LAM_VIEC v_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC();
@@ -1876,7 +1896,18 @@ namespace BKI_HRM
             v_frm.display_for_insert(v_us, "kiem_nhiem");
             load_data_2_grv_chuc_vu_hien_tai();
         }
-        
+        private void mien_nhiem() 
+        {
+            US_V_GD_QUA_TRINH_LAM_VIEC v_us = new US_V_GD_QUA_TRINH_LAM_VIEC();
+            DS_V_GD_QUA_TRINH_LAM_VIEC v_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC();
+            
+            //v_us.FillDatasetByManhanvien(v_ds, m_us.strMA_NV, DateTime.Parse("1/1/1900"), DateTime.Today);
+            //v_us.DataRow2Me((DataRow)v_ds.V_GD_QUA_TRINH_LAM_VIEC.Rows[0]);
+            grid2us_object_chuc_vu(v_us, m_grv_chuc_vu_hien_tai.Row);
+            f202_v_gd_qua_trinh_lam_viec_de v_frm = new f202_v_gd_qua_trinh_lam_viec_de();
+            v_frm.display_for_update(v_us);
+            load_data_2_grv_chuc_vu_hien_tai();
+        }
         private void them_trang_thai()
         {
             US_V_GD_TRANG_THAI_LAO_DONG v_us = new US_V_GD_TRANG_THAI_LAO_DONG();
@@ -2552,7 +2583,7 @@ namespace BKI_HRM
         {
             try
             {
-                them_chuc_vu();
+                bo_nhiem();
             }
             catch (Exception v_e)
             {
@@ -2584,6 +2615,18 @@ namespace BKI_HRM
             }
         }
         #endregion
+
+        private void m_cmd_mien_nhiem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                mien_nhiem();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
         
 
