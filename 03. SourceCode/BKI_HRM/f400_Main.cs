@@ -13,6 +13,7 @@ using IP.Core.IPCommon;
 using IP.Core.IPExcelReport;
 using IP.Core.IPSystemAdmin;
 using BKI_HRM.HeThong;
+using System.Diagnostics;
 
 namespace BKI_HRM {
     public partial class f400_Main : Form{
@@ -553,6 +554,32 @@ namespace BKI_HRM {
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_menuitem_gui_loi_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ProcessStartInfo sInfo = new ProcessStartInfo("http://goo.gl/swobCf");
+                Process.Start(sInfo);
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_menuitem_hdsd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ProcessStartInfo sInfo = new ProcessStartInfo("http://goo.gl/DFhioS");
+                Process.Start(sInfo);
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
             }
         }
         
