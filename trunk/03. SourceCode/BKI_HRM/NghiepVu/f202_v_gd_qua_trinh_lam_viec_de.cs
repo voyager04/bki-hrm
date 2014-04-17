@@ -227,6 +227,7 @@ namespace BKI_HRM
 
                 case DataEntryFormMode.UpdateDataState:
                     m_us_chi_tiet_chuc_vu.dcID = m_us_v_qua_trinh_lam_viec.dcID;
+                    m_us_chi_tiet_chuc_vu.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value;
                     m_us_chi_tiet_chuc_vu.dcID_QUYET_DINH_MIEN_NHIEM = m_us_quyet_dinh.dcID;
                     m_us_chi_tiet_chuc_vu.strTRANG_THAI_CV = "N";
                     break;
@@ -521,9 +522,6 @@ namespace BKI_HRM
             }
         }
 
-        
-#endregion
-
         private void m_txt_ty_le_tham_gia_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar)
@@ -533,6 +531,9 @@ namespace BKI_HRM
                 e.Handled = true;
             }
         }
+#endregion
+
+        
 
         
 
