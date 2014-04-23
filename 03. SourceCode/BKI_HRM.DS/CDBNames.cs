@@ -274,6 +274,7 @@
 
     public class V_GD_HOP_DONG_LAO_DONG
     {
+        public const string COLS1 = "COLS1";
         public const string MA_NV = "MA_NV";
         public const string HO_DEM = "HO_DEM";
         public const string TEN = "TEN";
