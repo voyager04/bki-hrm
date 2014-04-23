@@ -475,28 +475,7 @@ namespace BKI_HRM
         }
 
 
-        // == Thay đổi cột được tree ==
-
-        private void reset_cot()
-        {
-            for (int i = 2; i <= 14; i++)
-            {
-                m_fg.Cols[i].Visible = true;
-            }
-            m_obj_trans = get_trans_object(m_fg);
-            m_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
-            var v_str_search = m_txt_tim_kiem.Text.Trim();
-
-            if (v_str_search == M_STR_SUGGESTION)
-                m_us.FillDatasetSearchAll(m_ds, "");
-            m_us.FillDatasetSearchAll(m_ds, v_str_search);
-            m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            m_fg.Cols[(int)e_col_Number.MA_NV].Visible = true;
-            m_fg.Cols[1].Visible = false;
-            m_fg.Redraw = true;
-            m_fg.Focus();
-        }
+       
 
 
         private void insert_v_gd_hop_dong_lao_dong()
