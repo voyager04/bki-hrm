@@ -1665,7 +1665,7 @@ namespace BKI_HRM
 			CControlFormat.setC1FlexFormat(m_grv_nhan_su);
 			CGridUtils.AddSave_Excel_Handlers(m_grv_nhan_su);
             CGridUtils.AddSearch_Handlers(m_grv_nhan_su);
-
+            
             //CControlFormat.setC1FlexFormat(m_grv_qua_trinh_lam_viec);
             //CGridUtils.AddSave_Excel_Handlers(m_grv_qua_trinh_lam_viec);
             //CGridUtils.AddSearch_Handlers(m_grv_qua_trinh_lam_viec);
@@ -1967,32 +1967,7 @@ namespace BKI_HRM
             m_grv_hop_dong_ld.Redraw = true;
              
 
-            // Load Hợp đồng
-            //US_V_GD_HOP_DONG_LAO_DONG v_us_hop_dong_lao_dong = new US_V_GD_HOP_DONG_LAO_DONG();
-            //DS_V_GD_HOP_DONG_LAO_DONG v_ds_hop_dong_lao_dong = new DS_V_GD_HOP_DONG_LAO_DONG();
-            //v_us_hop_dong_lao_dong.FillDatasetByManhanvien(v_ds_hop_dong_lao_dong, m_us.strMA_NV);
-            //if (v_ds_hop_dong_lao_dong.V_GD_HOP_DONG_LAO_DONG.Select("MA_NV is not null").Length > 0)
-            //{
-            //    v_us_hop_dong_lao_dong.DataRow2Me(v_ds_hop_dong_lao_dong.V_GD_HOP_DONG_LAO_DONG.Rows[0]);
-            //    m_txt_ma_hop_dong.Text = v_us_hop_dong_lao_dong.strMA_HOP_DONG;
-            //    m_txt_loai_hop_dong.Text = v_us_hop_dong_lao_dong.strLOAI_HOP_DONG;
-            //    m_txt_ngay_ky.Text = v_us_hop_dong_lao_dong.datNGAY_CO_HIEU_LUC.ToShortDateString();
-            //    string v_str_ngay_het_hieu_luc1 = "";
-            //    if (v_us_hop_dong_lao_dong.datNGAY_HET_HAN > DateTime.Parse("01/01/1900"))
-            //        v_str_ngay_het_hieu_luc1 += " đến ngày " + v_us_hop_dong_lao_dong.datNGAY_HET_HAN.ToShortDateString();
-            //    m_txt_hieu_luc_hop_dong.Text = "Từ ngày "
-            //        + v_us_hop_dong_lao_dong.datNGAY_CO_HIEU_LUC.ToShortDateString()
-            //        + v_str_ngay_het_hieu_luc1;
-            //    m_txt_noi_dung_hop_dong.Text = "Nội dung hợp đồng";
-            //}
-            //else
-            //{
-            //    m_txt_ma_hop_dong.Text = "";
-            //    m_txt_loai_hop_dong.Text = "";
-            //    m_txt_ngay_ky.Text = "";
-            //    m_txt_hieu_luc_hop_dong.Text = "";
-            //    m_txt_noi_dung_hop_dong.Text = "";
-            //}
+          
         }
         private void load_data_2_grv_trang_thai_lao_dong()
         {
@@ -2065,6 +2040,9 @@ namespace BKI_HRM
         }
         private void load_chi_tiet_nhan_vien()
         {
+            CGridUtils.AddSave_Excel_Handlers(m_grv_chuc_vu_hien_tai);
+            CGridUtils.AddSave_Excel_Handlers(m_grv_hop_dong_ld);
+            CGridUtils.AddSave_Excel_Handlers(m_grv_qua_trinh_cong_tac);
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_nhan_su)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;
             grid2us_object(m_us, m_grv_nhan_su.Row);
