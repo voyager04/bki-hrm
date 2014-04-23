@@ -42,6 +42,8 @@ namespace BKI_HRM
         private TextBox m_txt_tim_kiem;
         private Label label1;
         private Label m_lbl_count_record;
+        private Label m_lbl_nhom;
+        private ComboBox m_cbo_nhom_theo_cot;
         private System.ComponentModel.IContainer components;
 
         public f702_bao_cao_hdld()
@@ -90,6 +92,8 @@ namespace BKI_HRM
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.m_lbl_count_record = new System.Windows.Forms.Label();
+            this.m_lbl_nhom = new System.Windows.Forms.Label();
+            this.m_cbo_nhom_theo_cot = new System.Windows.Forms.ComboBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -129,7 +133,7 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 575);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1357, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1354, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_xuat_excel
@@ -160,7 +164,7 @@ namespace BKI_HRM
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(1265, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(1262, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -200,7 +204,7 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(928, 20);
             this.m_txt_tim_kiem.TabIndex = 31;
             this.m_txt_tim_kiem.Text = "Nhập Mã nhân viên, Họ đệm, Tên, Mã hợp đồng, Loại hợp đồng, Ngày tháng, Trạng thá" +
-    "i";
+                "i";
             this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
             this.m_txt_tim_kiem.Leave += new System.EventHandler(this.m_txt_tim_kiem_Leave);
             // 
@@ -221,10 +225,30 @@ namespace BKI_HRM
             this.m_lbl_count_record.Size = new System.Drawing.Size(0, 13);
             this.m_lbl_count_record.TabIndex = 33;
             // 
+            // m_lbl_nhom
+            // 
+            this.m_lbl_nhom.AutoSize = true;
+            this.m_lbl_nhom.Location = new System.Drawing.Point(279, 73);
+            this.m_lbl_nhom.Name = "m_lbl_nhom";
+            this.m_lbl_nhom.Size = new System.Drawing.Size(77, 13);
+            this.m_lbl_nhom.TabIndex = 38;
+            this.m_lbl_nhom.Text = "Nhóm theo cột";
+            // 
+            // m_cbo_nhom_theo_cot
+            // 
+            this.m_cbo_nhom_theo_cot.FormattingEnabled = true;
+            this.m_cbo_nhom_theo_cot.Location = new System.Drawing.Point(383, 70);
+            this.m_cbo_nhom_theo_cot.Name = "m_cbo_nhom_theo_cot";
+            this.m_cbo_nhom_theo_cot.Size = new System.Drawing.Size(233, 21);
+            this.m_cbo_nhom_theo_cot.TabIndex = 37;
+            this.m_cbo_nhom_theo_cot.SelectedIndexChanged += new System.EventHandler(this.m_cbo_nhom_theo_cot_SelectedIndexChanged);
+            // 
             // f702_bao_cao_hdld
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(1357, 611);
+            this.ClientSize = new System.Drawing.Size(1354, 611);
+            this.Controls.Add(this.m_lbl_nhom);
+            this.Controls.Add(this.m_cbo_nhom_theo_cot);
             this.Controls.Add(this.m_lbl_count_record);
             this.Controls.Add(this.m_cmd_tim_kiem);
             this.Controls.Add(this.m_txt_tim_kiem);
@@ -268,19 +292,20 @@ namespace BKI_HRM
         #region Data Structure
         private enum e_col_Number
         {
-            MA_NV = 1,
-            HO_DEM = 2,
-            TEN = 3,
-            MA_HOP_DONG = 4,
-            LOAI_HOP_DONG = 5,
-            NGAY_KY_HOP_DONG = 6,
-            NGAY_CO_HIEU_LUC = 7,
-            NGAY_HET_HAN = 8,
-            TEN_PHAP_NHAN = 9,
-            TRANG_THAI_HOP_DONG = 10,
-            LINK = 11,
-            NGUOI_KY = 12,
-            CHUC_VU_NGUOI_KY = 13
+            COLS1 = 1,
+            MA_NV = 2,
+            HO_DEM = 3,
+            TEN = 4,
+            MA_HOP_DONG = 5,
+            LOAI_HOP_DONG = 6,
+            NGAY_KY_HOP_DONG = 7,
+            NGAY_CO_HIEU_LUC = 8,
+            NGAY_HET_HAN = 9,
+            TEN_PHAP_NHAN = 10,
+            TRANG_THAI_HOP_DONG = 11,
+            LINK = 12,
+            NGUOI_KY = 13,
+            CHUC_VU_NGUOI_KY = 14
         }
         #endregion
 
@@ -289,7 +314,7 @@ namespace BKI_HRM
         DS_V_GD_HOP_DONG_LAO_DONG m_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
         US_V_GD_HOP_DONG_LAO_DONG m_us = new US_V_GD_HOP_DONG_LAO_DONG();
         private int m_i_form_mode;
-        private string m_str_suggest = "Nhập Mã nhân viên, Họ đệm, Tên, Mã hợp đồng, Loại hợp đồng, Ngày tháng, Trạng thái";
+        private const string M_STR_SUGGESTION = "Nhập Mã nhân viên, Họ đệm, Tên, Mã hợp đồng, Loại hợp đồng, Ngày tháng, Trạng thái";
         #endregion
 
         #region Private Methods
@@ -301,18 +326,46 @@ namespace BKI_HRM
             CGridUtils.AddSearch_Handlers(m_fg);
             m_fg.Tree.Column = (int)e_col_Number.HO_DEM;
             m_fg.Cols[(int)e_col_Number.MA_NV].Visible = false;
+            m_fg.Cols[(int)e_col_Number.COLS1].Visible = false;
             m_fg.Tree.Style = TreeStyleFlags.SimpleLeaf;
             set_define_events();
             this.KeyPreview = true;
         }
+
+        private void load_data_2_cbo_group()
+        {
+
+            DataTable v_dt = new DataTable();
+            v_dt.Columns.Add("SO_COT");
+            v_dt.Columns.Add("TEN_COT");
+
+
+            v_dt.Rows.Add(-1, "-- Không nhóm --");
+            v_dt.Rows.Add((int)e_col_Number.MA_NV, "Mã nhân viên");
+            v_dt.Rows.Add((int)e_col_Number.LOAI_HOP_DONG, "Loại hợp đồng");
+            v_dt.Rows.Add((int)e_col_Number.NGAY_KY_HOP_DONG, "Ngày ký hợp đồng");
+            v_dt.Rows.Add((int)e_col_Number.NGAY_CO_HIEU_LUC, "Ngày có hiệu lực");
+            v_dt.Rows.Add((int)e_col_Number.NGAY_HET_HAN, "Ngày hết hạn");
+            v_dt.Rows.Add((int)e_col_Number.TEN_PHAP_NHAN, "Tên pháp nhân");
+            v_dt.Rows.Add((int)e_col_Number.NGUOI_KY, "Người ký");
+            v_dt.Rows.Add((int)e_col_Number.TRANG_THAI_HOP_DONG, "Trạng thái");
+            v_dt.Rows.Add((int)e_col_Number.CHUC_VU_NGUOI_KY, "Chức vụ người ký");
+
+            m_cbo_nhom_theo_cot.DisplayMember = "TEN_COT";
+            m_cbo_nhom_theo_cot.ValueMember = "SO_COT";
+            m_cbo_nhom_theo_cot.DataSource = v_dt;
+        }
+
         private void set_initial_form_load()
         {
             m_obj_trans = get_trans_object(m_fg);
+            load_data_2_cbo_group();
             load_data_2_grid();
         }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
             Hashtable v_htb = new Hashtable();
+            v_htb.Add(V_GD_HOP_DONG_LAO_DONG.COLS1, e_col_Number.COLS1);
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.TRANG_THAI_HOP_DONG, e_col_Number.TRANG_THAI_HOP_DONG);
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.CHUC_VU_NGUOI_KY, e_col_Number.CHUC_VU_NGUOI_KY);
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.NGAY_HET_HAN, e_col_Number.NGAY_HET_HAN);
@@ -332,13 +385,15 @@ namespace BKI_HRM
         private void load_data_2_grid()
         {
             var v_str_search = m_txt_tim_kiem.Text.Trim();
+            if (v_str_search == M_STR_SUGGESTION)
+                v_str_search = "";
             var v_str_month = Regex.Match(v_str_search, @"\d+").Value;
             if (!v_str_month.Equals(""))
                 v_str_search = v_str_month;
 
             m_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
 
-            if (v_str_search == m_str_suggest)
+            if (v_str_search == M_STR_SUGGESTION)
             {
                 if (m_i_form_mode == 1)
                 {
@@ -377,12 +432,27 @@ namespace BKI_HRM
 
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
-             , 0
-             , (int)e_col_Number.MA_NV // chỗ này là tên trường mà mình nhóm
-             , (int)e_col_Number.MA_HOP_DONG // chỗ này là tên trường mà mình Count
-             , "{0}"
-             );
+            if (int.Parse(m_cbo_nhom_theo_cot.SelectedValue.ToString()) > -1)
+            {
+                for (int v_i_cur_row = m_fg.Rows.Fixed; v_i_cur_row < m_fg.Rows.Count; v_i_cur_row++)
+                {
+                    m_fg[v_i_cur_row, (int)e_col_Number.COLS1]
+                        = m_fg[v_i_cur_row, int.Parse(m_cbo_nhom_theo_cot.SelectedValue.ToString())];
+                }
+                m_fg.Sort(SortFlags.Ascending, (int)e_col_Number.COLS1);
+
+
+                m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+                 , 0
+                 , (int)e_col_Number.COLS1 // chỗ này là tên trường mà mình nhóm
+                 , (int)e_col_Number.MA_HOP_DONG // chỗ này là tên trường mà mình Count
+                 , "{0}"
+                 );
+            }
+            else
+            {
+                m_fg.Cols[(int)e_col_Number.MA_NV].Visible = true;
+            }
             m_fg.Redraw = true;
             m_fg.Focus();
         }
@@ -402,6 +472,30 @@ namespace BKI_HRM
             DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
             i_us.Me2DataRow(v_dr);
             m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
+        }
+
+
+        // == Thay đổi cột được tree ==
+
+        private void reset_cot()
+        {
+            for (int i = 2; i <= 14; i++)
+            {
+                m_fg.Cols[i].Visible = true;
+            }
+            m_obj_trans = get_trans_object(m_fg);
+            m_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
+            var v_str_search = m_txt_tim_kiem.Text.Trim();
+
+            if (v_str_search == M_STR_SUGGESTION)
+                m_us.FillDatasetSearchAll(m_ds, "");
+            m_us.FillDatasetSearchAll(m_ds, v_str_search);
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            m_fg.Cols[(int)e_col_Number.MA_NV].Visible = true;
+            m_fg.Cols[1].Visible = false;
+            m_fg.Redraw = true;
+            m_fg.Focus();
         }
 
 
@@ -541,7 +635,7 @@ namespace BKI_HRM
             {
                 if (m_txt_tim_kiem.Text == "")
                 {
-                    m_txt_tim_kiem.Text = m_str_suggest;
+                    m_txt_tim_kiem.Text = M_STR_SUGGESTION;
                     m_txt_tim_kiem.ForeColor = Color.Gray;
                 }
 
@@ -560,6 +654,19 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cbo_nhom_theo_cot_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
