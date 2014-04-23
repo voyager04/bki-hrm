@@ -23,6 +23,28 @@ namespace BKI_HRM.US
     {
         private const string c_TableName = "V_GD_HOP_DONG_LAO_DONG";
         #region "Public Properties"
+        public string strCOLS1
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "COLS1", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["COLS1"] = value;
+            }
+        }
+
+        public bool IsCOLS1Null()
+        {
+            return pm_objDR.IsNull("COLS1");
+        }
+
+        public void SetCOLS1Null()
+        {
+            pm_objDR["COLS1"] = System.Convert.DBNull;
+        }
+
         public string strMA_NV
         {
             get
