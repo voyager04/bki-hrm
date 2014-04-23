@@ -2,24 +2,26 @@
 <xs:schema id="DS_V_GD_HOP_DONG_LAO_DONG" targetNamespace="http://tempuri.org/DS_V_GD_HOP_DONG_LAO_DONG.xsd" xmlns:mstns="http://tempuri.org/DS_V_GD_HOP_DONG_LAO_DONG.xsd" xmlns="http://tempuri.org/DS_V_GD_HOP_DONG_LAO_DONG.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BKI_HRMConnectionString3" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BKI_HRMConnectionString3 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_HRM.DS.Properties.Settings.GlobalReference.Default.BKI_HRMConnectionString3" Provider="System.Data.SqlClient" />
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BKI_HRMConnectionString6" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BKI_HRMConnectionString6 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_HRM.DS.Properties.Settings.GlobalReference.Default.BKI_HRMConnectionString6" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BKI_HRMConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BKI_HRMConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_HRM.DS.Properties.Settings.GlobalReference.Default.BKI_HRMConnectionString1" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_GD_HOP_DONG_LAO_DONGTableAdapter" GeneratorDataComponentClassName="V_GD_HOP_DONG_LAO_DONGTableAdapter" Name="V_GD_HOP_DONG_LAO_DONG" UserDataComponentName="V_GD_HOP_DONG_LAO_DONGTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BKI_HRMConnectionString3 (Settings)" DbObjectName="BKI_HRM.dbo.V_GD_HOP_DONG_LAO_DONG" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BKI_HRMConnectionString1 (Settings)" DbObjectName="BKI_HRM.dbo.V_GD_HOP_DONG_LAO_DONG" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT MA_NV, HO_DEM, TEN, MA_HOP_DONG, ID_LOAI_HOP_DONG, LOAI_HOP_DONG, NGAY_CO_HIEU_LUC, NGAY_HET_HAN, TRANG_THAI_HOP_DONG, ID_NHAN_SU, TRANG_THAI, NGUOI_KY, CHUC_VU_NGUOI_KY, NGAY_KY_HOP_DONG, ID_PHAP_NHAN, MA_PHAP_NHAN, TEN_PHAP_NHAN, ID_TRANG_LAO_DONG, TRANG_THAI_HIEN_TAI, LINK FROM dbo.V_GD_HOP_DONG_LAO_DONG</CommandText>
+                    <CommandText>SELECT COLS1, MA_NV, HO_DEM, TEN, MA_HOP_DONG, ID_LOAI_HOP_DONG, LOAI_HOP_DONG, NGAY_CO_HIEU_LUC, NGAY_HET_HAN, TRANG_THAI_HOP_DONG, ID_NHAN_SU, TRANG_THAI, NGUOI_KY, CHUC_VU_NGUOI_KY, NGAY_KY_HOP_DONG, ID_PHAP_NHAN, MA_PHAP_NHAN, TEN_PHAP_NHAN, ID_TRANG_LAO_DONG, TRANG_THAI_HIEN_TAI, LINK FROM dbo.V_GD_HOP_DONG_LAO_DONG</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
             </MainSource>
             <Mappings>
+              <Mapping SourceColumn="COLS1" DataSetColumn="COLS1" />
               <Mapping SourceColumn="MA_NV" DataSetColumn="MA_NV" />
               <Mapping SourceColumn="HO_DEM" DataSetColumn="HO_DEM" />
               <Mapping SourceColumn="TEN" DataSetColumn="TEN" />
@@ -51,9 +53,16 @@
   <xs:element name="DS_V_GD_HOP_DONG_LAO_DONG" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_GD_HOP_DONG_LAO_DONG" msprop:Generator_UserDSName="DS_V_GD_HOP_DONG_LAO_DONG">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="V_GD_HOP_DONG_LAO_DONG" msprop:Generator_TableClassName="V_GD_HOP_DONG_LAO_DONGDataTable" msprop:Generator_TableVarName="tableV_GD_HOP_DONG_LAO_DONG" msprop:Generator_TablePropName="V_GD_HOP_DONG_LAO_DONG" msprop:Generator_RowDeletingName="V_GD_HOP_DONG_LAO_DONGRowDeleting" msprop:Generator_RowChangingName="V_GD_HOP_DONG_LAO_DONGRowChanging" msprop:Generator_RowEvHandlerName="V_GD_HOP_DONG_LAO_DONGRowChangeEventHandler" msprop:Generator_RowDeletedName="V_GD_HOP_DONG_LAO_DONGRowDeleted" msprop:Generator_UserTableName="V_GD_HOP_DONG_LAO_DONG" msprop:Generator_RowChangedName="V_GD_HOP_DONG_LAO_DONGRowChanged" msprop:Generator_RowEvArgName="V_GD_HOP_DONG_LAO_DONGRowChangeEvent" msprop:Generator_RowClassName="V_GD_HOP_DONG_LAO_DONGRow">
+        <xs:element name="V_GD_HOP_DONG_LAO_DONG" msprop:Generator_TableClassName="V_GD_HOP_DONG_LAO_DONGDataTable" msprop:Generator_TableVarName="tableV_GD_HOP_DONG_LAO_DONG" msprop:Generator_TablePropName="V_GD_HOP_DONG_LAO_DONG" msprop:Generator_RowDeletingName="V_GD_HOP_DONG_LAO_DONGRowDeleting" msprop:Generator_UserTableName="V_GD_HOP_DONG_LAO_DONG" msprop:Generator_RowChangingName="V_GD_HOP_DONG_LAO_DONGRowChanging" msprop:Generator_RowEvHandlerName="V_GD_HOP_DONG_LAO_DONGRowChangeEventHandler" msprop:Generator_RowDeletedName="V_GD_HOP_DONG_LAO_DONGRowDeleted" msprop:Generator_RowEvArgName="V_GD_HOP_DONG_LAO_DONGRowChangeEvent" msprop:Generator_RowChangedName="V_GD_HOP_DONG_LAO_DONGRowChanged" msprop:Generator_RowClassName="V_GD_HOP_DONG_LAO_DONGRow">
           <xs:complexType>
             <xs:sequence>
+              <xs:element name="COLS1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCOLS1" msprop:Generator_ColumnPropNameInRow="COLS1" msprop:Generator_ColumnPropNameInTable="COLS1Column" msprop:Generator_UserColumnName="COLS1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="MA_NV" msprop:Generator_ColumnVarNameInTable="columnMA_NV" msprop:Generator_ColumnPropNameInRow="MA_NV" msprop:Generator_ColumnPropNameInTable="MA_NVColumn" msprop:Generator_UserColumnName="MA_NV" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
