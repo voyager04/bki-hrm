@@ -223,6 +223,7 @@
         public const string MA_NV = "MA_NV";
         public const string HO_DEM = "HO_DEM";
         public const string TEN = "TEN";
+        public const string ID_CHUC_VU = "ID_CHUC_VU";
         public const string MA_CV = "MA_CV";
         public const string TEN_CV = "TEN_CV";
         public const string MA_DON_VI = "MA_DON_VI";

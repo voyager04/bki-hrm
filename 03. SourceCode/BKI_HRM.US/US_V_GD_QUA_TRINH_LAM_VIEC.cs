@@ -726,6 +726,28 @@ namespace BKI_HRM.US {
             pm_objDR["TY_LE_THAM_GIA"] = System.Convert.DBNull;
         }
 
+        public decimal dcID_CHUC_VU
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_CHUC_VU", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_CHUC_VU"] = value;
+            }
+        }
+
+        public bool IsID_CHUC_VUNull()
+        {
+            return pm_objDR.IsNull("ID_CHUC_VU");
+        }
+
+        public void SetID_CHUC_VUNull()
+        {
+            pm_objDR["ID_CHUC_VU"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_V_GD_QUA_TRINH_LAM_VIEC()
