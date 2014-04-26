@@ -38,6 +38,7 @@ namespace BKI_HRM
             InitializeComponent();
             format_controls();
         }
+
         public void display_for_insert()
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
@@ -165,7 +166,7 @@ namespace BKI_HRM
             m_us_dm_nhan_su.strTEN = m_txt_ten.Text.Trim();
             m_us_dm_nhan_su.strGIOI_TINH = ((m_cbo_gioi_tinh.SelectedIndex == 0) ? "Nam" : "Nữ");
         
-            //m_us_dm_nhan_su.strANH = m_ofd_chon_anh.FileName;
+            m_us_dm_nhan_su.strANH = m_ofd_chon_anh.FileName;
            
 
             if(m_dat_ngay_sinh.Checked == true)
@@ -318,16 +319,13 @@ namespace BKI_HRM
         }
         private void save_image(string ip_str_pathimage)
         {
-            //MessageBox.Show(Application.CommonAppDataPath + "\n"
-            //    + Application.ExecutablePath + "\n"
-            //    + Application.LocalUserAppDataPath + "\n"
-            //    + Application.UserAppDataPath);
             
             if (ip_str_pathimage != "")
             {
-                if (File.Exists("E:\\00.CV\\" + m_us_dm_nhan_su.strMA_NV + ".jpg"))
-                {
-                    File.Delete("E:\\00.CV\\" + m_us_dm_nhan_su.strMA_NV + ".jpg");
+
+                if (File.Exists(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg"))
+                { 
+                    File.Delete(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg");
                 }
 
                 int maxWidth = 120,
@@ -357,9 +355,9 @@ namespace BKI_HRM
                     graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
                     graphics.DrawImage(image, 0, 0, newWidth, newHeight);
                 }
-                BaseMessages.MsgBox_Infor(Path.GetDirectoryName(Application.ExecutablePath));
-                newImage.Save(Path.GetDirectoryName(Application.ExecutablePath) + "\\" + m_us_dm_nhan_su.strMA_NV + ".jpg", ImageFormat.Jpeg);
-                m_us_dm_nhan_su.strANH = Path.GetDirectoryName(Application.ExecutablePath) + "\\" + m_us_dm_nhan_su.strMA_NV + ".jpg";
+               
+                newImage.Save(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg", ImageFormat.Jpeg);
+                m_us_dm_nhan_su.strANH = Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg";
                
             }
                 
