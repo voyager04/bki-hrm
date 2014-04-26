@@ -535,10 +535,12 @@ namespace BKI_HRM.US
             v_sp.fillDataSetByCommand(this, op_ds);
         }
 
-        public void FillDatasetSearchAll(DS_V_GD_HOP_DONG_LAO_DONG op_ds, string ip_str_keyword)
+        public void FillDatasetSearchAll(DS_V_GD_HOP_DONG_LAO_DONG op_ds, string ip_str_keyword, decimal ip_dc_loai_hop_dong, string ip_str_trang_thai_hop_dong)
         {
             CStoredProc v_sp = new CStoredProc("pr_GD_HOP_DONG_Search");
             v_sp.addNVarcharInputParam("@ip_str_keyword", ip_str_keyword);
+            v_sp.addDecimalInputParam("@id_loai_hop_dong", ip_dc_loai_hop_dong);
+            v_sp.addNVarcharInputParam("@trang_thai_hop_dong", ip_str_trang_thai_hop_dong);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
 
@@ -562,5 +564,7 @@ namespace BKI_HRM.US
             v_sp.addNVarcharInputParam("@ip_str_keyword", ip_str_keyword);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
+
+
     }
 }
