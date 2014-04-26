@@ -28,6 +28,8 @@ using BKI_HRM.DS.CDBNames;
 using C1.Win.C1FlexGrid;
 using System.Threading;
 using BKI_HRM.NghiepVu;
+using System.Drawing.Imaging;
+using System.IO;
 
 namespace BKI_HRM
 {
@@ -2154,7 +2156,11 @@ namespace BKI_HRM
             if (m_us.strANH != "")
                 try
                 {
-                    m_ptb_anh.Image = new Bitmap(m_us.strANH);
+                    FileStream fs ;
+                    fs = new System.IO.FileStream(m_us.strANH,System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                    m_ptb_anh.Image = System.Drawing.Image.FromStream(fs);
+                    fs.Close();
+                   
                 }
                 catch (Exception v_e)
                 {
@@ -2244,10 +2250,38 @@ namespace BKI_HRM
 
 		private void update_dm_nhan_su()
         {
-           // m_ptb_anh.Image = null;
+            if (File.Exists(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\temp.jpg"))
+            {
+                File.Delete(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\temp.jpg");
+            }
+            if (m_us.strANH != "")
+                try
+                {
+                    m_ptb_anh.Image.Dispose();
+
+                    
+
+                    File.Copy(m_us.strANH, Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\temp.jpg");
+                    FileStream fs;
+                    fs = new System.IO.FileStream(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\temp.jpg",
+                        System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                    m_ptb_anh.Image = System.Drawing.Image.FromStream(fs);
+                    fs.Close();
+                    m_us.strANH = Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\temp.jpg";
+                  
+                }
+                catch (Exception v_e)
+                {
+                    MessageBox.Show("Không load được file ảnh.");
+                }
+
+            else
+                m_ptb_anh.Image = m_ptb_anh.ErrorImage;
+
+
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_nhan_su)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;			
-			grid2us_object(m_us, m_grv_nhan_su.Row);
+			//grid2us_object(m_us, m_grv_nhan_su.Row);
             f201_DM_NHAN_SU_DE v_fDE = new f201_DM_NHAN_SU_DE();
             v_fDE.display_for_update(m_us);
 			load_data_2_grid_search();
