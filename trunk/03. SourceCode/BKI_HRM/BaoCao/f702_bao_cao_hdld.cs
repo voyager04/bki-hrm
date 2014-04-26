@@ -398,7 +398,7 @@ namespace BKI_HRM
                 if (m_i_form_mode == 1)
                 {
                     m_us.FIllDataset_By_Hop_Dong_Da_Het_Han(m_ds, "");
-                    m_lbl_count_record.Text = string.Format("Có {0} Hợp Đồng Lao Động đã hết hạn.", m_ds.Tables[0].Rows.Count);
+                    m_lbl_count_record.Text = string.Format("Có {0} Hợp Đồng Lao Động còn hiệu lực.", m_ds.Tables[0].Rows.Count);
                 }
                 if (m_i_form_mode == 2)
                 {
@@ -416,7 +416,7 @@ namespace BKI_HRM
                 if (m_i_form_mode == 1)
                 {
                     m_us.FIllDataset_By_Hop_Dong_Da_Het_Han(m_ds, v_str_search);
-                    m_lbl_count_record.Text = string.Format("Có {0} Hợp Đồng Lao Động đã hết hạn.", m_ds.Tables[0].Rows.Count);
+                    m_lbl_count_record.Text = string.Format("Có {0} Hợp Đồng Lao Động còn hiệu lực.", m_ds.Tables[0].Rows.Count);
                 }
                 if (m_i_form_mode == 2)
                 {

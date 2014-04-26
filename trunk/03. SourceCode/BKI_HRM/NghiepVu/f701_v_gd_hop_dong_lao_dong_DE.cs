@@ -89,6 +89,18 @@ namespace BKI_HRM.NghiepVu
                 return false;
             }
 
+            if (!Regex.IsMatch(m_txt_nguoi_ky.Text, "[A-z0-9]*"))
+            {
+                BaseMessages.MsgBox_Infor("Bạn nhập tên người ký chưa đúng định dạng");
+                return false;
+            }
+
+            if (!Regex.IsMatch(m_txt_chuc_vu_nguoi_ky.Text, "[A-z0-9]*"))
+            {
+                BaseMessages.MsgBox_Infor("Bạn nhập chức vụ người ký chưa đúng định dạng");
+                return false;
+            }
+
             if (m_lbl_ma_nhan_vien.Text == "")
             {
                 BaseMessages.MsgBox_Infor("Bạn chưa nhập Mã Nhân Viên.");

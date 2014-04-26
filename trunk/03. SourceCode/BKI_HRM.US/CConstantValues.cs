@@ -20,6 +20,7 @@ namespace BKI_HRM.US {
         public const string LOAI_QUYET_DINH = "LOAI_QUYET_DINH";
         public const string NGACH = "NGACH";
         public const string LOAI_CHUC_VU = "LOAI_CHUC_VU";
+        public const string TRANG_THAI_HOP_DONG = "TRANG_THAI_HOP_DONG";
     }
 
     public class TU_DIEN {
