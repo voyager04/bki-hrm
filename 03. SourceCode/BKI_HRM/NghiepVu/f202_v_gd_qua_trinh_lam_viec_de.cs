@@ -147,7 +147,7 @@ namespace BKI_HRM
                     m_lbl_ngay_ket_thuc.Text = "Ngày miễn nhiệm";
                     m_lbl_chuc_vu_moi.Text = "Chức vụ miễn nhiệm";
 
-                   m_cbo_ma_chuc_vu_moi.SelectedValue = m_us_v_qua_trinh_lam_viec.dcID_CHUC_VU;
+                    m_cbo_ma_chuc_vu_moi.SelectedValue = m_us_v_qua_trinh_lam_viec.dcID_CHUC_VU;
                    
                     m_cbo_chuc_vu_moi.Enabled = false;
                     m_cbo_ma_chuc_vu_moi.Enabled = false;
