@@ -120,7 +120,8 @@ namespace BKI_HRM
                 m_ptb_anh.Image = new Bitmap(m_ofd_chon_anh.FileName);
             }
         }
-        private void us_object_to_form(){
+        private void us_object_to_form()
+        {
             m_txt_ma_nhan_vien.Text = m_us_dm_nhan_su.strMA_NV;
             m_txt_ho_dem.Text = m_us_dm_nhan_su.strHO_DEM;
             m_txt_ten.Text = m_us_dm_nhan_su.strTEN;
@@ -142,12 +143,18 @@ namespace BKI_HRM
 
             m_ofd_chon_anh.FileName = m_us_dm_nhan_su.strANH;
             if (m_us_dm_nhan_su.strANH != "")
-                m_ptb_anh.Image = new Bitmap(m_ofd_chon_anh.FileName);
-            
+               // m_ptb_anh.Image = new Bitmap(m_ofd_chon_anh.FileName);
+            {
+                FileStream fs;
+                fs = new System.IO.FileStream(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\temp.jpg",
+                    System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                m_ptb_anh.Image = System.Drawing.Image.FromStream(fs);
+                fs.Close();
+            }
             m_txt_trinh_do.Text = m_us_dm_nhan_su.strTRINH_DO;
             m_txt_noi_dao_tao.Text = m_us_dm_nhan_su.strNOI_DAO_TAO;
             m_txt_chuyen_nganh.Text = m_us_dm_nhan_su.strCHUYEN_NGANH;
-            m_txt_nam_tot_nghiep.Text = (m_us_dm_nhan_su.dcNAM_TOT_NGHIEP>0)?CIPConvert.ToStr(m_us_dm_nhan_su.dcNAM_TOT_NGHIEP):"";
+            m_txt_nam_tot_nghiep.Text = (m_us_dm_nhan_su.dcNAM_TOT_NGHIEP > 0) ? CIPConvert.ToStr(m_us_dm_nhan_su.dcNAM_TOT_NGHIEP) : "";
             m_txt_email_co_quan.Text = m_us_dm_nhan_su.strEMAIL_CQ;
             m_txt_email_ca_nhan.Text = m_us_dm_nhan_su.strEMAIL_CA_NHAN;
             m_txt_so_dtdd.Text = m_us_dm_nhan_su.strDI_DONG;

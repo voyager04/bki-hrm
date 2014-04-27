@@ -277,7 +277,7 @@ namespace BKI_HRM.DS {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class GD_CHI_TIET_CHUC_VUDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
+        public partial class GD_CHI_TIET_CHUC_VUDataTable : global::System.Data.TypedTableBase<GD_CHI_TIET_CHUC_VURow> {
             
             private global::System.Data.DataColumn columnID;
             
@@ -483,12 +483,6 @@ namespace BKI_HRM.DS {
             public GD_CHI_TIET_CHUC_VURow FindByID(decimal ID) {
                 return ((GD_CHI_TIET_CHUC_VURow)(this.Rows.Find(new object[] {
                             ID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public virtual global::System.Collections.IEnumerator GetEnumerator() {
-                return this.Rows.GetEnumerator();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

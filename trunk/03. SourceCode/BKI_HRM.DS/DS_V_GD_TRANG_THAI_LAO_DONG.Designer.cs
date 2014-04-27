@@ -277,7 +277,7 @@ namespace BKI_HRM.DS {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class V_GD_TRANG_THAI_LAO_DONGDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
+        public partial class V_GD_TRANG_THAI_LAO_DONGDataTable : global::System.Data.TypedTableBase<V_GD_TRANG_THAI_LAO_DONGRow> {
             
             private global::System.Data.DataColumn columnMA_NV;
             
@@ -498,12 +498,6 @@ namespace BKI_HRM.DS {
                 rowV_GD_TRANG_THAI_LAO_DONGRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowV_GD_TRANG_THAI_LAO_DONGRow);
                 return rowV_GD_TRANG_THAI_LAO_DONGRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public virtual global::System.Collections.IEnumerator GetEnumerator() {
-                return this.Rows.GetEnumerator();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

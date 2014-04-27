@@ -277,7 +277,7 @@ namespace BKI_HRM.DS {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class RPT_CHUC_VU_TRANG_THAIDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
+        public partial class RPT_CHUC_VU_TRANG_THAIDataTable : global::System.Data.TypedTableBase<RPT_CHUC_VU_TRANG_THAIRow> {
             
             private global::System.Data.DataColumn columnID;
             
@@ -421,12 +421,6 @@ namespace BKI_HRM.DS {
                 rowRPT_CHUC_VU_TRANG_THAIRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRPT_CHUC_VU_TRANG_THAIRow);
                 return rowRPT_CHUC_VU_TRANG_THAIRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public virtual global::System.Collections.IEnumerator GetEnumerator() {
-                return this.Rows.GetEnumerator();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
