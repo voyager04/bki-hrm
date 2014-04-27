@@ -221,7 +221,7 @@ namespace BKI_HRM
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "F205_V_GD_QUYET_DINH";
-            this.Text = "F205_V_GD_QUYET_DINH";
+            this.Text = "F205 - Danh mục quyết định";
             this.Load += new System.EventHandler(this.F205_V_GD_QUYET_DINH_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
