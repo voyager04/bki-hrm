@@ -2156,8 +2156,9 @@ namespace BKI_HRM
             if (m_us.strANH != "")
                 try
                 {
+                    string v_str_imagepath = Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us.strMA_NV + ".jpg";
                     FileStream fs ;
-                    fs = new System.IO.FileStream(m_us.strANH,System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                    fs = new System.IO.FileStream(v_str_imagepath,System.IO.FileMode.Open, System.IO.FileAccess.Read);
                     m_ptb_anh.Image = System.Drawing.Image.FromStream(fs);
                     fs.Close();
                    
@@ -2259,9 +2260,9 @@ namespace BKI_HRM
                 {
                     m_ptb_anh.Image.Dispose();
 
-                    
 
-                    File.Copy(m_us.strANH, Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\temp.jpg");
+                    string v_str_imagepath = Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us.strMA_NV + ".jpg";
+                    File.Copy(v_str_imagepath, Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\temp.jpg");
                     FileStream fs;
                     fs = new System.IO.FileStream(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\temp.jpg",
                         System.IO.FileMode.Open, System.IO.FileAccess.Read);
