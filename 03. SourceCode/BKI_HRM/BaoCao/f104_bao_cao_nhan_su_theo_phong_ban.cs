@@ -37,9 +37,9 @@ namespace BKI_HRM {
         #region Data Structure
 
         private enum e_col_Number {
-            LOAI_DON_VI = 9
+            LOAI_DON_VI = 10
 ,
-            TEN_DON_VI = 2
+            TEN_DON_VI = 3
                 ,
             ID_DON_VI_CAP_TREN = 23
                 ,
@@ -47,19 +47,19 @@ namespace BKI_HRM {
                 ,
             NGAY_BAT_DAU = 15
                 ,
-            CAP_DON_VI = 8
+            CAP_DON_VI = 9
                 ,
             TRANG_THAI_CV = 18
                 ,
-            MA_NV = 3
+            MA_NV = 4
                 ,
             LOAI_CV = 14
                 ,
             MA_QUYET_DINH = 11
                 ,
-            DIA_BAN = 10
+            DIA_BAN = 1
                 ,
-            TEN = 5
+            TEN = 6
                 ,
             ID_LOAI_DON_VI = 22
                 ,
@@ -69,11 +69,11 @@ namespace BKI_HRM {
                 ,
             LUA_CHON = 32
                 ,
-            MA_DON_VI = 1
+            MA_DON_VI = 2
                 ,
             ID_QUYET_DINH_MIEN_NHIEM = 31
                 ,
-            HO_DEM = 4
+            HO_DEM = 5
                 ,
             TY_LE_THAM_GIA = 20
                 ,
@@ -81,7 +81,7 @@ namespace BKI_HRM {
                 ,
             ID_NHAN_SU = 25
                 ,
-            TEN_CV = 7
+            TEN_CV = 8
                 ,
             NGAY_HET_HIEU_LUC = 13
                 ,
@@ -93,7 +93,7 @@ namespace BKI_HRM {
                 ,
             ID_LOAI_CV = 24
                 ,
-            MA_CV = 6
+            MA_CV = 7
                 ,
             TRANG_THAI_CHUC_VU_YN = 29
                 ,
@@ -117,8 +117,8 @@ namespace BKI_HRM {
             CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
-            m_fg.Tree.Column = (int)e_col_Number.MA_NV;
-            m_fg.Tree.Style = TreeStyleFlags.Simple;
+            m_fg.Tree.Column = (int)e_col_Number.DIA_BAN;
+            m_fg.Tree.Style = TreeStyleFlags.SimpleLeaf;
 
             set_define_events();
             KeyPreview = true;
@@ -140,8 +140,8 @@ namespace BKI_HRM {
                 v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.TEN] + "");
                 v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.MA_DON_VI] + "");
                 v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.TEN_DON_VI] + "");
-                v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.MA_DON_VI] + "-" + v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.TEN_DON_VI]);
-                v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.TEN_DON_VI]+"-"+v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.MA_DON_VI]);
+                //v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.MA_DON_VI] + " - " + v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.TEN_DON_VI]);
+                //v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.TEN_DON_VI]+" - "+v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.MA_DON_VI]);
                 v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.TEN_CV] + "");
                 v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.LOAI_DON_VI] + "");
             }
@@ -204,8 +204,14 @@ namespace BKI_HRM {
              */
             m_fg.Subtotal(AggregateEnum.Count
               , 0
-              , (int)e_col_Number.TEN_DON_VI    // Group theo cột này
-              , (int)e_col_Number.TEN         // Subtotal theo cột này
+              , (int)e_col_Number.DIA_BAN    // Group theo cột này
+              , (int)e_col_Number.MA_DON_VI         // Subtotal theo cột này
+              , "{0}"
+              );
+            m_fg.Subtotal(AggregateEnum.Count
+              , 1
+              , (int)e_col_Number.MA_DON_VI    // Group theo cột này
+              , (int)e_col_Number.TEN_DON_VI         // Subtotal theo cột này
               , "{0}"
               );
             m_fg.Redraw = true;

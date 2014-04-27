@@ -85,7 +85,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1189, 76);
+            this.panel2.Size = new System.Drawing.Size(1189, 71);
             this.panel2.TabIndex = 25;
             // 
             // m_lbl_thong_bao
@@ -93,15 +93,15 @@
             this.m_lbl_thong_bao.AutoSize = true;
             this.m_lbl_thong_bao.Location = new System.Drawing.Point(13, 5);
             this.m_lbl_thong_bao.Name = "m_lbl_thong_bao";
-            this.m_lbl_thong_bao.Size = new System.Drawing.Size(0, 14);
+            this.m_lbl_thong_bao.Size = new System.Drawing.Size(0, 13);
             this.m_lbl_thong_bao.TabIndex = 37;
             // 
             // m_lbl_thoidiem
             // 
             this.m_lbl_thoidiem.AutoSize = true;
-            this.m_lbl_thoidiem.Location = new System.Drawing.Point(782, 30);
+            this.m_lbl_thoidiem.Location = new System.Drawing.Point(782, 28);
             this.m_lbl_thoidiem.Name = "m_lbl_thoidiem";
-            this.m_lbl_thoidiem.Size = new System.Drawing.Size(56, 14);
+            this.m_lbl_thoidiem.Size = new System.Drawing.Size(57, 13);
             this.m_lbl_thoidiem.TabIndex = 36;
             this.m_lbl_thoidiem.Text = "Thời điểm:";
             // 
@@ -109,7 +109,7 @@
             // 
             this.m_dtp_thoidiem.CustomFormat = "dd/MM/yyyy";
             this.m_dtp_thoidiem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_thoidiem.Location = new System.Drawing.Point(844, 25);
+            this.m_dtp_thoidiem.Location = new System.Drawing.Point(844, 23);
             this.m_dtp_thoidiem.Name = "m_dtp_thoidiem";
             this.m_dtp_thoidiem.Size = new System.Drawing.Size(99, 20);
             this.m_dtp_thoidiem.TabIndex = 2;
@@ -117,18 +117,18 @@
             // m_lbl_so_luong_ban_ghi
             // 
             this.m_lbl_so_luong_ban_ghi.AutoSize = true;
-            this.m_lbl_so_luong_ban_ghi.Location = new System.Drawing.Point(195, 59);
+            this.m_lbl_so_luong_ban_ghi.Location = new System.Drawing.Point(195, 55);
             this.m_lbl_so_luong_ban_ghi.Name = "m_lbl_so_luong_ban_ghi";
-            this.m_lbl_so_luong_ban_ghi.Size = new System.Drawing.Size(25, 14);
+            this.m_lbl_so_luong_ban_ghi.Size = new System.Drawing.Size(25, 13);
             this.m_lbl_so_luong_ban_ghi.TabIndex = 28;
             this.m_lbl_so_luong_ban_ghi.Text = "000";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 59);
+            this.label4.Location = new System.Drawing.Point(7, 55);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(178, 14);
+            this.label4.Size = new System.Drawing.Size(176, 13);
             this.label4.TabIndex = 27;
             this.label4.Text = "Số nhân viên viên trong danh sách:";
             // 
@@ -140,9 +140,9 @@
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(961, 20);
+            this.m_cmd_search.Location = new System.Drawing.Point(961, 19);
             this.m_cmd_search.Name = "m_cmd_search";
-            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_search.Size = new System.Drawing.Size(88, 26);
             this.m_cmd_search.TabIndex = 3;
             this.m_cmd_search.Text = "Tìm kiếm";
             // 
@@ -150,7 +150,7 @@
             // 
             this.m_txt_search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_search.Location = new System.Drawing.Point(226, 23);
+            this.m_txt_search.Location = new System.Drawing.Point(226, 21);
             this.m_txt_search.Name = "m_txt_search";
             this.m_txt_search.Size = new System.Drawing.Size(541, 20);
             this.m_txt_search.TabIndex = 1;
@@ -159,9 +159,9 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(123, 26);
+            this.label6.Location = new System.Drawing.Point(123, 24);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 14);
+            this.label6.Size = new System.Drawing.Size(88, 13);
             this.label6.TabIndex = 24;
             this.label6.Text = "Từ khoá tìm kiếm";
             // 
@@ -170,10 +170,10 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 536);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 498);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1189, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1189, 33);
             this.m_pnl_out_place_dm.TabIndex = 32;
             // 
             // m_cmd_xuat_excel
@@ -188,7 +188,7 @@
             this.m_cmd_xuat_excel.ImageList = this.ImageList;
             this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
-            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(118, 28);
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(118, 25);
             this.m_cmd_xuat_excel.TabIndex = 4;
             this.m_cmd_xuat_excel.Text = "Xuất Excel";
             // 
@@ -205,7 +205,7 @@
             this.m_cmd_exit.ImageList = this.ImageList;
             this.m_cmd_exit.Location = new System.Drawing.Point(1067, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(118, 28);
+            this.m_cmd_exit.Size = new System.Drawing.Size(118, 25);
             this.m_cmd_exit.TabIndex = 5;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
@@ -213,17 +213,17 @@
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 76);
+            this.m_fg.Location = new System.Drawing.Point(0, 71);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1189, 460);
+            this.m_fg.Size = new System.Drawing.Size(1189, 427);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 33;
             // 
             // f104_bao_cao_nhan_su_theo_phong_ban
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1189, 572);
+            this.ClientSize = new System.Drawing.Size(1189, 531);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.panel2);
