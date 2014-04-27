@@ -301,5 +301,12 @@ public class US_V_GD_QUYET_DINH : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
+#region "Addtionals"
+    public void FillDataset(DS_V_GD_QUYET_DINH op_ds)
+    {
+        CStoredProc v_sp = new CStoredProc("pr_V_GD_QUYET_DINH_FillDataset");
+        v_sp.fillDataSetByCommand(this, op_ds);
+    }
+#endregion
 	}
 }
