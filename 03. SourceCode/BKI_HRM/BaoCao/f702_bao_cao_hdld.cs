@@ -544,8 +544,7 @@ namespace BKI_HRM
             var v_str_search = m_txt_tim_kiem.Text.Trim();
             if (v_str_search == M_STR_SUGGESTION)
                 v_str_search = "";
-
-            if (m_cbo_loai_hop_dong.SelectedValue == null)
+            if (m_cbo_loai_hop_dong.SelectedValue == null || m_cbo_loai_hop_dong.SelectedValue.ToString() == "System.Data.DataRowView")
                 return;
 
             m_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
@@ -588,6 +587,8 @@ namespace BKI_HRM
 
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            if (m_cbo_nhom_theo_cot.SelectedValue == null)
+                return;
             if (int.Parse(m_cbo_nhom_theo_cot.SelectedValue.ToString()) > -1)
             {
                 for (int v_i_cur_row = m_fg.Rows.Fixed; v_i_cur_row < m_fg.Rows.Count; v_i_cur_row++)
@@ -700,6 +701,10 @@ namespace BKI_HRM
             foreach (DataRow dr in v_ds_v_gd_hop_dong.V_GD_HOP_DONG_LAO_DONG)
             {
                 v_acsc_search.Add(dr[V_GD_HOP_DONG_LAO_DONG.HO_DEM].ToString() + " " + dr[V_GD_HOP_DONG_LAO_DONG.TEN].ToString());
+                v_acsc_search.Add(dr[V_GD_HOP_DONG_LAO_DONG.MA_NV].ToString());
+                v_acsc_search.Add(dr[V_GD_HOP_DONG_LAO_DONG.MA_HOP_DONG].ToString());
+                v_acsc_search.Add(dr[V_GD_HOP_DONG_LAO_DONG.TEN].ToString());
+                v_acsc_search.Add(dr[V_GD_HOP_DONG_LAO_DONG.HO_DEM].ToString());
             }
             m_txt_tim_kiem.AutoCompleteCustomSource = v_acsc_search;
         }
