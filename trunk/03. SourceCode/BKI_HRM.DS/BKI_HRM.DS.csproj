@@ -126,11 +126,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_GD_QUA_TRINH_CONG_TAC.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DS_V_GD_QUYET_DINH.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_V_GD_QUYET_DINH.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DS_HT_FORM.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -224,6 +219,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_GD_QUA_TRINH_LAM_VIEC.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_V_GD_QUYET_DINH.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_GD_QUYET_DINH.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS_V_GD_TRANG_THAI_LAO_DONG.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -423,17 +423,6 @@
     <None Include="DS_GD_QUA_TRINH_CONG_TAC.xss">
       <DependentUpon>DS_GD_QUA_TRINH_CONG_TAC.xsd</DependentUpon>
     </None>
-    <None Include="DS_V_GD_QUYET_DINH.xsc">
-      <DependentUpon>DS_V_GD_QUYET_DINH.xsd</DependentUpon>
-    </None>
-    <None Include="DS_V_GD_QUYET_DINH.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_V_GD_QUYET_DINH.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_V_GD_QUYET_DINH.xss">
-      <DependentUpon>DS_V_GD_QUYET_DINH.xsd</DependentUpon>
-    </None>
     <None Include="DS_HT_FORM.xsc">
       <DependentUpon>DS_HT_FORM.xsd</DependentUpon>
     </None>
@@ -631,6 +620,17 @@
     </None>
     <None Include="DS_V_GD_QUA_TRINH_LAM_VIEC.xss">
       <DependentUpon>DS_V_GD_QUA_TRINH_LAM_VIEC.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_QUYET_DINH.xsc">
+      <DependentUpon>DS_V_GD_QUYET_DINH.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_QUYET_DINH.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_GD_QUYET_DINH.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_GD_QUYET_DINH.xss">
+      <DependentUpon>DS_V_GD_QUYET_DINH.xsd</DependentUpon>
     </None>
     <None Include="DS_V_GD_TRANG_THAI_LAO_DONG.xsc">
       <DependentUpon>DS_V_GD_TRANG_THAI_LAO_DONG.xsd</DependentUpon>
