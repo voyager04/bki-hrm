@@ -276,32 +276,32 @@ namespace BKI_HRM
 		#region Data Structure
         private enum e_col_Number
         {
-            CAP_DON_VI = 10
+            CAP_DON_VI = 11
 ,
             TY_LE_THAM_GIA = 13
                 ,
-            NGAY_BAT_DAU = 6
+            NGAY_BAT_DAU = 7
                 ,
-            TEN_CV = 2
+            TEN_CV = 3
                 ,
-            TEN_DON_VI = 9
+            TEN_DON_VI = 10
                 ,
-            MA_NV = 3
+            MA_NV = 4
                 ,
-            MA_DON_VI = 8
+            MA_DON_VI = 9
                 ,
-            NGAY_KET_THUC = 7
+            NGAY_KET_THUC = 8
                 ,
-            MA_CV = 1
+            MA_CV = 2
                 ,
-            HO_DEM = 4
+            HO_DEM = 5
                 ,
-            LOAI_DON_VI = 11
+            LOAI_DON_VI = 12
                 ,
-            TEN = 5
+            TEN = 6
                 ,
             TRANG_THAI_CV = 14
-                , DIA_BAN = 12
+                , DIA_BAN = 1
 
         }			
 		#endregion
@@ -318,7 +318,7 @@ namespace BKI_HRM
 			CControlFormat.setC1FlexFormat(m_fg);
 			CGridUtils.AddSave_Excel_Handlers(m_fg);
             			CGridUtils.AddSearch_Handlers(m_fg);
-                        m_fg.Tree.Column = (int)e_col_Number.MA_CV;
+                        m_fg.Tree.Column = (int)e_col_Number.DIA_BAN;
                         m_fg.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.SimpleLeaf;
 			set_define_events();
 			this.KeyPreview = true;		
@@ -371,6 +371,12 @@ namespace BKI_HRM
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count
           , 0
+          , (int)e_col_Number.DIA_BAN
+          , (int)e_col_Number.MA_CV
+          , "{0}"
+          );
+            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count
+          , 1
           , (int)e_col_Number.MA_CV
           , (int)e_col_Number.TEN_CV
           , "{0}"
