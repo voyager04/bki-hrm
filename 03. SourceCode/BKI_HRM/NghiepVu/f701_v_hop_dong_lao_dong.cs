@@ -50,6 +50,12 @@ namespace BKI_HRM
         private ComboBox m_cbo_loai_hop_dong;
         private ComboBox m_cbo_trang_thai_hop_dong;
         private Label label3;
+        private DateTimePicker m_dat_ngay_thang;
+        private GroupBox groupBox1;
+        private GroupBox groupBox2;
+        private ComboBox m_cbo_tim_kiem_theo;
+        private Label label5;
+        private Label label4;
         private System.ComponentModel.IContainer components;
 
         public f701_v_hop_dong_lao_dong()
@@ -104,8 +110,16 @@ namespace BKI_HRM
             this.m_cbo_loai_hop_dong = new System.Windows.Forms.ComboBox();
             this.m_cbo_trang_thai_hop_dong = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.m_dat_ngay_thang = new System.Windows.Forms.DateTimePicker();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.m_cbo_tim_kiem_theo = new System.Windows.Forms.ComboBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ImageList
@@ -227,7 +241,7 @@ namespace BKI_HRM
             this.m_cmd_tim_kiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_tim_kiem.ImageIndex = 5;
             this.m_cmd_tim_kiem.ImageList = this.ImageList;
-            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(1160, 17);
+            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(515, 26);
             this.m_cmd_tim_kiem.Name = "m_cmd_tim_kiem";
             this.m_cmd_tim_kiem.Size = new System.Drawing.Size(101, 28);
             this.m_cmd_tim_kiem.TabIndex = 29;
@@ -239,19 +253,18 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.m_txt_tim_kiem.ForeColor = System.Drawing.Color.Gray;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(480, 22);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(149, 31);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
-            this.m_txt_tim_kiem.Size = new System.Drawing.Size(674, 20);
+            this.m_txt_tim_kiem.Size = new System.Drawing.Size(360, 20);
             this.m_txt_tim_kiem.TabIndex = 28;
-            this.m_txt_tim_kiem.Text = "Nhập Mã nhân viên, Họ đệm, Tên, Mã hợp đồng, Loại hợp đồng, Ngày tháng, Trạng thá" +
-    "i";
+            this.m_txt_tim_kiem.Text = "Nhập Mã nhân viên, Họ đệm, Tên, Mã hợp đồng";
             this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
             this.m_txt_tim_kiem.Leave += new System.EventHandler(this.m_txt_tim_kiem_Leave);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(386, 25);
+            this.label1.Location = new System.Drawing.Point(55, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 27;
@@ -260,7 +273,7 @@ namespace BKI_HRM
             // m_lbl_count_record
             // 
             this.m_lbl_count_record.AutoSize = true;
-            this.m_lbl_count_record.Location = new System.Drawing.Point(386, 66);
+            this.m_lbl_count_record.Location = new System.Drawing.Point(55, 75);
             this.m_lbl_count_record.Name = "m_lbl_count_record";
             this.m_lbl_count_record.Size = new System.Drawing.Size(0, 13);
             this.m_lbl_count_record.TabIndex = 34;
@@ -268,7 +281,7 @@ namespace BKI_HRM
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 25);
+            this.label2.Location = new System.Drawing.Point(45, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 13);
             this.label2.TabIndex = 35;
@@ -278,9 +291,9 @@ namespace BKI_HRM
             // 
             this.m_cbo_loai_hop_dong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_loai_hop_dong.FormattingEnabled = true;
-            this.m_cbo_loai_hop_dong.Location = new System.Drawing.Point(136, 22);
+            this.m_cbo_loai_hop_dong.Location = new System.Drawing.Point(127, 56);
             this.m_cbo_loai_hop_dong.Name = "m_cbo_loai_hop_dong";
-            this.m_cbo_loai_hop_dong.Size = new System.Drawing.Size(192, 21);
+            this.m_cbo_loai_hop_dong.Size = new System.Drawing.Size(159, 21);
             this.m_cbo_loai_hop_dong.TabIndex = 36;
             this.m_cbo_loai_hop_dong.SelectedIndexChanged += new System.EventHandler(this.m_cbo_loai_hop_dong_SelectedIndexChanged);
             // 
@@ -288,29 +301,96 @@ namespace BKI_HRM
             // 
             this.m_cbo_trang_thai_hop_dong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_trang_thai_hop_dong.FormattingEnabled = true;
-            this.m_cbo_trang_thai_hop_dong.Location = new System.Drawing.Point(136, 63);
+            this.m_cbo_trang_thai_hop_dong.Location = new System.Drawing.Point(127, 19);
             this.m_cbo_trang_thai_hop_dong.Name = "m_cbo_trang_thai_hop_dong";
-            this.m_cbo_trang_thai_hop_dong.Size = new System.Drawing.Size(192, 21);
+            this.m_cbo_trang_thai_hop_dong.Size = new System.Drawing.Size(159, 21);
             this.m_cbo_trang_thai_hop_dong.TabIndex = 38;
             this.m_cbo_trang_thai_hop_dong.SelectedIndexChanged += new System.EventHandler(this.m_cbo_trang_thai_hop_dong_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 66);
+            this.label3.Location = new System.Drawing.Point(17, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 13);
             this.label3.TabIndex = 37;
             this.label3.Text = "Trạng thái hợp đồng";
             // 
+            // m_dat_ngay_thang
+            // 
+            this.m_dat_ngay_thang.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_thang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_ngay_thang.Location = new System.Drawing.Point(100, 53);
+            this.m_dat_ngay_thang.Name = "m_dat_ngay_thang";
+            this.m_dat_ngay_thang.Size = new System.Drawing.Size(202, 20);
+            this.m_dat_ngay_thang.TabIndex = 39;
+            this.m_dat_ngay_thang.ValueChanged += new System.EventHandler(this.m_dat_ngay_thang_ValueChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.m_cbo_trang_thai_hop_dong);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.m_cbo_loai_hop_dong);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(658, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(314, 88);
+            this.groupBox1.TabIndex = 41;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tìm kiếm theo";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.m_cbo_tim_kiem_theo);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.m_dat_ngay_thang);
+            this.groupBox2.Location = new System.Drawing.Point(978, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(308, 88);
+            this.groupBox2.TabIndex = 42;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Tìm kiếm theo ngày tháng";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(36, 59);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.TabIndex = 40;
+            this.label4.Text = "Chọn ngày";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(21, 22);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 13);
+            this.label5.TabIndex = 41;
+            this.label5.Text = "Tìm kiếm theo";
+            // 
+            // m_cbo_tim_kiem_theo
+            // 
+            this.m_cbo_tim_kiem_theo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_tim_kiem_theo.FormattingEnabled = true;
+            this.m_cbo_tim_kiem_theo.Items.AddRange(new object[] {
+            "----------- Tất cả -----------",
+            "Ngày ký hợp đồng",
+            "Ngày hợp đồng có hiệu lực",
+            "Ngày hợp đồng hết hiệu lực"});
+            this.m_cbo_tim_kiem_theo.Location = new System.Drawing.Point(100, 19);
+            this.m_cbo_tim_kiem_theo.Name = "m_cbo_tim_kiem_theo";
+            this.m_cbo_tim_kiem_theo.Size = new System.Drawing.Size(202, 21);
+            this.m_cbo_tim_kiem_theo.TabIndex = 42;
+            this.m_cbo_tim_kiem_theo.SelectedIndexChanged += new System.EventHandler(this.m_cbo_tim_kiem_theo_SelectedIndexChanged);
+            // 
             // f701_v_hop_dong_lao_dong
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(1355, 591);
-            this.Controls.Add(this.m_cbo_trang_thai_hop_dong);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.m_cbo_loai_hop_dong);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_lbl_count_record);
             this.Controls.Add(this.m_cmd_tim_kiem);
             this.Controls.Add(this.m_txt_tim_kiem);
@@ -322,6 +402,10 @@ namespace BKI_HRM
             this.Load += new System.EventHandler(this.f701_v_hop_dong_lao_dong_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,7 +444,7 @@ namespace BKI_HRM
         US_V_GD_HOP_DONG_LAO_DONG m_us = new US_V_GD_HOP_DONG_LAO_DONG();
         private US_GD_HOP_DONG m_us_gd_hop_dong;
 
-        private string m_str_suggest = "Nhập Mã nhân viên, Họ đệm, Tên, Mã hợp đồng, Loại hợp đồng, Ngày tháng, Trạng thái";
+        private string m_str_suggest = "Nhập Mã nhân viên, Họ đệm, Tên, Mã hợp đồng";
         public static string m_str_ma_hop_dong;
         #endregion
 
@@ -411,6 +495,8 @@ namespace BKI_HRM
         {
             m_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
             var v_str_search = m_txt_tim_kiem.Text.Trim();
+            if (v_str_search == m_str_suggest)
+                v_str_search = "";
 
             if (m_cbo_loai_hop_dong.SelectedValue == null)
                 return;
@@ -423,10 +509,14 @@ namespace BKI_HRM
             if (m_cbo_trang_thai_hop_dong.SelectedIndex == 2)
                 v_str_trang_thai_hop_dong = "N";
 
-            if (v_str_search == m_str_suggest)
-                m_us.FillDatasetSearchAll(m_ds, "", decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), v_str_trang_thai_hop_dong);
-
-            m_us.FillDatasetSearchAll(m_ds, v_str_search, decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), v_str_trang_thai_hop_dong);
+            if (m_cbo_tim_kiem_theo.SelectedIndex == 0)
+                m_us.FillDatasetSearchAll(m_ds, v_str_search, decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), v_str_trang_thai_hop_dong, DateTime.Parse(m_dat_ngay_thang.Value.ToShortDateString()), 0);
+            if (m_cbo_tim_kiem_theo.SelectedIndex == 1)
+                m_us.FillDatasetSearchAll(m_ds, v_str_search, decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), v_str_trang_thai_hop_dong, DateTime.Parse(m_dat_ngay_thang.Value.ToShortDateString()), 1);
+            if (m_cbo_tim_kiem_theo.SelectedIndex == 2)
+                m_us.FillDatasetSearchAll(m_ds, v_str_search, decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), v_str_trang_thai_hop_dong, DateTime.Parse(m_dat_ngay_thang.Value.ToShortDateString()), 2);
+            if (m_cbo_tim_kiem_theo.SelectedIndex == 3)
+                m_us.FillDatasetSearchAll(m_ds, v_str_search, decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), v_str_trang_thai_hop_dong, DateTime.Parse(m_dat_ngay_thang.Value.ToShortDateString()), 3);
 
             m_lbl_count_record.Text = string.Format("Có {0} Hợp Đồng Lao Động.", m_ds.Tables[0].Rows.Count);
             m_fg.Redraw = false;
@@ -556,8 +646,8 @@ namespace BKI_HRM
                 v_acsc_search.Add(dr[V_GD_HOP_DONG_LAO_DONG.HO_DEM].ToString() + " " + dr[V_GD_HOP_DONG_LAO_DONG.TEN].ToString());
                 v_acsc_search.Add(dr[V_GD_HOP_DONG_LAO_DONG.MA_NV].ToString());
                 v_acsc_search.Add(dr[V_GD_HOP_DONG_LAO_DONG.MA_HOP_DONG].ToString());
-                v_acsc_search.Add(dr[V_GD_HOP_DONG_LAO_DONG.LOAI_HOP_DONG].ToString());
-                v_acsc_search.Add(dr[V_GD_HOP_DONG_LAO_DONG.TRANG_THAI_HOP_DONG].ToString());
+                v_acsc_search.Add(dr[V_GD_HOP_DONG_LAO_DONG.TEN].ToString());
+                v_acsc_search.Add(dr[V_GD_HOP_DONG_LAO_DONG.HO_DEM].ToString());
             }
             m_txt_tim_kiem.AutoCompleteCustomSource = v_acsc_search;
         }
@@ -595,7 +685,7 @@ namespace BKI_HRM
         {
             try
             {
-                if (view_hop_dong_saved()) return;
+                //if (view_hop_dong_saved()) return;
             }
             catch (Exception v_e)
             {
@@ -607,6 +697,7 @@ namespace BKI_HRM
             try
             {
                 m_txt_tim_kiem.ForeColor = Color.Gray;
+                m_cbo_tim_kiem_theo.SelectedIndex = 0;
                 set_initial_form_load();
                 m_txt_tim_kiem.Focus();
                 auto_suggest_text();
@@ -724,6 +815,30 @@ namespace BKI_HRM
         }
 
         private void m_cbo_trang_thai_hop_dong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cbo_tim_kiem_theo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_dat_ngay_thang_ValueChanged(object sender, EventArgs e)
         {
             try
             {
