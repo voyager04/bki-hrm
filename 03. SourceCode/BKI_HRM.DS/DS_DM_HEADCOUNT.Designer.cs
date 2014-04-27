@@ -277,7 +277,7 @@ namespace BKI_HRM.DS {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DM_HEADCOUNTDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
+        public partial class DM_HEADCOUNTDataTable : global::System.Data.TypedTableBase<DM_HEADCOUNTRow> {
             
             private global::System.Data.DataColumn columnID;
             
@@ -417,12 +417,6 @@ namespace BKI_HRM.DS {
             public DM_HEADCOUNTRow FindByID(decimal ID) {
                 return ((DM_HEADCOUNTRow)(this.Rows.Find(new object[] {
                             ID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public virtual global::System.Collections.IEnumerator GetEnumerator() {
-                return this.Rows.GetEnumerator();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
