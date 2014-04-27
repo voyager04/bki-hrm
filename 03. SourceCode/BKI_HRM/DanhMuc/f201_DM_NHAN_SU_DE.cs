@@ -166,7 +166,7 @@ namespace BKI_HRM
             m_us_dm_nhan_su.strTEN = m_txt_ten.Text.Trim();
             m_us_dm_nhan_su.strGIOI_TINH = ((m_cbo_gioi_tinh.SelectedIndex == 0) ? "Nam" : "Nữ");
         
-            m_us_dm_nhan_su.strANH = m_ofd_chon_anh.FileName;
+          //  m_us_dm_nhan_su.strANH = m_ofd_chon_anh.FileName;
            
 
             if(m_dat_ngay_sinh.Checked == true)
@@ -357,8 +357,8 @@ namespace BKI_HRM
                 }
                
                 newImage.Save(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg", ImageFormat.Jpeg);
-                m_us_dm_nhan_su.strANH = Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg";
-               
+              //  m_us_dm_nhan_su.strANH = Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg";
+                m_us_dm_nhan_su.strANH = m_us_dm_nhan_su.strMA_NV;
             }
                 
         }
