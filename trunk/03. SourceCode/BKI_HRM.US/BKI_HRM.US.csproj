@@ -86,6 +86,7 @@
     <Compile Include="US_V_GD_CHI_TIET_CAP_BAC.cs" />
     <Compile Include="US_V_GD_HOP_DONG_LAO_DONG.cs" />
     <Compile Include="US_V_GD_QUA_TRINH_LAM_VIEC.cs" />
+    <Compile Include="US_V_GD_QUYET_DINH.cs" />
     <Compile Include="US_V_GD_TRANG_THAI_LAO_DONG.cs" />
     <Compile Include="US_V_HT_CONTROL_IN_FORM.cs" />
     <Compile Include="Windows.cs" />
