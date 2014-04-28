@@ -186,6 +186,11 @@ namespace BKI_HRM {
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_GD_QUA_TRINH_LAM_VIEC.NewRow());
             return v_obj_trans;
         }
+        public void display_for_dm_don_vi(String v_str_ma_dv)
+        {
+            m_txt_search.Text = v_str_ma_dv;
+            this.ShowDialog();
+        }
         private void load_data_2_grid() {
             m_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC();
             var v_str_search = m_txt_search.Text.Trim();
