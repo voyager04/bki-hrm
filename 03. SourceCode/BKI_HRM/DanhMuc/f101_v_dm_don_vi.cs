@@ -315,6 +315,7 @@ namespace BKI_HRM {
             this.m_fg.TabIndex = 29;
             this.m_tooltip.SetToolTip(this.m_fg, "Nháy đúp vào dòng đơn vị cần chỉnh sửa");
             this.m_fg.Tree.LineColor = System.Drawing.Color.Maroon;
+            this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
             // 
             // f101_v_dm_don_vi
             // 
@@ -536,6 +537,7 @@ namespace BKI_HRM {
             v_f_de.display_for_update(m_v_us);
             load_data_2_grid();
         }
+
         private void delete_v_dm_don_vi() {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
@@ -566,7 +568,15 @@ namespace BKI_HRM {
             }
             m_txt_search.ForeColor = Color.Black;
         }
-        
+        private void xem_nhan_su()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if (m_fg.Rows[m_fg.Row].IsNode) return;
+            grid2us_object(m_v_us, m_fg.Row);
+            var frm = new f104_bao_cao_nhan_su_theo_phong_ban();
+            frm.display_for_dm_don_vi(m_v_us.strMA_DON_VI.ToString());
+        }
         
         #endregion
 
@@ -668,6 +678,18 @@ namespace BKI_HRM {
             try {
                 set_search_format_before();
             } catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_fg_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                xem_nhan_su();
+            }
+            catch (Exception v_e)
+            {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
