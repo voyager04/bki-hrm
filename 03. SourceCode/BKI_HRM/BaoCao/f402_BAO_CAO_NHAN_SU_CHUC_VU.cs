@@ -61,6 +61,7 @@ namespace BKI_HRM
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
+        /// 
 		protected override void Dispose( bool disposing )
 		{
 			if( disposing )
@@ -72,7 +73,12 @@ namespace BKI_HRM
 			}
 			base.Dispose( disposing );
 		}
-
+        public void display_for_dm_chuc_vu(String v_str_ma_cv)
+        {
+            m_form_mode = false;
+            m_txt_tim_kiem.Text = v_str_ma_cv;
+            this.ShowDialog();
+        }
 		#region Windows Form Designer generated code
 		/// <summary>
 		/// Required method for Designer support - do not modify
@@ -307,7 +313,8 @@ namespace BKI_HRM
 		#endregion
 
 		#region Members
-		ITransferDataRow m_obj_trans;		
+		ITransferDataRow m_obj_trans;
+        Boolean m_form_mode = true;
 		DS_V_GD_QUA_TRINH_LAM_VIEC m_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC();
 		US_V_GD_QUA_TRINH_LAM_VIEC m_us = new US_V_GD_QUA_TRINH_LAM_VIEC();
 		#endregion
@@ -325,9 +332,14 @@ namespace BKI_HRM
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
-            m_txt_tim_kiem.Text = "";
-			load_data_2_grid_search();
-            m_txt_tim_kiem.Text = "Nhập mã chức vụ, mã nhân viên, họ tên";
+            if (m_form_mode == true)
+            {
+                m_txt_tim_kiem.Text = "";
+                load_data_2_grid_search();
+                m_txt_tim_kiem.Text = "Nhập mã chức vụ, mã nhân viên, họ tên";
+            }
+            else
+                load_data_2_grid_search();
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
