@@ -313,7 +313,7 @@ namespace BKI_HRM
 
                 US_V_GD_HOP_DONG_LAO_DONG v_us_v_gd_hop_dong = new US_V_GD_HOP_DONG_LAO_DONG();
                 DS_V_GD_HOP_DONG_LAO_DONG v_ds_v_gd_hop_dong_sap_het_han = new DS_V_GD_HOP_DONG_LAO_DONG();
-                v_us_v_gd_hop_dong.FIllDataset_By_Hop_Dong_Sap_Het_Han(v_ds_v_gd_hop_dong_sap_het_han, "", -1, DateTime.Now, 0);
+                v_us_v_gd_hop_dong.FIllDataset_By_Hop_Dong_Sap_Het_Han(v_ds_v_gd_hop_dong_sap_het_han, "", -1, DateTime.Now, DateTime.Now, 0);
                 if (v_ds_v_gd_hop_dong_sap_het_han.Tables[0].Rows.Count > 0)
                 {
                     m_lbl_thong_bao_hop_dong_sap_het_han.Text =
@@ -322,7 +322,7 @@ namespace BKI_HRM
                 }
 
                 DS_V_GD_HOP_DONG_LAO_DONG v_ds_v_gd_hop_dong_da_het_han = new DS_V_GD_HOP_DONG_LAO_DONG();
-                v_us_v_gd_hop_dong.FillDataSet_Search_HDLD_da_het_han_nhung_chua_ky(v_ds_v_gd_hop_dong_da_het_han, "", -1, DateTime.Now, 0);
+                v_us_v_gd_hop_dong.FillDataSet_Search_HDLD_da_het_han_nhung_chua_ky(v_ds_v_gd_hop_dong_da_het_han, "", -1, DateTime.Now, DateTime.Now, 0);
                 if (v_ds_v_gd_hop_dong_da_het_han.Tables[0].Rows.Count > 0)
                 {
                     m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text =
