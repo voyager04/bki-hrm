@@ -350,35 +350,35 @@ namespace BKI_HRM {
 
         #region Data Structure
         private enum e_col_Number {
-            TEN_DON_VI_CAP_TREN = 1
+            TEN_DON_VI_CAP_TREN = 2
                 ,
-            ID_CAP_DON_VI = 5
+            ID_CAP_DON_VI = 6
                 ,
-            TEN_TIENG_ANH = 10
+            TEN_TIENG_ANH = 11
                 ,
-            ID = 3
+            ID = 4
                 ,
-            TEN_DON_VI = 9
+            TEN_DON_VI = 10
                 ,
-            TEN_TIENG_ANH_DON_VI_CAP_TREN = 8
+            TEN_TIENG_ANH_DON_VI_CAP_TREN = 9
                 ,
-            MA_DON_VI = 2
+            MA_DON_VI = 3
                 ,
             TRANG_THAI = 15
                 ,
-            CAP_DON_VI = 11
+            CAP_DON_VI = 12
                 ,
-            MA_DON_VI_CAP_TREN = 7
+            MA_DON_VI_CAP_TREN = 8
                 ,
-            TU_NGAY = 13
+            TU_NGAY = 14
                 ,
-            ID_DON_VI_CAP_TREN = 4
+            ID_DON_VI_CAP_TREN = 5
                 ,
-            LOAI_DON_VI = 12
+            LOAI_DON_VI = 13
                 ,
-            ID_LOAI_DON_VI = 6
+            ID_LOAI_DON_VI = 7
                 ,
-            DIA_BAN = 14
+            DIA_BAN = 1
 
         }
         #endregion
@@ -400,9 +400,9 @@ namespace BKI_HRM {
             CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
-            m_fg.Tree.Column = (int)e_col_Number.MA_DON_VI;
-            m_fg.Cols[(int) e_col_Number.TEN_DON_VI_CAP_TREN].Visible = false;
-                m_fg.Tree.Style = TreeStyleFlags.Simple;
+            m_fg.Tree.Column = (int)e_col_Number.DIA_BAN;
+            //m_fg.Cols[(int) e_col_Number.TEN_DON_VI_CAP_TREN].Visible = false;
+               m_fg.Tree.Style = TreeStyleFlags.SimpleLeaf;
             set_define_events();
             KeyPreview = true;
         }
@@ -462,6 +462,12 @@ namespace BKI_HRM {
             // Group (subtotal) trên grid.
             m_fg.Subtotal(AggregateEnum.Count
               , 0
+              , (int)e_col_Number.DIA_BAN   // Group theo cột này
+              , (int)e_col_Number.TEN_DON_VI             // Subtotal theo cột này
+              , "{0}"
+              );
+            m_fg.Subtotal(AggregateEnum.Count
+              , 1
               , (int)e_col_Number.TEN_DON_VI_CAP_TREN   // Group theo cột này
               , (int)e_col_Number.TEN_DON_VI             // Subtotal theo cột này
               , "{0}"
