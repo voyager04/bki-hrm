@@ -27,55 +27,55 @@ using C1.Win.C1FlexGrid;
 namespace BKI_HRM
 {
 
-	public class f401_V_DM_CHUC_VU : System.Windows.Forms.Form
-	{
-		internal System.Windows.Forms.ImageList ImageList;
+    public class f401_V_DM_CHUC_VU : System.Windows.Forms.Form
+    {
+        internal System.Windows.Forms.ImageList ImageList;
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
-		internal SIS.Controls.Button.SiSButton m_cmd_delete;
-		internal SIS.Controls.Button.SiSButton m_cmd_update;
+        internal SIS.Controls.Button.SiSButton m_cmd_delete;
+        internal SIS.Controls.Button.SiSButton m_cmd_update;
         internal SIS.Controls.Button.SiSButton m_cmd_insert;
         internal SIS.Controls.Button.SiSButton m_cmd_view;
         private TextBox m_txt_tim_kiem;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private C1FlexGrid m_fg;
-		private System.ComponentModel.IContainer components;
+        private System.ComponentModel.IContainer components;
 
-		public f401_V_DM_CHUC_VU()
-		{
-			//
-			// Required for Windows Form Designer support
-			//
-			InitializeComponent();
+        public f401_V_DM_CHUC_VU()
+        {
+            //
+            // Required for Windows Form Designer support
+            //
+            InitializeComponent();
 
-			//
-			// TODO: Add any constructor code after InitializeComponent call
-			//
-			format_controls();
-		}
+            //
+            // TODO: Add any constructor code after InitializeComponent call
+            //
+            format_controls();
+        }
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		protected override void Dispose( bool disposing )
-		{
-			if( disposing )
-			{
-				if(components != null)
-				{
-					components.Dispose();
-				}
-			}
-			base.Dispose( disposing );
-		}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (components != null)
+                {
+                    components.Dispose();
+                }
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
+        #region Windows Form Designer generated code
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f401_V_DM_CHUC_VU));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
@@ -245,6 +245,7 @@ namespace BKI_HRM
             this.m_fg.Size = new System.Drawing.Size(684, 264);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 32;
+            this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
             // 
             // f401_V_DM_CHUC_VU
             // 
@@ -266,16 +267,17 @@ namespace BKI_HRM
             this.ResumeLayout(false);
             this.PerformLayout();
 
-		}
-		#endregion
+        }
+        #endregion
 
-		#region Public Interface
-		public void display(){			
-			this.ShowDialog();
-		}
-		#endregion
+        #region Public Interface
+        public void display()
+        {
+            this.ShowDialog();
+        }
+        #endregion
 
-		#region Data Structure
+        #region Data Structure
         private enum e_col_Number
         {
             TEN = 4
@@ -291,35 +293,38 @@ namespace BKI_HRM
             MA_CV = 1
                 , TEN_CV = 2
 
-        }	
-        			
-		#endregion
+        }
 
-		#region Members
-		ITransferDataRow m_obj_trans;
+        #endregion
+
+        #region Members
+        ITransferDataRow m_obj_trans;
         DS_DM_CHUC_VU m_ds = new DS_DM_CHUC_VU();
         US_DM_CHUC_VU m_us;
-		DS_V_DM_CHUC_VU m_v_ds = new DS_V_DM_CHUC_VU();
-		US_V_DM_CHUC_VU m_v_us = new US_V_DM_CHUC_VU();
-		#endregion
+        DS_V_DM_CHUC_VU m_v_ds = new DS_V_DM_CHUC_VU();
+        US_V_DM_CHUC_VU m_v_us = new US_V_DM_CHUC_VU();
+        #endregion
 
-		#region Private Methods
-		private void format_controls(){
-			CControlFormat.setFormStyle(this, new CAppContext_201());
-			CControlFormat.setC1FlexFormat(m_fg);
-			CGridUtils.AddSave_Excel_Handlers(m_fg);
-            			CGridUtils.AddSearch_Handlers(m_fg);
-			set_define_events();
-			this.KeyPreview = true;		
-		}
-		private void set_initial_form_load(){						
-			m_obj_trans = get_trans_object(m_fg);
+        #region Private Methods
+        private void format_controls()
+        {
+            CControlFormat.setFormStyle(this, new CAppContext_201());
+            CControlFormat.setC1FlexFormat(m_fg);
+            CGridUtils.AddSave_Excel_Handlers(m_fg);
+            CGridUtils.AddSearch_Handlers(m_fg);
+            set_define_events();
+            this.KeyPreview = true;
+        }
+        private void set_initial_form_load()
+        {
+            m_obj_trans = get_trans_object(m_fg);
             m_txt_tim_kiem.Text = "";
-			load_data_2_grid();
+            load_data_2_grid();
             m_txt_tim_kiem.Text = "Nhập mã chức vụ, tên chức vụ";
-		}	
-		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
-			Hashtable v_htb = new Hashtable();
+        }
+        private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
+        {
+            Hashtable v_htb = new Hashtable();
             v_htb.Add(V_DM_CHUC_VU.TEN, e_col_Number.TEN);
             v_htb.Add(V_DM_CHUC_VU.NGAY_AP_DUNG, e_col_Number.NGAY_AP_DUNG);
             v_htb.Add(V_DM_CHUC_VU.TEN_CV_TA, e_col_Number.TEN_CV_TA);
@@ -327,17 +332,18 @@ namespace BKI_HRM
             v_htb.Add(V_DM_CHUC_VU.TRANG_THAI_SU_DUNG, e_col_Number.TRANG_THAI_SU_DUNG);
             v_htb.Add(V_DM_CHUC_VU.MA_CV, e_col_Number.MA_CV);
             v_htb.Add(V_DM_CHUC_VU.TEN_CV, e_col_Number.TEN_CV);
-									
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_v_ds.V_DM_CHUC_VU.NewRow());
-			return v_obj_trans;			
-		}
-		private void load_data_2_grid(){						
-			m_v_ds = new DS_V_DM_CHUC_VU();			
-			m_v_us.FillDataset(m_v_ds);
-			m_fg.Redraw = false;
-			CGridUtils.Dataset2C1Grid(m_v_ds, m_fg, m_obj_trans);
-			m_fg.Redraw = true;
-		}
+
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_v_ds.V_DM_CHUC_VU.NewRow());
+            return v_obj_trans;
+        }
+        private void load_data_2_grid()
+        {
+            m_v_ds = new DS_V_DM_CHUC_VU();
+            m_v_us.FillDataset(m_v_ds);
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_v_ds, m_fg, m_obj_trans);
+            m_fg.Redraw = true;
+        }
         private void load_data_2_grid_search()
         {
             m_obj_trans = get_trans_object(m_fg);
@@ -347,75 +353,84 @@ namespace BKI_HRM
             CGridUtils.Dataset2C1Grid(m_v_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;
         }
-		private void grid2us_object(US_DM_CHUC_VU i_us
-			, int i_grid_row) {
-			DataRow v_dr;
-			v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
+        private void grid2us_object(US_DM_CHUC_VU i_us
+            , int i_grid_row)
+        {
+            DataRow v_dr;
+            v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
             m_us = new US_DM_CHUC_VU((decimal)v_dr.ItemArray[0]);
-			//m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
-			//i_us.DataRow2Me(v_dr);
-		}
-
-	
-		private void us_object2grid(US_V_DM_CHUC_VU i_us
-			, int i_grid_row) {
-			DataRow v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
-			i_us.Me2DataRow(v_dr);
-			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
-		}
+            //m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
+            //i_us.DataRow2Me(v_dr);
+        }
 
 
-		private void insert_v_dm_chuc_vu(){			
-			f401_V_DM_CHUC_VU_DE v_fDE = new  f401_V_DM_CHUC_VU_DE();								
-			v_fDE.display_for_insert();
-			load_data_2_grid();
+        private void us_object2grid(US_V_DM_CHUC_VU i_us
+            , int i_grid_row)
+        {
+            DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
+            i_us.Me2DataRow(v_dr);
+            m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
+        }
+
+
+        private void insert_v_dm_chuc_vu()
+        {
+            f401_V_DM_CHUC_VU_DE v_fDE = new f401_V_DM_CHUC_VU_DE();
+            v_fDE.display_for_insert();
+            load_data_2_grid();
             v_fDE.get_us(ref m_us);
             WinFormControls.set_focus_for_grid(m_fg, m_us.strMA_CV, 1);
-		}
+        }
 
-		private void update_v_dm_chuc_vu(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
-			grid2us_object(m_us, m_fg.Row);
-			f401_V_DM_CHUC_VU_DE v_fDE = new f401_V_DM_CHUC_VU_DE();
-			v_fDE.display_for_update(m_us);
-			load_data_2_grid();
-		}
-				
-		private void delete_v_dm_chuc_vu(){
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			grid2us_object(m_us, m_fg.Row);
-			try {			
-				m_us.BeginTransaction();    											
-				m_us.Delete();                      								
-				m_us.CommitTransaction();
-				m_fg.Rows.Remove(m_fg.Row);				
-			}
-			catch (Exception v_e) {
-				m_us.Rollback();
-				CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
-					new CDBClientDBExceptionInterpret());
-				v_objErrHandler.showErrorMessage();
-			}
-		}
+        private void update_v_dm_chuc_vu()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us, m_fg.Row);
+            f401_V_DM_CHUC_VU_DE v_fDE = new f401_V_DM_CHUC_VU_DE();
+            v_fDE.display_for_update(m_us);
+            load_data_2_grid();
+        }
 
-		private void view_v_dm_chuc_vu(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			//grid2us_object(m_v_us, m_fg.Row);
-		//	f401_V_DM_CHUC_VU_DE v_fDE = new f401_V_DM_CHUC_VU_DE();			
-		//	v_fDE.display(m_v_us);
-		}
-		private void set_define_events(){
-			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
-			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
-			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
-		}
-        
+        private void delete_v_dm_chuc_vu()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
+            grid2us_object(m_us, m_fg.Row);
+            try
+            {
+                m_us.BeginTransaction();
+                m_us.Delete();
+                m_us.CommitTransaction();
+                m_fg.Rows.Remove(m_fg.Row);
+            }
+            catch (Exception v_e)
+            {
+                m_us.Rollback();
+                CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
+                    new CDBClientDBExceptionInterpret());
+                v_objErrHandler.showErrorMessage();
+            }
+        }
+
+        private void view_v_dm_chuc_vu()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            //grid2us_object(m_v_us, m_fg.Row);
+            //	f401_V_DM_CHUC_VU_DE v_fDE = new f401_V_DM_CHUC_VU_DE();			
+            //	v_fDE.display(m_v_us);
+        }
+        private void set_define_events()
+        {
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
+            m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
+            m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
+            m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+        }
+
         private void load_custom_source_2_m_txt_tim_kiem()
         {
             //m_v_us.FillDataset(m_v_ds);
@@ -429,67 +444,94 @@ namespace BKI_HRM
             }
             m_txt_tim_kiem.AutoCompleteCustomSource = v_acsc_search;
         }
-		#endregion
+        private void xem_nhan_su()
+        {
+            //if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            //if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            //if (m_fg.Rows[m_fg.Row].IsNode) return;
+            grid2us_object(m_us, m_fg.Row);
+            var frm = new f402_BAO_CAO_NHAN_SU_CHUC_VU();
+            frm.display_for_dm_chuc_vu(m_us.strMA_CV.ToString());
+        }
+        #endregion
 
-//
-		//
-		//		EVENT HANLDERS
-		//
-		//
-		private void f401_V_DM_CHUC_VU_Load(object sender, System.EventArgs e) {
-			try{
-				set_initial_form_load();
+        //
+        //
+        //		EVENT HANLDERS
+        //
+        //
+        private void f401_V_DM_CHUC_VU_Load(object sender, System.EventArgs e)
+        {
+            try
+            {
+                set_initial_form_load();
                 load_custom_source_2_m_txt_tim_kiem();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_exit_Click(object sender, EventArgs e) {
-			try{
-				this.Close();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_insert_Click(object sender, EventArgs e) {
-			try{
-				insert_v_dm_chuc_vu();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_insert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                insert_v_dm_chuc_vu();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_update_Click(object sender, EventArgs e) {
-			try{
-				update_v_dm_chuc_vu();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                update_v_dm_chuc_vu();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_delete_Click(object sender, EventArgs e) {
-			try{
-				delete_v_dm_chuc_vu();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                delete_v_dm_chuc_vu();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_view_Click(object sender, EventArgs e) {
-			try{
-				view_v_dm_chuc_vu();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_view_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                view_v_dm_chuc_vu();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
         private void m_fg_Click(object sender, EventArgs e)
         {
@@ -544,6 +586,18 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-	}
+
+        private void m_fg_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                xem_nhan_su();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+    }
 }
 
