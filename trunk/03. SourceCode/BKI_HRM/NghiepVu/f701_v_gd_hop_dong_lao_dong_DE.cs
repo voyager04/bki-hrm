@@ -298,7 +298,6 @@ namespace BKI_HRM.NghiepVu
         private void chon_file()
         {
             m_str_old_path = m_str_destination + m_lbl_file_name.Text;
-            int v_i_file_size = 5096000;
             m_ofd_chon_file.Filter = "(*.*)|*.*";
             m_ofd_chon_file.Multiselect = false;
             m_ofd_chon_file.Title = "Chọn file";
@@ -306,7 +305,7 @@ namespace BKI_HRM.NghiepVu
             DialogResult result = m_ofd_chon_file.ShowDialog();
             if (result != DialogResult.OK) return;
 
-            if (new FileInfo(m_ofd_chon_file.FileName).Length > v_i_file_size)
+            if (new FileInfo(m_ofd_chon_file.FileName).Length > 5096000)
             {
                 BaseMessages.MsgBox_Infor("File đính kèm quá lớn. \nVui lòng chọn file có dung lượng < 5Mb");
                 return;
@@ -327,6 +326,11 @@ namespace BKI_HRM.NghiepVu
             if (File.Exists(m_str_old_path))
                 File.Delete(m_str_old_path);
             m_us.strLINK = m_str_file_name;
+        }
+
+        private void delete_file()
+        {
+            
         }
 
         private bool check_trung_ma_hop_dong(string ip_str_ma_hop_dong)
