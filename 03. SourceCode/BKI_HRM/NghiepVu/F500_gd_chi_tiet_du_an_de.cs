@@ -157,7 +157,10 @@ namespace BKI_HRM.NghiepVu
             v_us.dcID_DU_AN = CIPConvert.ToDecimal(v_dr[GD_CHI_TIET_DU_AN.ID_DU_AN]);
             v_us.dcID_NHAN_SU = CIPConvert.ToDecimal(v_dr[GD_CHI_TIET_DU_AN.ID_NHAN_SU]);
             v_us.dcID_VI_TRI = CIPConvert.ToDecimal(v_dr[GD_CHI_TIET_DU_AN.ID_VI_TRI]);
-            v_us.dcID_DANH_HIEU = CIPConvert.ToDecimal(v_dr[GD_CHI_TIET_DU_AN.ID_DANH_HIEU]);
+            if (v_dr[GD_CHI_TIET_DU_AN.ID_DANH_HIEU].ToString() != "")
+            {
+                v_us.dcID_DANH_HIEU = CIPConvert.ToDecimal(v_dr[GD_CHI_TIET_DU_AN.ID_DANH_HIEU]);
+            }            
             if (v_dr[GD_CHI_TIET_DU_AN.THOI_GIAN_TG].ToString() != "")
             {
                 v_us.dcTHOI_GIAN_TG = CIPConvert.ToDecimal(v_dr[GD_CHI_TIET_DU_AN.THOI_GIAN_TG]);    
@@ -166,8 +169,10 @@ namespace BKI_HRM.NghiepVu
             v_us.strLUA_CHON = v_dr[GD_CHI_TIET_DU_AN.LUA_CHON].ToString();
             v_us.strMO_TA = v_dr[GD_CHI_TIET_DU_AN.MO_TA].ToString();
             v_us.strTRANG_THAI_HIEN_TAI = v_dr[GD_CHI_TIET_DU_AN.TRANG_THAI_HIEN_TAI].ToString();
-
-            v_us.datTHOI_DIEM_KT = (DateTime)v_dr[GD_CHI_TIET_DU_AN.THOI_DIEM_KT];
+            if (v_dr[GD_CHI_TIET_DU_AN.THOI_DIEM_KT].ToString() != "")
+            {
+                v_us.datTHOI_DIEM_KT = (DateTime)v_dr[GD_CHI_TIET_DU_AN.THOI_DIEM_KT];
+            }            
             v_us.datTHOI_DIEM_TG = (DateTime)v_dr[GD_CHI_TIET_DU_AN.THOI_DIEM_TG];
         }
 
@@ -308,6 +313,7 @@ namespace BKI_HRM.NghiepVu
             {
                 save_data();
             }
+            
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
