@@ -49,6 +49,19 @@ namespace BKI_HRM
             us_object_to_form();
             this.ShowDialog();
         }
+        public void display_for_update_qd(US_V_GD_QUA_TRINH_LAM_VIEC ip_us_qua_trinh_lam_viec)
+        {
+            m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            m_us_v_qua_trinh_lam_viec = ip_us_qua_trinh_lam_viec;
+            us_object_to_form();
+            m_txt_ty_le_tham_gia.ReadOnly = true;
+            m_cbo_chuc_vu_moi.Enabled = false;
+            m_cmd_chon_don_vi.Visible = false;
+            m_cbo_loai_chuc_vu.Enabled = false;
+            m_dat_ngay_bat_dau.Enabled = false;
+            m_dat_ngay_ket_thuc.Enabled = false;
+            this.ShowDialog();
+        }
 #endregion
 
 #region Members
@@ -391,7 +404,39 @@ namespace BKI_HRM
             m_grb_quyet_dinh.Enabled = true;
             m_txt_ma_quyet_dinh.Focus();
         }
-       
+        private void chon_quyet_dinh()
+        {
+            m_b_check_quyet_dinh_save = false;
+            m_grb_quyet_dinh.Enabled = true;
+            f600_v_dm_quyet_dinh v_frm = new f600_v_dm_quyet_dinh();
+            v_frm.select_data(ref m_us_quyet_dinh);
+            if (m_us_quyet_dinh.dcID != -1)
+            {
+
+                m_ofd_openfile.FileName = m_us_quyet_dinh.strLINK;
+                m_txt_ma_quyet_dinh.Text = m_us_quyet_dinh.strMA_QUYET_DINH;
+
+                m_cbo_loai_quyet_dinh.SelectedValue = m_us_quyet_dinh.dcID_LOAI_QD;
+                m_dat_ngay_ky.Value = m_us_quyet_dinh.datNGAY_KY;
+                if (m_us_quyet_dinh.datNGAY_CO_HIEU_LUC > DateTime.Parse("01/01/1900") &&
+                    m_us_quyet_dinh.datNGAY_CO_HIEU_LUC != null)
+                    m_dat_ngay_co_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_CO_HIEU_LUC;
+                else
+                    m_dat_ngay_co_hieu_luc_qd.Checked = false;
+                if (m_us_quyet_dinh.datNGAY_HET_HIEU_LUC != null &&
+                    m_us_quyet_dinh.datNGAY_HET_HIEU_LUC > DateTime.Parse("1/1/1900"))
+                    m_dat_ngay_het_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_HET_HIEU_LUC;
+                else
+                    m_dat_ngay_het_hieu_luc_qd.Checked = false;
+                m_txt_noi_dung.Text = m_us_quyet_dinh.strNOI_DUNG;
+                m_ofd_openfile.FileName = m_us_quyet_dinh.strLINK;
+
+            }
+            else
+            {
+                m_b_check_quyet_dinh_null = true;
+            }
+        }
 #endregion
 
        
@@ -476,36 +521,7 @@ namespace BKI_HRM
         {
             try
             {
-                m_b_check_quyet_dinh_save = false;
-                m_grb_quyet_dinh.Enabled = true; 
-                f600_v_dm_quyet_dinh v_frm = new f600_v_dm_quyet_dinh();
-                v_frm.select_data(ref m_us_quyet_dinh);
-                if (m_us_quyet_dinh.dcID != -1)
-                {
-
-                    m_ofd_openfile.FileName = m_us_quyet_dinh.strLINK;
-                    m_txt_ma_quyet_dinh.Text = m_us_quyet_dinh.strMA_QUYET_DINH;
-
-                    m_cbo_loai_quyet_dinh.SelectedValue = m_us_quyet_dinh.dcID_LOAI_QD;
-                    m_dat_ngay_ky.Value = m_us_quyet_dinh.datNGAY_KY;
-                    if (m_us_quyet_dinh.datNGAY_CO_HIEU_LUC > DateTime.Parse("01/01/1900") && 
-                        m_us_quyet_dinh.datNGAY_CO_HIEU_LUC != null)
-                        m_dat_ngay_co_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_CO_HIEU_LUC;
-                    else
-                        m_dat_ngay_co_hieu_luc_qd.Checked = false;
-                    if (m_us_quyet_dinh.datNGAY_HET_HIEU_LUC != null &&
-                        m_us_quyet_dinh.datNGAY_HET_HIEU_LUC > DateTime.Parse("1/1/1900"))
-                        m_dat_ngay_het_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_HET_HIEU_LUC;
-                    else
-                        m_dat_ngay_het_hieu_luc_qd.Checked = false;
-                    m_txt_noi_dung.Text = m_us_quyet_dinh.strNOI_DUNG;
-                    m_ofd_openfile.FileName = m_us_quyet_dinh.strLINK;
-                   
-                }
-                else
-                {
-                    m_b_check_quyet_dinh_null = true;
-                }
+                chon_quyet_dinh();
             }
             catch (Exception v_e)
             {
