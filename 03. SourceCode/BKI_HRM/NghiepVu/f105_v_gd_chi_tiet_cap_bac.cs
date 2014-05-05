@@ -29,7 +29,7 @@ namespace BKI_HRM {
         internal ImageList ImageList;
         internal Panel m_pnl_out_place_dm;
         internal SiSButton m_cmd_delete;
-        internal SiSButton m_cmd_update;
+        internal SiSButton m_cmd_them_quyet_dinh;
         internal SiSButton m_cmd_insert;
         internal SiSButton m_cmd_exit;
         private Panel panel1;
@@ -78,7 +78,7 @@ namespace BKI_HRM {
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_lbl_phim_tat = new System.Windows.Forms.Label();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_update = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_them_quyet_dinh = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -124,7 +124,7 @@ namespace BKI_HRM {
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.m_lbl_phim_tat);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_them_quyet_dinh);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -152,27 +152,27 @@ namespace BKI_HRM {
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 21;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(440, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(405, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(137, 28);
             this.m_cmd_insert.TabIndex = 3;
             this.m_cmd_insert.Text = "&Thay đổi cấp bậc";
             // 
-            // m_cmd_update
+            // m_cmd_them_quyet_dinh
             // 
-            this.m_cmd_update.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_update.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_update.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_update.ImageIndex = 3;
-            this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(577, 4);
-            this.m_cmd_update.Name = "m_cmd_update";
-            this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_update.TabIndex = 4;
-            this.m_cmd_update.Text = "&Sửa";
-            this.m_cmd_update.Visible = false;
+            this.m_cmd_them_quyet_dinh.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_them_quyet_dinh.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_them_quyet_dinh.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_them_quyet_dinh.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_them_quyet_dinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_them_quyet_dinh.ImageIndex = 3;
+            this.m_cmd_them_quyet_dinh.ImageList = this.ImageList;
+            this.m_cmd_them_quyet_dinh.Location = new System.Drawing.Point(542, 4);
+            this.m_cmd_them_quyet_dinh.Name = "m_cmd_them_quyet_dinh";
+            this.m_cmd_them_quyet_dinh.Size = new System.Drawing.Size(123, 28);
+            this.m_cmd_them_quyet_dinh.TabIndex = 4;
+            this.m_cmd_them_quyet_dinh.Text = "&Thêm quyết định";
+            this.m_cmd_them_quyet_dinh.Click += new System.EventHandler(this.m_cmd_them_quyet_dinh_Click);
             // 
             // m_cmd_delete
             // 
@@ -418,7 +418,16 @@ namespace BKI_HRM {
             var v_fDE = new f106_v_gd_chi_tiet_cap_bac_DE();
             v_fDE.display_for_insert(m_us, m_ds);
             load_data_2_grid();
-            WinFormControls.set_focus_for_grid(m_fg,m_us.strMA_NV,(int)e_col_Number.MA_NV);
+            WinFormControls.set_focus_for_grid(m_fg, m_us.strMA_NV, (int)e_col_Number.MA_NV);
+        }
+        private void update_v_gd_chi_tiet_cap_bac() 
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us, m_fg.Row);
+            f106_v_gd_chi_tiet_cap_bac_DE v_fDE = new f106_v_gd_chi_tiet_cap_bac_DE();
+            v_fDE.display_for_update(m_us);
+            load_data_2_grid();
         }
         private void delete_v_gd_chi_tiet_cap_bac() {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
@@ -533,6 +542,18 @@ namespace BKI_HRM {
                 set_search_format_before();
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_them_quyet_dinh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                update_v_gd_chi_tiet_cap_bac();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
             }
         }
     
