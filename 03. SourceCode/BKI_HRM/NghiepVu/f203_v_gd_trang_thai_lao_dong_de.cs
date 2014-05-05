@@ -40,6 +40,7 @@ namespace BKI_HRM
         public void display_for_update(US_V_GD_TRANG_THAI_LAO_DONG ip_us_trang_thai_ld)
         {
             m_us_v_trang_thai_ld = ip_us_trang_thai_ld;
+            
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             us_object_to_form();
             this.ShowDialog();
@@ -64,6 +65,8 @@ namespace BKI_HRM
         
         US_DM_QUYET_DINH m_us_quyet_dinh = new US_DM_QUYET_DINH();
         DS_DM_QUYET_DINH m_ds_quyet_dinh = new DS_DM_QUYET_DINH();
+        bool m_b_check_quyet_dinh_null = false;
+        bool m_b_check_quyet_dinh_save;
     #endregion
 
     #region Private Methods
@@ -224,6 +227,7 @@ namespace BKI_HRM
                 m_us_quyet_dinh.SetNGAY_HET_HIEU_LUCNull();
         }
         private void form_to_us_object_trang_thai_ld(){
+            m_us_trang_thai_ld.dcID = m_us_v_trang_thai_ld.dcID;
             m_us_trang_thai_ld.dcID_NHAN_SU = m_us_v_trang_thai_ld.dcID_NHAN_SU;
             m_us_trang_thai_ld.dcID_TRANG_LAO_DONG = CIPConvert.ToDecimal(m_cbo_trang_thai_moi.SelectedValue);
             if (m_txt_ma_quyet_dinh.Text != "")
@@ -247,7 +251,7 @@ namespace BKI_HRM
             Process.Start("explorer.exe", m_ofd_openfile.FileName);
         }
         private bool check_validate_data_is_ok(){
-            if (m_dat_ngay_co_hieu_luc.Value.Date > m_dat_ngay_het_hieu_luc.Value.Date)
+            if (m_dat_ngay_co_hieu_luc.Value.Date > m_dat_ngay_het_hieu_luc.Value.Date && m_dat_ngay_het_hieu_luc.Value.Date > DateTime.Parse("1/1/1900"))
             {
                 BaseMessages.MsgBox_Infor("Ngày hết hiệu lực không thể trước ngày có hiệu lực.");
                 return false;
@@ -273,7 +277,17 @@ namespace BKI_HRM
                     else
                     {
                         form_to_us_object_quyet_dinh();
-                        m_us_quyet_dinh.Update();
+                        if (m_b_check_quyet_dinh_save)
+                        {
+                            if (m_b_check_quyet_dinh_null)
+                            {
+                                m_us_quyet_dinh.Insert();
+                            }
+                            else
+                            {
+                                m_us_quyet_dinh.Update();
+                            }
+                        }
                         form_to_us_object_trang_thai_ld();
                         m_us_trang_thai_ld.Update();
                         
@@ -302,6 +316,7 @@ namespace BKI_HRM
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhât!");
             this.Close();
         }
+        
         private void xoa_trang(){
             switch (m_e_form_mode)
             {
@@ -359,7 +374,45 @@ namespace BKI_HRM
             m_cmd_refresh.Click += new EventHandler(m_cmd_refresh_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
         }
-        
+        private void them_quyet_dinh()
+        {
+            m_b_check_quyet_dinh_save = true;
+            m_grb_quyet_dinh.Enabled = true;
+            m_txt_ma_quyet_dinh.Focus();
+        }
+        private void chon_quyet_dinh()
+        {
+            m_b_check_quyet_dinh_save = false;
+            m_grb_quyet_dinh.Enabled = true;
+            f600_v_dm_quyet_dinh v_frm = new f600_v_dm_quyet_dinh();
+            v_frm.select_data(ref m_us_quyet_dinh);
+            if (m_us_quyet_dinh.dcID != -1)
+            {
+
+                m_ofd_openfile.FileName = m_us_quyet_dinh.strLINK;
+                m_txt_ma_quyet_dinh.Text = m_us_quyet_dinh.strMA_QUYET_DINH;
+
+                m_cbo_loai_quyet_dinh.SelectedValue = m_us_quyet_dinh.dcID_LOAI_QD;
+                m_dat_ngay_ky.Value = m_us_quyet_dinh.datNGAY_KY;
+                if (m_us_quyet_dinh.datNGAY_CO_HIEU_LUC > DateTime.Parse("01/01/1900") &&
+                    m_us_quyet_dinh.datNGAY_CO_HIEU_LUC != null)
+                    m_dat_ngay_co_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_CO_HIEU_LUC;
+                else
+                    m_dat_ngay_co_hieu_luc_qd.Checked = false;
+                if (m_us_quyet_dinh.datNGAY_HET_HIEU_LUC != null &&
+                    m_us_quyet_dinh.datNGAY_HET_HIEU_LUC > DateTime.Parse("1/1/1900"))
+                    m_dat_ngay_het_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_HET_HIEU_LUC;
+                else
+                    m_dat_ngay_het_hieu_luc_qd.Checked = false;
+                m_txt_noi_dung.Text = m_us_quyet_dinh.strNOI_DUNG;
+                m_ofd_openfile.FileName = m_us_quyet_dinh.strLINK;
+
+            }
+            else
+            {
+                m_b_check_quyet_dinh_null = true;
+            }
+        }
     #endregion
 
     #region Event Hanlders
@@ -407,9 +460,53 @@ namespace BKI_HRM
             	CSystemLog_301.ExceptionHandle( v_e);
             }
         }
-      
 
-       
+
+        private void m_cmd_chon_file_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                chon_file();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_xem_file_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                mo_file();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_them_quyet_dinh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                them_quyet_dinh();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_chon_quyet_dinh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                chon_quyet_dinh();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
         private void m_txt_ma_nhan_vien_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -423,30 +520,7 @@ namespace BKI_HRM
         
     #endregion
 
-        private void m_cmd_chon_file_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                chon_file();
-            }
-            catch (Exception v_e)
-            {
-            	CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void m_cmd_xem_file_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                mo_file();
-            }
-            catch (Exception v_e)
-            {
-            	CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-        
+     
     }
 
 }
