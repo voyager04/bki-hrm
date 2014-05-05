@@ -17,8 +17,16 @@ namespace BKI_HRM {
             fomat_control();
         }
         public void display_for_insert(US_V_GD_CHI_TIET_CAP_BAC ip_us_gs_chi_tiet_cap_bac, DS_V_GD_CHI_TIET_CAP_BAC ip_ds_gs_chi_tiet_cap_bac) {
+            m_e_formmode = DataEntryFormMode.InsertDataState;
             m_v_us_chi_tiet_cap_bac = ip_us_gs_chi_tiet_cap_bac;
             m_ds_gd_chi_tiet_cap_bac = ip_ds_gs_chi_tiet_cap_bac;
+            us_object_2_form();
+            ShowDialog();
+        }
+        public void display_for_update(US_V_GD_CHI_TIET_CAP_BAC ip_us_chi_tiet_cap_bac)
+        {
+            m_e_formmode = DataEntryFormMode.UpdateDataState;
+            m_v_us_chi_tiet_cap_bac = ip_us_chi_tiet_cap_bac;
             us_object_2_form();
             ShowDialog();
         }
@@ -34,6 +42,7 @@ namespace BKI_HRM {
         private DS_V_GD_CHI_TIET_CAP_BAC m_ds_gd_chi_tiet_cap_bac = new DS_V_GD_CHI_TIET_CAP_BAC();
         private bool m_b_check_quyet_dinh_save;
         private bool m_b_check_quyet_dinh_null;
+        DataEntryFormMode m_e_formmode;
         #endregion
 
         #region Private Methods
@@ -86,6 +95,14 @@ namespace BKI_HRM {
             m_us_chi_tiet_cap_bac.datNGAY_KET_THUC = m_dat_ngay_bat_dau.Value.Date;
             m_us_chi_tiet_cap_bac.Update();
             //-- Thêm 1 bản ghi mới
+            switch (m_e_formmode)
+            {
+                case DataEntryFormMode.InsertDataState:
+                    break;
+                case DataEntryFormMode.UpdateDataState:
+                    m_us_chi_tiet_cap_bac.dcID = m_v_us_chi_tiet_cap_bac.dcID;
+                    break;
+            }
             m_us_chi_tiet_cap_bac.dcID_NHAN_SU = m_v_us_chi_tiet_cap_bac.dcID_NHAN_SU;
             m_us_chi_tiet_cap_bac.dcID_CAP_BAC = CIPConvert.ToDecimal(m_cbo_ma_cap_bac.SelectedValue);
             m_us_chi_tiet_cap_bac.strTRANG_THAI_CB = "Y";
@@ -114,7 +131,16 @@ namespace BKI_HRM {
                 m_us_quyet_dinh.Insert();
             }
             form_2_us_object_chi_tiet_cap_bac();
-            m_us_chi_tiet_cap_bac.Insert();
+            switch (m_e_formmode)
+            {
+                case DataEntryFormMode.InsertDataState:
+                    m_us_chi_tiet_cap_bac.Insert();
+                    break;
+                case DataEntryFormMode.UpdateDataState:
+                    m_us_chi_tiet_cap_bac.Update();
+                    break;
+            }
+            //m_us_chi_tiet_cap_bac.Insert();
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
             Close();
         }
