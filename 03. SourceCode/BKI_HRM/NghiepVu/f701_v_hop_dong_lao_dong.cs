@@ -6,6 +6,7 @@
 
 
 using System;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -604,7 +605,7 @@ namespace BKI_HRM
             }
             DS_GD_HOP_DONG v_ds = new DS_GD_HOP_DONG();
             US_GD_HOP_DONG v_us = new US_GD_HOP_DONG();
-            v_us.FillDatasetSearchByMaHopDong(v_ds, v_dr.ItemArray[3].ToString());
+            v_us.FillDatasetSearchByMaHopDong(v_ds, v_dr.ItemArray[4].ToString());
 
             m_us_gd_hop_dong = new US_GD_HOP_DONG((decimal)v_ds.Tables[0].Rows[0]["ID"]);
             //m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
@@ -634,6 +635,7 @@ namespace BKI_HRM
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             if (m_fg.Rows[m_fg.Row].IsNode) return;
             grid2us_object(m_fg.Row);
+
             f701_v_gd_hop_dong_lao_dong_DE v_fDE = new f701_v_gd_hop_dong_lao_dong_DE();
             v_fDE.display_for_update(m_us_gd_hop_dong);
             load_data_2_grid();
@@ -655,9 +657,10 @@ namespace BKI_HRM
             {
                 m_us_gd_hop_dong.BeginTransaction();
                 m_us_gd_hop_dong.Delete();
-                if (File.Exists(m_us_gd_hop_dong.strLINK))
+                string v_str_to = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
+                if (File.Exists(v_str_to + m_us_gd_hop_dong.strLINK))
                 {
-                    File.Delete(m_us_gd_hop_dong.strLINK);
+                    File.Delete(v_str_to + m_us_gd_hop_dong.strLINK);
                 }
                 m_us_gd_hop_dong.CommitTransaction();
                 m_fg.Rows.Remove(m_fg.Row);
