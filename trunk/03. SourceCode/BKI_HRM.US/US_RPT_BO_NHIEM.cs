@@ -251,9 +251,10 @@ public class US_RPT_BO_NHIEM : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-    public void FillDatasetByProc(DS_RPT_BO_NHIEM op_ds_rpt)
+    public void FillDatasetByProc(DS_RPT_BO_NHIEM op_ds_rpt,string ip_str_keyword)
     {
         CStoredProc v_sp = new CStoredProc("pr_RPT_BO_NHIEM");
+        v_sp.addNVarcharInputParam("@ip_str_keyword", ip_str_keyword);
         v_sp.fillDataSetByCommand(this, op_ds_rpt);
     }
 	}
