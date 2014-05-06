@@ -281,7 +281,7 @@ namespace BKI_HRM
         #region Public Interface
         public void display()
         {
-            this.ShowDialog();
+            this.Show();
         }
         #endregion
 
