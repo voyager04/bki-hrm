@@ -65,13 +65,16 @@ namespace BKI_HRM.NghiepVu
         US_V_GD_HOP_DONG_LAO_DONG m_us_v = new US_V_GD_HOP_DONG_LAO_DONG();
         DS_V_GD_HOP_DONG_LAO_DONG m_ds_v = new DS_V_GD_HOP_DONG_LAO_DONG();
         US_DM_NHAN_SU m_us_dm_nhan_su = new US_DM_NHAN_SU();
-        private string m_str_destination = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
-        private string m_str_path = "";
+        private string m_str_to = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
+        private string m_str_from = "";
         private string m_str_file_name = "";
+        private string m_str_path = "";
+        private string m_str_time_now = DateTime.Now.Ticks.ToString();
         private string m_str_file_name_old = "";
         private string m_str_origination = "";
         private string m_str_old_path = "";
         private decimal m_str_id_hop_dong_old;
+        private bool m_b_status = false;
         #endregion
 
         #region Private Methods
@@ -135,7 +138,7 @@ namespace BKI_HRM.NghiepVu
             m_us.dcID_PHAP_NHAN = (decimal)m_cbo_phap_nhan.SelectedValue;
             m_us.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value;
             m_us.strTRANG_THAI_HOP_DONG = m_cbo_trang_thai.SelectedIndex.Equals(0) ? "Y" : "N";
-            m_us.strLINK = m_lbl_file_name.Text;
+            m_us.strLINK = m_str_time_now + "-" + m_str_file_name;
             m_us.strNGUOI_KY = m_txt_nguoi_ky.Text.Trim();
             m_us.strCHUC_VU_NGUOI_KY = m_txt_chuc_vu_nguoi_ky.Text.Trim();
             m_us.datNGAY_KY_HOP_DONG = m_dat_ngay_ky_hop_dong.Value;
@@ -167,11 +170,12 @@ namespace BKI_HRM.NghiepVu
                 return;
 
             form_2_us_object();
-            upload_file();
-            if (File.Exists(m_str_destination + "TOPICA-" + m_str_file_name_old) && m_lbl_file_name.Text.Trim().Length.Equals(0))
+            if (existed_file(m_str_to + m_str_time_now + "-" + m_str_file_name))
             {
-                File.Delete(m_str_destination + "TOPICA-" + m_str_file_name_old);
+                BaseMessages.MsgBox_Infor("Tên file đã tồn tại, vui lòng đổi tên khác.");
+                return;
             }
+            upload_file();
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.InsertDataState:
@@ -194,6 +198,8 @@ namespace BKI_HRM.NghiepVu
                             return;
                         }
                     }
+                    if (m_b_status == true && m_str_file_name_old != "")
+                        delete_file(m_str_to + m_str_file_name_old);
                     m_us.Update();
                     break;
             }
@@ -238,10 +244,10 @@ namespace BKI_HRM.NghiepVu
                 m_dat_ngay_het_han.Value = ip_us_gd_hop_dong.datNGAY_HET_HAN;
                 m_dat_ngay_het_han.Checked = true;
             }
-
+            m_str_file_name_old = ip_us_gd_hop_dong.strLINK;
             if (ip_us_gd_hop_dong.strLINK == "") return;
             string[] v_strs = ip_us_gd_hop_dong.strLINK.Split('\\');
-            m_lbl_file_name.Text = v_strs[v_strs.Length - 1];
+            m_lbl_file_name.Text = v_strs[v_strs.Length - 1].Split('-')[v_strs[v_strs.Length - 1].Split('-').Length - 1];
         }
 
         private void load_data_2_cbo_loai_hop_dong()
@@ -297,7 +303,6 @@ namespace BKI_HRM.NghiepVu
 
         private void chon_file()
         {
-            m_str_old_path = m_str_destination + m_lbl_file_name.Text;
             m_ofd_chon_file.Filter = "(*.*)|*.*";
             m_ofd_chon_file.Multiselect = false;
             m_ofd_chon_file.Title = "Chọn file";
@@ -310,27 +315,49 @@ namespace BKI_HRM.NghiepVu
                 BaseMessages.MsgBox_Infor("File đính kèm quá lớn. \nVui lòng chọn file có dung lượng < 5Mb");
                 return;
             }
-            m_lbl_file_name.Text = m_ofd_chon_file.SafeFileName;
             m_str_file_name = m_ofd_chon_file.SafeFileName;
-            m_str_origination = m_ofd_chon_file.FileName;
+            m_lbl_file_name.Text = m_str_file_name;
+            m_str_from = m_ofd_chon_file.FileName;
+            var v_i_index = m_str_from.Trim().LastIndexOf("\\");
+            m_str_path = m_str_from.Trim().Substring(0, v_i_index + 1);
+        }
+
+        private bool existed_file(string ip_str_path)
+        {
+            if (File.Exists(ip_str_path))
+                return true;
+            return false;
         }
 
         private void upload_file()
         {
             if (m_str_file_name == "")
+            {
+                m_us.strLINK = "";
                 return;
-            string v_str_path_destination = m_str_destination + m_str_file_name;
-            m_str_path = m_str_destination + "TOPICA" + "-" + m_str_file_name;
-            File.Copy(m_str_origination, v_str_path_destination);
-            File.Move(m_str_destination + m_str_file_name, m_str_path);
-            if (File.Exists(m_str_old_path))
-                File.Delete(m_str_old_path);
-            m_us.strLINK = m_str_file_name;
+            }
+            modify_name_file(m_str_from, m_str_path + m_str_time_now + "-" + m_str_file_name);
+            File.Move(m_str_path + m_str_time_now + "-" + m_str_file_name, m_str_to + m_str_time_now + "-" + m_str_file_name);
+            m_us.strLINK = m_str_time_now + "-" + m_str_file_name;
+            m_b_status = true;
         }
 
-        private void delete_file()
+        private void modify_name_file(string ip_str_source_file_name, string ip_str_desination_file_name)
         {
-            
+            //Coppy file mới
+            File.Copy(ip_str_source_file_name, m_str_path + "topica" + m_str_file_name);
+            //Đổi tên file mới
+            File.Move(m_str_path + "topica" + m_str_file_name, ip_str_desination_file_name);
+        }
+
+        private void delete_file(string ip_str_path)
+        {
+            if (existed_file(m_str_from))
+            {
+                File.Delete(ip_str_path);
+                return;
+            }
+            BaseMessages.MsgBox_Infor("File không tồn tại.");
         }
 
         private bool check_trung_ma_hop_dong(string ip_str_ma_hop_dong)
@@ -506,7 +533,7 @@ namespace BKI_HRM.NghiepVu
 
         private void m_cmd_bo_dinh_kem_Click(object sender, EventArgs e)
         {
-            if (File.Exists(m_str_destination + "TOPICA-" + m_lbl_file_name.Text))
+            if (File.Exists(m_str_to + "TOPICA-" + m_lbl_file_name.Text))
             {
                 m_str_file_name_old = m_lbl_file_name.Text;
                 m_lbl_file_name.Text = "";
