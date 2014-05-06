@@ -843,8 +843,7 @@ namespace BKI_HRM.US {
             v_sp.ExecuteCommand(this);
             op_dc_tong_so = CIPConvert.ToDecimal(v_pa2.Value);
             op_dc_hien_tai = CIPConvert.ToDecimal(v_pa1.Value);
-            //op_dc_hien_tai = CIPConvert.ToDecimal(cmd.Parameters["@SO_LUONG_HIEN_TAI"].Value.ToString());
-            //op_dc_tong_so = CIPConvert.ToDecimal(cmd.Parameters["@TONG_SO"].Value.ToString());
+           
             
         }
         public decimal Sum_ty_le_tham_gia(string ip_str_ma_nv )
