@@ -84,6 +84,7 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky = new System.Windows.Forms.Label();
             this.m_lbl_sap_quay_lai = new System.Windows.Forms.Label();
             this.m_lbl_so_luong_nv_hien_tai = new System.Windows.Forms.Label();
+            this.báoCáoBổNhiệmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -386,7 +387,8 @@ namespace BKI_HRM
             this.nhânSựTheoChứcVuToolStripMenuItem,
             this.nhânSựTheoCấpBậcToolStripMenuItem,
             this.quáTrìnhLàmViệcToolStripMenuItem,
-            this.chToolStripMenuItem});
+            this.chToolStripMenuItem,
+            this.báoCáoBổNhiệmToolStripMenuItem});
             this.m_menuitem_bcnhansu.Name = "m_menuitem_bcnhansu";
             this.m_menuitem_bcnhansu.Size = new System.Drawing.Size(221, 22);
             this.m_menuitem_bcnhansu.Text = "Báo cáo nhân sự";
@@ -512,7 +514,7 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.ForeColor = System.Drawing.Color.Red;
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Location = new System.Drawing.Point(0, 341);
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Name = "m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky";
-            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Size = new System.Drawing.Size(346, 18);
+            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Size = new System.Drawing.Size(345, 18);
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.TabIndex = 5;
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text = "Danh sách Hợp đồng đã hết hạn nhưng chưa ký";
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Click += new System.EventHandler(this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky_Click);
@@ -526,7 +528,7 @@ namespace BKI_HRM
             this.m_lbl_sap_quay_lai.ForeColor = System.Drawing.Color.Red;
             this.m_lbl_sap_quay_lai.Location = new System.Drawing.Point(0, 323);
             this.m_lbl_sap_quay_lai.Name = "m_lbl_sap_quay_lai";
-            this.m_lbl_sap_quay_lai.Size = new System.Drawing.Size(305, 18);
+            this.m_lbl_sap_quay_lai.Size = new System.Drawing.Size(306, 18);
             this.m_lbl_sap_quay_lai.TabIndex = 6;
             this.m_lbl_sap_quay_lai.Text = "Danh sách nhân viên sắp quay lại sau nghỉ";
             this.m_lbl_sap_quay_lai.Click += new System.EventHandler(this.m_lbl_sap_quay_lai_Click);
@@ -542,6 +544,13 @@ namespace BKI_HRM
             this.m_lbl_so_luong_nv_hien_tai.Size = new System.Drawing.Size(143, 18);
             this.m_lbl_so_luong_nv_hien_tai.TabIndex = 7;
             this.m_lbl_so_luong_nv_hien_tai.Text = "so luong nhan vien";
+            // 
+            // báoCáoBổNhiệmToolStripMenuItem
+            // 
+            this.báoCáoBổNhiệmToolStripMenuItem.Name = "báoCáoBổNhiệmToolStripMenuItem";
+            this.báoCáoBổNhiệmToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.báoCáoBổNhiệmToolStripMenuItem.Text = "Báo cáo bổ nhiệm";
+            this.báoCáoBổNhiệmToolStripMenuItem.Click += new System.EventHandler(this.báoCáoBổNhiệmToolStripMenuItem_Click);
             // 
             // f400_Main
             // 
@@ -627,5 +636,6 @@ namespace BKI_HRM
         private ToolStripMenuItem m_menuitem_gui_loi;
         private ToolStripMenuItem m_menuitem_hdsd;
         private ToolStripMenuItem m_menuitem_chitietquyetdinh;
+        private ToolStripMenuItem báoCáoBổNhiệmToolStripMenuItem;
     }
 }
