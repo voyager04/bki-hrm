@@ -687,4 +687,17 @@
        public const string MA_TU_DIEN = "MA_TU_DIEN";
        public const string SO_LUONG = "SO_LUONG";
    }
+   public class RPT_BO_NHIEM
+   {
+       public const string ID = "ID";
+       public const string DIA_BAN = "DIA_BAN";
+       public const string ID_DV_CT = "ID_DV_CT";
+       public const string MA_DV_CAP_TREN = "MA_DV_CAP_TREN";
+       public const string ID_DON_VI = "ID_DON_VI";
+       public const string MA_DON_VI = "MA_DON_VI";
+       public const string SL_BO_NHIEM = "SL_BO_NHIEM";
+       public const string SL_BN_CO_QD = "SL_BN_CO_QD";
+       public const string SL_BN_KO_QD = "SL_BN_KO_QD";
+       public const string SL_BN_KO_QD_KT = "SL_BN_KO_QD_KT";
+   }
 }
