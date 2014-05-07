@@ -355,7 +355,7 @@ namespace BKI_HRM
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
             m_fg.Tree.Column = (int)e_col_Number.LOAI_QUYET_DINH;
-            
+
             m_fg.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.SimpleLeaf;
             set_define_events();
             this.KeyPreview = true;
@@ -384,13 +384,13 @@ namespace BKI_HRM
         }
         private void load_data_2_grid()
         {
-            
+
             m_ds = new DS_V_GD_QUYET_DINH();
-            if (m_txt_tim_kiem.Text.Trim() == m_str_tim_kiem || m_txt_tim_kiem.Text.Trim() == "") 
+            if (m_txt_tim_kiem.Text.Trim() == m_str_tim_kiem || m_txt_tim_kiem.Text.Trim() == "")
                 m_us.FillDatasetSearch(m_ds, "");
-            else 
+            else
                 m_us.FillDatasetSearch(m_ds, m_txt_tim_kiem.Text.Trim());
-           // m_us.FillDataset(m_ds);
+            // m_us.FillDataset(m_ds);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
 
@@ -400,7 +400,7 @@ namespace BKI_HRM
               , (int)e_col_Number.MA_QUYET_DINH // chỗ này là tên trường mà mình Count
               , "{0}"
               );
-           
+
             m_fg.Redraw = true;
         }
         private void grid2us_object(US_V_GD_QUYET_DINH i_us
@@ -455,7 +455,7 @@ namespace BKI_HRM
             try
             {
                 v_us.BeginTransaction();
-                v_us.Delete();
+                v_us.delete_by_id(v_us.dcID);
                 v_us.CommitTransaction();
                 m_fg.Rows.Remove(m_fg.Row);
             }
@@ -486,11 +486,7 @@ namespace BKI_HRM
         }
         #endregion
 
-        //
-        //
-        //		EVENT HANLDERS
-        //
-        //
+        #region "Event Handls"
         private void F205_V_GD_QUYET_DINH_Load(object sender, System.EventArgs e)
         {
             try
@@ -618,6 +614,8 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        #endregion
+
 
     }
 }
