@@ -752,7 +752,7 @@ namespace BKI_HRM
         {
             try
             {
-                //if (view_hop_dong_saved()) return;
+                if (view_hop_dong_saved()) return;
             }
             catch (Exception v_e)
             {
