@@ -170,6 +170,8 @@ namespace BKI_HRM.NghiepVu
                 return;
 
             form_2_us_object();
+            System.Security.Principal.WindowsIdentity idnt = new System.Security.Principal.WindowsIdentity("admin", "admin");
+            System.Security.Principal.WindowsImpersonationContext context = idnt.Impersonate();
             if (existed_file(m_str_to + m_str_time_now + "-" + m_str_file_name))
             {
                 BaseMessages.MsgBox_Infor("Tên file đã tồn tại, vui lòng đổi tên khác.");
@@ -203,6 +205,7 @@ namespace BKI_HRM.NghiepVu
                     m_us.Update();
                     break;
             }
+            context.Undo();
             f701_v_hop_dong_lao_dong.m_str_ma_hop_dong = m_txt_ma_hop_dong.Text;
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
             this.Close();
