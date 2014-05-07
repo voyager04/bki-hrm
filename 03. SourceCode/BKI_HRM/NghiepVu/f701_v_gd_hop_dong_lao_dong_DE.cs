@@ -348,7 +348,7 @@ namespace BKI_HRM.NghiepVu
         private void modify_name_file(string ip_str_source_file_name, string ip_str_desination_file_name)
         {
             //Coppy file mới
-            File.Copy(ip_str_source_file_name, m_str_path + "topica" + m_str_file_name);
+            File.Copy(ip_str_source_file_name, m_str_path + "topica" + m_str_file_name,true);
             //Đổi tên file mới
             File.Move(m_str_path + "topica" + m_str_file_name, ip_str_desination_file_name);
         }
