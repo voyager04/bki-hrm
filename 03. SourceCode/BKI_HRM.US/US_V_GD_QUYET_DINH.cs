@@ -328,6 +328,12 @@ public class US_V_GD_QUYET_DINH : US_Object
         v_sp.addNVarcharInputParam("@STR_SEARCH", i_str_search);
         v_sp.fillDataSetByCommand(this, op_ds);
     }
+    public void delete_by_id(decimal ip_dc_id)
+    {
+        CStoredProc v_cstore = new CStoredProc("pr_V_GD_QUYET_DINH_Delete");
+        v_cstore.addDecimalInputParam("@ID", ip_dc_id);
+        v_cstore.ExecuteCommand(this);
+    }
 #endregion
 	}
 }

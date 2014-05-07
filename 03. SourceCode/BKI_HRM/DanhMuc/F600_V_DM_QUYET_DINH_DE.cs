@@ -38,7 +38,6 @@ namespace BKI_HRM.DanhMuc
         public void display_for_insert()
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
-            
             this.ShowDialog();
         }
         public void display_for_update(US_V_DM_QUYET_DINH ip_m_us_v_dm_quyet_dinh)
@@ -171,11 +170,13 @@ namespace BKI_HRM.DanhMuc
             //}
 
 
-            return true && kiem_tra_ngay_truoc_sau(); 
+            return  kiem_tra_ngay_truoc_sau(); 
         }
         private bool kiem_tra_ngay_truoc_sau()
         {
-            if (m_dat_ngay_co_hieu_luc.Value.Date >= m_dat_ngay_het_hieu_luc.Value.Date)
+            if (m_dat_ngay_co_hieu_luc.Value.Date >= m_dat_ngay_het_hieu_luc.Value.Date 
+                && m_dat_ngay_co_hieu_luc.Checked == true && m_dat_ngay_het_hieu_luc.Checked == true
+                )
             {
                BaseMessages.MsgBox_Error("Ngày có hiệu lực phải trước ngày hết hiệu lực!");
                 return false;
