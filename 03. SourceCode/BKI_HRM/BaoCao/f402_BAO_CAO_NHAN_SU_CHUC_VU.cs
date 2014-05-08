@@ -194,6 +194,7 @@ namespace BKI_HRM
             this.m_dtp_thoidiem.Name = "m_dtp_thoidiem";
             this.m_dtp_thoidiem.Size = new System.Drawing.Size(176, 20);
             this.m_dtp_thoidiem.TabIndex = 3;
+            this.m_dtp_thoidiem.ValueChanged += new System.EventHandler(this.m_dtp_thoidiem_ValueChanged);
             // 
             // m_lbl_thoidiem
             // 
@@ -540,6 +541,18 @@ namespace BKI_HRM
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        private void m_dtp_thoidiem_ValueChanged(object sender, EventArgs e)
+        {
+            if (m_txt_tim_kiem.Text.Trim() == "Nhập mã chức vụ, mã nhân viên, họ tên")
+            {
+                m_txt_tim_kiem.Text = "";
+                load_data_2_grid_search();
+                m_txt_tim_kiem.Text = "Nhập mã chức vụ, mã nhân viên, họ tên";
+            }
+            else
+                load_data_2_grid_search();
         }		
 
 	}

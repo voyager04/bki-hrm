@@ -38,6 +38,8 @@ namespace BKI_HRM
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         private TextBox m_txt_tim_kiem;
         internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
+        private Label m_lbl_thoidiem;
+        private DateTimePicker m_dtp_thoidiem;
 		private System.ComponentModel.IContainer components;
 
 		public f406_bao_cao_bo_nhiem()
@@ -84,6 +86,8 @@ namespace BKI_HRM
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
+            this.m_lbl_thoidiem = new System.Windows.Forms.Label();
+            this.m_dtp_thoidiem = new System.Windows.Forms.DateTimePicker();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -161,9 +165,9 @@ namespace BKI_HRM
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 52);
+            this.m_fg.Location = new System.Drawing.Point(0, 75);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(834, 373);
+            this.m_fg.Size = new System.Drawing.Size(834, 350);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
@@ -195,10 +199,32 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.m_txt_tim_kiem_KeyDown);
             this.m_txt_tim_kiem.Leave += new System.EventHandler(this.m_txt_tim_kiem_Leave);
             // 
+            // m_lbl_thoidiem
+            // 
+            this.m_lbl_thoidiem.AutoSize = true;
+            this.m_lbl_thoidiem.Location = new System.Drawing.Point(18, 41);
+            this.m_lbl_thoidiem.Name = "m_lbl_thoidiem";
+            this.m_lbl_thoidiem.Size = new System.Drawing.Size(41, 13);
+            this.m_lbl_thoidiem.TabIndex = 40;
+            this.m_lbl_thoidiem.Text = "Tháng:";
+            // 
+            // m_dtp_thoidiem
+            // 
+            this.m_dtp_thoidiem.CustomFormat = "MM/yyyy";
+            this.m_dtp_thoidiem.Enabled = false;
+            this.m_dtp_thoidiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_dtp_thoidiem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dtp_thoidiem.Location = new System.Drawing.Point(65, 38);
+            this.m_dtp_thoidiem.Name = "m_dtp_thoidiem";
+            this.m_dtp_thoidiem.Size = new System.Drawing.Size(176, 20);
+            this.m_dtp_thoidiem.TabIndex = 39;
+            // 
             // f406_bao_cao_bo_nhiem
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(834, 461);
+            this.Controls.Add(this.m_lbl_thoidiem);
+            this.Controls.Add(this.m_dtp_thoidiem);
             this.Controls.Add(this.m_cmd_search);
             this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.m_fg);

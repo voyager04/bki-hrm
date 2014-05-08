@@ -487,7 +487,15 @@ namespace BKI_HRM
         {
             try
             {
-                load_data_2_grid();
+                if (m_txt_tim_kiem.Text.Trim() == "Nhập mã đơn vị, mã chức vụ")
+                {
+                    m_txt_tim_kiem.Text = "";
+                    load_data_2_grid();
+                    m_txt_tim_kiem.Text = "Nhập mã đơn vị, mã chức vụ";
+                }
+                else
+                    load_data_2_grid();
+
             }
             catch (Exception v_e)
             {
