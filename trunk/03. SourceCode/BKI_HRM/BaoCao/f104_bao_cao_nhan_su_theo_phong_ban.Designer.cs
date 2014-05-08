@@ -113,6 +113,7 @@
             this.m_dtp_thoidiem.Name = "m_dtp_thoidiem";
             this.m_dtp_thoidiem.Size = new System.Drawing.Size(99, 20);
             this.m_dtp_thoidiem.TabIndex = 2;
+            this.m_dtp_thoidiem.ValueChanged += new System.EventHandler(this.m_dtp_thoidiem_ValueChanged);
             // 
             // m_lbl_so_luong_ban_ghi
             // 
