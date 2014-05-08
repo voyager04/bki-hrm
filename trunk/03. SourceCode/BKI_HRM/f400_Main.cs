@@ -734,5 +734,18 @@ namespace BKI_HRM
             }
         }
 
+        private void báoCáoDanhSáchBổNhiêmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f407_bao_cao_bo_nhiem frm = new f407_bao_cao_bo_nhiem();
+                frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
     }
 }

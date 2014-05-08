@@ -253,6 +253,7 @@
         public const string ID_QUYET_DINH_MIEN_NHIEM = "ID_QUYET_DINH_MIEN_NHIEM";
         public const string LUA_CHON = "LUA_CHON";
         public const string TY_LE_THAM_GIA = "TY_LE_THAM_GIA";
+        //public const string MA_DV_CAP_TREN = "MA_DV_CAP_TREN";
     }
 
     public class V_GD_QUYET_DINH
