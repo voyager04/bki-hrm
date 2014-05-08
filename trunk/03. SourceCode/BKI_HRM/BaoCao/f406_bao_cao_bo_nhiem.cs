@@ -351,7 +351,17 @@ namespace BKI_HRM
             //m_fg.AutoSizeCols(0,m_fg.Cols.Count-1,10);
 
         }
-
+        private void load_custom_source_2_m_txt_tim_kiem()
+        {
+            //m_us.FillDataset(m_ds);
+            int count = m_ds.Tables["RPT_BO_NHIEM"].Rows.Count;
+            AutoCompleteStringCollection v_acsc_search = new AutoCompleteStringCollection();
+            foreach (DataRow dr in m_ds.RPT_BO_NHIEM)
+            {
+                v_acsc_search.Add(dr[RPT_BO_NHIEM.MA_DON_VI].ToString());
+            }
+            m_txt_tim_kiem.AutoCompleteCustomSource = v_acsc_search;
+        }
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 		}
@@ -366,6 +376,7 @@ namespace BKI_HRM
 			try{
                 format_grid();
 				set_initial_form_load();
+                load_custom_source_2_m_txt_tim_kiem();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
