@@ -298,6 +298,7 @@ namespace BKI_HRM
 		#endregion
 
 		#region Members
+        Boolean m_form_mode = true;
         Decimal m_lua_chon = 0;
 		ITransferDataRow m_obj_trans;		
 		DS_V_GD_QUA_TRINH_LAM_VIEC m_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC();
@@ -317,9 +318,14 @@ namespace BKI_HRM
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
-            m_txt_tim_kiem.Text = "";
-            load_data_2_grid();
-            m_txt_tim_kiem.Text = "Nhập mã đơn vị, mã chức vụ";	
+            if (m_form_mode == true)
+            {
+                m_txt_tim_kiem.Text = "";
+                load_data_2_grid();
+                m_txt_tim_kiem.Text = "Nhập mã đơn vị, mã chức vụ";
+            }
+            else
+                load_data_2_grid();
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -394,7 +400,13 @@ namespace BKI_HRM
             m_txt_tim_kiem.AutoCompleteCustomSource = v_acsc_search;
         }
 
-		
+        public void display_for_so_luong_bn(String v_str_ma_dv)
+        {
+            m_form_mode = false;
+            m_txt_tim_kiem.Text = v_str_ma_dv;
+            this.ShowDialog();
+        }
+
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			
