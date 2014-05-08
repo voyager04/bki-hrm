@@ -665,7 +665,11 @@ namespace BKI_HRM.US {
             v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_str_key_word);
             v_stored_proc.fillDataSetByCommand(this, op_m_ds);
         }
-
+        public void FillDatasetNVSapQuayLai(DS_V_DM_DU_LIEU_NHAN_VIEN m_ds)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_Nhan_vien_sap_quay_lai");
+            v_sp.fillDataSetByCommand(this, m_ds);
+        }
         #endregion
 
 
