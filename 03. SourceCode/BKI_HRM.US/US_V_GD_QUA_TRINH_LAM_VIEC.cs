@@ -871,8 +871,13 @@ namespace BKI_HRM.US {
             v_sp.addDecimalInputParam("@ID_DON_VI", ip_id_don_vi);
             v_sp.fillDataSetByCommand(this, op_ds_qua_trinh_lam_viec);
         }
-        
+         public void FillDatasetBonhiem(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds, string ip_str_search, DateTime ip_dat_thoi_diem){
+             CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_danh_sach_bo_nhiem");
+             v_sp.addNVarcharInputParam("@ip_str_tim_kiem", ip_str_search);
+             v_sp.addDatetimeInputParam("@ip_dat_thoi_diem", ip_dat_thoi_diem);
+             v_sp.fillDataSetByCommand(this, op_ds);
+        }
         #endregion
-
+        
     }
 }
