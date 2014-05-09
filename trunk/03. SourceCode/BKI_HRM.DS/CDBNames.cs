@@ -643,6 +643,7 @@
        public const string VAI_TRO = "VAI_TRO";
        public const string TY_LE_THAM_GIA = "TY_LE_THAM_GIA";
        public const string MA_QUYET_DINH = "MA_QUYET_DINH";
+       public const string MA_QUYET_DINH_MIEN_NHIEM = "MA_QUYET_DINH_MIEN_NHIEM";
    }
 
    public class HT_CONTROL_IN_FORM
