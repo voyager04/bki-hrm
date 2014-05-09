@@ -170,8 +170,6 @@ namespace BKI_HRM.NghiepVu
                 return;
 
             form_2_us_object();
-            System.Security.Principal.WindowsIdentity idnt = new System.Security.Principal.WindowsIdentity("admin", "admin");
-            System.Security.Principal.WindowsImpersonationContext context = idnt.Impersonate();
             if (existed_file(m_str_to + m_str_time_now + "-" + m_str_file_name))
             {
                 BaseMessages.MsgBox_Infor("Tên file đã tồn tại, vui lòng đổi tên khác.");
@@ -205,7 +203,6 @@ namespace BKI_HRM.NghiepVu
                     m_us.Update();
                     break;
             }
-            context.Undo();
             f701_v_hop_dong_lao_dong.m_str_ma_hop_dong = m_txt_ma_hop_dong.Text;
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
             this.Close();
@@ -340,7 +337,15 @@ namespace BKI_HRM.NghiepVu
                 return;
             }
             modify_name_file(m_str_from, m_str_path + m_str_time_now + "-" + m_str_file_name);
-            File.Move(m_str_path + m_str_time_now + "-" + m_str_file_name, m_str_to + m_str_time_now + "-" + m_str_file_name);
+            //byte[] bytes = File.ReadAllBytes(m_str_path + m_str_time_now + "-" + m_str_file_name);
+            //File.WriteAllBytes(m_str_to + m_str_time_now + "-" + m_str_file_name, bytes);
+            //FileStream fileStream = new FileStream(m_str_to, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            //fileStream.Write(bytes, 0 , bytes.Length);
+
+
+            File.Move(m_str_path + m_str_time_now + "-" + m_str_file_name,
+                      m_str_to + m_str_time_now + "-" + m_str_file_name);
+
             m_us.strLINK = m_str_time_now + "-" + m_str_file_name;
             m_b_status = true;
         }
@@ -348,7 +353,7 @@ namespace BKI_HRM.NghiepVu
         private void modify_name_file(string ip_str_source_file_name, string ip_str_desination_file_name)
         {
             //Coppy file mới
-            File.Copy(ip_str_source_file_name, m_str_path + "topica" + m_str_file_name,true);
+            File.Copy(ip_str_source_file_name, m_str_path + "topica" + m_str_file_name);
             //Đổi tên file mới
             File.Move(m_str_path + "topica" + m_str_file_name, ip_str_desination_file_name);
         }

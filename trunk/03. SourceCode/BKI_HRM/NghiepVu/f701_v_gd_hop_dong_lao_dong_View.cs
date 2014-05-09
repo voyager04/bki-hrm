@@ -36,7 +36,7 @@ namespace BKI_HRM.NghiepVu
 
         private void f701_v_gd_hop_dong_lao_dong_View_Load(object sender, EventArgs e)
         {
-            webBrowser1.Navigate(@"http://localhost/MvcApplication1/Images/" + m_us_gd_hop_dong.strLINK);
+            webBrowser1.Navigate(@"\\192.168.1.115\Images\" + m_us_gd_hop_dong.strLINK);
         }
     }
 }
