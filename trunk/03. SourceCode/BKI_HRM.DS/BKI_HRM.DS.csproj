@@ -161,6 +161,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_RPT_CHUC_VU_TRANG_THAI.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_RPT_DON_VI_TRANG_THAI.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_RPT_DON_VI_TRANG_THAI.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_DM_CAP_BAC.cs">
       <DependentUpon>DS_V_DM_CAP_BAC.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -504,6 +509,17 @@
     </None>
     <None Include="DS_RPT_CHUC_VU_TRANG_THAI.xss">
       <DependentUpon>DS_RPT_CHUC_VU_TRANG_THAI.xsd</DependentUpon>
+    </None>
+    <None Include="DS_RPT_DON_VI_TRANG_THAI.xsc">
+      <DependentUpon>DS_RPT_DON_VI_TRANG_THAI.xsd</DependentUpon>
+    </None>
+    <None Include="DS_RPT_DON_VI_TRANG_THAI.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_RPT_DON_VI_TRANG_THAI.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_RPT_DON_VI_TRANG_THAI.xss">
+      <DependentUpon>DS_RPT_DON_VI_TRANG_THAI.xsd</DependentUpon>
     </None>
     <None Include="DS_V_DM_CAP_BAC.xsc">
       <DependentUpon>DS_V_DM_CAP_BAC.xsd</DependentUpon>

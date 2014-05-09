@@ -702,4 +702,15 @@
        public const string SL_BN_KO_QD = "SL_BN_KO_QD";
        public const string SL_BN_KO_QD_KT = "SL_BN_KO_QD_KT";
    }
+   public class RPT_DON_VI_TRANG_THAI
+   {
+       public const string ID = "ID";
+       public const string ID_DV = "ID_DV";
+       public const string MA_DON_VI = "MA_DON_VI";
+       public const string ID_DON_VI_CAP_TREN = "ID_DON_VI_CAP_TREN";
+       public const string MA_DON_VI_CAP_TEN = "MA_DON_VI_CAP_TEN";
+       public const string ID_TRANG_THAI = "ID_TRANG_THAI";
+       public const string MA_TU_DIEN = "MA_TU_DIEN";
+       public const string SO_LUONG = "SO_LUONG";
+   }
 }
