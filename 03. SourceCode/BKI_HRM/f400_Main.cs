@@ -285,7 +285,7 @@ namespace BKI_HRM
             try
             {
                 f103_bao_cao_tra_cuu_nhan_su frm = new f103_bao_cao_tra_cuu_nhan_su();
-                frm.Show();
+                frm.display();
             }
             catch (Exception v_e)
             {
@@ -331,8 +331,8 @@ namespace BKI_HRM
                 }
                 thong_bao_thu_viec_sap_het_han();
 
-                US_V_GD_TRANG_THAI_LAO_DONG m_us = new US_V_GD_TRANG_THAI_LAO_DONG();
-                DS_V_GD_TRANG_THAI_LAO_DONG m_ds = new DS_V_GD_TRANG_THAI_LAO_DONG();
+                US_V_DM_DU_LIEU_NHAN_VIEN m_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
+                DS_V_DM_DU_LIEU_NHAN_VIEN m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
                 m_us.FillDatasetNVSapQuayLai(m_ds);
                 if (m_ds.Tables[0].Rows.Count > 0)
                 {
@@ -673,8 +673,8 @@ namespace BKI_HRM
         {
             try
             {
-                f503_nhan_vien_sap_quay_tro_lai frm = new f503_nhan_vien_sap_quay_tro_lai();
-                frm.displaySapQuayLai();
+                f103_bao_cao_tra_cuu_nhan_su frm = new f103_bao_cao_tra_cuu_nhan_su();
+                frm.display_nghi_sap_quay_lai();
             }
             catch (Exception v_e)
             {

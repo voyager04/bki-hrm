@@ -419,13 +419,9 @@ namespace BKI_HRM
                 , NGAY_CO_HIEU_LUC = 3
 
         }
-        private enum e_loai_ngay
-        {
-            NGAY_KY = 1,
-            NGAY_CO_HIEU_LUC = 2,
-            NGAY_HET_HIEU_LUC = 3,
-            TAT_CA = -1
-        }
+        
+            
+        
         #endregion
 
         #region Members
@@ -433,6 +429,10 @@ namespace BKI_HRM
         DS_V_GD_QUYET_DINH m_ds = new DS_V_GD_QUYET_DINH();
         US_V_GD_QUYET_DINH m_us = new US_V_GD_QUYET_DINH();
         private const String m_str_tim_kiem = "Nhập loại quyết định, mã quyết định, nội dung cần tìm";
+        const int NGAY_KY = 1;
+        const int NGAY_CO_HIEU_LUC = 2;
+        const int NGAY_HET_HIEU_LUC = 3;
+        const int TAT_CA = -1;
         #endregion
 
         #region Private Methods
@@ -443,10 +443,10 @@ namespace BKI_HRM
             DataTable v_dt = new DataTable();
             v_dt.Columns.Add("SO_COT");
             v_dt.Columns.Add("TEN_COT");
-            v_dt.Rows.Add(e_loai_ngay.TAT_CA, "-- Tất cả --");
-            v_dt.Rows.Add(e_loai_ngay.NGAY_KY, "Ngày ký");
-            v_dt.Rows.Add(e_loai_ngay.NGAY_CO_HIEU_LUC, "Ngày có hiệu lực");
-            v_dt.Rows.Add(e_loai_ngay.NGAY_HET_HIEU_LUC, "Ngày hết hiệu lực");
+            v_dt.Rows.Add(TAT_CA, "-- Tất cả --");
+            v_dt.Rows.Add(NGAY_KY, "Ngày ký");
+            v_dt.Rows.Add(NGAY_CO_HIEU_LUC, "Ngày có hiệu lực");
+            v_dt.Rows.Add(NGAY_HET_HIEU_LUC, "Ngày hết hiệu lực");
             m_cbo_tim_kiem_theo.DisplayMember = "TEN_COT";
             m_cbo_tim_kiem_theo.ValueMember = "SO_COT";
             m_cbo_tim_kiem_theo.DataSource = v_dt;
@@ -520,19 +520,19 @@ namespace BKI_HRM
         {
 
             m_ds = new DS_V_GD_QUYET_DINH();
-          //  if (m_txt_tim_kiem.Text.Trim() == m_str_tim_kiem || m_txt_tim_kiem.Text.Trim() == "")
-                //m_us.FillDatasetSearch(m_ds, "", 
-                //    (int)m_cbo_loai_quyet_dinh.SelectedValue.ToString(),
-                //    (int)m_cbo_tim_kiem_theo.SelectedValue.ToString(),
-                //    m_dat_tu_ngay.Value,
-                //    m_dat_den_ngay.Value);
-           // else
-                //m_us.FillDatasetSearch(m_ds, m_txt_tim_kiem.Text.Trim(),
-                //    (int)m_cbo_loai_quyet_dinh.SelectedValue.ToString(),
-                //    (int)m_cbo_tim_kiem_theo.SelectedValue.ToString(),
-                //    m_dat_tu_ngay.Value,
-                //    m_dat_den_ngay.Value);
-            // m_us.FillDataset(m_ds);
+            if (m_txt_tim_kiem.Text.Trim() == m_str_tim_kiem || m_txt_tim_kiem.Text.Trim() == "")
+                m_us.FillDatasetSearch(m_ds, "",
+                    CIPConvert.ToDecimal(m_cbo_loai_quyet_dinh.SelectedValue.ToString()),
+                    CIPConvert.ToDecimal(m_cbo_tim_kiem_theo.SelectedValue.ToString()),
+                    m_dat_tu_ngay.Value,
+                    m_dat_den_ngay.Value);
+            else
+                m_us.FillDatasetSearch(m_ds, m_txt_tim_kiem.Text.Trim(),
+                    CIPConvert.ToDecimal(m_cbo_loai_quyet_dinh.SelectedValue.ToString()),
+                    CIPConvert.ToDecimal(m_cbo_tim_kiem_theo.SelectedValue.ToString()),
+                    m_dat_tu_ngay.Value,
+                    m_dat_den_ngay.Value);
+           // m_us.FillDataset(m_ds);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
 
