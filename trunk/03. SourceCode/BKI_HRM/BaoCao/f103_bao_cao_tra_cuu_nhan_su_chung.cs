@@ -330,6 +330,8 @@ namespace BKI_HRM {
 
         #region Public Interface
         public void display() {
+            m_rdb_nhan_vien_sap_quay_lai.Visible = false;
+            m_rdb_thu_viec_sap_het_han.Visible = false;
             Show();
         }
         public void display_nghi_sap_quay_lai()
@@ -399,7 +401,7 @@ namespace BKI_HRM {
         private bool load_invisible = true;
         DS_V_DM_DU_LIEU_NHAN_VIEN m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
         US_V_DM_DU_LIEU_NHAN_VIEN m_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
-        private const String m_str_goi_y_tim_kiem = "Giới tính: nữ, đơn vị: Phòng hành chính hoặc Nguyễn Danh Tú, giới tính: Nam, Trình độ: Đại học";
+        private const String m_str_goi_y_tim_kiem = "Nhập vào Mã nhân viên, Họ tên, Chức vụ, hoặc Trình độ, ... để tìm kiếm";
         private IList<KeyValuePair<string, string>> m_list_key_value = new List<KeyValuePair<string, string>>();
         private string m_str_search = "";
         private string m_str_ma_nhan_vien = "";
