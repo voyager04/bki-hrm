@@ -97,8 +97,8 @@ namespace BKI_HRM
             this.m_lbl_thoidiem = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.m_lbl_soluongns = new System.Windows.Forms.Label();
-            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
+            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -224,16 +224,6 @@ namespace BKI_HRM
             this.m_lbl_soluongns.Text = "label2";
             this.m_lbl_soluongns.Visible = false;
             // 
-            // m_fg
-            // 
-            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 58);
-            this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(984, 437);
-            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 37;
-            // 
             // m_cmd_search
             // 
             this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -248,6 +238,16 @@ namespace BKI_HRM
             this.m_cmd_search.TabIndex = 2;
             this.m_cmd_search.Text = "Tìm kiếm";
             this.m_cmd_search.Click += new System.EventHandler(this.m_cmd_search_Click);
+            // 
+            // m_fg
+            // 
+            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_fg.Location = new System.Drawing.Point(0, 58);
+            this.m_fg.Name = "m_fg";
+            this.m_fg.Size = new System.Drawing.Size(984, 437);
+            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
+            this.m_fg.TabIndex = 37;
             // 
             // f402_BAO_CAO_NHAN_SU_CHUC_VU
             // 
@@ -283,32 +283,44 @@ namespace BKI_HRM
 		#region Data Structure
         private enum e_col_Number
         {
-            CAP_DON_VI = 11
+            LOAI_DON_VI = 12
 ,
-            TY_LE_THAM_GIA = 13
-                ,
-            NGAY_BAT_DAU = 7
-                ,
-            TEN_CV = 3
-                ,
             TEN_DON_VI = 10
                 ,
             MA_NV = 4
                 ,
-            MA_DON_VI = 9
-                ,
             NGAY_KET_THUC = 8
                 ,
-            MA_CV = 2
+            NGAY_BAT_DAU = 7
                 ,
-            HO_DEM = 5
+            CAP_DON_VI = 11
                 ,
-            LOAI_DON_VI = 12
+            TRANG_THAI_CV = 16
+                ,
+            LOAI_CV = 14
+                ,
+            MA_QUYET_DINH = 17
+                ,
+            DIA_BAN = 1
                 ,
             TEN = 6
                 ,
-            TRANG_THAI_CV = 14
-                , DIA_BAN = 1
+            NGAY_CO_HIEU_LUC = 18
+                ,
+            MA_DON_VI = 9
+                ,
+            HO_DEM = 5
+                ,
+            TY_LE_THAM_GIA = 13
+                ,
+            TEN_CV = 3
+                ,
+            NGAY_HET_HIEU_LUC = 19
+                ,
+            MA_CV = 2
+                ,
+            MA_QUYET_DINH_MIEN_NHIEM = 20
+                , NGACH = 15
 
         }			
 		#endregion
@@ -344,20 +356,26 @@ namespace BKI_HRM
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
-            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.CAP_DON_VI, e_col_Number.CAP_DON_VI);
-            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.TY_LE_THAM_GIA, e_col_Number.TY_LE_THAM_GIA);
-            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.NGAY_BAT_DAU, e_col_Number.NGAY_BAT_DAU);
-            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.TEN_CV, e_col_Number.TEN_CV);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.LOAI_DON_VI, e_col_Number.LOAI_DON_VI);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.TEN_DON_VI, e_col_Number.TEN_DON_VI);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_NV, e_col_Number.MA_NV);
-            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_DON_VI, e_col_Number.MA_DON_VI);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.NGAY_KET_THUC, e_col_Number.NGAY_KET_THUC);
-            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_CV, e_col_Number.MA_CV);
-            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.HO_DEM, e_col_Number.HO_DEM);
-            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.LOAI_DON_VI, e_col_Number.LOAI_DON_VI);
-            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.TEN, e_col_Number.TEN);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.NGAY_BAT_DAU, e_col_Number.NGAY_BAT_DAU);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.CAP_DON_VI, e_col_Number.CAP_DON_VI);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.TRANG_THAI_CV, e_col_Number.TRANG_THAI_CV);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.LOAI_CV, e_col_Number.LOAI_CV);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_QUYET_DINH, e_col_Number.MA_QUYET_DINH);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.DIA_BAN, e_col_Number.DIA_BAN);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.TEN, e_col_Number.TEN);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.NGAY_CO_HIEU_LUC, e_col_Number.NGAY_CO_HIEU_LUC);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_DON_VI, e_col_Number.MA_DON_VI);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.HO_DEM, e_col_Number.HO_DEM);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.TY_LE_THAM_GIA, e_col_Number.TY_LE_THAM_GIA);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.TEN_CV, e_col_Number.TEN_CV);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.NGAY_HET_HIEU_LUC, e_col_Number.NGAY_HET_HIEU_LUC);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_CV, e_col_Number.MA_CV);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_QUYET_DINH_MIEN_NHIEM, e_col_Number.MA_QUYET_DINH_MIEN_NHIEM);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.NGACH, e_col_Number.NGACH);
 									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_GD_QUA_TRINH_LAM_VIEC.NewRow());
 			return v_obj_trans;			
