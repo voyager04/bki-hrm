@@ -322,10 +322,20 @@ public class US_V_GD_QUYET_DINH : US_Object
         CStoredProc v_sp = new CStoredProc("pr_V_GD_QUYET_DINH_FillDataset");
         v_sp.fillDataSetByCommand(this, op_ds);
     }
-    public void FillDatasetSearch(DS_V_GD_QUYET_DINH op_ds, string i_str_search)
+    public void FillDatasetSearch(DS_V_GD_QUYET_DINH op_ds, 
+        string i_str_search, 
+        decimal ip_dc_loai_qd, 
+        decimal ip_dc_loai_ngay,
+        DateTime ip_dat_tu_ngay,
+        DateTime ip_dat_den_ngay)
+   
     {
         CStoredProc v_sp = new CStoredProc("pr_V_GD_QUYET_DINH_search");
         v_sp.addNVarcharInputParam("@STR_SEARCH", i_str_search);
+        v_sp.addDecimalInputParam("@LOAI_QUYET_DINH", ip_dc_loai_qd);
+        v_sp.addDecimalInputParam("@LOAI_NGAY", ip_dc_loai_ngay);
+        v_sp.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay);
+        v_sp.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay);
         v_sp.fillDataSetByCommand(this, op_ds);
     }
     public void delete_by_id(decimal ip_dc_id)

@@ -330,9 +330,14 @@ namespace BKI_HRM {
 
         #region Public Interface
         public void display() {
-            ShowDialog();
+            Show();
         }
-
+        public void display_nghi_sap_quay_lai()
+        {
+            m_e_form_mode = DataEntryFormMode.ViewDataState;
+            
+            this.Show();
+        }
         internal int SapHetHanThuViec(DataEntryFormMode ip_e_form_mode) {
             Text = "F103 - Danh sách Thử việc sắp hết hạn";
             m_e_form_mode = ip_e_form_mode;
@@ -341,7 +346,7 @@ namespace BKI_HRM {
             m_so_luong_thu_viec_sap_het_han = m_ds.V_DM_DU_LIEU_NHAN_VIEN.Rows.Count;
             return m_so_luong_thu_viec_sap_het_han;
         }
-
+       
         #endregion
 
         #region Data Structure
@@ -447,6 +452,7 @@ namespace BKI_HRM {
         }
         private void set_initial_form_load() {
             m_obj_trans = get_trans_object(m_fg);
+            m_rdb_nhan_vien_sap_quay_lai.Checked = true;
             load_data_2_grid();
 
         }
