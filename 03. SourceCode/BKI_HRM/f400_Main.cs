@@ -747,5 +747,18 @@ namespace BKI_HRM
             }
         }
 
+        private void biếnĐộngĐơnVịTrạngTháiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f408_bao_cao_don_vi_trang_thai frm = new f408_bao_cao_don_vi_trang_thai();
+                frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
     }
 }
