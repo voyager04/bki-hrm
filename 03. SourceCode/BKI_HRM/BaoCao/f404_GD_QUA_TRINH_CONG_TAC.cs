@@ -84,14 +84,14 @@ namespace BKI_HRM
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f404_GD_QUA_TRINH_CONG_TAC));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_ckb_chucvu = new System.Windows.Forms.CheckBox();
             this.m_ckb_capbac = new System.Windows.Forms.CheckBox();
             this.m_ckb_duan = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.m_cmd_search = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -134,53 +134,6 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1001, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
-            // 
-            // m_cmd_xuat_excel
-            // 
-            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_xuat_excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_xuat_excel.ImageIndex = 19;
-            this.m_cmd_xuat_excel.ImageList = this.ImageList;
-            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
-            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(93, 28);
-            this.m_cmd_xuat_excel.TabIndex = 6;
-            this.m_cmd_xuat_excel.Text = "Xuất Excel";
-            this.m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
-            // 
-            // m_cmd_exit
-            // 
-            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_exit.ImageIndex = 12;
-            this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(909, 4);
-            this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 7;
-            this.m_cmd_exit.Text = "Thoát (Esc)";
-            // 
-            // m_cmd_search
-            // 
-            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_search.ImageIndex = 5;
-            this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(687, 12);
-            this.m_cmd_search.Name = "m_cmd_search";
-            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_search.TabIndex = 2;
-            this.m_cmd_search.Text = "Tìm kiếm";
-            this.m_cmd_search.Click += new System.EventHandler(this.m_cmd_search_Click);
             // 
             // m_txt_tim_kiem
             // 
@@ -241,6 +194,53 @@ namespace BKI_HRM
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 38;
             this.label1.Text = "Hiển thị:";
+            // 
+            // m_cmd_search
+            // 
+            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_search.ImageIndex = 5;
+            this.m_cmd_search.ImageList = this.ImageList;
+            this.m_cmd_search.Location = new System.Drawing.Point(687, 12);
+            this.m_cmd_search.Name = "m_cmd_search";
+            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_search.TabIndex = 2;
+            this.m_cmd_search.Text = "Tìm kiếm";
+            this.m_cmd_search.Click += new System.EventHandler(this.m_cmd_search_Click);
+            // 
+            // m_cmd_xuat_excel
+            // 
+            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xuat_excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xuat_excel.ImageIndex = 19;
+            this.m_cmd_xuat_excel.ImageList = this.ImageList;
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(93, 28);
+            this.m_cmd_xuat_excel.TabIndex = 6;
+            this.m_cmd_xuat_excel.Text = "Xuất Excel";
+            this.m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
+            // 
+            // m_cmd_exit
+            // 
+            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_exit.ImageIndex = 12;
+            this.m_cmd_exit.ImageList = this.ImageList;
+            this.m_cmd_exit.Location = new System.Drawing.Point(909, 4);
+            this.m_cmd_exit.Name = "m_cmd_exit";
+            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_exit.TabIndex = 7;
+            this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // m_fg
             // 
@@ -303,9 +303,11 @@ namespace BKI_HRM
             LAM_GI = 6
                 ,
             MA_QUYET_DINH = 10
+                ,
+            MA_QUYET_DINH_MIEN_NHIEM = 11
                 , O_DAU = 7
 
-        }			
+        }
 		#endregion
 
 		#region Members
@@ -334,16 +336,17 @@ namespace BKI_HRM
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
-			v_htb.Add(GD_QUA_TRINH_CONG_TAC.DEN_NGAY, e_col_Number.DEN_NGAY);
-			v_htb.Add(GD_QUA_TRINH_CONG_TAC.MA_NV, e_col_Number.MA_NV);
-			v_htb.Add(GD_QUA_TRINH_CONG_TAC.HO_DEM, e_col_Number.HO_DEM);
-			v_htb.Add(GD_QUA_TRINH_CONG_TAC.VAI_TRO, e_col_Number.VAI_TRO);
-			v_htb.Add(GD_QUA_TRINH_CONG_TAC.TEN, e_col_Number.TEN);
-			v_htb.Add(GD_QUA_TRINH_CONG_TAC.TU_NGAY, e_col_Number.TU_NGAY);
-			v_htb.Add(GD_QUA_TRINH_CONG_TAC.LAM_GI, e_col_Number.LAM_GI);
-			v_htb.Add(GD_QUA_TRINH_CONG_TAC.MA_QUYET_DINH, e_col_Number.MA_QUYET_DINH);
-			v_htb.Add(GD_QUA_TRINH_CONG_TAC.O_DAU, e_col_Number.O_DAU);
-            v_htb.Add(GD_QUA_TRINH_CONG_TAC.TY_LE_THAM_GIA, e_col_Number.TY_LE_THAM_GIA);						
+            v_htb.Add(GD_QUA_TRINH_CONG_TAC.DEN_NGAY, e_col_Number.DEN_NGAY);
+            v_htb.Add(GD_QUA_TRINH_CONG_TAC.MA_NV, e_col_Number.MA_NV);
+            v_htb.Add(GD_QUA_TRINH_CONG_TAC.TY_LE_THAM_GIA, e_col_Number.TY_LE_THAM_GIA);
+            v_htb.Add(GD_QUA_TRINH_CONG_TAC.HO_DEM, e_col_Number.HO_DEM);
+            v_htb.Add(GD_QUA_TRINH_CONG_TAC.VAI_TRO, e_col_Number.VAI_TRO);
+            v_htb.Add(GD_QUA_TRINH_CONG_TAC.TEN, e_col_Number.TEN);
+            v_htb.Add(GD_QUA_TRINH_CONG_TAC.TU_NGAY, e_col_Number.TU_NGAY);
+            v_htb.Add(GD_QUA_TRINH_CONG_TAC.LAM_GI, e_col_Number.LAM_GI);
+            v_htb.Add(GD_QUA_TRINH_CONG_TAC.MA_QUYET_DINH, e_col_Number.MA_QUYET_DINH);
+            v_htb.Add(GD_QUA_TRINH_CONG_TAC.MA_QUYET_DINH_MIEN_NHIEM, e_col_Number.MA_QUYET_DINH_MIEN_NHIEM);
+            v_htb.Add(GD_QUA_TRINH_CONG_TAC.O_DAU, e_col_Number.O_DAU);					
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.GD_QUA_TRINH_CONG_TAC.NewRow());
 			return v_obj_trans;			
 		}

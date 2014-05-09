@@ -264,6 +264,28 @@ public class US_GD_QUA_TRINH_CONG_TAC : US_Object
         pm_objDR["MA_QUYET_DINH"] = System.Convert.DBNull;
     }
 
+    public string strMA_QUYET_DINH_MIEN_NHIEM
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "MA_QUYET_DINH_MIEN_NHIEM", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["MA_QUYET_DINH_MIEN_NHIEM"] = value;
+        }
+    }
+
+    public bool IsMA_QUYET_DINH_MIEN_NHIEMNull()
+    {
+        return pm_objDR.IsNull("MA_QUYET_DINH_MIEN_NHIEM");
+    }
+
+    public void SetMA_QUYET_DINH_MIEN_NHIEMNull()
+    {
+        pm_objDR["MA_QUYET_DINH_MIEN_NHIEM"] = System.Convert.DBNull;
+    }
+
     #endregion
     #region "Init Functions"
     public US_GD_QUA_TRINH_CONG_TAC()
