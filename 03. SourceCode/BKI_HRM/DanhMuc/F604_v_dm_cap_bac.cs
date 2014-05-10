@@ -223,6 +223,7 @@ namespace BKI_HRM
             this.m_fg.Size = new System.Drawing.Size(686, 314);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
+            this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
             // 
             // m_lbl_tim_kiem
             // 
@@ -640,6 +641,18 @@ namespace BKI_HRM
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_fg_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                update_v_dm_cap_bac();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 

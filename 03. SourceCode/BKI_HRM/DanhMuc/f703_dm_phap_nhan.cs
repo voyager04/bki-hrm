@@ -221,6 +221,7 @@ namespace BKI_HRM
             this.m_fg.Size = new System.Drawing.Size(1146, 322);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
+            this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
             // 
             // m_cmd_tim_kiem
             // 
@@ -247,7 +248,7 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(749, 20);
             this.m_txt_tim_kiem.TabIndex = 31;
             this.m_txt_tim_kiem.Text = "Nhập Mã pháp nhân, Tên pháp nhân, Mã số thuế, Mã đăng ký kinh doanh, Tháng đăng k" +
-    "ý kinh doanh, Địa chỉ, Người đại diện";
+                "ý kinh doanh, Địa chỉ, Người đại diện";
             this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
             this.m_txt_tim_kiem.Leave += new System.EventHandler(this.m_txt_tim_kiem_Leave);
             // 
@@ -576,6 +577,18 @@ namespace BKI_HRM
             }
         }
         #endregion
+
+        private void m_fg_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                update_dm_phap_nhan();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
 

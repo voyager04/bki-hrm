@@ -280,6 +280,7 @@ namespace BKI_HRM {
             this.m_fg.Size = new System.Drawing.Size(845, 354);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 23;
+            this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
             // 
             // f105_v_gd_chi_tiet_cap_bac
             // 
@@ -546,6 +547,18 @@ namespace BKI_HRM {
         }
 
         private void m_cmd_them_quyet_dinh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                update_v_gd_chi_tiet_cap_bac();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_fg_DoubleClick(object sender, EventArgs e)
         {
             try
             {
