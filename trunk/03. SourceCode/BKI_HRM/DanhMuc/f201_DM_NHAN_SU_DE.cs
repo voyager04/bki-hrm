@@ -364,8 +364,8 @@ namespace BKI_HRM
                 }
                
                 newImage.Save(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg", ImageFormat.Jpeg);
-              //  m_us_dm_nhan_su.strANH = Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg";
-                m_us_dm_nhan_su.strANH = m_us_dm_nhan_su.strMA_NV;
+                m_us_dm_nhan_su.strANH = Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg";
+               // m_us_dm_nhan_su.strANH = m_us_dm_nhan_su.strMA_NV;
             }
                 
         }
