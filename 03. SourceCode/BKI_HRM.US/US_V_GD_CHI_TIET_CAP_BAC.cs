@@ -353,6 +353,50 @@ namespace BKI_HRM.US {
             pm_objDR["LUA_CHON"] = System.Convert.DBNull;
         }
 
+        public decimal dcID_LOAI_QD
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_LOAI_QD", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_LOAI_QD"] = value;
+            }
+        }
+
+        public bool IsID_LOAI_QDNull()
+        {
+            return pm_objDR.IsNull("ID_LOAI_QD");
+        }
+
+        public void SetID_LOAI_QDNull()
+        {
+            pm_objDR["ID_LOAI_QD"] = System.Convert.DBNull;
+        }
+
+        public string strLOAI_QD
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "LOAI_QD", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["LOAI_QD"] = value;
+            }
+        }
+
+        public bool IsLOAI_QDNull()
+        {
+            return pm_objDR.IsNull("LOAI_QD");
+        }
+
+        public void SetLOAI_QDNull()
+        {
+            pm_objDR["LOAI_QD"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_V_GD_CHI_TIET_CAP_BAC()
@@ -380,6 +424,7 @@ namespace BKI_HRM.US {
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
+
 	
 
         #region "Addtional"
