@@ -328,5 +328,13 @@ namespace BKI_HRM.US
             v_sp.addNVarcharInputParam("@MA_HOP_DONG", ma_hop_dong);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
+
+        public void FillDataSet_Search_by_trang_thai_hop_dong(DS_GD_HOP_DONG op_ds, string trang_thai_hop_dong, decimal id_nhan_su)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_V_GD_HOP_DONG_LAO_DONG_by_trang_thai_hop_dong");
+            v_sp.addNVarcharInputParam("@trang_thai_hop_dong", trang_thai_hop_dong);
+            v_sp.addDecimalInputParam("@id_nhan_su", id_nhan_su);
+            v_sp.fillDataSetByCommand(this, op_ds);
+        }
     }
 }

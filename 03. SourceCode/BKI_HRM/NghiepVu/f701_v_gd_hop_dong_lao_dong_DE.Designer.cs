@@ -70,6 +70,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.m_cmd_bo_dinh_kem = new SIS.Controls.Button.SiSButton();
             this.m_sfd_in_hop_dong = new System.Windows.Forms.SaveFileDialog();
+            this.m_cbo_ma_hop_dong = new System.Windows.Forms.ComboBox();
+            this.m_lbl_ma_hop_dong = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -376,7 +378,7 @@
             "Hợp đồng cũ"});
             this.m_cbo_trang_thai.Location = new System.Drawing.Point(124, 106);
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
-            this.m_cbo_trang_thai.Size = new System.Drawing.Size(157, 21);
+            this.m_cbo_trang_thai.Size = new System.Drawing.Size(190, 21);
             this.m_cbo_trang_thai.TabIndex = 2;
             // 
             // m_lbl_co_che
@@ -391,7 +393,7 @@
             // m_lbl_trang_thai
             // 
             this.m_lbl_trang_thai.AutoSize = true;
-            this.m_lbl_trang_thai.Location = new System.Drawing.Point(37, 62);
+            this.m_lbl_trang_thai.Location = new System.Drawing.Point(37, 82);
             this.m_lbl_trang_thai.Name = "m_lbl_trang_thai";
             this.m_lbl_trang_thai.Size = new System.Drawing.Size(76, 13);
             this.m_lbl_trang_thai.TabIndex = 107;
@@ -428,8 +430,9 @@
             // 
             this.m_txt_ma_hop_dong.Location = new System.Drawing.Point(124, 18);
             this.m_txt_ma_hop_dong.Name = "m_txt_ma_hop_dong";
-            this.m_txt_ma_hop_dong.Size = new System.Drawing.Size(157, 20);
+            this.m_txt_ma_hop_dong.Size = new System.Drawing.Size(63, 20);
             this.m_txt_ma_hop_dong.TabIndex = 0;
+            this.m_txt_ma_hop_dong.TextChanged += new System.EventHandler(this.m_txt_ma_hop_dong_TextChanged);
             // 
             // m_lbl_ma_du_an
             // 
@@ -459,9 +462,9 @@
             // 
             this.m_cbo_loai_hop_dong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_loai_hop_dong.FormattingEnabled = true;
-            this.m_cbo_loai_hop_dong.Location = new System.Drawing.Point(126, 59);
+            this.m_cbo_loai_hop_dong.Location = new System.Drawing.Point(126, 79);
             this.m_cbo_loai_hop_dong.Name = "m_cbo_loai_hop_dong";
-            this.m_cbo_loai_hop_dong.Size = new System.Drawing.Size(155, 21);
+            this.m_cbo_loai_hop_dong.Size = new System.Drawing.Size(188, 21);
             this.m_cbo_loai_hop_dong.TabIndex = 1;
             // 
             // m_cbo_phap_nhan
@@ -500,11 +503,32 @@
             this.m_cmd_bo_dinh_kem.Text = "Gỡ đính kèm";
             this.m_cmd_bo_dinh_kem.Click += new System.EventHandler(this.m_cmd_bo_dinh_kem_Click);
             // 
+            // m_cbo_ma_hop_dong
+            // 
+            this.m_cbo_ma_hop_dong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_ma_hop_dong.FormattingEnabled = true;
+            this.m_cbo_ma_hop_dong.Location = new System.Drawing.Point(193, 18);
+            this.m_cbo_ma_hop_dong.Name = "m_cbo_ma_hop_dong";
+            this.m_cbo_ma_hop_dong.Size = new System.Drawing.Size(121, 21);
+            this.m_cbo_ma_hop_dong.TabIndex = 120;
+            this.m_cbo_ma_hop_dong.SelectedIndexChanged += new System.EventHandler(this.m_cbo_ma_hop_dong_SelectedIndexChanged);
+            // 
+            // m_lbl_ma_hop_dong
+            // 
+            this.m_lbl_ma_hop_dong.AutoSize = true;
+            this.m_lbl_ma_hop_dong.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_ma_hop_dong.Location = new System.Drawing.Point(123, 50);
+            this.m_lbl_ma_hop_dong.Name = "m_lbl_ma_hop_dong";
+            this.m_lbl_ma_hop_dong.Size = new System.Drawing.Size(0, 13);
+            this.m_lbl_ma_hop_dong.TabIndex = 121;
+            // 
             // f701_v_gd_hop_dong_lao_dong_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1054, 437);
+            this.Controls.Add(this.m_lbl_ma_hop_dong);
+            this.Controls.Add(this.m_cbo_ma_hop_dong);
             this.Controls.Add(this.m_cmd_bo_dinh_kem);
             this.Controls.Add(this.m_cbo_phap_nhan);
             this.Controls.Add(this.label7);
@@ -581,5 +605,7 @@
         internal SIS.Controls.Button.SiSButton m_cmd_refresh;
         internal SIS.Controls.Button.SiSButton m_cmd_bo_dinh_kem;
         private System.Windows.Forms.SaveFileDialog m_sfd_in_hop_dong;
+        private System.Windows.Forms.ComboBox m_cbo_ma_hop_dong;
+        private System.Windows.Forms.Label m_lbl_ma_hop_dong;
     }
 }
