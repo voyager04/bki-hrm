@@ -40,6 +40,9 @@ namespace BKI_HRM
         internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
         private Label m_lbl_thoidiem;
         private DateTimePicker m_dtp_thoidiem;
+        private GroupBox groupBox1;
+        private RadioButton m_rdb_nhom;
+        private RadioButton m_rdb_ko_nhom;
 		private System.ComponentModel.IContainer components;
 
 		public f406_bao_cao_bo_nhiem()
@@ -88,8 +91,12 @@ namespace BKI_HRM
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_lbl_thoidiem = new System.Windows.Forms.Label();
             this.m_dtp_thoidiem = new System.Windows.Forms.DateTimePicker();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.m_rdb_nhom = new System.Windows.Forms.RadioButton();
+            this.m_rdb_ko_nhom = new System.Windows.Forms.RadioButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ImageList
@@ -127,7 +134,7 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 425);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(834, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(934, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_xuat_excel
@@ -155,7 +162,7 @@ namespace BKI_HRM
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(742, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(842, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -167,7 +174,7 @@ namespace BKI_HRM
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_fg.Location = new System.Drawing.Point(0, 75);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(834, 350);
+            this.m_fg.Size = new System.Drawing.Size(934, 350);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
@@ -180,7 +187,7 @@ namespace BKI_HRM
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(592, 7);
+            this.m_cmd_search.Location = new System.Drawing.Point(679, 7);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 22;
@@ -191,9 +198,9 @@ namespace BKI_HRM
             // 
             this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(124, 12);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(232, 12);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
-            this.m_txt_tim_kiem.Size = new System.Drawing.Size(462, 20);
+            this.m_txt_tim_kiem.Size = new System.Drawing.Size(441, 20);
             this.m_txt_tim_kiem.TabIndex = 21;
             this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
             this.m_txt_tim_kiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.m_txt_tim_kiem_KeyDown);
@@ -202,7 +209,7 @@ namespace BKI_HRM
             // m_lbl_thoidiem
             // 
             this.m_lbl_thoidiem.AutoSize = true;
-            this.m_lbl_thoidiem.Location = new System.Drawing.Point(18, 41);
+            this.m_lbl_thoidiem.Location = new System.Drawing.Point(773, 18);
             this.m_lbl_thoidiem.Name = "m_lbl_thoidiem";
             this.m_lbl_thoidiem.Size = new System.Drawing.Size(41, 13);
             this.m_lbl_thoidiem.TabIndex = 40;
@@ -214,28 +221,65 @@ namespace BKI_HRM
             this.m_dtp_thoidiem.Enabled = false;
             this.m_dtp_thoidiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_dtp_thoidiem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_thoidiem.Location = new System.Drawing.Point(65, 38);
+            this.m_dtp_thoidiem.Location = new System.Drawing.Point(820, 12);
             this.m_dtp_thoidiem.Name = "m_dtp_thoidiem";
-            this.m_dtp_thoidiem.Size = new System.Drawing.Size(176, 20);
+            this.m_dtp_thoidiem.Size = new System.Drawing.Size(102, 20);
             this.m_dtp_thoidiem.TabIndex = 39;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.m_rdb_nhom);
+            this.groupBox1.Controls.Add(this.m_rdb_ko_nhom);
+            this.groupBox1.Location = new System.Drawing.Point(12, 7);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(190, 65);
+            this.groupBox1.TabIndex = 41;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Hiển thị:";
+            // 
+            // m_rdb_nhom
+            // 
+            this.m_rdb_nhom.AutoSize = true;
+            this.m_rdb_nhom.Location = new System.Drawing.Point(21, 44);
+            this.m_rdb_nhom.Name = "m_rdb_nhom";
+            this.m_rdb_nhom.Size = new System.Drawing.Size(169, 17);
+            this.m_rdb_nhom.TabIndex = 1;
+            this.m_rdb_nhom.Text = "Nhóm theo địa bàn, mã đơn vị";
+            this.m_rdb_nhom.UseVisualStyleBackColor = true;
+            this.m_rdb_nhom.CheckedChanged += new System.EventHandler(this.m_rdb_nhom_CheckedChanged);
+            // 
+            // m_rdb_ko_nhom
+            // 
+            this.m_rdb_ko_nhom.AutoSize = true;
+            this.m_rdb_ko_nhom.Checked = true;
+            this.m_rdb_ko_nhom.Location = new System.Drawing.Point(21, 20);
+            this.m_rdb_ko_nhom.Name = "m_rdb_ko_nhom";
+            this.m_rdb_ko_nhom.Size = new System.Drawing.Size(85, 17);
+            this.m_rdb_ko_nhom.TabIndex = 0;
+            this.m_rdb_ko_nhom.TabStop = true;
+            this.m_rdb_ko_nhom.Text = "Không nhóm";
+            this.m_rdb_ko_nhom.UseVisualStyleBackColor = true;
             // 
             // f406_bao_cao_bo_nhiem
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(834, 461);
+            this.ClientSize = new System.Drawing.Size(934, 461);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_lbl_thoidiem);
             this.Controls.Add(this.m_dtp_thoidiem);
             this.Controls.Add(this.m_cmd_search);
             this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
-            this.MaximumSize = new System.Drawing.Size(850, 500);
-            this.MinimumSize = new System.Drawing.Size(850, 500);
+            this.MaximumSize = new System.Drawing.Size(950, 500);
+            this.MinimumSize = new System.Drawing.Size(950, 500);
             this.Name = "f406_bao_cao_bo_nhiem";
             this.Text = "f406_bao_cao_bo_nhiem";
             this.Load += new System.EventHandler(this.f406_bao_cao_bo_nhiem_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,18 +347,21 @@ namespace BKI_HRM
             m_us.FillDatasetByProc(m_ds, m_txt_tim_kiem.Text.Trim());
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            m_fg.Subtotal(AggregateEnum.Count
-              , 0
-              , (int)e_col_Number.DIA_BAN    // Group theo cột này
-              , (int)e_col_Number.MA_DON_VI       // Subtotal theo cột này
-              , "{0}"
-              );
-            m_fg.Subtotal(AggregateEnum.Count
-              , 1
-              , (int)e_col_Number.MA_DV_CAP_TREN   // Group theo cột này
-              , (int)e_col_Number.MA_DON_VI         // Subtotal theo cột này
-              , "{0}"
-              );
+            if (m_rdb_nhom.Checked == true)
+            {
+                m_fg.Subtotal(AggregateEnum.Count
+                  , 0
+                  , (int)e_col_Number.DIA_BAN    // Group theo cột này
+                  , (int)e_col_Number.MA_DON_VI       // Subtotal theo cột này
+                  , "{0}"
+                  );
+                m_fg.Subtotal(AggregateEnum.Count
+                  , 1
+                  , (int)e_col_Number.MA_DV_CAP_TREN   // Group theo cột này
+                  , (int)e_col_Number.MA_DON_VI         // Subtotal theo cột này
+                  , "{0}"
+                  );
+            }
 			m_fg.Redraw = true;
 		}
 		private void grid2us_object(US_RPT_BO_NHIEM i_us
@@ -487,6 +534,25 @@ namespace BKI_HRM
             try
             {
                 xem_danh_sach();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_rdb_nhom_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_txt_tim_kiem.Text.Trim() == "Nhập mã đơn vị")
+                {
+                    m_txt_tim_kiem.Text = "";
+                    load_data_2_grid();
+                    m_txt_tim_kiem.Text = "Nhập mã đơn vị";
+                }
+                else
+                    load_data_2_grid();
             }
             catch (Exception v_e)
             {
