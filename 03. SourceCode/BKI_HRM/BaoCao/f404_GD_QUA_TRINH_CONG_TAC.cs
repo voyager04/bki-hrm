@@ -43,6 +43,9 @@ namespace BKI_HRM
         private Label label1;
         internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
         private C1FlexGrid m_fg;
+        private GroupBox groupBox1;
+        private RadioButton m_rdb_nhom;
+        private RadioButton m_rdb_ko_nhom;
 		private System.ComponentModel.IContainer components;
 
 		public f404_GD_QUA_TRINH_CONG_TAC()
@@ -93,8 +96,12 @@ namespace BKI_HRM
             this.label1 = new System.Windows.Forms.Label();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.m_rdb_ko_nhom = new System.Windows.Forms.RadioButton();
+            this.m_rdb_nhom = new System.Windows.Forms.RadioButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ImageList
@@ -246,16 +253,51 @@ namespace BKI_HRM
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 66);
+            this.m_fg.Location = new System.Drawing.Point(0, 79);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1001, 324);
+            this.m_fg.Size = new System.Drawing.Size(1001, 311);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 39;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.m_rdb_nhom);
+            this.groupBox1.Controls.Add(this.m_rdb_ko_nhom);
+            this.groupBox1.Location = new System.Drawing.Point(50, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(171, 65);
+            this.groupBox1.TabIndex = 40;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Hiển thị:";
+            // 
+            // m_rdb_ko_nhom
+            // 
+            this.m_rdb_ko_nhom.AutoSize = true;
+            this.m_rdb_ko_nhom.Checked = true;
+            this.m_rdb_ko_nhom.Location = new System.Drawing.Point(21, 20);
+            this.m_rdb_ko_nhom.Name = "m_rdb_ko_nhom";
+            this.m_rdb_ko_nhom.Size = new System.Drawing.Size(85, 17);
+            this.m_rdb_ko_nhom.TabIndex = 0;
+            this.m_rdb_ko_nhom.TabStop = true;
+            this.m_rdb_ko_nhom.Text = "Không nhóm";
+            this.m_rdb_ko_nhom.UseVisualStyleBackColor = true;
+            // 
+            // m_rdb_nhom
+            // 
+            this.m_rdb_nhom.AutoSize = true;
+            this.m_rdb_nhom.Location = new System.Drawing.Point(21, 44);
+            this.m_rdb_nhom.Name = "m_rdb_nhom";
+            this.m_rdb_nhom.Size = new System.Drawing.Size(144, 17);
+            this.m_rdb_nhom.TabIndex = 1;
+            this.m_rdb_nhom.Text = "Nhóm theo mã nhân viên";
+            this.m_rdb_nhom.UseVisualStyleBackColor = true;
+            this.m_rdb_nhom.CheckedChanged += new System.EventHandler(this.m_rdb_nhom_CheckedChanged);
             // 
             // f404_GD_QUA_TRINH_CONG_TAC
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(1001, 426);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_ckb_duan);
@@ -271,6 +313,8 @@ namespace BKI_HRM
             this.Load += new System.EventHandler(this.f404_GD_QUA_TRINH_CONG_TAC_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,12 +402,15 @@ namespace BKI_HRM
 			m_us.FillDatasetByProc(m_ds,m_txt_tim_kiem.Text.Trim(), m_str_lua_chon);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count
-              , 0
-              , (int)e_col_Number.MA_NV
-              , (int)e_col_Number.HO_DEM
-              , "{0}"
-              );
+            if (m_rdb_nhom.Checked == true)
+            {
+                m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count
+                  , 0
+                  , (int)e_col_Number.MA_NV
+                  , (int)e_col_Number.HO_DEM
+                  , "{0}"
+                  );
+            }
 			m_fg.Redraw = true;
 		}
 		private void grid2us_object(US_GD_QUA_TRINH_CONG_TAC i_us
@@ -427,6 +474,7 @@ namespace BKI_HRM
             v_obj_excel_rpt.FindAndReplace(false);
             v_obj_excel_rpt.Export2ExcelWithoutFixedRows(m_fg, 1, m_fg.Cols.Count - 1, true);
         }
+
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 		}
@@ -605,6 +653,29 @@ namespace BKI_HRM
             try
             {
                 export_2_excel();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_rdb_nhom_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_txt_tim_kiem.Text.Trim() == "Nhập mã nhân viên, họ đệm, tên")
+                {
+                    m_txt_tim_kiem.Text = "";
+                    what_is_checked();
+                    load_data_2_grid();
+                    m_txt_tim_kiem.Text = "Nhập mã nhân viên, họ đệm, tên";
+                }
+                else
+                {
+                    what_is_checked();
+                    load_data_2_grid();
+                }
             }
             catch (Exception v_e)
             {
