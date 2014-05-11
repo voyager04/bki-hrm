@@ -253,6 +253,8 @@
         public const string ID_QUYET_DINH_MIEN_NHIEM = "ID_QUYET_DINH_MIEN_NHIEM";
         public const string LUA_CHON = "LUA_CHON";
         public const string TY_LE_THAM_GIA = "TY_LE_THAM_GIA";
+        public const string ID_LOAI_QD = "ID_LOAI_QD";
+        public const string LOAI_QD = "LOAI_QD";
         //public const string MA_DV_CAP_TREN = "MA_DV_CAP_TREN";
     }
 
@@ -610,6 +612,8 @@
        public const string NGAY_HET_HIEU_LUC = "NGAY_HET_HIEU_LUC";
        public const string MA_CAP_BAC = "MA_CAP_BAC";
        public const string LUA_CHON = "LUA_CHON";
+       public const string ID_LOAI_QD = "ID_LOAI_QD";
+       public const string LOAI_QD = "LOAI_QD";
    }
 
    public class DM_CAP_BAC {
@@ -643,6 +647,7 @@
        public const string VAI_TRO = "VAI_TRO";
        public const string TY_LE_THAM_GIA = "TY_LE_THAM_GIA";
        public const string MA_QUYET_DINH = "MA_QUYET_DINH";
+       public const string LOAI_QD = "LOAI_QD";
        public const string MA_QUYET_DINH_MIEN_NHIEM = "MA_QUYET_DINH_MIEN_NHIEM";
    }
 

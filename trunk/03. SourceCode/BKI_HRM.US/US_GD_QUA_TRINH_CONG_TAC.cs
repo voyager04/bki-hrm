@@ -264,6 +264,28 @@ public class US_GD_QUA_TRINH_CONG_TAC : US_Object
         pm_objDR["MA_QUYET_DINH"] = System.Convert.DBNull;
     }
 
+    public string strLOAI_QD
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "LOAI_QD", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["LOAI_QD"] = value;
+        }
+    }
+
+    public bool IsLOAI_QDNull()
+    {
+        return pm_objDR.IsNull("LOAI_QD");
+    }
+
+    public void SetLOAI_QDNull()
+    {
+        pm_objDR["LOAI_QD"] = System.Convert.DBNull;
+    }
+
     public string strMA_QUYET_DINH_MIEN_NHIEM
     {
         get
@@ -313,6 +335,7 @@ public class US_GD_QUA_TRINH_CONG_TAC : US_Object
         pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
     }
     #endregion
+
 
     #region Addtional
     public void FillDatasetByProc(DS_GD_QUA_TRINH_CONG_TAC op_ds_v_qua_trinh_cong_tac, string ip_str_key_word, string ip_str_lua_chon)
