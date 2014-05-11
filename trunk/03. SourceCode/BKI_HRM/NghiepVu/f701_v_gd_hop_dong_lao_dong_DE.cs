@@ -86,7 +86,7 @@ namespace BKI_HRM.NghiepVu
                 return false;
             }
 
-            if (!Regex.IsMatch(m_txt_ma_hop_dong.Text, "^[\\w-/\\s]+$"))
+            if (!Regex.IsMatch(m_txt_ma_hop_dong.Text, "^[0-9]+$"))
             {
                 BaseMessages.MsgBox_Infor("Bạn nhập Mã Hợp Đồng chưa đúng định dạng");
                 return false;
@@ -186,7 +186,16 @@ namespace BKI_HRM.NghiepVu
                         return;
                     }
                     m_us.Insert();
+                    DS_GD_HOP_DONG v_ds_hd = new DS_GD_HOP_DONG();
+                    m_us.FillDataSet_Search_by_trang_thai_hop_dong(v_ds_hd, "Y", m_us.dcID_NHAN_SU);
+                    var v_i_total_record = v_ds_hd.Tables[0].Rows.Count;
+                    if (v_i_total_record > 0)
+                    {
+                        m_us.strTRANG_THAI_HOP_DONG = "N";
+                        m_us.Update();
+                    }
                     break;
+                    
                 case DataEntryFormMode.UpdateDataState:
                     US_GD_HOP_DONG v_us_gd_hop_dong = new US_GD_HOP_DONG(m_str_id_hop_dong_old);
                     if (!m_txt_ma_hop_dong.Text.Equals(v_us_gd_hop_dong.strMA_HOP_DONG))
@@ -337,11 +346,6 @@ namespace BKI_HRM.NghiepVu
                 return;
             }
             modify_name_file(m_str_from, m_str_path + m_str_time_now + "-" + m_str_file_name);
-            //byte[] bytes = File.ReadAllBytes(m_str_path + m_str_time_now + "-" + m_str_file_name);
-            //File.WriteAllBytes(m_str_to + m_str_time_now + "-" + m_str_file_name, bytes);
-            //FileStream fileStream = new FileStream(m_str_to, FileMode.OpenOrCreate, FileAccess.ReadWrite);
-            //fileStream.Write(bytes, 0 , bytes.Length);
-
 
             File.Move(m_str_path + m_str_time_now + "-" + m_str_file_name,
                       m_str_to + m_str_time_now + "-" + m_str_file_name);
@@ -379,10 +383,11 @@ namespace BKI_HRM.NghiepVu
             return false;
         }
 
-        //TODO : generate mã hợp đồng
         private void generate_ma_hop_dong()
         {
-
+            m_lbl_ma_hop_dong.Text = string.Format("{0}/{1}/{2}", m_txt_ma_hop_dong.Text,
+                                                                  m_dat_ngay_co_hieu_luc.Value.Year,
+                                                                  m_cbo_ma_hop_dong.Text);
         }
 
         private void xuat_word()
@@ -450,7 +455,7 @@ namespace BKI_HRM.NghiepVu
         #region Event
         private void f701_v_gd_hop_dong_lao_dong_DE_Load(object sender, EventArgs e)
         {
-            generate_ma_hop_dong();
+            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.MA_HOP_DONG, WinFormControls.eTAT_CA.NO, m_cbo_ma_hop_dong);
             m_txt_ma_hop_dong.Focus();
         }
 
@@ -541,13 +546,37 @@ namespace BKI_HRM.NghiepVu
 
         private void m_cmd_bo_dinh_kem_Click(object sender, EventArgs e)
         {
-            if (File.Exists(m_str_to + "TOPICA-" + m_lbl_file_name.Text))
+            string v_str_to = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
+            if (File.Exists(m_us.strLINK))
             {
-                m_str_file_name_old = m_lbl_file_name.Text;
-                m_lbl_file_name.Text = "";
+                File.Delete(m_us.strLINK);
             }
         }
         #endregion
+
+        private void m_txt_ma_hop_dong_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                generate_ma_hop_dong();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cbo_ma_hop_dong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                generate_ma_hop_dong();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
 
