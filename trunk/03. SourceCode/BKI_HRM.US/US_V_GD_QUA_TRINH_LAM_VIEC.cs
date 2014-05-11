@@ -748,6 +748,94 @@ namespace BKI_HRM.US {
             pm_objDR["ID_CHUC_VU"] = System.Convert.DBNull;
         }
 
+        public string strMA_DV_CAP_TREN
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "MA_DV_CAP_TREN", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["MA_DV_CAP_TREN"] = value;
+            }
+        }
+
+        public bool IsMA_DV_CAP_TRENNull()
+        {
+            return pm_objDR.IsNull("MA_DV_CAP_TREN");
+        }
+
+        public void SetMA_DV_CAP_TRENNull()
+        {
+            pm_objDR["MA_DV_CAP_TREN"] = System.Convert.DBNull;
+        }
+
+        public string strTEN_DV_CAP_TREN
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "TEN_DV_CAP_TREN", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["TEN_DV_CAP_TREN"] = value;
+            }
+        }
+
+        public bool IsTEN_DV_CAP_TRENNull()
+        {
+            return pm_objDR.IsNull("TEN_DV_CAP_TREN");
+        }
+
+        public void SetTEN_DV_CAP_TRENNull()
+        {
+            pm_objDR["TEN_DV_CAP_TREN"] = System.Convert.DBNull;
+        }
+
+        public decimal dcID_LOAI_QD
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_LOAI_QD", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_LOAI_QD"] = value;
+            }
+        }
+
+        public bool IsID_LOAI_QDNull()
+        {
+            return pm_objDR.IsNull("ID_LOAI_QD");
+        }
+
+        public void SetID_LOAI_QDNull()
+        {
+            pm_objDR["ID_LOAI_QD"] = System.Convert.DBNull;
+        }
+
+        public string strLOAI_QD
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "LOAI_QD", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["LOAI_QD"] = value;
+            }
+        }
+
+        public bool IsLOAI_QDNull()
+        {
+            return pm_objDR.IsNull("LOAI_QD");
+        }
+
+        public void SetLOAI_QDNull()
+        {
+            pm_objDR["LOAI_QD"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_V_GD_QUA_TRINH_LAM_VIEC()
