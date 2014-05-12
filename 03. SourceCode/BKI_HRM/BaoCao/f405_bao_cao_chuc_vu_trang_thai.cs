@@ -74,8 +74,8 @@ namespace BKI_HRM
             }
             //2. tạo danh sách dòng trạng thái
             m_fg.Rows.Count = v_ds_dm_tu_dien.CM_DM_TU_DIEN.Rows.Count + 1;
-            m_fg.Rows[1][0] = "Tổng";
-            m_fg.Rows[1].UserData = 0;
+            //m_fg.Rows[1][0] = "Tổng";
+            //m_fg.Rows[1].UserData = 0;
             for (int j = 1; j < m_fg.Rows.Count; j++)
             {
                 m_fg.Rows[j][0] = v_ds_dm_tu_dien.CM_DM_TU_DIEN.Rows[j - 1][3].ToString();
@@ -113,12 +113,13 @@ namespace BKI_HRM
                         sum += Convert.ToInt32(m_fg.Rows[v][t]);
                     m_fg.Rows[v][1] = sum;
                 }
-                m_fg.SubtotalPosition = SubtotalPositionEnum.AboveData;
+                m_fg.SubtotalPosition = SubtotalPositionEnum.BelowData;
             m_fg.Tree.Column = 0;
             m_fg.Tree.Style = TreeStyleFlags.Simple;
             m_fg.Subtotal(AggregateEnum.Clear);
             for (int u = 1; u < m_fg.Cols.Count;u++ )
                 m_fg.Subtotal(AggregateEnum.Sum, -1, -1, u, "Tổng");
+                m_fg.AutoSizeCols();
             WinFormControls.load_data_to_CheckboxCombobox(m_fg, m_cbc_choose_columns, load_invisible);
             
         }
