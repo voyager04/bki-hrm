@@ -76,6 +76,7 @@
             this.m_dat_thoidiem.Name = "m_dat_thoidiem";
             this.m_dat_thoidiem.Size = new System.Drawing.Size(200, 20);
             this.m_dat_thoidiem.TabIndex = 39;
+            this.m_dat_thoidiem.ValueChanged += new System.EventHandler(this.m_dat_thoidiem_ValueChanged);
             // 
             // label1
             // 

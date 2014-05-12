@@ -77,6 +77,7 @@ namespace BKI_HRM
                 m_fg.Cols[i].UserData = v_ds_dm_tu_dien.CM_DM_TU_DIEN.Rows[i - 4][0];
             }
             //2. tạo danh sách dòng trạng thái
+            
             m_fg.Rows.Count = m_ds_1.V_DM_DON_VI.Rows.Count + 1;
             //m_fg.Rows[1][1] = "Tổng";
             //m_fg.Rows[1].UserData = 0;
@@ -86,6 +87,7 @@ namespace BKI_HRM
                 m_fg.Rows[j][2] = m_ds_1.V_DM_DON_VI.Rows[j - 1][7].ToString();
                 m_fg.Rows[j].UserData = m_ds_1.V_DM_DON_VI.Rows[j - 1][0];
             }
+            m_ds_1.Clear();
             //3.Đưa dữ liệu lên lưới
             m_ds_rpt = new DS_RPT_DON_VI_TRANG_THAI();
             m_us_rpt.FillDatasetByProc(m_ds_rpt, m_dat_thoidiem.Value);
@@ -121,10 +123,9 @@ namespace BKI_HRM
             m_fg.SubtotalPosition = SubtotalPositionEnum.AboveData;
             m_fg.Tree.Column = 1;
             m_fg.Tree.Style = TreeStyleFlags.SimpleLeaf;
-            //m_fg.Subtotal(AggregateEnum.Clear);
+            m_fg.Subtotal(AggregateEnum.Clear);
             //for (int u = 1; u < m_fg.Cols.Count; u++)
-            m_fg.Subtotal(AggregateEnum.Sum, 0, 1, 3, "{0}");
-            
+            //m_fg.Subtotal(AggregateEnum.Sum, 0, 1, 3); 
         }
 
 
@@ -142,6 +143,18 @@ namespace BKI_HRM
             try
             {
                 set_initial_form_load();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_dat_thoidiem_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+               load_data_2_grid();
             }
             catch (Exception v_e)
             {
