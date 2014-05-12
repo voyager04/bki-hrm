@@ -683,35 +683,29 @@ namespace BKI_HRM
         private void load_data_2_grid()
         {
             m_ds = new DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
-            
-            if (m_cbo_trang_thai.SelectedValue.ToString() == "-1")
-            {
-                m_us.FillDataset(m_ds);
-            }
-            else
-            {
-                if (m_cbo_tim_kiem_theo_ngay.SelectedIndex == 0)
-                    m_us.FillDatasetSearch(m_ds,
-                                           m_txt_tim_kiem.Text,
-                                           m_dat_tu_ngay.Value,
-                                           m_dat_den_ngay.Value,
-                                           decimal.Parse(m_cbo_trang_thai.SelectedValue.ToString()),
-                                           0);
-                if (m_cbo_tim_kiem_theo_ngay.SelectedIndex == 1)
-                    m_us.FillDatasetSearch(m_ds,
-                                           m_txt_tim_kiem.Text,
-                                           m_dat_tu_ngay.Value,
-                                           m_dat_den_ngay.Value,
-                                           decimal.Parse(m_cbo_trang_thai.SelectedValue.ToString()),
-                                           1);
-                if (m_cbo_tim_kiem_theo_ngay.SelectedIndex == 2)
-                    m_us.FillDatasetSearch(m_ds,
-                                           m_txt_tim_kiem.Text,
-                                           m_dat_tu_ngay.Value,
-                                           m_dat_den_ngay.Value,
-                                           decimal.Parse(m_cbo_trang_thai.SelectedValue.ToString()),
-                                           2);
-            }
+            m_us.FillDataset(m_ds);
+
+            if (m_cbo_tim_kiem_theo_ngay.SelectedIndex == 0)
+                m_us.FillDatasetSearch(m_ds,
+                                        m_txt_tim_kiem.Text,
+                                        m_dat_tu_ngay.Value,
+                                        m_dat_den_ngay.Value,
+                                        decimal.Parse(m_cbo_trang_thai.SelectedValue.ToString()),
+                                        0);
+            if (m_cbo_tim_kiem_theo_ngay.SelectedIndex == 1)
+                m_us.FillDatasetSearch(m_ds,
+                                        m_txt_tim_kiem.Text,
+                                        m_dat_tu_ngay.Value,
+                                        m_dat_den_ngay.Value,
+                                        decimal.Parse(m_cbo_trang_thai.SelectedValue.ToString()),
+                                        1);
+            if (m_cbo_tim_kiem_theo_ngay.SelectedIndex == 2)
+                m_us.FillDatasetSearch(m_ds,
+                                        m_txt_tim_kiem.Text,
+                                        m_dat_tu_ngay.Value,
+                                        m_dat_den_ngay.Value,
+                                        decimal.Parse(m_cbo_trang_thai.SelectedValue.ToString()),
+                                        2);
 
             m_grv_du_an.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_grv_du_an, m_obj_trans);
