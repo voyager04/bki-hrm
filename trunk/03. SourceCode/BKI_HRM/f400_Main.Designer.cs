@@ -87,6 +87,7 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky = new System.Windows.Forms.Label();
             this.m_lbl_sap_quay_lai = new System.Windows.Forms.Label();
             this.m_lbl_so_luong_nv_hien_tai = new System.Windows.Forms.Label();
+            this.báoCáoNghỉViệcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -392,7 +393,8 @@ namespace BKI_HRM
             this.chToolStripMenuItem,
             this.báoCáoBổNhiệmToolStripMenuItem,
             this.báoCáoDanhSáchBổNhiêmToolStripMenuItem,
-            this.biếnĐộngĐơnVịTrạngTháiToolStripMenuItem});
+            this.biếnĐộngĐơnVịTrạngTháiToolStripMenuItem,
+            this.báoCáoNghỉViệcToolStripMenuItem});
             this.m_menuitem_bcnhansu.Name = "m_menuitem_bcnhansu";
             this.m_menuitem_bcnhansu.Size = new System.Drawing.Size(221, 22);
             this.m_menuitem_bcnhansu.Text = "Báo cáo nhân sự";
@@ -570,6 +572,13 @@ namespace BKI_HRM
             this.m_lbl_so_luong_nv_hien_tai.TabIndex = 7;
             this.m_lbl_so_luong_nv_hien_tai.Text = "so luong nhan vien";
             // 
+            // báoCáoNghỉViệcToolStripMenuItem
+            // 
+            this.báoCáoNghỉViệcToolStripMenuItem.Name = "báoCáoNghỉViệcToolStripMenuItem";
+            this.báoCáoNghỉViệcToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.báoCáoNghỉViệcToolStripMenuItem.Text = "Báo cáo nghỉ việc";
+            this.báoCáoNghỉViệcToolStripMenuItem.Click += new System.EventHandler(this.báoCáoNghỉViệcToolStripMenuItem_Click);
+            // 
             // f400_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -657,5 +666,6 @@ namespace BKI_HRM
         private ToolStripMenuItem báoCáoBổNhiệmToolStripMenuItem;
         private ToolStripMenuItem báoCáoDanhSáchBổNhiêmToolStripMenuItem;
         private ToolStripMenuItem biếnĐộngĐơnVịTrạngTháiToolStripMenuItem;
+        private ToolStripMenuItem báoCáoNghỉViệcToolStripMenuItem;
     }
 }
