@@ -578,13 +578,15 @@ namespace BKI_HRM
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            grid2us_object(m_us, m_fg.Row);
-            //	F205_V_GD_QUYET_DINH_DE v_fDE = new F205_V_GD_QUYET_DINH_DE();
-            //	v_fDE.display(m_us);
-            US_V_DM_QUYET_DINH v_us = new US_V_DM_QUYET_DINH(m_us.dcID);
-            F600_V_DM_QUYET_DINH_DE v_fDE = new F600_V_DM_QUYET_DINH_DE();
-            v_fDE.display_for_update(v_us);
-            load_data_2_grid();
+            if (m_fg.Rows[m_fg.Row].UserData != null)
+            {
+                grid2us_object(m_us, m_fg.Row);
+                US_V_DM_QUYET_DINH v_us = new US_V_DM_QUYET_DINH(m_us.dcID);
+                F600_V_DM_QUYET_DINH_DE v_fDE = new F600_V_DM_QUYET_DINH_DE();
+                v_fDE.display_for_update(v_us);
+                load_data_2_grid();
+            }
+            
         }
 
         private void delete_v_gd_quyet_dinh()

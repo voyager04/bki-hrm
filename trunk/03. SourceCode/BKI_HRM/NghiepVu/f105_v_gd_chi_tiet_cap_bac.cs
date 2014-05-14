@@ -425,6 +425,7 @@ namespace BKI_HRM {
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if (m_fg.Rows[m_fg.Row].UserData == null) return;
             grid2us_object(m_us, m_fg.Row);
             f106_v_gd_chi_tiet_cap_bac_DE v_fDE = new f106_v_gd_chi_tiet_cap_bac_DE();
             v_fDE.display_for_update(m_us);
