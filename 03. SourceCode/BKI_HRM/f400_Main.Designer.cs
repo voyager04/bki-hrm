@@ -77,6 +77,7 @@ namespace BKI_HRM
             this.báoCáoBổNhiệmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.báoCáoDanhSáchBổNhiêmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.biếnĐộngĐơnVịTrạngTháiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.báoCáoNghỉViệcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_tro_giup = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_hdsd = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,7 +88,6 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky = new System.Windows.Forms.Label();
             this.m_lbl_sap_quay_lai = new System.Windows.Forms.Label();
             this.m_lbl_so_luong_nv_hien_tai = new System.Windows.Forms.Label();
-            this.báoCáoNghỉViệcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -460,6 +460,13 @@ namespace BKI_HRM
             this.biếnĐộngĐơnVịTrạngTháiToolStripMenuItem.Text = "Biến động đơn vị trạng thái";
             this.biếnĐộngĐơnVịTrạngTháiToolStripMenuItem.Click += new System.EventHandler(this.biếnĐộngĐơnVịTrạngTháiToolStripMenuItem_Click);
             // 
+            // báoCáoNghỉViệcToolStripMenuItem
+            // 
+            this.báoCáoNghỉViệcToolStripMenuItem.Name = "báoCáoNghỉViệcToolStripMenuItem";
+            this.báoCáoNghỉViệcToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.báoCáoNghỉViệcToolStripMenuItem.Text = "Báo cáo nghỉ việc";
+            this.báoCáoNghỉViệcToolStripMenuItem.Click += new System.EventHandler(this.báoCáoNghỉViệcToolStripMenuItem_Click);
+            // 
             // báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem
             // 
             this.báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem.Name = "báoCáoHợpĐồngĐãHếtHạnToolStripMenuItem";
@@ -563,6 +570,7 @@ namespace BKI_HRM
             // m_lbl_so_luong_nv_hien_tai
             // 
             this.m_lbl_so_luong_nv_hien_tai.AutoSize = true;
+            this.m_lbl_so_luong_nv_hien_tai.Cursor = System.Windows.Forms.Cursors.Hand;
             this.m_lbl_so_luong_nv_hien_tai.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_lbl_so_luong_nv_hien_tai.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_so_luong_nv_hien_tai.ForeColor = System.Drawing.Color.Red;
@@ -571,13 +579,7 @@ namespace BKI_HRM
             this.m_lbl_so_luong_nv_hien_tai.Size = new System.Drawing.Size(143, 18);
             this.m_lbl_so_luong_nv_hien_tai.TabIndex = 7;
             this.m_lbl_so_luong_nv_hien_tai.Text = "so luong nhan vien";
-            // 
-            // báoCáoNghỉViệcToolStripMenuItem
-            // 
-            this.báoCáoNghỉViệcToolStripMenuItem.Name = "báoCáoNghỉViệcToolStripMenuItem";
-            this.báoCáoNghỉViệcToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
-            this.báoCáoNghỉViệcToolStripMenuItem.Text = "Báo cáo nghỉ việc";
-            this.báoCáoNghỉViệcToolStripMenuItem.Click += new System.EventHandler(this.báoCáoNghỉViệcToolStripMenuItem_Click);
+            this.m_lbl_so_luong_nv_hien_tai.Click += new System.EventHandler(this.m_lbl_so_luong_nv_hien_tai_Click);
             // 
             // f400_Main
             // 

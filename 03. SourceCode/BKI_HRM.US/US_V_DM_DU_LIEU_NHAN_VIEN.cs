@@ -602,7 +602,8 @@ namespace BKI_HRM.US {
                                             , string ip_str_oderby_01
                                             , string ip_str_oderby_02
                                             , string ip_str_oderby_03
-            ) {
+            )
+        {
 
             CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_search");
             v_stored_proc.addNVarcharInputParam("@ip_str_01_search", ip_str_search);

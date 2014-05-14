@@ -50,8 +50,46 @@ namespace BKI_HRM
             //CControlFormat.setFormStyle(this, new CAppContext_201());
             set_define_events();
             ShowInTaskbar = true;
-            m_us_trang_thai_lao_dong.Count_Nhan_vien(ref  hien_tai);
-            m_lbl_so_luong_nv_hien_tai.Text = "Số lượng nhân viên hiện tại: " + hien_tai.ToString();
+           // m_us_trang_thai_lao_dong.Count_Nhan_vien(ref  hien_tai);
+            US_V_DM_DU_LIEU_NHAN_VIEN v_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
+            DS_V_DM_DU_LIEU_NHAN_VIEN v_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
+            v_us.FillDatasetAll(v_ds,  ""
+                        , ""
+                        , ""
+                        , ""
+                        , ""
+                        , ""
+                        , ""
+                        , ""
+                        , ""
+                        , ""
+                        , ""
+                        , ""
+                        , ""
+                        , ""
+                        , ""
+                        , ""
+                        , ""
+                        , ""
+                        , ""
+                        , ""
+                        , ""
+                        , ""
+                        , ""
+                        , ""
+                        , ""
+                        , ""
+                        , ""
+                        , ""
+                        , ""
+                        , ""
+                        , "Y"
+                        , "Y"
+                        , ""
+                        , ""
+                        , "");
+
+            m_lbl_so_luong_nv_hien_tai.Text = "Số lượng nhân viên hiện tại: " + v_ds.V_DM_DU_LIEU_NHAN_VIEN.Count.ToString();
         }
 
         private f103_bao_cao_tra_cuu_nhan_su thong_bao_thu_viec_sap_het_han()
@@ -770,6 +808,19 @@ namespace BKI_HRM
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_lbl_so_luong_nv_hien_tai_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f103_bao_cao_tra_cuu_nhan_su v_frm = new f103_bao_cao_tra_cuu_nhan_su();
+                v_frm.display();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
