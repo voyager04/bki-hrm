@@ -611,6 +611,8 @@ namespace BKI_HRM
 
         private void m_dtp_thoidiem_ValueChanged(object sender, EventArgs e)
         {
+            try
+            {
             if (m_txt_tim_kiem.Text.Trim() == "Nhập mã chức vụ, mã nhân viên, họ tên")
             {
                 m_txt_tim_kiem.Text = "";
@@ -619,6 +621,11 @@ namespace BKI_HRM
             }
             else
                 load_data_2_grid_search();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void m_rdb_nhom_CheckedChanged(object sender, EventArgs e)
