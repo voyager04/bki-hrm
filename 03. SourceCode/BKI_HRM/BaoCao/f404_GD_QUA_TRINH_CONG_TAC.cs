@@ -97,8 +97,8 @@ namespace BKI_HRM
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.m_rdb_ko_nhom = new System.Windows.Forms.RadioButton();
             this.m_rdb_nhom = new System.Windows.Forms.RadioButton();
+            this.m_rdb_ko_nhom = new System.Windows.Forms.RadioButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -265,10 +265,21 @@ namespace BKI_HRM
             this.groupBox1.Controls.Add(this.m_rdb_ko_nhom);
             this.groupBox1.Location = new System.Drawing.Point(50, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(171, 65);
+            this.groupBox1.Size = new System.Drawing.Size(188, 65);
             this.groupBox1.TabIndex = 40;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hiển thị:";
+            // 
+            // m_rdb_nhom
+            // 
+            this.m_rdb_nhom.AutoSize = true;
+            this.m_rdb_nhom.Location = new System.Drawing.Point(21, 44);
+            this.m_rdb_nhom.Name = "m_rdb_nhom";
+            this.m_rdb_nhom.Size = new System.Drawing.Size(144, 17);
+            this.m_rdb_nhom.TabIndex = 1;
+            this.m_rdb_nhom.Text = "Nhóm theo mã nhân viên";
+            this.m_rdb_nhom.UseVisualStyleBackColor = true;
+            this.m_rdb_nhom.CheckedChanged += new System.EventHandler(this.m_rdb_nhom_CheckedChanged);
             // 
             // m_rdb_ko_nhom
             // 
@@ -281,17 +292,6 @@ namespace BKI_HRM
             this.m_rdb_ko_nhom.TabStop = true;
             this.m_rdb_ko_nhom.Text = "Không nhóm";
             this.m_rdb_ko_nhom.UseVisualStyleBackColor = true;
-            // 
-            // m_rdb_nhom
-            // 
-            this.m_rdb_nhom.AutoSize = true;
-            this.m_rdb_nhom.Location = new System.Drawing.Point(21, 44);
-            this.m_rdb_nhom.Name = "m_rdb_nhom";
-            this.m_rdb_nhom.Size = new System.Drawing.Size(144, 17);
-            this.m_rdb_nhom.TabIndex = 1;
-            this.m_rdb_nhom.Text = "Nhóm theo mã nhân viên";
-            this.m_rdb_nhom.UseVisualStyleBackColor = true;
-            this.m_rdb_nhom.CheckedChanged += new System.EventHandler(this.m_rdb_nhom_CheckedChanged);
             // 
             // f404_GD_QUA_TRINH_CONG_TAC
             // 
