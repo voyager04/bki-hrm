@@ -670,6 +670,14 @@ namespace BKI_HRM.US {
             CStoredProc v_sp = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_Nhan_vien_sap_quay_lai");
             v_sp.fillDataSetByCommand(this, m_ds);
         }
+        public void FillDatasetNVNghiviec(DS_V_DM_DU_LIEU_NHAN_VIEN op_m_ds, string ip_str_key_word, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
+        {
+            CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_nghi_viec");
+            v_stored_proc.addNVarcharInputParam("@ip_str_tim_kiem", ip_str_key_word);
+            v_stored_proc.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
+            v_stored_proc.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
+            v_stored_proc.fillDataSetByCommand(this, op_m_ds);
+        }
         #endregion
 
 
