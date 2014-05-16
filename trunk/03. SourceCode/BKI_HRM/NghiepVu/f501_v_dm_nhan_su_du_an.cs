@@ -303,7 +303,8 @@ namespace BKI_HRM
 			THOI_GIAN_TG = 11
 ,MA_DU_AN = 2
 ,ID_DU_AN = 1
-,DANH_HIEU = 12
+,DANH_HIEU = 12,
+            MA_QUYET_DINH = 14
 ,MA_NV = 5
 ,TEN_DU_AN = 3
 ,VI_TRI = 8
@@ -312,8 +313,8 @@ namespace BKI_HRM
 ,TEN = 7
 ,THOI_DIEM_TG = 9
 ,ID = 13
-,LUA_CHON = 15
-,MO_TA = 14
+,LUA_CHON = 16
+,MO_TA = 15
 ,THOI_DIEM_KT = 10
 
 		}			
@@ -357,6 +358,7 @@ namespace BKI_HRM
 			v_htb.Add(V_DM_NHAN_SU_DU_AN.LUA_CHON, e_col_Number.LUA_CHON);
 			v_htb.Add(V_DM_NHAN_SU_DU_AN.MO_TA, e_col_Number.MO_TA);
 			v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_DIEM_KT, e_col_Number.THOI_DIEM_KT);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_QUYET_DINH, e_col_Number.MA_QUYET_DINH);
 									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_DM_NHAN_SU_DU_AN.NewRow());
 			return v_obj_trans;			
