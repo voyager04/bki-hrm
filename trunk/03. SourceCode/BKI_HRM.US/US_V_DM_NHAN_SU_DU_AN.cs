@@ -353,6 +353,204 @@ namespace BKI_HRM.US
             pm_objDR["LUA_CHON"] = System.Convert.DBNull;
         }
 
+        public decimal dcID_QUYET_DINH
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_QUYET_DINH", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_QUYET_DINH"] = value;
+            }
+        }
+
+        public bool IsID_QUYET_DINHNull()
+        {
+            return pm_objDR.IsNull("ID_QUYET_DINH");
+        }
+
+        public void SetID_QUYET_DINHNull()
+        {
+            pm_objDR["ID_QUYET_DINH"] = System.Convert.DBNull;
+        }
+
+        public string strMA_QUYET_DINH
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "MA_QUYET_DINH", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["MA_QUYET_DINH"] = value;
+            }
+        }
+
+        public bool IsMA_QUYET_DINHNull()
+        {
+            return pm_objDR.IsNull("MA_QUYET_DINH");
+        }
+
+        public void SetMA_QUYET_DINHNull()
+        {
+            pm_objDR["MA_QUYET_DINH"] = System.Convert.DBNull;
+        }
+
+        public decimal dcID_LOAI_QD
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_LOAI_QD", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_LOAI_QD"] = value;
+            }
+        }
+
+        public bool IsID_LOAI_QDNull()
+        {
+            return pm_objDR.IsNull("ID_LOAI_QD");
+        }
+
+        public void SetID_LOAI_QDNull()
+        {
+            pm_objDR["ID_LOAI_QD"] = System.Convert.DBNull;
+        }
+
+        public DateTime datNGAY_CO_HIEU_LUC
+        {
+            get
+            {
+                return CNull.RowNVLDate(pm_objDR, "NGAY_CO_HIEU_LUC", IPConstants.c_DefaultDate);
+            }
+            set
+            {
+                pm_objDR["NGAY_CO_HIEU_LUC"] = value;
+            }
+        }
+
+        public bool IsNGAY_CO_HIEU_LUCNull()
+        {
+            return pm_objDR.IsNull("NGAY_CO_HIEU_LUC");
+        }
+
+        public void SetNGAY_CO_HIEU_LUCNull()
+        {
+            pm_objDR["NGAY_CO_HIEU_LUC"] = System.Convert.DBNull;
+        }
+
+        public DateTime datNGAY_KY
+        {
+            get
+            {
+                return CNull.RowNVLDate(pm_objDR, "NGAY_KY", IPConstants.c_DefaultDate);
+            }
+            set
+            {
+                pm_objDR["NGAY_KY"] = value;
+            }
+        }
+
+        public bool IsNGAY_KYNull()
+        {
+            return pm_objDR.IsNull("NGAY_KY");
+        }
+
+        public void SetNGAY_KYNull()
+        {
+            pm_objDR["NGAY_KY"] = System.Convert.DBNull;
+        }
+
+        public DateTime datNGAY_HET_HIEU_LUC
+        {
+            get
+            {
+                return CNull.RowNVLDate(pm_objDR, "NGAY_HET_HIEU_LUC", IPConstants.c_DefaultDate);
+            }
+            set
+            {
+                pm_objDR["NGAY_HET_HIEU_LUC"] = value;
+            }
+        }
+
+        public bool IsNGAY_HET_HIEU_LUCNull()
+        {
+            return pm_objDR.IsNull("NGAY_HET_HIEU_LUC");
+        }
+
+        public void SetNGAY_HET_HIEU_LUCNull()
+        {
+            pm_objDR["NGAY_HET_HIEU_LUC"] = System.Convert.DBNull;
+        }
+
+        public string strNOI_DUNG
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "NOI_DUNG", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["NOI_DUNG"] = value;
+            }
+        }
+
+        public bool IsNOI_DUNGNull()
+        {
+            return pm_objDR.IsNull("NOI_DUNG");
+        }
+
+        public void SetNOI_DUNGNull()
+        {
+            pm_objDR["NOI_DUNG"] = System.Convert.DBNull;
+        }
+
+        public string strLINK
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "LINK", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["LINK"] = value;
+            }
+        }
+
+        public bool IsLINKNull()
+        {
+            return pm_objDR.IsNull("LINK");
+        }
+
+        public void SetLINKNull()
+        {
+            pm_objDR["LINK"] = System.Convert.DBNull;
+        }
+
+        public string strLOAI_QD
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "LOAI_QD", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["LOAI_QD"] = value;
+            }
+        }
+
+        public bool IsLOAI_QDNull()
+        {
+            return pm_objDR.IsNull("LOAI_QD");
+        }
+
+        public void SetLOAI_QDNull()
+        {
+            pm_objDR["LOAI_QD"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_V_DM_NHAN_SU_DU_AN()

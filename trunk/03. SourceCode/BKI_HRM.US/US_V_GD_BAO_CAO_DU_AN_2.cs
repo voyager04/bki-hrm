@@ -199,6 +199,50 @@ namespace BKI_HRM.US
             pm_objDR["GHI_CHU"] = System.Convert.DBNull;
         }
 
+        public decimal dcID_QUYET_DINH
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_QUYET_DINH", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_QUYET_DINH"] = value;
+            }
+        }
+
+        public bool IsID_QUYET_DINHNull()
+        {
+            return pm_objDR.IsNull("ID_QUYET_DINH");
+        }
+
+        public void SetID_QUYET_DINHNull()
+        {
+            pm_objDR["ID_QUYET_DINH"] = System.Convert.DBNull;
+        }
+
+        public string strMA_QUYET_DINH
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "MA_QUYET_DINH", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["MA_QUYET_DINH"] = value;
+            }
+        }
+
+        public bool IsMA_QUYET_DINHNull()
+        {
+            return pm_objDR.IsNull("MA_QUYET_DINH");
+        }
+
+        public void SetMA_QUYET_DINHNull()
+        {
+            pm_objDR["MA_QUYET_DINH"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_V_GD_BAO_CAO_DU_AN_2()

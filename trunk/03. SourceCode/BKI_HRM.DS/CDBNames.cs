@@ -463,6 +463,7 @@
        public const string ID = "ID";
        public const string MO_TA = "MO_TA";
        public const string LUA_CHON = "LUA_CHON";
+       public const string MA_QUYET_DINH = "MA_QUYET_DINH";
    }
 
    public class V_BAO_CAO_NHAN_SU {
@@ -579,6 +580,7 @@
        public const string NGAY_KET_THUC = "NGAY_KET_THUC";
        public const string CO_CHE = "CO_CHE";
        public const string GHI_CHU = "GHI_CHU";
+       public const string MA_QUYET_DINH = "MA_QUYET_DINH";
    }
    public class GD_CHI_TIET_CHUC_VU
    {
