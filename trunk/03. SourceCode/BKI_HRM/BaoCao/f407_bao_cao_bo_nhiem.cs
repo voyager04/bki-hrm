@@ -88,6 +88,7 @@ namespace BKI_HRM
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f407_bao_cao_bo_nhiem));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_lbl_thoidiem = new System.Windows.Forms.Label();
@@ -100,7 +101,6 @@ namespace BKI_HRM
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.m_rdb_nhom = new System.Windows.Forms.RadioButton();
             this.m_rdb_ko_nhom = new System.Windows.Forms.RadioButton();
-            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -144,6 +144,23 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1189, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
+            // 
+            // m_cmd_xuat_excel
+            // 
+            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xuat_excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xuat_excel.ImageIndex = 19;
+            this.m_cmd_xuat_excel.ImageList = this.ImageList;
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(93, 28);
+            this.m_cmd_xuat_excel.TabIndex = 13;
+            this.m_cmd_xuat_excel.Text = "Xuất Excel";
+            this.m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
             // 
             // m_cmd_exit
             // 
@@ -284,23 +301,6 @@ namespace BKI_HRM
             this.m_rdb_ko_nhom.TabStop = true;
             this.m_rdb_ko_nhom.Text = "Không nhóm";
             this.m_rdb_ko_nhom.UseVisualStyleBackColor = true;
-            // 
-            // m_cmd_xuat_excel
-            // 
-            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_xuat_excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_xuat_excel.ImageIndex = 19;
-            this.m_cmd_xuat_excel.ImageList = this.ImageList;
-            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
-            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(93, 28);
-            this.m_cmd_xuat_excel.TabIndex = 13;
-            this.m_cmd_xuat_excel.Text = "Xuất Excel";
-            this.m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
             // 
             // f407_bao_cao_bo_nhiem
             // 
