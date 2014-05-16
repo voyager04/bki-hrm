@@ -284,7 +284,7 @@ namespace BKI_HRM.US
         v_sp.addNVarcharInputParam("@str_search", i_str_search);
         v_sp.addDatetimeInputParam("@tu_ngay", v_dat_tu_ngay);
         v_sp.addDatetimeInputParam("@den_ngay", v_dat_den_ngay);
-        v_sp.addDecimalInputParam("@id_trang_thai_hop_dong", v_dc_trang_thai);
+        v_sp.addDecimalInputParam("@id_trang_thai_du_an", v_dc_trang_thai);
         v_sp.addDecimalInputParam("@tim_kiem_theo_ngay", v_dc_tim_kiem_theo_ngay);
         v_sp.fillDataSetByCommand(this, op_ds);
     }
