@@ -90,6 +90,8 @@ namespace BKI_HRM
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_rdb_thu_viec_sap_het_han = new System.Windows.Forms.RadioButton();
+            this.m_rdb_nhan_vien_sap_quay_lai = new System.Windows.Forms.RadioButton();
             this.m_cbc_choose_columns = new Checkbox_Combobox.CheckBoxComboBox();
             this.m_lbl_thong_bao = new System.Windows.Forms.Label();
             this.m_lbl_so_nhan_vien = new System.Windows.Forms.Label();
@@ -102,8 +104,6 @@ namespace BKI_HRM
             this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.m_rdb_nhan_vien_sap_quay_lai = new System.Windows.Forms.RadioButton();
-            this.m_rdb_thu_viec_sap_het_han = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -161,6 +161,30 @@ namespace BKI_HRM
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1189, 95);
             this.panel1.TabIndex = 24;
+            // 
+            // m_rdb_thu_viec_sap_het_han
+            // 
+            this.m_rdb_thu_viec_sap_het_han.AutoSize = true;
+            this.m_rdb_thu_viec_sap_het_han.Checked = true;
+            this.m_rdb_thu_viec_sap_het_han.Location = new System.Drawing.Point(494, 68);
+            this.m_rdb_thu_viec_sap_het_han.Name = "m_rdb_thu_viec_sap_het_han";
+            this.m_rdb_thu_viec_sap_het_han.Size = new System.Drawing.Size(126, 17);
+            this.m_rdb_thu_viec_sap_het_han.TabIndex = 33;
+            this.m_rdb_thu_viec_sap_het_han.TabStop = true;
+            this.m_rdb_thu_viec_sap_het_han.Text = "Thử việc sắp hết hạn";
+            this.m_rdb_thu_viec_sap_het_han.UseVisualStyleBackColor = true;
+            this.m_rdb_thu_viec_sap_het_han.CheckedChanged += new System.EventHandler(this.m_rdb_thu_viec_sap_het_han_CheckedChanged);
+            // 
+            // m_rdb_nhan_vien_sap_quay_lai
+            // 
+            this.m_rdb_nhan_vien_sap_quay_lai.AutoSize = true;
+            this.m_rdb_nhan_vien_sap_quay_lai.Location = new System.Drawing.Point(316, 68);
+            this.m_rdb_nhan_vien_sap_quay_lai.Name = "m_rdb_nhan_vien_sap_quay_lai";
+            this.m_rdb_nhan_vien_sap_quay_lai.Size = new System.Drawing.Size(171, 17);
+            this.m_rdb_nhan_vien_sap_quay_lai.TabIndex = 32;
+            this.m_rdb_nhan_vien_sap_quay_lai.Text = "Nhân viên nghỉ sắp quay trở lại";
+            this.m_rdb_nhan_vien_sap_quay_lai.UseVisualStyleBackColor = true;
+            this.m_rdb_nhan_vien_sap_quay_lai.CheckedChanged += new System.EventHandler(this.m_rdb_nhan_vien_sap_quay_lai_CheckedChanged);
             // 
             // m_cbc_choose_columns
             // 
@@ -289,30 +313,6 @@ namespace BKI_HRM
             this.m_cmd_exit.Size = new System.Drawing.Size(118, 28);
             this.m_cmd_exit.TabIndex = 4;
             this.m_cmd_exit.Text = "Thoát (Esc)";
-            // 
-            // m_rdb_nhan_vien_sap_quay_lai
-            // 
-            this.m_rdb_nhan_vien_sap_quay_lai.AutoSize = true;
-            this.m_rdb_nhan_vien_sap_quay_lai.Location = new System.Drawing.Point(316, 68);
-            this.m_rdb_nhan_vien_sap_quay_lai.Name = "m_rdb_nhan_vien_sap_quay_lai";
-            this.m_rdb_nhan_vien_sap_quay_lai.Size = new System.Drawing.Size(171, 17);
-            this.m_rdb_nhan_vien_sap_quay_lai.TabIndex = 32;
-            this.m_rdb_nhan_vien_sap_quay_lai.Text = "Nhân viên nghỉ sắp quay trở lại";
-            this.m_rdb_nhan_vien_sap_quay_lai.UseVisualStyleBackColor = true;
-            this.m_rdb_nhan_vien_sap_quay_lai.CheckedChanged += new System.EventHandler(this.m_rdb_nhan_vien_sap_quay_lai_CheckedChanged);
-            // 
-            // m_rdb_thu_viec_sap_het_han
-            // 
-            this.m_rdb_thu_viec_sap_het_han.AutoSize = true;
-            this.m_rdb_thu_viec_sap_het_han.Checked = true;
-            this.m_rdb_thu_viec_sap_het_han.Location = new System.Drawing.Point(494, 68);
-            this.m_rdb_thu_viec_sap_het_han.Name = "m_rdb_thu_viec_sap_het_han";
-            this.m_rdb_thu_viec_sap_het_han.Size = new System.Drawing.Size(126, 17);
-            this.m_rdb_thu_viec_sap_het_han.TabIndex = 33;
-            this.m_rdb_thu_viec_sap_het_han.TabStop = true;
-            this.m_rdb_thu_viec_sap_het_han.Text = "Thử việc sắp hết hạn";
-            this.m_rdb_thu_viec_sap_het_han.UseVisualStyleBackColor = true;
-            this.m_rdb_thu_viec_sap_het_han.CheckedChanged += new System.EventHandler(this.m_rdb_thu_viec_sap_het_han_CheckedChanged);
             // 
             // f103_bao_cao_tra_cuu_nhan_su
             // 
@@ -527,10 +527,20 @@ namespace BKI_HRM
             if (m_e_form_mode == DataEntryFormMode.ViewDataState)
             {
                 if (m_rdb_nhan_vien_sap_quay_lai.Checked)
+                {
                     m_us.FillDatasetNVSapQuayLai(m_ds);
+                    m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC].Caption = "Ngày quay lại";
+                    m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC].Visible = true;
+                    m_fg.Cols[(int)e_col_Number.NGAY_CO_HIEU_LUC].Caption = "Ngày bắt đầu nghỉ";
+                }
                 else
                     if (m_rdb_thu_viec_sap_het_han.Checked)
+                    {
                         m_us.FillDatasetSapHetHanThuViec(m_ds, "");
+                        m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC].Caption = "Ngày hết hạn thử việc";
+                        m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC].Visible = true;
+                        m_fg.Cols[(int)e_col_Number.NGAY_CO_HIEU_LUC].Caption = "Ngày bắt đầu thử việc";
+                    }
                 m_so_luong_thu_viec_sap_het_han = m_ds.V_DM_DU_LIEU_NHAN_VIEN.Rows.Count;
             }
             else
