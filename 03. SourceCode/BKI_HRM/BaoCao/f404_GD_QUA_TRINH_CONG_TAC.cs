@@ -46,6 +46,7 @@ namespace BKI_HRM
         private GroupBox groupBox1;
         private RadioButton m_rdb_nhom;
         private RadioButton m_rdb_ko_nhom;
+        private CheckBox m_ckb_congtac;
 		private System.ComponentModel.IContainer components;
 
 		public f404_GD_QUA_TRINH_CONG_TAC()
@@ -99,6 +100,7 @@ namespace BKI_HRM
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.m_rdb_nhom = new System.Windows.Forms.RadioButton();
             this.m_rdb_ko_nhom = new System.Windows.Forms.RadioButton();
+            this.m_ckb_congtac = new System.Windows.Forms.CheckBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -293,10 +295,24 @@ namespace BKI_HRM
             this.m_rdb_ko_nhom.Text = "Không nhóm";
             this.m_rdb_ko_nhom.UseVisualStyleBackColor = true;
             // 
+            // m_ckb_congtac
+            // 
+            this.m_ckb_congtac.AutoSize = true;
+            this.m_ckb_congtac.Checked = true;
+            this.m_ckb_congtac.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.m_ckb_congtac.Location = new System.Drawing.Point(501, 43);
+            this.m_ckb_congtac.Name = "m_ckb_congtac";
+            this.m_ckb_congtac.Size = new System.Drawing.Size(69, 17);
+            this.m_ckb_congtac.TabIndex = 41;
+            this.m_ckb_congtac.Text = "Công tác";
+            this.m_ckb_congtac.UseVisualStyleBackColor = true;
+            this.m_ckb_congtac.CheckedChanged += new System.EventHandler(this.m_ckb_congtac_CheckedChanged);
+            // 
             // f404_GD_QUA_TRINH_CONG_TAC
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(1001, 426);
+            this.Controls.Add(this.m_ckb_congtac);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.label1);
@@ -360,7 +376,7 @@ namespace BKI_HRM
 		ITransferDataRow m_obj_trans;		
 		DS_GD_QUA_TRINH_CONG_TAC m_ds = new DS_GD_QUA_TRINH_CONG_TAC();
 		US_GD_QUA_TRINH_CONG_TAC m_us = new US_GD_QUA_TRINH_CONG_TAC();
-        string m_str_lua_chon = "D";
+        string m_str_lua_chon = "ABCD";
 		#endregion
 
 		#region Private Methods
@@ -438,7 +454,7 @@ namespace BKI_HRM
 		}
         private void what_is_checked()
         {
-            if ((m_ckb_chucvu.Checked) && (m_ckb_capbac.Checked) && (m_ckb_duan.Checked))
+            /*if ((m_ckb_chucvu.Checked) && (m_ckb_capbac.Checked) && (m_ckb_duan.Checked))
                 m_str_lua_chon = "D";
             else if ((m_ckb_chucvu.Checked) && (m_ckb_capbac.Checked))
                 m_str_lua_chon = "B";
@@ -451,7 +467,17 @@ namespace BKI_HRM
             else if ((m_ckb_capbac.Checked))
                 m_str_lua_chon = "BCD";
             else
-                m_str_lua_chon = "CAD";
+                m_str_lua_chon = "CAD"*/
+            m_str_lua_chon = "";
+            if (m_ckb_chucvu.Checked)
+                m_str_lua_chon = String.Concat(m_str_lua_chon,"A");
+            if (m_ckb_capbac.Checked)
+                m_str_lua_chon = String.Concat(m_str_lua_chon, "B");
+            if (m_ckb_duan.Checked)
+                m_str_lua_chon = String.Concat(m_str_lua_chon, "C");
+            if (m_ckb_congtac.Checked)
+                m_str_lua_chon = String.Concat(m_str_lua_chon, "D");
+
         }
         private void load_custom_source_2_m_txt_tim_kiem()
         {
@@ -675,6 +701,31 @@ namespace BKI_HRM
                 {
                     what_is_checked();
                     load_data_2_grid();
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_ckb_congtac_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                {
+                    if (m_txt_tim_kiem.Text.Trim() == "Nhập mã nhân viên, họ đệm, tên")
+                    {
+                        m_txt_tim_kiem.Text = "";
+                        what_is_checked();
+                        load_data_2_grid();
+                        m_txt_tim_kiem.Text = "Nhập mã nhân viên, họ đệm, tên";
+                    }
+                    else
+                    {
+                        what_is_checked();
+                        load_data_2_grid();
+                    }
                 }
             }
             catch (Exception v_e)
