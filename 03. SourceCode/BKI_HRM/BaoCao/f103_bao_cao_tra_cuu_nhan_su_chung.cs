@@ -33,8 +33,7 @@ namespace BKI_HRM
         internal ImageList ImageList;
         private C1FlexGrid m_fg;
         private Panel panel1;
-        private Label m_lbl_so_nhan_vien;
-        private Label label2;
+        private Label m_lbl_so_luong_nv;
         internal SiSButton m_cmd_search;
         private TextBox m_txt_search;
         private Label m_lbl_tim_kiem;
@@ -86,7 +85,7 @@ namespace BKI_HRM
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f103_bao_cao_tra_cuu_nhan_su));
-            Checkbox_Combobox.CheckBoxProperties checkBoxProperties2 = new Checkbox_Combobox.CheckBoxProperties();
+            Checkbox_Combobox.CheckBoxProperties checkBoxProperties1 = new Checkbox_Combobox.CheckBoxProperties();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -94,8 +93,7 @@ namespace BKI_HRM
             this.m_rdb_nhan_vien_sap_quay_lai = new System.Windows.Forms.RadioButton();
             this.m_cbc_choose_columns = new Checkbox_Combobox.CheckBoxComboBox();
             this.m_lbl_thong_bao = new System.Windows.Forms.Label();
-            this.m_lbl_so_nhan_vien = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.m_lbl_so_luong_nv = new System.Windows.Forms.Label();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_txt_search = new System.Windows.Forms.TextBox();
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
@@ -151,8 +149,7 @@ namespace BKI_HRM
             this.panel1.Controls.Add(this.m_rdb_nhan_vien_sap_quay_lai);
             this.panel1.Controls.Add(this.m_cbc_choose_columns);
             this.panel1.Controls.Add(this.m_lbl_thong_bao);
-            this.panel1.Controls.Add(this.m_lbl_so_nhan_vien);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.m_lbl_so_luong_nv);
             this.panel1.Controls.Add(this.m_cmd_search);
             this.panel1.Controls.Add(this.m_txt_search);
             this.panel1.Controls.Add(this.m_lbl_tim_kiem);
@@ -188,8 +185,8 @@ namespace BKI_HRM
             // 
             // m_cbc_choose_columns
             // 
-            checkBoxProperties2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.m_cbc_choose_columns.CheckBoxProperties = checkBoxProperties2;
+            checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.m_cbc_choose_columns.CheckBoxProperties = checkBoxProperties1;
             this.m_cbc_choose_columns.DisplayMemberSingleItem = "";
             this.m_cbc_choose_columns.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbc_choose_columns.FormattingEnabled = true;
@@ -208,23 +205,14 @@ namespace BKI_HRM
             this.m_lbl_thong_bao.Text = "Thông báo - cảnh báo ";
             this.m_lbl_thong_bao.Visible = false;
             // 
-            // m_lbl_so_nhan_vien
+            // m_lbl_so_luong_nv
             // 
-            this.m_lbl_so_nhan_vien.AutoSize = true;
-            this.m_lbl_so_nhan_vien.Location = new System.Drawing.Point(204, 77);
-            this.m_lbl_so_nhan_vien.Name = "m_lbl_so_nhan_vien";
-            this.m_lbl_so_nhan_vien.Size = new System.Drawing.Size(25, 13);
-            this.m_lbl_so_nhan_vien.TabIndex = 28;
-            this.m_lbl_so_nhan_vien.Text = "000";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(182, 13);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "Số lượng nhân viên trong danh sách:";
+            this.m_lbl_so_luong_nv.AutoSize = true;
+            this.m_lbl_so_luong_nv.Location = new System.Drawing.Point(12, 77);
+            this.m_lbl_so_luong_nv.Name = "m_lbl_so_luong_nv";
+            this.m_lbl_so_luong_nv.Size = new System.Drawing.Size(182, 13);
+            this.m_lbl_so_luong_nv.TabIndex = 27;
+            this.m_lbl_so_luong_nv.Text = "Số lượng nhân viên trong danh sách:";
             // 
             // m_cmd_search
             // 
@@ -528,7 +516,11 @@ namespace BKI_HRM
         }
         private void load_data_2_grid()
         {
+            US_V_DM_DU_LIEU_NHAN_VIEN v_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
+            DS_V_DM_DU_LIEU_NHAN_VIEN v_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
+            decimal v_dc_so_luong_nv = 0;
             
+           
 
             m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
             if (m_txt_search.Text.Equals(m_str_goi_y_tim_kiem))
@@ -539,6 +531,9 @@ namespace BKI_HRM
             {
                 if (m_rdb_nhan_vien_sap_quay_lai.Checked)
                 {
+                    v_us.count_nhan_vien(v_ds, "nghỉ việc quay lại", ref v_dc_so_luong_nv);
+                    m_lbl_so_luong_nv.Text = "Số lượng nhân viên nghỉ việc sắp quay lại: ";
+                    m_lbl_so_luong_nv.Text += v_dc_so_luong_nv.ToString();
                     m_us.FillDatasetSearch(m_ds
                         , m_str_search
                         , ""
@@ -552,6 +547,9 @@ namespace BKI_HRM
                 else
                     if (m_rdb_thu_viec_sap_het_han.Checked)
                     {
+                        v_us.count_nhan_vien(v_ds, "thử việc hết hạn", ref v_dc_so_luong_nv);
+                        m_lbl_so_luong_nv.Text = "Số lượng nhân viên thử việc sắp hết hạn: ";
+                        m_lbl_so_luong_nv.Text += v_dc_so_luong_nv.ToString();
                         m_us.FillDatasetSearch(m_ds
                             ,m_str_search
                             , ""
@@ -562,10 +560,13 @@ namespace BKI_HRM
                         m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC].Visible = true;
                         m_fg.Cols[(int)e_col_Number.NGAY_CO_HIEU_LUC].Caption = "Ngày bắt đầu thử việc";
                     }
-                m_so_luong_thu_viec_sap_het_han = m_ds.V_DM_DU_LIEU_NHAN_VIEN.Rows.Count;
+               // m_so_luong_thu_viec_sap_het_han = m_ds.V_DM_DU_LIEU_NHAN_VIEN.Rows.Count;
             }
             else
             {
+                v_us.count_nhan_vien(v_ds, "hiện tại", ref v_dc_so_luong_nv);
+                m_lbl_so_luong_nv.Text = "Số lượng nhân viên hiện tại: ";
+                m_lbl_so_luong_nv.Text += v_dc_so_luong_nv.ToString();
                 m_list_key_value = get_list_key_value(m_txt_search.Text);
                 refresh_key_value();
                 get_key_value_from_txt_search();
@@ -865,7 +866,7 @@ namespace BKI_HRM
               , "{0}"
               );
             set_search_format_before();
-            m_lbl_so_nhan_vien.Text = lay_so_ban_ghi().ToString(CultureInfo.InvariantCulture);
+            //m_lbl_so_nhan_vien.Text = lay_so_ban_ghi().ToString(CultureInfo.InvariantCulture);
         }
 
         /*
@@ -1050,6 +1051,8 @@ namespace BKI_HRM
             }
         }
         #endregion
+
+        
 
     }
 }
