@@ -32,8 +32,7 @@ namespace BKI_HRM
 	public class f409_bao_cao_nghi_viec : System.Windows.Forms.Form
 	{
 		internal System.Windows.Forms.ImageList ImageList;
-		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
-        private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
+        internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
         private Label m_lbl_thoidiem;
@@ -45,6 +44,7 @@ namespace BKI_HRM
         private GroupBox groupBox1;
         private RadioButton m_rdb_nhom;
         private RadioButton m_rdb_ko_nhom;
+        private C1FlexGrid m_fg;
 		private System.ComponentModel.IContainer components;
 
 		public f409_bao_cao_nghi_viec()
@@ -86,21 +86,21 @@ namespace BKI_HRM
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f409_bao_cao_nghi_viec));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_lbl_thoidiem = new System.Windows.Forms.Label();
             this.m_dtp_tu_ngay = new System.Windows.Forms.DateTimePicker();
-            this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.m_dtp_den_ngay = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.m_rdb_nhom = new System.Windows.Forms.RadioButton();
             this.m_rdb_ko_nhom = new System.Windows.Forms.RadioButton();
+            this.m_cmd_search = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
             // 
             // ImageList
@@ -141,47 +141,6 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1009, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
-            // m_cmd_exit
-            // 
-            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_exit.ImageIndex = 12;
-            this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(917, 4);
-            this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 11;
-            this.m_cmd_exit.Text = "Thoát (Esc)";
-            // 
-            // m_fg
-            // 
-            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 78);
-            this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1009, 364);
-            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 20;
-            // 
-            // m_cmd_xuat_excel
-            // 
-            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_xuat_excel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_xuat_excel.ImageIndex = 19;
-            this.m_cmd_xuat_excel.ImageList = this.ImageList;
-            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
-            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(118, 28);
-            this.m_cmd_xuat_excel.TabIndex = 12;
-            this.m_cmd_xuat_excel.Text = "Xuất Excel";
-            // 
             // m_lbl_thoidiem
             // 
             this.m_lbl_thoidiem.AutoSize = true;
@@ -200,21 +159,6 @@ namespace BKI_HRM
             this.m_dtp_tu_ngay.Size = new System.Drawing.Size(176, 20);
             this.m_dtp_tu_ngay.TabIndex = 37;
             this.m_dtp_tu_ngay.ValueChanged += new System.EventHandler(this.m_dtp_tu_ngay_ValueChanged);
-            // 
-            // m_cmd_search
-            // 
-            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_search.ImageIndex = 5;
-            this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(653, 7);
-            this.m_cmd_search.Name = "m_cmd_search";
-            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_search.TabIndex = 36;
-            this.m_cmd_search.Text = "Tìm kiếm";
-            this.m_cmd_search.Click += new System.EventHandler(this.m_cmd_search_Click);
             // 
             // m_txt_tim_kiem
             // 
@@ -281,10 +225,67 @@ namespace BKI_HRM
             this.m_rdb_ko_nhom.Text = "Không nhóm";
             this.m_rdb_ko_nhom.UseVisualStyleBackColor = true;
             // 
+            // m_cmd_search
+            // 
+            this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_search.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_search.ImageIndex = 5;
+            this.m_cmd_search.ImageList = this.ImageList;
+            this.m_cmd_search.Location = new System.Drawing.Point(653, 7);
+            this.m_cmd_search.Name = "m_cmd_search";
+            this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_search.TabIndex = 36;
+            this.m_cmd_search.Text = "Tìm kiếm";
+            this.m_cmd_search.Click += new System.EventHandler(this.m_cmd_search_Click);
+            // 
+            // m_cmd_xuat_excel
+            // 
+            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xuat_excel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xuat_excel.ImageIndex = 19;
+            this.m_cmd_xuat_excel.ImageList = this.ImageList;
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(118, 28);
+            this.m_cmd_xuat_excel.TabIndex = 12;
+            this.m_cmd_xuat_excel.Text = "Xuất Excel";
+            // 
+            // m_cmd_exit
+            // 
+            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_exit.ImageIndex = 12;
+            this.m_cmd_exit.ImageList = this.ImageList;
+            this.m_cmd_exit.Location = new System.Drawing.Point(917, 4);
+            this.m_cmd_exit.Name = "m_cmd_exit";
+            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_exit.TabIndex = 11;
+            this.m_cmd_exit.Text = "Thoát (Esc)";
+            // 
+            // m_fg
+            // 
+            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_fg.Location = new System.Drawing.Point(0, 78);
+            this.m_fg.Name = "m_fg";
+            this.m_fg.Size = new System.Drawing.Size(1009, 364);
+            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
+            this.m_fg.TabIndex = 43;
+            // 
             // f409_bao_cao_nghi_viec
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(1009, 478);
+            this.Controls.Add(this.m_fg);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_dtp_den_ngay);
@@ -292,7 +293,6 @@ namespace BKI_HRM
             this.Controls.Add(this.m_dtp_tu_ngay);
             this.Controls.Add(this.m_cmd_search);
             this.Controls.Add(this.m_txt_tim_kiem);
-            this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.MaximumSize = new System.Drawing.Size(1025, 517);
             this.MinimumSize = new System.Drawing.Size(1025, 517);
@@ -300,9 +300,9 @@ namespace BKI_HRM
             this.Text = "f409_bao_cao_nghi_viec";
             this.Load += new System.EventHandler(this.f409_bao_cao_nghi_viec_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,28 +316,52 @@ namespace BKI_HRM
 		#endregion
 
 		#region Data Structure
-		private enum e_col_Number{
-			LOAI_DON_VI = 11
-,TEN_DON_VI = 3
-,MA_NV = 4
-,NGAY_KET_THUC = 14
-,NGAY_BAT_DAU = 13
-,CAP_DON_VI = 12
-,TRANG_THAI_LAO_DONG = 15
-,LOAI_CV = 9
-,DIA_BAN = 1
-,TEN = 6
-,NGAY_CO_HIEU_LUC = 16
-,TRANG_THAI_HIEN_TAI = 18
-,MA_DON_VI = 2
-,HO_DEM = 5
-,TY_LE_THAM_GIA = 10
-,TEN_CV = 8
-,NGAY_HET_HIEU_LUC = 17
-,MA_CV = 7
-,TRANG_THAI_CV = 19
+        private enum e_col_Number
+        {
+            LOAI_DON_VI = 11
+,
+            TEN_DON_VI = 3
+                ,
+            MA_NV = 4
+                ,
+            NGAY_KET_THUC = 14
+                ,
+            NGAY_BAT_DAU = 13
+                ,
+            CAP_DON_VI = 12
+                ,
+            TRANG_THAI_LAO_DONG = 15
+                ,
+            LOAI_CV = 9
+                ,
+            DIA_BAN = 1
+                ,
+            TEN = 6
+                ,
+            NGAY_CO_HIEU_LUC = 16
+                ,
+            MA_DON_VI = 2
+                ,
+            MA_QD_TRANG_THAI_LD = 18
+                ,
+            HO_DEM = 5
+                ,
+            TY_LE_THAM_GIA = 10
+                ,
+            NGAY_KY = 20
+                ,
+            NGAY_CO_HIEU_LUC_LD = 19
+                ,
+            TEN_CV = 8
+                ,
+            NGAY_HET_HIEU_LUC = 17
+                ,
+            NGAY_HET_HIEU_LUC_LD = 21
+                ,
+            MA_CV = 7
+                , LOAI_QD_LD = 22
 
-		}			
+        }			
 		#endregion
 
 		#region Members
@@ -365,26 +389,29 @@ namespace BKI_HRM
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
-			v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.LOAI_DON_VI, e_col_Number.LOAI_DON_VI);
-			v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN_DON_VI, e_col_Number.TEN_DON_VI);
-			v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_NV, e_col_Number.MA_NV);
-			v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_KET_THUC, e_col_Number.NGAY_KET_THUC);
-			v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_BAT_DAU, e_col_Number.NGAY_BAT_DAU);
-			v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.CAP_DON_VI, e_col_Number.CAP_DON_VI);
-			v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRANG_THAI_LAO_DONG, e_col_Number.TRANG_THAI_LAO_DONG);
-			v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.LOAI_CV, e_col_Number.LOAI_CV);
-			v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.DIA_BAN, e_col_Number.DIA_BAN);
-			v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN, e_col_Number.TEN);
-			v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_CO_HIEU_LUC, e_col_Number.NGAY_CO_HIEU_LUC);
-			v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRANG_THAI_HIEN_TAI, e_col_Number.TRANG_THAI_HIEN_TAI);
-			v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_DON_VI, e_col_Number.MA_DON_VI);
-			v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.HO_DEM, e_col_Number.HO_DEM);
-			v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TY_LE_THAM_GIA, e_col_Number.TY_LE_THAM_GIA);
-			v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN_CV, e_col_Number.TEN_CV);
-			v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_HET_HIEU_LUC, e_col_Number.NGAY_HET_HIEU_LUC);
-			v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_CV, e_col_Number.MA_CV);
-			v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRANG_THAI_CV, e_col_Number.TRANG_THAI_CV);
-									
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.LOAI_DON_VI, e_col_Number.LOAI_DON_VI);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN_DON_VI, e_col_Number.TEN_DON_VI);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_NV, e_col_Number.MA_NV);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_KET_THUC, e_col_Number.NGAY_KET_THUC);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_BAT_DAU, e_col_Number.NGAY_BAT_DAU);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.CAP_DON_VI, e_col_Number.CAP_DON_VI);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRANG_THAI_LAO_DONG, e_col_Number.TRANG_THAI_LAO_DONG);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.LOAI_CV, e_col_Number.LOAI_CV);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.DIA_BAN, e_col_Number.DIA_BAN);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN, e_col_Number.TEN);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_CO_HIEU_LUC, e_col_Number.NGAY_CO_HIEU_LUC);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_DON_VI, e_col_Number.MA_DON_VI);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_QD_TRANG_THAI_LD, e_col_Number.MA_QD_TRANG_THAI_LD);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.HO_DEM, e_col_Number.HO_DEM);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TY_LE_THAM_GIA, e_col_Number.TY_LE_THAM_GIA);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_KY, e_col_Number.NGAY_KY);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_CO_HIEU_LUC_LD, e_col_Number.NGAY_CO_HIEU_LUC_LD);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN_CV, e_col_Number.TEN_CV);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_HET_HIEU_LUC, e_col_Number.NGAY_HET_HIEU_LUC);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_HET_HIEU_LUC_LD, e_col_Number.NGAY_HET_HIEU_LUC_LD);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_CV, e_col_Number.MA_CV);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.LOAI_QD_LD, e_col_Number.LOAI_QD_LD);
+						
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_DM_DU_LIEU_NHAN_VIEN.NewRow());
 			return v_obj_trans;			
 		}
