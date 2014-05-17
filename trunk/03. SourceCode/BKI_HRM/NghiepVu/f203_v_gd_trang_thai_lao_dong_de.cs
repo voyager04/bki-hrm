@@ -35,12 +35,12 @@ namespace BKI_HRM
             m_us_v_trang_thai_ld = ip_us_trang_thai_ld;
             us_object_to_form();
             this.ShowDialog();
-            
+
         }
         public void display_for_update(US_V_GD_TRANG_THAI_LAO_DONG ip_us_trang_thai_ld)
         {
             m_us_v_trang_thai_ld = ip_us_trang_thai_ld;
-            
+
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             us_object_to_form();
             this.ShowDialog();
@@ -55,21 +55,21 @@ namespace BKI_HRM
             us_object_to_form();
             this.ShowDialog();
         }
-    #endregion
+        #endregion
 
-    #region Members
+        #region Members
         DataEntryFormMode m_e_form_mode;
         US_V_GD_TRANG_THAI_LAO_DONG m_us_v_trang_thai_ld = new US_V_GD_TRANG_THAI_LAO_DONG();
         DS_V_GD_TRANG_THAI_LAO_DONG m_ds_v_trang_thai_ld = new DS_V_GD_TRANG_THAI_LAO_DONG();
         US_GD_CHI_TIET_TRANG_THAI_LD m_us_trang_thai_ld = new US_GD_CHI_TIET_TRANG_THAI_LD();
-        
+
         US_DM_QUYET_DINH m_us_quyet_dinh = new US_DM_QUYET_DINH();
         DS_DM_QUYET_DINH m_ds_quyet_dinh = new DS_DM_QUYET_DINH();
         bool m_b_check_quyet_dinh_null = false;
         bool m_b_check_quyet_dinh_save;
-    #endregion
+        #endregion
 
-    #region Private Methods
+        #region Private Methods
         private void format_controls()
         {
             CControlFormat.setFormStyle(this, new CAppContext_201());
@@ -100,7 +100,7 @@ namespace BKI_HRM
         {
             m_txt_ma_nv.Text = m_us_v_trang_thai_ld.strMA_NV;
             m_txt_ho_ten.Text = m_us_v_trang_thai_ld.strHO_DEM + " " + m_us_v_trang_thai_ld.strTEN;
-            
+
             m_txt_ma_nv.BackColor = SystemColors.Info;
             m_txt_ma_nv.ReadOnly = true;
             m_txt_ho_ten.BackColor = SystemColors.Info;
@@ -116,7 +116,7 @@ namespace BKI_HRM
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.InsertDataState:
-                    
+
                     m_txt_trang_thai_hien_tai.BackColor = SystemColors.Info;
                     m_txt_trang_thai_hien_tai.ReadOnly = true;
                     break;
@@ -226,17 +226,18 @@ namespace BKI_HRM
             else
                 m_us_quyet_dinh.SetNGAY_HET_HIEU_LUCNull();
         }
-        private void form_to_us_object_trang_thai_ld(){
+        private void form_to_us_object_trang_thai_ld()
+        {
             m_us_trang_thai_ld.dcID = m_us_v_trang_thai_ld.dcID;
             m_us_trang_thai_ld.dcID_NHAN_SU = m_us_v_trang_thai_ld.dcID_NHAN_SU;
             m_us_trang_thai_ld.dcID_TRANG_LAO_DONG = CIPConvert.ToDecimal(m_cbo_trang_thai_moi.SelectedValue);
             if (m_txt_ma_quyet_dinh.Text != "")
                 m_us_trang_thai_ld.dcID_QUYET_DINH = m_us_quyet_dinh.dcID;
             m_us_trang_thai_ld.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value;
-            
+
             if (m_dat_ngay_het_hieu_luc.Checked)
                 m_us_trang_thai_ld.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc.Value;
-            
+
             m_us_trang_thai_ld.strTRANG_THAI_HIEN_TAI = "Y";
         }
         private void chon_file()
@@ -250,7 +251,8 @@ namespace BKI_HRM
         {
             Process.Start("explorer.exe", m_ofd_openfile.FileName);
         }
-        private bool check_validate_data_is_ok(){
+        private bool check_validate_data_is_ok()
+        {
             if (m_dat_ngay_co_hieu_luc.Value.Date > m_dat_ngay_het_hieu_luc.Value.Date && m_dat_ngay_het_hieu_luc.Value.Date > DateTime.Parse("1/1/1900"))
             {
                 BaseMessages.MsgBox_Infor("Ngày hết hiệu lực không thể trước ngày có hiệu lực.");
@@ -265,59 +267,73 @@ namespace BKI_HRM
             }
             return true;
         }
+        private bool confirm_save_data()
+        {
+            BKI_HRM.US.US_CM_DM_TU_DIEN v_us_tu_dien = new BKI_HRM.US.US_CM_DM_TU_DIEN();
+            BKI_HRM.DS.DS_CM_DM_TU_DIEN v_ds_tu_dien = new BKI_HRM.DS.DS_CM_DM_TU_DIEN();
+            string v_str_trang_thai_moi = "";
+           v_us_tu_dien.FillDatasetByID(v_ds_tu_dien, CIPConvert.ToDecimal(m_cbo_trang_thai_moi.SelectedValue), ref v_str_trang_thai_moi );
+           
+            return BaseMessages.MsgBox_Confirm("Bạn có thực sự muốn thay đổi trạng thái lao động của \"" + m_us_v_trang_thai_ld.strHO_DEM + " " + m_us_v_trang_thai_ld.strTEN + "\" thành\n \"" + v_str_trang_thai_moi + "\" không?");
 
-        private void save_data(){
-            
-            switch (m_e_form_mode)
+        }
+        private void save_data()
+        {
+            if (confirm_save_data())
             {
-                    
-                case DataEntryFormMode.UpdateDataState:
-                    if (check_validate_data_is_ok() == false)
-                        return;
-                    else
-                    {
-                        form_to_us_object_quyet_dinh();
-                        if (m_b_check_quyet_dinh_save)
-                        {
-                            if (m_b_check_quyet_dinh_null)
-                            {
-                                m_us_quyet_dinh.Insert();
-                            }
-                            else
-                            {
-                                m_us_quyet_dinh.Update();
-                            }
-                        }
-                        form_to_us_object_trang_thai_ld();
-                        m_us_trang_thai_ld.Update();
-                        
-                    }
-                        
-                    break;
-                case DataEntryFormMode.InsertDataState:
+                switch (m_e_form_mode)
+                {
 
-                    if (check_validate_data_is_ok() == false)
-                        return;
-                    else
-                    {
-                        if (m_txt_ma_quyet_dinh.Text != "")
+                    case DataEntryFormMode.UpdateDataState:
+                        if (check_validate_data_is_ok() == false)
+                            return;
+                        else
                         {
                             form_to_us_object_quyet_dinh();
-                            m_us_quyet_dinh.Insert();
+                            if (m_b_check_quyet_dinh_save)
+                            {
+                                if (m_b_check_quyet_dinh_null)
+                                {
+                                    m_us_quyet_dinh.Insert();
+                                }
+                                else
+                                {
+                                    m_us_quyet_dinh.Update();
+                                }
+                            }
+                            form_to_us_object_trang_thai_ld();
+                            m_us_trang_thai_ld.Update();
+
                         }
-                        form_to_us_object_trang_thai_ld();
-                        m_us_trang_thai_ld.Insert();
-                    }
-                        
-                    break;
-                default:
-                    break;
+
+                        break;
+                    case DataEntryFormMode.InsertDataState:
+
+                        if (check_validate_data_is_ok() == false)
+                            return;
+                        else
+                        {
+                            if (m_txt_ma_quyet_dinh.Text != "")
+                            {
+                                form_to_us_object_quyet_dinh();
+                                m_us_quyet_dinh.Insert();
+                            }
+                            form_to_us_object_trang_thai_ld();
+                            m_us_trang_thai_ld.Insert();
+                        }
+
+                        break;
+                    default:
+                        break;
+                }
+                BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhât!");
+                this.Close();
             }
-            BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhât!");
-            this.Close();
+
         }
-        
-        private void xoa_trang(){
+
+        private void xoa_trang()
+        {
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.InsertDataState:
@@ -346,13 +362,13 @@ namespace BKI_HRM
                     break;
             }
 
-            
-            
-            
+
+
+
         }
         private void set_inital_form_load()
         {
-            
+
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.UpdateDataState:
@@ -365,10 +381,11 @@ namespace BKI_HRM
                 default:
                     break;
             }
-            
+
         }
-        
-        private void set_define_event(){
+
+        private void set_define_event()
+        {
             this.Load += new EventHandler(f203_v_gd_trang_thai_lao_dong_de_Load);
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
             m_cmd_refresh.Click += new EventHandler(m_cmd_refresh_Click);
@@ -413,29 +430,31 @@ namespace BKI_HRM
                 m_b_check_quyet_dinh_null = true;
             }
         }
-    #endregion
+        #endregion
 
-    #region Event Hanlders
-        private void f203_v_gd_trang_thai_lao_dong_de_Load(object sendrer, EventArgs e){
+        #region Event Hanlders
+        private void f203_v_gd_trang_thai_lao_dong_de_Load(object sendrer, EventArgs e)
+        {
             try
             {
-                
+
                 set_inital_form_load();
-                
+
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle(v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        private void m_cmd_save_Click(object sender, EventArgs e){
+        private void m_cmd_save_Click(object sender, EventArgs e)
+        {
             try
             {
-            	save_data();
+                save_data();
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle( v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
         private void m_cmd_refresh_Click(object sender, EventArgs e)
@@ -446,7 +465,7 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle( v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
         private void m_cmd_exit_Click(object sender, EventArgs e)
@@ -457,7 +476,7 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle( v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
@@ -517,10 +536,10 @@ namespace BKI_HRM
                 e.Handled = true;
             }
         }
-        
-    #endregion
 
-     
+        #endregion
+
+
     }
 
 }
