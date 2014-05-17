@@ -508,9 +508,8 @@
        public const string ID_CHUC_VU = "ID_CHUC_VU";
        public const string MA_CV = "MA_CV";
        public const string TEN_CV = "TEN_CV";
+       public const string ID_LOAI_CV = "ID_LOAI_CV";
        public const string LOAI_CV = "LOAI_CV";
-       public const string ID_TRANG_THAI_CV = "ID_TRANG_THAI_CV";
-       public const string TRANG_THAI_CV = "TRANG_THAI_CV";
        public const string TY_LE_THAM_GIA = "TY_LE_THAM_GIA";
        public const string ID_DON_VI = "ID_DON_VI";
        public const string MA_DON_VI = "MA_DON_VI";
@@ -528,7 +527,17 @@
        public const string NGAY_CO_HIEU_LUC = "NGAY_CO_HIEU_LUC";
        public const string NGAY_HET_HIEU_LUC = "NGAY_HET_HIEU_LUC";
        public const string TRANG_THAI_HIEN_TAI = "TRANG_THAI_HIEN_TAI";
+       public const string TRANG_THAI_CV = "TRANG_THAI_CV";
+       public const string MA_DV_CAP_TREN = "MA_DV_CAP_TREN";
+       public const string TEN_DV_CAP_TREN = "TEN_DV_CAP_TREN";
+       public const string MA_QD_TRANG_THAI_LD = "MA_QD_TRANG_THAI_LD";
+       public const string ID_LOAI_QD = "ID_LOAI_QD";
+       public const string NGAY_CO_HIEU_LUC_LD = "NGAY_CO_HIEU_LUC_LD";
+       public const string NGAY_KY = "NGAY_KY";
+       public const string NGAY_HET_HIEU_LUC_LD = "NGAY_HET_HIEU_LUC_LD";
+       public const string LOAI_QD_LD = "LOAI_QD_LD";
    }
+
 
 
 
