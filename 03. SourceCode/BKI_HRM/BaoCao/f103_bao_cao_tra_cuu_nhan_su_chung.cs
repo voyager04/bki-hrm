@@ -541,40 +541,12 @@ namespace BKI_HRM
                 init_key_value();
                 m_us.FillDatasetAll(m_ds
                         , m_str_search
-                        , m_str_ma_nhan_vien
-                        , m_str_ho_va_ten
-                        , m_str_gioi_tinh
-                        , m_str_ngay_sinh
-                        , m_str_thang_sinh
-                        , m_str_nam_sinh
-                        , m_str_trinh_do
-                        , m_str_ma_chuc_vu
-                        , m_str_ten_chuc_vu
-                        , m_str_loai_chuc_vu
-                        , m_str_ty_le_tham_gia
-                        , m_str_ma_don_vi
-                        , m_str_ten_don_vi
-                        , m_str_loai_don_vi
-                        , m_str_cap_don_vi
-                        , m_str_dia_ban
-                        , m_str_ngay_bat_dau
-                        , m_str_thang_bat_dau
-                        , m_str_nam_bat_dau
-                        , m_str_ngay_ket_thuc
-                        , m_str_thang_ket_thuc
-                        , m_str_nam_ket_thuc
+                       
                         , m_str_trang_thai_lao_dong
-                        , m_str_ngay_co_hieu_luc
-                        , m_str_thang_co_hieu_luc
-                        , m_str_nam_co_hieu_luc
-                        , m_str_ngay_het_hieu_luc
-                        , m_str_thang_het_hieu_luc
-                        , m_str_nam_het_hieu_luc
+                        
                         , m_str_trang_thai_hien_tai
                         , m_str_trang_thai_chuc_vu
-                        , m_str_oderby_01
-                        , m_str_oderby_02
-                        , m_str_oderby_03
+                        
                     );
                 refresh_key_value();
                 load_custom_source_2_m_txt_search();

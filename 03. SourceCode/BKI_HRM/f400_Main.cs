@@ -54,40 +54,11 @@ namespace BKI_HRM
             US_V_DM_DU_LIEU_NHAN_VIEN v_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
             DS_V_DM_DU_LIEU_NHAN_VIEN v_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
             v_us.FillDatasetAll(v_ds,  ""
-                        , ""
-                        , ""
-                        , ""
-                        , ""
-                        , ""
-                        , ""
-                        , ""
-                        , ""
-                        , ""
-                        , ""
-                        , ""
-                        , ""
-                        , ""
-                        , ""
-                        , ""
-                        , ""
-                        , ""
-                        , ""
-                        , ""
-                        , ""
-                        , ""
-                        , ""
-                        , ""
-                        , ""
-                        , ""
-                        , ""
-                        , ""
-                        , ""
+                       
                         , ""
                         , "Y"
                         , "Y"
-                        , ""
-                        , ""
-                        , "");
+                       );
 
             m_lbl_so_luong_nv_hien_tai.Text = "Số lượng nhân viên hiện tại: " + v_ds.V_DM_DU_LIEU_NHAN_VIEN.Count.ToString();
         }
