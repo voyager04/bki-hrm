@@ -53,14 +53,10 @@ namespace BKI_HRM
            // m_us_trang_thai_lao_dong.Count_Nhan_vien(ref  hien_tai);
             US_V_DM_DU_LIEU_NHAN_VIEN v_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
             DS_V_DM_DU_LIEU_NHAN_VIEN v_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
-            v_us.FillDatasetAll(v_ds,  ""
-                       
-                        , ""
-                        , "Y"
-                        , "Y"
-                       );
+            decimal v_dc_so_luong_nv_hien_tai = 0;
+            v_us.count_nhan_vien_hien_tai(v_ds, ref v_dc_so_luong_nv_hien_tai);
 
-            m_lbl_so_luong_nv_hien_tai.Text = "Số lượng nhân viên hiện tại: " + v_ds.V_DM_DU_LIEU_NHAN_VIEN.Count.ToString();
+            m_lbl_so_luong_nv_hien_tai.Text = "Số lượng nhân viên hiện tại: " + v_dc_so_luong_nv_hien_tai;
         }
 
         private f103_bao_cao_tra_cuu_nhan_su thong_bao_thu_viec_sap_het_han()
