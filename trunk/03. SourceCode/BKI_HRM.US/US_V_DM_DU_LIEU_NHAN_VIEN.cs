@@ -568,79 +568,23 @@ namespace BKI_HRM.US {
 
         public void FillDatasetAll(DS_V_DM_DU_LIEU_NHAN_VIEN op_ds_v_dm_du_lieu_nhan_vien
                                             , string ip_str_search
-                                            , string ip_str_ma_nhan_vien
-                                            , string ip_str_ho_va_ten
-                                            , string ip_str_gioi_tinh
-                                            , string ip_str_ngay_sinh
-                                            , string ip_str_thang_sinh
-                                            , string ip_str_nam_sinh
-                                            , string ip_str_trinh_do
-                                            , string ip_str_ma_chuc_vu
-                                            , string ip_str_ten_chuc_vu
-                                            , string ip_str_loai_chuc_vu
-                                            , string ip_str_ty_le_them_gia
-                                            , string ip_str_ma_don_vi
-                                            , string ip_str_ten_don_vi
-                                            , string ip_str_loai_don_vi
-                                            , string ip_str_cap_don_vi
-                                            , string ip_str_dia_ban
-                                            , string ip_str_ngay_bat_dau
-                                            , string ip_str_thang_bat_dau
-                                            , string ip_str_nam_bat_dau
-                                            , string ip_str_ngay_ket_thuc
-                                            , string ip_str_thang_ket_thuc
-                                            , string ip_str_nam_ket_thuc
+                                           
                                             , string ip_str_trang_thai_lao_dong
-                                            , string ip_str_ngay_co_hieu_luc
-                                            , string ip_str_thang_co_hieu_luc
-                                            , string ip_str_nam_co_hieu_luc
-                                            , string ip_str_ngay_het_hieu_luc
-                                            , string ip_str_thang_het_hieu_luc
-                                            , string ip_str_nam_het_hieu_luc
+                                           
                                             , string ip_str_trang_thai_hien_tai
                                             , string ip_str_trang_thai_chuc_vu
-                                            , string ip_str_oderby_01
-                                            , string ip_str_oderby_02
-                                            , string ip_str_oderby_03
+                                           
             )
         {
 
             CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_search");
             v_stored_proc.addNVarcharInputParam("@ip_str_01_search", ip_str_search);
-            v_stored_proc.addNVarcharInputParam("@ip_str_02_ma_nhan_vien", ip_str_ma_nhan_vien);
-            v_stored_proc.addNVarcharInputParam("@ip_str_03_ho_va_ten", ip_str_ho_va_ten);
-            v_stored_proc.addNVarcharInputParam("@ip_str_04_gioi_tinh", ip_str_gioi_tinh);
-            v_stored_proc.addNVarcharInputParam("@ip_str_05_ngay_sinh", ip_str_ngay_sinh);
-            v_stored_proc.addNVarcharInputParam("@ip_str_06_thang_sinh", ip_str_thang_sinh);
-            v_stored_proc.addNVarcharInputParam("@ip_str_07_nam_sinh", ip_str_nam_sinh);
-            v_stored_proc.addNVarcharInputParam("@ip_str_08_trinh_do", ip_str_trinh_do);
-            v_stored_proc.addNVarcharInputParam("@ip_str_09_ma_chuc_vu", ip_str_ma_chuc_vu);
-            v_stored_proc.addNVarcharInputParam("@ip_str_10_ten_chuc_vu", ip_str_ten_chuc_vu);
-            v_stored_proc.addNVarcharInputParam("@ip_str_11_loai_chuc_vu", ip_str_loai_chuc_vu);
-            v_stored_proc.addNVarcharInputParam("@ip_str_12_ty_le_them_gia", ip_str_ty_le_them_gia);
-            v_stored_proc.addNVarcharInputParam("@ip_str_13_ma_don_vi", ip_str_ma_don_vi);
-            v_stored_proc.addNVarcharInputParam("@ip_str_14_ten_don_vi", ip_str_ten_don_vi);
-            v_stored_proc.addNVarcharInputParam("@ip_str_15_loai_don_vi", ip_str_loai_don_vi);
-            v_stored_proc.addNVarcharInputParam("@ip_str_16_cap_don_vi", ip_str_cap_don_vi);
-            v_stored_proc.addNVarcharInputParam("@ip_str_17_dia_ban", ip_str_dia_ban);
-            v_stored_proc.addNVarcharInputParam("@ip_str_18_ngay_bat_dau", ip_str_ngay_bat_dau);
-            v_stored_proc.addNVarcharInputParam("@ip_str_19_thang_bat_dau", ip_str_thang_bat_dau);
-            v_stored_proc.addNVarcharInputParam("@ip_str_20_nam_bat_dau", ip_str_nam_bat_dau);
-            v_stored_proc.addNVarcharInputParam("@ip_str_21_ngay_ket_thuc", ip_str_ngay_ket_thuc);
-            v_stored_proc.addNVarcharInputParam("@ip_str_22_thang_ket_thuc", ip_str_thang_ket_thuc);
-            v_stored_proc.addNVarcharInputParam("@ip_str_23_nam_ket_thuc", ip_str_nam_ket_thuc);
+          
             v_stored_proc.addNVarcharInputParam("@ip_str_24_trang_thai_lao_dong", ip_str_trang_thai_lao_dong);
-            v_stored_proc.addNVarcharInputParam("@ip_str_25_ngay_co_hieu_luc", ip_str_ngay_co_hieu_luc);
-            v_stored_proc.addNVarcharInputParam("@ip_str_26_thang_co_hieu_luc", ip_str_thang_co_hieu_luc);
-            v_stored_proc.addNVarcharInputParam("@ip_str_27_nam_co_hieu_luc", ip_str_nam_co_hieu_luc);
-            v_stored_proc.addNVarcharInputParam("@ip_str_28_ngay_het_hieu_luc", ip_str_ngay_het_hieu_luc);
-            v_stored_proc.addNVarcharInputParam("@ip_str_29_thang_het_hieu_luc", ip_str_thang_het_hieu_luc);
-            v_stored_proc.addNVarcharInputParam("@ip_str_30_nam_het_hieu_luc", ip_str_nam_het_hieu_luc);
+            
             v_stored_proc.addNVarcharInputParam("@ip_str_31_trang_thai_hien_tai", ip_str_trang_thai_hien_tai);
             v_stored_proc.addNVarcharInputParam("@ip_str_32_trang_thai_chuc_vu", ip_str_trang_thai_chuc_vu);
-            v_stored_proc.addNVarcharInputParam("@ip_oderby_01", "");
-            v_stored_proc.addNVarcharInputParam("@ip_oderby_02", "");
-            v_stored_proc.addNVarcharInputParam("@ip_oderby_03", "");
+            
             v_stored_proc.fillDataSetByCommand(this, op_ds_v_dm_du_lieu_nhan_vien);
         }
 
