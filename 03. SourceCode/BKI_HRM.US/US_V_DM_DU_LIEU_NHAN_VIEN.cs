@@ -624,7 +624,13 @@ namespace BKI_HRM.US {
             v_stored_proc.fillDataSetByCommand(this, op_m_ds);
         }
         #endregion
-
+        public void count_nhan_vien_hien_tai(DS_V_DM_DU_LIEU_NHAN_VIEN op_ds, ref decimal op_dc)
+        {
+            CStoredProc v_store = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_count_nhan_vien_hien_tai");
+            SqlParameter v_sql = v_store.addDecimalOutputParam("@COUNT", op_dc);
+            v_store.fillDataSetByCommand(this, op_ds);
+            op_dc = CIPConvert.ToDecimal(v_sql.Value);
+        }
 
 
         public object ip_str_ngay_truoc_het_han { get; set; }
