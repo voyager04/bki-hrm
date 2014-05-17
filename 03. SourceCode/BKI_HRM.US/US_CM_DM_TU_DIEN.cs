@@ -187,5 +187,13 @@ public class US_CM_DM_TU_DIEN : US_Object
         v_sp.addNVarcharInputParam("@MIEN_NHIEM_YN", i_str_mien_nhiem_yn);
         v_sp.fillDataSetByCommand(this, v_op_ds);
     }
+    public void FillDatasetByID(DS_CM_DM_TU_DIEN v_op_ds, decimal ip_dc_id, ref string v_str_ten)
+    {
+        CStoredProc v_cstore = new CStoredProc("pr_CM_DM_TU_DIEN_search_by_id");
+        v_cstore.addDecimalInputParam("@ID", ip_dc_id);
+        SqlParameter v_sql = v_cstore.addNVarcharOutputParam("@TEN", v_str_ten);
+        v_cstore.fillDataSetByCommand(this, v_op_ds);
+        v_str_ten = v_sql.Value.ToString();
+    }
 }
 }

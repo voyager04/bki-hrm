@@ -231,5 +231,13 @@ public class US_DM_CHUC_VU : US_Object
         v_sp.addNVarcharInputParam("@STR_SEARCH", i_str_search);
         v_sp.fillDataSetByCommand(this, op_ds);
     }
+    public void FillDatasetByID(DS_DM_CHUC_VU op_ds, decimal ip_dc_id, ref string op_str)
+    {
+        CStoredProc v_cstore = new CStoredProc("pr_DM_CHUC_VU_filldataset_by_id");
+        v_cstore.addDecimalInputParam("@ID", ip_dc_id);
+        SqlParameter v_sql = v_cstore.addNVarcharOutputParam("@TEN", op_str);
+        v_cstore.fillDataSetByCommand(this, op_ds);
+        op_str = v_sql.Value.ToString();
+    }
 	}
 }

@@ -62,9 +62,9 @@ namespace BKI_HRM
             m_dat_ngay_ket_thuc.Enabled = false;
             this.ShowDialog();
         }
-#endregion
+        #endregion
 
-#region Members
+        #region Members
         DataEntryFormMode m_e_form_mode;
         US_V_GD_QUA_TRINH_LAM_VIEC m_us_v_qua_trinh_lam_viec = new US_V_GD_QUA_TRINH_LAM_VIEC();
         DS_V_GD_QUA_TRINH_LAM_VIEC m_ds_v_qua_trinh_lam_viec = new DS_V_GD_QUA_TRINH_LAM_VIEC();
@@ -75,15 +75,15 @@ namespace BKI_HRM
         bool m_b_check_quyet_dinh_null = false;
         bool m_b_check_quyet_dinh_save;
         string m_str_loai_thay_doi;
-#endregion
+        #endregion
 
-#region Private Methods
+        #region Private Methods
         private void format_controls()
         {
             CControlFormat.setFormStyle(this, new CAppContext_201());
             this.KeyPreview = true;
             load_data_to_cbo();
-            
+
         }
         private void chon_file()
         {
@@ -102,7 +102,7 @@ namespace BKI_HRM
             //  WinFormControls.eTAT_CA.NO,
             //  m_cbo_loai_quyet_dinh);
 
-            
+
 
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.LOAI_CHUC_VU,
                 WinFormControls.eTAT_CA.NO,
@@ -135,7 +135,7 @@ namespace BKI_HRM
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.InsertDataState:
-                    
+
                     v_us_loai_quyet_dinh.FillDataset_load_loai_quyet_dinh(v_ds_loai_quyet_dinh, "Chức vụ", "N");
                     m_cbo_loai_quyet_dinh.DataSource = v_ds_loai_quyet_dinh.CM_DM_TU_DIEN;
                     m_cbo_loai_quyet_dinh.DisplayMember = CM_DM_TU_DIEN.TEN;
@@ -149,7 +149,7 @@ namespace BKI_HRM
                     m_cbo_loai_quyet_dinh.DisplayMember = CM_DM_TU_DIEN.TEN;
                     m_cbo_loai_quyet_dinh.ValueMember = CM_DM_TU_DIEN.ID;
                     m_us_dm_don_vi = new US_DM_DON_VI(m_us_v_qua_trinh_lam_viec.dcID_DON_VI);
-                    
+
                     m_txt_don_vi_moi.Text = m_us_dm_don_vi.strMA_DON_VI + " - " + m_us_dm_don_vi.strTEN_DON_VI;
 
                     m_dat_ngay_bat_dau.Value = m_us_v_qua_trinh_lam_viec.datNGAY_BAT_DAU;
@@ -161,14 +161,14 @@ namespace BKI_HRM
                     m_lbl_chuc_vu_moi.Text = "Chức vụ miễn nhiệm";
 
                     m_cbo_ma_chuc_vu_moi.SelectedValue = m_us_v_qua_trinh_lam_viec.dcID_CHUC_VU;
-                   
+
                     m_cbo_chuc_vu_moi.Enabled = false;
                     m_cbo_ma_chuc_vu_moi.Enabled = false;
                     m_lbl_ma_chuc_vu_moi.Text = "Mã chức vụ miễn nhiệm";
                     m_lbl_don_vi_moi.Text = "Đơn vị hiện tại";
                     m_txt_don_vi_moi.ReadOnly = true;
                     m_txt_don_vi_moi.BackColor = SystemColors.Info;
-                //    m_txt_don_vi_moi.Text = m_us_dm_don_vi.strMA_DON_VI + " - " + m_us_dm_don_vi.strTEN_DON_VI;
+                    //    m_txt_don_vi_moi.Text = m_us_dm_don_vi.strMA_DON_VI + " - " + m_us_dm_don_vi.strTEN_DON_VI;
                     m_cmd_chon_don_vi.Visible = false;
                     m_cbo_loai_chuc_vu.Enabled = false;
                     m_dat_ngay_bat_dau.Enabled = false;
@@ -247,7 +247,7 @@ namespace BKI_HRM
                     m_us_chi_tiet_chuc_vu.dcID_QUYET_DINH_MIEN_NHIEM = m_us_quyet_dinh.dcID;
                     m_us_chi_tiet_chuc_vu.strTRANG_THAI_CV = "N";
                     break;
-                
+
                 default:
                     break;
             }
@@ -265,10 +265,10 @@ namespace BKI_HRM
             else
                 m_us_quyet_dinh.SetNGAY_HET_HIEU_LUCNull();
         }
-        
+
         private bool check_validate_data_is_ok()
         {
-            if (m_us_dm_don_vi.dcID == -1 )
+            if (m_us_dm_don_vi.dcID == -1)
             {
                 BaseMessages.MsgBox_Infor("Bạn chưa chọn đơn vị của nhân viên.");
                 return false;
@@ -285,73 +285,86 @@ namespace BKI_HRM
 
             return true;
         }
+        private bool confirm_save_data()
+        {
+            US_DM_CHUC_VU v_us_dm_chuc_vu = new US_DM_CHUC_VU();
+            DS_DM_CHUC_VU v_ds_dm_chuc_vu = new DS_DM_CHUC_VU();
+            
+            string v_str_chuc_vu = "";
+
+            v_us_dm_chuc_vu.FillDatasetByID(v_ds_dm_chuc_vu, CIPConvert.ToDecimal(m_cbo_chuc_vu_moi.SelectedValue), ref v_str_chuc_vu);
+            return BaseMessages.MsgBox_Confirm("Bạn có thực sự muốn thay đổi chức vụ của \"" + m_us_v_qua_trinh_lam_viec.strHO_DEM + " " + m_us_v_qua_trinh_lam_viec.strTEN + "\" thành\n \"" + v_str_chuc_vu + "\" tại \"" + m_txt_don_vi_moi.Text + "\" không?");
+
+        }
         private void save_data()
         {
-            
-            
-            switch (m_e_form_mode)
+            if (confirm_save_data())
             {
+                switch (m_e_form_mode)
+                {
 
-                case DataEntryFormMode.UpdateDataState:
-                    
-                    if (check_validate_data_is_ok() == false)
-                        return;
-                    else
-                    {
-                        
-                        form_to_us_object_quyet_dinh();
-                        if (m_b_check_quyet_dinh_save)
+                    case DataEntryFormMode.UpdateDataState:
+
+                        if (check_validate_data_is_ok() == false)
+                            return;
+                        else
                         {
-                            if (m_b_check_quyet_dinh_null)
-                            {
-                                m_us_quyet_dinh.Insert();
-                            }
-                            else
-                            {
-                                m_us_quyet_dinh.Update();
-                            }
-                        }
-                        
-                        
-                        form_to_us_object_chi_tiet_chuc_vu();
-                        
-                        m_us_chi_tiet_chuc_vu.Update();
 
-                    }
-
-                    break;
-                case DataEntryFormMode.InsertDataState:
-                    decimal v_dc = 0;
-                    if (CIPConvert.is_valid_number(m_txt_ty_le_tham_gia.Text.Trim()))
-                        v_dc = CIPConvert.ToDecimal(m_txt_ty_le_tham_gia.Text.Trim());
-                    if (m_us_v_qua_trinh_lam_viec.Sum_ty_le_tham_gia(m_us_v_qua_trinh_lam_viec.strMA_NV) + v_dc > 100)
-                    {
-                        BaseMessages.MsgBox_Infor("Tỷ lệ tham gia đã đã vượt quá 100%.");
-                        return;
-                    }
-                    if (check_validate_data_is_ok() == false)
-                        return;
-                    else
-                    {
-                        if (m_txt_ma_quyet_dinh.Text != "")
-                        {
                             form_to_us_object_quyet_dinh();
                             if (m_b_check_quyet_dinh_save)
                             {
-                                m_us_quyet_dinh.Insert();
+                                if (m_b_check_quyet_dinh_null)
+                                {
+                                    m_us_quyet_dinh.Insert();
+                                }
+                                else
+                                {
+                                    m_us_quyet_dinh.Update();
+                                }
                             }
-                            
-                        }
-                        form_to_us_object_chi_tiet_chuc_vu();
-                        m_us_chi_tiet_chuc_vu.Insert();
-                    }
 
-                    break;
-                default:
-                    break;
+
+                            form_to_us_object_chi_tiet_chuc_vu();
+
+                            m_us_chi_tiet_chuc_vu.Update();
+
+                        }
+
+                        break;
+                    case DataEntryFormMode.InsertDataState:
+                        decimal v_dc = 0;
+                        if (CIPConvert.is_valid_number(m_txt_ty_le_tham_gia.Text.Trim()))
+                            v_dc = CIPConvert.ToDecimal(m_txt_ty_le_tham_gia.Text.Trim());
+                        if (m_us_v_qua_trinh_lam_viec.Sum_ty_le_tham_gia(m_us_v_qua_trinh_lam_viec.strMA_NV) + v_dc > 100)
+                        {
+                            BaseMessages.MsgBox_Infor("Tỷ lệ tham gia đã đã vượt quá 100%.");
+                            return;
+                        }
+                        if (check_validate_data_is_ok() == false)
+                            return;
+                        else
+                        {
+                            if (m_txt_ma_quyet_dinh.Text != "")
+                            {
+                                form_to_us_object_quyet_dinh();
+                                if (m_b_check_quyet_dinh_save)
+                                {
+                                    m_us_quyet_dinh.Insert();
+                                }
+
+                            }
+                            form_to_us_object_chi_tiet_chuc_vu();
+                            m_us_chi_tiet_chuc_vu.Insert();
+                        }
+
+                        break;
+                    default:
+                        break;
+                }
+                BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhât!");
+                this.Close();
             }
-            BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhât!");
-            this.Close();
+
         }
         private void xoa_trang()
         {
@@ -377,7 +390,7 @@ namespace BKI_HRM
                     us_object_to_form();
                     break;
             }
-            
+
         }
         private void set_inital_form_load()
         {
@@ -400,7 +413,7 @@ namespace BKI_HRM
         }
         private void them_quyet_dinh()
         {
-            m_b_check_quyet_dinh_save = true;  
+            m_b_check_quyet_dinh_save = true;
             m_grb_quyet_dinh.Enabled = true;
             m_txt_ma_quyet_dinh.Focus();
         }
@@ -437,10 +450,10 @@ namespace BKI_HRM
                 m_b_check_quyet_dinh_null = true;
             }
         }
-#endregion
+        #endregion
 
-       
-#region Event Hanlders
+
+        #region Event Hanlders
         private void m_cmd_exit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -454,7 +467,7 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle(v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
         private void m_cmd_save_Click(object sender, EventArgs e)
@@ -465,7 +478,7 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle(v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
@@ -525,7 +538,7 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle(v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
@@ -550,11 +563,11 @@ namespace BKI_HRM
                 e.Handled = true;
             }
         }
-#endregion
+        #endregion
 
-        
 
-        
+
+
 
     }
 }
