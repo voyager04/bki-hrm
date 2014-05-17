@@ -565,28 +565,46 @@ namespace BKI_HRM.US {
             v_sp.fillDataSetByCommand(this, op_ds_nhan_su);
         }
 
-
-        public void FillDatasetAll(DS_V_DM_DU_LIEU_NHAN_VIEN op_ds_v_dm_du_lieu_nhan_vien
+        public void FillDatasetSearch(DS_V_DM_DU_LIEU_NHAN_VIEN op_ds_v_dm_du_lieu_nhan_vien
                                             , string ip_str_search
                                            
                                             , string ip_str_trang_thai_lao_dong
-                                           
+
                                             , string ip_str_trang_thai_hien_tai
                                             , string ip_str_trang_thai_chuc_vu
-                                           
-            )
+                                            , string ip_str_loai_tim_kiem)
         {
-
             CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_search");
             v_stored_proc.addNVarcharInputParam("@ip_str_01_search", ip_str_search);
-          
+
             v_stored_proc.addNVarcharInputParam("@ip_str_24_trang_thai_lao_dong", ip_str_trang_thai_lao_dong);
-            
+
             v_stored_proc.addNVarcharInputParam("@ip_str_31_trang_thai_hien_tai", ip_str_trang_thai_hien_tai);
             v_stored_proc.addNVarcharInputParam("@ip_str_32_trang_thai_chuc_vu", ip_str_trang_thai_chuc_vu);
-            
+            v_stored_proc.addNVarcharInputParam("@loai_tim_kiem", ip_str_loai_tim_kiem);
             v_stored_proc.fillDataSetByCommand(this, op_ds_v_dm_du_lieu_nhan_vien);
         }
+        //public void FillDatasetAll(DS_V_DM_DU_LIEU_NHAN_VIEN op_ds_v_dm_du_lieu_nhan_vien
+        //                                    , string ip_str_search
+                                           
+        //                                    , string ip_str_trang_thai_lao_dong
+                                           
+        //                                    , string ip_str_trang_thai_hien_tai
+        //                                    , string ip_str_trang_thai_chuc_vu
+                                           
+        //    )
+        //{
+
+        //    CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_search");
+        //    v_stored_proc.addNVarcharInputParam("@ip_str_01_search", ip_str_search);
+          
+        //    v_stored_proc.addNVarcharInputParam("@ip_str_24_trang_thai_lao_dong", ip_str_trang_thai_lao_dong);
+            
+        //    v_stored_proc.addNVarcharInputParam("@ip_str_31_trang_thai_hien_tai", ip_str_trang_thai_hien_tai);
+        //    v_stored_proc.addNVarcharInputParam("@ip_str_32_trang_thai_chuc_vu", ip_str_trang_thai_chuc_vu);
+            
+        //    v_stored_proc.fillDataSetByCommand(this, op_ds_v_dm_du_lieu_nhan_vien);
+        //}
 
         public void FillDatasetByIdDonVi(DS_V_DM_DU_LIEU_NHAN_VIEN op_ds_v_dm_du_lieu_nhan_vien, decimal ip_dc_id_don_vi) {
             CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_search_by_id_don_vi");
@@ -624,9 +642,10 @@ namespace BKI_HRM.US {
             v_stored_proc.fillDataSetByCommand(this, op_m_ds);
         }
         #endregion
-        public void count_nhan_vien_hien_tai(DS_V_DM_DU_LIEU_NHAN_VIEN op_ds, ref decimal op_dc)
+        public void count_nhan_vien(DS_V_DM_DU_LIEU_NHAN_VIEN op_ds,string ip_str_loai_count, ref decimal op_dc)
         {
-            CStoredProc v_store = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_count_nhan_vien_hien_tai");
+            CStoredProc v_store = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_count_nhan_vien");
+            v_store.addNVarcharInputParam("@loai_count", ip_str_loai_count);
             SqlParameter v_sql = v_store.addDecimalOutputParam("@COUNT", op_dc);
             v_store.fillDataSetByCommand(this, op_ds);
             op_dc = CIPConvert.ToDecimal(v_sql.Value);

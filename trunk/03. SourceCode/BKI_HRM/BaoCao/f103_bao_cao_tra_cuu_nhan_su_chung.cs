@@ -344,18 +344,28 @@ namespace BKI_HRM
         }
         public void display_nghi_sap_quay_lai()
         {
+           
             m_e_form_mode = DataEntryFormMode.ViewDataState;
-
+            this.Show();
+            m_rdb_nhan_vien_sap_quay_lai.Checked = true;
+        }
+        public void display_thu_viec_sap_het_han()
+        {
+           // m_rdb_nhan_vien_sap_quay_lai.Checked = false;
+            m_rdb_thu_viec_sap_het_han.Checked = true;
+            m_e_form_mode = DataEntryFormMode.ViewDataState;
             this.Show();
         }
-        internal int SapHetHanThuViec(DataEntryFormMode ip_e_form_mode)
+        internal int SapHetHanThuViec()
         {
+            m_rdb_thu_viec_sap_het_han.Checked = true;
             Text = "F103 - Danh sách Thử việc sắp hết hạn";
-            m_e_form_mode = ip_e_form_mode;
+            //m_e_form_mode = DataEntryFormMode.ViewDataState;
             m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
             m_us.FillDatasetSapHetHanThuViec(m_ds, "");
             m_so_luong_thu_viec_sap_het_han = m_ds.V_DM_DU_LIEU_NHAN_VIEN.Rows.Count;
             return m_so_luong_thu_viec_sap_het_han;
+            
         }
 
         #endregion
@@ -466,7 +476,6 @@ namespace BKI_HRM
         private void set_initial_form_load()
         {
             m_obj_trans = get_trans_object(m_fg);
-            m_rdb_nhan_vien_sap_quay_lai.Checked = true;
             load_data_2_grid();
 
         }
@@ -519,6 +528,8 @@ namespace BKI_HRM
         }
         private void load_data_2_grid()
         {
+            
+
             m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
             if (m_txt_search.Text.Equals(m_str_goi_y_tim_kiem))
             {
@@ -528,7 +539,12 @@ namespace BKI_HRM
             {
                 if (m_rdb_nhan_vien_sap_quay_lai.Checked)
                 {
-                    m_us.FillDatasetNVSapQuayLai(m_ds);
+                    m_us.FillDatasetSearch(m_ds
+                        , m_str_search
+                        , ""
+                        , ""
+                        , ""
+                        , "search nghỉ việc quay lại");
                     m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC].Caption = "Ngày quay lại";
                     m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC].Visible = true;
                     m_fg.Cols[(int)e_col_Number.NGAY_CO_HIEU_LUC].Caption = "Ngày bắt đầu nghỉ";
@@ -536,7 +552,12 @@ namespace BKI_HRM
                 else
                     if (m_rdb_thu_viec_sap_het_han.Checked)
                     {
-                        m_us.FillDatasetSapHetHanThuViec(m_ds, "");
+                        m_us.FillDatasetSearch(m_ds
+                            ,m_str_search
+                            , ""
+                            , ""
+                            , ""
+                            , "search thử việc hết hạn");
                         m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC].Caption = "Ngày hết hạn thử việc";
                         m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC].Visible = true;
                         m_fg.Cols[(int)e_col_Number.NGAY_CO_HIEU_LUC].Caption = "Ngày bắt đầu thử việc";
@@ -549,14 +570,14 @@ namespace BKI_HRM
                 refresh_key_value();
                 get_key_value_from_txt_search();
                 init_key_value();
-                m_us.FillDatasetAll(m_ds
+                m_us.FillDatasetSearch(m_ds
                         , m_str_search
                        
                         , m_str_trang_thai_lao_dong
                         
                         , m_str_trang_thai_hien_tai
                         , m_str_trang_thai_chuc_vu
-                        
+                        , "search tất cả"
                     );
                 refresh_key_value();
                 load_custom_source_2_m_txt_search();
