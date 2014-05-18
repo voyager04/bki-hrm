@@ -296,7 +296,7 @@ namespace BKI_HRM
 
 		private void insert_v_gd_cong_tac(){
             f206_v_gd_cong_tac_de v_fDE = new f206_v_gd_cong_tac_de();
-            v_fDE.display();
+            v_fDE.display_for_insert();
 			load_data_2_grid();
 		}
 
