@@ -14,6 +14,7 @@ using BKI_HRM.US;
 using BKI_HRM.DS;
 using IP.Core.IPCommon;
 using IP.Core.IPWordReport;
+using System.Diagnostics;
 
 namespace BKI_HRM
 {
