@@ -200,9 +200,9 @@ namespace BKI_HRM
             // 
             this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(232, 12);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(253, 12);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
-            this.m_txt_tim_kiem.Size = new System.Drawing.Size(441, 20);
+            this.m_txt_tim_kiem.Size = new System.Drawing.Size(420, 20);
             this.m_txt_tim_kiem.TabIndex = 21;
             this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
             this.m_txt_tim_kiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.m_txt_tim_kiem_KeyDown);
@@ -234,7 +234,7 @@ namespace BKI_HRM
             this.groupBox1.Controls.Add(this.m_rdb_ko_nhom);
             this.groupBox1.Location = new System.Drawing.Point(12, 7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(190, 65);
+            this.groupBox1.Size = new System.Drawing.Size(235, 65);
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hiển thị:";
