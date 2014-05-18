@@ -482,7 +482,7 @@ namespace BKI_HRM.NghiepVu
                     v_fDE = new F500_gd_chi_tiet_du_an_de();
                     DataRow v_dr = (DataRow)m_grv_nhan_su.Rows[m_dc_index_row].UserData;
                     decimal v_dc_id_chi_tiet_du_an = (decimal)v_dr["ID"];
-                    v_fDE.display_for_update(v_dc_id_chi_tiet_du_an);
+                    v_fDE.display_for_update(v_dc_id_chi_tiet_du_an, null);
                     load_data_2_grv_nhan_su(m_dc_id_du_an);
                     break;
             }

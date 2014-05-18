@@ -54,7 +54,6 @@
             this.m_cmd_xem_file = new SIS.Controls.Button.SiSButton();
             this.m_cmd_chon_file = new SIS.Controls.Button.SiSButton();
             this.m_txt_noi_dung = new System.Windows.Forms.TextBox();
-            this.m_cbo_loai_quyet_dinh = new System.Windows.Forms.ComboBox();
             this.m_dat_ngay_het_hieu_luc_qd = new System.Windows.Forms.DateTimePicker();
             this.m_dat_ngay_ky = new System.Windows.Forms.DateTimePicker();
             this.m_dat_ngay_co_hieu_luc_qd = new System.Windows.Forms.DateTimePicker();
@@ -69,6 +68,7 @@
             this.m_txt_ma_du_an = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.m_lbl_ho_dem = new System.Windows.Forms.Label();
             this.m_lbl_dia_chi = new System.Windows.Forms.Label();
             this.m_lbl_ngay_sinh = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -76,8 +76,8 @@
             this.m_lbl_ho_va_ten = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.m_lbl_ho_dem = new System.Windows.Forms.Label();
             this.m_ofd_openfile = new System.Windows.Forms.OpenFileDialog();
+            this.m_lbl_loai_qd = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.m_grb_quyet_dinh.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -280,6 +280,8 @@
             this.m_txt_thoi_gian_tham_gia.Name = "m_txt_thoi_gian_tham_gia";
             this.m_txt_thoi_gian_tham_gia.Size = new System.Drawing.Size(121, 20);
             this.m_txt_thoi_gian_tham_gia.TabIndex = 47;
+            this.m_txt_thoi_gian_tham_gia.Text = "0";
+            this.m_txt_thoi_gian_tham_gia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label7
             // 
@@ -320,10 +322,10 @@
             // 
             // m_grb_quyet_dinh
             // 
+            this.m_grb_quyet_dinh.Controls.Add(this.m_lbl_loai_qd);
             this.m_grb_quyet_dinh.Controls.Add(this.m_cmd_xem_file);
             this.m_grb_quyet_dinh.Controls.Add(this.m_cmd_chon_file);
             this.m_grb_quyet_dinh.Controls.Add(this.m_txt_noi_dung);
-            this.m_grb_quyet_dinh.Controls.Add(this.m_cbo_loai_quyet_dinh);
             this.m_grb_quyet_dinh.Controls.Add(this.m_dat_ngay_het_hieu_luc_qd);
             this.m_grb_quyet_dinh.Controls.Add(this.m_dat_ngay_ky);
             this.m_grb_quyet_dinh.Controls.Add(this.m_dat_ngay_co_hieu_luc_qd);
@@ -377,15 +379,6 @@
             this.m_txt_noi_dung.Name = "m_txt_noi_dung";
             this.m_txt_noi_dung.Size = new System.Drawing.Size(313, 58);
             this.m_txt_noi_dung.TabIndex = 27;
-            // 
-            // m_cbo_loai_quyet_dinh
-            // 
-            this.m_cbo_loai_quyet_dinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_loai_quyet_dinh.FormattingEnabled = true;
-            this.m_cbo_loai_quyet_dinh.Location = new System.Drawing.Point(120, 73);
-            this.m_cbo_loai_quyet_dinh.Name = "m_cbo_loai_quyet_dinh";
-            this.m_cbo_loai_quyet_dinh.Size = new System.Drawing.Size(176, 21);
-            this.m_cbo_loai_quyet_dinh.TabIndex = 26;
             // 
             // m_dat_ngay_het_hieu_luc_qd
             // 
@@ -541,6 +534,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chọn nhân sự";
             // 
+            // m_lbl_ho_dem
+            // 
+            this.m_lbl_ho_dem.AutoSize = true;
+            this.m_lbl_ho_dem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_ho_dem.ForeColor = System.Drawing.Color.Blue;
+            this.m_lbl_ho_dem.Location = new System.Drawing.Point(117, 55);
+            this.m_lbl_ho_dem.Name = "m_lbl_ho_dem";
+            this.m_lbl_ho_dem.Size = new System.Drawing.Size(0, 17);
+            this.m_lbl_ho_dem.TabIndex = 75;
+            // 
             // m_lbl_dia_chi
             // 
             this.m_lbl_dia_chi.AutoSize = true;
@@ -607,15 +610,14 @@
             this.label12.TabIndex = 64;
             this.label12.Text = "Mã nhân viên";
             // 
-            // m_lbl_ho_dem
+            // m_lbl_loai_qd
             // 
-            this.m_lbl_ho_dem.AutoSize = true;
-            this.m_lbl_ho_dem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_ho_dem.ForeColor = System.Drawing.Color.Blue;
-            this.m_lbl_ho_dem.Location = new System.Drawing.Point(117, 55);
-            this.m_lbl_ho_dem.Name = "m_lbl_ho_dem";
-            this.m_lbl_ho_dem.Size = new System.Drawing.Size(0, 17);
-            this.m_lbl_ho_dem.TabIndex = 75;
+            this.m_lbl_loai_qd.AutoSize = true;
+            this.m_lbl_loai_qd.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_loai_qd.Location = new System.Drawing.Point(117, 78);
+            this.m_lbl_loai_qd.Name = "m_lbl_loai_qd";
+            this.m_lbl_loai_qd.Size = new System.Drawing.Size(0, 13);
+            this.m_lbl_loai_qd.TabIndex = 29;
             // 
             // F500_gd_chi_tiet_du_an_de
             // 
@@ -629,6 +631,7 @@
             this.Controls.Add(this.m_cmd_chon_quyet_dinh);
             this.Name = "F500_gd_chi_tiet_du_an_de";
             this.Text = "Chi tiết nhân sự dự án";
+            this.Load += new System.EventHandler(this.F500_gd_chi_tiet_du_an_de_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.m_grb_quyet_dinh.ResumeLayout(false);
             this.m_grb_quyet_dinh.PerformLayout();
@@ -669,7 +672,6 @@
         internal SIS.Controls.Button.SiSButton m_cmd_xem_file;
         internal SIS.Controls.Button.SiSButton m_cmd_chon_file;
         private System.Windows.Forms.TextBox m_txt_noi_dung;
-        private System.Windows.Forms.ComboBox m_cbo_loai_quyet_dinh;
         private System.Windows.Forms.DateTimePicker m_dat_ngay_het_hieu_luc_qd;
         private System.Windows.Forms.DateTimePicker m_dat_ngay_ky;
         private System.Windows.Forms.DateTimePicker m_dat_ngay_co_hieu_luc_qd;
@@ -693,6 +695,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label m_lbl_ho_dem;
         private System.Windows.Forms.OpenFileDialog m_ofd_openfile;
+        private System.Windows.Forms.Label m_lbl_loai_qd;
        // internal System.Windows.Forms.ImageList ImageList;
 
     }
