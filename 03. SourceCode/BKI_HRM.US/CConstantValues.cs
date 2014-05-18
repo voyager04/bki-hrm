@@ -43,6 +43,7 @@ namespace BKI_HRM.US {
         public const string QD_MIEN_NHIEM = "644";
         public const string QD_NGHI_VIEC = "647";
         public const string QD_THU_VIEC = "648";
+        public const string QD_CONG_TAC = "715";
         public const string CHUC_VU_CU = "652";
         public const string CHUC_VU_HIEN_TAI = "650";
         public const string KIEM_NHIEM = "651";
