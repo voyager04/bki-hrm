@@ -15,7 +15,7 @@ using BKI_HRM.DS;
 using IP.Core.IPCommon;
 using IP.Core.IPWordReport;
 
-namespace BKI_HRM.NghiepVu
+namespace BKI_HRM
 {
     public partial class f206_v_gd_cong_tac_de : Form
     {

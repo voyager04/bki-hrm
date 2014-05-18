@@ -1,4 +1,4 @@
-﻿namespace BKI_HRM.NghiepVu
+﻿namespace BKI_HRM
 {
     partial class f206_v_gd_cong_tac_de
     {
