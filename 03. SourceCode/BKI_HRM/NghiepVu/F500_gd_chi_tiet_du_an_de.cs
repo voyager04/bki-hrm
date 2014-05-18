@@ -340,6 +340,7 @@ namespace BKI_HRM.NghiepVu
         {
             m_b_check_quyet_dinh_save = true;
             m_grb_quyet_dinh.Enabled = true;
+            m_lbl_loai_qd.Text = new US.US_CM_DM_TU_DIEN(CIPConvert.ToDecimal(TU_DIEN.QD_THANH_LAP_DU_AN)).strTEN;
             m_txt_ma_quyet_dinh.Focus();
         }
 
