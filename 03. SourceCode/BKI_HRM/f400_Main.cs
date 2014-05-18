@@ -801,5 +801,17 @@ namespace BKI_HRM
             }
         }
 
+        private void m_menuitem_qua_trinh_di_cong_tac_Click(object sender, EventArgs e)
+        {
+            try
+            {
+            	
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
     }
 }
