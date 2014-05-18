@@ -665,14 +665,12 @@ namespace BKI_HRM
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_du_an)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_du_an, m_grv_du_an.Row)) return;
             grid2us_object(m_us, m_grv_du_an.Row);
-            US_DM_DU_AN v_us_dm_da = new US_DM_DU_AN();
-            DS_DM_DU_AN v_ds_dm_da = new DS_DM_DU_AN();
 
-            v_us_dm_da.FillDatasetByID(v_ds_dm_da, m_us.dcID);
-            //	F500_V_DM_DU_AN_DE v_fDE = new F500_V_DM_DU_AN_DE();
-            //	v_fDE.display(m_us);
             f500_dm_du_an_detail v_fDE = new f500_dm_du_an_detail();
-            v_fDE.display_for_update(v_ds_dm_da);
+            if (m_us != null)
+                v_fDE.display_for_update(new US_DM_DU_AN(m_us.dcID));
+            else
+                v_fDE.display_for_update(new US_DM_DU_AN());
             load_data_2_grid();
         }
 
