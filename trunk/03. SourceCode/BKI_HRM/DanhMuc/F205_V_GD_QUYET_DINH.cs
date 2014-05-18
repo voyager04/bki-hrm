@@ -521,8 +521,7 @@ namespace BKI_HRM
         }
         private void load_data_2_grid()
         {
-            //MessageBox.Show(CIPConvert.ToDecimal(m_cbo_loai_quyet_dinh.SelectedValue.ToString()).ToString());
-            //MessageBox.Show(CIPConvert.ToDecimal(m_cbo_tim_kiem_theo.SelectedValue.ToString()).ToString());
+          
             m_ds = new DS_V_GD_QUYET_DINH();
             if (m_txt_tim_kiem.Text.Trim() == m_str_tim_kiem || m_txt_tim_kiem.Text.Trim() == "")
                 m_us.FillDatasetSearch(m_ds, "",

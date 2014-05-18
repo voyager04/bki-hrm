@@ -19,6 +19,7 @@ namespace BKI_HRM
 {
     public partial class f206_v_gd_cong_tac_de : Form
     {
+
 #region Public Interfaces
         public f206_v_gd_cong_tac_de()
         {
@@ -34,6 +35,15 @@ namespace BKI_HRM
         }
 #endregion
 
+#region Members
+        US_V_GD_CONG_TAC m_us_v_gd_cong_tac = new US_V_GD_CONG_TAC();
+        DS_V_GD_CONG_TAC m_ds_v_gd_cong_tac = new DS_V_GD_CONG_TAC();
+        US_GD_CONG_TAC m_us_gd_cong_tac = new US_GD_CONG_TAC();
+        DS_GD_CONG_TAC m_ds_gd_cong_tac = new DS_GD_CONG_TAC();
+        US_DM_QUYET_DINH m_us_dm_quyet_dinh = new US_DM_QUYET_DINH();
+        DS_DM_QUYET_DINH m_ds_dm_quyet_dinh = new DS_DM_QUYET_DINH();
+#endregion
+
 #region Private Methods
         private void generate_ma_quyet_dinh()
         {
@@ -47,6 +57,8 @@ namespace BKI_HRM
         }
         private void form_2_us_object()
         {
+            m_us_dm_quyet_dinh.strMA_QUYET_DINH = m_lbl_ma_qd.Text;
+            m_us_dm_quyet_dinh.strNOI_DUNG = m_txt_noi_dung.Text;
 
         }
         private void us_object_2_form()
@@ -55,13 +67,19 @@ namespace BKI_HRM
         }
         private void load_data_2_cbo_loai_qd()
         {
-
+            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.MA_QUYET_DINH
+                , WinFormControls.eTAT_CA.NO
+                , m_cbo_ma_quyet_dinh);
         }
         private void save_data()
         {
 
         }
 
+        private void set_define_event()
+        {
+
+        }
 #endregion
 
         

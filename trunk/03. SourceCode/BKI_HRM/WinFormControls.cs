@@ -41,6 +41,7 @@ namespace BKI_HRM {
             TRANG_THAI_HOP_DONG,
             MA_HOP_DONG,
             DANH_HIEU,
+            MA_QUYET_DINH
         }
         public static void load_data_to_cbo_tu_dien(
              eLOAI_TU_DIEN ip_e
@@ -92,6 +93,9 @@ namespace BKI_HRM {
                     break;
                 case eLOAI_TU_DIEN.LOAI_DU_AN:
                     v_str_loai_tu_dien = MA_LOAI_TU_DIEN.LOAI_DU_AN;
+                    break;
+                case eLOAI_TU_DIEN.MA_QUYET_DINH:
+                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.MA_QUYET_DINH;
                     break;
             }
             v_us_dm_tu_dien.fill_tu_dien_cung_loai_ds(
