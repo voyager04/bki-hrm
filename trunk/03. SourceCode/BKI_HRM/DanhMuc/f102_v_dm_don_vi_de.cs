@@ -181,7 +181,7 @@ namespace BKI_HRM.DanhMuc {
         private bool trung_ma_don_vi(string ip_str_ma_don_vi) {
             var v_ds = new DS_V_DM_DON_VI();
             var v_us = new US_V_DM_DON_VI();
-            v_us.FillDatasetByKeyWord(v_ds, ip_str_ma_don_vi);
+            v_us.FillDatasetByKeyWord(v_ds, ip_str_ma_don_vi, -1,-1,"");
             decimal v_count = v_ds.V_DM_DON_VI.Count;
             if (v_count > 0) {
                 return true;

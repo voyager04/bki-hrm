@@ -61,7 +61,7 @@ namespace BKI_HRM {
         private void load_data_2_cbo_don_vi_left() {
             var v_ds = new DS_V_DM_DON_VI();
             var v_us = new US_V_DM_DON_VI();
-            v_us.FillDatasetByKeyWord(v_ds, "");
+            //v_us.FillDatasetByKeyWord(v_ds, "");
             m_cbo_don_vi_left.DataSource = v_ds.V_DM_DON_VI;
             m_cbo_don_vi_left.DisplayMember = V_DM_DON_VI.TEN_DON_VI;
             m_cbo_don_vi_left.ValueMember = V_DM_DON_VI.ID;
@@ -75,7 +75,7 @@ namespace BKI_HRM {
         private void load_data_2_cbo_don_vi_right() {
             var v_ds = new DS_V_DM_DON_VI();
             var v_us = new US_V_DM_DON_VI();
-            v_us.FillDatasetByKeyWord(v_ds, "");
+            //v_us.FillDatasetByKeyWord(v_ds, "");
             m_cbo_don_vi_right.DataSource = v_ds.V_DM_DON_VI;
             m_cbo_don_vi_right.DisplayMember = V_DM_DON_VI.TEN_DON_VI;
             m_cbo_don_vi_right.ValueMember = V_DM_DON_VI.ID;
