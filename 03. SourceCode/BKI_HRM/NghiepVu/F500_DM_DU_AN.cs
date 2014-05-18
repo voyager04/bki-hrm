@@ -552,7 +552,7 @@ namespace BKI_HRM
                 }
                 load_custom_source_2_m_txt_tim_kiem();
                 set_initial_form_load();
-                //load_data_2_grid_dm_nhan_su(1);
+                load_data_2_grv_nhan_su(1);
             }
             catch (Exception v_e)
             {
@@ -599,6 +599,16 @@ namespace BKI_HRM
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_DM_DU_AN_QUYET_DINH_TU_DIEN.NewRow());
             return v_obj_trans;
+        }
+
+        private void load_data_2_grid_du_an()
+        {
+            m_ds = new DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
+            m_us.FillDataset(m_ds);
+            m_grv_du_an.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_grv_du_an, m_obj_trans);
+            m_grv_du_an.Redraw = true;
+            m_lbl_total_record_grid1.Text = string.Format("Có {0} dự án", m_ds.Tables[0].Rows.Count);
         }
 
         private void load_data_2_grid()
@@ -657,7 +667,7 @@ namespace BKI_HRM
             //	v_fDE.display();
             f500_dm_du_an_detail v_fDE = new f500_dm_du_an_detail();
             v_fDE.display_for_insert();
-            load_data_2_grid();
+            load_data_2_grid_du_an();
         }
 
         private void update_v_dm_du_an_quyet_dinh_tu_dien()
@@ -671,7 +681,7 @@ namespace BKI_HRM
                 v_fDE.display_for_update(new US_DM_DU_AN(m_us.dcID));
             else
                 v_fDE.display_for_update(new US_DM_DU_AN());
-            load_data_2_grid();
+            load_data_2_grid_du_an();
         }
 
         //private void update_gd_chi_tiet_du_an()

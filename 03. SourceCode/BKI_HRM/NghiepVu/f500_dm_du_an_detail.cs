@@ -353,6 +353,7 @@ namespace BKI_HRM.NghiepVu
             //    cap_nhat_ngay_ket_thuc_cho_thanh_vien(m_us_dm_du_an.dcID, v_dat);
             //}
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
+            this.Close();
         }
 
         //private void cap_nhat_ngay_ket_thuc_cho_thanh_vien(decimal i_dc_id, DateTime i_dat)
