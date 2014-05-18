@@ -24,6 +24,10 @@ namespace BKI_HRM
         {
             InitializeComponent();
         }
+        public void display_for_insert()
+        {
+
+        }
 #endregion
 #region Private Methods
         private void generate_ma_quyet_dinh()
