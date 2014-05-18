@@ -145,6 +145,7 @@ namespace BKI_HRM
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 12;
             this.m_cmd_insert.Text = "&Thêm";
+          
             // 
             // m_cmd_update
             // 
@@ -304,8 +305,8 @@ namespace BKI_HRM
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
 			grid2us_object(m_us, m_fg.Row);
-		//	f206_v_gd_cong_tac_DE v_fDE = new f206_v_gd_cong_tac_DE();
-		//	v_fDE.display(m_us);
+            f206_v_gd_cong_tac_de v_fDE = new f206_v_gd_cong_tac_de();
+            v_fDE.display_for_update(m_us);
 			load_data_2_grid();
 		}
 				
@@ -405,6 +406,7 @@ namespace BKI_HRM
 			}
 		}
 
+        
 	}
 }
 

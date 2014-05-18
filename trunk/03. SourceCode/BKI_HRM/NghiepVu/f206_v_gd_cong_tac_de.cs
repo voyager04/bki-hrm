@@ -20,31 +20,36 @@ namespace BKI_HRM
     public partial class f206_v_gd_cong_tac_de : Form
     {
 
-#region Public Interfaces
+        #region Public Interfaces
         public f206_v_gd_cong_tac_de()
         {
             InitializeComponent();
         }
         public void display_for_insert()
         {
-
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            this.Show();
         }
-        public void display_for_update()
+        public void display_for_update(US_V_GD_CONG_TAC ip_us)
         {
+            m_us_v_gd_cong_tac = ip_us;
+            m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            this.Show();
 
         }
-#endregion
+        #endregion
 
-#region Members
+        #region Members
         US_V_GD_CONG_TAC m_us_v_gd_cong_tac = new US_V_GD_CONG_TAC();
         DS_V_GD_CONG_TAC m_ds_v_gd_cong_tac = new DS_V_GD_CONG_TAC();
         US_GD_CONG_TAC m_us_gd_cong_tac = new US_GD_CONG_TAC();
         DS_GD_CONG_TAC m_ds_gd_cong_tac = new DS_GD_CONG_TAC();
         US_DM_QUYET_DINH m_us_dm_quyet_dinh = new US_DM_QUYET_DINH();
         DS_DM_QUYET_DINH m_ds_dm_quyet_dinh = new DS_DM_QUYET_DINH();
-#endregion
+        DataEntryFormMode m_e_form_mode = new DataEntryFormMode();
+        #endregion
 
-#region Private Methods
+        #region Private Methods
         private void generate_ma_quyet_dinh()
         {
             m_lbl_ma_qd.Text = string.Format("{0}/{1}/{2}", m_txt_ma_quyet_dinh.Text,
@@ -59,7 +64,11 @@ namespace BKI_HRM
         {
             m_us_dm_quyet_dinh.strMA_QUYET_DINH = m_lbl_ma_qd.Text;
             m_us_dm_quyet_dinh.strNOI_DUNG = m_txt_noi_dung.Text;
-
+            m_us_dm_quyet_dinh.datNGAY_KY = m_dat_ngay_ky.Value;
+            m_us_dm_quyet_dinh.SetNGAY_HET_HIEU_LUCNull();
+            m_us_dm_quyet_dinh.datNGAY_CO_HIEU_LUC = m_us_dm_quyet_dinh.datNGAY_KY;
+            m_us_dm_quyet_dinh.dcID_LOAI_QD = CIPConvert.ToDecimal(TU_DIEN.QD_CONG_TAC);
+            
         }
         private void us_object_2_form()
         {
@@ -75,16 +84,31 @@ namespace BKI_HRM
         {
 
         }
-
+        private void chon_file()
+        {
+            m_ofd_openfile.Filter = "(*.pdf)|*.pdf|(*.doc)|*.doc|(*.docx)|*.docx|(*.xls)|*.xls|(*.xlsx)|*.xlsx";
+            m_ofd_openfile.Multiselect = false;
+            m_ofd_openfile.Title = "Chọn tài liệu đính kèm";
+            DialogResult result = m_ofd_openfile.ShowDialog();
+        }
+        private void mo_file()
+        {
+            Process.Start("explorer.exe", m_ofd_openfile.FileName);
+        }
         private void set_define_event()
         {
-
+            m_cmd_chon_file.Click += new EventHandler(m_cmd_chon_file_Click);
+            m_cmd_xem_file.Click += new EventHandler(m_cmd_xem_file_Click);
         }
-#endregion
 
         
 
-#region Events
+        
+        #endregion
+
+
+
+        #region Events
         private void m_txt_ma_quyet_dinh_TextChanged(object sender, EventArgs e)
         {
             try
@@ -120,8 +144,31 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-#endregion
-        
+
+        private void m_cmd_xem_file_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                mo_file();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_chon_file_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                chon_file();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        #endregion
+
     }
 
 

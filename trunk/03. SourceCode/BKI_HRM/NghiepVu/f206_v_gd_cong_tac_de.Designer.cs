@@ -31,8 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f206_v_gd_cong_tac_de));
             this.m_cmd_them_quyet_dinh = new SIS.Controls.Button.SiSButton();
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_cmd_chon_quyet_dinh = new SIS.Controls.Button.SiSButton();
             this.m_grb_quyet_dinh = new System.Windows.Forms.GroupBox();
+            this.m_lbl_ma_qd = new System.Windows.Forms.Label();
+            this.m_cbo_ma_quyet_dinh = new System.Windows.Forms.ComboBox();
+            this.m_txt_loai_quyet_dinh = new System.Windows.Forms.TextBox();
             this.m_cmd_xem_file = new SIS.Controls.Button.SiSButton();
             this.m_cmd_chon_file = new SIS.Controls.Button.SiSButton();
             this.m_txt_noi_dung = new System.Windows.Forms.TextBox();
@@ -43,15 +47,12 @@
             this.m_lbl_ngay_ky = new System.Windows.Forms.Label();
             this.m_lbl_loai_quyet_dinh = new System.Windows.Forms.Label();
             this.m_lbl_ma_quyet_dinh = new System.Windows.Forms.Label();
-            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.m_cmd_refresh = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_txt_loai_quyet_dinh = new System.Windows.Forms.TextBox();
-            this.m_cbo_ma_quyet_dinh = new System.Windows.Forms.ComboBox();
-            this.m_lbl_ma_qd = new System.Windows.Forms.Label();
+            this.m_ofd_openfile = new System.Windows.Forms.OpenFileDialog();
             this.m_grb_quyet_dinh.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -70,6 +71,33 @@
             this.m_cmd_them_quyet_dinh.Size = new System.Drawing.Size(134, 28);
             this.m_cmd_them_quyet_dinh.TabIndex = 106;
             this.m_cmd_them_quyet_dinh.Text = "Tạo mới quyết định";
+            // 
+            // ImageList
+            // 
+            this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
+            this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.ImageList.Images.SetKeyName(0, "");
+            this.ImageList.Images.SetKeyName(1, "");
+            this.ImageList.Images.SetKeyName(2, "");
+            this.ImageList.Images.SetKeyName(3, "");
+            this.ImageList.Images.SetKeyName(4, "");
+            this.ImageList.Images.SetKeyName(5, "");
+            this.ImageList.Images.SetKeyName(6, "");
+            this.ImageList.Images.SetKeyName(7, "");
+            this.ImageList.Images.SetKeyName(8, "");
+            this.ImageList.Images.SetKeyName(9, "");
+            this.ImageList.Images.SetKeyName(10, "");
+            this.ImageList.Images.SetKeyName(11, "");
+            this.ImageList.Images.SetKeyName(12, "");
+            this.ImageList.Images.SetKeyName(13, "");
+            this.ImageList.Images.SetKeyName(14, "");
+            this.ImageList.Images.SetKeyName(15, "");
+            this.ImageList.Images.SetKeyName(16, "");
+            this.ImageList.Images.SetKeyName(17, "");
+            this.ImageList.Images.SetKeyName(18, "");
+            this.ImageList.Images.SetKeyName(19, "");
+            this.ImageList.Images.SetKeyName(20, "");
+            this.ImageList.Images.SetKeyName(21, "");
             // 
             // m_cmd_chon_quyet_dinh
             // 
@@ -106,6 +134,35 @@
             this.m_grb_quyet_dinh.TabIndex = 104;
             this.m_grb_quyet_dinh.TabStop = false;
             this.m_grb_quyet_dinh.Text = "Quyết định đi kèm";
+            // 
+            // m_lbl_ma_qd
+            // 
+            this.m_lbl_ma_qd.AutoSize = true;
+            this.m_lbl_ma_qd.Location = new System.Drawing.Point(105, 55);
+            this.m_lbl_ma_qd.Name = "m_lbl_ma_qd";
+            this.m_lbl_ma_qd.Size = new System.Drawing.Size(75, 13);
+            this.m_lbl_ma_qd.TabIndex = 122;
+            this.m_lbl_ma_qd.Text = "Mã quyết định";
+            // 
+            // m_cbo_ma_quyet_dinh
+            // 
+            this.m_cbo_ma_quyet_dinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_ma_quyet_dinh.FormattingEnabled = true;
+            this.m_cbo_ma_quyet_dinh.Location = new System.Drawing.Point(202, 23);
+            this.m_cbo_ma_quyet_dinh.Name = "m_cbo_ma_quyet_dinh";
+            this.m_cbo_ma_quyet_dinh.Size = new System.Drawing.Size(131, 21);
+            this.m_cbo_ma_quyet_dinh.TabIndex = 121;
+            this.m_cbo_ma_quyet_dinh.SelectedIndexChanged += new System.EventHandler(this.m_cbo_ma_quyet_dinh_SelectedIndexChanged);
+            // 
+            // m_txt_loai_quyet_dinh
+            // 
+            this.m_txt_loai_quyet_dinh.BackColor = System.Drawing.SystemColors.Info;
+            this.m_txt_loai_quyet_dinh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_loai_quyet_dinh.Location = new System.Drawing.Point(570, 54);
+            this.m_txt_loai_quyet_dinh.Name = "m_txt_loai_quyet_dinh";
+            this.m_txt_loai_quyet_dinh.ReadOnly = true;
+            this.m_txt_loai_quyet_dinh.Size = new System.Drawing.Size(176, 20);
+            this.m_txt_loai_quyet_dinh.TabIndex = 29;
             // 
             // m_cmd_xem_file
             // 
@@ -205,33 +262,6 @@
             this.m_lbl_ma_quyet_dinh.TabIndex = 14;
             this.m_lbl_ma_quyet_dinh.Text = "Mã quyết định";
             // 
-            // ImageList
-            // 
-            this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
-            this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.ImageList.Images.SetKeyName(0, "");
-            this.ImageList.Images.SetKeyName(1, "");
-            this.ImageList.Images.SetKeyName(2, "");
-            this.ImageList.Images.SetKeyName(3, "");
-            this.ImageList.Images.SetKeyName(4, "");
-            this.ImageList.Images.SetKeyName(5, "");
-            this.ImageList.Images.SetKeyName(6, "");
-            this.ImageList.Images.SetKeyName(7, "");
-            this.ImageList.Images.SetKeyName(8, "");
-            this.ImageList.Images.SetKeyName(9, "");
-            this.ImageList.Images.SetKeyName(10, "");
-            this.ImageList.Images.SetKeyName(11, "");
-            this.ImageList.Images.SetKeyName(12, "");
-            this.ImageList.Images.SetKeyName(13, "");
-            this.ImageList.Images.SetKeyName(14, "");
-            this.ImageList.Images.SetKeyName(15, "");
-            this.ImageList.Images.SetKeyName(16, "");
-            this.ImageList.Images.SetKeyName(17, "");
-            this.ImageList.Images.SetKeyName(18, "");
-            this.ImageList.Images.SetKeyName(19, "");
-            this.ImageList.Images.SetKeyName(20, "");
-            this.ImageList.Images.SetKeyName(21, "");
-            // 
             // m_pnl_out_place_dm
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
@@ -301,35 +331,6 @@
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 109;
             // 
-            // m_txt_loai_quyet_dinh
-            // 
-            this.m_txt_loai_quyet_dinh.BackColor = System.Drawing.SystemColors.Info;
-            this.m_txt_loai_quyet_dinh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_loai_quyet_dinh.Location = new System.Drawing.Point(570, 54);
-            this.m_txt_loai_quyet_dinh.Name = "m_txt_loai_quyet_dinh";
-            this.m_txt_loai_quyet_dinh.ReadOnly = true;
-            this.m_txt_loai_quyet_dinh.Size = new System.Drawing.Size(176, 20);
-            this.m_txt_loai_quyet_dinh.TabIndex = 29;
-            // 
-            // m_cbo_ma_quyet_dinh
-            // 
-            this.m_cbo_ma_quyet_dinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_ma_quyet_dinh.FormattingEnabled = true;
-            this.m_cbo_ma_quyet_dinh.Location = new System.Drawing.Point(202, 23);
-            this.m_cbo_ma_quyet_dinh.Name = "m_cbo_ma_quyet_dinh";
-            this.m_cbo_ma_quyet_dinh.Size = new System.Drawing.Size(131, 21);
-            this.m_cbo_ma_quyet_dinh.TabIndex = 121;
-            this.m_cbo_ma_quyet_dinh.SelectedIndexChanged += new System.EventHandler(this.m_cbo_ma_quyet_dinh_SelectedIndexChanged);
-            // 
-            // m_lbl_ma_qd
-            // 
-            this.m_lbl_ma_qd.AutoSize = true;
-            this.m_lbl_ma_qd.Location = new System.Drawing.Point(105, 55);
-            this.m_lbl_ma_qd.Name = "m_lbl_ma_qd";
-            this.m_lbl_ma_qd.Size = new System.Drawing.Size(75, 13);
-            this.m_lbl_ma_qd.TabIndex = 122;
-            this.m_lbl_ma_qd.Text = "Mã quyết định";
-            // 
             // f206_v_gd_cong_tac_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -374,5 +375,6 @@
         private System.Windows.Forms.TextBox m_txt_loai_quyet_dinh;
         private System.Windows.Forms.Label m_lbl_ma_qd;
         private System.Windows.Forms.ComboBox m_cbo_ma_quyet_dinh;
+        private System.Windows.Forms.OpenFileDialog m_ofd_openfile;
     }
 }
