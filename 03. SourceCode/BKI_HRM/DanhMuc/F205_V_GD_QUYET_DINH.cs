@@ -339,6 +339,7 @@ namespace BKI_HRM
             this.m_cbo_tim_kiem_theo.Name = "m_cbo_tim_kiem_theo";
             this.m_cbo_tim_kiem_theo.Size = new System.Drawing.Size(299, 21);
             this.m_cbo_tim_kiem_theo.TabIndex = 46;
+            this.m_cbo_tim_kiem_theo.SelectedIndexChanged += new System.EventHandler(this.m_cbo_tim_kiem_theo_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -770,6 +771,18 @@ namespace BKI_HRM
             {
                 
                 CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cbo_tim_kiem_theo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
