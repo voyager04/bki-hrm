@@ -516,8 +516,18 @@ namespace BKI_HRM
         {
             try
             {
-                m_lua_chon = 0;
-                load_data_2_grid();
+                if (m_rdb_coqd.Checked)
+                    m_lua_chon = 0;
+                else
+                    m_lua_chon = 1;
+                if (m_txt_tim_kiem.Text.Trim() == "Nhập mã đơn vị, mã chức vụ")
+                {
+                    m_txt_tim_kiem.Text = "";
+                    load_data_2_grid();
+                    m_txt_tim_kiem.Text = "Nhập mã đơn vị, mã chức vụ";
+                }
+                else
+                    load_data_2_grid();
             }
             catch (Exception v_e)
             {
@@ -529,8 +539,7 @@ namespace BKI_HRM
         {
             try
             {
-                m_lua_chon = 1;
-                load_data_2_grid();
+                    //load_data_2_grid();
             }
             catch (Exception v_e)
             {
