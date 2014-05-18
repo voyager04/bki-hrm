@@ -294,9 +294,9 @@ namespace BKI_HRM
 		}
 
 
-		private void insert_v_gd_cong_tac(){			
-		//	f206_v_gd_cong_tac_DE v_fDE = new  f206_v_gd_cong_tac_DE();								
-		//	v_fDE.display();
+		private void insert_v_gd_cong_tac(){
+            f206_v_gd_cong_tac_de v_fDE = new f206_v_gd_cong_tac_de();
+            v_fDE.display();
 			load_data_2_grid();
 		}
 
