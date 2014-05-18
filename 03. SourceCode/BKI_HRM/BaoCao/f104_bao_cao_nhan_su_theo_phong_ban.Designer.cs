@@ -27,6 +27,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f104_bao_cao_nhan_su_theo_phong_ban));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.m_rdb_nhom = new System.Windows.Forms.RadioButton();
+            this.m_rdb_ko_nhom = new System.Windows.Forms.RadioButton();
             this.m_lbl_thong_bao = new System.Windows.Forms.Label();
             this.m_lbl_thoidiem = new System.Windows.Forms.Label();
             this.m_dtp_thoidiem = new System.Windows.Forms.DateTimePicker();
@@ -40,13 +43,10 @@
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.m_rdb_nhom = new System.Windows.Forms.RadioButton();
-            this.m_rdb_ko_nhom = new System.Windows.Forms.RadioButton();
             this.panel2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ImageList
@@ -92,6 +92,40 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1189, 81);
             this.panel2.TabIndex = 25;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.m_rdb_nhom);
+            this.groupBox1.Controls.Add(this.m_rdb_ko_nhom);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(231, 65);
+            this.groupBox1.TabIndex = 41;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Hiển thị:";
+            // 
+            // m_rdb_nhom
+            // 
+            this.m_rdb_nhom.AutoSize = true;
+            this.m_rdb_nhom.Location = new System.Drawing.Point(21, 44);
+            this.m_rdb_nhom.Name = "m_rdb_nhom";
+            this.m_rdb_nhom.Size = new System.Drawing.Size(169, 17);
+            this.m_rdb_nhom.TabIndex = 1;
+            this.m_rdb_nhom.Text = "Nhóm theo địa bàn, mã đơn vị";
+            this.m_rdb_nhom.UseVisualStyleBackColor = true;
+            this.m_rdb_nhom.CheckedChanged += new System.EventHandler(this.m_rdb_nhom_CheckedChanged);
+            // 
+            // m_rdb_ko_nhom
+            // 
+            this.m_rdb_ko_nhom.AutoSize = true;
+            this.m_rdb_ko_nhom.Checked = true;
+            this.m_rdb_ko_nhom.Location = new System.Drawing.Point(21, 20);
+            this.m_rdb_ko_nhom.Name = "m_rdb_ko_nhom";
+            this.m_rdb_ko_nhom.Size = new System.Drawing.Size(85, 17);
+            this.m_rdb_ko_nhom.TabIndex = 0;
+            this.m_rdb_ko_nhom.TabStop = true;
+            this.m_rdb_ko_nhom.Text = "Không nhóm";
+            this.m_rdb_ko_nhom.UseVisualStyleBackColor = true;
             // 
             // m_lbl_thong_bao
             // 
@@ -158,16 +192,16 @@
             // 
             this.m_txt_search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_search.Location = new System.Drawing.Point(305, 21);
+            this.m_txt_search.Location = new System.Drawing.Point(343, 23);
             this.m_txt_search.Name = "m_txt_search";
-            this.m_txt_search.Size = new System.Drawing.Size(462, 20);
+            this.m_txt_search.Size = new System.Drawing.Size(433, 20);
             this.m_txt_search.TabIndex = 1;
             this.m_tooltip.SetToolTip(this.m_txt_search, "Nhập Tên hoặc Mã sô phòng ban, trung tâm, khối để tìm kiếm");
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(211, 26);
+            this.label6.Location = new System.Drawing.Point(249, 28);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 13);
             this.label6.TabIndex = 24;
@@ -227,40 +261,6 @@
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 33;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.m_rdb_nhom);
-            this.groupBox1.Controls.Add(this.m_rdb_ko_nhom);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(193, 65);
-            this.groupBox1.TabIndex = 41;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Hiển thị:";
-            // 
-            // m_rdb_nhom
-            // 
-            this.m_rdb_nhom.AutoSize = true;
-            this.m_rdb_nhom.Location = new System.Drawing.Point(21, 44);
-            this.m_rdb_nhom.Name = "m_rdb_nhom";
-            this.m_rdb_nhom.Size = new System.Drawing.Size(169, 17);
-            this.m_rdb_nhom.TabIndex = 1;
-            this.m_rdb_nhom.Text = "Nhóm theo địa bàn, mã đơn vị";
-            this.m_rdb_nhom.UseVisualStyleBackColor = true;
-            this.m_rdb_nhom.CheckedChanged += new System.EventHandler(this.m_rdb_nhom_CheckedChanged);
-            // 
-            // m_rdb_ko_nhom
-            // 
-            this.m_rdb_ko_nhom.AutoSize = true;
-            this.m_rdb_ko_nhom.Checked = true;
-            this.m_rdb_ko_nhom.Location = new System.Drawing.Point(21, 20);
-            this.m_rdb_ko_nhom.Name = "m_rdb_ko_nhom";
-            this.m_rdb_ko_nhom.Size = new System.Drawing.Size(85, 17);
-            this.m_rdb_ko_nhom.TabIndex = 0;
-            this.m_rdb_ko_nhom.TabStop = true;
-            this.m_rdb_ko_nhom.Text = "Không nhóm";
-            this.m_rdb_ko_nhom.UseVisualStyleBackColor = true;
-            // 
             // f104_bao_cao_nhan_su_theo_phong_ban
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -278,10 +278,10 @@
             this.Load += new System.EventHandler(this.f104_bao_cao_nhan_su_theo_phong_ban_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.m_pnl_out_place_dm.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.m_pnl_out_place_dm.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
 
         }
