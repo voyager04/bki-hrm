@@ -116,6 +116,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_GD_CHI_TIET_TRANG_THAI_LD.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_GD_CONG_TAC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_GD_CONG_TAC.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_GD_HOP_DONG.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -219,6 +224,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_GD_CHI_TIET_CAP_BAC.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_V_GD_CONG_TAC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_GD_CONG_TAC.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS_V_GD_HOP_DONG_LAO_DONG.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -410,6 +420,17 @@
     </None>
     <None Include="DS_GD_CHI_TIET_TRANG_THAI_LD.xss">
       <DependentUpon>DS_GD_CHI_TIET_TRANG_THAI_LD.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_CONG_TAC.xsc">
+      <DependentUpon>DS_GD_CONG_TAC.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_CONG_TAC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_GD_CONG_TAC.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_GD_CONG_TAC.xss">
+      <DependentUpon>DS_GD_CONG_TAC.xsd</DependentUpon>
     </None>
     <None Include="DS_GD_HOP_DONG.xsc">
       <DependentUpon>DS_GD_HOP_DONG.xsd</DependentUpon>
@@ -630,6 +651,17 @@
     </None>
     <None Include="DS_V_GD_CHI_TIET_CAP_BAC.xss">
       <DependentUpon>DS_V_GD_CHI_TIET_CAP_BAC.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_CONG_TAC.xsc">
+      <DependentUpon>DS_V_GD_CONG_TAC.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_CONG_TAC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_GD_CONG_TAC.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_GD_CONG_TAC.xss">
+      <DependentUpon>DS_V_GD_CONG_TAC.xsd</DependentUpon>
     </None>
     <None Include="DS_V_GD_HOP_DONG_LAO_DONG.xsc">
       <DependentUpon>DS_V_GD_HOP_DONG_LAO_DONG.xsd</DependentUpon>

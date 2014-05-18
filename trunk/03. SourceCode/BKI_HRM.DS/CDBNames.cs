@@ -729,4 +729,36 @@
        public const string MA_TU_DIEN = "MA_TU_DIEN";
        public const string SO_LUONG = "SO_LUONG";
    }
+   public class GD_CONG_TAC
+   {
+       public const string ID = "ID";
+       public const string ID_NHAN_SU = "ID_NHAN_SU";
+       public const string ID_QUYET_DINH = "ID_QUYET_DINH";
+       public const string NGAY_DI = "NGAY_DI";
+       public const string NGAY_VE = "NGAY_VE";
+       public const string DIA_DIEM = "DIA_DIEM";
+       public const string MO_TA_CONG_VIEC = "MO_TA_CONG_VIEC";
+       public const string LUA_CHON = "LUA_CHON";
+   }
+   public class V_GD_CONG_TAC
+   {
+       public const string ID_NHAN_SU = "ID_NHAN_SU";
+       public const string MA_NV = "MA_NV";
+       public const string HO_DEM = "HO_DEM";
+       public const string TEN = "TEN";
+       public const string ID_QUYET_DINH = "ID_QUYET_DINH";
+       public const string MA_QUYET_DINH = "MA_QUYET_DINH";
+       public const string ID_LOAI_QD = "ID_LOAI_QD";
+       public const string LOAI_QD = "LOAI_QD";
+       public const string NGAY_CO_HIEU_LUC = "NGAY_CO_HIEU_LUC";
+       public const string NGAY_KY = "NGAY_KY";
+       public const string NGAY_HET_HIEU_LUC = "NGAY_HET_HIEU_LUC";
+       public const string NOI_DUNG = "NOI_DUNG";
+       public const string NGAY_DI = "NGAY_DI";
+       public const string NGAY_VE = "NGAY_VE";
+       public const string DIA_DIEM = "DIA_DIEM";
+       public const string MO_TA_CONG_VIEC = "MO_TA_CONG_VIEC";
+       public const string LUA_CHON = "LUA_CHON";
+   }
+
 }
