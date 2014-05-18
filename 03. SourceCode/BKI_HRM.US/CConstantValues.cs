@@ -24,6 +24,8 @@ namespace BKI_HRM.US {
         public const string TRANG_THAI_DU_AN = "TRANG_THAI_DU_AN";
         public const string MA_HOP_DONG = "MA_HOP_DONG";
         public const string DANH_HIEU = "DANH_HIEU";
+        public const string CO_CHE = "CO_CHE";
+        public const string LOAI_DU_AN = "LOAI_DU_AN";
     }
 
     public class TU_DIEN {

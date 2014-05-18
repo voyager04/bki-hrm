@@ -188,7 +188,7 @@ namespace BKI_HRM.NghiepVu
             else
                 m_dat_ngay_kt.Checked = false;
 
-            if (v_us_gd_ct_da.dcID_QUYET_DINH != null)
+            if (v_us_gd_ct_da.dcID_QUYET_DINH != 0)
             {
                 m_grb_quyet_dinh.Enabled = true;
                 US_DM_QUYET_DINH v_us_dm_qd = new US_DM_QUYET_DINH(v_us_gd_ct_da.dcID_QUYET_DINH);
