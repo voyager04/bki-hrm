@@ -23,6 +23,7 @@ namespace BKI_HRM.US {
         public const string TRANG_THAI_HOP_DONG = "TRANG_THAI_HOP_DONG";
         public const string TRANG_THAI_DU_AN = "TRANG_THAI_DU_AN";
         public const string MA_HOP_DONG = "MA_HOP_DONG";
+        public const string DANH_HIEU = "DANH_HIEU";
     }
 
     public class TU_DIEN {
@@ -53,6 +54,7 @@ namespace BKI_HRM.US {
         public const string TU_VAN_TUYEN_SINH = "668";
         public const string VHOL = "670";
         public const string VHTT = "671";
+        public const string QD_THANH_LAP_DU_AN = "679";
     }
 
     public class CAP_DON_VI {

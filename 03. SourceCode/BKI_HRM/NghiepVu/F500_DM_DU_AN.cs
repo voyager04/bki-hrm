@@ -46,7 +46,6 @@ namespace BKI_HRM
         internal Panel panel1;
         internal SIS.Controls.Button.SiSButton m_cmd_them;
         internal SIS.Controls.Button.SiSButton m_cmd_sua;
-        internal SIS.Controls.Button.SiSButton m_cmd_xoa;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private Panel panel2;
         private GroupBox groupBox1;
@@ -111,7 +110,6 @@ namespace BKI_HRM
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cmd_them = new SIS.Controls.Button.SiSButton();
             this.m_cmd_sua = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_xoa = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_lbl_total_record_grid1 = new System.Windows.Forms.Label();
@@ -190,13 +188,14 @@ namespace BKI_HRM
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(169, 28);
             this.m_cmd_delete.TabIndex = 14;
-            this.m_cmd_delete.Text = "&Xoá";
+            this.m_cmd_delete.Text = "&Xoá dự án";
             // 
             // m_grv_du_an
             // 
             this.m_grv_du_an.ColumnInfo = resources.GetString("m_grv_du_an.ColumnInfo");
             this.m_grv_du_an.Location = new System.Drawing.Point(0, 125);
             this.m_grv_du_an.Name = "m_grv_du_an";
+            this.m_grv_du_an.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Row;
             this.m_grv_du_an.Size = new System.Drawing.Size(1127, 215);
             this.m_grv_du_an.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_du_an.Styles"));
             this.m_grv_du_an.TabIndex = 20;
@@ -257,16 +256,17 @@ namespace BKI_HRM
             this.m_grv_nhan_su.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_nhan_su.Location = new System.Drawing.Point(0, 388);
             this.m_grv_nhan_su.Name = "m_grv_nhan_su";
+            this.m_grv_nhan_su.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Row;
             this.m_grv_nhan_su.Size = new System.Drawing.Size(1127, 180);
             this.m_grv_nhan_su.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_nhan_su.Styles"));
             this.m_grv_nhan_su.TabIndex = 52;
             this.m_grv_nhan_su.Click += new System.EventHandler(this.m_grv_nhan_su_Click);
+            this.m_grv_nhan_su.DoubleClick += new System.EventHandler(this.m_grv_nhan_su_DoubleClick);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.m_cmd_them);
             this.panel1.Controls.Add(this.m_cmd_sua);
-            this.panel1.Controls.Add(this.m_cmd_xoa);
             this.panel1.Controls.Add(this.m_cmd_exit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 568);
@@ -283,7 +283,7 @@ namespace BKI_HRM
             this.m_cmd_them.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_them.ImageIndex = 2;
-            this.m_cmd_them.Location = new System.Drawing.Point(394, 4);
+            this.m_cmd_them.Location = new System.Drawing.Point(560, 4);
             this.m_cmd_them.Name = "m_cmd_them";
             this.m_cmd_them.Size = new System.Drawing.Size(198, 28);
             this.m_cmd_them.TabIndex = 12;
@@ -298,27 +298,12 @@ namespace BKI_HRM
             this.m_cmd_sua.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_sua.ImageIndex = 3;
-            this.m_cmd_sua.Location = new System.Drawing.Point(592, 4);
+            this.m_cmd_sua.Location = new System.Drawing.Point(758, 4);
             this.m_cmd_sua.Name = "m_cmd_sua";
             this.m_cmd_sua.Size = new System.Drawing.Size(196, 28);
             this.m_cmd_sua.TabIndex = 13;
             this.m_cmd_sua.Text = "&Sửa thông tin thành viên";
             this.m_cmd_sua.Click += new System.EventHandler(this.m_cmd_sua_Click);
-            // 
-            // m_cmd_xoa
-            // 
-            this.m_cmd_xoa.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_xoa.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_xoa.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_xoa.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_xoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_xoa.ImageIndex = 4;
-            this.m_cmd_xoa.Location = new System.Drawing.Point(788, 4);
-            this.m_cmd_xoa.Name = "m_cmd_xoa";
-            this.m_cmd_xoa.Size = new System.Drawing.Size(166, 28);
-            this.m_cmd_xoa.TabIndex = 14;
-            this.m_cmd_xoa.Text = "&Xoá";
-            this.m_cmd_xoa.Click += new System.EventHandler(this.m_cmd_xoa_Click);
             // 
             // m_cmd_exit
             // 
@@ -493,32 +478,6 @@ namespace BKI_HRM
                 , CO_CHE = 9
 
         }
-        #endregion
-
-        #region Members
-        bool trang_thai = true;
-        ITransferDataRow m_obj_trans;
-        int m_dc_index_row = 1;
-        int m_dc_index_row_chi_tiet_da = 1;
-        DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN m_ds = new DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
-        US_V_DM_DU_AN_QUYET_DINH_TU_DIEN m_us = new US_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
-        DS.DS_V_DM_NHAN_SU_DU_AN m_ds_nsda = new DS.DS_V_DM_NHAN_SU_DU_AN();
-        US.US_V_DM_NHAN_SU_DU_AN m_us_nsda = new US.US_V_DM_NHAN_SU_DU_AN();
-        private enum e_col_Number_of_nhan_su_du_an
-        {
-            MA_NV = 3,
-            HO_DEM = 4,
-            TEN = 5,
-            MA_CV = 6,
-            MA_DON_VI = 7,
-            VI_TRI = 8,
-            THOI_DIEM_TG = 9,
-            THOI_DIEM_KT = 10,
-            THOI_GIAN_TG = 11,
-            DANH_HIEU = 12,
-            MA_QUYET_DINH = 13,
-            MO_TA = 14
-        }
 
         private enum e_col_Number_de
         {
@@ -555,6 +514,17 @@ namespace BKI_HRM
                 ,
             TRANG_THAI_CV = 20
         }
+        #endregion
+
+        #region Members
+        bool trang_thai = true;
+        ITransferDataRow m_obj_trans;
+        int m_dc_index_row = 1;
+        int m_dc_index_row_chi_tiet_da = 1;
+        DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN m_ds = new DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
+        US_V_DM_DU_AN_QUYET_DINH_TU_DIEN m_us = new US_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
+        DS_V_DM_NHAN_SU_DU_AN m_ds_nsda = new DS.DS_V_DM_NHAN_SU_DU_AN();
+        US_V_DM_NHAN_SU_DU_AN m_us_nsda = new US.US_V_DM_NHAN_SU_DU_AN();
 
         #endregion
 
@@ -767,12 +737,6 @@ namespace BKI_HRM
             m_us_nsda.FillDatasetByIdDuAn(m_ds_nsda, m_us.dcID);
             m_grv_nhan_su.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds_nsda, m_grv_nhan_su, v_obj_trans);
-            //m_grv_nhan_su.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.None // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
-            // , 0
-            // , (int)e_col_Number_de.MA_NV // chỗ này là tên trường mà mình nhóm
-            // , (int)e_col_Number_de.MA_NV // chỗ này là tên trường mà mình Count
-            // , "{0}"
-            // );
             m_grv_nhan_su.Redraw = true;
             m_lbl_total_record_grid2.Text = string.Format("Có {0} thành viên", m_ds_nsda.Tables[0].Rows.Count);
         }
@@ -805,6 +769,15 @@ namespace BKI_HRM
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds_nsda.V_DM_NHAN_SU_DU_AN.NewRow());
             return v_obj_trans;
+        }
+
+        private void select_nhan_vien_du_an()
+        {
+            F500_gd_chi_tiet_du_an_de v_fDE = new F500_gd_chi_tiet_du_an_de();
+            DataRow v_dr = (DataRow)m_grv_nhan_su.Rows[m_dc_index_row_chi_tiet_da].UserData;
+            decimal v_dc_id_chi_tiet_du_an = (decimal)v_dr["ID"];
+            v_fDE.display_for_update(v_dc_id_chi_tiet_du_an, m_us);
+            load_data_2_grv_nhan_su(m_dc_index_row);
         }
         #endregion
 
@@ -839,18 +812,6 @@ namespace BKI_HRM
             try
             {
                 delete_v_dm_du_an_quyet_dinh_tu_dien();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void m_cmd_view_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                view_v_dm_du_an_quyet_dinh_tu_dien();
             }
             catch (Exception v_e)
             {
@@ -1040,11 +1001,7 @@ namespace BKI_HRM
         {
             try
             {
-                F500_gd_chi_tiet_du_an_de v_fDE = new F500_gd_chi_tiet_du_an_de();
-                DataRow v_dr = (DataRow)m_grv_nhan_su.Rows[m_dc_index_row_chi_tiet_da].UserData;
-                decimal v_dc_id_chi_tiet_du_an = (decimal)v_dr["ID"];
-                v_fDE.display_for_update(v_dc_id_chi_tiet_du_an);
-                load_data_2_grv_nhan_su(m_dc_index_row);
+                select_nhan_vien_du_an();
             }
             catch (Exception v_e)
             {
@@ -1093,6 +1050,18 @@ namespace BKI_HRM
             try
             {
                 load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_grv_nhan_su_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                select_nhan_vien_du_an();
             }
             catch (Exception v_e)
             {
