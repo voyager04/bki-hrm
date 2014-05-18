@@ -93,10 +93,10 @@ namespace BKI_HRM {
                 , CM_DM_TU_DIEN.GHI_CHU
                 , v_ds_dm_tu_dien);
 
-            ip_obj_cbo_trang_thai.DataSource = v_ds_dm_tu_dien.CM_DM_TU_DIEN;
+           
             ip_obj_cbo_trang_thai.DisplayMember = CM_DM_TU_DIEN.TEN;
             ip_obj_cbo_trang_thai.ValueMember = CM_DM_TU_DIEN.ID;
-
+            ip_obj_cbo_trang_thai.DataSource = v_ds_dm_tu_dien.CM_DM_TU_DIEN;
             if (ip_e_tat_ca == eTAT_CA.YES) {
                 DataRow v_dr = v_ds_dm_tu_dien.CM_DM_TU_DIEN.NewRow();
                 v_dr[CM_DM_TU_DIEN.ID] = -1;
