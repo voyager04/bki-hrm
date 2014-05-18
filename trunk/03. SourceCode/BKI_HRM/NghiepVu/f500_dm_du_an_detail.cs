@@ -20,45 +20,41 @@ namespace BKI_HRM.NghiepVu
     public partial class f500_dm_du_an_detail : Form
     {
         #region publicInterface
+
         public f500_dm_du_an_detail()
         {
             InitializeComponent();
             format_control();
         }
+
         public void display_for_insert()
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
-            load_data_2_control();
             this.ShowDialog();
         }
 
         public void display_for_update(DS.DS_DM_DU_AN i_ds)
-        {            
+        {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
-            load_data_2_control();
-            ds_2_form(i_ds);
-            load_data_2_form_chi_tiet_qd(m_txt_ma_quyet_dinh.Text);
-            DataRow v_dr = i_ds.Tables[0].Rows[0];
-            m_dc_id_du_an = CIPConvert.ToDecimal(v_dr["ID"]);
-            load_data_2_grv_nhan_su(m_dc_id_du_an);
             this.ShowDialog();
         }
-        
+
         #endregion
 
         #region Member
         decimal m_dc_id_du_an;
         int m_dc_index_row;
-        ITransferDataRow m_obj_trans;	
+        ITransferDataRow m_obj_trans;
         DataEntryFormMode m_e_form_mode;
         US.US_DM_DU_AN m_us_dm_du_an = new US.US_DM_DU_AN();
         US.US_DM_QUYET_DINH m_us_dm_quyet_dinh = new US.US_DM_QUYET_DINH();
         DS.DS_V_DM_NHAN_SU_DU_AN m_ds_nsda = new DS.DS_V_DM_NHAN_SU_DU_AN();
         US.US_V_DM_NHAN_SU_DU_AN m_us_nsda = new US.US_V_DM_NHAN_SU_DU_AN();
-        enum cm_dm_tu_dien { 
+        enum cm_dm_tu_dien
+        {
             TRANG_THAI = 10,
             LOAI_DU_AN = 9,
-            CO_CHE =8,
+            CO_CHE = 8,
             THANH_LAP_DU_AN = 679
         }
         private enum e_col_Number
@@ -80,11 +76,11 @@ namespace BKI_HRM.NghiepVu
             MA_DON_VI = 9
                 ,
             TEN_DON_VI = 10
-                , 
+                ,
             VI_TRI = 11
                 ,
             THOI_DIEM_TG = 12
-                ,          
+                ,
             THOI_DIEM_KT = 13
                 ,
             THOI_GIAN_TG = 14
@@ -94,7 +90,7 @@ namespace BKI_HRM.NghiepVu
             MO_TA = 18
                 ,
             TRANG_THAI_CV = 19
-        }			
+        }
         #endregion
 
         #region privateMethod
@@ -105,25 +101,9 @@ namespace BKI_HRM.NghiepVu
             CGridUtils.AddSave_Excel_Handlers(m_grv_nhan_su);
             CGridUtils.AddSearch_Handlers(m_grv_nhan_su);
             m_grv_nhan_su.Tree.Column = (int)e_col_Number.HO_DEM;
-            m_grv_nhan_su.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.SimpleLeaf;            
+            m_grv_nhan_su.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.SimpleLeaf;
         }
-        
 
-        private void load_data_2_grv_nhan_su(decimal i_dc_id_da)
-        {
-            m_obj_trans = get_trans_object(m_grv_nhan_su);
-            m_ds_nsda = new DS.DS_V_DM_NHAN_SU_DU_AN();
-            m_us_nsda.FillDatasetByIdDuAn(m_ds_nsda,i_dc_id_da);
-            m_grv_nhan_su.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds_nsda, m_grv_nhan_su, m_obj_trans);
-            m_grv_nhan_su.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.None // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
-             , 0
-             , (int)e_col_Number.MA_NV // chỗ này là tên trường mà mình nhóm
-             , (int)e_col_Number.MA_NV // chỗ này là tên trường mà mình Count
-             , "{0}"
-             );
-            m_grv_nhan_su.Redraw = true;
-        }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
             Hashtable v_htb = new Hashtable();
@@ -139,11 +119,11 @@ namespace BKI_HRM.NghiepVu
 
             v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_DIEM_KT, e_col_Number.THOI_DIEM_KT);
 
-            v_htb.Add(V_DM_NHAN_SU_DU_AN.TEN, e_col_Number.TEN);        
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.TEN, e_col_Number.TEN);
 
             v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_DIEM_TG, e_col_Number.THOI_DIEM_TG);
 
-            v_htb.Add(V_DM_NHAN_SU_DU_AN.HO_DEM, e_col_Number.HO_DEM);         
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.HO_DEM, e_col_Number.HO_DEM);
 
             v_htb.Add(V_DM_NHAN_SU_DU_AN.TEN_DU_AN, e_col_Number.TEN_DU_AN);
 
@@ -153,169 +133,32 @@ namespace BKI_HRM.NghiepVu
             return v_obj_trans;
         }
 
-        private void load_data_2_form_chi_tiet_qd(string i_str_ma_qd)
+        private void load_data_2_grv_nhan_su(decimal i_dc_id_da)
         {
-            DS.DS_DM_QUYET_DINH v_ds_dm_qd = new DS.DS_DM_QUYET_DINH();
-            m_us_dm_quyet_dinh.FillDatasetByMaQuyetDinh(v_ds_dm_qd, i_str_ma_qd);
-            DataRow v_dr = v_ds_dm_qd.Tables[0].Rows[0];
-            m_txt_link.Text = v_dr["LINK"].ToString();
-            m_txt_noi_dung_quyet_dinh.Text = v_dr["NOI_DUNG"].ToString();
-
-            if (v_dr["NGAY_KY"].ToString() != "")
-            {
-                m_dat_ngay_ki.Value = (DateTime)v_dr["NGAY_KY"];
-            }
-            else
-            {
-                m_dat_ngay_ki.Checked = false;
-            }
-
-            if (v_dr["NGAY_HET_HIEU_LUC"].ToString() != "")
-            {
-                m_dat_ngay_het_hieu_luc.Value = (DateTime)v_dr["NGAY_HET_HIEU_LUC"];
-            }
-            else
-            {
-                m_dat_ngay_het_hieu_luc.Checked = false;
-            }
-            if (v_dr["NGAY_CO_HIEU_LUC"].ToString() != "")
-            {
-                m_dat_ngay_co_hieu_luc.Value = (DateTime)v_dr["NGAY_CO_HIEU_LUC"];
-            }
-            else
-            {
-                m_dat_ngay_co_hieu_luc.Checked = false;
-            }
-            
-            m_us_dm_quyet_dinh.dcID = CIPConvert.ToDecimal(v_dr["ID"].ToString());
+            m_obj_trans = get_trans_object(m_grv_nhan_su);
+            m_ds_nsda = new DS.DS_V_DM_NHAN_SU_DU_AN();
+            m_us_nsda.FillDatasetByIdDuAn(m_ds_nsda, i_dc_id_da);
+            m_grv_nhan_su.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds_nsda, m_grv_nhan_su, m_obj_trans);
+            m_grv_nhan_su.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.None // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+             , 0
+             , (int)e_col_Number.MA_NV // chỗ này là tên trường mà mình nhóm
+             , (int)e_col_Number.MA_NV // chỗ này là tên trường mà mình Count
+             , "{0}"
+             );
+            m_grv_nhan_su.Redraw = true;
         }
 
-        private void ds_2_form(DS.DS_DM_DU_AN i_ds)
-        {
-            DataRow dr = i_ds.Tables[0].Rows[0];
-            m_us_dm_du_an.dcID = CIPConvert.ToDecimal(dr["ID"].ToString());
-            m_txt_ma_du_an.Text = dr["MA_DU_AN"].ToString();
-            //m_txt_ma_quyet_dinh.Text = dr["TEN_DU_AN"].ToString();
-            m_txt_noi_dung.Text = dr["NOI_DUNG"].ToString();
-            m_txt_ten_du_an.Text = dr["TEN_DU_AN"].ToString();
-            if (dr["ID_CO_CHE"].ToString() != "")
-            {
-                m_cbo_co_che.SelectedValue = CIPConvert.ToDecimal(dr["ID_CO_CHE"].ToString());    
-            }            
-            m_cbo_loai_du_an.SelectedValue = CIPConvert.ToDecimal(dr["ID_LOAI_DU_AN"].ToString());
-            m_cbo_trang_thai.SelectedValue = CIPConvert.ToDecimal(dr["ID_TRANG_THAI"].ToString());
-
-            m_dat_ngay_bd.Value = (DateTime)dr["NGAY_BAT_DAU"];
-            if (dr["NGAY_KET_THUC"].ToString() == "")
-            {
-                m_dat_ngay_kt.Checked = false;
-            }
-            else
-            {
-                m_dat_ngay_kt.Value = (DateTime)dr["NGAY_KET_THUC"];
-            }
-
-            US.US_DM_QUYET_DINH v_us_qd = new US.US_DM_QUYET_DINH();
-            DS.DS_DM_QUYET_DINH v_ds_qd = new DS.DS_DM_QUYET_DINH();
-            v_us_qd.FillDatasetByIdQD(v_ds_qd, CIPConvert.ToDecimal(dr["ID_QUYET_DINH"].ToString()));
-            dr = v_ds_qd.Tables[0].Rows[0];
-            m_txt_ma_quyet_dinh.Text = dr["MA_QUYET_DINH"].ToString();
-            
-        }
-
-        public void load_data_2_cbo_trang_thai()
-        {
-            DS_CM_DM_TU_DIEN v_ds_cm_dm_td = new DS_CM_DM_TU_DIEN();
-            US_CM_DM_TU_DIEN v_us_cm_dm_td = new US_CM_DM_TU_DIEN();
-            v_us_cm_dm_td.FillDatasetByIdLoaiTuDien(v_ds_cm_dm_td, (int)cm_dm_tu_dien.TRANG_THAI);
-            m_cbo_trang_thai.DataSource = v_ds_cm_dm_td.Tables[0];
-            m_cbo_trang_thai.DisplayMember = CM_DM_TU_DIEN.TEN_NGAN;
-            m_cbo_trang_thai.ValueMember = CM_DM_TU_DIEN.ID;
-        }
-        
-        public void load_data_2_cbo_co_che() 
-        {
-            DS_CM_DM_TU_DIEN v_ds_cm_dm_td = new DS_CM_DM_TU_DIEN();
-            US_CM_DM_TU_DIEN v_us_cm_dm_td = new US_CM_DM_TU_DIEN();
-            v_us_cm_dm_td.FillDatasetByIdLoaiTuDien(v_ds_cm_dm_td, (int)cm_dm_tu_dien.CO_CHE);
-            m_cbo_co_che.DataSource = v_ds_cm_dm_td.Tables[0];
-            m_cbo_co_che.DisplayMember = CM_DM_TU_DIEN.TEN_NGAN;
-            m_cbo_co_che.ValueMember = CM_DM_TU_DIEN.ID;
-        }
-
-        public void load_data_2_cbo_loai_du_an()
-        {
-            DS_CM_DM_TU_DIEN v_ds_cm_dm_td = new DS_CM_DM_TU_DIEN();
-            US_CM_DM_TU_DIEN v_us_cm_dm_td = new US_CM_DM_TU_DIEN();
-            v_us_cm_dm_td.FillDatasetByIdLoaiTuDien(v_ds_cm_dm_td, (int)cm_dm_tu_dien.LOAI_DU_AN);
-            m_cbo_loai_du_an.DataSource = v_ds_cm_dm_td.Tables[0];
-            m_cbo_loai_du_an.DisplayMember = CM_DM_TU_DIEN.TEN_NGAN;
-            m_cbo_loai_du_an.ValueMember = CM_DM_TU_DIEN.ID;
-        }
-        public void load_data_2_txt_ma_quyet_dinh_custom_source()
-        {
-            BKI_HRM.DS.DS_DM_QUYET_DINH v_ds_quyet_dinh = new BKI_HRM.DS.DS_DM_QUYET_DINH();
-            BKI_HRM.US.US_DM_QUYET_DINH v_us_quyet_dinh = new BKI_HRM.US.US_DM_QUYET_DINH();
-            v_us_quyet_dinh.FillDatasetByIdLoaiQD(v_ds_quyet_dinh,(int)cm_dm_tu_dien.THANH_LAP_DU_AN);
-            int count = v_ds_quyet_dinh.Tables["DM_QUYET_DINH"].Rows.Count;
-            for (int i = 0; i < count; i++)
-            {
-                DataRow dr = v_ds_quyet_dinh.Tables["DM_QUYET_DINH"].Rows[i];
-                m_txt_ma_quyet_dinh.AutoCompleteCustomSource.Add(dr[1].ToString());
-            }
-        }
         public void form_2_us_object()
         {
             m_us_dm_quyet_dinh.strMA_QUYET_DINH = m_txt_ma_quyet_dinh.Text;
-            m_us_dm_quyet_dinh.strNOI_DUNG = m_txt_noi_dung_quyet_dinh.Text;
-            m_us_dm_quyet_dinh.strLINK = m_txt_link.Text;
-
-            if (m_dat_ngay_co_hieu_luc.Checked)
-            {
-                m_us_dm_quyet_dinh.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value.Date;
-            }
-            else
-            {
-                MessageBox.Show("Phải nhập ngày có hiệu lực");
-                return;
-            }
-
-            if (m_dat_ngay_het_hieu_luc.Checked)
-            {
-                if (m_dat_ngay_co_hieu_luc.Value.Date > m_dat_ngay_het_hieu_luc.Value.Date)
-                {
-                    MessageBox.Show("Ngày hết hiệu lực phải sau ngày có hiệu lực");
-                    return;
-                }
-                m_us_dm_quyet_dinh.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc.Value.Date;
-            }
-            else
-            {
-                m_us_dm_quyet_dinh.SetNGAY_HET_HIEU_LUCNull();
-            }
-
-            if (m_dat_ngay_ki.Checked)
-            {
-                m_us_dm_quyet_dinh.datNGAY_KY = m_dat_ngay_ki.Value;
-            }
-
             m_us_dm_quyet_dinh.dcID_LOAI_QD = (int)cm_dm_tu_dien.THANH_LAP_DU_AN;
 
             //----------------------------------------------------------------------------------
             m_us_dm_du_an.dcID_CO_CHE = CIPConvert.ToDecimal(m_cbo_co_che.SelectedValue);
             m_us_dm_du_an.dcID_LOAI_DU_AN = CIPConvert.ToDecimal(m_cbo_loai_du_an.SelectedValue);
             m_us_dm_du_an.dcID_TRANG_THAI = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
-
-            BKI_HRM.US.US_DM_QUYET_DINH v_us = new BKI_HRM.US.US_DM_QUYET_DINH();
-            BKI_HRM.DS.DS_DM_QUYET_DINH v_ds = new BKI_HRM.DS.DS_DM_QUYET_DINH();
-
-            //v_us.FillDatasetByMaQuyetDinh(v_ds,m_txt_ma_quyet_dinh.Text);
-
-            //DataRow dr = v_ds.Tables[0].Rows[0];
-
             m_us_dm_du_an.dcID_QUYET_DINH = m_us_dm_quyet_dinh.dcID;
-                //CIPConvert.ToDecimal(dr[0].ToString());
-
             m_us_dm_du_an.strMA_DU_AN = m_txt_ma_du_an.Text;
             m_us_dm_du_an.strNOI_DUNG = m_txt_noi_dung.Text;
             m_us_dm_du_an.strTEN_DU_AN = m_txt_ten_du_an.Text;
@@ -328,7 +171,40 @@ namespace BKI_HRM.NghiepVu
             else
             {
                 m_us_dm_du_an.SetNGAY_KET_THUCNull();
-            }            
+            }
+        }
+
+        private bool check_data_is_ok()
+        {
+            if (!m_dat_ngay_bd.Checked)
+            {
+                MessageBox.Show("Phải có ngày bắt đầu dự án");
+                return false;
+            }
+            if (m_dat_ngay_kt.Checked)
+            {
+                if (m_dat_ngay_bd.Value.Date > m_dat_ngay_kt.Value.Date)
+                {
+                    MessageBox.Show("Ngày bắt đầu dự án phải trước ngày kết thúc dự án");
+                    return false;
+                }
+            }
+            if (m_txt_ma_du_an.Text == "")
+            {
+                MessageBox.Show("Phải có mã dự án");
+                return false;
+            }
+            if (m_txt_ma_quyet_dinh.Text == "")
+            {
+                MessageBox.Show("Phải có mã quyết định");
+                return false;
+            }
+            if (m_txt_ten_du_an.Text == "")
+            {
+                MessageBox.Show("Phải có tên dự án");
+                return false;
+            }
+            return true;
         }
 
         private void save_data()
@@ -351,7 +227,7 @@ namespace BKI_HRM.NghiepVu
                     break;
                 case DataEntryFormMode.UpdateDataState:
                     m_us_dm_quyet_dinh.Update();
-                    m_us_dm_du_an.Update();                    
+                    m_us_dm_du_an.Update();
                     break;
             }
             if (m_us_dm_du_an.datNGAY_KET_THUC != null)
@@ -377,46 +253,6 @@ namespace BKI_HRM.NghiepVu
             }
         }
 
-        private bool check_data_is_ok()
-        {
-            if (!m_dat_ngay_bd.Checked)
-            {
-                MessageBox.Show("Phải có ngày bắt đầu dự án");
-                return false;
-            }
-            if (m_dat_ngay_kt.Checked)
-            {
-                if (m_dat_ngay_bd.Value.Date > m_dat_ngay_kt.Value.Date)
-                {
-                    MessageBox.Show("Ngày bắt đầu dự án phải trước ngày kết thúc dự án");
-                    return false;
-                }
-            }
-            if (m_txt_ma_du_an.Text =="")
-            {
-                MessageBox.Show("Phải có mã dự án");
-                return false;
-            }
-            if (m_txt_ma_quyet_dinh.Text == "")
-            {
-                MessageBox.Show("Phải có mã quyết định");
-                return false;
-            }
-            if (m_txt_ten_du_an.Text == "")
-            {
-                MessageBox.Show("Phải có tên dự án");
-                return false;
-            }
-            return true;
-        }
-
-        private void load_data_2_control() 
-        {
-            load_data_2_cbo_co_che();
-            load_data_2_cbo_loai_du_an();
-            load_data_2_cbo_trang_thai();
-            load_data_2_txt_ma_quyet_dinh_custom_source();
-        }
         #endregion
 
         #region eventHandle
@@ -454,9 +290,10 @@ namespace BKI_HRM.NghiepVu
 
         private void f500_dm_du_an_detail_Load(object sender, EventArgs e)
         {
-            
+            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.CO_CHE, WinFormControls.eTAT_CA.YES, m_cbo_co_che);
+            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_DU_AN, WinFormControls.eTAT_CA.NO, m_cbo_trang_thai);
+            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.LOAI_DU_AN, WinFormControls.eTAT_CA.NO, m_cbo_loai_du_an);
         }
-        #endregion
 
         private void m_grv_nhan_su_Click(object sender, EventArgs e)
         {
@@ -488,7 +325,8 @@ namespace BKI_HRM.NghiepVu
             }
         }
 
-        private void delete_nhan_su_du_an() {
+        private void delete_nhan_su_du_an()
+        {
             try
             {
                 DataRow v_dr;
@@ -509,5 +347,6 @@ namespace BKI_HRM.NghiepVu
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        #endregion
     }
 }

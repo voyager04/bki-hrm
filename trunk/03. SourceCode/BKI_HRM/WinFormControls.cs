@@ -87,6 +87,12 @@ namespace BKI_HRM {
                 case eLOAI_TU_DIEN.DANH_HIEU:
                     v_str_loai_tu_dien = MA_LOAI_TU_DIEN.DANH_HIEU;
                     break;
+                case eLOAI_TU_DIEN.CO_CHE:
+                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.CO_CHE;
+                    break;
+                case eLOAI_TU_DIEN.LOAI_DU_AN:
+                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.LOAI_DU_AN;
+                    break;
             }
             v_us_dm_tu_dien.fill_tu_dien_cung_loai_ds(
                 v_str_loai_tu_dien
