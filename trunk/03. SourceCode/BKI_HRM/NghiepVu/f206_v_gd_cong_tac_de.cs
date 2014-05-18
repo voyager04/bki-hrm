@@ -28,7 +28,12 @@ namespace BKI_HRM
         {
 
         }
+        public void display_for_update()
+        {
+
+        }
 #endregion
+
 #region Private Methods
         private void generate_ma_quyet_dinh()
         {
@@ -36,6 +41,27 @@ namespace BKI_HRM
                                                                   m_dat_ngay_ky.Value.Year,
                                                                   m_cbo_ma_quyet_dinh.Text);
         }
+        private bool check_data_is_ok()
+        {
+            return true;
+        }
+        private void form_2_us_object()
+        {
+
+        }
+        private void us_object_2_form()
+        {
+
+        }
+        private void load_data_2_cbo_loai_qd()
+        {
+
+        }
+        private void save_data()
+        {
+
+        }
+
 #endregion
 
         
