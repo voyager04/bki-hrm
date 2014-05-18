@@ -805,7 +805,8 @@ namespace BKI_HRM
         {
             try
             {
-            	
+                f206_v_gd_cong_tac v_frm = new f206_v_gd_cong_tac();
+                v_frm.display();
             }
             catch (Exception v_e)
             {
