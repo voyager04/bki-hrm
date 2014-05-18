@@ -26,6 +26,7 @@ namespace BKI_HRM.US {
         public const string DANH_HIEU = "DANH_HIEU";
         public const string CO_CHE = "CO_CHE";
         public const string LOAI_DU_AN = "LOAI_DU_AN";
+        public const string MA_QUYET_DINH = "MA_QUYET_DINH";
     }
 
     public class TU_DIEN {
