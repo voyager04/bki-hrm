@@ -492,7 +492,7 @@ namespace BKI_HRM
             m_fg.Tree.Column = (int)e_col_Number.LOAI_QUYET_DINH;
 
             m_fg.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.SimpleLeaf;
-            set_define_events();
+            
             this.KeyPreview = true;
         }
         private void set_initial_form_load()
@@ -500,6 +500,7 @@ namespace BKI_HRM
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_cbo();
             load_data_2_grid();
+            set_define_events();
         }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
@@ -520,7 +521,8 @@ namespace BKI_HRM
         }
         private void load_data_2_grid()
         {
-
+            //MessageBox.Show(CIPConvert.ToDecimal(m_cbo_loai_quyet_dinh.SelectedValue.ToString()).ToString());
+            //MessageBox.Show(CIPConvert.ToDecimal(m_cbo_tim_kiem_theo.SelectedValue.ToString()).ToString());
             m_ds = new DS_V_GD_QUYET_DINH();
             if (m_txt_tim_kiem.Text.Trim() == m_str_tim_kiem || m_txt_tim_kiem.Text.Trim() == "")
                 m_us.FillDatasetSearch(m_ds, "",
@@ -628,10 +630,12 @@ namespace BKI_HRM
             m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_cbo_loai_quyet_dinh.SelectedIndexChanged += new EventHandler(m_cbo_loai_quyet_dinh_SelectedIndexChanged);
         }
         #endregion
 
         #region "Event Handls"
+       
         private void F205_V_GD_QUYET_DINH_Load(object sender, System.EventArgs e)
         {
             try
@@ -775,6 +779,18 @@ namespace BKI_HRM
         }
 
         private void m_cbo_tim_kiem_theo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cbo_loai_quyet_dinh_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
