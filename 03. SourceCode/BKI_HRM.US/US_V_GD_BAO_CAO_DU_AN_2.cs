@@ -243,6 +243,160 @@ namespace BKI_HRM.US
             pm_objDR["MA_QUYET_DINH"] = System.Convert.DBNull;
         }
 
+        public decimal dcID_VI_TRI
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_VI_TRI", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_VI_TRI"] = value;
+            }
+        }
+
+        public bool IsID_VI_TRINull()
+        {
+            return pm_objDR.IsNull("ID_VI_TRI");
+        }
+
+        public void SetID_VI_TRINull()
+        {
+            pm_objDR["ID_VI_TRI"] = System.Convert.DBNull;
+        }
+
+        public decimal dcID_NHAN_SU
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_NHAN_SU", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_NHAN_SU"] = value;
+            }
+        }
+
+        public bool IsID_NHAN_SUNull()
+        {
+            return pm_objDR.IsNull("ID_NHAN_SU");
+        }
+
+        public void SetID_NHAN_SUNull()
+        {
+            pm_objDR["ID_NHAN_SU"] = System.Convert.DBNull;
+        }
+
+        public decimal dcID_LOAI_DU_AN
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_LOAI_DU_AN", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_LOAI_DU_AN"] = value;
+            }
+        }
+
+        public bool IsID_LOAI_DU_ANNull()
+        {
+            return pm_objDR.IsNull("ID_LOAI_DU_AN");
+        }
+
+        public void SetID_LOAI_DU_ANNull()
+        {
+            pm_objDR["ID_LOAI_DU_AN"] = System.Convert.DBNull;
+        }
+
+        public decimal dcID_TRANG_THAI
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_TRANG_THAI", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_TRANG_THAI"] = value;
+            }
+        }
+
+        public bool IsID_TRANG_THAINull()
+        {
+            return pm_objDR.IsNull("ID_TRANG_THAI");
+        }
+
+        public void SetID_TRANG_THAINull()
+        {
+            pm_objDR["ID_TRANG_THAI"] = System.Convert.DBNull;
+        }
+
+        public decimal dcID_CO_CHE
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_CO_CHE", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_CO_CHE"] = value;
+            }
+        }
+
+        public bool IsID_CO_CHENull()
+        {
+            return pm_objDR.IsNull("ID_CO_CHE");
+        }
+
+        public void SetID_CO_CHENull()
+        {
+            pm_objDR["ID_CO_CHE"] = System.Convert.DBNull;
+        }
+
+        public string strTRANG_THAI
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "TRANG_THAI", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["TRANG_THAI"] = value;
+            }
+        }
+
+        public bool IsTRANG_THAINull()
+        {
+            return pm_objDR.IsNull("TRANG_THAI");
+        }
+
+        public void SetTRANG_THAINull()
+        {
+            pm_objDR["TRANG_THAI"] = System.Convert.DBNull;
+        }
+
+        public string strLOAI_DU_AN
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "LOAI_DU_AN", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["LOAI_DU_AN"] = value;
+            }
+        }
+
+        public bool IsLOAI_DU_ANNull()
+        {
+            return pm_objDR.IsNull("LOAI_DU_AN");
+        }
+
+        public void SetLOAI_DU_ANNull()
+        {
+            pm_objDR["LOAI_DU_AN"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_V_GD_BAO_CAO_DU_AN_2()
@@ -271,13 +425,29 @@ namespace BKI_HRM.US
         }
         #endregion
 
-    public void FillDatasetSearch(DS_V_GD_BAO_CAO_DU_AN_2 op_ds_bc_da, string i_str_tu_khoa, DateTime i_dat_ngay_bd, DateTime i_dat_ngay_kt)
-    {
-        CStoredProc v_sp = new CStoredProc("pr_V_GD_BAO_CAO_DU_AN_2_search");
-        v_sp.addNVarcharInputParam("@STR_DU_AN", i_str_tu_khoa);
-        v_sp.addDatetimeInputParam("@DAT_BD",i_dat_ngay_bd);
-        v_sp.addDatetimeInputParam("@DAT_KT", i_dat_ngay_kt);
-        v_sp.fillDataSetByCommand(this, op_ds_bc_da);
+        public void FillDatasetSearch(
+            DS_V_GD_BAO_CAO_DU_AN_2 op_ds_bc_da, 
+            string i_str_search,
+            DateTime v_dat_bc_tu_ngay,
+            DateTime v_dat_bc_den_ngay,
+            DateTime v_dat_tu_ngay,
+            DateTime v_dat_den_ngay,
+            decimal v_dc_trang_thai,
+            decimal v_dc_loai_du_an,
+            decimal v_dc_co_che,
+            decimal v_dc_tim_kiem_theo_ngay)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_V_GD_BAO_CAO_DU_AN_2_search");
+            v_sp.addNVarcharInputParam("@str_search", i_str_search);
+            v_sp.addDatetimeInputParam("@bc_tu_ngay", v_dat_bc_tu_ngay);
+            v_sp.addDatetimeInputParam("@bc_den_ngay", v_dat_bc_den_ngay);
+            v_sp.addDatetimeInputParam("@tu_ngay", v_dat_tu_ngay);
+            v_sp.addDatetimeInputParam("@den_ngay", v_dat_den_ngay);
+            v_sp.addDecimalInputParam("@id_trang_thai_du_an", v_dc_trang_thai);
+            v_sp.addDecimalInputParam("@id_loai_du_an", v_dc_loai_du_an);
+            v_sp.addDecimalInputParam("@id_co_che", v_dc_co_che);
+            v_sp.addDecimalInputParam("@tim_kiem_theo_ngay", v_dc_tim_kiem_theo_ngay);
+            v_sp.fillDataSetByCommand(this, op_ds_bc_da);
+        }
     }
-}
 }

@@ -278,13 +278,22 @@ namespace BKI_HRM.US
     //    v_sp.fillDataSetByCommand(this, op_ds);
     //}
 
-    public void FillDatasetSearch(DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN op_ds, string i_str_search, DateTime v_dat_tu_ngay, DateTime v_dat_den_ngay, decimal v_dc_trang_thai, decimal v_dc_tim_kiem_theo_ngay)
+    public void FillDatasetSearch(DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN op_ds, 
+                                  string i_str_search, 
+                                  DateTime v_dat_tu_ngay, 
+                                  DateTime v_dat_den_ngay, 
+                                  decimal v_dc_trang_thai, 
+                                  decimal v_dc_loai_du_an,
+                                  decimal v_dc_co_che,
+                                  decimal v_dc_tim_kiem_theo_ngay)
     {
         CStoredProc v_sp = new CStoredProc("pr_V_DM_DU_AN_QUYET_DINH_TU_DIEN_search");
         v_sp.addNVarcharInputParam("@str_search", i_str_search);
         v_sp.addDatetimeInputParam("@tu_ngay", v_dat_tu_ngay);
         v_sp.addDatetimeInputParam("@den_ngay", v_dat_den_ngay);
         v_sp.addDecimalInputParam("@id_trang_thai_du_an", v_dc_trang_thai);
+        v_sp.addDecimalInputParam("@id_loai_du_an", v_dc_loai_du_an);
+        v_sp.addDecimalInputParam("@id_co_che", v_dc_co_che);
         v_sp.addDecimalInputParam("@tim_kiem_theo_ngay", v_dc_tim_kiem_theo_ngay);
         v_sp.fillDataSetByCommand(this, op_ds);
     }
