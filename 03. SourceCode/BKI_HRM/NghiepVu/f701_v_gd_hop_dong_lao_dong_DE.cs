@@ -6,6 +6,8 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -14,6 +16,7 @@ using BKI_HRM.US;
 using BKI_HRM.DS;
 using IP.Core.IPCommon;
 using IP.Core.IPWordReport;
+using System.Net.NetworkInformation;
 
 namespace BKI_HRM.NghiepVu
 {
@@ -66,13 +69,14 @@ namespace BKI_HRM.NghiepVu
         DS_V_GD_HOP_DONG_LAO_DONG m_ds_v = new DS_V_GD_HOP_DONG_LAO_DONG();
         US_DM_NHAN_SU m_us_dm_nhan_su = new US_DM_NHAN_SU();
         private string m_str_to = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
+        private string m_str_username_share = ConfigurationSettings.AppSettings["USERNAME_SHARE"];
+        private string m_str_password_share = ConfigurationSettings.AppSettings["PASSWORD_SHARE"];
+        private string m_str_domain = ConfigurationSettings.AppSettings["DOMAIN"];
         private string m_str_from = "";
         private string m_str_file_name = "";
         private string m_str_path = "";
         private string m_str_time_now = DateTime.Now.Ticks.ToString();
         private string m_str_file_name_old = "";
-        private string m_str_origination = "";
-        private string m_str_old_path = "";
         private decimal m_str_id_hop_dong_old;
         private bool m_b_status = false;
         #endregion
@@ -133,7 +137,9 @@ namespace BKI_HRM.NghiepVu
 
         private void form_2_us_object()
         {
-            m_us.strMA_HOP_DONG = m_txt_ma_hop_dong.Text.Trim();
+            m_us.strMA_HOP_DONG = string.Format("{0}/{1}/{2}", m_txt_ma_hop_dong.Text.Trim(),
+                                                                  m_dat_ngay_co_hieu_luc.Value.Year,
+                                                                  m_cbo_ma_hop_dong.Text);
             m_us.dcID_LOAI_HOP_DONG = (decimal)m_cbo_loai_hop_dong.SelectedValue;
             m_us.dcID_PHAP_NHAN = (decimal)m_cbo_phap_nhan.SelectedValue;
             m_us.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value;
@@ -228,7 +234,10 @@ namespace BKI_HRM.NghiepVu
         private void us_object_2_form(US_GD_HOP_DONG ip_us_gd_hop_dong)
         {
             m_us.dcID = ip_us_gd_hop_dong.dcID;
-            m_txt_ma_hop_dong.Text = ip_us_gd_hop_dong.strMA_HOP_DONG;
+
+
+            m_txt_ma_hop_dong.Text = ip_us_gd_hop_dong.strMA_HOP_DONG.Split('/')[0];
+
             m_txt_nguoi_ky.Text = ip_us_gd_hop_dong.strNGUOI_KY;
             m_txt_chuc_vu_nguoi_ky.Text = ip_us_gd_hop_dong.strCHUC_VU_NGUOI_KY;
             m_dat_ngay_co_hieu_luc.Value = ip_us_gd_hop_dong.datNGAY_CO_HIEU_LUC;
@@ -347,8 +356,19 @@ namespace BKI_HRM.NghiepVu
             }
             modify_name_file(m_str_from, m_str_path + m_str_time_now + "-" + m_str_file_name);
 
-            File.Move(m_str_path + m_str_time_now + "-" + m_str_file_name,
-                      m_str_to + m_str_time_now + "-" + m_str_file_name);
+            var oNetworkCredential =
+                    new System.Net.NetworkCredential()
+                    {
+                        Domain = m_str_domain,
+                        UserName = m_str_domain + "\\" + m_str_username_share,
+                        Password = m_str_password_share
+                    };
+
+            using (new RemoteAccessHelper.NetworkConnection(@"\\" + m_str_domain, oNetworkCredential))
+            {
+                File.Move(m_str_path + m_str_time_now + "-" + m_str_file_name,
+                            m_str_to + m_str_time_now + "-" + m_str_file_name);
+            }
 
             m_us.strLINK = m_str_time_now + "-" + m_str_file_name;
             m_b_status = true;
@@ -552,7 +572,6 @@ namespace BKI_HRM.NghiepVu
                 File.Delete(m_us.strLINK);
             }
         }
-        #endregion
 
         private void m_txt_ma_hop_dong_TextChanged(object sender, EventArgs e)
         {
@@ -576,6 +595,109 @@ namespace BKI_HRM.NghiepVu
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+        #endregion
+    }
+
+    public class RemoteAccessHelper
+    {
+        public class NetworkConnection : IDisposable
+        {
+            string _networkName;
+
+            public NetworkConnection(string networkName, NetworkCredential credentials)
+            {
+                _networkName = networkName;
+
+                var netResource = new NetResource()
+                {
+                    Scope = ResourceScope.GlobalNetwork,
+                    ResourceType = ResourceType.Disk,
+                    DisplayType = ResourceDisplaytype.Share,
+                    RemoteName = networkName
+                };
+
+                var result = WNetAddConnection2(
+                    netResource,
+                    credentials.Password,
+                    credentials.UserName,
+                    0);
+
+                if (result != 0)
+                {
+                    throw new Win32Exception(result, "Error connecting to remote share");
+                }
+            }
+
+            ~NetworkConnection()
+            {
+                Dispose(false);
+            }
+
+            public void Dispose()
+            {
+                Dispose(true);
+                GC.SuppressFinalize(this);
+            }
+
+            protected virtual void Dispose(bool disposing)
+            {
+                WNetCancelConnection2(_networkName, 0, true);
+            }
+
+            [DllImport("mpr.dll")]
+            private static extern int WNetAddConnection2(NetResource netResource,
+                string password, string username, int flags);
+
+            [DllImport("mpr.dll")]
+            private static extern int WNetCancelConnection2(string name, int flags,
+                bool force);
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        public class NetResource
+        {
+            public ResourceScope Scope;
+            public ResourceType ResourceType;
+            public ResourceDisplaytype DisplayType;
+            public int Usage;
+            public string LocalName;
+            public string RemoteName;
+            public string Comment;
+            public string Provider;
+        }
+
+        public enum ResourceScope : int
+        {
+            Connected = 1,
+            GlobalNetwork,
+            Remembered,
+            Recent,
+            Context
+        };
+
+        public enum ResourceType : int
+        {
+            Any = 0,
+            Disk = 1,
+            Print = 2,
+            Reserved = 8,
+        }
+
+        public enum ResourceDisplaytype : int
+        {
+            Generic = 0x0,
+            Domain = 0x01,
+            Server = 0x02,
+            Share = 0x03,
+            File = 0x04,
+            Group = 0x05,
+            Network = 0x06,
+            Root = 0x07,
+            Shareadmin = 0x08,
+            Directory = 0x09,
+            Tree = 0x0a,
+            Ndscontainer = 0x0b
         }
     }
 }
