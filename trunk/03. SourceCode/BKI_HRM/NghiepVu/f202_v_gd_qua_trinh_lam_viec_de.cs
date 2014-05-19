@@ -44,6 +44,7 @@ namespace BKI_HRM
         }
         public void display_for_update(US_V_GD_QUA_TRINH_LAM_VIEC ip_us_qua_trinh_lam_viec)
         {
+            m_b_check_is_mien_nhiem = true;
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             m_us_v_qua_trinh_lam_viec = ip_us_qua_trinh_lam_viec;
             us_object_to_form();
@@ -75,6 +76,7 @@ namespace BKI_HRM
         bool m_b_check_quyet_dinh_null = false;
         bool m_b_check_quyet_dinh_save;
         string m_str_loai_thay_doi;
+        bool m_b_check_is_mien_nhiem = false;
         #endregion
 
         #region Private Methods
@@ -291,8 +293,10 @@ namespace BKI_HRM
             DS_DM_CHUC_VU v_ds_dm_chuc_vu = new DS_DM_CHUC_VU();
             
             string v_str_chuc_vu = "";
-
+            
             v_us_dm_chuc_vu.FillDatasetByID(v_ds_dm_chuc_vu, CIPConvert.ToDecimal(m_cbo_chuc_vu_moi.SelectedValue), ref v_str_chuc_vu);
+            if (m_b_check_is_mien_nhiem)
+                return BaseMessages.MsgBox_Confirm("Bạn có thực sự muốn miễn nhiệm chức vụ \"" + v_str_chuc_vu + "\" của " + m_us_v_qua_trinh_lam_viec.strHO_DEM + " " + m_us_v_qua_trinh_lam_viec.strTEN + "\" tại\n \""  + m_txt_don_vi_moi.Text + "\" không?");
             return BaseMessages.MsgBox_Confirm("Bạn có thực sự muốn thay đổi chức vụ của \"" + m_us_v_qua_trinh_lam_viec.strHO_DEM + " " + m_us_v_qua_trinh_lam_viec.strTEN + "\" thành\n \"" + v_str_chuc_vu + "\" tại \"" + m_txt_don_vi_moi.Text + "\" không?");
 
         }
