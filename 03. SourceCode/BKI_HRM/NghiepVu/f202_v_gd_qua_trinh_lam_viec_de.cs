@@ -47,6 +47,7 @@ namespace BKI_HRM
             m_b_check_is_mien_nhiem = true;
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             m_us_v_qua_trinh_lam_viec = ip_us_qua_trinh_lam_viec;
+            m_dat_ngay_ket_thuc.ShowCheckBox = false;
             us_object_to_form();
             this.ShowDialog();
         }
