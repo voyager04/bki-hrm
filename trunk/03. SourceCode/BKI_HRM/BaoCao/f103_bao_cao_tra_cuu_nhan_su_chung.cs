@@ -361,41 +361,41 @@ namespace BKI_HRM
         #region Data Structure
         private enum e_col_Number
         {
-            LOAI_DON_VI = 13
+            LOAI_DON_VI = 4
 ,
-            TEN_DON_VI = 1//12
+            TEN_DON_VI = 3
                 ,
-            MA_NV = 3
+            MA_NV = 6
                 ,
-            CAP_DON_VI = 14
+            CAP_DON_VI = 5
                 ,
-            TRANG_THAI_LAO_DONG = 16
+            TRANG_THAI_LAO_DONG = 13
                 ,
-            DIA_BAN = 15
+            DIA_BAN = 1
                 ,
-            TEN = 5
+            TEN = 8
                 ,
-            NGAY_CO_HIEU_LUC = 17
+            NGAY_CO_HIEU_LUC = 16
                 ,
-            TRANG_THAI_HIEN_TAI = 19
+            TRANG_THAI_HIEN_TAI = 15
                 ,
-            MA_DON_VI = 2 //11
+            MA_DON_VI = 2
                 ,
-            HO_DEM = 4
+            HO_DEM = 7
                 ,
             TY_LE_THAM_GIA = 12
                 ,
             TEN_CV = 10
                 ,
-            NGAY_HET_HIEU_LUC = 18
+            NGAY_HET_HIEU_LUC = 14
                 ,
-            NGAY_SINH = 7
+            NGAY_SINH = 17
                 ,
-            TRINH_DO = 8
+            TRINH_DO = 19
                 ,
             TRANG_THAI_CV = 11
                 ,
-            GIOI_TINH = 6
+            GIOI_TINH = 18
                 , MA_CV = 9
 
         }
@@ -456,7 +456,7 @@ namespace BKI_HRM
             CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
-            m_fg.Tree.Column = (int)e_col_Number.MA_NV;//Cột chứa tree
+            m_fg.Tree.Column = (int)e_col_Number.DIA_BAN;//Cột chứa tree
             m_fg.Tree.Style = TreeStyleFlags.Simple;
             set_define_events();
             KeyPreview = true;
@@ -861,10 +861,15 @@ namespace BKI_HRM
             // Group (subtotal) trên grid.
             m_fg.Subtotal(AggregateEnum.Count
               , 0
-              , (int)e_col_Number.TEN_DON_VI    // Group theo cột này
-              , (int)e_col_Number.TEN         // Subtotal theo cột này
+              , (int)e_col_Number.DIA_BAN    // Group theo cột này
+              , (int)e_col_Number.DIA_BAN         // Subtotal theo cột này
               , "{0}"
               );
+            m_fg.Subtotal(AggregateEnum.Count
+                , 1
+                , (int)e_col_Number.MA_DON_VI
+                , (int)e_col_Number.MA_DON_VI
+                , "{0}");
             set_search_format_before();
             //m_lbl_so_nhan_vien.Text = lay_so_ban_ghi().ToString(CultureInfo.InvariantCulture);
         }
