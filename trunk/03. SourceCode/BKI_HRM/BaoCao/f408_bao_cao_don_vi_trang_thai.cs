@@ -123,9 +123,9 @@ namespace BKI_HRM
             m_fg.SubtotalPosition = SubtotalPositionEnum.AboveData;
             m_fg.Tree.Column = 1;
             m_fg.Tree.Style = TreeStyleFlags.SimpleLeaf;
-            m_fg.Subtotal(AggregateEnum.Clear);
+            //m_fg.Subtotal(AggregateEnum.Clear);
             //for (int u = 1; u < m_fg.Cols.Count; u++)
-            //m_fg.Subtotal(AggregateEnum.Sum, 0, 1, 3); 
+            m_fg.Subtotal(AggregateEnum.Sum, 0, 1, 3); 
         }
 
 
@@ -155,6 +155,18 @@ namespace BKI_HRM
             try
             {
                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
             }
             catch (Exception v_e)
             {
