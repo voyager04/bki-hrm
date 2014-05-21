@@ -120,12 +120,14 @@ namespace BKI_HRM
                     sum += Convert.ToInt32(m_fg.Rows[v][t]);
                 m_fg.Rows[v][3] = sum;
             }
-            m_fg.SubtotalPosition = SubtotalPositionEnum.AboveData;
-            m_fg.Tree.Column = 1;
-            m_fg.Tree.Style = TreeStyleFlags.SimpleLeaf;
+            m_fg.Redraw = false;
+            //m_fg.SubtotalPosition = SubtotalPositionEnum.AboveData;
+            //m_fg.Tree.Column = 1;
+           // m_fg.Tree.Style = TreeStyleFlags.SimpleLeaf;
             //m_fg.Subtotal(AggregateEnum.Clear);
             //for (int u = 1; u < m_fg.Cols.Count; u++)
-            m_fg.Subtotal(AggregateEnum.Sum, 0, 1, 3); 
+            m_fg.Subtotal(AggregateEnum.Sum, 1, 1, 3);
+            m_fg.Redraw = true;
         }
 
 
