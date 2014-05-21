@@ -63,6 +63,7 @@ namespace BKI_HRM
             this.táchGộpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_chuyen_nhan_vien = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_chuyen_don_vi = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_menuitem_qua_trinh_di_cong_tac = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_baocao = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_bcduan = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_bc_duan = new System.Windows.Forms.ToolStripMenuItem();
@@ -88,7 +89,6 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky = new System.Windows.Forms.Label();
             this.m_lbl_sap_quay_lai = new System.Windows.Forms.Label();
             this.m_lbl_so_luong_nv_hien_tai = new System.Windows.Forms.Label();
-            this.m_menuitem_qua_trinh_di_cong_tac = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -353,6 +353,13 @@ namespace BKI_HRM
             this.m_menuitem_chuyen_don_vi.Size = new System.Drawing.Size(170, 22);
             this.m_menuitem_chuyen_don_vi.Text = "Chuyển đơn vị";
             // 
+            // m_menuitem_qua_trinh_di_cong_tac
+            // 
+            this.m_menuitem_qua_trinh_di_cong_tac.Name = "m_menuitem_qua_trinh_di_cong_tac";
+            this.m_menuitem_qua_trinh_di_cong_tac.Size = new System.Drawing.Size(186, 22);
+            this.m_menuitem_qua_trinh_di_cong_tac.Text = "Quá trình đi công tác";
+            this.m_menuitem_qua_trinh_di_cong_tac.Click += new System.EventHandler(this.m_menuitem_qua_trinh_di_cong_tac_Click);
+            // 
             // m_menuitem_baocao
             // 
             this.m_menuitem_baocao.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -552,7 +559,7 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.ForeColor = System.Drawing.Color.Red;
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Location = new System.Drawing.Point(0, 341);
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Name = "m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky";
-            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Size = new System.Drawing.Size(345, 18);
+            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Size = new System.Drawing.Size(346, 18);
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.TabIndex = 5;
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text = "Danh sách Hợp đồng đã hết hạn nhưng chưa ký";
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Click += new System.EventHandler(this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky_Click);
@@ -566,7 +573,7 @@ namespace BKI_HRM
             this.m_lbl_sap_quay_lai.ForeColor = System.Drawing.Color.Red;
             this.m_lbl_sap_quay_lai.Location = new System.Drawing.Point(0, 323);
             this.m_lbl_sap_quay_lai.Name = "m_lbl_sap_quay_lai";
-            this.m_lbl_sap_quay_lai.Size = new System.Drawing.Size(306, 18);
+            this.m_lbl_sap_quay_lai.Size = new System.Drawing.Size(305, 18);
             this.m_lbl_sap_quay_lai.TabIndex = 6;
             this.m_lbl_sap_quay_lai.Text = "Danh sách nhân viên sắp quay lại sau nghỉ";
             this.m_lbl_sap_quay_lai.Click += new System.EventHandler(this.m_lbl_sap_quay_lai_Click);
@@ -584,13 +591,6 @@ namespace BKI_HRM
             this.m_lbl_so_luong_nv_hien_tai.TabIndex = 7;
             this.m_lbl_so_luong_nv_hien_tai.Text = "so luong nhan vien";
             this.m_lbl_so_luong_nv_hien_tai.Click += new System.EventHandler(this.m_lbl_so_luong_nv_hien_tai_Click);
-            // 
-            // m_menuitem_qua_trinh_di_cong_tac
-            // 
-            this.m_menuitem_qua_trinh_di_cong_tac.Name = "m_menuitem_qua_trinh_di_cong_tac";
-            this.m_menuitem_qua_trinh_di_cong_tac.Size = new System.Drawing.Size(186, 22);
-            this.m_menuitem_qua_trinh_di_cong_tac.Text = "Quá trình đi công tác";
-            this.m_menuitem_qua_trinh_di_cong_tac.Click += new System.EventHandler(this.m_menuitem_qua_trinh_di_cong_tac_Click);
             // 
             // f400_Main
             // 

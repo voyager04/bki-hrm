@@ -59,10 +59,6 @@ namespace BKI_HRM
         private DateTimePicker m_dat_den_ngay;
         private Label m_lbl_title;
         private Panel panel1;
-        private Label label7;
-        private DateTimePicker m_dat_bc_den_ngay;
-        private Label label6;
-        private DateTimePicker m_dat_bc_tu_ngay;
         private System.ComponentModel.IContainer components;
 
         public f702_bao_cao_hdld()
@@ -128,10 +124,6 @@ namespace BKI_HRM
             this.m_dat_tu_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.m_dat_bc_tu_ngay = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.m_dat_bc_den_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -215,9 +207,9 @@ namespace BKI_HRM
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 188);
+            this.m_fg.Location = new System.Drawing.Point(0, 152);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1354, 387);
+            this.m_fg.Size = new System.Drawing.Size(1354, 423);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -229,7 +221,7 @@ namespace BKI_HRM
             this.m_cmd_tim_kiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_tim_kiem.ImageIndex = 5;
             this.m_cmd_tim_kiem.ImageList = this.ImageList;
-            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(424, 53);
+            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(424, 16);
             this.m_cmd_tim_kiem.Name = "m_cmd_tim_kiem";
             this.m_cmd_tim_kiem.Size = new System.Drawing.Size(101, 28);
             this.m_cmd_tim_kiem.TabIndex = 32;
@@ -241,7 +233,7 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.m_txt_tim_kiem.ForeColor = System.Drawing.Color.Gray;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(156, 58);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(156, 21);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(262, 20);
             this.m_txt_tim_kiem.TabIndex = 31;
@@ -253,7 +245,7 @@ namespace BKI_HRM
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 61);
+            this.label1.Location = new System.Drawing.Point(52, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 30;
@@ -262,7 +254,7 @@ namespace BKI_HRM
             // m_lbl_count_record
             // 
             this.m_lbl_count_record.AutoSize = true;
-            this.m_lbl_count_record.Location = new System.Drawing.Point(52, 107);
+            this.m_lbl_count_record.Location = new System.Drawing.Point(52, 80);
             this.m_lbl_count_record.Name = "m_lbl_count_record";
             this.m_lbl_count_record.Size = new System.Drawing.Size(0, 13);
             this.m_lbl_count_record.TabIndex = 33;
@@ -270,7 +262,7 @@ namespace BKI_HRM
             // m_lbl_nhom
             // 
             this.m_lbl_nhom.AutoSize = true;
-            this.m_lbl_nhom.Location = new System.Drawing.Point(63, 87);
+            this.m_lbl_nhom.Location = new System.Drawing.Point(63, 50);
             this.m_lbl_nhom.Name = "m_lbl_nhom";
             this.m_lbl_nhom.Size = new System.Drawing.Size(77, 13);
             this.m_lbl_nhom.TabIndex = 38;
@@ -279,7 +271,7 @@ namespace BKI_HRM
             // m_cbo_nhom_theo_cot
             // 
             this.m_cbo_nhom_theo_cot.FormattingEnabled = true;
-            this.m_cbo_nhom_theo_cot.Location = new System.Drawing.Point(156, 84);
+            this.m_cbo_nhom_theo_cot.Location = new System.Drawing.Point(156, 47);
             this.m_cbo_nhom_theo_cot.Name = "m_cbo_nhom_theo_cot";
             this.m_cbo_nhom_theo_cot.Size = new System.Drawing.Size(262, 21);
             this.m_cbo_nhom_theo_cot.TabIndex = 37;
@@ -327,7 +319,7 @@ namespace BKI_HRM
             this.groupBox1.Controls.Add(this.m_rbt_hop_dong_con_hieu_luc);
             this.groupBox1.Controls.Add(this.m_rbt_sap_het_han);
             this.groupBox1.Controls.Add(this.m_rbt_da_het_han_nhung_chua_ky);
-            this.groupBox1.Location = new System.Drawing.Point(990, 41);
+            this.groupBox1.Location = new System.Drawing.Point(990, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(310, 94);
             this.groupBox1.TabIndex = 42;
@@ -344,7 +336,7 @@ namespace BKI_HRM
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.m_dat_tu_ngay);
-            this.groupBox2.Location = new System.Drawing.Point(531, 41);
+            this.groupBox2.Location = new System.Drawing.Point(531, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(453, 94);
             this.groupBox2.TabIndex = 43;
@@ -429,6 +421,7 @@ namespace BKI_HRM
             this.m_dat_tu_ngay.Name = "m_dat_tu_ngay";
             this.m_dat_tu_ngay.Size = new System.Drawing.Size(111, 20);
             this.m_dat_tu_ngay.TabIndex = 43;
+            this.m_dat_tu_ngay.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.m_dat_tu_ngay.ValueChanged += new System.EventHandler(this.m_dat_ngay_thang_ValueChanged);
             // 
             // m_lbl_title
@@ -445,10 +438,6 @@ namespace BKI_HRM
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.m_dat_bc_den_ngay);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.m_dat_bc_tu_ngay);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.m_txt_tim_kiem);
@@ -460,46 +449,8 @@ namespace BKI_HRM
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 45);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1354, 143);
+            this.panel1.Size = new System.Drawing.Size(1354, 107);
             this.panel1.TabIndex = 45;
-            // 
-            // m_dat_bc_tu_ngay
-            // 
-            this.m_dat_bc_tu_ngay.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_bc_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_bc_tu_ngay.Location = new System.Drawing.Point(513, 3);
-            this.m_dat_bc_tu_ngay.Name = "m_dat_bc_tu_ngay";
-            this.m_dat_bc_tu_ngay.Size = new System.Drawing.Size(133, 20);
-            this.m_dat_bc_tu_ngay.TabIndex = 44;
-            this.m_dat_bc_tu_ngay.ValueChanged += new System.EventHandler(this.m_dat_bc_tu_ngay_ValueChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(461, 7);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 13);
-            this.label6.TabIndex = 45;
-            this.label6.Text = "Từ ngày";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(700, 7);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 13);
-            this.label7.TabIndex = 47;
-            this.label7.Text = "Đến ngày";
-            // 
-            // m_dat_bc_den_ngay
-            // 
-            this.m_dat_bc_den_ngay.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_bc_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_bc_den_ngay.Location = new System.Drawing.Point(759, 3);
-            this.m_dat_bc_den_ngay.Name = "m_dat_bc_den_ngay";
-            this.m_dat_bc_den_ngay.Size = new System.Drawing.Size(133, 20);
-            this.m_dat_bc_den_ngay.TabIndex = 46;
-            this.m_dat_bc_den_ngay.ValueChanged += new System.EventHandler(this.m_dat_bc_den_ngay_ValueChanged);
             // 
             // f702_bao_cao_hdld
             // 
@@ -665,8 +616,6 @@ namespace BKI_HRM
             {
                 if (m_cbo_tim_kiem_theo.SelectedIndex == 0)
                     m_us.FIllDataset_By_Hop_Dong_Da_Het_Han(m_ds, 
-                                                            DateTime.Parse(m_dat_bc_tu_ngay.Value.ToShortDateString()),
-                                                            DateTime.Parse(m_dat_bc_den_ngay.Value.ToShortDateString()),
                                                             v_str_search, 
                                                             decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), 
                                                             DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
@@ -674,8 +623,6 @@ namespace BKI_HRM
                                                             0);
                 if (m_cbo_tim_kiem_theo.SelectedIndex == 1)
                     m_us.FIllDataset_By_Hop_Dong_Da_Het_Han(m_ds,
-                                                            DateTime.Parse(m_dat_bc_tu_ngay.Value.ToShortDateString()),
-                                                            DateTime.Parse(m_dat_bc_den_ngay.Value.ToShortDateString()),
                                                             v_str_search, 
                                                             decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), 
                                                             DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
@@ -683,8 +630,6 @@ namespace BKI_HRM
                                                             1);
                 if (m_cbo_tim_kiem_theo.SelectedIndex == 2)
                     m_us.FIllDataset_By_Hop_Dong_Da_Het_Han(m_ds,
-                                                            DateTime.Parse(m_dat_bc_tu_ngay.Value.ToShortDateString()),
-                                                            DateTime.Parse(m_dat_bc_den_ngay.Value.ToShortDateString()),
                                                             v_str_search, 
                                                             decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), 
                                                             DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
@@ -692,8 +637,6 @@ namespace BKI_HRM
                                                             2);
                 if (m_cbo_tim_kiem_theo.SelectedIndex == 3)
                     m_us.FIllDataset_By_Hop_Dong_Da_Het_Han(m_ds,
-                                                            DateTime.Parse(m_dat_bc_tu_ngay.Value.ToShortDateString()),
-                                                            DateTime.Parse(m_dat_bc_den_ngay.Value.ToShortDateString()),
                                                             v_str_search, 
                                                             decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), 
                                                             DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
@@ -705,8 +648,6 @@ namespace BKI_HRM
             {
                 if (m_cbo_tim_kiem_theo.SelectedIndex == 0)
                     m_us.FIllDataset_By_Hop_Dong_Sap_Het_Han(m_ds,
-                                                             DateTime.Parse(m_dat_bc_tu_ngay.Value.ToShortDateString()),
-                                                             DateTime.Parse(m_dat_bc_den_ngay.Value.ToShortDateString()),
                                                              v_str_search, 
                                                              decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), 
                                                              DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
@@ -714,8 +655,6 @@ namespace BKI_HRM
                                                              0);
                 if (m_cbo_tim_kiem_theo.SelectedIndex == 1)
                     m_us.FIllDataset_By_Hop_Dong_Sap_Het_Han(m_ds,
-                                                             DateTime.Parse(m_dat_bc_tu_ngay.Value.ToShortDateString()),
-                                                             DateTime.Parse(m_dat_bc_den_ngay.Value.ToShortDateString()),
                                                              v_str_search, 
                                                              decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), 
                                                              DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
@@ -723,8 +662,6 @@ namespace BKI_HRM
                                                              1);
                 if (m_cbo_tim_kiem_theo.SelectedIndex == 2)
                     m_us.FIllDataset_By_Hop_Dong_Sap_Het_Han(m_ds,
-                                                             DateTime.Parse(m_dat_bc_tu_ngay.Value.ToShortDateString()),
-                                                             DateTime.Parse(m_dat_bc_den_ngay.Value.ToShortDateString()),
                                                              v_str_search, 
                                                              decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), 
                                                              DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
@@ -732,8 +669,6 @@ namespace BKI_HRM
                                                              2);
                 if (m_cbo_tim_kiem_theo.SelectedIndex == 3)
                     m_us.FIllDataset_By_Hop_Dong_Sap_Het_Han(m_ds,
-                                                             DateTime.Parse(m_dat_bc_tu_ngay.Value.ToShortDateString()),
-                                                             DateTime.Parse(m_dat_bc_den_ngay.Value.ToShortDateString()),
                                                              v_str_search, 
                                                              decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), 
                                                              DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
@@ -745,8 +680,6 @@ namespace BKI_HRM
             {
                 if (m_cbo_tim_kiem_theo.SelectedIndex == 0)
                     m_us.FillDataSet_Search_HDLD_da_het_han_nhung_chua_ky(m_ds,
-                                                                          DateTime.Parse(m_dat_bc_tu_ngay.Value.ToShortDateString()),
-                                                                          DateTime.Parse(m_dat_bc_den_ngay.Value.ToShortDateString()),
                                                                           v_str_search, 
                                                                           decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), 
                                                                           DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
@@ -754,8 +687,6 @@ namespace BKI_HRM
                                                                           0);
                 if (m_cbo_tim_kiem_theo.SelectedIndex == 1)
                     m_us.FillDataSet_Search_HDLD_da_het_han_nhung_chua_ky(m_ds,
-                                                                          DateTime.Parse(m_dat_bc_tu_ngay.Value.ToShortDateString()),
-                                                                          DateTime.Parse(m_dat_bc_den_ngay.Value.ToShortDateString()),
                                                                           v_str_search, 
                                                                           decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), 
                                                                           DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
@@ -763,17 +694,13 @@ namespace BKI_HRM
                                                                           1);
                 if (m_cbo_tim_kiem_theo.SelectedIndex == 2)
                     m_us.FillDataSet_Search_HDLD_da_het_han_nhung_chua_ky(m_ds,
-                                                                          DateTime.Parse(m_dat_bc_tu_ngay.Value.ToShortDateString()),
-                                                                          DateTime.Parse(m_dat_bc_den_ngay.Value.ToShortDateString()),
                                                                           v_str_search, 
                                                                           decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), 
                                                                           DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
                                                                           DateTime.Parse(m_dat_den_ngay.Value.ToShortDateString()), 
                                                                           2);
                 if (m_cbo_tim_kiem_theo.SelectedIndex == 3)
-                    m_us.FillDataSet_Search_HDLD_da_het_han_nhung_chua_ky(m_ds,
-                                                                          DateTime.Parse(m_dat_bc_tu_ngay.Value.ToShortDateString()),
-                                                                          DateTime.Parse(m_dat_bc_den_ngay.Value.ToShortDateString()),    
+                    m_us.FillDataSet_Search_HDLD_da_het_han_nhung_chua_ky(m_ds,  
                                                                           v_str_search, 
                                                                           decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), 
                                                                           DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
@@ -905,6 +832,32 @@ namespace BKI_HRM
                 v_acsc_search.Add(dr[V_GD_HOP_DONG_LAO_DONG.HO_DEM].ToString());
             }
             m_txt_tim_kiem.AutoCompleteCustomSource = v_acsc_search;
+        }
+
+        public int count_record_bao_cao_sap_het_han()
+        {
+            int result = 0;
+            US_V_GD_HOP_DONG_LAO_DONG v_us_v_gd_hop_dong = new US_V_GD_HOP_DONG_LAO_DONG();
+            DS_V_GD_HOP_DONG_LAO_DONG v_ds_v_gd_hop_dong_sap_het_han = new DS_V_GD_HOP_DONG_LAO_DONG();
+            v_us_v_gd_hop_dong.FIllDataset_By_Hop_Dong_Sap_Het_Han(v_ds_v_gd_hop_dong_sap_het_han, "", -1, DateTime.Parse("01/01/2000"), DateTime.Now, 0);
+            if (v_ds_v_gd_hop_dong_sap_het_han.Tables[0].Rows.Count > 0)
+            {
+                result = v_ds_v_gd_hop_dong_sap_het_han.Tables[0].Rows.Count;
+            }
+            return result;
+        }
+
+        public int count_record_bao_cao_het_han_nhung_chua_ky_moi()
+        {
+            int result = 0;
+            US_V_GD_HOP_DONG_LAO_DONG v_us_v_gd_hop_dong = new US_V_GD_HOP_DONG_LAO_DONG();
+            DS_V_GD_HOP_DONG_LAO_DONG v_ds_v_gd_hop_dong_da_het_han = new DS_V_GD_HOP_DONG_LAO_DONG();
+            v_us_v_gd_hop_dong.FillDataSet_Search_HDLD_da_het_han_nhung_chua_ky(v_ds_v_gd_hop_dong_da_het_han, "", -1, DateTime.Parse("01/01/2000"), DateTime.Now, 0);
+            if (v_ds_v_gd_hop_dong_da_het_han.Tables[0].Rows.Count > 0)
+            {
+                result = v_ds_v_gd_hop_dong_da_het_han.Tables[0].Rows.Count;
+            }
+            return result;
         }
 
         #endregion
