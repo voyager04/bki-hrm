@@ -417,6 +417,7 @@
        public const string TRANG_THAI = "TRANG_THAI";
        public const string NGAY_AP_DUNG = "NGAY_AP_DUNG";
        public const string NGAY_KET_THUC = "NGAY_KET_THUC";
+       public const string ID_NGACH = "ID_NGACH";
    }
    public class V_DM_CHUC_VU
    {
