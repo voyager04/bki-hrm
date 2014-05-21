@@ -47,6 +47,10 @@ namespace BKI_HRM
         private RadioButton m_rdb_nhom;
         private RadioButton m_rdb_ko_nhom;
         private CheckBox m_ckb_congtac;
+        private Label label2;
+        private DateTimePicker m_dtp_den_ngay;
+        private Label m_lbl_thoidiem;
+        private DateTimePicker m_dtp_tu_ngay;
 		private System.ComponentModel.IContainer components;
 
 		public f404_GD_QUA_TRINH_CONG_TAC()
@@ -101,6 +105,10 @@ namespace BKI_HRM
             this.m_rdb_nhom = new System.Windows.Forms.RadioButton();
             this.m_rdb_ko_nhom = new System.Windows.Forms.RadioButton();
             this.m_ckb_congtac = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.m_dtp_den_ngay = new System.Windows.Forms.DateTimePicker();
+            this.m_lbl_thoidiem = new System.Windows.Forms.Label();
+            this.m_dtp_tu_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -308,10 +316,53 @@ namespace BKI_HRM
             this.m_ckb_congtac.UseVisualStyleBackColor = true;
             this.m_ckb_congtac.CheckedChanged += new System.EventHandler(this.m_ckb_congtac_CheckedChanged);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(801, 43);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.TabIndex = 45;
+            this.label2.Text = "Đến ngày:";
+            // 
+            // m_dtp_den_ngay
+            // 
+            this.m_dtp_den_ngay.CustomFormat = "dd/MM/yyyy";
+            this.m_dtp_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dtp_den_ngay.Location = new System.Drawing.Point(863, 38);
+            this.m_dtp_den_ngay.Name = "m_dtp_den_ngay";
+            this.m_dtp_den_ngay.Size = new System.Drawing.Size(126, 20);
+            this.m_dtp_den_ngay.TabIndex = 44;
+            this.m_dtp_den_ngay.ValueChanged += new System.EventHandler(this.m_dtp_den_ngay_ValueChanged);
+            // 
+            // m_lbl_thoidiem
+            // 
+            this.m_lbl_thoidiem.AutoSize = true;
+            this.m_lbl_thoidiem.Location = new System.Drawing.Point(808, 17);
+            this.m_lbl_thoidiem.Name = "m_lbl_thoidiem";
+            this.m_lbl_thoidiem.Size = new System.Drawing.Size(49, 13);
+            this.m_lbl_thoidiem.TabIndex = 43;
+            this.m_lbl_thoidiem.Text = "Từ ngày:";
+            // 
+            // m_dtp_tu_ngay
+            // 
+            this.m_dtp_tu_ngay.CustomFormat = "dd/MM/yyyy";
+            this.m_dtp_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(863, 12);
+            this.m_dtp_tu_ngay.Name = "m_dtp_tu_ngay";
+            this.m_dtp_tu_ngay.Size = new System.Drawing.Size(126, 20);
+            this.m_dtp_tu_ngay.TabIndex = 42;
+            this.m_dtp_tu_ngay.Value = new System.DateTime(2009, 1, 1, 17, 21, 0, 0);
+            this.m_dtp_tu_ngay.ValueChanged += new System.EventHandler(this.m_dtp_tu_ngay_ValueChanged);
+            // 
             // f404_GD_QUA_TRINH_CONG_TAC
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(1001, 426);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.m_dtp_den_ngay);
+            this.Controls.Add(this.m_lbl_thoidiem);
+            this.Controls.Add(this.m_dtp_tu_ngay);
             this.Controls.Add(this.m_ckb_congtac);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_fg);
@@ -415,7 +466,7 @@ namespace BKI_HRM
 		}
 		private void load_data_2_grid(){						
 			m_ds = new DS_GD_QUA_TRINH_CONG_TAC();			
-			m_us.FillDatasetByProc(m_ds,m_txt_tim_kiem.Text.Trim(), m_str_lua_chon);
+			m_us.FillDatasetByProc(m_ds,m_txt_tim_kiem.Text.Trim(), m_str_lua_chon, m_dtp_tu_ngay.Value, m_dtp_den_ngay.Value);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             if (m_rdb_nhom.Checked == true)
@@ -710,6 +761,56 @@ namespace BKI_HRM
         }
 
         private void m_ckb_congtac_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                {
+                    if (m_txt_tim_kiem.Text.Trim() == "Nhập mã nhân viên, họ đệm, tên")
+                    {
+                        m_txt_tim_kiem.Text = "";
+                        what_is_checked();
+                        load_data_2_grid();
+                        m_txt_tim_kiem.Text = "Nhập mã nhân viên, họ đệm, tên";
+                    }
+                    else
+                    {
+                        what_is_checked();
+                        load_data_2_grid();
+                    }
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_dtp_tu_ngay_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                {
+                    if (m_txt_tim_kiem.Text.Trim() == "Nhập mã nhân viên, họ đệm, tên")
+                    {
+                        m_txt_tim_kiem.Text = "";
+                        what_is_checked();
+                        load_data_2_grid();
+                        m_txt_tim_kiem.Text = "Nhập mã nhân viên, họ đệm, tên";
+                    }
+                    else
+                    {
+                        what_is_checked();
+                        load_data_2_grid();
+                    }
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_dtp_den_ngay_ValueChanged(object sender, EventArgs e)
         {
             try
             {
