@@ -129,6 +129,10 @@ namespace BKI_HRM
         private Label m_lbl_ngay_cap;
         private Label m_lbl_cmnd;
         private TabControl m_tct_chi_tiet_nhan_vien;
+        private DateTimePicker m_dtp_tu_ngay;
+        private Label m_lbl_thoidiem;
+        private Label label4;
+        private DateTimePicker m_dtp_den_ngay;
 		private System.ComponentModel.IContainer components;
 
 		
@@ -247,6 +251,10 @@ namespace BKI_HRM
             this.m_lbl_ngay_cap = new System.Windows.Forms.Label();
             this.m_lbl_cmnd = new System.Windows.Forms.Label();
             this.m_tct_chi_tiet_nhan_vien = new System.Windows.Forms.TabControl();
+            this.label4 = new System.Windows.Forms.Label();
+            this.m_dtp_den_ngay = new System.Windows.Forms.DateTimePicker();
+            this.m_lbl_thoidiem = new System.Windows.Forms.Label();
+            this.m_dtp_tu_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).BeginInit();
             this.panel1.SuspendLayout();
@@ -745,7 +753,11 @@ namespace BKI_HRM
             // 
             // m_tpg_qua_trinh_lam_viec
             // 
+            this.m_tpg_qua_trinh_lam_viec.Controls.Add(this.label4);
             this.m_tpg_qua_trinh_lam_viec.Controls.Add(this.m_grv_qua_trinh_cong_tac);
+            this.m_tpg_qua_trinh_lam_viec.Controls.Add(this.m_dtp_den_ngay);
+            this.m_tpg_qua_trinh_lam_viec.Controls.Add(this.m_dtp_tu_ngay);
+            this.m_tpg_qua_trinh_lam_viec.Controls.Add(this.m_lbl_thoidiem);
             this.m_tpg_qua_trinh_lam_viec.Location = new System.Drawing.Point(4, 22);
             this.m_tpg_qua_trinh_lam_viec.Name = "m_tpg_qua_trinh_lam_viec";
             this.m_tpg_qua_trinh_lam_viec.Padding = new System.Windows.Forms.Padding(3);
@@ -760,10 +772,10 @@ namespace BKI_HRM
             this.m_grv_qua_trinh_cong_tac.AllowEditing = false;
             this.m_grv_qua_trinh_cong_tac.ColumnInfo = resources.GetString("m_grv_qua_trinh_cong_tac.ColumnInfo");
             this.m_grv_qua_trinh_cong_tac.Cursor = System.Windows.Forms.Cursors.Default;
-            this.m_grv_qua_trinh_cong_tac.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grv_qua_trinh_cong_tac.Location = new System.Drawing.Point(3, 3);
+            this.m_grv_qua_trinh_cong_tac.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_grv_qua_trinh_cong_tac.Location = new System.Drawing.Point(3, 31);
             this.m_grv_qua_trinh_cong_tac.Name = "m_grv_qua_trinh_cong_tac";
-            this.m_grv_qua_trinh_cong_tac.Size = new System.Drawing.Size(994, 227);
+            this.m_grv_qua_trinh_cong_tac.Size = new System.Drawing.Size(994, 199);
             this.m_grv_qua_trinh_cong_tac.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_qua_trinh_cong_tac.Styles"));
             this.m_grv_qua_trinh_cong_tac.TabIndex = 21;
             // 
@@ -1265,6 +1277,45 @@ namespace BKI_HRM
             this.m_tct_chi_tiet_nhan_vien.TabIndex = 23;
             this.m_tct_chi_tiet_nhan_vien.SelectedIndexChanged += new System.EventHandler(this.m_tct_chi_tiet_nhan_vien_SelectedIndexChanged);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(483, 11);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 13);
+            this.label4.TabIndex = 49;
+            this.label4.Text = "Đến ngày:";
+            // 
+            // m_dtp_den_ngay
+            // 
+            this.m_dtp_den_ngay.CustomFormat = "dd/MM/yyyy";
+            this.m_dtp_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dtp_den_ngay.Location = new System.Drawing.Point(545, 6);
+            this.m_dtp_den_ngay.Name = "m_dtp_den_ngay";
+            this.m_dtp_den_ngay.Size = new System.Drawing.Size(126, 20);
+            this.m_dtp_den_ngay.TabIndex = 48;
+            this.m_dtp_den_ngay.ValueChanged += new System.EventHandler(this.m_dtp_den_ngay_ValueChanged);
+            // 
+            // m_lbl_thoidiem
+            // 
+            this.m_lbl_thoidiem.AutoSize = true;
+            this.m_lbl_thoidiem.Location = new System.Drawing.Point(263, 12);
+            this.m_lbl_thoidiem.Name = "m_lbl_thoidiem";
+            this.m_lbl_thoidiem.Size = new System.Drawing.Size(49, 13);
+            this.m_lbl_thoidiem.TabIndex = 47;
+            this.m_lbl_thoidiem.Text = "Từ ngày:";
+            // 
+            // m_dtp_tu_ngay
+            // 
+            this.m_dtp_tu_ngay.CustomFormat = "dd/MM/yyyy";
+            this.m_dtp_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dtp_tu_ngay.Location = new System.Drawing.Point(318, 6);
+            this.m_dtp_tu_ngay.Name = "m_dtp_tu_ngay";
+            this.m_dtp_tu_ngay.Size = new System.Drawing.Size(126, 20);
+            this.m_dtp_tu_ngay.TabIndex = 46;
+            this.m_dtp_tu_ngay.Value = new System.DateTime(2009, 1, 1, 17, 21, 0, 0);
+            this.m_dtp_tu_ngay.ValueChanged += new System.EventHandler(this.m_dtp_tu_ngay_ValueChanged);
+            // 
             // f201_dm_nhan_su
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -1300,6 +1351,7 @@ namespace BKI_HRM
             this.m_tpg_hop_dong.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_hop_dong_ld)).EndInit();
             this.m_tpg_qua_trinh_lam_viec.ResumeLayout(false);
+            this.m_tpg_qua_trinh_lam_viec.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_qua_trinh_cong_tac)).EndInit();
             this.m_tpg_chuc_vu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_chuc_vu_hien_tai)).EndInit();
@@ -1868,7 +1920,7 @@ namespace BKI_HRM
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;
             grid2us_object(m_us, m_grv_nhan_su.Row);
 
-            v_us.FillDatasetByProc(v_ds, m_us.strMA_NV,"D");
+            v_us.FillDatasetByProc(v_ds, m_us.strMA_NV,"ABCD",m_dtp_tu_ngay.Value, m_dtp_den_ngay.Value);
             m_grv_qua_trinh_cong_tac.Redraw = false;
             // phai viet 1 ham get_trans_object khac
             ITransferDataRow v_obj_trans = get_trans_object_qua_trinh_cong_tac(m_grv_qua_trinh_cong_tac);
@@ -2316,6 +2368,30 @@ namespace BKI_HRM
 
         
         #endregion
+
+        private void m_dtp_den_ngay_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grv_qua_trinh_lam_viec();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_dtp_tu_ngay_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grv_qua_trinh_lam_viec();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
         
 
