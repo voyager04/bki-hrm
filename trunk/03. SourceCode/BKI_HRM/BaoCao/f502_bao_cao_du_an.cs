@@ -39,9 +39,6 @@ namespace BKI_HRM
         internal SIS.Controls.Button.SiSButton m_cmd_insert;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         internal SIS.Controls.Button.SiSButton m_cmd_excel;
-        private Label label1;
-        private Label m_lbl_tu_ngay;
-        private DateTimePicker m_dat_bc_tu_ngay;
         private TextBox m_txt_tim_kiem;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         private Label m_lbl_tim_kiem;
@@ -63,7 +60,6 @@ namespace BKI_HRM
         private Label label7;
         private Label label8;
         private Label m_lbl_total_record_grid1;
-        private DateTimePicker m_dat_bc_den_ngay;
         private System.ComponentModel.IContainer components;
 
         public f502_bao_cao_du_an()
@@ -110,16 +106,12 @@ namespace BKI_HRM
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.label1 = new System.Windows.Forms.Label();
-            this.m_lbl_tu_ngay = new System.Windows.Forms.Label();
-            this.m_dat_bc_tu_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.m_dat_bc_den_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_total_record_grid1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.m_cbo_co_che = new System.Windows.Forms.ComboBox();
@@ -231,46 +223,17 @@ namespace BKI_HRM
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 200);
+            this.m_fg.Location = new System.Drawing.Point(0, 157);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1180, 421);
+            this.m_fg.Size = new System.Drawing.Size(1180, 464);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(590, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
-            this.label1.TabIndex = 43;
-            this.label1.Text = "Đến ngày";
-            // 
-            // m_lbl_tu_ngay
-            // 
-            this.m_lbl_tu_ngay.AutoSize = true;
-            this.m_lbl_tu_ngay.Location = new System.Drawing.Point(391, 7);
-            this.m_lbl_tu_ngay.Name = "m_lbl_tu_ngay";
-            this.m_lbl_tu_ngay.Size = new System.Drawing.Size(46, 13);
-            this.m_lbl_tu_ngay.TabIndex = 42;
-            this.m_lbl_tu_ngay.Text = "Từ ngày";
-            // 
-            // m_dat_bc_tu_ngay
-            // 
-            this.m_dat_bc_tu_ngay.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_bc_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_bc_tu_ngay.Location = new System.Drawing.Point(443, 3);
-            this.m_dat_bc_tu_ngay.Name = "m_dat_bc_tu_ngay";
-            this.m_dat_bc_tu_ngay.Size = new System.Drawing.Size(121, 20);
-            this.m_dat_bc_tu_ngay.TabIndex = 40;
-            this.m_dat_bc_tu_ngay.Value = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
-            this.m_dat_bc_tu_ngay.ValueChanged += new System.EventHandler(this.m_dat_bc_tu_ngay_ValueChanged);
             // 
             // m_txt_tim_kiem
             // 
             this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(87, 51);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(87, 12);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(364, 20);
             this.m_txt_tim_kiem.TabIndex = 37;
@@ -286,7 +249,7 @@ namespace BKI_HRM
             this.m_cmd_search.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
-            this.m_cmd_search.Location = new System.Drawing.Point(457, 46);
+            this.m_cmd_search.Location = new System.Drawing.Point(457, 7);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 38;
@@ -296,7 +259,7 @@ namespace BKI_HRM
             // m_lbl_tim_kiem
             // 
             this.m_lbl_tim_kiem.AutoSize = true;
-            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(32, 54);
+            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(32, 15);
             this.m_lbl_tim_kiem.Name = "m_lbl_tim_kiem";
             this.m_lbl_tim_kiem.Size = new System.Drawing.Size(49, 13);
             this.m_lbl_tim_kiem.TabIndex = 39;
@@ -316,36 +279,22 @@ namespace BKI_HRM
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.m_dat_bc_den_ngay);
             this.panel1.Controls.Add(this.m_lbl_total_record_grid1);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.m_lbl_tim_kiem);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.m_cmd_search);
-            this.panel1.Controls.Add(this.m_lbl_tu_ngay);
             this.panel1.Controls.Add(this.m_txt_tim_kiem);
-            this.panel1.Controls.Add(this.m_dat_bc_tu_ngay);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 41);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1180, 159);
+            this.panel1.Size = new System.Drawing.Size(1180, 116);
             this.panel1.TabIndex = 46;
-            // 
-            // m_dat_bc_den_ngay
-            // 
-            this.m_dat_bc_den_ngay.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_bc_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_bc_den_ngay.Location = new System.Drawing.Point(649, 3);
-            this.m_dat_bc_den_ngay.Name = "m_dat_bc_den_ngay";
-            this.m_dat_bc_den_ngay.Size = new System.Drawing.Size(121, 20);
-            this.m_dat_bc_den_ngay.TabIndex = 47;
-            this.m_dat_bc_den_ngay.ValueChanged += new System.EventHandler(this.m_dat_bc_den_ngay_ValueChanged);
             // 
             // m_lbl_total_record_grid1
             // 
             this.m_lbl_total_record_grid1.AutoSize = true;
-            this.m_lbl_total_record_grid1.Location = new System.Drawing.Point(32, 96);
+            this.m_lbl_total_record_grid1.Location = new System.Drawing.Point(32, 57);
             this.m_lbl_total_record_grid1.Name = "m_lbl_total_record_grid1";
             this.m_lbl_total_record_grid1.Size = new System.Drawing.Size(0, 13);
             this.m_lbl_total_record_grid1.TabIndex = 46;
@@ -358,7 +307,7 @@ namespace BKI_HRM
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.m_cbo_trang_thai);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(551, 45);
+            this.groupBox2.Location = new System.Drawing.Point(551, 6);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(312, 100);
             this.groupBox2.TabIndex = 45;
@@ -430,7 +379,7 @@ namespace BKI_HRM
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Location = new System.Drawing.Point(869, 45);
+            this.groupBox1.Location = new System.Drawing.Point(869, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(299, 100);
             this.groupBox1.TabIndex = 44;
@@ -531,6 +480,19 @@ namespace BKI_HRM
         public void display()
         {
             this.ShowDialog();
+        }
+
+        public int count_record_du_an_sap_ket_thuc()
+        {
+            int result = 0;
+            US_DM_DU_AN v_us = new US_DM_DU_AN();
+            DS_DM_DU_AN v_ds = new DS_DM_DU_AN();
+            v_us.FillDatasetSapKetThuc(v_ds, DateTime.Now.Date);
+            if (v_ds.Tables[0].Rows.Count > 0)
+            {
+                result = v_ds.Tables[0].Rows.Count;
+            }
+            return result;
         }
         #endregion
 
@@ -645,8 +607,6 @@ namespace BKI_HRM
             if (m_cbo_tim_kiem_theo_ngay.SelectedIndex == 0)
                 m_us.FillDatasetSearch(m_ds,
                                         v_str_search,
-                                        m_dat_bc_tu_ngay.Value,
-                                        m_dat_bc_den_ngay.Value,
                                         m_dat_tu_ngay.Value,
                                         m_dat_den_ngay.Value,
                                         decimal.Parse(m_cbo_trang_thai.SelectedValue.ToString()),
@@ -656,8 +616,6 @@ namespace BKI_HRM
             if (m_cbo_tim_kiem_theo_ngay.SelectedIndex == 1)
                 m_us.FillDatasetSearch(m_ds,
                                         v_str_search,
-                                        m_dat_bc_tu_ngay.Value,
-                                        m_dat_bc_den_ngay.Value,
                                         m_dat_tu_ngay.Value,
                                         m_dat_den_ngay.Value,
                                         decimal.Parse(m_cbo_trang_thai.SelectedValue.ToString()),
@@ -667,8 +625,6 @@ namespace BKI_HRM
             if (m_cbo_tim_kiem_theo_ngay.SelectedIndex == 2)
                 m_us.FillDatasetSearch(m_ds,
                                         v_str_search,
-                                        m_dat_bc_tu_ngay.Value,
-                                        m_dat_bc_den_ngay.Value,
                                         m_dat_tu_ngay.Value,
                                         m_dat_den_ngay.Value,
                                         decimal.Parse(m_cbo_trang_thai.SelectedValue.ToString()),
@@ -758,8 +714,8 @@ namespace BKI_HRM
         private void export_2_excel()
         {
             CExcelReport v_obj_excel_rpt = new CExcelReport("f502_bao_cao_du_an_tu_ngay_den_ngay.xlsx", 7, 1);
-            v_obj_excel_rpt.AddFindAndReplaceItem("<tu_ngay>", m_dat_bc_tu_ngay.Value.Date);
-            v_obj_excel_rpt.AddFindAndReplaceItem("<den_ngay>", m_dat_bc_den_ngay.Value.Date);
+            v_obj_excel_rpt.AddFindAndReplaceItem("<tu_ngay>", m_dat_tu_ngay.Value.Date);
+            v_obj_excel_rpt.AddFindAndReplaceItem("<den_ngay>", m_dat_den_ngay.Value.Date);
             v_obj_excel_rpt.FindAndReplace(false);
             v_obj_excel_rpt.Export2ExcelWithoutFixedRows(m_fg, 1, m_fg.Cols.Count - 1, true);
         }

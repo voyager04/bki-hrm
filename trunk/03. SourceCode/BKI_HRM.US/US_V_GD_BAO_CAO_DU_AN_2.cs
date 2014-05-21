@@ -428,8 +428,6 @@ namespace BKI_HRM.US
         public void FillDatasetSearch(
             DS_V_GD_BAO_CAO_DU_AN_2 op_ds_bc_da, 
             string i_str_search,
-            DateTime v_dat_bc_tu_ngay,
-            DateTime v_dat_bc_den_ngay,
             DateTime v_dat_tu_ngay,
             DateTime v_dat_den_ngay,
             decimal v_dc_trang_thai,
@@ -439,8 +437,6 @@ namespace BKI_HRM.US
         {
             CStoredProc v_sp = new CStoredProc("pr_V_GD_BAO_CAO_DU_AN_2_search");
             v_sp.addNVarcharInputParam("@str_search", i_str_search);
-            v_sp.addDatetimeInputParam("@bc_tu_ngay", v_dat_bc_tu_ngay);
-            v_sp.addDatetimeInputParam("@bc_den_ngay", v_dat_bc_den_ngay);
             v_sp.addDatetimeInputParam("@tu_ngay", v_dat_tu_ngay);
             v_sp.addDatetimeInputParam("@den_ngay", v_dat_den_ngay);
             v_sp.addDecimalInputParam("@id_trang_thai_du_an", v_dc_trang_thai);

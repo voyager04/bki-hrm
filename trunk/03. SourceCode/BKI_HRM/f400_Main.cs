@@ -220,6 +220,9 @@ namespace BKI_HRM
             {
                 F500_DM_DU_AN frm = new F500_DM_DU_AN();
                 frm.Show();
+                f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
+                m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc. Click để xem chi tiết!",
+                                                        frm502.count_record_du_an_sap_ket_thuc());
             }
             catch (Exception v_e)
             {
@@ -273,6 +276,12 @@ namespace BKI_HRM
             {
                 f701_v_hop_dong_lao_dong frm = new f701_v_hop_dong_lao_dong();
                 frm.Show();
+                f702_bao_cao_hdld frm2 = new f702_bao_cao_hdld();
+                m_lbl_thong_bao_hop_dong_sap_het_han.Text =
+                    string.Format("Có {0} hợp đồng sắp hết hạn. Click để xem chi tiết!", frm2.count_record_bao_cao_sap_het_han());
+                m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text =
+                    string.Format("Có {0} hợp đồng đã quá hạn và chưa ký mới. Click để xem chi tiết!",
+                                  frm2.count_record_bao_cao_het_han_nhung_chua_ky_moi());
             }
             catch (Exception v_e)
             {
@@ -323,38 +332,18 @@ namespace BKI_HRM
         {
             try
             {
-                US_DM_DU_AN v_us = new US_DM_DU_AN();
-                DS_DM_DU_AN v_ds = new DS_DM_DU_AN();
-                v_us.FillDatasetSapKetThuc(v_ds, DateTime.Now.Date);
-                if (v_ds.Tables[0].Rows.Count > 0)
-                {
-                    m_lbl_du_an_sap_kt.Text = "Có " + v_ds.Tables[0].Rows.Count.ToString() +
-                                              " dự án sắp kết thúc. Click để xem chi tiết!";
-                    m_lbl_du_an_sap_kt.Visible = true;
-                }
-                else
-                {
-                    m_lbl_du_an_sap_kt.Visible = false;
-                }
 
-                US_V_GD_HOP_DONG_LAO_DONG v_us_v_gd_hop_dong = new US_V_GD_HOP_DONG_LAO_DONG();
-                DS_V_GD_HOP_DONG_LAO_DONG v_ds_v_gd_hop_dong_sap_het_han = new DS_V_GD_HOP_DONG_LAO_DONG();
-                v_us_v_gd_hop_dong.FIllDataset_By_Hop_Dong_Sap_Het_Han(v_ds_v_gd_hop_dong_sap_het_han, DateTime.Now, DateTime.Now, "", -1, DateTime.Now, DateTime.Now, 0);
-                if (v_ds_v_gd_hop_dong_sap_het_han.Tables[0].Rows.Count > 0)
-                {
-                    m_lbl_thong_bao_hop_dong_sap_het_han.Text =
-                        string.Format("Có {0} hợp đồng sắp hết hạn. Click để xem chi tiết!",
-                            v_ds_v_gd_hop_dong_sap_het_han.Tables[0].Rows.Count);
-                }
+                f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
+                m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc. Click để xem chi tiết!",
+                                                        frm502.count_record_du_an_sap_ket_thuc());
 
-                DS_V_GD_HOP_DONG_LAO_DONG v_ds_v_gd_hop_dong_da_het_han = new DS_V_GD_HOP_DONG_LAO_DONG();
-                v_us_v_gd_hop_dong.FillDataSet_Search_HDLD_da_het_han_nhung_chua_ky(v_ds_v_gd_hop_dong_da_het_han, DateTime.Now, DateTime.Now, "", -1, DateTime.Now, DateTime.Now, 0);
-                if (v_ds_v_gd_hop_dong_da_het_han.Tables[0].Rows.Count > 0)
-                {
-                    m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text =
-                        string.Format("Có {0} hợp đồng đã quá hạn và chưa ký mới. Click để xem chi tiết!",
-                            v_ds_v_gd_hop_dong_da_het_han.Tables[0].Rows.Count);
-                }
+                f702_bao_cao_hdld frm = new f702_bao_cao_hdld();
+                m_lbl_thong_bao_hop_dong_sap_het_han.Text =
+                    string.Format("Có {0} hợp đồng sắp hết hạn. Click để xem chi tiết!", frm.count_record_bao_cao_sap_het_han());
+                m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text =
+                    string.Format("Có {0} hợp đồng đã quá hạn và chưa ký mới. Click để xem chi tiết!",
+                                  frm.count_record_bao_cao_het_han_nhung_chua_ky_moi());
+                
                 thu_viec_sap_het_han();
                 nghi_viec_sap_quay_lai();
                
@@ -371,6 +360,9 @@ namespace BKI_HRM
             {
                 F500_DM_DU_AN frm = new F500_DM_DU_AN();
                 frm.DisplaySapKetThuc();
+                f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
+                m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc. Click để xem chi tiết!",
+                                                        frm502.count_record_du_an_sap_ket_thuc());
             }
             catch (Exception v_e)
             {
@@ -399,6 +391,11 @@ namespace BKI_HRM
                 f702_bao_cao_hdld frm = new f702_bao_cao_hdld();
                 frm.set_form_mode_for_report(2);
                 frm.ShowDialog();
+                m_lbl_thong_bao_hop_dong_sap_het_han.Text =
+                    string.Format("Có {0} hợp đồng sắp hết hạn. Click để xem chi tiết!", frm.count_record_bao_cao_sap_het_han());
+                m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text =
+                    string.Format("Có {0} hợp đồng đã quá hạn và chưa ký mới. Click để xem chi tiết!",
+                                  frm.count_record_bao_cao_het_han_nhung_chua_ky_moi());
             }
             catch (Exception v_e)
             {
@@ -425,6 +422,9 @@ namespace BKI_HRM
             {
                 f502_bao_cao_du_an frm = new f502_bao_cao_du_an();
                 frm.Show();
+                f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
+                m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc. Click để xem chi tiết!",
+                                                        frm502.count_record_du_an_sap_ket_thuc());
             }
             catch (Exception v_e)
             {
@@ -547,6 +547,11 @@ namespace BKI_HRM
                 f702_bao_cao_hdld frm = new f702_bao_cao_hdld();
                 frm.set_form_mode_for_report(3);
                 frm.ShowDialog();
+                m_lbl_thong_bao_hop_dong_sap_het_han.Text =
+                    string.Format("Có {0} hợp đồng sắp hết hạn. Click để xem chi tiết!", frm.count_record_bao_cao_sap_het_han());
+                m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text =
+                    string.Format("Có {0} hợp đồng đã quá hạn và chưa ký mới. Click để xem chi tiết!",
+                                  frm.count_record_bao_cao_het_han_nhung_chua_ky_moi());
             }
             catch (Exception v_e)
             {
