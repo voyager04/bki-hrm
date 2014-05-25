@@ -96,6 +96,13 @@ namespace BKI_HRM
             Checkbox_Combobox.CheckBoxProperties checkBoxProperties1 = new Checkbox_Combobox.CheckBoxProperties();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cbo_chon_dia_ban = new System.Windows.Forms.ComboBox();
+            this.m_lbl_chon_dia_ban = new System.Windows.Forms.Label();
+            this.m_cbo_chon_don_vi = new System.Windows.Forms.ComboBox();
+            this.m_lbl_chon_don_vi = new System.Windows.Forms.Label();
+            this.m_cbo_chon_chuc_vu = new System.Windows.Forms.ComboBox();
+            this.m_lbl_chon_chuc_vu = new System.Windows.Forms.Label();
+            this.m_lbl_chon_cot = new System.Windows.Forms.Label();
             this.m_rdb_thu_viec_sap_het_han = new System.Windows.Forms.RadioButton();
             this.m_rdb_nhan_vien_sap_quay_lai = new System.Windows.Forms.RadioButton();
             this.m_cbc_choose_columns = new Checkbox_Combobox.CheckBoxComboBox();
@@ -110,13 +117,6 @@ namespace BKI_HRM
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_lbl_chon_cot = new System.Windows.Forms.Label();
-            this.m_lbl_chon_chuc_vu = new System.Windows.Forms.Label();
-            this.m_cbo_chon_chuc_vu = new System.Windows.Forms.ComboBox();
-            this.m_lbl_chon_don_vi = new System.Windows.Forms.Label();
-            this.m_cbo_chon_don_vi = new System.Windows.Forms.ComboBox();
-            this.m_lbl_chon_dia_ban = new System.Windows.Forms.Label();
-            this.m_cbo_chon_dia_ban = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -171,6 +171,69 @@ namespace BKI_HRM
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1189, 133);
             this.panel1.TabIndex = 24;
+            // 
+            // m_cbo_chon_dia_ban
+            // 
+            this.m_cbo_chon_dia_ban.FormattingEnabled = true;
+            this.m_cbo_chon_dia_ban.Location = new System.Drawing.Point(778, 73);
+            this.m_cbo_chon_dia_ban.Name = "m_cbo_chon_dia_ban";
+            this.m_cbo_chon_dia_ban.Size = new System.Drawing.Size(121, 21);
+            this.m_cbo_chon_dia_ban.TabIndex = 36;
+        //    this.m_cbo_chon_dia_ban.SelectedIndexChanged += new System.EventHandler(this.m_cbo_chon_dia_ban_SelectedIndexChanged);
+            // 
+            // m_lbl_chon_dia_ban
+            // 
+            this.m_lbl_chon_dia_ban.AutoSize = true;
+            this.m_lbl_chon_dia_ban.Location = new System.Drawing.Point(699, 76);
+            this.m_lbl_chon_dia_ban.Name = "m_lbl_chon_dia_ban";
+            this.m_lbl_chon_dia_ban.Size = new System.Drawing.Size(71, 13);
+            this.m_lbl_chon_dia_ban.TabIndex = 35;
+            this.m_lbl_chon_dia_ban.Text = "Chọn địa bàn";
+            // 
+            // m_cbo_chon_don_vi
+            // 
+            this.m_cbo_chon_don_vi.FormattingEnabled = true;
+            this.m_cbo_chon_don_vi.Location = new System.Drawing.Point(478, 73);
+            this.m_cbo_chon_don_vi.Name = "m_cbo_chon_don_vi";
+            this.m_cbo_chon_don_vi.Size = new System.Drawing.Size(172, 21);
+            this.m_cbo_chon_don_vi.TabIndex = 36;
+           // this.m_cbo_chon_don_vi.SelectedIndexChanged += new System.EventHandler(this.m_cbo_chon_don_vi_SelectedIndexChanged);
+            // 
+            // m_lbl_chon_don_vi
+            // 
+            this.m_lbl_chon_don_vi.AutoSize = true;
+            this.m_lbl_chon_don_vi.Location = new System.Drawing.Point(408, 76);
+            this.m_lbl_chon_don_vi.Name = "m_lbl_chon_don_vi";
+            this.m_lbl_chon_don_vi.Size = new System.Drawing.Size(65, 13);
+            this.m_lbl_chon_don_vi.TabIndex = 35;
+            this.m_lbl_chon_don_vi.Text = "Chọn đơn vị";
+            // 
+            // m_cbo_chon_chuc_vu
+            // 
+            this.m_cbo_chon_chuc_vu.FormattingEnabled = true;
+            this.m_cbo_chon_chuc_vu.Location = new System.Drawing.Point(266, 73);
+            this.m_cbo_chon_chuc_vu.Name = "m_cbo_chon_chuc_vu";
+            this.m_cbo_chon_chuc_vu.Size = new System.Drawing.Size(121, 21);
+            this.m_cbo_chon_chuc_vu.TabIndex = 36;
+           // this.m_cbo_chon_chuc_vu.SelectedIndexChanged += new System.EventHandler(this.m_cbo_chon_chuc_vu_SelectedIndexChanged);
+            // 
+            // m_lbl_chon_chuc_vu
+            // 
+            this.m_lbl_chon_chuc_vu.AutoSize = true;
+            this.m_lbl_chon_chuc_vu.Location = new System.Drawing.Point(169, 76);
+            this.m_lbl_chon_chuc_vu.Name = "m_lbl_chon_chuc_vu";
+            this.m_lbl_chon_chuc_vu.Size = new System.Drawing.Size(74, 13);
+            this.m_lbl_chon_chuc_vu.TabIndex = 35;
+            this.m_lbl_chon_chuc_vu.Text = "Chọn chức vụ";
+            // 
+            // m_lbl_chon_cot
+            // 
+            this.m_lbl_chon_cot.AutoSize = true;
+            this.m_lbl_chon_cot.Location = new System.Drawing.Point(864, 110);
+            this.m_lbl_chon_cot.Name = "m_lbl_chon_cot";
+            this.m_lbl_chon_cot.Size = new System.Drawing.Size(87, 13);
+            this.m_lbl_chon_cot.TabIndex = 34;
+            this.m_lbl_chon_cot.Text = "Chọn cột hiển thị";
             // 
             // m_rdb_thu_viec_sap_het_han
             // 
@@ -325,66 +388,6 @@ namespace BKI_HRM
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 32;
             // 
-            // m_lbl_chon_cot
-            // 
-            this.m_lbl_chon_cot.AutoSize = true;
-            this.m_lbl_chon_cot.Location = new System.Drawing.Point(864, 110);
-            this.m_lbl_chon_cot.Name = "m_lbl_chon_cot";
-            this.m_lbl_chon_cot.Size = new System.Drawing.Size(87, 13);
-            this.m_lbl_chon_cot.TabIndex = 34;
-            this.m_lbl_chon_cot.Text = "Chọn cột hiển thị";
-            // 
-            // m_lbl_chon_chuc_vu
-            // 
-            this.m_lbl_chon_chuc_vu.AutoSize = true;
-            this.m_lbl_chon_chuc_vu.Location = new System.Drawing.Point(169, 76);
-            this.m_lbl_chon_chuc_vu.Name = "m_lbl_chon_chuc_vu";
-            this.m_lbl_chon_chuc_vu.Size = new System.Drawing.Size(74, 13);
-            this.m_lbl_chon_chuc_vu.TabIndex = 35;
-            this.m_lbl_chon_chuc_vu.Text = "Chọn chức vụ";
-            // 
-            // m_cbo_chon_chuc_vu
-            // 
-            this.m_cbo_chon_chuc_vu.FormattingEnabled = true;
-            this.m_cbo_chon_chuc_vu.Location = new System.Drawing.Point(266, 73);
-            this.m_cbo_chon_chuc_vu.Name = "m_cbo_chon_chuc_vu";
-            this.m_cbo_chon_chuc_vu.Size = new System.Drawing.Size(121, 21);
-            this.m_cbo_chon_chuc_vu.TabIndex = 36;
-            // 
-            // m_lbl_chon_don_vi
-            // 
-            this.m_lbl_chon_don_vi.AutoSize = true;
-            this.m_lbl_chon_don_vi.Location = new System.Drawing.Point(408, 76);
-            this.m_lbl_chon_don_vi.Name = "m_lbl_chon_don_vi";
-            this.m_lbl_chon_don_vi.Size = new System.Drawing.Size(65, 13);
-            this.m_lbl_chon_don_vi.TabIndex = 35;
-            this.m_lbl_chon_don_vi.Text = "Chọn đơn vị";
-            // 
-            // m_cbo_chon_don_vi
-            // 
-            this.m_cbo_chon_don_vi.FormattingEnabled = true;
-            this.m_cbo_chon_don_vi.Location = new System.Drawing.Point(478, 73);
-            this.m_cbo_chon_don_vi.Name = "m_cbo_chon_don_vi";
-            this.m_cbo_chon_don_vi.Size = new System.Drawing.Size(172, 21);
-            this.m_cbo_chon_don_vi.TabIndex = 36;
-            // 
-            // m_lbl_chon_dia_ban
-            // 
-            this.m_lbl_chon_dia_ban.AutoSize = true;
-            this.m_lbl_chon_dia_ban.Location = new System.Drawing.Point(699, 76);
-            this.m_lbl_chon_dia_ban.Name = "m_lbl_chon_dia_ban";
-            this.m_lbl_chon_dia_ban.Size = new System.Drawing.Size(71, 13);
-            this.m_lbl_chon_dia_ban.TabIndex = 35;
-            this.m_lbl_chon_dia_ban.Text = "Chọn địa bàn";
-            // 
-            // m_cbo_chon_dia_ban
-            // 
-            this.m_cbo_chon_dia_ban.FormattingEnabled = true;
-            this.m_cbo_chon_dia_ban.Location = new System.Drawing.Point(778, 73);
-            this.m_cbo_chon_dia_ban.Name = "m_cbo_chon_dia_ban";
-            this.m_cbo_chon_dia_ban.Size = new System.Drawing.Size(121, 21);
-            this.m_cbo_chon_dia_ban.TabIndex = 36;
-            // 
             // f103_bao_cao_tra_cuu_nhan_su
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -415,14 +418,14 @@ namespace BKI_HRM
         }
         public void display_nghi_sap_quay_lai()
         {
-           
+
             m_e_form_mode = DataEntryFormMode.ViewDataState;
             this.Show();
             m_rdb_nhan_vien_sap_quay_lai.Checked = true;
         }
         public void display_thu_viec_sap_het_han()
         {
-           // m_rdb_nhan_vien_sap_quay_lai.Checked = false;
+            // m_rdb_nhan_vien_sap_quay_lai.Checked = false;
             m_rdb_thu_viec_sap_het_han.Checked = true;
             m_e_form_mode = DataEntryFormMode.ViewDataState;
             this.Show();
@@ -436,7 +439,7 @@ namespace BKI_HRM
             m_us.FillDatasetSapHetHanThuViec(m_ds, "");
             m_so_luong_thu_viec_sap_het_han = m_ds.V_DM_DU_LIEU_NHAN_VIEN.Rows.Count;
             return m_so_luong_thu_viec_sap_het_han;
-            
+
         }
 
         #endregion
@@ -541,7 +544,7 @@ namespace BKI_HRM
             CGridUtils.AddSearch_Handlers(m_fg);
             m_fg.Tree.Column = (int)e_col_Number.DIA_BAN;//Cột chứa tree
             m_fg.Tree.Style = TreeStyleFlags.Simple;
-            
+
             KeyPreview = true;
         }
         private void set_initial_form_load()
@@ -603,8 +606,8 @@ namespace BKI_HRM
             US_V_DM_DU_LIEU_NHAN_VIEN v_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
             DS_V_DM_DU_LIEU_NHAN_VIEN v_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
             decimal v_dc_so_luong_nv = 0;
-            
-           
+
+
 
             m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
             if (m_txt_search.Text.Equals(m_str_goi_y_tim_kiem))
@@ -620,6 +623,9 @@ namespace BKI_HRM
                     m_lbl_so_luong_nv.Text += v_dc_so_luong_nv.ToString();
                     m_us.FillDatasetSearch(m_ds
                         , m_str_search
+                        , CIPConvert.ToDecimal(m_cbo_chon_chuc_vu.SelectedValue)
+                            , CIPConvert.ToDecimal(m_cbo_chon_don_vi.SelectedValue)
+                            , CIPConvert.ToDecimal(m_cbo_chon_dia_ban.SelectedValue)
                         , ""
                         , ""
                         , ""
@@ -635,7 +641,10 @@ namespace BKI_HRM
                         m_lbl_so_luong_nv.Text = "Số lượng nhân viên thử việc sắp hết hạn: ";
                         m_lbl_so_luong_nv.Text += v_dc_so_luong_nv.ToString();
                         m_us.FillDatasetSearch(m_ds
-                            ,m_str_search
+                            , m_str_search
+                            , CIPConvert.ToDecimal(m_cbo_chon_chuc_vu.SelectedValue)
+                            , CIPConvert.ToDecimal(m_cbo_chon_don_vi.SelectedValue)
+                            , CIPConvert.ToDecimal(m_cbo_chon_dia_ban.SelectedValue)
                             , ""
                             , ""
                             , ""
@@ -644,7 +653,7 @@ namespace BKI_HRM
                         m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC].Visible = true;
                         m_fg.Cols[(int)e_col_Number.NGAY_CO_HIEU_LUC].Caption = "Ngày bắt đầu thử việc";
                     }
-               // m_so_luong_thu_viec_sap_het_han = m_ds.V_DM_DU_LIEU_NHAN_VIEN.Rows.Count;
+                // m_so_luong_thu_viec_sap_het_han = m_ds.V_DM_DU_LIEU_NHAN_VIEN.Rows.Count;
             }
             else
             {
@@ -657,9 +666,11 @@ namespace BKI_HRM
                 init_key_value();
                 m_us.FillDatasetSearch(m_ds
                         , m_str_search
-                       
+                       , CIPConvert.ToDecimal(m_cbo_chon_chuc_vu.SelectedValue)
+                            , CIPConvert.ToDecimal(m_cbo_chon_don_vi.SelectedValue)
+                            , CIPConvert.ToDecimal(m_cbo_chon_dia_ban.SelectedValue)
                         , m_str_trang_thai_lao_dong
-                        
+
                         , m_str_trang_thai_hien_tai
                         , m_str_trang_thai_chuc_vu
                         , "search tất cả"
@@ -673,7 +684,7 @@ namespace BKI_HRM
             tao_tree();
             WinFormControls.load_data_to_CheckboxCombobox(m_fg, m_cbc_choose_columns, load_invisible);
         }
-        private void load_data_2_cbo() 
+        private void load_data_2_cbo()
         {
             // load chuc vu
             US_DM_CHUC_VU v_us_dm_chuc_vu = new US_DM_CHUC_VU();
@@ -1055,6 +1066,9 @@ namespace BKI_HRM
             m_txt_search.Leave += m_txt_search_Leave;
             m_cbc_choose_columns.CheckBoxItems.CheckBoxCheckedChanged += m_cbc_choose_columns_SelectedIndexChange;
             m_cmd_xuat_excel.Click += m_cmd_xuat_excel_Click;
+            m_cbo_chon_chuc_vu.SelectedIndexChanged += m_cbo_chon_chuc_vu_SelectedIndexChanged;
+            m_cbo_chon_dia_ban.SelectedIndexChanged += m_cbo_chon_dia_ban_SelectedIndexChanged;
+            m_cbo_chon_don_vi.SelectedIndexChanged += m_cbo_chon_don_vi_SelectedIndexChanged;
         }
 
         private void f103_bao_cao_tra_cuu_nhan_su_Load(object sender, EventArgs e)
@@ -1185,7 +1199,44 @@ namespace BKI_HRM
         }
         #endregion
 
-        
+        private void m_cbo_chon_chuc_vu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cbo_chon_don_vi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cbo_chon_dia_ban_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+
 
     }
 }
