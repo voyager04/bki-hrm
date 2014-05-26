@@ -15,6 +15,7 @@ using BKI_HRM.DS;
 using IP.Core.IPCommon;
 using IP.Core.IPWordReport;
 using System.Diagnostics;
+using IP.Core.IPSystemAdmin;
 
 namespace BKI_HRM
 {
@@ -25,6 +26,7 @@ namespace BKI_HRM
         public f206_v_gd_cong_tac_de()
         {
             InitializeComponent();
+            format_controls();
         }
         public void display_for_insert()
         {
@@ -48,9 +50,34 @@ namespace BKI_HRM
         US_DM_QUYET_DINH m_us_dm_quyet_dinh = new US_DM_QUYET_DINH();
         DS_DM_QUYET_DINH m_ds_dm_quyet_dinh = new DS_DM_QUYET_DINH();
         DataEntryFormMode m_e_form_mode = new DataEntryFormMode();
+        bool m_b_check_quyet_dinh_save;
+        bool m_b_check_quyet_dinh_null = false;
         #endregion
 
         #region Private Methods
+        private void format_controls()
+        {
+            CControlFormat.setFormStyle(this, new CAppContext_201());
+            this.KeyPreview = true;
+            load_cbo_ma_quyet_dinh();
+        }
+        private void set_inital_form_load()
+        {
+
+            switch (m_e_form_mode)
+            {
+                case DataEntryFormMode.UpdateDataState:
+                    //us_object_2_form;
+                    break;
+                case DataEntryFormMode.ViewDataState:
+                    break;
+                case DataEntryFormMode.InsertDataState:
+                    break;
+                default:
+                    break;
+            }
+
+        }
         private void generate_ma_quyet_dinh()
         {
             m_lbl_ma_qd.Text = string.Format("{0}/{1}/{2}", m_txt_ma_quyet_dinh.Text,
@@ -61,26 +88,21 @@ namespace BKI_HRM
         {
             return true;
         }
-        private void form_2_us_object()
+        private void form_2_us_object_quyet_dinh()
         {
-            m_us_dm_quyet_dinh.strMA_QUYET_DINH = m_lbl_ma_qd.Text;
-            m_us_dm_quyet_dinh.strNOI_DUNG = m_txt_noi_dung.Text;
+            m_us_dm_quyet_dinh.strMA_QUYET_DINH = m_txt_ma_quyet_dinh.Text.Trim();
+            m_us_dm_quyet_dinh.strNOI_DUNG = m_txt_noi_dung.Text.Trim();
+            m_us_dm_quyet_dinh.strLINK = m_ofd_openfile.FileName;
             m_us_dm_quyet_dinh.datNGAY_KY = m_dat_ngay_ky.Value;
             m_us_dm_quyet_dinh.SetNGAY_HET_HIEU_LUCNull();
             m_us_dm_quyet_dinh.datNGAY_CO_HIEU_LUC = m_us_dm_quyet_dinh.datNGAY_KY;
             m_us_dm_quyet_dinh.dcID_LOAI_QD = CIPConvert.ToDecimal(TU_DIEN.QD_CONG_TAC);
-            
         }
         private void us_object_2_form()
         {
 
         }
-        private void load_data_2_cbo_loai_qd()
-        {
-            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.MA_QUYET_DINH
-                , WinFormControls.eTAT_CA.NO
-                , m_cbo_ma_quyet_dinh);
-        }
+       
         private void save_data()
         {
 
@@ -100,10 +122,58 @@ namespace BKI_HRM
         {
             m_cmd_chon_file.Click += new EventHandler(m_cmd_chon_file_Click);
             m_cmd_xem_file.Click += new EventHandler(m_cmd_xem_file_Click);
+            m_cmd_them_quyet_dinh.Click += new EventHandler(m_cmd_them_quyet_dinh_Click);
+            m_cmd_chon_quyet_dinh.Click += new EventHandler(m_cmd_chon_quyet_dinh_Click);
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
+            
+        }
+        private void them_quyet_dinh()
+        {
+            m_b_check_quyet_dinh_save = true;
+            m_grb_quyet_dinh.Enabled = true;
+            m_txt_ma_quyet_dinh.Focus();
+        }
+        private void chon_quyet_dinh()
+        {
+            m_b_check_quyet_dinh_save = false;
+            m_grb_quyet_dinh.Enabled = true;
+            f600_v_dm_quyet_dinh v_frm = new f600_v_dm_quyet_dinh();
+            v_frm.select_data(ref m_us_dm_quyet_dinh);
+            if (m_us_dm_quyet_dinh.dcID != -1)
+            {
+
+                m_ofd_openfile.FileName = m_us_dm_quyet_dinh.strLINK;
+                m_lbl_ma_qd.Text = m_us_dm_quyet_dinh.strMA_QUYET_DINH;
+
+                //m_cbo_loai_quyet_dinh.SelectedValue = m_us_dm_quyet_dinh.dcID_LOAI_QD;
+                m_dat_ngay_ky.Value = m_us_dm_quyet_dinh.datNGAY_KY;
+                //if (m_us_dm_quyet_dinh.datNGAY_CO_HIEU_LUC > DateTime.Parse("01/01/1900") &&
+                //    m_us_dm_quyet_dinh.datNGAY_CO_HIEU_LUC != null)
+                //    m_dat_ngay_co_hieu_luc_qd.Value = m_us_dm_quyet_dinh.datNGAY_CO_HIEU_LUC;
+                //else
+                //    m_dat_ngay_co_hieu_luc_qd.Checked = false;
+                //if (m_us_dm_quyet_dinh.datNGAY_HET_HIEU_LUC != null &&
+                //    m_us_dm_quyet_dinh.datNGAY_HET_HIEU_LUC > DateTime.Parse("1/1/1900"))
+                //    m_dat_ngay_het_hieu_luc_qd.Value = m_us_dm_quyet_dinh.datNGAY_HET_HIEU_LUC;
+                //else
+                //    m_dat_ngay_het_hieu_luc_qd.Checked = false;
+                m_txt_noi_dung.Text = m_us_dm_quyet_dinh.strNOI_DUNG;
+                m_ofd_openfile.FileName = m_us_dm_quyet_dinh.strLINK;
+
+            }
+            else
+            {
+                m_b_check_quyet_dinh_null = true;
+            }
         }
 
-        
-
+        private void load_cbo_ma_quyet_dinh()
+        {
+            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.MA_QUYET_DINH
+                , WinFormControls.eTAT_CA.NO
+                , m_cbo_ma_quyet_dinh);
+        }
         
         #endregion
 
@@ -168,7 +238,64 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        private void m_cmd_them_quyet_dinh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                them_quyet_dinh();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_chon_quyet_dinh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                chon_quyet_dinh();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_save_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                save_data();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         #endregion
+
+        private void f206_v_gd_cong_tac_de_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                set_inital_form_load();
+                set_define_event();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
     }
 

@@ -128,6 +128,7 @@
             this.m_grb_quyet_dinh.Controls.Add(this.m_lbl_ngay_ky);
             this.m_grb_quyet_dinh.Controls.Add(this.m_lbl_loai_quyet_dinh);
             this.m_grb_quyet_dinh.Controls.Add(this.m_lbl_ma_quyet_dinh);
+            this.m_grb_quyet_dinh.Enabled = false;
             this.m_grb_quyet_dinh.Location = new System.Drawing.Point(14, 48);
             this.m_grb_quyet_dinh.Name = "m_grb_quyet_dinh";
             this.m_grb_quyet_dinh.Size = new System.Drawing.Size(766, 180);
@@ -327,7 +328,7 @@
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_fg.Location = new System.Drawing.Point(0, 257);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Rows.Count = 3;
+            this.m_fg.Rows.Count = 4;
             this.m_fg.Size = new System.Drawing.Size(792, 176);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 109;
@@ -344,6 +345,7 @@
             this.Controls.Add(this.m_grb_quyet_dinh);
             this.Name = "f206_v_gd_cong_tac_de";
             this.Text = "F206 - Bổ sung quyết định đi công tác";
+            this.Load += new System.EventHandler(this.f206_v_gd_cong_tac_de_Load);
             this.m_grb_quyet_dinh.ResumeLayout(false);
             this.m_grb_quyet_dinh.PerformLayout();
             this.m_pnl_out_place_dm.ResumeLayout(false);
