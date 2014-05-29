@@ -336,5 +336,12 @@ namespace BKI_HRM.US
             v_sp.addDecimalInputParam("@id_nhan_su", id_nhan_su);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
+
+        public void Upload_trang_thai_hop_dong(US_GD_HOP_DONG op_us)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_GD_HOP_DONG_Update_Trang_thai_hop_dong");
+            v_sp.addDecimalInputParam("@ID", op_us.dcID);
+            v_sp.ExecuteCommand(op_us);
+        }
     }
 }

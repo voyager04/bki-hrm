@@ -313,7 +313,7 @@
             // 
             // m_txt_tim_kiem_nhan_vien
             // 
-            this.m_txt_tim_kiem_nhan_vien.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_txt_tim_kiem_nhan_vien.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.m_txt_tim_kiem_nhan_vien.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.m_txt_tim_kiem_nhan_vien.Location = new System.Drawing.Point(101, 28);
             this.m_txt_tim_kiem_nhan_vien.Name = "m_txt_tim_kiem_nhan_vien";
