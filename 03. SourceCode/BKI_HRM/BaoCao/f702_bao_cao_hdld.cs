@@ -840,7 +840,7 @@ namespace BKI_HRM
             int result = 0;
             US_V_GD_HOP_DONG_LAO_DONG v_us_v_gd_hop_dong = new US_V_GD_HOP_DONG_LAO_DONG();
             DS_V_GD_HOP_DONG_LAO_DONG v_ds_v_gd_hop_dong_sap_het_han = new DS_V_GD_HOP_DONG_LAO_DONG();
-            v_us_v_gd_hop_dong.FIllDataset_By_Hop_Dong_Sap_Het_Han(v_ds_v_gd_hop_dong_sap_het_han, "", -1, DateTime.Parse("01/01/2000"), DateTime.Now, 0);
+            v_us_v_gd_hop_dong.FIllDataset_By_Hop_Dong_Sap_Het_Han(v_ds_v_gd_hop_dong_sap_het_han, "", -1, DateTime.Parse("01/01/2000"), DateTime.Parse("01/01/2220"), 0);
             if (v_ds_v_gd_hop_dong_sap_het_han.Tables[0].Rows.Count > 0)
             {
                 result = v_ds_v_gd_hop_dong_sap_het_han.Tables[0].Rows.Count;

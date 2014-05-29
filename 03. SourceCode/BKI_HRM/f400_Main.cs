@@ -275,7 +275,7 @@ namespace BKI_HRM
             try
             {
                 f701_v_hop_dong_lao_dong frm = new f701_v_hop_dong_lao_dong();
-                frm.Show();
+                frm.ShowDialog();
                 f702_bao_cao_hdld frm2 = new f702_bao_cao_hdld();
                 m_lbl_thong_bao_hop_dong_sap_het_han.Text =
                     string.Format("Có {0} hợp đồng sắp hết hạn. Click để xem chi tiết!", frm2.count_record_bao_cao_sap_het_han());
