@@ -155,9 +155,6 @@ namespace BKI_HRM.NghiepVu
                 m_us_dm_nhan_su.FillDataset_search_by_ma_nv(m_ds_dm_nhan_su, m_lbl_ma_nhan_vien.Text);
                 m_us.dcID_NHAN_SU = (decimal)m_ds_dm_nhan_su.Tables[0].Rows[0].ItemArray[0];
             }
-            //DS_DM_NHAN_SU m_ds_dm_nhan_su = new DS_DM_NHAN_SU();
-            //m_us_dm_nhan_su.FillDataset_search_by_ma_nv(m_ds_dm_nhan_su, m_lbl_ma_nhan_vien.Text);
-            //m_us.dcID_NHAN_SU = (decimal)m_ds_dm_nhan_su.Tables[0].Rows[0].ItemArray[0];
             else
             {
                 m_us.dcID_NHAN_SU = m_us_dm_nhan_su.dcID;
@@ -191,15 +188,19 @@ namespace BKI_HRM.NghiepVu
                         m_txt_ma_hop_dong.Focus();
                         return;
                     }
-                    m_us.Insert();
-                    DS_GD_HOP_DONG v_ds_hd = new DS_GD_HOP_DONG();
-                    m_us.FillDataSet_Search_by_trang_thai_hop_dong(v_ds_hd, "Y", m_us.dcID_NHAN_SU);
-                    var v_i_total_record = v_ds_hd.Tables[0].Rows.Count;
+                    DS_GD_HOP_DONG ds_gd_hd = new DS_GD_HOP_DONG();
+                    US_GD_HOP_DONG us_gd_hd = new US_GD_HOP_DONG();
+                    us_gd_hd.FillDataSet_Search_by_trang_thai_hop_dong(ds_gd_hd, "Y", m_us.dcID_NHAN_SU);
+                    var v_i_total_record = ds_gd_hd.Tables[0].Rows.Count;
                     if (v_i_total_record > 0)
                     {
-                        m_us.strTRANG_THAI_HOP_DONG = "N";
-                        m_us.Update();
+                        foreach (var item in ds_gd_hd.GD_HOP_DONG)
+                        {
+                            us_gd_hd.dcID = item.ID;
+                            us_gd_hd.Upload_trang_thai_hop_dong(us_gd_hd);
+                        }
                     }
+                    m_us.Insert();
                     break;
                     
                 case DataEntryFormMode.UpdateDataState:
@@ -304,19 +305,17 @@ namespace BKI_HRM.NghiepVu
 
         private void auto_suggest_text()
         {
-            m_txt_tim_kiem_nhan_vien.AutoCompleteMode = AutoCompleteMode.Suggest;
-            m_txt_tim_kiem_nhan_vien.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            AutoCompleteStringCollection coll = new AutoCompleteStringCollection();
-            US_DM_NHAN_SU v_us_dm_nhan_su = new US_DM_NHAN_SU();
-            DS_DM_NHAN_SU v_ds_dm_nhan_su = new DS_DM_NHAN_SU();
-            v_us_dm_nhan_su.FillDataset_search(v_ds_dm_nhan_su, m_txt_tim_kiem_nhan_vien.Text);
-            var v_rows = v_ds_dm_nhan_su.Tables[0].Rows;
-            for (int i = 0; i < v_rows.Count - 1; i++)
+            US_DM_NHAN_SU us_dm_nhan_su = new US_DM_NHAN_SU();
+            DS_DM_NHAN_SU ds_dm_nhan_su = new DS_DM_NHAN_SU();
+            us_dm_nhan_su.FillDataset(ds_dm_nhan_su);
+            var v_acsc_search = new AutoCompleteStringCollection();
+            foreach (var v_rows in ds_dm_nhan_su.DM_NHAN_SU)
             {
-                coll.Add(v_rows[i]["HO_DEM"] + " - " + v_rows[i]["TEN"] + " - " + v_rows[i]["MA_NV"]);
-                coll.Add(v_rows[i]["TEN"] + " - " + v_rows[i]["HO_DEM"] + " " + v_rows[i]["TEN"] + " - " + v_rows[i]["MA_NV"]);
+                v_acsc_search.Add(v_rows[DM_NHAN_SU.HO_DEM] + " - " + v_rows[DM_NHAN_SU.TEN] + " - " + v_rows[DM_NHAN_SU.MA_NV]);
+                v_acsc_search.Add(v_rows[DM_NHAN_SU.TEN] + " - " + v_rows[DM_NHAN_SU.HO_DEM] + " " + v_rows[DM_NHAN_SU.TEN] + " - " + v_rows[DM_NHAN_SU.MA_NV]);
+                v_acsc_search.Add(v_rows[DM_NHAN_SU.MA_NV] + " - " + v_rows[DM_NHAN_SU.HO_DEM] + " " + v_rows[DM_NHAN_SU.TEN] + " - " + v_rows[DM_NHAN_SU.MA_NV]);
             }
-            m_txt_tim_kiem_nhan_vien.AutoCompleteCustomSource = coll;
+            m_txt_tim_kiem_nhan_vien.AutoCompleteCustomSource = v_acsc_search;
         }
 
         private void chon_file()
