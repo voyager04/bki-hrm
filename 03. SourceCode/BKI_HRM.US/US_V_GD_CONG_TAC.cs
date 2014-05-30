@@ -407,5 +407,16 @@ public class US_V_GD_CONG_TAC : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
+    public void FillDatasetSearch(DS_V_GD_CONG_TAC op_ds
+        , string ip_str_search
+        , DateTime ip_dat_tu_ngay
+        , DateTime ip_dat_den_ngay)
+    {
+        CStoredProc v_store = new CStoredProc("pr_V_GD_CONG_TAC_search");
+        v_store.addNVarcharInputParam("@ip_str_search", ip_str_search);
+        v_store.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
+        v_store.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
+        v_store.fillDataSetByCommand(this, op_ds);
+    }
 	}
 }
