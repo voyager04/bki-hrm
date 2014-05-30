@@ -628,7 +628,7 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-            private void m_txt_tim_kiem_MouseClick(object sender, MouseEventArgs e)
+        private void m_txt_tim_kiem_MouseClick(object sender, MouseEventArgs e)
         {
             try
             {
