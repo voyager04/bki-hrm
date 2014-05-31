@@ -16,6 +16,7 @@ using IP.Core.IPCommon;
 using IP.Core.IPWordReport;
 using System.Diagnostics;
 using IP.Core.IPSystemAdmin;
+using System.Collections;
 
 namespace BKI_HRM
 {
@@ -37,12 +38,33 @@ namespace BKI_HRM
         {
             m_us_v_gd_cong_tac = ip_us;
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            us_object_2_form();
             this.Show();
 
         }
         #endregion
+        #region Data Structs
+        private enum e_col_Number
+        {
+            NGAY_DI = 4
+,
+            MO_TA_CONG_VIEC = 7
+                ,
+            DIA_DIEM = 6
+                ,
+            MA_NV = 1
+                ,
+            NGAY_VE = 5
+                ,
 
+            HO_DEM = 2
+                ,
+            TEN = 3
+
+        }
+        #endregion
         #region Members
+        ITransferDataRow m_obj_trans;
         US_V_GD_CONG_TAC m_us_v_gd_cong_tac = new US_V_GD_CONG_TAC();
         DS_V_GD_CONG_TAC m_ds_v_gd_cong_tac = new DS_V_GD_CONG_TAC();
         US_GD_CONG_TAC m_us_gd_cong_tac = new US_GD_CONG_TAC();
@@ -98,11 +120,52 @@ namespace BKI_HRM
             m_us_dm_quyet_dinh.datNGAY_CO_HIEU_LUC = m_us_dm_quyet_dinh.datNGAY_KY;
             m_us_dm_quyet_dinh.dcID_LOAI_QD = CIPConvert.ToDecimal(TU_DIEN.QD_CONG_TAC);
         }
+        private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
+        {
+            Hashtable v_htb = new Hashtable();
+            v_htb.Add(V_GD_CONG_TAC.NGAY_DI, e_col_Number.NGAY_DI);
+            v_htb.Add(V_GD_CONG_TAC.MO_TA_CONG_VIEC, e_col_Number.MO_TA_CONG_VIEC);
+            v_htb.Add(V_GD_CONG_TAC.DIA_DIEM, e_col_Number.DIA_DIEM);
+            v_htb.Add(V_GD_CONG_TAC.MA_NV, e_col_Number.MA_NV);
+            v_htb.Add(V_GD_CONG_TAC.NGAY_VE, e_col_Number.NGAY_VE);
+
+            v_htb.Add(V_GD_CONG_TAC.HO_DEM, e_col_Number.HO_DEM);
+            v_htb.Add(V_GD_CONG_TAC.TEN, e_col_Number.TEN);
+
+
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds_v_gd_cong_tac.V_GD_CONG_TAC.NewRow());
+            return v_obj_trans;
+        }
+        private void load_data_2_grid()
+        {
+            m_ds_v_gd_cong_tac = new DS_V_GD_CONG_TAC();
+
+            m_us_v_gd_cong_tac.FillDatasetSearch(m_ds_v_gd_cong_tac, m_us_v_gd_cong_tac.strMA_QUYET_DINH, DateTime.Parse("1/1/1900"), DateTime.Today);
+            m_fg.Redraw = false;
+            m_obj_trans = get_trans_object(m_fg);
+            CGridUtils.Dataset2C1Grid(m_ds_v_gd_cong_tac, m_fg, m_obj_trans);
+            m_fg.Redraw = true;
+        }
         private void us_object_2_form()
         {
+            // m_b_check_quyet_dinh_save = false;
+            m_grb_quyet_dinh.Enabled = true;
 
+            string[] v_arstr = m_us_v_gd_cong_tac.strMA_QUYET_DINH.Trim().Split('/');
+            m_ofd_openfile.FileName = m_us_v_gd_cong_tac.strLINK;
+            m_txt_ma_quyet_dinh.Text = v_arstr[0];
+            US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
+            DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
+            decimal v_dc_id = 0;
+            v_us.FillDatasetByName(v_ds, v_arstr[v_arstr.Length - 1], ref v_dc_id);
+            m_cbo_ma_quyet_dinh.SelectedValue = v_dc_id;
+            m_txt_loai_quyet_dinh.Text = "QĐ Đi công tác";
+            m_dat_ngay_ky.Value = m_us_v_gd_cong_tac.datNGAY_KY;
+            m_txt_noi_dung.Text = m_us_v_gd_cong_tac.strNOI_DUNG;
+           
+            load_data_2_grid();
         }
-       
+
         private void save_data()
         {
 
@@ -126,7 +189,7 @@ namespace BKI_HRM
             m_cmd_chon_quyet_dinh.Click += new EventHandler(m_cmd_chon_quyet_dinh_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
-            
+
         }
         private void them_quyet_dinh()
         {
@@ -142,25 +205,18 @@ namespace BKI_HRM
             v_frm.select_data(ref m_us_dm_quyet_dinh);
             if (m_us_dm_quyet_dinh.dcID != -1)
             {
-
+                string[] v_arstr = m_us_dm_quyet_dinh.strMA_QUYET_DINH.Trim().Split('/');
                 m_ofd_openfile.FileName = m_us_dm_quyet_dinh.strLINK;
-                m_lbl_ma_qd.Text = m_us_dm_quyet_dinh.strMA_QUYET_DINH;
-
-                //m_cbo_loai_quyet_dinh.SelectedValue = m_us_dm_quyet_dinh.dcID_LOAI_QD;
+                m_txt_ma_quyet_dinh.Text = v_arstr[0];
+                US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
+                DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
+                decimal v_dc_id = 0;
+                v_us.FillDatasetByName(v_ds, v_arstr[v_arstr.Length - 1], ref v_dc_id);
+                m_cbo_ma_quyet_dinh.SelectedValue = v_dc_id;
+                m_txt_loai_quyet_dinh.Text = "QĐ Đi công tác";
                 m_dat_ngay_ky.Value = m_us_dm_quyet_dinh.datNGAY_KY;
-                //if (m_us_dm_quyet_dinh.datNGAY_CO_HIEU_LUC > DateTime.Parse("01/01/1900") &&
-                //    m_us_dm_quyet_dinh.datNGAY_CO_HIEU_LUC != null)
-                //    m_dat_ngay_co_hieu_luc_qd.Value = m_us_dm_quyet_dinh.datNGAY_CO_HIEU_LUC;
-                //else
-                //    m_dat_ngay_co_hieu_luc_qd.Checked = false;
-                //if (m_us_dm_quyet_dinh.datNGAY_HET_HIEU_LUC != null &&
-                //    m_us_dm_quyet_dinh.datNGAY_HET_HIEU_LUC > DateTime.Parse("1/1/1900"))
-                //    m_dat_ngay_het_hieu_luc_qd.Value = m_us_dm_quyet_dinh.datNGAY_HET_HIEU_LUC;
-                //else
-                //    m_dat_ngay_het_hieu_luc_qd.Checked = false;
                 m_txt_noi_dung.Text = m_us_dm_quyet_dinh.strNOI_DUNG;
-                m_ofd_openfile.FileName = m_us_dm_quyet_dinh.strLINK;
-
+               
             }
             else
             {
@@ -174,12 +230,25 @@ namespace BKI_HRM
                 , WinFormControls.eTAT_CA.NO
                 , m_cbo_ma_quyet_dinh);
         }
-        
+
         #endregion
 
 
 
         #region Events
+        private void f206_v_gd_cong_tac_de_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                set_inital_form_load();
+                set_define_event();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
         private void m_txt_ma_quyet_dinh_TextChanged(object sender, EventArgs e)
         {
             try
@@ -246,7 +315,7 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle(v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
         private void m_cmd_chon_quyet_dinh_Click(object sender, EventArgs e)
@@ -257,7 +326,7 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle(v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
         private void m_cmd_save_Click(object sender, EventArgs e)
@@ -268,7 +337,7 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle(v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
         private void m_cmd_exit_Click(object sender, EventArgs e)
@@ -279,23 +348,11 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle(v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
         #endregion
 
-        private void f206_v_gd_cong_tac_de_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                set_inital_form_load();
-                set_define_event();
-            }
-            catch (Exception v_e)
-            {
-            	CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
 
     }
 

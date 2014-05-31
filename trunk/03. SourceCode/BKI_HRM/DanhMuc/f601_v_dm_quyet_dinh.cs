@@ -387,8 +387,10 @@ namespace BKI_HRM {
         }
         private void load_data_2_grid() {
             m_v_ds = new DS_V_DM_QUYET_DINH();
-            if (m_txt_tim_kiem.Text.Trim() == m_str_tim_kiem || m_txt_tim_kiem.Text.Trim() == "") m_v_us.FillDatasetSearch(m_v_ds, "");
-            else m_v_us.FillDatasetSearch(m_v_ds, m_txt_tim_kiem.Text.Trim());
+            if (m_txt_tim_kiem.Text.Trim() == m_str_tim_kiem || m_txt_tim_kiem.Text.Trim() == "") 
+                m_v_us.FillDatasetSearch(m_v_ds, "");
+            else 
+                m_v_us.FillDatasetSearch(m_v_ds, m_txt_tim_kiem.Text.Trim());
             //m_us.FillDataset(m_ds);
             var v_str_search = m_txt_tim_kiem.Text.Trim();
             if (v_str_search.Equals(m_str_tim_kiem)) {
