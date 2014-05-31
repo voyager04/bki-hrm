@@ -762,6 +762,7 @@
        public const string DIA_DIEM = "DIA_DIEM";
        public const string MO_TA_CONG_VIEC = "MO_TA_CONG_VIEC";
        public const string LUA_CHON = "LUA_CHON";
+       public const string LINK = "LINK";
    }
 
 }

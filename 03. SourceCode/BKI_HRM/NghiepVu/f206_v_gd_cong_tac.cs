@@ -59,6 +59,7 @@ namespace BKI_HRM
 			// TODO: Add any constructor code after InitializeComponent call
 			//
 			format_controls();
+            m_txt_tim_kiem.ForeColor = Color.Gray;
 		}
 
 		/// <summary>
@@ -355,7 +356,7 @@ namespace BKI_HRM
 			CControlFormat.setFormStyle(this, new CAppContext_201());
 			CControlFormat.setC1FlexFormat(m_fg);
 			CGridUtils.AddSave_Excel_Handlers(m_fg);
-            			CGridUtils.AddSearch_Handlers(m_fg);
+            CGridUtils.AddSearch_Handlers(m_fg);
 			set_define_events();
 			this.KeyPreview = true;		
 		}

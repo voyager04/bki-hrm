@@ -328,7 +328,7 @@
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_fg.Location = new System.Drawing.Point(0, 257);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Rows.Count = 4;
+            this.m_fg.Rows.Count = 5;
             this.m_fg.Size = new System.Drawing.Size(792, 176);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 109;
@@ -344,7 +344,7 @@
             this.Controls.Add(this.m_cmd_chon_quyet_dinh);
             this.Controls.Add(this.m_grb_quyet_dinh);
             this.Name = "f206_v_gd_cong_tac_de";
-            this.Text = "F206 - Bổ sung quyết định đi công tác";
+            this.Text = "F206 - Thêm quyết định đi công tác";
             this.Load += new System.EventHandler(this.f206_v_gd_cong_tac_de_Load);
             this.m_grb_quyet_dinh.ResumeLayout(false);
             this.m_grb_quyet_dinh.PerformLayout();

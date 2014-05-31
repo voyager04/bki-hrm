@@ -313,6 +313,8 @@ namespace BKI_HRM.DS {
             
             private global::System.Data.DataColumn columnLUA_CHON;
             
+            private global::System.Data.DataColumn columnLINK;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public V_GD_CONG_TACDataTable() {
@@ -484,6 +486,14 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LINKColumn {
+                get {
+                    return this.columnLINK;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -536,7 +546,8 @@ namespace BKI_HRM.DS {
                         System.DateTime NGAY_VE, 
                         string DIA_DIEM, 
                         string MO_TA_CONG_VIEC, 
-                        string LUA_CHON) {
+                        string LUA_CHON, 
+                        string LINK) {
                 V_GD_CONG_TACRow rowV_GD_CONG_TACRow = ((V_GD_CONG_TACRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID_NHAN_SU,
@@ -555,7 +566,8 @@ namespace BKI_HRM.DS {
                         NGAY_VE,
                         DIA_DIEM,
                         MO_TA_CONG_VIEC,
-                        LUA_CHON};
+                        LUA_CHON,
+                        LINK};
                 rowV_GD_CONG_TACRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowV_GD_CONG_TACRow);
                 return rowV_GD_CONG_TACRow;
@@ -595,6 +607,7 @@ namespace BKI_HRM.DS {
                 this.columnDIA_DIEM = base.Columns["DIA_DIEM"];
                 this.columnMO_TA_CONG_VIEC = base.Columns["MO_TA_CONG_VIEC"];
                 this.columnLUA_CHON = base.Columns["LUA_CHON"];
+                this.columnLINK = base.Columns["LINK"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -634,6 +647,8 @@ namespace BKI_HRM.DS {
                 base.Columns.Add(this.columnMO_TA_CONG_VIEC);
                 this.columnLUA_CHON = new global::System.Data.DataColumn("LUA_CHON", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLUA_CHON);
+                this.columnLINK = new global::System.Data.DataColumn("LINK", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLINK);
                 this.columnID_NHAN_SU.AllowDBNull = false;
                 this.columnMA_NV.AllowDBNull = false;
                 this.columnMA_NV.MaxLength = 35;
@@ -649,6 +664,7 @@ namespace BKI_HRM.DS {
                 this.columnDIA_DIEM.MaxLength = 250;
                 this.columnMO_TA_CONG_VIEC.MaxLength = 250;
                 this.columnLUA_CHON.MaxLength = 15;
+                this.columnLINK.MaxLength = 250;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1033,6 +1049,22 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string LINK {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_GD_CONG_TAC.LINKColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LINK\' in table \'V_GD_CONG_TAC\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_GD_CONG_TAC.LINKColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsID_QUYET_DINHNull() {
                 return this.IsNull(this.tableV_GD_CONG_TAC.ID_QUYET_DINHColumn);
             }
@@ -1161,6 +1193,18 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetLUA_CHONNull() {
                 this[this.tableV_GD_CONG_TAC.LUA_CHONColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLINKNull() {
+                return this.IsNull(this.tableV_GD_CONG_TAC.LINKColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLINKNull() {
+                this[this.tableV_GD_CONG_TAC.LINKColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1340,6 +1384,7 @@ namespace BKI_HRM.DS.DS_V_GD_CONG_TACTableAdapters {
             tableMapping.ColumnMappings.Add("DIA_DIEM", "DIA_DIEM");
             tableMapping.ColumnMappings.Add("MO_TA_CONG_VIEC", "MO_TA_CONG_VIEC");
             tableMapping.ColumnMappings.Add("LUA_CHON", "LUA_CHON");
+            tableMapping.ColumnMappings.Add("LINK", "LINK");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1358,7 +1403,7 @@ namespace BKI_HRM.DS.DS_V_GD_CONG_TACTableAdapters {
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID_NHAN_SU, MA_NV, HO_DEM, TEN, ID_QUYET_DINH, MA_QUYET_DINH, ID_LOAI_QD, " +
                 "LOAI_QD, NGAY_CO_HIEU_LUC, NGAY_KY, NGAY_HET_HIEU_LUC, NOI_DUNG, NGAY_DI, NGAY_V" +
-                "E, DIA_DIEM, MO_TA_CONG_VIEC, LUA_CHON FROM dbo.V_GD_CONG_TAC";
+                "E, DIA_DIEM, MO_TA_CONG_VIEC, LUA_CHON, LINK FROM dbo.V_GD_CONG_TAC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
