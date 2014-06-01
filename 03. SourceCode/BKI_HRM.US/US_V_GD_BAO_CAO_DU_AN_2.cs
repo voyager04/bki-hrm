@@ -243,50 +243,6 @@ namespace BKI_HRM.US
             pm_objDR["MA_QUYET_DINH"] = System.Convert.DBNull;
         }
 
-        public decimal dcID_VI_TRI
-        {
-            get
-            {
-                return CNull.RowNVLDecimal(pm_objDR, "ID_VI_TRI", IPConstants.c_DefaultDecimal);
-            }
-            set
-            {
-                pm_objDR["ID_VI_TRI"] = value;
-            }
-        }
-
-        public bool IsID_VI_TRINull()
-        {
-            return pm_objDR.IsNull("ID_VI_TRI");
-        }
-
-        public void SetID_VI_TRINull()
-        {
-            pm_objDR["ID_VI_TRI"] = System.Convert.DBNull;
-        }
-
-        public decimal dcID_NHAN_SU
-        {
-            get
-            {
-                return CNull.RowNVLDecimal(pm_objDR, "ID_NHAN_SU", IPConstants.c_DefaultDecimal);
-            }
-            set
-            {
-                pm_objDR["ID_NHAN_SU"] = value;
-            }
-        }
-
-        public bool IsID_NHAN_SUNull()
-        {
-            return pm_objDR.IsNull("ID_NHAN_SU");
-        }
-
-        public void SetID_NHAN_SUNull()
-        {
-            pm_objDR["ID_NHAN_SU"] = System.Convert.DBNull;
-        }
-
         public decimal dcID_LOAI_DU_AN
         {
             get
@@ -424,6 +380,7 @@ namespace BKI_HRM.US
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
+
 
         public void FillDatasetSearch(
             DS_V_GD_BAO_CAO_DU_AN_2 op_ds_bc_da, 

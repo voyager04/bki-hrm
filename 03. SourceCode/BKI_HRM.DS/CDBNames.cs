@@ -590,10 +590,15 @@
        public const string NGAY_KET_THUC = "NGAY_KET_THUC";
        public const string CO_CHE = "CO_CHE";
        public const string GHI_CHU = "GHI_CHU";
+       public const string ID_QUYET_DINH = "ID_QUYET_DINH";
        public const string MA_QUYET_DINH = "MA_QUYET_DINH";
-       public const string LOAI_DU_AN = "LOAI_DU_AN";
+       public const string ID_LOAI_DU_AN = "ID_LOAI_DU_AN";
+       public const string ID_TRANG_THAI = "ID_TRANG_THAI";
+       public const string ID_CO_CHE = "ID_CO_CHE";
        public const string TRANG_THAI = "TRANG_THAI";
+       public const string LOAI_DU_AN = "LOAI_DU_AN";
    }
+
    public class GD_CHI_TIET_CHUC_VU
    {
        public const string ID = "ID";
