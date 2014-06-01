@@ -50,15 +50,18 @@ namespace BKI_HRM
             //CControlFormat.setFormStyle(this, new CAppContext_201());
             set_define_events();
             ShowInTaskbar = true;
-           
+
+            nhan_vien_hien_tai();
+        }
+        private void nhan_vien_hien_tai()
+        {
             US_V_DM_DU_LIEU_NHAN_VIEN v_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
             DS_V_DM_DU_LIEU_NHAN_VIEN v_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
             decimal v_dc_so_luong_nv_hien_tai = 0;
-            v_us.count_nhan_vien(v_ds,"hiện tại", ref v_dc_so_luong_nv_hien_tai);
+            v_us.count_nhan_vien(v_ds, "hiện tại", ref v_dc_so_luong_nv_hien_tai);
 
             m_lbl_so_luong_nv_hien_tai.Text = "Số lượng nhân viên hiện tại: " + v_dc_so_luong_nv_hien_tai;
         }
-
         private void thu_viec_sap_het_han()
         {
             US_V_DM_DU_LIEU_NHAN_VIEN v_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
@@ -130,6 +133,7 @@ namespace BKI_HRM
             {
                 f201_dm_nhan_su frm = new f201_dm_nhan_su();
                 frm.display();
+                nhan_vien_hien_tai();
             }
             catch (Exception v_e)
             {
@@ -250,6 +254,7 @@ namespace BKI_HRM
             {
                 f203_v_gd_trang_thai_lao_dong frm = new f203_v_gd_trang_thai_lao_dong();
                 frm.display();
+                nhan_vien_hien_tai();
             }
             catch (Exception v_e)
             {
@@ -295,6 +300,7 @@ namespace BKI_HRM
             {
                 f202_V_GD_QUA_TRINH_LAM_VIEC frm = new f202_V_GD_QUA_TRINH_LAM_VIEC();
                 frm.display();
+                nhan_vien_hien_tai();
             }
             catch (Exception v_e)
             {
@@ -812,6 +818,7 @@ namespace BKI_HRM
             {
                 f206_v_gd_cong_tac v_frm = new f206_v_gd_cong_tac();
                 v_frm.display();
+
             }
             catch (Exception v_e)
             {
