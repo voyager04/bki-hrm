@@ -14,7 +14,7 @@
               <DbSource ConnectionRef="BKI_HRMConnectionString1 (Settings)" DbObjectName="BKI_HRM.dbo.V_GD_BAO_CAO_DU_AN_2" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT TEN_DU_AN, MA_DU_AN, NGAY_BAT_DAU, TRUONG_DU_AN, SL_THANH_VIEN, NGAY_KET_THUC, CO_CHE, GHI_CHU, ID_QUYET_DINH, MA_QUYET_DINH, ID_VI_TRI, ID_NHAN_SU, ID_LOAI_DU_AN, ID_TRANG_THAI, ID_CO_CHE, TRANG_THAI, LOAI_DU_AN FROM dbo.V_GD_BAO_CAO_DU_AN_2</CommandText>
+                    <CommandText>SELECT TEN_DU_AN, MA_DU_AN, NGAY_BAT_DAU, TRUONG_DU_AN, SL_THANH_VIEN, NGAY_KET_THUC, CO_CHE, GHI_CHU, ID_QUYET_DINH, MA_QUYET_DINH, ID_LOAI_DU_AN, ID_TRANG_THAI, ID_CO_CHE, TRANG_THAI, LOAI_DU_AN FROM dbo.V_GD_BAO_CAO_DU_AN_2</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -31,8 +31,6 @@
               <Mapping SourceColumn="GHI_CHU" DataSetColumn="GHI_CHU" />
               <Mapping SourceColumn="ID_QUYET_DINH" DataSetColumn="ID_QUYET_DINH" />
               <Mapping SourceColumn="MA_QUYET_DINH" DataSetColumn="MA_QUYET_DINH" />
-              <Mapping SourceColumn="ID_VI_TRI" DataSetColumn="ID_VI_TRI" />
-              <Mapping SourceColumn="ID_NHAN_SU" DataSetColumn="ID_NHAN_SU" />
               <Mapping SourceColumn="ID_LOAI_DU_AN" DataSetColumn="ID_LOAI_DU_AN" />
               <Mapping SourceColumn="ID_TRANG_THAI" DataSetColumn="ID_TRANG_THAI" />
               <Mapping SourceColumn="ID_CO_CHE" DataSetColumn="ID_CO_CHE" />
@@ -98,8 +96,6 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ID_VI_TRI" msprop:Generator_ColumnVarNameInTable="columnID_VI_TRI" msprop:Generator_ColumnPropNameInRow="ID_VI_TRI" msprop:Generator_ColumnPropNameInTable="ID_VI_TRIColumn" msprop:Generator_UserColumnName="ID_VI_TRI" type="xs:decimal" minOccurs="0" />
-              <xs:element name="ID_NHAN_SU" msprop:Generator_ColumnVarNameInTable="columnID_NHAN_SU" msprop:Generator_ColumnPropNameInRow="ID_NHAN_SU" msprop:Generator_ColumnPropNameInTable="ID_NHAN_SUColumn" msprop:Generator_UserColumnName="ID_NHAN_SU" type="xs:decimal" minOccurs="0" />
               <xs:element name="ID_LOAI_DU_AN" msprop:Generator_ColumnVarNameInTable="columnID_LOAI_DU_AN" msprop:Generator_ColumnPropNameInRow="ID_LOAI_DU_AN" msprop:Generator_ColumnPropNameInTable="ID_LOAI_DU_ANColumn" msprop:Generator_UserColumnName="ID_LOAI_DU_AN" type="xs:decimal" />
               <xs:element name="ID_TRANG_THAI" msprop:Generator_ColumnVarNameInTable="columnID_TRANG_THAI" msprop:Generator_ColumnPropNameInRow="ID_TRANG_THAI" msprop:Generator_ColumnPropNameInTable="ID_TRANG_THAIColumn" msprop:Generator_UserColumnName="ID_TRANG_THAI" type="xs:decimal" />
               <xs:element name="ID_CO_CHE" msprop:Generator_ColumnVarNameInTable="columnID_CO_CHE" msprop:Generator_ColumnPropNameInRow="ID_CO_CHE" msprop:Generator_ColumnPropNameInTable="ID_CO_CHEColumn" msprop:Generator_UserColumnName="ID_CO_CHE" type="xs:decimal" minOccurs="0" />
