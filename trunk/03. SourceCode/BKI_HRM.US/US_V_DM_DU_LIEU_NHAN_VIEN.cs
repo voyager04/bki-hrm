@@ -896,6 +896,7 @@ namespace BKI_HRM.US {
 
         public void FillDatasetSearch(DS_V_DM_DU_LIEU_NHAN_VIEN op_ds_v_dm_du_lieu_nhan_vien
                                             , string ip_str_search
+                                            , string ip_str_trinh_do
                                            , decimal ip_dc_id_chuc_vu
                                             , decimal ip_dc_id_don_vi
                                             , decimal ip_dc_id_dia_ban
@@ -909,6 +910,7 @@ namespace BKI_HRM.US {
         {
             CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_search");
             v_stored_proc.addNVarcharInputParam("@ip_str_01_search", ip_str_search);
+            v_stored_proc.addNVarcharInputParam("@ip_str_trinh_do", ip_str_trinh_do);
             v_stored_proc.addDecimalInputParam("@ip_dc_id_chuc_vu", ip_dc_id_chuc_vu);
             v_stored_proc.addDecimalInputParam("@ip_dc_id_don_vi", ip_dc_id_don_vi);
             v_stored_proc.addDecimalInputParam("@ip_dc_id_dia_ban", ip_dc_id_dia_ban);

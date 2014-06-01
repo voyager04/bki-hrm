@@ -61,6 +61,8 @@ namespace BKI_HRM
         private DateTimePicker m_dat_tu_ngay;
         private DateTimePicker m_dat_thoi_diem;
         private Label m_lbl_thoi_diem;
+        private TextBox m_txt_trinh_do;
+        private Label label1;
         private IContainer components;
 
         public f103_bao_cao_tra_cuu_nhan_su()
@@ -103,6 +105,13 @@ namespace BKI_HRM
             Checkbox_Combobox.CheckBoxProperties checkBoxProperties1 = new Checkbox_Combobox.CheckBoxProperties();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_dat_thoi_diem = new System.Windows.Forms.DateTimePicker();
+            this.m_grb_ngay_sinh = new System.Windows.Forms.GroupBox();
+            this.m_dat_den_ngay = new System.Windows.Forms.DateTimePicker();
+            this.m_lbl_den_ngay = new System.Windows.Forms.Label();
+            this.m_lbl_tu_ngay = new System.Windows.Forms.Label();
+            this.m_dat_tu_ngay = new System.Windows.Forms.DateTimePicker();
+            this.m_lbl_thoi_diem = new System.Windows.Forms.Label();
             this.m_cbo_chon_dia_ban = new System.Windows.Forms.ComboBox();
             this.m_lbl_chon_dia_ban = new System.Windows.Forms.Label();
             this.m_cbo_chon_don_vi = new System.Windows.Forms.ComboBox();
@@ -124,17 +133,12 @@ namespace BKI_HRM
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_lbl_tu_ngay = new System.Windows.Forms.Label();
-            this.m_dat_tu_ngay = new System.Windows.Forms.DateTimePicker();
-            this.m_dat_den_ngay = new System.Windows.Forms.DateTimePicker();
-            this.m_lbl_den_ngay = new System.Windows.Forms.Label();
-            this.m_grb_ngay_sinh = new System.Windows.Forms.GroupBox();
-            this.m_dat_thoi_diem = new System.Windows.Forms.DateTimePicker();
-            this.m_lbl_thoi_diem = new System.Windows.Forms.Label();
+            this.m_txt_trinh_do = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.m_grb_ngay_sinh.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
-            this.m_grb_ngay_sinh.SuspendLayout();
             this.SuspendLayout();
             // 
             // ImageList
@@ -166,6 +170,8 @@ namespace BKI_HRM
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_txt_trinh_do);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.m_dat_thoi_diem);
             this.panel1.Controls.Add(this.m_grb_ngay_sinh);
             this.panel1.Controls.Add(this.m_lbl_thoi_diem);
@@ -189,6 +195,76 @@ namespace BKI_HRM
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1189, 133);
             this.panel1.TabIndex = 24;
+            // 
+            // m_dat_thoi_diem
+            // 
+            this.m_dat_thoi_diem.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_thoi_diem.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_thoi_diem.Location = new System.Drawing.Point(283, 64);
+            this.m_dat_thoi_diem.Name = "m_dat_thoi_diem";
+            this.m_dat_thoi_diem.Size = new System.Drawing.Size(85, 20);
+            this.m_dat_thoi_diem.TabIndex = 44;
+            this.m_dat_thoi_diem.Visible = false;
+            // 
+            // m_grb_ngay_sinh
+            // 
+            this.m_grb_ngay_sinh.Controls.Add(this.m_dat_den_ngay);
+            this.m_grb_ngay_sinh.Controls.Add(this.m_lbl_den_ngay);
+            this.m_grb_ngay_sinh.Controls.Add(this.m_lbl_tu_ngay);
+            this.m_grb_ngay_sinh.Controls.Add(this.m_dat_tu_ngay);
+            this.m_grb_ngay_sinh.Location = new System.Drawing.Point(659, 48);
+            this.m_grb_ngay_sinh.Name = "m_grb_ngay_sinh";
+            this.m_grb_ngay_sinh.Size = new System.Drawing.Size(292, 51);
+            this.m_grb_ngay_sinh.TabIndex = 41;
+            this.m_grb_ngay_sinh.TabStop = false;
+            this.m_grb_ngay_sinh.Text = "Ngày sinh";
+            // 
+            // m_dat_den_ngay
+            // 
+            this.m_dat_den_ngay.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_den_ngay.Location = new System.Drawing.Point(197, 19);
+            this.m_dat_den_ngay.Name = "m_dat_den_ngay";
+            this.m_dat_den_ngay.Size = new System.Drawing.Size(85, 20);
+            this.m_dat_den_ngay.TabIndex = 40;
+            // 
+            // m_lbl_den_ngay
+            // 
+            this.m_lbl_den_ngay.AutoSize = true;
+            this.m_lbl_den_ngay.Location = new System.Drawing.Point(142, 23);
+            this.m_lbl_den_ngay.Name = "m_lbl_den_ngay";
+            this.m_lbl_den_ngay.Size = new System.Drawing.Size(53, 13);
+            this.m_lbl_den_ngay.TabIndex = 39;
+            this.m_lbl_den_ngay.Text = "Đến ngày";
+            // 
+            // m_lbl_tu_ngay
+            // 
+            this.m_lbl_tu_ngay.AutoSize = true;
+            this.m_lbl_tu_ngay.Location = new System.Drawing.Point(5, 23);
+            this.m_lbl_tu_ngay.Name = "m_lbl_tu_ngay";
+            this.m_lbl_tu_ngay.Size = new System.Drawing.Size(46, 13);
+            this.m_lbl_tu_ngay.TabIndex = 37;
+            this.m_lbl_tu_ngay.Text = "Từ ngày";
+            // 
+            // m_dat_tu_ngay
+            // 
+            this.m_dat_tu_ngay.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_tu_ngay.Location = new System.Drawing.Point(52, 19);
+            this.m_dat_tu_ngay.Name = "m_dat_tu_ngay";
+            this.m_dat_tu_ngay.Size = new System.Drawing.Size(85, 20);
+            this.m_dat_tu_ngay.TabIndex = 38;
+            this.m_dat_tu_ngay.Value = new System.DateTime(1970, 1, 1, 11, 53, 0, 0);
+            // 
+            // m_lbl_thoi_diem
+            // 
+            this.m_lbl_thoi_diem.AutoSize = true;
+            this.m_lbl_thoi_diem.Location = new System.Drawing.Point(203, 68);
+            this.m_lbl_thoi_diem.Name = "m_lbl_thoi_diem";
+            this.m_lbl_thoi_diem.Size = new System.Drawing.Size(54, 13);
+            this.m_lbl_thoi_diem.TabIndex = 43;
+            this.m_lbl_thoi_diem.Text = "Thời điểm";
+            this.m_lbl_thoi_diem.Visible = false;
             // 
             // m_cbo_chon_dia_ban
             // 
@@ -403,75 +479,25 @@ namespace BKI_HRM
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 32;
             // 
-            // m_lbl_tu_ngay
+            // m_txt_trinh_do
             // 
-            this.m_lbl_tu_ngay.AutoSize = true;
-            this.m_lbl_tu_ngay.Location = new System.Drawing.Point(20, 23);
-            this.m_lbl_tu_ngay.Name = "m_lbl_tu_ngay";
-            this.m_lbl_tu_ngay.Size = new System.Drawing.Size(46, 13);
-            this.m_lbl_tu_ngay.TabIndex = 37;
-            this.m_lbl_tu_ngay.Text = "Từ ngày";
+            this.m_txt_trinh_do.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_txt_trinh_do.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.m_txt_trinh_do.Location = new System.Drawing.Point(1018, 67);
+            this.m_txt_trinh_do.Name = "m_txt_trinh_do";
+            this.m_txt_trinh_do.Size = new System.Drawing.Size(142, 20);
+            this.m_txt_trinh_do.TabIndex = 45;
+            this.m_tooltip.SetToolTip(this.m_txt_trinh_do, "Gợi ý tìm kiếm:\r\nGiới tính: nữ, đơn vị: Phòng hành chính\r\nhoặc Nguyễn Danh Tú, gi" +
+                    "ới tính: Nam");
             // 
-            // m_dat_tu_ngay
+            // label1
             // 
-            this.m_dat_tu_ngay.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.m_dat_tu_ngay.Location = new System.Drawing.Point(80, 19);
-            this.m_dat_tu_ngay.Name = "m_dat_tu_ngay";
-            this.m_dat_tu_ngay.Size = new System.Drawing.Size(85, 20);
-            this.m_dat_tu_ngay.TabIndex = 38;
-            this.m_dat_tu_ngay.Value = new System.DateTime(1970, 1, 1, 11, 53, 0, 0);
-            // 
-            // m_dat_den_ngay
-            // 
-            this.m_dat_den_ngay.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.m_dat_den_ngay.Location = new System.Drawing.Point(284, 19);
-            this.m_dat_den_ngay.Name = "m_dat_den_ngay";
-            this.m_dat_den_ngay.Size = new System.Drawing.Size(85, 20);
-            this.m_dat_den_ngay.TabIndex = 40;
-            // 
-            // m_lbl_den_ngay
-            // 
-            this.m_lbl_den_ngay.AutoSize = true;
-            this.m_lbl_den_ngay.Location = new System.Drawing.Point(204, 23);
-            this.m_lbl_den_ngay.Name = "m_lbl_den_ngay";
-            this.m_lbl_den_ngay.Size = new System.Drawing.Size(53, 13);
-            this.m_lbl_den_ngay.TabIndex = 39;
-            this.m_lbl_den_ngay.Text = "Đến ngày";
-            // 
-            // m_grb_ngay_sinh
-            // 
-            this.m_grb_ngay_sinh.Controls.Add(this.m_dat_den_ngay);
-            this.m_grb_ngay_sinh.Controls.Add(this.m_lbl_den_ngay);
-            this.m_grb_ngay_sinh.Controls.Add(this.m_lbl_tu_ngay);
-            this.m_grb_ngay_sinh.Controls.Add(this.m_dat_tu_ngay);
-            this.m_grb_ngay_sinh.Location = new System.Drawing.Point(659, 48);
-            this.m_grb_ngay_sinh.Name = "m_grb_ngay_sinh";
-            this.m_grb_ngay_sinh.Size = new System.Drawing.Size(394, 51);
-            this.m_grb_ngay_sinh.TabIndex = 41;
-            this.m_grb_ngay_sinh.TabStop = false;
-            this.m_grb_ngay_sinh.Text = "Ngày sinh";
-            // 
-            // m_dat_thoi_diem
-            // 
-            this.m_dat_thoi_diem.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_thoi_diem.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.m_dat_thoi_diem.Location = new System.Drawing.Point(283, 64);
-            this.m_dat_thoi_diem.Name = "m_dat_thoi_diem";
-            this.m_dat_thoi_diem.Size = new System.Drawing.Size(85, 20);
-            this.m_dat_thoi_diem.TabIndex = 44;
-            this.m_dat_thoi_diem.Visible = false;
-            // 
-            // m_lbl_thoi_diem
-            // 
-            this.m_lbl_thoi_diem.AutoSize = true;
-            this.m_lbl_thoi_diem.Location = new System.Drawing.Point(203, 68);
-            this.m_lbl_thoi_diem.Name = "m_lbl_thoi_diem";
-            this.m_lbl_thoi_diem.Size = new System.Drawing.Size(54, 13);
-            this.m_lbl_thoi_diem.TabIndex = 43;
-            this.m_lbl_thoi_diem.Text = "Thời điểm";
-            this.m_lbl_thoi_diem.Visible = false;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(965, 70);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "Trình độ";
             // 
             // f103_bao_cao_tra_cuu_nhan_su
             // 
@@ -486,11 +512,11 @@ namespace BKI_HRM
             this.Load += new System.EventHandler(this.f103_bao_cao_tra_cuu_nhan_su_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.m_grb_ngay_sinh.ResumeLayout(false);
+            this.m_grb_ngay_sinh.PerformLayout();
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.m_pnl_out_place_dm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
-            this.m_grb_ngay_sinh.ResumeLayout(false);
-            this.m_grb_ngay_sinh.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -661,6 +687,15 @@ namespace BKI_HRM
                 v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.HO_DEM] + " " + v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.TEN]);
             }
             m_txt_search.AutoCompleteCustomSource = v_coll;
+
+            m_txt_trinh_do.AutoCompleteMode = AutoCompleteMode.Suggest;
+            m_txt_trinh_do.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            AutoCompleteStringCollection v_acsc_search_trinh_do = new AutoCompleteStringCollection();
+            foreach (DataRow dr in m_ds.V_DM_DU_LIEU_NHAN_VIEN)
+            {
+                v_acsc_search_trinh_do.Add(dr[V_DM_DU_LIEU_NHAN_VIEN.TRINH_DO].ToString());
+            }
+            m_txt_trinh_do.AutoCompleteCustomSource = v_acsc_search_trinh_do;
         }
         private ITransferDataRow get_trans_object(C1FlexGrid i_fg)
         {
@@ -710,6 +745,7 @@ namespace BKI_HRM
                     m_lbl_so_luong_nv.Text += v_dc_so_luong_nv.ToString();
                     m_us.FillDatasetSearch(m_ds
                         , m_str_search
+                        , m_txt_trinh_do.Text.Trim()
                         , CIPConvert.ToDecimal(m_cbo_chon_chuc_vu.SelectedValue)
                         , CIPConvert.ToDecimal(m_cbo_chon_don_vi.SelectedValue)
                         , CIPConvert.ToDecimal(m_cbo_chon_dia_ban.SelectedValue)
@@ -717,7 +753,7 @@ namespace BKI_HRM
                         , m_dat_tu_ngay.Value
                         , m_dat_den_ngay.Value
                         , ""
-                        , ""
+                        , "Y"
                         , ""
                         , "search nghỉ việc quay lại");
                     m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC].Caption = "Ngày quay lại";
@@ -732,6 +768,7 @@ namespace BKI_HRM
                         m_lbl_so_luong_nv.Text += v_dc_so_luong_nv.ToString();
                         m_us.FillDatasetSearch(m_ds
                             , m_str_search
+                            , m_txt_trinh_do.Text.Trim()
                             , CIPConvert.ToDecimal(m_cbo_chon_chuc_vu.SelectedValue)
                             , CIPConvert.ToDecimal(m_cbo_chon_don_vi.SelectedValue)
                             , CIPConvert.ToDecimal(m_cbo_chon_dia_ban.SelectedValue)
@@ -739,7 +776,7 @@ namespace BKI_HRM
                             , m_dat_tu_ngay.Value
                             , m_dat_den_ngay.Value
                             , ""
-                            , ""
+                            , "Y"
                             , ""
                             , "search thử việc hết hạn");
                         m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC].Caption = "Ngày hết hạn thử việc";
@@ -759,6 +796,7 @@ namespace BKI_HRM
                 init_key_value();
                 m_us.FillDatasetSearch(m_ds
                         , m_str_search
+                        , m_txt_trinh_do.Text.Trim()
                        , CIPConvert.ToDecimal(m_cbo_chon_chuc_vu.SelectedValue)
                         , CIPConvert.ToDecimal(m_cbo_chon_don_vi.SelectedValue)
                         , CIPConvert.ToDecimal(m_cbo_chon_dia_ban.SelectedValue)
@@ -1158,6 +1196,7 @@ namespace BKI_HRM
             m_cmd_exit.Click += new EventHandler( m_cmd_exit_Click);
             m_cmd_search.Click += new EventHandler( m_cmd_search_Click);
             m_txt_search.KeyDown += m_txt_search_KeyDown;
+            m_txt_trinh_do.KeyDown += m_txt_trinh_do_KeyDown;
             m_txt_search.MouseClick += m_txt_search_MouseClick;
             m_txt_search.Leave += new EventHandler(m_txt_search_Leave);
             m_cbc_choose_columns.CheckBoxItems.CheckBoxCheckedChanged += new EventHandler(m_cbc_choose_columns_SelectedIndexChange);
@@ -1167,6 +1206,7 @@ namespace BKI_HRM
             m_cbo_chon_don_vi.SelectedIndexChanged += new EventHandler(m_cbo_chon_don_vi_SelectedIndexChanged);
             m_dat_tu_ngay.ValueChanged += new EventHandler(m_dat_tu_ngay_ValueChanged);
             m_dat_den_ngay.ValueChanged += new EventHandler(m_dat_den_ngay_ValueChanged);
+
         }
         private void m_dat_tu_ngay_ValueChanged(object sender, EventArgs e)
         {
@@ -1228,6 +1268,25 @@ namespace BKI_HRM
         }
 
         private void m_txt_search_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Enter)
+                {
+                    load_data_2_grid();
+                }
+                else
+                {
+                    set_search_format_after();
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_txt_trinh_do_KeyDown(object sender, KeyEventArgs e)
         {
             try
             {
