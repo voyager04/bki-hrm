@@ -309,6 +309,12 @@
     <Compile Include="NghiepVu\f203_v_gd_trang_thai_lao_dong_de.designer.cs">
       <DependentUpon>f203_v_gd_trang_thai_lao_dong_de.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\F206_chi_tiet_cong_tac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\F206_chi_tiet_cong_tac.Designer.cs">
+      <DependentUpon>F206_chi_tiet_cong_tac.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\f206_v_gd_cong_tac.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -520,6 +526,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f203_v_gd_trang_thai_lao_dong_de.resx">
       <DependentUpon>f203_v_gd_trang_thai_lao_dong_de.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\F206_chi_tiet_cong_tac.resx">
+      <DependentUpon>F206_chi_tiet_cong_tac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f206_v_gd_cong_tac.resx">
       <DependentUpon>f206_v_gd_cong_tac.cs</DependentUpon>

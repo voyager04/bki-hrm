@@ -189,6 +189,7 @@ namespace BKI_HRM
             m_cmd_chon_quyet_dinh.Click += new EventHandler(m_cmd_chon_quyet_dinh_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
+            m_fg.Click += new EventHandler(m_fg_Click);
 
         }
         private void them_quyet_dinh()
@@ -230,7 +231,13 @@ namespace BKI_HRM
                 , WinFormControls.eTAT_CA.NO
                 , m_cbo_ma_quyet_dinh);
         }
-
+        private void us_object2grid(US_V_GD_CONG_TAC i_us
+            , int i_grid_row)
+        {
+            DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
+            i_us.Me2DataRow(v_dr);
+            m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
+        }
         #endregion
 
 
@@ -350,6 +357,13 @@ namespace BKI_HRM
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+        private void m_fg_Click(object sender, EventArgs e)
+        {
+            US_V_GD_CONG_TAC v_us = new US_V_GD_CONG_TAC();
+            F206_chi_tiet_cong_tac v_frm = new F206_chi_tiet_cong_tac();
+            v_frm.display(ref v_us);
+            us_object2grid(v_us, m_fg.Row);
         }
         #endregion
 
