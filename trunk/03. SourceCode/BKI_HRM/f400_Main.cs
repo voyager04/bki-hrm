@@ -67,7 +67,7 @@ namespace BKI_HRM
             US_V_DM_DU_LIEU_NHAN_VIEN v_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
             DS_V_DM_DU_LIEU_NHAN_VIEN v_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
             decimal v_dc_so_luong_nv = 0;
-          //  f103_bao_cao_tra_cuu_nhan_su v_frm = new f103_bao_cao_tra_cuu_nhan_su();
+            //  f103_bao_cao_tra_cuu_nhan_su v_frm = new f103_bao_cao_tra_cuu_nhan_su();
             v_us.count_nhan_vien(v_ds, "thử việc hết hạn", ref v_dc_so_luong_nv);
             if (v_dc_so_luong_nv <= 0)
             {
@@ -78,7 +78,7 @@ namespace BKI_HRM
                 m_lbl_thu_viec_sap_het_han.Text = @"Có " + v_dc_so_luong_nv.ToString() +
                                                   " Thử việc sắp hết hạn. Click để xem chi tiết!";
             }
-           // v_frm.display_thu_viec_sap_het_han();
+            // v_frm.display_thu_viec_sap_het_han();
         }
 
         private void nghi_viec_sap_quay_lai()
@@ -110,7 +110,7 @@ namespace BKI_HRM
 
         #endregion
 
-        // Event handlers
+        #region Events
         private void set_define_events()
         {
             m_menuitem_tudien.Click += m_mnu_tu_dien_he_thong_Click;
@@ -134,6 +134,8 @@ namespace BKI_HRM
                 f201_dm_nhan_su frm = new f201_dm_nhan_su();
                 frm.display();
                 nhan_vien_hien_tai();
+                thu_viec_sap_het_han();
+                nghi_viec_sap_quay_lai();
             }
             catch (Exception v_e)
             {
@@ -255,6 +257,8 @@ namespace BKI_HRM
                 f203_v_gd_trang_thai_lao_dong frm = new f203_v_gd_trang_thai_lao_dong();
                 frm.display();
                 nhan_vien_hien_tai();
+                thu_viec_sap_het_han();
+                nghi_viec_sap_quay_lai();
             }
             catch (Exception v_e)
             {
@@ -301,6 +305,8 @@ namespace BKI_HRM
                 f202_V_GD_QUA_TRINH_LAM_VIEC frm = new f202_V_GD_QUA_TRINH_LAM_VIEC();
                 frm.display();
                 nhan_vien_hien_tai();
+                thu_viec_sap_het_han();
+                nghi_viec_sap_quay_lai();
             }
             catch (Exception v_e)
             {
@@ -349,10 +355,10 @@ namespace BKI_HRM
                 m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text =
                     string.Format("Có {0} hợp đồng đã quá hạn và chưa ký mới. Click để xem chi tiết!",
                                   frm.count_record_bao_cao_het_han_nhung_chua_ky_moi());
-                
+
                 thu_viec_sap_het_han();
                 nghi_viec_sap_quay_lai();
-               
+
             }
             catch (Exception v_e)
             {
@@ -524,16 +530,6 @@ namespace BKI_HRM
 
         private void m_menuitem_qlbac_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    F603_dm_cap_bac frm = new F603_dm_cap_bac();
-            //    frm.Show();
-            //}
-            //catch (Exception v_e)
-            //{
-
-            //    CSystemLog_301.ExceptionHandle(v_e);
-            //}
             try
             {
                 F604_v_dm_cap_bac frm = new F604_v_dm_cap_bac();
@@ -541,7 +537,6 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
-
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
@@ -808,7 +803,7 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle(v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
@@ -822,9 +817,11 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle(v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        #endregion
 
     }
 }
