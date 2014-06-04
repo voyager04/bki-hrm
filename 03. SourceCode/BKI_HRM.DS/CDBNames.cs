@@ -464,7 +464,15 @@
        public const string ID = "ID";
        public const string MO_TA = "MO_TA";
        public const string LUA_CHON = "LUA_CHON";
+       public const string ID_QUYET_DINH = "ID_QUYET_DINH";
        public const string MA_QUYET_DINH = "MA_QUYET_DINH";
+       public const string ID_LOAI_QD = "ID_LOAI_QD";
+       public const string NGAY_CO_HIEU_LUC = "NGAY_CO_HIEU_LUC";
+       public const string NGAY_KY = "NGAY_KY";
+       public const string NGAY_HET_HIEU_LUC = "NGAY_HET_HIEU_LUC";
+       public const string NOI_DUNG = "NOI_DUNG";
+       public const string LINK = "LINK";
+       public const string LOAI_QD = "LOAI_QD";
    }
 
    public class V_BAO_CAO_NHAN_SU {

@@ -243,6 +243,94 @@ namespace BKI_HRM.US
             pm_objDR["MA_QUYET_DINH"] = System.Convert.DBNull;
         }
 
+        public decimal dcID_TRANG_THAI
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_TRANG_THAI", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_TRANG_THAI"] = value;
+            }
+        }
+
+        public bool IsID_TRANG_THAINull()
+        {
+            return pm_objDR.IsNull("ID_TRANG_THAI");
+        }
+
+        public void SetID_TRANG_THAINull()
+        {
+            pm_objDR["ID_TRANG_THAI"] = System.Convert.DBNull;
+        }
+
+        public decimal dcID_CO_CHE
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_CO_CHE", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_CO_CHE"] = value;
+            }
+        }
+
+        public bool IsID_CO_CHENull()
+        {
+            return pm_objDR.IsNull("ID_CO_CHE");
+        }
+
+        public void SetID_CO_CHENull()
+        {
+            pm_objDR["ID_CO_CHE"] = System.Convert.DBNull;
+        }
+
+        public decimal dcID_QUYET_DINH
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_QUYET_DINH", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_QUYET_DINH"] = value;
+            }
+        }
+
+        public bool IsID_QUYET_DINHNull()
+        {
+            return pm_objDR.IsNull("ID_QUYET_DINH");
+        }
+
+        public void SetID_QUYET_DINHNull()
+        {
+            pm_objDR["ID_QUYET_DINH"] = System.Convert.DBNull;
+        }
+
+        public decimal dcID_LOAI_DU_AN
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_LOAI_DU_AN", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_LOAI_DU_AN"] = value;
+            }
+        }
+
+        public bool IsID_LOAI_DU_ANNull()
+        {
+            return pm_objDR.IsNull("ID_LOAI_DU_AN");
+        }
+
+        public void SetID_LOAI_DU_ANNull()
+        {
+            pm_objDR["ID_LOAI_DU_AN"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_V_DM_DU_AN_QUYET_DINH_TU_DIEN()
@@ -270,13 +358,6 @@ namespace BKI_HRM.US
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
-
-    //public void FillDatasetSearch(DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN op_ds, string i_str_search)
-    //{
-    //    CStoredProc v_sp = new CStoredProc("pr_V_DM_DU_AN_QUYET_DINH_TU_DIEN_search");
-    //    v_sp.addNVarcharInputParam("@STR_SEARCH", i_str_search);
-    //    v_sp.fillDataSetByCommand(this, op_ds);
-    //}
 
     public void FillDatasetSearch(DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN op_ds, 
                                   string i_str_search, 

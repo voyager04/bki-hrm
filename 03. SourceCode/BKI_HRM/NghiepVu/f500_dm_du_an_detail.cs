@@ -40,6 +40,7 @@ namespace BKI_HRM.NghiepVu
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             us_2_form_du_an(ip_us_dm_du_an);
             us_to_form_quyet_dinh(ip_us_dm_du_an);
+            m_dc_id_du_an_old = ip_us_dm_du_an.dcID;
             this.ShowDialog();
         }
 
@@ -48,6 +49,7 @@ namespace BKI_HRM.NghiepVu
         #region Member
         decimal m_dc_id_du_an;
         int m_dc_index_row;
+        private decimal m_dc_id_du_an_old;
         ITransferDataRow m_obj_trans;
         DataEntryFormMode m_e_form_mode;
         US_DM_DU_AN m_us_dm_du_an = new US.US_DM_DU_AN();
@@ -57,6 +59,7 @@ namespace BKI_HRM.NghiepVu
         bool m_b_check_quyet_dinh_save;
         bool m_b_check_quyet_dinh_null = false;
         private string m_str_ma_qd = "";
+
         enum cm_dm_tu_dien
         {
             TRANG_THAI = 10,
@@ -147,17 +150,12 @@ namespace BKI_HRM.NghiepVu
             else
                 m_us_dm_du_an.SetNGAY_KET_THUCNull();
 
-            //if (m_cbo_co_che.SelectedValue.ToString() == "-1")
-            //    m_us_dm_du_an.dcID_CO_CHE = 0;
-            //else
-            //    m_us_dm_du_an.dcID_CO_CHE = CIPConvert.ToDecimal(m_cbo_co_che.SelectedValue);
-
             m_us_dm_du_an.dcID_CO_CHE = CIPConvert.ToDecimal(m_cbo_co_che.SelectedValue);
 
             m_us_dm_du_an.dcID_TRANG_THAI = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
 
             if (m_us_quyet_dinh.dcID == 0 || m_us_quyet_dinh.dcID == -1)
-                m_us_dm_du_an.dcID_QUYET_DINH = 0;
+                m_us_dm_du_an.SetID_QUYET_DINHNull();
             else
                 m_us_dm_du_an.dcID_QUYET_DINH = m_us_quyet_dinh.dcID;
 
@@ -263,7 +261,7 @@ namespace BKI_HRM.NghiepVu
             m_b_check_quyet_dinh_null = true;
             m_txt_ma_quyet_dinh.Focus();
         }
-
+            
         private bool check_data_is_ok()
         {
             if (!m_dat_ngay_bd.Checked)
@@ -292,6 +290,17 @@ namespace BKI_HRM.NghiepVu
             return true;
         }
 
+        private bool check_trung_ma_du_an(string ip_str_ma_du_an)
+        {
+
+            DS_DM_DU_AN v_ds = new DS_DM_DU_AN();
+            US_DM_DU_AN v_us = new US_DM_DU_AN();
+            v_us.FillDataset_search_by_ma_da(v_ds, ip_str_ma_du_an);
+            if (v_ds.DM_DU_AN.Count > 0)
+                return true;
+            return false;
+        }
+
         private void save_data()
         {
             if (check_data_is_ok() == false)
@@ -304,6 +313,14 @@ namespace BKI_HRM.NghiepVu
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.InsertDataState:
+                    // Kiểm tra dự án đã tồn tại hay chưa
+                    if (check_trung_ma_du_an(m_txt_ma_du_an.Text))
+                    {
+                        BaseMessages.MsgBox_Error("Mã dự án đã tồn tại.");
+                        m_txt_ma_du_an.Focus();
+                        return;
+                    }
+
 
                     // Kiểm tra Quyết Định đã được dùng cho Dự Án nào chưa
                     US_DM_DU_AN v_us_dm_da = new US_DM_DU_AN();
@@ -332,6 +349,20 @@ namespace BKI_HRM.NghiepVu
                     m_dc_id_du_an = m_us_dm_du_an.dcID;
                     break;
                 case DataEntryFormMode.UpdateDataState:
+                    // Kiểm tra mã dự án
+                    US_DM_DU_AN v_us_dm_du_an = new US_DM_DU_AN(m_dc_id_du_an_old);
+                    if (!m_txt_ma_du_an.Text.Equals(v_us_dm_du_an.strMA_DU_AN))
+                    {
+                        if (check_trung_ma_du_an(m_txt_ma_du_an.Text))
+                        {
+                            BaseMessages.MsgBox_Error("Mã dự án đã tồn tại.");
+                            m_txt_ma_du_an.Focus();
+                            return;
+                        }
+                    }
+
+
+                    // Kiểm tra quyết định
                     if (m_txt_ma_quyet_dinh.Text != "")
                     {
                         form_to_us_object_quyet_dinh();
@@ -347,28 +378,9 @@ namespace BKI_HRM.NghiepVu
                     m_us_dm_du_an.Update();
                     break;
             }
-            //if (m_us_dm_du_an.datNGAY_KET_THUC != null)
-            //{
-            //    DateTime v_dat = m_us_dm_du_an.datNGAY_KET_THUC;
-            //    cap_nhat_ngay_ket_thuc_cho_thanh_vien(m_us_dm_du_an.dcID, v_dat);
-            //}
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
             this.Close();
         }
-
-        //private void cap_nhat_ngay_ket_thuc_cho_thanh_vien(decimal i_dc_id, DateTime i_dat)
-        //{
-        //    US.US_GD_CHI_TIET_DU_AN v_us = new US.US_GD_CHI_TIET_DU_AN();
-        //    DS.DS_GD_CHI_TIET_DU_AN v_ds = new DS.DS_GD_CHI_TIET_DU_AN();
-        //    v_us.FillDatasetByIDDuAn(v_ds, i_dc_id);
-        //    for (int i = 0; i < v_ds.Tables[0].Rows.Count; i++)
-        //    {
-        //        DataRow v_dr = v_ds.Tables[0].Rows[i];
-        //        v_us = new US.US_GD_CHI_TIET_DU_AN(CIPConvert.ToDecimal(v_dr[GD_CHI_TIET_DU_AN.ID]));
-        //        v_us.datTHOI_DIEM_KT = i_dat;
-        //        v_us.Update();
-        //    }
-        //}
 
         #endregion
 
