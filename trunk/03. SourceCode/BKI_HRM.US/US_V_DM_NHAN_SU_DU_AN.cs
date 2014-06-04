@@ -579,33 +579,33 @@ namespace BKI_HRM.US
         }
         #endregion
 
-    public void FillDatasetByIdDuAn(DS_V_DM_NHAN_SU_DU_AN op_ds_nhan_su, decimal i_dc_id)
-    {
-        CStoredProc v_sp = new CStoredProc("pr_V_NHAN_SU_DU_AN_select_by_ID");
-        v_sp.addDecimalInputParam("@ID_DU_AN", i_dc_id);
-        v_sp.fillDataSetByCommand(this, op_ds_nhan_su);
-    }
+        public void FillDatasetByIdDuAn(DS_V_DM_NHAN_SU_DU_AN op_ds_nhan_su, decimal i_dc_id)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_V_NHAN_SU_DU_AN_select_by_ID");
+            v_sp.addDecimalInputParam("@ID_DU_AN", i_dc_id);
+            v_sp.fillDataSetByCommand(this, op_ds_nhan_su);
+        }
 
-    public void FillDatasetSearch(DS_V_DM_NHAN_SU_DU_AN op_ds_nhan_su, string v_str_tu_khoa)
-    {
-        CStoredProc v_sp = new CStoredProc("pr_V_NHAN_SU_DU_AN_search");
-        v_sp.addNVarcharInputParam("@STR_DU_AN", v_str_tu_khoa);
-        v_sp.fillDataSetByCommand(this, op_ds_nhan_su);
-    }
+        public void FillDatasetSearch(DS_V_DM_NHAN_SU_DU_AN op_ds_nhan_su, string v_str_tu_khoa)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_V_NHAN_SU_DU_AN_search");
+            v_sp.addNVarcharInputParam("@STR_DU_AN", v_str_tu_khoa);
+            v_sp.fillDataSetByCommand(this, op_ds_nhan_su);
+        }
 
-    public void FillDatasetTuNgayDenNgay(
-        DS_V_DM_NHAN_SU_DU_AN op_ds_nhan_su, 
-        string v_str_tu_khoa,
-        DateTime v_dat_tu_ngay, 
-        DateTime v_dat_den_ngay, 
-        decimal v_dc_tim_kiem_theo_ngay)
-    {
-        CStoredProc v_sp = new CStoredProc("pr_V_NHAN_SU_DU_AN_tu_ngay_den_ngay");
-        v_sp.addNVarcharInputParam("@ip_str_keyword", v_str_tu_khoa);
-        v_sp.addDatetimeInputParam("@tu_ngay", v_dat_tu_ngay);
-        v_sp.addDatetimeInputParam("@den_ngay", v_dat_den_ngay);
-        v_sp.addDecimalInputParam("@tim_kiem_theo_ngay", v_dc_tim_kiem_theo_ngay);
-        v_sp.fillDataSetByCommand(this, op_ds_nhan_su);
-    }
+        public void FillDatasetTuNgayDenNgay(
+            DS_V_DM_NHAN_SU_DU_AN op_ds_nhan_su,
+            string v_str_tu_khoa,
+            DateTime v_dat_tu_ngay,
+            DateTime v_dat_den_ngay,
+            decimal v_dc_tim_kiem_theo_ngay)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_V_NHAN_SU_DU_AN_tu_ngay_den_ngay");
+            v_sp.addNVarcharInputParam("@ip_str_keyword", v_str_tu_khoa);
+            v_sp.addDatetimeInputParam("@tu_ngay", v_dat_tu_ngay);
+            v_sp.addDatetimeInputParam("@den_ngay", v_dat_den_ngay);
+            v_sp.addDecimalInputParam("@tim_kiem_theo_ngay", v_dc_tim_kiem_theo_ngay);
+            v_sp.fillDataSetByCommand(this, op_ds_nhan_su);
+        }
     }
 }

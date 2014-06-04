@@ -51,6 +51,7 @@
             this.m_cmd_them_quyet_dinh = new SIS.Controls.Button.SiSButton();
             this.m_cmd_chon_quyet_dinh = new SIS.Controls.Button.SiSButton();
             this.m_grb_quyet_dinh = new System.Windows.Forms.GroupBox();
+            this.m_lbl_loai_qd = new System.Windows.Forms.Label();
             this.m_cmd_xem_file = new SIS.Controls.Button.SiSButton();
             this.m_cmd_chon_file = new SIS.Controls.Button.SiSButton();
             this.m_txt_noi_dung = new System.Windows.Forms.TextBox();
@@ -77,7 +78,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.m_ofd_openfile = new System.Windows.Forms.OpenFileDialog();
-            this.m_lbl_loai_qd = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.m_grb_quyet_dinh.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -231,7 +231,6 @@
             this.m_dat_tham_gia.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_tham_gia.Location = new System.Drawing.Point(117, 305);
             this.m_dat_tham_gia.Name = "m_dat_tham_gia";
-            this.m_dat_tham_gia.ShowCheckBox = true;
             this.m_dat_tham_gia.Size = new System.Drawing.Size(121, 20);
             this.m_dat_tham_gia.TabIndex = 43;
             // 
@@ -344,6 +343,15 @@
             this.m_grb_quyet_dinh.TabIndex = 102;
             this.m_grb_quyet_dinh.TabStop = false;
             this.m_grb_quyet_dinh.Text = "Quyết định đi kèm";
+            // 
+            // m_lbl_loai_qd
+            // 
+            this.m_lbl_loai_qd.AutoSize = true;
+            this.m_lbl_loai_qd.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_loai_qd.Location = new System.Drawing.Point(117, 78);
+            this.m_lbl_loai_qd.Name = "m_lbl_loai_qd";
+            this.m_lbl_loai_qd.Size = new System.Drawing.Size(0, 13);
+            this.m_lbl_loai_qd.TabIndex = 29;
             // 
             // m_cmd_xem_file
             // 
@@ -609,15 +617,6 @@
             this.label12.Size = new System.Drawing.Size(72, 13);
             this.label12.TabIndex = 64;
             this.label12.Text = "Mã nhân viên";
-            // 
-            // m_lbl_loai_qd
-            // 
-            this.m_lbl_loai_qd.AutoSize = true;
-            this.m_lbl_loai_qd.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_loai_qd.Location = new System.Drawing.Point(117, 78);
-            this.m_lbl_loai_qd.Name = "m_lbl_loai_qd";
-            this.m_lbl_loai_qd.Size = new System.Drawing.Size(0, 13);
-            this.m_lbl_loai_qd.TabIndex = 29;
             // 
             // F500_gd_chi_tiet_du_an_de
             // 

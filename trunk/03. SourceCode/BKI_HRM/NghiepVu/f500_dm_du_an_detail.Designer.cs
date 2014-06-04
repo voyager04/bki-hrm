@@ -215,7 +215,6 @@
             this.m_dat_ngay_bd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_bd.Location = new System.Drawing.Point(96, 151);
             this.m_dat_ngay_bd.Name = "m_dat_ngay_bd";
-            this.m_dat_ngay_bd.ShowCheckBox = true;
             this.m_dat_ngay_bd.Size = new System.Drawing.Size(157, 20);
             this.m_dat_ngay_bd.TabIndex = 34;
             // 
