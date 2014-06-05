@@ -144,7 +144,7 @@
         </xs:element>
       </xs:choice>
     </xs:complexType>
-    <xs:unique name="V_GD_CONG_TACKey1">
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:V_GD_CONG_TAC" />
       <xs:field xpath="mstns:ID" />
     </xs:unique>

@@ -599,6 +599,13 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public V_GD_CONG_TACRow FindByID(decimal ID) {
+                return ((V_GD_CONG_TACRow)(this.Rows.Find(new object[] {
+                            ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 V_GD_CONG_TACDataTable cln = ((V_GD_CONG_TACDataTable)(base.Clone()));
                 cln.InitVars();
@@ -679,8 +686,8 @@ namespace BKI_HRM.DS {
                 base.Columns.Add(this.columnLUA_CHON);
                 this.columnLINK = new global::System.Data.DataColumn("LINK", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLINK);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("V_GD_CONG_TACKey1", new global::System.Data.DataColumn[] {
-                                this.columnID}, false));
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID}, true));
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnID_NHAN_SU.AllowDBNull = false;
