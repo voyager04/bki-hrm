@@ -47,21 +47,16 @@ namespace BKI_HRM
         #region Data Structs
         private enum e_col_Number
         {
-            NGAY_DI = 4
-,
-            MO_TA_CONG_VIEC = 7
+            NGAY_DI = 3
+           ,
+            MO_TA_CONG_VIEC = 6
                 ,
-            DIA_DIEM = 6
+            DIA_DIEM = 5
                 ,
             MA_NV = 1
                 ,
-            NGAY_VE = 5
-                ,
-
-            HO_DEM = 2
-                ,
-            TEN = 3
-
+            NGAY_VE = 4
+                , HO_TEN = 2
         }
         #endregion
         #region Members
@@ -72,8 +67,8 @@ namespace BKI_HRM
         DS_GD_CONG_TAC m_ds_gd_cong_tac = new DS_GD_CONG_TAC();
         US_DM_QUYET_DINH m_us_dm_quyet_dinh = new US_DM_QUYET_DINH();
         DS_DM_QUYET_DINH m_ds_dm_quyet_dinh = new DS_DM_QUYET_DINH();
-        US_DM_NHAN_SU m_us_dm_nhan_su = new US_DM_NHAN_SU();
-        DS_DM_NHAN_SU m_ds_dm_nhan_su = new DS_DM_NHAN_SU();
+        US_V_DM_NHAN_SU m_us_dm_nhan_su = new US_V_DM_NHAN_SU();
+        DS_V_DM_NHAN_SU m_ds_v_dm_nhan_su = new DS_V_DM_NHAN_SU();
         DataEntryFormMode m_e_form_mode = new DataEntryFormMode();
         bool m_b_check_quyet_dinh_save;
         bool m_b_check_quyet_dinh_null = false;
@@ -101,7 +96,7 @@ namespace BKI_HRM
                 default:
                     break;
             }
-            m_us_dm_nhan_su.FillDataset(m_ds_dm_nhan_su);
+            m_us_dm_nhan_su.FillDataset(m_ds_v_dm_nhan_su);
             load_data_2_row();
         }
         private void generate_ma_quyet_dinh()
@@ -133,10 +128,8 @@ namespace BKI_HRM
             v_htb.Add(V_GD_CONG_TAC.MA_NV, e_col_Number.MA_NV);
             v_htb.Add(V_GD_CONG_TAC.NGAY_VE, e_col_Number.NGAY_VE);
 
-            v_htb.Add(V_GD_CONG_TAC.HO_DEM, e_col_Number.HO_DEM);
-            v_htb.Add(V_GD_CONG_TAC.TEN, e_col_Number.TEN);
-
-
+            v_htb.Add(V_GD_CONG_TAC.HO_TEN, e_col_Number.HO_TEN);
+           
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds_v_gd_cong_tac.V_GD_CONG_TAC.NewRow());
             return v_obj_trans;
         }
@@ -231,39 +224,42 @@ namespace BKI_HRM
         private Hashtable get_mapping_col_ma_nv()
         {
             Hashtable v_hst = new Hashtable();
-            foreach (DataRow v_dr in m_ds_dm_nhan_su.DM_NHAN_SU.Rows)
+            foreach (DataRow v_dr in m_ds_v_dm_nhan_su.V_DM_NHAN_SU.Rows)
             {
-                v_hst.Add(v_dr[DM_NHAN_SU.ID], v_dr[DM_NHAN_SU.MA_NV]);
+                v_hst.Add(v_dr[V_DM_NHAN_SU.ID], v_dr[V_DM_NHAN_SU.MA_NV]);
             }
             return v_hst;
         }
-        private Hashtable get_mapping_col_ho_dem()
+        private Hashtable get_mapping_col_ho_ten()
         {
             Hashtable v_hst = new Hashtable();
-            foreach (DataRow v_dr in m_ds_dm_nhan_su.DM_NHAN_SU.Rows)
+            foreach (DataRow v_dr in m_ds_v_dm_nhan_su.V_DM_NHAN_SU.Rows)
             {
-                v_hst.Add(v_dr[DM_NHAN_SU.ID], v_dr[DM_NHAN_SU.HO_DEM]);
+                v_hst.Add(v_dr[V_DM_NHAN_SU.ID], v_dr[V_DM_NHAN_SU.HO_TEN]);
             }
             return v_hst;
         }
-        private Hashtable get_mapping_col_ten()
-        {
-            Hashtable v_hst = new Hashtable();
-            foreach (DataRow v_dr in m_ds_dm_nhan_su.DM_NHAN_SU.Rows)
-            {
-                v_hst.Add(v_dr[DM_NHAN_SU.ID], v_dr[DM_NHAN_SU.TEN]);
-            }
-            return v_hst;
-        }
-      
+       
         private void load_data_2_row()
         {
             m_fg.Cols[(int)e_col_Number.MA_NV].DataMap = get_mapping_col_ma_nv();
-            m_fg.Cols[(int)e_col_Number.HO_DEM].DataMap = get_mapping_col_ho_dem();
-            m_fg.Cols[(int)e_col_Number.TEN].DataMap = get_mapping_col_ten();
-          
+            m_fg.Cols[(int)e_col_Number.HO_TEN].DataMap = get_mapping_col_ho_ten();
+           
         }
-      
+        private void load_edited_grid()
+        {
+            switch (m_fg.Col)
+            {
+                case (int)e_col_Number.MA_NV:
+                    m_fg.Rows[m_fg.Row][(int)e_col_Number.HO_TEN] = m_fg.Rows[m_fg.Row][(int)e_col_Number.MA_NV];
+                    break;
+                case (int)e_col_Number.HO_TEN:
+                    m_fg.Rows[m_fg.Row][(int)e_col_Number.MA_NV] = m_fg.Rows[m_fg.Row][(int)e_col_Number.HO_TEN];
+                    break;
+                default: 
+                    break;
+            }
+        }
         private void load_cbo_ma_quyet_dinh()
         {
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.MA_QUYET_DINH
@@ -412,6 +408,18 @@ namespace BKI_HRM
 
         }
         #endregion
+
+        private void m_fg_AfterEdit(object sender, RowColEventArgs e)
+        {
+            try
+            {
+                load_edited_grid();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 
 

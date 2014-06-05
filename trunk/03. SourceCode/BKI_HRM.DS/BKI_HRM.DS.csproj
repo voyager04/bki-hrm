@@ -200,6 +200,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_DM_DU_LIEU_NHAN_VIEN.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_DM_NHAN_SU.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_DM_NHAN_SU.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_DM_NHAN_SU_DU_AN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -596,6 +601,17 @@
     </None>
     <None Include="DS_V_DM_DU_LIEU_NHAN_VIEN.xss">
       <DependentUpon>DS_V_DM_DU_LIEU_NHAN_VIEN.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DM_NHAN_SU.xsc">
+      <DependentUpon>DS_V_DM_NHAN_SU.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DM_NHAN_SU.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_DM_NHAN_SU.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_DM_NHAN_SU.xss">
+      <DependentUpon>DS_V_DM_NHAN_SU.xsd</DependentUpon>
     </None>
     <None Include="DS_V_DM_NHAN_SU_DU_AN.xsc">
       <DependentUpon>DS_V_DM_NHAN_SU_DU_AN.xsd</DependentUpon>
