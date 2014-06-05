@@ -67,7 +67,7 @@ namespace BKI_HRM
         DS_GD_CONG_TAC m_ds_gd_cong_tac = new DS_GD_CONG_TAC();
         US_DM_QUYET_DINH m_us_dm_quyet_dinh = new US_DM_QUYET_DINH();
         DS_DM_QUYET_DINH m_ds_dm_quyet_dinh = new DS_DM_QUYET_DINH();
-        US_V_DM_NHAN_SU m_us_dm_nhan_su = new US_V_DM_NHAN_SU();
+        US_V_DM_NHAN_SU m_us_v_dm_nhan_su = new US_V_DM_NHAN_SU();
         DS_V_DM_NHAN_SU m_ds_v_dm_nhan_su = new DS_V_DM_NHAN_SU();
         DataEntryFormMode m_e_form_mode = new DataEntryFormMode();
         bool m_b_check_quyet_dinh_save;
@@ -96,7 +96,7 @@ namespace BKI_HRM
                 default:
                     break;
             }
-            m_us_dm_nhan_su.FillDataset(m_ds_v_dm_nhan_su);
+            m_us_v_dm_nhan_su.FillDataset(m_ds_v_dm_nhan_su);
             load_data_2_row();
         }
         private void generate_ma_quyet_dinh()
@@ -118,6 +118,22 @@ namespace BKI_HRM
             m_us_dm_quyet_dinh.SetNGAY_HET_HIEU_LUCNull();
             m_us_dm_quyet_dinh.datNGAY_CO_HIEU_LUC = m_us_dm_quyet_dinh.datNGAY_KY;
             m_us_dm_quyet_dinh.dcID_LOAI_QD = CIPConvert.ToDecimal(TU_DIEN.QD_CONG_TAC);
+        }
+        private void form_2_us_object_gd_cong_tac(int ip_i_row)
+        {
+            m_us_gd_cong_tac.dcID_NHAN_SU = CIPConvert.ToDecimal(m_fg.Rows[ip_i_row][(int)e_col_Number.MA_NV]);
+            m_us_gd_cong_tac.dcID_QUYET_DINH = m_us_dm_quyet_dinh.dcID;
+            m_us_gd_cong_tac.datNGAY_DI = CIPConvert.ToDatetime(m_fg.Rows[ip_i_row][(int)e_col_Number.NGAY_DI]);
+            m_us_gd_cong_tac.datNGAY_VE = CIPConvert.ToDatetime(m_fg.Rows[ip_i_row][(int)e_col_Number.NGAY_VE]);
+            if (m_fg.Rows[ip_i_row][(int)e_col_Number.DIA_DIEM] != null)
+            {
+                m_us_gd_cong_tac.strDIA_DIEM = CIPConvert.ToStr(m_fg.Rows[ip_i_row][(int)e_col_Number.DIA_DIEM]);
+            }
+            if (m_fg.Rows[ip_i_row][(int)e_col_Number.MO_TA_CONG_VIEC] != null)
+            {
+                m_us_gd_cong_tac.strMO_TA_CONG_VIEC = CIPConvert.ToStr(m_fg.Rows[ip_i_row][(int)e_col_Number.MO_TA_CONG_VIEC]);
+            }
+            
         }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
@@ -165,7 +181,19 @@ namespace BKI_HRM
 
         private void save_data()
         {
-
+            if (m_b_check_quyet_dinh_save)
+            {
+                m_us_dm_quyet_dinh.Insert();
+            }
+            for (int i = 1; i < m_fg.Rows.Count; i ++ )
+            {
+                if ((m_fg.Rows[i][(int)e_col_Number.MA_NV]) != null)
+                {
+                    form_2_us_object_gd_cong_tac(i);
+                    m_us_gd_cong_tac.Insert();    
+                }
+                
+            }
         }
         private void chon_file()
         {
@@ -407,8 +435,7 @@ namespace BKI_HRM
             }
 
         }
-        #endregion
-
+      
         private void m_fg_AfterEdit(object sender, RowColEventArgs e)
         {
             try
@@ -420,6 +447,8 @@ namespace BKI_HRM
             	CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        #endregion
+
     }
 
 

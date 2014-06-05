@@ -12,13 +12,14 @@
               <DbSource ConnectionRef="BKI_HRMConnectionString1 (Settings)" DbObjectName="BKI_HRM.dbo.V_GD_CONG_TAC" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID_NHAN_SU, MA_NV, HO_DEM, TEN, HO_TEN, ID_QUYET_DINH, MA_QUYET_DINH, ID_LOAI_QD, LOAI_QD, NGAY_CO_HIEU_LUC, NGAY_KY, NGAY_HET_HIEU_LUC, NOI_DUNG, NGAY_DI, NGAY_VE, DIA_DIEM, MO_TA_CONG_VIEC, LUA_CHON, LINK FROM dbo.V_GD_CONG_TAC</CommandText>
+                    <CommandText>SELECT ID, ID_NHAN_SU, MA_NV, HO_DEM, TEN, HO_TEN, ID_QUYET_DINH, MA_QUYET_DINH, ID_LOAI_QD, LOAI_QD, NGAY_CO_HIEU_LUC, NGAY_KY, NGAY_HET_HIEU_LUC, NOI_DUNG, NGAY_DI, NGAY_VE, DIA_DIEM, MO_TA_CONG_VIEC, LUA_CHON, LINK FROM dbo.V_GD_CONG_TAC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
             </MainSource>
             <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
               <Mapping SourceColumn="ID_NHAN_SU" DataSetColumn="ID_NHAN_SU" />
               <Mapping SourceColumn="MA_NV" DataSetColumn="MA_NV" />
               <Mapping SourceColumn="HO_DEM" DataSetColumn="HO_DEM" />
@@ -52,6 +53,7 @@
         <xs:element name="V_GD_CONG_TAC" msprop:Generator_TableClassName="V_GD_CONG_TACDataTable" msprop:Generator_TableVarName="tableV_GD_CONG_TAC" msprop:Generator_TablePropName="V_GD_CONG_TAC" msprop:Generator_RowDeletingName="V_GD_CONG_TACRowDeleting" msprop:Generator_RowChangingName="V_GD_CONG_TACRowChanging" msprop:Generator_RowEvHandlerName="V_GD_CONG_TACRowChangeEventHandler" msprop:Generator_RowDeletedName="V_GD_CONG_TACRowDeleted" msprop:Generator_UserTableName="V_GD_CONG_TAC" msprop:Generator_RowChangedName="V_GD_CONG_TACRowChanged" msprop:Generator_RowEvArgName="V_GD_CONG_TACRowChangeEvent" msprop:Generator_RowClassName="V_GD_CONG_TACRow">
           <xs:complexType>
             <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
               <xs:element name="ID_NHAN_SU" msprop:Generator_ColumnVarNameInTable="columnID_NHAN_SU" msprop:Generator_ColumnPropNameInRow="ID_NHAN_SU" msprop:Generator_ColumnPropNameInTable="ID_NHAN_SUColumn" msprop:Generator_UserColumnName="ID_NHAN_SU" type="xs:decimal" />
               <xs:element name="MA_NV" msprop:Generator_ColumnVarNameInTable="columnMA_NV" msprop:Generator_ColumnPropNameInRow="MA_NV" msprop:Generator_ColumnPropNameInTable="MA_NVColumn" msprop:Generator_UserColumnName="MA_NV">
                 <xs:simpleType>
@@ -142,5 +144,9 @@
         </xs:element>
       </xs:choice>
     </xs:complexType>
+    <xs:unique name="V_GD_CONG_TACKey1">
+      <xs:selector xpath=".//mstns:V_GD_CONG_TAC" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
   </xs:element>
 </xs:schema>
