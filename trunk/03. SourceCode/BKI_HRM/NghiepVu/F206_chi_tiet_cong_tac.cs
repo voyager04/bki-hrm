@@ -28,44 +28,32 @@ namespace BKI_HRM
             format_controls();
             set_define_event();
         }
-        public void display(ref US_V_GD_CONG_TAC op_us)
+        public void display(string ip_str, ref string op_str)
         {
+            m_str_ip = ip_str;
+            m_txt_mo_ta_cong_viec.Text = m_str_ip;
             this.ShowDialog();
-            op_us = m_us;
+            op_str = m_str_op;
         }
         #endregion
         #region Data Structure
         #endregion
         #region Members
-        US_V_GD_CONG_TAC m_us;
+        string m_str_op = "";
+        string m_str_ip = "";
         #endregion
         #region Private Methods
         private void format_controls()
         {
             CControlFormat.setFormStyle(this, new CAppContext_201());
             this.KeyPreview = true;
-        }
-        private void form_2_us_object()
-        {
            
-            m_us.strMA_NV = m_txt_ma_nhan_vien.Text;
-            m_us.strHO_DEM = m_txt_ho_dem.Text;
-            m_us.strTEN = m_txt_ten.Text;
-            m_us.datNGAY_VE = m_dat_ngay_ve.Value;
-            m_us.datNGAY_DI = m_dat_ngay_di.Value;
-            m_us.strDIA_DIEM = m_txt_dia_diem.Text;
-            m_us.strMO_TA_CONG_VIEC = m_txt_mo_ta_cong_viec.Text;
         }
+       
         
         private void xoa_trang()
         {
-            m_txt_dia_diem.Text = "";
-            m_txt_ho_dem.Text = "";
-            m_txt_ten.Text = "";
-            m_txt_ma_nhan_vien.Text = "";
-            m_txt_mo_ta_cong_viec.Text = "";
-            m_dat_ngay_di.Value = DateTime.Today;
-            m_dat_ngay_ve.Value = DateTime.Today;
+            m_txt_mo_ta_cong_viec.Text = m_str_ip;
         }
         private void set_define_event()
         {
@@ -79,7 +67,7 @@ namespace BKI_HRM
         {
             try
             {
-                
+                m_str_op = m_str_ip;
                 this.Close();
             }
             catch (Exception v_e)
@@ -89,7 +77,7 @@ namespace BKI_HRM
         }
         private void m_cmd_save_Click(object sender, EventArgs e)
         {
-            form_2_us_object();
+            m_str_op = m_txt_mo_ta_cong_viec.Text.Trim();
             this.Close();
         }
         private void m_cmd_refresh_Click(object sender, EventArgs e)
