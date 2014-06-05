@@ -279,6 +279,8 @@ namespace BKI_HRM.DS {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class V_GD_CONG_TACDataTable : global::System.Data.TypedTableBase<V_GD_CONG_TACRow> {
             
+            private global::System.Data.DataColumn columnID;
+            
             private global::System.Data.DataColumn columnID_NHAN_SU;
             
             private global::System.Data.DataColumn columnMA_NV;
@@ -348,6 +350,14 @@ namespace BKI_HRM.DS {
             protected V_GD_CONG_TACDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -540,6 +550,7 @@ namespace BKI_HRM.DS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public V_GD_CONG_TACRow AddV_GD_CONG_TACRow(
+                        decimal ID, 
                         decimal ID_NHAN_SU, 
                         string MA_NV, 
                         string HO_DEM, 
@@ -561,6 +572,7 @@ namespace BKI_HRM.DS {
                         string LINK) {
                 V_GD_CONG_TACRow rowV_GD_CONG_TACRow = ((V_GD_CONG_TACRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        ID,
                         ID_NHAN_SU,
                         MA_NV,
                         HO_DEM,
@@ -602,6 +614,7 @@ namespace BKI_HRM.DS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
+                this.columnID = base.Columns["ID"];
                 this.columnID_NHAN_SU = base.Columns["ID_NHAN_SU"];
                 this.columnMA_NV = base.Columns["MA_NV"];
                 this.columnHO_DEM = base.Columns["HO_DEM"];
@@ -626,6 +639,8 @@ namespace BKI_HRM.DS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
                 this.columnID_NHAN_SU = new global::System.Data.DataColumn("ID_NHAN_SU", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_NHAN_SU);
                 this.columnMA_NV = new global::System.Data.DataColumn("MA_NV", typeof(string), null, global::System.Data.MappingType.Element);
@@ -664,6 +679,10 @@ namespace BKI_HRM.DS {
                 base.Columns.Add(this.columnLUA_CHON);
                 this.columnLINK = new global::System.Data.DataColumn("LINK", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLINK);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("V_GD_CONG_TACKey1", new global::System.Data.DataColumn[] {
+                                this.columnID}, false));
+                this.columnID.AllowDBNull = false;
+                this.columnID.Unique = true;
                 this.columnID_NHAN_SU.AllowDBNull = false;
                 this.columnMA_NV.AllowDBNull = false;
                 this.columnMA_NV.MaxLength = 35;
@@ -820,6 +839,17 @@ namespace BKI_HRM.DS {
             internal V_GD_CONG_TACRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tableV_GD_CONG_TAC = ((V_GD_CONG_TACDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ID {
+                get {
+                    return ((decimal)(this[this.tableV_GD_CONG_TAC.IDColumn]));
+                }
+                set {
+                    this[this.tableV_GD_CONG_TAC.IDColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1412,6 +1442,7 @@ namespace BKI_HRM.DS.DS_V_GD_CONG_TACTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "V_GD_CONG_TAC";
+            tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("ID_NHAN_SU", "ID_NHAN_SU");
             tableMapping.ColumnMappings.Add("MA_NV", "MA_NV");
             tableMapping.ColumnMappings.Add("HO_DEM", "HO_DEM");
@@ -1447,9 +1478,9 @@ namespace BKI_HRM.DS.DS_V_GD_CONG_TACTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_NHAN_SU, MA_NV, HO_DEM, TEN, HO_TEN, ID_QUYET_DINH, MA_QUYET_DINH, ID_L" +
-                "OAI_QD, LOAI_QD, NGAY_CO_HIEU_LUC, NGAY_KY, NGAY_HET_HIEU_LUC, NOI_DUNG, NGAY_DI" +
-                ", NGAY_VE, DIA_DIEM, MO_TA_CONG_VIEC, LUA_CHON, LINK FROM dbo.V_GD_CONG_TAC";
+            this._commandCollection[0].CommandText = "SELECT ID, ID_NHAN_SU, MA_NV, HO_DEM, TEN, HO_TEN, ID_QUYET_DINH, MA_QUYET_DINH, " +
+                "ID_LOAI_QD, LOAI_QD, NGAY_CO_HIEU_LUC, NGAY_KY, NGAY_HET_HIEU_LUC, NOI_DUNG, NGA" +
+                "Y_DI, NGAY_VE, DIA_DIEM, MO_TA_CONG_VIEC, LUA_CHON, LINK FROM dbo.V_GD_CONG_TAC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

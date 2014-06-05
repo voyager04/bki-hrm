@@ -22,6 +22,28 @@ public class US_V_GD_CONG_TAC : US_Object
 {
 	private const string c_TableName = "V_GD_CONG_TAC";
     #region "Public Properties"
+    public decimal dcID
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "ID", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["ID"] = value;
+        }
+    }
+
+    public bool IsIDNull()
+    {
+        return pm_objDR.IsNull("ID");
+    }
+
+    public void SetIDNull()
+    {
+        pm_objDR["ID"] = System.Convert.DBNull;
+    }
+
     public decimal dcID_NHAN_SU
     {
         get
