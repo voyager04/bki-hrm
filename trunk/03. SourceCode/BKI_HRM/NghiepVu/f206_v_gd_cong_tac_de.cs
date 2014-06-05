@@ -181,19 +181,30 @@ namespace BKI_HRM
 
         private void save_data()
         {
-            if (m_b_check_quyet_dinh_save)
+            switch (m_e_form_mode)
             {
-                m_us_dm_quyet_dinh.Insert();
+                case DataEntryFormMode.InsertDataState:
+                    if (m_b_check_quyet_dinh_save)
+                    {
+                        m_us_dm_quyet_dinh.Insert();
+                    }
+                    for (int i = 1; i < m_fg.Rows.Count; i++)
+                    {
+                        if ((m_fg.Rows[i][(int)e_col_Number.MA_NV]) != null)
+                        {
+                            form_2_us_object_gd_cong_tac(i);
+                            m_us_gd_cong_tac.Insert();
+                        }
+
+                    }
+                    break;
+                case DataEntryFormMode.UpdateDataState:
+                    break;
+                default:
+                    break;
             }
-            for (int i = 1; i < m_fg.Rows.Count; i ++ )
-            {
-                if ((m_fg.Rows[i][(int)e_col_Number.MA_NV]) != null)
-                {
-                    form_2_us_object_gd_cong_tac(i);
-                    m_us_gd_cong_tac.Insert();    
-                }
-                
-            }
+            
+           
         }
         private void chon_file()
         {
