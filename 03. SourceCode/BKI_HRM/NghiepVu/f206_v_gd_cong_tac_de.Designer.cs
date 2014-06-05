@@ -319,6 +319,7 @@
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
+            this.m_cmd_exit.Click += new System.EventHandler(this.m_cmd_exit_Click);
             // 
             // m_fg
             // 
@@ -328,10 +329,11 @@
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_fg.Location = new System.Drawing.Point(0, 257);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Rows.Count = 3;
+            this.m_fg.Rows.Count = 6;
             this.m_fg.Size = new System.Drawing.Size(792, 176);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 109;
+            this.m_fg.AfterEdit += new C1.Win.C1FlexGrid.RowColEventHandler(this.m_fg_AfterEdit);
             // 
             // f206_v_gd_cong_tac_de
             // 
