@@ -287,6 +287,7 @@ namespace BKI_HRM
             this.m_dat_den_ngay.Name = "m_dat_den_ngay";
             this.m_dat_den_ngay.Size = new System.Drawing.Size(111, 20);
             this.m_dat_den_ngay.TabIndex = 53;
+            this.m_dat_den_ngay.ValueChanged += new System.EventHandler(this.m_dat_ValueChanged);
             // 
             // label4
             // 
@@ -306,6 +307,7 @@ namespace BKI_HRM
             this.m_dat_tu_ngay.Size = new System.Drawing.Size(111, 20);
             this.m_dat_tu_ngay.TabIndex = 51;
             this.m_dat_tu_ngay.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.m_dat_tu_ngay.ValueChanged += new System.EventHandler(this.m_dat_ValueChanged);
             // 
             // f206_v_gd_cong_tac
             // 
@@ -582,6 +584,18 @@ namespace BKI_HRM
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_dat_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
             }
         }
         

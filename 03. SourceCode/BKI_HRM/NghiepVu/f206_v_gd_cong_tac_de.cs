@@ -17,6 +17,7 @@ using IP.Core.IPWordReport;
 using System.Diagnostics;
 using IP.Core.IPSystemAdmin;
 using System.Collections;
+using C1.Win.C1FlexGrid;
 
 namespace BKI_HRM
 {
@@ -71,6 +72,8 @@ namespace BKI_HRM
         DS_GD_CONG_TAC m_ds_gd_cong_tac = new DS_GD_CONG_TAC();
         US_DM_QUYET_DINH m_us_dm_quyet_dinh = new US_DM_QUYET_DINH();
         DS_DM_QUYET_DINH m_ds_dm_quyet_dinh = new DS_DM_QUYET_DINH();
+        US_DM_NHAN_SU m_us_dm_nhan_su = new US_DM_NHAN_SU();
+        DS_DM_NHAN_SU m_ds_dm_nhan_su = new DS_DM_NHAN_SU();
         DataEntryFormMode m_e_form_mode = new DataEntryFormMode();
         bool m_b_check_quyet_dinh_save;
         bool m_b_check_quyet_dinh_null = false;
@@ -98,7 +101,8 @@ namespace BKI_HRM
                 default:
                     break;
             }
-
+            m_us_dm_nhan_su.FillDataset(m_ds_dm_nhan_su);
+            load_data_2_row();
         }
         private void generate_ma_quyet_dinh()
         {
@@ -162,7 +166,7 @@ namespace BKI_HRM
             m_txt_loai_quyet_dinh.Text = "QĐ Đi công tác";
             m_dat_ngay_ky.Value = m_us_v_gd_cong_tac.datNGAY_KY;
             m_txt_noi_dung.Text = m_us_v_gd_cong_tac.strNOI_DUNG;
-           
+
             load_data_2_grid();
         }
 
@@ -217,14 +221,49 @@ namespace BKI_HRM
                 m_txt_loai_quyet_dinh.Text = "QĐ Đi công tác";
                 m_dat_ngay_ky.Value = m_us_dm_quyet_dinh.datNGAY_KY;
                 m_txt_noi_dung.Text = m_us_dm_quyet_dinh.strNOI_DUNG;
-               
+
             }
             else
             {
                 m_b_check_quyet_dinh_null = true;
             }
         }
-
+        private Hashtable get_mapping_col_ma_nv()
+        {
+            Hashtable v_hst = new Hashtable();
+            foreach (DataRow v_dr in m_ds_dm_nhan_su.DM_NHAN_SU.Rows)
+            {
+                v_hst.Add(v_dr[DM_NHAN_SU.ID], v_dr[DM_NHAN_SU.MA_NV]);
+            }
+            return v_hst;
+        }
+        private Hashtable get_mapping_col_ho_dem()
+        {
+            Hashtable v_hst = new Hashtable();
+            foreach (DataRow v_dr in m_ds_dm_nhan_su.DM_NHAN_SU.Rows)
+            {
+                v_hst.Add(v_dr[DM_NHAN_SU.ID], v_dr[DM_NHAN_SU.HO_DEM]);
+            }
+            return v_hst;
+        }
+        private Hashtable get_mapping_col_ten()
+        {
+            Hashtable v_hst = new Hashtable();
+            foreach (DataRow v_dr in m_ds_dm_nhan_su.DM_NHAN_SU.Rows)
+            {
+                v_hst.Add(v_dr[DM_NHAN_SU.ID], v_dr[DM_NHAN_SU.TEN]);
+            }
+            return v_hst;
+        }
+      
+        private void load_data_2_row()
+        {
+            m_fg.Cols[(int)e_col_Number.MA_NV].DataMap = get_mapping_col_ma_nv();
+            m_fg.Cols[(int)e_col_Number.HO_DEM].DataMap = get_mapping_col_ho_dem();
+            m_fg.Cols[(int)e_col_Number.TEN].DataMap = get_mapping_col_ten();
+          
+        }
+      
         private void load_cbo_ma_quyet_dinh()
         {
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.MA_QUYET_DINH
@@ -239,8 +278,6 @@ namespace BKI_HRM
             m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
         }
         #endregion
-
-
 
         #region Events
         private void f206_v_gd_cong_tac_de_Load(object sender, EventArgs e)
@@ -360,14 +397,21 @@ namespace BKI_HRM
         }
         private void m_fg_Click(object sender, EventArgs e)
         {
-            US_V_GD_CONG_TAC v_us = new US_V_GD_CONG_TAC();
-            F206_chi_tiet_cong_tac v_frm = new F206_chi_tiet_cong_tac();
-            v_frm.display(ref v_us);
-            us_object2grid(v_us, m_fg.Row);
+            string v_str_mo_ta = "";
+            if (m_fg.Col == (int)e_col_Number.MO_TA_CONG_VIEC)
+            {
+                F206_chi_tiet_cong_tac v_frm = new F206_chi_tiet_cong_tac();
+                if (m_fg.Rows[m_fg.Row][m_fg.Col] == null)
+                {
+                    v_frm.display("", ref v_str_mo_ta);
+                }
+                else
+                    v_frm.display(CIPConvert.ToStr(m_fg.Rows[m_fg.Row][m_fg.Col]), ref v_str_mo_ta);
+                m_fg.Rows[m_fg.Row][m_fg.Col] = v_str_mo_ta;
+            }
+
         }
         #endregion
-
-
     }
 
 
