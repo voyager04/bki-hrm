@@ -774,10 +774,12 @@ namespace BKI_HRM
 
         private void select_nhan_vien_du_an()
         {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg_nhan_su)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg_nhan_su, m_fg_nhan_su.Row)) return;
+            grid2us_object_nhan_su(m_us_nhan_su, m_fg_nhan_su.Row);
+
             F500_gd_chi_tiet_du_an_de v_fDE = new F500_gd_chi_tiet_du_an_de();
-            DataRow v_dr = (DataRow)m_fg_nhan_su.Rows[m_dc_index_row_chi_tiet_da].UserData;
-            decimal v_dc_id_chi_tiet_du_an = (decimal)v_dr["ID"];
-            v_fDE.display_for_update(v_dc_id_chi_tiet_du_an, m_us_du_an);
+            v_fDE.display_for_update(m_us_nhan_su.dcID, m_us_du_an);
             load_data_2_grid_nhan_su();
         }
         #endregion

@@ -386,7 +386,7 @@ namespace BKI_HRM
             this.m_cbo_tim_kiem_theo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_tim_kiem_theo.FormattingEnabled = true;
             this.m_cbo_tim_kiem_theo.Items.AddRange(new object[] {
-            "----------- Tất cả -----------",
+            "----------- Không tìm kiếm -----------",
             "Ngày ký hợp đồng",
             "Ngày hợp đồng có hiệu lực",
             "Ngày hợp đồng hết hiệu lực"});

@@ -320,7 +320,7 @@ namespace BKI_HRM
             this.m_cbo_tim_kiem_theo_ngay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_tim_kiem_theo_ngay.FormattingEnabled = true;
             this.m_cbo_tim_kiem_theo_ngay.Items.AddRange(new object[] {
-            "-------- Tất cả -------",
+            "-------- Không tìm kiếm -------",
             "Thời điểm tham gia",
             "Thời điểm kết thúc"});
             this.m_cbo_tim_kiem_theo_ngay.Location = new System.Drawing.Point(98, 21);
@@ -502,10 +502,10 @@ namespace BKI_HRM
             
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.None // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
              , 0
              , (int)e_col_Number.MA_DU_AN // chỗ này là tên trường mà mình nhóm
-             , (int)e_col_Number.MA_NV // chỗ này là tên trường mà mình Count
+             , (int)e_col_Number.TEN // chỗ này là tên trường mà mình Count
              , "{0}"
              );
             m_fg.Redraw = true;
