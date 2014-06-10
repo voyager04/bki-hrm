@@ -105,6 +105,8 @@ namespace BKI_HRM
             Checkbox_Combobox.CheckBoxProperties checkBoxProperties1 = new Checkbox_Combobox.CheckBoxProperties();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_txt_trinh_do = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.m_dat_thoi_diem = new System.Windows.Forms.DateTimePicker();
             this.m_grb_ngay_sinh = new System.Windows.Forms.GroupBox();
             this.m_dat_den_ngay = new System.Windows.Forms.DateTimePicker();
@@ -133,8 +135,6 @@ namespace BKI_HRM
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_txt_trinh_do = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.m_grb_ngay_sinh.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -195,6 +195,26 @@ namespace BKI_HRM
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1189, 133);
             this.panel1.TabIndex = 24;
+            // 
+            // m_txt_trinh_do
+            // 
+            this.m_txt_trinh_do.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_txt_trinh_do.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.m_txt_trinh_do.Location = new System.Drawing.Point(1018, 67);
+            this.m_txt_trinh_do.Name = "m_txt_trinh_do";
+            this.m_txt_trinh_do.Size = new System.Drawing.Size(142, 20);
+            this.m_txt_trinh_do.TabIndex = 45;
+            this.m_tooltip.SetToolTip(this.m_txt_trinh_do, "Gợi ý tìm kiếm:\r\nGiới tính: nữ, đơn vị: Phòng hành chính\r\nhoặc Nguyễn Danh Tú, gi" +
+                    "ới tính: Nam");
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(965, 70);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "Trình độ";
             // 
             // m_dat_thoi_diem
             // 
@@ -479,26 +499,6 @@ namespace BKI_HRM
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 32;
             // 
-            // m_txt_trinh_do
-            // 
-            this.m_txt_trinh_do.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.m_txt_trinh_do.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_trinh_do.Location = new System.Drawing.Point(1018, 67);
-            this.m_txt_trinh_do.Name = "m_txt_trinh_do";
-            this.m_txt_trinh_do.Size = new System.Drawing.Size(142, 20);
-            this.m_txt_trinh_do.TabIndex = 45;
-            this.m_tooltip.SetToolTip(this.m_txt_trinh_do, "Gợi ý tìm kiếm:\r\nGiới tính: nữ, đơn vị: Phòng hành chính\r\nhoặc Nguyễn Danh Tú, gi" +
-                    "ới tính: Nam");
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(965, 70);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 46;
-            this.label1.Text = "Trình độ";
-            // 
             // f103_bao_cao_tra_cuu_nhan_su
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -560,6 +560,8 @@ namespace BKI_HRM
         #region Data Structure
         private enum e_col_Number
         {
+            MA_HEADCOUNT = 7
+                ,
             LOAI_DON_VI = 4
 ,
             TEN_DON_VI = 3
@@ -568,34 +570,34 @@ namespace BKI_HRM
                 ,
             CAP_DON_VI = 5
                 ,
-            TRANG_THAI_LAO_DONG = 13
+            TRANG_THAI_LAO_DONG = 14
                 ,
             DIA_BAN = 1
                 ,
-            TEN = 8
+            TEN = 9
                 ,
-            NGAY_CO_HIEU_LUC = 16
+            NGAY_CO_HIEU_LUC = 17
                 ,
-            TRANG_THAI_HIEN_TAI = 15
+            TRANG_THAI_HIEN_TAI = 16
                 ,
             MA_DON_VI = 2
                 ,
-            HO_DEM = 7
+            HO_DEM = 8
                 ,
-            TY_LE_THAM_GIA = 12
+            TY_LE_THAM_GIA = 13
                 ,
-            TEN_CV = 10
+            TEN_CV = 11
                 ,
-            NGAY_HET_HIEU_LUC = 14
+            NGAY_HET_HIEU_LUC = 15
                 ,
-            NGAY_SINH = 17
+            NGAY_SINH = 18
                 ,
-            TRINH_DO = 19
+            TRINH_DO = 20
                 ,
-            TRANG_THAI_CV = 11
+            TRANG_THAI_CV = 12
                 ,
-            GIOI_TINH = 18
-                , MA_CV = 9
+            GIOI_TINH = 19
+                , MA_CV = 10
 
         }
         #endregion
@@ -719,6 +721,7 @@ namespace BKI_HRM
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRANG_THAI_CV, e_col_Number.TRANG_THAI_CV);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.GIOI_TINH, e_col_Number.GIOI_TINH);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_CV, e_col_Number.MA_CV);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_HEADCOUNT, e_col_Number.MA_HEADCOUNT);
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_DM_DU_LIEU_NHAN_VIEN.NewRow());
             return v_obj_trans;

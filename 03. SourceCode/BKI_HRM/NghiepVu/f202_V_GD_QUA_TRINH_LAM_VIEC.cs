@@ -433,7 +433,7 @@ namespace BKI_HRM
         }
         private void load_custom_source_2_m_txt_tim_kiem()
         {
-            int count = m_ds_qua_trinh_lam_viec.Tables["V_GD_QUA_TRINH_LAM_VIEC"].Rows.Count;
+          //  int count = m_ds_qua_trinh_lam_viec.Tables["V_GD_QUA_TRINH_LAM_VIEC"].Rows.Count;
             AutoCompleteStringCollection v_acsc_search = new AutoCompleteStringCollection();
             foreach (DataRow dr in m_ds_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC)
             {
