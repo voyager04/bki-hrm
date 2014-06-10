@@ -858,6 +858,28 @@ namespace BKI_HRM.US {
             pm_objDR["LOAI_QD_LD"] = System.Convert.DBNull;
         }
 
+        public string strMA_HEADCOUNT
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "MA_HEADCOUNT", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["MA_HEADCOUNT"] = value;
+            }
+        }
+
+        public bool IsMA_HEADCOUNTNull()
+        {
+            return pm_objDR.IsNull("MA_HEADCOUNT");
+        }
+
+        public void SetMA_HEADCOUNTNull()
+        {
+            pm_objDR["MA_HEADCOUNT"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_V_DM_DU_LIEU_NHAN_VIEN()

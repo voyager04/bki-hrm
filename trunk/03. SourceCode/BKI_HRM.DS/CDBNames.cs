@@ -545,6 +545,7 @@
        public const string NGAY_KY = "NGAY_KY";
        public const string NGAY_HET_HIEU_LUC_LD = "NGAY_HET_HIEU_LUC_LD";
        public const string LOAI_QD_LD = "LOAI_QD_LD";
+       public const string MA_HEADCOUNT = "MA_HEADCOUNT";
    }
 
 

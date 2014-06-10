@@ -72,6 +72,10 @@ namespace BKI_HRM
         DataEntryFormMode m_e_form_mode = new DataEntryFormMode();
         bool m_b_check_quyet_dinh_save;
         bool m_b_check_quyet_dinh_null = false;
+        ArrayList m_ar_txt_ma_nv = new ArrayList();
+        ArrayList m_ar_txt_ho_ten = new ArrayList();
+        TextBox m_txt_ma_nv = new TextBox();
+        TextBox m_txt_ho_ten = new TextBox();
         #endregion
 
         #region Private Methods
@@ -97,7 +101,9 @@ namespace BKI_HRM
                     break;
             }
             m_us_v_dm_nhan_su.FillDataset(m_ds_v_dm_nhan_su);
-            load_data_2_row();
+            //load_data_2_row();
+            load_custom_source_2_txt();
+            add_textbox_2_grid();
         }
         private void generate_ma_quyet_dinh()
         {
@@ -217,17 +223,7 @@ namespace BKI_HRM
         {
             Process.Start("explorer.exe", m_ofd_openfile.FileName);
         }
-        private void set_define_event()
-        {
-            m_cmd_chon_file.Click += new EventHandler(m_cmd_chon_file_Click);
-            m_cmd_xem_file.Click += new EventHandler(m_cmd_xem_file_Click);
-            m_cmd_them_quyet_dinh.Click += new EventHandler(m_cmd_them_quyet_dinh_Click);
-            m_cmd_chon_quyet_dinh.Click += new EventHandler(m_cmd_chon_quyet_dinh_Click);
-            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-            m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
-            m_fg.Click += new EventHandler(m_fg_Click);
-
-        }
+       
         private void them_quyet_dinh()
         {
             m_b_check_quyet_dinh_save = true;
@@ -278,12 +274,18 @@ namespace BKI_HRM
             }
             return v_hst;
         }
-       
+        private void _flex_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
+        {
+            foreach (HostedControl hosted in m_ar_txt_ma_nv)
+                hosted.UpdatePosition();
+            foreach (HostedControl hosted in m_ar_txt_ho_ten)
+                hosted.UpdatePosition();
+        }
         private void load_data_2_row()
         {
             m_fg.Cols[(int)e_col_Number.MA_NV].DataMap = get_mapping_col_ma_nv();
             m_fg.Cols[(int)e_col_Number.HO_TEN].DataMap = get_mapping_col_ho_ten();
-           
+            
         }
         private void load_edited_grid()
         {
@@ -311,6 +313,49 @@ namespace BKI_HRM
             DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
             i_us.Me2DataRow(v_dr);
             m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
+        }
+
+        private void load_custom_source_2_txt()
+        {
+            
+            AutoCompleteStringCollection v_acsc = new AutoCompleteStringCollection();
+            foreach (DataRow dr in m_ds_v_dm_nhan_su.V_DM_NHAN_SU)
+            {
+                v_acsc.Add(dr[V_DM_NHAN_SU.MA_NV].ToString());
+                v_acsc.Add(dr[V_DM_NHAN_SU.HO_TEN].ToString());
+            }
+            m_txt_ma_nv.AutoCompleteCustomSource = v_acsc;
+            m_txt_ho_ten.AutoCompleteCustomSource = v_acsc;
+        }
+
+        private void add_textbox_2_grid()
+        {
+            
+            foreach (Row r in m_fg.Rows)
+            {
+                if (r.Index > 0)
+                {
+                    m_txt_ma_nv.Tag = r.Index;
+                    m_txt_ho_ten.Tag = r.Index;
+
+                    m_ar_txt_ma_nv.Add(new HostedControl(m_fg, m_txt_ma_nv, r.Index, (int)e_col_Number.MA_NV));
+                    m_ar_txt_ho_ten.Add(new HostedControl(m_fg, m_txt_ho_ten, r.Index, (int)e_col_Number.HO_TEN));
+                }
+            }
+
+
+        }
+        private void set_define_event()
+        {
+            m_cmd_chon_file.Click += new EventHandler(m_cmd_chon_file_Click);
+            m_cmd_xem_file.Click += new EventHandler(m_cmd_xem_file_Click);
+            m_cmd_them_quyet_dinh.Click += new EventHandler(m_cmd_them_quyet_dinh_Click);
+            m_cmd_chon_quyet_dinh.Click += new EventHandler(m_cmd_chon_quyet_dinh_Click);
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
+            m_fg.Click += new EventHandler(m_fg_Click);
+            m_fg.Paint += new PaintEventHandler(_flex_Paint);
+
         }
         #endregion
 
@@ -452,6 +497,8 @@ namespace BKI_HRM
             try
             {
                 load_edited_grid();
+                TextBox v_txt_ = new TextBox();
+                m_fg.Controls.Add(v_txt_);
             }
             catch (Exception v_e)
             {
