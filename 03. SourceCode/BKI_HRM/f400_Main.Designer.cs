@@ -58,6 +58,7 @@ namespace BKI_HRM
             this.m_menuitem_thaydoi_chucvu_donvi = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_trangthailaodong = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_chi_tiet_cap_bac = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_menuitem_qua_trinh_di_cong_tac = new System.Windows.Forms.ToolStripMenuItem();
             this.dựÁnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_meuitem_ttduan = new System.Windows.Forms.ToolStripMenuItem();
             this.táchGộpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -88,7 +89,6 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky = new System.Windows.Forms.Label();
             this.m_lbl_sap_quay_lai = new System.Windows.Forms.Label();
             this.m_lbl_so_luong_nv_hien_tai = new System.Windows.Forms.Label();
-            this.m_menuitem_qua_trinh_di_cong_tac = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -315,6 +315,13 @@ namespace BKI_HRM
             this.m_menuitem_chi_tiet_cap_bac.Name = "m_menuitem_chi_tiet_cap_bac";
             this.m_menuitem_chi_tiet_cap_bac.Size = new System.Drawing.Size(204, 22);
             this.m_menuitem_chi_tiet_cap_bac.Text = "Chi tiết cấp bậc";
+            // 
+            // m_menuitem_qua_trinh_di_cong_tac
+            // 
+            this.m_menuitem_qua_trinh_di_cong_tac.Name = "m_menuitem_qua_trinh_di_cong_tac";
+            this.m_menuitem_qua_trinh_di_cong_tac.Size = new System.Drawing.Size(204, 22);
+            this.m_menuitem_qua_trinh_di_cong_tac.Text = "Quá trình đi công tác";
+            this.m_menuitem_qua_trinh_di_cong_tac.Click += new System.EventHandler(this.m_menuitem_qua_trinh_di_cong_tac_Click);
             // 
             // dựÁnToolStripMenuItem
             // 
@@ -584,13 +591,6 @@ namespace BKI_HRM
             this.m_lbl_so_luong_nv_hien_tai.TabIndex = 7;
             this.m_lbl_so_luong_nv_hien_tai.Text = "so luong nhan vien";
             this.m_lbl_so_luong_nv_hien_tai.Click += new System.EventHandler(this.m_lbl_so_luong_nv_hien_tai_Click);
-            // 
-            // m_menuitem_qua_trinh_di_cong_tac
-            // 
-            this.m_menuitem_qua_trinh_di_cong_tac.Name = "m_menuitem_qua_trinh_di_cong_tac";
-            this.m_menuitem_qua_trinh_di_cong_tac.Size = new System.Drawing.Size(204, 22);
-            this.m_menuitem_qua_trinh_di_cong_tac.Text = "Quá trình đi công tác";
-            this.m_menuitem_qua_trinh_di_cong_tac.Click += new System.EventHandler(this.m_menuitem_qua_trinh_di_cong_tac_Click);
             // 
             // f400_Main
             // 

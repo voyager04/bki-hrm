@@ -99,6 +99,16 @@ namespace BKI_HRM
             }
             //v_frm.display_nghi_sap_quay_lai();
         }
+
+        private void canh_bao_hop_dong()
+        {
+            f702_bao_cao_hdld frm = new f702_bao_cao_hdld();
+            m_lbl_thong_bao_hop_dong_sap_het_han.Text =
+                string.Format("Có {0} hợp đồng sắp hết hạn. Click để xem chi tiết!", frm.count_record_bao_cao_sap_het_han());
+            m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text =
+                string.Format("Có {0} hợp đồng đã quá hạn và chưa ký mới. Click để xem chi tiết!",
+                              frm.count_record_bao_cao_het_han_nhung_chua_ky_moi());
+        }
         #endregion
 
         #region Members
@@ -136,6 +146,7 @@ namespace BKI_HRM
                 nhan_vien_hien_tai();
                 thu_viec_sap_het_han();
                 nghi_viec_sap_quay_lai();
+                canh_bao_hop_dong();
             }
             catch (Exception v_e)
             {
@@ -259,6 +270,7 @@ namespace BKI_HRM
                 nhan_vien_hien_tai();
                 thu_viec_sap_het_han();
                 nghi_viec_sap_quay_lai();
+                canh_bao_hop_dong();
             }
             catch (Exception v_e)
             {
@@ -307,6 +319,7 @@ namespace BKI_HRM
                 nhan_vien_hien_tai();
                 thu_viec_sap_het_han();
                 nghi_viec_sap_quay_lai();
+                canh_bao_hop_dong();
             }
             catch (Exception v_e)
             {
@@ -349,12 +362,7 @@ namespace BKI_HRM
                 m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc. Click để xem chi tiết!",
                                                         frm502.count_record_du_an_sap_ket_thuc());
 
-                f702_bao_cao_hdld frm = new f702_bao_cao_hdld();
-                m_lbl_thong_bao_hop_dong_sap_het_han.Text =
-                    string.Format("Có {0} hợp đồng sắp hết hạn. Click để xem chi tiết!", frm.count_record_bao_cao_sap_het_han());
-                m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text =
-                    string.Format("Có {0} hợp đồng đã quá hạn và chưa ký mới. Click để xem chi tiết!",
-                                  frm.count_record_bao_cao_het_han_nhung_chua_ky_moi());
+                canh_bao_hop_dong();
 
                 thu_viec_sap_het_han();
                 nghi_viec_sap_quay_lai();
