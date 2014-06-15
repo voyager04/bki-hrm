@@ -456,7 +456,7 @@ namespace BKI_HRM
             this.m_cbo_tim_kiem_theo_ngay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_tim_kiem_theo_ngay.FormattingEnabled = true;
             this.m_cbo_tim_kiem_theo_ngay.Items.AddRange(new object[] {
-            "-------- Tất cả -------",
+            "-------- Không tìm kiếm -------",
             "Ngày bắt đầu",
             "Ngày kết thúc"});
             this.m_cbo_tim_kiem_theo_ngay.Location = new System.Drawing.Point(98, 21);

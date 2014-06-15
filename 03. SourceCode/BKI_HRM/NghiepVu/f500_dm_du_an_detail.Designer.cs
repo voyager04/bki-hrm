@@ -62,15 +62,16 @@
             this.m_dat_ngay_co_hieu_luc_qd = new System.Windows.Forms.DateTimePicker();
             this.m_txt_ma_quyet_dinh = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.m_lbl_link = new System.Windows.Forms.Label();
+            this.m_lbl_file_name = new System.Windows.Forms.Label();
             this.m_lbl_ngay_het_hieu_luc_qd = new System.Windows.Forms.Label();
             this.m_lbl_ngay_ky = new System.Windows.Forms.Label();
             this.m_lbl_ngay_co_hieu_luc_qd = new System.Windows.Forms.Label();
             this.m_lbl_loai_quyet_dinh = new System.Windows.Forms.Label();
             this.m_lbl_ma_quyet_dinh = new System.Windows.Forms.Label();
             this.m_cmd_chon_quyet_dinh = new SIS.Controls.Button.SiSButton();
-            this.m_ofd_openfile = new System.Windows.Forms.OpenFileDialog();
             this.m_cmd_them_quyet_dinh = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_go_dinh_kem = new SIS.Controls.Button.SiSButton();
+            this.m_ofd_chon_file = new System.Windows.Forms.OpenFileDialog();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.m_grb_quyet_dinh.SuspendLayout();
@@ -334,6 +335,7 @@
             // 
             // m_grb_quyet_dinh
             // 
+            this.m_grb_quyet_dinh.Controls.Add(this.m_cmd_go_dinh_kem);
             this.m_grb_quyet_dinh.Controls.Add(this.m_lbl_loai_qd);
             this.m_grb_quyet_dinh.Controls.Add(this.m_cmd_xem_file);
             this.m_grb_quyet_dinh.Controls.Add(this.m_cmd_chon_file);
@@ -343,7 +345,7 @@
             this.m_grb_quyet_dinh.Controls.Add(this.m_dat_ngay_co_hieu_luc_qd);
             this.m_grb_quyet_dinh.Controls.Add(this.m_txt_ma_quyet_dinh);
             this.m_grb_quyet_dinh.Controls.Add(this.label1);
-            this.m_grb_quyet_dinh.Controls.Add(this.m_lbl_link);
+            this.m_grb_quyet_dinh.Controls.Add(this.m_lbl_file_name);
             this.m_grb_quyet_dinh.Controls.Add(this.m_lbl_ngay_het_hieu_luc_qd);
             this.m_grb_quyet_dinh.Controls.Add(this.m_lbl_ngay_ky);
             this.m_grb_quyet_dinh.Controls.Add(this.m_lbl_ngay_co_hieu_luc_qd);
@@ -373,11 +375,12 @@
             this.m_cmd_xem_file.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_xem_file.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_xem_file.ImageIndex = 18;
-            this.m_cmd_xem_file.Location = new System.Drawing.Point(238, 214);
+            this.m_cmd_xem_file.Location = new System.Drawing.Point(141, 214);
             this.m_cmd_xem_file.Name = "m_cmd_xem_file";
             this.m_cmd_xem_file.Size = new System.Drawing.Size(99, 28);
             this.m_cmd_xem_file.TabIndex = 28;
-            this.m_cmd_xem_file.Text = "&Xem tài liệu";
+            this.m_cmd_xem_file.Text = "&Xem file";
+            this.m_cmd_xem_file.Click += new System.EventHandler(this.m_cmd_xem_file_Click);
             // 
             // m_cmd_chon_file
             // 
@@ -386,19 +389,20 @@
             this.m_cmd_chon_file.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_chon_file.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_chon_file.ImageIndex = 5;
-            this.m_cmd_chon_file.Location = new System.Drawing.Point(120, 214);
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(27, 214);
             this.m_cmd_chon_file.Name = "m_cmd_chon_file";
             this.m_cmd_chon_file.Size = new System.Drawing.Size(110, 28);
             this.m_cmd_chon_file.TabIndex = 28;
-            this.m_cmd_chon_file.Text = "&Chọn tài liệu";
+            this.m_cmd_chon_file.Text = "&Đính kèm file";
+            this.m_cmd_chon_file.Click += new System.EventHandler(this.m_cmd_chon_file_Click);
             // 
             // m_txt_noi_dung_quyet_dinh
             // 
             this.m_txt_noi_dung_quyet_dinh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_noi_dung_quyet_dinh.Location = new System.Drawing.Point(27, 273);
+            this.m_txt_noi_dung_quyet_dinh.Location = new System.Drawing.Point(27, 300);
             this.m_txt_noi_dung_quyet_dinh.Multiline = true;
             this.m_txt_noi_dung_quyet_dinh.Name = "m_txt_noi_dung_quyet_dinh";
-            this.m_txt_noi_dung_quyet_dinh.Size = new System.Drawing.Size(310, 92);
+            this.m_txt_noi_dung_quyet_dinh.Size = new System.Drawing.Size(310, 65);
             this.m_txt_noi_dung_quyet_dinh.TabIndex = 27;
             // 
             // m_dat_ngay_het_hieu_luc_qd
@@ -441,20 +445,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 254);
+            this.label1.Location = new System.Drawing.Point(30, 274);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 20;
             this.label1.Text = "Nội dung";
             // 
-            // m_lbl_link
+            // m_lbl_file_name
             // 
-            this.m_lbl_link.AutoSize = true;
-            this.m_lbl_link.Location = new System.Drawing.Point(18, 222);
-            this.m_lbl_link.Name = "m_lbl_link";
-            this.m_lbl_link.Size = new System.Drawing.Size(90, 13);
-            this.m_lbl_link.TabIndex = 19;
-            this.m_lbl_link.Text = "Tài liệu đính kèm";
+            this.m_lbl_file_name.AutoSize = true;
+            this.m_lbl_file_name.Location = new System.Drawing.Point(24, 254);
+            this.m_lbl_file_name.Name = "m_lbl_file_name";
+            this.m_lbl_file_name.Size = new System.Drawing.Size(90, 13);
+            this.m_lbl_file_name.TabIndex = 19;
+            this.m_lbl_file_name.Text = "Tài liệu đính kèm";
             // 
             // m_lbl_ngay_het_hieu_luc_qd
             // 
@@ -529,6 +533,24 @@
             this.m_cmd_them_quyet_dinh.Text = "Tạo mới quyết định";
             this.m_cmd_them_quyet_dinh.Click += new System.EventHandler(this.m_cmd_them_quyet_dinh_Click);
             // 
+            // m_cmd_go_dinh_kem
+            // 
+            this.m_cmd_go_dinh_kem.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_go_dinh_kem.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_go_dinh_kem.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_go_dinh_kem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_go_dinh_kem.ImageIndex = 5;
+            this.m_cmd_go_dinh_kem.Location = new System.Drawing.Point(243, 214);
+            this.m_cmd_go_dinh_kem.Name = "m_cmd_go_dinh_kem";
+            this.m_cmd_go_dinh_kem.Size = new System.Drawing.Size(110, 28);
+            this.m_cmd_go_dinh_kem.TabIndex = 30;
+            this.m_cmd_go_dinh_kem.Text = "&Gỡ đính kèm";
+            this.m_cmd_go_dinh_kem.Click += new System.EventHandler(this.m_cmd_go_dinh_kem_Click);
+            // 
+            // m_ofd_chon_file
+            // 
+            this.m_ofd_chon_file.FileName = "openFileDialog1";
+            // 
             // f500_dm_du_an_detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -589,11 +611,12 @@
         private System.Windows.Forms.Label m_lbl_loai_quyet_dinh;
         private System.Windows.Forms.Label m_lbl_ma_quyet_dinh;
         internal SIS.Controls.Button.SiSButton m_cmd_chon_quyet_dinh;
-        private System.Windows.Forms.OpenFileDialog m_ofd_openfile;
         internal SIS.Controls.Button.SiSButton m_cmd_xem_file;
         internal SIS.Controls.Button.SiSButton m_cmd_chon_file;
-        private System.Windows.Forms.Label m_lbl_link;
+        private System.Windows.Forms.Label m_lbl_file_name;
         internal SIS.Controls.Button.SiSButton m_cmd_them_quyet_dinh;
+        internal SIS.Controls.Button.SiSButton m_cmd_go_dinh_kem;
+        private System.Windows.Forms.OpenFileDialog m_ofd_chon_file;
 
     }
 }
