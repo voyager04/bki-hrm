@@ -68,6 +68,7 @@ namespace BKI_HRM.NghiepVu
         US_V_GD_HOP_DONG_LAO_DONG m_us_v = new US_V_GD_HOP_DONG_LAO_DONG();
         DS_V_GD_HOP_DONG_LAO_DONG m_ds_v = new DS_V_GD_HOP_DONG_LAO_DONG();
         US_DM_NHAN_SU m_us_dm_nhan_su = new US_DM_NHAN_SU();
+
         private string m_str_to = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
         private string m_str_username_share = ConfigurationSettings.AppSettings["USERNAME_SHARE"];
         private string m_str_password_share = ConfigurationSettings.AppSettings["PASSWORD_SHARE"];
@@ -77,6 +78,7 @@ namespace BKI_HRM.NghiepVu
         private string m_str_path = "";
         private string m_str_time_now = DateTime.Now.Ticks.ToString();
         private string m_str_file_name_old = "";
+
         private decimal m_str_id_hop_dong_old;
         private bool m_b_status = false;
         #endregion
@@ -565,7 +567,6 @@ namespace BKI_HRM.NghiepVu
 
         private void m_cmd_bo_dinh_kem_Click(object sender, EventArgs e)
         {
-            string v_str_to = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
             if (File.Exists(m_us.strLINK))
             {
                 File.Delete(m_us.strLINK);
