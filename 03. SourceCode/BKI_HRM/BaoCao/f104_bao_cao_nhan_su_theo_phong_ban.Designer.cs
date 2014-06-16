@@ -254,10 +254,10 @@
             // m_fg
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 87);
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_fg.Location = new System.Drawing.Point(0, 81);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1189, 411);
+            this.m_fg.Size = new System.Drawing.Size(1189, 417);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 33;
             // 
@@ -302,9 +302,9 @@
         private System.Windows.Forms.Label m_lbl_thong_bao;
         private System.Windows.Forms.Label m_lbl_so_luong_ban_ghi;
         private System.Windows.Forms.Label label4;
-        private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton m_rdb_nhom;
         private System.Windows.Forms.RadioButton m_rdb_ko_nhom;
+        private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
     }
 }
