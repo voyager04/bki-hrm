@@ -91,6 +91,7 @@
     <Compile Include="US_V_GD_CONG_TAC.cs" />
     <Compile Include="US_V_GD_HOP_DONG_LAO_DONG.cs" />
     <Compile Include="US_V_GD_QUA_TRINH_LAM_VIEC.cs" />
+    <Compile Include="US_V_GD_QUA_TRINH_LAM_VIEC_2.cs" />
     <Compile Include="US_V_GD_QUYET_DINH.cs" />
     <Compile Include="US_V_GD_TRANG_THAI_LAO_DONG.cs" />
     <Compile Include="US_V_HT_CONTROL_IN_FORM.cs" />
