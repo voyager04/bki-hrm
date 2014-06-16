@@ -60,6 +60,8 @@ namespace BKI_HRM
         }
         private void load_data_2_grid()
         {
+            m_fg.Clear();
+            m_fg.Cols[0].Width = 10;
             m_us_1.FillDataset(m_ds_1, "ORDER BY ID_DON_VI_CAP_TREN DESC");
             v_us_dm_tu_dien.FillDataset(v_ds_dm_tu_dien, "WHERE Id_loai_tu_dien = 5 AND ID <> 655");
             //1.tạo danh sách cột trạng thái
