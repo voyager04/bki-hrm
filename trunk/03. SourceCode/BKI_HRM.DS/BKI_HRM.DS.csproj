@@ -245,6 +245,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_GD_QUA_TRINH_LAM_VIEC.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_GD_QUA_TRINH_LAM_VIEC_2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_GD_QUA_TRINH_LAM_VIEC_2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_GD_QUYET_DINH.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -700,6 +705,17 @@
     </None>
     <None Include="DS_V_GD_QUA_TRINH_LAM_VIEC.xss">
       <DependentUpon>DS_V_GD_QUA_TRINH_LAM_VIEC.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_QUA_TRINH_LAM_VIEC_2.xsc">
+      <DependentUpon>DS_V_GD_QUA_TRINH_LAM_VIEC_2.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_QUA_TRINH_LAM_VIEC_2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_GD_QUA_TRINH_LAM_VIEC_2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_GD_QUA_TRINH_LAM_VIEC_2.xss">
+      <DependentUpon>DS_V_GD_QUA_TRINH_LAM_VIEC_2.xsd</DependentUpon>
     </None>
     <None Include="DS_V_GD_QUYET_DINH.xsc">
       <DependentUpon>DS_V_GD_QUYET_DINH.xsd</DependentUpon>
