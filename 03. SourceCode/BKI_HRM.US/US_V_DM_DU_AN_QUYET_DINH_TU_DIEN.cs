@@ -360,6 +360,7 @@ namespace BKI_HRM.US
         #endregion
 
     public void FillDatasetSearch(DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN op_ds, 
+                                  decimal v_dc_form_mode,
                                   string i_str_search, 
                                   DateTime v_dat_tu_ngay, 
                                   DateTime v_dat_den_ngay, 
@@ -369,6 +370,7 @@ namespace BKI_HRM.US
                                   decimal v_dc_tim_kiem_theo_ngay)
     {
         CStoredProc v_sp = new CStoredProc("pr_V_DM_DU_AN_QUYET_DINH_TU_DIEN_search");
+        v_sp.addDecimalInputParam("@form_mode", v_dc_form_mode);
         v_sp.addNVarcharInputParam("@str_search", i_str_search);
         v_sp.addDatetimeInputParam("@tu_ngay", v_dat_tu_ngay);
         v_sp.addDatetimeInputParam("@den_ngay", v_dat_den_ngay);

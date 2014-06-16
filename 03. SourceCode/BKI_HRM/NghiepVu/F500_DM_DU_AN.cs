@@ -548,7 +548,6 @@ namespace BKI_HRM
         #endregion
 
         #region Members
-        bool trang_thai = true;
         int m_dc_index_row_chi_tiet_da = 1;
         ITransferDataRow m_obj_trans_du_an;
         ITransferDataRow m_obj_trans_nhan_su;
@@ -557,6 +556,8 @@ namespace BKI_HRM
         DS_V_DM_NHAN_SU_DU_AN m_ds_nhan_su = new DS_V_DM_NHAN_SU_DU_AN();
         US_V_DM_NHAN_SU_DU_AN m_us_nhan_su = new US_V_DM_NHAN_SU_DU_AN();
         private string m_str_suggest = "Nhập mã dự án, tên dự án, mã quyết định";
+
+        private int m_i_is_report = 0;
         #endregion
 
         #region Private Methods
@@ -652,8 +653,10 @@ namespace BKI_HRM
             {
                 return;
             }
+
             if (m_cbo_tim_kiem_theo_ngay.SelectedIndex == 0)
                 m_us_du_an.FillDatasetSearch(m_ds_du_an,
+                                        m_i_is_report,
                                         v_str_search,
                                         m_dat_tu_ngay.Value,
                                         m_dat_den_ngay.Value,
@@ -663,6 +666,7 @@ namespace BKI_HRM
                                         0);
             if (m_cbo_tim_kiem_theo_ngay.SelectedIndex == 1)
                 m_us_du_an.FillDatasetSearch(m_ds_du_an,
+                                        m_i_is_report,
                                         v_str_search,
                                         m_dat_tu_ngay.Value,
                                         m_dat_den_ngay.Value,
@@ -672,6 +676,7 @@ namespace BKI_HRM
                                         1);
             if (m_cbo_tim_kiem_theo_ngay.SelectedIndex == 2)
                 m_us_du_an.FillDatasetSearch(m_ds_du_an,
+                                        m_i_is_report,
                                         v_str_search,
                                         m_dat_tu_ngay.Value,
                                         m_dat_den_ngay.Value,
@@ -679,7 +684,7 @@ namespace BKI_HRM
                                         decimal.Parse(m_cbo_loai_du_an.SelectedValue.ToString()),
                                         decimal.Parse(m_cbo_co_che.SelectedValue.ToString()),
                                         2);
-
+            
             m_fg_du_an.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds_du_an, m_fg_du_an, m_obj_trans_du_an);
             m_fg_du_an.Redraw = true;
@@ -790,9 +795,6 @@ namespace BKI_HRM
         {
             try
             {
-                if (!trang_thai)
-                    return;
-
                 set_initial_form_load();
 
             }
@@ -870,15 +872,7 @@ namespace BKI_HRM
                 m_cmd_delete.Visible = false;
                 m_cmd_insert.Visible = false;
                 m_cmd_update.Visible = false;
-                m_obj_trans_du_an = get_trans_object_du_an(m_fg_du_an);
-                US.US_V_DM_DU_AN_QUYET_DINH_TU_DIEN v_us = new US_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
-                DS.DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN v_ds = new DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
-                v_us.FillDatasetSapKetThuc(v_ds, DateTime.Now.Date);
-                m_fg_du_an.Redraw = false;
-                CGridUtils.Dataset2C1Grid(v_ds, m_fg_du_an, m_obj_trans_du_an);
-                m_fg_du_an.Redraw = true;
-                trang_thai = false;
-                this.Show();
+                m_i_is_report = 1;
             }
             catch (Exception v_e)
             {

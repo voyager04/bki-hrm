@@ -380,6 +380,7 @@ namespace BKI_HRM
             {
                 F500_DM_DU_AN frm = new F500_DM_DU_AN();
                 frm.DisplaySapKetThuc();
+                frm.Show();
                 f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
                 m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc. Click để xem chi tiết!",
                                                         frm502.count_record_du_an_sap_ket_thuc());
