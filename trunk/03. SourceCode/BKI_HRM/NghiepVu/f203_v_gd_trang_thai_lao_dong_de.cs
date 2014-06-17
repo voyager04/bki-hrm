@@ -94,6 +94,8 @@ namespace BKI_HRM
             m_cmd_save.Enabled = true;
             m_cmd_refresh.Enabled = true;
             m_cmd_exit.Enabled = true;
+
+            load_cbo_ma_quyet_dinh();
         }
 
         private void us_object_to_form()
@@ -215,7 +217,7 @@ namespace BKI_HRM
         }
         private void form_to_us_object_quyet_dinh()
         {
-            m_us_quyet_dinh.strMA_QUYET_DINH = m_txt_ma_quyet_dinh.Text.Trim();
+            m_us_quyet_dinh.strMA_QUYET_DINH = m_lbl_ma_qd.Text;
             m_us_quyet_dinh.strNOI_DUNG = m_txt_noi_dung.Text.Trim();
             m_us_quyet_dinh.strLINK = m_ofd_openfile.FileName;
             m_us_quyet_dinh.dcID_LOAI_QD = CIPConvert.ToDecimal(m_cbo_loai_quyet_dinh.SelectedValue);
@@ -239,6 +241,13 @@ namespace BKI_HRM
                 m_us_trang_thai_ld.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc.Value;
 
             m_us_trang_thai_ld.strTRANG_THAI_HIEN_TAI = "Y";
+        }
+
+        private void load_cbo_ma_quyet_dinh()
+        {
+            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.MA_QUYET_DINH
+                , WinFormControls.eTAT_CA.NO
+                , m_cbo_ma_quyet_dinh);
         }
         private void chon_file()
         {
@@ -383,13 +392,21 @@ namespace BKI_HRM
             }
 
         }
-
+        private void generate_ma_quyet_dinh()
+        {
+            m_lbl_ma_qd.Text = string.Format("{0}/{1}/{2}", m_txt_ma_quyet_dinh.Text,
+                                                                  m_dat_ngay_ky.Value.Year,
+                                                                  m_cbo_ma_quyet_dinh.Text);
+        }
         private void set_define_event()
         {
             this.Load += new EventHandler(f203_v_gd_trang_thai_lao_dong_de_Load);
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
             m_cmd_refresh.Click += new EventHandler(m_cmd_refresh_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+//             m_txt_ma_quyet_dinh.TextChanged += new EventHandler(m_txt_ma_quyet_dinh_TextChanged);
+//             m_cbo_ma_quyet_dinh.SelectedIndexChanged += new EventHandler(m_cbo_ma_quyet_dinh_SelectedIndexChanged);
+//             m_dat_ngay_ky.ValueChanged += new EventHandler(m_dat_ngay_ky_ValueChanged);
         }
         private void them_quyet_dinh()
         {
@@ -479,7 +496,41 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        private void m_txt_ma_quyet_dinh_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                generate_ma_quyet_dinh();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
+        private void m_cbo_ma_quyet_dinh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                generate_ma_quyet_dinh();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_dat_ngay_ky_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                generate_ma_quyet_dinh();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
         private void m_cmd_chon_file_Click(object sender, EventArgs e)
         {

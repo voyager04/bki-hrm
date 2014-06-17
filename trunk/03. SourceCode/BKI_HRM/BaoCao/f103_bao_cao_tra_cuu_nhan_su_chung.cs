@@ -747,7 +747,7 @@ namespace BKI_HRM
                     m_lbl_so_luong_nv.Text = "Số lượng nhân viên nghỉ việc sắp quay lại: ";
                     m_lbl_so_luong_nv.Text += v_dc_so_luong_nv.ToString();
                     m_us.FillDatasetSearch(m_ds
-                        , m_str_search
+                        , m_txt_search.Text.Trim()
                         , m_txt_trinh_do.Text.Trim()
                         , CIPConvert.ToDecimal(m_cbo_chon_chuc_vu.SelectedValue)
                         , CIPConvert.ToDecimal(m_cbo_chon_don_vi.SelectedValue)
@@ -770,7 +770,7 @@ namespace BKI_HRM
                         m_lbl_so_luong_nv.Text = "Số lượng nhân viên thử việc sắp hết hạn: ";
                         m_lbl_so_luong_nv.Text += v_dc_so_luong_nv.ToString();
                         m_us.FillDatasetSearch(m_ds
-                            , m_str_search
+                            , m_txt_search.Text.Trim()
                             , m_txt_trinh_do.Text.Trim()
                             , CIPConvert.ToDecimal(m_cbo_chon_chuc_vu.SelectedValue)
                             , CIPConvert.ToDecimal(m_cbo_chon_don_vi.SelectedValue)
@@ -795,7 +795,7 @@ namespace BKI_HRM
                 m_lbl_so_luong_nv.Text += v_dc_so_luong_nv.ToString();
                 m_list_key_value = get_list_key_value(m_txt_search.Text);
                 refresh_key_value();
-                get_key_value_from_txt_search();
+           //     get_key_value_from_txt_search();
                 init_key_value();
                 m_us.FillDatasetSearch(m_ds
                         , m_str_search
