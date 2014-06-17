@@ -15,6 +15,8 @@ using BKI_HRM.US;
 using BKI_HRM.DS;
 using BKI_HRM.DS.CDBNames;
 using System.Diagnostics;
+using System.Configuration;
+using System.IO;
 
 namespace BKI_HRM
 {
@@ -48,6 +50,7 @@ namespace BKI_HRM
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             m_us_v_qua_trinh_lam_viec = ip_us_qua_trinh_lam_viec;
             m_dat_ngay_ket_thuc.ShowCheckBox = false;
+            
             us_object_to_form();
             this.ShowDialog();
         }
@@ -78,6 +81,18 @@ namespace BKI_HRM
         bool m_b_check_quyet_dinh_save;
         string m_str_loai_thay_doi;
         bool m_b_check_is_mien_nhiem = false;
+
+
+        private string m_str_to = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
+        private string m_str_username_share = ConfigurationSettings.AppSettings["USERNAME_SHARE"];
+        private string m_str_password_share = ConfigurationSettings.AppSettings["PASSWORD_SHARE"];
+        private string m_str_domain = ConfigurationSettings.AppSettings["DOMAIN"];
+        private string m_str_from = "";
+        private string m_str_file_name = "";
+        private string m_str_path = "";
+        private string m_str_time_now = DateTime.Now.Ticks.ToString();
+        private string m_str_file_name_old = "";
+        private bool m_b_status = false;
         #endregion
 
         #region Private Methods
@@ -88,17 +103,91 @@ namespace BKI_HRM
             load_data_to_cbo();
 
         }
-        private void chon_file()
+        private void generate_ma_quyet_dinh()
         {
-            m_ofd_openfile.Filter = "(*.pdf)|*.pdf|(*.doc)|*.doc|(*.docx)|*.docx|(*.xls)|*.xls|(*.xlsx)|*.xlsx";
-            m_ofd_openfile.Multiselect = false;
-            m_ofd_openfile.Title = "Chọn tài liệu đính kèm";
-            DialogResult result = m_ofd_openfile.ShowDialog();
+            m_lbl_ma_qd.Text = string.Format("{0}/{1}/{2}", m_txt_ma_quyet_dinh.Text,
+                                                                  m_dat_ngay_ky.Value.Year,
+                                                                  m_cbo_ma_quyet_dinh.Text);
         }
         private void mo_file()
         {
             Process.Start("explorer.exe", m_ofd_openfile.FileName);
         }
+
+        private void chon_file()
+        {
+            m_ofd_openfile.Filter = "(*.pdf)|*.pdf|(*.doc)|*.doc|(*.docx)|*.docx|(*.xls)|*.xls|(*.xlsx)|*.xlsx";
+            m_ofd_openfile.Multiselect = false;
+            m_ofd_openfile.Title = "Chọn tài liệu đính kèm";
+            m_ofd_openfile.FileName = "";
+            DialogResult result = m_ofd_openfile.ShowDialog();
+            if (result != DialogResult.OK) return;
+
+            if (new FileInfo(m_ofd_openfile.FileName).Length > 5096000)
+            {
+                BaseMessages.MsgBox_Infor("File đính kèm quá lớn. \nVui lòng chọn file có dung lượng < 5Mb");
+                return;
+            }
+            m_str_file_name = m_ofd_openfile.SafeFileName;
+            m_lbl_file_name.Text = m_str_file_name;
+            m_str_from = m_ofd_openfile.FileName;
+            var v_i_index = m_str_from.Trim().LastIndexOf("\\");
+            m_str_path = m_str_from.Trim().Substring(0, v_i_index + 1);
+        }
+
+        private bool existed_file(string ip_str_path)
+        {
+            if (File.Exists(ip_str_path))
+                return true;
+            return false;
+        }
+
+        private void upload_file()
+        {
+            if (m_str_file_name == "")
+            {
+                m_us_quyet_dinh.strLINK = "";
+                return;
+            }
+            modify_name_file(m_str_from, m_str_path + m_str_time_now + "-" + m_str_file_name);
+
+            var oNetworkCredential =
+                    new System.Net.NetworkCredential()
+                    {
+                        Domain = m_str_domain,
+                        UserName = m_str_domain + "\\" + m_str_username_share,
+                        Password = m_str_password_share
+                    };
+
+            using (new RemoteAccessHelper.NetworkConnection(@"\\" + m_str_domain, oNetworkCredential))
+            {
+                File.Move(m_str_path + m_str_time_now + "-" + m_str_file_name,
+                            m_str_to + m_str_time_now + "-" + m_str_file_name);
+            }
+
+            m_us_quyet_dinh.strLINK = m_str_time_now + "-" + m_str_file_name;
+            m_b_status = true;
+        }
+
+        private void modify_name_file(string ip_str_source_file_name, string ip_str_desination_file_name)
+        {
+            //Coppy file mới
+            File.Copy(ip_str_source_file_name, m_str_path + "topica" + m_str_file_name);
+            //Đổi tên file mới
+            File.Move(m_str_path + "topica" + m_str_file_name, ip_str_desination_file_name);
+        }
+
+        private void delete_file(string ip_str_path)
+        {
+            if (existed_file(m_str_from))
+            {
+                File.Delete(ip_str_path);
+                return;
+            }
+            BaseMessages.MsgBox_Infor("File không tồn tại.");
+        }
+
+
         private void load_data_to_cbo()
         {
             //WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.LOAI_QUYET_DINH,
@@ -143,6 +232,18 @@ namespace BKI_HRM
                     m_cbo_loai_quyet_dinh.DataSource = v_ds_loai_quyet_dinh.CM_DM_TU_DIEN;
                     m_cbo_loai_quyet_dinh.DisplayMember = CM_DM_TU_DIEN.TEN;
                     m_cbo_loai_quyet_dinh.ValueMember = CM_DM_TU_DIEN.ID;
+                    if (m_us_v_qua_trinh_lam_viec.dcID_QUYET_DINH != 0)
+                    {
+                        US_DM_QUYET_DINH v_us_quyet_dinh = new US_DM_QUYET_DINH(m_us_v_qua_trinh_lam_viec.dcID_QUYET_DINH);
+                        m_str_file_name_old = v_us_quyet_dinh.strLINK;
+                        if (v_us_quyet_dinh.strLINK == "") return;
+                        string[] v_strs = v_us_quyet_dinh.strLINK.Split('\\');
+                        m_lbl_file_name.Text = v_strs[v_strs.Length - 1].Split('-')[v_strs[v_strs.Length - 1].Split('-').Length - 1];
+                    }
+                    
+                    
+                    
+                    
                     break;
                 case DataEntryFormMode.UpdateDataState:
 
@@ -175,42 +276,17 @@ namespace BKI_HRM
                     m_cmd_chon_don_vi.Visible = false;
                     m_cbo_loai_chuc_vu.Enabled = false;
                     m_dat_ngay_bat_dau.Enabled = false;
-                    //if (m_us_v_qua_trinh_lam_viec.dcID_QUYET_DINH != null)
-                    //{
-                    //    m_us_quyet_dinh.FillDataset_By_Ma_qd(m_ds_quyet_dinh, m_us_v_qua_trinh_lam_viec.strMA_QUYET_DINH);
-                    //    if (m_ds_quyet_dinh.DM_QUYET_DINH.Select("MA_QUYET_DINH is not null").Length > 0)
-                    //    {
-                    //        m_ofd_openfile.FileName = m_us_quyet_dinh.strLINK;
-                    //        m_txt_ma_quyet_dinh.Text = m_us_v_qua_trinh_lam_viec.strMA_QUYET_DINH;
-                    //        m_us_quyet_dinh.DataRow2Me((DataRow)m_ds_quyet_dinh.DM_QUYET_DINH.Rows[0]);
-                    //        m_cbo_loai_quyet_dinh.SelectedValue = m_us_quyet_dinh.dcID_LOAI_QD;
-                    //        m_dat_ngay_ky.Value = m_us_quyet_dinh.datNGAY_KY;
-                    //        if (m_us_quyet_dinh.datNGAY_CO_HIEU_LUC > DateTime.Parse("01/01/1900"))
-                    //            m_dat_ngay_co_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_CO_HIEU_LUC;
-                    //        else
-                    //            m_dat_ngay_co_hieu_luc_qd.Checked = false;
-                    //        if (m_us_quyet_dinh.datNGAY_HET_HIEU_LUC != null)
-                    //            m_dat_ngay_het_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_HET_HIEU_LUC;
-                    //        else
-                    //            m_dat_ngay_het_hieu_luc_qd.Checked = false;
-                    //        m_txt_noi_dung.Text = m_us_quyet_dinh.strNOI_DUNG;
-                    //        m_ofd_openfile.FileName = m_us_quyet_dinh.strLINK;
-                    //    }
-                    //    else
-                    //    {
-                    //        m_txt_ma_quyet_dinh.Text = "";
-                    //        m_cbo_loai_quyet_dinh.SelectedIndex = 0;
-                    //        m_dat_ngay_ky.Checked = false;
-                    //        m_dat_ngay_co_hieu_luc_qd.Checked = false;
-                    //        m_dat_ngay_het_hieu_luc_qd.Checked = false;
-                    //        m_txt_noi_dung.Text = "";
-                    //        m_ofd_openfile.FileName = "";
-                    //    }
-                    //}
-                    //else
-                    //{
-                    //    check_quyet_dinh_null = true;
-                    //}
+                    if (m_us_v_qua_trinh_lam_viec.dcID_QUYET_DINH_MIEN_NHIEM != 0)
+                    {
+                        US_DM_QUYET_DINH v_us_quyet_dinh_1 = new US_DM_QUYET_DINH(m_us_v_qua_trinh_lam_viec.dcID_QUYET_DINH_MIEN_NHIEM);
+                        m_str_file_name_old = v_us_quyet_dinh_1.strLINK;
+                        if (v_us_quyet_dinh_1.strLINK == "") return;
+                        string[] v_strs_1 = v_us_quyet_dinh_1.strLINK.Split('\\');
+                        m_lbl_file_name.Text = v_strs_1[v_strs_1.Length - 1].Split('-')[v_strs_1[v_strs_1.Length - 1].Split('-').Length - 1];
+                    }
+                    
+                    
+                    
                     break;
                 default: break;
             }
@@ -257,7 +333,7 @@ namespace BKI_HRM
         }
         private void form_to_us_object_quyet_dinh()
         {
-            m_us_quyet_dinh.strMA_QUYET_DINH = m_txt_ma_quyet_dinh.Text.Trim();
+            m_us_quyet_dinh.strMA_QUYET_DINH = m_lbl_ma_qd.Text;
             m_us_quyet_dinh.strNOI_DUNG = m_txt_noi_dung.Text.Trim();
             m_us_quyet_dinh.strLINK = m_ofd_openfile.FileName;
             m_us_quyet_dinh.dcID_LOAI_QD = CIPConvert.ToDecimal(m_cbo_loai_quyet_dinh.SelectedValue);
@@ -305,6 +381,13 @@ namespace BKI_HRM
         {
             if (confirm_save_data())
             {
+                
+                if (existed_file(m_str_to + m_str_time_now + "-" + m_str_file_name))
+                {
+                    BaseMessages.MsgBox_Infor("Tên file đã tồn tại, vui lòng đổi tên khác.");
+                    return;
+                }
+                upload_file();
                 switch (m_e_form_mode)
                 {
 
@@ -334,7 +417,7 @@ namespace BKI_HRM
                             m_us_chi_tiet_chuc_vu.Update();
 
                         }
-
+                       
                         break;
                     case DataEntryFormMode.InsertDataState:
                         decimal v_dc = 0;
@@ -568,6 +651,43 @@ namespace BKI_HRM
                 e.Handled = true;
             }
         }
+
+        private void m_txt_ma_quyet_dinh_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                generate_ma_quyet_dinh();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cbo_ma_quyet_dinh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                generate_ma_quyet_dinh();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_dat_ngay_ky_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                generate_ma_quyet_dinh();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
         #endregion
 
 

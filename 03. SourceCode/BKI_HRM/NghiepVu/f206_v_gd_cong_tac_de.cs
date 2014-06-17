@@ -73,7 +73,7 @@ namespace BKI_HRM
         bool m_b_check_quyet_dinh_save;
         bool m_b_check_quyet_dinh_null = false;
         ArrayList m_ar_txt_ma_nv = new ArrayList();
-        ArrayList m_ar_txt_ho_ten = new ArrayList();
+         ArrayList m_ar_txt_ho_ten = new ArrayList();
         TextBox m_txt_ma_nv = new TextBox();
         TextBox m_txt_ho_ten = new TextBox();
         #endregion
@@ -101,9 +101,9 @@ namespace BKI_HRM
                     break;
             }
             m_us_v_dm_nhan_su.FillDataset(m_ds_v_dm_nhan_su);
-            //load_data_2_row();
-            load_custom_source_2_txt();
-            add_textbox_2_grid();
+            load_data_2_row();
+//             load_custom_source_2_txt();
+//             add_textbox_2_grid();
         }
         private void generate_ma_quyet_dinh()
         {
@@ -117,7 +117,7 @@ namespace BKI_HRM
         }
         private void form_2_us_object_quyet_dinh()
         {
-            m_us_dm_quyet_dinh.strMA_QUYET_DINH = m_txt_ma_quyet_dinh.Text.Trim();
+            m_us_dm_quyet_dinh.strMA_QUYET_DINH = m_lbl_ma_qd.Text;
             m_us_dm_quyet_dinh.strNOI_DUNG = m_txt_noi_dung.Text.Trim();
             m_us_dm_quyet_dinh.strLINK = m_ofd_openfile.FileName;
             m_us_dm_quyet_dinh.datNGAY_KY = m_dat_ngay_ky.Value;
@@ -274,18 +274,26 @@ namespace BKI_HRM
             }
             return v_hst;
         }
-        private void _flex_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
-        {
-            foreach (HostedControl hosted in m_ar_txt_ma_nv)
-                hosted.UpdatePosition();
-            foreach (HostedControl hosted in m_ar_txt_ho_ten)
-                hosted.UpdatePosition();
-        }
+//         private void _flex_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
+//         {
+//             foreach (HostedControl hosted in m_ar_txt_ma_nv)
+//                 hosted.UpdatePosition();
+//             foreach (HostedControl hosted in m_ar_txt_ho_ten)
+//                 hosted.UpdatePosition();
+//         }
         private void load_data_2_row()
         {
             m_fg.Cols[(int)e_col_Number.MA_NV].DataMap = get_mapping_col_ma_nv();
             m_fg.Cols[(int)e_col_Number.HO_TEN].DataMap = get_mapping_col_ho_ten();
+
+
+            C1.Win.C1FlexGrid.CellStyle cs_list;
+            cs_list = m_fg.Styles.Add("Textstyle");
+            cs_list.DataType = typeof(decimal);
+            cs_list.DataMap = get_mapping_col_ma_nv();
             
+            m_fg.SetCellStyle(3, 1, cs_list);
+           
         }
         private void load_edited_grid()
         {
@@ -354,7 +362,7 @@ namespace BKI_HRM
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
             m_fg.Click += new EventHandler(m_fg_Click);
-            m_fg.Paint += new PaintEventHandler(_flex_Paint);
+       //     m_fg.Paint += new PaintEventHandler(_flex_Paint);
 
         }
         #endregion
@@ -497,8 +505,8 @@ namespace BKI_HRM
             try
             {
                 load_edited_grid();
-                TextBox v_txt_ = new TextBox();
-                m_fg.Controls.Add(v_txt_);
+//                 TextBox v_txt_ = new TextBox();
+//                 m_fg.Controls.Add(v_txt_);
             }
             catch (Exception v_e)
             {

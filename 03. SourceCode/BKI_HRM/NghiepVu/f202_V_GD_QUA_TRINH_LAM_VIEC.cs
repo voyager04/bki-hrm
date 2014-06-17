@@ -691,10 +691,6 @@ namespace BKI_HRM
             }
         }
 
-        private void m_cmd_thang_chuc_Click(object sender, EventArgs e)
-        {
-
-        }
         private void m_cmd_them_quyet_dinh_Click(object sender, EventArgs e)
         {
             try
