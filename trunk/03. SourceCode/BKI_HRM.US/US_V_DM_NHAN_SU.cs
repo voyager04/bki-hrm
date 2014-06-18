@@ -719,5 +719,11 @@ public class US_V_DM_NHAN_SU : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
+    public void FillDataset_search(DS_V_DM_NHAN_SU op_ds, string ip_str)
+    {
+        CStoredProc v_cst = new CStoredProc("pr_V_DM_NHAN_SU_search");
+        v_cst.addNVarcharInputParam("@ip_str", ip_str);
+        v_cst.fillDataSetByCommand(this, op_ds);
+    }
 	}
 }

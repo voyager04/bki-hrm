@@ -925,6 +925,7 @@ namespace BKI_HRM.US {
                                            // , DateTime ip_dat_thoi_diem
                                             , DateTime ip_dat_tu_ngay
                                             , DateTime ip_dat_den_ngay
+                                            , decimal ip_dc_thang_sinh
                                             , string ip_str_trang_thai_lao_dong
                                             , string ip_str_trang_thai_hien_tai
                                             , string ip_str_trang_thai_chuc_vu
@@ -938,6 +939,7 @@ namespace BKI_HRM.US {
             v_stored_proc.addDecimalInputParam("@ip_dc_id_dia_ban", ip_dc_id_dia_ban);
             v_stored_proc.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
             v_stored_proc.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
+            v_stored_proc.addDecimalInputParam("@ip_dc_thang_sinh", ip_dc_thang_sinh);
             v_stored_proc.addNVarcharInputParam("@ip_str_24_trang_thai_lao_dong", ip_str_trang_thai_lao_dong);
 
             v_stored_proc.addNVarcharInputParam("@ip_str_31_trang_thai_hien_tai", ip_str_trang_thai_hien_tai);
