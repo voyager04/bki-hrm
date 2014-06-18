@@ -44,42 +44,44 @@ namespace BKI_HRM {
                 ,
             MA_NV = 4
                 ,
-            NGAY_KET_THUC = 16
+            NGAY_KET_THUC = 13
                 ,
-            NGAY_BAT_DAU = 15
+            NGAY_BAT_DAU = 12
                 ,
             CAP_DON_VI = 9
                 ,
-            TRANG_THAI_CV = 18
+            TRANG_THAI_CV = 19
                 ,
-            LOAI_CV = 14
+            LOAI_CV = 11
                 ,
-            MA_QUYET_DINH = 11
+            MA_QUYET_DINH = 14
                 ,
             DIA_BAN = 1
                 ,
             TEN = 6
                 ,
-            NGAY_CO_HIEU_LUC = 12
+            LOAI_QD = 15
+                ,
+            NGAY_CO_HIEU_LUC = 16
                 ,
             MA_DON_VI = 2
                 ,
             HO_DEM = 5
                 ,
-            TY_LE_THAM_GIA = 20
+            TY_LE_THAM_GIA = 21
                 ,
             TEN_CV = 8
                 ,
-            NGAY_HET_HIEU_LUC = 13
+            NGAY_HET_HIEU_LUC = 17
                 ,
-            TRANG_THAI_LD_HIEN_TAI = 21
+            TRANG_THAI_LD_HIEN_TAI = 22
                 ,
             MA_CV = 7
                 ,
-            MA_QUYET_DINH_MIEN_NHIEM = 19
-                , NGACH = 17
+            MA_QUYET_DINH_MIEN_NHIEM = 20
+                , NGACH = 18
 
-        }			
+        }
         #endregion
 
         #region Members
@@ -141,6 +143,7 @@ namespace BKI_HRM {
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.MA_QUYET_DINH, e_col_Number.MA_QUYET_DINH);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.DIA_BAN, e_col_Number.DIA_BAN);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.TEN, e_col_Number.TEN);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.LOAI_QD, e_col_Number.LOAI_QD);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGAY_CO_HIEU_LUC, e_col_Number.NGAY_CO_HIEU_LUC);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.MA_DON_VI, e_col_Number.MA_DON_VI);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.HO_DEM, e_col_Number.HO_DEM);
