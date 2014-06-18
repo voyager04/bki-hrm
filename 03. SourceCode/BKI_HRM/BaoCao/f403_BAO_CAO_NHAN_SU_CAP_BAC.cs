@@ -333,7 +333,7 @@ namespace BKI_HRM
             m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count
               , 0
               , (int)e_col_Number.MA_CAP
-              , (int)e_col_Number.MA_BAC
+              , (int)e_col_Number.MA_NV
               , "{0}"
               );
 			m_fg.Redraw = true;
