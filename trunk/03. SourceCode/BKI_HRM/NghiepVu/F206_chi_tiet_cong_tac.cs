@@ -30,6 +30,7 @@ namespace BKI_HRM
         }
         public void display(string ip_str, ref string op_str)
         {
+            m_txt_mo_ta_cong_viec.Focus();
             m_str_ip = ip_str;
             m_txt_mo_ta_cong_viec.Text = m_str_ip;
             this.ShowDialog();

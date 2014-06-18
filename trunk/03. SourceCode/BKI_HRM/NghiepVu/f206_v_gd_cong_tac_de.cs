@@ -18,6 +18,7 @@ using System.Diagnostics;
 using IP.Core.IPSystemAdmin;
 using System.Collections;
 using C1.Win.C1FlexGrid;
+using System.Timers;
 
 namespace BKI_HRM
 {
@@ -74,8 +75,6 @@ namespace BKI_HRM
         bool m_b_check_quyet_dinh_null = false;
         ArrayList m_ar_txt_ma_nv = new ArrayList();
          ArrayList m_ar_txt_ho_ten = new ArrayList();
-        TextBox m_txt_ma_nv = new TextBox();
-        TextBox m_txt_ho_ten = new TextBox();
         #endregion
 
         #region Private Methods
@@ -101,9 +100,8 @@ namespace BKI_HRM
                     break;
             }
             m_us_v_dm_nhan_su.FillDataset(m_ds_v_dm_nhan_su);
-            load_data_2_row();
-//             load_custom_source_2_txt();
-//             add_textbox_2_grid();
+           
+            add_textbox_2_grid();
         }
         private void generate_ma_quyet_dinh()
         {
@@ -274,27 +272,15 @@ namespace BKI_HRM
             }
             return v_hst;
         }
-//         private void _flex_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
-//         {
-//             foreach (HostedControl hosted in m_ar_txt_ma_nv)
-//                 hosted.UpdatePosition();
-//             foreach (HostedControl hosted in m_ar_txt_ho_ten)
-//                 hosted.UpdatePosition();
-//         }
-        private void load_data_2_row()
+        private void _flex_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
         {
-            m_fg.Cols[(int)e_col_Number.MA_NV].DataMap = get_mapping_col_ma_nv();
-            m_fg.Cols[(int)e_col_Number.HO_TEN].DataMap = get_mapping_col_ho_ten();
-
-
-            C1.Win.C1FlexGrid.CellStyle cs_list;
-            cs_list = m_fg.Styles.Add("Textstyle");
-            cs_list.DataType = typeof(decimal);
-            cs_list.DataMap = get_mapping_col_ma_nv();
-            
-            m_fg.SetCellStyle(3, 1, cs_list);
+            foreach (HostedControl hosted in m_ar_txt_ma_nv)
+                hosted.UpdatePosition();
+            foreach (HostedControl hosted in m_ar_txt_ho_ten)
+                hosted.UpdatePosition();
            
         }
+      
         private void load_edited_grid()
         {
             switch (m_fg.Col)
@@ -323,36 +309,89 @@ namespace BKI_HRM
             m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
         }
 
-        private void load_custom_source_2_txt()
-        {
-            
-            AutoCompleteStringCollection v_acsc = new AutoCompleteStringCollection();
-            foreach (DataRow dr in m_ds_v_dm_nhan_su.V_DM_NHAN_SU)
-            {
-                v_acsc.Add(dr[V_DM_NHAN_SU.MA_NV].ToString());
-                v_acsc.Add(dr[V_DM_NHAN_SU.HO_TEN].ToString());
-            }
-            m_txt_ma_nv.AutoCompleteCustomSource = v_acsc;
-            m_txt_ho_ten.AutoCompleteCustomSource = v_acsc;
-        }
-
         private void add_textbox_2_grid()
         {
             
             foreach (Row r in m_fg.Rows)
             {
-                if (r.Index > 0)
+                if (r.Index > 0 && r.Index < m_fg.Rows.Count - 1)
                 {
-                    m_txt_ma_nv.Tag = r.Index;
-                    m_txt_ho_ten.Tag = r.Index;
+                    TextBox v_txt_ma_nv = new TextBox();
+                    TextBox v_txt_ho_ten = new TextBox();
+                    v_txt_ma_nv.TabIndex = r.Index;
+                    AutoCompleteStringCollection v_acsc_ma_nv = new AutoCompleteStringCollection();
+                    foreach (DataRow dr in m_ds_v_dm_nhan_su.V_DM_NHAN_SU)
+                    {
+                        v_acsc_ma_nv.Add(dr[V_DM_NHAN_SU.MA_NV].ToString());
+                    }
+                    AutoCompleteStringCollection v_acsc_ho_ten = new AutoCompleteStringCollection();
+                    foreach (DataRow dr in m_ds_v_dm_nhan_su.V_DM_NHAN_SU)
+                    {
+                        v_acsc_ho_ten.Add(dr[V_DM_NHAN_SU.HO_TEN].ToString());
+                    }
+                    v_txt_ma_nv.AutoCompleteMode = AutoCompleteMode.Suggest;
+                    v_txt_ma_nv.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                    v_txt_ma_nv.AutoCompleteCustomSource = v_acsc_ma_nv;
+                    v_txt_ho_ten.AutoCompleteMode = AutoCompleteMode.Suggest;
+                    v_txt_ho_ten.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                    v_txt_ho_ten.AutoCompleteCustomSource = v_acsc_ho_ten;
+                    m_ar_txt_ma_nv.Add(new HostedControl(m_fg, v_txt_ma_nv, r.Index, (int)e_col_Number.MA_NV));
+                    m_ar_txt_ho_ten.Add(new HostedControl(m_fg, v_txt_ho_ten, r.Index, (int)e_col_Number.HO_TEN));
 
-                    m_ar_txt_ma_nv.Add(new HostedControl(m_fg, m_txt_ma_nv, r.Index, (int)e_col_Number.MA_NV));
-                    m_ar_txt_ho_ten.Add(new HostedControl(m_fg, m_txt_ho_ten, r.Index, (int)e_col_Number.HO_TEN));
+                    v_txt_ma_nv.Leave += (sender, e) => v_txt_Leave(sender, e, v_txt_ma_nv.TabIndex, v_txt_ma_nv.Text, ref v_txt_ma_nv, ref v_txt_ho_ten);
+                    v_txt_ho_ten.Leave += (sender, e) => v_txt_Leave(sender, e, v_txt_ma_nv.TabIndex, v_txt_ho_ten.Text, ref v_txt_ma_nv, ref v_txt_ho_ten);
                 }
             }
 
 
         }
+
+        private void v_txt_Leave(object sender, EventArgs e, int ip_row, string ip_str, ref TextBox op_txt_ma_nv, ref TextBox op_txt_ho_ten)
+        {
+            try
+            {
+                US_V_DM_NHAN_SU v_us = new US_V_DM_NHAN_SU();
+                DS_V_DM_NHAN_SU v_ds = new DS_V_DM_NHAN_SU();
+                v_us.FillDataset_search(v_ds, ip_str);
+                if (v_ds.V_DM_NHAN_SU.Count == 0)
+                {
+                    MessageBox.Show("Mã nhân viên hoặc Họ Tên bạn nhập vào không chính xác !");
+                }
+                if (v_ds.V_DM_NHAN_SU.Count == 1)
+                {
+                    v_us.DataRow2Me((DataRow)v_ds.V_DM_NHAN_SU.Rows[0]);
+                    op_txt_ma_nv.Text = v_us.strMA_NV;
+                    op_txt_ho_ten.Text = v_us.strHO_TEN;
+                    m_fg.Rows[ip_row][(int)e_col_Number.MA_NV] = v_us.dcID;
+                }
+                if (v_ds.V_DM_NHAN_SU.Count > 1 && ip_str != "")
+                {
+                    AutoCompleteStringCollection v_acsc_ma_nv = new AutoCompleteStringCollection();
+                    foreach (DataRow dr in v_ds.V_DM_NHAN_SU)
+                    {
+                        v_acsc_ma_nv.Add(dr[V_DM_NHAN_SU.MA_NV].ToString());
+                    }
+//                     op_txt_ma_nv.AutoCompleteMode = AutoCompleteMode.Suggest;
+//                     op_txt_ma_nv.AutoCompleteSource = AutoCompleteSource.CustomSource;
+//                     op_txt_ma_nv.AutoCompleteCustomSource = v_acsc_ma_nv;
+                    v_us.DataRow2Me((DataRow)v_ds.V_DM_NHAN_SU.Rows[0]);
+                    op_txt_ma_nv.Text = v_us.strMA_NV;
+                    m_fg.Rows[ip_row][(int)e_col_Number.MA_NV] = v_us.dcID;
+                }
+                if (ip_str == "")
+                {
+                    m_fg.Rows[ip_row][(int)e_col_Number.MA_NV] = "";
+                }
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        
+
+     
         private void set_define_event()
         {
             m_cmd_chon_file.Click += new EventHandler(m_cmd_chon_file_Click);
@@ -362,7 +401,7 @@ namespace BKI_HRM
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
             m_fg.Click += new EventHandler(m_fg_Click);
-       //     m_fg.Paint += new PaintEventHandler(_flex_Paint);
+        //    m_fg.Paint += new PaintEventHandler(_flex_Paint);
 
         }
         #endregion
@@ -505,8 +544,7 @@ namespace BKI_HRM
             try
             {
                 load_edited_grid();
-//                 TextBox v_txt_ = new TextBox();
-//                 m_fg.Controls.Add(v_txt_);
+
             }
             catch (Exception v_e)
             {
@@ -514,6 +552,39 @@ namespace BKI_HRM
             }
         }
         #endregion
+
+        private void m_fg_AfterAddRow(object sender, RowColEventArgs e)
+        {
+            try
+            {
+                TextBox v_txt_ma_nv = new TextBox();
+                TextBox v_txt_ho_ten = new TextBox();
+                AutoCompleteStringCollection v_acsc_ma_nv = new AutoCompleteStringCollection();
+                foreach (DataRow dr in m_ds_v_dm_nhan_su.V_DM_NHAN_SU)
+                {
+                    v_acsc_ma_nv.Add(dr[V_DM_NHAN_SU.MA_NV].ToString());
+                }
+                AutoCompleteStringCollection v_acsc_ho_ten = new AutoCompleteStringCollection();
+                foreach (DataRow dr in m_ds_v_dm_nhan_su.V_DM_NHAN_SU)
+                {
+                    v_acsc_ho_ten.Add(dr[V_DM_NHAN_SU.HO_TEN].ToString());
+                }
+                v_txt_ma_nv.AutoCompleteMode = AutoCompleteMode.Suggest;
+                v_txt_ma_nv.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                v_txt_ma_nv.AutoCompleteCustomSource = v_acsc_ma_nv;
+                v_txt_ho_ten.AutoCompleteMode = AutoCompleteMode.Suggest;
+                v_txt_ho_ten.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                v_txt_ho_ten.AutoCompleteCustomSource = v_acsc_ho_ten;
+                m_ar_txt_ma_nv.Add(new HostedControl(m_fg, v_txt_ma_nv, m_fg.Rows.Count - 2, (int)e_col_Number.MA_NV));
+                m_ar_txt_ho_ten.Add(new HostedControl(m_fg, v_txt_ho_ten, m_fg.Rows.Count - 2, (int)e_col_Number.HO_TEN));
+                v_txt_ma_nv.Leave += (sender2, e2) => v_txt_Leave(sender2, e2, v_txt_ma_nv.TabIndex, v_txt_ma_nv.Text, ref v_txt_ma_nv, ref v_txt_ho_ten);
+                v_txt_ho_ten.Leave += (sender2, e2) => v_txt_Leave(sender2, e2, v_txt_ma_nv.TabIndex, v_txt_ho_ten.Text, ref v_txt_ma_nv, ref v_txt_ho_ten);
+            }
+            catch (Exception v_e)
+            {
+            	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
     }
 
