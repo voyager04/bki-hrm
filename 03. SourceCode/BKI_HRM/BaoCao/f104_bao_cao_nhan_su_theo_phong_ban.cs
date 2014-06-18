@@ -179,18 +179,19 @@ namespace BKI_HRM {
             /**
              * Group (subtotal) trên grid.
              */
+            //m_fg.Subtotal(AggregateEnum.Count, -1, 0, (int)e_col_Number.MA_NV, "Tổng");
             if (m_rdb_nhom.Checked == true)
             {
                 m_fg.Subtotal(AggregateEnum.Count
                   , 0
                   , (int)e_col_Number.DIA_BAN    // Group theo cột này
-                  , (int)e_col_Number.MA_DON_VI         // Subtotal theo cột này
+                  , (int)e_col_Number.MA_NV         // Subtotal theo cột này
                   , "{0}"
                   );
                 m_fg.Subtotal(AggregateEnum.Count
                   , 1
                   , (int)e_col_Number.MA_DON_VI    // Group theo cột này
-                  , (int)e_col_Number.TEN_DON_VI         // Subtotal theo cột này
+                  , (int)e_col_Number.MA_NV         // Subtotal theo cột này
                   , "{0}"
                   );
             }
