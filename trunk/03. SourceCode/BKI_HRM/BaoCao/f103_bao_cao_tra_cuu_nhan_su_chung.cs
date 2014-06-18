@@ -63,6 +63,8 @@ namespace BKI_HRM
         private Label m_lbl_thoi_diem;
         private TextBox m_txt_trinh_do;
         private Label label1;
+        private ComboBox m_cbo_thang_sinh;
+        private Label m_lbl_thang_sinh;
         private IContainer components;
 
         public f103_bao_cao_tra_cuu_nhan_su()
@@ -102,9 +104,11 @@ namespace BKI_HRM
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f103_bao_cao_tra_cuu_nhan_su));
-            Checkbox_Combobox.CheckBoxProperties checkBoxProperties1 = new Checkbox_Combobox.CheckBoxProperties();
+            Checkbox_Combobox.CheckBoxProperties checkBoxProperties2 = new Checkbox_Combobox.CheckBoxProperties();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cbo_thang_sinh = new System.Windows.Forms.ComboBox();
+            this.m_lbl_thang_sinh = new System.Windows.Forms.Label();
             this.m_txt_trinh_do = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.m_dat_thoi_diem = new System.Windows.Forms.DateTimePicker();
@@ -170,6 +174,8 @@ namespace BKI_HRM
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_cbo_thang_sinh);
+            this.panel1.Controls.Add(this.m_lbl_thang_sinh);
             this.panel1.Controls.Add(this.m_txt_trinh_do);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.m_dat_thoi_diem);
@@ -196,6 +202,23 @@ namespace BKI_HRM
             this.panel1.Size = new System.Drawing.Size(1189, 133);
             this.panel1.TabIndex = 24;
             // 
+            // m_cbo_thang_sinh
+            // 
+            this.m_cbo_thang_sinh.FormattingEnabled = true;
+            this.m_cbo_thang_sinh.Location = new System.Drawing.Point(730, 73);
+            this.m_cbo_thang_sinh.Name = "m_cbo_thang_sinh";
+            this.m_cbo_thang_sinh.Size = new System.Drawing.Size(90, 21);
+            this.m_cbo_thang_sinh.TabIndex = 48;
+            // 
+            // m_lbl_thang_sinh
+            // 
+            this.m_lbl_thang_sinh.AutoSize = true;
+            this.m_lbl_thang_sinh.Location = new System.Drawing.Point(654, 76);
+            this.m_lbl_thang_sinh.Name = "m_lbl_thang_sinh";
+            this.m_lbl_thang_sinh.Size = new System.Drawing.Size(60, 13);
+            this.m_lbl_thang_sinh.TabIndex = 47;
+            this.m_lbl_thang_sinh.Text = "Tháng sinh";
+            // 
             // m_txt_trinh_do
             // 
             this.m_txt_trinh_do.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
@@ -220,7 +243,7 @@ namespace BKI_HRM
             // 
             this.m_dat_thoi_diem.CustomFormat = "dd/MM/yyyy";
             this.m_dat_thoi_diem.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.m_dat_thoi_diem.Location = new System.Drawing.Point(283, 64);
+            this.m_dat_thoi_diem.Location = new System.Drawing.Point(117, 64);
             this.m_dat_thoi_diem.Name = "m_dat_thoi_diem";
             this.m_dat_thoi_diem.Size = new System.Drawing.Size(85, 20);
             this.m_dat_thoi_diem.TabIndex = 44;
@@ -232,7 +255,7 @@ namespace BKI_HRM
             this.m_grb_ngay_sinh.Controls.Add(this.m_lbl_den_ngay);
             this.m_grb_ngay_sinh.Controls.Add(this.m_lbl_tu_ngay);
             this.m_grb_ngay_sinh.Controls.Add(this.m_dat_tu_ngay);
-            this.m_grb_ngay_sinh.Location = new System.Drawing.Point(659, 48);
+            this.m_grb_ngay_sinh.Location = new System.Drawing.Point(233, 54);
             this.m_grb_ngay_sinh.Name = "m_grb_ngay_sinh";
             this.m_grb_ngay_sinh.Size = new System.Drawing.Size(292, 51);
             this.m_grb_ngay_sinh.TabIndex = 41;
@@ -279,7 +302,7 @@ namespace BKI_HRM
             // m_lbl_thoi_diem
             // 
             this.m_lbl_thoi_diem.AutoSize = true;
-            this.m_lbl_thoi_diem.Location = new System.Drawing.Point(203, 68);
+            this.m_lbl_thoi_diem.Location = new System.Drawing.Point(37, 68);
             this.m_lbl_thoi_diem.Name = "m_lbl_thoi_diem";
             this.m_lbl_thoi_diem.Size = new System.Drawing.Size(54, 13);
             this.m_lbl_thoi_diem.TabIndex = 43;
@@ -372,8 +395,8 @@ namespace BKI_HRM
             // 
             // m_cbc_choose_columns
             // 
-            checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.m_cbc_choose_columns.CheckBoxProperties = checkBoxProperties1;
+            checkBoxProperties2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.m_cbc_choose_columns.CheckBoxProperties = checkBoxProperties2;
             this.m_cbc_choose_columns.DisplayMemberSingleItem = "";
             this.m_cbc_choose_columns.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbc_choose_columns.FormattingEnabled = true;
@@ -755,6 +778,7 @@ namespace BKI_HRM
                  //       , m_dat_thoi_diem.Value
                         , m_dat_tu_ngay.Value
                         , m_dat_den_ngay.Value
+                        , CIPConvert.ToDecimal(m_cbo_thang_sinh.SelectedValue)
                         , ""
                         , "Y"
                         , ""
@@ -778,6 +802,7 @@ namespace BKI_HRM
                      //      , m_dat_thoi_diem.Value
                             , m_dat_tu_ngay.Value
                             , m_dat_den_ngay.Value
+                            , CIPConvert.ToDecimal(m_cbo_thang_sinh.SelectedValue)
                             , ""
                             , "Y"
                             , ""
@@ -806,6 +831,7 @@ namespace BKI_HRM
                    //     , m_dat_thoi_diem.Value
                         , m_dat_tu_ngay.Value
                         , m_dat_den_ngay.Value
+                        , CIPConvert.ToDecimal(m_cbo_thang_sinh.SelectedValue)
                         , m_str_trang_thai_lao_dong
 
                         , m_str_trang_thai_hien_tai
@@ -865,6 +891,21 @@ namespace BKI_HRM
 
             // load dia ban
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.DIA_BAN, WinFormControls.eTAT_CA.YES, m_cbo_chon_dia_ban);
+
+            // load thang sinh
+            DataTable v_dt = new DataTable();
+            v_dt.Columns.Add("ID_THANG");
+            v_dt.Columns.Add("TEN_THANG");
+
+
+            v_dt.Rows.Add(-1, "-- Tất cả --");
+            for (int i = 1; i <= 12; i ++ )
+            {
+                v_dt.Rows.Add(i, "Tháng " + CIPConvert.ToStr(i));
+            }
+            m_cbo_thang_sinh.DisplayMember = "TEN_THANG";
+            m_cbo_thang_sinh.ValueMember = "ID_THANG";
+            m_cbo_thang_sinh.DataSource = v_dt;
         }
         private void xuat_excel()
         {
@@ -1204,9 +1245,10 @@ namespace BKI_HRM
             m_txt_search.Leave += new EventHandler(m_txt_search_Leave);
             m_cbc_choose_columns.CheckBoxItems.CheckBoxCheckedChanged += new EventHandler(m_cbc_choose_columns_SelectedIndexChange);
             m_cmd_xuat_excel.Click += new EventHandler(m_cmd_xuat_excel_Click);
-            m_cbo_chon_chuc_vu.SelectedIndexChanged += new EventHandler(m_cbo_chon_chuc_vu_SelectedIndexChanged);
-            m_cbo_chon_dia_ban.SelectedIndexChanged += new EventHandler(m_cbo_chon_dia_ban_SelectedIndexChanged);
-            m_cbo_chon_don_vi.SelectedIndexChanged += new EventHandler(m_cbo_chon_don_vi_SelectedIndexChanged);
+            m_cbo_chon_chuc_vu.SelectedIndexChanged += new EventHandler(m_cbo_SelectedIndexChanged);
+            m_cbo_chon_dia_ban.SelectedIndexChanged += new EventHandler(m_cbo_SelectedIndexChanged);
+            m_cbo_chon_don_vi.SelectedIndexChanged += new EventHandler(m_cbo_SelectedIndexChanged);
+            m_cbo_thang_sinh.SelectedIndexChanged += new EventHandler(m_cbo_SelectedIndexChanged);
             m_dat_tu_ngay.ValueChanged += new EventHandler(m_dat_tu_ngay_ValueChanged);
             m_dat_den_ngay.ValueChanged += new EventHandler(m_dat_den_ngay_ValueChanged);
 
@@ -1380,7 +1422,7 @@ namespace BKI_HRM
             }
         }
         
-        private void m_cbo_chon_chuc_vu_SelectedIndexChanged(object sender, EventArgs e)
+        private void m_cbo_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
@@ -1388,35 +1430,14 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
-
-                CSystemLog_301.ExceptionHandle(v_e);
+            	CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
-        private void m_cbo_chon_don_vi_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                load_data_2_grid();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void m_cbo_chon_dia_ban_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                load_data_2_grid();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
+       
         #endregion
+
+     
 
 
 
