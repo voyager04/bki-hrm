@@ -76,7 +76,7 @@
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(590, 36);
-            this.m_pnl_out_place_dm.TabIndex = 109;
+            this.m_pnl_out_place_dm.TabIndex = 1;
             // 
             // m_cmd_save
             // 
@@ -90,7 +90,7 @@
             this.m_cmd_save.Location = new System.Drawing.Point(322, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_save.TabIndex = 13;
+            this.m_cmd_save.TabIndex = 0;
             this.m_cmd_save.Text = "&Lưu";
             // 
             // m_cmd_refresh
@@ -105,7 +105,7 @@
             this.m_cmd_refresh.Location = new System.Drawing.Point(410, 4);
             this.m_cmd_refresh.Name = "m_cmd_refresh";
             this.m_cmd_refresh.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_refresh.TabIndex = 14;
+            this.m_cmd_refresh.TabIndex = 1;
             this.m_cmd_refresh.Text = "L&àm lại";
             // 
             // m_cmd_exit
@@ -120,7 +120,7 @@
             this.m_cmd_exit.Location = new System.Drawing.Point(498, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 11;
+            this.m_cmd_exit.TabIndex = 2;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // m_txt_mo_ta_cong_viec
@@ -130,7 +130,7 @@
             this.m_txt_mo_ta_cong_viec.Multiline = true;
             this.m_txt_mo_ta_cong_viec.Name = "m_txt_mo_ta_cong_viec";
             this.m_txt_mo_ta_cong_viec.Size = new System.Drawing.Size(590, 231);
-            this.m_txt_mo_ta_cong_viec.TabIndex = 121;
+            this.m_txt_mo_ta_cong_viec.TabIndex = 0;
             // 
             // F206_chi_tiet_cong_tac
             // 
