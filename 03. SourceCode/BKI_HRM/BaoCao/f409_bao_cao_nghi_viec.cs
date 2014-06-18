@@ -425,13 +425,13 @@ namespace BKI_HRM
                 m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count
                   , 0
                   , (int)e_col_Number.DIA_BAN
-                  , (int)e_col_Number.TEN_DON_VI
+                  , (int)e_col_Number.MA_NV
                   , "{0}"
                   );
                 m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count
                   , 1
                   , (int)e_col_Number.MA_DON_VI
-                  , (int)e_col_Number.TEN_DON_VI
+                  , (int)e_col_Number.MA_NV
                   , "{0}"
                   );
             }
