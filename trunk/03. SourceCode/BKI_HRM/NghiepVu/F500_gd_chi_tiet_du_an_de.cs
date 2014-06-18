@@ -697,7 +697,8 @@ namespace BKI_HRM.NghiepVu
 
         private void m_cmd_xem_file_Click(object sender, EventArgs e)
         {
-
+            f701_v_gd_hop_dong_lao_dong_View frm = new f701_v_gd_hop_dong_lao_dong_View();
+            frm.display_for_view_quyet_dinh(m_us_quyet_dinh);
         }
 
         private void m_cmd_go_dinh_kem_Click(object sender, EventArgs e)
