@@ -563,7 +563,9 @@ namespace BKI_HRM.NghiepVu
 
         private void m_cmd_xem_file_Click(object sender, EventArgs e)
         {
-
+            f701_v_gd_hop_dong_lao_dong_View frm = new f701_v_gd_hop_dong_lao_dong_View();
+            US_DM_QUYET_DINH v_us = new US_DM_QUYET_DINH(m_us_quyet_dinh.dcID);
+            frm.display_for_view_quyet_dinh(v_us);
         }
 
         private void m_cmd_go_dinh_kem_Click(object sender, EventArgs e)

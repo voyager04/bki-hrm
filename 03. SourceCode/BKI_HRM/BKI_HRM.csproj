@@ -153,6 +153,7 @@
     <Compile Include="DanhMuc\F205_V_GD_QUYET_DINH.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FileExplorer.cs" />
     <Compile Include="HostedControl.cs" />
     <Compile Include="NghiepVu\f107_chuyen_nhan_vien.cs">
       <SubType>Form</SubType>
