@@ -118,6 +118,7 @@
             this.m_cmd_xuat_excel.Size = new System.Drawing.Size(93, 28);
             this.m_cmd_xuat_excel.TabIndex = 6;
             this.m_cmd_xuat_excel.Text = "Xuất Excel";
+            this.m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
             // 
             // m_pnl_out_place_dm
             // 
