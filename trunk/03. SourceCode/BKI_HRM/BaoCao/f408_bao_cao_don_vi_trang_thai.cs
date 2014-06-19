@@ -135,7 +135,7 @@ namespace BKI_HRM
 
         private void export_2_excel()
         {
-            CExcelReport v_obj_excel_rpt = new CExcelReport("f405_bien_dong_nhan_su_chuc_vu_trang_thai.xlsx", 3, 1);
+            CExcelReport v_obj_excel_rpt = new CExcelReport("f408_bao_cao_don_vi_trang_thai.xlsx", 3, 2);
             v_obj_excel_rpt.AddFindAndReplaceItem("<thoi_diem>", m_dat_thoidiem.Value.Date);
             v_obj_excel_rpt.FindAndReplace(false);
             v_obj_excel_rpt.Export2ExcelWithoutFixedRows(m_fg, 1, m_fg.Cols.Count - 1, true);
@@ -171,6 +171,18 @@ namespace BKI_HRM
             try
             {
                 this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                export_2_excel();
             }
             catch (Exception v_e)
             {
