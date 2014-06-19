@@ -47,6 +47,8 @@ namespace BKI_HRM
         private RadioButton m_rdb_nhom;
         private RadioButton m_rdb_ko_nhom;
         internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
+        private Label m_lbl_soluongns;
+        private Label label1;
 		private System.ComponentModel.IContainer components;
 
 		public f407_bao_cao_bo_nhiem()
@@ -101,6 +103,8 @@ namespace BKI_HRM
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.m_rdb_nhom = new System.Windows.Forms.RadioButton();
             this.m_rdb_ko_nhom = new System.Windows.Forms.RadioButton();
+            this.m_lbl_soluongns = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -302,10 +306,30 @@ namespace BKI_HRM
             this.m_rdb_ko_nhom.Text = "Không nhóm";
             this.m_rdb_ko_nhom.UseVisualStyleBackColor = true;
             // 
+            // m_lbl_soluongns
+            // 
+            this.m_lbl_soluongns.AutoSize = true;
+            this.m_lbl_soluongns.Location = new System.Drawing.Point(772, 68);
+            this.m_lbl_soluongns.Name = "m_lbl_soluongns";
+            this.m_lbl_soluongns.Size = new System.Drawing.Size(35, 13);
+            this.m_lbl_soluongns.TabIndex = 43;
+            this.m_lbl_soluongns.Text = "label2";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(673, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 13);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "Số lượng nhân sự:";
+            // 
             // f407_bao_cao_bo_nhiem
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(1189, 531);
+            this.Controls.Add(this.m_lbl_soluongns);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.groupBox1);
@@ -438,6 +462,7 @@ namespace BKI_HRM
                   );
             }
 			m_fg.Redraw = true;
+            m_lbl_soluongns.Text = m_ds.V_GD_QUA_TRINH_LAM_VIEC.Count.ToString();
 		}
 		private void grid2us_object(US_V_GD_QUA_TRINH_LAM_VIEC i_us
 			, int i_grid_row) {

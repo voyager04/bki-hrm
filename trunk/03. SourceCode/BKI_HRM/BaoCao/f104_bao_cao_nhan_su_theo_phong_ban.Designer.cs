@@ -162,7 +162,6 @@
             this.m_lbl_so_luong_ban_ghi.Size = new System.Drawing.Size(25, 13);
             this.m_lbl_so_luong_ban_ghi.TabIndex = 28;
             this.m_lbl_so_luong_ban_ghi.Text = "000";
-            this.m_lbl_so_luong_ban_ghi.Visible = false;
             // 
             // label4
             // 
@@ -172,7 +171,6 @@
             this.label4.Size = new System.Drawing.Size(176, 13);
             this.label4.TabIndex = 27;
             this.label4.Text = "Số nhân viên viên trong danh sách:";
-            this.label4.Visible = false;
             // 
             // m_cmd_search
             // 
