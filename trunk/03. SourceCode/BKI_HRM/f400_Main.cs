@@ -832,33 +832,12 @@ namespace BKI_HRM
 
         #endregion
 
-        private void m_menuitem_thoat_Click_1(object sender, EventArgs e)
-        {
-            
-        }
-
         private void restoreDBToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void saoLưuDữLiệuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
             try
             {
-                CDataBaseProccessing.BackupDataBase();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void phụcHồiDữLiệuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                CDataBaseProccessing.RestoreDataBase();
+                f400_dialog frm = new f400_dialog();
+                frm.Show();
             }
             catch (Exception v_e)
             {
