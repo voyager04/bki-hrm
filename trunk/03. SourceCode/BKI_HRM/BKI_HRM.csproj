@@ -68,6 +68,9 @@
     <Reference Include="C1.Win.C1Input">
       <HintPath>..\DLL\C1.Win.C1Input.dll</HintPath>
     </Reference>
+    <Reference Include="C1.WPF.FlexGrid">
+      <HintPath>C:\Users\Hoàng\Desktop\C1.WPF.FlexGrid\C1.WPF.FlexGrid\X86\3.0.20111.140\C1.WPF.FlexGrid.dll</HintPath>
+    </Reference>
     <Reference Include="SiSButton, Version=1.0.1494.35082, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DLL\SiSButton.dll</HintPath>

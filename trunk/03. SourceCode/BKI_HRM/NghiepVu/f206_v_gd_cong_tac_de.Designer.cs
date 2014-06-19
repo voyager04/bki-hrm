@@ -164,6 +164,7 @@
             this.m_txt_loai_quyet_dinh.ReadOnly = true;
             this.m_txt_loai_quyet_dinh.Size = new System.Drawing.Size(176, 20);
             this.m_txt_loai_quyet_dinh.TabIndex = 4;
+            this.m_txt_loai_quyet_dinh.Text = "QĐ Đi công tác";
             // 
             // m_cmd_xem_file
             // 
@@ -333,7 +334,7 @@
             this.m_fg.Size = new System.Drawing.Size(792, 176);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 3;
-            this.m_fg.AfterEdit += new C1.Win.C1FlexGrid.RowColEventHandler(this.m_fg_AfterEdit);
+            this.m_fg.EnterCell += new System.EventHandler(this.m_fg_EnterCell);
             this.m_fg.AfterAddRow += new C1.Win.C1FlexGrid.RowColEventHandler(this.m_fg_AfterAddRow);
             this.m_fg.Paint += new System.Windows.Forms.PaintEventHandler(this._flex_Paint);
             // 

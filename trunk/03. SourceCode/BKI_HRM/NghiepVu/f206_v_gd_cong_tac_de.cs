@@ -74,7 +74,7 @@ namespace BKI_HRM
         bool m_b_check_quyet_dinh_save;
         bool m_b_check_quyet_dinh_null = false;
         ArrayList m_ar_txt_ma_nv = new ArrayList();
-         ArrayList m_ar_txt_ho_ten = new ArrayList();
+        ArrayList m_ar_txt_ho_ten = new ArrayList();
         #endregion
 
         #region Private Methods
@@ -100,7 +100,7 @@ namespace BKI_HRM
                     break;
             }
             m_us_v_dm_nhan_su.FillDataset(m_ds_v_dm_nhan_su);
-           
+
             add_textbox_2_grid();
         }
         private void generate_ma_quyet_dinh()
@@ -137,7 +137,7 @@ namespace BKI_HRM
             {
                 m_us_gd_cong_tac.strMO_TA_CONG_VIEC = CIPConvert.ToStr(m_fg.Rows[ip_i_row][(int)e_col_Number.MO_TA_CONG_VIEC]);
             }
-            
+
         }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
@@ -149,7 +149,7 @@ namespace BKI_HRM
             v_htb.Add(V_GD_CONG_TAC.NGAY_VE, e_col_Number.NGAY_VE);
 
             v_htb.Add(V_GD_CONG_TAC.HO_TEN, e_col_Number.HO_TEN);
-           
+
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds_v_gd_cong_tac.V_GD_CONG_TAC.NewRow());
             return v_obj_trans;
         }
@@ -207,8 +207,8 @@ namespace BKI_HRM
                 default:
                     break;
             }
-            
-           
+
+
         }
         private void chon_file()
         {
@@ -221,7 +221,7 @@ namespace BKI_HRM
         {
             Process.Start("explorer.exe", m_ofd_openfile.FileName);
         }
-       
+
         private void them_quyet_dinh()
         {
             m_b_check_quyet_dinh_save = true;
@@ -278,23 +278,23 @@ namespace BKI_HRM
                 hosted.UpdatePosition();
             foreach (HostedControl hosted in m_ar_txt_ho_ten)
                 hosted.UpdatePosition();
-           
+
         }
-      
-        private void load_edited_grid()
-        {
-            switch (m_fg.Col)
-            {
-                case (int)e_col_Number.MA_NV:
-                    m_fg.Rows[m_fg.Row][(int)e_col_Number.HO_TEN] = m_fg.Rows[m_fg.Row][(int)e_col_Number.MA_NV];
-                    break;
-                case (int)e_col_Number.HO_TEN:
-                    m_fg.Rows[m_fg.Row][(int)e_col_Number.MA_NV] = m_fg.Rows[m_fg.Row][(int)e_col_Number.HO_TEN];
-                    break;
-                default: 
-                    break;
-            }
-        }
+
+        //         private void load_edited_grid()
+        //         {
+        //             switch (m_fg.Col)
+        //             {
+        //                 case (int)e_col_Number.MA_NV:
+        //                     m_fg.Rows[m_fg.Row][(int)e_col_Number.HO_TEN] = m_fg.Rows[m_fg.Row][(int)e_col_Number.MA_NV];
+        //                     break;
+        //                 case (int)e_col_Number.HO_TEN:
+        //                     m_fg.Rows[m_fg.Row][(int)e_col_Number.MA_NV] = m_fg.Rows[m_fg.Row][(int)e_col_Number.HO_TEN];
+        //                     break;
+        //                 default: 
+        //                     break;
+        //             }
+        //         }
         private void load_cbo_ma_quyet_dinh()
         {
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.MA_QUYET_DINH
@@ -311,7 +311,7 @@ namespace BKI_HRM
 
         private void add_textbox_2_grid()
         {
-            
+
             foreach (Row r in m_fg.Rows)
             {
                 if (r.Index > 0 && r.Index < m_fg.Rows.Count - 1)
@@ -345,53 +345,59 @@ namespace BKI_HRM
 
 
         }
-
-        private void v_txt_Leave(object sender, EventArgs e, int ip_row, string ip_str, ref TextBox op_txt_ma_nv, ref TextBox op_txt_ho_ten)
+        private void txt_leave(int ip_row, string ip_str, ref TextBox op_txt_ma_nv, ref TextBox op_txt_ho_ten)
         {
-            try
+            US_V_DM_NHAN_SU v_us = new US_V_DM_NHAN_SU();
+            DS_V_DM_NHAN_SU v_ds = new DS_V_DM_NHAN_SU();
+            v_us.FillDataset_search(v_ds, ip_str);
+            if (v_ds.V_DM_NHAN_SU.Count == 0)
             {
-                US_V_DM_NHAN_SU v_us = new US_V_DM_NHAN_SU();
-                DS_V_DM_NHAN_SU v_ds = new DS_V_DM_NHAN_SU();
-                v_us.FillDataset_search(v_ds, ip_str);
-                if (v_ds.V_DM_NHAN_SU.Count == 0)
+                op_txt_ma_nv.Text = "";
+                op_txt_ho_ten.Text = "";
+                MessageBox.Show("Mã nhân viên hoặc Họ Tên bạn nhập vào không chính xác !");
+                if (op_txt_ma_nv.Focused)
                 {
-                    MessageBox.Show("Mã nhân viên hoặc Họ Tên bạn nhập vào không chính xác !");
+                    op_txt_ho_ten.Focus();
                 }
-                if (v_ds.V_DM_NHAN_SU.Count == 1)
+                else
                 {
-                    v_us.DataRow2Me((DataRow)v_ds.V_DM_NHAN_SU.Rows[0]);
-                    op_txt_ma_nv.Text = v_us.strMA_NV;
-                    op_txt_ho_ten.Text = v_us.strHO_TEN;
-                    m_fg.Rows[ip_row][(int)e_col_Number.MA_NV] = v_us.dcID;
-                }
-                if (v_ds.V_DM_NHAN_SU.Count > 1 && ip_str != "")
-                {
-                    AutoCompleteStringCollection v_acsc_ma_nv = new AutoCompleteStringCollection();
-                    foreach (DataRow dr in v_ds.V_DM_NHAN_SU)
-                    {
-                        v_acsc_ma_nv.Add(dr[V_DM_NHAN_SU.MA_NV].ToString());
-                    }
-//                     op_txt_ma_nv.AutoCompleteMode = AutoCompleteMode.Suggest;
-//                     op_txt_ma_nv.AutoCompleteSource = AutoCompleteSource.CustomSource;
-//                     op_txt_ma_nv.AutoCompleteCustomSource = v_acsc_ma_nv;
-                    v_us.DataRow2Me((DataRow)v_ds.V_DM_NHAN_SU.Rows[0]);
-                    op_txt_ma_nv.Text = v_us.strMA_NV;
-                    m_fg.Rows[ip_row][(int)e_col_Number.MA_NV] = v_us.dcID;
-                }
-                if (ip_str == "")
-                {
-                    m_fg.Rows[ip_row][(int)e_col_Number.MA_NV] = "";
+                    op_txt_ma_nv.Focus();
                 }
             }
-            catch (Exception v_e)
+            if (v_ds.V_DM_NHAN_SU.Count == 1)
             {
-            	CSystemLog_301.ExceptionHandle(v_e);
+                v_us.DataRow2Me((DataRow)v_ds.V_DM_NHAN_SU.Rows[0]);
+                op_txt_ma_nv.Text = v_us.strMA_NV;
+                op_txt_ho_ten.Text = v_us.strHO_TEN;
+                m_fg.Rows[ip_row][(int)e_col_Number.MA_NV] = v_us.dcID;
+                m_fg.Focus();
+                m_fg.Select(ip_row, (int)e_col_Number.NGAY_DI);
+            }
+            if (v_ds.V_DM_NHAN_SU.Count > 1 && ip_str != "")
+            {
+                AutoCompleteStringCollection v_acsc_ma_nv = new AutoCompleteStringCollection();
+                foreach (DataRow dr in v_ds.V_DM_NHAN_SU)
+                {
+                    v_acsc_ma_nv.Add(dr[V_DM_NHAN_SU.MA_NV].ToString());
+                }
+                //                     op_txt_ma_nv.AutoCompleteMode = AutoCompleteMode.Suggest;
+                //                     op_txt_ma_nv.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                //                     op_txt_ma_nv.AutoCompleteCustomSource = v_acsc_ma_nv;
+                v_us.DataRow2Me((DataRow)v_ds.V_DM_NHAN_SU.Rows[0]);
+                op_txt_ma_nv.Text = v_us.strMA_NV;
+                m_fg.Rows[ip_row][(int)e_col_Number.MA_NV] = v_us.dcID;
+                op_txt_ma_nv.Focus();
+            }
+            if (ip_str == "")
+            {
+                m_fg.Rows[ip_row][(int)e_col_Number.MA_NV] = "";
+            
             }
         }
 
-        
 
-     
+
+
         private void set_define_event()
         {
             m_cmd_chon_file.Click += new EventHandler(m_cmd_chon_file_Click);
@@ -401,7 +407,7 @@ namespace BKI_HRM
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
             m_fg.Click += new EventHandler(m_fg_Click);
-        //    m_fg.Paint += new PaintEventHandler(_flex_Paint);
+            //    m_fg.Paint += new PaintEventHandler(_flex_Paint);
 
         }
         #endregion
@@ -524,35 +530,27 @@ namespace BKI_HRM
         }
         private void m_fg_Click(object sender, EventArgs e)
         {
-            string v_str_mo_ta = "";
-            if (m_fg.Col == (int)e_col_Number.MO_TA_CONG_VIEC)
-            {
-                F206_chi_tiet_cong_tac v_frm = new F206_chi_tiet_cong_tac();
-                if (m_fg.Rows[m_fg.Row][m_fg.Col] == null)
-                {
-                    v_frm.display("", ref v_str_mo_ta);
-                }
-                else
-                    v_frm.display(CIPConvert.ToStr(m_fg.Rows[m_fg.Row][m_fg.Col]), ref v_str_mo_ta);
-                m_fg.Rows[m_fg.Row][m_fg.Col] = v_str_mo_ta;
-            }
-
-        }
-      
-        private void m_fg_AfterEdit(object sender, RowColEventArgs e)
-        {
             try
             {
-                load_edited_grid();
-
+                string v_str_mo_ta = "";
+                if (m_fg.Col == (int)e_col_Number.MO_TA_CONG_VIEC)
+                {
+                    F206_chi_tiet_cong_tac v_frm = new F206_chi_tiet_cong_tac();
+                    if (m_fg.Rows[m_fg.Row][m_fg.Col] == null)
+                    {
+                        v_frm.display("", ref v_str_mo_ta);
+                    }
+                    else
+                        v_frm.display(CIPConvert.ToStr(m_fg.Rows[m_fg.Row][m_fg.Col]), ref v_str_mo_ta);
+                    m_fg.Rows[m_fg.Row][m_fg.Col] = v_str_mo_ta;
+                }
             }
             catch (Exception v_e)
             {
             	CSystemLog_301.ExceptionHandle(v_e);
             }
-        }
-        #endregion
 
+        }
         private void m_fg_AfterAddRow(object sender, RowColEventArgs e)
         {
             try
@@ -582,9 +580,60 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void v_txt_Leave(object sender, EventArgs e, int ip_row, string ip_str, ref TextBox op_txt_ma_nv, ref TextBox op_txt_ho_ten)
+        {
+            try
+            {
+                txt_leave(ip_row, ip_str,ref op_txt_ma_nv,ref op_txt_ho_ten);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_fg_EnterCell(object sender, EventArgs e)
+        {
+            try
+            {
+                string v_str_mo_ta = "";
+                if (m_fg.Col == (int)e_col_Number.MO_TA_CONG_VIEC)
+                {
+                    F206_chi_tiet_cong_tac v_frm = new F206_chi_tiet_cong_tac();
+                    if (m_fg.Rows[m_fg.Row][m_fg.Col] == null)
+                    {
+                        v_frm.display("", ref v_str_mo_ta);
+                    }
+                    else
+                        v_frm.display(CIPConvert.ToStr(m_fg.Rows[m_fg.Row][m_fg.Col]), ref v_str_mo_ta);
+                    m_fg.Rows[m_fg.Row][m_fg.Col] = v_str_mo_ta;
+                }
+            }
+            catch (Exception v_e)
+            {
             	CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+      
+
+        //         private void m_fg_AfterEdit(object sender, RowColEventArgs e)
+        //         {
+        //             try
+        //             {
+        //                 load_edited_grid();
+        // 
+        //             }
+        //             catch (Exception v_e)
+        //             {
+        //             	CSystemLog_301.ExceptionHandle(v_e);
+        //             }
+        //         }
+        #endregion
+
 
     }
 
