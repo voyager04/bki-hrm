@@ -40,12 +40,12 @@ namespace BKI_HRM
         private DateTimePicker m_dtp_thoidiem;
         private Label m_lbl_thoidiem;
         internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
-        private Label label1;
-        private Label m_lbl_soluongns;
         private GroupBox groupBox1;
         private RadioButton m_rdb_nhom;
         private RadioButton m_rdb_ko_nhom;
         private C1FlexGrid m_fg;
+        private Label label1;
+        private Label m_lbl_soluongns;
 		private System.ComponentModel.IContainer components;
 
 		public f402_BAO_CAO_NHAN_SU_CHUC_VU()
@@ -98,13 +98,13 @@ namespace BKI_HRM
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_dtp_thoidiem = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_thoidiem = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.m_lbl_soluongns = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.m_rdb_nhom = new System.Windows.Forms.RadioButton();
             this.m_rdb_ko_nhom = new System.Windows.Forms.RadioButton();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_lbl_soluongns = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -212,31 +212,11 @@ namespace BKI_HRM
             this.m_lbl_thoidiem.TabIndex = 34;
             this.m_lbl_thoidiem.Text = "Thời điểm:";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(79, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 13);
-            this.label1.TabIndex = 35;
-            this.label1.Text = "Số lượng nhân sự:";
-            this.label1.Visible = false;
-            // 
-            // m_lbl_soluongns
-            // 
-            this.m_lbl_soluongns.AutoSize = true;
-            this.m_lbl_soluongns.Location = new System.Drawing.Point(178, 42);
-            this.m_lbl_soluongns.Name = "m_lbl_soluongns";
-            this.m_lbl_soluongns.Size = new System.Drawing.Size(35, 13);
-            this.m_lbl_soluongns.TabIndex = 36;
-            this.m_lbl_soluongns.Text = "label2";
-            this.m_lbl_soluongns.Visible = false;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.m_rdb_nhom);
             this.groupBox1.Controls.Add(this.m_rdb_ko_nhom);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 9);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(228, 65);
             this.groupBox1.TabIndex = 41;
@@ -290,6 +270,24 @@ namespace BKI_HRM
             this.m_fg.Size = new System.Drawing.Size(984, 412);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 42;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(742, 61);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 13);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Số lượng nhân sự:";
+            // 
+            // m_lbl_soluongns
+            // 
+            this.m_lbl_soluongns.AutoSize = true;
+            this.m_lbl_soluongns.Location = new System.Drawing.Point(841, 61);
+            this.m_lbl_soluongns.Name = "m_lbl_soluongns";
+            this.m_lbl_soluongns.Size = new System.Drawing.Size(35, 13);
+            this.m_lbl_soluongns.TabIndex = 36;
+            this.m_lbl_soluongns.Text = "label2";
             // 
             // f402_BAO_CAO_NHAN_SU_CHUC_VU
             // 
