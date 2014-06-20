@@ -62,6 +62,7 @@ namespace BKI_HRM
         private ComboBox m_cbo_loai_du_an;
         private Label label3;
         private C1FlexGrid m_fg_nhan_su;
+        internal SIS.Controls.Button.SiSButton m_cmd_delete_nhan_su;
         private System.ComponentModel.IContainer components;
 
         public F500_DM_DU_AN()
@@ -130,6 +131,7 @@ namespace BKI_HRM
             this.m_cbo_tim_kiem_theo_ngay = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.m_fg_nhan_su = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_cmd_delete_nhan_su = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_du_an)).BeginInit();
             this.panel1.SuspendLayout();
@@ -269,6 +271,7 @@ namespace BKI_HRM
             this.panel1.Controls.Add(this.m_cmd_them);
             this.panel1.Controls.Add(this.m_cmd_sua);
             this.panel1.Controls.Add(this.m_cmd_exit);
+            this.panel1.Controls.Add(this.m_cmd_delete_nhan_su);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 568);
             this.panel1.Name = "panel1";
@@ -281,10 +284,9 @@ namespace BKI_HRM
             this.m_cmd_them.AdjustImageLocation = new System.Drawing.Point(0, 0);
             this.m_cmd_them.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_them.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_them.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_them.ImageIndex = 2;
-            this.m_cmd_them.Location = new System.Drawing.Point(768, 4);
+            this.m_cmd_them.Location = new System.Drawing.Point(576, 4);
             this.m_cmd_them.Name = "m_cmd_them";
             this.m_cmd_them.Size = new System.Drawing.Size(198, 28);
             this.m_cmd_them.TabIndex = 12;
@@ -296,10 +298,9 @@ namespace BKI_HRM
             this.m_cmd_sua.AdjustImageLocation = new System.Drawing.Point(0, 0);
             this.m_cmd_sua.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_sua.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_sua.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_sua.ImageIndex = 3;
-            this.m_cmd_sua.Location = new System.Drawing.Point(966, 4);
+            this.m_cmd_sua.Location = new System.Drawing.Point(774, 4);
             this.m_cmd_sua.Name = "m_cmd_sua";
             this.m_cmd_sua.Size = new System.Drawing.Size(196, 28);
             this.m_cmd_sua.TabIndex = 13;
@@ -482,6 +483,20 @@ namespace BKI_HRM
             this.m_fg_nhan_su.Size = new System.Drawing.Size(1335, 181);
             this.m_fg_nhan_su.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_nhan_su.Styles"));
             this.m_fg_nhan_su.TabIndex = 54;
+            // 
+            // m_cmd_delete_nhan_su
+            // 
+            this.m_cmd_delete_nhan_su.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_delete_nhan_su.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_delete_nhan_su.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_delete_nhan_su.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_delete_nhan_su.ImageIndex = 4;
+            this.m_cmd_delete_nhan_su.Location = new System.Drawing.Point(970, 4);
+            this.m_cmd_delete_nhan_su.Name = "m_cmd_delete_nhan_su";
+            this.m_cmd_delete_nhan_su.Size = new System.Drawing.Size(192, 28);
+            this.m_cmd_delete_nhan_su.TabIndex = 15;
+            this.m_cmd_delete_nhan_su.Text = "&Xoá thành viên";
+            this.m_cmd_delete_nhan_su.Click += new System.EventHandler(this.m_cmd_delete_nhan_su_Click);
             // 
             // F500_DM_DU_AN
             // 
@@ -757,14 +772,18 @@ namespace BKI_HRM
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg_du_an)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg_du_an, m_fg_du_an.Row)) return;
-            US_V_DM_DU_AN_QUYET_DINH_TU_DIEN v_us = new US_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
             grid2us_object_du_an(m_us_du_an, m_fg_du_an.Row);
-            grid2us_object_du_an(v_us, m_fg_du_an.Row);
-            m_fg_du_an.Rows.Remove(m_fg_du_an.Row);
 
-            US_DM_DU_AN v_us_dm_du_an = new US_DM_DU_AN();
-            DS_DM_DU_AN v_ds_dm_du_an = new DS_DM_DU_AN();
-            v_us_dm_du_an.DeleteDuAnById(v_ds_dm_du_an, m_us_du_an.dcID);
+            US_GD_CHI_TIET_DU_AN v_us_ct_da = new US_GD_CHI_TIET_DU_AN();
+            DS_GD_CHI_TIET_DU_AN v_ds_ct_da = new DS_GD_CHI_TIET_DU_AN();
+            v_us_ct_da.FillDatasetByIDDuAn(v_ds_ct_da, m_us_du_an.dcID);
+            if (v_ds_ct_da.GD_CHI_TIET_DU_AN.Rows.Count > 0 && BaseMessages.MsgBox_Confirm("Đang có nhân viên trong dự án. Bạn có chắc chắn muốn xóa không?"))
+            {
+                m_fg_du_an.Rows.Remove(m_fg_du_an.Row);
+                m_us_du_an.Delete();
+                load_data_2_grid_du_an();
+                load_data_2_grid_nhan_su();
+            }
         }
 
         private void view_v_dm_du_an_quyet_dinh_tu_dien()
@@ -790,6 +809,17 @@ namespace BKI_HRM
             grid2us_object_nhan_su(m_us_nhan_su, m_fg_nhan_su.Row);
             F500_gd_chi_tiet_du_an_de v_fDE = new F500_gd_chi_tiet_du_an_de();
             v_fDE.display_for_update(m_us_nhan_su.dcID, m_us_du_an);
+            load_data_2_grid_nhan_su();
+        }
+
+        private void delete_nhan_su_du_an()
+        {
+            if (BaseMessages.MsgBox_Confirm("Bạn có chắc chắn muốn xóa nhân sự này?") == false)
+                return;
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg_nhan_su)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg_nhan_su, m_fg_nhan_su.Row)) return;
+            grid2us_object_nhan_su(m_us_nhan_su, m_fg_nhan_su.Row);
+            m_us_nhan_su.Delete();
             load_data_2_grid_nhan_su();
         }
         #endregion
@@ -891,43 +921,6 @@ namespace BKI_HRM
             try
             {
                 this.Close();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void m_cmd_xoa_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
-                delete_nhan_su_du_an();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void delete_nhan_su_du_an()
-        {
-            try
-            {
-                ITransferDataRow v_obj_trans;
-                DataRow v_dr;
-                v_obj_trans = get_trans_object_du_an(m_fg_nhan_su);
-                US.US_GD_CHI_TIET_DU_AN v_us = new US.US_GD_CHI_TIET_DU_AN();
-                DS.DS_GD_CHI_TIET_DU_AN v_ds = new DS.DS_GD_CHI_TIET_DU_AN();
-                v_dr = (DataRow)m_fg_nhan_su.Rows[m_dc_index_row_chi_tiet_da].UserData;
-                v_obj_trans.GridRow2DataRow(m_dc_index_row_chi_tiet_da, v_dr);
-                decimal v_dc_id_ns = (decimal)v_dr["ID_NHAN_SU"];
-                v_us.FillDatasetByIDNS(v_ds, v_dc_id_ns);
-                v_dr = v_ds.Tables[0].Rows[0];
-                v_us.DataRow2Me(v_dr);
-                v_us.Delete();
-                m_fg_nhan_su.Rows.Remove(m_dc_index_row_chi_tiet_da);
             }
             catch (Exception v_e)
             {
@@ -1098,6 +1091,18 @@ namespace BKI_HRM
             }
         }
         #endregion
+
+        private void m_cmd_delete_nhan_su_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                delete_nhan_su_du_an();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
 
