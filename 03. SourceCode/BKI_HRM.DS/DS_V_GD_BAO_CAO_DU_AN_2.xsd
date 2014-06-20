@@ -14,7 +14,7 @@
               <DbSource ConnectionRef="BKI_HRMConnectionString1 (Settings)" DbObjectName="BKI_HRM.dbo.V_GD_BAO_CAO_DU_AN_2" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT TEN_DU_AN, MA_DU_AN, NGAY_BAT_DAU, TRUONG_DU_AN, SL_THANH_VIEN, NGAY_KET_THUC, CO_CHE, GHI_CHU, ID_QUYET_DINH, MA_QUYET_DINH, ID_LOAI_DU_AN, ID_TRANG_THAI, ID_CO_CHE, TRANG_THAI, LOAI_DU_AN FROM dbo.V_GD_BAO_CAO_DU_AN_2</CommandText>
+                    <CommandText>SELECT TEN_DU_AN, MA_DU_AN, NGAY_BAT_DAU, TRUONG_DU_AN, SL_THANH_VIEN, NGAY_KET_THUC, CO_CHE, GHI_CHU, ID_QUYET_DINH, MA_QUYET_DINH, ID_LOAI_DU_AN, ID_TRANG_THAI, ID_CO_CHE, TRANG_THAI, LOAI_DU_AN, LOAI_QD FROM dbo.V_GD_BAO_CAO_DU_AN_2</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -36,6 +36,7 @@
               <Mapping SourceColumn="ID_CO_CHE" DataSetColumn="ID_CO_CHE" />
               <Mapping SourceColumn="TRANG_THAI" DataSetColumn="TRANG_THAI" />
               <Mapping SourceColumn="LOAI_DU_AN" DataSetColumn="LOAI_DU_AN" />
+              <Mapping SourceColumn="LOAI_QD" DataSetColumn="LOAI_QD" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -107,6 +108,13 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="LOAI_DU_AN" msprop:Generator_ColumnVarNameInTable="columnLOAI_DU_AN" msprop:Generator_ColumnPropNameInRow="LOAI_DU_AN" msprop:Generator_ColumnPropNameInTable="LOAI_DU_ANColumn" msprop:Generator_UserColumnName="LOAI_DU_AN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAI_QD" msprop:Generator_ColumnVarNameInTable="columnLOAI_QD" msprop:Generator_ColumnPropNameInRow="LOAI_QD" msprop:Generator_ColumnPropNameInTable="LOAI_QDColumn" msprop:Generator_UserColumnName="LOAI_QD" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />

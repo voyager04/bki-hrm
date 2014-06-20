@@ -307,6 +307,8 @@ namespace BKI_HRM.DS {
             
             private global::System.Data.DataColumn columnID_LOAI_DU_AN;
             
+            private global::System.Data.DataColumn columnLOAI_QD;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public V_DM_DU_AN_QUYET_DINH_TU_DIENDataTable() {
@@ -454,6 +456,14 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LOAI_QDColumn {
+                get {
+                    return this.columnLOAI_QD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -489,7 +499,7 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_DM_DU_AN_QUYET_DINH_TU_DIENRow AddV_DM_DU_AN_QUYET_DINH_TU_DIENRow(decimal ID, string MA_DU_AN, string TEN_DU_AN, string TRANG_THAI, string LOAI_DU_AN, System.DateTime NGAY_BAT_DAU, System.DateTime NGAY_KET_THUC, string NOI_DUNG, string CO_CHE, string MA_QUYET_DINH, decimal ID_TRANG_THAI, decimal ID_CO_CHE, decimal ID_QUYET_DINH, decimal ID_LOAI_DU_AN) {
+            public V_DM_DU_AN_QUYET_DINH_TU_DIENRow AddV_DM_DU_AN_QUYET_DINH_TU_DIENRow(decimal ID, string MA_DU_AN, string TEN_DU_AN, string TRANG_THAI, string LOAI_DU_AN, System.DateTime NGAY_BAT_DAU, System.DateTime NGAY_KET_THUC, string NOI_DUNG, string CO_CHE, string MA_QUYET_DINH, decimal ID_TRANG_THAI, decimal ID_CO_CHE, decimal ID_QUYET_DINH, decimal ID_LOAI_DU_AN, string LOAI_QD) {
                 V_DM_DU_AN_QUYET_DINH_TU_DIENRow rowV_DM_DU_AN_QUYET_DINH_TU_DIENRow = ((V_DM_DU_AN_QUYET_DINH_TU_DIENRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
@@ -505,7 +515,8 @@ namespace BKI_HRM.DS {
                         ID_TRANG_THAI,
                         ID_CO_CHE,
                         ID_QUYET_DINH,
-                        ID_LOAI_DU_AN};
+                        ID_LOAI_DU_AN,
+                        LOAI_QD};
                 rowV_DM_DU_AN_QUYET_DINH_TU_DIENRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowV_DM_DU_AN_QUYET_DINH_TU_DIENRow);
                 return rowV_DM_DU_AN_QUYET_DINH_TU_DIENRow;
@@ -549,6 +560,7 @@ namespace BKI_HRM.DS {
                 this.columnID_CO_CHE = base.Columns["ID_CO_CHE"];
                 this.columnID_QUYET_DINH = base.Columns["ID_QUYET_DINH"];
                 this.columnID_LOAI_DU_AN = base.Columns["ID_LOAI_DU_AN"];
+                this.columnLOAI_QD = base.Columns["LOAI_QD"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -582,6 +594,8 @@ namespace BKI_HRM.DS {
                 base.Columns.Add(this.columnID_QUYET_DINH);
                 this.columnID_LOAI_DU_AN = new global::System.Data.DataColumn("ID_LOAI_DU_AN", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_LOAI_DU_AN);
+                this.columnLOAI_QD = new global::System.Data.DataColumn("LOAI_QD", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLOAI_QD);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
@@ -599,6 +613,7 @@ namespace BKI_HRM.DS {
                 this.columnMA_QUYET_DINH.MaxLength = 50;
                 this.columnID_TRANG_THAI.AllowDBNull = false;
                 this.columnID_LOAI_DU_AN.AllowDBNull = false;
+                this.columnLOAI_QD.MaxLength = 250;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -937,6 +952,23 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string LOAI_QD {
+                get {
+                    try {
+                        return ((string)(this[this.tableV_DM_DU_AN_QUYET_DINH_TU_DIEN.LOAI_QDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LOAI_QD\' in table \'V_DM_DU_AN_QUYET_DINH_TU_DIEN\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableV_DM_DU_AN_QUYET_DINH_TU_DIEN.LOAI_QDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTEN_DU_ANNull() {
                 return this.IsNull(this.tableV_DM_DU_AN_QUYET_DINH_TU_DIEN.TEN_DU_ANColumn);
             }
@@ -1017,6 +1049,18 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetID_QUYET_DINHNull() {
                 this[this.tableV_DM_DU_AN_QUYET_DINH_TU_DIEN.ID_QUYET_DINHColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLOAI_QDNull() {
+                return this.IsNull(this.tableV_DM_DU_AN_QUYET_DINH_TU_DIEN.LOAI_QDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLOAI_QDNull() {
+                this[this.tableV_DM_DU_AN_QUYET_DINH_TU_DIEN.LOAI_QDColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1193,6 +1237,7 @@ namespace BKI_HRM.DS.DS_V_DM_DU_AN_QUYET_DINH_TU_DIENTableAdapters {
             tableMapping.ColumnMappings.Add("ID_CO_CHE", "ID_CO_CHE");
             tableMapping.ColumnMappings.Add("ID_QUYET_DINH", "ID_QUYET_DINH");
             tableMapping.ColumnMappings.Add("ID_LOAI_DU_AN", "ID_LOAI_DU_AN");
+            tableMapping.ColumnMappings.Add("LOAI_QD", "LOAI_QD");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1200,7 +1245,7 @@ namespace BKI_HRM.DS.DS_V_DM_DU_AN_QUYET_DINH_TU_DIENTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BKI_HRM.DS.Properties.Settings.Default.BKI_HRMConnectionString6;
+            this._connection.ConnectionString = global::BKI_HRM.DS.Properties.Settings.Default.BKI_HRMConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1211,7 +1256,7 @@ namespace BKI_HRM.DS.DS_V_DM_DU_AN_QUYET_DINH_TU_DIENTableAdapters {
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, MA_DU_AN, TEN_DU_AN, TRANG_THAI, LOAI_DU_AN, NGAY_BAT_DAU, NGAY_KET_TH" +
                 "UC, NOI_DUNG, CO_CHE, MA_QUYET_DINH, ID_TRANG_THAI, ID_CO_CHE, ID_QUYET_DINH, ID" +
-                "_LOAI_DU_AN FROM dbo.V_DM_DU_AN_QUYET_DINH_TU_DIEN";
+                "_LOAI_DU_AN, LOAI_QD FROM dbo.V_DM_DU_AN_QUYET_DINH_TU_DIEN";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

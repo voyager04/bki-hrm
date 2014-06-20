@@ -287,28 +287,6 @@ namespace BKI_HRM.US
             pm_objDR["DANH_HIEU"] = System.Convert.DBNull;
         }
 
-        public decimal dcID
-        {
-            get
-            {
-                return CNull.RowNVLDecimal(pm_objDR, "ID", IPConstants.c_DefaultDecimal);
-            }
-            set
-            {
-                pm_objDR["ID"] = value;
-            }
-        }
-
-        public bool IsIDNull()
-        {
-            return pm_objDR.IsNull("ID");
-        }
-
-        public void SetIDNull()
-        {
-            pm_objDR["ID"] = System.Convert.DBNull;
-        }
-
         public string strMO_TA
         {
             get
@@ -549,6 +527,94 @@ namespace BKI_HRM.US
         public void SetLOAI_QDNull()
         {
             pm_objDR["LOAI_QD"] = System.Convert.DBNull;
+        }
+
+        public decimal dcID_TRANG_LAO_DONG
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_TRANG_LAO_DONG", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_TRANG_LAO_DONG"] = value;
+            }
+        }
+
+        public bool IsID_TRANG_LAO_DONGNull()
+        {
+            return pm_objDR.IsNull("ID_TRANG_LAO_DONG");
+        }
+
+        public void SetID_TRANG_LAO_DONGNull()
+        {
+            pm_objDR["ID_TRANG_LAO_DONG"] = System.Convert.DBNull;
+        }
+
+        public string strTRANG_THAI_LAO_DONG
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "TRANG_THAI_LAO_DONG", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["TRANG_THAI_LAO_DONG"] = value;
+            }
+        }
+
+        public bool IsTRANG_THAI_LAO_DONGNull()
+        {
+            return pm_objDR.IsNull("TRANG_THAI_LAO_DONG");
+        }
+
+        public void SetTRANG_THAI_LAO_DONGNull()
+        {
+            pm_objDR["TRANG_THAI_LAO_DONG"] = System.Convert.DBNull;
+        }
+
+        public string strTRANG_THAI_HIEN_TAI
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "TRANG_THAI_HIEN_TAI", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["TRANG_THAI_HIEN_TAI"] = value;
+            }
+        }
+
+        public bool IsTRANG_THAI_HIEN_TAINull()
+        {
+            return pm_objDR.IsNull("TRANG_THAI_HIEN_TAI");
+        }
+
+        public void SetTRANG_THAI_HIEN_TAINull()
+        {
+            pm_objDR["TRANG_THAI_HIEN_TAI"] = System.Convert.DBNull;
+        }
+
+        public decimal dcID
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID"] = value;
+            }
+        }
+
+        public bool IsIDNull()
+        {
+            return pm_objDR.IsNull("ID");
+        }
+
+        public void SetIDNull()
+        {
+            pm_objDR["ID"] = System.Convert.DBNull;
         }
 
         #endregion

@@ -485,6 +485,28 @@ namespace BKI_HRM.US
             pm_objDR["LINK"] = System.Convert.DBNull;
         }
 
+        public string strTRANG_THAI_LAO_DONG
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "TRANG_THAI_LAO_DONG", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["TRANG_THAI_LAO_DONG"] = value;
+            }
+        }
+
+        public bool IsTRANG_THAI_LAO_DONGNull()
+        {
+            return pm_objDR.IsNull("TRANG_THAI_LAO_DONG");
+        }
+
+        public void SetTRANG_THAI_LAO_DONGNull()
+        {
+            pm_objDR["TRANG_THAI_LAO_DONG"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_V_GD_HOP_DONG_LAO_DONG()
@@ -554,7 +576,7 @@ namespace BKI_HRM.US
                                                        DateTime ip_dat_den_ngay, 
                                                        decimal ip_dc_tim_kiem_ngay_thang_theo)
         {
-            CStoredProc v_sp = new CStoredProc("pr_V_GD_HOP_DONG_LAO_DONG_By_Da_Het_Han");
+            CStoredProc v_sp = new CStoredProc("pr_V_GD_HOP_DONG_LAO_DONG_Search_HD_hien_tai");
             v_sp.addNVarcharInputParam("@ip_str_keyword", ip_str_keyword);
             v_sp.addDecimalInputParam("@id_loai_hop_dong", ip_dc_loai_hop_dong);
             v_sp.addDatetimeInputParam("@tu_ngay", ip_dat_tu_ngay);
@@ -570,7 +592,7 @@ namespace BKI_HRM.US
                                                         DateTime ip_dat_den_ngay,
                                                         decimal ip_dc_tim_kiem_ngay_thang_theo)
         {
-            CStoredProc v_sp = new CStoredProc("pr_V_GD_HOP_DONG_LAO_DONG_By_Ngay_Het_Han");
+            CStoredProc v_sp = new CStoredProc("pr_V_GD_HOP_DONG_LAO_DONG_Search_HD_sap_het_han");
             v_sp.addNVarcharInputParam("@ip_str_keyword", ip_str_keyword);
             v_sp.addDecimalInputParam("@id_loai_hop_dong", ip_dc_loai_hop_dong);
             v_sp.addDatetimeInputParam("@tu_ngay", ip_dat_tu_ngay);

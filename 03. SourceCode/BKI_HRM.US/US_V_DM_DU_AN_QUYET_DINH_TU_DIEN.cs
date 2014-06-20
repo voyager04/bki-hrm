@@ -331,6 +331,28 @@ namespace BKI_HRM.US
             pm_objDR["ID_LOAI_DU_AN"] = System.Convert.DBNull;
         }
 
+        public string strLOAI_QD
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "LOAI_QD", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["LOAI_QD"] = value;
+            }
+        }
+
+        public bool IsLOAI_QDNull()
+        {
+            return pm_objDR.IsNull("LOAI_QD");
+        }
+
+        public void SetLOAI_QDNull()
+        {
+            pm_objDR["LOAI_QD"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_V_DM_DU_AN_QUYET_DINH_TU_DIEN()

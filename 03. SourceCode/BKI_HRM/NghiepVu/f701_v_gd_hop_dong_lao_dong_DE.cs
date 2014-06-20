@@ -69,6 +69,7 @@ namespace BKI_HRM.NghiepVu
         DS_V_GD_HOP_DONG_LAO_DONG m_ds_v = new DS_V_GD_HOP_DONG_LAO_DONG();
         US_DM_NHAN_SU m_us_dm_nhan_su = new US_DM_NHAN_SU();
 
+        private FileExplorer m_fe_file_explorer;
         private string m_str_to = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
         private string m_str_username_share = ConfigurationSettings.AppSettings["USERNAME_SHARE"];
         private string m_str_password_share = ConfigurationSettings.AppSettings["PASSWORD_SHARE"];
@@ -146,11 +147,10 @@ namespace BKI_HRM.NghiepVu
             m_us.dcID_PHAP_NHAN = (decimal)m_cbo_phap_nhan.SelectedValue;
             m_us.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value;
             m_us.strTRANG_THAI_HOP_DONG = m_cbo_trang_thai.SelectedIndex.Equals(0) ? "Y" : "N";
-            m_us.strLINK = m_str_time_now + "-" + m_str_file_name;
             m_us.strNGUOI_KY = m_txt_nguoi_ky.Text.Trim();
             m_us.strCHUC_VU_NGUOI_KY = m_txt_chuc_vu_nguoi_ky.Text.Trim();
             m_us.datNGAY_KY_HOP_DONG = m_dat_ngay_ky_hop_dong.Value;
-
+            
             if (m_us_dm_nhan_su.dcID == -1)
             {
                 DS_DM_NHAN_SU m_ds_dm_nhan_su = new DS_DM_NHAN_SU();
@@ -167,6 +167,9 @@ namespace BKI_HRM.NghiepVu
                 m_us.SetNGAY_HET_HANNull();
             else
                 m_us.datNGAY_HET_HAN = m_dat_ngay_het_han.Value;
+
+            m_us.strLINK = m_str_time_now + "-" + m_str_file_name;
+            
         }
 
         private void save_data()
@@ -339,6 +342,11 @@ namespace BKI_HRM.NghiepVu
             m_str_from = m_ofd_chon_file.FileName;
             var v_i_index = m_str_from.Trim().LastIndexOf("\\");
             m_str_path = m_str_from.Trim().Substring(0, v_i_index + 1);
+            //m_fe_file_explorer = new FileExplorer(m_ofd_chon_file,
+            //    ConfigurationSettings.AppSettings["DOMAIN"],
+            //    ConfigurationSettings.AppSettings["USERNAME_SHARE"],
+            //    ConfigurationSettings.AppSettings["PASSWORD_SHARE"]);
+            //m_lbl_file_name.Text = m_fe_file_explorer.UploadFile();
         }
 
         private bool existed_file(string ip_str_path)
@@ -350,6 +358,7 @@ namespace BKI_HRM.NghiepVu
 
         private void upload_file()
         {
+            MessageBox.Show(m_ofd_chon_file.SafeFileName);
             if (m_str_file_name == "")
             {
                 m_us.strLINK = "";

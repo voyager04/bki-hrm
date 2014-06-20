@@ -56,7 +56,7 @@ namespace BKI_HRM
             return false;
         }
 
-        public void UploadFile()
+        public string UploadFile()
         {
             ModifyFileName(directoryFrom, path + timeNow + "-" + fileName);
 
@@ -73,6 +73,7 @@ namespace BKI_HRM
                 File.Move(path + timeNow + "-" + fileName,
                             directoryTo + timeNow + "-" + fileName);
             }
+            return fileName;
         }
 
         private void ModifyFileName(string from, string to)
