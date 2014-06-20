@@ -388,35 +388,17 @@ namespace BKI_HRM
         #region Data Structure
         private enum e_col_Number
         {
-            THOI_GIAN_TG = 11
-,
-            MA_DU_AN = 2
-                ,
-            ID_DU_AN = 1
-                , DANH_HIEU = 12,
-            MA_QUYET_DINH = 14
-,
-            MA_NV = 5
-                ,
-            TEN_DU_AN = 3
-                ,
-            VI_TRI = 8
-                ,
-            ID_NHAN_SU = 4
-                ,
-            HO_DEM = 6
-                ,
-            TEN = 7
-                ,
-            THOI_DIEM_TG = 9
-                ,
-            ID = 13
-                ,
-            LUA_CHON = 16
-                ,
-            MO_TA = 15
-                , THOI_DIEM_KT = 10
-
+            MA_DU_AN = 1,
+            MA_NV = 2,
+            HO_DEM = 3,
+            TEN = 4,
+            VI_TRI = 5,
+            THOI_DIEM_TG = 6,
+            THOI_DIEM_KT = 7,
+            THOI_GIAN_TG = 8,
+            DANH_HIEU = 9,
+            MO_TA = 10,
+            MA_QUYET_DINH = 11,
         }
         #endregion
 
@@ -449,19 +431,14 @@ namespace BKI_HRM
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
             Hashtable v_htb = new Hashtable();
-            v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_GIAN_TG, e_col_Number.THOI_GIAN_TG);
             v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_DU_AN, e_col_Number.MA_DU_AN);
-            v_htb.Add(V_DM_NHAN_SU_DU_AN.ID_DU_AN, e_col_Number.ID_DU_AN);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_GIAN_TG, e_col_Number.THOI_GIAN_TG);
             v_htb.Add(V_DM_NHAN_SU_DU_AN.DANH_HIEU, e_col_Number.DANH_HIEU);
             v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_NV, e_col_Number.MA_NV);
-            v_htb.Add(V_DM_NHAN_SU_DU_AN.TEN_DU_AN, e_col_Number.TEN_DU_AN);
             v_htb.Add(V_DM_NHAN_SU_DU_AN.VI_TRI, e_col_Number.VI_TRI);
-            v_htb.Add(V_DM_NHAN_SU_DU_AN.ID_NHAN_SU, e_col_Number.ID_NHAN_SU);
             v_htb.Add(V_DM_NHAN_SU_DU_AN.HO_DEM, e_col_Number.HO_DEM);
             v_htb.Add(V_DM_NHAN_SU_DU_AN.TEN, e_col_Number.TEN);
             v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_DIEM_TG, e_col_Number.THOI_DIEM_TG);
-            v_htb.Add(V_DM_NHAN_SU_DU_AN.ID, e_col_Number.ID);
-            v_htb.Add(V_DM_NHAN_SU_DU_AN.LUA_CHON, e_col_Number.LUA_CHON);
             v_htb.Add(V_DM_NHAN_SU_DU_AN.MO_TA, e_col_Number.MO_TA);
             v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_DIEM_KT, e_col_Number.THOI_DIEM_KT);
             v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_QUYET_DINH, e_col_Number.MA_QUYET_DINH);
@@ -508,6 +485,7 @@ namespace BKI_HRM
              , (int)e_col_Number.TEN // chỗ này là tên trường mà mình Count
              , "{0}"
              );
+            m_fg.Cols[(int)e_col_Number.MA_DU_AN].Visible = false;
             m_fg.Redraw = true;
             m_lbl_count_record.Text = string.Format("Có {0} bản ghi", m_ds.Tables[0].Rows.Count);
         }
@@ -583,7 +561,7 @@ namespace BKI_HRM
         {
             DS_V_DM_NHAN_SU_DU_AN v_ds_dm_ns_da = new DS_V_DM_NHAN_SU_DU_AN();
             US_V_DM_NHAN_SU_DU_AN v_us_dm_ns_da = new US_V_DM_NHAN_SU_DU_AN();
-            v_us_dm_ns_da.FillDataset(v_ds_dm_ns_da);
+            //v_us_dm_ns_da.FillDataset(v_ds_dm_ns_da);
             var v_acsc_search = new AutoCompleteStringCollection();
             foreach (DataRow dr in v_ds_dm_ns_da.V_DM_NHAN_SU_DU_AN)
             {

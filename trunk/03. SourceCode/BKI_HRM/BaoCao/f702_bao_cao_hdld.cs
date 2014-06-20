@@ -513,16 +513,17 @@ namespace BKI_HRM
             MA_NV = 2,
             HO_DEM = 3,
             TEN = 4,
-            MA_HOP_DONG = 5,
-            LOAI_HOP_DONG = 6,
-            NGAY_KY_HOP_DONG = 7,
-            NGAY_CO_HIEU_LUC = 8,
-            NGAY_HET_HAN = 9,
-            TEN_PHAP_NHAN = 10,
-            TRANG_THAI_HOP_DONG = 11,
-            LINK = 12,
-            NGUOI_KY = 13,
-            CHUC_VU_NGUOI_KY = 14
+            TRANG_THAI_LAO_DONG = 5,
+            MA_HOP_DONG = 6,
+            LOAI_HOP_DONG = 7,
+            NGAY_KY_HOP_DONG = 8,
+            NGAY_CO_HIEU_LUC = 9,
+            NGAY_HET_HAN = 10,
+            TEN_PHAP_NHAN = 11,
+            TRANG_THAI_HOP_DONG = 12,
+            LINK = 13,
+            NGUOI_KY = 14,
+            CHUC_VU_NGUOI_KY = 15
         }
         #endregion
 
@@ -600,6 +601,7 @@ namespace BKI_HRM
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.HO_DEM, e_col_Number.HO_DEM);
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.NGAY_CO_HIEU_LUC, e_col_Number.NGAY_CO_HIEU_LUC);
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.TEN_PHAP_NHAN, e_col_Number.TEN_PHAP_NHAN);
+            v_htb.Add(V_GD_HOP_DONG_LAO_DONG.TRANG_THAI_LAO_DONG, e_col_Number.TRANG_THAI_LAO_DONG);
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_GD_HOP_DONG_LAO_DONG.NewRow());
             return v_obj_trans;
         }

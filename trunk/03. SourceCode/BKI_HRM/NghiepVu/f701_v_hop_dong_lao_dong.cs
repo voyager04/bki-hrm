@@ -466,16 +466,17 @@ namespace BKI_HRM
             MA_NV = 1,
             HO_DEM = 2,
             TEN = 3,
-            MA_HOP_DONG = 4,
-            LOAI_HOP_DONG = 5,
-            NGAY_KY_HOP_DONG = 6,
-            NGAY_CO_HIEU_LUC = 7,
-            NGAY_HET_HAN = 8,
-            TEN_PHAP_NHAN = 9,
-            TRANG_THAI_HOP_DONG = 10,
-            LINK = 11,
-            NGUOI_KY = 12,
-            CHUC_VU_NGUOI_KY = 13
+            TRANG_THAI_LAO_DONG = 4,
+            MA_HOP_DONG = 5,
+            LOAI_HOP_DONG = 6,
+            NGAY_KY_HOP_DONG = 7,
+            NGAY_CO_HIEU_LUC = 8,
+            NGAY_HET_HAN = 9,
+            TEN_PHAP_NHAN = 10,
+            TRANG_THAI_HOP_DONG = 11,
+            LINK = 12,
+            NGUOI_KY = 13,
+            CHUC_VU_NGUOI_KY = 14
         }
         #endregion
 
@@ -514,6 +515,7 @@ namespace BKI_HRM
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
             Hashtable v_htb = new Hashtable();
+            v_htb.Add(V_GD_HOP_DONG_LAO_DONG.TRANG_THAI_LAO_DONG, e_col_Number.TRANG_THAI_LAO_DONG);
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.TRANG_THAI_HOP_DONG, e_col_Number.TRANG_THAI_HOP_DONG);
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.CHUC_VU_NGUOI_KY, e_col_Number.CHUC_VU_NGUOI_KY);
             v_htb.Add(V_GD_HOP_DONG_LAO_DONG.NGAY_HET_HAN, e_col_Number.NGAY_HET_HAN);
