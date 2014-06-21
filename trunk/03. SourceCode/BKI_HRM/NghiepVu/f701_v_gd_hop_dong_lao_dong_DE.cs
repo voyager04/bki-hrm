@@ -63,6 +63,7 @@ namespace BKI_HRM.NghiepVu
 
         #region Member
         private DataEntryFormMode m_e_form_mode;
+        private DataEntryFileMode m_e_file_mode;
         US_GD_HOP_DONG m_us = new US_GD_HOP_DONG();
         DS_GD_HOP_DONG m_ds = new DS_GD_HOP_DONG();
         US_V_GD_HOP_DONG_LAO_DONG m_us_v = new US_V_GD_HOP_DONG_LAO_DONG();
@@ -70,18 +71,10 @@ namespace BKI_HRM.NghiepVu
         US_DM_NHAN_SU m_us_dm_nhan_su = new US_DM_NHAN_SU();
 
         private FileExplorer m_fe_file_explorer;
-        private string m_str_to = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
-        private string m_str_username_share = ConfigurationSettings.AppSettings["USERNAME_SHARE"];
-        private string m_str_password_share = ConfigurationSettings.AppSettings["PASSWORD_SHARE"];
         private string m_str_domain = ConfigurationSettings.AppSettings["DOMAIN"];
-        private string m_str_from = "";
-        private string m_str_file_name = "";
-        private string m_str_path = "";
-        private string m_str_time_now = DateTime.Now.Ticks.ToString();
-        private string m_str_file_name_old = "";
-
+        private string m_str_directory_to = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
         private decimal m_str_id_hop_dong_old;
-        private bool m_b_status = false;
+        private string m_str_link_old;
         #endregion
 
         #region Private Methods
@@ -168,8 +161,7 @@ namespace BKI_HRM.NghiepVu
             else
                 m_us.datNGAY_HET_HAN = m_dat_ngay_het_han.Value;
 
-            m_us.strLINK = m_str_time_now + "-" + m_str_file_name;
-            
+            m_us.strLINK = m_lbl_file_name.Text;
         }
 
         private void save_data()
@@ -177,13 +169,33 @@ namespace BKI_HRM.NghiepVu
             if (check_data_is_ok() == false)
                 return;
 
-            form_2_us_object();
-            if (existed_file(m_str_to + m_str_time_now + "-" + m_str_file_name))
+            // Xử lý file đính kèm
+            switch (m_e_file_mode)
             {
-                BaseMessages.MsgBox_Infor("Tên file đã tồn tại, vui lòng đổi tên khác.");
-                return;
+                case DataEntryFileMode.UploadFile:
+                    m_fe_file_explorer.UploadFile();
+                    break;
+                case DataEntryFileMode.EditFile:
+                    if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old) == false)
+                    {
+                        BaseMessages.MsgBox_Infor("File không tồn tại!");
+                        return;
+                    }
+                    FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
+                    m_fe_file_explorer.UploadFile();
+                    break;
+                case DataEntryFileMode.DeleteFile:
+                    if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old) == false)
+                    {
+                        BaseMessages.MsgBox_Infor("File không tồn tại!");
+                        return;
+                    }
+                    FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
+                    break;
             }
-            upload_file();
+
+
+            form_2_us_object();
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.InsertDataState:
@@ -219,8 +231,6 @@ namespace BKI_HRM.NghiepVu
                             return;
                         }
                     }
-                    if (m_b_status == true && m_str_file_name_old != "")
-                        delete_file(m_str_to + m_str_file_name_old);
                     m_us.Update();
                     break;
             }
@@ -268,10 +278,8 @@ namespace BKI_HRM.NghiepVu
                 m_dat_ngay_het_han.Value = ip_us_gd_hop_dong.datNGAY_HET_HAN;
                 m_dat_ngay_het_han.Checked = true;
             }
-            m_str_file_name_old = ip_us_gd_hop_dong.strLINK;
             if (ip_us_gd_hop_dong.strLINK == "") return;
-            string[] v_strs = ip_us_gd_hop_dong.strLINK.Split('\\');
-            m_lbl_file_name.Text = v_strs[v_strs.Length - 1].Split('-')[v_strs[v_strs.Length - 1].Split('-').Length - 1];
+            m_lbl_file_name.Text = ip_us_gd_hop_dong.strLINK;
         }
 
         private void load_data_2_cbo_loai_hop_dong()
@@ -325,81 +333,17 @@ namespace BKI_HRM.NghiepVu
 
         private void chon_file()
         {
-            m_ofd_chon_file.Filter = "(*.*)|*.*";
-            m_ofd_chon_file.Multiselect = false;
-            m_ofd_chon_file.Title = "Chọn file";
-            m_ofd_chon_file.FileName = "";
-            DialogResult result = m_ofd_chon_file.ShowDialog();
-            if (result != DialogResult.OK) return;
-
-            if (new FileInfo(m_ofd_chon_file.FileName).Length > 5096000)
-            {
-                BaseMessages.MsgBox_Infor("File đính kèm quá lớn. \nVui lòng chọn file có dung lượng < 5Mb");
-                return;
-            }
-            m_str_file_name = m_ofd_chon_file.SafeFileName;
-            m_lbl_file_name.Text = m_str_file_name;
-            m_str_from = m_ofd_chon_file.FileName;
-            var v_i_index = m_str_from.Trim().LastIndexOf("\\");
-            m_str_path = m_str_from.Trim().Substring(0, v_i_index + 1);
-            //m_fe_file_explorer = new FileExplorer(m_ofd_chon_file,
-            //    ConfigurationSettings.AppSettings["DOMAIN"],
-            //    ConfigurationSettings.AppSettings["USERNAME_SHARE"],
-            //    ConfigurationSettings.AppSettings["PASSWORD_SHARE"]);
-            //m_lbl_file_name.Text = m_fe_file_explorer.UploadFile();
-        }
-
-        private bool existed_file(string ip_str_path)
-        {
-            if (File.Exists(ip_str_path))
-                return true;
-            return false;
-        }
-
-        private void upload_file()
-        {
-            MessageBox.Show(m_ofd_chon_file.SafeFileName);
-            if (m_str_file_name == "")
-            {
-                m_us.strLINK = "";
-                return;
-            }
-            modify_name_file(m_str_from, m_str_path + m_str_time_now + "-" + m_str_file_name);
-
-            var oNetworkCredential =
-                    new System.Net.NetworkCredential()
-                    {
-                        Domain = m_str_domain,
-                        UserName = m_str_domain + "\\" + m_str_username_share,
-                        Password = m_str_password_share
-                    };
-
-            using (new RemoteAccessHelper.NetworkConnection(@"\\" + m_str_domain, oNetworkCredential))
-            {
-                File.Move(m_str_path + m_str_time_now + "-" + m_str_file_name,
-                            m_str_to + m_str_time_now + "-" + m_str_file_name);
-            }
-
-            m_us.strLINK = m_str_time_now + "-" + m_str_file_name;
-            m_b_status = true;
-        }
-
-        private void modify_name_file(string ip_str_source_file_name, string ip_str_desination_file_name)
-        {
-            //Coppy file mới
-            File.Copy(ip_str_source_file_name, m_str_path + "topica" + m_str_file_name);
-            //Đổi tên file mới
-            File.Move(m_str_path + "topica" + m_str_file_name, ip_str_desination_file_name);
-        }
-
-        private void delete_file(string ip_str_path)
-        {
-            if (existed_file(m_str_from))
-            {
-                File.Delete(ip_str_path);
-                return;
-            }
-            BaseMessages.MsgBox_Infor("File không tồn tại.");
+            m_fe_file_explorer = new FileExplorer(m_ofd_chon_file,
+                m_str_domain,
+                ConfigurationSettings.AppSettings["USERNAME_SHARE"],
+                ConfigurationSettings.AppSettings["PASSWORD_SHARE"],
+                ConfigurationSettings.AppSettings["DESTINATION_NAME"]);
+            m_str_link_old = m_lbl_file_name.Text;
+            if (m_str_link_old != "")
+                m_e_file_mode = DataEntryFileMode.EditFile;
+            else
+                m_e_file_mode = DataEntryFileMode.UploadFile;
+            m_lbl_file_name.Text = m_fe_file_explorer.fileName;
         }
 
         private bool check_trung_ma_hop_dong(string ip_str_ma_hop_dong)
@@ -576,10 +520,9 @@ namespace BKI_HRM.NghiepVu
 
         private void m_cmd_bo_dinh_kem_Click(object sender, EventArgs e)
         {
-            if (File.Exists(m_us.strLINK))
-            {
-                File.Delete(m_us.strLINK);
-            }
+            m_e_file_mode = DataEntryFileMode.DeleteFile;
+            m_str_link_old = m_lbl_file_name.Text;
+            m_lbl_file_name.Text = "";
         }
 
         private void m_txt_ma_hop_dong_TextChanged(object sender, EventArgs e)
@@ -607,8 +550,6 @@ namespace BKI_HRM.NghiepVu
         }
         #endregion
     }
-
-    
 }
 
 

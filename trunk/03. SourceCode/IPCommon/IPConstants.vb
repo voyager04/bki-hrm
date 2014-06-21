@@ -10,6 +10,12 @@ Public Enum DataEntryFormMode
     SelectDataState
 End Enum
 
+Public Enum DataEntryFileMode
+    UploadFile
+    EditFile
+    DeleteFile
+End Enum
+
 Public Class IPConstants
 
 #Region "Nhiệm vụ của class"

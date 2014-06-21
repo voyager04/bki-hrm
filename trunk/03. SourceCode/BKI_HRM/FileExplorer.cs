@@ -12,22 +12,24 @@ namespace BKI_HRM
     {
         public string Domain { get; set; }
         public string UserName { get; set; }
-        public string Password { get; private set; }
+        public string Password { get; set; }
+        public string DirectoryTo { get; set; }
 
+        public string fileName = "";
         private string directoryFrom = "";
-        private string directoryTo = "";
-        private string fileName = "";
         private string path = "";
         private long timeNow = DateTime.Now.Ticks;
 
         public FileExplorer(OpenFileDialog fileDialog,
             string domain, 
             string userName, 
-            string password)
+            string password,
+            string directoryTo)
         {
             Domain = domain;
             UserName = userName;
             Password = password;
+            DirectoryTo = directoryTo;
 
             fileDialog.Filter = "(*.*)|*.*";
             fileDialog.Multiselect = false;
@@ -49,7 +51,7 @@ namespace BKI_HRM
             path = directoryFrom.Trim().Substring(0, index + 1);
         }
 
-        private bool IsExistedFile(string path)
+        public static bool IsExistedFile(string path)
         {
             if (File.Exists(path))
                 return true;
@@ -58,21 +60,28 @@ namespace BKI_HRM
 
         public string UploadFile()
         {
-            ModifyFileName(directoryFrom, path + timeNow + "-" + fileName);
-
-            var oNetworkCredential =
-                    new System.Net.NetworkCredential()
-                    {
-                        Domain = this.Domain,
-                        UserName = this.Domain + "\\" + this.UserName,
-                        Password = this.Password
-                    };
-
-            using (new RemoteAccessHelper.NetworkConnection(@"\\" + this.Domain, oNetworkCredential))
+            if (IsExistedFile(this.DirectoryTo + fileName))
             {
-                File.Move(path + timeNow + "-" + fileName,
-                            directoryTo + timeNow + "-" + fileName);
+                BaseMessages.MsgBox_Infor("Tên file đã tồn tại. Vui lòng đổi tên khác");
+                return "";
             }
+            //ModifyFileName(directoryFrom, path + fileName);
+
+            //var oNetworkCredential =
+            //        new System.Net.NetworkCredential()
+            //        {
+            //            Domain = this.Domain,
+            //            UserName = this.Domain + "\\" + this.UserName,
+            //            Password = this.Password
+            //        };
+
+            //using (new RemoteAccessHelper.NetworkConnection(@"\\" + this.Domain, oNetworkCredential))
+            //{
+            //    File.Move(path + fileRenamed,
+            //                directoryTo + fileRenamed);
+            //}
+            File.Move(path + fileName,
+                            this.DirectoryTo + fileName);
             return fileName;
         }
 
@@ -84,14 +93,13 @@ namespace BKI_HRM
             File.Move(path + "bki" + fileName, to);
         }
 
-        public void DeleteFile(string path)
+        public static void DeleteFile(string path)
         {
-            if (IsExistedFile(directoryFrom))
+            if (IsExistedFile(path))
             {
                 File.Delete(path);
                 return;
             }
-            BaseMessages.MsgBox_Infor("File không tồn tại.");
         }
     }
 }
