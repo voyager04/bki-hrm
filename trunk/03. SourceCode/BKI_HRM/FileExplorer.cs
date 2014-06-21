@@ -96,10 +96,7 @@ namespace BKI_HRM
         public static void DeleteFile(string path)
         {
             if (IsExistedFile(path))
-            {
                 File.Delete(path);
-                return;
-            }
         }
     }
 }
