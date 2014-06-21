@@ -65,23 +65,25 @@ namespace BKI_HRM
                 BaseMessages.MsgBox_Infor("Tên file đã tồn tại. Vui lòng đổi tên khác");
                 return "";
             }
-            //ModifyFileName(directoryFrom, path + fileName);
+            if (UserName == "")
+                File.Move(path + fileName, this.DirectoryTo + fileName);
+            else
+            {
+                var oNetworkCredential =
+                        new System.Net.NetworkCredential()
+                        {
+                            Domain = this.Domain,
+                            UserName = this.Domain + "\\" + this.UserName,
+                            Password = this.Password
+                        };
 
-            //var oNetworkCredential =
-            //        new System.Net.NetworkCredential()
-            //        {
-            //            Domain = this.Domain,
-            //            UserName = this.Domain + "\\" + this.UserName,
-            //            Password = this.Password
-            //        };
-
-            //using (new RemoteAccessHelper.NetworkConnection(@"\\" + this.Domain, oNetworkCredential))
-            //{
-            //    File.Move(path + fileRenamed,
-            //                directoryTo + fileRenamed);
-            //}
-            File.Move(path + fileName,
-                            this.DirectoryTo + fileName);
+                using (new RemoteAccessHelper.NetworkConnection(@"\\" + this.Domain, oNetworkCredential))
+                {
+                    File.Move(path + fileName,
+                                this.DirectoryTo + fileName);
+                }
+            }
+            
             return fileName;
         }
 
