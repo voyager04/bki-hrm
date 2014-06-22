@@ -306,6 +306,16 @@ namespace BKI_HRM {
             ShowDialog();
             op_us = m_us;
         }
+        public void select_data(string ip_str_loai_quyet_dinh, ref US_DM_QUYET_DINH op_us)
+        {
+            m_str_loai_quyet_dinh = ip_str_loai_quyet_dinh;
+            m_e_form_mode = DataEntryFormMode.SelectDataState;
+            m_cmd_delete.Visible = false;
+            m_cmd_insert.Visible = false;
+            m_cmd_update.Visible = false;
+            ShowDialog();
+            op_us = m_us;
+        }
         #endregion
 
         #region Data Structure
@@ -334,7 +344,7 @@ namespace BKI_HRM {
         US_DM_QUYET_DINH m_us = new US_DM_QUYET_DINH();
         DS_DM_QUYET_DINH m_ds = new DS_DM_QUYET_DINH();
         private const String m_str_tim_kiem = "Nhập loại quyết định, mã quyết định, nội dung cần tìm";
-
+        private string m_str_loai_quyet_dinh;
         #endregion
 
         #region Private Methods
@@ -388,9 +398,9 @@ namespace BKI_HRM {
         private void load_data_2_grid() {
             m_v_ds = new DS_V_DM_QUYET_DINH();
             if (m_txt_tim_kiem.Text.Trim() == m_str_tim_kiem || m_txt_tim_kiem.Text.Trim() == "") 
-                m_v_us.FillDatasetSearch(m_v_ds, "");
+                m_v_us.FillDatasetSearch(m_v_ds, "",m_str_loai_quyet_dinh);
             else 
-                m_v_us.FillDatasetSearch(m_v_ds, m_txt_tim_kiem.Text.Trim());
+                m_v_us.FillDatasetSearch(m_v_ds, m_txt_tim_kiem.Text.Trim(),m_str_loai_quyet_dinh);
             //m_us.FillDataset(m_ds);
             var v_str_search = m_txt_tim_kiem.Text.Trim();
             if (v_str_search.Equals(m_str_tim_kiem)) {

@@ -34,14 +34,14 @@ namespace BKI_HRM
         public void display_for_insert()
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
-            this.Show();
+            this.ShowDialog();
         }
         public void display_for_update(US_V_GD_CONG_TAC ip_us)
         {
             m_us_v_gd_cong_tac = ip_us;
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             us_object_2_form();
-            this.Show();
+            this.ShowDialog();
 
         }
         #endregion
@@ -58,6 +58,7 @@ namespace BKI_HRM
                 ,
             NGAY_VE = 4
                 , HO_TEN = 2
+            , ID = 7
         }
         #endregion
         #region Members
@@ -115,6 +116,10 @@ namespace BKI_HRM
         }
         private void form_2_us_object_quyet_dinh()
         {
+            if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
+            {
+                m_us_dm_quyet_dinh.dcID = m_us_v_gd_cong_tac.dcID_QUYET_DINH;
+            }
             m_us_dm_quyet_dinh.strMA_QUYET_DINH = m_lbl_ma_qd.Text;
             m_us_dm_quyet_dinh.strNOI_DUNG = m_txt_noi_dung.Text.Trim();
             m_us_dm_quyet_dinh.strLINK = m_ofd_openfile.FileName;
@@ -125,10 +130,27 @@ namespace BKI_HRM
         }
         private void form_2_us_object_gd_cong_tac(int ip_i_row)
         {
-            m_us_gd_cong_tac.dcID_NHAN_SU = CIPConvert.ToDecimal(m_fg.Rows[ip_i_row][(int)e_col_Number.MA_NV]);
+            if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
+            {
+                m_us_gd_cong_tac.dcID = CIPConvert.ToDecimal(m_fg.Rows[ip_i_row][(int)e_col_Number.ID]);
+               
+            }
+            US_V_DM_NHAN_SU v_us = new US_V_DM_NHAN_SU();
+            DS_V_DM_NHAN_SU v_ds = new DS_V_DM_NHAN_SU();
+            v_us.FillDataset_search(v_ds, CIPConvert.ToStr(m_fg.Rows[ip_i_row][(int)e_col_Number.MA_NV]));
+            v_us.DataRow2Me((DataRow)v_ds.V_DM_NHAN_SU.Rows[0]);
+
+            m_us_gd_cong_tac.dcID_NHAN_SU = v_us.dcID;
             m_us_gd_cong_tac.dcID_QUYET_DINH = m_us_dm_quyet_dinh.dcID;
-            m_us_gd_cong_tac.datNGAY_DI = CIPConvert.ToDatetime(m_fg.Rows[ip_i_row][(int)e_col_Number.NGAY_DI]);
-            m_us_gd_cong_tac.datNGAY_VE = CIPConvert.ToDatetime(m_fg.Rows[ip_i_row][(int)e_col_Number.NGAY_VE]);
+            if (m_fg.Rows[ip_i_row][(int)e_col_Number.NGAY_DI] != null)
+            {
+                m_us_gd_cong_tac.datNGAY_DI = CIPConvert.ToDatetime(m_fg.Rows[ip_i_row][(int)e_col_Number.NGAY_DI].ToString().Substring(0,10));
+            }
+            if (m_fg.Rows[ip_i_row][(int)e_col_Number.NGAY_VE] != null)
+            {
+                m_us_gd_cong_tac.datNGAY_VE = CIPConvert.ToDatetime(m_fg.Rows[ip_i_row][(int)e_col_Number.NGAY_VE].ToString().Substring(0,10));
+            }
+            
             if (m_fg.Rows[ip_i_row][(int)e_col_Number.DIA_DIEM] != null)
             {
                 m_us_gd_cong_tac.strDIA_DIEM = CIPConvert.ToStr(m_fg.Rows[ip_i_row][(int)e_col_Number.DIA_DIEM]);
@@ -147,16 +169,15 @@ namespace BKI_HRM
             v_htb.Add(V_GD_CONG_TAC.DIA_DIEM, e_col_Number.DIA_DIEM);
             v_htb.Add(V_GD_CONG_TAC.MA_NV, e_col_Number.MA_NV);
             v_htb.Add(V_GD_CONG_TAC.NGAY_VE, e_col_Number.NGAY_VE);
-
             v_htb.Add(V_GD_CONG_TAC.HO_TEN, e_col_Number.HO_TEN);
-
+            v_htb.Add(V_GD_CONG_TAC.ID, e_col_Number.ID);
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds_v_gd_cong_tac.V_GD_CONG_TAC.NewRow());
             return v_obj_trans;
         }
         private void load_data_2_grid()
         {
+            m_fg.AllowAddNew = false;
             m_ds_v_gd_cong_tac = new DS_V_GD_CONG_TAC();
-
             m_us_v_gd_cong_tac.FillDatasetSearch(m_ds_v_gd_cong_tac, m_us_v_gd_cong_tac.strMA_QUYET_DINH, DateTime.Parse("1/1/1900"), DateTime.Today);
             m_fg.Redraw = false;
             m_obj_trans = get_trans_object(m_fg);
@@ -190,6 +211,7 @@ namespace BKI_HRM
                 case DataEntryFormMode.InsertDataState:
                     if (m_b_check_quyet_dinh_save)
                     {
+                        form_2_us_object_quyet_dinh();
                         m_us_dm_quyet_dinh.Insert();
                     }
                     for (int i = 1; i < m_fg.Rows.Count; i++)
@@ -199,10 +221,18 @@ namespace BKI_HRM
                             form_2_us_object_gd_cong_tac(i);
                             m_us_gd_cong_tac.Insert();
                         }
-
                     }
                     break;
                 case DataEntryFormMode.UpdateDataState:
+                    form_2_us_object_quyet_dinh();
+                    for (int i = 1; i < m_fg.Rows.Count; i++)
+                    {
+                        if ((m_fg.Rows[i][(int)e_col_Number.MA_NV]) != null)
+                        {
+                            form_2_us_object_gd_cong_tac(i);
+                            m_us_gd_cong_tac.Update();
+                        }
+                    }
                     break;
                 default:
                     break;
@@ -233,7 +263,7 @@ namespace BKI_HRM
             m_b_check_quyet_dinh_save = false;
             m_grb_quyet_dinh.Enabled = true;
             f600_v_dm_quyet_dinh v_frm = new f600_v_dm_quyet_dinh();
-            v_frm.select_data(ref m_us_dm_quyet_dinh);
+            v_frm.select_data("Đi công tác", ref m_us_dm_quyet_dinh);
             if (m_us_dm_quyet_dinh.dcID != -1)
             {
                 string[] v_arstr = m_us_dm_quyet_dinh.strMA_QUYET_DINH.Trim().Split('/');
@@ -319,6 +349,11 @@ namespace BKI_HRM
                     TextBox v_txt_ma_nv = new TextBox();
                     TextBox v_txt_ho_ten = new TextBox();
                     v_txt_ma_nv.TabIndex = r.Index;
+                    if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
+                    {
+                        v_txt_ma_nv.Text = CIPConvert.ToStr(m_fg.Rows[v_txt_ma_nv.TabIndex][(int)e_col_Number.MA_NV]);
+                        v_txt_ho_ten.Text = CIPConvert.ToStr(m_fg.Rows[v_txt_ma_nv.TabIndex][(int)e_col_Number.HO_TEN]);
+                    }
                     AutoCompleteStringCollection v_acsc_ma_nv = new AutoCompleteStringCollection();
                     foreach (DataRow dr in m_ds_v_dm_nhan_su.V_DM_NHAN_SU)
                     {
@@ -340,6 +375,8 @@ namespace BKI_HRM
 
                     v_txt_ma_nv.Leave += (sender, e) => v_txt_Leave(sender, e, v_txt_ma_nv.TabIndex, v_txt_ma_nv.Text, ref v_txt_ma_nv, ref v_txt_ho_ten);
                     v_txt_ho_ten.Leave += (sender, e) => v_txt_Leave(sender, e, v_txt_ma_nv.TabIndex, v_txt_ho_ten.Text, ref v_txt_ma_nv, ref v_txt_ho_ten);
+
+                    
                 }
             }
 
@@ -369,7 +406,7 @@ namespace BKI_HRM
                 v_us.DataRow2Me((DataRow)v_ds.V_DM_NHAN_SU.Rows[0]);
                 op_txt_ma_nv.Text = v_us.strMA_NV;
                 op_txt_ho_ten.Text = v_us.strHO_TEN;
-                m_fg.Rows[ip_row][(int)e_col_Number.MA_NV] = v_us.dcID;
+                m_fg.Rows[ip_row][(int)e_col_Number.MA_NV] = v_us.strMA_NV;
                 m_fg.Focus();
                 m_fg.Select(ip_row, (int)e_col_Number.NGAY_DI);
             }
@@ -385,7 +422,7 @@ namespace BKI_HRM
                 //                     op_txt_ma_nv.AutoCompleteCustomSource = v_acsc_ma_nv;
                 v_us.DataRow2Me((DataRow)v_ds.V_DM_NHAN_SU.Rows[0]);
                 op_txt_ma_nv.Text = v_us.strMA_NV;
-                m_fg.Rows[ip_row][(int)e_col_Number.MA_NV] = v_us.dcID;
+                m_fg.Rows[ip_row][(int)e_col_Number.MA_NV] = v_us.strMA_NV;
                 op_txt_ma_nv.Focus();
             }
             if (ip_str == "")
@@ -407,7 +444,7 @@ namespace BKI_HRM
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
             m_fg.Click += new EventHandler(m_fg_Click);
-            //    m_fg.Paint += new PaintEventHandler(_flex_Paint);
+       //     m_fg.Paint += new PaintEventHandler(_flex_Paint);
 
         }
         #endregion
@@ -511,6 +548,7 @@ namespace BKI_HRM
             try
             {
                 save_data();
+                this.Close();
             }
             catch (Exception v_e)
             {
@@ -617,6 +655,8 @@ namespace BKI_HRM
             	CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+       
 
       
 
