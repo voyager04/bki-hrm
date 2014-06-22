@@ -66,7 +66,8 @@ namespace BKI_HRM
                 return "";
             }
             if (UserName == "")
-                File.Move(path + fileName, this.DirectoryTo + fileName);
+                //File.Move(path + fileName, this.DirectoryTo + fileName);
+                File.Copy(path + fileName, this.DirectoryTo + fileName);
             else
             {
                 var oNetworkCredential =
@@ -79,8 +80,9 @@ namespace BKI_HRM
 
                 using (new RemoteAccessHelper.NetworkConnection(@"\\" + this.Domain, oNetworkCredential))
                 {
-                    File.Move(path + fileName,
-                                this.DirectoryTo + fileName);
+                    //File.Move(path + fileName,
+                    //            this.DirectoryTo + fileName);
+                    File.Copy(path + fileName, this.DirectoryTo + fileName);
                 }
             }
             

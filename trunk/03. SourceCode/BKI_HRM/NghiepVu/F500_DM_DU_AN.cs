@@ -781,9 +781,16 @@ namespace BKI_HRM
             {
                 m_fg_du_an.Rows.Remove(m_fg_du_an.Row);
                 m_us_du_an.Delete();
-                load_data_2_grid_du_an();
-                load_data_2_grid_nhan_su();
             }
+            if (v_ds_ct_da.GD_CHI_TIET_DU_AN.Rows.Count == 0 && BaseMessages.MsgBox_Confirm("Bạn có chắc chắn muốn xóa dự án này không?"))
+            {
+                m_fg_du_an.Rows.Remove(m_fg_du_an.Row);
+                US_DM_DU_AN v_us_dm_da = new US_DM_DU_AN(m_us_du_an.dcID);
+                v_us_dm_da.Delete();
+                
+            }
+            load_data_2_grid_du_an();
+            load_data_2_grid_nhan_su();
         }
 
         private void view_v_dm_du_an_quyet_dinh_tu_dien()
