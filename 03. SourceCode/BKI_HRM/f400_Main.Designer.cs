@@ -42,8 +42,7 @@ namespace BKI_HRM
             this.m_menuitem_dm_control = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_tudien = new System.Windows.Forms.ToolStripMenuItem();
             this.restoreDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saoLưuDữLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.phụcHồiDữLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+           
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.m_menuitem_thoat = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_danhmuc = new System.Windows.Forms.ToolStripMenuItem();
@@ -196,20 +195,7 @@ namespace BKI_HRM
             this.restoreDBToolStripMenuItem.Text = "Sao lưu/Khôi phục dữ liệu";
             this.restoreDBToolStripMenuItem.Click += new System.EventHandler(this.restoreDBToolStripMenuItem_Click);
             // 
-            // saoLưuDữLiệuToolStripMenuItem
-            // 
-            this.saoLưuDữLiệuToolStripMenuItem.Name = "saoLưuDữLiệuToolStripMenuItem";
-            this.saoLưuDữLiệuToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.saoLưuDữLiệuToolStripMenuItem.Text = "Sao lưu dữ liệu";
-            this.saoLưuDữLiệuToolStripMenuItem.Click += new System.EventHandler(this.saoLưuDữLiệuToolStripMenuItem_Click);
-            // 
-            // phụcHồiDữLiệuToolStripMenuItem
-            // 
-            this.phụcHồiDữLiệuToolStripMenuItem.Name = "phụcHồiDữLiệuToolStripMenuItem";
-            this.phụcHồiDữLiệuToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.phụcHồiDữLiệuToolStripMenuItem.Text = "Phục hồi dữ liệu";
-            this.phụcHồiDữLiệuToolStripMenuItem.Click += new System.EventHandler(this.phụcHồiDữLiệuToolStripMenuItem_Click);
-            // 
+          
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
