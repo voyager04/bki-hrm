@@ -44,6 +44,7 @@ namespace BKI_HRM
         internal SIS.Controls.Button.SiSButton m_cmd_them_quyet_dinh;
         private Label m_lbl_mess;
         private Label m_lbl_so_nhan_vien;
+        private Label m_lbl_phim_tat;
 		private System.ComponentModel.IContainer components;
 
 		public f202_V_GD_QUA_TRINH_LAM_VIEC()
@@ -96,6 +97,7 @@ namespace BKI_HRM
             this.m_grv_qua_trinh_lam_viec = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_lbl_mess = new System.Windows.Forms.Label();
             this.m_lbl_so_nhan_vien = new System.Windows.Forms.Label();
+            this.m_lbl_phim_tat = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_qua_trinh_lam_viec)).BeginInit();
             this.SuspendLayout();
@@ -129,6 +131,7 @@ namespace BKI_HRM
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_lbl_phim_tat);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_them_quyet_dinh);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_kiem_nhiem);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_mien_nhiem);
@@ -285,6 +288,15 @@ namespace BKI_HRM
             this.m_lbl_so_nhan_vien.Text = "_";
             this.m_lbl_so_nhan_vien.Visible = false;
             // 
+            // m_lbl_phim_tat
+            // 
+            this.m_lbl_phim_tat.AutoSize = true;
+            this.m_lbl_phim_tat.Location = new System.Drawing.Point(142, 12);
+            this.m_lbl_phim_tat.Name = "m_lbl_phim_tat";
+            this.m_lbl_phim_tat.Size = new System.Drawing.Size(206, 13);
+            this.m_lbl_phim_tat.TabIndex = 1000;
+            this.m_lbl_phim_tat.Text = "Phím tắt: F6_Mở rộng-Thu gọn danh sách";
+            // 
             // f202_V_GD_QUA_TRINH_LAM_VIEC
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -302,6 +314,7 @@ namespace BKI_HRM
             this.Text = "F202-Thay đổi chức vụ, đơn vị công tác";
             this.Load += new System.EventHandler(this.f202_V_GD_QUA_TRINH_LAM_VIEC_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
+            this.m_pnl_out_place_dm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_qua_trinh_lam_viec)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

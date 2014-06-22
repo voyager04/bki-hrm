@@ -76,6 +76,14 @@ namespace BKI_HRM
         bool m_b_check_quyet_dinh_null = false;
         ArrayList m_ar_txt_ma_nv = new ArrayList();
         ArrayList m_ar_txt_ho_ten = new ArrayList();
+
+        // File explorer
+        private DataEntryFileMode m_e_file_mode;
+        private FileExplorer m_fe_file_explorer;
+        private string m_str_domain = ConfigurationSettings.AppSettings["DOMAIN"];
+        private string m_str_directory_to = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
+        private decimal m_str_id_hop_dong_old;
+        private string m_str_link_old;
         #endregion
 
         #region Private Methods
@@ -122,7 +130,7 @@ namespace BKI_HRM
             }
             m_us_dm_quyet_dinh.strMA_QUYET_DINH = m_lbl_ma_qd.Text;
             m_us_dm_quyet_dinh.strNOI_DUNG = m_txt_noi_dung.Text.Trim();
-            m_us_dm_quyet_dinh.strLINK = m_ofd_openfile.FileName;
+            m_us_dm_quyet_dinh.strLINK = m_lbl_file_name.Text;
             m_us_dm_quyet_dinh.datNGAY_KY = m_dat_ngay_ky.Value;
             m_us_dm_quyet_dinh.SetNGAY_HET_HIEU_LUCNull();
             m_us_dm_quyet_dinh.datNGAY_CO_HIEU_LUC = m_us_dm_quyet_dinh.datNGAY_KY;
@@ -190,7 +198,7 @@ namespace BKI_HRM
             m_grb_quyet_dinh.Enabled = true;
 
             string[] v_arstr = m_us_v_gd_cong_tac.strMA_QUYET_DINH.Trim().Split('/');
-            m_ofd_openfile.FileName = m_us_v_gd_cong_tac.strLINK;
+            m_ofd_chon_file.FileName = m_us_v_gd_cong_tac.strLINK;
             m_txt_ma_quyet_dinh.Text = v_arstr[0];
             US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
             DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
@@ -206,6 +214,29 @@ namespace BKI_HRM
 
         private void save_data()
         {
+            // Xử lý file đính kèm
+            switch (m_e_file_mode)
+            {
+                case DataEntryFileMode.UploadFile:
+                    m_fe_file_explorer.UploadFile();
+                    break;
+                case DataEntryFileMode.EditFile:
+                    if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old))
+                    {
+                        FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
+                    }
+                    m_fe_file_explorer.UploadFile();
+                    break;
+                case DataEntryFileMode.DeleteFile:
+                    if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old) == false)
+                    {
+                        BaseMessages.MsgBox_Infor("File không tồn tại!");
+                        return;
+                    }
+                    FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
+                    break;
+            }
+
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.InsertDataState:
@@ -242,14 +273,14 @@ namespace BKI_HRM
         }
         private void chon_file()
         {
-            m_ofd_openfile.Filter = "(*.pdf)|*.pdf|(*.doc)|*.doc|(*.docx)|*.docx|(*.xls)|*.xls|(*.xlsx)|*.xlsx";
-            m_ofd_openfile.Multiselect = false;
-            m_ofd_openfile.Title = "Chọn tài liệu đính kèm";
-            DialogResult result = m_ofd_openfile.ShowDialog();
+            m_ofd_chon_file.Filter = "(*.pdf)|*.pdf|(*.doc)|*.doc|(*.docx)|*.docx|(*.xls)|*.xls|(*.xlsx)|*.xlsx";
+            m_ofd_chon_file.Multiselect = false;
+            m_ofd_chon_file.Title = "Chọn tài liệu đính kèm";
+            DialogResult result = m_ofd_chon_file.ShowDialog();
         }
         private void mo_file()
         {
-            Process.Start("explorer.exe", m_ofd_openfile.FileName);
+            Process.Start("explorer.exe", m_ofd_chon_file.FileName);
         }
 
         private void them_quyet_dinh()
@@ -267,7 +298,7 @@ namespace BKI_HRM
             if (m_us_dm_quyet_dinh.dcID != -1)
             {
                 string[] v_arstr = m_us_dm_quyet_dinh.strMA_QUYET_DINH.Trim().Split('/');
-                m_ofd_openfile.FileName = m_us_dm_quyet_dinh.strLINK;
+                m_ofd_chon_file.FileName = m_us_dm_quyet_dinh.strLINK;
                 m_txt_ma_quyet_dinh.Text = v_arstr[0];
                 US_CM_DM_TU_DIEN v_us = new US_CM_DM_TU_DIEN();
                 DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
@@ -351,6 +382,7 @@ namespace BKI_HRM
                     v_txt_ma_nv.TabIndex = r.Index;
                     if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
                     {
+                        
                         v_txt_ma_nv.Text = CIPConvert.ToStr(m_fg.Rows[v_txt_ma_nv.TabIndex][(int)e_col_Number.MA_NV]);
                         v_txt_ho_ten.Text = CIPConvert.ToStr(m_fg.Rows[v_txt_ma_nv.TabIndex][(int)e_col_Number.HO_TEN]);
                     }
@@ -420,6 +452,7 @@ namespace BKI_HRM
                 //                     op_txt_ma_nv.AutoCompleteMode = AutoCompleteMode.Suggest;
                 //                     op_txt_ma_nv.AutoCompleteSource = AutoCompleteSource.CustomSource;
                 //                     op_txt_ma_nv.AutoCompleteCustomSource = v_acsc_ma_nv;
+                
                 v_us.DataRow2Me((DataRow)v_ds.V_DM_NHAN_SU.Rows[0]);
                 op_txt_ma_nv.Text = v_us.strMA_NV;
                 m_fg.Rows[ip_row][(int)e_col_Number.MA_NV] = v_us.strMA_NV;
@@ -431,8 +464,30 @@ namespace BKI_HRM
             
             }
         }
-
-
+        private void m_fg_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Tab)
+            {
+                MessageBox.Show("row: " + m_fg.Row.ToString() + "; col: " + m_fg.Col.ToString());
+                m_fg.Select(m_fg.Row + 0, m_fg.Col + 1);
+                e.Handled = true;
+            }
+        }
+        
+        private void chon_file2()
+        {
+            m_fe_file_explorer = new FileExplorer(m_ofd_chon_file,
+                m_str_domain,
+                ConfigurationSettings.AppSettings["USERNAME_SHARE"],
+                ConfigurationSettings.AppSettings["PASSWORD_SHARE"],
+                ConfigurationSettings.AppSettings["DESTINATION_NAME"]);
+            m_str_link_old = m_lbl_file_name.Text;
+            if (m_str_link_old != "")
+                m_e_file_mode = DataEntryFileMode.EditFile;
+            else
+                m_e_file_mode = DataEntryFileMode.UploadFile;
+            m_lbl_file_name.Text = m_fe_file_explorer.fileName;
+        }
 
 
         private void set_define_event()
@@ -595,6 +650,7 @@ namespace BKI_HRM
             {
                 TextBox v_txt_ma_nv = new TextBox();
                 TextBox v_txt_ho_ten = new TextBox();
+                v_txt_ma_nv.TabIndex = m_fg.Row - 2;
                 AutoCompleteStringCollection v_acsc_ma_nv = new AutoCompleteStringCollection();
                 foreach (DataRow dr in m_ds_v_dm_nhan_su.V_DM_NHAN_SU)
                 {
@@ -653,6 +709,33 @@ namespace BKI_HRM
             catch (Exception v_e)
             {
             	CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_chon_file_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (check_data_is_ok() == false) return;
+                chon_file2();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_go_dinh_kem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                m_e_file_mode = DataEntryFileMode.DeleteFile;
+                m_str_link_old = m_lbl_file_name.Text;
+                m_lbl_file_name.Text = "";
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
