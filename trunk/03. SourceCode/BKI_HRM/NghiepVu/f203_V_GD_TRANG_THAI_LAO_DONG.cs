@@ -42,6 +42,7 @@ namespace BKI_HRM
         private Label m_lbl_tim_kiem;
         private TextBox m_txt_tim_kiem;
         internal SIS.Controls.Button.SiSButton m_cmd_tim_kiem;
+        private Label m_lbl_phim_tat;
 		private System.ComponentModel.IContainer components;
 
 		public f203_v_gd_trang_thai_lao_dong()
@@ -92,6 +93,7 @@ namespace BKI_HRM
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_cmd_tim_kiem = new SIS.Controls.Button.SiSButton();
+            this.m_lbl_phim_tat = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_trang_thai_ld)).BeginInit();
             this.SuspendLayout();
@@ -125,6 +127,7 @@ namespace BKI_HRM
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_lbl_phim_tat);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_them_quyet_dinh);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
@@ -166,7 +169,6 @@ namespace BKI_HRM
             this.m_cmd_them_quyet_dinh.Size = new System.Drawing.Size(122, 28);
             this.m_cmd_them_quyet_dinh.TabIndex = 13;
             this.m_cmd_them_quyet_dinh.Text = "&Thêm quyết định";
-           // this.m_cmd_them_quyet_dinh.Click += new System.EventHandler(this.m_cmd_them_quyet_dinh_Click);
             // 
             // m_cmd_view
             // 
@@ -266,6 +268,15 @@ namespace BKI_HRM
             this.m_cmd_tim_kiem.Text = "Tìm kiếm(&S)";
             this.m_cmd_tim_kiem.Click += new System.EventHandler(this.m_cmd_tim_kiem_Click);
             // 
+            // m_lbl_phim_tat
+            // 
+            this.m_lbl_phim_tat.AutoSize = true;
+            this.m_lbl_phim_tat.Location = new System.Drawing.Point(139, 12);
+            this.m_lbl_phim_tat.Name = "m_lbl_phim_tat";
+            this.m_lbl_phim_tat.Size = new System.Drawing.Size(206, 13);
+            this.m_lbl_phim_tat.TabIndex = 1000;
+            this.m_lbl_phim_tat.Text = "Phím tắt: F6_Mở rộng-Thu gọn danh sách";
+            // 
             // f203_v_gd_trang_thai_lao_dong
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -282,6 +293,7 @@ namespace BKI_HRM
             this.Text = "F203 - Thay đổi trạng thái lao động";
             this.Load += new System.EventHandler(this.f203_v_gd_trang_thai_lao_dong_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
+            this.m_pnl_out_place_dm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_trang_thai_ld)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

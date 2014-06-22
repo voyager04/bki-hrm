@@ -1179,13 +1179,13 @@ namespace BKI_HRM
             m_fg.Subtotal(AggregateEnum.Count
               , 0
               , (int)e_col_Number.DIA_BAN    // Group theo cột này
-              , (int)e_col_Number.DIA_BAN         // Subtotal theo cột này
+              , (int)e_col_Number.MA_NV         // Subtotal theo cột này
               , "{0}"
               );
             m_fg.Subtotal(AggregateEnum.Count
                 , 1
                 , (int)e_col_Number.MA_DON_VI
-                , (int)e_col_Number.MA_DON_VI
+                , (int)e_col_Number.MA_NV
                 , "{0}");
             set_search_format_before();
             //m_lbl_so_nhan_vien.Text = lay_so_ban_ghi().ToString(CultureInfo.InvariantCulture);

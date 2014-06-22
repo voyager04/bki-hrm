@@ -46,6 +46,7 @@ namespace BKI_HRM
         private DateTimePicker m_dat_den_ngay;
         private Label label4;
         private DateTimePicker m_dat_tu_ngay;
+        private Label m_lbl_phim_tat;
         private System.ComponentModel.IContainer components;
 
         public f206_v_gd_cong_tac()
@@ -101,6 +102,7 @@ namespace BKI_HRM
             this.m_dat_den_ngay = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.m_dat_tu_ngay = new System.Windows.Forms.DateTimePicker();
+            this.m_lbl_phim_tat = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -134,6 +136,7 @@ namespace BKI_HRM
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_lbl_phim_tat);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
@@ -310,6 +313,15 @@ namespace BKI_HRM
             this.m_dat_tu_ngay.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.m_dat_tu_ngay.ValueChanged += new System.EventHandler(this.m_dat_ValueChanged);
             // 
+            // m_lbl_phim_tat
+            // 
+            this.m_lbl_phim_tat.AutoSize = true;
+            this.m_lbl_phim_tat.Location = new System.Drawing.Point(184, 12);
+            this.m_lbl_phim_tat.Name = "m_lbl_phim_tat";
+            this.m_lbl_phim_tat.Size = new System.Drawing.Size(206, 13);
+            this.m_lbl_phim_tat.TabIndex = 1000;
+            this.m_lbl_phim_tat.Text = "Phím tắt: F6_Mở rộng-Thu gọn danh sách";
+            // 
             // f206_v_gd_cong_tac
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -328,6 +340,7 @@ namespace BKI_HRM
             this.Text = "F206 - Quá trình đi công tác";
             this.Load += new System.EventHandler(this.f206_v_gd_cong_tac_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
+            this.m_pnl_out_place_dm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

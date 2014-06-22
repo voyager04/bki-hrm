@@ -34,6 +34,8 @@
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_cmd_chon_quyet_dinh = new SIS.Controls.Button.SiSButton();
             this.m_grb_quyet_dinh = new System.Windows.Forms.GroupBox();
+            this.m_cmd_go_dinh_kem = new SIS.Controls.Button.SiSButton();
+            this.m_lbl_file_name = new System.Windows.Forms.Label();
             this.m_lbl_ma_qd = new System.Windows.Forms.Label();
             this.m_cbo_ma_quyet_dinh = new System.Windows.Forms.ComboBox();
             this.m_txt_loai_quyet_dinh = new System.Windows.Forms.TextBox();
@@ -52,7 +54,7 @@
             this.m_cmd_refresh = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_ofd_openfile = new System.Windows.Forms.OpenFileDialog();
+            this.m_ofd_chon_file = new System.Windows.Forms.OpenFileDialog();
             this.m_grb_quyet_dinh.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -115,6 +117,8 @@
             // 
             // m_grb_quyet_dinh
             // 
+            this.m_grb_quyet_dinh.Controls.Add(this.m_cmd_go_dinh_kem);
+            this.m_grb_quyet_dinh.Controls.Add(this.m_lbl_file_name);
             this.m_grb_quyet_dinh.Controls.Add(this.m_lbl_ma_qd);
             this.m_grb_quyet_dinh.Controls.Add(this.m_cbo_ma_quyet_dinh);
             this.m_grb_quyet_dinh.Controls.Add(this.m_txt_loai_quyet_dinh);
@@ -135,6 +139,29 @@
             this.m_grb_quyet_dinh.TabIndex = 2;
             this.m_grb_quyet_dinh.TabStop = false;
             this.m_grb_quyet_dinh.Text = "Quyết định đi kèm";
+            // 
+            // m_cmd_go_dinh_kem
+            // 
+            this.m_cmd_go_dinh_kem.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_go_dinh_kem.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_go_dinh_kem.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_go_dinh_kem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_go_dinh_kem.ImageIndex = 18;
+            this.m_cmd_go_dinh_kem.Location = new System.Drawing.Point(339, 78);
+            this.m_cmd_go_dinh_kem.Name = "m_cmd_go_dinh_kem";
+            this.m_cmd_go_dinh_kem.Size = new System.Drawing.Size(112, 28);
+            this.m_cmd_go_dinh_kem.TabIndex = 9;
+            this.m_cmd_go_dinh_kem.Text = "&Go tai lieu";
+            this.m_cmd_go_dinh_kem.Click += new System.EventHandler(this.m_cmd_go_dinh_kem_Click);
+            // 
+            // m_lbl_file_name
+            // 
+            this.m_lbl_file_name.AutoSize = true;
+            this.m_lbl_file_name.Location = new System.Drawing.Point(487, 85);
+            this.m_lbl_file_name.Name = "m_lbl_file_name";
+            this.m_lbl_file_name.Size = new System.Drawing.Size(35, 13);
+            this.m_lbl_file_name.TabIndex = 8;
+            this.m_lbl_file_name.Text = "label1";
             // 
             // m_lbl_ma_qd
             // 
@@ -191,6 +218,7 @@
             this.m_cmd_chon_file.Size = new System.Drawing.Size(112, 28);
             this.m_cmd_chon_file.TabIndex = 5;
             this.m_cmd_chon_file.Text = "&Chọn tài liệu";
+            this.m_cmd_chon_file.Click += new System.EventHandler(this.m_cmd_chon_file_Click_1);
             // 
             // m_txt_noi_dung
             // 
@@ -330,13 +358,14 @@
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_fg.Location = new System.Drawing.Point(0, 257);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Rows.Count = 3;
+            this.m_fg.Rows.Count = 5;
             this.m_fg.Size = new System.Drawing.Size(792, 176);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 3;
             this.m_fg.EnterCell += new System.EventHandler(this.m_fg_EnterCell);
             this.m_fg.AfterAddRow += new C1.Win.C1FlexGrid.RowColEventHandler(this.m_fg_AfterAddRow);
             this.m_fg.Paint += new System.Windows.Forms.PaintEventHandler(this._flex_Paint);
+            this.m_fg.KeyUp += new System.Windows.Forms.KeyEventHandler(this.m_fg_KeyUp);
             // 
             // f206_v_gd_cong_tac_de
             // 
@@ -383,6 +412,8 @@
         private System.Windows.Forms.TextBox m_txt_loai_quyet_dinh;
         private System.Windows.Forms.Label m_lbl_ma_qd;
         private System.Windows.Forms.ComboBox m_cbo_ma_quyet_dinh;
-        private System.Windows.Forms.OpenFileDialog m_ofd_openfile;
+        private System.Windows.Forms.OpenFileDialog m_ofd_chon_file;
+        internal SIS.Controls.Button.SiSButton m_cmd_go_dinh_kem;
+        private System.Windows.Forms.Label m_lbl_file_name;
     }
 }
