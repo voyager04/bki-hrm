@@ -79,7 +79,7 @@ namespace BKI_HRM
 
         // File explorer
         private DataEntryFileMode m_e_file_mode;
-        private FileExplorer m_fe_file_explorer;
+      //  private FileExplorer m_fe_file_explorer;
         private string m_str_domain = ConfigurationSettings.AppSettings["DOMAIN"];
         private string m_str_directory_to = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
         private decimal m_str_id_hop_dong_old;
@@ -218,14 +218,14 @@ namespace BKI_HRM
             switch (m_e_file_mode)
             {
                 case DataEntryFileMode.UploadFile:
-                    m_fe_file_explorer.UploadFile();
+                  //  m_fe_file_explorer.UploadFile();
                     break;
                 case DataEntryFileMode.EditFile:
                     if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old))
                     {
                         FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
                     }
-                    m_fe_file_explorer.UploadFile();
+                //    m_fe_file_explorer.UploadFile();
                     break;
                 case DataEntryFileMode.DeleteFile:
                     if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old) == false)
@@ -476,17 +476,17 @@ namespace BKI_HRM
         
         private void chon_file2()
         {
-            m_fe_file_explorer = new FileExplorer(m_ofd_chon_file,
-                m_str_domain,
-                ConfigurationSettings.AppSettings["USERNAME_SHARE"],
-                ConfigurationSettings.AppSettings["PASSWORD_SHARE"],
-                ConfigurationSettings.AppSettings["DESTINATION_NAME"]);
+         //   m_fe_file_explorer = new FileExplorer(m_ofd_chon_file,
+//                 m_str_domain,
+//                 ConfigurationSettings.AppSettings["USERNAME_SHARE"],
+//                 ConfigurationSettings.AppSettings["PASSWORD_SHARE"],
+//                 ConfigurationSettings.AppSettings["DESTINATION_NAME"]);
             m_str_link_old = m_lbl_file_name.Text;
             if (m_str_link_old != "")
                 m_e_file_mode = DataEntryFileMode.EditFile;
             else
                 m_e_file_mode = DataEntryFileMode.UploadFile;
-            m_lbl_file_name.Text = m_fe_file_explorer.fileName;
+          //  m_lbl_file_name.Text = m_fe_file_explorer.fileName;
         }
 
 
