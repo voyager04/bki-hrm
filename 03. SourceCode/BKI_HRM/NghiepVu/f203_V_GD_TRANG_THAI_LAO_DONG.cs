@@ -293,6 +293,15 @@ namespace BKI_HRM
 		public void display(){			
 			this.ShowDialog();
 		}
+        public void displaySapQuayLai()
+        {
+            m_cmd_delete.Visible = false;
+            m_cmd_them_quyet_dinh.Visible = false;
+            m_cmd_insert.Visible = false;
+            m_cmd_view.Visible = false;
+            m_e_form_mode = DataEntryFormMode.ViewDataState;
+            this.ShowDialog();
+        }
 		#endregion
 
 		#region Data Structure
@@ -659,15 +668,7 @@ namespace BKI_HRM
         }
 #endregion
 
-        public void displaySapQuayLai()
-        {
-            m_cmd_delete.Visible = false;
-            m_cmd_them_quyet_dinh.Visible = false;
-            m_cmd_insert.Visible = false;
-            m_cmd_view.Visible = false;
-            m_e_form_mode = DataEntryFormMode.ViewDataState;
-            this.ShowDialog();
-        }
+        
     }
 }
 

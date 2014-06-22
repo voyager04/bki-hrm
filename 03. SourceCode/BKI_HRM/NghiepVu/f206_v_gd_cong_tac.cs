@@ -383,6 +383,9 @@ namespace BKI_HRM
             CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
+            m_fg.Tree.Column = (int)e_col_Number.MA_QUYET_DINH;
+            
+            m_fg.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.SimpleLeaf;
             set_define_events();
             this.KeyPreview = true;
         }
@@ -423,6 +426,12 @@ namespace BKI_HRM
                 m_us.FillDatasetSearch(m_ds, m_txt_tim_kiem.Text.Trim(), m_dat_tu_ngay.Value, m_dat_den_ngay.Value);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+              , 0
+              , (int)e_col_Number.MA_QUYET_DINH // chỗ này là tên trường mà mình nhóm
+              , (int)e_col_Number.MA_NV // chỗ này là tên trường mà mình Count
+              , "{0}"
+              );
             m_fg.Redraw = true;
 
         }
@@ -550,6 +559,7 @@ namespace BKI_HRM
             try
             {
                 insert_v_gd_cong_tac();
+                load_data_2_grid();
             }
             catch (Exception v_e)
             {
@@ -562,6 +572,7 @@ namespace BKI_HRM
             try
             {
                 update_v_gd_cong_tac();
+                load_data_2_grid();
             }
             catch (Exception v_e)
             {
@@ -574,6 +585,7 @@ namespace BKI_HRM
             try
             {
                 delete_v_gd_cong_tac();
+                load_data_2_grid();
             }
             catch (Exception v_e)
             {
