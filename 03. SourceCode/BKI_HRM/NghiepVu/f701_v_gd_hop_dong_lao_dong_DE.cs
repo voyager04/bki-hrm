@@ -63,13 +63,14 @@ namespace BKI_HRM.NghiepVu
 
         #region Member
         private DataEntryFormMode m_e_form_mode;
-        private DataEntryFileMode m_e_file_mode;
+        
         US_GD_HOP_DONG m_us = new US_GD_HOP_DONG();
         DS_GD_HOP_DONG m_ds = new DS_GD_HOP_DONG();
         US_V_GD_HOP_DONG_LAO_DONG m_us_v = new US_V_GD_HOP_DONG_LAO_DONG();
         DS_V_GD_HOP_DONG_LAO_DONG m_ds_v = new DS_V_GD_HOP_DONG_LAO_DONG();
         US_DM_NHAN_SU m_us_dm_nhan_su = new US_DM_NHAN_SU();
 
+        private DataEntryFileMode m_e_file_mode;
         private FileExplorer m_fe_file_explorer;
         private string m_str_domain = ConfigurationSettings.AppSettings["DOMAIN"];
         private string m_str_directory_to = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
@@ -176,12 +177,10 @@ namespace BKI_HRM.NghiepVu
                     m_fe_file_explorer.UploadFile();
                     break;
                 case DataEntryFileMode.EditFile:
-                    if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old) == false)
+                    if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old))
                     {
-                        BaseMessages.MsgBox_Infor("File không tồn tại!");
-                        return;
+                        FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
                     }
-                    FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
                     m_fe_file_explorer.UploadFile();
                     break;
                 case DataEntryFileMode.DeleteFile:
@@ -520,9 +519,16 @@ namespace BKI_HRM.NghiepVu
 
         private void m_cmd_bo_dinh_kem_Click(object sender, EventArgs e)
         {
-            m_e_file_mode = DataEntryFileMode.DeleteFile;
-            m_str_link_old = m_lbl_file_name.Text;
-            m_lbl_file_name.Text = "";
+            try
+            {
+                m_e_file_mode = DataEntryFileMode.DeleteFile;
+                m_str_link_old = m_lbl_file_name.Text;
+                m_lbl_file_name.Text = "";
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void m_txt_ma_hop_dong_TextChanged(object sender, EventArgs e)
