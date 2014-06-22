@@ -43,6 +43,7 @@ namespace BKI_HRM
         private Label m_lbl_soluongns;
         private Label label1;
         internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
+        private Label m_lbl_phim_tat;
 		private System.ComponentModel.IContainer components;
 
 		public f403_BAO_CAO_NHAN_SU_CAP_BAC()
@@ -93,6 +94,7 @@ namespace BKI_HRM
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_lbl_soluongns = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.m_lbl_phim_tat = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -126,6 +128,7 @@ namespace BKI_HRM
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_lbl_phim_tat);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -241,6 +244,15 @@ namespace BKI_HRM
             this.label1.TabIndex = 39;
             this.label1.Text = "Số lượng nhân sự:";
             // 
+            // m_lbl_phim_tat
+            // 
+            this.m_lbl_phim_tat.AutoSize = true;
+            this.m_lbl_phim_tat.Location = new System.Drawing.Point(239, 12);
+            this.m_lbl_phim_tat.Name = "m_lbl_phim_tat";
+            this.m_lbl_phim_tat.Size = new System.Drawing.Size(206, 13);
+            this.m_lbl_phim_tat.TabIndex = 1001;
+            this.m_lbl_phim_tat.Text = "Phím tắt: F6_Mở rộng-Thu gọn danh sách";
+            // 
             // f403_BAO_CAO_NHAN_SU_CAP_BAC
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -259,6 +271,7 @@ namespace BKI_HRM
             this.Text = "F403 - Báo cáo nhân sự theo cấp bậc";
             this.Load += new System.EventHandler(this.f403_BAO_CAO_NHAN_SU_CAP_BAC_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
+            this.m_pnl_out_place_dm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

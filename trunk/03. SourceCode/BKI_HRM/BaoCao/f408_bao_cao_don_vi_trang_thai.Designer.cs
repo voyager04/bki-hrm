@@ -37,6 +37,7 @@
             this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_lbl_phim_tat = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -122,6 +123,7 @@
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_lbl_phim_tat);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -141,6 +143,15 @@
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 42;
             // 
+            // m_lbl_phim_tat
+            // 
+            this.m_lbl_phim_tat.AutoSize = true;
+            this.m_lbl_phim_tat.Location = new System.Drawing.Point(154, 12);
+            this.m_lbl_phim_tat.Name = "m_lbl_phim_tat";
+            this.m_lbl_phim_tat.Size = new System.Drawing.Size(206, 13);
+            this.m_lbl_phim_tat.TabIndex = 1001;
+            this.m_lbl_phim_tat.Text = "Phím tắt: F6_Mở rộng-Thu gọn danh sách";
+            // 
             // f408_bao_cao_don_vi_trang_thai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,6 +167,7 @@
             this.Text = "f408_bao_cao_don_vi_trang_thai";
             this.Load += new System.EventHandler(this.f408_bao_cao_don_vi_trang_thai_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
+            this.m_pnl_out_place_dm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -171,6 +183,7 @@
         internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
+        private System.Windows.Forms.Label m_lbl_phim_tat;
 
     }
 }

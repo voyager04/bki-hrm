@@ -53,6 +53,7 @@ namespace BKI_HRM {
         private Label label4;
         private Label label1;
         private Label label3;
+        private Label m_lbl_phim_tat;
         private IContainer components;
 
         public f101_v_dm_don_vi() {
@@ -98,22 +99,23 @@ namespace BKI_HRM {
             this.m_lbl_so_luong_ban_ghi = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.m_cbo_capdv = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.m_cbo_trangthai = new System.Windows.Forms.ComboBox();
+            this.m_cbo_loaidv = new System.Windows.Forms.ComboBox();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_txt_search = new System.Windows.Forms.TextBox();
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.m_cbo_trangthai = new System.Windows.Forms.ComboBox();
-            this.m_cbo_loaidv = new System.Windows.Forms.ComboBox();
-            this.m_cbo_capdv = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.m_lbl_phim_tat = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
             // 
             // ImageList
@@ -145,6 +147,7 @@ namespace BKI_HRM {
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_lbl_phim_tat);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_chon_don_vi);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
@@ -284,6 +287,72 @@ namespace BKI_HRM {
             this.panel1.Size = new System.Drawing.Size(1189, 124);
             this.panel1.TabIndex = 21;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.m_cbo_capdv);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.m_cbo_trangthai);
+            this.groupBox1.Controls.Add(this.m_cbo_loaidv);
+            this.groupBox1.Location = new System.Drawing.Point(32, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(287, 96);
+            this.groupBox1.TabIndex = 30;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 75);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "Trạng thái:";
+            // 
+            // m_cbo_capdv
+            // 
+            this.m_cbo_capdv.FormattingEnabled = true;
+            this.m_cbo_capdv.Location = new System.Drawing.Point(84, 20);
+            this.m_cbo_capdv.Name = "m_cbo_capdv";
+            this.m_cbo_capdv.Size = new System.Drawing.Size(197, 21);
+            this.m_cbo_capdv.TabIndex = 31;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Loại đơn vị:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 13);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Cấp đơn vị:";
+            // 
+            // m_cbo_trangthai
+            // 
+            this.m_cbo_trangthai.FormattingEnabled = true;
+            this.m_cbo_trangthai.Location = new System.Drawing.Point(84, 72);
+            this.m_cbo_trangthai.Name = "m_cbo_trangthai";
+            this.m_cbo_trangthai.Size = new System.Drawing.Size(197, 21);
+            this.m_cbo_trangthai.TabIndex = 29;
+            // 
+            // m_cbo_loaidv
+            // 
+            this.m_cbo_loaidv.FormattingEnabled = true;
+            this.m_cbo_loaidv.Location = new System.Drawing.Point(84, 45);
+            this.m_cbo_loaidv.Name = "m_cbo_loaidv";
+            this.m_cbo_loaidv.Size = new System.Drawing.Size(197, 21);
+            this.m_cbo_loaidv.TabIndex = 30;
+            // 
             // m_cmd_search
             // 
             this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -333,71 +402,14 @@ namespace BKI_HRM {
             this.m_fg.Tree.LineColor = System.Drawing.Color.Maroon;
             this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
             // 
-            // m_cbo_trangthai
+            // m_lbl_phim_tat
             // 
-            this.m_cbo_trangthai.FormattingEnabled = true;
-            this.m_cbo_trangthai.Location = new System.Drawing.Point(84, 72);
-            this.m_cbo_trangthai.Name = "m_cbo_trangthai";
-            this.m_cbo_trangthai.Size = new System.Drawing.Size(197, 21);
-            this.m_cbo_trangthai.TabIndex = 29;
-            // 
-            // m_cbo_loaidv
-            // 
-            this.m_cbo_loaidv.FormattingEnabled = true;
-            this.m_cbo_loaidv.Location = new System.Drawing.Point(84, 45);
-            this.m_cbo_loaidv.Name = "m_cbo_loaidv";
-            this.m_cbo_loaidv.Size = new System.Drawing.Size(197, 21);
-            this.m_cbo_loaidv.TabIndex = 30;
-            // 
-            // m_cbo_capdv
-            // 
-            this.m_cbo_capdv.FormattingEnabled = true;
-            this.m_cbo_capdv.Location = new System.Drawing.Point(84, 20);
-            this.m_cbo_capdv.Name = "m_cbo_capdv";
-            this.m_cbo_capdv.Size = new System.Drawing.Size(197, 21);
-            this.m_cbo_capdv.TabIndex = 31;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.m_cbo_capdv);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.m_cbo_trangthai);
-            this.groupBox1.Controls.Add(this.m_cbo_loaidv);
-            this.groupBox1.Location = new System.Drawing.Point(32, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(287, 96);
-            this.groupBox1.TabIndex = 30;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Loại đơn vị:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 23);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "Cấp đơn vị:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 75);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 13);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "Trạng thái:";
+            this.m_lbl_phim_tat.AutoSize = true;
+            this.m_lbl_phim_tat.Location = new System.Drawing.Point(179, 14);
+            this.m_lbl_phim_tat.Name = "m_lbl_phim_tat";
+            this.m_lbl_phim_tat.Size = new System.Drawing.Size(206, 13);
+            this.m_lbl_phim_tat.TabIndex = 1001;
+            this.m_lbl_phim_tat.Text = "Phím tắt: F6_Mở rộng-Thu gọn danh sách";
             // 
             // f101_v_dm_don_vi
             // 
@@ -411,11 +423,12 @@ namespace BKI_HRM {
             this.Text = "F101 - Danh sách đơn vị";
             this.Load += new System.EventHandler(this.f101_v_dm_don_vi_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
+            this.m_pnl_out_place_dm.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
 
         }
