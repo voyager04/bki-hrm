@@ -8,29 +8,20 @@ using IP.Core.IPCommon;
 
 namespace BKI_HRM
 {
-    public class FileExplorer
+    public static class FileExplorer
     {
-        public string Domain { get; set; }
-        public string UserName { get; set; }
-        public string Password { get; set; }
-        public string DirectoryTo { get; set; }
+        public static string Domain { get; set; }
+        public static string UserName { get; set; }
+        public static string Password { get; set; }
+        public static string DirectoryTo { get; set; }
 
-        public string fileName = "";
-        private string directoryFrom = "";
-        private string path = "";
-        private long timeNow = DateTime.Now.Ticks;
+        public static string fileName = "";
+        private static string directoryFrom = "";
+        private static string path = "";
+        private static long timeNow = DateTime.Now.Ticks;
 
-        public FileExplorer(OpenFileDialog fileDialog,
-            string domain, 
-            string userName, 
-            string password,
-            string directoryTo)
+        public static void SelectFile(OpenFileDialog fileDialog)
         {
-            Domain = domain;
-            UserName = userName;
-            Password = password;
-            DirectoryTo = directoryTo;
-
             fileDialog.Filter = "(*.*)|*.*";
             fileDialog.Multiselect = false;
             fileDialog.Title = "Chọn file";
@@ -58,43 +49,51 @@ namespace BKI_HRM
             return false;
         }
 
-        public string UploadFile()
+        public static string UploadFile(string domain, string directoryTo)
         {
-            if (IsExistedFile(this.DirectoryTo + fileName))
+            Domain = domain;
+            DirectoryTo = directoryTo;
+
+            if (IsExistedFile(DirectoryTo + fileName))
             {
                 BaseMessages.MsgBox_Infor("Tên file đã tồn tại. Vui lòng đổi tên khác");
                 return "";
             }
-            if (UserName == "")
-                //File.Move(path + fileName, this.DirectoryTo + fileName);
-                File.Copy(path + fileName, this.DirectoryTo + fileName);
-            else
+            if (fileName != "")
+            {
+                File.Copy(path + fileName, DirectoryTo + fileName);
+            }
+            return fileName;
+        }
+
+        public static string UploadFile(string domain, string userName, string password, string directoryTo)
+        {
+            Domain = domain;
+            DirectoryTo = directoryTo;
+            UserName = userName;
+            Password = password;
+
+            if (IsExistedFile(DirectoryTo + fileName))
+            {
+                BaseMessages.MsgBox_Infor("Tên file đã tồn tại. Vui lòng đổi tên khác");
+                return "";
+            }
+            if (UserName != null)
             {
                 var oNetworkCredential =
                         new System.Net.NetworkCredential()
                         {
-                            Domain = this.Domain,
-                            UserName = this.Domain + "\\" + this.UserName,
-                            Password = this.Password
+                            Domain = Domain,
+                            UserName = Domain + "\\" + UserName,
+                            Password = Password
                         };
 
-                using (new RemoteAccessHelper.NetworkConnection(@"\\" + this.Domain, oNetworkCredential))
+                using (new RemoteAccessHelper.NetworkConnection(@"\\" + Domain, oNetworkCredential))
                 {
-                    //File.Move(path + fileName,
-                    //            this.DirectoryTo + fileName);
-                    File.Copy(path + fileName, this.DirectoryTo + fileName);
+                    File.Copy(path + fileName, DirectoryTo + fileName);
                 }
             }
-            
             return fileName;
-        }
-
-        private void ModifyFileName(string from, string to)
-        {
-            //Coppy file mới
-            File.Copy(from, path + "bki" + fileName);
-            //Đổi tên file mới
-            File.Move(path + "bki" + fileName, to);
         }
 
         public static void DeleteFile(string path)

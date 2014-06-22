@@ -71,9 +71,10 @@ namespace BKI_HRM.NghiepVu
         US_DM_NHAN_SU m_us_dm_nhan_su = new US_DM_NHAN_SU();
 
         private DataEntryFileMode m_e_file_mode;
-        private FileExplorer m_fe_file_explorer;
         private string m_str_domain = ConfigurationSettings.AppSettings["DOMAIN"];
         private string m_str_directory_to = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
+        private string m_str_user_name = ConfigurationSettings.AppSettings["USERNAME_SHARE"];
+        private string m_str_password = ConfigurationSettings.AppSettings["PASSWORD_SHARE"];
         private decimal m_str_id_hop_dong_old;
         private string m_str_link_old;
         #endregion
@@ -174,14 +175,14 @@ namespace BKI_HRM.NghiepVu
             switch (m_e_file_mode)
             {
                 case DataEntryFileMode.UploadFile:
-                    m_fe_file_explorer.UploadFile();
+                    FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
                     break;
                 case DataEntryFileMode.EditFile:
                     if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old))
                     {
                         FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
                     }
-                    m_fe_file_explorer.UploadFile();
+                    FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
                     break;
                 case DataEntryFileMode.DeleteFile:
                     if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old) == false)
@@ -332,17 +333,13 @@ namespace BKI_HRM.NghiepVu
 
         private void chon_file()
         {
-            m_fe_file_explorer = new FileExplorer(m_ofd_chon_file,
-                m_str_domain,
-                ConfigurationSettings.AppSettings["USERNAME_SHARE"],
-                ConfigurationSettings.AppSettings["PASSWORD_SHARE"],
-                ConfigurationSettings.AppSettings["DESTINATION_NAME"]);
+            FileExplorer.SelectFile(m_ofd_chon_file);
             m_str_link_old = m_lbl_file_name.Text;
             if (m_str_link_old != "")
                 m_e_file_mode = DataEntryFileMode.EditFile;
             else
                 m_e_file_mode = DataEntryFileMode.UploadFile;
-            m_lbl_file_name.Text = m_fe_file_explorer.fileName;
+            m_lbl_file_name.Text = FileExplorer.fileName;
         }
 
         private bool check_trung_ma_hop_dong(string ip_str_ma_hop_dong)
