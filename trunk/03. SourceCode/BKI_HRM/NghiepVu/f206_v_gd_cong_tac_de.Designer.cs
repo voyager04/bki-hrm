@@ -50,14 +50,19 @@
             this.m_lbl_loai_quyet_dinh = new System.Windows.Forms.Label();
             this.m_lbl_ma_quyet_dinh = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_cmd_save = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_refresh = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_update = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_ofd_chon_file = new System.Windows.Forms.OpenFileDialog();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cmd_save_qd = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_refresh = new SIS.Controls.Button.SiSButton();
             this.m_grb_quyet_dinh.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_cmd_them_quyet_dinh
@@ -294,8 +299,9 @@
             // 
             // m_pnl_out_place_dm
             // 
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_refresh);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 433);
@@ -304,35 +310,50 @@
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(792, 36);
             this.m_pnl_out_place_dm.TabIndex = 4;
             // 
-            // m_cmd_save
+            // m_cmd_insert
             // 
-            this.m_cmd_save.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_save.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_save.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_save.ImageIndex = 10;
-            this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(524, 4);
-            this.m_cmd_save.Name = "m_cmd_save";
-            this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_save.TabIndex = 0;
-            this.m_cmd_save.Text = "&Lưu";
+            this.m_cmd_insert.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_insert.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_insert.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_insert.ImageIndex = 2;
+            this.m_cmd_insert.ImageList = this.ImageList;
+            this.m_cmd_insert.Location = new System.Drawing.Point(352, 4);
+            this.m_cmd_insert.Name = "m_cmd_insert";
+            this.m_cmd_insert.Size = new System.Drawing.Size(116, 28);
+            this.m_cmd_insert.TabIndex = 4;
+            this.m_cmd_insert.Text = "&Thêm nhân viên";
             // 
-            // m_cmd_refresh
+            // m_cmd_update
             // 
-            this.m_cmd_refresh.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_refresh.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_refresh.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_refresh.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_refresh.ImageIndex = 9;
-            this.m_cmd_refresh.ImageList = this.ImageList;
-            this.m_cmd_refresh.Location = new System.Drawing.Point(612, 4);
-            this.m_cmd_refresh.Name = "m_cmd_refresh";
-            this.m_cmd_refresh.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_refresh.TabIndex = 1;
-            this.m_cmd_refresh.Text = "L&àm lại";
+            this.m_cmd_update.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_update.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_update.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_update.ImageIndex = 3;
+            this.m_cmd_update.ImageList = this.ImageList;
+            this.m_cmd_update.Location = new System.Drawing.Point(468, 4);
+            this.m_cmd_update.Name = "m_cmd_update";
+            this.m_cmd_update.Size = new System.Drawing.Size(116, 28);
+            this.m_cmd_update.TabIndex = 3;
+            this.m_cmd_update.Text = "&Sửa nhân viên";
+            // 
+            // m_cmd_delete
+            // 
+            this.m_cmd_delete.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_delete.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_delete.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_delete.ImageIndex = 4;
+            this.m_cmd_delete.ImageList = this.ImageList;
+            this.m_cmd_delete.Location = new System.Drawing.Point(584, 4);
+            this.m_cmd_delete.Name = "m_cmd_delete";
+            this.m_cmd_delete.Size = new System.Drawing.Size(116, 28);
+            this.m_cmd_delete.TabIndex = 0;
+            this.m_cmd_delete.Text = "&Xóa nhân viên";
             // 
             // m_cmd_exit
             // 
@@ -352,26 +373,62 @@
             // 
             // m_fg
             // 
-            this.m_fg.AllowAddNew = true;
-            this.m_fg.AllowDelete = true;
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 257);
+            this.m_fg.Location = new System.Drawing.Point(0, 284);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Rows.Count = 5;
-            this.m_fg.Size = new System.Drawing.Size(792, 176);
+            this.m_fg.Rows.Count = 6;
+            this.m_fg.Size = new System.Drawing.Size(792, 149);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 3;
-            this.m_fg.EnterCell += new System.EventHandler(this.m_fg_EnterCell);
-            this.m_fg.AfterAddRow += new C1.Win.C1FlexGrid.RowColEventHandler(this.m_fg_AfterAddRow);
-            this.m_fg.Paint += new System.Windows.Forms.PaintEventHandler(this._flex_Paint);
-            this.m_fg.KeyUp += new System.Windows.Forms.KeyEventHandler(this.m_fg_KeyUp);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.m_cmd_save_qd);
+            this.panel1.Controls.Add(this.m_cmd_refresh);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 248);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(4);
+            this.panel1.Size = new System.Drawing.Size(792, 36);
+            this.panel1.TabIndex = 6;
+            // 
+            // m_cmd_save_qd
+            // 
+            this.m_cmd_save_qd.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_save_qd.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_save_qd.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_save_qd.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_save_qd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_save_qd.ImageIndex = 10;
+            this.m_cmd_save_qd.ImageList = this.ImageList;
+            this.m_cmd_save_qd.Location = new System.Drawing.Point(557, 4);
+            this.m_cmd_save_qd.Name = "m_cmd_save_qd";
+            this.m_cmd_save_qd.Size = new System.Drawing.Size(116, 28);
+            this.m_cmd_save_qd.TabIndex = 0;
+            this.m_cmd_save_qd.Text = "Lưu &quyết định";
+            // 
+            // m_cmd_refresh
+            // 
+            this.m_cmd_refresh.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_refresh.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_refresh.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_refresh.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_refresh.ImageIndex = 9;
+            this.m_cmd_refresh.ImageList = this.ImageList;
+            this.m_cmd_refresh.Location = new System.Drawing.Point(673, 4);
+            this.m_cmd_refresh.Name = "m_cmd_refresh";
+            this.m_cmd_refresh.Size = new System.Drawing.Size(115, 28);
+            this.m_cmd_refresh.TabIndex = 1;
+            this.m_cmd_refresh.Text = "Làm lạ&i";
             // 
             // f206_v_gd_cong_tac_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 469);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_cmd_them_quyet_dinh);
@@ -384,6 +441,7 @@
             this.m_grb_quyet_dinh.PerformLayout();
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -405,8 +463,7 @@
         private System.Windows.Forms.Label m_lbl_ma_quyet_dinh;
         internal System.Windows.Forms.ImageList ImageList;
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
-        internal SIS.Controls.Button.SiSButton m_cmd_save;
-        internal SIS.Controls.Button.SiSButton m_cmd_refresh;
+        internal SIS.Controls.Button.SiSButton m_cmd_delete;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
         private System.Windows.Forms.TextBox m_txt_loai_quyet_dinh;
@@ -415,5 +472,10 @@
         private System.Windows.Forms.OpenFileDialog m_ofd_chon_file;
         internal SIS.Controls.Button.SiSButton m_cmd_go_dinh_kem;
         private System.Windows.Forms.Label m_lbl_file_name;
+        internal System.Windows.Forms.Panel panel1;
+        internal SIS.Controls.Button.SiSButton m_cmd_save_qd;
+        internal SIS.Controls.Button.SiSButton m_cmd_refresh;
+        internal SIS.Controls.Button.SiSButton m_cmd_update;
+        internal SIS.Controls.Button.SiSButton m_cmd_insert;
     }
 }

@@ -497,6 +497,7 @@ namespace BKI_HRM
                 v_us.Delete();
                 v_us.CommitTransaction();
                 m_fg.Rows.Remove(m_fg.Row);
+                BaseMessages.MsgBox_Infor("Xóa thành công.");
             }
             catch (Exception v_e)
             {

@@ -321,12 +321,6 @@
     <Compile Include="NghiepVu\f203_v_gd_trang_thai_lao_dong_de.designer.cs">
       <DependentUpon>f203_v_gd_trang_thai_lao_dong_de.cs</DependentUpon>
     </Compile>
-    <Compile Include="NghiepVu\F206_chi_tiet_cong_tac.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\F206_chi_tiet_cong_tac.Designer.cs">
-      <DependentUpon>F206_chi_tiet_cong_tac.cs</DependentUpon>
-    </Compile>
     <Compile Include="NghiepVu\f206_v_gd_cong_tac.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -335,6 +329,12 @@
     </Compile>
     <Compile Include="NghiepVu\f206_v_gd_cong_tac_de.Designer.cs">
       <DependentUpon>f206_v_gd_cong_tac_de.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NghiepVu\f206_v_gd_cong_tac_de_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f206_v_gd_cong_tac_de_de.Designer.cs">
+      <DependentUpon>f206_v_gd_cong_tac_de_de.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\F500_DM_DU_AN.cs">
       <SubType>Form</SubType>
@@ -543,14 +543,14 @@
     <EmbeddedResource Include="NghiepVu\f203_v_gd_trang_thai_lao_dong_de.resx">
       <DependentUpon>f203_v_gd_trang_thai_lao_dong_de.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\F206_chi_tiet_cong_tac.resx">
-      <DependentUpon>F206_chi_tiet_cong_tac.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f206_v_gd_cong_tac.resx">
       <DependentUpon>f206_v_gd_cong_tac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f206_v_gd_cong_tac_de.resx">
       <DependentUpon>f206_v_gd_cong_tac_de.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f206_v_gd_cong_tac_de_de.resx">
+      <DependentUpon>f206_v_gd_cong_tac_de_de.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\F500_DM_DU_AN.resx">
       <DependentUpon>F500_DM_DU_AN.cs</DependentUpon>
