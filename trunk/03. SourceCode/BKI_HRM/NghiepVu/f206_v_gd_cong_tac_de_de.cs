@@ -28,6 +28,7 @@ namespace BKI_HRM
         public f206_v_gd_cong_tac_de_de()
         {
             InitializeComponent();
+            format_controls();
         }
         public void display_for_insert(US_DM_QUYET_DINH ip_us_quyet_dinh)
         {
