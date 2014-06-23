@@ -331,7 +331,7 @@ namespace BKI_HRM
 
 		#region Data Structure
 		private enum e_col_Number{
-            NGAY_CO_HIEU_LUC = 17,
+            NGAY_CO_HIEU_LUC = 18,
             CAP_DON_VI = 13,
             NGAY_BAT_DAU = 4,
             TEN_CV = 7,
@@ -346,10 +346,11 @@ namespace BKI_HRM
             TY_LE_THAM_GIA = 10,
             TRANG_THAI_CV = 9,
             MA_QUYET_DINH = 16 ,
-            NGAY_HET_HIEU_LUC = 18,
+            LOAI_QUYET_DINH = 17,
+            NGAY_HET_HIEU_LUC = 19,
             DIA_BAN = 15 ,
             NGACH = 8,
-            MA_QUYET_DINH_MIEN_NHIEM = 18
+            MA_QUYET_DINH_MIEN_NHIEM = 20
 		}			
 		#endregion
 
@@ -384,6 +385,7 @@ namespace BKI_HRM
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.LOAI_QD, e_col_Number.LOAI_QUYET_DINH);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.NGAY_CO_HIEU_LUC, e_col_Number.NGAY_CO_HIEU_LUC);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.CAP_DON_VI, e_col_Number.CAP_DON_VI);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.NGAY_BAT_DAU, e_col_Number.NGAY_BAT_DAU);
