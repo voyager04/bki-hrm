@@ -117,6 +117,35 @@ namespace BKI_HRM
                                                                   m_dat_ngay_ky.Value.Year,
                                                                   m_cbo_ma_quyet_dinh.Text);
         }
+        private bool check_is_trung_ma_quyet_dinh()
+        {
+            DS_DM_QUYET_DINH v_ds = new DS_DM_QUYET_DINH();
+            US_DM_QUYET_DINH v_us = new US_DM_QUYET_DINH();
+            v_us.FillDataset_By_Ma_qd(v_ds, m_lbl_ma_qd.Text);
+            switch (m_e_form_mode)
+            {
+                case DataEntryFormMode.InsertDataState:
+                    
+                    if (v_ds.DM_QUYET_DINH.Count > 0)
+                    {
+                        return true;
+                    }
+                    break;
+                case DataEntryFormMode.SelectDataState:
+                    if (v_ds.DM_QUYET_DINH > 0 && m_lbl_ma_qd.Text != m_us_v_gd_cong_tac.strMA_QUYET_DINH)
+                    {
+                        return true;
+                    }
+                    break;
+                case DataEntryFormMode.UpdateDataState:
+                    break;
+                case DataEntryFormMode.ViewDataState:
+                    break;
+                default:
+                    break;
+            }
+            return false;
+        }
         private bool check_data_is_ok()
         {
             return true;
@@ -364,6 +393,16 @@ namespace BKI_HRM
             try
             {
                 generate_ma_quyet_dinh();
+                if (check_is_trung_ma_quyet_dinh)
+                {
+                    BaseMessages.MsgBox_Error("Mã quyết định đã tồn tại.");
+                    m_txt_ma_quyet_dinh.Focus();
+                    m_txt_ma_quyet_dinh.BackColor = Color.Red;
+                }
+                else
+                {
+                    m_txt_ma_quyet_dinh.BackColor = Color.White;
+                }
             }
             catch (Exception v_e)
             {
