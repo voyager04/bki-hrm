@@ -40,6 +40,7 @@ namespace BKI_HRM
         public void display_for_update(US_V_GD_CONG_TAC ip_us)
         {
             m_us_v_gd_cong_tac = ip_us;
+            m_us_dm_quyet_dinh = new US_DM_QUYET_DINH(ip_us.dcID_QUYET_DINH);
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             us_object_2_form();
             this.ShowDialog();
@@ -76,10 +77,10 @@ namespace BKI_HRM
         DataEntryFormMode m_e_form_mode = new DataEntryFormMode();
         bool m_b_check_quyet_dinh_save;
         bool m_b_check_quyet_dinh_null = false;
-       
+
         // File explorer
         private DataEntryFileMode m_e_file_mode;
-        //  private FileExplorer m_fe_file_explorer;
+       
         private string m_str_domain = ConfigurationSettings.AppSettings["DOMAIN"];
         private string m_str_directory_to = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
         private decimal m_str_id_hop_dong_old;
@@ -134,7 +135,7 @@ namespace BKI_HRM
             m_us_dm_quyet_dinh.datNGAY_CO_HIEU_LUC = m_us_dm_quyet_dinh.datNGAY_KY;
             m_us_dm_quyet_dinh.dcID_LOAI_QD = CIPConvert.ToDecimal(TU_DIEN.QD_CONG_TAC);
         }
-       
+
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
             Hashtable v_htb = new Hashtable();
@@ -183,14 +184,14 @@ namespace BKI_HRM
             switch (m_e_file_mode)
             {
                 case DataEntryFileMode.UploadFile:
-                    //  m_fe_file_explorer.UploadFile();
+                    FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
                     break;
                 case DataEntryFileMode.EditFile:
                     if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old))
                     {
                         FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
                     }
-                    //    m_fe_file_explorer.UploadFile();
+                    FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
                     break;
                 case DataEntryFileMode.DeleteFile:
                     if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old) == false)
@@ -212,7 +213,7 @@ namespace BKI_HRM
                     break;
             }
         }
-        
+
         private void chon_file()
         {
             m_ofd_chon_file.Filter = "(*.pdf)|*.pdf|(*.doc)|*.doc|(*.docx)|*.docx|(*.xls)|*.xls|(*.xlsx)|*.xlsx";
@@ -257,7 +258,7 @@ namespace BKI_HRM
                 m_b_check_quyet_dinh_null = true;
             }
         }
-        
+
         private void load_cbo_ma_quyet_dinh()
         {
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.MA_QUYET_DINH
@@ -275,17 +276,13 @@ namespace BKI_HRM
 
         private void chon_file2()
         {
-            //   m_fe_file_explorer = new FileExplorer(m_ofd_chon_file,
-            //                 m_str_domain,
-            //                 ConfigurationSettings.AppSettings["USERNAME_SHARE"],
-            //                 ConfigurationSettings.AppSettings["PASSWORD_SHARE"],
-            //                 ConfigurationSettings.AppSettings["DESTINATION_NAME"]);
+            FileExplorer.SelectFile(m_ofd_chon_file);
             m_str_link_old = m_lbl_file_name.Text;
             if (m_str_link_old != "")
                 m_e_file_mode = DataEntryFileMode.EditFile;
             else
                 m_e_file_mode = DataEntryFileMode.UploadFile;
-            //  m_lbl_file_name.Text = m_fe_file_explorer.fileName;
+            m_lbl_file_name.Text = FileExplorer.fileName;
         }
         private void grid2us_object(US_V_GD_CONG_TAC i_us
             , int i_grid_row)
@@ -299,7 +296,7 @@ namespace BKI_HRM
         {
             f206_v_gd_cong_tac_de_de v_frm = new f206_v_gd_cong_tac_de_de();
             v_frm.display_for_insert(m_us_dm_quyet_dinh);
-            
+
             load_data_2_grid();
         }
         private void sua_nhan_vien(int i_row)
@@ -336,13 +333,12 @@ namespace BKI_HRM
         }
         private void set_define_event()
         {
-            m_cmd_chon_file.Click += new EventHandler(m_cmd_chon_file_Click);
             m_cmd_xem_file.Click += new EventHandler(m_cmd_xem_file_Click);
             m_cmd_them_quyet_dinh.Click += new EventHandler(m_cmd_them_quyet_dinh_Click);
             m_cmd_chon_quyet_dinh.Click += new EventHandler(m_cmd_chon_quyet_dinh_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-            
-            m_cmd_save_qd.Click +=  new EventHandler(m_cmd_save_qd_Click);
+
+            m_cmd_save_qd.Click += new EventHandler(m_cmd_save_qd_Click);
             m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
             m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
@@ -448,6 +444,7 @@ namespace BKI_HRM
             try
             {
                 save_quyet_dinh();
+                BaseMessages.MsgBox_Infor("Thêm quyết định thành công.");
             }
             catch (Exception v_e)
             {
@@ -506,7 +503,7 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        private void m_cmd_insert_Click(object sender, EventArgs e) 
+        private void m_cmd_insert_Click(object sender, EventArgs e)
         {
             try
             {
