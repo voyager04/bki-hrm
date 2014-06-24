@@ -26,7 +26,8 @@ namespace BKI_HRM
         {
             string _networkName;
 
-            public NetworkConnection(string networkName, NetworkCredential credentials)
+            public NetworkConnection(string networkName,
+                NetworkCredential credentials)
             {
                 _networkName = networkName;
 
