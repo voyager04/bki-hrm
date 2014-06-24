@@ -667,7 +667,8 @@ namespace BKI_HRM
                                                              v_str_search, 
                                                              decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), 
                                                              DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
-                                                             DateTime.Parse(m_dat_den_ngay.Value.ToShortDateString()), 
+                                                             //DateTime.Parse(m_dat_den_ngay.Value.ToShortDateString()), 
+                                                             DateTime.Parse("01/01/2220"),
                                                              0);
                 if (m_cbo_tim_kiem_theo.SelectedIndex == 1)
                     m_us.FIllDataset_By_Hop_Dong_Sap_Het_Han(m_ds,
