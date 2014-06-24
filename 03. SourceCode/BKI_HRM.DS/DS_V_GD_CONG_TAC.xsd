@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="BKI_HRMConnectionString1 (Settings)" DbObjectName="BKI_HRM.dbo.V_GD_CONG_TAC" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, ID_NHAN_SU, MA_NV, HO_DEM, TEN, HO_TEN, ID_QUYET_DINH, MA_QUYET_DINH, ID_LOAI_QD, LOAI_QD, NGAY_CO_HIEU_LUC, NGAY_KY, NGAY_HET_HIEU_LUC, NOI_DUNG, NGAY_DI, NGAY_VE, DIA_DIEM, MO_TA_CONG_VIEC, LUA_CHON, LINK FROM dbo.V_GD_CONG_TAC</CommandText>
+                    <CommandText>SELECT ID, ID_NHAN_SU, MA_NV, HO_DEM, TEN, ID_QUYET_DINH, MA_QUYET_DINH, ID_LOAI_QD, LOAI_QD, NGAY_CO_HIEU_LUC, NGAY_KY, NGAY_HET_HIEU_LUC, NOI_DUNG, NGAY_DI, NGAY_VE, DIA_DIEM, MO_TA_CONG_VIEC, LUA_CHON, LINK FROM dbo.V_GD_CONG_TAC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -24,7 +24,6 @@
               <Mapping SourceColumn="MA_NV" DataSetColumn="MA_NV" />
               <Mapping SourceColumn="HO_DEM" DataSetColumn="HO_DEM" />
               <Mapping SourceColumn="TEN" DataSetColumn="TEN" />
-              <Mapping SourceColumn="HO_TEN" DataSetColumn="HO_TEN" />
               <Mapping SourceColumn="ID_QUYET_DINH" DataSetColumn="ID_QUYET_DINH" />
               <Mapping SourceColumn="MA_QUYET_DINH" DataSetColumn="MA_QUYET_DINH" />
               <Mapping SourceColumn="ID_LOAI_QD" DataSetColumn="ID_LOAI_QD" />
@@ -73,13 +72,6 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="HO_TEN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnHO_TEN" msprop:Generator_ColumnPropNameInRow="HO_TEN" msprop:Generator_ColumnPropNameInTable="HO_TENColumn" msprop:Generator_UserColumnName="HO_TEN" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="101" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

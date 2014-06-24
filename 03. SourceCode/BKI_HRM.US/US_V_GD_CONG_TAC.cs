@@ -132,28 +132,6 @@ public class US_V_GD_CONG_TAC : US_Object
         pm_objDR["TEN"] = System.Convert.DBNull;
     }
 
-    public string strHO_TEN
-    {
-        get
-        {
-            return CNull.RowNVLString(pm_objDR, "HO_TEN", IPConstants.c_DefaultString);
-        }
-        set
-        {
-            pm_objDR["HO_TEN"] = value;
-        }
-    }
-
-    public bool IsHO_TENNull()
-    {
-        return pm_objDR.IsNull("HO_TEN");
-    }
-
-    public void SetHO_TENNull()
-    {
-        pm_objDR["HO_TEN"] = System.Convert.DBNull;
-    }
-
     public decimal dcID_QUYET_DINH
     {
         get

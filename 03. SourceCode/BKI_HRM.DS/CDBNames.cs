@@ -779,7 +779,6 @@
        public const string MA_NV = "MA_NV";
        public const string HO_DEM = "HO_DEM";
        public const string TEN = "TEN";
-       public const string HO_TEN = "HO_TEN";
        public const string ID_QUYET_DINH = "ID_QUYET_DINH";
        public const string MA_QUYET_DINH = "MA_QUYET_DINH";
        public const string ID_LOAI_QD = "ID_LOAI_QD";

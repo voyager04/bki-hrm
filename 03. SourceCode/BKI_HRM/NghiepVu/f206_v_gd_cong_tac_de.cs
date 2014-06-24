@@ -50,18 +50,20 @@ namespace BKI_HRM
         #region Data Structs
         private enum e_col_Number
         {
-            NGAY_DI = 3
+            NGAY_DI = 4
            ,
-            MO_TA_CONG_VIEC = 6
+            MO_TA_CONG_VIEC = 7
                 ,
-            DIA_DIEM = 5
+            DIA_DIEM = 6
                 ,
             MA_NV = 1
                 ,
-            NGAY_VE = 4
+            NGAY_VE = 5
                 ,
-            HO_TEN = 2
-                , ID = 7
+            HO_DEM = 2
+                ,
+            TEN = 3
+                , ID = 8
         }
         #endregion
         #region Members
@@ -152,12 +154,12 @@ namespace BKI_HRM
         }
         private bool check_data_is_ok()
         {
-            if (m_txt_ma_quyet_dinh.Text.Trim())
+            if (m_txt_ma_quyet_dinh.Text.Trim() == "")
             {
                 BaseMessages.MsgBox_Error("Bạn chưa nhập mã quyết định.");
                 return false;
             }
-            if (m_dat_ngay_ky.Value > DateTime.Today)
+            if (m_dat_ngay_ky.Value.Date > DateTime.Today.Date)
             {
                 BaseMessages.MsgBox_Error("Ngày ký không hợp lệ.");
                 return false;
@@ -188,7 +190,8 @@ namespace BKI_HRM
             v_htb.Add(V_GD_CONG_TAC.DIA_DIEM, e_col_Number.DIA_DIEM);
             v_htb.Add(V_GD_CONG_TAC.MA_NV, e_col_Number.MA_NV);
             v_htb.Add(V_GD_CONG_TAC.NGAY_VE, e_col_Number.NGAY_VE);
-            v_htb.Add(V_GD_CONG_TAC.HO_TEN, e_col_Number.HO_TEN);
+            v_htb.Add(V_GD_CONG_TAC.HO_DEM, e_col_Number.HO_DEM);
+            v_htb.Add(V_GD_CONG_TAC.TEN, e_col_Number.TEN);
             v_htb.Add(V_GD_CONG_TAC.ID, e_col_Number.ID);
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds_v_gd_cong_tac.V_GD_CONG_TAC.NewRow());
             return v_obj_trans;
@@ -259,8 +262,8 @@ namespace BKI_HRM
                         break;
                 }
             }
-            
-            
+
+            BaseMessages.MsgBox_Infor("Thêm quyết định thành công.");
         }
 
         private void chon_file()
@@ -388,7 +391,7 @@ namespace BKI_HRM
             m_cmd_them_quyet_dinh.Click += new EventHandler(m_cmd_them_quyet_dinh_Click);
             m_cmd_chon_quyet_dinh.Click += new EventHandler(m_cmd_chon_quyet_dinh_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-
+            m_txt_ma_quyet_dinh.Leave += new EventHandler(m_txt_ma_quyet_dinh_Leave);
             m_cmd_save_qd.Click += new EventHandler(m_cmd_save_qd_Click);
             m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
             m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
@@ -415,23 +418,31 @@ namespace BKI_HRM
             try
             {
                 generate_ma_quyet_dinh();
-                if (check_is_trung_ma_quyet_dinh())
-                {
-                    BaseMessages.MsgBox_Error("Mã quyết định đã tồn tại.");
-                    m_txt_ma_quyet_dinh.Focus();
-                    m_txt_ma_quyet_dinh.BackColor = Color.Red;
-                }
-                else
+                if (!check_is_trung_ma_quyet_dinh())
                 {
                     m_txt_ma_quyet_dinh.BackColor = Color.White;
+                    
                 }
+                
             }
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
+        private void m_txt_ma_quyet_dinh_Leave(object sender, EventArgs e) 
+        {
+            if (check_is_trung_ma_quyet_dinh())
+            {
+                BaseMessages.MsgBox_Error("Mã quyết định đã tồn tại.");
+                m_txt_ma_quyet_dinh.Focus();
+                m_txt_ma_quyet_dinh.BackColor = Color.Red;
+            }
+            else
+            {
+                m_txt_ma_quyet_dinh.BackColor = Color.White;
+            }
+        }
         private void m_cbo_ma_quyet_dinh_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -505,7 +516,7 @@ namespace BKI_HRM
             try
             {
                 save_quyet_dinh();
-                BaseMessages.MsgBox_Infor("Thêm quyết định thành công.");
+                
             }
             catch (Exception v_e)
             {

@@ -298,14 +298,7 @@ namespace BKI_HRM {
         public void display() {
             this.ShowDialog();
         }
-        public void select_data(ref US_DM_QUYET_DINH op_us) {
-            m_e_form_mode = DataEntryFormMode.SelectDataState;
-            m_cmd_delete.Visible = false;
-            m_cmd_insert.Visible = false;
-            m_cmd_update.Visible = false;
-            ShowDialog();
-            op_us = m_us;
-        }
+      
         public void select_data(string ip_str_loai_quyet_dinh, ref US_DM_QUYET_DINH op_us)
         {
             m_str_loai_quyet_dinh = ip_str_loai_quyet_dinh;
