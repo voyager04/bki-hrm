@@ -289,8 +289,6 @@ namespace BKI_HRM.DS {
             
             private global::System.Data.DataColumn columnTEN;
             
-            private global::System.Data.DataColumn columnHO_TEN;
-            
             private global::System.Data.DataColumn columnID_QUYET_DINH;
             
             private global::System.Data.DataColumn columnMA_QUYET_DINH;
@@ -389,14 +387,6 @@ namespace BKI_HRM.DS {
             public global::System.Data.DataColumn TENColumn {
                 get {
                     return this.columnTEN;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn HO_TENColumn {
-                get {
-                    return this.columnHO_TEN;
                 }
             }
             
@@ -555,7 +545,6 @@ namespace BKI_HRM.DS {
                         string MA_NV, 
                         string HO_DEM, 
                         string TEN, 
-                        string HO_TEN, 
                         decimal ID_QUYET_DINH, 
                         string MA_QUYET_DINH, 
                         decimal ID_LOAI_QD, 
@@ -577,7 +566,6 @@ namespace BKI_HRM.DS {
                         MA_NV,
                         HO_DEM,
                         TEN,
-                        HO_TEN,
                         ID_QUYET_DINH,
                         MA_QUYET_DINH,
                         ID_LOAI_QD,
@@ -626,7 +614,6 @@ namespace BKI_HRM.DS {
                 this.columnMA_NV = base.Columns["MA_NV"];
                 this.columnHO_DEM = base.Columns["HO_DEM"];
                 this.columnTEN = base.Columns["TEN"];
-                this.columnHO_TEN = base.Columns["HO_TEN"];
                 this.columnID_QUYET_DINH = base.Columns["ID_QUYET_DINH"];
                 this.columnMA_QUYET_DINH = base.Columns["MA_QUYET_DINH"];
                 this.columnID_LOAI_QD = base.Columns["ID_LOAI_QD"];
@@ -656,8 +643,6 @@ namespace BKI_HRM.DS {
                 base.Columns.Add(this.columnHO_DEM);
                 this.columnTEN = new global::System.Data.DataColumn("TEN", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTEN);
-                this.columnHO_TEN = new global::System.Data.DataColumn("HO_TEN", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHO_TEN);
                 this.columnID_QUYET_DINH = new global::System.Data.DataColumn("ID_QUYET_DINH", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_QUYET_DINH);
                 this.columnMA_QUYET_DINH = new global::System.Data.DataColumn("MA_QUYET_DINH", typeof(string), null, global::System.Data.MappingType.Element);
@@ -697,8 +682,6 @@ namespace BKI_HRM.DS {
                 this.columnHO_DEM.MaxLength = 50;
                 this.columnTEN.AllowDBNull = false;
                 this.columnTEN.MaxLength = 50;
-                this.columnHO_TEN.ReadOnly = true;
-                this.columnHO_TEN.MaxLength = 101;
                 this.columnMA_QUYET_DINH.MaxLength = 50;
                 this.columnLOAI_QD.MaxLength = 250;
                 this.columnNOI_DUNG.MaxLength = 250;
@@ -900,22 +883,6 @@ namespace BKI_HRM.DS {
                 }
                 set {
                     this[this.tableV_GD_CONG_TAC.TENColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string HO_TEN {
-                get {
-                    try {
-                        return ((string)(this[this.tableV_GD_CONG_TAC.HO_TENColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'HO_TEN\' in table \'V_GD_CONG_TAC\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableV_GD_CONG_TAC.HO_TENColumn] = value;
                 }
             }
             
@@ -1131,18 +1098,6 @@ namespace BKI_HRM.DS {
                 set {
                     this[this.tableV_GD_CONG_TAC.LINKColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsHO_TENNull() {
-                return this.IsNull(this.tableV_GD_CONG_TAC.HO_TENColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetHO_TENNull() {
-                this[this.tableV_GD_CONG_TAC.HO_TENColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1454,7 +1409,6 @@ namespace BKI_HRM.DS.DS_V_GD_CONG_TACTableAdapters {
             tableMapping.ColumnMappings.Add("MA_NV", "MA_NV");
             tableMapping.ColumnMappings.Add("HO_DEM", "HO_DEM");
             tableMapping.ColumnMappings.Add("TEN", "TEN");
-            tableMapping.ColumnMappings.Add("HO_TEN", "HO_TEN");
             tableMapping.ColumnMappings.Add("ID_QUYET_DINH", "ID_QUYET_DINH");
             tableMapping.ColumnMappings.Add("MA_QUYET_DINH", "MA_QUYET_DINH");
             tableMapping.ColumnMappings.Add("ID_LOAI_QD", "ID_LOAI_QD");
@@ -1485,9 +1439,9 @@ namespace BKI_HRM.DS.DS_V_GD_CONG_TACTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, ID_NHAN_SU, MA_NV, HO_DEM, TEN, HO_TEN, ID_QUYET_DINH, MA_QUYET_DINH, " +
-                "ID_LOAI_QD, LOAI_QD, NGAY_CO_HIEU_LUC, NGAY_KY, NGAY_HET_HIEU_LUC, NOI_DUNG, NGA" +
-                "Y_DI, NGAY_VE, DIA_DIEM, MO_TA_CONG_VIEC, LUA_CHON, LINK FROM dbo.V_GD_CONG_TAC";
+            this._commandCollection[0].CommandText = "SELECT ID, ID_NHAN_SU, MA_NV, HO_DEM, TEN, ID_QUYET_DINH, MA_QUYET_DINH, ID_LOAI_" +
+                "QD, LOAI_QD, NGAY_CO_HIEU_LUC, NGAY_KY, NGAY_HET_HIEU_LUC, NOI_DUNG, NGAY_DI, NG" +
+                "AY_VE, DIA_DIEM, MO_TA_CONG_VIEC, LUA_CHON, LINK FROM dbo.V_GD_CONG_TAC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

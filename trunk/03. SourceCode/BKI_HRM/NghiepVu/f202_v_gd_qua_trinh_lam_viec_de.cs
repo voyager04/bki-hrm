@@ -510,7 +510,7 @@ namespace BKI_HRM
             m_b_check_quyet_dinh_save = false;
             m_grb_quyet_dinh.Enabled = true;
             f600_v_dm_quyet_dinh v_frm = new f600_v_dm_quyet_dinh();
-            v_frm.select_data(ref m_us_quyet_dinh);
+            v_frm.select_data("Tất cả", ref m_us_quyet_dinh);
             if (m_us_quyet_dinh.dcID != -1)
             {
 

@@ -199,7 +199,7 @@ namespace BKI_HRM {
             format_un_edited_control();
             m_cmd_xem_file.Enabled = true;
             var v_frm = new f600_v_dm_quyet_dinh();
-            v_frm.select_data(ref m_us_quyet_dinh);
+            v_frm.select_data("Tất cả", ref m_us_quyet_dinh);
             if (m_us_quyet_dinh.dcID != -1) {
                 m_ofd_openfile.FileName = m_us_quyet_dinh.strLINK;
                 m_txt_ma_quyet_dinh.Text = m_us_quyet_dinh.strMA_QUYET_DINH;

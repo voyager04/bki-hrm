@@ -100,17 +100,17 @@ namespace BKI_HRM
 
         private bool check_data_is_ok()
         {
-            if (m_txt_tim_kiem_nhan_vien.Text.Trim())
+            if (m_txt_tim_kiem_nhan_vien.Text.Trim() == "")
             {
                 BaseMessages.MsgBox_Error("Bạn chưa chọn nhân viên.");
                 return false;
             }
-            if (m_dat_ngay_di.Value > m_dat_ngay_ve.Value)
+            if (m_dat_ngay_di.Value.Date > m_dat_ngay_ve.Value.Date)
             {
                 BaseMessages.MsgBox_Error("Ngày đi và ngày về không hợp lệ.");
                 return false;
             }
-            if (m_txt_dia_diem.Text.Trim())
+            if (m_txt_dia_diem.Text.Trim() == "")
             {
                 BaseMessages.MsgBox_Error("Bạn chưa điền địa điểm.");
                 return false;
