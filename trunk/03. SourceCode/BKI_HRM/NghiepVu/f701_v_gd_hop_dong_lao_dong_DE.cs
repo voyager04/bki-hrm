@@ -175,13 +175,21 @@ namespace BKI_HRM.NghiepVu
             switch (m_e_file_mode)
             {
                 case DataEntryFileMode.UploadFile:
+                    if (FileExplorer.IsExistedFile(m_str_directory_to + FileExplorer.fileName))
+                    {
+                        BaseMessages.MsgBox_Infor("Tên file đã tồn tại. Vui lòng đổi tên khác");
+                        return;
+                    }
                     FileExplorer.UploadFile(m_str_domain, m_str_directory_to, m_str_user_name, m_str_password);
                     break;
                 case DataEntryFileMode.EditFile:
-                    if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old))
+                    if (FileExplorer.IsExistedFile(m_str_directory_to + FileExplorer.fileName))
                     {
-                        FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
+                        BaseMessages.MsgBox_Infor("Tên file đã tồn tại. Vui lòng đổi tên khác");
+                        return;
                     }
+                    if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old))
+                        FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
                     FileExplorer.UploadFile(m_str_domain, m_str_directory_to, m_str_user_name, m_str_password);
                     break;
                 case DataEntryFileMode.DeleteFile:

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Windows.Forms;
 using IP.Core.IPCommon;
@@ -52,16 +53,8 @@ namespace BKI_HRM
         {
             DomainName = domain;
             DirectoryTo = directoryTo;
-
-            if (IsExistedFile(DirectoryTo + fileName))
-            {
-                BaseMessages.MsgBox_Infor("Tên file đã tồn tại. Vui lòng đổi tên khác");
-                return "";
-            }
             if (fileName != "")
-            {
                 File.Copy(path + fileName, DirectoryTo + fileName);
-            }
             return fileName;
         }
 
@@ -72,26 +65,9 @@ namespace BKI_HRM
             UserName = userName;
             Password = password;
 
-            if (IsExistedFile(DirectoryTo + fileName))
-            {
-                BaseMessages.MsgBox_Infor("Tên file đã tồn tại. Vui lòng đổi tên khác");
-                return "";
-            }
             if (UserName != null)
-            {
-                var oNetworkCredential =
-                        new System.Net.NetworkCredential()
-                        {
-                            Domain = DomainName,
-                            UserName = DomainName + "\\" + UserName,
-                            Password = Password
-                        };
-
-                using (new RemoteAccessHelper.NetworkConnection(@"\\" + DomainName, oNetworkCredential))
-                {
+                using (new RemoteAccessHelper.NetworkConnection(DomainName, new NetworkCredential(UserName, Password, DomainName)))
                     File.Copy(path + fileName, DirectoryTo + fileName);
-                }
-            }
             return fileName;
         }
 
