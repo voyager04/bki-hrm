@@ -82,11 +82,13 @@ namespace BKI_HRM
 
         // File explorer
         private DataEntryFileMode m_e_file_mode;
-       
         private string m_str_domain = ConfigurationSettings.AppSettings["DOMAIN"];
         private string m_str_directory_to = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
+        private string m_str_user_name = ConfigurationSettings.AppSettings["USERNAME_SHARE"];
+        private string m_str_password = ConfigurationSettings.AppSettings["PASSWORD_SHARE"];
         private decimal m_str_id_hop_dong_old;
         private string m_str_link_old;
+        
         #endregion
 
         #region Private Methods
@@ -233,14 +235,22 @@ namespace BKI_HRM
                 switch (m_e_file_mode)
                 {
                     case DataEntryFileMode.UploadFile:
-                        FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
+                        if (FileExplorer.IsExistedFile(m_str_directory_to + FileExplorer.fileName))
+                        {
+                            BaseMessages.MsgBox_Infor("Tên file đã tồn tại. Vui lòng đổi tên khác");
+                            return;
+                        }
+                        FileExplorer.UploadFile(m_str_domain, m_str_directory_to, m_str_user_name, m_str_password);
                         break;
                     case DataEntryFileMode.EditFile:
-                        if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old))
+                        if (FileExplorer.IsExistedFile(m_str_directory_to + FileExplorer.fileName))
                         {
-                            FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
+                            BaseMessages.MsgBox_Infor("Tên file đã tồn tại. Vui lòng đổi tên khác");
+                            return;
                         }
-                        FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
+                        if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old))
+                            FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
+                        FileExplorer.UploadFile(m_str_domain, m_str_directory_to, m_str_user_name, m_str_password);
                         break;
                     case DataEntryFileMode.DeleteFile:
                         if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old) == false)
