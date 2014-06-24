@@ -175,14 +175,14 @@ namespace BKI_HRM.NghiepVu
             switch (m_e_file_mode)
             {
                 case DataEntryFileMode.UploadFile:
-                    FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
+                    FileExplorer.UploadFile(m_str_domain, m_str_directory_to, m_str_user_name, m_str_password);
                     break;
                 case DataEntryFileMode.EditFile:
                     if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old))
                     {
                         FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
                     }
-                    FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
+                    FileExplorer.UploadFile(m_str_domain, m_str_directory_to, m_str_user_name, m_str_password);
                     break;
                 case DataEntryFileMode.DeleteFile:
                     if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old) == false)
