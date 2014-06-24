@@ -56,13 +56,13 @@
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_ofd_chon_file = new System.Windows.Forms.OpenFileDialog();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.m_pnl_control_quyet_dinh = new System.Windows.Forms.Panel();
             this.m_cmd_save_qd = new SIS.Controls.Button.SiSButton();
             this.m_cmd_refresh = new SIS.Controls.Button.SiSButton();
             this.m_grb_quyet_dinh.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.m_pnl_control_quyet_dinh.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_cmd_them_quyet_dinh
@@ -382,16 +382,17 @@
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 3;
             // 
-            // panel1
+            // m_pnl_control_quyet_dinh
             // 
-            this.panel1.Controls.Add(this.m_cmd_save_qd);
-            this.panel1.Controls.Add(this.m_cmd_refresh);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 248);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(4);
-            this.panel1.Size = new System.Drawing.Size(792, 36);
-            this.panel1.TabIndex = 6;
+            this.m_pnl_control_quyet_dinh.Controls.Add(this.m_cmd_save_qd);
+            this.m_pnl_control_quyet_dinh.Controls.Add(this.m_cmd_refresh);
+            this.m_pnl_control_quyet_dinh.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_pnl_control_quyet_dinh.Location = new System.Drawing.Point(0, 248);
+            this.m_pnl_control_quyet_dinh.Name = "m_pnl_control_quyet_dinh";
+            this.m_pnl_control_quyet_dinh.Padding = new System.Windows.Forms.Padding(4);
+            this.m_pnl_control_quyet_dinh.Size = new System.Drawing.Size(792, 36);
+            this.m_pnl_control_quyet_dinh.TabIndex = 6;
+            this.m_pnl_control_quyet_dinh.Visible = false;
             // 
             // m_cmd_save_qd
             // 
@@ -428,7 +429,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 469);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.m_pnl_control_quyet_dinh);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_cmd_them_quyet_dinh);
@@ -441,7 +442,7 @@
             this.m_grb_quyet_dinh.PerformLayout();
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.m_pnl_control_quyet_dinh.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -472,7 +473,7 @@
         private System.Windows.Forms.OpenFileDialog m_ofd_chon_file;
         internal SIS.Controls.Button.SiSButton m_cmd_go_dinh_kem;
         private System.Windows.Forms.Label m_lbl_file_name;
-        internal System.Windows.Forms.Panel panel1;
+        internal System.Windows.Forms.Panel m_pnl_control_quyet_dinh;
         internal SIS.Controls.Button.SiSButton m_cmd_save_qd;
         internal SIS.Controls.Button.SiSButton m_cmd_refresh;
         internal SIS.Controls.Button.SiSButton m_cmd_update;

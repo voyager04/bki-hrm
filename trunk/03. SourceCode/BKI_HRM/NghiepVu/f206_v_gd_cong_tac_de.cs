@@ -122,32 +122,47 @@ namespace BKI_HRM
             DS_DM_QUYET_DINH v_ds = new DS_DM_QUYET_DINH();
             US_DM_QUYET_DINH v_us = new US_DM_QUYET_DINH();
             v_us.FillDataset_By_Ma_qd(v_ds, m_lbl_ma_qd.Text);
-            switch (m_e_form_mode)
+            if (m_b_check_quyet_dinh_save)
             {
-                case DataEntryFormMode.InsertDataState:
-                    
-                    if (v_ds.DM_QUYET_DINH.Count > 0)
-                    {
-                        return true;
-                    }
-                    break;
-                case DataEntryFormMode.SelectDataState:
-                    if (v_ds.DM_QUYET_DINH > 0 && m_lbl_ma_qd.Text != m_us_v_gd_cong_tac.strMA_QUYET_DINH)
-                    {
-                        return true;
-                    }
-                    break;
-                case DataEntryFormMode.UpdateDataState:
-                    break;
-                case DataEntryFormMode.ViewDataState:
-                    break;
-                default:
-                    break;
+                switch (m_e_form_mode)
+                {
+                    case DataEntryFormMode.InsertDataState:
+
+                        if (v_ds.DM_QUYET_DINH.Count > 0)
+                        {
+                            return true;
+                        }
+                        break;
+                    case DataEntryFormMode.SelectDataState:
+                        if (v_ds.DM_QUYET_DINH.Count > 0 && m_lbl_ma_qd.Text != m_us_v_gd_cong_tac.strMA_QUYET_DINH)
+                        {
+                            return true;
+                        }
+                        break;
+                    case DataEntryFormMode.UpdateDataState:
+                        break;
+                    case DataEntryFormMode.ViewDataState:
+                        break;
+                    default:
+                        break;
+                }
             }
+            
             return false;
         }
         private bool check_data_is_ok()
         {
+            if (m_txt_ma_quyet_dinh.Text.Trim())
+            {
+                BaseMessages.MsgBox_Error("Bạn chưa nhập mã quyết định.");
+                return false;
+            }
+            if (m_dat_ngay_ky.Value > DateTime.Today)
+            {
+                BaseMessages.MsgBox_Error("Ngày ký không hợp lệ.");
+                return false;
+            }
+            
             return true;
         }
         private void form_2_us_object_quyet_dinh()
@@ -209,38 +224,43 @@ namespace BKI_HRM
         }
         private void save_quyet_dinh()
         {
-            // Xử lý file đính kèm
-            switch (m_e_file_mode)
+            if (check_data_is_ok())
             {
-                case DataEntryFileMode.UploadFile:
-                    FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
-                    break;
-                case DataEntryFileMode.EditFile:
-                    if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old))
-                    {
+                // Xử lý file đính kèm
+                switch (m_e_file_mode)
+                {
+                    case DataEntryFileMode.UploadFile:
+                        FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
+                        break;
+                    case DataEntryFileMode.EditFile:
+                        if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old))
+                        {
+                            FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
+                        }
+                        FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
+                        break;
+                    case DataEntryFileMode.DeleteFile:
+                        if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old) == false)
+                        {
+                            BaseMessages.MsgBox_Infor("File không tồn tại!");
+                            return;
+                        }
                         FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
-                    }
-                    FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
-                    break;
-                case DataEntryFileMode.DeleteFile:
-                    if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old) == false)
-                    {
-                        BaseMessages.MsgBox_Infor("File không tồn tại!");
-                        return;
-                    }
-                    FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
-                    break;
+                        break;
+                }
+                switch (m_e_form_mode)
+                {
+                    case DataEntryFormMode.InsertDataState:
+                        if (m_b_check_quyet_dinh_save)
+                        {
+                            form_2_us_object_quyet_dinh();
+                            m_us_dm_quyet_dinh.Insert();
+                        }
+                        break;
+                }
             }
-            switch (m_e_form_mode)
-            {
-                case DataEntryFormMode.InsertDataState:
-                    if (m_b_check_quyet_dinh_save)
-                    {
-                        form_2_us_object_quyet_dinh();
-                        m_us_dm_quyet_dinh.Insert();
-                    }
-                    break;
-            }
+            
+            
         }
 
         private void chon_file()
@@ -257,12 +277,14 @@ namespace BKI_HRM
 
         private void them_quyet_dinh()
         {
+            m_pnl_control_quyet_dinh.Visible = true;
             m_b_check_quyet_dinh_save = true;
             m_grb_quyet_dinh.Enabled = true;
             m_txt_ma_quyet_dinh.Focus();
         }
         private void chon_quyet_dinh()
         {
+            m_pnl_control_quyet_dinh.Visible = false;
             m_b_check_quyet_dinh_save = false;
             m_grb_quyet_dinh.Enabled = true;
             f600_v_dm_quyet_dinh v_frm = new f600_v_dm_quyet_dinh();
@@ -393,7 +415,7 @@ namespace BKI_HRM
             try
             {
                 generate_ma_quyet_dinh();
-                if (check_is_trung_ma_quyet_dinh)
+                if (check_is_trung_ma_quyet_dinh())
                 {
                     BaseMessages.MsgBox_Error("Mã quyết định đã tồn tại.");
                     m_txt_ma_quyet_dinh.Focus();
