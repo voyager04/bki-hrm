@@ -66,7 +66,7 @@ namespace BKI_HRM
             return fileName;
         }
 
-        public static string UploadFile(string domain, string userName, string password, string directoryTo)
+        public static string UploadFile(string domain, string directoryTo, string userName, string password)
         {
             Domain = domain;
             DirectoryTo = directoryTo;
