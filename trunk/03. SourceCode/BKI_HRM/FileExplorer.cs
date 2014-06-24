@@ -10,7 +10,7 @@ namespace BKI_HRM
 {
     public static class FileExplorer
     {
-        public static string Domain { get; set; }
+        public static string DomainName { get; set; }
         public static string UserName { get; set; }
         public static string Password { get; set; }
         public static string DirectoryTo { get; set; }
@@ -18,7 +18,6 @@ namespace BKI_HRM
         public static string fileName = "";
         private static string directoryFrom = "";
         private static string path = "";
-        private static long timeNow = DateTime.Now.Ticks;
 
         public static void SelectFile(OpenFileDialog fileDialog)
         {
@@ -51,7 +50,7 @@ namespace BKI_HRM
 
         public static string UploadFile(string domain, string directoryTo)
         {
-            Domain = domain;
+            DomainName = domain;
             DirectoryTo = directoryTo;
 
             if (IsExistedFile(DirectoryTo + fileName))
@@ -68,7 +67,7 @@ namespace BKI_HRM
 
         public static string UploadFile(string domain, string directoryTo, string userName, string password)
         {
-            Domain = domain;
+            DomainName = domain;
             DirectoryTo = directoryTo;
             UserName = userName;
             Password = password;
@@ -83,12 +82,12 @@ namespace BKI_HRM
                 var oNetworkCredential =
                         new System.Net.NetworkCredential()
                         {
-                            Domain = Domain,
-                            UserName = Domain + "\\" + UserName,
+                            Domain = DomainName,
+                            UserName = DomainName + "\\" + UserName,
                             Password = Password
                         };
 
-                using (new RemoteAccessHelper.NetworkConnection(@"\\" + Domain, oNetworkCredential))
+                using (new RemoteAccessHelper.NetworkConnection(@"\\" + DomainName, oNetworkCredential))
                 {
                     File.Copy(path + fileName, DirectoryTo + fileName);
                 }
