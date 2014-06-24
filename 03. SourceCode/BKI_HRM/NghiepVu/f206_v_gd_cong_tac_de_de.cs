@@ -100,6 +100,21 @@ namespace BKI_HRM
 
         private bool check_data_is_ok()
         {
+            if (m_txt_tim_kiem_nhan_vien.Text.Trim())
+            {
+                BaseMessages.MsgBox_Error("Bạn chưa chọn nhân viên.");
+                return false;
+            }
+            if (m_dat_ngay_di.Value > m_dat_ngay_ve.Value)
+            {
+                BaseMessages.MsgBox_Error("Ngày đi và ngày về không hợp lệ.");
+                return false;
+            }
+            if (m_txt_dia_diem.Text.Trim())
+            {
+                BaseMessages.MsgBox_Error("Bạn chưa điền địa điểm.");
+                return false;
+            }
             return true;
         }
 
@@ -168,24 +183,28 @@ namespace BKI_HRM
         }
         private void save_data()
         {
-            form_2_us_object();
-            switch (m_e_form_mode)
+            if (check_data_is_ok())
             {
-                case DataEntryFormMode.InsertDataState:
-                    m_us_gd_cong_tac.Insert();
-                    break;
-                case DataEntryFormMode.SelectDataState:
-                    break;
-                case DataEntryFormMode.UpdateDataState:
-                    m_us_gd_cong_tac.Update();
-                    break;
-                case DataEntryFormMode.ViewDataState:
-                    break;
-                default:
-                    break;
-            }
-            this.Close();
+                form_2_us_object();
+                switch (m_e_form_mode)
+                {
+                    case DataEntryFormMode.InsertDataState:
+                        m_us_gd_cong_tac.Insert();
+                        break;
+                    case DataEntryFormMode.SelectDataState:
+                        break;
+                    case DataEntryFormMode.UpdateDataState:
+                        m_us_gd_cong_tac.Update();
+                        break;
+                    case DataEntryFormMode.ViewDataState:
+                        break;
+                    default:
+                        break;
+                }
+                this.Close();
 
+            }
+           
         }
         private void xoa_trang()
         {
