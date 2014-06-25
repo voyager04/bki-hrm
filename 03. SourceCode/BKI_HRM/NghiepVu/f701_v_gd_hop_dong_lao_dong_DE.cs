@@ -130,6 +130,11 @@ namespace BKI_HRM.NghiepVu
                 BaseMessages.MsgBox_Infor("Ngày Hợp Đồng có hiệu lực không thể lớn hơn ngày Hợp Đồng hết hạn.");
                 return false;
             }
+            if (m_us.dcID_PHAP_NHAN == 0 || m_us.dcID_PHAP_NHAN == null)
+            {
+                BaseMessages.MsgBox_Infor("Cần phải chọn Pháp nhân.");
+                return false;
+            }
             return true;
         }
 
@@ -180,7 +185,11 @@ namespace BKI_HRM.NghiepVu
                         BaseMessages.MsgBox_Infor("Tên file đã tồn tại. Vui lòng đổi tên khác");
                         return;
                     }
-                    FileExplorer.UploadFile(m_str_domain, m_str_directory_to, m_str_user_name, m_str_password);
+
+                    if (m_str_user_name != "")
+                        FileExplorer.UploadFile(m_str_domain, m_str_directory_to, m_str_user_name, m_str_password);
+                    else
+                        FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
                     break;
                 case DataEntryFileMode.EditFile:
                     if (FileExplorer.IsExistedFile(m_str_directory_to + FileExplorer.fileName))
@@ -188,9 +197,14 @@ namespace BKI_HRM.NghiepVu
                         BaseMessages.MsgBox_Infor("Tên file đã tồn tại. Vui lòng đổi tên khác");
                         return;
                     }
+
                     if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old))
                         FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
-                    FileExplorer.UploadFile(m_str_domain, m_str_directory_to, m_str_user_name, m_str_password);
+
+                    if (m_str_user_name != "")
+                        FileExplorer.UploadFile(m_str_domain, m_str_directory_to, m_str_user_name, m_str_password);
+                    else
+                        FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
                     break;
                 case DataEntryFileMode.DeleteFile:
                     if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old) == false)
