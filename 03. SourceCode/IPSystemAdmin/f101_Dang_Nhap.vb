@@ -138,7 +138,6 @@ Public Class f101_Dang_Nhap
         Me.m_txtMatKhau.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.m_txtMatKhau.Size = New System.Drawing.Size(98, 20)
         Me.m_txtMatKhau.TabIndex = 3
-        Me.m_txtMatKhau.Text = "admin"
         '
         'Label2
         '
@@ -170,7 +169,6 @@ Public Class f101_Dang_Nhap
         Me.m_txtTenTruyNhap.Name = "m_txtTenTruyNhap"
         Me.m_txtTenTruyNhap.Size = New System.Drawing.Size(147, 20)
         Me.m_txtTenTruyNhap.TabIndex = 1
-        Me.m_txtTenTruyNhap.Text = "admin"
         '
         'GroupBox1
         '
@@ -319,8 +317,8 @@ Public Class f101_Dang_Nhap
     End Function
 
 
-    Private Sub setInitialFormLoad()
-    End Sub
+    'Private Sub setInitialFormLoad()
+    'End Sub
 #End Region
     '
     '    EVENTS HANDER
@@ -328,7 +326,7 @@ Public Class f101_Dang_Nhap
     Private Sub f101_Dang_Nhap_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.KeyPreview = True
         Try
-            setInitialFormLoad()
+            'setInitialFormLoad()
             ' Dim v_settingReader As New System.Configuration.AppSettingsReader
             '  Me.m_strMaDonVi = v_settingReader.GetValue("MA_DON_VI", System.Type.GetType("System.String")).ToString()
             '  Me.m_strMaHeThongDangNhap = v_settingReader.GetValue("MA_HE_THONG", System.Type.GetType("System.String")).ToString(
