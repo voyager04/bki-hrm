@@ -336,6 +336,12 @@
     <Compile Include="NghiepVu\f206_v_gd_cong_tac_de_de.Designer.cs">
       <DependentUpon>f206_v_gd_cong_tac_de_de.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\f206_v_gd_cong_tac_view_document.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f206_v_gd_cong_tac_view_document.Designer.cs">
+      <DependentUpon>f206_v_gd_cong_tac_view_document.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\F500_DM_DU_AN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -551,6 +557,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f206_v_gd_cong_tac_de_de.resx">
       <DependentUpon>f206_v_gd_cong_tac_de_de.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f206_v_gd_cong_tac_view_document.resx">
+      <DependentUpon>f206_v_gd_cong_tac_view_document.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\F500_DM_DU_AN.resx">
       <DependentUpon>F500_DM_DU_AN.cs</DependentUpon>

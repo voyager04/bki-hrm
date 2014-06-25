@@ -406,6 +406,7 @@ namespace BKI_HRM
             m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
             m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
+           
         }
         #endregion
 
@@ -423,6 +424,7 @@ namespace BKI_HRM
             }
         }
 
+        
         private void m_txt_ma_quyet_dinh_TextChanged(object sender, EventArgs e)
         {
             try

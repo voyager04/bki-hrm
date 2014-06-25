@@ -151,12 +151,13 @@
             this.m_cmd_go_dinh_kem.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_go_dinh_kem.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_go_dinh_kem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_go_dinh_kem.ImageIndex = 18;
+            this.m_cmd_go_dinh_kem.ImageIndex = 4;
+            this.m_cmd_go_dinh_kem.ImageList = this.ImageList;
             this.m_cmd_go_dinh_kem.Location = new System.Drawing.Point(339, 78);
             this.m_cmd_go_dinh_kem.Name = "m_cmd_go_dinh_kem";
             this.m_cmd_go_dinh_kem.Size = new System.Drawing.Size(112, 28);
             this.m_cmd_go_dinh_kem.TabIndex = 9;
-            this.m_cmd_go_dinh_kem.Text = "&Go tai lieu";
+            this.m_cmd_go_dinh_kem.Text = "&Gỡ tài liệu";
             this.m_cmd_go_dinh_kem.Click += new System.EventHandler(this.m_cmd_go_dinh_kem_Click);
             // 
             // m_lbl_file_name
@@ -164,9 +165,8 @@
             this.m_lbl_file_name.AutoSize = true;
             this.m_lbl_file_name.Location = new System.Drawing.Point(487, 85);
             this.m_lbl_file_name.Name = "m_lbl_file_name";
-            this.m_lbl_file_name.Size = new System.Drawing.Size(35, 13);
+            this.m_lbl_file_name.Size = new System.Drawing.Size(0, 13);
             this.m_lbl_file_name.TabIndex = 8;
-            this.m_lbl_file_name.Text = "label1";
             // 
             // m_lbl_ma_qd
             // 
@@ -210,6 +210,7 @@
             this.m_cmd_xem_file.Size = new System.Drawing.Size(112, 28);
             this.m_cmd_xem_file.TabIndex = 6;
             this.m_cmd_xem_file.Text = "&Xem tài liệu";
+            this.m_cmd_xem_file.Visible = false;
             // 
             // m_cmd_chon_file
             // 
@@ -218,6 +219,7 @@
             this.m_cmd_chon_file.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_chon_file.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_chon_file.ImageIndex = 5;
+            this.m_cmd_chon_file.ImageList = this.ImageList;
             this.m_cmd_chon_file.Location = new System.Drawing.Point(103, 78);
             this.m_cmd_chon_file.Name = "m_cmd_chon_file";
             this.m_cmd_chon_file.Size = new System.Drawing.Size(112, 28);
