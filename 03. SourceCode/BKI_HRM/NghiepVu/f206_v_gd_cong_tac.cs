@@ -397,7 +397,7 @@ namespace BKI_HRM
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
             m_fg.Tree.Column = (int)e_col_Number.MA_QUYET_DINH;
-            
+
             m_fg.Tree.Style = C1.Win.C1FlexGrid.TreeStyleFlags.SimpleLeaf;
             set_define_events();
             this.KeyPreview = true;
@@ -436,7 +436,7 @@ namespace BKI_HRM
                 m_us.FillDatasetSearch(m_ds, "", m_dat_tu_ngay.Value, m_dat_den_ngay.Value);
             }
             else
-                m_us.FillDatasetSearch(m_ds, m_txt_tim_kiem.Text.Trim(), m_dat_tu_ngay.Value, m_dat_den_ngay.Value);
+                m_us.FillDatasetSearch(m_ds, m_txt_tim_kiem.Text.Trim(), m_dat_tu_ngay.Value.Date, m_dat_den_ngay.Value.Date.AddDays(1));
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
@@ -537,6 +537,7 @@ namespace BKI_HRM
             m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_fg.Click += new EventHandler(m_fg_Click);
         }
 
         #endregion
@@ -686,7 +687,35 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        private void m_fg_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_fg.Col == (int)e_col_Number.MA_QUYET_DINH)
+                {
+                    if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+                    if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+                    grid2us_object(m_us, m_fg.Row);
 
+                    US_DM_QUYET_DINH v_us = new US_DM_QUYET_DINH(m_us.dcID_QUYET_DINH);
+                    if (v_us.strLINK != "")
+                    {
+                        //FileExplorer.DownloadFile(v_us.strLINK);
+                        f206_v_gd_cong_tac_view_document v_frm = new f206_v_gd_cong_tac_view_document();
+                        v_frm.display(v_us.strLINK);
+                    }
+                    else
+                    {
+                        BaseMessages.MsgBox_Error("Chưa có file đính kèm.");
+                    }
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         #endregion
     }
 }
