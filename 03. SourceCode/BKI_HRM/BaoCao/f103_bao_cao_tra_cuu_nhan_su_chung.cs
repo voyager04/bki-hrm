@@ -104,7 +104,7 @@ namespace BKI_HRM
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f103_bao_cao_tra_cuu_nhan_su));
-            Checkbox_Combobox.CheckBoxProperties checkBoxProperties2 = new Checkbox_Combobox.CheckBoxProperties();
+            Checkbox_Combobox.CheckBoxProperties checkBoxProperties1 = new Checkbox_Combobox.CheckBoxProperties();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cbo_thang_sinh = new System.Windows.Forms.ComboBox();
@@ -228,7 +228,7 @@ namespace BKI_HRM
             this.m_txt_trinh_do.Size = new System.Drawing.Size(142, 20);
             this.m_txt_trinh_do.TabIndex = 45;
             this.m_tooltip.SetToolTip(this.m_txt_trinh_do, "Gợi ý tìm kiếm:\r\nGiới tính: nữ, đơn vị: Phòng hành chính\r\nhoặc Nguyễn Danh Tú, gi" +
-                    "ới tính: Nam");
+        "ới tính: Nam");
             // 
             // label1
             // 
@@ -395,8 +395,8 @@ namespace BKI_HRM
             // 
             // m_cbc_choose_columns
             // 
-            checkBoxProperties2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.m_cbc_choose_columns.CheckBoxProperties = checkBoxProperties2;
+            checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.m_cbc_choose_columns.CheckBoxProperties = checkBoxProperties1;
             this.m_cbc_choose_columns.DisplayMemberSingleItem = "";
             this.m_cbc_choose_columns.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbc_choose_columns.FormattingEnabled = true;
@@ -446,8 +446,6 @@ namespace BKI_HRM
             this.m_txt_search.Name = "m_txt_search";
             this.m_txt_search.Size = new System.Drawing.Size(384, 20);
             this.m_txt_search.TabIndex = 1;
-            this.m_tooltip.SetToolTip(this.m_txt_search, "Gợi ý tìm kiếm:\r\nGiới tính: nữ, đơn vị: Phòng hành chính\r\nhoặc Nguyễn Danh Tú, gi" +
-                    "ới tính: Nam");
             // 
             // m_lbl_tim_kiem
             // 
@@ -823,7 +821,7 @@ namespace BKI_HRM
            //     get_key_value_from_txt_search();
                 init_key_value();
                 m_us.FillDatasetSearch(m_ds
-                        , m_str_search
+                        , m_txt_search.Text.Trim()
                         , m_txt_trinh_do.Text.Trim()
                        , CIPConvert.ToDecimal(m_cbo_chon_chuc_vu.SelectedValue)
                         , CIPConvert.ToDecimal(m_cbo_chon_don_vi.SelectedValue)
