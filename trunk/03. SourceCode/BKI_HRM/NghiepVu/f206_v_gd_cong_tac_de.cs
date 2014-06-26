@@ -334,7 +334,7 @@ namespace BKI_HRM
 
         private void chon_file()
         {
-            FileExplorer.SelectFile(m_ofd_chon_file);
+            FileExplorer.SelectFile(m_ofd_chon_file, m_str_link_old);
             m_str_link_old = m_lbl_file_name.Text;
             if (m_str_link_old != "")
                 m_e_file_mode = DataEntryFileMode.EditFile;
