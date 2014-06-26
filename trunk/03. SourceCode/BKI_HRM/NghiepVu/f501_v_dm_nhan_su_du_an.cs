@@ -574,7 +574,12 @@ namespace BKI_HRM
         {
             DS_V_DM_NHAN_SU_DU_AN v_ds_dm_ns_da = new DS_V_DM_NHAN_SU_DU_AN();
             US_V_DM_NHAN_SU_DU_AN v_us_dm_ns_da = new US_V_DM_NHAN_SU_DU_AN();
-            //v_us_dm_ns_da.FillDataset(v_ds_dm_ns_da);
+            v_us_dm_ns_da.FillDatasetTuNgayDenNgay(
+                    v_ds_dm_ns_da,
+                    "",
+                    DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
+                    DateTime.Parse(m_dat_den_ngay.Value.ToShortDateString()),
+                    0);
             var v_acsc_search = new AutoCompleteStringCollection();
             foreach (DataRow dr in v_ds_dm_ns_da.V_DM_NHAN_SU_DU_AN)
             {
@@ -597,7 +602,6 @@ namespace BKI_HRM
             m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
         }
 
-
         private void export_2_excel()
         {
             CExcelReport v_obj_excel_rpt = new CExcelReport("f501_bao_cao_nhan_su_du_an_tu_ngay_den_ngay.xlsx", 6, 1);
@@ -608,11 +612,7 @@ namespace BKI_HRM
         }
         #endregion
 
-        //
-        //
-        //		EVENT HANLDERS
-        //
-        //
+        #region Event
         private void f501_v_dm_nhan_su_du_an_Load(object sender, System.EventArgs e)
         {
             try
@@ -781,6 +781,7 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        #endregion
     }
 }
 
