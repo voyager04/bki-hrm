@@ -20,20 +20,18 @@ namespace BKI_HRM
         private static string directoryFrom = "";
         private static string path = "";
 
-        public static void SelectFile(OpenFileDialog fileDialog)
+        public static void SelectFile(OpenFileDialog fileDialog, string fileNameOld)
         {
+            // Khai báo dialog
             fileDialog.Filter = "(*.*)|*.*";
             fileDialog.Multiselect = false;
             fileDialog.Title = "Chọn file";
+            fileDialog.FileName = "";
             DialogResult result = fileDialog.ShowDialog();
+            // Nếu bỏ không chọn file nữa, trả về tên file cũ
             if (result != DialogResult.OK)
-                return;
-            if (new FileInfo(fileDialog.FileName).Length > 5096000)
             {
-                MessageBox.Show("File quá lớn. Vui lòng chọn file có dung lượng < 5Mb",
-                                "Cảnh báo",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
+                fileName = fileNameOld;
                 return;
             }
             fileName = fileDialog.SafeFileName;
