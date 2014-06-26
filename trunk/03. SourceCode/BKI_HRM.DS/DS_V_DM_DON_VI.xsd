@@ -10,10 +10,10 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_DM_DON_VITableAdapter" GeneratorDataComponentClassName="V_DM_DON_VITableAdapter" Name="V_DM_DON_VI" UserDataComponentName="V_DM_DON_VITableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BKI_HRMConnectionString3 (Settings)" DbObjectName="BKI_HRM.dbo.V_DM_DON_VI" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BKI_HRMConnectionString1 (Settings)" DbObjectName="BKI_HRM.dbo.V_DM_DON_VI" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, ID_DON_VI_CAP_TREN, ID_CAP_DON_VI, ID_LOAI_DON_VI, MA_DON_VI_CAP_TREN, TEN_DON_VI_CAP_TREN, TEN_TIENG_ANH_DON_VI_CAP_TREN, MA_DON_VI, TEN_DON_VI, TEN_TIENG_ANH, CAP_DON_VI, LOAI_DON_VI, TU_NGAY, DIA_BAN, TRANG_THAI FROM dbo.V_DM_DON_VI</CommandText>
+                    <CommandText>SELECT ID, ID_DON_VI_CAP_TREN, ID_CAP_DON_VI, ID_LOAI_DON_VI, MA_DON_VI_CAP_TREN, TEN_DON_VI_CAP_TREN, TEN_TIENG_ANH_DON_VI_CAP_TREN, MA_DON_VI, TEN_DON_VI, TEN_TIENG_ANH, CAP_DON_VI, LOAI_DON_VI, TU_NGAY, DIA_BAN, TRANG_THAI, TRANG_THAI_YN, ID_PHAP_NHAN, MA_PHAP_NHAN, TEN_PHAP_NHAN FROM dbo.V_DM_DON_VI</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -35,6 +35,10 @@
               <Mapping SourceColumn="TU_NGAY" DataSetColumn="TU_NGAY" />
               <Mapping SourceColumn="DIA_BAN" DataSetColumn="DIA_BAN" />
               <Mapping SourceColumn="TRANG_THAI" DataSetColumn="TRANG_THAI" />
+              <Mapping SourceColumn="TRANG_THAI_YN" DataSetColumn="TRANG_THAI_YN" />
+              <Mapping SourceColumn="ID_PHAP_NHAN" DataSetColumn="ID_PHAP_NHAN" />
+              <Mapping SourceColumn="MA_PHAP_NHAN" DataSetColumn="MA_PHAP_NHAN" />
+              <Mapping SourceColumn="TEN_PHAP_NHAN" DataSetColumn="TEN_PHAP_NHAN" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -46,7 +50,7 @@
   <xs:element name="DS_V_DM_DON_VI" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_DM_DON_VI" msprop:Generator_UserDSName="DS_V_DM_DON_VI">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="V_DM_DON_VI" msprop:Generator_TableClassName="V_DM_DON_VIDataTable" msprop:Generator_TableVarName="tableV_DM_DON_VI" msprop:Generator_RowChangedName="V_DM_DON_VIRowChanged" msprop:Generator_TablePropName="V_DM_DON_VI" msprop:Generator_RowDeletingName="V_DM_DON_VIRowDeleting" msprop:Generator_RowChangingName="V_DM_DON_VIRowChanging" msprop:Generator_RowEvHandlerName="V_DM_DON_VIRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DM_DON_VIRowDeleted" msprop:Generator_RowClassName="V_DM_DON_VIRow" msprop:Generator_UserTableName="V_DM_DON_VI" msprop:Generator_RowEvArgName="V_DM_DON_VIRowChangeEvent">
+        <xs:element name="V_DM_DON_VI" msprop:Generator_TableClassName="V_DM_DON_VIDataTable" msprop:Generator_TableVarName="tableV_DM_DON_VI" msprop:Generator_TablePropName="V_DM_DON_VI" msprop:Generator_RowDeletingName="V_DM_DON_VIRowDeleting" msprop:Generator_RowChangingName="V_DM_DON_VIRowChanging" msprop:Generator_RowEvHandlerName="V_DM_DON_VIRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DM_DON_VIRowDeleted" msprop:Generator_UserTableName="V_DM_DON_VI" msprop:Generator_RowChangedName="V_DM_DON_VIRowChanged" msprop:Generator_RowEvArgName="V_DM_DON_VIRowChangeEvent" msprop:Generator_RowClassName="V_DM_DON_VIRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
@@ -63,7 +67,7 @@
               <xs:element name="TEN_DON_VI_CAP_TREN" msprop:Generator_ColumnVarNameInTable="columnTEN_DON_VI_CAP_TREN" msprop:Generator_ColumnPropNameInRow="TEN_DON_VI_CAP_TREN" msprop:Generator_ColumnPropNameInTable="TEN_DON_VI_CAP_TRENColumn" msprop:Generator_UserColumnName="TEN_DON_VI_CAP_TREN" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="250" />
+                    <xs:maxLength value="266" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -121,6 +125,28 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TRANG_THAI_YN" msprop:Generator_ColumnVarNameInTable="columnTRANG_THAI_YN" msprop:Generator_ColumnPropNameInRow="TRANG_THAI_YN" msprop:Generator_ColumnPropNameInTable="TRANG_THAI_YNColumn" msprop:Generator_UserColumnName="TRANG_THAI_YN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_PHAP_NHAN" msprop:Generator_ColumnVarNameInTable="columnID_PHAP_NHAN" msprop:Generator_ColumnPropNameInRow="ID_PHAP_NHAN" msprop:Generator_ColumnPropNameInTable="ID_PHAP_NHANColumn" msprop:Generator_UserColumnName="ID_PHAP_NHAN" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MA_PHAP_NHAN" msprop:Generator_ColumnVarNameInTable="columnMA_PHAP_NHAN" msprop:Generator_ColumnPropNameInRow="MA_PHAP_NHAN" msprop:Generator_ColumnPropNameInTable="MA_PHAP_NHANColumn" msprop:Generator_UserColumnName="MA_PHAP_NHAN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEN_PHAP_NHAN" msprop:Generator_ColumnVarNameInTable="columnTEN_PHAP_NHAN" msprop:Generator_ColumnPropNameInRow="TEN_PHAP_NHAN" msprop:Generator_ColumnPropNameInTable="TEN_PHAP_NHANColumn" msprop:Generator_UserColumnName="TEN_PHAP_NHAN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

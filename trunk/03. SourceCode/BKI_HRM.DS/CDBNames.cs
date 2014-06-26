@@ -345,6 +345,7 @@
         public const string DIA_BAN = "DIA_BAN";
         public const string TRANG_THAI = "TRANG_THAI";
         public const string TU_NGAY = "TU_NGAY";
+        public const string ID_PHAP_NHAN = "ID_PHAP_NHAN";
     }
     public class DM_NHAN_SU
     {
@@ -380,8 +381,8 @@
         public const string ID_HEADCOUNT = "ID_HEADCOUNT";
         public const string MA_HEADCOUNT = "MA_HEADCOUNT";
     }
-
-    public class V_DM_DON_VI {
+    public class V_DM_DON_VI
+    {
         public const string ID = "ID";
         public const string ID_DON_VI_CAP_TREN = "ID_DON_VI_CAP_TREN";
         public const string ID_CAP_DON_VI = "ID_CAP_DON_VI";
@@ -397,7 +398,12 @@
         public const string TU_NGAY = "TU_NGAY";
         public const string DIA_BAN = "DIA_BAN";
         public const string TRANG_THAI = "TRANG_THAI";
+        public const string TRANG_THAI_YN = "TRANG_THAI_YN";
+        public const string ID_PHAP_NHAN = "ID_PHAP_NHAN";
+        public const string MA_PHAP_NHAN = "MA_PHAP_NHAN";
+        public const string TEN_PHAP_NHAN = "TEN_PHAP_NHAN";
     }
+
 
     public class DM_PHAP_NHAN
     {
