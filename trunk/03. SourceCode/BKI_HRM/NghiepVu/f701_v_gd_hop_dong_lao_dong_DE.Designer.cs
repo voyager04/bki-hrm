@@ -84,7 +84,7 @@
             this.m_cmd_chon_file.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_chon_file.ImageIndex = 3;
             this.m_cmd_chon_file.ImageList = this.ImageList;
-            this.m_cmd_chon_file.Location = new System.Drawing.Point(613, 137);
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(435, 140);
             this.m_cmd_chon_file.Name = "m_cmd_chon_file";
             this.m_cmd_chon_file.Size = new System.Drawing.Size(99, 28);
             this.m_cmd_chon_file.TabIndex = 114;
@@ -208,7 +208,7 @@
             // m_lbl_file_name
             // 
             this.m_lbl_file_name.AutoSize = true;
-            this.m_lbl_file_name.Location = new System.Drawing.Point(723, 145);
+            this.m_lbl_file_name.Location = new System.Drawing.Point(545, 148);
             this.m_lbl_file_name.Name = "m_lbl_file_name";
             this.m_lbl_file_name.Size = new System.Drawing.Size(0, 13);
             this.m_lbl_file_name.TabIndex = 112;
@@ -496,7 +496,7 @@
             this.m_cmd_bo_dinh_kem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_bo_dinh_kem.ImageIndex = 4;
             this.m_cmd_bo_dinh_kem.ImageList = this.ImageList;
-            this.m_cmd_bo_dinh_kem.Location = new System.Drawing.Point(512, 137);
+            this.m_cmd_bo_dinh_kem.Location = new System.Drawing.Point(334, 140);
             this.m_cmd_bo_dinh_kem.Name = "m_cmd_bo_dinh_kem";
             this.m_cmd_bo_dinh_kem.Size = new System.Drawing.Size(95, 28);
             this.m_cmd_bo_dinh_kem.TabIndex = 119;

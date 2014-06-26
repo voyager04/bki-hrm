@@ -36,12 +36,14 @@ namespace BKI_HRM.NghiepVu
         public void display_for_insert()
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
+            m_e_file_mode = DataEntryFileMode.UploadFile;
             this.ShowDialog();
         }
 
         public void display_for_insert(US_DM_NHAN_SU ip_m_us_dm_nhan_su)
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
+            m_e_file_mode = DataEntryFileMode.UploadFile;
             m_us_dm_nhan_su = ip_m_us_dm_nhan_su;
             view_info_Nhan_Su();
             this.ShowDialog();
@@ -53,6 +55,8 @@ namespace BKI_HRM.NghiepVu
             us_object_2_form(ip_m_us_gd_hop_dong);
             m_str_id_hop_dong_old = ip_m_us_gd_hop_dong.dcID;
             m_txt_tim_kiem_nhan_vien.Enabled = false;
+            m_e_file_mode = DataEntryFileMode.EditFile;
+            m_str_link_old = m_lbl_file_name.Text;
             this.ShowDialog();
         }
         #endregion
@@ -174,33 +178,48 @@ namespace BKI_HRM.NghiepVu
             switch (m_e_file_mode)
             {
                 case DataEntryFileMode.UploadFile:
+                    // Kiểm tra file đã tồn tại trên server hay chưa
                     if (FileExplorer.IsExistedFile(m_str_directory_to + FileExplorer.fileName))
                     {
                         BaseMessages.MsgBox_Infor("Tên file đã tồn tại. Vui lòng đổi tên khác");
                         return;
                     }
 
-                    if (m_str_user_name != "")
-                        FileExplorer.UploadFile(m_str_domain, m_str_directory_to, m_str_user_name, m_str_password);
-                    else
-                        FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
+                    // Nếu đã chọn file 
+                    if (m_lbl_file_name.Text != "")
+                    {
+                        // Upload server có sử dụng user và pass
+                        if (m_str_user_name != "")
+                            FileExplorer.UploadFile(m_str_domain, m_str_directory_to, m_str_user_name, m_str_password);
+                        // Upload không sử dụng user và pass
+                        else
+                            FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
+                    }
                     break;
                 case DataEntryFileMode.EditFile:
-                    if (FileExplorer.IsExistedFile(m_str_directory_to + FileExplorer.fileName))
+                    // Nếu ko up lên file mới sẽ bỏ qua bước này
+                    if (m_str_link_old != m_lbl_file_name.Text)
                     {
-                        BaseMessages.MsgBox_Infor("Tên file đã tồn tại. Vui lòng đổi tên khác");
-                        return;
+                        // Kiểm tra file vừa upload đã tồn tại hay chưa
+                        if (FileExplorer.IsExistedFile(m_str_directory_to + FileExplorer.fileName))
+                        {
+                            BaseMessages.MsgBox_Infor("Tên file đã tồn tại. Vui lòng đổi tên khác");
+                            return;
+                        }
+
+                        // Xóa file cũ
+                        if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old))
+                            FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
+
+                        // Upload file mới lên
+                        if (m_str_user_name != "")
+                            FileExplorer.UploadFile(m_str_domain, m_str_directory_to, m_str_user_name, m_str_password);
+                        else
+                            FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
                     }
-
-                    if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old))
-                        FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
-
-                    if (m_str_user_name != "")
-                        FileExplorer.UploadFile(m_str_domain, m_str_directory_to, m_str_user_name, m_str_password);
-                    else
-                        FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
                     break;
                 case DataEntryFileMode.DeleteFile:
+                    // Kiểm tra file có tồn tại hay không
                     if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old) == false)
                     {
                         BaseMessages.MsgBox_Infor("File không tồn tại!");
@@ -349,12 +368,7 @@ namespace BKI_HRM.NghiepVu
 
         private void chon_file()
         {
-            FileExplorer.SelectFile(m_ofd_chon_file);
-            m_str_link_old = m_lbl_file_name.Text;
-            if (m_str_link_old != "")
-                m_e_file_mode = DataEntryFileMode.EditFile;
-            else
-                m_e_file_mode = DataEntryFileMode.UploadFile;
+            FileExplorer.SelectFile(m_ofd_chon_file, m_str_link_old);
             m_lbl_file_name.Text = FileExplorer.fileName;
         }
 

@@ -314,7 +314,7 @@ namespace BKI_HRM.NghiepVu
 
         private void chon_file()
         {
-            FileExplorer.SelectFile(m_ofd_chon_file);
+            FileExplorer.SelectFile(m_ofd_chon_file, m_str_link_old);
             m_str_link_old = m_lbl_file_name.Text;
             if (m_str_link_old != "")
                 m_e_file_mode = DataEntryFileMode.EditFile;
@@ -525,6 +525,8 @@ namespace BKI_HRM.NghiepVu
 
         private void m_cmd_xem_file_Click(object sender, EventArgs e)
         {
+            if (m_lbl_file_name.Text == "")
+                return;
             f701_v_gd_hop_dong_lao_dong_View frm = new f701_v_gd_hop_dong_lao_dong_View();
             US_DM_QUYET_DINH v_us = new US_DM_QUYET_DINH(m_us_quyet_dinh.dcID);
             frm.display_for_view_quyet_dinh(v_us);
