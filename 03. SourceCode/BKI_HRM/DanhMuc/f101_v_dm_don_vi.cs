@@ -658,15 +658,18 @@ namespace BKI_HRM {
             grid2us_object(v_us, m_fg.Row);
             try {
                 v_us.BeginTransaction();
-                v_us.Delete();
+                v_us.Delete(v_us.dcID);
                 v_us.CommitTransaction();
                 m_fg.Rows.Remove(m_fg.Row);
+                load_data_2_grid();
+                BaseMessages.MsgBox_Infor("Xóa thành công.");
             } catch (Exception v_e) {
                 v_us.Rollback();
                 var v_objErrHandler = new CDBExceptionHandler(v_e,
                     new CDBClientDBExceptionInterpret());
                 v_objErrHandler.showErrorMessage();
             }
+            
         }
         private void set_search_format_before() {
             if (m_txt_search.Text == "") {

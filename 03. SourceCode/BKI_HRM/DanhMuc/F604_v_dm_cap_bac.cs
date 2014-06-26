@@ -272,7 +272,7 @@ namespace BKI_HRM
             this.MaximumSize = new System.Drawing.Size(702, 448);
             this.MinimumSize = new System.Drawing.Size(702, 448);
             this.Name = "F604_v_dm_cap_bac";
-            this.Text = "F604_v_dm_cap_bac";
+            this.Text = "F604 - Danh mục cấp bậc";
             this.Load += new System.EventHandler(this.F604_v_dm_cap_bac_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();

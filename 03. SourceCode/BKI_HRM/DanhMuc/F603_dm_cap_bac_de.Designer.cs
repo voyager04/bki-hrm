@@ -52,7 +52,7 @@
             // m_lbl_ma_cap
             // 
             this.m_lbl_ma_cap.AutoSize = true;
-            this.m_lbl_ma_cap.Location = new System.Drawing.Point(36, 41);
+            this.m_lbl_ma_cap.Location = new System.Drawing.Point(63, 23);
             this.m_lbl_ma_cap.Name = "m_lbl_ma_cap";
             this.m_lbl_ma_cap.Size = new System.Drawing.Size(43, 13);
             this.m_lbl_ma_cap.TabIndex = 17;
@@ -61,7 +61,7 @@
             // m_lbl_ma_bac
             // 
             this.m_lbl_ma_bac.AutoSize = true;
-            this.m_lbl_ma_bac.Location = new System.Drawing.Point(36, 74);
+            this.m_lbl_ma_bac.Location = new System.Drawing.Point(63, 56);
             this.m_lbl_ma_bac.Name = "m_lbl_ma_bac";
             this.m_lbl_ma_bac.Size = new System.Drawing.Size(43, 13);
             this.m_lbl_ma_bac.TabIndex = 18;
@@ -70,7 +70,7 @@
             // m_lbl_trang_thai
             // 
             this.m_lbl_trang_thai.AutoSize = true;
-            this.m_lbl_trang_thai.Location = new System.Drawing.Point(36, 105);
+            this.m_lbl_trang_thai.Location = new System.Drawing.Point(10, 94);
             this.m_lbl_trang_thai.Name = "m_lbl_trang_thai";
             this.m_lbl_trang_thai.Size = new System.Drawing.Size(96, 13);
             this.m_lbl_trang_thai.TabIndex = 19;
@@ -79,7 +79,7 @@
             // m_
             // 
             this.m_.AutoSize = true;
-            this.m_.Location = new System.Drawing.Point(36, 177);
+            this.m_.Location = new System.Drawing.Point(248, 134);
             this.m_.Name = "m_";
             this.m_.Size = new System.Drawing.Size(74, 13);
             this.m_.TabIndex = 20;
@@ -88,7 +88,7 @@
             // m_lbl_ngay_ap_dung
             // 
             this.m_lbl_ngay_ap_dung.AutoSize = true;
-            this.m_lbl_ngay_ap_dung.Location = new System.Drawing.Point(36, 145);
+            this.m_lbl_ngay_ap_dung.Location = new System.Drawing.Point(32, 134);
             this.m_lbl_ngay_ap_dung.Name = "m_lbl_ngay_ap_dung";
             this.m_lbl_ngay_ap_dung.Size = new System.Drawing.Size(74, 13);
             this.m_lbl_ngay_ap_dung.TabIndex = 21;
@@ -96,14 +96,14 @@
             // 
             // m_txt_ma_cap
             // 
-            this.m_txt_ma_cap.Location = new System.Drawing.Point(141, 38);
+            this.m_txt_ma_cap.Location = new System.Drawing.Point(122, 20);
             this.m_txt_ma_cap.Name = "m_txt_ma_cap";
             this.m_txt_ma_cap.Size = new System.Drawing.Size(309, 20);
             this.m_txt_ma_cap.TabIndex = 22;
             // 
             // m_txt_ma_bac
             // 
-            this.m_txt_ma_bac.Location = new System.Drawing.Point(141, 71);
+            this.m_txt_ma_bac.Location = new System.Drawing.Point(122, 53);
             this.m_txt_ma_bac.Name = "m_txt_ma_bac";
             this.m_txt_ma_bac.Size = new System.Drawing.Size(309, 20);
             this.m_txt_ma_bac.TabIndex = 23;
@@ -111,19 +111,19 @@
             // m_dat_ngay_ap_dung
             // 
             this.m_dat_ngay_ap_dung.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.m_dat_ngay_ap_dung.Location = new System.Drawing.Point(141, 139);
+            this.m_dat_ngay_ap_dung.Location = new System.Drawing.Point(122, 128);
             this.m_dat_ngay_ap_dung.Name = "m_dat_ngay_ap_dung";
             this.m_dat_ngay_ap_dung.ShowCheckBox = true;
-            this.m_dat_ngay_ap_dung.Size = new System.Drawing.Size(189, 20);
+            this.m_dat_ngay_ap_dung.Size = new System.Drawing.Size(97, 20);
             this.m_dat_ngay_ap_dung.TabIndex = 26;
             // 
             // m_dat_ngay_ket_thuc
             // 
             this.m_dat_ngay_ket_thuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.m_dat_ngay_ket_thuc.Location = new System.Drawing.Point(141, 171);
+            this.m_dat_ngay_ket_thuc.Location = new System.Drawing.Point(334, 131);
             this.m_dat_ngay_ket_thuc.Name = "m_dat_ngay_ket_thuc";
             this.m_dat_ngay_ket_thuc.ShowCheckBox = true;
-            this.m_dat_ngay_ket_thuc.Size = new System.Drawing.Size(189, 20);
+            this.m_dat_ngay_ket_thuc.Size = new System.Drawing.Size(97, 20);
             this.m_dat_ngay_ket_thuc.TabIndex = 27;
             // 
             // ImageList
@@ -158,9 +158,10 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_refresh);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(6, 276);
+            this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 170);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(444, 28);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(455, 28);
             this.m_pnl_out_place_dm.TabIndex = 28;
             // 
             // m_cmd_save
@@ -172,7 +173,7 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(180, 0);
+            this.m_cmd_save.Location = new System.Drawing.Point(191, 0);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 32;
@@ -187,7 +188,7 @@
             this.m_cmd_refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_refresh.ImageIndex = 9;
             this.m_cmd_refresh.ImageList = this.ImageList;
-            this.m_cmd_refresh.Location = new System.Drawing.Point(268, 0);
+            this.m_cmd_refresh.Location = new System.Drawing.Point(279, 0);
             this.m_cmd_refresh.Name = "m_cmd_refresh";
             this.m_cmd_refresh.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_refresh.TabIndex = 32;
@@ -203,7 +204,7 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(356, 0);
+            this.m_cmd_exit.Location = new System.Drawing.Point(367, 0);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 32;
@@ -213,7 +214,7 @@
             // 
             this.m_rdb_khong_su_dung.AutoSize = true;
             this.m_rdb_khong_su_dung.Checked = true;
-            this.m_rdb_khong_su_dung.Location = new System.Drawing.Point(141, 103);
+            this.m_rdb_khong_su_dung.Location = new System.Drawing.Point(122, 92);
             this.m_rdb_khong_su_dung.Name = "m_rdb_khong_su_dung";
             this.m_rdb_khong_su_dung.Size = new System.Drawing.Size(97, 17);
             this.m_rdb_khong_su_dung.TabIndex = 29;
@@ -224,7 +225,7 @@
             // m_rdb_su_dung
             // 
             this.m_rdb_su_dung.AutoSize = true;
-            this.m_rdb_su_dung.Location = new System.Drawing.Point(265, 103);
+            this.m_rdb_su_dung.Location = new System.Drawing.Point(246, 92);
             this.m_rdb_su_dung.Name = "m_rdb_su_dung";
             this.m_rdb_su_dung.Size = new System.Drawing.Size(92, 17);
             this.m_rdb_su_dung.TabIndex = 30;
@@ -235,7 +236,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 326);
+            this.ClientSize = new System.Drawing.Size(455, 198);
             this.Controls.Add(this.m_rdb_su_dung);
             this.Controls.Add(this.m_rdb_khong_su_dung);
             this.Controls.Add(this.m_pnl_out_place_dm);
@@ -248,10 +249,8 @@
             this.Controls.Add(this.m_lbl_trang_thai);
             this.Controls.Add(this.m_lbl_ma_bac);
             this.Controls.Add(this.m_lbl_ma_cap);
-            this.MaximumSize = new System.Drawing.Size(496, 365);
-            this.MinimumSize = new System.Drawing.Size(496, 365);
             this.Name = "F603_dm_cap_bac_de";
-            this.Text = "F602_dm_cap_bac_de";
+            this.Text = "F602 - Chi tiết cấp bậc";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

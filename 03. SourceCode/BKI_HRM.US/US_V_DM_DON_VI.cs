@@ -489,6 +489,12 @@ namespace BKI_HRM.US {
             v_stored_proc.fillDataSetByCommand(this, op_ds_v_v_dm_don_vi);
         }
 
+        public void Delete(decimal ip_dc_id)
+        {
+            CStoredProc v_cst = new CStoredProc("pr_V_DM_DON_VI_Delete_by_ID");
+            v_cst.addDecimalInputParam("@ID", ip_dc_id);
+            v_cst.ExecuteCommand(this);
+        }
         #endregion
     }
 }
