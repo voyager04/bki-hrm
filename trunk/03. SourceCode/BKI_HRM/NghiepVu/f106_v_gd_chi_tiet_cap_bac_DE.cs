@@ -25,7 +25,7 @@ namespace BKI_HRM {
         }
         public void display_for_update(US_V_GD_CHI_TIET_CAP_BAC ip_us_chi_tiet_cap_bac)
         {
-            m_e_formmode = DataEntryFormMode.UpdateDataState;
+            m_e_formmode = DataEntryFormMode.InsertDataState;
             m_v_us_chi_tiet_cap_bac = ip_us_chi_tiet_cap_bac;
             us_object_2_form();
             ShowDialog();
@@ -92,8 +92,8 @@ namespace BKI_HRM {
              * Lấy dữ liệu từ form vào US_GD_CHI_TIET_CAP_BAC
              */
             //-- Cập nhật ngày kết thúc cho chức vụ cũ.
-            m_us_chi_tiet_cap_bac.datNGAY_KET_THUC = m_dat_ngay_bat_dau.Value.Date;
-            m_us_chi_tiet_cap_bac.Update();
+//             m_us_chi_tiet_cap_bac.datNGAY_KET_THUC = m_dat_ngay_bat_dau.Value.Date;
+//             m_us_chi_tiet_cap_bac.Update();
             //-- Thêm 1 bản ghi mới
             switch (m_e_formmode)
             {

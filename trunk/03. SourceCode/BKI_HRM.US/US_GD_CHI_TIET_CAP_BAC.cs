@@ -20,141 +20,200 @@ namespace BKI_HRM.US {
 
     public class US_GD_CHI_TIET_CAP_BAC : US_Object {
         private const string c_TableName = "GD_CHI_TIET_CAP_BAC";
-
         #region "Public Properties"
-        public decimal dcID {
-            get {
+        public decimal dcID
+        {
+            get
+            {
                 return CNull.RowNVLDecimal(pm_objDR, "ID", IPConstants.c_DefaultDecimal);
             }
-            set {
+            set
+            {
                 pm_objDR["ID"] = value;
             }
         }
 
-        public bool IsIDNull() {
+        public bool IsIDNull()
+        {
             return pm_objDR.IsNull("ID");
         }
 
-        public void SetIDNull() {
+        public void SetIDNull()
+        {
             pm_objDR["ID"] = System.Convert.DBNull;
         }
 
-        public decimal dcID_NHAN_SU {
-            get {
+        public decimal dcID_NHAN_SU
+        {
+            get
+            {
                 return CNull.RowNVLDecimal(pm_objDR, "ID_NHAN_SU", IPConstants.c_DefaultDecimal);
             }
-            set {
+            set
+            {
                 pm_objDR["ID_NHAN_SU"] = value;
             }
         }
 
-        public bool IsID_NHAN_SUNull() {
+        public bool IsID_NHAN_SUNull()
+        {
             return pm_objDR.IsNull("ID_NHAN_SU");
         }
 
-        public void SetID_NHAN_SUNull() {
+        public void SetID_NHAN_SUNull()
+        {
             pm_objDR["ID_NHAN_SU"] = System.Convert.DBNull;
         }
 
-        public decimal dcID_CAP_BAC {
-            get {
+        public decimal dcID_CAP_BAC
+        {
+            get
+            {
                 return CNull.RowNVLDecimal(pm_objDR, "ID_CAP_BAC", IPConstants.c_DefaultDecimal);
             }
-            set {
+            set
+            {
                 pm_objDR["ID_CAP_BAC"] = value;
             }
         }
 
-        public bool IsID_CAP_BACNull() {
+        public bool IsID_CAP_BACNull()
+        {
             return pm_objDR.IsNull("ID_CAP_BAC");
         }
 
-        public void SetID_CAP_BACNull() {
+        public void SetID_CAP_BACNull()
+        {
             pm_objDR["ID_CAP_BAC"] = System.Convert.DBNull;
         }
 
-        public string strTRANG_THAI_CB {
-            get {
+        public string strTRANG_THAI_CB
+        {
+            get
+            {
                 return CNull.RowNVLString(pm_objDR, "TRANG_THAI_CB", IPConstants.c_DefaultString);
             }
-            set {
+            set
+            {
                 pm_objDR["TRANG_THAI_CB"] = value;
             }
         }
 
-        public bool IsTRANG_THAI_CBNull() {
+        public bool IsTRANG_THAI_CBNull()
+        {
             return pm_objDR.IsNull("TRANG_THAI_CB");
         }
 
-        public void SetTRANG_THAI_CBNull() {
+        public void SetTRANG_THAI_CBNull()
+        {
             pm_objDR["TRANG_THAI_CB"] = System.Convert.DBNull;
         }
 
-        public decimal dcID_QUYET_DINH {
-            get {
+        public decimal dcID_QUYET_DINH
+        {
+            get
+            {
                 return CNull.RowNVLDecimal(pm_objDR, "ID_QUYET_DINH", IPConstants.c_DefaultDecimal);
             }
-            set {
+            set
+            {
                 pm_objDR["ID_QUYET_DINH"] = value;
             }
         }
 
-        public bool IsID_QUYET_DINHNull() {
+        public bool IsID_QUYET_DINHNull()
+        {
             return pm_objDR.IsNull("ID_QUYET_DINH");
         }
 
-        public void SetID_QUYET_DINHNull() {
+        public void SetID_QUYET_DINHNull()
+        {
             pm_objDR["ID_QUYET_DINH"] = System.Convert.DBNull;
         }
 
-        public DateTime datNGAY_BAT_DAU {
-            get {
+        public DateTime datNGAY_BAT_DAU
+        {
+            get
+            {
                 return CNull.RowNVLDate(pm_objDR, "NGAY_BAT_DAU", IPConstants.c_DefaultDate);
             }
-            set {
+            set
+            {
                 pm_objDR["NGAY_BAT_DAU"] = value;
             }
         }
 
-        public bool IsNGAY_BAT_DAUNull() {
+        public bool IsNGAY_BAT_DAUNull()
+        {
             return pm_objDR.IsNull("NGAY_BAT_DAU");
         }
 
-        public void SetNGAY_BAT_DAUNull() {
+        public void SetNGAY_BAT_DAUNull()
+        {
             pm_objDR["NGAY_BAT_DAU"] = System.Convert.DBNull;
         }
 
-        public DateTime datNGAY_KET_THUC {
-            get {
+        public DateTime datNGAY_KET_THUC
+        {
+            get
+            {
                 return CNull.RowNVLDate(pm_objDR, "NGAY_KET_THUC", IPConstants.c_DefaultDate);
             }
-            set {
+            set
+            {
                 pm_objDR["NGAY_KET_THUC"] = value;
             }
         }
 
-        public bool IsNGAY_KET_THUCNull() {
+        public bool IsNGAY_KET_THUCNull()
+        {
             return pm_objDR.IsNull("NGAY_KET_THUC");
         }
 
-        public void SetNGAY_KET_THUCNull() {
+        public void SetNGAY_KET_THUCNull()
+        {
             pm_objDR["NGAY_KET_THUC"] = System.Convert.DBNull;
+        }
+
+        public string strLUA_CHON
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "LUA_CHON", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["LUA_CHON"] = value;
+            }
+        }
+
+        public bool IsLUA_CHONNull()
+        {
+            return pm_objDR.IsNull("LUA_CHON");
+        }
+
+        public void SetLUA_CHONNull()
+        {
+            pm_objDR["LUA_CHON"] = System.Convert.DBNull;
         }
 
         #endregion
         #region "Init Functions"
-        public US_GD_CHI_TIET_CAP_BAC() {
+        public US_GD_CHI_TIET_CAP_BAC()
+        {
             pm_objDS = new DS_GD_CHI_TIET_CAP_BAC();
             pm_strTableName = c_TableName;
             pm_objDR = pm_objDS.Tables[pm_strTableName].NewRow();
         }
 
         public US_GD_CHI_TIET_CAP_BAC(DataRow i_objDR)
-            : this() {
+            : this()
+        {
             this.DataRow2Me(i_objDR);
         }
 
-        public US_GD_CHI_TIET_CAP_BAC(decimal i_dbID) {
+        public US_GD_CHI_TIET_CAP_BAC(decimal i_dbID)
+        {
             pm_objDS = new DS_GD_CHI_TIET_CAP_BAC();
             pm_strTableName = c_TableName;
             IMakeSelectCmd v_objMkCmd = new CMakeAndSelectCmd(pm_objDS, c_TableName);
