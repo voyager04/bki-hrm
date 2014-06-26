@@ -76,5 +76,10 @@ namespace BKI_HRM
             if (IsExistedFile(path))
                 File.Delete(path);
         }
+
+        public static void DownloadFile()
+        {
+
+        }
     }
 }

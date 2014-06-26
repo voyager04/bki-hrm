@@ -90,6 +90,7 @@ namespace BKI_HRM {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f101_v_dm_don_vi));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_lbl_phim_tat = new System.Windows.Forms.Label();
             this.m_cmd_chon_don_vi = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
@@ -111,7 +112,6 @@ namespace BKI_HRM {
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.m_lbl_phim_tat = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -160,6 +160,15 @@ namespace BKI_HRM {
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1189, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
+            // 
+            // m_lbl_phim_tat
+            // 
+            this.m_lbl_phim_tat.AutoSize = true;
+            this.m_lbl_phim_tat.Location = new System.Drawing.Point(179, 14);
+            this.m_lbl_phim_tat.Name = "m_lbl_phim_tat";
+            this.m_lbl_phim_tat.Size = new System.Drawing.Size(206, 13);
+            this.m_lbl_phim_tat.TabIndex = 1001;
+            this.m_lbl_phim_tat.Text = "Phím tắt: F6_Mở rộng-Thu gọn danh sách";
             // 
             // m_cmd_chon_don_vi
             // 
@@ -402,15 +411,6 @@ namespace BKI_HRM {
             this.m_fg.Tree.LineColor = System.Drawing.Color.Maroon;
             this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
             // 
-            // m_lbl_phim_tat
-            // 
-            this.m_lbl_phim_tat.AutoSize = true;
-            this.m_lbl_phim_tat.Location = new System.Drawing.Point(179, 14);
-            this.m_lbl_phim_tat.Name = "m_lbl_phim_tat";
-            this.m_lbl_phim_tat.Size = new System.Drawing.Size(206, 13);
-            this.m_lbl_phim_tat.TabIndex = 1001;
-            this.m_lbl_phim_tat.Text = "Phím tắt: F6_Mở rộng-Thu gọn danh sách";
-            // 
             // f101_v_dm_don_vi
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -448,35 +448,36 @@ namespace BKI_HRM {
 
         #region Data Structure
         private enum e_col_Number {
-            TEN_DON_VI_CAP_TREN = 2
+            PHAP_NHAN = 1,
+            TEN_DON_VI_CAP_TREN = 3
                 ,
-            ID_CAP_DON_VI = 6
+            ID_CAP_DON_VI = 7
                 ,
-            TEN_TIENG_ANH = 11
+            TEN_TIENG_ANH = 12
                 ,
-            ID = 4
+            ID = 5
                 ,
-            TEN_DON_VI = 10
+            TEN_DON_VI = 11
                 ,
-            TEN_TIENG_ANH_DON_VI_CAP_TREN = 9
+            TEN_TIENG_ANH_DON_VI_CAP_TREN = 10
                 ,
-            MA_DON_VI = 3
+            MA_DON_VI = 4
                 ,
-            TRANG_THAI = 15
+            TRANG_THAI = 16
                 ,
-            CAP_DON_VI = 12
+            CAP_DON_VI = 13
                 ,
-            MA_DON_VI_CAP_TREN = 8
+            MA_DON_VI_CAP_TREN = 9
                 ,
-            TU_NGAY = 14
+            TU_NGAY = 15
                 ,
-            ID_DON_VI_CAP_TREN = 5
+            ID_DON_VI_CAP_TREN = 6
                 ,
-            LOAI_DON_VI = 13
+            LOAI_DON_VI = 14
                 ,
-            ID_LOAI_DON_VI = 7
+            ID_LOAI_DON_VI = 8
                 ,
-            DIA_BAN = 1
+            DIA_BAN = 2
 
         }
         #endregion
@@ -506,6 +507,8 @@ namespace BKI_HRM {
                m_fg.Tree.Style = TreeStyleFlags.SimpleLeaf;
             
             KeyPreview = true;
+         //   m_fg.Cols[(int)e_col_Number.DIA_BAN].Visible = false;
+            m_fg.Cols[(int)e_col_Number.PHAP_NHAN].Visible = false;
             WinFormControls.load_data_to_cbo_tu_dien(BKI_HRM.WinFormControls.eLOAI_TU_DIEN.LOAI_DON_VI,
                 WinFormControls.eTAT_CA.YES, m_cbo_loaidv);
             WinFormControls.load_data_to_cbo_tu_dien(BKI_HRM.WinFormControls.eLOAI_TU_DIEN.CAP_DON_VI,
@@ -538,6 +541,7 @@ namespace BKI_HRM {
         }
         private ITransferDataRow get_trans_object(C1FlexGrid i_fg) {
             Hashtable v_htb = new Hashtable();
+            v_htb.Add(V_DM_DON_VI.MA_PHAP_NHAN, e_col_Number.PHAP_NHAN);
             v_htb.Add(V_DM_DON_VI.TEN_DON_VI_CAP_TREN, e_col_Number.TEN_DON_VI_CAP_TREN);
             v_htb.Add(V_DM_DON_VI.ID_CAP_DON_VI, e_col_Number.ID_CAP_DON_VI);
             v_htb.Add(V_DM_DON_VI.TEN_TIENG_ANH, e_col_Number.TEN_TIENG_ANH);
@@ -569,12 +573,18 @@ namespace BKI_HRM {
             // Group (subtotal) trên grid.
             m_fg.Subtotal(AggregateEnum.Count
               , 0
-              , (int)e_col_Number.DIA_BAN   // Group theo cột này
+              , (int)e_col_Number.PHAP_NHAN   // Group theo cột này
               , (int)e_col_Number.MA_DON_VI             // Subtotal theo cột này
               , "{0}"
               );
             m_fg.Subtotal(AggregateEnum.Count
               , 1
+              , (int)e_col_Number.DIA_BAN   // Group theo cột này
+              , (int)e_col_Number.MA_DON_VI             // Subtotal theo cột này
+              , "{0}"
+              );
+            m_fg.Subtotal(AggregateEnum.Count
+              , 2
               , (int)e_col_Number.TEN_DON_VI_CAP_TREN   // Group theo cột này
               , (int)e_col_Number.MA_DON_VI             // Subtotal theo cột này
               , "{0}"

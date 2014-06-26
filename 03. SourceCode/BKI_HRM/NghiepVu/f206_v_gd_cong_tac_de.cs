@@ -276,13 +276,7 @@ namespace BKI_HRM
             BaseMessages.MsgBox_Infor("Thêm quyết định thành công.");
         }
 
-        private void chon_file()
-        {
-            m_ofd_chon_file.Filter = "(*.pdf)|*.pdf|(*.doc)|*.doc|(*.docx)|*.docx|(*.xls)|*.xls|(*.xlsx)|*.xlsx";
-            m_ofd_chon_file.Multiselect = false;
-            m_ofd_chon_file.Title = "Chọn tài liệu đính kèm";
-            DialogResult result = m_ofd_chon_file.ShowDialog();
-        }
+        
         private void mo_file()
         {
             Process.Start("explorer.exe", m_ofd_chon_file.FileName);
@@ -338,7 +332,7 @@ namespace BKI_HRM
         }
 
 
-        private void chon_file2()
+        private void chon_file()
         {
             FileExplorer.SelectFile(m_ofd_chon_file);
             m_str_link_old = m_lbl_file_name.Text;
@@ -566,7 +560,7 @@ namespace BKI_HRM
             try
             {
                 if (check_data_is_ok() == false) return;
-                chon_file2();
+                chon_file();
             }
             catch (Exception v_e)
             {
