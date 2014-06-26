@@ -51,6 +51,10 @@
             this.m_cmd_them_quyet_dinh = new SIS.Controls.Button.SiSButton();
             this.m_cmd_chon_quyet_dinh = new SIS.Controls.Button.SiSButton();
             this.m_grb_quyet_dinh = new System.Windows.Forms.GroupBox();
+            this.m_cmd_go_dinh_kem = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_xem_file = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_chon_file = new SIS.Controls.Button.SiSButton();
+            this.m_lbl_file_name = new System.Windows.Forms.Label();
             this.m_lbl_loai_qd = new System.Windows.Forms.Label();
             this.m_txt_noi_dung = new System.Windows.Forms.TextBox();
             this.m_dat_ngay_het_hieu_luc_qd = new System.Windows.Forms.DateTimePicker();
@@ -74,10 +78,6 @@
             this.m_lbl_ho_va_ten = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.m_cmd_go_dinh_kem = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_xem_file = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_chon_file = new SIS.Controls.Button.SiSButton();
-            this.m_lbl_file_name = new System.Windows.Forms.Label();
             this.m_ofd_chon_file = new System.Windows.Forms.OpenFileDialog();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.m_grb_quyet_dinh.SuspendLayout();
@@ -114,7 +114,7 @@
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 440);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(890, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(899, 36);
             this.m_pnl_out_place_dm.TabIndex = 26;
             // 
             // m_cmd_save
@@ -125,7 +125,7 @@
             this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
-            this.m_cmd_save.Location = new System.Drawing.Point(622, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(631, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 31;
@@ -140,7 +140,7 @@
             this.m_cmd_refresh.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_refresh.ImageIndex = 9;
-            this.m_cmd_refresh.Location = new System.Drawing.Point(710, 4);
+            this.m_cmd_refresh.Location = new System.Drawing.Point(719, 4);
             this.m_cmd_refresh.Name = "m_cmd_refresh";
             this.m_cmd_refresh.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_refresh.TabIndex = 32;
@@ -156,7 +156,7 @@
             this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
-            this.m_cmd_exit.Location = new System.Drawing.Point(798, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(807, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 33;
@@ -299,7 +299,7 @@
             this.m_cmd_them_quyet_dinh.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_them_quyet_dinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_them_quyet_dinh.ImageIndex = 6;
-            this.m_cmd_them_quyet_dinh.Location = new System.Drawing.Point(573, 19);
+            this.m_cmd_them_quyet_dinh.Location = new System.Drawing.Point(66, 17);
             this.m_cmd_them_quyet_dinh.Name = "m_cmd_them_quyet_dinh";
             this.m_cmd_them_quyet_dinh.Size = new System.Drawing.Size(134, 28);
             this.m_cmd_them_quyet_dinh.TabIndex = 104;
@@ -313,7 +313,7 @@
             this.m_cmd_chon_quyet_dinh.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_chon_quyet_dinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_chon_quyet_dinh.ImageIndex = 5;
-            this.m_cmd_chon_quyet_dinh.Location = new System.Drawing.Point(710, 19);
+            this.m_cmd_chon_quyet_dinh.Location = new System.Drawing.Point(203, 17);
             this.m_cmd_chon_quyet_dinh.Name = "m_cmd_chon_quyet_dinh";
             this.m_cmd_chon_quyet_dinh.Size = new System.Drawing.Size(134, 28);
             this.m_cmd_chon_quyet_dinh.TabIndex = 103;
@@ -339,12 +339,62 @@
             this.m_grb_quyet_dinh.Controls.Add(this.m_lbl_loai_quyet_dinh);
             this.m_grb_quyet_dinh.Controls.Add(this.m_lbl_ma_quyet_dinh);
             this.m_grb_quyet_dinh.Enabled = false;
-            this.m_grb_quyet_dinh.Location = new System.Drawing.Point(519, 59);
+            this.m_grb_quyet_dinh.Location = new System.Drawing.Point(12, 57);
             this.m_grb_quyet_dinh.Name = "m_grb_quyet_dinh";
             this.m_grb_quyet_dinh.Size = new System.Drawing.Size(361, 377);
             this.m_grb_quyet_dinh.TabIndex = 102;
             this.m_grb_quyet_dinh.TabStop = false;
             this.m_grb_quyet_dinh.Text = "Quyết định đi kèm";
+            // 
+            // m_cmd_go_dinh_kem
+            // 
+            this.m_cmd_go_dinh_kem.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_go_dinh_kem.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_go_dinh_kem.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_go_dinh_kem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_go_dinh_kem.ImageIndex = 5;
+            this.m_cmd_go_dinh_kem.Location = new System.Drawing.Point(237, 231);
+            this.m_cmd_go_dinh_kem.Name = "m_cmd_go_dinh_kem";
+            this.m_cmd_go_dinh_kem.Size = new System.Drawing.Size(110, 28);
+            this.m_cmd_go_dinh_kem.TabIndex = 34;
+            this.m_cmd_go_dinh_kem.Text = "&Gỡ đính kèm";
+            this.m_cmd_go_dinh_kem.Click += new System.EventHandler(this.m_cmd_go_dinh_kem_Click);
+            // 
+            // m_cmd_xem_file
+            // 
+            this.m_cmd_xem_file.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xem_file.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xem_file.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xem_file.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xem_file.ImageIndex = 18;
+            this.m_cmd_xem_file.Location = new System.Drawing.Point(135, 231);
+            this.m_cmd_xem_file.Name = "m_cmd_xem_file";
+            this.m_cmd_xem_file.Size = new System.Drawing.Size(99, 28);
+            this.m_cmd_xem_file.TabIndex = 32;
+            this.m_cmd_xem_file.Text = "&Xem file";
+            this.m_cmd_xem_file.Click += new System.EventHandler(this.m_cmd_xem_file_Click);
+            // 
+            // m_cmd_chon_file
+            // 
+            this.m_cmd_chon_file.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_chon_file.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_chon_file.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_chon_file.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_chon_file.ImageIndex = 5;
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(21, 231);
+            this.m_cmd_chon_file.Name = "m_cmd_chon_file";
+            this.m_cmd_chon_file.Size = new System.Drawing.Size(110, 28);
+            this.m_cmd_chon_file.TabIndex = 33;
+            this.m_cmd_chon_file.Text = "&Đính kèm file";
+            this.m_cmd_chon_file.Click += new System.EventHandler(this.m_cmd_chon_file_Click);
+            // 
+            // m_lbl_file_name
+            // 
+            this.m_lbl_file_name.AutoSize = true;
+            this.m_lbl_file_name.Location = new System.Drawing.Point(18, 271);
+            this.m_lbl_file_name.Name = "m_lbl_file_name";
+            this.m_lbl_file_name.Size = new System.Drawing.Size(0, 13);
+            this.m_lbl_file_name.TabIndex = 31;
             // 
             // m_lbl_loai_qd
             // 
@@ -483,7 +533,7 @@
             this.groupBox1.Controls.Add(this.m_dat_ngay_kt);
             this.groupBox1.Controls.Add(this.m_dat_tham_gia);
             this.groupBox1.Controls.Add(this.m_cbo_vi_tri);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(379, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(501, 424);
             this.groupBox1.TabIndex = 105;
@@ -585,57 +635,6 @@
             this.label12.TabIndex = 64;
             this.label12.Text = "Mã nhân viên";
             // 
-            // m_cmd_go_dinh_kem
-            // 
-            this.m_cmd_go_dinh_kem.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_go_dinh_kem.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_go_dinh_kem.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_go_dinh_kem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_go_dinh_kem.ImageIndex = 5;
-            this.m_cmd_go_dinh_kem.Location = new System.Drawing.Point(237, 231);
-            this.m_cmd_go_dinh_kem.Name = "m_cmd_go_dinh_kem";
-            this.m_cmd_go_dinh_kem.Size = new System.Drawing.Size(110, 28);
-            this.m_cmd_go_dinh_kem.TabIndex = 34;
-            this.m_cmd_go_dinh_kem.Text = "&Gỡ đính kèm";
-            this.m_cmd_go_dinh_kem.Click += new System.EventHandler(this.m_cmd_go_dinh_kem_Click);
-            // 
-            // m_cmd_xem_file
-            // 
-            this.m_cmd_xem_file.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_xem_file.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_xem_file.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_xem_file.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_xem_file.ImageIndex = 18;
-            this.m_cmd_xem_file.Location = new System.Drawing.Point(135, 231);
-            this.m_cmd_xem_file.Name = "m_cmd_xem_file";
-            this.m_cmd_xem_file.Size = new System.Drawing.Size(99, 28);
-            this.m_cmd_xem_file.TabIndex = 32;
-            this.m_cmd_xem_file.Text = "&Xem file";
-            this.m_cmd_xem_file.Click += new System.EventHandler(this.m_cmd_xem_file_Click);
-            // 
-            // m_cmd_chon_file
-            // 
-            this.m_cmd_chon_file.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_chon_file.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_chon_file.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_chon_file.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_chon_file.ImageIndex = 5;
-            this.m_cmd_chon_file.Location = new System.Drawing.Point(21, 231);
-            this.m_cmd_chon_file.Name = "m_cmd_chon_file";
-            this.m_cmd_chon_file.Size = new System.Drawing.Size(110, 28);
-            this.m_cmd_chon_file.TabIndex = 33;
-            this.m_cmd_chon_file.Text = "&Đính kèm file";
-            this.m_cmd_chon_file.Click += new System.EventHandler(this.m_cmd_chon_file_Click);
-            // 
-            // m_lbl_file_name
-            // 
-            this.m_lbl_file_name.AutoSize = true;
-            this.m_lbl_file_name.Location = new System.Drawing.Point(18, 271);
-            this.m_lbl_file_name.Name = "m_lbl_file_name";
-            this.m_lbl_file_name.Size = new System.Drawing.Size(90, 13);
-            this.m_lbl_file_name.TabIndex = 31;
-            this.m_lbl_file_name.Text = "Tài liệu đính kèm";
-            // 
             // m_ofd_chon_file
             // 
             this.m_ofd_chon_file.FileName = "openFileDialog1";
@@ -644,14 +643,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(890, 476);
+            this.ClientSize = new System.Drawing.Size(899, 476);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_cmd_them_quyet_dinh);
             this.Controls.Add(this.m_grb_quyet_dinh);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_cmd_chon_quyet_dinh);
             this.Name = "F500_gd_chi_tiet_du_an_de";
-            this.Text = "Chi tiết nhân sự dự án";
+            this.Text = "Thông tin nhân sự dự án";
             this.Load += new System.EventHandler(this.F500_gd_chi_tiet_du_an_de_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.m_grb_quyet_dinh.ResumeLayout(false);

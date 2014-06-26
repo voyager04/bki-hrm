@@ -25,7 +25,6 @@ namespace BKI_HRM.NghiepVu
         #region Public Interfaces
         public f701_v_gd_hop_dong_lao_dong_DE()
         {
-
             InitializeComponent();
             auto_suggest_text();
             CControlFormat.setFormStyle(this);
@@ -88,7 +87,7 @@ namespace BKI_HRM.NghiepVu
                 return false;
             }
 
-            if (!Regex.IsMatch(m_txt_ma_hop_dong.Text, "^[0-9]+$"))
+            if (!Regex.IsMatch(m_txt_ma_hop_dong.Text, "^[A-z0-9]+$"))
             {
                 BaseMessages.MsgBox_Infor("Bạn nhập Mã Hợp Đồng chưa đúng định dạng");
                 return false;
@@ -128,11 +127,6 @@ namespace BKI_HRM.NghiepVu
             if ((m_dat_ngay_het_han.Value - m_dat_ngay_co_hieu_luc.Value).TotalHours < -1)
             {
                 BaseMessages.MsgBox_Infor("Ngày Hợp Đồng có hiệu lực không thể lớn hơn ngày Hợp Đồng hết hạn.");
-                return false;
-            }
-            if (m_us.dcID_PHAP_NHAN == 0 || m_us.dcID_PHAP_NHAN == null)
-            {
-                BaseMessages.MsgBox_Infor("Cần phải chọn Pháp nhân.");
                 return false;
             }
             return true;
@@ -479,7 +473,6 @@ namespace BKI_HRM.NghiepVu
         {
             try
             {
-                if (check_data_is_ok() == false) return;
                 chon_file();
             }
             catch (Exception v_e)

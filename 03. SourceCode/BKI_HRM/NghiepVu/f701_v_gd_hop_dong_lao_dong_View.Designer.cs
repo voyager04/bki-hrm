@@ -47,7 +47,7 @@
             this.ClientSize = new System.Drawing.Size(484, 361);
             this.Controls.Add(this.webBrowser1);
             this.Name = "f701_v_gd_hop_dong_lao_dong_View";
-            this.Text = "f701 Hợp đồng đã lưu";
+            this.Text = "f701 View File";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.f701_v_gd_hop_dong_lao_dong_View_Load);
             this.ResumeLayout(false);

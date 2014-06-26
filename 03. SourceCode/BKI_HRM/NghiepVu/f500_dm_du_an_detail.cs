@@ -515,7 +515,6 @@ namespace BKI_HRM.NghiepVu
         {
             try
             {
-                if (check_data_is_ok() == false) return;
                 chon_file();
             }
             catch (Exception v_e)

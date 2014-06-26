@@ -53,6 +53,7 @@
             this.m_txt_ma_du_an = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.m_grb_quyet_dinh = new System.Windows.Forms.GroupBox();
+            this.m_cmd_go_dinh_kem = new SIS.Controls.Button.SiSButton();
             this.m_lbl_loai_qd = new System.Windows.Forms.Label();
             this.m_cmd_xem_file = new SIS.Controls.Button.SiSButton();
             this.m_cmd_chon_file = new SIS.Controls.Button.SiSButton();
@@ -70,7 +71,6 @@
             this.m_lbl_ma_quyet_dinh = new System.Windows.Forms.Label();
             this.m_cmd_chon_quyet_dinh = new SIS.Controls.Button.SiSButton();
             this.m_cmd_them_quyet_dinh = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_go_dinh_kem = new SIS.Controls.Button.SiSButton();
             this.m_ofd_chon_file = new System.Windows.Forms.OpenFileDialog();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -86,7 +86,7 @@
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 425);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(889, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(888, 36);
             this.m_pnl_out_place_dm.TabIndex = 21;
             // 
             // m_cmd_save
@@ -98,7 +98,7 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(621, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(620, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 31;
@@ -141,7 +141,7 @@
             this.m_cmd_refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_refresh.ImageIndex = 9;
             this.m_cmd_refresh.ImageList = this.ImageList;
-            this.m_cmd_refresh.Location = new System.Drawing.Point(709, 4);
+            this.m_cmd_refresh.Location = new System.Drawing.Point(708, 4);
             this.m_cmd_refresh.Name = "m_cmd_refresh";
             this.m_cmd_refresh.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_refresh.TabIndex = 32;
@@ -158,7 +158,7 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(797, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(796, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 33;
@@ -359,6 +359,20 @@
             this.m_grb_quyet_dinh.TabStop = false;
             this.m_grb_quyet_dinh.Text = "Quyết định đi kèm";
             // 
+            // m_cmd_go_dinh_kem
+            // 
+            this.m_cmd_go_dinh_kem.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_go_dinh_kem.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_go_dinh_kem.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_go_dinh_kem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_go_dinh_kem.ImageIndex = 5;
+            this.m_cmd_go_dinh_kem.Location = new System.Drawing.Point(243, 214);
+            this.m_cmd_go_dinh_kem.Name = "m_cmd_go_dinh_kem";
+            this.m_cmd_go_dinh_kem.Size = new System.Drawing.Size(110, 28);
+            this.m_cmd_go_dinh_kem.TabIndex = 30;
+            this.m_cmd_go_dinh_kem.Text = "&Gỡ đính kèm";
+            this.m_cmd_go_dinh_kem.Click += new System.EventHandler(this.m_cmd_go_dinh_kem_Click);
+            // 
             // m_lbl_loai_qd
             // 
             this.m_lbl_loai_qd.AutoSize = true;
@@ -456,9 +470,8 @@
             this.m_lbl_file_name.AutoSize = true;
             this.m_lbl_file_name.Location = new System.Drawing.Point(24, 254);
             this.m_lbl_file_name.Name = "m_lbl_file_name";
-            this.m_lbl_file_name.Size = new System.Drawing.Size(90, 13);
+            this.m_lbl_file_name.Size = new System.Drawing.Size(0, 13);
             this.m_lbl_file_name.TabIndex = 19;
-            this.m_lbl_file_name.Text = "Tài liệu đính kèm";
             // 
             // m_lbl_ngay_het_hieu_luc_qd
             // 
@@ -533,20 +546,6 @@
             this.m_cmd_them_quyet_dinh.Text = "Tạo mới quyết định";
             this.m_cmd_them_quyet_dinh.Click += new System.EventHandler(this.m_cmd_them_quyet_dinh_Click);
             // 
-            // m_cmd_go_dinh_kem
-            // 
-            this.m_cmd_go_dinh_kem.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_go_dinh_kem.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_go_dinh_kem.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_go_dinh_kem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_go_dinh_kem.ImageIndex = 5;
-            this.m_cmd_go_dinh_kem.Location = new System.Drawing.Point(243, 214);
-            this.m_cmd_go_dinh_kem.Name = "m_cmd_go_dinh_kem";
-            this.m_cmd_go_dinh_kem.Size = new System.Drawing.Size(110, 28);
-            this.m_cmd_go_dinh_kem.TabIndex = 30;
-            this.m_cmd_go_dinh_kem.Text = "&Gỡ đính kèm";
-            this.m_cmd_go_dinh_kem.Click += new System.EventHandler(this.m_cmd_go_dinh_kem_Click);
-            // 
             // m_ofd_chon_file
             // 
             this.m_ofd_chon_file.FileName = "openFileDialog1";
@@ -555,7 +554,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(889, 461);
+            this.ClientSize = new System.Drawing.Size(888, 461);
             this.Controls.Add(this.m_cmd_them_quyet_dinh);
             this.Controls.Add(this.m_grb_quyet_dinh);
             this.Controls.Add(this.m_cmd_chon_quyet_dinh);

@@ -726,8 +726,7 @@ namespace BKI_HRM
             m_lbl_total_record_grid2.Text = string.Format("Có {0} thành viên", m_ds_nhan_su.Tables[0].Rows.Count);
         }
 
-        private void grid2us_object_du_an(US_V_DM_DU_AN_QUYET_DINH_TU_DIEN i_us
-            , int i_grid_row)
+        private void grid2us_object_du_an(US_V_DM_DU_AN_QUYET_DINH_TU_DIEN i_us, int i_grid_row)
         {
             DataRow v_dr;
             v_dr = (DataRow)m_fg_du_an.Rows[i_grid_row].UserData;

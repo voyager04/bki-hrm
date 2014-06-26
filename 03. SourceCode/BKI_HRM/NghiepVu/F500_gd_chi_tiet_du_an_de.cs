@@ -203,16 +203,16 @@ namespace BKI_HRM.NghiepVu
             if (v_us_gd_ct_da.dcID_QUYET_DINH != 0)
             {
                 m_grb_quyet_dinh.Enabled = true;
-                US_DM_QUYET_DINH v_us_dm_qd = new US_DM_QUYET_DINH(v_us_gd_ct_da.dcID_QUYET_DINH);
-                m_txt_ma_quyet_dinh.Text = v_us_dm_qd.strMA_QUYET_DINH;
+                m_us_quyet_dinh = new US_DM_QUYET_DINH(v_us_gd_ct_da.dcID_QUYET_DINH);
+                m_txt_ma_quyet_dinh.Text = m_us_quyet_dinh.strMA_QUYET_DINH;
                 m_lbl_loai_qd.Text = new US.US_CM_DM_TU_DIEN(CIPConvert.ToDecimal(TU_DIEN.QD_THANH_LAP_DU_AN)).strTEN;
-                m_dat_ngay_ky.Value = v_us_dm_qd.datNGAY_KY;
-                m_dat_ngay_co_hieu_luc_qd.Value = v_us_dm_qd.datNGAY_CO_HIEU_LUC;
-                if (v_us_dm_qd.datNGAY_HET_HIEU_LUC != null)
-                    m_dat_ngay_het_hieu_luc_qd.Value = v_us_dm_qd.datNGAY_HET_HIEU_LUC;
-                m_txt_noi_dung.Text = v_us_dm_qd.strNOI_DUNG;
-                m_str_ma_qd = v_us_dm_qd.strMA_QUYET_DINH;
-                m_lbl_file_name.Text = v_us_dm_qd.strLINK;
+                m_dat_ngay_ky.Value = m_us_quyet_dinh.datNGAY_KY;
+                m_dat_ngay_co_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_CO_HIEU_LUC;
+                if (m_us_quyet_dinh.datNGAY_HET_HIEU_LUC != null)
+                    m_dat_ngay_het_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_HET_HIEU_LUC;
+                m_txt_noi_dung.Text = m_us_quyet_dinh.strNOI_DUNG;
+                m_str_ma_qd = m_us_quyet_dinh.strMA_QUYET_DINH;
+                m_lbl_file_name.Text = m_us_quyet_dinh.strLINK;
             }
         }
 
@@ -429,8 +429,6 @@ namespace BKI_HRM.NghiepVu
 
             US_DM_QUYET_DINH v_us_qd = new US_DM_QUYET_DINH();
             DS_DM_QUYET_DINH v_ds_qd = new DS_DM_QUYET_DINH();
-            
-            m_us_quyet_dinh.dcID = m_us.dcID_QUYET_DINH;
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.InsertDataState:
@@ -467,8 +465,6 @@ namespace BKI_HRM.NghiepVu
                         if (v_ds_qd.Tables[0].Rows.Count != 0)
                             m_us.dcID_QUYET_DINH = CIPConvert.ToDecimal(v_ds_qd.Tables[0].Rows[0]["ID"]);
                     }
-                    m_us_quyet_dinh.Update();
-
                     m_us.Update();
                     break;
             }
@@ -649,7 +645,6 @@ namespace BKI_HRM.NghiepVu
         {
             try
             {
-                if (check_data_is_ok() == false) return;
                 chon_file();
             }
             catch (Exception v_e)
