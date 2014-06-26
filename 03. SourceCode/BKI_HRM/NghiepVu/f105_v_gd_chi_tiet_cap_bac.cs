@@ -416,7 +416,7 @@ namespace BKI_HRM {
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             if (m_fg.Rows[m_fg.Row].IsNode) return;
             grid2us_object(m_us, m_fg.Row);
-            var v_fDE = new f106_v_gd_chi_tiet_cap_bac_DE();
+            f106_v_gd_chi_tiet_cap_bac_DE v_fDE = new f106_v_gd_chi_tiet_cap_bac_DE();
             v_fDE.display_for_insert(m_us, m_ds);
             load_data_2_grid();
             WinFormControls.set_focus_for_grid(m_fg, m_us.strMA_NV, (int)e_col_Number.MA_NV);
