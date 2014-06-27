@@ -448,36 +448,41 @@ namespace BKI_HRM {
         #region Data Structure
         private enum e_col_Number {
             PHAP_NHAN = 1,
-            TEN_DON_VI_CAP_TREN = 3
+            TEN_DON_VI_CAP_TREN = 2
                 ,
-            ID_CAP_DON_VI = 7
+            ID_CAP_DON_VI = 6
                 ,
             TEN_TIENG_ANH = 12
                 ,
-            ID = 5
+            ID = 4
                 ,
-            TEN_DON_VI = 11
+            TEN_DON_VI = 10
                 ,
-            TEN_TIENG_ANH_DON_VI_CAP_TREN = 10
+            TEN_TIENG_ANH_DON_VI_CAP_TREN = 9
                 ,
-            MA_DON_VI = 4
+            MA_DON_VI = 3
                 ,
             TRANG_THAI = 16
                 ,
             CAP_DON_VI = 13
                 ,
-            MA_DON_VI_CAP_TREN = 9
+            MA_DON_VI_CAP_TREN = 8
                 ,
             TU_NGAY = 15
                 ,
-            ID_DON_VI_CAP_TREN = 6
+            ID_DON_VI_CAP_TREN = 5
                 ,
             LOAI_DON_VI = 14
                 ,
-            ID_LOAI_DON_VI = 8
+            ID_LOAI_DON_VI = 7
                 ,
-            DIA_BAN = 2
+            DIA_BAN = 11
 
+        }
+        private enum TypeNode
+        {
+            child,
+            sibling
         }
         #endregion
 
@@ -501,9 +506,10 @@ namespace BKI_HRM {
             CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
-            m_fg.Tree.Column = (int)e_col_Number.DIA_BAN;
+            m_fg.Tree.Column = (int)e_col_Number.MA_DON_VI;
             //m_fg.Cols[(int) e_col_Number.TEN_DON_VI_CAP_TREN].Visible = false;
-               m_fg.Tree.Style = TreeStyleFlags.SimpleLeaf;
+               m_fg.Tree.Style = TreeStyleFlags.ButtonBar;
+            
             
             KeyPreview = true;
          //   m_fg.Cols[(int)e_col_Number.DIA_BAN].Visible = false;
@@ -561,38 +567,113 @@ namespace BKI_HRM {
             return v_obj_trans;
         }
         private void load_data_2_grid() {
+            US_V_DM_DON_VI v_us_dm_don_vi = new US_V_DM_DON_VI();
             m_v_ds = new DS_V_DM_DON_VI();
             var v_str_search = m_txt_search.Text.Trim();
             if (v_str_search.Equals(m_str_goi_y_tim_kiem)) {
                 v_str_search = "";
             }
-            m_v_us.FillDatasetByKeyWord(m_v_ds, v_str_search, CIPConvert.ToDecimal(m_cbo_loaidv.SelectedValue),CIPConvert.ToDecimal(m_cbo_capdv.SelectedValue),m_cbo_trangthai.SelectedValue.ToString());
+            v_us_dm_don_vi.FillDatasetByKeyWord(m_v_ds, v_str_search, CIPConvert.ToDecimal(m_cbo_loaidv.SelectedValue), CIPConvert.ToDecimal(m_cbo_capdv.SelectedValue), m_cbo_trangthai.SelectedValue.ToString());
             m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_v_ds, m_fg, m_obj_trans);
-            // Group (subtotal) trên grid.
-            m_fg.Subtotal(AggregateEnum.Count
-              , 0
-              , (int)e_col_Number.PHAP_NHAN   // Group theo cột này
-              , (int)e_col_Number.MA_DON_VI             // Subtotal theo cột này
-              , "{0}"
-              );
-            m_fg.Subtotal(AggregateEnum.Count
-              , 1
-              , (int)e_col_Number.DIA_BAN   // Group theo cột này
-              , (int)e_col_Number.MA_DON_VI             // Subtotal theo cột này
-              , "{0}"
-              );
-            m_fg.Subtotal(AggregateEnum.Count
-              , 2
-              , (int)e_col_Number.TEN_DON_VI_CAP_TREN   // Group theo cột này
-              , (int)e_col_Number.MA_DON_VI             // Subtotal theo cột này
-              , "{0}"
-              );
+           
+            DataRow[] v_arr_dr = m_v_ds.V_DM_DON_VI.Select(V_DM_DON_VI.ID_DON_VI_CAP_TREN + " is null");
+            if (v_arr_dr.Length == 0) return;
+            CGridUtils.ClearDataInGrid(m_fg);
+            v_us_dm_don_vi.DataRow2Me(v_arr_dr[0]);
+            m_fg.Rows.Count += 1;
+            int v_i_root_row = m_fg.Rows.Count - 1;
+            us_object_2_grid(v_us_dm_don_vi, m_v_ds, v_i_root_row);
+            m_fg.Rows[v_i_root_row].IsNode = true;
+            m_fg.Rows[v_i_root_row].Node.Level = 0;
+
+            insert_all_child_of_node(v_i_root_row, m_v_ds);
+
+
+
             load_custom_source_2_m_txt_search();
             m_fg.Redraw = true;
             set_search_format_before();
             /*Đếm số dòng dữ liệu trên Grid*/
             m_lbl_so_luong_ban_ghi.Text = m_v_ds.V_DM_DON_VI.Count.ToString();
+        }
+
+        private void insert_all_child_of_node(int i_grid_row, DS_V_DM_DON_VI ip_ds_don_vi)
+        {
+            US_V_DM_DON_VI v_us_dm_don_vi = new US_V_DM_DON_VI();
+            grid2us_object(v_us_dm_don_vi, i_grid_row);
+
+            DataRow[] v_arr_dr_child = ip_ds_don_vi.V_DM_DON_VI.Select(V_DM_DON_VI.ID_DON_VI_CAP_TREN + "=" + v_us_dm_don_vi.dcID.ToString());
+            foreach (DataRow v_dr in v_arr_dr_child)
+            {
+                US_V_DM_DON_VI v_us_dm_don_vi_child = new US_V_DM_DON_VI();
+                v_us_dm_don_vi_child.DataRow2Me(v_dr);
+                int v_i_child_row = -1;
+                insert_child_node(
+                    v_us_dm_don_vi_child
+                    , ip_ds_don_vi
+                    , i_grid_row
+                    , ref v_i_child_row);
+                insert_all_child_of_node(v_i_child_row, ip_ds_don_vi);
+
+            }
+
+        }
+        private void us_object_2_grid(US_V_DM_DON_VI i_us_object, DataSet i_ds
+            , int i_grid_row)
+        {
+            if (m_fg.Rows[i_grid_row].UserData == null)
+            {
+                m_fg.Rows[i_grid_row].UserData = i_ds.Tables[0].NewRow();
+            }
+            DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
+            i_us_object.Me2DataRow(v_dr);
+            m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
+        }
+        private void insert_child_node(US_V_DM_DON_VI i_us_object
+            , DataSet i_ds
+            , int i_parent_row
+            , ref int i_row_result
+            )
+        {
+
+            int v_i_new_grid_row;
+            //Lay nut hien tai 
+            Node v_current_node = m_fg.Rows[i_parent_row].Node;
+            Node v_node_4_index;
+            int v_i_level;
+            //Neu them kieu nut la sibling cua nut hien tai            
+            v_node_4_index = v_current_node;
+            v_i_level = v_current_node.Level + 1;
+            Node v_last_child = v_node_4_index.GetNode(NodeTypeEnum.LastChild);
+            while (v_last_child != null)
+            {
+                v_node_4_index = v_last_child;
+                v_last_child = v_node_4_index.GetNode(NodeTypeEnum.LastChild);
+            }
+            v_i_new_grid_row = v_node_4_index.Row.Index + 1;
+            m_fg.Rows.Insert(v_i_new_grid_row);
+            us_object_2_grid(i_us_object, i_ds, v_i_new_grid_row);
+            m_fg.Rows[v_i_new_grid_row].IsNode = true;
+            m_fg.Rows[v_i_new_grid_row].Node.Level = v_i_level;
+
+            switch (v_i_level)
+            {
+                case 0:
+                    m_fg.Rows[v_i_new_grid_row].Style = m_fg.Styles[CellStyleEnum.Subtotal0];
+                    break;
+                case 1:
+                    m_fg.Rows[v_i_new_grid_row].Style = m_fg.Styles[CellStyleEnum.Subtotal1];
+                    break;
+                case 2:
+                    m_fg.Rows[v_i_new_grid_row].Style = m_fg.Styles[CellStyleEnum.Subtotal2];
+                    break;
+                case 3:
+                    m_fg.Rows[v_i_new_grid_row].Style = m_fg.Styles[CellStyleEnum.Subtotal3];
+                    break;
+
+            }
+
+            i_row_result = v_i_new_grid_row;
         }
         private void load_custom_source_2_m_txt_search() {
             m_txt_search.AutoCompleteMode = AutoCompleteMode.Suggest;
@@ -643,7 +724,7 @@ namespace BKI_HRM {
         private void update_v_dm_don_vi() {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            if (m_fg.Rows[m_fg.Row].IsNode) return;
+           // if (m_fg.Rows[m_fg.Row].IsNode) return;
             grid2us_object(m_v_us, m_fg.Row);
             var v_f_de = new f102_v_dm_don_vi_de();
             v_f_de.display_for_update(m_v_us);
@@ -687,7 +768,7 @@ namespace BKI_HRM {
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            if (m_fg.Rows[m_fg.Row].IsNode) return;
+            //if (m_fg.Rows[m_fg.Row].IsNode) return;
             grid2us_object(m_v_us, m_fg.Row);
             var frm = new f104_bao_cao_nhan_su_theo_phong_ban();
             frm.display_for_dm_don_vi(m_v_us.strMA_DON_VI.ToString());
