@@ -90,12 +90,12 @@ namespace BKI_HRM
             v_us.count_nhan_vien(v_ds, "nghỉ việc quay lại", ref v_dc_so_luong_nv);
             if (v_dc_so_luong_nv <= 0)
             {
-                m_lbl_sap_quay_lai.Text = @"Không có Nghỉ việc sắp quay lại";
+                m_lbl_sap_quay_lai.Text = @"Không có Nghỉ sắp quay lại";
             }
             else
             {
                 m_lbl_sap_quay_lai.Text = @"Có " + v_dc_so_luong_nv.ToString() +
-                                                  " Nghỉ việc sắp quay lại. Click để xem chi tiết!";
+                                                  " Nghỉ sắp quay lại. Click để xem chi tiết!";
             }
             //v_frm.display_nghi_sap_quay_lai();
         }

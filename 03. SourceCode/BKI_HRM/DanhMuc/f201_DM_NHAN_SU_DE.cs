@@ -21,6 +21,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Drawing.Drawing2D;
 using System.Drawing.Drawing2D;
+using System.Configuration;
 
 
 
@@ -98,7 +99,15 @@ namespace BKI_HRM
     #region Members
         DataEntryFormMode m_e_form_mode;
         US_DM_NHAN_SU m_us_dm_nhan_su = new US_DM_NHAN_SU();
-        
+
+        // File explorer
+        private DataEntryFileMode m_e_file_mode;
+        private string m_str_domain = ConfigurationSettings.AppSettings["DOMAIN"];
+        private string m_str_directory_to = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
+        private string m_str_user_name = ConfigurationSettings.AppSettings["USERNAME_SHARE"];
+        private string m_str_password = ConfigurationSettings.AppSettings["PASSWORD_SHARE"];
+        private decimal m_str_id_hop_dong_old;
+        private string m_str_link_old;
     #endregion
 
     #region Private Methods
@@ -364,6 +373,7 @@ namespace BKI_HRM
                 }
                
                 newImage.Save(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg", ImageFormat.Jpeg);
+              //  FileExplorer.UploadFile(m_str_domain, m_str_directory_to, m_str_user_name, m_str_password);
                 m_us_dm_nhan_su.strANH = Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg";
                // m_us_dm_nhan_su.strANH = m_us_dm_nhan_su.strMA_NV;
             }
