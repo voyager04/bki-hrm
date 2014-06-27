@@ -556,7 +556,7 @@ namespace BKI_HRM
             this.m_lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
-            m_fg.Tree.Column = (int)e_col_Number.HO_DEM;
+            m_fg.Tree.Column = (int)e_col_Number.MA_NV;
             m_fg.Cols[(int)e_col_Number.MA_NV].Visible = false;
             m_fg.Cols[(int)e_col_Number.COLS1].Visible = false;
             m_fg.Tree.Style = TreeStyleFlags.SimpleLeaf;
