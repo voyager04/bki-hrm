@@ -105,7 +105,7 @@ namespace BKI_HRM
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f103_bao_cao_tra_cuu_nhan_su));
-            Checkbox_Combobox.CheckBoxProperties checkBoxProperties1 = new Checkbox_Combobox.CheckBoxProperties();
+            Checkbox_Combobox.CheckBoxProperties checkBoxProperties2 = new Checkbox_Combobox.CheckBoxProperties();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_ckb_group_yn = new System.Windows.Forms.CheckBox();
@@ -311,7 +311,7 @@ namespace BKI_HRM
             this.m_dat_tu_ngay.Name = "m_dat_tu_ngay";
             this.m_dat_tu_ngay.Size = new System.Drawing.Size(85, 20);
             this.m_dat_tu_ngay.TabIndex = 38;
-            this.m_dat_tu_ngay.Value = new System.DateTime(1970, 1, 1, 11, 53, 0, 0);
+            this.m_dat_tu_ngay.Value = new System.DateTime(1930, 1, 1, 11, 53, 0, 0);
             // 
             // m_lbl_thoi_diem
             // 
@@ -401,16 +401,16 @@ namespace BKI_HRM
             this.m_rdb_nhan_vien_sap_quay_lai.AutoSize = true;
             this.m_rdb_nhan_vien_sap_quay_lai.Location = new System.Drawing.Point(370, 108);
             this.m_rdb_nhan_vien_sap_quay_lai.Name = "m_rdb_nhan_vien_sap_quay_lai";
-            this.m_rdb_nhan_vien_sap_quay_lai.Size = new System.Drawing.Size(171, 17);
+            this.m_rdb_nhan_vien_sap_quay_lai.Size = new System.Drawing.Size(125, 17);
             this.m_rdb_nhan_vien_sap_quay_lai.TabIndex = 32;
-            this.m_rdb_nhan_vien_sap_quay_lai.Text = "Nhân viên nghỉ sắp quay trở lại";
+            this.m_rdb_nhan_vien_sap_quay_lai.Text = "Nhân viên đang nghỉ";
             this.m_rdb_nhan_vien_sap_quay_lai.UseVisualStyleBackColor = true;
             this.m_rdb_nhan_vien_sap_quay_lai.CheckedChanged += new System.EventHandler(this.m_rdb_nhan_vien_sap_quay_lai_CheckedChanged);
             // 
             // m_cbc_choose_columns
             // 
-            checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.m_cbc_choose_columns.CheckBoxProperties = checkBoxProperties1;
+            checkBoxProperties2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.m_cbc_choose_columns.CheckBoxProperties = checkBoxProperties2;
             this.m_cbc_choose_columns.DisplayMemberSingleItem = "";
             this.m_cbc_choose_columns.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbc_choose_columns.FormattingEnabled = true;
