@@ -424,7 +424,13 @@ namespace BKI_HRM
             {
 
                 m_ofd_openfile.FileName = m_us_quyet_dinh.strLINK;
-                m_txt_ma_quyet_dinh.Text = m_us_quyet_dinh.strMA_QUYET_DINH;
+                string[] v_arstr = m_us_quyet_dinh.strMA_QUYET_DINH.Trim().Split('/');
+                m_txt_ma_quyet_dinh.Text = v_arstr[0];
+                BKI_HRM.US.US_CM_DM_TU_DIEN v_us = new BKI_HRM.US.US_CM_DM_TU_DIEN();
+                BKI_HRM.DS.DS_CM_DM_TU_DIEN v_ds = new BKI_HRM.DS.DS_CM_DM_TU_DIEN();
+                decimal v_dc_id = 0;
+                v_us.FillDatasetByName(v_ds, v_arstr[v_arstr.Length - 1], ref v_dc_id);
+                m_cbo_ma_quyet_dinh.SelectedValue = v_dc_id;
 
                 m_cbo_loai_quyet_dinh.SelectedValue = m_us_quyet_dinh.dcID_LOAI_QD;
                 m_dat_ngay_ky.Value = m_us_quyet_dinh.datNGAY_KY;

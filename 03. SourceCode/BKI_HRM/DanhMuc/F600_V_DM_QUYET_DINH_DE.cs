@@ -71,6 +71,7 @@ namespace BKI_HRM.DanhMuc
         private string m_str_old_path = "";
         #endregion
         #region Private Methods
+
         private bool check_trung_ma_quyet_dinh(string ip_str_ma_quyet_dinh)
         {
             DS_V_DM_QUYET_DINH v_ds = new DS_V_DM_QUYET_DINH();
@@ -86,7 +87,13 @@ namespace BKI_HRM.DanhMuc
             m_us.dcID = ip_us_v_dm_quyet_dinh.dcID;
 
             //m_txt_link.Text = ip_us_v_dm_quyet_dinh.strLINK;
-            m_txt_ma_quyet_dinh.Text = ip_us_v_dm_quyet_dinh.strMA_QUYET_DINH;
+            string[] v_arstr = ip_us_v_dm_quyet_dinh.strMA_QUYET_DINH.Trim().Split('/');
+            m_txt_ma_quyet_dinh.Text = v_arstr[0];
+            BKI_HRM.US.US_CM_DM_TU_DIEN v_us = new BKI_HRM.US.US_CM_DM_TU_DIEN();
+            BKI_HRM.DS.DS_CM_DM_TU_DIEN v_ds = new BKI_HRM.DS.DS_CM_DM_TU_DIEN();
+            decimal v_dc_id = 0;
+            v_us.FillDatasetByName(v_ds, v_arstr[v_arstr.Length - 1], ref v_dc_id);
+            m_cbo_ma_quyet_dinh.SelectedValue = v_dc_id;
             m_txt_noi_dung.Text = ip_us_v_dm_quyet_dinh.strNOI_DUNG;
             if (ip_us_v_dm_quyet_dinh.datNGAY_HET_HIEU_LUC.Year > 1900)
                 m_dat_ngay_het_hieu_luc.Value = ip_us_v_dm_quyet_dinh.datNGAY_HET_HIEU_LUC;
@@ -107,7 +114,12 @@ namespace BKI_HRM.DanhMuc
             string[] v_strs = ip_us_v_dm_quyet_dinh.strLINK.Split('\\');
            
         }
-      
+        private void generate_ma_quyet_dinh()
+        {
+            m_lbl_ma_qd.Text = string.Format("{0}/{1}/{2}", m_txt_ma_quyet_dinh.Text,
+                                                                  m_dat_ngay_ky.Value.Year,
+                                                                  m_cbo_ma_quyet_dinh.Text);
+        }
         private void open_file()
         {
             Process.Start("explorer.exe", m_ofd_chon_file.FileName);
@@ -216,7 +228,7 @@ namespace BKI_HRM.DanhMuc
         }
         private void form_2_us_object()
         {
-            m_us.strMA_QUYET_DINH = m_txt_ma_quyet_dinh.Text.Trim();
+            m_us.strMA_QUYET_DINH = m_lbl_ma_qd.Text.Trim();
             //m_us.strLINK = m_txt_link.Text.Trim();
             m_us.strNOI_DUNG = m_txt_noi_dung.Text.Trim();
             m_us.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value.Date;
@@ -287,10 +299,16 @@ namespace BKI_HRM.DanhMuc
             BaseMessages.MsgBox_Infor("Cập nhật dữ liệu thành công!");
             this.Close();
         }
-       
+        private void load_cbo_ma_quyet_dinh()
+        {
+            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.MA_QUYET_DINH
+                , WinFormControls.eTAT_CA.NO
+                , m_cbo_ma_quyet_dinh);
+        }
         private void format_control()
         {
             CControlFormat.setFormStyle(this);
+            load_cbo_ma_quyet_dinh();
             set_define_events();
         }
 
@@ -375,7 +393,20 @@ namespace BKI_HRM.DanhMuc
 
         #endregion
 
-  
+        private void generate_ma_quyet_dinh_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                generate_ma_quyet_dinh();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+     
 
 
 

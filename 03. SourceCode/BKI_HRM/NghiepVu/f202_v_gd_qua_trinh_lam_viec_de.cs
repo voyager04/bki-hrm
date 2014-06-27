@@ -101,7 +101,7 @@ namespace BKI_HRM
             CControlFormat.setFormStyle(this, new CAppContext_201());
             this.KeyPreview = true;
             load_data_to_cbo();
-
+            load_cbo_ma_quyet_dinh();
         }
         private void generate_ma_quyet_dinh()
         {
@@ -186,7 +186,12 @@ namespace BKI_HRM
             }
             BaseMessages.MsgBox_Infor("File không tồn tại.");
         }
-
+        private void load_cbo_ma_quyet_dinh()
+        {
+            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.MA_QUYET_DINH
+                , WinFormControls.eTAT_CA.NO
+                , m_cbo_ma_quyet_dinh);
+        }
 
         private void load_data_to_cbo()
         {
@@ -240,9 +245,6 @@ namespace BKI_HRM
                         string[] v_strs = v_us_quyet_dinh.strLINK.Split('\\');
                         m_lbl_file_name.Text = v_strs[v_strs.Length - 1].Split('-')[v_strs[v_strs.Length - 1].Split('-').Length - 1];
                     }
-                    
-                    
-                    
                     
                     break;
                 case DataEntryFormMode.UpdateDataState:
@@ -515,7 +517,13 @@ namespace BKI_HRM
             {
 
                 m_ofd_openfile.FileName = m_us_quyet_dinh.strLINK;
-                m_txt_ma_quyet_dinh.Text = m_us_quyet_dinh.strMA_QUYET_DINH;
+                string[] v_arstr = m_us_quyet_dinh.strMA_QUYET_DINH.Trim().Split('/');
+                m_txt_ma_quyet_dinh.Text = v_arstr[0];
+                BKI_HRM.US.US_CM_DM_TU_DIEN v_us = new BKI_HRM.US.US_CM_DM_TU_DIEN();
+                BKI_HRM.DS.DS_CM_DM_TU_DIEN v_ds = new BKI_HRM.DS.DS_CM_DM_TU_DIEN();
+                decimal v_dc_id = 0;
+                v_us.FillDatasetByName(v_ds, v_arstr[v_arstr.Length - 1], ref v_dc_id);
+                m_cbo_ma_quyet_dinh.SelectedValue = v_dc_id;
 
                 m_cbo_loai_quyet_dinh.SelectedValue = m_us_quyet_dinh.dcID_LOAI_QD;
                 m_dat_ngay_ky.Value = m_us_quyet_dinh.datNGAY_KY;
