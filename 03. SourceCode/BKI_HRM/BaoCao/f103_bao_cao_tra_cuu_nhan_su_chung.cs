@@ -65,6 +65,7 @@ namespace BKI_HRM
         private Label label1;
         private ComboBox m_cbo_thang_sinh;
         private Label m_lbl_thang_sinh;
+        private CheckBox m_ckb_group_yn;
         private IContainer components;
 
         public f103_bao_cao_tra_cuu_nhan_su()
@@ -104,7 +105,7 @@ namespace BKI_HRM
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f103_bao_cao_tra_cuu_nhan_su));
-            Checkbox_Combobox.CheckBoxProperties checkBoxProperties1 = new Checkbox_Combobox.CheckBoxProperties();
+            Checkbox_Combobox.CheckBoxProperties checkBoxProperties2 = new Checkbox_Combobox.CheckBoxProperties();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cbo_thang_sinh = new System.Windows.Forms.ComboBox();
@@ -139,6 +140,7 @@ namespace BKI_HRM
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_ckb_group_yn = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.m_grb_ngay_sinh.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -174,6 +176,7 @@ namespace BKI_HRM
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_ckb_group_yn);
             this.panel1.Controls.Add(this.m_cbo_thang_sinh);
             this.panel1.Controls.Add(this.m_lbl_thang_sinh);
             this.panel1.Controls.Add(this.m_txt_trinh_do);
@@ -395,8 +398,8 @@ namespace BKI_HRM
             // 
             // m_cbc_choose_columns
             // 
-            checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.m_cbc_choose_columns.CheckBoxProperties = checkBoxProperties1;
+            checkBoxProperties2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.m_cbc_choose_columns.CheckBoxProperties = checkBoxProperties2;
             this.m_cbc_choose_columns.DisplayMemberSingleItem = "";
             this.m_cbc_choose_columns.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbc_choose_columns.FormattingEnabled = true;
@@ -519,6 +522,17 @@ namespace BKI_HRM
             this.m_fg.Size = new System.Drawing.Size(1189, 395);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 32;
+            // 
+            // m_ckb_group_yn
+            // 
+            this.m_ckb_group_yn.AutoSize = true;
+            this.m_ckb_group_yn.Location = new System.Drawing.Point(730, 108);
+            this.m_ckb_group_yn.Name = "m_ckb_group_yn";
+            this.m_ckb_group_yn.Size = new System.Drawing.Size(86, 17);
+            this.m_ckb_group_yn.TabIndex = 49;
+            this.m_ckb_group_yn.Text = "Không nhóm";
+            this.m_ckb_group_yn.UseVisualStyleBackColor = true;
+            this.m_ckb_group_yn.CheckedChanged += new System.EventHandler(this.m_ckb_group_yn_CheckedChanged);
             // 
             // f103_bao_cao_tra_cuu_nhan_su
             // 
@@ -774,8 +788,8 @@ namespace BKI_HRM
                         , CIPConvert.ToDecimal(m_cbo_chon_don_vi.SelectedValue)
                         , CIPConvert.ToDecimal(m_cbo_chon_dia_ban.SelectedValue)
                  //       , m_dat_thoi_diem.Value
-                        , m_dat_tu_ngay.Value
-                        , m_dat_den_ngay.Value
+                        , m_dat_tu_ngay.Value.Date
+                        , m_dat_den_ngay.Value.Date
                         , CIPConvert.ToDecimal(m_cbo_thang_sinh.SelectedValue)
                         , ""
                         , "Y"
@@ -798,8 +812,8 @@ namespace BKI_HRM
                             , CIPConvert.ToDecimal(m_cbo_chon_don_vi.SelectedValue)
                             , CIPConvert.ToDecimal(m_cbo_chon_dia_ban.SelectedValue)
                      //      , m_dat_thoi_diem.Value
-                            , m_dat_tu_ngay.Value
-                            , m_dat_den_ngay.Value
+                            , m_dat_tu_ngay.Value.Date
+                            , m_dat_den_ngay.Value.Date
                             , CIPConvert.ToDecimal(m_cbo_thang_sinh.SelectedValue)
                             , ""
                             , "Y"
@@ -827,8 +841,8 @@ namespace BKI_HRM
                         , CIPConvert.ToDecimal(m_cbo_chon_don_vi.SelectedValue)
                         , CIPConvert.ToDecimal(m_cbo_chon_dia_ban.SelectedValue)
                    //     , m_dat_thoi_diem.Value
-                        , m_dat_tu_ngay.Value
-                        , m_dat_den_ngay.Value
+                        , m_dat_tu_ngay.Value.Date
+                        , m_dat_den_ngay.Value.Date
                         , CIPConvert.ToDecimal(m_cbo_thang_sinh.SelectedValue)
                         , m_str_trang_thai_lao_dong
 
@@ -842,7 +856,10 @@ namespace BKI_HRM
             }
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;
-            tao_tree();
+            if (m_ckb_group_yn.Checked == true)
+            {
+                tao_tree();
+            }
             WinFormControls.load_data_to_CheckboxCombobox(m_fg, m_cbc_choose_columns, load_invisible);
         }
         private void load_data_2_cbo()
@@ -1229,7 +1246,21 @@ namespace BKI_HRM
         /*
          * Kết thúc Phần xử lý Thêm cột hiển thị
          */
+        private void changeTree()
+        {
+            if (m_ckb_group_yn.Checked == true)
+            {
 
+                m_ckb_group_yn.Text = "Có nhóm.";
+                load_data_2_grid();
+            }
+            else
+            {
+
+                m_ckb_group_yn.Text = "Không nhóm.";
+                load_data_2_grid();
+            }
+        }
         #endregion
 
         #region Event
@@ -1249,7 +1280,19 @@ namespace BKI_HRM
             m_cbo_thang_sinh.SelectedIndexChanged += new EventHandler(m_cbo_SelectedIndexChanged);
             m_dat_tu_ngay.ValueChanged += new EventHandler(m_dat_tu_ngay_ValueChanged);
             m_dat_den_ngay.ValueChanged += new EventHandler(m_dat_den_ngay_ValueChanged);
+      //      m_ckb_group_yn.CheckedChanged += new EventHandler(m_ckb_group_yn_CheckedChanged);
+        }
+        private void m_ckb_group_yn_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                changeTree();
+            }
+            catch (Exception v_e)
+            {
 
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
         private void m_dat_tu_ngay_ValueChanged(object sender, EventArgs e)
         {
@@ -1435,6 +1478,7 @@ namespace BKI_HRM
        
         #endregion
 
+       
      
 
 
