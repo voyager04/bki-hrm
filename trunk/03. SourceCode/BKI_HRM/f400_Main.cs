@@ -95,7 +95,7 @@ namespace BKI_HRM
             else
             {
                 m_lbl_sap_quay_lai.Text = @"Có " + v_dc_so_luong_nv.ToString() +
-                                                  " Nghỉ sắp quay lại. Click để xem chi tiết!";
+                                                  " Nhân viên đang nghỉ. Click để xem chi tiết!";
             }
             //v_frm.display_nghi_sap_quay_lai();
         }
