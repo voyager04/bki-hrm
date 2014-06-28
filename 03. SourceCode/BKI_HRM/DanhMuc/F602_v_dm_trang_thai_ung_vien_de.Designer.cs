@@ -234,7 +234,7 @@
             this.MaximumSize = new System.Drawing.Size(686, 347);
             this.MinimumSize = new System.Drawing.Size(686, 347);
             this.Name = "F602_v_dm_trang_thai_ung_vien_de";
-            this.Text = "F602_v_dm_trang_thai_ung_vien_de";
+            this.Text = "F6 - Chi tiết trạng thái ứng viên";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

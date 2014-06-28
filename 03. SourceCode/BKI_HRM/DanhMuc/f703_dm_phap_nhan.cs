@@ -248,7 +248,7 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(749, 20);
             this.m_txt_tim_kiem.TabIndex = 31;
             this.m_txt_tim_kiem.Text = "Nhập Mã pháp nhân, Tên pháp nhân, Mã số thuế, Mã đăng ký kinh doanh, Tháng đăng k" +
-                "ý kinh doanh, Địa chỉ, Người đại diện";
+    "ý kinh doanh, Địa chỉ, Người đại diện";
             this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
             this.m_txt_tim_kiem.Leave += new System.EventHandler(this.m_txt_tim_kiem_Leave);
             // 
@@ -271,7 +271,7 @@ namespace BKI_HRM
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f703_dm_phap_nhan";
-            this.Text = "f703 Danh mục pháp nhân";
+            this.Text = "F703 - Danh mục pháp nhân";
             this.Load += new System.EventHandler(this.f703_dm_phap_nhan_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();

@@ -181,7 +181,7 @@
             this.Controls.Add(this.m_cmd_them_chuc_vu);
             this.Name = "f201_dm_nhan_su_dialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Bổ sung thông tin nhân viên";
+            this.Text = "F201 - Bổ sung thông tin nhân viên";
             this.ResumeLayout(false);
 
         }

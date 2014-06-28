@@ -299,7 +299,7 @@ namespace BKI_HRM
             this.MaximumSize = new System.Drawing.Size(800, 520);
             this.MinimumSize = new System.Drawing.Size(800, 520);
             this.Name = "F602_v_dm_trang_thai_ung_vien";
-            this.Text = "F602_v_dm_trang_thai_ung_vien";
+            this.Text = "F60 - Danh mục trạng thái ứng viên";
             this.Load += new System.EventHandler(this.f602_v_dm_trang_thai_ung_vien_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();

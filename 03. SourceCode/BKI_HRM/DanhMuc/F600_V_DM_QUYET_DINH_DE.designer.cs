@@ -338,7 +338,7 @@
             this.MaximumSize = new System.Drawing.Size(636, 312);
             this.MinimumSize = new System.Drawing.Size(636, 312);
             this.Name = "F600_V_DM_QUYET_DINH_DE";
-            this.Text = "F600_V_DM_QUYET_DINH_DE";
+            this.Text = "F600 - Chi tiết quyết định";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
