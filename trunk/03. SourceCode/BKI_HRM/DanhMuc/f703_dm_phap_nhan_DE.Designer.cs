@@ -257,7 +257,7 @@
             this.Controls.Add(this.m_txt_ma_phap_nhan);
             this.Controls.Add(this.label1);
             this.Name = "f703_dm_phap_nhan_DE";
-            this.Text = "f703 Chi tiết pháp nhân";
+            this.Text = "F703 - Chi tiết pháp nhân";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
