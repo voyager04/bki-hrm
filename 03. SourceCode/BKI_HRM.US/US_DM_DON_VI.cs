@@ -241,26 +241,48 @@ namespace BKI_HRM.US {
             pm_objDR["TU_NGAY"] = System.Convert.DBNull;
         }
 
-        public decimal dcID_PHAP_NHAN
+        public decimal dcSO_LUONG
         {
             get
             {
-                return CNull.RowNVLDecimal(pm_objDR, "ID_PHAP_NHAN", IPConstants.c_DefaultDecimal);
+                return CNull.RowNVLDecimal(pm_objDR, "SO_LUONG", IPConstants.c_DefaultDecimal);
             }
             set
             {
-                pm_objDR["ID_PHAP_NHAN"] = value;
+                pm_objDR["SO_LUONG"] = value;
             }
         }
 
-        public bool IsID_PHAP_NHANNull()
+        public bool IsSO_LUONGNull()
         {
-            return pm_objDR.IsNull("ID_PHAP_NHAN");
+            return pm_objDR.IsNull("SO_LUONG");
         }
 
-        public void SetID_PHAP_NHANNull()
+        public void SetSO_LUONGNull()
         {
-            pm_objDR["ID_PHAP_NHAN"] = System.Convert.DBNull;
+            pm_objDR["SO_LUONG"] = System.Convert.DBNull;
+        }
+
+        public decimal dcID_LEVEL
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_LEVEL", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_LEVEL"] = value;
+            }
+        }
+
+        public bool IsID_LEVELNull()
+        {
+            return pm_objDR.IsNull("ID_LEVEL");
+        }
+
+        public void SetID_LEVELNull()
+        {
+            pm_objDR["ID_LEVEL"] = System.Convert.DBNull;
         }
 
         #endregion

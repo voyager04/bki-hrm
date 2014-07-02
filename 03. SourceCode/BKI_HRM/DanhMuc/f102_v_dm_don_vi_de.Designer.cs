@@ -48,8 +48,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.m_dat_tu_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_cbo_trang_thai = new System.Windows.Forms.ComboBox();
-            this.m_cbo_phap_nhan = new System.Windows.Forms.ComboBox();
-            this.m_lbl_phap_nhan = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -239,7 +237,7 @@
             this.m_cbo_cap_don_vi.FormattingEnabled = true;
             this.m_cbo_cap_don_vi.Location = new System.Drawing.Point(132, 35);
             this.m_cbo_cap_don_vi.Name = "m_cbo_cap_don_vi";
-            this.m_cbo_cap_don_vi.Size = new System.Drawing.Size(126, 21);
+            this.m_cbo_cap_don_vi.Size = new System.Drawing.Size(211, 21);
             this.m_cbo_cap_don_vi.TabIndex = 1;
             // 
             // m_txt_ten_tieng_anh
@@ -288,31 +286,11 @@
             this.m_cbo_trang_thai.Size = new System.Drawing.Size(121, 21);
             this.m_cbo_trang_thai.TabIndex = 1000;
             // 
-            // m_cbo_phap_nhan
-            // 
-            this.m_cbo_phap_nhan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_phap_nhan.FormattingEnabled = true;
-            this.m_cbo_phap_nhan.Location = new System.Drawing.Point(355, 37);
-            this.m_cbo_phap_nhan.Name = "m_cbo_phap_nhan";
-            this.m_cbo_phap_nhan.Size = new System.Drawing.Size(84, 21);
-            this.m_cbo_phap_nhan.TabIndex = 1001;
-            // 
-            // m_lbl_phap_nhan
-            // 
-            this.m_lbl_phap_nhan.AutoSize = true;
-            this.m_lbl_phap_nhan.Location = new System.Drawing.Point(275, 40);
-            this.m_lbl_phap_nhan.Name = "m_lbl_phap_nhan";
-            this.m_lbl_phap_nhan.Size = new System.Drawing.Size(59, 13);
-            this.m_lbl_phap_nhan.TabIndex = 1002;
-            this.m_lbl_phap_nhan.Text = "Pháp nhân";
-            // 
             // f102_v_dm_don_vi_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 335);
-            this.Controls.Add(this.m_cbo_phap_nhan);
-            this.Controls.Add(this.m_lbl_phap_nhan);
             this.Controls.Add(this.m_cbo_trang_thai);
             this.Controls.Add(this.m_dat_tu_ngay);
             this.Controls.Add(this.label10);
@@ -369,7 +347,5 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker m_dat_tu_ngay;
         private System.Windows.Forms.ComboBox m_cbo_trang_thai;
-        private System.Windows.Forms.ComboBox m_cbo_phap_nhan;
-        private System.Windows.Forms.Label m_lbl_phap_nhan;
     }
 }

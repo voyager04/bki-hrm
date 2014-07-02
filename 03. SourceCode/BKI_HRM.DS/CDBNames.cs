@@ -345,7 +345,8 @@
         public const string DIA_BAN = "DIA_BAN";
         public const string TRANG_THAI = "TRANG_THAI";
         public const string TU_NGAY = "TU_NGAY";
-        public const string ID_PHAP_NHAN = "ID_PHAP_NHAN";
+        public const string ID_LEVEL = "ID_LEVEL";
+
     }
     public class DM_NHAN_SU
     {
@@ -399,10 +400,10 @@
         public const string DIA_BAN = "DIA_BAN";
         public const string TRANG_THAI = "TRANG_THAI";
         public const string TRANG_THAI_YN = "TRANG_THAI_YN";
-        public const string ID_PHAP_NHAN = "ID_PHAP_NHAN";
-        public const string MA_PHAP_NHAN = "MA_PHAP_NHAN";
-        public const string TEN_PHAP_NHAN = "TEN_PHAP_NHAN";
+        public const string SO_LUONG = "SO_LUONG";
+        public const string ID_LEVEL = "ID_LEVEL";
     }
+
 
 
     public class DM_PHAP_NHAN

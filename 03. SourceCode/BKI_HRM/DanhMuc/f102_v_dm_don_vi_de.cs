@@ -64,7 +64,6 @@ namespace BKI_HRM.DanhMuc
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.CAP_DON_VI,
                 WinFormControls.eTAT_CA.NO,
                 m_cbo_cap_don_vi);
-            load_data_2_cbo_phap_nhan();
             load_data_2_cbo_don_vi_cap_tren();
             set_define_events();
         }
@@ -72,16 +71,6 @@ namespace BKI_HRM.DanhMuc
         {
             m_cbo_trang_thai.SelectedIndex = 0;
             m_cbo_cap_don_vi.SelectedIndex = (int)CAP_DON_VI.PHONG_BAN - 1;
-        }
-        private void load_data_2_cbo_phap_nhan()
-        {
-            DS_DM_PHAP_NHAN v_ds_phap_nhan = new DS_DM_PHAP_NHAN();
-            US_DM_PHAP_NHAN v_us_phap_nhan = new US_DM_PHAP_NHAN();
-            v_us_phap_nhan.FillDataset(v_ds_phap_nhan);
-
-            m_cbo_phap_nhan.DisplayMember = DM_PHAP_NHAN.MA_PHAP_NHAN;
-            m_cbo_phap_nhan.ValueMember = DM_PHAP_NHAN.ID;
-            m_cbo_phap_nhan.DataSource = v_ds_phap_nhan.DM_PHAP_NHAN;
         }
         private void load_data_2_cbo_don_vi_cap_tren()
         {
@@ -159,7 +148,7 @@ namespace BKI_HRM.DanhMuc
         {
             //             if (CIPConvert.ToDecimal(m_cbo_phap_nhan.SelectedValue) == 641)
             //             {
-            m_us.dcID_PHAP_NHAN = CIPConvert.ToDecimal(m_cbo_phap_nhan.SelectedValue);
+            //m_us.dcID_PHAP_NHAN = CIPConvert.ToDecimal(m_cbo_phap_nhan.SelectedValue);
             //             }
             //             else
             //             {
@@ -176,13 +165,32 @@ namespace BKI_HRM.DanhMuc
             
             m_us.dcID_LOAI_DON_VI = CIPConvert.ToDecimal(m_cbo_loai_don_vi.SelectedValue);
             m_us.dcID_CAP_DON_VI = CIPConvert.ToDecimal(m_cbo_cap_don_vi.SelectedValue);
+            switch (int.Parse(m_cbo_cap_don_vi.SelectedValue.ToString()))
+            {
+                case 691:
+                    m_us.dcID_LEVEL = CIPConvert.ToDecimal(0);
+                    break;
+                case 738:
+                    m_us.dcID_LEVEL = CIPConvert.ToDecimal(1);
+                    break;
+                case 641:
+                    m_us.dcID_LEVEL = CIPConvert.ToDecimal(2);
+                    break;
+                case 640:
+                    m_us.dcID_LEVEL = CIPConvert.ToDecimal(3);
+                    break;
+                case 642:
+                    m_us.dcID_LEVEL = CIPConvert.ToDecimal(4);
+                    break;
+            }
+            m_us.SetSO_LUONGNull();
             m_us.strMA_DON_VI = m_txt_ma_don_vi.Text.Trim();
             m_us.strTEN_DON_VI = m_txt_ten_don_vi.Text.Trim();
             m_us.strTEN_TA = m_txt_ten_tieng_anh.Text.Trim();
             m_us.strDIA_BAN = m_txt_dia_ban.Text.Trim();
             m_us.strTRANG_THAI = get_trang_thai(m_cbo_trang_thai);
-            m_us.dcID_LOAI_DON_VI = CIPConvert.ToDecimal(m_cbo_loai_don_vi.SelectedValue);
-            m_us.dcID_CAP_DON_VI = CIPConvert.ToDecimal(m_cbo_cap_don_vi.SelectedValue);
+            //m_us.dcID_LOAI_DON_VI = CIPConvert.ToDecimal(m_cbo_loai_don_vi.SelectedValue);
+            //m_us.dcID_CAP_DON_VI = CIPConvert.ToDecimal(m_cbo_cap_don_vi.SelectedValue);
             m_us.datTU_NGAY = m_dat_tu_ngay.Value.Date;
         }
         private static string get_trang_thai(ListControl ip_cbo)
@@ -212,7 +220,7 @@ namespace BKI_HRM.DanhMuc
         {
             //             if (m_us.dcID_PHAP_NHAN != null)
             //             {
-            m_cbo_phap_nhan.SelectedValue = m_us.dcID_PHAP_NHAN;
+            //m_cbo_phap_nhan.SelectedValue = m_us.dcID_PHAP_NHAN;
             // }
             m_us.dcID = ip_us_dm_don_vi.dcID;
             m_cbo_cap_don_vi.SelectedValue = ip_us_dm_don_vi.dcID_CAP_DON_VI;
