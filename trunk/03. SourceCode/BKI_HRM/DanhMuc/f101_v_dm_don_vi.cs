@@ -550,7 +550,12 @@ namespace BKI_HRM {
               v_str_search = "TEG";
             }
             //var v_str_search = "TEG";
-            v_us_dm_don_vi.FillDatasetByKeyWord(m_v_ds, v_str_search, CIPConvert.ToDecimal(m_cbo_loaidv.SelectedValue), CIPConvert.ToDecimal(m_cbo_capdv.SelectedValue), m_cbo_trangthai.SelectedValue.ToString());
+            if (m_txt_search.Text.Trim() != m_str_goi_y_tim_kiem)
+                v_us_dm_don_vi.FillDatasetByKeyWord(m_v_ds, v_str_search, CIPConvert.ToDecimal(m_cbo_loaidv.SelectedValue), CIPConvert.ToDecimal(m_cbo_capdv.SelectedValue), m_cbo_trangthai.SelectedValue.ToString());
+            else
+            {
+                v_us_dm_don_vi.FillDatasetByKeyWord(m_v_ds, "", CIPConvert.ToDecimal(m_cbo_loaidv.SelectedValue), CIPConvert.ToDecimal(m_cbo_capdv.SelectedValue), m_cbo_trangthai.SelectedValue.ToString());
+            }
             m_fg.Redraw = false;
             int minID_LEVEL = int.Parse(m_v_ds.V_DM_DON_VI.Compute("Min(ID_LEVEL)","").ToString());
             
@@ -795,6 +800,7 @@ namespace BKI_HRM {
             m_cbo_capdv.SelectedValueChanged += m_cbo_capdv_SelectedValueChanged;
             m_cbo_loaidv.SelectedValueChanged += m_cbo_loaidv_SelectedValueChanged;
             m_cbo_trangthai.SelectedValueChanged += m_cbo_trangthai_SelectedValueChanged;
+            m_fg.KeyDown += new KeyEventHandler(m_fg_KeyDown);
         }
 
         private void f101_v_dm_don_vi_Load(object sender, EventArgs e) {
@@ -840,7 +846,8 @@ namespace BKI_HRM {
 
         private void m_cmd_search_Click(object sender, EventArgs e) {
             try {
-                load_data_2_grid();
+                
+                    load_data_2_grid();
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -865,7 +872,21 @@ namespace BKI_HRM {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
+        private void m_fg_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.Enter)
+                {
+                    xem_nhan_su();
+                }
+               
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         private void m_txt_search_MouseClick(object sender, MouseEventArgs e) {
             try {
                 set_search_format_after();
