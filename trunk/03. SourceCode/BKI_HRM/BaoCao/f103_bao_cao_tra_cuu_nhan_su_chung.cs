@@ -825,7 +825,7 @@ namespace BKI_HRM
                         , "Y"
                         , ""
                         , "nghỉ việc quay lại", ref v_dc_so_luong_nv);
-                    m_lbl_so_luong_nv.Text = "Số lượng nhân viên nghỉ sắp quay lại: ";
+                    m_lbl_so_luong_nv.Text = "Số lượng nhân viên đang nghỉ: ";
                     m_lbl_so_luong_nv.Text += v_dc_so_luong_nv.ToString();
                     m_us.FillDatasetSearch(m_ds
                         , m_txt_search.Text.Trim()
