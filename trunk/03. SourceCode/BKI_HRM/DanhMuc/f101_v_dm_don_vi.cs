@@ -42,7 +42,6 @@ namespace BKI_HRM {
         private Label m_lbl_tim_kiem;
         private Label m_lbl_so_luong_ban_ghi;
         private Label label2;
-        private C1FlexGrid m_fg;
         private ToolTip m_tooltip;
         internal SiSButton m_cmd_view;
         internal SiSButton m_cmd_chon_don_vi;
@@ -54,6 +53,7 @@ namespace BKI_HRM {
         private Label label1;
         private Label label3;
         private Label m_lbl_phim_tat;
+        private C1FlexGrid m_fg;
         private IContainer components;
 
         public f101_v_dm_don_vi() {
@@ -110,8 +110,8 @@ namespace BKI_HRM {
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_txt_search = new System.Windows.Forms.TextBox();
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
-            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
+            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -293,7 +293,7 @@ namespace BKI_HRM {
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1189, 124);
+            this.panel1.Size = new System.Drawing.Size(1189, 53);
             this.panel1.TabIndex = 21;
             // 
             // groupBox1
@@ -304,11 +304,12 @@ namespace BKI_HRM {
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.m_cbo_trangthai);
             this.groupBox1.Controls.Add(this.m_cbo_loaidv);
-            this.groupBox1.Location = new System.Drawing.Point(32, 12);
+            this.groupBox1.Location = new System.Drawing.Point(32, 63);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(287, 96);
+            this.groupBox1.Size = new System.Drawing.Size(287, 45);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Visible = false;
             // 
             // label4
             // 
@@ -369,7 +370,7 @@ namespace BKI_HRM {
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(926, 12);
+            this.m_cmd_search.Location = new System.Drawing.Point(799, 11);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 2;
@@ -380,16 +381,16 @@ namespace BKI_HRM {
             this.m_txt_search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.m_txt_search.ForeColor = System.Drawing.Color.DimGray;
-            this.m_txt_search.Location = new System.Drawing.Point(452, 17);
+            this.m_txt_search.Location = new System.Drawing.Point(325, 16);
             this.m_txt_search.Name = "m_txt_search";
             this.m_txt_search.Size = new System.Drawing.Size(468, 20);
             this.m_txt_search.TabIndex = 1;
-            this.m_tooltip.SetToolTip(this.m_txt_search, "Tìm kiếm theo tên đơn vị, mã đơn vị");
+            this.m_tooltip.SetToolTip(this.m_txt_search, "Tìm kiếm theo mã đơn vị");
             // 
             // m_lbl_tim_kiem
             // 
             this.m_lbl_tim_kiem.AutoSize = true;
-            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(358, 20);
+            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(231, 19);
             this.m_lbl_tim_kiem.Name = "m_lbl_tim_kiem";
             this.m_lbl_tim_kiem.Size = new System.Drawing.Size(88, 13);
             this.m_lbl_tim_kiem.TabIndex = 24;
@@ -397,18 +398,13 @@ namespace BKI_HRM {
             // 
             // m_fg
             // 
-            this.m_fg.AllowEditing = false;
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 121);
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_fg.Location = new System.Drawing.Point(0, 53);
             this.m_fg.Name = "m_fg";
-            this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Row;
-            this.m_fg.Size = new System.Drawing.Size(1189, 415);
+            this.m_fg.Size = new System.Drawing.Size(1189, 483);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 29;
-            this.m_tooltip.SetToolTip(this.m_fg, "Nháy đúp vào dòng đơn vị cần chỉnh sửa");
-            this.m_fg.Tree.LineColor = System.Drawing.Color.Maroon;
-            this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
+            this.m_fg.TabIndex = 22;
             // 
             // f101_v_dm_don_vi
             // 
@@ -446,39 +442,26 @@ namespace BKI_HRM {
         #endregion
 
         #region Data Structure
-        private enum e_col_Number {
-            PHAP_NHAN = 1,
-            TEN_DON_VI_CAP_TREN = 2
+        private enum e_col_Number
+        {
+            TEN_TIENG_ANH = 5
+,
+            TEN_DON_VI = 2
                 ,
-            ID_CAP_DON_VI = 6
+            TRANG_THAI = 8
                 ,
-            TEN_TIENG_ANH = 12
+            MA_DON_VI = 1
                 ,
-            ID = 4
+            SO_LUONG = 4
                 ,
-            TEN_DON_VI = 10
+            CAP_DON_VI = 6
                 ,
-            TEN_TIENG_ANH_DON_VI_CAP_TREN = 9
+            LOAI_DON_VI = 7
                 ,
-            MA_DON_VI = 3
-                ,
-            TRANG_THAI = 16
-                ,
-            CAP_DON_VI = 13
-                ,
-            MA_DON_VI_CAP_TREN = 8
-                ,
-            TU_NGAY = 15
-                ,
-            ID_DON_VI_CAP_TREN = 5
-                ,
-            LOAI_DON_VI = 14
-                ,
-            ID_LOAI_DON_VI = 7
-                ,
-            DIA_BAN = 11
+            TU_NGAY = 9
+                , DIA_BAN = 3
 
-        }
+        }			
         private enum TypeNode
         {
             child,
@@ -492,7 +475,7 @@ namespace BKI_HRM {
         US_V_DM_DON_VI m_v_us = new US_V_DM_DON_VI();
         DS_DM_DON_VI m_ds = new DS_DM_DON_VI();
         US_DM_DON_VI m_us = new US_DM_DON_VI();
-        private const String m_str_goi_y_tim_kiem = "Nhập Tên đơn vị, Mã đơn vị, Địa bàn, Cấp đơn vị...";
+        private const String m_str_goi_y_tim_kiem = "Nhập Mã đơn vị";
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
         //const int TAT_CA = -1;
         const string DANG_SU_DUNG = "Y";
@@ -513,7 +496,6 @@ namespace BKI_HRM {
             
             KeyPreview = true;
          //   m_fg.Cols[(int)e_col_Number.DIA_BAN].Visible = false;
-            m_fg.Cols[(int)e_col_Number.PHAP_NHAN].Visible = false;
             WinFormControls.load_data_to_cbo_tu_dien(BKI_HRM.WinFormControls.eLOAI_TU_DIEN.LOAI_DON_VI,
                 WinFormControls.eTAT_CA.YES, m_cbo_loaidv);
             WinFormControls.load_data_to_cbo_tu_dien(BKI_HRM.WinFormControls.eLOAI_TU_DIEN.CAP_DON_VI,
@@ -544,23 +526,17 @@ namespace BKI_HRM {
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_grid();
         }
-        private ITransferDataRow get_trans_object(C1FlexGrid i_fg) {
+        private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
+        {
             Hashtable v_htb = new Hashtable();
-            v_htb.Add(V_DM_DON_VI.MA_PHAP_NHAN, e_col_Number.PHAP_NHAN);
-            v_htb.Add(V_DM_DON_VI.TEN_DON_VI_CAP_TREN, e_col_Number.TEN_DON_VI_CAP_TREN);
-            v_htb.Add(V_DM_DON_VI.ID_CAP_DON_VI, e_col_Number.ID_CAP_DON_VI);
             v_htb.Add(V_DM_DON_VI.TEN_TIENG_ANH, e_col_Number.TEN_TIENG_ANH);
-            v_htb.Add(V_DM_DON_VI.ID, e_col_Number.ID);
             v_htb.Add(V_DM_DON_VI.TEN_DON_VI, e_col_Number.TEN_DON_VI);
-            v_htb.Add(V_DM_DON_VI.TEN_TIENG_ANH_DON_VI_CAP_TREN, e_col_Number.TEN_TIENG_ANH_DON_VI_CAP_TREN);
-            v_htb.Add(V_DM_DON_VI.MA_DON_VI, e_col_Number.MA_DON_VI);
             v_htb.Add(V_DM_DON_VI.TRANG_THAI, e_col_Number.TRANG_THAI);
+            v_htb.Add(V_DM_DON_VI.MA_DON_VI, e_col_Number.MA_DON_VI);
+            v_htb.Add(V_DM_DON_VI.SO_LUONG, e_col_Number.SO_LUONG);
             v_htb.Add(V_DM_DON_VI.CAP_DON_VI, e_col_Number.CAP_DON_VI);
-            v_htb.Add(V_DM_DON_VI.MA_DON_VI_CAP_TREN, e_col_Number.MA_DON_VI_CAP_TREN);
-            v_htb.Add(V_DM_DON_VI.TU_NGAY, e_col_Number.TU_NGAY);
-            v_htb.Add(V_DM_DON_VI.ID_DON_VI_CAP_TREN, e_col_Number.ID_DON_VI_CAP_TREN);
             v_htb.Add(V_DM_DON_VI.LOAI_DON_VI, e_col_Number.LOAI_DON_VI);
-            v_htb.Add(V_DM_DON_VI.ID_LOAI_DON_VI, e_col_Number.ID_LOAI_DON_VI);
+            v_htb.Add(V_DM_DON_VI.TU_NGAY, e_col_Number.TU_NGAY);
             v_htb.Add(V_DM_DON_VI.DIA_BAN, e_col_Number.DIA_BAN);
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_v_ds.V_DM_DON_VI.NewRow());
@@ -570,13 +546,15 @@ namespace BKI_HRM {
             US_V_DM_DON_VI v_us_dm_don_vi = new US_V_DM_DON_VI();
             m_v_ds = new DS_V_DM_DON_VI();
             var v_str_search = m_txt_search.Text.Trim();
-            if (v_str_search.Equals(m_str_goi_y_tim_kiem)) {
-                v_str_search = "";
+            if (v_str_search.Equals("")) {
+              v_str_search = "TEG";
             }
+            //var v_str_search = "TEG";
             v_us_dm_don_vi.FillDatasetByKeyWord(m_v_ds, v_str_search, CIPConvert.ToDecimal(m_cbo_loaidv.SelectedValue), CIPConvert.ToDecimal(m_cbo_capdv.SelectedValue), m_cbo_trangthai.SelectedValue.ToString());
             m_fg.Redraw = false;
-           
-            DataRow[] v_arr_dr = m_v_ds.V_DM_DON_VI.Select(V_DM_DON_VI.ID_DON_VI_CAP_TREN + " is null");
+            int minID_LEVEL = int.Parse(m_v_ds.V_DM_DON_VI.Compute("Min(ID_LEVEL)","").ToString());
+            
+            DataRow[] v_arr_dr = m_v_ds.V_DM_DON_VI.Select(V_DM_DON_VI.ID_LEVEL + "=" + minID_LEVEL.ToString());
             if (v_arr_dr.Length == 0) return;
             CGridUtils.ClearDataInGrid(m_fg);
             v_us_dm_don_vi.DataRow2Me(v_arr_dr[0]);
@@ -584,12 +562,24 @@ namespace BKI_HRM {
             int v_i_root_row = m_fg.Rows.Count - 1;
             us_object_2_grid(v_us_dm_don_vi, m_v_ds, v_i_root_row);
             m_fg.Rows[v_i_root_row].IsNode = true;
-            m_fg.Rows[v_i_root_row].Node.Level = 0;
+            m_fg.Rows[v_i_root_row].Node.Level = int.Parse(v_us_dm_don_vi.dcID_LEVEL.ToString());
+            switch (m_fg.Rows[v_i_root_row].Node.Level)
+            {
+                case 0:
+                    m_fg.Rows[v_i_root_row].Style = m_fg.Styles[CellStyleEnum.Subtotal0];
+                    break;
+                case 1:
+                    m_fg.Rows[v_i_root_row].Style = m_fg.Styles[CellStyleEnum.Subtotal1];
+                    break;
+                case 2:
+                    m_fg.Rows[v_i_root_row].Style = m_fg.Styles[CellStyleEnum.Subtotal2];
+                    break;
+                case 3:
+                    m_fg.Rows[v_i_root_row].Style = m_fg.Styles[CellStyleEnum.Subtotal3];
+                    break;
 
+            }
             insert_all_child_of_node(v_i_root_row, m_v_ds);
-
-
-
             load_custom_source_2_m_txt_search();
             m_fg.Redraw = true;
             set_search_format_before();
@@ -643,7 +633,7 @@ namespace BKI_HRM {
             int v_i_level;
             //Neu them kieu nut la sibling cua nut hien tai            
             v_node_4_index = v_current_node;
-            v_i_level = v_current_node.Level + 1;
+            v_i_level = int.Parse(i_us_object.dcID_LEVEL.ToString());
             Node v_last_child = v_node_4_index.GetNode(NodeTypeEnum.LastChild);
             while (v_last_child != null)
             {
@@ -683,8 +673,8 @@ namespace BKI_HRM {
             for (var i = 0; i < v_rows.Count - 1; i++) {
                 v_coll.Add(v_rows[i]["MA_DON_VI"] + "");
                 v_coll.Add(v_rows[i]["TEN_DON_VI"] + "");
-                v_coll.Add(v_rows[i]["TEN_DON_VI_CAP_TREN"] + "" );
-                v_coll.Add(v_rows[i]["TEN_TIENG_ANH"] + "");
+                //v_coll.Add(v_rows[i]["TEN_DON_VI_CAP_TREN"] + "" );
+                //v_coll.Add(v_rows[i]["TEN_TIENG_ANH"] + "");
             }
             m_txt_search.AutoCompleteCustomSource = v_coll;
         }
