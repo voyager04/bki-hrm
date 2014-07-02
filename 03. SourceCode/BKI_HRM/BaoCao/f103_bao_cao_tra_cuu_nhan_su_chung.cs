@@ -732,6 +732,7 @@ namespace BKI_HRM
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_grid();
             set_define_events();
+            
         }
         private void load_custom_source_2_m_txt_search()
         {
@@ -741,8 +742,8 @@ namespace BKI_HRM
             var v_rows = m_ds.Tables[0].Rows;
             for (var i = 0; i < v_rows.Count - 1; i++)
             {
-                v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.MA_NV] + "");
-                v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.TEN] + "");
+                v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.MA_NV].ToString());
+                v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.TEN].ToString());
 //                 v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.TEN_CV] + "");
 //                 v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.TRINH_DO] + "");
 //                 v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.MA_CV] + "");
@@ -929,9 +930,10 @@ namespace BKI_HRM
                         , "search tất cả"
                     );
                 refresh_key_value();
-                load_custom_source_2_m_txt_search();
+                
                 //test();
             }
+            load_custom_source_2_m_txt_search();
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;
             if (m_ckb_group_yn.Checked == true)
