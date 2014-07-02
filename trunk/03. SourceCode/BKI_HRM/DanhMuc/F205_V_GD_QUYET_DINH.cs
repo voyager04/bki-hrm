@@ -443,7 +443,7 @@ namespace BKI_HRM
         ITransferDataRow m_obj_trans;
         DS_V_GD_QUYET_DINH m_ds = new DS_V_GD_QUYET_DINH();
         US_V_GD_QUYET_DINH m_us = new US_V_GD_QUYET_DINH();
-        private const String m_str_tim_kiem = "Nhập loại quyết định, mã quyết định, nội dung cần tìm";
+        private const String m_str_tim_kiem = "Nhập Mã quyết định, Mã nhân viên, Họ tên để tìm kiếm";
         const int NGAY_KY = 1;
         const int NGAY_CO_HIEU_LUC = 2;
         const int NGAY_HET_HIEU_LUC = 3;
@@ -469,13 +469,17 @@ namespace BKI_HRM
         private void load_custom_source_2_m_txt_tim_kiem()
         {
             //m_us.FillDataset(m_ds);
+            DS_V_GD_QUYET_DINH v_ds = new DS_V_GD_QUYET_DINH();
+            m_us.FillDataset(v_ds);
             int count = m_ds.Tables["V_GD_QUYET_DINH"].Rows.Count;
             AutoCompleteStringCollection v_acsc_search = new AutoCompleteStringCollection();
-            foreach (DataRow dr in m_ds.V_GD_QUYET_DINH)
+            foreach (DataRow dr in v_ds.V_GD_QUYET_DINH)
             {
+                v_acsc_search.Add(dr[V_GD_QUYET_DINH.MA_NV].ToString());
                 v_acsc_search.Add(dr[V_GD_QUYET_DINH.TEN].ToString());
+                v_acsc_search.Add(dr[V_GD_QUYET_DINH.HO_DEM] + " " + dr[V_GD_QUYET_DINH.TEN]);
                 v_acsc_search.Add(dr[V_GD_QUYET_DINH.MA_QUYET_DINH].ToString());
-                v_acsc_search.Add(dr[V_GD_QUYET_DINH.NOI_DUNG].ToString());
+              /*  v_acsc_search.Add(dr[V_GD_QUYET_DINH.NOI_DUNG].ToString());*/
             }
             m_txt_tim_kiem.AutoCompleteCustomSource = v_acsc_search;
         }
@@ -560,6 +564,7 @@ namespace BKI_HRM
               );
 
             m_fg.Redraw = true;
+            load_custom_source_2_m_txt_tim_kiem();
         }
         private void grid2us_object(US_V_GD_QUYET_DINH i_us
             , int i_grid_row)

@@ -738,8 +738,9 @@ namespace BKI_HRM
         {
             m_txt_search.AutoCompleteMode = AutoCompleteMode.Suggest;
             m_txt_search.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            DS_V_DM_DU_LIEU_NHAN_VIEN v_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
             var v_coll = new AutoCompleteStringCollection();
-            var v_rows = m_ds.Tables[0].Rows;
+            var v_rows = v_ds.Tables[0].Rows;
             for (var i = 0; i < v_rows.Count - 1; i++)
             {
                 v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.MA_NV].ToString());
