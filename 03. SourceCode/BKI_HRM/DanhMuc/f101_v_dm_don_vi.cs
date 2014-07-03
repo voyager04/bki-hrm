@@ -557,7 +557,7 @@ namespace BKI_HRM {
                 v_us_dm_don_vi.FillDatasetByKeyWord(m_v_ds, v_str_search, CIPConvert.ToDecimal(m_cbo_loaidv.SelectedValue), CIPConvert.ToDecimal(m_cbo_capdv.SelectedValue), m_cbo_trangthai.SelectedValue.ToString());
             else
             {
-                v_us_dm_don_vi.FillDatasetByKeyWord(m_v_ds, "", CIPConvert.ToDecimal(m_cbo_loaidv.SelectedValue), CIPConvert.ToDecimal(m_cbo_capdv.SelectedValue), m_cbo_trangthai.SelectedValue.ToString());
+                v_us_dm_don_vi.FillDatasetByKeyWord(m_v_ds, "TEG", CIPConvert.ToDecimal(m_cbo_loaidv.SelectedValue), CIPConvert.ToDecimal(m_cbo_capdv.SelectedValue), m_cbo_trangthai.SelectedValue.ToString());
             }
             m_fg.Redraw = false;
             int minID_LEVEL = int.Parse(m_v_ds.V_DM_DON_VI.Compute("Min(ID_LEVEL)","").ToString());
