@@ -614,10 +614,10 @@ namespace BKI_HRM
                 e.Handled = true;
             }
             
-            if ((sender as TextBox).Text.Length > 3)
-            {
-                e.Handled = true;
-            }
+//             if ((sender as TextBox).Text.Length > 4)
+//             {
+//                 e.Handled = true;
+//             }
         }
 
         private void m_txt_so_dtdd_KeyPress(object sender, KeyPressEventArgs e)
