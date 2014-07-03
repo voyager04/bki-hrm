@@ -77,7 +77,7 @@ namespace BKI_HRM.DanhMuc
             var v_ds = new DS_V_DM_DON_VI();
             var v_us = new US_V_DM_DON_VI();
             v_us.FillDatasetByCapDonVi(v_ds, CAP_DON_VI.TRUNG_TAM);
-            m_cbo_ten_don_vi_cap_tren.DisplayMember = DM_DON_VI.TEN_DON_VI;
+            m_cbo_ten_don_vi_cap_tren.DisplayMember = DM_DON_VI.MA_DON_VI;
             m_cbo_ten_don_vi_cap_tren.ValueMember = DM_DON_VI.ID;
             m_cbo_ten_don_vi_cap_tren.DataSource = v_ds.V_DM_DON_VI;
             var v_row = v_ds.V_DM_DON_VI.NewRow();
@@ -85,7 +85,7 @@ namespace BKI_HRM.DanhMuc
             v_row[V_DM_DON_VI.ID_CAP_DON_VI] = 0;
             v_row[V_DM_DON_VI.ID_DON_VI_CAP_TREN] = -1;
             v_row[V_DM_DON_VI.ID_LOAI_DON_VI] = -1;
-            v_row[V_DM_DON_VI.MA_DON_VI] = "NULL";
+            v_row[V_DM_DON_VI.MA_DON_VI] = "KHONG_CO";
             v_row[V_DM_DON_VI.TEN_DON_VI] = "Không có đơn vị cấp trên";
             v_row[V_DM_DON_VI.TEN_TIENG_ANH] = "NULL";
             v_row[V_DM_DON_VI.TRANG_THAI] = "Y";
@@ -102,14 +102,18 @@ namespace BKI_HRM.DanhMuc
                 case 0: // Tổ Hợp
                     m_cbo_ten_don_vi_cap_tren.SelectedIndex = 0;
                     m_cbo_ten_don_vi_cap_tren.Enabled = false;
-                    v_us.FillDatasetByCapDonVi(v_ds, CAP_DON_VI.KHOI);
+                    v_us.FillDatasetByCapDonVi(v_ds, CAP_DON_VI.TO_HOP);
                     break;
-                case 1: // Khối
-                    v_us.FillDatasetByCapDonVi(v_ds, CAP_DON_VI.TRUNG_TAM);
+                case 1: // Công ty
+                    v_us.FillDatasetByCapDonVi(v_ds, CAP_DON_VI.TO_HOP);
                     m_cbo_ten_don_vi_cap_tren.Enabled = true;
                     break;
-                case 2: // Trung Tâm
-                    v_us.FillDatasetByCapDonVi(v_ds, CAP_DON_VI.TRUNG_TAM);
+                case 2: // Khối
+                    v_us.FillDatasetByCapDonVi(v_ds, CAP_DON_VI.CONG_TY);
+                    m_cbo_ten_don_vi_cap_tren.Enabled = true;
+                    break;
+                case 3: // Trung Tâm
+                    v_us.FillDatasetByCapDonVi(v_ds, CAP_DON_VI.KHOI);
                     m_cbo_ten_don_vi_cap_tren.Enabled = true;
                     break;
                 default:
