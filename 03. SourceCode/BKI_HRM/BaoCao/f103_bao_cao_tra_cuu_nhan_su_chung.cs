@@ -110,6 +110,8 @@ namespace BKI_HRM
             Checkbox_Combobox.CheckBoxProperties checkBoxProperties1 = new Checkbox_Combobox.CheckBoxProperties();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cbo_gioi_tinh = new System.Windows.Forms.ComboBox();
+            this.m_lbl_gioi_tinh = new System.Windows.Forms.Label();
             this.m_ckb_group_yn = new System.Windows.Forms.CheckBox();
             this.m_cbo_thang_sinh = new System.Windows.Forms.ComboBox();
             this.m_lbl_thang_sinh = new System.Windows.Forms.Label();
@@ -143,8 +145,6 @@ namespace BKI_HRM
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_cbo_gioi_tinh = new System.Windows.Forms.ComboBox();
-            this.m_lbl_gioi_tinh = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.m_grb_ngay_sinh.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -210,6 +210,23 @@ namespace BKI_HRM
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1189, 133);
             this.panel1.TabIndex = 24;
+            // 
+            // m_cbo_gioi_tinh
+            // 
+            this.m_cbo_gioi_tinh.FormattingEnabled = true;
+            this.m_cbo_gioi_tinh.Location = new System.Drawing.Point(730, 80);
+            this.m_cbo_gioi_tinh.Name = "m_cbo_gioi_tinh";
+            this.m_cbo_gioi_tinh.Size = new System.Drawing.Size(90, 21);
+            this.m_cbo_gioi_tinh.TabIndex = 51;
+            // 
+            // m_lbl_gioi_tinh
+            // 
+            this.m_lbl_gioi_tinh.AutoSize = true;
+            this.m_lbl_gioi_tinh.Location = new System.Drawing.Point(654, 83);
+            this.m_lbl_gioi_tinh.Name = "m_lbl_gioi_tinh";
+            this.m_lbl_gioi_tinh.Size = new System.Drawing.Size(47, 13);
+            this.m_lbl_gioi_tinh.TabIndex = 50;
+            this.m_lbl_gioi_tinh.Text = "Giới tính";
             // 
             // m_ckb_group_yn
             // 
@@ -522,6 +539,7 @@ namespace BKI_HRM
             this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
             this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_exit.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.m_cmd_exit.ForeColor = System.Drawing.Color.Maroon;
@@ -544,26 +562,10 @@ namespace BKI_HRM
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 32;
             // 
-            // m_cbo_gioi_tinh
-            // 
-            this.m_cbo_gioi_tinh.FormattingEnabled = true;
-            this.m_cbo_gioi_tinh.Location = new System.Drawing.Point(730, 80);
-            this.m_cbo_gioi_tinh.Name = "m_cbo_gioi_tinh";
-            this.m_cbo_gioi_tinh.Size = new System.Drawing.Size(90, 21);
-            this.m_cbo_gioi_tinh.TabIndex = 51;
-            // 
-            // m_lbl_gioi_tinh
-            // 
-            this.m_lbl_gioi_tinh.AutoSize = true;
-            this.m_lbl_gioi_tinh.Location = new System.Drawing.Point(654, 83);
-            this.m_lbl_gioi_tinh.Name = "m_lbl_gioi_tinh";
-            this.m_lbl_gioi_tinh.Size = new System.Drawing.Size(47, 13);
-            this.m_lbl_gioi_tinh.TabIndex = 50;
-            this.m_lbl_gioi_tinh.Text = "Giới tính";
-            // 
             // f103_bao_cao_tra_cuu_nhan_su
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.CancelButton = this.m_cmd_exit;
             this.ClientSize = new System.Drawing.Size(1189, 572);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
