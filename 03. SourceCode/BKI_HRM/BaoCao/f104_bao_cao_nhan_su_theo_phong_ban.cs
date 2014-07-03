@@ -88,7 +88,7 @@ namespace BKI_HRM {
         ITransferDataRow m_obj_trans;
         DS_V_GD_QUA_TRINH_LAM_VIEC_2 m_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC_2();
         US_V_GD_QUA_TRINH_LAM_VIEC_2 m_us = new US_V_GD_QUA_TRINH_LAM_VIEC_2();
-        private const String m_str_goi_y_tim_kiem = "Nhập Tên đơn vị (Phòng, Trung tâm, Khối), Mã đơn vị, Loại đơn vị, Họ tên nhân viên...";
+        private const String m_str_goi_y_tim_kiem = "Nhập Mã đơn vị, Họ tên, Mã nhân viên...";
         #endregion
 
         #region Private Methods
@@ -120,11 +120,11 @@ namespace BKI_HRM {
                 v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.HO_DEM] + " " + v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.TEN]);
                 v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.TEN] + "");
                 v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.MA_DON_VI] + "");
-                v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.TEN_DON_VI] + "");
+                v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.MA_NV] + "");
                 //v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.MA_DON_VI] + " - " + v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.TEN_DON_VI]);
                 //v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.TEN_DON_VI]+" - "+v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.MA_DON_VI]);
                 v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.TEN_CV] + "");
-                v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.LOAI_DON_VI] + "");
+                //v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.LOAI_DON_VI] + "");
             }
 
             m_txt_search.AutoCompleteCustomSource = v_coll;
