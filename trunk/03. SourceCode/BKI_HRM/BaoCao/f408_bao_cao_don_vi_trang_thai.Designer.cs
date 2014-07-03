@@ -72,6 +72,7 @@
             // m_dat_thoidiem
             // 
             this.m_dat_thoidiem.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_thoidiem.Enabled = false;
             this.m_dat_thoidiem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_thoidiem.Location = new System.Drawing.Point(297, 4);
             this.m_dat_thoidiem.Name = "m_dat_thoidiem";

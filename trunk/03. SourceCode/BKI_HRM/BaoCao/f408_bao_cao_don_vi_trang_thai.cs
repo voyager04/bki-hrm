@@ -62,13 +62,14 @@ namespace BKI_HRM
         {
             m_fg.Clear();
             m_fg.Cols[0].Width = 10;
-            m_us_1.FillDataset(m_ds_1, "ORDER BY ID_DON_VI_CAP_TREN DESC");
+            m_us_1.FillDataset(m_ds_1,"WHERE TRANG_THAI_YN='Y'");
             v_us_dm_tu_dien.FillDataset(v_ds_dm_tu_dien, "WHERE Id_loai_tu_dien = 5 AND ID <> 655");
             //1.tạo danh sách cột trạng thái
             m_fg.Cols.Count = v_ds_dm_tu_dien.CM_DM_TU_DIEN.Rows.Count+4;
             //m_fg.Cols[0].Width = 150;
             //m_fg.Cols[1].Caption = "Trạng thái/Chức vụ";
             m_fg.Cols[1].Caption = "Mã đơn vị cấp trên";
+            m_fg.Cols[1].Visible = false;
             m_fg.Cols[2].Caption = "Mã đơn vị";
             m_fg.Cols[3].Caption = "Tổng";
             m_fg.Cols[3].UserData = 0;
@@ -128,7 +129,7 @@ namespace BKI_HRM
            // m_fg.Tree.Style = TreeStyleFlags.SimpleLeaf;
             //m_fg.Subtotal(AggregateEnum.Clear);
             //for (int u = 1; u < m_fg.Cols.Count; u++)
-            m_fg.Subtotal(AggregateEnum.Sum, 1, 1, 3);
+            //m_fg.Subtotal(AggregateEnum.Sum, 1, 1, 3);
             m_fg.Redraw = true;
         }
 
