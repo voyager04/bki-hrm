@@ -199,8 +199,11 @@ namespace BKI_HRM {
             /**
              * Đếm số dòng dữ liệu trên Grid
              */
-            m_lbl_so_luong_ban_ghi.Text = m_ds.V_GD_QUA_TRINH_LAM_VIEC_2.Count.ToString();
+          //  m_lbl_so_luong_ban_ghi.Text = m_ds.V_GD_QUA_TRINH_LAM_VIEC_2.Count.ToString();
 
+            decimal count = 0;
+            m_us.count_nhan_vien_theo_phong_ban(m_ds, v_str_search, v_dat_thoi_diem, ref count);
+            m_lbl_so_luong_ban_ghi.Text = CIPConvert.ToStr(count);
            // m_lbl_thong_bao.Text = m_fg.ColumnInfo;
         }
         private void set_search_format_before() {
