@@ -205,6 +205,7 @@ namespace BKI_HRM
             this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
             this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
@@ -468,6 +469,7 @@ namespace BKI_HRM
             // f702_bao_cao_hdld
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.CancelButton = this.m_cmd_exit;
             this.ClientSize = new System.Drawing.Size(1354, 611);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.panel1);

@@ -92,6 +92,7 @@ namespace BKI_HRM
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F205_V_GD_QUYET_DINH));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_lbl_phim_tat = new System.Windows.Forms.Label();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_view = new SIS.Controls.Button.SiSButton();
@@ -110,7 +111,6 @@ namespace BKI_HRM
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.m_dat_tu_ngay = new System.Windows.Forms.DateTimePicker();
-            this.m_lbl_phim_tat = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -157,6 +157,15 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1046, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
+            // 
+            // m_lbl_phim_tat
+            // 
+            this.m_lbl_phim_tat.AutoSize = true;
+            this.m_lbl_phim_tat.Location = new System.Drawing.Point(148, 12);
+            this.m_lbl_phim_tat.Name = "m_lbl_phim_tat";
+            this.m_lbl_phim_tat.Size = new System.Drawing.Size(206, 13);
+            this.m_lbl_phim_tat.TabIndex = 1001;
+            this.m_lbl_phim_tat.Text = "Phím tắt: F6_Mở rộng-Thu gọn danh sách";
             // 
             // m_cmd_insert
             // 
@@ -223,6 +232,7 @@ namespace BKI_HRM
             this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
             this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
@@ -371,18 +381,10 @@ namespace BKI_HRM
             this.m_dat_tu_ngay.Size = new System.Drawing.Size(111, 20);
             this.m_dat_tu_ngay.TabIndex = 43;
             // 
-            // m_lbl_phim_tat
-            // 
-            this.m_lbl_phim_tat.AutoSize = true;
-            this.m_lbl_phim_tat.Location = new System.Drawing.Point(148, 12);
-            this.m_lbl_phim_tat.Name = "m_lbl_phim_tat";
-            this.m_lbl_phim_tat.Size = new System.Drawing.Size(206, 13);
-            this.m_lbl_phim_tat.TabIndex = 1001;
-            this.m_lbl_phim_tat.Text = "Phím tắt: F6_Mở rộng-Thu gọn danh sách";
-            // 
             // F205_V_GD_QUYET_DINH
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.CancelButton = this.m_cmd_exit;
             this.ClientSize = new System.Drawing.Size(1046, 409);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.m_lbl_tim_kiem);

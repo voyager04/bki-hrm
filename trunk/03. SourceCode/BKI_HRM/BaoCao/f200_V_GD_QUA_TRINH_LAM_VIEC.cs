@@ -160,6 +160,7 @@ namespace BKI_HRM
             this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
             this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.m_cmd_exit.ForeColor = System.Drawing.Color.Maroon;
@@ -280,6 +281,7 @@ namespace BKI_HRM
             // f200_V_GD_QUA_TRINH_LAM_VIEC
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.CancelButton = this.m_cmd_exit;
             this.ClientSize = new System.Drawing.Size(828, 409);
             this.Controls.Add(this.m_cmd_search);
             this.Controls.Add(this.m_dat_ngay_ket_thuc);

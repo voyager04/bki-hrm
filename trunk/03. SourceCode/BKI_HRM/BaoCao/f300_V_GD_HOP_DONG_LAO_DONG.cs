@@ -165,6 +165,7 @@ namespace BKI_HRM
             this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
             this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
@@ -199,7 +200,7 @@ namespace BKI_HRM
             this.m_lbl_ma_nhan_vien.AutoSize = true;
             this.m_lbl_ma_nhan_vien.Location = new System.Drawing.Point(12, 26);
             this.m_lbl_ma_nhan_vien.Name = "m_lbl_ma_nhan_vien";
-            this.m_lbl_ma_nhan_vien.Size = new System.Drawing.Size(160, 14);
+            this.m_lbl_ma_nhan_vien.Size = new System.Drawing.Size(163, 13);
             this.m_lbl_ma_nhan_vien.TabIndex = 22;
             this.m_lbl_ma_nhan_vien.Text = "Tìm kiếm theo tên/mã nhân viên:";
             this.m_lbl_ma_nhan_vien.Click += new System.EventHandler(this.m_lbl_ma_nhan_vien_Click);
@@ -209,7 +210,7 @@ namespace BKI_HRM
             this.m_lbl_ngay_hieu_luc.AutoSize = true;
             this.m_lbl_ngay_hieu_luc.Location = new System.Drawing.Point(36, 82);
             this.m_lbl_ngay_hieu_luc.Name = "m_lbl_ngay_hieu_luc";
-            this.m_lbl_ngay_hieu_luc.Size = new System.Drawing.Size(140, 14);
+            this.m_lbl_ngay_hieu_luc.Size = new System.Drawing.Size(139, 13);
             this.m_lbl_ngay_hieu_luc.TabIndex = 25;
             this.m_lbl_ngay_hieu_luc.Text = "Ngày hợp đồng có hiệu lực:";
             // 
@@ -218,7 +219,7 @@ namespace BKI_HRM
             this.m_lbl_ngay_het_han.AutoSize = true;
             this.m_lbl_ngay_het_han.Location = new System.Drawing.Point(314, 84);
             this.m_lbl_ngay_het_han.Name = "m_lbl_ngay_het_han";
-            this.m_lbl_ngay_het_han.Size = new System.Drawing.Size(123, 14);
+            this.m_lbl_ngay_het_han.Size = new System.Drawing.Size(123, 13);
             this.m_lbl_ngay_het_han.TabIndex = 25;
             this.m_lbl_ngay_het_han.Text = "Ngày hợp đồng hết hạn:";
             // 
@@ -227,7 +228,7 @@ namespace BKI_HRM
             this.m_lbl_loai_hop_dong.AutoSize = true;
             this.m_lbl_loai_hop_dong.Location = new System.Drawing.Point(80, 52);
             this.m_lbl_loai_hop_dong.Name = "m_lbl_loai_hop_dong";
-            this.m_lbl_loai_hop_dong.Size = new System.Drawing.Size(79, 14);
+            this.m_lbl_loai_hop_dong.Size = new System.Drawing.Size(79, 13);
             this.m_lbl_loai_hop_dong.TabIndex = 23;
             this.m_lbl_loai_hop_dong.Text = "Loại hợp đồng:";
             this.m_lbl_loai_hop_dong.UseMnemonic = false;
@@ -238,7 +239,7 @@ namespace BKI_HRM
             this.m_cbo_loai_hop_dong.FormattingEnabled = true;
             this.m_cbo_loai_hop_dong.Location = new System.Drawing.Point(181, 49);
             this.m_cbo_loai_hop_dong.Name = "m_cbo_loai_hop_dong";
-            this.m_cbo_loai_hop_dong.Size = new System.Drawing.Size(271, 22);
+            this.m_cbo_loai_hop_dong.Size = new System.Drawing.Size(271, 21);
             this.m_cbo_loai_hop_dong.TabIndex = 34;
             // 
             // m_dat_ngay_bat_dau
@@ -287,6 +288,7 @@ namespace BKI_HRM
             // f300_V_GD_HOP_DONG_LAO_DONG
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.CancelButton = this.m_cmd_exit;
             this.ClientSize = new System.Drawing.Size(760, 409);
             this.Controls.Add(this.m_cmd_search);
             this.Controls.Add(this.m_dat_ngay_ket_thuc);
