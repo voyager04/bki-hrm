@@ -136,14 +136,20 @@ namespace BKI_HRM
             m_txt_ten.Text = m_us_dm_nhan_su.strTEN;
             m_cbo_gioi_tinh.SelectedIndex = (m_us_dm_nhan_su.strGIOI_TINH.Equals("Nam") == true) ? 0 : 1;
             if (m_us_dm_nhan_su.datNGAY_SINH.Year > 1900)
+            {
+                m_dat_ngay_sinh.Checked = true;
                 m_dat_ngay_sinh.Value = m_us_dm_nhan_su.datNGAY_SINH;
+            }
             else
                 m_dat_ngay_sinh.Checked = false;
             m_txt_noi_sinh.Text = m_us_dm_nhan_su.strNOI_SINH;
             m_txt_nguyen_quan.Text = m_us_dm_nhan_su.strNGUYEN_QUAN;
             m_txt_cmnd.Text = m_us_dm_nhan_su.strCMND;
             if (m_us_dm_nhan_su.datNGAY_CAP_CMND.Year > 1900)
+            {
+                m_dat_ngay_cap.Checked = true;
                 m_dat_ngay_cap.Value = m_us_dm_nhan_su.datNGAY_CAP_CMND;
+            }
             else
                 m_dat_ngay_cap.Checked = false;
             m_txt_noi_cap.Text = m_us_dm_nhan_su.strNOI_CAP_CMND;
