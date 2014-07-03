@@ -491,6 +491,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="f400_Main.resx">
       <DependentUpon>f400_Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="HeThong\f990_ht_form.resx">
       <DependentUpon>f990_ht_form.cs</DependentUpon>
