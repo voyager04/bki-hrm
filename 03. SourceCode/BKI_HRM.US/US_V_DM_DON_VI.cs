@@ -466,7 +466,12 @@ namespace BKI_HRM.US {
             CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DON_VI_search_all");
             v_stored_proc.fillDataSetByCommand(this, op_ds_v_v_dm_don_vi);
         }
-
+        public void FillDataset_search_by_ma_dv(DS_V_DM_DON_VI op_ds, string ip_str_ma_dv)
+        {
+            CStoredProc v_cst = new CStoredProc("pr_V_DM_DON_VI_search_by_ma_dv");
+            v_cst.addNVarcharInputParam("@ip_str_ma_dv", ip_str_ma_dv);
+            v_cst.fillDataSetByCommand(this, op_ds);
+        }
         public void Delete(decimal ip_dc_id)
         {
             CStoredProc v_cst = new CStoredProc("pr_V_DM_DON_VI_Delete_by_ID");

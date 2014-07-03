@@ -102,12 +102,31 @@ namespace BKI_HRM
             this.KeyPreview = true;
             load_data_to_cbo();
             load_cbo_ma_quyet_dinh();
+            load_custom_source_2_m_txt_don_vi();
         }
         private void generate_ma_quyet_dinh()
         {
             m_lbl_ma_qd.Text = string.Format("{0}/{1}/{2}", m_txt_ma_quyet_dinh.Text,
                                                                   m_dat_ngay_ky.Value.Year,
                                                                   m_cbo_ma_quyet_dinh.Text);
+        }
+
+        private void load_custom_source_2_m_txt_don_vi()
+        {
+            //  int count = m_ds_qua_trinh_lam_viec.Tables["V_GD_QUA_TRINH_LAM_VIEC"].Rows.Count;
+            AutoCompleteStringCollection v_acsc_search = new AutoCompleteStringCollection();
+            US_DM_DON_VI v_us = new US_DM_DON_VI();
+            DS_DM_DON_VI v_ds = new DS_DM_DON_VI();
+            v_us.FillDataset(v_ds);
+            foreach (DataRow dr in v_ds.DM_DON_VI)
+            {
+                v_acsc_search.Add(dr[DM_DON_VI.MA_DON_VI].ToString());
+               
+            }
+            
+            m_txt_don_vi_moi.AutoCompleteMode = AutoCompleteMode.Suggest;
+            m_txt_don_vi_moi.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            m_txt_don_vi_moi.AutoCompleteCustomSource = v_acsc_search;
         }
         private void mo_file()
         {
@@ -499,7 +518,28 @@ namespace BKI_HRM
         }
         private void set_define_event()
         {
+            m_txt_don_vi_moi.TextChanged += m_txt_don_vi_moi_TextChanged;
+        }
 
+        private void m_txt_don_vi_moi_TextChanged(object sender, EventArgs e)
+        {
+            US_V_DM_DON_VI v_us = new US_V_DM_DON_VI();
+            DS_V_DM_DON_VI v_ds = new DS_V_DM_DON_VI();
+            v_us.FillDataset_search_by_ma_dv(v_ds, m_txt_don_vi_moi.Text.Trim());
+            if (v_ds.V_DM_DON_VI.Count == 0)
+            {
+              //  BaseMessages.MsgBox_Error("Mã đơn vị không hợp lệ.");
+            }
+            else
+            {
+                if (v_ds.V_DM_DON_VI.Count == 1)
+                {
+                    v_us.DataRow2Me((DataRow)v_ds.V_DM_DON_VI.Rows[0]);
+                    m_us_dm_don_vi = new US_DM_DON_VI(v_us.dcID);
+                    m_txt_ma_don_vi_cap_tren.Text = v_us.strMA_DON_VI_CAP_TREN;
+                }
+            }
+           
         }
         private void them_quyet_dinh()
         {
@@ -583,6 +623,7 @@ namespace BKI_HRM
             try
             {
                 set_inital_form_load();
+                set_define_event();
             }
             catch (Exception v_e)
             {
@@ -595,7 +636,7 @@ namespace BKI_HRM
             {
                 f101_v_dm_don_vi v_frm = new f101_v_dm_don_vi();
                 v_frm.select_data(ref m_us_dm_don_vi);
-                m_txt_don_vi_moi.Text = m_us_dm_don_vi.strMA_DON_VI + " - " + m_us_dm_don_vi.strTEN_DON_VI;
+                m_txt_don_vi_moi.Text = m_us_dm_don_vi.strMA_DON_VI;
             }
             catch (Exception v_e)
             {
