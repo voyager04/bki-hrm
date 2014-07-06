@@ -41,7 +41,7 @@ namespace BKI_HRM
         internal SIS.Controls.Button.SiSButton m_cmd_delete;
         internal SIS.Controls.Button.SiSButton m_cmd_kiem_nhiem;
         internal SIS.Controls.Button.SiSButton m_cmd_mien_nhiem;
-        internal SIS.Controls.Button.SiSButton m_cmd_them_quyet_dinh;
+        internal SIS.Controls.Button.SiSButton m_cmd_update;
         private Label m_lbl_mess;
         private Label m_lbl_so_nhan_vien;
         private Label m_lbl_phim_tat;
@@ -86,7 +86,8 @@ namespace BKI_HRM
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f202_V_GD_QUA_TRINH_LAM_VIEC));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_cmd_them_quyet_dinh = new SIS.Controls.Button.SiSButton();
+            this.m_lbl_phim_tat = new System.Windows.Forms.Label();
+            this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_kiem_nhiem = new SIS.Controls.Button.SiSButton();
             this.m_cmd_mien_nhiem = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
@@ -97,7 +98,6 @@ namespace BKI_HRM
             this.m_grv_qua_trinh_lam_viec = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_lbl_mess = new System.Windows.Forms.Label();
             this.m_lbl_so_nhan_vien = new System.Windows.Forms.Label();
-            this.m_lbl_phim_tat = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_qua_trinh_lam_viec)).BeginInit();
             this.SuspendLayout();
@@ -132,7 +132,7 @@ namespace BKI_HRM
             // m_pnl_out_place_dm
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.m_lbl_phim_tat);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_them_quyet_dinh);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_kiem_nhiem);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_mien_nhiem);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
@@ -144,22 +144,31 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1096, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
-            // m_cmd_them_quyet_dinh
+            // m_lbl_phim_tat
             // 
-            this.m_cmd_them_quyet_dinh.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_them_quyet_dinh.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_them_quyet_dinh.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_them_quyet_dinh.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_them_quyet_dinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_them_quyet_dinh.ImageIndex = 9;
-            this.m_cmd_them_quyet_dinh.ImageList = this.ImageList;
-            this.m_cmd_them_quyet_dinh.Location = new System.Drawing.Point(582, 4);
-            this.m_cmd_them_quyet_dinh.Name = "m_cmd_them_quyet_dinh";
-            this.m_cmd_them_quyet_dinh.Size = new System.Drawing.Size(118, 28);
-            this.m_cmd_them_quyet_dinh.TabIndex = 18;
-            this.m_cmd_them_quyet_dinh.Text = "&Thêm quyết định";
-            this.m_cmd_them_quyet_dinh.Visible = false;
-            this.m_cmd_them_quyet_dinh.Click += new System.EventHandler(this.m_cmd_them_quyet_dinh_Click);
+            this.m_lbl_phim_tat.AutoSize = true;
+            this.m_lbl_phim_tat.Location = new System.Drawing.Point(142, 12);
+            this.m_lbl_phim_tat.Name = "m_lbl_phim_tat";
+            this.m_lbl_phim_tat.Size = new System.Drawing.Size(206, 13);
+            this.m_lbl_phim_tat.TabIndex = 1000;
+            this.m_lbl_phim_tat.Text = "Phím tắt: F6_Mở rộng-Thu gọn danh sách";
+            // 
+            // m_cmd_update
+            // 
+            this.m_cmd_update.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_update.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_update.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_update.ImageIndex = 9;
+            this.m_cmd_update.ImageList = this.ImageList;
+            this.m_cmd_update.Location = new System.Drawing.Point(596, 4);
+            this.m_cmd_update.Name = "m_cmd_update";
+            this.m_cmd_update.Size = new System.Drawing.Size(104, 28);
+            this.m_cmd_update.TabIndex = 18;
+            this.m_cmd_update.Text = "&Sửa";
+            this.m_cmd_update.Visible = false;
+            this.m_cmd_update.Click += new System.EventHandler(this.m_cmd_them_quyet_dinh_Click);
             // 
             // m_cmd_kiem_nhiem
             // 
@@ -287,15 +296,6 @@ namespace BKI_HRM
             this.m_lbl_so_nhan_vien.TabIndex = 26;
             this.m_lbl_so_nhan_vien.Text = "_";
             this.m_lbl_so_nhan_vien.Visible = false;
-            // 
-            // m_lbl_phim_tat
-            // 
-            this.m_lbl_phim_tat.AutoSize = true;
-            this.m_lbl_phim_tat.Location = new System.Drawing.Point(142, 12);
-            this.m_lbl_phim_tat.Name = "m_lbl_phim_tat";
-            this.m_lbl_phim_tat.Size = new System.Drawing.Size(206, 13);
-            this.m_lbl_phim_tat.TabIndex = 1000;
-            this.m_lbl_phim_tat.Text = "Phím tắt: F6_Mở rộng-Thu gọn danh sách";
             // 
             // f202_V_GD_QUA_TRINH_LAM_VIEC
             // 
@@ -628,8 +628,8 @@ namespace BKI_HRM
 		private void f202_V_GD_QUA_TRINH_LAM_VIEC_Load(object sender, System.EventArgs e) {
 			try{
 				set_initial_form_load();
-                m_cmd_them_quyet_dinh.Visible = true;
-                m_cmd_them_quyet_dinh.Enabled = true;
+                m_cmd_update.Visible = true;
+                m_cmd_update.Enabled = true;
                 load_custom_source_2_m_txt_tim_kiem();
 			}
 			catch (Exception v_e){
