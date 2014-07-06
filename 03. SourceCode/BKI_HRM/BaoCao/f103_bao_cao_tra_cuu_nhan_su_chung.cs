@@ -630,16 +630,15 @@ namespace BKI_HRM
                 ,
             MA_NV = 6
                 ,
-            NGAY_KET_THUC = 18
+            NGAY_KET_THUC = 17
                 ,
-            NGAY_BAT_DAU = 17
+            NGAY_BAT_DAU = 16
                 ,
             CAP_DON_VI = 5
                 ,
-            TRANG_THAI_LAO_DONG = 14
+            TRANG_THAI_LAO_DONG = 13
                 ,
-            LOAI_CV = 12
-                ,
+           
             DIA_BAN = 1
                 ,
             TEN = 9
@@ -648,22 +647,22 @@ namespace BKI_HRM
                 ,
             MA_DON_VI = 2
                 ,
-            NGAY_SINH = 20
+            NGAY_SINH = 19
                 ,
             HO_DEM = 8
                 ,
-            TY_LE_THAM_GIA = 13
+            TY_LE_THAM_GIA = 12
                 ,
-            NGAY_HET_HIEU_LUC_LD = 16
+            NGAY_HET_HIEU_LUC_LD = 15
                 ,
-            NGAY_CO_HIEU_LUC_LD = 15
+            NGAY_CO_HIEU_LUC_LD = 14
                 ,
             TEN_CV = 11
                 ,
             MA_CV = 10
                 ,
-            TRINH_DO = 21
-                , GIOI_TINH = 19
+            TRINH_DO = 20
+                , GIOI_TINH = 18
 
         }
         #endregion
@@ -779,7 +778,7 @@ namespace BKI_HRM
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_BAT_DAU, e_col_Number.NGAY_BAT_DAU);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.CAP_DON_VI, e_col_Number.CAP_DON_VI);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRANG_THAI_LAO_DONG, e_col_Number.TRANG_THAI_LAO_DONG);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.LOAI_CV, e_col_Number.LOAI_CV);
+           
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.DIA_BAN, e_col_Number.DIA_BAN);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN, e_col_Number.TEN);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_HEADCOUNT, e_col_Number.MA_HEADCOUNT);

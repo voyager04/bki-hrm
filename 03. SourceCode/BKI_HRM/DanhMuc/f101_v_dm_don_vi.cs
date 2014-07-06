@@ -546,6 +546,7 @@ namespace BKI_HRM {
             return v_obj_trans;
         }
         private void load_data_2_grid() {
+           
             US_V_DM_DON_VI v_us_dm_don_vi = new US_V_DM_DON_VI();
             m_v_ds = new DS_V_DM_DON_VI();
             var v_str_search = m_txt_search.Text.Trim();

@@ -341,48 +341,47 @@ namespace BKI_HRM
 		#region Data Structure
         private enum e_col_Number
         {
-            LOAI_DON_VI = 11
+            LOAI_DON_VI = 10
 ,
-            TEN_DON_VI = 9
+            TEN_DON_VI = 8
                 ,
             MA_NV = 4
                 ,
-            NGAY_KET_THUC = 13
+            NGAY_KET_THUC = 12
                 ,
-            NGAY_BAT_DAU = 12
+            NGAY_BAT_DAU = 11
                 ,
-            CAP_DON_VI = 10
+            CAP_DON_VI = 9
                 ,
-            TRANG_THAI_CV = 19
+            TRANG_THAI_CV = 18
                 ,
-            LOAI_CV = 7
-                ,
-            MA_QUYET_DINH = 14
+           
+            MA_QUYET_DINH = 13
                 ,
             DIA_BAN = 1
                 ,
             TEN = 6
                 ,
-            LOAI_QD = 15
+            LOAI_QD = 14
                 ,
-            NGAY_CO_HIEU_LUC = 16
+            NGAY_CO_HIEU_LUC = 15
                 ,
-            MA_DON_VI = 8
+            MA_DON_VI = 7
                 ,
             HO_DEM = 5
                 ,
-            TY_LE_THAM_GIA = 21
+            TY_LE_THAM_GIA = 20
                 ,
             TEN_CV = 3
                 ,
-            NGAY_HET_HIEU_LUC = 17
+            NGAY_HET_HIEU_LUC = 16
                 ,
-            TRANG_THAI_LD_HIEN_TAI = 22
+            TRANG_THAI_LD_HIEN_TAI = 21
                 ,
             MA_CV = 2
                 ,
-            MA_QUYET_DINH_MIEN_NHIEM = 20
-                , NGACH = 18
+            MA_QUYET_DINH_MIEN_NHIEM = 19
+                , NGACH = 17
 
         }
 		#endregion
@@ -426,7 +425,6 @@ namespace BKI_HRM
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGAY_BAT_DAU, e_col_Number.NGAY_BAT_DAU);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.CAP_DON_VI, e_col_Number.CAP_DON_VI);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.TRANG_THAI_CV, e_col_Number.TRANG_THAI_CV);
-            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.LOAI_CV, e_col_Number.LOAI_CV);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.MA_QUYET_DINH, e_col_Number.MA_QUYET_DINH);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.DIA_BAN, e_col_Number.DIA_BAN);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.TEN, e_col_Number.TEN);

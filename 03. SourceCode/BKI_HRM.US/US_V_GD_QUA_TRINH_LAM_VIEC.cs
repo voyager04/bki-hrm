@@ -934,11 +934,12 @@ namespace BKI_HRM.US {
            
             
         }
-        public decimal Sum_ty_le_tham_gia(string ip_str_ma_nv )
+        public decimal Sum_ty_le_tham_gia(string ip_str_ma_nv, string ip_str_trang_thai_chuc_vu_yn )
         {
             decimal v_dc_ty_le = 0;
             CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_Sum_Ty_le_tham_gia");
             v_sp.addNVarcharInputParam("@MA_NV", ip_str_ma_nv);
+            v_sp.addNVarcharInputParam("@TRANG_THAI_CHUC_VU_YN", ip_str_trang_thai_chuc_vu_yn);
             SqlParameter v_pa_ty_le = v_sp.addDecimalOutputParam("@TONG_TY_LE", v_dc_ty_le);
             
             v_sp.ExecuteCommand(this);
