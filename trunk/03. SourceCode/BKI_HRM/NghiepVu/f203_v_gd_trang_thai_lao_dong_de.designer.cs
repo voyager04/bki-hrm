@@ -48,6 +48,9 @@
             this.m_txt_ho_ten = new System.Windows.Forms.TextBox();
             this.m_txt_trang_thai_hien_tai = new System.Windows.Forms.TextBox();
             this.m_grb_quyet_dinh = new System.Windows.Forms.GroupBox();
+            this.m_lbl_file_name = new System.Windows.Forms.Label();
+            this.m_lbl_ma_qd = new System.Windows.Forms.Label();
+            this.m_cbo_ma_quyet_dinh = new System.Windows.Forms.ComboBox();
             this.m_cmd_xem_file = new SIS.Controls.Button.SiSButton();
             this.m_cmd_chon_file = new SIS.Controls.Button.SiSButton();
             this.m_txt_noi_dung = new System.Windows.Forms.TextBox();
@@ -66,9 +69,9 @@
             this.m_ofd_openfile = new System.Windows.Forms.OpenFileDialog();
             this.m_cmd_them_quyet_dinh = new SIS.Controls.Button.SiSButton();
             this.m_cmd_chon_quyet_dinh = new SIS.Controls.Button.SiSButton();
-            this.m_lbl_ma_qd = new System.Windows.Forms.Label();
-            this.m_cbo_ma_quyet_dinh = new System.Windows.Forms.ComboBox();
-            this.m_lbl_file_name = new System.Windows.Forms.Label();
+            this.m_cmd_bo_quyet_dinh = new SIS.Controls.Button.SiSButton();
+            this.m_ckb_trang_thai_hien_tai_yn = new System.Windows.Forms.CheckBox();
+            this.m_lbl_trang_thai_hien_tai_yn = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.m_grb_quyet_dinh.SuspendLayout();
             this.SuspendLayout();
@@ -77,7 +80,7 @@
             // 
             this.m_dat_ngay_het_hieu_luc.Checked = false;
             this.m_dat_ngay_het_hieu_luc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.m_dat_ngay_het_hieu_luc.Location = new System.Drawing.Point(404, 82);
+            this.m_dat_ngay_het_hieu_luc.Location = new System.Drawing.Point(360, 82);
             this.m_dat_ngay_het_hieu_luc.Name = "m_dat_ngay_het_hieu_luc";
             this.m_dat_ngay_het_hieu_luc.ShowCheckBox = true;
             this.m_dat_ngay_het_hieu_luc.Size = new System.Drawing.Size(115, 20);
@@ -86,7 +89,7 @@
             // m_lbl_ngay_het_hieu_luc
             // 
             this.m_lbl_ngay_het_hieu_luc.AutoSize = true;
-            this.m_lbl_ngay_het_hieu_luc.Location = new System.Drawing.Point(297, 86);
+            this.m_lbl_ngay_het_hieu_luc.Location = new System.Drawing.Point(253, 86);
             this.m_lbl_ngay_het_hieu_luc.Name = "m_lbl_ngay_het_hieu_luc";
             this.m_lbl_ngay_het_hieu_luc.Size = new System.Drawing.Size(90, 13);
             this.m_lbl_ngay_het_hieu_luc.TabIndex = 66;
@@ -113,7 +116,7 @@
             // 
             this.m_cbo_trang_thai_moi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_trang_thai_moi.FormattingEnabled = true;
-            this.m_cbo_trang_thai_moi.Location = new System.Drawing.Point(404, 51);
+            this.m_cbo_trang_thai_moi.Location = new System.Drawing.Point(359, 51);
             this.m_cbo_trang_thai_moi.Name = "m_cbo_trang_thai_moi";
             this.m_cbo_trang_thai_moi.Size = new System.Drawing.Size(168, 21);
             this.m_cbo_trang_thai_moi.TabIndex = 62;
@@ -121,7 +124,7 @@
             // m_lbl_trang_thai_moi
             // 
             this.m_lbl_trang_thai_moi.AutoSize = true;
-            this.m_lbl_trang_thai_moi.Location = new System.Drawing.Point(313, 54);
+            this.m_lbl_trang_thai_moi.Location = new System.Drawing.Point(268, 54);
             this.m_lbl_trang_thai_moi.Name = "m_lbl_trang_thai_moi";
             this.m_lbl_trang_thai_moi.Size = new System.Drawing.Size(74, 13);
             this.m_lbl_trang_thai_moi.TabIndex = 61;
@@ -235,7 +238,7 @@
             // m_lbl_ho_dem
             // 
             this.m_lbl_ho_dem.AutoSize = true;
-            this.m_lbl_ho_dem.Location = new System.Drawing.Point(353, 24);
+            this.m_lbl_ho_dem.Location = new System.Drawing.Point(308, 24);
             this.m_lbl_ho_dem.Name = "m_lbl_ho_dem";
             this.m_lbl_ho_dem.Size = new System.Drawing.Size(39, 13);
             this.m_lbl_ho_dem.TabIndex = 69;
@@ -252,7 +255,7 @@
             // m_txt_ho_ten
             // 
             this.m_txt_ho_ten.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_ho_ten.Location = new System.Drawing.Point(404, 21);
+            this.m_txt_ho_ten.Location = new System.Drawing.Point(359, 21);
             this.m_txt_ho_ten.Name = "m_txt_ho_ten";
             this.m_txt_ho_ten.Size = new System.Drawing.Size(168, 20);
             this.m_txt_ho_ten.TabIndex = 70;
@@ -293,6 +296,33 @@
             this.m_grb_quyet_dinh.TabIndex = 71;
             this.m_grb_quyet_dinh.TabStop = false;
             this.m_grb_quyet_dinh.Text = "Quyết định đi kèm";
+            // 
+            // m_lbl_file_name
+            // 
+            this.m_lbl_file_name.AutoSize = true;
+            this.m_lbl_file_name.Location = new System.Drawing.Point(370, 131);
+            this.m_lbl_file_name.Name = "m_lbl_file_name";
+            this.m_lbl_file_name.Size = new System.Drawing.Size(0, 13);
+            this.m_lbl_file_name.TabIndex = 127;
+            // 
+            // m_lbl_ma_qd
+            // 
+            this.m_lbl_ma_qd.AutoSize = true;
+            this.m_lbl_ma_qd.Location = new System.Drawing.Point(100, 55);
+            this.m_lbl_ma_qd.Name = "m_lbl_ma_qd";
+            this.m_lbl_ma_qd.Size = new System.Drawing.Size(75, 13);
+            this.m_lbl_ma_qd.TabIndex = 126;
+            this.m_lbl_ma_qd.Text = "Mã quyết định";
+            // 
+            // m_cbo_ma_quyet_dinh
+            // 
+            this.m_cbo_ma_quyet_dinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_ma_quyet_dinh.FormattingEnabled = true;
+            this.m_cbo_ma_quyet_dinh.Location = new System.Drawing.Point(191, 22);
+            this.m_cbo_ma_quyet_dinh.Name = "m_cbo_ma_quyet_dinh";
+            this.m_cbo_ma_quyet_dinh.Size = new System.Drawing.Size(131, 21);
+            this.m_cbo_ma_quyet_dinh.TabIndex = 125;
+            this.m_cbo_ma_quyet_dinh.SelectedIndexChanged += new System.EventHandler(this.m_cbo_ma_quyet_dinh_SelectedIndexChanged);
             // 
             // m_cmd_xem_file
             // 
@@ -471,38 +501,49 @@
             this.m_cmd_chon_quyet_dinh.Text = "Chọn quyết định";
             this.m_cmd_chon_quyet_dinh.Click += new System.EventHandler(this.m_cmd_chon_quyet_dinh_Click);
             // 
-            // m_lbl_ma_qd
+            // m_cmd_bo_quyet_dinh
             // 
-            this.m_lbl_ma_qd.AutoSize = true;
-            this.m_lbl_ma_qd.Location = new System.Drawing.Point(100, 55);
-            this.m_lbl_ma_qd.Name = "m_lbl_ma_qd";
-            this.m_lbl_ma_qd.Size = new System.Drawing.Size(75, 13);
-            this.m_lbl_ma_qd.TabIndex = 126;
-            this.m_lbl_ma_qd.Text = "Mã quyết định";
+            this.m_cmd_bo_quyet_dinh.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_bo_quyet_dinh.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_bo_quyet_dinh.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_bo_quyet_dinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_bo_quyet_dinh.ImageIndex = 4;
+            this.m_cmd_bo_quyet_dinh.ImageList = this.ImageList;
+            this.m_cmd_bo_quyet_dinh.Location = new System.Drawing.Point(525, 124);
+            this.m_cmd_bo_quyet_dinh.Name = "m_cmd_bo_quyet_dinh";
+            this.m_cmd_bo_quyet_dinh.Size = new System.Drawing.Size(134, 28);
+            this.m_cmd_bo_quyet_dinh.TabIndex = 104;
+            this.m_cmd_bo_quyet_dinh.Text = "Bỏ quyết định";
+            this.m_cmd_bo_quyet_dinh.Click += new System.EventHandler(this.m_cmd_bo_quyet_dinh_Click);
             // 
-            // m_cbo_ma_quyet_dinh
+            // m_ckb_trang_thai_hien_tai_yn
             // 
-            this.m_cbo_ma_quyet_dinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_ma_quyet_dinh.FormattingEnabled = true;
-            this.m_cbo_ma_quyet_dinh.Location = new System.Drawing.Point(191, 22);
-            this.m_cbo_ma_quyet_dinh.Name = "m_cbo_ma_quyet_dinh";
-            this.m_cbo_ma_quyet_dinh.Size = new System.Drawing.Size(131, 21);
-            this.m_cbo_ma_quyet_dinh.TabIndex = 125;
-            this.m_cbo_ma_quyet_dinh.SelectedIndexChanged += new System.EventHandler(this.m_cbo_ma_quyet_dinh_SelectedIndexChanged);
+            this.m_ckb_trang_thai_hien_tai_yn.AutoSize = true;
+            this.m_ckb_trang_thai_hien_tai_yn.Location = new System.Drawing.Point(678, 53);
+            this.m_ckb_trang_thai_hien_tai_yn.Name = "m_ckb_trang_thai_hien_tai_yn";
+            this.m_ckb_trang_thai_hien_tai_yn.Size = new System.Drawing.Size(57, 17);
+            this.m_ckb_trang_thai_hien_tai_yn.TabIndex = 109;
+            this.m_ckb_trang_thai_hien_tai_yn.Text = "Không";
+            this.m_ckb_trang_thai_hien_tai_yn.UseVisualStyleBackColor = true;
+            this.m_ckb_trang_thai_hien_tai_yn.CheckedChanged += new System.EventHandler(this.m_ckb_trang_thai_hien_tai_yn_CheckedChanged);
             // 
-            // m_lbl_file_name
+            // m_lbl_trang_thai_hien_tai_yn
             // 
-            this.m_lbl_file_name.AutoSize = true;
-            this.m_lbl_file_name.Location = new System.Drawing.Point(370, 131);
-            this.m_lbl_file_name.Name = "m_lbl_file_name";
-            this.m_lbl_file_name.Size = new System.Drawing.Size(0, 13);
-            this.m_lbl_file_name.TabIndex = 127;
+            this.m_lbl_trang_thai_hien_tai_yn.AutoSize = true;
+            this.m_lbl_trang_thai_hien_tai_yn.Location = new System.Drawing.Point(564, 54);
+            this.m_lbl_trang_thai_hien_tai_yn.Name = "m_lbl_trang_thai_hien_tai_yn";
+            this.m_lbl_trang_thai_hien_tai_yn.Size = new System.Drawing.Size(103, 13);
+            this.m_lbl_trang_thai_hien_tai_yn.TabIndex = 108;
+            this.m_lbl_trang_thai_hien_tai_yn.Text = "Là trạng thái hiện tại";
             // 
             // f203_v_gd_trang_thai_lao_dong_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(755, 434);
+            this.Controls.Add(this.m_ckb_trang_thai_hien_tai_yn);
+            this.Controls.Add(this.m_lbl_trang_thai_hien_tai_yn);
+            this.Controls.Add(this.m_cmd_bo_quyet_dinh);
             this.Controls.Add(this.m_cmd_them_quyet_dinh);
             this.Controls.Add(this.m_cmd_chon_quyet_dinh);
             this.Controls.Add(this.m_grb_quyet_dinh);
@@ -572,5 +613,8 @@
         private System.Windows.Forms.Label m_lbl_ma_qd;
         private System.Windows.Forms.ComboBox m_cbo_ma_quyet_dinh;
         private System.Windows.Forms.Label m_lbl_file_name;
+        internal SIS.Controls.Button.SiSButton m_cmd_bo_quyet_dinh;
+        private System.Windows.Forms.CheckBox m_ckb_trang_thai_hien_tai_yn;
+        private System.Windows.Forms.Label m_lbl_trang_thai_hien_tai_yn;
     }
 }

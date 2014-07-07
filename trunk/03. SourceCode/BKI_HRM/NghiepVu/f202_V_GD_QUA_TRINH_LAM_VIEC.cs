@@ -545,18 +545,18 @@ namespace BKI_HRM
             
             load_data_2_grid_search();
             m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, "");
-            if (m_ds_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Count > v_i_count)
-            {
-                bool v_dlr = BaseMessages.MsgBox_Confirm("Có miễn nhiệm chức vũ cũ không?");
-                if (v_dlr)
-                {
-                    US_V_GD_QUA_TRINH_LAM_VIEC v_us_qua_trinh_lam_viec = new US_V_GD_QUA_TRINH_LAM_VIEC();
-                    v_fDE.get_us(ref v_us_qua_trinh_lam_viec);
-                    m_txt_tim_kiem.Text = v_us_qua_trinh_lam_viec.strMA_NV;
-                    load_data_2_grid_search();
-                    m_cmd_kiem_nhiem.Visible = false;
-                }
-            }
+//             if (m_ds_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Count > v_i_count)
+//             {
+//                 bool v_dlr = BaseMessages.MsgBox_Confirm("Có miễn nhiệm chức vũ cũ không?");
+//                 if (v_dlr)
+//                 {
+//                     US_V_GD_QUA_TRINH_LAM_VIEC v_us_qua_trinh_lam_viec = new US_V_GD_QUA_TRINH_LAM_VIEC();
+//                     v_fDE.get_us(ref v_us_qua_trinh_lam_viec);
+//                     m_txt_tim_kiem.Text = v_us_qua_trinh_lam_viec.strMA_NV;
+//                     load_data_2_grid_search();
+//                     m_cmd_kiem_nhiem.Visible = false;
+//                 }
+//             }
 		}
 
 		private void update_v_gd_qua_trinh_lam_viec()
