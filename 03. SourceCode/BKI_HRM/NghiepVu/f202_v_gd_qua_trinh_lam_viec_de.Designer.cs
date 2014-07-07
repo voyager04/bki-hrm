@@ -59,6 +59,7 @@
             this.m_txt_ma_don_vi_cap_tren = new System.Windows.Forms.TextBox();
             this.m_tpc_quyet_dinh = new System.Windows.Forms.TabControl();
             this.m_tp_bo_nhiem = new System.Windows.Forms.TabPage();
+            this.m_cmd_bo_quyet_dinh = new SIS.Controls.Button.SiSButton();
             this.m_cmd_them_quyet_dinh = new SIS.Controls.Button.SiSButton();
             this.m_cmd_chon_quyet_dinh = new SIS.Controls.Button.SiSButton();
             this.m_grb_quyet_dinh = new System.Windows.Forms.GroupBox();
@@ -81,6 +82,7 @@
             this.m_lbl_loai_quyet_dinh = new System.Windows.Forms.Label();
             this.m_lbl_ma_quyet_dinh = new System.Windows.Forms.Label();
             this.m_tp_mien_nhiem = new System.Windows.Forms.TabPage();
+            this.m_cmd_bo_quyet_dinh_mien_nhiem = new SIS.Controls.Button.SiSButton();
             this.m_cmd_them_quyet_dinh_mien_nhiem = new SIS.Controls.Button.SiSButton();
             this.m_cmd_chon_quyet_dinh_mien_nhiem = new SIS.Controls.Button.SiSButton();
             this.m_grb_quyet_dinh_mien_nhiem = new System.Windows.Forms.GroupBox();
@@ -407,6 +409,7 @@
             // 
             // m_tp_bo_nhiem
             // 
+            this.m_tp_bo_nhiem.Controls.Add(this.m_cmd_bo_quyet_dinh);
             this.m_tp_bo_nhiem.Controls.Add(this.m_cmd_them_quyet_dinh);
             this.m_tp_bo_nhiem.Controls.Add(this.m_cmd_chon_quyet_dinh);
             this.m_tp_bo_nhiem.Controls.Add(this.m_grb_quyet_dinh);
@@ -417,6 +420,20 @@
             this.m_tp_bo_nhiem.TabIndex = 0;
             this.m_tp_bo_nhiem.Text = "Bổ nhiệm";
             this.m_tp_bo_nhiem.UseVisualStyleBackColor = true;
+            // 
+            // m_cmd_bo_quyet_dinh
+            // 
+            this.m_cmd_bo_quyet_dinh.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_bo_quyet_dinh.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_bo_quyet_dinh.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_bo_quyet_dinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_bo_quyet_dinh.ImageIndex = 4;
+            this.m_cmd_bo_quyet_dinh.ImageList = this.ImageList;
+            this.m_cmd_bo_quyet_dinh.Location = new System.Drawing.Point(458, 14);
+            this.m_cmd_bo_quyet_dinh.Name = "m_cmd_bo_quyet_dinh";
+            this.m_cmd_bo_quyet_dinh.Size = new System.Drawing.Size(134, 28);
+            this.m_cmd_bo_quyet_dinh.TabIndex = 20;
+            this.m_cmd_bo_quyet_dinh.Text = "Bỏ quyết định";
             // 
             // m_cmd_them_quyet_dinh
             // 
@@ -645,6 +662,7 @@
             // 
             // m_tp_mien_nhiem
             // 
+            this.m_tp_mien_nhiem.Controls.Add(this.m_cmd_bo_quyet_dinh_mien_nhiem);
             this.m_tp_mien_nhiem.Controls.Add(this.m_cmd_them_quyet_dinh_mien_nhiem);
             this.m_tp_mien_nhiem.Controls.Add(this.m_cmd_chon_quyet_dinh_mien_nhiem);
             this.m_tp_mien_nhiem.Controls.Add(this.m_grb_quyet_dinh_mien_nhiem);
@@ -655,6 +673,20 @@
             this.m_tp_mien_nhiem.TabIndex = 1;
             this.m_tp_mien_nhiem.Text = "Miễn nhiệm";
             this.m_tp_mien_nhiem.UseVisualStyleBackColor = true;
+            // 
+            // m_cmd_bo_quyet_dinh_mien_nhiem
+            // 
+            this.m_cmd_bo_quyet_dinh_mien_nhiem.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_bo_quyet_dinh_mien_nhiem.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_bo_quyet_dinh_mien_nhiem.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_bo_quyet_dinh_mien_nhiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_bo_quyet_dinh_mien_nhiem.ImageIndex = 4;
+            this.m_cmd_bo_quyet_dinh_mien_nhiem.ImageList = this.ImageList;
+            this.m_cmd_bo_quyet_dinh_mien_nhiem.Location = new System.Drawing.Point(460, 14);
+            this.m_cmd_bo_quyet_dinh_mien_nhiem.Name = "m_cmd_bo_quyet_dinh_mien_nhiem";
+            this.m_cmd_bo_quyet_dinh_mien_nhiem.Size = new System.Drawing.Size(134, 28);
+            this.m_cmd_bo_quyet_dinh_mien_nhiem.TabIndex = 23;
+            this.m_cmd_bo_quyet_dinh_mien_nhiem.Text = "Bỏ quyết định";
             // 
             // m_cmd_them_quyet_dinh_mien_nhiem
             // 
@@ -878,6 +910,7 @@
             this.m_ckb_cv_hien_tai_yn.TabIndex = 107;
             this.m_ckb_cv_hien_tai_yn.Text = "Không";
             this.m_ckb_cv_hien_tai_yn.UseVisualStyleBackColor = true;
+            this.m_ckb_cv_hien_tai_yn.CheckedChanged += new System.EventHandler(this.m_ckb_cv_hien_tai_yn_CheckedChanged);
             // 
             // f202_v_gd_qua_trinh_lam_viec_de
             // 
@@ -1001,5 +1034,7 @@
         private System.Windows.Forms.OpenFileDialog m_ofd_openfile_mien_nhiem;
         private System.Windows.Forms.Label m_lbl_cv_hien_tai_yn;
         private System.Windows.Forms.CheckBox m_ckb_cv_hien_tai_yn;
+        internal SIS.Controls.Button.SiSButton m_cmd_bo_quyet_dinh;
+        internal SIS.Controls.Button.SiSButton m_cmd_bo_quyet_dinh_mien_nhiem;
     }
 }

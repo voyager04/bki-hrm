@@ -308,6 +308,50 @@ public class US_V_GD_TRANG_THAI_LAO_DONG : US_Object
         pm_objDR["ID_NHAN_SU"] = System.Convert.DBNull;
     }
 
+    public string strTRANG_THAI_HIEN_TAI_YN
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "TRANG_THAI_HIEN_TAI_YN", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["TRANG_THAI_HIEN_TAI_YN"] = value;
+        }
+    }
+
+    public bool IsTRANG_THAI_HIEN_TAI_YNNull()
+    {
+        return pm_objDR.IsNull("TRANG_THAI_HIEN_TAI_YN");
+    }
+
+    public void SetTRANG_THAI_HIEN_TAI_YNNull()
+    {
+        pm_objDR["TRANG_THAI_HIEN_TAI_YN"] = System.Convert.DBNull;
+    }
+
+    public decimal dcID_QUYET_DINH
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "ID_QUYET_DINH", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["ID_QUYET_DINH"] = value;
+        }
+    }
+
+    public bool IsID_QUYET_DINHNull()
+    {
+        return pm_objDR.IsNull("ID_QUYET_DINH");
+    }
+
+    public void SetID_QUYET_DINHNull()
+    {
+        pm_objDR["ID_QUYET_DINH"] = System.Convert.DBNull;
+    }
+
     #endregion
     #region "Init Functions"
     public US_V_GD_TRANG_THAI_LAO_DONG()

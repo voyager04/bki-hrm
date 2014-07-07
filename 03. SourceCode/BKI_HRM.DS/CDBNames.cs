@@ -287,8 +287,10 @@
         public const string ID_LOAI_QD = "ID_LOAI_QD";
         public const string LOAI_QUYET_DINH = "LOAI_QUYET_DINH";
         public const string TRANG_THAI_HIEN_TAI = "TRANG_THAI_HIEN_TAI";
+        public const string TRANG_THAI_HIEN_TAI_YN = "TRANG_THAI_HIEN_TAI_YN";
         public const string ID = "ID";
         public const string ID_NHAN_SU = "ID_NHAN_SU";
+        public const string ID_QUYET_DINH = "ID_QUYET_DINH";
     }
 
     public class V_GD_HOP_DONG_LAO_DONG
