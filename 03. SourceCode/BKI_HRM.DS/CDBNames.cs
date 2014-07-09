@@ -272,6 +272,9 @@
         public const string MA_NV = "MA_NV";
         public const string HO_DEM = "HO_DEM";
         public const string TEN = "TEN";
+        public const string ID_PHAP_NHAN = "ID_PHAP_NHAN";
+        public const string MA_PHAP_NHAN = "MA_PHAP_NHAN";
+        public const string TEN_PHAP_NHAN = "TEN_PHAP_NHAN";
     }
 
 

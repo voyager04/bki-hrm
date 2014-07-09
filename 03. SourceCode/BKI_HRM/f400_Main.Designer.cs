@@ -90,6 +90,8 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky = new System.Windows.Forms.Label();
             this.m_lbl_sap_quay_lai = new System.Windows.Forms.Label();
             this.m_lbl_so_luong_nv_hien_tai = new System.Windows.Forms.Label();
+            this.m_lbl_phap_nhan = new System.Windows.Forms.Label();
+            this.m_menuitem_dang_xuat = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,6 +116,7 @@ namespace BKI_HRM
             this.m_menuitem_tudien,
             this.restoreDBToolStripMenuItem,
             this.toolStripMenuItem1,
+            this.m_menuitem_dang_xuat,
             this.m_menuitem_thoat});
             this.m_menuitem_hethong.Name = "m_menuitem_hethong";
             this.m_menuitem_hethong.Size = new System.Drawing.Size(69, 20);
@@ -601,6 +604,24 @@ namespace BKI_HRM
             this.m_lbl_so_luong_nv_hien_tai.Text = "so luong nhan vien";
             this.m_lbl_so_luong_nv_hien_tai.Click += new System.EventHandler(this.m_lbl_so_luong_nv_hien_tai_Click);
             // 
+            // m_lbl_phap_nhan
+            // 
+            this.m_lbl_phap_nhan.AutoSize = true;
+            this.m_lbl_phap_nhan.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_lbl_phap_nhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.m_lbl_phap_nhan.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_phap_nhan.Location = new System.Drawing.Point(750, 24);
+            this.m_lbl_phap_nhan.Name = "m_lbl_phap_nhan";
+            this.m_lbl_phap_nhan.Size = new System.Drawing.Size(85, 20);
+            this.m_lbl_phap_nhan.TabIndex = 8;
+            this.m_lbl_phap_nhan.Text = "pháp nhân";
+            // 
+            // m_menuitem_dang_xuat
+            // 
+            this.m_menuitem_dang_xuat.Name = "m_menuitem_dang_xuat";
+            this.m_menuitem_dang_xuat.Size = new System.Drawing.Size(211, 22);
+            this.m_menuitem_dang_xuat.Text = "Đăng xuất";
+            // 
             // f400_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -608,6 +629,7 @@ namespace BKI_HRM
             this.BackgroundImage = global::BKI_HRM.Properties.Resources.Human_resources_management_v2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(835, 413);
+            this.Controls.Add(this.m_lbl_phap_nhan);
             this.Controls.Add(this.m_lbl_so_luong_nv_hien_tai);
             this.Controls.Add(this.m_lbl_sap_quay_lai);
             this.Controls.Add(this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky);
@@ -691,5 +713,7 @@ namespace BKI_HRM
         private ToolStripMenuItem báoCáoNghỉViệcToolStripMenuItem;
         private ToolStripMenuItem m_menuitem_qua_trinh_di_cong_tac;
         private ToolStripMenuItem restoreDBToolStripMenuItem;
+        private Label m_lbl_phap_nhan;
+        private ToolStripMenuItem m_menuitem_dang_xuat;
     }
 }

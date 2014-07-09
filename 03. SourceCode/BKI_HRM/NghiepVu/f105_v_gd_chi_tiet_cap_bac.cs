@@ -171,7 +171,7 @@ namespace BKI_HRM {
             this.m_cmd_them_quyet_dinh.Name = "m_cmd_them_quyet_dinh";
             this.m_cmd_them_quyet_dinh.Size = new System.Drawing.Size(123, 28);
             this.m_cmd_them_quyet_dinh.TabIndex = 4;
-            this.m_cmd_them_quyet_dinh.Text = "&Thêm quyết định";
+            this.m_cmd_them_quyet_dinh.Text = "&Sửa cấp bậc";
             this.m_cmd_them_quyet_dinh.Click += new System.EventHandler(this.m_cmd_them_quyet_dinh_Click);
             // 
             // m_cmd_delete
@@ -423,6 +423,7 @@ namespace BKI_HRM {
         }
         private void update_v_gd_chi_tiet_cap_bac() 
         {
+            
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             if (m_fg.Rows[m_fg.Row].UserData == null) return;
