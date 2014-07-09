@@ -72,6 +72,7 @@
             this.m_sfd_in_hop_dong = new System.Windows.Forms.SaveFileDialog();
             this.m_cbo_ma_hop_dong = new System.Windows.Forms.ComboBox();
             this.m_lbl_ma_hop_dong = new System.Windows.Forms.Label();
+            this.m_cmd_xem_file = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -84,7 +85,7 @@
             this.m_cmd_chon_file.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_chon_file.ImageIndex = 3;
             this.m_cmd_chon_file.ImageList = this.ImageList;
-            this.m_cmd_chon_file.Location = new System.Drawing.Point(435, 140);
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(234, 140);
             this.m_cmd_chon_file.Name = "m_cmd_chon_file";
             this.m_cmd_chon_file.Size = new System.Drawing.Size(99, 28);
             this.m_cmd_chon_file.TabIndex = 114;
@@ -496,7 +497,7 @@
             this.m_cmd_bo_dinh_kem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_bo_dinh_kem.ImageIndex = 4;
             this.m_cmd_bo_dinh_kem.ImageList = this.ImageList;
-            this.m_cmd_bo_dinh_kem.Location = new System.Drawing.Point(334, 140);
+            this.m_cmd_bo_dinh_kem.Location = new System.Drawing.Point(339, 140);
             this.m_cmd_bo_dinh_kem.Name = "m_cmd_bo_dinh_kem";
             this.m_cmd_bo_dinh_kem.Size = new System.Drawing.Size(95, 28);
             this.m_cmd_bo_dinh_kem.TabIndex = 119;
@@ -522,11 +523,27 @@
             this.m_lbl_ma_hop_dong.Size = new System.Drawing.Size(0, 13);
             this.m_lbl_ma_hop_dong.TabIndex = 121;
             // 
+            // m_cmd_xem_file
+            // 
+            this.m_cmd_xem_file.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xem_file.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xem_file.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xem_file.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xem_file.ImageIndex = 5;
+            this.m_cmd_xem_file.ImageList = this.ImageList;
+            this.m_cmd_xem_file.Location = new System.Drawing.Point(440, 140);
+            this.m_cmd_xem_file.Name = "m_cmd_xem_file";
+            this.m_cmd_xem_file.Size = new System.Drawing.Size(99, 28);
+            this.m_cmd_xem_file.TabIndex = 122;
+            this.m_cmd_xem_file.Text = "&Xem file";
+            this.m_cmd_xem_file.Click += new System.EventHandler(this.m_cmd_xem_file_Click);
+            // 
             // f701_v_gd_hop_dong_lao_dong_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1054, 437);
+            this.Controls.Add(this.m_cmd_xem_file);
             this.Controls.Add(this.m_lbl_ma_hop_dong);
             this.Controls.Add(this.m_cbo_ma_hop_dong);
             this.Controls.Add(this.m_cmd_bo_dinh_kem);
@@ -607,5 +624,6 @@
         private System.Windows.Forms.SaveFileDialog m_sfd_in_hop_dong;
         private System.Windows.Forms.ComboBox m_cbo_ma_hop_dong;
         private System.Windows.Forms.Label m_lbl_ma_hop_dong;
+        internal SIS.Controls.Button.SiSButton m_cmd_xem_file;
     }
 }
