@@ -22,6 +22,8 @@ Public Class CAppContext_201
     Private Shared m_us_user As US_HT_NGUOI_SU_DUNG
     Private Shared m_strRunMode As String
     Private Shared m_dsDecentralization As New DS_HT_PHAN_QUYEN_DETAIL
+    Private Shared m_dc_id_phap_nhan As New Decimal
+
 #End Region
 
 #Region "Public interface"
@@ -53,7 +55,7 @@ Public Class CAppContext_201
         '* 1. các giá trị thường dùng trong hệ thống
         '        Debug.Assert(m_strCurrentUserName <> "")
         Try
-
+            m_dc_id_phap_nhan = i_LoginInfo.m_dc_id_Phapnhan
             m_us_user = i_LoginInfo.m_us_user
             '* 2. load phân quyền hệ thống về 
             '* 3. Các biến môi trường khác
@@ -74,6 +76,9 @@ Public Class CAppContext_201
 
     Public Shared Function getCurrentUserName() As String
         Return m_us_user.strTEN_TRUY_CAP
+    End Function
+    Public Shared Function getCurrentIDPhapnhan() As Decimal
+        Return m_dc_id_phap_nhan
     End Function
 
     Public Shared Function getCurrentUser() As String

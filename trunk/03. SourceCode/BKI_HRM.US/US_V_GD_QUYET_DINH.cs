@@ -286,6 +286,72 @@ public class US_V_GD_QUYET_DINH : US_Object
         pm_objDR["TEN"] = System.Convert.DBNull;
     }
 
+    public decimal dcID_PHAP_NHAN
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "ID_PHAP_NHAN", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["ID_PHAP_NHAN"] = value;
+        }
+    }
+
+    public bool IsID_PHAP_NHANNull()
+    {
+        return pm_objDR.IsNull("ID_PHAP_NHAN");
+    }
+
+    public void SetID_PHAP_NHANNull()
+    {
+        pm_objDR["ID_PHAP_NHAN"] = System.Convert.DBNull;
+    }
+
+    public string strMA_PHAP_NHAN
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "MA_PHAP_NHAN", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["MA_PHAP_NHAN"] = value;
+        }
+    }
+
+    public bool IsMA_PHAP_NHANNull()
+    {
+        return pm_objDR.IsNull("MA_PHAP_NHAN");
+    }
+
+    public void SetMA_PHAP_NHANNull()
+    {
+        pm_objDR["MA_PHAP_NHAN"] = System.Convert.DBNull;
+    }
+
+    public string strTEN_PHAP_NHAN
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "TEN_PHAP_NHAN", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["TEN_PHAP_NHAN"] = value;
+        }
+    }
+
+    public bool IsTEN_PHAP_NHANNull()
+    {
+        return pm_objDR.IsNull("TEN_PHAP_NHAN");
+    }
+
+    public void SetTEN_PHAP_NHANNull()
+    {
+        pm_objDR["TEN_PHAP_NHAN"] = System.Convert.DBNull;
+    }
+
     #endregion
     #region "Init Functions"
     public US_V_GD_QUYET_DINH()
@@ -313,8 +379,6 @@ public class US_V_GD_QUYET_DINH : US_Object
         pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
     }
     #endregion
-
-    
 
 #region "Addtionals"
     public void FillDataset(DS_V_GD_QUYET_DINH op_ds)

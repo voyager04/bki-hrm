@@ -25,9 +25,11 @@ namespace BKI_HRM {
         }
         public void display_for_update(US_V_GD_CHI_TIET_CAP_BAC ip_us_chi_tiet_cap_bac)
         {
-            m_e_formmode = DataEntryFormMode.InsertDataState;
+            m_e_formmode = DataEntryFormMode.UpdateDataState;
             m_v_us_chi_tiet_cap_bac = ip_us_chi_tiet_cap_bac;
+            m_us_chi_tiet_cap_bac = new US_GD_CHI_TIET_CAP_BAC(m_v_us_chi_tiet_cap_bac.dcID);
             us_object_2_form();
+          
             ShowDialog();
         }
         #endregion
@@ -100,17 +102,25 @@ namespace BKI_HRM {
                 case DataEntryFormMode.InsertDataState:
                     break;
                 case DataEntryFormMode.UpdateDataState:
-                    m_us_chi_tiet_cap_bac.dcID = m_v_us_chi_tiet_cap_bac.dcID;
+               //     m_us_chi_tiet_cap_bac.dcID = m_v_us_chi_tiet_cap_bac.dcID;
                     break;
             }
             m_us_chi_tiet_cap_bac.dcID_NHAN_SU = m_v_us_chi_tiet_cap_bac.dcID_NHAN_SU;
             m_us_chi_tiet_cap_bac.dcID_CAP_BAC = CIPConvert.ToDecimal(m_cbo_ma_cap_bac.SelectedValue);
             m_us_chi_tiet_cap_bac.strTRANG_THAI_CB = "Y";
             m_us_chi_tiet_cap_bac.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value.Date;
+            if (m_dat_ngay_ket_thuc.Checked == true)
+            {
+                m_us_chi_tiet_cap_bac.datNGAY_KET_THUC = m_dat_ngay_ket_thuc.Value;
+            }
+            else
+            {
+                m_us_chi_tiet_cap_bac.SetNGAY_KET_THUCNull();
+            }
             if (m_txt_ma_quyet_dinh.Text.Trim() != "") {
                 m_us_chi_tiet_cap_bac.dcID_QUYET_DINH = m_us_quyet_dinh.dcID;
             }
-            m_us_chi_tiet_cap_bac.SetNGAY_KET_THUCNull();
+          //  m_us_chi_tiet_cap_bac.SetNGAY_KET_THUCNull();
         }
         private void form_2_us_object_quyet_dinh() {
             /**
@@ -126,15 +136,18 @@ namespace BKI_HRM {
         }
         private void save_data() {
             if (check_data_is_ok() == false) return;
-            if (m_b_check_quyet_dinh_save) {
-                form_2_us_object_quyet_dinh();
-                m_us_quyet_dinh.Insert();
-            }
+            
             form_2_us_object_chi_tiet_cap_bac();
             switch (m_e_formmode)
             {
                 case DataEntryFormMode.InsertDataState:
+                    if (m_b_check_quyet_dinh_save)
+                    {
+                        form_2_us_object_quyet_dinh();
+                        m_us_quyet_dinh.Insert();
+                    }
                     m_us_chi_tiet_cap_bac.Insert();
+                    
                     break;
                 case DataEntryFormMode.UpdateDataState:
                     m_us_chi_tiet_cap_bac.Update();
@@ -152,11 +165,31 @@ namespace BKI_HRM {
             else
                 m_dat_ngay_bat_dau.Value = m_v_us_chi_tiet_cap_bac.datNGAY_BAT_DAU;
             //m_dat_ngay_bat_dau.Value = m_v_us_chi_tiet_cap_bac.datNGAY_BAT_DAU.Date;
-            var v_ds = new DS_V_GD_CHI_TIET_CAP_BAC();
-            var v_us = new US_V_GD_CHI_TIET_CAP_BAC();
-            v_us.FillDatasetByManhanvien(v_ds, m_v_us_chi_tiet_cap_bac.strMA_NV);
-            var t = v_ds.V_GD_CHI_TIET_CAP_BAC.Rows[0][13];
-            m_txt_cap_bac_hien_tai.Text = v_ds.V_GD_CHI_TIET_CAP_BAC.Rows[0][13].ToString();
+//             var v_ds = new DS_V_GD_CHI_TIET_CAP_BAC();
+//             var v_us = new US_V_GD_CHI_TIET_CAP_BAC();
+//             v_us.FillDatasetByManhanvien(v_ds, m_v_us_chi_tiet_cap_bac.strMA_NV);
+//             var t = v_ds.V_GD_CHI_TIET_CAP_BAC.Rows[0][13];
+//             m_txt_cap_bac_hien_tai.Text = v_ds.V_GD_CHI_TIET_CAP_BAC.Rows[0][13].ToString();
+//             
+            if (m_v_us_chi_tiet_cap_bac.datNGAY_KET_THUC > DateTime.Parse("1/1/1900"))
+            {
+                m_dat_ngay_ket_thuc.Checked = true;
+                m_dat_ngay_ket_thuc.Value = m_v_us_chi_tiet_cap_bac.datNGAY_KET_THUC;
+            }
+            m_txt_cap_bac_hien_tai.Text = m_v_us_chi_tiet_cap_bac.strMA_CAP_BAC;
+            US_GD_CHI_TIET_CAP_BAC v_us_chi_tiet_cap_bac = new US_GD_CHI_TIET_CAP_BAC(m_v_us_chi_tiet_cap_bac.dcID);
+            if (v_us_chi_tiet_cap_bac.dcID_QUYET_DINH > 0)
+            {
+                m_us_quyet_dinh = new US_DM_QUYET_DINH(v_us_chi_tiet_cap_bac.dcID_QUYET_DINH);
+                US_DM_QUYET_DINH v_us = new US_DM_QUYET_DINH(v_us_chi_tiet_cap_bac.dcID_QUYET_DINH);
+                m_txt_ma_quyet_dinh.Text = v_us.strMA_QUYET_DINH;
+                m_cbo_loai_quyet_dinh.SelectedValue = v_us.dcID_LOAI_QD;
+                m_dat_ngay_ky.Value = v_us.datNGAY_KY;
+                m_dat_ngay_co_hieu_luc_qd.Value = v_us.datNGAY_CO_HIEU_LUC;
+                m_txt_noi_dung.Text = v_us.strNOI_DUNG;
+            }
+            
+
         }
 
 

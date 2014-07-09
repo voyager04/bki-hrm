@@ -32,6 +32,7 @@ namespace BKI_HRM
             try
             {
                 ShowDialog();
+                v_exitmode = m_exitmode;
             }
             catch (Exception v_e)
             {
@@ -117,7 +118,7 @@ namespace BKI_HRM
         decimal hien_tai;
         DS_V_GD_TRANG_THAI_LAO_DONG m_ds_trang_thai_lao_dong = new DS_V_GD_TRANG_THAI_LAO_DONG();
         US_V_GD_TRANG_THAI_LAO_DONG m_us_trang_thai_lao_dong = new US_V_GD_TRANG_THAI_LAO_DONG();
-
+        IPConstants.HowUserWantTo_Exit_MainForm m_exitmode = IPConstants.HowUserWantTo_Exit_MainForm.ExitFromSystem;
         #endregion
 
         #region Events
@@ -135,6 +136,21 @@ namespace BKI_HRM
             m_lbl_thu_viec_sap_het_han.Click += m_lbl_thu_viec_sap_het_han_Click;
             m_menuitem_chuyen_nhan_vien.Click += m_menuitem_chuyen_nhan_vien_Click;
             m_menuitem_chuyen_don_vi.Click += m_menuitem_chuyen_don_vi_Click;
+            m_menuitem_dang_xuat.Click += m_menuitem_dang_xuat_Click;
+        }
+
+        private void m_menuitem_dang_xuat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                m_exitmode = IPConstants.HowUserWantTo_Exit_MainForm.Login_As_DifferentUser;
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void m_menu_dsnhansu_Click(object sender, EventArgs e)
@@ -357,7 +373,8 @@ namespace BKI_HRM
         {
             try
             {
-
+                US_DM_PHAP_NHAN v_us = new US_DM_PHAP_NHAN(CAppContext_201.getCurrentIDPhapnhan());
+                m_lbl_phap_nhan.Text = v_us.strMA_PHAP_NHAN + " - " + v_us.strTEN_PHAP_NHAN;
                 f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
                 m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc. Click để xem chi tiết!",
                                                         frm502.count_record_du_an_sap_ket_thuc());

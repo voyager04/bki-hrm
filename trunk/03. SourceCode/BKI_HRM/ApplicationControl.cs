@@ -31,7 +31,8 @@ namespace BKI_HRM
 
                 IP.Core.IPSystemAdmin.f101_Dang_Nhap v_frm_login_form = new f101_Dang_Nhap();
                 US_HT_NGUOI_SU_DUNG v_us_user = new US_HT_NGUOI_SU_DUNG();
-                CLoginInformation_302 v_obj_login_info = new CLoginInformation_302(v_us_user);
+                decimal v_dc_id_phap_nhan = CAppContext_201.getCurrentIDPhapnhan();
+                CLoginInformation_302 v_obj_login_info = new CLoginInformation_302(v_us_user, v_dc_id_phap_nhan);
                 DialogResult v_login_result = DialogResult.Cancel;
                 bool v_UserWant2ExitFromSystem = false;
                 IPConstants.HowUserWantTo_Exit_MainForm v_exitmode = IPConstants.HowUserWantTo_Exit_MainForm.ExitFromSystem;
@@ -47,7 +48,8 @@ namespace BKI_HRM
                 while (!v_UserWant2ExitFromSystem)
                 {
                     CAppContext_201.InitializeContext(v_obj_login_info);
-                    CAppContext_201.LoadDecentralizationByUserLogin();		
+                    CAppContext_201.LoadDecentralizationByUserLogin();	
+	                
                     f400_Main v_frm_main = new f400_Main();
                     v_frm_main.display(ref v_exitmode);
                     v_frm_main.Dispose();
