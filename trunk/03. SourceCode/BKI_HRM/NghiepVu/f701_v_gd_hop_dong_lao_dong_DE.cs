@@ -372,6 +372,12 @@ namespace BKI_HRM.NghiepVu
             m_lbl_file_name.Text = FileExplorer.fileName;
         }
 
+        private void view_hop_dong_saved()
+        {
+            f701_v_gd_hop_dong_lao_dong_View frm = new f701_v_gd_hop_dong_lao_dong_View();
+            frm.display_for_view_hop_dong(new US_GD_HOP_DONG(m_us.dcID));
+        }
+
         private bool check_trung_ma_hop_dong(string ip_str_ma_hop_dong)
         {
 
@@ -581,6 +587,18 @@ namespace BKI_HRM.NghiepVu
             }
         }
         #endregion
+
+        private void m_cmd_xem_file_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                view_hop_dong_saved();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
 

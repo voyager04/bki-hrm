@@ -708,7 +708,7 @@ namespace BKI_HRM
                 return true;
             if (m_us_gd_hop_dong.strLINK == "")
                 return true;
-            if (m_fg.Col == (int)e_col_Number.LINK)
+            if (m_fg.Col == (int)e_col_Number.MA_HOP_DONG)
             {
                 f701_v_gd_hop_dong_lao_dong_View frm = new f701_v_gd_hop_dong_lao_dong_View();
                 frm.display_for_view_hop_dong(m_us_gd_hop_dong);
