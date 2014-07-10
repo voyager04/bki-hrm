@@ -10,6 +10,7 @@ Imports IP.Core.IPData.DBNames
 Imports BKI_HRM.DS
 Imports IP.Core.IPUserService.BKI_HRM.US
 Imports BKI_HRM.US
+Imports BKI_HRM.DS.CDBNames
 
 
 Public Class f101_Dang_Nhap
@@ -353,9 +354,18 @@ Public Class f101_Dang_Nhap
         m_cbo_co_cau.DisplayMember = "MA_PHAP_NHAN"
         m_cbo_co_cau.ValueMember = "ID"
         m_cbo_co_cau.DataSource = v_ds.DM_PHAP_NHAN
-      
-
-
+        Dim v_dr As DataRow
+        v_dr = v_ds.DM_PHAP_NHAN.NewRow()
+        v_dr(DM_PHAP_NHAN.ID) = -1
+        v_dr(DM_PHAP_NHAN.DIA_CHI) = "HN"
+        v_dr(DM_PHAP_NHAN.MA_DK_KINH_DOANH) = "123"
+        v_dr(DM_PHAP_NHAN.MA_PHAP_NHAN) = "Tất cả"
+        v_dr(DM_PHAP_NHAN.MA_SO_THUE) = "123"
+        v_dr(DM_PHAP_NHAN.NGAY_DK_KINH_DOANH) = DateTime.Today
+        v_dr(DM_PHAP_NHAN.NGUOI_DAI_DIEN) = "TEG"
+        v_dr(DM_PHAP_NHAN.TEN_PHAP_NHAN) = "Tất cả"
+        v_ds.DM_PHAP_NHAN.AddDM_PHAP_NHANRow(CType(v_dr, DS_DM_PHAP_NHAN.DM_PHAP_NHANRow))
+        m_cbo_co_cau.SelectedValue = -1
     End Sub
 
     'Private Sub setInitialFormLoad()
@@ -388,7 +398,8 @@ Public Class f101_Dang_Nhap
         '********************************************************************
         Try
             Me.DialogResult = DialogResult.Cancel
-            Me.Close()
+
+            Application.Exit()
 
         Catch ex As Exception
             CSystemLog_301.ExceptionHandle(ex)

@@ -373,8 +373,15 @@ namespace BKI_HRM
         {
             try
             {
-                US_DM_PHAP_NHAN v_us = new US_DM_PHAP_NHAN(CAppContext_201.getCurrentIDPhapnhan());
-                m_lbl_phap_nhan.Text = v_us.strMA_PHAP_NHAN + " - " + v_us.strTEN_PHAP_NHAN;
+                if (CAppContext_201.getCurrentIDPhapnhan() != -1)
+                {
+                    US_DM_PHAP_NHAN v_us = new US_DM_PHAP_NHAN(CAppContext_201.getCurrentIDPhapnhan());
+                    m_lbl_phap_nhan.Text = v_us.strMA_PHAP_NHAN + " - " + v_us.strTEN_PHAP_NHAN;
+                }
+                else
+                {
+                    m_lbl_phap_nhan.Text = "Tất cả";
+                }
                 f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
                 m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc. Click để xem chi tiết!",
                                                         frm502.count_record_du_an_sap_ket_thuc());

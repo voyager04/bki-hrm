@@ -7,6 +7,7 @@ using IP.Core.IPSystemAdmin;
 using IP.Core.IPBusinessService;
 using IP.Core.IPUserService;
 using BKI_HRM;
+using System.IO;
 
 
 
@@ -47,9 +48,14 @@ namespace BKI_HRM
                 v_frm_login_form.Dispose();
                 while (!v_UserWant2ExitFromSystem)
                 {
+
                     CAppContext_201.InitializeContext(v_obj_login_info);
-                    CAppContext_201.LoadDecentralizationByUserLogin();	
-	                
+                    CAppContext_201.LoadDecentralizationByUserLogin();
+                    string v_str_path = Path.GetDirectoryName(Application.ExecutablePath) + "\\login.txt";
+                    System.IO.StreamWriter file = new System.IO.StreamWriter(v_str_path);
+                    file.WriteLine("test");
+                    file.Close();
+	                //v_obj_login_info.m_us_user.str
                     f400_Main v_frm_main = new f400_Main();
                     v_frm_main.display(ref v_exitmode);
                     v_frm_main.Dispose();

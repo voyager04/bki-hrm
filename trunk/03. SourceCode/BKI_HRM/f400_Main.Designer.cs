@@ -43,6 +43,7 @@ namespace BKI_HRM
             this.m_menuitem_tudien = new System.Windows.Forms.ToolStripMenuItem();
             this.restoreDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.m_menuitem_dang_xuat = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_thoat = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_danhmuc = new System.Windows.Forms.ToolStripMenuItem();
             this.m_menuitem_qlchucvu = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,7 +92,6 @@ namespace BKI_HRM
             this.m_lbl_sap_quay_lai = new System.Windows.Forms.Label();
             this.m_lbl_so_luong_nv_hien_tai = new System.Windows.Forms.Label();
             this.m_lbl_phap_nhan = new System.Windows.Forms.Label();
-            this.m_menuitem_dang_xuat = new System.Windows.Forms.ToolStripMenuItem();
             this.m_mst_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -201,6 +201,12 @@ namespace BKI_HRM
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(208, 6);
+            // 
+            // m_menuitem_dang_xuat
+            // 
+            this.m_menuitem_dang_xuat.Name = "m_menuitem_dang_xuat";
+            this.m_menuitem_dang_xuat.Size = new System.Drawing.Size(211, 22);
+            this.m_menuitem_dang_xuat.Text = "Đăng xuất";
             // 
             // m_menuitem_thoat
             // 
@@ -615,12 +621,6 @@ namespace BKI_HRM
             this.m_lbl_phap_nhan.Size = new System.Drawing.Size(85, 20);
             this.m_lbl_phap_nhan.TabIndex = 8;
             this.m_lbl_phap_nhan.Text = "pháp nhân";
-            // 
-            // m_menuitem_dang_xuat
-            // 
-            this.m_menuitem_dang_xuat.Name = "m_menuitem_dang_xuat";
-            this.m_menuitem_dang_xuat.Size = new System.Drawing.Size(211, 22);
-            this.m_menuitem_dang_xuat.Text = "Đăng xuất";
             // 
             // f400_Main
             // 
