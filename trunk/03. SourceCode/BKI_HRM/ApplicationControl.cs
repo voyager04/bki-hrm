@@ -94,6 +94,20 @@ namespace BKI_HRM
                             break;
                         case IPConstants.HowUserWantTo_Exit_MainForm.Login_As_DifferentUser:
                             // vào bằng user khác ( hoặc nhóm khác)
+                            file_read = new System.IO.StreamReader(v_str_path);
+               
+                            v_str_user = file_read.ReadLine();
+                            v_str_pass = file_read.ReadLine();
+                            if (v_str_user == null || v_str_pass == null)
+                            {
+                                v_str_user = "";
+                                v_str_pass = "";
+                            }
+                            if (v_str_pass != "")
+                            {
+                                v_str_pass = CIPConvert.Deciphering(v_str_pass);
+                            }
+                            file_read.Close();
                             v_frm_login_form = new f101_Dang_Nhap();
                             v_frm_login_form.displayLogin(v_str_user, v_str_pass, ref v_obj_login_info, ref v_login_result);
                             v_frm_login_form.Dispose();
