@@ -314,7 +314,6 @@
             this.m_cbo_loai_chuc_vu.Name = "m_cbo_loai_chuc_vu";
             this.m_cbo_loai_chuc_vu.Size = new System.Drawing.Size(176, 21);
             this.m_cbo_loai_chuc_vu.TabIndex = 5;
-            this.m_cbo_loai_chuc_vu.Visible = false;
             // 
             // m_lbl_loai_chuc_vu
             // 
@@ -324,7 +323,6 @@
             this.m_lbl_loai_chuc_vu.Size = new System.Drawing.Size(88, 13);
             this.m_lbl_loai_chuc_vu.TabIndex = 84;
             this.m_lbl_loai_chuc_vu.Text = "Loại chức vụ mới";
-            this.m_lbl_loai_chuc_vu.Visible = false;
             // 
             // m_cmd_chon_don_vi
             // 

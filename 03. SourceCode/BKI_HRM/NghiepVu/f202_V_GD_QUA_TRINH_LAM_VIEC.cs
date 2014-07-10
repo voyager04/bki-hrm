@@ -331,26 +331,27 @@ namespace BKI_HRM
 
 		#region Data Structure
 		private enum e_col_Number{
-            NGAY_CO_HIEU_LUC = 18,
-            CAP_DON_VI = 13,
+            NGAY_CO_HIEU_LUC = 19,
+            CAP_DON_VI = 14,
             NGAY_BAT_DAU = 4,
             TEN_CV = 7,
-            TEN_DON_VI = 12,
+            TEN_DON_VI = 13,
             MA_NV = 1,
-            MA_DON_VI = 11 ,
+            MA_DON_VI = 12 ,
             NGAY_KET_THUC = 5,
             MA_CV = 6,
             HO_DEM = 2,
-            LOAI_DON_VI = 14,
+            LOAI_DON_VI = 15,
             TEN = 3 ,
-            TY_LE_THAM_GIA = 10,
+            LOAI_CV = 10,
+            TY_LE_THAM_GIA = 11,
             TRANG_THAI_CV = 9,
-            MA_QUYET_DINH = 16 ,
-            LOAI_QUYET_DINH = 17,
-            NGAY_HET_HIEU_LUC = 19,
-            DIA_BAN = 15 ,
+            MA_QUYET_DINH = 17 ,
+            LOAI_QUYET_DINH = 18,
+            NGAY_HET_HIEU_LUC = 20,
+            DIA_BAN = 16 ,
             NGACH = 8,
-            MA_QUYET_DINH_MIEN_NHIEM = 20
+            MA_QUYET_DINH_MIEN_NHIEM = 21
 		}			
 		#endregion
 
@@ -362,6 +363,7 @@ namespace BKI_HRM
         US_DM_NHAN_SU m_us_dm_nhan_su = new US_DM_NHAN_SU();
         decimal tong_so;
         decimal hien_tai;
+        string m_str_message_tim_kiem = "Nhập mã nhân viên hoặc họ tên để tìm kiếm";
 		#endregion
 
 		#region Private Methods
@@ -379,12 +381,14 @@ namespace BKI_HRM
         
         private void set_initial_form_load()
         {
-            
+            m_txt_tim_kiem.Text = m_str_message_tim_kiem;
+            m_txt_tim_kiem.ForeColor = Color.Gray;
 			m_obj_trans = get_trans_object(m_grv_qua_trinh_lam_viec);
 			load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.LOAI_CV, e_col_Number.LOAI_CV);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.LOAI_QD, e_col_Number.LOAI_QUYET_DINH);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.NGAY_CO_HIEU_LUC, e_col_Number.NGAY_CO_HIEU_LUC);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.CAP_DON_VI, e_col_Number.CAP_DON_VI);
@@ -494,8 +498,17 @@ namespace BKI_HRM
 
         private void tim_kiem_nhan_vien()
         {
-
-            load_data_2_grid_search();
+            if (m_txt_tim_kiem.Text == m_str_message_tim_kiem)
+            {
+                m_txt_tim_kiem.Text = "";
+                load_data_2_grid_search();
+                m_txt_tim_kiem.Text = m_str_message_tim_kiem;
+            }
+            else
+            {
+                load_data_2_grid_search();
+            }
+            
         }
         
 		private void us_object2grid(US_V_GD_QUA_TRINH_LAM_VIEC i_us
@@ -535,15 +548,33 @@ namespace BKI_HRM
             {
                 grid2us_object(m_us_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row + 1);
             }
-
-            load_data_2_grid_search();
+            if (m_txt_tim_kiem.Text == m_str_message_tim_kiem)
+            {
+                m_txt_tim_kiem.Text = "";
+                load_data_2_grid_search();
+                m_txt_tim_kiem.Text = m_str_message_tim_kiem;
+            }
+            else
+            {
+                load_data_2_grid_search();
+            }
+            
             m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, "");
             int v_i_count = m_ds_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Count;
             f202_v_gd_qua_trinh_lam_viec_de v_fDE = new f202_v_gd_qua_trinh_lam_viec_de();
             v_fDE.display_for_insert(m_us_qua_trinh_lam_viec, ip_str_loai_thay_doi);
 
+            if (m_txt_tim_kiem.Text == m_str_message_tim_kiem)
+            {
+                m_txt_tim_kiem.Text = "";
+                load_data_2_grid_search();
+                m_txt_tim_kiem.Text = m_str_message_tim_kiem;
+            }
+            else
+            {
+                load_data_2_grid_search();
+            }
             
-            load_data_2_grid_search();
             m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, "");
 //             if (m_ds_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Count > v_i_count)
 //             {
@@ -617,6 +648,8 @@ namespace BKI_HRM
 			
 			m_cmd_mien_nhiem.Click += new EventHandler(m_cmd_mien_nhiem_Click);
            m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
+            m_txt_tim_kiem.MouseClick += m_txt_tim_kiem_MouseClick;
+            m_txt_tim_kiem.Leave += m_txt_tim_kiem_Leave;
 		}
 		#endregion
 
@@ -693,7 +726,35 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        private void m_txt_tim_kiem_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                if (m_txt_tim_kiem.Text == m_str_message_tim_kiem)
+                    m_txt_tim_kiem.Text = "";
+                m_txt_tim_kiem.ForeColor = Color.Black;
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_txt_tim_kiem_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_txt_tim_kiem.Text == "")
+                {
+                    m_txt_tim_kiem.Text = m_str_message_tim_kiem;
+                    m_txt_tim_kiem.ForeColor = Color.Gray;
+                }
 
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         private void m_cmd_mien_nhiem_Click(object sender, EventArgs e)
         {
             try
