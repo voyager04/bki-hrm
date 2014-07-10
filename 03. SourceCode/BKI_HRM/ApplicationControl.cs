@@ -37,8 +37,18 @@ namespace BKI_HRM
                 DialogResult v_login_result = DialogResult.Cancel;
                 bool v_UserWant2ExitFromSystem = false;
                 IPConstants.HowUserWantTo_Exit_MainForm v_exitmode = IPConstants.HowUserWantTo_Exit_MainForm.ExitFromSystem;
+                //load user - pass lần đăng nhập gần nhất 
+                string v_str_path = Path.GetDirectoryName(Application.ExecutablePath) + "\\login.txt";
+                System.IO.StreamReader file_read = new System.IO.StreamReader(v_str_path);
+                string v_str_user = "",
+                    v_str_pass = "";
+                v_str_user = file_read.ReadLine();
+                v_str_pass = file_read.ReadLine();
+                v_str_pass = CIPConvert.Deciphering(v_str_pass);
+                file_read.Close();
                 // Login lan 1
-                v_frm_login_form.displayLogin(ref v_obj_login_info, ref v_login_result);
+                v_frm_login_form.displayLogin(v_str_user, v_str_pass, ref v_obj_login_info, ref v_login_result);
+                
                 if (v_login_result == DialogResult.Cancel)
                 {
                     v_frm_login_form.Dispose();
@@ -51,10 +61,11 @@ namespace BKI_HRM
 
                     CAppContext_201.InitializeContext(v_obj_login_info);
                     CAppContext_201.LoadDecentralizationByUserLogin();
-                    string v_str_path = Path.GetDirectoryName(Application.ExecutablePath) + "\\login.txt";
-                    System.IO.StreamWriter file = new System.IO.StreamWriter(v_str_path);
-                    file.WriteLine("test");
-                    file.Close();
+                   // string v_str_path = Path.GetDirectoryName(Application.ExecutablePath) + "\\login.txt";
+                    System.IO.StreamWriter file_write = new System.IO.StreamWriter(v_str_path);
+                    file_write.WriteLine(v_obj_login_info.m_us_user.strTEN_TRUY_CAP);
+                    file_write.WriteLine(v_obj_login_info.m_us_user.strMAT_KHAU);
+                    file_write.Close();
 	                //v_obj_login_info.m_us_user.str
                     f400_Main v_frm_main = new f400_Main();
                     v_frm_main.display(ref v_exitmode);
@@ -68,7 +79,7 @@ namespace BKI_HRM
                         case IPConstants.HowUserWantTo_Exit_MainForm.Login_As_DifferentUser:
                             // vào bằng user khác ( hoặc nhóm khác)
                             v_frm_login_form = new f101_Dang_Nhap();
-                            v_frm_login_form.displayLogin(ref v_obj_login_info, ref v_login_result);
+                            v_frm_login_form.displayLogin(v_str_user, v_str_pass, ref v_obj_login_info, ref v_login_result);
                             v_frm_login_form.Dispose();
                             break;
                         default:

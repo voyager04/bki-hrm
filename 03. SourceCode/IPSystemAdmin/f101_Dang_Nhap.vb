@@ -260,7 +260,9 @@ Public Class f101_Dang_Nhap
 #End Region
 
 #Region "PUBLIC INTERFACES"
-    Public Sub displayLogin(ByRef o_Information As CLoginInformation_302, _
+    Public Sub displayLogin(ByVal i_str_user As String, _
+                            ByVal i_str_pass As String, _
+                           ByRef o_Information As CLoginInformation_302, _
                             ByRef o_LoginResult As DialogResult)
         '*********************************************************************
         '* Hiện thị cửa sổ đăng nhập vào hệ thống
@@ -268,7 +270,10 @@ Public Class f101_Dang_Nhap
         '* - Thành công : o_LoginResult = DialogResult.OK
         '* - Không thành công : o_LoginResult = DialogResult.Cancel
         '*********************************************************************
+
         Me.DialogResult = DialogResult.Cancel
+        m_txtTenTruyNhap.Text = i_str_user
+        m_txtMatKhau.Text = i_str_pass
         'Hiện thị cửa sổ
         Me.ShowDialog()
         o_LoginResult = Me.DialogResult
