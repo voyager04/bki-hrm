@@ -514,8 +514,25 @@ namespace BKI_HRM
             if (m_dat_ngay_co_hieu_luc_qd.Value.Date > m_dat_ngay_het_hieu_luc_qd.Value.Date && m_dat_ngay_het_hieu_luc_qd.Checked == true)
             {
                 BaseMessages.MsgBox_Infor("Ngày có hiệu lực không thể sau ngày hết hiệu lực.");
+                return false;
             }
-
+            if (!check_chuc_vu_chinh())
+            {
+                BaseMessages.MsgBox_Infor("Không thể tồn tại 2 chức vụ chính tại thời điểm hiện tại.");
+                return false;
+            }
+            return true;
+        }
+        private bool check_chuc_vu_chinh()
+        {
+            decimal v_dc_count = 0;
+            m_us_v_qua_trinh_lam_viec.count_chuc_vu_chinh_hien_tai(m_ds_v_qua_trinh_lam_viec, m_us_v_qua_trinh_lam_viec.dcID_NHAN_SU, m_us_chi_tiet_chuc_vu.dcID, ref v_dc_count);
+            if (m_ckb_cv_hien_tai_yn.Checked == true
+                && CIPConvert.ToDecimal( m_cbo_loai_chuc_vu.SelectedValue) == 650
+                && v_dc_count > 0)
+            {
+                return false;
+            }
             return true;
         }
         private bool confirm_save_data()
@@ -551,7 +568,7 @@ namespace BKI_HRM
                             v_dc = CIPConvert.ToDecimal(m_txt_ty_le_tham_gia.Text.Trim());
                         if (m_us_v_qua_trinh_lam_viec.Sum_ty_le_tham_gia(m_us_v_qua_trinh_lam_viec.strMA_NV, m_us_v_qua_trinh_lam_viec.strTRANG_THAI_CHUC_VU_YN) - m_us_v_qua_trinh_lam_viec.dcTY_LE_THAM_GIA + v_dc > 100)
                         {
-                            BaseMessages.MsgBox_Infor("Tỷ lệ tham gia đã đã vượt quá 100%.");
+                            BaseMessages.MsgBox_Infor("Tỷ lệ tham gia đã vượt quá 100%.");
                             return;
                         }
                         if (check_validate_data_is_ok() == false)
@@ -694,10 +711,6 @@ namespace BKI_HRM
             m_cmd_bo_quyet_dinh.Click += m_cmd_bo_quyet_dinh_Click;
             m_cmd_bo_quyet_dinh_mien_nhiem.Click += m_cmd_bo_quyet_dinh_mien_nhiem_Click;
         }
-
-        
-
-        
 
         private void text_changed()
         {

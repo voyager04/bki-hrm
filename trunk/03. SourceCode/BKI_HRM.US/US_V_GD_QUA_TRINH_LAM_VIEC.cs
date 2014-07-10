@@ -966,7 +966,18 @@ namespace BKI_HRM.US {
              v_sp.addDatetimeInputParam("@ip_dat_thoi_diem", ip_dat_thoi_diem);
              v_sp.addDecimalInputParam("@ip_lua_chon", ip_lua_chon);
              v_sp.fillDataSetByCommand(this, op_ds);
-        }
+         }
+         public void count_chuc_vu_chinh_hien_tai(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds, decimal ip_dc_id_nhan_su, decimal ip_dc_id_update, ref decimal op_dc_count)
+         {
+             CStoredProc v_sp = new CStoredProc("[pr_V_GD_QUA_TRINH_LAM_VIEC_count_chuc_vu_chinh_hien_tai]");
+             v_sp.addDecimalInputParam("@ID_NHAN_SU", ip_dc_id_nhan_su);
+             v_sp.addDecimalInputParam("@ID_UPDATE", ip_dc_id_update);
+             SqlParameter v_sql = v_sp.addDecimalOutputParam("@Count", op_dc_count);
+            
+             v_sp.fillDataSetByCommand(this, op_ds);
+             
+             op_dc_count = CIPConvert.ToDecimal(v_sql.Value);
+         }
         #endregion
         
     }
