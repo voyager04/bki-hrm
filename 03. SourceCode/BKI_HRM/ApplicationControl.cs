@@ -38,13 +38,29 @@ namespace BKI_HRM
                 bool v_UserWant2ExitFromSystem = false;
                 IPConstants.HowUserWantTo_Exit_MainForm v_exitmode = IPConstants.HowUserWantTo_Exit_MainForm.ExitFromSystem;
                 //load user - pass lần đăng nhập gần nhất 
+                
                 string v_str_path = Path.GetDirectoryName(Application.ExecutablePath) + "\\login.txt";
+                if (!File.Exists(v_str_path))
+                {
+                    System.IO.StreamWriter file = new StreamWriter(v_str_path);
+//                     file.WriteLine("");
+//                     file.WriteLine("");
+                    file.Close();
+                }
                 System.IO.StreamReader file_read = new System.IO.StreamReader(v_str_path);
                 string v_str_user = "",
                     v_str_pass = "";
                 v_str_user = file_read.ReadLine();
                 v_str_pass = file_read.ReadLine();
-                v_str_pass = CIPConvert.Deciphering(v_str_pass);
+                if (v_str_user == null || v_str_pass == null)
+                {
+                    v_str_user = "";
+                    v_str_pass = "";
+                }
+                if (v_str_pass != "")
+                {
+                    v_str_pass = CIPConvert.Deciphering(v_str_pass);
+                }
                 file_read.Close();
                 // Login lan 1
                 v_frm_login_form.displayLogin(v_str_user, v_str_pass, ref v_obj_login_info, ref v_login_result);
