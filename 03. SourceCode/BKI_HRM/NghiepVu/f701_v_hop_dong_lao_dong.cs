@@ -615,6 +615,7 @@ namespace BKI_HRM
              );
             m_fg.Redraw = true;
             m_fg.Focus();
+            auto_suggest_text();
         }
 
         private void grid2us_object(int i_grid_row)
@@ -709,6 +710,7 @@ namespace BKI_HRM
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return true;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return true;
+            if (m_fg.Rows[m_fg.Row].IsNode) return false;
             grid2us_object(m_fg.Row);
             if (m_us_gd_hop_dong == null)
                 return true;
@@ -788,7 +790,6 @@ namespace BKI_HRM
                 m_cbo_tim_kiem_theo.SelectedIndex = 0;
                 set_initial_form_load();
                 m_txt_tim_kiem.Focus();
-                auto_suggest_text();
             }
             catch (Exception v_e)
             {
