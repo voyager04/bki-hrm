@@ -69,4 +69,9 @@ namespace BKI_HRM.US {
         public const decimal TRUNG_TAM = 3;
         public const decimal PHONG_BAN = 4;
     }
+    public class LOAI_CHUC_VU
+    {
+        public const decimal CHUC_VU_CHINH = 650;
+        public const decimal CHUC_VU_KIEM_NHIEM = 651;
+    }
 }

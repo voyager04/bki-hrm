@@ -878,9 +878,11 @@ namespace BKI_HRM.US {
             command.fillDataSetByCommand(this, op_ds);
 
         }
-        public void FillDataset_search(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds,string ip_str_tim_kiem) {
+        public void FillDataset_search(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds
+            ,string ip_str_tim_kiem
+            ,decimal ip_dc_id_phap_nhan) {
             var command = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_Search1");
-
+            command.addDecimalInputParam("@ID_PHAP_NHAN", ip_dc_id_phap_nhan);
             command.addNVarcharInputParam("@TIM_KIEM", ip_str_tim_kiem);
             command.fillDataSetByCommand(this, op_ds);
 

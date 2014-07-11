@@ -417,7 +417,7 @@ namespace BKI_HRM
 		}
 		private void load_data_2_grid(){						
 			m_ds_qua_trinh_lam_viec = new DS_V_GD_QUA_TRINH_LAM_VIEC();			
-			m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec,"");
+			m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec,"", CAppContext_201.getCurrentIDPhapnhan());
 			m_grv_qua_trinh_lam_viec.Redraw = false;
            
 			CGridUtils.Dataset2C1Grid(m_ds_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec, m_obj_trans);
@@ -435,7 +435,7 @@ namespace BKI_HRM
         private void load_data_2_grid_search()
         {
             m_ds_qua_trinh_lam_viec = new DS_V_GD_QUA_TRINH_LAM_VIEC();
-            m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, m_txt_tim_kiem.Text.Trim());
+            m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, m_txt_tim_kiem.Text.Trim(), CAppContext_201.getCurrentIDPhapnhan());
             m_grv_qua_trinh_lam_viec.Redraw = false;
             
             CGridUtils.Dataset2C1Grid(m_ds_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec, m_obj_trans);
@@ -559,7 +559,7 @@ namespace BKI_HRM
                 load_data_2_grid_search();
             }
             
-            m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, "");
+            m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, "",CAppContext_201.getCurrentIDPhapnhan());
             int v_i_count = m_ds_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Count;
             f202_v_gd_qua_trinh_lam_viec_de v_fDE = new f202_v_gd_qua_trinh_lam_viec_de();
             v_fDE.display_for_insert(m_us_qua_trinh_lam_viec, ip_str_loai_thay_doi);
@@ -575,7 +575,7 @@ namespace BKI_HRM
                 load_data_2_grid_search();
             }
             
-            m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, "");
+            m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, "",CAppContext_201.getCurrentIDPhapnhan());
 //             if (m_ds_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Count > v_i_count)
 //             {
 //                 bool v_dlr = BaseMessages.MsgBox_Confirm("Có miễn nhiệm chức vũ cũ không?");
