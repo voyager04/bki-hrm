@@ -650,7 +650,61 @@ namespace BKI_HRM
            m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             m_txt_tim_kiem.MouseClick += m_txt_tim_kiem_MouseClick;
             m_txt_tim_kiem.Leave += m_txt_tim_kiem_Leave;
+            m_grv_qua_trinh_lam_viec.Click += m_grv_qua_trinh_lam_viec_Click;
 		}
+
+       private  void m_grv_qua_trinh_lam_viec_Click(object sender, EventArgs e)
+        {
+            if (m_grv_qua_trinh_lam_viec.Col == (int)e_col_Number.MA_QUYET_DINH)
+            {
+                if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_qua_trinh_lam_viec)) return;
+                if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row)) return;
+                grid2us_object(m_us_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row);
+                if (m_us_qua_trinh_lam_viec.dcID_QUYET_DINH > 0)
+                {
+                    US_DM_QUYET_DINH v_us = new US_DM_QUYET_DINH(m_us_qua_trinh_lam_viec.dcID_QUYET_DINH);
+                    if (v_us.strLINK != "")
+                    {
+                        //FileExplorer.DownloadFile(v_us.strLINK);
+                        f202_v_gd_qua_trinh_lam_viec_view v_frm = new f202_v_gd_qua_trinh_lam_viec_view();
+                        v_frm.display_for_view_quyet_dinh(v_us);
+                    }
+                    else
+                    {
+                        BaseMessages.MsgBox_Error("Chưa có file đính kèm.");
+                    }
+                }
+               
+                else
+                {
+                    BaseMessages.MsgBox_Error("Chưa có file đính kèm.");
+                }
+            }
+            if (m_grv_qua_trinh_lam_viec.Col == (int)e_col_Number.MA_QUYET_DINH_MIEN_NHIEM)
+            {
+                if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_qua_trinh_lam_viec)) return;
+                if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row)) return;
+                grid2us_object(m_us_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row);
+                if (m_us_qua_trinh_lam_viec.dcID_QUYET_DINH > 0)
+                {
+                    US_DM_QUYET_DINH v_us = new US_DM_QUYET_DINH(m_us_qua_trinh_lam_viec.dcID_QUYET_DINH);
+                    if (v_us.strLINK != "")
+                    {
+                        //FileExplorer.DownloadFile(v_us.strLINK);
+                        f202_v_gd_qua_trinh_lam_viec_view v_frm = new f202_v_gd_qua_trinh_lam_viec_view();
+                        v_frm.display_for_view_quyet_dinh(v_us);
+                    }
+                    else
+                    {
+                        BaseMessages.MsgBox_Error("Chưa có file đính kèm.");
+                    }
+                }
+                else
+                {
+                    BaseMessages.MsgBox_Error("Chưa có file đính kèm.");
+                }
+            }
+        }
 		#endregion
 
 //
