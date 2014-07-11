@@ -202,7 +202,11 @@ namespace BKI_HRM
         {
             m_fg.AllowAddNew = false;
             m_ds_v_gd_cong_tac = new DS_V_GD_CONG_TAC();
-            m_us_v_gd_cong_tac.FillDatasetSearch(m_ds_v_gd_cong_tac, m_us_dm_quyet_dinh.strMA_QUYET_DINH, DateTime.Parse("1/1/1900"), DateTime.Today.AddDays(1));
+            m_us_v_gd_cong_tac.FillDatasetSearch(m_ds_v_gd_cong_tac, 
+                                                 m_us_dm_quyet_dinh.strMA_QUYET_DINH, 
+                                                 DateTime.Parse("1/1/1900"), 
+                                                 DateTime.Today.AddDays(1),
+                                                 CAppContext_201.getCurrentIDPhapnhan());
             m_fg.Redraw = false;
             m_obj_trans = get_trans_object(m_fg);
             CGridUtils.Dataset2C1Grid(m_ds_v_gd_cong_tac, m_fg, m_obj_trans);
