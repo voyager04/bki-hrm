@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
-
+using BKI_HRM.NghiepVu;
 using IP.Core.IPCommon;
 using IP.Core.IPException;
 using IP.Core.IPData;
@@ -95,12 +95,8 @@ namespace BKI_HRM
         private string m_str_directory_to = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
         private string m_str_user_name = ConfigurationSettings.AppSettings["USERNAME_SHARE"];
         private string m_str_password = ConfigurationSettings.AppSettings["PASSWORD_SHARE"];
-        private string m_str_from = "";
-        private string m_str_file_name = "";
-        private string m_str_path = "";
-        private string m_str_time_now = DateTime.Now.Ticks.ToString();
-        private string m_str_link_old = "";
-        private bool m_b_status = false;
+        private decimal m_str_id_hop_dong_old;
+        private string m_str_link_old;
         #endregion
 
         #region Private Methods
@@ -155,8 +151,8 @@ namespace BKI_HRM
         }
         private void view_quyet_dinh()
         {
-            f202_v_gd_qua_trinh_lam_viec_view v_frm = new f202_v_gd_qua_trinh_lam_viec_view();
-            v_frm.display_for_view_quyet_dinh(m_us_quyet_dinh);
+            f701_v_gd_hop_dong_lao_dong_View frm = new f701_v_gd_hop_dong_lao_dong_View();
+            frm.display_for_view_quyet_dinh(m_us_quyet_dinh);
         }
         private void view_quyet_dinh_mien_nhiem()
         {
@@ -237,8 +233,7 @@ namespace BKI_HRM
                         US_DM_QUYET_DINH v_us_quyet_dinh = new US_DM_QUYET_DINH(m_us_v_qua_trinh_lam_viec.dcID_QUYET_DINH);
                         m_str_link_old = v_us_quyet_dinh.strLINK;
                         if (v_us_quyet_dinh.strLINK == "") return;
-                        string[] v_strs = v_us_quyet_dinh.strLINK.Split('\\');
-                        m_lbl_file_name.Text = v_strs[v_strs.Length - 1].Split('-')[v_strs[v_strs.Length - 1].Split('-').Length - 1];
+                        m_lbl_file_name.Text = v_us_quyet_dinh.strLINK;
                     }
 
                     break;
@@ -445,7 +440,7 @@ namespace BKI_HRM
             }
             m_us_quyet_dinh.strMA_QUYET_DINH = m_txt_ma_quyet_dinh.Text;
             m_us_quyet_dinh.strNOI_DUNG = m_txt_noi_dung.Text.Trim();
-           // m_us_quyet_dinh.strLINK = m_ofd_chon_file.FileName;
+            m_us_quyet_dinh.strLINK = m_lbl_file_name.Text;
             m_us_quyet_dinh.dcID_LOAI_QD = CIPConvert.ToDecimal(m_cbo_loai_quyet_dinh.SelectedValue);
             m_us_quyet_dinh.datNGAY_KY = m_dat_ngay_ky.Value;
             m_us_quyet_dinh.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc_qd.Value;
@@ -523,7 +518,7 @@ namespace BKI_HRM
             US_GD_QUYET_DINH_PHAP_NHAN v_us_gd_quyet_dinh_phap_nhan = new US_GD_QUYET_DINH_PHAP_NHAN();
             if (confirm_save_data() && check_validate_data_is_ok())
             {
-
+                #region Xử lý file đính kèm
                 // Xử lý file đính kèm
                 switch (m_e_file_mode)
                 {
@@ -578,6 +573,9 @@ namespace BKI_HRM
                         FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
                         break;
                 }
+                #endregion
+
+
                 switch (m_e_form_mode)
                 {
 
