@@ -391,7 +391,8 @@ public class US_V_GD_QUYET_DINH : US_Object
         decimal ip_dc_loai_qd, 
         decimal ip_dc_loai_ngay,
         DateTime ip_dat_tu_ngay,
-        DateTime ip_dat_den_ngay)
+        DateTime ip_dat_den_ngay,
+        decimal ip_dc_phap_nhan)
    
     {
         CStoredProc v_sp = new CStoredProc("pr_V_GD_QUYET_DINH_search");
@@ -400,6 +401,7 @@ public class US_V_GD_QUYET_DINH : US_Object
         v_sp.addDecimalInputParam("@LOAI_NGAY", ip_dc_loai_ngay);
         v_sp.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay);
         v_sp.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay);
+        v_sp.addDecimalInputParam("@id_phap_nhan", ip_dc_phap_nhan);
         v_sp.fillDataSetByCommand(this, op_ds);
     }
     public void delete_by_id(decimal ip_dc_id)
