@@ -130,12 +130,12 @@ namespace BKI_HRM
         {
             //  int count = m_ds_qua_trinh_lam_viec.Tables["V_GD_QUA_TRINH_LAM_VIEC"].Rows.Count;
             AutoCompleteStringCollection v_acsc_search = new AutoCompleteStringCollection();
-            US_DM_DON_VI v_us = new US_DM_DON_VI();
-            DS_DM_DON_VI v_ds = new DS_DM_DON_VI();
-            v_us.FillDataset(v_ds);
-            foreach (DataRow dr in v_ds.DM_DON_VI)
+            US_V_DM_DON_VI v_us = new US_V_DM_DON_VI();
+            DS_V_DM_DON_VI v_ds = new DS_V_DM_DON_VI();
+            v_us.Filldataset_by_ID_phap_nhan(v_ds, CAppContext_201.getCurrentIDPhapnhan());
+            foreach (DataRow dr in v_ds.V_DM_DON_VI)
             {
-                v_acsc_search.Add(dr[DM_DON_VI.MA_DON_VI].ToString());
+                v_acsc_search.Add(dr[V_DM_DON_VI.MA_DON_VI].ToString());
 
             }
 
@@ -328,7 +328,7 @@ namespace BKI_HRM
 //                         decimal v_dc_id = 0;
 //                         v_us.FillDatasetByName(v_ds, v_arstr_mien_nhiem[v_arstr_mien_nhiem.Length - 1], ref v_dc_id);
 //                         m_cbo_ma_quyet_dinh_mien_nhiem.SelectedValue = v_dc_id;
-                        m_txt_ma_quyet_dinh.Text = m_us_v_qua_trinh_lam_viec.strMA_QUYET_DINH_MIEN_NHIEM;
+                        m_txt_ma_quyet_dinh_mien_nhiem.Text = m_us_v_qua_trinh_lam_viec.strMA_QUYET_DINH_MIEN_NHIEM;
                         m_cbo_loai_quyet_dinh_mien_nhiem.SelectedValue = v_us_qd.dcID_LOAI_QD;
                         m_dat_ngay_ky_mien_nhiem.Value = v_us_qd.datNGAY_KY;
                         if (v_us_qd.datNGAY_CO_HIEU_LUC > DateTime.Parse("01/01/1900") &&
@@ -349,7 +349,14 @@ namespace BKI_HRM
 //                         m_lbl_file_name.Text = v_strs_1[v_strs_1.Length - 1].Split('-')[v_strs_1[v_strs_1.Length - 1].Split('-').Length - 1];
                         m_lbl_file_name_mien_nhiem.Text = v_us_quyet_dinh_1.strLINK;
                     }
-
+                    if (m_txt_ma_quyet_dinh.Text == "")
+                    {
+                        m_grb_quyet_dinh.Enabled = false;
+                    }
+                    if (m_txt_ma_quyet_dinh_mien_nhiem.Text == "")
+                    {
+                        m_grb_quyet_dinh_mien_nhiem.Enabled = false;
+                    }
                     break;
                 default: break;
             }
@@ -371,8 +378,8 @@ namespace BKI_HRM
             m_us_chi_tiet_chuc_vu.dcID_NHAN_SU = m_us_v_qua_trinh_lam_viec.dcID_NHAN_SU;
             m_us_chi_tiet_chuc_vu.dcID_CHUC_VU = CIPConvert.ToDecimal(m_cbo_chuc_vu_moi.SelectedValue);
             
-            m_us_chi_tiet_chuc_vu.dcID_LOAI_CV = m_rdb_cv_chinh.Checked ? LOAI_CHUC_VU.CHUC_VU_CHINH : LOAI_CHUC_VU.CHUC_VU_KIEM_NHIEM;
-            m_us_chi_tiet_chuc_vu.dcID_LOAI_CV = CIPConvert.ToDecimal(m_cbo_loai_chuc_vu.SelectedValue);
+            m_us_chi_tiet_chuc_vu.dcID_LOAI_CV = (m_rdb_cv_chinh.Checked) ? LOAI_CHUC_VU.CHUC_VU_CHINH : LOAI_CHUC_VU.CHUC_VU_KIEM_NHIEM;
+        //    m_us_chi_tiet_chuc_vu.dcID_LOAI_CV = CIPConvert.ToDecimal(m_cbo_loai_chuc_vu.SelectedValue);
             m_us_chi_tiet_chuc_vu.dcID_DON_VI = m_us_dm_don_vi.dcID;
             if (m_txt_ma_quyet_dinh.Text != "")
                 m_us_chi_tiet_chuc_vu.dcID_QUYET_DINH = m_us_quyet_dinh.dcID;
@@ -513,6 +520,7 @@ namespace BKI_HRM
         }
         private void save_data()
         {
+            US_GD_QUYET_DINH_PHAP_NHAN v_us_gd_quyet_dinh_phap_nhan = new US_GD_QUYET_DINH_PHAP_NHAN();
             if (confirm_save_data() && check_validate_data_is_ok())
             {
 
@@ -593,6 +601,10 @@ namespace BKI_HRM
                                 if (m_b_check_quyet_dinh_null)
                                 {
                                     m_us_quyet_dinh.Insert();
+                                    v_us_gd_quyet_dinh_phap_nhan = new US_GD_QUYET_DINH_PHAP_NHAN();
+                                    v_us_gd_quyet_dinh_phap_nhan.dcID_QUYET_DINH = m_us_quyet_dinh.dcID;
+                                    v_us_gd_quyet_dinh_phap_nhan.dcID_PHAP_NHAN = CAppContext_201.getCurrentIDPhapnhan();
+                                    v_us_gd_quyet_dinh_phap_nhan.Insert();
                                 }
                                 else
                                 {
@@ -604,6 +616,10 @@ namespace BKI_HRM
                                 if (m_b_check_quyet_dinh_mien_nhiem_null)
                                 {
                                     m_us_quyet_dinh_mien_nhiem.Insert();
+                                    v_us_gd_quyet_dinh_phap_nhan = new US_GD_QUYET_DINH_PHAP_NHAN();
+                                    v_us_gd_quyet_dinh_phap_nhan.dcID_QUYET_DINH = m_us_quyet_dinh_mien_nhiem.dcID;
+                                    v_us_gd_quyet_dinh_phap_nhan.dcID_PHAP_NHAN = CAppContext_201.getCurrentIDPhapnhan();
+                                    v_us_gd_quyet_dinh_phap_nhan.Insert();
                                 }
                                 else
                                 {
@@ -636,7 +652,11 @@ namespace BKI_HRM
                                 form_to_us_object_quyet_dinh();
                                 if (m_b_check_quyet_dinh_save)
                                 {
-                                    m_us_quyet_dinh_mien_nhiem.Insert();
+                                    m_us_quyet_dinh.Insert();
+                                    v_us_gd_quyet_dinh_phap_nhan = new US_GD_QUYET_DINH_PHAP_NHAN();
+                                    v_us_gd_quyet_dinh_phap_nhan.dcID_QUYET_DINH = m_us_quyet_dinh.dcID;
+                                    v_us_gd_quyet_dinh_phap_nhan.dcID_PHAP_NHAN = CAppContext_201.getCurrentIDPhapnhan();
+                                    v_us_gd_quyet_dinh_phap_nhan.Insert();
                                 }
 
                             }
@@ -646,6 +666,10 @@ namespace BKI_HRM
                                 if (m_b_check_quyet_dinh_mien_nhiem_save)
                                 {
                                     m_us_quyet_dinh_mien_nhiem.Insert();
+                                    v_us_gd_quyet_dinh_phap_nhan = new US_GD_QUYET_DINH_PHAP_NHAN();
+                                    v_us_gd_quyet_dinh_phap_nhan.dcID_QUYET_DINH = m_us_quyet_dinh_mien_nhiem.dcID;
+                                    v_us_gd_quyet_dinh_phap_nhan.dcID_PHAP_NHAN = CAppContext_201.getCurrentIDPhapnhan();
+                                    v_us_gd_quyet_dinh_phap_nhan.Insert();
                                 }
 
                             }
@@ -764,12 +788,14 @@ namespace BKI_HRM
         }
         private void them_quyet_dinh()
         {
+            m_b_check_quyet_dinh_null = true;
             m_b_check_quyet_dinh_save = true;
             m_grb_quyet_dinh.Enabled = true;
             m_txt_ma_quyet_dinh.Focus();
         }
         private void them_quyet_dinh_mien_mien_nhiem()
         {
+            m_b_check_quyet_dinh_mien_nhiem_null = true;
             m_b_check_quyet_dinh_mien_nhiem_save = true;
             m_grb_quyet_dinh_mien_nhiem.Enabled = true;
             m_txt_ma_quyet_dinh_mien_nhiem.Focus();
