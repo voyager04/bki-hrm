@@ -550,6 +550,8 @@ namespace BKI_HRM
         private void load_data_2_grid()
         {
             m_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
+            var v_dc_id_phap_nhan = CAppContext_201.getCurrentIDPhapnhan();
+
             var v_str_search = m_txt_tim_kiem.Text.Trim();
             if (v_str_search == m_str_suggest)
                 v_str_search = "";
@@ -572,7 +574,8 @@ namespace BKI_HRM
                                           v_str_trang_thai_hop_dong, 
                                           DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()), 
                                           DateTime.Parse(m_dat_den_ngay.Value.ToShortDateString()), 
-                                          0);
+                                          0,
+                                          v_dc_id_phap_nhan);
             if (m_cbo_tim_kiem_theo.SelectedIndex == 1)
                 m_us.FillDatasetSearchAll(m_ds, 
                                           v_str_search, 
@@ -580,7 +583,8 @@ namespace BKI_HRM
                                           v_str_trang_thai_hop_dong, 
                                           DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()), 
                                           DateTime.Parse(m_dat_den_ngay.Value.ToShortDateString()), 
-                                          1);
+                                          1,
+                                          v_dc_id_phap_nhan);
             if (m_cbo_tim_kiem_theo.SelectedIndex == 2)
                 m_us.FillDatasetSearchAll(m_ds, 
                                           v_str_search, 
@@ -588,7 +592,8 @@ namespace BKI_HRM
                                           v_str_trang_thai_hop_dong, 
                                           DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
                                           DateTime.Parse(m_dat_den_ngay.Value.ToShortDateString()), 
-                                          2);
+                                          2,
+                                          v_dc_id_phap_nhan);
             if (m_cbo_tim_kiem_theo.SelectedIndex == 3)
                 m_us.FillDatasetSearchAll(m_ds, 
                                           v_str_search, 
@@ -596,7 +601,8 @@ namespace BKI_HRM
                                           v_str_trang_thai_hop_dong, 
                                           DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()), 
                                           DateTime.Parse(m_dat_den_ngay.Value.ToShortDateString()), 
-                                          3);
+                                          3,
+                                          v_dc_id_phap_nhan);
 
             m_lbl_count_record.Text = string.Format("Có {0} Hợp Đồng Lao Động.", m_ds.Tables[0].Rows.Count);
             m_fg.Redraw = false;

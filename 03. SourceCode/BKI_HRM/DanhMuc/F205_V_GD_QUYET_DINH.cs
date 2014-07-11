@@ -455,6 +455,13 @@ namespace BKI_HRM
                 , NGAY_CO_HIEU_LUC = 3
 
         }
+
+        private enum e_col_Number_quyet_dinh_phap_nhan
+        {
+            ID = 0,
+            ID_QUYET_DINH = 1,
+            ID_PHAP_NHAN = 2
+        }
         #endregion
 
         #region Members
@@ -635,10 +642,17 @@ namespace BKI_HRM
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
             US_V_GD_QUYET_DINH v_us = new US_V_GD_QUYET_DINH();
+            US_GD_QUYET_DINH_PHAP_NHAN v_us_qd_pn = new US_GD_QUYET_DINH_PHAP_NHAN();
+            DS_GD_QUYET_DINH_PHAP_NHAN v_ds_qd_pn = new DS_GD_QUYET_DINH_PHAP_NHAN();
             grid2us_object(v_us, m_fg.Row);
             try
             {
                 v_us.BeginTransaction();
+                // Xoá Quyết định - Pháp nhân
+                v_us_qd_pn.FillDatasetByIdQuyetDinh(v_ds_qd_pn, v_us.dcID);
+                v_us_qd_pn.DeleteByID(CIPConvert.ToDecimal(v_ds_qd_pn.GD_QUYET_DINH_PHAP_NHAN.Rows[0][(int)e_col_Number_quyet_dinh_phap_nhan.ID]));
+
+                // Xoá Pháp nhân
                 v_us.delete_by_id(v_us.dcID);
                 v_us.CommitTransaction();
                 m_fg.Rows.Remove(m_fg.Row);

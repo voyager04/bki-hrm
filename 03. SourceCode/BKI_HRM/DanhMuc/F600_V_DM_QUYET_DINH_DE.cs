@@ -65,6 +65,8 @@ namespace BKI_HRM.DanhMuc
         private DS_V_DM_QUYET_DINH m_v_ds = new DS_V_DM_QUYET_DINH();
         private US_DM_QUYET_DINH m_us = new US_DM_QUYET_DINH();
         private DS_DM_QUYET_DINH m_ds = new DS_DM_QUYET_DINH();
+        private US_GD_QUYET_DINH_PHAP_NHAN m_us_quyet_dinh_phap_nhan = new US_GD_QUYET_DINH_PHAP_NHAN();
+        private DS_GD_QUYET_DINH_PHAP_NHAN m_ds_quyet_dinh_phap_nhan = new DS_GD_QUYET_DINH_PHAP_NHAN();
 
         private DataEntryFileMode m_e_file_mode;
         private string m_str_domain = ConfigurationSettings.AppSettings["DOMAIN"];
@@ -181,6 +183,12 @@ namespace BKI_HRM.DanhMuc
 
         }
 
+        private void form_to_us_quyet_dinh_phap_nhan()
+        {
+            m_us_quyet_dinh_phap_nhan.dcID_PHAP_NHAN = CAppContext_201.getCurrentIDPhapnhan();
+            m_us_quyet_dinh_phap_nhan.dcID_QUYET_DINH = m_us.dcID;
+        }
+
         private void save_data()
         {
             if (check_data_is_ok() == false)
@@ -280,7 +288,8 @@ namespace BKI_HRM.DanhMuc
             // Xử lý quyết định theo pháp nhân
             if (m_e_form_mode == DataEntryFormMode.InsertDataState)
             {
-                // TODO: Chờ tuấn anh làm xong chọn pháp nhân khi login
+                form_to_us_quyet_dinh_phap_nhan();
+                m_us_quyet_dinh_phap_nhan.Insert();
             }
             BaseMessages.MsgBox_Infor("Cập nhật dữ liệu thành công!");
             this.Close();

@@ -557,7 +557,14 @@ namespace BKI_HRM.US
             v_sp.fillDataSetByCommand(this, op_ds);
         }
 
-        public void FillDatasetSearchAll(DS_V_GD_HOP_DONG_LAO_DONG op_ds, string ip_str_keyword, decimal ip_dc_loai_hop_dong, string ip_str_trang_thai_hop_dong, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay, decimal ip_dc_tim_kiem_ngay_thang_theo)
+        public void FillDatasetSearchAll(DS_V_GD_HOP_DONG_LAO_DONG op_ds, 
+                                         string ip_str_keyword, 
+                                         decimal ip_dc_loai_hop_dong, 
+                                         string ip_str_trang_thai_hop_dong, 
+                                         DateTime ip_dat_tu_ngay, 
+                                         DateTime ip_dat_den_ngay, 
+                                         decimal ip_dc_tim_kiem_ngay_thang_theo,
+                                         decimal ip_dc_id_phap_nhan)
         {
             CStoredProc v_sp = new CStoredProc("pr_GD_HOP_DONG_Search");
             v_sp.addNVarcharInputParam("@ip_str_keyword", ip_str_keyword);
@@ -566,15 +573,17 @@ namespace BKI_HRM.US
             v_sp.addDatetimeInputParam("@tu_ngay", ip_dat_tu_ngay);
             v_sp.addDatetimeInputParam("@den_ngay", ip_dat_den_ngay);
             v_sp.addDecimalInputParam("@tim_kiem_theo_ngay", ip_dc_tim_kiem_ngay_thang_theo);
+            v_sp.addDecimalInputParam("@id_phap_nhan", ip_dc_id_phap_nhan);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
 
-        public void FIllDataset_By_Hop_Dong_Da_Het_Han(DS_V_GD_HOP_DONG_LAO_DONG op_ds, 
+        public void SelectHopDongHienTaiByPhapNhan(DS_V_GD_HOP_DONG_LAO_DONG op_ds, 
                                                        string ip_str_keyword,
                                                        decimal ip_dc_loai_hop_dong,
                                                        DateTime ip_dat_tu_ngay, 
                                                        DateTime ip_dat_den_ngay, 
-                                                       decimal ip_dc_tim_kiem_ngay_thang_theo)
+                                                       decimal ip_dc_tim_kiem_ngay_thang_theo,
+                                                       decimal ip_dc_id_phap_nhan)
         {
             CStoredProc v_sp = new CStoredProc("pr_V_GD_HOP_DONG_LAO_DONG_Search_HD_hien_tai");
             v_sp.addNVarcharInputParam("@ip_str_keyword", ip_str_keyword);
@@ -582,15 +591,17 @@ namespace BKI_HRM.US
             v_sp.addDatetimeInputParam("@tu_ngay", ip_dat_tu_ngay);
             v_sp.addDatetimeInputParam("@den_ngay", ip_dat_den_ngay);
             v_sp.addDecimalInputParam("@tim_kiem_theo_ngay", ip_dc_tim_kiem_ngay_thang_theo);
+            v_sp.addDecimalInputParam("@id_phap_nhan", ip_dc_id_phap_nhan);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
 
-        public void FIllDataset_By_Hop_Dong_Sap_Het_Han(DS_V_GD_HOP_DONG_LAO_DONG op_ds,
+        public void SelectHopDongSapHetHan(DS_V_GD_HOP_DONG_LAO_DONG op_ds,
                                                         string ip_str_keyword, 
                                                         decimal ip_dc_loai_hop_dong,
                                                         DateTime ip_dat_tu_ngay,
                                                         DateTime ip_dat_den_ngay,
-                                                        decimal ip_dc_tim_kiem_ngay_thang_theo)
+                                                        decimal ip_dc_tim_kiem_ngay_thang_theo,
+                                                        decimal ip_dc_id_phap_nhan)
         {
             CStoredProc v_sp = new CStoredProc("pr_V_GD_HOP_DONG_LAO_DONG_Search_HD_sap_het_han");
             v_sp.addNVarcharInputParam("@ip_str_keyword", ip_str_keyword);
@@ -598,15 +609,17 @@ namespace BKI_HRM.US
             v_sp.addDatetimeInputParam("@tu_ngay", ip_dat_tu_ngay);
             v_sp.addDatetimeInputParam("@den_ngay", ip_dat_den_ngay);
             v_sp.addDecimalInputParam("@tim_kiem_theo_ngay", ip_dc_tim_kiem_ngay_thang_theo);
+            v_sp.addDecimalInputParam("@id_phap_nhan", ip_dc_id_phap_nhan);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
 
-        public void FillDataSet_Search_HDLD_da_het_han_nhung_chua_ky(DS_V_GD_HOP_DONG_LAO_DONG op_ds,
+        public void SelectHopDongDaHetHanNhungChuaKy(DS_V_GD_HOP_DONG_LAO_DONG op_ds,
                                                                      string ip_str_keyword,
                                                                      decimal ip_dc_loai_hop_dong,
                                                                      DateTime ip_dat_tu_ngay,
                                                                      DateTime ip_dat_den_ngay,
-                                                                     decimal ip_dc_tim_kiem_ngay_thang_theo)
+                                                                     decimal ip_dc_tim_kiem_ngay_thang_theo,
+                                                                     decimal ip_dc_id_phap_nhan)
         {
             CStoredProc v_sp = new CStoredProc("pr_V_GD_HOP_DONG_LAO_DONG_Search_HDLD_da_het_han_nhung_chua_ky");
             v_sp.addNVarcharInputParam("@ip_str_keyword", ip_str_keyword);
@@ -614,6 +627,7 @@ namespace BKI_HRM.US
             v_sp.addDatetimeInputParam("@tu_ngay", ip_dat_tu_ngay);
             v_sp.addDatetimeInputParam("@den_ngay", ip_dat_den_ngay);
             v_sp.addDecimalInputParam("@tim_kiem_theo_ngay", ip_dc_tim_kiem_ngay_thang_theo);
+            v_sp.addDecimalInputParam("@id_phap_nhan", ip_dc_id_phap_nhan);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
 
