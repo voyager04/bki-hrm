@@ -144,10 +144,12 @@ namespace BKI_HRM.DanhMuc
                 BaseMessages.MsgBox_Infor("Bạn chưa nhập mã quyết định");
                 return false;
             }
-
-
-
-
+            string[] v_arstr = m_txt_ma_quyet_dinh.Text.Trim().Split('/');
+            if (!CIPConvert.is_valid_number(v_arstr[0].Substring(0,v_arstr[0].Length-1)))
+            {
+                BaseMessages.MsgBox_Infor("Mã quyết định không đúng định dạng.");
+                return false;
+            }
             return kiem_tra_ngay_truoc_sau();
         }
 
