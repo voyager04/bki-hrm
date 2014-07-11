@@ -113,8 +113,8 @@ namespace BKI_HRM
             this.label4 = new System.Windows.Forms.Label();
             this.m_dat_tu_ngay = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.m_lbl_total_record = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.m_lbl_total_record = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -370,6 +370,7 @@ namespace BKI_HRM
             this.m_dat_tu_ngay.Name = "m_dat_tu_ngay";
             this.m_dat_tu_ngay.Size = new System.Drawing.Size(111, 20);
             this.m_dat_tu_ngay.TabIndex = 43;
+            this.m_dat_tu_ngay.ValueChanged += new System.EventHandler(this.m_dat_tu_ngay_ValueChanged);
             // 
             // panel1
             // 
@@ -385,14 +386,6 @@ namespace BKI_HRM
             this.panel1.Size = new System.Drawing.Size(1163, 101);
             this.panel1.TabIndex = 45;
             // 
-            // m_lbl_total_record
-            // 
-            this.m_lbl_total_record.AutoSize = true;
-            this.m_lbl_total_record.Location = new System.Drawing.Point(36, 69);
-            this.m_lbl_total_record.Name = "m_lbl_total_record";
-            this.m_lbl_total_record.Size = new System.Drawing.Size(0, 13);
-            this.m_lbl_total_record.TabIndex = 45;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -401,6 +394,14 @@ namespace BKI_HRM
             this.label1.Size = new System.Drawing.Size(234, 13);
             this.label1.TabIndex = 46;
             this.label1.Text = "Click vào ô Mã quyết định để xem file đính kèm";
+            // 
+            // m_lbl_total_record
+            // 
+            this.m_lbl_total_record.AutoSize = true;
+            this.m_lbl_total_record.Location = new System.Drawing.Point(36, 69);
+            this.m_lbl_total_record.Name = "m_lbl_total_record";
+            this.m_lbl_total_record.Size = new System.Drawing.Size(0, 13);
+            this.m_lbl_total_record.TabIndex = 45;
             // 
             // F205_V_GD_QUYET_DINH
             // 
@@ -576,17 +577,18 @@ namespace BKI_HRM
                     CIPConvert.ToDecimal(m_cbo_loai_quyet_dinh.SelectedValue.ToString()),
                     CIPConvert.ToDecimal(m_cbo_tim_kiem_theo.SelectedValue.ToString()),
                     m_dat_tu_ngay.Value,
-                    m_dat_den_ngay.Value);
+                    m_dat_den_ngay.Value,
+                    CAppContext_201.getCurrentIDPhapnhan());
             else
                 m_us.FillDatasetSearch(m_ds, m_txt_tim_kiem.Text.Trim(),
                     CIPConvert.ToDecimal(m_cbo_loai_quyet_dinh.SelectedValue.ToString()),
                     CIPConvert.ToDecimal(m_cbo_tim_kiem_theo.SelectedValue.ToString()),
                     m_dat_tu_ngay.Value,
-                    m_dat_den_ngay.Value);
+                    m_dat_den_ngay.Value,
+                    CAppContext_201.getCurrentIDPhapnhan());
            // m_us.FillDataset(m_ds);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-
             m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
               , 0
               , (int)e_col_Number.LOAI_QUYET_DINH // chỗ này là tên trường mà mình nhóm
@@ -883,6 +885,11 @@ namespace BKI_HRM
             }
         }
         #endregion
+
+        private void m_dat_tu_ngay_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
