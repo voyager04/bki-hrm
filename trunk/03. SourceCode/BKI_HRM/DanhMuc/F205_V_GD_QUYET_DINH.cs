@@ -315,6 +315,7 @@ namespace BKI_HRM
             this.m_dat_den_ngay.Name = "m_dat_den_ngay";
             this.m_dat_den_ngay.Size = new System.Drawing.Size(111, 20);
             this.m_dat_den_ngay.TabIndex = 49;
+            this.m_dat_den_ngay.ValueChanged += new System.EventHandler(this.m_dat_den_ngay_ValueChanged);
             // 
             // m_cbo_loai_quyet_dinh
             // 
@@ -888,7 +889,26 @@ namespace BKI_HRM
 
         private void m_dat_tu_ngay_ValueChanged(object sender, EventArgs e)
         {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
+        private void m_dat_den_ngay_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
     }
 }
