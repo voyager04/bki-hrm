@@ -478,6 +478,12 @@ namespace BKI_HRM.US {
             v_cst.addDecimalInputParam("@ID", ip_dc_id);
             v_cst.ExecuteCommand(this);
         }
+        public void Filldataset_by_ID_phap_nhan(DS_V_DM_DON_VI op_ds, decimal ip_dc_id_phap_nhan)
+        {
+            CStoredProc v_cst = new CStoredProc("pr_V_DM_DON_VI_search_by_id_phap_nhan");
+            v_cst.addDecimalInputParam("@id_phap_nhan", ip_dc_id_phap_nhan);
+            v_cst.fillDataSetByCommand(this, op_ds);
+        }
         #endregion
     }
 }
