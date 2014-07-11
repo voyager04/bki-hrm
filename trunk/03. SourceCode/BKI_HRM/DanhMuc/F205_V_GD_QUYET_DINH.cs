@@ -691,6 +691,7 @@ namespace BKI_HRM
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return true;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return true;
+            if (m_fg.Rows[m_fg.Row].IsNode) return false;
             grid2us_object(m_us, m_fg.Row);
             if (m_us == null)
                 return true;
