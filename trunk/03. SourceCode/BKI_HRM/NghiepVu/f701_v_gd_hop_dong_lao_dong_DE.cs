@@ -15,6 +15,7 @@ using BKI_HRM.DS.CDBNames;
 using BKI_HRM.US;
 using BKI_HRM.DS;
 using IP.Core.IPCommon;
+using IP.Core.IPSystemAdmin;
 using IP.Core.IPWordReport;
 using System.Net.NetworkInformation;
 
@@ -29,7 +30,6 @@ namespace BKI_HRM.NghiepVu
             auto_suggest_text();
             CControlFormat.setFormStyle(this);
             load_data_2_cbo_loai_hop_dong();
-            load_data_2_cbo_phap_nhan();
             m_cbo_trang_thai.SelectedIndex = 0;
         }
 
@@ -91,11 +91,11 @@ namespace BKI_HRM.NghiepVu
                 return false;
             }
 
-            if (!Regex.IsMatch(m_txt_ma_hop_dong.Text, "^[A-z0-9]+$"))
-            {
-                BaseMessages.MsgBox_Infor("Bạn nhập Mã Hợp Đồng chưa đúng định dạng");
-                return false;
-            }
+            //if (!Regex.IsMatch(m_txt_ma_hop_dong.Text, "^[A-z0-9]+$"))
+            //{
+            //    BaseMessages.MsgBox_Infor("Bạn nhập Mã Hợp Đồng chưa đúng định dạng");
+            //    return false;
+            //}
 
             if (!Regex.IsMatch(m_txt_nguoi_ky.Text, "[A-z0-9]*"))
             {
@@ -138,11 +138,9 @@ namespace BKI_HRM.NghiepVu
 
         private void form_2_us_object()
         {
-            m_us.strMA_HOP_DONG = string.Format("{0}/{1}/{2}", m_txt_ma_hop_dong.Text.Trim(),
-                                                                  m_dat_ngay_co_hieu_luc.Value.Year,
-                                                                  m_cbo_ma_hop_dong.Text);
+            m_us.strMA_HOP_DONG = m_txt_ma_hop_dong.Text.Trim();
             m_us.dcID_LOAI_HOP_DONG = (decimal)m_cbo_loai_hop_dong.SelectedValue;
-            m_us.dcID_PHAP_NHAN = (decimal)m_cbo_phap_nhan.SelectedValue;
+            m_us.dcID_PHAP_NHAN = CAppContext_201.getCurrentIDPhapnhan();
             m_us.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value;
             m_us.strTRANG_THAI_HOP_DONG = m_cbo_trang_thai.SelectedIndex.Equals(0) ? "Y" : "N";
             m_us.strNGUOI_KY = m_txt_nguoi_ky.Text.Trim();
@@ -287,7 +285,7 @@ namespace BKI_HRM.NghiepVu
             m_us.dcID = ip_us_gd_hop_dong.dcID;
 
 
-            m_txt_ma_hop_dong.Text = ip_us_gd_hop_dong.strMA_HOP_DONG.Split('/')[0];
+            m_txt_ma_hop_dong.Text = ip_us_gd_hop_dong.strMA_HOP_DONG;
 
             m_txt_nguoi_ky.Text = ip_us_gd_hop_dong.strNGUOI_KY;
             m_txt_chuc_vu_nguoi_ky.Text = ip_us_gd_hop_dong.strCHUC_VU_NGUOI_KY;
@@ -302,7 +300,7 @@ namespace BKI_HRM.NghiepVu
 
             m_cbo_loai_hop_dong.SelectedValue = ip_us_gd_hop_dong.dcID_LOAI_HOP_DONG;
             m_cbo_trang_thai.SelectedIndex = (ip_us_gd_hop_dong.strTRANG_THAI_HOP_DONG.Equals("Y")) ? 0 : 1;
-            m_cbo_phap_nhan.SelectedValue = ip_us_gd_hop_dong.dcID_PHAP_NHAN;
+            m_lbl_phap_nhan.Text = new US_DM_PHAP_NHAN(ip_us_gd_hop_dong.dcID_PHAP_NHAN).strTEN_PHAP_NHAN;
 
             if (ip_us_gd_hop_dong.datNGAY_HET_HAN.Equals(DateTime.Parse("1/1/1900 12:00:00 AM")))
             {
@@ -325,16 +323,6 @@ namespace BKI_HRM.NghiepVu
             m_cbo_loai_hop_dong.DataSource = v_ds_cm_dm_td.Tables[0];
             m_cbo_loai_hop_dong.DisplayMember = CM_DM_TU_DIEN.TEN_NGAN;
             m_cbo_loai_hop_dong.ValueMember = CM_DM_TU_DIEN.ID;
-        }
-
-        private void load_data_2_cbo_phap_nhan()
-        {
-            DS_DM_PHAP_NHAN v_ds_dm_phap_nhan = new DS_DM_PHAP_NHAN();
-            US_DM_PHAP_NHAN v_us_dm_phap_nhan = new US_DM_PHAP_NHAN();
-            v_us_dm_phap_nhan.FillDataset(v_ds_dm_phap_nhan);
-            m_cbo_phap_nhan.DataSource = v_ds_dm_phap_nhan.Tables[0];
-            m_cbo_phap_nhan.DisplayMember = DM_PHAP_NHAN.TEN_PHAP_NHAN;
-            m_cbo_phap_nhan.ValueMember = DM_PHAP_NHAN.ID;
         }
 
         private void chon_nhan_su()
@@ -387,13 +375,6 @@ namespace BKI_HRM.NghiepVu
             if (count_ma_hop_dong > 0)
                 return true;
             return false;
-        }
-
-        private void generate_ma_hop_dong()
-        {
-            m_lbl_ma_hop_dong.Text = string.Format("{0}/{1}/{2}", m_txt_ma_hop_dong.Text,
-                                                                  m_dat_ngay_co_hieu_luc.Value.Year,
-                                                                  m_cbo_ma_hop_dong.Text);
         }
 
         private void xuat_word()
@@ -451,7 +432,6 @@ namespace BKI_HRM.NghiepVu
 
             m_cbo_loai_hop_dong.SelectedIndex = 0;
             m_cbo_trang_thai.SelectedIndex = 0;
-            m_cbo_phap_nhan.SelectedIndex = 0;
             m_dat_ngay_co_hieu_luc.Value = DateTime.Now;
             m_dat_ngay_het_han.Value = DateTime.Now;
             m_dat_ngay_ky_hop_dong.Value = DateTime.Now;
@@ -461,8 +441,8 @@ namespace BKI_HRM.NghiepVu
         #region Event
         private void f701_v_gd_hop_dong_lao_dong_DE_Load(object sender, EventArgs e)
         {
-            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.MA_HOP_DONG, WinFormControls.eTAT_CA.NO, m_cbo_ma_hop_dong);
             m_txt_ma_hop_dong.Focus();
+            m_lbl_phap_nhan.Text = new US_DM_PHAP_NHAN(CAppContext_201.getCurrentIDPhapnhan()).strTEN_PHAP_NHAN;
         }
 
         private void m_cmd_save_Click(object sender, EventArgs e)
@@ -556,30 +536,6 @@ namespace BKI_HRM.NghiepVu
                 m_e_file_mode = DataEntryFileMode.DeleteFile;
                 m_str_link_old = m_lbl_file_name.Text;
                 m_lbl_file_name.Text = "";
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void m_txt_ma_hop_dong_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                generate_ma_hop_dong();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void m_cbo_ma_hop_dong_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                generate_ma_hop_dong();
             }
             catch (Exception v_e)
             {

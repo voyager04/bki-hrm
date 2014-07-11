@@ -68,6 +68,7 @@
     <Compile Include="US_GD_CONG_TAC.cs" />
     <Compile Include="US_GD_HOP_DONG.cs" />
     <Compile Include="US_GD_QUA_TRINH_CONG_TAC.cs" />
+    <Compile Include="US_GD_QUYET_DINH_PHAP_NHAN.cs" />
     <Compile Include="US_HT_FORM.cs" />
     <Compile Include="US_HT_NGUOI_SU_DUNG.cs" />
     <Compile Include="US_HT_PHAN_QUYEN_CHO_NHOM.cs" />

@@ -630,101 +630,114 @@ namespace BKI_HRM
                 return;
 
             m_ds = new DS_V_GD_HOP_DONG_LAO_DONG();
+            var v_dc_id_phap_nhan = CAppContext_201.getCurrentIDPhapnhan();
             if (m_i_form_mode == 1)
             {
                 if (m_cbo_tim_kiem_theo.SelectedIndex == 0)
-                    m_us.FIllDataset_By_Hop_Dong_Da_Het_Han(m_ds, 
+                    m_us.SelectHopDongHienTaiByPhapNhan(m_ds, 
                                                             v_str_search, 
                                                             decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), 
                                                             DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
                                                             DateTime.Parse(m_dat_den_ngay.Value.ToShortDateString()), 
-                                                            0);
+                                                            0,
+                                                            v_dc_id_phap_nhan);
                 if (m_cbo_tim_kiem_theo.SelectedIndex == 1)
-                    m_us.FIllDataset_By_Hop_Dong_Da_Het_Han(m_ds,
+                    m_us.SelectHopDongHienTaiByPhapNhan(m_ds,
                                                             v_str_search, 
                                                             decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), 
                                                             DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
                                                             DateTime.Parse(m_dat_den_ngay.Value.ToShortDateString()), 
-                                                            1);
+                                                            1,
+                                                            v_dc_id_phap_nhan);
                 if (m_cbo_tim_kiem_theo.SelectedIndex == 2)
-                    m_us.FIllDataset_By_Hop_Dong_Da_Het_Han(m_ds,
+                    m_us.SelectHopDongHienTaiByPhapNhan(m_ds,
                                                             v_str_search, 
                                                             decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), 
                                                             DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
                                                             DateTime.Parse(m_dat_den_ngay.Value.ToShortDateString()), 
-                                                            2);
+                                                            2,
+                                                            v_dc_id_phap_nhan);
                 if (m_cbo_tim_kiem_theo.SelectedIndex == 3)
-                    m_us.FIllDataset_By_Hop_Dong_Da_Het_Han(m_ds,
+                    m_us.SelectHopDongHienTaiByPhapNhan(m_ds,
                                                             v_str_search, 
                                                             decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), 
                                                             DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
                                                             DateTime.Parse(m_dat_den_ngay.Value.ToShortDateString()), 
-                                                            3);
+                                                            3,
+                                                            v_dc_id_phap_nhan);
                 m_lbl_count_record.Text = string.Format("Có {0} Hợp Đồng Lao Động còn hiệu lực.", m_ds.Tables[0].Rows.Count);
             }
             if (m_i_form_mode == 2)
             {
                 if (m_cbo_tim_kiem_theo.SelectedIndex == 0)
-                    m_us.FIllDataset_By_Hop_Dong_Sap_Het_Han(m_ds,
+                    m_us.SelectHopDongSapHetHan(m_ds,
                                                              v_str_search, 
                                                              decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), 
                                                              DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
                                                              //DateTime.Parse(m_dat_den_ngay.Value.ToShortDateString()), 
                                                              DateTime.Parse("01/01/2220"),
-                                                             0);
+                                                             0,
+                                                             v_dc_id_phap_nhan);
                 if (m_cbo_tim_kiem_theo.SelectedIndex == 1)
-                    m_us.FIllDataset_By_Hop_Dong_Sap_Het_Han(m_ds,
+                    m_us.SelectHopDongSapHetHan(m_ds,
                                                              v_str_search, 
                                                              decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), 
                                                              DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
                                                              DateTime.Parse(m_dat_den_ngay.Value.ToShortDateString()), 
-                                                             1);
+                                                             1,
+                                                             v_dc_id_phap_nhan);
                 if (m_cbo_tim_kiem_theo.SelectedIndex == 2)
-                    m_us.FIllDataset_By_Hop_Dong_Sap_Het_Han(m_ds,
+                    m_us.SelectHopDongSapHetHan(m_ds,
                                                              v_str_search, 
                                                              decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), 
                                                              DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
                                                              DateTime.Parse(m_dat_den_ngay.Value.ToShortDateString()), 
-                                                             2);
+                                                             2,
+                                                             v_dc_id_phap_nhan);
                 if (m_cbo_tim_kiem_theo.SelectedIndex == 3)
-                    m_us.FIllDataset_By_Hop_Dong_Sap_Het_Han(m_ds,
+                    m_us.SelectHopDongSapHetHan(m_ds,
                                                              v_str_search, 
                                                              decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), 
                                                              DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
                                                              DateTime.Parse(m_dat_den_ngay.Value.ToShortDateString()), 
-                                                             3);
+                                                             3,
+                                                             v_dc_id_phap_nhan);
                 m_lbl_count_record.Text = string.Format("Có {0} Hợp Đồng Lao Động sắp hết hạn (dưới 30 ngày).", m_ds.Tables[0].Rows.Count);
             }
             if (m_i_form_mode == 3)
             {
                 if (m_cbo_tim_kiem_theo.SelectedIndex == 0)
-                    m_us.FillDataSet_Search_HDLD_da_het_han_nhung_chua_ky(m_ds,
+                    m_us.SelectHopDongDaHetHanNhungChuaKy(m_ds,
                                                                           v_str_search, 
                                                                           decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), 
                                                                           DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
                                                                           DateTime.Parse(m_dat_den_ngay.Value.ToShortDateString()), 
-                                                                          0);
+                                                                          0,
+                                                                          v_dc_id_phap_nhan);
                 if (m_cbo_tim_kiem_theo.SelectedIndex == 1)
-                    m_us.FillDataSet_Search_HDLD_da_het_han_nhung_chua_ky(m_ds,
+                    m_us.SelectHopDongDaHetHanNhungChuaKy(m_ds,
                                                                           v_str_search, 
                                                                           decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), 
                                                                           DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
                                                                           DateTime.Parse(m_dat_den_ngay.Value.ToShortDateString()), 
-                                                                          1);
+                                                                          1,
+                                                                          v_dc_id_phap_nhan);
                 if (m_cbo_tim_kiem_theo.SelectedIndex == 2)
-                    m_us.FillDataSet_Search_HDLD_da_het_han_nhung_chua_ky(m_ds,
+                    m_us.SelectHopDongDaHetHanNhungChuaKy(m_ds,
                                                                           v_str_search, 
                                                                           decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), 
                                                                           DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
                                                                           DateTime.Parse(m_dat_den_ngay.Value.ToShortDateString()), 
-                                                                          2);
+                                                                          2,
+                                                                          v_dc_id_phap_nhan);
                 if (m_cbo_tim_kiem_theo.SelectedIndex == 3)
-                    m_us.FillDataSet_Search_HDLD_da_het_han_nhung_chua_ky(m_ds,  
+                    m_us.SelectHopDongDaHetHanNhungChuaKy(m_ds,  
                                                                           v_str_search, 
                                                                           decimal.Parse(m_cbo_loai_hop_dong.SelectedValue.ToString()), 
                                                                           DateTime.Parse(m_dat_tu_ngay.Value.ToShortDateString()),
                                                                           DateTime.Parse(m_dat_den_ngay.Value.ToShortDateString()), 
-                                                                          3);
+                                                                          3,
+                                                                          v_dc_id_phap_nhan);
                 m_lbl_count_record.Text = string.Format("Có {0} Hợp Đồng Lao Động đã hết hạn nhưng chưa ký mới.", m_ds.Tables[0].Rows.Count);
             }
 
@@ -858,7 +871,13 @@ namespace BKI_HRM
             int result = 0;
             US_V_GD_HOP_DONG_LAO_DONG v_us_v_gd_hop_dong = new US_V_GD_HOP_DONG_LAO_DONG();
             DS_V_GD_HOP_DONG_LAO_DONG v_ds_v_gd_hop_dong_sap_het_han = new DS_V_GD_HOP_DONG_LAO_DONG();
-            v_us_v_gd_hop_dong.FIllDataset_By_Hop_Dong_Sap_Het_Han(v_ds_v_gd_hop_dong_sap_het_han, "", -1, DateTime.Parse("01/01/2000"), DateTime.Parse("01/01/2220"), 0);
+            v_us_v_gd_hop_dong.SelectHopDongSapHetHan(v_ds_v_gd_hop_dong_sap_het_han, 
+                                                      "", 
+                                                      -1, 
+                                                      DateTime.Parse("01/01/2000"), 
+                                                      DateTime.Parse("01/01/2220"), 
+                                                      0,
+                                                      CAppContext_201.getCurrentIDPhapnhan());
             if (v_ds_v_gd_hop_dong_sap_het_han.Tables[0].Rows.Count > 0)
             {
                 result = v_ds_v_gd_hop_dong_sap_het_han.Tables[0].Rows.Count;
@@ -871,7 +890,13 @@ namespace BKI_HRM
             int result = 0;
             US_V_GD_HOP_DONG_LAO_DONG v_us_v_gd_hop_dong = new US_V_GD_HOP_DONG_LAO_DONG();
             DS_V_GD_HOP_DONG_LAO_DONG v_ds_v_gd_hop_dong_da_het_han = new DS_V_GD_HOP_DONG_LAO_DONG();
-            v_us_v_gd_hop_dong.FillDataSet_Search_HDLD_da_het_han_nhung_chua_ky(v_ds_v_gd_hop_dong_da_het_han, "", -1, DateTime.Parse("01/01/2000"), DateTime.Now, 0);
+            v_us_v_gd_hop_dong.SelectHopDongDaHetHanNhungChuaKy(v_ds_v_gd_hop_dong_da_het_han, 
+                                                                "", 
+                                                                -1, 
+                                                                DateTime.Parse("01/01/2000"), 
+                                                                DateTime.Now, 
+                                                                0,
+                                                                CAppContext_201.getCurrentIDPhapnhan());
             if (v_ds_v_gd_hop_dong_da_het_han.Tables[0].Rows.Count > 0)
             {
                 result = v_ds_v_gd_hop_dong_da_het_han.Tables[0].Rows.Count;
@@ -1091,7 +1116,6 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        #endregion
 
         private void m_dat_den_ngay_ValueChanged(object sender, EventArgs e)
         {
@@ -1104,6 +1128,7 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        #endregion
     }
 }
 
