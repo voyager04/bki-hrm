@@ -470,12 +470,14 @@ public class US_V_GD_CONG_TAC : US_Object
     public void FillDatasetSearch(DS_V_GD_CONG_TAC op_ds
         , string ip_str_search
         , DateTime ip_dat_tu_ngay
-        , DateTime ip_dat_den_ngay)
+        , DateTime ip_dat_den_ngay,
+        decimal ip_dc_id_phap_nhan)
     {
         CStoredProc v_store = new CStoredProc("pr_V_GD_CONG_TAC_search");
         v_store.addNVarcharInputParam("@ip_str_search", ip_str_search);
         v_store.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
         v_store.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
+        v_store.addDecimalInputParam("@id_phap_nhan", ip_dc_id_phap_nhan);
         v_store.fillDataSetByCommand(this, op_ds);
     }
 	}
