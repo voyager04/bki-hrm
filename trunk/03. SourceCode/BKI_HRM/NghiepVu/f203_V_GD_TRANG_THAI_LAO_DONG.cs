@@ -193,6 +193,7 @@ namespace BKI_HRM
             this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_view.TabIndex = 21;
             this.m_cmd_view.Text = "Xem";
+            this.m_cmd_view.Visible = false;
             this.m_cmd_view.Click += new System.EventHandler(this.m_cmd_view_Click);
             // 
             // m_cmd_delete
@@ -397,7 +398,7 @@ namespace BKI_HRM
 		}
 		private void load_data_2_grid(){						
 			m_ds = new DS_V_GD_TRANG_THAI_LAO_DONG();			
-			m_us.FillDataset_Search(m_ds, "");
+			m_us.FillDataset_Search(m_ds, "", CAppContext_201.getCurrentIDPhapnhan());
 			m_grv_trang_thai_ld.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_grv_trang_thai_ld, m_obj_trans);
             m_grv_trang_thai_ld.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.None // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
@@ -412,7 +413,7 @@ namespace BKI_HRM
         private void load_data_2_grid_search()
         {
             m_ds = new DS_V_GD_TRANG_THAI_LAO_DONG();
-            m_us.FillDataset_Search(m_ds, m_txt_tim_kiem.Text.Trim());
+            m_us.FillDataset_Search(m_ds, m_txt_tim_kiem.Text.Trim(), CAppContext_201.getCurrentIDPhapnhan());
             m_grv_trang_thai_ld.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_grv_trang_thai_ld, m_obj_trans);
             m_grv_trang_thai_ld.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế

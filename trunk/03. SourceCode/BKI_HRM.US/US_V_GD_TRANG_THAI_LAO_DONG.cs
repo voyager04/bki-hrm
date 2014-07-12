@@ -410,10 +410,11 @@ public class US_V_GD_TRANG_THAI_LAO_DONG : US_Object
         v_sp.addNVarcharInputParam("@MA_NHAN_VIEN", ip_str_ma_nv);
         v_sp.fillDataSetByCommand(this, op_ds);
     }
-    public void FillDataset_Search(DS_V_GD_TRANG_THAI_LAO_DONG op_ds, string ip_str_search)
+    public void FillDataset_Search(DS_V_GD_TRANG_THAI_LAO_DONG op_ds, string ip_str_search, decimal ip_dc_id_phap_nhan)
     {
         CStoredProc v_sp = new CStoredProc("pr_V_GD_TRANG_THAI_LAO_DONG_search");
         v_sp.addNVarcharInputParam("@ip_str_search", ip_str_search);
+        v_sp.addDecimalInputParam("@id_phap_nhan", ip_dc_id_phap_nhan);
         v_sp.fillDataSetByCommand(this, op_ds);
     }
 
