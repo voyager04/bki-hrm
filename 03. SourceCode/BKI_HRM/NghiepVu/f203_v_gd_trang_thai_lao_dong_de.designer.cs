@@ -79,6 +79,7 @@
             // m_dat_ngay_het_hieu_luc
             // 
             this.m_dat_ngay_het_hieu_luc.Checked = false;
+            this.m_dat_ngay_het_hieu_luc.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_het_hieu_luc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.m_dat_ngay_het_hieu_luc.Location = new System.Drawing.Point(360, 82);
             this.m_dat_ngay_het_hieu_luc.Name = "m_dat_ngay_het_hieu_luc";
@@ -97,6 +98,7 @@
             // 
             // m_dat_ngay_co_hieu_luc
             // 
+            this.m_dat_ngay_co_hieu_luc.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_co_hieu_luc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.m_dat_ngay_co_hieu_luc.Location = new System.Drawing.Point(115, 82);
             this.m_dat_ngay_co_hieu_luc.Name = "m_dat_ngay_co_hieu_luc";
@@ -313,15 +315,17 @@
             this.m_lbl_ma_qd.Size = new System.Drawing.Size(75, 13);
             this.m_lbl_ma_qd.TabIndex = 126;
             this.m_lbl_ma_qd.Text = "Mã quyết định";
+            this.m_lbl_ma_qd.Visible = false;
             // 
             // m_cbo_ma_quyet_dinh
             // 
             this.m_cbo_ma_quyet_dinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_ma_quyet_dinh.FormattingEnabled = true;
-            this.m_cbo_ma_quyet_dinh.Location = new System.Drawing.Point(191, 22);
+            this.m_cbo_ma_quyet_dinh.Location = new System.Drawing.Point(181, 52);
             this.m_cbo_ma_quyet_dinh.Name = "m_cbo_ma_quyet_dinh";
             this.m_cbo_ma_quyet_dinh.Size = new System.Drawing.Size(131, 21);
             this.m_cbo_ma_quyet_dinh.TabIndex = 125;
+            this.m_cbo_ma_quyet_dinh.Visible = false;
             this.m_cbo_ma_quyet_dinh.SelectedIndexChanged += new System.EventHandler(this.m_cbo_ma_quyet_dinh_SelectedIndexChanged);
             // 
             // m_cmd_xem_file
@@ -375,6 +379,7 @@
             // m_dat_ngay_het_hieu_luc_qd
             // 
             this.m_dat_ngay_het_hieu_luc_qd.Checked = false;
+            this.m_dat_ngay_het_hieu_luc_qd.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_het_hieu_luc_qd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.m_dat_ngay_het_hieu_luc_qd.Location = new System.Drawing.Point(434, 78);
             this.m_dat_ngay_het_hieu_luc_qd.Name = "m_dat_ngay_het_hieu_luc_qd";
@@ -384,6 +389,7 @@
             // 
             // m_dat_ngay_ky
             // 
+            this.m_dat_ngay_ky.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_ky.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.m_dat_ngay_ky.Location = new System.Drawing.Point(434, 18);
             this.m_dat_ngay_ky.Name = "m_dat_ngay_ky";
@@ -393,6 +399,7 @@
             // 
             // m_dat_ngay_co_hieu_luc_qd
             // 
+            this.m_dat_ngay_co_hieu_luc_qd.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_co_hieu_luc_qd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.m_dat_ngay_co_hieu_luc_qd.Location = new System.Drawing.Point(434, 49);
             this.m_dat_ngay_co_hieu_luc_qd.Name = "m_dat_ngay_co_hieu_luc_qd";
@@ -404,7 +411,7 @@
             this.m_txt_ma_quyet_dinh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_txt_ma_quyet_dinh.Location = new System.Drawing.Point(102, 22);
             this.m_txt_ma_quyet_dinh.Name = "m_txt_ma_quyet_dinh";
-            this.m_txt_ma_quyet_dinh.Size = new System.Drawing.Size(83, 20);
+            this.m_txt_ma_quyet_dinh.Size = new System.Drawing.Size(228, 20);
             this.m_txt_ma_quyet_dinh.TabIndex = 21;
             this.m_txt_ma_quyet_dinh.TextChanged += new System.EventHandler(this.m_txt_ma_quyet_dinh_TextChanged);
             // 

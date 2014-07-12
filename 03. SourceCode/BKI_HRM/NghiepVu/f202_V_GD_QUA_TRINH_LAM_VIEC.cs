@@ -168,7 +168,7 @@ namespace BKI_HRM
             this.m_cmd_update.TabIndex = 18;
             this.m_cmd_update.Text = "&Sửa";
             this.m_cmd_update.Visible = false;
-            this.m_cmd_update.Click += new System.EventHandler(this.m_cmd_them_quyet_dinh_Click);
+            this.m_cmd_update.Click += new System.EventHandler(this.m_cmd_update_Click);
             // 
             // m_cmd_kiem_nhiem
             // 
@@ -518,7 +518,7 @@ namespace BKI_HRM
 			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
 		}
 
-        private void them_quyet_dinh()
+        private void update_data()
         {
             m_cmd_kiem_nhiem.Visible = true;
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_qua_trinh_lam_viec)) return;
@@ -528,6 +528,13 @@ namespace BKI_HRM
                 grid2us_object(m_us_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row);
                 f202_v_gd_qua_trinh_lam_viec_de v_fDE = new f202_v_gd_qua_trinh_lam_viec_de();
                 v_fDE.display_for_update_qd(m_us_qua_trinh_lam_viec);
+                if (m_txt_tim_kiem.Text == m_str_message_tim_kiem)
+                {
+                    m_txt_tim_kiem.Text = "";
+                    load_data_2_grid_search();
+                    m_txt_tim_kiem.Text = m_str_message_tim_kiem;
+                }
+                else
                 load_data_2_grid_search();
             }
             else
@@ -575,7 +582,7 @@ namespace BKI_HRM
                 load_data_2_grid_search();
             }
             
-            m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, "",CAppContext_201.getCurrentIDPhapnhan());
+   //         m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, "",CAppContext_201.getCurrentIDPhapnhan());
 //             if (m_ds_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Count > v_i_count)
 //             {
 //                 bool v_dlr = BaseMessages.MsgBox_Confirm("Có miễn nhiệm chức vũ cũ không?");
@@ -600,6 +607,13 @@ namespace BKI_HRM
                 grid2us_object(m_us_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row);
                 f202_v_gd_qua_trinh_lam_viec_de v_fDE = new f202_v_gd_qua_trinh_lam_viec_de();
                 v_fDE.display_for_update(m_us_qua_trinh_lam_viec);
+                if (m_txt_tim_kiem.Text == m_str_message_tim_kiem)
+                {
+                    m_txt_tim_kiem.Text = "";
+                    load_data_2_grid_search();
+                    m_txt_tim_kiem.Text = m_str_message_tim_kiem;
+                }
+                else
                 load_data_2_grid_search();
             }
             else
@@ -821,11 +835,11 @@ namespace BKI_HRM
             }
         }
 
-        private void m_cmd_them_quyet_dinh_Click(object sender, EventArgs e)
+        private void m_cmd_update_Click(object sender, EventArgs e)
         {
             try
             {
-                them_quyet_dinh();
+                update_data();
             }
             catch (Exception v_e)
             {
