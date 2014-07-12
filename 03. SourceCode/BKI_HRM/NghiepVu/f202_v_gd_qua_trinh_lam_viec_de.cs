@@ -819,7 +819,7 @@ namespace BKI_HRM
         private void chon_quyet_dinh_mien_nhiem()
         {
             m_b_check_quyet_dinh_mien_nhiem_save = false;
-            m_grb_quyet_dinh_mien_nhiem.Enabled = true;
+            m_grb_quyet_dinh_mien_nhiem.Enabled = false;
             f600_v_dm_quyet_dinh v_frm = new f600_v_dm_quyet_dinh();
             v_frm.select_data("Tất cả", ref m_us_quyet_dinh_mien_nhiem);
             if (m_us_quyet_dinh_mien_nhiem.dcID != -1)
@@ -854,7 +854,7 @@ namespace BKI_HRM
         private void chon_quyet_dinh()
         {
             m_b_check_quyet_dinh_save = false;
-            m_grb_quyet_dinh.Enabled = true;
+            m_grb_quyet_dinh.Enabled = false;
             f600_v_dm_quyet_dinh v_frm = new f600_v_dm_quyet_dinh();
             v_frm.select_data("Tất cả", ref m_us_quyet_dinh);
             if (m_us_quyet_dinh.dcID != -1)
