@@ -203,12 +203,12 @@
             this.m_cmd_xem_file.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_xem_file.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_xem_file.ImageIndex = 18;
+            this.m_cmd_xem_file.ImageList = this.ImageList;
             this.m_cmd_xem_file.Location = new System.Drawing.Point(221, 75);
             this.m_cmd_xem_file.Name = "m_cmd_xem_file";
             this.m_cmd_xem_file.Size = new System.Drawing.Size(112, 28);
             this.m_cmd_xem_file.TabIndex = 6;
             this.m_cmd_xem_file.Text = "&Xem tài liệu";
-            this.m_cmd_xem_file.Visible = false;
             // 
             // m_cmd_chon_file
             // 

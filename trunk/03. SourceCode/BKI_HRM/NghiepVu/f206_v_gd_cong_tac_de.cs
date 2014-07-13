@@ -10,6 +10,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using BKI_HRM.DS.CDBNames;
+using BKI_HRM.NghiepVu;
 using BKI_HRM.US;
 using BKI_HRM.DS;
 using IP.Core.IPCommon;
@@ -492,9 +493,10 @@ namespace BKI_HRM
             m_lbl_file_name.Text = FileExplorer.fileName;
         }
 
-        private void mo_file()
+        private void view_quyet_dinh_saved()
         {
-            Process.Start("explorer.exe", m_ofd_chon_file.FileName);
+            f701_v_gd_hop_dong_lao_dong_View frm = new f701_v_gd_hop_dong_lao_dong_View();
+            frm.display_for_view_quyet_dinh(m_us_dm_quyet_dinh);
         }
 
         private void set_define_event()
@@ -544,7 +546,7 @@ namespace BKI_HRM
         {
             try
             {
-                mo_file();
+                view_quyet_dinh_saved();
             }
             catch (Exception v_e)
             {
