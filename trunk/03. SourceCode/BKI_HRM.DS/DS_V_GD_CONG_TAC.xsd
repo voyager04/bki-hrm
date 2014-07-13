@@ -2,17 +2,18 @@
 <xs:schema id="DS_V_GD_CONG_TAC" targetNamespace="http://tempuri.org/DS_V_GD_CONG_TAC.xsd" xmlns:mstns="http://tempuri.org/DS_V_GD_CONG_TAC.xsd" xmlns="http://tempuri.org/DS_V_GD_CONG_TAC.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BKI_HRMConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BKI_HRMConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_HRM.DS.Properties.Settings.GlobalReference.Default.BKI_HRMConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BKI_HRMConnectionString6" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BKI_HRMConnectionString6 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_HRM.DS.Properties.Settings.GlobalReference.Default.BKI_HRMConnectionString6" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_GD_CONG_TACTableAdapter" GeneratorDataComponentClassName="V_GD_CONG_TACTableAdapter" Name="V_GD_CONG_TAC" UserDataComponentName="V_GD_CONG_TACTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BKI_HRMConnectionString1 (Settings)" DbObjectName="BKI_HRM.dbo.V_GD_CONG_TAC" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BKI_HRMConnectionString6 (Settings)" DbObjectName="BKI_HRM.dbo.V_GD_CONG_TAC" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, ID_NHAN_SU, MA_NV, HO_DEM, TEN, ID_QUYET_DINH, MA_QUYET_DINH, ID_LOAI_QD, LOAI_QD, NGAY_CO_HIEU_LUC, NGAY_KY, NGAY_HET_HIEU_LUC, NOI_DUNG, NGAY_DI, NGAY_VE, DIA_DIEM, MO_TA_CONG_VIEC, LUA_CHON, LINK FROM dbo.V_GD_CONG_TAC</CommandText>
+                    <CommandText>SELECT ID, ID_NHAN_SU, MA_NV, HO_DEM, TEN, ID_QUYET_DINH, MA_QUYET_DINH, ID_LOAI_QD, LOAI_QD, NGAY_CO_HIEU_LUC, NGAY_KY, NGAY_HET_HIEU_LUC, NOI_DUNG, NGAY_DI, NGAY_VE, DIA_DIEM, MO_TA_CONG_VIEC, LUA_CHON, LINK, ID_PHAP_NHAN, MA_PHAP_NHAN, TEN_PHAP_NHAN FROM dbo.V_GD_CONG_TAC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -38,6 +39,9 @@
               <Mapping SourceColumn="MO_TA_CONG_VIEC" DataSetColumn="MO_TA_CONG_VIEC" />
               <Mapping SourceColumn="LUA_CHON" DataSetColumn="LUA_CHON" />
               <Mapping SourceColumn="LINK" DataSetColumn="LINK" />
+              <Mapping SourceColumn="ID_PHAP_NHAN" DataSetColumn="ID_PHAP_NHAN" />
+              <Mapping SourceColumn="MA_PHAP_NHAN" DataSetColumn="MA_PHAP_NHAN" />
+              <Mapping SourceColumn="TEN_PHAP_NHAN" DataSetColumn="TEN_PHAP_NHAN" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -125,6 +129,21 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="LINK" msprop:Generator_ColumnVarNameInTable="columnLINK" msprop:Generator_ColumnPropNameInRow="LINK" msprop:Generator_ColumnPropNameInTable="LINKColumn" msprop:Generator_UserColumnName="LINK" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_PHAP_NHAN" msprop:Generator_ColumnVarNameInTable="columnID_PHAP_NHAN" msprop:Generator_ColumnPropNameInRow="ID_PHAP_NHAN" msprop:Generator_ColumnPropNameInTable="ID_PHAP_NHANColumn" msprop:Generator_UserColumnName="ID_PHAP_NHAN" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MA_PHAP_NHAN" msprop:Generator_ColumnVarNameInTable="columnMA_PHAP_NHAN" msprop:Generator_ColumnPropNameInRow="MA_PHAP_NHAN" msprop:Generator_ColumnPropNameInTable="MA_PHAP_NHANColumn" msprop:Generator_UserColumnName="MA_PHAP_NHAN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEN_PHAP_NHAN" msprop:Generator_ColumnVarNameInTable="columnTEN_PHAP_NHAN" msprop:Generator_ColumnPropNameInRow="TEN_PHAP_NHAN" msprop:Generator_ColumnPropNameInTable="TEN_PHAP_NHANColumn" msprop:Generator_UserColumnName="TEN_PHAP_NHAN" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
