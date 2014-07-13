@@ -447,18 +447,20 @@ namespace BKI_HRM.US {
         #endregion
         #region Addtional
 
-        public void FillDatasetByKeyWord(DS_V_DM_DON_VI op_ds_v_v_dm_don_vi, string ip_str_key_word, decimal ip_dc_loaidv,decimal ip_dc_capdv, string ip_str_trangthai) {
+        public void FillDatasetByKeyWord(DS_V_DM_DON_VI op_ds_v_v_dm_don_vi, string ip_str_key_word, decimal ip_dc_loaidv,decimal ip_dc_capdv, string ip_str_trangthai, decimal ip_dc_phannhan) {
             CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DON_VI_search");
             v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_str_key_word);
             v_stored_proc.addDecimalInputParam("@ip_dc_loai_dv", ip_dc_loaidv);
             v_stored_proc.addDecimalInputParam("@ip_dc_cap_dv", ip_dc_capdv);
             v_stored_proc.addNVarcharInputParam("@ip_str_trang_thai", ip_str_trangthai);
+            v_stored_proc.addDecimalInputParam("@ip_dc_phap_nhan", ip_dc_phannhan);
             v_stored_proc.fillDataSetByCommand(this, op_ds_v_v_dm_don_vi);
         }
 
-        public void FillDatasetByCapDonVi(DS_V_DM_DON_VI op_ds_v_v_dm_don_vi, decimal ip_dc_cap_don_vi) {
+        public void FillDatasetByCapDonVi(DS_V_DM_DON_VI op_ds_v_v_dm_don_vi, decimal ip_dc_level, decimal ip_dc_phap_nhan) {
             CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DON_VI_search_cap_don_vi");
-            v_stored_proc.addNVarcharInputParam("@ip_dc_cap_don_vi", ip_dc_cap_don_vi);
+            v_stored_proc.addDecimalInputParam("@ip_dc_level", ip_dc_level);
+            v_stored_proc.addDecimalInputParam("@ip_dc_phap_nhan", ip_dc_phap_nhan);
             v_stored_proc.fillDataSetByCommand(this, op_ds_v_v_dm_don_vi);
         }
 

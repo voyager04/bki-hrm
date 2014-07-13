@@ -550,15 +550,13 @@ namespace BKI_HRM {
             US_V_DM_DON_VI v_us_dm_don_vi = new US_V_DM_DON_VI();
             m_v_ds = new DS_V_DM_DON_VI();
             var v_str_search = m_txt_search.Text.Trim();
-            if (v_str_search.Equals("")) {
-              v_str_search = "TEG";
-            }
+   
             //var v_str_search = "TEG";
             if (m_txt_search.Text.Trim() != m_str_goi_y_tim_kiem)
-                v_us_dm_don_vi.FillDatasetByKeyWord(m_v_ds, v_str_search, CIPConvert.ToDecimal(m_cbo_loaidv.SelectedValue), CIPConvert.ToDecimal(m_cbo_capdv.SelectedValue), m_cbo_trangthai.SelectedValue.ToString());
+                v_us_dm_don_vi.FillDatasetByKeyWord(m_v_ds, v_str_search, CIPConvert.ToDecimal(m_cbo_loaidv.SelectedValue), CIPConvert.ToDecimal(m_cbo_capdv.SelectedValue), m_cbo_trangthai.SelectedValue.ToString(),CAppContext_201.getCurrentIDPhapnhan());
             else
             {
-                v_us_dm_don_vi.FillDatasetByKeyWord(m_v_ds, "TEG", CIPConvert.ToDecimal(m_cbo_loaidv.SelectedValue), CIPConvert.ToDecimal(m_cbo_capdv.SelectedValue), m_cbo_trangthai.SelectedValue.ToString());
+                v_us_dm_don_vi.FillDatasetByKeyWord(m_v_ds, "", CIPConvert.ToDecimal(m_cbo_loaidv.SelectedValue), CIPConvert.ToDecimal(m_cbo_capdv.SelectedValue), m_cbo_trangthai.SelectedValue.ToString(), CAppContext_201.getCurrentIDPhapnhan());
             }
             m_fg.Redraw = false;
             int minID_LEVEL = int.Parse(m_v_ds.V_DM_DON_VI.Compute("Min(ID_LEVEL)","").ToString());
@@ -738,7 +736,7 @@ namespace BKI_HRM {
             grid2us_object(v_us, m_fg.Row);
             try {
                 v_us.BeginTransaction();
-                v_us.Delete(v_us.dcID);
+                v_us.DeleteByID(v_us.dcID);
                 v_us.CommitTransaction();
                 m_fg.Rows.Remove(m_fg.Row);
                 load_data_2_grid();
