@@ -886,4 +886,10 @@
        public const string TRANG_THAI_LD_HIEN_TAI = "TRANG_THAI_LD_HIEN_TAI";
    }
 
+   public class GD_DON_VI_PHAP_NHAN
+   {
+       public const string ID = "ID";
+       public const string ID_DON_VI = "ID_DON_VI";
+       public const string ID_PHAP_NHAN = "ID_PHAP_NHAN";
+   }
 }

@@ -48,6 +48,8 @@ namespace BKI_HRM.DanhMuc
         private US_DM_DON_VI m_us = new US_DM_DON_VI();
         private DS_DM_DON_VI m_ds = new DS_DM_DON_VI();
         private DS_V_DM_DON_VI m_v_ds = new DS_V_DM_DON_VI();
+        private DS_GD_DON_VI_PHAP_NHAN m_ds_dv_pn = new DS_GD_DON_VI_PHAP_NHAN();
+        private US_GD_DON_VI_PHAP_NHAN m_us_dv_pn = new US_GD_DON_VI_PHAP_NHAN();
         #endregion
 
         #region Private Methods
@@ -76,7 +78,7 @@ namespace BKI_HRM.DanhMuc
         {
             var v_ds = new DS_V_DM_DON_VI();
             var v_us = new US_V_DM_DON_VI();
-            v_us.FillDatasetByCapDonVi(v_ds, CAP_DON_VI.TRUNG_TAM);
+            v_us.FillDatasetByCapDonVi(v_ds, 0,CAppContext_201.getCurrentIDPhapnhan());
             m_cbo_ten_don_vi_cap_tren.DisplayMember = DM_DON_VI.MA_DON_VI;
             m_cbo_ten_don_vi_cap_tren.ValueMember = DM_DON_VI.ID;
             m_cbo_ten_don_vi_cap_tren.DataSource = v_ds.V_DM_DON_VI;
@@ -102,21 +104,22 @@ namespace BKI_HRM.DanhMuc
                 case 0: // Tổ Hợp
                     m_cbo_ten_don_vi_cap_tren.SelectedIndex = 0;
                     m_cbo_ten_don_vi_cap_tren.Enabled = false;
-                    v_us.FillDatasetByCapDonVi(v_ds, CAP_DON_VI.TO_HOP);
+                    v_us.FillDatasetByCapDonVi(v_ds, 0,CAppContext_201.getCurrentIDPhapnhan());
                     break;
                 case 1: // Công ty
-                    v_us.FillDatasetByCapDonVi(v_ds, CAP_DON_VI.TO_HOP);
+                    v_us.FillDatasetByCapDonVi(v_ds, 1, CAppContext_201.getCurrentIDPhapnhan());
                     m_cbo_ten_don_vi_cap_tren.Enabled = true;
                     break;
                 case 2: // Khối
-                    v_us.FillDatasetByCapDonVi(v_ds, CAP_DON_VI.CONG_TY);
+                    v_us.FillDatasetByCapDonVi(v_ds, 2, CAppContext_201.getCurrentIDPhapnhan());
                     m_cbo_ten_don_vi_cap_tren.Enabled = true;
                     break;
                 case 3: // Trung Tâm
-                    v_us.FillDatasetByCapDonVi(v_ds, CAP_DON_VI.KHOI);
+                    v_us.FillDatasetByCapDonVi(v_ds, 3, CAppContext_201.getCurrentIDPhapnhan());
                     m_cbo_ten_don_vi_cap_tren.Enabled = true;
                     break;
                 default:
+                    v_us.FillDatasetByCapDonVi(v_ds, 4, CAppContext_201.getCurrentIDPhapnhan());
                     m_cbo_ten_don_vi_cap_tren.Enabled = true;
                     break;
             }
@@ -207,6 +210,7 @@ namespace BKI_HRM.DanhMuc
             {
                 return;
             }
+            //Xử lý đơn vị
             form_2_us_object();
             switch (m_e_form_mode)
             {
@@ -217,8 +221,19 @@ namespace BKI_HRM.DanhMuc
                     m_us.Update();
                     break;
             }
+            //Xử lý đơn vị pháp nhân
+            if (m_e_form_mode == DataEntryFormMode.InsertDataState)
+            {
+                form_to_us_don_vi_phap_nhan();
+                m_us_dv_pn.Insert();
+            }
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
             Close();
+        }
+        private void form_to_us_don_vi_phap_nhan()
+        {
+            m_us_dv_pn.dcID_PHAP_NHAN = CAppContext_201.getCurrentIDPhapnhan();
+            m_us_dv_pn.dcID_DON_VI = m_us.dcID;
         }
         private void us_object_2_form(US_V_DM_DON_VI ip_us_dm_don_vi)
         {
@@ -248,7 +263,7 @@ namespace BKI_HRM.DanhMuc
         {
             var v_ds = new DS_V_DM_DON_VI();
             var v_us = new US_V_DM_DON_VI();
-            v_us.FillDatasetByKeyWord(v_ds, ip_str_ma_don_vi, -1, -1, "");
+            v_us.FillDatasetByKeyWord(v_ds, ip_str_ma_don_vi, -1, -1, "",CAppContext_201.getCurrentIDPhapnhan());
             decimal v_count = v_ds.V_DM_DON_VI.Count;
             if (v_count > 0)
             {

@@ -66,6 +66,7 @@
     <Compile Include="US_GD_CHI_TIET_DU_AN.cs" />
     <Compile Include="US_GD_CHI_TIET_TRANG_THAI_LD.cs" />
     <Compile Include="US_GD_CONG_TAC.cs" />
+    <Compile Include="US_GD_DON_VI_PHAP_NHAN.cs" />
     <Compile Include="US_GD_HOP_DONG.cs" />
     <Compile Include="US_GD_QUA_TRINH_CONG_TAC.cs" />
     <Compile Include="US_GD_QUYET_DINH_PHAP_NHAN.cs" />
