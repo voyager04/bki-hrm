@@ -53,7 +53,6 @@ namespace BKI_HRM.NghiepVu
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             us_object_2_form(ip_m_us_gd_hop_dong);
-            m_str_id_hop_dong_old = ip_m_us_gd_hop_dong.dcID;
             m_txt_tim_kiem_nhan_vien.Enabled = false;
             m_e_file_mode = DataEntryFileMode.EditFile;
             m_str_link_old = m_lbl_file_name.Text;
@@ -172,7 +171,7 @@ namespace BKI_HRM.NghiepVu
             if (check_data_is_ok() == false)
                 return;
 
-            // Xử lý file đính kèm
+            #region Xử lý file đính kèm
             switch (m_e_file_mode)
             {
                 case DataEntryFileMode.UploadFile:
@@ -226,7 +225,7 @@ namespace BKI_HRM.NghiepVu
                     FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
                     break;
             }
-
+            #endregion
 
             form_2_us_object();
             switch (m_e_form_mode)
@@ -282,11 +281,10 @@ namespace BKI_HRM.NghiepVu
 
         private void us_object_2_form(US_GD_HOP_DONG ip_us_gd_hop_dong)
         {
+            m_str_id_hop_dong_old = ip_us_gd_hop_dong.dcID;
+
             m_us.dcID = ip_us_gd_hop_dong.dcID;
-
-
             m_txt_ma_hop_dong.Text = ip_us_gd_hop_dong.strMA_HOP_DONG;
-
             m_txt_nguoi_ky.Text = ip_us_gd_hop_dong.strNGUOI_KY;
             m_txt_chuc_vu_nguoi_ky.Text = ip_us_gd_hop_dong.strCHUC_VU_NGUOI_KY;
             m_dat_ngay_co_hieu_luc.Value = ip_us_gd_hop_dong.datNGAY_CO_HIEU_LUC;

@@ -11,7 +11,7 @@ using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
-
+using BKI_HRM.NghiepVu;
 using IP.Core.IPCommon;
 using IP.Core.IPException;
 using IP.Core.IPData;
@@ -248,6 +248,7 @@ namespace BKI_HRM
             this.m_fg.Size = new System.Drawing.Size(1262, 386);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
+            this.m_fg.Click += new System.EventHandler(this.m_fg_Click);
             // 
             // m_cmd_search
             // 
@@ -375,7 +376,7 @@ namespace BKI_HRM
         #region Public Interface
         public void display()
         {
-            this.Show();
+            this.ShowDialog();
         }
         #endregion
 
@@ -426,14 +427,14 @@ namespace BKI_HRM
             set_define_events();
             this.KeyPreview = true;
         }
-        
+
         private void set_initial_form_load()
         {
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_grid();
-            load_custom_source_2_m_txt_tim_kiem();
+            auto_suggest_text();
         }
-        
+
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
             Hashtable v_htb = new Hashtable();
@@ -452,26 +453,27 @@ namespace BKI_HRM
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_GD_CONG_TAC.NewRow());
             return v_obj_trans;
         }
-        
+
         private void load_data_2_grid()
         {
             m_ds = new DS_V_GD_CONG_TAC();
+            m_fg.Redraw = false;
             var v_id_phap_nhan = CAppContext_201.getCurrentIDPhapnhan();
             if (m_txt_tim_kiem.Text.Trim() == m_str_goi_y)
             {
-                m_us.FillDatasetSearch(m_ds, 
-                                       "", 
-                                       m_dat_tu_ngay.Value, 
+                m_us.FillDatasetSearch(m_ds,
+                                       "",
+                                       m_dat_tu_ngay.Value,
                                        m_dat_den_ngay.Value,
                                        v_id_phap_nhan);
             }
             else
-                m_us.FillDatasetSearch(m_ds, 
-                                       m_txt_tim_kiem.Text.Trim(), 
-                                       m_dat_tu_ngay.Value.Date, 
+                m_us.FillDatasetSearch(m_ds,
+                                       m_txt_tim_kiem.Text.Trim(),
+                                       m_dat_tu_ngay.Value.Date,
                                        m_dat_den_ngay.Value.Date.AddDays(1),
                                        v_id_phap_nhan);
-            m_fg.Redraw = false;
+            
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Subtotal(C1.Win.C1FlexGrid.AggregateEnum.Count // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
               , 0
@@ -479,10 +481,13 @@ namespace BKI_HRM
               , (int)e_col_Number.MA_NV // chỗ này là tên trường mà mình Count
               , "{0}"
               );
-            m_fg.Redraw = true;
             m_lbl_total_record.Text = string.Format("Có {0} bản ghi", m_ds.V_GD_CONG_TAC.Rows.Count);
+            m_fg.Focus();
+            m_fg.Redraw = true;
+
+            auto_suggest_text();
         }
-        
+
         private void grid2us_object(US_V_GD_CONG_TAC i_us, int i_grid_row)
         {
             DataRow v_dr;
@@ -525,7 +530,7 @@ namespace BKI_HRM
             try
             {
                 v_us.BeginTransaction();
-                v_us.Delete();
+                v_us.DeleteByID(v_us.dcID_QUYET_DINH);
                 v_us.CommitTransaction();
                 m_fg.Rows.Remove(m_fg.Row);
                 BaseMessages.MsgBox_Infor("Xóa thành công.");
@@ -533,9 +538,7 @@ namespace BKI_HRM
             catch (Exception v_e)
             {
                 v_us.Rollback();
-                CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
-                    new CDBClientDBExceptionInterpret());
-                v_objErrHandler.showErrorMessage();
+                throw v_e;
             }
         }
 
@@ -547,8 +550,8 @@ namespace BKI_HRM
             //	f206_v_gd_cong_tac_DE v_fDE = new f206_v_gd_cong_tac_DE();			
             //	v_fDE.display(m_us);
         }
-        
-        private void load_custom_source_2_m_txt_tim_kiem()
+
+        private void auto_suggest_text()
         {
             int count = m_ds.Tables["V_GD_CONG_TAC"].Rows.Count;
             AutoCompleteStringCollection v_acsc_search = new AutoCompleteStringCollection();
@@ -562,7 +565,29 @@ namespace BKI_HRM
             }
             m_txt_tim_kiem.AutoCompleteCustomSource = v_acsc_search;
         }
-        
+
+        private bool view_quyet_dinh_saved()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return true;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return true;
+            if (m_fg.Rows[m_fg.Row].IsNode) return false;
+            grid2us_object(m_us, m_fg.Row);
+            if (m_fg.Col == (int)e_col_Number.MA_QUYET_DINH)
+            {
+                US_DM_QUYET_DINH v_us = new US_DM_QUYET_DINH(m_us.dcID_QUYET_DINH);
+                if (v_us.strLINK != "")
+                {
+                    f206_v_gd_cong_tac_view_document v_frm = new f206_v_gd_cong_tac_view_document();
+                    v_frm.display(v_us.strLINK);
+                }
+                else
+                {
+                    BaseMessages.MsgBox_Error("Chưa có file đính kèm.");
+                }
+            }
+            return false;
+        }
+
         private void set_define_events()
         {
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
@@ -570,7 +595,6 @@ namespace BKI_HRM
             m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
-            m_fg.Click += new EventHandler(m_fg_Click);
         }
         #endregion
 
@@ -619,7 +643,6 @@ namespace BKI_HRM
             try
             {
                 update_v_gd_cong_tac();
-                load_data_2_grid();
             }
             catch (Exception v_e)
             {
@@ -719,28 +742,13 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        #endregion
+
         private void m_fg_Click(object sender, EventArgs e)
         {
             try
             {
-                if (m_fg.Col == (int)e_col_Number.MA_QUYET_DINH)
-                {
-                    if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-                    if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-                    grid2us_object(m_us, m_fg.Row);
-
-                    US_DM_QUYET_DINH v_us = new US_DM_QUYET_DINH(m_us.dcID_QUYET_DINH);
-                    if (v_us.strLINK != "")
-                    {
-                        //FileExplorer.DownloadFile(v_us.strLINK);
-                        f206_v_gd_cong_tac_view_document v_frm = new f206_v_gd_cong_tac_view_document();
-                        v_frm.display(v_us.strLINK);
-                    }
-                    else
-                    {
-                        BaseMessages.MsgBox_Error("Chưa có file đính kèm.");
-                    }
-                }
+                if (view_quyet_dinh_saved()) return;
             }
             catch (Exception v_e)
             {
@@ -748,7 +756,6 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        #endregion
     }
 }
 
