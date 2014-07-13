@@ -440,7 +440,7 @@ namespace BKI_HRM
             }
             m_us_quyet_dinh.strMA_QUYET_DINH = m_txt_ma_quyet_dinh.Text;
             m_us_quyet_dinh.strNOI_DUNG = m_txt_noi_dung.Text.Trim();
-            m_us_quyet_dinh.strLINK = m_lbl_file_name.Text;
+          
             m_us_quyet_dinh.dcID_LOAI_QD = CIPConvert.ToDecimal(m_cbo_loai_quyet_dinh.SelectedValue);
             m_us_quyet_dinh.datNGAY_KY = m_dat_ngay_ky.Value;
             m_us_quyet_dinh.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc_qd.Value;
