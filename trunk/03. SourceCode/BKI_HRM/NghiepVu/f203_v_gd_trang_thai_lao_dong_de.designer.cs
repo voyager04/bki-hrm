@@ -81,7 +81,7 @@
             // 
             this.m_dat_ngay_het_hieu_luc.Checked = false;
             this.m_dat_ngay_het_hieu_luc.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_ngay_het_hieu_luc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_ngay_het_hieu_luc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_het_hieu_luc.Location = new System.Drawing.Point(360, 82);
             this.m_dat_ngay_het_hieu_luc.Name = "m_dat_ngay_het_hieu_luc";
             this.m_dat_ngay_het_hieu_luc.ShowCheckBox = true;
@@ -100,7 +100,7 @@
             // m_dat_ngay_co_hieu_luc
             // 
             this.m_dat_ngay_co_hieu_luc.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_ngay_co_hieu_luc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_ngay_co_hieu_luc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_co_hieu_luc.Location = new System.Drawing.Point(115, 82);
             this.m_dat_ngay_co_hieu_luc.Name = "m_dat_ngay_co_hieu_luc";
             this.m_dat_ngay_co_hieu_luc.Size = new System.Drawing.Size(100, 20);
@@ -397,7 +397,7 @@
             // 
             this.m_dat_ngay_het_hieu_luc_qd.Checked = false;
             this.m_dat_ngay_het_hieu_luc_qd.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_ngay_het_hieu_luc_qd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_ngay_het_hieu_luc_qd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_het_hieu_luc_qd.Location = new System.Drawing.Point(434, 78);
             this.m_dat_ngay_het_hieu_luc_qd.Name = "m_dat_ngay_het_hieu_luc_qd";
             this.m_dat_ngay_het_hieu_luc_qd.ShowCheckBox = true;
@@ -407,7 +407,7 @@
             // m_dat_ngay_ky
             // 
             this.m_dat_ngay_ky.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_ngay_ky.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_ngay_ky.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_ky.Location = new System.Drawing.Point(434, 18);
             this.m_dat_ngay_ky.Name = "m_dat_ngay_ky";
             this.m_dat_ngay_ky.Size = new System.Drawing.Size(101, 20);
@@ -417,7 +417,7 @@
             // m_dat_ngay_co_hieu_luc_qd
             // 
             this.m_dat_ngay_co_hieu_luc_qd.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_ngay_co_hieu_luc_qd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_ngay_co_hieu_luc_qd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_co_hieu_luc_qd.Location = new System.Drawing.Point(434, 49);
             this.m_dat_ngay_co_hieu_luc_qd.Name = "m_dat_ngay_co_hieu_luc_qd";
             this.m_dat_ngay_co_hieu_luc_qd.Size = new System.Drawing.Size(100, 20);
