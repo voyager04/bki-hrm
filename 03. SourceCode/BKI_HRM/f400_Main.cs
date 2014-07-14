@@ -59,7 +59,9 @@ namespace BKI_HRM
             US_V_DM_DU_LIEU_NHAN_VIEN v_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
             DS_V_DM_DU_LIEU_NHAN_VIEN v_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
             decimal v_dc_so_luong_nv_hien_tai = 0;
-            v_us.count_nhan_vien(v_ds, "hiện tại", ref v_dc_so_luong_nv_hien_tai);
+            v_us.count_nhan_vien(v_ds, "hiện tại", 
+                CAppContext_201.getCurrentIDPhapnhan(),
+                ref v_dc_so_luong_nv_hien_tai);
 
             m_lbl_so_luong_nv_hien_tai.Text = "Số lượng nhân viên hiện tại: " + v_dc_so_luong_nv_hien_tai;
         }
@@ -69,7 +71,9 @@ namespace BKI_HRM
             DS_V_DM_DU_LIEU_NHAN_VIEN v_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
             decimal v_dc_so_luong_nv = 0;
             //  f103_bao_cao_tra_cuu_nhan_su v_frm = new f103_bao_cao_tra_cuu_nhan_su();
-            v_us.count_nhan_vien(v_ds, "thử việc hết hạn", ref v_dc_so_luong_nv);
+            v_us.count_nhan_vien(v_ds, "thử việc hết hạn"
+                , CAppContext_201.getCurrentIDPhapnhan()
+                , ref v_dc_so_luong_nv);
             if (v_dc_so_luong_nv <= 0)
             {
                 m_lbl_thu_viec_sap_het_han.Text = @"Không có Thử việc sắp hết hạn";
@@ -88,7 +92,9 @@ namespace BKI_HRM
             DS_V_DM_DU_LIEU_NHAN_VIEN v_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
             //f103_bao_cao_tra_cuu_nhan_su v_frm = new f103_bao_cao_tra_cuu_nhan_su();
             decimal v_dc_so_luong_nv = 0;
-            v_us.count_nhan_vien(v_ds, "nghỉ việc quay lại", ref v_dc_so_luong_nv);
+            v_us.count_nhan_vien(v_ds, "nghỉ việc quay lại"
+                , CAppContext_201.getCurrentIDPhapnhan()
+                , ref v_dc_so_luong_nv);
             if (v_dc_so_luong_nv <= 0)
             {
                 m_lbl_sap_quay_lai.Text = @"Không có Nghỉ sắp quay lại";

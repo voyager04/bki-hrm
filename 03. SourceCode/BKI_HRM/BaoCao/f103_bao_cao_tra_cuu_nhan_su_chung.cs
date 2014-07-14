@@ -828,7 +828,9 @@ namespace BKI_HRM
                         , ""
                         , "Y"
                         , ""
-                        , "nghỉ việc quay lại", ref v_dc_so_luong_nv);
+                        , "nghỉ việc quay lại"
+                        , CAppContext_201.getCurrentIDPhapnhan()
+                        , ref v_dc_so_luong_nv);
                     m_lbl_so_luong_nv.Text = "Số lượng nhân viên đang nghỉ: ";
                     m_lbl_so_luong_nv.Text += v_dc_so_luong_nv.ToString();
                     m_us.FillDatasetSearch(m_ds
@@ -845,7 +847,8 @@ namespace BKI_HRM
                         , ""
                         , "Y"
                         , ""
-                        , "search nghỉ việc quay lại");
+                        , "search nghỉ việc quay lại"
+                        , CAppContext_201.getCurrentIDPhapnhan());
                     m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC_LD].Caption = "Ngày quay lại";
                     m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC_LD].Visible = true;
                     m_fg.Cols[(int)e_col_Number.NGAY_CO_HIEU_LUC_LD].Caption = "Ngày bắt đầu nghỉ";
@@ -867,7 +870,9 @@ namespace BKI_HRM
                             , ""
                             , "Y"
                             , ""
-                            , "thử việc hết hạn", ref v_dc_so_luong_nv);
+                            , "thử việc hết hạn"
+                            , CAppContext_201.getCurrentIDPhapnhan()
+                            , ref v_dc_so_luong_nv);
                         m_lbl_so_luong_nv.Text = "Số lượng nhân viên thử việc sắp hết hạn (còn <= 7 ngày): ";
                         m_lbl_so_luong_nv.Text += v_dc_so_luong_nv.ToString();
                         m_us.FillDatasetSearch(m_ds
@@ -884,7 +889,8 @@ namespace BKI_HRM
                             , ""
                             , "Y"
                             , ""
-                            , "search thử việc hết hạn");
+                            , "search thử việc hết hạn"
+                            , CAppContext_201.getCurrentIDPhapnhan());
                         m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC_LD].Caption = "Ngày hết hạn thử việc";
                         m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC_LD].Visible = true;
                         m_fg.Cols[(int)e_col_Number.NGAY_CO_HIEU_LUC_LD].Caption = "Ngày bắt đầu thử việc";
@@ -908,7 +914,9 @@ namespace BKI_HRM
 
                         , m_str_trang_thai_hien_tai
                         , m_str_trang_thai_chuc_vu
-                    , "hiện tại", ref v_dc_so_luong_nv);
+                    , "hiện tại"
+                    , CAppContext_201.getCurrentIDPhapnhan()
+                    , ref v_dc_so_luong_nv);
                 m_lbl_so_luong_nv.Text = "Số lượng nhân viên hiện tại: ";
                 m_lbl_so_luong_nv.Text += v_dc_so_luong_nv.ToString();
                 m_list_key_value = get_list_key_value(m_txt_search.Text);
@@ -931,6 +939,7 @@ namespace BKI_HRM
                         , m_str_trang_thai_hien_tai
                         , m_str_trang_thai_chuc_vu
                         , "search tất cả"
+                        , CAppContext_201.getCurrentIDPhapnhan()
                     );
                 refresh_key_value();
                 
