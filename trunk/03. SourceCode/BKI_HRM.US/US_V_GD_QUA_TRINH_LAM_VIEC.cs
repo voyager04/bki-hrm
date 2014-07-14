@@ -920,9 +920,10 @@ namespace BKI_HRM.US {
             v_sp.fillDataSetByCommand(this, op_ds);
         }
         
-        public void FillDataset_chuc_vu_hien_tai(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds, string ip_str_ma_nv) {
+        public void FillDataset_chuc_vu_hien_tai(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds, string ip_str_ma_nv, decimal ip_dc_id_phap_nhan) {
             CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_chuc_vu_hien_tai");
             v_sp.addNVarcharInputParam("@MA_NHAN_VIEN", ip_str_ma_nv);
+            v_sp.addDecimalInputParam("@ID_PHAP_NHAN", ip_dc_id_phap_nhan);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
         public void Count_Nhan_vien(ref decimal op_dc_tong_so,ref decimal op_dc_hien_tai)

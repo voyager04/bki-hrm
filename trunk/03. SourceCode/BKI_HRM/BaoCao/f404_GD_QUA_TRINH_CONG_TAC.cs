@@ -481,7 +481,7 @@ namespace BKI_HRM
 		}
 		private void load_data_2_grid(){						
 			m_ds = new DS_GD_QUA_TRINH_CONG_TAC();			
-			m_us.FillDatasetByProc(m_ds,m_txt_tim_kiem.Text.Trim(), m_str_lua_chon, m_dtp_tu_ngay.Value, m_dtp_den_ngay.Value);
+			m_us.FillDatasetByProc(m_ds,m_txt_tim_kiem.Text.Trim(), m_str_lua_chon, m_dtp_tu_ngay.Value, m_dtp_den_ngay.Value, CAppContext_201.getCurrentIDPhapnhan());
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             if (m_rdb_nhom.Checked == true)
