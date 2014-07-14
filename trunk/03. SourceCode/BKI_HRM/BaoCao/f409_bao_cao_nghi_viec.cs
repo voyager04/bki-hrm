@@ -440,16 +440,16 @@ namespace BKI_HRM
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.LOAI_CV, e_col_Number.LOAI_CV);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.DIA_BAN, e_col_Number.DIA_BAN);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN, e_col_Number.TEN);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_CO_HIEU_LUC, e_col_Number.NGAY_CO_HIEU_LUC);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_CO_HIEU_LUC_LD, e_col_Number.NGAY_CO_HIEU_LUC);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_DON_VI, e_col_Number.MA_DON_VI);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_QD_TRANG_THAI_LD, e_col_Number.MA_QD_TRANG_THAI_LD);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.HO_DEM, e_col_Number.HO_DEM);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TY_LE_THAM_GIA, e_col_Number.TY_LE_THAM_GIA);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_KY, e_col_Number.NGAY_KY);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_CO_HIEU_LUC_LD, e_col_Number.NGAY_CO_HIEU_LUC_LD);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_CO_HIEU_LUC, e_col_Number.NGAY_CO_HIEU_LUC_LD);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN_CV, e_col_Number.TEN_CV);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_HET_HIEU_LUC, e_col_Number.NGAY_HET_HIEU_LUC);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_HET_HIEU_LUC_LD, e_col_Number.NGAY_HET_HIEU_LUC_LD);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_HET_HIEU_LUC_LD, e_col_Number.NGAY_HET_HIEU_LUC);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_HET_HIEU_LUC, e_col_Number.NGAY_HET_HIEU_LUC_LD);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_CV, e_col_Number.MA_CV);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.LOAI_QD_LD, e_col_Number.LOAI_QD_LD);
 						
