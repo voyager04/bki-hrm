@@ -48,6 +48,7 @@
             this.m_txt_ho_ten = new System.Windows.Forms.TextBox();
             this.m_txt_trang_thai_hien_tai = new System.Windows.Forms.TextBox();
             this.m_grb_quyet_dinh = new System.Windows.Forms.GroupBox();
+            this.m_cmd_bo_dinh_kem = new SIS.Controls.Button.SiSButton();
             this.m_lbl_file_name = new System.Windows.Forms.Label();
             this.m_lbl_ma_qd = new System.Windows.Forms.Label();
             this.m_cbo_ma_quyet_dinh = new System.Windows.Forms.ComboBox();
@@ -66,7 +67,7 @@
             this.m_lbl_ngay_co_hieu_luc_qd = new System.Windows.Forms.Label();
             this.m_lbl_loai_quyet_dinh = new System.Windows.Forms.Label();
             this.m_lbl_ma_quyet_dinh = new System.Windows.Forms.Label();
-            this.m_ofd_openfile = new System.Windows.Forms.OpenFileDialog();
+            this.m_ofd_chon_file = new System.Windows.Forms.OpenFileDialog();
             this.m_cmd_them_quyet_dinh = new SIS.Controls.Button.SiSButton();
             this.m_cmd_chon_quyet_dinh = new SIS.Controls.Button.SiSButton();
             this.m_cmd_bo_quyet_dinh = new SIS.Controls.Button.SiSButton();
@@ -274,6 +275,7 @@
             // 
             // m_grb_quyet_dinh
             // 
+            this.m_grb_quyet_dinh.Controls.Add(this.m_cmd_bo_dinh_kem);
             this.m_grb_quyet_dinh.Controls.Add(this.m_lbl_file_name);
             this.m_grb_quyet_dinh.Controls.Add(this.m_lbl_ma_qd);
             this.m_grb_quyet_dinh.Controls.Add(this.m_cbo_ma_quyet_dinh);
@@ -292,6 +294,7 @@
             this.m_grb_quyet_dinh.Controls.Add(this.m_lbl_ngay_co_hieu_luc_qd);
             this.m_grb_quyet_dinh.Controls.Add(this.m_lbl_loai_quyet_dinh);
             this.m_grb_quyet_dinh.Controls.Add(this.m_lbl_ma_quyet_dinh);
+            this.m_grb_quyet_dinh.Enabled = false;
             this.m_grb_quyet_dinh.Location = new System.Drawing.Point(12, 158);
             this.m_grb_quyet_dinh.Name = "m_grb_quyet_dinh";
             this.m_grb_quyet_dinh.Size = new System.Drawing.Size(731, 235);
@@ -299,10 +302,24 @@
             this.m_grb_quyet_dinh.TabStop = false;
             this.m_grb_quyet_dinh.Text = "Quyết định đi kèm";
             // 
+            // m_cmd_bo_dinh_kem
+            // 
+            this.m_cmd_bo_dinh_kem.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_bo_dinh_kem.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_bo_dinh_kem.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_bo_dinh_kem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_bo_dinh_kem.ImageIndex = 4;
+            this.m_cmd_bo_dinh_kem.ImageList = this.ImageList;
+            this.m_cmd_bo_dinh_kem.Location = new System.Drawing.Point(221, 123);
+            this.m_cmd_bo_dinh_kem.Name = "m_cmd_bo_dinh_kem";
+            this.m_cmd_bo_dinh_kem.Size = new System.Drawing.Size(95, 28);
+            this.m_cmd_bo_dinh_kem.TabIndex = 128;
+            this.m_cmd_bo_dinh_kem.Text = "Gỡ đính kèm";
+            // 
             // m_lbl_file_name
             // 
             this.m_lbl_file_name.AutoSize = true;
-            this.m_lbl_file_name.Location = new System.Drawing.Point(370, 131);
+            this.m_lbl_file_name.Location = new System.Drawing.Point(497, 131);
             this.m_lbl_file_name.Name = "m_lbl_file_name";
             this.m_lbl_file_name.Size = new System.Drawing.Size(0, 13);
             this.m_lbl_file_name.TabIndex = 127;
@@ -336,7 +353,7 @@
             this.m_cmd_xem_file.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_xem_file.ImageIndex = 18;
             this.m_cmd_xem_file.ImageList = this.ImageList;
-            this.m_cmd_xem_file.Location = new System.Drawing.Point(221, 123);
+            this.m_cmd_xem_file.Location = new System.Drawing.Point(322, 123);
             this.m_cmd_xem_file.Name = "m_cmd_xem_file";
             this.m_cmd_xem_file.Size = new System.Drawing.Size(112, 28);
             this.m_cmd_xem_file.TabIndex = 28;
@@ -355,7 +372,7 @@
             this.m_cmd_chon_file.Name = "m_cmd_chon_file";
             this.m_cmd_chon_file.Size = new System.Drawing.Size(112, 28);
             this.m_cmd_chon_file.TabIndex = 28;
-            this.m_cmd_chon_file.Text = "&Chọn tài liệu";
+            this.m_cmd_chon_file.Text = "&Đính kèm";
             this.m_cmd_chon_file.Click += new System.EventHandler(this.m_cmd_chon_file_Click);
             // 
             // m_txt_noi_dung
@@ -613,7 +630,7 @@
         private System.Windows.Forms.Label m_lbl_loai_quyet_dinh;
         private System.Windows.Forms.Label m_lbl_ma_quyet_dinh;
         internal SIS.Controls.Button.SiSButton m_cmd_chon_file;
-        private System.Windows.Forms.OpenFileDialog m_ofd_openfile;
+        private System.Windows.Forms.OpenFileDialog m_ofd_chon_file;
         internal SIS.Controls.Button.SiSButton m_cmd_xem_file;
         internal SIS.Controls.Button.SiSButton m_cmd_them_quyet_dinh;
         internal SIS.Controls.Button.SiSButton m_cmd_chon_quyet_dinh;
@@ -623,5 +640,6 @@
         internal SIS.Controls.Button.SiSButton m_cmd_bo_quyet_dinh;
         private System.Windows.Forms.CheckBox m_ckb_trang_thai_hien_tai_yn;
         private System.Windows.Forms.Label m_lbl_trang_thai_hien_tai_yn;
+        internal SIS.Controls.Button.SiSButton m_cmd_bo_dinh_kem;
     }
 }

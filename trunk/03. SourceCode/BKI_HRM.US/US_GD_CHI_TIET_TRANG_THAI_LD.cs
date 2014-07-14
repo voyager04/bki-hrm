@@ -193,5 +193,22 @@ public class US_GD_CHI_TIET_TRANG_THAI_LD : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+    #region "Addtional"
+    public decimal count_trang_thai_hien_tai_phap_nhan( decimal ip_dc_id_nhan_su
+       , decimal ip_dc_id_phap_nhan
+       , decimal ip_dc_id_update
+      )
+    {
+        decimal v_dc_count = 0;
+        CStoredProc v_cst = new CStoredProc("pr_V_GD_TRANG_THAI_LAO_DONG_count_hien_tai_theo_phap_nhan");
+        v_cst.addDecimalInputParam("@ID_NHAN_SU", ip_dc_id_nhan_su);
+        v_cst.addDecimalInputParam("@ID_PHAP_NHAN", ip_dc_id_phap_nhan);
+        v_cst.addDecimalInputParam("@ID_UPDATE", ip_dc_id_update);
+        SqlParameter v_sql = v_cst.addDecimalOutputParam("@count", v_dc_count);
+        v_cst.ExecuteCommand(this);
+        v_dc_count = CIPConvert.ToDecimal(v_sql.Value);
+        return v_dc_count;
+    }
+    #endregion
+}
 }
