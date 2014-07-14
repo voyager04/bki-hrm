@@ -83,7 +83,7 @@ namespace BKI_HRM
             }
            //3.Đưa dữ liệu lên lưới
             m_ds_rpt = new DS_RPT_CHUC_VU_TRANG_THAI();
-            m_us_rpt.FillDatasetByProc(m_ds_rpt,m_dat_thoidiem.Value);
+            m_us_rpt.FillDatasetByProc(m_ds_rpt,m_dat_thoidiem.Value,CAppContext_201.getCurrentIDPhapnhan());
             
             
                 for (int v_i_cur_col = m_fg.Cols.Fixed; v_i_cur_col < m_fg.Cols.Count; v_i_cur_col++)

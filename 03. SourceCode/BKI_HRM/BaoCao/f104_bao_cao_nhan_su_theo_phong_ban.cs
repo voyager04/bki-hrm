@@ -172,7 +172,7 @@ namespace BKI_HRM {
             if (m_dtp_thoidiem.Checked){
                 v_dat_thoi_diem = m_dtp_thoidiem.Value.Date;
             }
-            m_us.FillDatase_NhanSu_TheoPhongBan(m_ds, v_str_search, v_dat_thoi_diem);
+            m_us.FillDatase_NhanSu_TheoPhongBan(m_ds, v_str_search, v_dat_thoi_diem,CAppContext_201.getCurrentIDPhapnhan());
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             /**
@@ -201,7 +201,7 @@ namespace BKI_HRM {
           //  m_lbl_so_luong_ban_ghi.Text = m_ds.V_GD_QUA_TRINH_LAM_VIEC_2.Count.ToString();
 
             decimal count = 0;
-            m_us.count_nhan_vien_theo_phong_ban(m_ds, v_str_search, v_dat_thoi_diem, ref count);
+            m_us.count_nhan_vien_theo_phong_ban(m_ds, v_str_search, v_dat_thoi_diem, ref count,CAppContext_201.getCurrentIDPhapnhan());
             m_lbl_so_luong_ban_ghi.Text = CIPConvert.ToStr(count);
            // m_lbl_thong_bao.Text = m_fg.ColumnInfo;
         }

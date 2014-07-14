@@ -460,7 +460,7 @@ namespace BKI_HRM
         {
             m_obj_trans = get_trans_object(m_fg);
             m_ds.Clear();
-            m_us.FillDatasetSearchChucVuThoiDiem(m_ds, m_txt_tim_kiem.Text.Trim(), m_dtp_thoidiem.Value);
+            m_us.FillDatasetSearchChucVuThoiDiem(m_ds, m_txt_tim_kiem.Text.Trim(), m_dtp_thoidiem.Value,CAppContext_201.getCurrentIDPhapnhan());
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             if (m_rdb_nhom.Checked == true)
@@ -482,7 +482,7 @@ namespace BKI_HRM
           //  m_lbl_soluongns.Text = m_ds.V_GD_QUA_TRINH_LAM_VIEC_2.Count.ToString();
 
             decimal count = 0;
-            m_us.count_nhan_vien_theo_chuc_vu(m_ds, m_txt_tim_kiem.Text.Trim(), m_dtp_thoidiem.Value, ref count);
+            m_us.count_nhan_vien_theo_chuc_vu(m_ds, m_txt_tim_kiem.Text.Trim(), m_dtp_thoidiem.Value,CAppContext_201.getCurrentIDPhapnhan(), ref count);
             m_lbl_soluongns.Text = CIPConvert.ToStr(count);
         }
 		private void grid2us_object(US_V_GD_QUA_TRINH_LAM_VIEC_2 i_us
