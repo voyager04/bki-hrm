@@ -391,9 +391,9 @@ namespace BKI_HRM {
         private void load_data_2_grid() {
             m_v_ds = new DS_V_DM_QUYET_DINH();
             if (m_txt_tim_kiem.Text.Trim() == m_str_tim_kiem || m_txt_tim_kiem.Text.Trim() == "") 
-                m_v_us.FillDatasetSearch(m_v_ds, "",m_str_loai_quyet_dinh);
+                m_v_us.FillDatasetSearch(m_v_ds, "",m_str_loai_quyet_dinh, CAppContext_201.getCurrentIDPhapnhan());
             else 
-                m_v_us.FillDatasetSearch(m_v_ds, m_txt_tim_kiem.Text.Trim(),m_str_loai_quyet_dinh);
+                m_v_us.FillDatasetSearch(m_v_ds, m_txt_tim_kiem.Text.Trim(),m_str_loai_quyet_dinh, CAppContext_201.getCurrentIDPhapnhan());
             //m_us.FillDataset(m_ds);
             var v_str_search = m_txt_tim_kiem.Text.Trim();
             if (v_str_search.Equals(m_str_tim_kiem)) {
