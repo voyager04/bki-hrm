@@ -145,6 +145,7 @@ namespace BKI_HRM
         private DateTimePicker m_dat_den_ngay_chuc_vu;
         private DateTimePicker m_dat_tu_ngay_chuc_vu;
         private Label label8;
+        internal SIS.Controls.Button.SiSButton m_cmd_update_chuc_vu;
 		private System.ComponentModel.IContainer components;
 
 		
@@ -279,6 +280,7 @@ namespace BKI_HRM
             this.m_dat_den_ngay_chuc_vu = new System.Windows.Forms.DateTimePicker();
             this.m_dat_tu_ngay_chuc_vu = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
+            this.m_cmd_update_chuc_vu = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).BeginInit();
             this.panel1.SuspendLayout();
@@ -846,6 +848,7 @@ namespace BKI_HRM
             // 
             // m_tpg_chuc_vu
             // 
+            this.m_tpg_chuc_vu.Controls.Add(this.m_cmd_update_chuc_vu);
             this.m_tpg_chuc_vu.Controls.Add(this.m_cmd_them_chuc_vu);
             this.m_tpg_chuc_vu.Controls.Add(this.m_cmd_mien_nhiem);
             this.m_tpg_chuc_vu.Controls.Add(this.m_grv_chuc_vu_hien_tai);
@@ -870,7 +873,7 @@ namespace BKI_HRM
             this.m_cmd_them_chuc_vu.Name = "m_cmd_them_chuc_vu";
             this.m_cmd_them_chuc_vu.Size = new System.Drawing.Size(115, 28);
             this.m_cmd_them_chuc_vu.TabIndex = 32;
-            this.m_cmd_them_chuc_vu.Text = "Bổ nhiệm";
+            this.m_cmd_them_chuc_vu.Text = "&Bổ nhiệm";
             this.m_cmd_them_chuc_vu.Click += new System.EventHandler(this.m_cmd_thay_chuc_vu_Click);
             // 
             // m_cmd_mien_nhiem
@@ -893,6 +896,7 @@ namespace BKI_HRM
             // 
             this.m_grv_chuc_vu_hien_tai.AllowEditing = false;
             this.m_grv_chuc_vu_hien_tai.ColumnInfo = resources.GetString("m_grv_chuc_vu_hien_tai.ColumnInfo");
+            this.m_grv_chuc_vu_hien_tai.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_chuc_vu_hien_tai.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_grv_chuc_vu_hien_tai.Location = new System.Drawing.Point(0, 0);
             this.m_grv_chuc_vu_hien_tai.Name = "m_grv_chuc_vu_hien_tai";
@@ -1373,6 +1377,7 @@ namespace BKI_HRM
             // 
             this.m_grv_di_cong_tac.AllowEditing = false;
             this.m_grv_di_cong_tac.ColumnInfo = resources.GetString("m_grv_di_cong_tac.ColumnInfo");
+            this.m_grv_di_cong_tac.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_di_cong_tac.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_di_cong_tac.Location = new System.Drawing.Point(3, 31);
             this.m_grv_di_cong_tac.Name = "m_grv_di_cong_tac";
@@ -1420,7 +1425,7 @@ namespace BKI_HRM
             this.m_tpg_qua_trinh_chuc_vu.Padding = new System.Windows.Forms.Padding(3);
             this.m_tpg_qua_trinh_chuc_vu.Size = new System.Drawing.Size(1000, 233);
             this.m_tpg_qua_trinh_chuc_vu.TabIndex = 8;
-            this.m_tpg_qua_trinh_chuc_vu.Text = "Chức vụ";
+            this.m_tpg_qua_trinh_chuc_vu.Text = "Quá trình công tác";
             this.m_tpg_qua_trinh_chuc_vu.ToolTipText = "Chức vụ";
             this.m_tpg_qua_trinh_chuc_vu.UseVisualStyleBackColor = true;
             // 
@@ -1437,6 +1442,7 @@ namespace BKI_HRM
             // 
             this.m_grv_chuc_vu.AllowEditing = false;
             this.m_grv_chuc_vu.ColumnInfo = resources.GetString("m_grv_chuc_vu.ColumnInfo");
+            this.m_grv_chuc_vu.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_chuc_vu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_chuc_vu.Location = new System.Drawing.Point(3, 31);
             this.m_grv_chuc_vu.Name = "m_grv_chuc_vu";
@@ -1471,6 +1477,21 @@ namespace BKI_HRM
             this.label8.Size = new System.Drawing.Size(49, 13);
             this.label8.TabIndex = 52;
             this.label8.Text = "Từ ngày:";
+            // 
+            // m_cmd_update_chuc_vu
+            // 
+            this.m_cmd_update_chuc_vu.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_update_chuc_vu.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_update_chuc_vu.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_update_chuc_vu.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_update_chuc_vu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_update_chuc_vu.ImageIndex = 9;
+            this.m_cmd_update_chuc_vu.ImageList = this.ImageList;
+            this.m_cmd_update_chuc_vu.Location = new System.Drawing.Point(655, 205);
+            this.m_cmd_update_chuc_vu.Name = "m_cmd_update_chuc_vu";
+            this.m_cmd_update_chuc_vu.Size = new System.Drawing.Size(115, 28);
+            this.m_cmd_update_chuc_vu.TabIndex = 33;
+            this.m_cmd_update_chuc_vu.Text = "&Sửa thông tin";
             // 
             // f201_dm_nhan_su
             // 
@@ -1881,6 +1902,18 @@ namespace BKI_HRM
             v_frm.display_for_insert(v_us, "kiem_nhiem");
             load_data_2_grv_chuc_vu_hien_tai();
         }
+        private void update_chuc_vu()
+        {
+            US_V_GD_QUA_TRINH_LAM_VIEC v_us = new US_V_GD_QUA_TRINH_LAM_VIEC();
+            DS_V_GD_QUA_TRINH_LAM_VIEC v_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC();
+            
+            v_us.FillDatasetByManhanvien(v_ds, m_us.strMA_NV, DateTime.Parse("1/1/1900"), DateTime.Today);
+            v_us.DataRow2Me((DataRow)v_ds.V_GD_QUA_TRINH_LAM_VIEC.Rows[0]);
+            US_V_GD_QUA_TRINH_LAM_VIEC v_us_qua_trinh_lam_viec = new US_V_GD_QUA_TRINH_LAM_VIEC(v_us.dcID);
+            f202_v_gd_qua_trinh_lam_viec_de v_frm = new f202_v_gd_qua_trinh_lam_viec_de();
+            v_frm.display_for_update_qd(v_us_qua_trinh_lam_viec);
+            load_data_2_grv_chuc_vu_hien_tai();
+        }
         private void mien_nhiem() 
         {
             US_V_GD_QUA_TRINH_LAM_VIEC v_us = new US_V_GD_QUA_TRINH_LAM_VIEC();
@@ -2244,7 +2277,10 @@ namespace BKI_HRM
             m_dat_den_ngay_di_cong_tac.ValueChanged += m_dat_di_cong_tac_ValueChanged;
             m_dat_tu_ngay_chuc_vu.ValueChanged += m_dat_chuc_vu_ValueChanged;
             m_dat_den_ngay_chuc_vu.ValueChanged += m_dat_chuc_vu_ValueChanged;
+            m_cmd_update_chuc_vu.Click += m_cmd_update_chuc_vu_Click;
 		}
+
+      
 
        
 		#endregion
@@ -2562,7 +2598,18 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        private void m_cmd_update_chuc_vu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                update_chuc_vu();
+            }
+            catch (Exception v_e)
+            {
 
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         #endregion
 
 
