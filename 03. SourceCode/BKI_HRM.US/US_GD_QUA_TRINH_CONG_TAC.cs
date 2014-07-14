@@ -338,13 +338,19 @@ public class US_GD_QUA_TRINH_CONG_TAC : US_Object
 
 
     #region Addtional
-    public void FillDatasetByProc(DS_GD_QUA_TRINH_CONG_TAC op_ds_v_qua_trinh_cong_tac, string ip_str_key_word, string ip_str_lua_chon, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
+    public void FillDatasetByProc(DS_GD_QUA_TRINH_CONG_TAC op_ds_v_qua_trinh_cong_tac
+        , string ip_str_key_word
+        , string ip_str_lua_chon
+        , DateTime ip_dat_tu_ngay
+        , DateTime ip_dat_den_ngay
+        , decimal ip_dc_id_phap_nhan)
     {
         CStoredProc v_stored_proc = new CStoredProc("pr_GD_QUA_TRINH_CONG_TAC");
         v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_str_key_word);
         v_stored_proc.addNVarcharInputParam("@ip_str_lua_chon", ip_str_lua_chon);
         v_stored_proc.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
         v_stored_proc.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
+        v_stored_proc.addDecimalInputParam("@ip_dc_phap_nhan", ip_dc_id_phap_nhan);
         v_stored_proc.fillDataSetByCommand(this, op_ds_v_qua_trinh_cong_tac);
     }
     #endregion

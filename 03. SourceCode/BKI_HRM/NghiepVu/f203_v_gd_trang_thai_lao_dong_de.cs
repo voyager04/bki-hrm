@@ -120,7 +120,7 @@ namespace BKI_HRM
             m_txt_ho_ten.BackColor = SystemColors.Info;
             m_txt_ho_ten.ReadOnly = true;
 
-            m_us_v_trang_thai_ld.FillDatasetByManhanvien_trang_thai_hien_tai(m_ds_v_trang_thai_ld, m_us_v_trang_thai_ld.strMA_NV);
+            m_us_v_trang_thai_ld.FillDatasetByManhanvien_trang_thai_hien_tai(m_ds_v_trang_thai_ld, m_us_v_trang_thai_ld.strMA_NV, CAppContext_201.getCurrentIDPhapnhan());
 
             switch (m_e_form_mode)
             {

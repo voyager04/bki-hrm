@@ -550,10 +550,11 @@ namespace BKI_HRM.US
             command.fillDataSetByCommand(this, op_ds);
 
         }
-        public void FillDatasetByManhanvien(DS_V_GD_HOP_DONG_LAO_DONG op_ds, string ip_str_ma_nv)
+        public void FillDatasetByManhanvien(DS_V_GD_HOP_DONG_LAO_DONG op_ds, string ip_str_ma_nv, decimal ip_dc_id_phap_nhan)
         {
             CStoredProc v_sp = new CStoredProc("pr_V_GD_HOP_DONG_LAO_DONG_By_Ma_nhan_vien");
             v_sp.addDecimalInputParam("@MA_NHAN_VIEN", ip_str_ma_nv);
+            v_sp.addDecimalInputParam("@ID_PHAP_NHAN", ip_dc_id_phap_nhan);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
 

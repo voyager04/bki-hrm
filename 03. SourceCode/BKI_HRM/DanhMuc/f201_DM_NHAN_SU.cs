@@ -1577,11 +1577,7 @@ namespace BKI_HRM
 			m_obj_trans = get_trans_object(m_grv_nhan_su);
 
 			load_data_2_grid_search();
-            //Thread m_thread_load_data_2_grv = new Thread(new ThreadStart(load_data_2_grid));
-            //Thread m_thread_load_customsource = new Thread(new ThreadStart(load_custom_source_2_m_txt_tim_kiem));
-            //m_thread_load_data_2_grv.Start();
-            //m_thread_load_data_2_grv.Join();
-            //m_thread_load_customsource.Start();
+           
            
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
@@ -1699,7 +1695,7 @@ namespace BKI_HRM
             m_obj_trans_qua_trinh_lam_viec = get_trans_object_qua_trinh_lam_viec(m_grv_chuc_vu_hien_tai);
             US_V_GD_QUA_TRINH_LAM_VIEC v_us_qua_trinh_lam_viec = new US_V_GD_QUA_TRINH_LAM_VIEC();
             DS_V_GD_QUA_TRINH_LAM_VIEC v_ds_qua_trinh_lam_viec = new DS_V_GD_QUA_TRINH_LAM_VIEC();
-            v_us_qua_trinh_lam_viec.FillDataset_chuc_vu_hien_tai(v_ds_qua_trinh_lam_viec, m_us.strMA_NV);
+            v_us_qua_trinh_lam_viec.FillDataset_chuc_vu_hien_tai(v_ds_qua_trinh_lam_viec, m_us.strMA_NV, CAppContext_201.getCurrentIDPhapnhan());
             m_grv_chuc_vu_hien_tai.Redraw = false;
             
             CGridUtils.Dataset2C1Grid(v_ds_qua_trinh_lam_viec, m_grv_chuc_vu_hien_tai, m_obj_trans_qua_trinh_lam_viec);
@@ -1752,7 +1748,7 @@ namespace BKI_HRM
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;
             grid2us_object(m_us, m_grv_nhan_su.Row);
 
-            v_us.FillDatasetByManhanvien(v_ds, m_us.strMA_NV);
+            v_us.FillDatasetByManhanvien(v_ds, m_us.strMA_NV, CAppContext_201.getCurrentIDPhapnhan());
             m_grv_hop_dong_ld.Redraw = false;
             // phai viet 1 ham get_trans_object khac
             ITransferDataRow v_obj_trans = get_trans_object_hop_dong_lao_dong(m_grv_hop_dong_ld);
@@ -1902,7 +1898,7 @@ namespace BKI_HRM
             US_V_GD_TRANG_THAI_LAO_DONG v_us_trang_thai_lao_dong = new US_V_GD_TRANG_THAI_LAO_DONG();
             DS_V_GD_TRANG_THAI_LAO_DONG v_ds_trang_thai_lao_dong = new DS_V_GD_TRANG_THAI_LAO_DONG();
 
-            v_us_trang_thai_lao_dong.FillDatasetByManhanvien_trang_thai_hien_tai(v_ds_trang_thai_lao_dong, m_us.strMA_NV);
+            v_us_trang_thai_lao_dong.FillDatasetByManhanvien_trang_thai_hien_tai(v_ds_trang_thai_lao_dong, m_us.strMA_NV, CAppContext_201.getCurrentIDPhapnhan());
             if (v_ds_trang_thai_lao_dong.V_GD_TRANG_THAI_LAO_DONG.Select("MA_NV is not null").Length > 0)
             {
                 v_us_trang_thai_lao_dong.DataRow2Me(v_ds_trang_thai_lao_dong.V_GD_TRANG_THAI_LAO_DONG.Rows[0]);
@@ -1920,7 +1916,7 @@ namespace BKI_HRM
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;
             grid2us_object(m_us, m_grv_nhan_su.Row);
 
-            v_us.FillDatasetByProc(v_ds, m_us.strMA_NV,"ABCD",m_dtp_tu_ngay.Value, m_dtp_den_ngay.Value);
+            v_us.FillDatasetByProc(v_ds, m_us.strMA_NV,"ABCD",m_dtp_tu_ngay.Value, m_dtp_den_ngay.Value, CAppContext_201.getCurrentIDPhapnhan());
             m_grv_qua_trinh_cong_tac.Redraw = false;
             // phai viet 1 ham get_trans_object khac
             ITransferDataRow v_obj_trans = get_trans_object_qua_trinh_cong_tac(m_grv_qua_trinh_cong_tac);
@@ -2366,9 +2362,7 @@ namespace BKI_HRM
 
         }
 
-        
-        #endregion
-
+       
         private void m_dtp_den_ngay_ValueChanged(object sender, EventArgs e)
         {
             try
@@ -2393,11 +2387,12 @@ namespace BKI_HRM
             }
         }
 
-        
 
-        
+        #endregion
 
-        
+
+
+
     }
 }
 
