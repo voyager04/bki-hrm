@@ -424,7 +424,7 @@ public class US_V_GD_TRANG_THAI_LAO_DONG : US_Object
         v_sp.addDecimalInputParam("@ID", ip_dc_id_chi_tiet_trang_thai_lao_dong);
         v_sp.ExecuteCommand(this);
     }
-    #endregion
+    
 
     public void FillDatasetNVSapQuayLai(DS_V_GD_TRANG_THAI_LAO_DONG m_ds)
     {
@@ -441,5 +441,8 @@ public class US_V_GD_TRANG_THAI_LAO_DONG : US_Object
         //op_dc_tong_so = CIPConvert.ToDecimal(cmd.Parameters["@TONG_SO"].Value.ToString());
 
     }
+
+   
+    #endregion
 }
 }
