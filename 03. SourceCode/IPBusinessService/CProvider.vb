@@ -26,6 +26,7 @@ Public Class CProvider
             m_strConnectionStringCurrent = readConnectionString()
             m_strConnectionStringCreateFromAppConfig = m_strConnectionStringCurrent
         End If
+
         cn.ConnectionString = m_strConnectionStringCurrent '"data source=ACBNT;initial catalog=eSchool;user id=eSchool;password=eSchool"
         Return cn
     End Function
@@ -78,7 +79,8 @@ Public Class CProvider
                 v_strConnectionString &= "Persist Security Info=True;"
             Case "USER_AND_PASSWORD"
                 v_strConnectionString &= "user id=" & v_strUser & ";"
-                v_strConnectionString &= "password=" & v_strPwd
+                v_strConnectionString &= "password=" & v_strPwd & ";"
+                v_strConnectionString &= "Connection Timeout=3000"
         End Select
         m_strDBname = v_strDatabase
         m_strDBnameAdmin = v_strDatabase

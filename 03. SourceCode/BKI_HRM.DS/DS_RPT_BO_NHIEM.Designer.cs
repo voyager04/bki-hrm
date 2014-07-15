@@ -299,6 +299,8 @@ namespace BKI_HRM.DS {
             
             private global::System.Data.DataColumn columnSL_BN_KO_QD_KT;
             
+            private global::System.Data.DataColumn columnID_LEVEL;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public RPT_BO_NHIEMDataTable() {
@@ -414,6 +416,14 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_LEVELColumn {
+                get {
+                    return this.columnID_LEVEL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -449,7 +459,7 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RPT_BO_NHIEMRow AddRPT_BO_NHIEMRow(decimal ID, string DIA_BAN, decimal ID_DV_CT, string MA_DV_CAP_TREN, decimal ID_DON_VI, string MA_DON_VI, decimal SL_BO_NHIEM, decimal SL_BN_CO_QD, decimal SL_BN_KO_QD, decimal SL_BN_KO_QD_KT) {
+            public RPT_BO_NHIEMRow AddRPT_BO_NHIEMRow(decimal ID, string DIA_BAN, decimal ID_DV_CT, string MA_DV_CAP_TREN, decimal ID_DON_VI, string MA_DON_VI, decimal SL_BO_NHIEM, decimal SL_BN_CO_QD, decimal SL_BN_KO_QD, decimal SL_BN_KO_QD_KT, decimal ID_LEVEL) {
                 RPT_BO_NHIEMRow rowRPT_BO_NHIEMRow = ((RPT_BO_NHIEMRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
@@ -461,7 +471,8 @@ namespace BKI_HRM.DS {
                         SL_BO_NHIEM,
                         SL_BN_CO_QD,
                         SL_BN_KO_QD,
-                        SL_BN_KO_QD_KT};
+                        SL_BN_KO_QD_KT,
+                        ID_LEVEL};
                 rowRPT_BO_NHIEMRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRPT_BO_NHIEMRow);
                 return rowRPT_BO_NHIEMRow;
@@ -494,6 +505,7 @@ namespace BKI_HRM.DS {
                 this.columnSL_BN_CO_QD = base.Columns["SL_BN_CO_QD"];
                 this.columnSL_BN_KO_QD = base.Columns["SL_BN_KO_QD"];
                 this.columnSL_BN_KO_QD_KT = base.Columns["SL_BN_KO_QD_KT"];
+                this.columnID_LEVEL = base.Columns["ID_LEVEL"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -519,6 +531,8 @@ namespace BKI_HRM.DS {
                 base.Columns.Add(this.columnSL_BN_KO_QD);
                 this.columnSL_BN_KO_QD_KT = new global::System.Data.DataColumn("SL_BN_KO_QD_KT", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSL_BN_KO_QD_KT);
+                this.columnID_LEVEL = new global::System.Data.DataColumn("ID_LEVEL", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_LEVEL);
                 this.columnDIA_BAN.MaxLength = 35;
                 this.columnMA_DV_CAP_TREN.MaxLength = 35;
                 this.columnMA_DON_VI.MaxLength = 35;
@@ -824,6 +838,22 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ID_LEVEL {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableRPT_BO_NHIEM.ID_LEVELColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID_LEVEL\' in table \'RPT_BO_NHIEM\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRPT_BO_NHIEM.ID_LEVELColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsIDNull() {
                 return this.IsNull(this.tableRPT_BO_NHIEM.IDColumn);
             }
@@ -940,6 +970,18 @@ namespace BKI_HRM.DS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetSL_BN_KO_QD_KTNull() {
                 this[this.tableRPT_BO_NHIEM.SL_BN_KO_QD_KTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsID_LEVELNull() {
+                return this.IsNull(this.tableRPT_BO_NHIEM.ID_LEVELColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetID_LEVELNull() {
+                this[this.tableRPT_BO_NHIEM.ID_LEVELColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1112,10 +1154,11 @@ namespace BKI_HRM.DS.DS_RPT_BO_NHIEMTableAdapters {
             tableMapping.ColumnMappings.Add("SL_BN_CO_QD", "SL_BN_CO_QD");
             tableMapping.ColumnMappings.Add("SL_BN_KO_QD", "SL_BN_KO_QD");
             tableMapping.ColumnMappings.Add("SL_BN_KO_QD_KT", "SL_BN_KO_QD_KT");
+            tableMapping.ColumnMappings.Add("ID_LEVEL", "ID_LEVEL");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[RPT_BO_NHIEM] ([ID], [DIA_BAN], [ID_DV_CT], [MA_DV_CAP_TREN], [ID_DON_VI], [MA_DON_VI], [SL_BO_NHIEM], [SL_BN_CO_QD], [SL_BN_KO_QD], [SL_BN_KO_QD_KT]) VALUES (@ID, @DIA_BAN, @ID_DV_CT, @MA_DV_CAP_TREN, @ID_DON_VI, @MA_DON_VI, @SL_BO_NHIEM, @SL_BN_CO_QD, @SL_BN_KO_QD, @SL_BN_KO_QD_KT)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[RPT_BO_NHIEM] ([ID], [DIA_BAN], [ID_DV_CT], [MA_DV_CAP_TREN], [ID_DON_VI], [MA_DON_VI], [SL_BO_NHIEM], [SL_BN_CO_QD], [SL_BN_KO_QD], [SL_BN_KO_QD_KT], [ID_LEVEL]) VALUES (@ID, @DIA_BAN, @ID_DV_CT, @MA_DV_CAP_TREN, @ID_DON_VI, @MA_DON_VI, @SL_BO_NHIEM, @SL_BN_CO_QD, @SL_BN_KO_QD, @SL_BN_KO_QD_KT, @ID_LEVEL)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DIA_BAN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIA_BAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1127,13 +1170,14 @@ namespace BKI_HRM.DS.DS_RPT_BO_NHIEMTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SL_BN_CO_QD", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "SL_BN_CO_QD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SL_BN_KO_QD", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "SL_BN_KO_QD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SL_BN_KO_QD_KT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "SL_BN_KO_QD_KT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_LEVEL", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_LEVEL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BKI_HRM.DS.Properties.Settings.Default.BKI_HRMConnectionString1;
+            this._connection.ConnectionString = global::BKI_HRM.DS.Properties.Settings.Default.BKI_HRMConnectionString5;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1143,7 +1187,7 @@ namespace BKI_HRM.DS.DS_RPT_BO_NHIEMTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, DIA_BAN, ID_DV_CT, MA_DV_CAP_TREN, ID_DON_VI, MA_DON_VI, SL_BO_NHIEM, " +
-                "SL_BN_CO_QD, SL_BN_KO_QD, SL_BN_KO_QD_KT FROM dbo.RPT_BO_NHIEM";
+                "SL_BN_CO_QD, SL_BN_KO_QD, SL_BN_KO_QD_KT, ID_LEVEL FROM dbo.RPT_BO_NHIEM";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1204,7 +1248,7 @@ namespace BKI_HRM.DS.DS_RPT_BO_NHIEMTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<decimal> ID, string DIA_BAN, global::System.Nullable<decimal> ID_DV_CT, string MA_DV_CAP_TREN, global::System.Nullable<decimal> ID_DON_VI, string MA_DON_VI, global::System.Nullable<decimal> SL_BO_NHIEM, global::System.Nullable<decimal> SL_BN_CO_QD, global::System.Nullable<decimal> SL_BN_KO_QD, global::System.Nullable<decimal> SL_BN_KO_QD_KT) {
+        public virtual int Insert(global::System.Nullable<decimal> ID, string DIA_BAN, global::System.Nullable<decimal> ID_DV_CT, string MA_DV_CAP_TREN, global::System.Nullable<decimal> ID_DON_VI, string MA_DON_VI, global::System.Nullable<decimal> SL_BO_NHIEM, global::System.Nullable<decimal> SL_BN_CO_QD, global::System.Nullable<decimal> SL_BN_KO_QD, global::System.Nullable<decimal> SL_BN_KO_QD_KT, global::System.Nullable<decimal> ID_LEVEL) {
             if ((ID.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(ID.Value));
             }
@@ -1264,6 +1308,12 @@ namespace BKI_HRM.DS.DS_RPT_BO_NHIEMTableAdapters {
             }
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((ID_LEVEL.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((decimal)(ID_LEVEL.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
