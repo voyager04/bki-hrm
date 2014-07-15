@@ -540,12 +540,14 @@ namespace BKI_HRM.US
             , string ip_str_search
             , DateTime ip_dat_tu_ngay
             , DateTime ip_dat_den_ngay,
+            decimal ip_dc_tim_kiem_theo,
             decimal ip_dc_id_phap_nhan)
         {
             CStoredProc v_store = new CStoredProc("pr_V_GD_CONG_TAC_search");
             v_store.addNVarcharInputParam("@ip_str_search", ip_str_search);
-            v_store.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
-            v_store.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
+            v_store.addDatetimeInputParam("@tu_ngay", ip_dat_tu_ngay);
+            v_store.addDatetimeInputParam("@den_ngay", ip_dat_den_ngay);
+            v_store.addDecimalInputParam("@tim_kiem_theo_ngay", ip_dc_tim_kiem_theo);
             v_store.addDecimalInputParam("@id_phap_nhan", ip_dc_id_phap_nhan);
             v_store.fillDataSetByCommand(this, op_ds);
         }

@@ -102,6 +102,7 @@ namespace BKI_HRM
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f701_v_hop_dong_lao_dong));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_lbl_phim_tat = new System.Windows.Forms.Label();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
@@ -124,7 +125,6 @@ namespace BKI_HRM
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.m_lbl_phim_tat = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -172,6 +172,15 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1354, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
+            // 
+            // m_lbl_phim_tat
+            // 
+            this.m_lbl_phim_tat.AutoSize = true;
+            this.m_lbl_phim_tat.Location = new System.Drawing.Point(221, 12);
+            this.m_lbl_phim_tat.Name = "m_lbl_phim_tat";
+            this.m_lbl_phim_tat.Size = new System.Drawing.Size(206, 13);
+            this.m_lbl_phim_tat.TabIndex = 1001;
+            this.m_lbl_phim_tat.Text = "Phím tắt: F6_Mở rộng-Thu gọn danh sách";
             // 
             // m_cmd_insert
             // 
@@ -433,15 +442,6 @@ namespace BKI_HRM
             this.panel1.Size = new System.Drawing.Size(1354, 108);
             this.panel1.TabIndex = 43;
             // 
-            // m_lbl_phim_tat
-            // 
-            this.m_lbl_phim_tat.AutoSize = true;
-            this.m_lbl_phim_tat.Location = new System.Drawing.Point(221, 12);
-            this.m_lbl_phim_tat.Name = "m_lbl_phim_tat";
-            this.m_lbl_phim_tat.Size = new System.Drawing.Size(206, 13);
-            this.m_lbl_phim_tat.TabIndex = 1001;
-            this.m_lbl_phim_tat.Text = "Phím tắt: F6_Mở rộng-Thu gọn danh sách";
-            // 
             // f701_v_hop_dong_lao_dong
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -523,6 +523,7 @@ namespace BKI_HRM
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.LOAI_HOP_DONG, WinFormControls.eTAT_CA.YES, m_cbo_loai_hop_dong);
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_HOP_DONG, WinFormControls.eTAT_CA.YES, m_cbo_trang_thai_hop_dong);
             load_data_2_grid();
+            m_fg.Select(1, (int)e_col_Number.MA_HOP_DONG);
         }
 
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
@@ -646,24 +647,22 @@ namespace BKI_HRM
             f701_v_gd_hop_dong_lao_dong_DE v_fDE = new f701_v_gd_hop_dong_lao_dong_DE();
             v_fDE.display_for_insert();
             load_data_2_grid();
-            if (m_str_ma_hop_dong == null)
-                return;
-            WinFormControls.set_focus_for_grid(m_fg, m_str_ma_hop_dong, 4);
+            m_fg.Select(m_fg.FindRow(v_fDE.lay_ma_hop_dong_vua_insert(), 1, (int)e_col_Number.MA_HOP_DONG, true), (int)e_col_Number.MA_HOP_DONG);
         }
 
         private void update_v_gd_hop_dong_lao_dong()
         {
+            var currentRow = 0;
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             if (m_fg.Rows[m_fg.Row].IsNode) return;
+            currentRow = m_fg.Row;
             grid2us_object(m_fg.Row);
 
             f701_v_gd_hop_dong_lao_dong_DE v_fDE = new f701_v_gd_hop_dong_lao_dong_DE();
             v_fDE.display_for_update(m_us_gd_hop_dong);
             load_data_2_grid();
-            if (m_str_ma_hop_dong == null)
-                return;
-            WinFormControls.set_focus_for_grid(m_fg, m_str_ma_hop_dong, 4);
+            m_fg.Select(currentRow, (int)e_col_Number.MA_HOP_DONG);
         }
 
         private void delete_v_gd_hop_dong_lao_dong()
@@ -687,6 +686,7 @@ namespace BKI_HRM
                 m_us_gd_hop_dong.CommitTransaction();
                 m_fg.Rows.Remove(m_fg.Row);
                 BaseMessages.MsgBox_Infor("Xoá thành công!");
+                m_fg.Select(1, (int)e_col_Number.MA_HOP_DONG);
             }
             catch (Exception v_e)
             {
