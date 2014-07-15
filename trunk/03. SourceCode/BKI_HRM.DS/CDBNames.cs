@@ -761,6 +761,7 @@
        public const string SL_BN_CO_QD = "SL_BN_CO_QD";
        public const string SL_BN_KO_QD = "SL_BN_KO_QD";
        public const string SL_BN_KO_QD_KT = "SL_BN_KO_QD_KT";
+       public const string ID_LEVEL = "ID_LEVEL";
    }
    public class RPT_DON_VI_TRANG_THAI
    {
