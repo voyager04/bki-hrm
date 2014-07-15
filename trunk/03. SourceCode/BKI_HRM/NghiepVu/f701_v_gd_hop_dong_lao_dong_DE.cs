@@ -38,6 +38,7 @@ namespace BKI_HRM.NghiepVu
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             m_e_file_mode = DataEntryFileMode.UploadFile;
             this.ShowDialog();
+            m_str_ma_hop_dong = m_txt_ma_hop_dong.Text;
         }
 
         public void display_for_insert(US_DM_NHAN_SU ip_m_us_dm_nhan_su)
@@ -56,7 +57,14 @@ namespace BKI_HRM.NghiepVu
             m_txt_tim_kiem_nhan_vien.Enabled = false;
             m_e_file_mode = DataEntryFileMode.EditFile;
             m_str_link_old = m_lbl_file_name.Text;
+
+            
             this.ShowDialog();
+        }
+
+        public string lay_ma_hop_dong_vua_insert()
+        {
+            return m_str_ma_hop_dong;
         }
         #endregion
 
@@ -67,10 +75,8 @@ namespace BKI_HRM.NghiepVu
         private DataEntryFormMode m_e_form_mode;
         
         US_GD_HOP_DONG m_us = new US_GD_HOP_DONG();
-        DS_GD_HOP_DONG m_ds = new DS_GD_HOP_DONG();
-        US_V_GD_HOP_DONG_LAO_DONG m_us_v = new US_V_GD_HOP_DONG_LAO_DONG();
-        DS_V_GD_HOP_DONG_LAO_DONG m_ds_v = new DS_V_GD_HOP_DONG_LAO_DONG();
         US_DM_NHAN_SU m_us_dm_nhan_su = new US_DM_NHAN_SU();
+        private string m_str_ma_hop_dong;
 
         private DataEntryFileMode m_e_file_mode;
         private string m_str_domain = ConfigurationSettings.AppSettings["DOMAIN"];

@@ -38,6 +38,7 @@ namespace BKI_HRM
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             m_e_file_mode = DataEntryFileMode.UploadFile;
             this.ShowDialog();
+            m_str_ma_quyet_dinh = m_txt_ma_quyet_dinh.Text;
         }
 
         public void display_for_update(US_V_GD_CONG_TAC ip_us)
@@ -46,6 +47,11 @@ namespace BKI_HRM
             m_grb_quyet_dinh.Enabled = true;
             us_quyet_dinh_to_form(ip_us);
             this.ShowDialog();
+        }
+
+        public string lay_ma_quyet_dinh_vua_insert()
+        {
+            return m_str_ma_quyet_dinh;
         }
         #endregion
 
@@ -67,16 +73,13 @@ namespace BKI_HRM
         ITransferDataRow m_obj_trans;
         US_V_GD_CONG_TAC m_us_v_gd_cong_tac = new US_V_GD_CONG_TAC();
         DS_V_GD_CONG_TAC m_ds_v_gd_cong_tac = new DS_V_GD_CONG_TAC();
-        US_GD_CONG_TAC m_us_gd_cong_tac = new US_GD_CONG_TAC();
-        DS_GD_CONG_TAC m_ds_gd_cong_tac = new DS_GD_CONG_TAC();
         US_DM_QUYET_DINH m_us_dm_quyet_dinh = new US_DM_QUYET_DINH();
-        DS_DM_QUYET_DINH m_ds_dm_quyet_dinh = new DS_DM_QUYET_DINH();
         US_V_DM_NHAN_SU m_us_v_dm_nhan_su = new US_V_DM_NHAN_SU();
         DS_V_DM_NHAN_SU m_ds_v_dm_nhan_su = new DS_V_DM_NHAN_SU();
         DataEntryFormMode m_e_form_mode = new DataEntryFormMode();
         bool m_b_check_quyet_dinh_save;
-        bool m_b_check_quyet_dinh_null = false;
         private string m_str_ma_quyet_dinh_old;
+        private string m_str_ma_quyet_dinh;
 
         // File explorer
         private DataEntryFileMode m_e_file_mode;
