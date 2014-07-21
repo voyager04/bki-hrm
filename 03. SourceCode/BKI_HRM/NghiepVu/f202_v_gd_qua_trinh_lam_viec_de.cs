@@ -270,6 +270,7 @@ namespace BKI_HRM
                     if (m_us_v_qua_trinh_lam_viec.strTRANG_THAI_CHUC_VU_YN == "Y")
                     {
                         m_ckb_cv_hien_tai_yn.Checked = true;
+                        m_ckb_cv_hien_tai_yn.Text = "Có";
                     }
                     else
                     {
