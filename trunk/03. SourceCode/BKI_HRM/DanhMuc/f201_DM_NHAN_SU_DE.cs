@@ -29,7 +29,7 @@ namespace BKI_HRM
 {
     public partial class f201_DM_NHAN_SU_DE : Form
     {
-    #region Public Interface
+        #region Public Interface
         public void display()
         {
             this.ShowDialog();
@@ -46,13 +46,14 @@ namespace BKI_HRM
             m_cbo_gioi_tinh.SelectedIndex = 0;
             m_txt_ma_nhan_vien.Focus();
             this.ShowDialog();
-            
+
         }
         public void get_us(ref US_DM_NHAN_SU op_us)
         {
             op_us = m_us_dm_nhan_su;
         }
-        public void display_for_update(US_DM_NHAN_SU ip_us_dm_nhan_su){
+        public void display_for_update(US_DM_NHAN_SU ip_us_dm_nhan_su)
+        {
             m_us_dm_nhan_su = ip_us_dm_nhan_su;
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             us_object_to_form();
@@ -94,9 +95,9 @@ namespace BKI_HRM
             m_cmd_save.Visible = false;
             this.ShowDialog();
         }
-    #endregion
+        #endregion
 
-    #region Members
+        #region Members
         DataEntryFormMode m_e_form_mode;
         US_DM_NHAN_SU m_us_dm_nhan_su = new US_DM_NHAN_SU();
 
@@ -108,9 +109,9 @@ namespace BKI_HRM
         private string m_str_password = ConfigurationSettings.AppSettings["PASSWORD_SHARE"];
         private decimal m_str_id_hop_dong_old;
         private string m_str_link_old;
-    #endregion
+        #endregion
 
-    #region Private Methods
+        #region Private Methods
         private void format_controls()
         {
             CControlFormat.setFormStyle(this, new CAppContext_201());
@@ -158,11 +159,11 @@ namespace BKI_HRM
 
             m_ofd_chon_anh.FileName = m_us_dm_nhan_su.strANH;
             if (m_us_dm_nhan_su.strANH != "")
-               // m_ptb_anh.Image = new Bitmap(m_ofd_chon_anh.FileName);
             {
+                m_cmd_xoa_anh.Visible = true;
+                string v_str_imagepath = m_str_directory_to + m_us_dm_nhan_su.strMA_NV + ".jpg";
                 FileStream fs;
-                fs = new System.IO.FileStream(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\temp.jpg",
-                    System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                fs = new System.IO.FileStream(v_str_imagepath, System.IO.FileMode.Open, System.IO.FileAccess.Read);
                 m_ptb_anh.Image = System.Drawing.Image.FromStream(fs);
                 fs.Close();
             }
@@ -182,21 +183,22 @@ namespace BKI_HRM
             m_txt_quan_he.Text = m_us_dm_nhan_su.strQUAN_HE;
             m_txt_ma_headcount.Text = m_us_dm_nhan_su.strMA_HEADCOUNT;
         }
-        private void form_to_us_object(){
+        private void form_to_us_object()
+        {
             m_us_dm_nhan_su.strMA_NV = m_txt_ma_nhan_vien.Text.Trim();
             m_us_dm_nhan_su.strHO_DEM = m_txt_ho_dem.Text.Trim();
             m_us_dm_nhan_su.strTEN = m_txt_ten.Text.Trim();
             m_us_dm_nhan_su.strGIOI_TINH = ((m_cbo_gioi_tinh.SelectedIndex == 0) ? "Nam" : "Nữ");
-        
-          //  m_us_dm_nhan_su.strANH = m_ofd_chon_anh.FileName;
-           
 
-            if(m_dat_ngay_sinh.Checked == true)
+         //   m_us_dm_nhan_su.strANH = m_txt_ma_nhan_vien.Text;
+
+
+            if (m_dat_ngay_sinh.Checked == true)
                 m_us_dm_nhan_su.datNGAY_SINH = m_dat_ngay_sinh.Value;
             m_us_dm_nhan_su.strNOI_SINH = m_txt_noi_sinh.Text.Trim();
             m_us_dm_nhan_su.strNGUYEN_QUAN = m_txt_nguyen_quan.Text.Trim();
             m_us_dm_nhan_su.strCMND = m_txt_cmnd.Text.Trim();
-            if(m_dat_ngay_cap.Checked == true)
+            if (m_dat_ngay_cap.Checked == true)
                 m_us_dm_nhan_su.datNGAY_CAP_CMND = m_dat_ngay_cap.Value;
             m_us_dm_nhan_su.strNOI_CAP_CMND = m_txt_noi_cap.Text.Trim();
             m_us_dm_nhan_su.strTON_GIAO = m_txt_ton_giao.Text.Trim();
@@ -219,7 +221,7 @@ namespace BKI_HRM
             m_us_dm_nhan_su.strMA_HEADCOUNT = m_txt_ma_headcount.Text.Trim();
         }
         private bool check_trung_ma_nv(string ip_str_ma_nv)
-        {  
+        {
             DS_DM_NHAN_SU v_ds = new DS_DM_NHAN_SU();
             decimal count_ma_nv;
             m_us_dm_nhan_su.FillDataset_search_by_ma_nv(v_ds, ip_str_ma_nv);
@@ -228,13 +230,16 @@ namespace BKI_HRM
                 return true;
             return false;
         }
-        private bool check_validate_data_is_ok(){
-            if (!CValidateTextBox.IsValid(m_txt_ma_nhan_vien, DataType.NumberType, allowNull.NO, true)){
+        private bool check_validate_data_is_ok()
+        {
+            if (!CValidateTextBox.IsValid(m_txt_ma_nhan_vien, DataType.NumberType, allowNull.NO, true))
+            {
                 BaseMessages.MsgBox_Warning(201);
                 return false;
             }
-            
-            if (!CValidateTextBox.IsValid(m_txt_ho_dem, DataType.StringType, allowNull.NO, true) || CIPConvert.is_valid_number(m_txt_ho_dem)){
+
+            if (!CValidateTextBox.IsValid(m_txt_ho_dem, DataType.StringType, allowNull.NO, true) || CIPConvert.is_valid_number(m_txt_ho_dem))
+            {
                 BaseMessages.MsgBox_Warning(202);
                 return false;
             }
@@ -248,7 +253,8 @@ namespace BKI_HRM
             //    BaseMessages.MsgBox_Warning(204);
             //    return false;
             //}
-            if ((m_dat_ngay_sinh.Checked == true) && (DateTime.Today.Year - m_dat_ngay_sinh.Value.Year) < 15){
+            if ((m_dat_ngay_sinh.Checked == true) && (DateTime.Today.Year - m_dat_ngay_sinh.Value.Year) < 15)
+            {
                 BaseMessages.MsgBox_Warning(205);
                 return false;
             }
@@ -264,29 +270,34 @@ namespace BKI_HRM
                 BaseMessages.MsgBox_Warning(220);
                 return false;
             }
-            if (!CValidateTextBox.IsValid(m_txt_noi_sinh, DataType.StringType, allowNull.YES, true)){
+            if (!CValidateTextBox.IsValid(m_txt_noi_sinh, DataType.StringType, allowNull.YES, true))
+            {
                 BaseMessages.MsgBox_Warning(206);
                 return false;
             }
-            if (!CValidateTextBox.IsValid(m_txt_cmnd, DataType.NumberType, allowNull.YES, true)){
+            if (!CValidateTextBox.IsValid(m_txt_cmnd, DataType.NumberType, allowNull.YES, true))
+            {
                 BaseMessages.MsgBox_Warning(208);
                 return false;
             }
             if (!CValidateTextBox.IsValid(m_txt_noi_cap, DataType.StringType, allowNull.YES, true))
                 return false;
-            
-            if ((m_dat_ngay_cap.Checked == true) && (m_dat_ngay_cap.Value.Year < (m_dat_ngay_sinh.Value.Year + 14))){
+
+            if ((m_dat_ngay_cap.Checked == true) && (m_dat_ngay_cap.Value.Year < (m_dat_ngay_sinh.Value.Year + 14)))
+            {
                 BaseMessages.MsgBox_Warning(209);
                 return false;
             }
-            if (!CValidateTextBox.IsValid(m_txt_ton_giao, DataType.StringType, allowNull.YES, true)){
-                
+            if (!CValidateTextBox.IsValid(m_txt_ton_giao, DataType.StringType, allowNull.YES, true))
+            {
+
                 return false;
             }
             if (!CValidateTextBox.IsValid(m_txt_dan_toc, DataType.StringType, allowNull.YES, true))
                 return false;
             if (!CValidateTextBox.IsValid(m_txt_nam_tot_nghiep, DataType.NumberType, allowNull.YES, true)
-                || ((m_txt_nam_tot_nghiep.Text.Trim().Length > 0)&&(CIPConvert.ToDecimal(m_txt_nam_tot_nghiep.Text) > DateTime.Today.Year))){
+                || ((m_txt_nam_tot_nghiep.Text.Trim().Length > 0) && (CIPConvert.ToDecimal(m_txt_nam_tot_nghiep.Text) > DateTime.Today.Year)))
+            {
                 //BaseMessages.MsgBox_Warning(211);
                 return false;
             }
@@ -308,17 +319,19 @@ namespace BKI_HRM
             }
             if (!CValidateTextBox.IsValid(m_txt_so_dtdd, DataType.StringType, allowNull.YES, true))
             {
-               
+
                 BaseMessages.MsgBox_Warning(210);
                 return false;
             }
-            if (!CValidateTextBox.IsValid(m_txt_sdt_nha_rieng, DataType.StringType, allowNull.YES, true)){
+            if (!CValidateTextBox.IsValid(m_txt_sdt_nha_rieng, DataType.StringType, allowNull.YES, true))
+            {
                 BaseMessages.MsgBox_Warning(210);
                 return false;
             }
             if (!CValidateTextBox.IsValid(m_txt_ma_so_thue, DataType.NumberType, allowNull.YES, true))
                 return false;
-            if (!CValidateTextBox.IsValid(m_txt_dia_chi, DataType.StringType, allowNull.YES, true)){
+            if (!CValidateTextBox.IsValid(m_txt_dia_chi, DataType.StringType, allowNull.YES, true))
+            {
                 BaseMessages.MsgBox_Warning(210);
                 return false;
             }
@@ -326,7 +339,8 @@ namespace BKI_HRM
                 return false;
             if (!CValidateTextBox.IsValid(m_txt_nguoi_lien_he, DataType.StringType, allowNull.YES, true))
                 return false;
-            if (!CValidateTextBox.IsValid(m_txt_sdt_lien_he, DataType.StringType, allowNull.YES, true)){
+            if (!CValidateTextBox.IsValid(m_txt_sdt_lien_he, DataType.StringType, allowNull.YES, true))
+            {
                 BaseMessages.MsgBox_Warning(210);
                 return false;
             }
@@ -341,12 +355,12 @@ namespace BKI_HRM
         }
         private void save_image(string ip_str_pathimage)
         {
-            
+
             if (ip_str_pathimage != "")
             {
 
                 if (File.Exists(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg"))
-                { 
+                {
                     File.Delete(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg");
                 }
 
@@ -377,28 +391,57 @@ namespace BKI_HRM
                     graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
                     graphics.DrawImage(image, 0, 0, newWidth, newHeight);
                 }
-               
+
                 newImage.Save(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg", ImageFormat.Jpeg);
-              //  FileExplorer.UploadFile(m_str_domain, m_str_directory_to, m_str_user_name, m_str_password);
-                m_us_dm_nhan_su.strANH = Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg";
-               // m_us_dm_nhan_su.strANH = m_us_dm_nhan_su.strMA_NV;
+                switch (m_e_file_mode)
+                {
+                    case DataEntryFileMode.DeleteFile:
+                        File.Delete(m_str_directory_to + m_us_dm_nhan_su.strMA_NV + ".jpg");
+                        
+                        m_us_dm_nhan_su.SetANHNull();
+                        break;
+                    case DataEntryFileMode.EditFile:
+                       if (File.Exists(m_str_directory_to + m_txt_ma_nhan_vien.Text + ".jpg"))
+                        {
+                            File.Delete(m_str_directory_to + m_txt_ma_nhan_vien.Text + ".jpg");
+                        }
+                        FileExplorer.UploadFile_with_filename(m_str_domain, m_str_directory_to, Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\", m_txt_ma_nhan_vien.Text + ".jpg");
+                        // m_us_dm_nhan_su.strANH = Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg";
+                        m_us_dm_nhan_su.strANH = m_us_dm_nhan_su.strMA_NV;
+                        break;
+                    case DataEntryFileMode.UploadFile:
+                        if (File.Exists(m_str_directory_to + m_txt_ma_nhan_vien.Text + ".jpg"))
+                        {
+                            File.Delete(m_str_directory_to + m_txt_ma_nhan_vien.Text + ".jpg");
+                        }
+                        FileExplorer.UploadFile_with_filename(m_str_domain, m_str_directory_to, Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\", m_txt_ma_nhan_vien.Text + ".jpg");
+                        // m_us_dm_nhan_su.strANH = Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg";
+                        m_us_dm_nhan_su.strANH = m_us_dm_nhan_su.strMA_NV;
+                        break;
+                    default:
+                        
+                        break;
+                }
+
             }
-                
+
         }
-        private void save_data(){
-            save_image(m_ofd_chon_anh.FileName);
+        private void save_data()
+        {
+
             switch (m_e_form_mode)
             {
-                    
+
                 case DataEntryFormMode.UpdateDataState:
                     if (check_validate_data_is_ok() == false)
                         return;
                     else
                     {
+                        save_image(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg");
                         form_to_us_object();
                         m_us_dm_nhan_su.Update();
                     }
-                        
+
                     break;
                 case DataEntryFormMode.InsertDataState:
                     if (check_trung_ma_nv(m_txt_ma_nhan_vien.Text))
@@ -411,17 +454,19 @@ namespace BKI_HRM
                     }
                     else
                     {
+
                         m_txt_ma_nhan_vien.BackColor = Color.White;
                         if (check_validate_data_is_ok() == false)
                             return;
                         else
                         {
+                            save_image(m_ofd_chon_anh.FileName);
                             form_to_us_object();
                             m_us_dm_nhan_su.Insert();
                         }
-                        
+
                     }
-                    
+
                     break;
                 default:
                     break;
@@ -429,7 +474,8 @@ namespace BKI_HRM
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhât!");
             this.Close();
         }
-        private void xoa_trang(){
+        private void xoa_trang()
+        {
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.InsertDataState:
@@ -442,7 +488,7 @@ namespace BKI_HRM
                     m_txt_noi_sinh.Text = "";
                     m_txt_nguyen_quan.Text = "";
                     m_txt_cmnd.Text = "";
-                  //  m_dat_ngay_cap.Value = DateTime.Today;
+                    //  m_dat_ngay_cap.Value = DateTime.Today;
                     m_dat_ngay_cap.Checked = false;
                     m_txt_noi_cap.Text = "";
                     m_txt_ton_giao.Text = "";
@@ -469,7 +515,7 @@ namespace BKI_HRM
                 case DataEntryFormMode.UpdateDataState:
                     us_object_to_form();
                     if (m_us_dm_nhan_su.strANH != "")
-                        m_ptb_anh.Image = new Bitmap(m_us_dm_nhan_su.strANH);
+                        m_ptb_anh.Image = new Bitmap(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg");
                     else
                     {
                         m_ptb_anh.Image = m_ptb_anh.ErrorImage;
@@ -484,7 +530,7 @@ namespace BKI_HRM
         }
         private void set_inital_form_load()
         {
-            
+
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.UpdateDataState:
@@ -497,15 +543,19 @@ namespace BKI_HRM
                 default:
                     break;
             }
-            
+
         }
-        
-        private void set_define_event(){
+
+        private void set_define_event()
+        {
             this.Load += new EventHandler(f201_DM_NHAN_SU_DE_Load);
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
             m_cmd_refresh.Click += new EventHandler(m_cmd_refresh_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_cmd_xoa_anh.Click += new EventHandler(m_cmd_xoa_anh_Click);
         }
+
+
         private bool check_validate_email(string emailaddress)
         {
             if (emailaddress == "") return true;
@@ -516,58 +566,47 @@ namespace BKI_HRM
             + @"([a-zA-Z]+[\w-]+\.)+[a-zA-Z]{2,4})$";
 
 
-           
-             return Regex.IsMatch(emailaddress, MatchEmailPattern);
-                
-        }
-    #endregion
 
-    #region Event Hanlders
-        private void f201_DM_NHAN_SU_DE_Load(object sendrer, EventArgs e){
+            return Regex.IsMatch(emailaddress, MatchEmailPattern);
+
+        }
+        #endregion
+
+        #region Event Hanlders
+        private void f201_DM_NHAN_SU_DE_Load(object sendrer, EventArgs e)
+        {
             try
             {
-                
+
                 set_inital_form_load();
-                
+                set_define_event();
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle(v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        private void m_cmd_save_Click(object sender, EventArgs e){
+        private void m_cmd_save_Click(object sender, EventArgs e)
+        {
             try
             {
-            	save_data();
+                save_data();
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle( v_e);
+
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
         private void m_cmd_refresh_Click(object sender, EventArgs e)
         {
-            try
-            {
-                xoa_trang();
-            }
-            catch (Exception v_e)
-            {
-            	CSystemLog_301.ExceptionHandle( v_e);
-            }
+
         }
         private void m_cmd_exit_Click(object sender, EventArgs e)
         {
-            try
-            {
-                this.Close();
-            }
-            catch (Exception v_e)
-            {
-            	CSystemLog_301.ExceptionHandle( v_e);
-            }
+
         }
-      
+
 
         private void m_ptb_anh_Click(object sender, EventArgs e)
         {
@@ -613,11 +652,11 @@ namespace BKI_HRM
             {
                 e.Handled = true;
             }
-            
-//             if ((sender as TextBox).Text.Length > 4)
-//             {
-//                 e.Handled = true;
-//             }
+
+            //             if ((sender as TextBox).Text.Length > 4)
+            //             {
+            //                 e.Handled = true;
+            //             }
         }
 
         private void m_txt_so_dtdd_KeyPress(object sender, KeyPressEventArgs e)
@@ -716,7 +755,7 @@ namespace BKI_HRM
         private void m_txt_email_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar)
-        && !char.IsLetterOrDigit(e.KeyChar) 
+        && !char.IsLetterOrDigit(e.KeyChar)
         && e.KeyChar != '.' && e.KeyChar != '@' && e.KeyChar != '_')
             {
                 e.Handled = true;
@@ -727,7 +766,7 @@ namespace BKI_HRM
             {
                 e.Handled = true;
             }
-            
+
         }
         private void m_ptb_anh_MouseHover(object sender, EventArgs e)
         {
@@ -736,21 +775,33 @@ namespace BKI_HRM
 
         private void m_ptb_anh_MouseLeave(object sender, EventArgs e)
         {
-            if (m_ofd_chon_anh.FileName != "")
-                m_ptb_anh.Image = new Bitmap(m_ofd_chon_anh.FileName);
+            if (m_us_dm_nhan_su.strANH != "")
+            {
+                string v_str_imagepath = m_str_directory_to + m_us_dm_nhan_su.strMA_NV + ".jpg";
+                FileStream fs;
+                fs = new System.IO.FileStream(v_str_imagepath, System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                m_ptb_anh.Image = System.Drawing.Image.FromStream(fs);
+                fs.Close();
+            }
+            
         }
 
-    #endregion
+        private void m_cmd_xoa_anh_Click(object sender, EventArgs e)
+        {
+            m_e_file_mode = DataEntryFileMode.DeleteFile;
+            m_ptb_anh.Image = m_ptb_anh.ErrorImage;
+        }
+        #endregion
 
         private void m_txt_noi_sinh_KeyPress(object sender, KeyPressEventArgs e)
         {
-//             if (!char.IsControl(e.KeyChar)
-//         && !char.IsLetterOrDigit(e.KeyChar)
-//         && e.KeyChar != '.' && e.KeyChar != '-' && e.KeyChar != '/' && e.KeyChar != ',')
-//             {
-//                 e.Handled = true;
-//             }
-//            
+            //             if (!char.IsControl(e.KeyChar)
+            //         && !char.IsLetterOrDigit(e.KeyChar)
+            //         && e.KeyChar != '.' && e.KeyChar != '-' && e.KeyChar != '/' && e.KeyChar != ',')
+            //             {
+            //                 e.Handled = true;
+            //             }
+            //            
         }
 
     }

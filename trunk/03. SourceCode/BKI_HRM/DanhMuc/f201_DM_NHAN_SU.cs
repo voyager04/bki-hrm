@@ -30,6 +30,7 @@ using System.Threading;
 using BKI_HRM.NghiepVu;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Configuration;
 
 namespace BKI_HRM
 {
@@ -1677,6 +1678,7 @@ namespace BKI_HRM
         string m_str_message_tim_kiem = "Nhập vào thông tin muốn tìm kiếm: mã nhân viên, họ tên, ...";
         string m_str_trang_thai_cmd = "creat";
         string m_str_lua_chon = "";
+        private string m_str_directory_to = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
 		#endregion
 
 		#region Private Methods
@@ -2080,7 +2082,7 @@ namespace BKI_HRM
             if (m_us.strANH != "")
                 try
                 {
-                    string v_str_imagepath = Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us.strMA_NV + ".jpg";
+                    string v_str_imagepath = m_str_directory_to + m_us.strMA_NV + ".jpg";
                     FileStream fs ;
                     fs = new System.IO.FileStream(v_str_imagepath,System.IO.FileMode.Open, System.IO.FileAccess.Read);
                     m_ptb_anh.Image = System.Drawing.Image.FromStream(fs);
@@ -2189,24 +2191,25 @@ namespace BKI_HRM
 
 		private void update_dm_nhan_su()
         {
-            if (File.Exists(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\temp.jpg"))
+            if (File.Exists(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us.strMA_NV + ".jpg"))
             {
-                File.Delete(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\temp.jpg");
+                File.Delete(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us.strMA_NV + ".jpg");
             }
+            
+            File.Copy(m_str_directory_to + m_us.strMA_NV + ".jpg", Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us.strMA_NV + ".jpg");
             if (m_us.strANH != "")
                 try
                 {
                     m_ptb_anh.Image.Dispose();
 
 
-                    string v_str_imagepath = Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us.strMA_NV + ".jpg";
-                    File.Copy(v_str_imagepath, Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\temp.jpg");
+                    string v_str_imagepath = m_str_directory_to + m_us.strMA_NV + ".jpg";
                     FileStream fs;
-                    fs = new System.IO.FileStream(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\temp.jpg",
-                        System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                    fs = new System.IO.FileStream(v_str_imagepath, System.IO.FileMode.Open, System.IO.FileAccess.Read);
                     m_ptb_anh.Image = System.Drawing.Image.FromStream(fs);
+                    
                     fs.Close();
-                    m_us.strANH = Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\temp.jpg";
+                  //  m_us.strANH = Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\temp.jpg";
                   
                 }
                 catch (Exception v_e)

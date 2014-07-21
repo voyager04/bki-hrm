@@ -95,6 +95,7 @@
             this.m_txt_ma_so_thue = new System.Windows.Forms.TextBox();
             this.m_ma_so_thue = new System.Windows.Forms.Label();
             this.m_ofd_chon_anh = new System.Windows.Forms.OpenFileDialog();
+            this.m_cmd_xoa_anh = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -377,6 +378,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.m_cmd_xoa_anh);
             this.tabPage1.Controls.Add(this.m_ptb_anh);
             this.tabPage1.Controls.Add(this.m_lbl_ma_headcount);
             this.tabPage1.Controls.Add(this.m_lbl_dan_toc);
@@ -793,6 +795,22 @@
             this.m_ma_so_thue.TabIndex = 44;
             this.m_ma_so_thue.Text = "Mã số thuế";
             // 
+            // m_cmd_xoa_anh
+            // 
+            this.m_cmd_xoa_anh.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xoa_anh.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xoa_anh.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xoa_anh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xoa_anh.ImageIndex = 4;
+            this.m_cmd_xoa_anh.ImageList = this.ImageList;
+            this.m_cmd_xoa_anh.Location = new System.Drawing.Point(643, 211);
+            this.m_cmd_xoa_anh.Name = "m_cmd_xoa_anh";
+            this.m_cmd_xoa_anh.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_xoa_anh.TabIndex = 49;
+            this.m_cmd_xoa_anh.Text = "&Xóa ảnh";
+            this.m_cmd_xoa_anh.Visible = false;
+            this.m_cmd_xoa_anh.Click += new System.EventHandler(this.m_cmd_xoa_anh_Click);
+            // 
             // f201_DM_NHAN_SU_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -884,5 +902,6 @@
         private System.Windows.Forms.OpenFileDialog m_ofd_chon_anh;
         private System.Windows.Forms.Label m_lbl_ma_headcount;
         private System.Windows.Forms.TextBox m_txt_ma_headcount;
+        internal SIS.Controls.Button.SiSButton m_cmd_xoa_anh;
     }
 }
