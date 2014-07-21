@@ -218,6 +218,7 @@
             // 
             // m_dat_ngay_kt
             // 
+            this.m_dat_ngay_kt.Checked = false;
             this.m_dat_ngay_kt.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_kt.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_kt.Location = new System.Drawing.Point(352, 305);

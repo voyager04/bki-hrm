@@ -614,7 +614,7 @@ namespace BKI_HRM
         {
             US_V_DM_DU_AN_QUYET_DINH_TU_DIEN v_us_v_dm_da_qd_td = new US_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
             DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN v_ds_v_dm_da_qd_td = new DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
-            v_us_v_dm_da_qd_td.FillDataset(v_ds_v_dm_da_qd_td);
+            v_us_v_dm_da_qd_td.FillDataset(v_ds_v_dm_da_qd_td, "WHERE ID_PHAP_NHAN = " + CAppContext_201.getCurrentIDPhapnhan().ToString());
             var v_acsc_search = new AutoCompleteStringCollection();
             foreach (DataRow dr in v_ds_v_dm_da_qd_td.V_DM_DU_AN_QUYET_DINH_TU_DIEN)
             {
@@ -675,8 +675,7 @@ namespace BKI_HRM
                 return;
             }
 
-            if (m_cbo_tim_kiem_theo_ngay.SelectedIndex == 0)
-                m_us_du_an.FillDatasetSearch(m_ds_du_an,
+            m_us_du_an.FillDatasetSearch(m_ds_du_an,
                                         m_i_is_report,
                                         v_str_search,
                                         m_dat_tu_ngay.Value,
@@ -684,28 +683,9 @@ namespace BKI_HRM
                                         decimal.Parse(m_cbo_trang_thai.SelectedValue.ToString()),
                                         decimal.Parse(m_cbo_loai_du_an.SelectedValue.ToString()),
                                         decimal.Parse(m_cbo_co_che.SelectedValue.ToString()),
-                                        0);
-            if (m_cbo_tim_kiem_theo_ngay.SelectedIndex == 1)
-                m_us_du_an.FillDatasetSearch(m_ds_du_an,
-                                        m_i_is_report,
-                                        v_str_search,
-                                        m_dat_tu_ngay.Value,
-                                        m_dat_den_ngay.Value,
-                                        decimal.Parse(m_cbo_trang_thai.SelectedValue.ToString()),
-                                        decimal.Parse(m_cbo_loai_du_an.SelectedValue.ToString()),
-                                        decimal.Parse(m_cbo_co_che.SelectedValue.ToString()),
-                                        1);
-            if (m_cbo_tim_kiem_theo_ngay.SelectedIndex == 2)
-                m_us_du_an.FillDatasetSearch(m_ds_du_an,
-                                        m_i_is_report,
-                                        v_str_search,
-                                        m_dat_tu_ngay.Value,
-                                        m_dat_den_ngay.Value,
-                                        decimal.Parse(m_cbo_trang_thai.SelectedValue.ToString()),
-                                        decimal.Parse(m_cbo_loai_du_an.SelectedValue.ToString()),
-                                        decimal.Parse(m_cbo_co_che.SelectedValue.ToString()),
-                                        2);
-            
+                                        m_cbo_tim_kiem_theo_ngay.SelectedIndex,
+                                        CAppContext_201.getCurrentIDPhapnhan());
+
             m_fg_du_an.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds_du_an, m_fg_du_an, m_obj_trans_du_an);
             m_fg_du_an.Redraw = true;
@@ -734,7 +714,7 @@ namespace BKI_HRM
             i_us.DataRow2Me(v_dr);
         }
 
-        private void grid2us_object_nhan_su(US_V_DM_NHAN_SU_DU_AN i_us , int i_grid_row)
+        private void grid2us_object_nhan_su(US_V_DM_NHAN_SU_DU_AN i_us, int i_grid_row)
         {
             DataRow v_dr;
             v_dr = (DataRow)m_fg_nhan_su.Rows[i_grid_row].UserData;
@@ -786,7 +766,6 @@ namespace BKI_HRM
                 m_fg_du_an.Rows.Remove(m_fg_du_an.Row);
                 US_DM_DU_AN v_us_dm_da = new US_DM_DU_AN(m_us_du_an.dcID);
                 v_us_dm_da.Delete();
-                
             }
             load_data_2_grid_du_an();
             load_data_2_grid_nhan_su();

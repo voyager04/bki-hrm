@@ -412,7 +412,8 @@ namespace BKI_HRM.US
             decimal v_dc_trang_thai,
             decimal v_dc_loai_du_an,
             decimal v_dc_co_che,
-            decimal v_dc_tim_kiem_theo_ngay)
+            decimal v_dc_tim_kiem_theo_ngay,
+            decimal ip_dc_id_phap_nhan)
         {
             CStoredProc v_sp = new CStoredProc("pr_V_GD_BAO_CAO_DU_AN_2_search");
             v_sp.addNVarcharInputParam("@str_search", i_str_search);
@@ -422,6 +423,7 @@ namespace BKI_HRM.US
             v_sp.addDecimalInputParam("@id_loai_du_an", v_dc_loai_du_an);
             v_sp.addDecimalInputParam("@id_co_che", v_dc_co_che);
             v_sp.addDecimalInputParam("@tim_kiem_theo_ngay", v_dc_tim_kiem_theo_ngay);
+            v_sp.addDecimalInputParam("@id_phap_nhan", ip_dc_id_phap_nhan);
             v_sp.fillDataSetByCommand(this, op_ds_bc_da);
         }
     }
