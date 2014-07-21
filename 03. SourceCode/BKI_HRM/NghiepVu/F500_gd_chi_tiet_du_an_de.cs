@@ -13,6 +13,7 @@ using IP.Core.IPCommon;
 using BKI_HRM.US;
 using BKI_HRM.DS;
 using BKI_HRM.DS.CDBNames;
+using IP.Core.IPSystemAdmin;
 using IP.Core.IPUserService;
 using IP.Core.IPData;
 
@@ -115,11 +116,11 @@ namespace BKI_HRM.NghiepVu
         private void load_data_2_control()
         {
             load_data_2_cbo_vi_tri();
-            load_data_2_custom_source_ma_nv();
-            load_data_2_custom_source_ma_da();
+            load_data_2_custom_source_ma_nhan_vien();
+            load_data_2_custom_source_ma_du_an();
         }
 
-        private void load_data_2_custom_source_ma_nv()
+        private void load_data_2_custom_source_ma_nhan_vien()
         {
             US_DM_NHAN_SU v_us = new US_DM_NHAN_SU();
             DS_DM_NHAN_SU v_ds = new DS_DM_NHAN_SU();
@@ -131,7 +132,7 @@ namespace BKI_HRM.NghiepVu
             }
         }
 
-        private void load_data_2_custom_source_ma_da()
+        private void load_data_2_custom_source_ma_du_an()
         {
             US_DM_DU_AN v_us = new US_DM_DU_AN();
             DS_DM_DU_AN v_ds = new DS_DM_DU_AN();
@@ -384,7 +385,7 @@ namespace BKI_HRM.NghiepVu
             if (check_data_is_ok() == false)
                 return;
 
-            // Xử lý file đính kèm
+            #region Xử lý file đính kèm
             switch (m_e_file_mode)
             {
                 case DataEntryFileMode.UploadFile:
@@ -438,6 +439,7 @@ namespace BKI_HRM.NghiepVu
                     FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
                     break;
             }
+            #endregion
 
             form_2_us_du_an();
 
@@ -456,7 +458,20 @@ namespace BKI_HRM.NghiepVu
                     {
                         form_to_us_quyet_dinh();
                         if (m_b_check_quyet_dinh_null)
+                        {
                             m_us_quyet_dinh.Insert();
+
+                            US_DM_QUYET_DINH v_us = new US_DM_QUYET_DINH();
+                            DS_DM_QUYET_DINH v_ds = new DS_DM_QUYET_DINH();
+                            v_us.FillDataset_By_Ma_qd(v_ds, m_us_quyet_dinh.strMA_QUYET_DINH);
+                            if (v_ds.DM_QUYET_DINH.Rows.Count != 0)
+                            {
+                                US_GD_QUYET_DINH_PHAP_NHAN v_us_qd_pn = new US_GD_QUYET_DINH_PHAP_NHAN();
+                                v_us_qd_pn.dcID_PHAP_NHAN = CAppContext_201.getCurrentIDPhapnhan();
+                                v_us_qd_pn.dcID_QUYET_DINH = CIPConvert.ToDecimal(v_ds_qd.Tables[0].Rows[0]["ID"]);
+                                v_us_qd_pn.Insert();
+                            }
+                        }
                         else
                             m_us_quyet_dinh.Update();
 

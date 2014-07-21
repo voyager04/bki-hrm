@@ -729,7 +729,8 @@ namespace BKI_HRM
         {
             US_V_GD_HOP_DONG_LAO_DONG v_us_v_gd_hop_dong = new US_V_GD_HOP_DONG_LAO_DONG();
             DS_V_GD_HOP_DONG_LAO_DONG v_ds_v_gd_hop_dong = new DS_V_GD_HOP_DONG_LAO_DONG();
-            v_us_v_gd_hop_dong.FillDataset(v_ds_v_gd_hop_dong);
+            v_us_v_gd_hop_dong.FillDataset(v_ds_v_gd_hop_dong, "WHERE ID_PHAP_NHAN = " + CAppContext_201.getCurrentIDPhapnhan().ToString());
+            
             var v_acsc_search = new AutoCompleteStringCollection();
             foreach (DataRow dr in v_ds_v_gd_hop_dong.V_GD_HOP_DONG_LAO_DONG)
             {

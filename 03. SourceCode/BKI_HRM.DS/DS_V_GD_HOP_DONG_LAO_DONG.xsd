@@ -14,7 +14,7 @@
               <DbSource ConnectionRef="BKI_HRMConnectionString1 (Settings)" DbObjectName="BKI_HRM.dbo.V_GD_HOP_DONG_LAO_DONG" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT COLS1, MA_NV, HO_DEM, TEN, MA_HOP_DONG, ID_LOAI_HOP_DONG, LOAI_HOP_DONG, NGAY_CO_HIEU_LUC, NGAY_HET_HAN, TRANG_THAI_HOP_DONG, ID_NHAN_SU, TRANG_THAI, NGUOI_KY, CHUC_VU_NGUOI_KY, NGAY_KY_HOP_DONG, ID_PHAP_NHAN, MA_PHAP_NHAN, TEN_PHAP_NHAN, ID_TRANG_LAO_DONG, TRANG_THAI_HIEN_TAI, LINK, TRANG_THAI_LAO_DONG FROM dbo.V_GD_HOP_DONG_LAO_DONG</CommandText>
+                    <CommandText>SELECT COLS1, MA_NV, HO_DEM, TEN, MA_HOP_DONG, ID_LOAI_HOP_DONG, LOAI_HOP_DONG, NGAY_CO_HIEU_LUC, NGAY_HET_HAN, TRANG_THAI_HOP_DONG, ID_NHAN_SU, TRANG_THAI, NGUOI_KY, CHUC_VU_NGUOI_KY, NGAY_KY_HOP_DONG, ID_PHAP_NHAN, MA_PHAP_NHAN, TEN_PHAP_NHAN, ID_TRANG_LAO_DONG, TRANG_THAI_HIEN_TAI, LINK, TRANG_THAI_LAO_DONG, NGAY_CO_HIEU_LUC_TRANG_THAI_LAO_DONG, NGAY_HET_HIEU_LUC_TRANG_THAI_LAO_DONG FROM dbo.V_GD_HOP_DONG_LAO_DONG</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -43,6 +43,8 @@
               <Mapping SourceColumn="TRANG_THAI_HIEN_TAI" DataSetColumn="TRANG_THAI_HIEN_TAI" />
               <Mapping SourceColumn="LINK" DataSetColumn="LINK" />
               <Mapping SourceColumn="TRANG_THAI_LAO_DONG" DataSetColumn="TRANG_THAI_LAO_DONG" />
+              <Mapping SourceColumn="NGAY_CO_HIEU_LUC_TRANG_THAI_LAO_DONG" DataSetColumn="NGAY_CO_HIEU_LUC_TRANG_THAI_LAO_DONG" />
+              <Mapping SourceColumn="NGAY_HET_HIEU_LUC_TRANG_THAI_LAO_DONG" DataSetColumn="NGAY_HET_HIEU_LUC_TRANG_THAI_LAO_DONG" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -169,6 +171,8 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="NGAY_CO_HIEU_LUC_TRANG_THAI_LAO_DONG" msprop:Generator_ColumnVarNameInTable="columnNGAY_CO_HIEU_LUC_TRANG_THAI_LAO_DONG" msprop:Generator_ColumnPropNameInRow="NGAY_CO_HIEU_LUC_TRANG_THAI_LAO_DONG" msprop:Generator_ColumnPropNameInTable="NGAY_CO_HIEU_LUC_TRANG_THAI_LAO_DONGColumn" msprop:Generator_UserColumnName="NGAY_CO_HIEU_LUC_TRANG_THAI_LAO_DONG" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NGAY_HET_HIEU_LUC_TRANG_THAI_LAO_DONG" msprop:Generator_ColumnVarNameInTable="columnNGAY_HET_HIEU_LUC_TRANG_THAI_LAO_DONG" msprop:Generator_ColumnPropNameInRow="NGAY_HET_HIEU_LUC_TRANG_THAI_LAO_DONG" msprop:Generator_ColumnPropNameInTable="NGAY_HET_HIEU_LUC_TRANG_THAI_LAO_DONGColumn" msprop:Generator_UserColumnName="NGAY_HET_HIEU_LUC_TRANG_THAI_LAO_DONG" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

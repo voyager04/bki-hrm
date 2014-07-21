@@ -507,6 +507,50 @@ namespace BKI_HRM.US
             pm_objDR["TRANG_THAI_LAO_DONG"] = System.Convert.DBNull;
         }
 
+        public DateTime datNGAY_CO_HIEU_LUC_TRANG_THAI_LAO_DONG
+        {
+            get
+            {
+                return CNull.RowNVLDate(pm_objDR, "NGAY_CO_HIEU_LUC_TRANG_THAI_LAO_DONG", IPConstants.c_DefaultDate);
+            }
+            set
+            {
+                pm_objDR["NGAY_CO_HIEU_LUC_TRANG_THAI_LAO_DONG"] = value;
+            }
+        }
+
+        public bool IsNGAY_CO_HIEU_LUC_TRANG_THAI_LAO_DONGNull()
+        {
+            return pm_objDR.IsNull("NGAY_CO_HIEU_LUC_TRANG_THAI_LAO_DONG");
+        }
+
+        public void SetNGAY_CO_HIEU_LUC_TRANG_THAI_LAO_DONGNull()
+        {
+            pm_objDR["NGAY_CO_HIEU_LUC_TRANG_THAI_LAO_DONG"] = System.Convert.DBNull;
+        }
+
+        public DateTime datNGAY_HET_HIEU_LUC_TRANG_THAI_LAO_DONG
+        {
+            get
+            {
+                return CNull.RowNVLDate(pm_objDR, "NGAY_HET_HIEU_LUC_TRANG_THAI_LAO_DONG", IPConstants.c_DefaultDate);
+            }
+            set
+            {
+                pm_objDR["NGAY_HET_HIEU_LUC_TRANG_THAI_LAO_DONG"] = value;
+            }
+        }
+
+        public bool IsNGAY_HET_HIEU_LUC_TRANG_THAI_LAO_DONGNull()
+        {
+            return pm_objDR.IsNull("NGAY_HET_HIEU_LUC_TRANG_THAI_LAO_DONG");
+        }
+
+        public void SetNGAY_HET_HIEU_LUC_TRANG_THAI_LAO_DONGNull()
+        {
+            pm_objDR["NGAY_HET_HIEU_LUC_TRANG_THAI_LAO_DONG"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_V_GD_HOP_DONG_LAO_DONG()
@@ -558,12 +602,12 @@ namespace BKI_HRM.US
             v_sp.fillDataSetByCommand(this, op_ds);
         }
 
-        public void FillDatasetSearchAll(DS_V_GD_HOP_DONG_LAO_DONG op_ds, 
-                                         string ip_str_keyword, 
-                                         decimal ip_dc_loai_hop_dong, 
-                                         string ip_str_trang_thai_hop_dong, 
-                                         DateTime ip_dat_tu_ngay, 
-                                         DateTime ip_dat_den_ngay, 
+        public void FillDatasetSearchAll(DS_V_GD_HOP_DONG_LAO_DONG op_ds,
+                                         string ip_str_keyword,
+                                         decimal ip_dc_loai_hop_dong,
+                                         string ip_str_trang_thai_hop_dong,
+                                         DateTime ip_dat_tu_ngay,
+                                         DateTime ip_dat_den_ngay,
                                          decimal ip_dc_tim_kiem_ngay_thang_theo,
                                          decimal ip_dc_id_phap_nhan)
         {
@@ -578,11 +622,11 @@ namespace BKI_HRM.US
             v_sp.fillDataSetByCommand(this, op_ds);
         }
 
-        public void SelectHopDongHienTaiByPhapNhan(DS_V_GD_HOP_DONG_LAO_DONG op_ds, 
+        public void SelectHopDongHienTaiByPhapNhan(DS_V_GD_HOP_DONG_LAO_DONG op_ds,
                                                        string ip_str_keyword,
                                                        decimal ip_dc_loai_hop_dong,
-                                                       DateTime ip_dat_tu_ngay, 
-                                                       DateTime ip_dat_den_ngay, 
+                                                       DateTime ip_dat_tu_ngay,
+                                                       DateTime ip_dat_den_ngay,
                                                        decimal ip_dc_tim_kiem_ngay_thang_theo,
                                                        decimal ip_dc_id_phap_nhan)
         {
@@ -597,7 +641,7 @@ namespace BKI_HRM.US
         }
 
         public void SelectHopDongSapHetHan(DS_V_GD_HOP_DONG_LAO_DONG op_ds,
-                                                        string ip_str_keyword, 
+                                                        string ip_str_keyword,
                                                         decimal ip_dc_loai_hop_dong,
                                                         DateTime ip_dat_tu_ngay,
                                                         DateTime ip_dat_den_ngay,

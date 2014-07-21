@@ -487,9 +487,18 @@ namespace BKI_HRM
         public int count_record_du_an_sap_ket_thuc()
         {
             int result = 0;
-            US_DM_DU_AN v_us = new US_DM_DU_AN();
-            DS_DM_DU_AN v_ds = new DS_DM_DU_AN();
-            v_us.FillDatasetSapKetThuc(v_ds, DateTime.Now.Date);
+            DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN v_ds = new DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
+            US_V_DM_DU_AN_QUYET_DINH_TU_DIEN v_us = new US_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
+            v_us.FillDatasetSearch(v_ds,
+                                        1,
+                                        "",
+                                        m_dat_tu_ngay.Value,
+                                        DateTime.Now,
+                                        -1,
+                                        -1,
+                                        -1,
+                                        0,
+                                        CAppContext_201.getCurrentIDPhapnhan());
             if (v_ds.Tables[0].Rows.Count > 0)
             {
                 result = v_ds.Tables[0].Rows.Count;
@@ -608,33 +617,15 @@ namespace BKI_HRM
                 m_lbl_total_record_grid1.Text = string.Format("Có {0} dự án", m_ds.Tables[0].Rows.Count);
                 return;
             }
-            if (m_cbo_tim_kiem_theo_ngay.SelectedIndex == 0)
-                m_us.FillDatasetSearch(m_ds,
-                                        v_str_search,
-                                        m_dat_tu_ngay.Value,
-                                        m_dat_den_ngay.Value,
-                                        decimal.Parse(m_cbo_trang_thai.SelectedValue.ToString()),
-                                        decimal.Parse(m_cbo_loai_du_an.SelectedValue.ToString()),
-                                        decimal.Parse(m_cbo_co_che.SelectedValue.ToString()),
-                                        0);
-            if (m_cbo_tim_kiem_theo_ngay.SelectedIndex == 1)
-                m_us.FillDatasetSearch(m_ds,
-                                        v_str_search,
-                                        m_dat_tu_ngay.Value,
-                                        m_dat_den_ngay.Value,
-                                        decimal.Parse(m_cbo_trang_thai.SelectedValue.ToString()),
-                                        decimal.Parse(m_cbo_loai_du_an.SelectedValue.ToString()),
-                                        decimal.Parse(m_cbo_co_che.SelectedValue.ToString()),
-                                        1);
-            if (m_cbo_tim_kiem_theo_ngay.SelectedIndex == 2)
-                m_us.FillDatasetSearch(m_ds,
-                                        v_str_search,
-                                        m_dat_tu_ngay.Value,
-                                        m_dat_den_ngay.Value,
-                                        decimal.Parse(m_cbo_trang_thai.SelectedValue.ToString()),
-                                        decimal.Parse(m_cbo_loai_du_an.SelectedValue.ToString()),
-                                        decimal.Parse(m_cbo_co_che.SelectedValue.ToString()),
-                                        2);
+            m_us.FillDatasetSearch(m_ds,
+                                    v_str_search,
+                                    m_dat_tu_ngay.Value,
+                                    m_dat_den_ngay.Value,
+                                    decimal.Parse(m_cbo_trang_thai.SelectedValue.ToString()),
+                                    decimal.Parse(m_cbo_loai_du_an.SelectedValue.ToString()),
+                                    decimal.Parse(m_cbo_co_che.SelectedValue.ToString()),
+                                    m_cbo_tim_kiem_theo_ngay.SelectedIndex,
+                                    CAppContext_201.getCurrentIDPhapnhan());
 
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);

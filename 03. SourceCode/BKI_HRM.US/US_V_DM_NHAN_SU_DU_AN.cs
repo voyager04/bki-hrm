@@ -617,6 +617,50 @@ namespace BKI_HRM.US
             pm_objDR["ID"] = System.Convert.DBNull;
         }
 
+        public decimal dcID_PHAP_NHAN
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_PHAP_NHAN", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_PHAP_NHAN"] = value;
+            }
+        }
+
+        public bool IsID_PHAP_NHANNull()
+        {
+            return pm_objDR.IsNull("ID_PHAP_NHAN");
+        }
+
+        public void SetID_PHAP_NHANNull()
+        {
+            pm_objDR["ID_PHAP_NHAN"] = System.Convert.DBNull;
+        }
+
+        public string strMA_PHAP_NHAN
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "MA_PHAP_NHAN", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["MA_PHAP_NHAN"] = value;
+            }
+        }
+
+        public bool IsMA_PHAP_NHANNull()
+        {
+            return pm_objDR.IsNull("MA_PHAP_NHAN");
+        }
+
+        public void SetMA_PHAP_NHANNull()
+        {
+            pm_objDR["MA_PHAP_NHAN"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_V_DM_NHAN_SU_DU_AN()
@@ -664,13 +708,15 @@ namespace BKI_HRM.US
             string v_str_tu_khoa,
             DateTime v_dat_tu_ngay,
             DateTime v_dat_den_ngay,
-            decimal v_dc_tim_kiem_theo_ngay)
+            decimal v_dc_tim_kiem_theo_ngay,
+            decimal ip_dc_id_phap_nhan)
         {
             CStoredProc v_sp = new CStoredProc("pr_V_NHAN_SU_DU_AN_tu_ngay_den_ngay");
             v_sp.addNVarcharInputParam("@ip_str_keyword", v_str_tu_khoa);
             v_sp.addDatetimeInputParam("@tu_ngay", v_dat_tu_ngay);
             v_sp.addDatetimeInputParam("@den_ngay", v_dat_den_ngay);
             v_sp.addDecimalInputParam("@tim_kiem_theo_ngay", v_dc_tim_kiem_theo_ngay);
+            v_sp.addDecimalInputParam("@id_phap_nhan", ip_dc_id_phap_nhan);
             v_sp.fillDataSetByCommand(this, op_ds_nhan_su);
         }
     }
