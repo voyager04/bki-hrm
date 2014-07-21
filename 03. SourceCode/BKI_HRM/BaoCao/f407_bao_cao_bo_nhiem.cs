@@ -426,7 +426,7 @@ namespace BKI_HRM
             {
                 m_txt_tim_kiem.Text = "";
                 load_data_2_grid();
-                m_txt_tim_kiem.Text = "Nhập mã đơn vị, mã chức vụ";
+                m_txt_tim_kiem.Text = "Nhập mã đơn vị";
             }
             else
                 load_data_2_grid();
@@ -458,7 +458,7 @@ namespace BKI_HRM
 		}
 		private void load_data_2_grid(){						
 			m_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC();
-            m_us.FillDatasetBonhiem(m_ds,m_txt_tim_kiem.Text.Trim(),m_dtp_thoidiem.Value,m_lua_chon);
+            m_us.FillDatasetBonhiem(m_ds,m_txt_tim_kiem.Text.Trim(),m_dtp_thoidiem.Value,m_lua_chon,CAppContext_201.getCurrentIDPhapnhan());
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             if (m_rdb_nhom.Checked == true)
@@ -496,14 +496,14 @@ namespace BKI_HRM
 		}
         private void load_custom_source_2_m_txt_tim_kiem()
         {
-            m_us.FillDataset(m_ds);
+            m_us.FillDataset(m_ds,"WHERE ID_PHAP_NHAN =" + CAppContext_201.getCurrentIDPhapnhan().ToString());
             int count = m_ds.Tables["V_GD_QUA_TRINH_LAM_VIEC"].Rows.Count;
             AutoCompleteStringCollection v_acsc_search = new AutoCompleteStringCollection();
             foreach (DataRow dr in m_ds.V_GD_QUA_TRINH_LAM_VIEC)
             {
                 v_acsc_search.Add(dr[V_GD_QUA_TRINH_LAM_VIEC.MA_DON_VI].ToString());
                 v_acsc_search.Add(dr[V_GD_QUA_TRINH_LAM_VIEC.TEN_DON_VI].ToString());
-                v_acsc_search.Add(dr[V_GD_QUA_TRINH_LAM_VIEC.MA_CV].ToString());
+                //v_acsc_search.Add(dr[V_GD_QUA_TRINH_LAM_VIEC.MA_CV].ToString());
             }
             m_txt_tim_kiem.AutoCompleteCustomSource = v_acsc_search;
         }
@@ -560,11 +560,11 @@ namespace BKI_HRM
                     m_lua_chon = 0;
                 else
                     m_lua_chon = 1;
-                if (m_txt_tim_kiem.Text.Trim() == "Nhập mã đơn vị, mã chức vụ")
+                if (m_txt_tim_kiem.Text.Trim() == "Nhập mã đơn vị")
                 {
                     m_txt_tim_kiem.Text = "";
                     load_data_2_grid();
-                    m_txt_tim_kiem.Text = "Nhập mã đơn vị, mã chức vụ";
+                    m_txt_tim_kiem.Text = "Nhập mã đơn vị";
                 }
                 else
                     load_data_2_grid();
@@ -591,11 +591,11 @@ namespace BKI_HRM
         {
             try
             {
-                if (m_txt_tim_kiem.Text.Trim() == "Nhập mã đơn vị, mã chức vụ")
+                if (m_txt_tim_kiem.Text.Trim() == "Nhập mã đơn vị")
                 {
                     m_txt_tim_kiem.Text = "";
                     load_data_2_grid();
-                    m_txt_tim_kiem.Text = "Nhập mã đơn vị, mã chức vụ";
+                    m_txt_tim_kiem.Text = "Nhập mã đơn vị";
                 }
                 else
                     load_data_2_grid();
@@ -610,11 +610,11 @@ namespace BKI_HRM
         {
             try
             {
-                if (m_txt_tim_kiem.Text.Trim() == "Nhập mã đơn vị, mã chức vụ")
+                if (m_txt_tim_kiem.Text.Trim() == "Nhập mã đơn vị")
                 {
                     m_txt_tim_kiem.Text = "";
                     load_data_2_grid();
-                    m_txt_tim_kiem.Text = "Nhập mã đơn vị, mã chức vụ";
+                    m_txt_tim_kiem.Text = "Nhập mã đơn vị";
                 }
                 else
                     load_data_2_grid();
@@ -636,7 +636,7 @@ namespace BKI_HRM
             try
             {
                 if (m_txt_tim_kiem.Text.Trim() == "")
-                    m_txt_tim_kiem.Text = "Nhập mã đơn vị, mã chức vụ";
+                    m_txt_tim_kiem.Text = "Nhập mã đơn vị";
             }
             catch (Exception v_e)
             {
@@ -664,11 +664,11 @@ namespace BKI_HRM
         {
             try
             {
-                if (m_txt_tim_kiem.Text.Trim() == "Nhập mã đơn vị, mã chức vụ")
+                if (m_txt_tim_kiem.Text.Trim() == "Nhập mã đơn vị")
                 {
                     m_txt_tim_kiem.Text = "";
                     load_data_2_grid();
-                    m_txt_tim_kiem.Text = "Nhập mã đơn vị, mã chức vụ";
+                    m_txt_tim_kiem.Text = "Nhập mã đơn vị";
                 }
                 else
                     load_data_2_grid();
