@@ -32,11 +32,15 @@ namespace BKI_HRM
             InitializeComponent();
             format_controls();
         }
-        public void display_for_insert(US_V_GD_QUA_TRINH_LAM_VIEC ip_us_qua_trinh_lam_viec, string ip_str_loai_thay_doi)
+        public void display_for_bo_nhiem(US_V_GD_QUA_TRINH_LAM_VIEC ip_us_qua_trinh_lam_viec, string ip_str_loai_thay_doi)
         {
             m_str_loai_thay_doi = ip_str_loai_thay_doi;
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             m_e_file_mode = DataEntryFileMode.UploadFile;
+            m_tpc_quyet_dinh.SelectedTab = m_tp_bo_nhiem;
+            m_cmd_them_quyet_dinh_mien_nhiem.Visible = false;
+            m_cmd_chon_quyet_dinh_mien_nhiem.Visible = false;
+            m_cmd_bo_quyet_dinh_mien_nhiem.Visible = false;
             m_us_v_qua_trinh_lam_viec = ip_us_qua_trinh_lam_viec;
             us_object_to_form();
             this.ShowDialog();
@@ -45,11 +49,17 @@ namespace BKI_HRM
         {
             op_us = m_us_v_qua_trinh_lam_viec;
         }
-        public void display_for_update(US_V_GD_QUA_TRINH_LAM_VIEC ip_us_qua_trinh_lam_viec)
+        public void display_for_mien_nhiem(US_V_GD_QUA_TRINH_LAM_VIEC ip_us_qua_trinh_lam_viec)
         {
             m_b_check_is_mien_nhiem = true;
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             m_e_file_mode = DataEntryFileMode.EditFile;
+            m_tpc_quyet_dinh.SelectedTab = m_tp_mien_nhiem;
+            m_cmd_them_quyet_dinh.Visible = false;
+            m_cmd_chon_quyet_dinh.Visible = false;
+            m_cmd_bo_quyet_dinh.Visible = false;
+            m_pnl_1.Enabled = false;
+            m_pnl_2.Enabled = false;
             m_str_link_old = m_lbl_file_name.Text;
             m_us_v_qua_trinh_lam_viec = ip_us_qua_trinh_lam_viec;
             m_us_chi_tiet_chuc_vu = new US_GD_CHI_TIET_CHUC_VU(ip_us_qua_trinh_lam_viec.dcID);
@@ -58,7 +68,7 @@ namespace BKI_HRM
             us_object_to_form();
             this.ShowDialog();
         }
-        public void display_for_update_qd(US_V_GD_QUA_TRINH_LAM_VIEC ip_us_qua_trinh_lam_viec)
+        public void display_for_update(US_V_GD_QUA_TRINH_LAM_VIEC ip_us_qua_trinh_lam_viec)
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             m_e_file_mode = DataEntryFileMode.EditFile;
@@ -354,6 +364,10 @@ namespace BKI_HRM
                     }
                     break;
                 default: break;
+            }
+            if (m_b_check_is_mien_nhiem)
+            {
+                m_ckb_cv_hien_tai_yn.Checked = false;
             }
         }
         private void form_to_us_object_chi_tiet_chuc_vu()
@@ -754,7 +768,10 @@ namespace BKI_HRM
             m_cmd_bo_dinh_kem.Click += m_cmd_bo_dinh_kem_Click;
             m_cmd_xem_file.Click += m_cmd_xem_file_Click;
             m_cmd_xem_file_mien_nhiem.Click += m_cmd_xem_file_mien_nhiem_Click;
+          
         }
+
+      
 
        
 
@@ -1141,6 +1158,7 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+       
         #endregion
 
     }
