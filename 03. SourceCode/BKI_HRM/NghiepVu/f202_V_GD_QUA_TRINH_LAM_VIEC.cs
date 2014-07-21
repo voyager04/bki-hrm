@@ -533,7 +533,7 @@ namespace BKI_HRM
                     return;
                 }
                 f202_v_gd_qua_trinh_lam_viec_de v_fDE = new f202_v_gd_qua_trinh_lam_viec_de();
-                v_fDE.display_for_update_qd(m_us_qua_trinh_lam_viec);
+                v_fDE.display_for_update(m_us_qua_trinh_lam_viec);
                 if (m_txt_tim_kiem.Text == m_str_message_tim_kiem)
                 {
                     m_txt_tim_kiem.Text = "";
@@ -575,7 +575,7 @@ namespace BKI_HRM
             m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, "",CAppContext_201.getCurrentIDPhapnhan());
             int v_i_count = m_ds_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Count;
             f202_v_gd_qua_trinh_lam_viec_de v_fDE = new f202_v_gd_qua_trinh_lam_viec_de();
-            v_fDE.display_for_insert(m_us_qua_trinh_lam_viec, ip_str_loai_thay_doi);
+            v_fDE.display_for_bo_nhiem(m_us_qua_trinh_lam_viec, ip_str_loai_thay_doi);
 
             if (m_txt_tim_kiem.Text == m_str_message_tim_kiem)
             {
@@ -612,7 +612,7 @@ namespace BKI_HRM
             {
                 grid2us_object(m_us_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row);
                 f202_v_gd_qua_trinh_lam_viec_de v_fDE = new f202_v_gd_qua_trinh_lam_viec_de();
-                v_fDE.display_for_update(m_us_qua_trinh_lam_viec);
+                v_fDE.display_for_mien_nhiem(m_us_qua_trinh_lam_viec);
                 if (m_txt_tim_kiem.Text == m_str_message_tim_kiem)
                 {
                     m_txt_tim_kiem.Text = "";

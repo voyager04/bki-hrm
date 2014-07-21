@@ -1901,7 +1901,7 @@ namespace BKI_HRM
                 v_us.DataRow2Me((DataRow)v_ds.V_GD_QUA_TRINH_LAM_VIEC.Rows[0]);
             //}
             f202_v_gd_qua_trinh_lam_viec_de v_frm = new f202_v_gd_qua_trinh_lam_viec_de();
-            v_frm.display_for_insert(v_us, "kiem_nhiem");
+            v_frm.display_for_bo_nhiem(v_us, "kiem_nhiem");
             load_data_2_grv_chuc_vu_hien_tai();
         }
         private void update_chuc_vu()
@@ -1913,7 +1913,7 @@ namespace BKI_HRM
             v_us.DataRow2Me((DataRow)v_ds.V_GD_QUA_TRINH_LAM_VIEC.Rows[0]);
             US_V_GD_QUA_TRINH_LAM_VIEC v_us_qua_trinh_lam_viec = new US_V_GD_QUA_TRINH_LAM_VIEC(v_us.dcID);
             f202_v_gd_qua_trinh_lam_viec_de v_frm = new f202_v_gd_qua_trinh_lam_viec_de();
-            v_frm.display_for_update_qd(v_us_qua_trinh_lam_viec);
+            v_frm.display_for_update(v_us_qua_trinh_lam_viec);
             load_data_2_grv_chuc_vu_hien_tai();
         }
         private void mien_nhiem() 
@@ -1925,7 +1925,7 @@ namespace BKI_HRM
             //v_us.DataRow2Me((DataRow)v_ds.V_GD_QUA_TRINH_LAM_VIEC.Rows[0]);
             grid2us_object_chuc_vu(v_us, m_grv_chuc_vu_hien_tai.Row);
             f202_v_gd_qua_trinh_lam_viec_de v_frm = new f202_v_gd_qua_trinh_lam_viec_de();
-            v_frm.display_for_update(v_us);
+            v_frm.display_for_mien_nhiem(v_us);
             load_data_2_grv_chuc_vu_hien_tai();
         }
        
