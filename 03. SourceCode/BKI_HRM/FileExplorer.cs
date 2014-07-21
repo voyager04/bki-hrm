@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -19,6 +20,8 @@ namespace BKI_HRM
         public static string fileName = "";
         private static string directoryFrom = "";
         private static string path = "";
+        private static string m_str_user_name = ConfigurationSettings.AppSettings["USERNAME_SHARE"];
+        private static string m_str_password = ConfigurationSettings.AppSettings["PASSWORD_SHARE"];
 
         public static void SelectFile(OpenFileDialog fileDialog, string fileNameOld)
         {
@@ -41,12 +44,30 @@ namespace BKI_HRM
         }
 
         public static bool IsExistedFile(string path)
-        {
+        {                                                                                              
             if (File.Exists(path))
                 return true;
             return false;
         }
-
+        public static string UploadFile_with_filename(string domain, string directoryTo,string ip_str_path, string ip_str_filename)
+        {
+            DomainName = domain;
+            DirectoryTo = directoryTo;
+            if (ip_str_filename != "")
+            {
+                if (m_str_user_name == "")
+                {
+                    File.Copy(ip_str_path + ip_str_filename, DirectoryTo + ip_str_filename);
+                }
+                else
+                {
+                    using (new RemoteAccessHelper.NetworkConnection(DomainName, new NetworkCredential(UserName, Password, DomainName)))
+                    File.Copy(ip_str_path + ip_str_filename, DirectoryTo + ip_str_filename);
+                }
+            }
+                
+            return ip_str_filename;
+        }
         public static string UploadFile(string domain, string directoryTo)
         {
             DomainName = domain;
