@@ -157,7 +157,7 @@ namespace BKI_HRM
             m_txt_ton_giao.Text = m_us_dm_nhan_su.strTON_GIAO;
             m_txt_dan_toc.Text = m_us_dm_nhan_su.strDAN_TOC;
 
-            m_ofd_chon_anh.FileName = m_us_dm_nhan_su.strANH;
+            m_ofd_chon_anh.FileName = m_str_directory_to + m_us_dm_nhan_su.strMA_NV + ".jpg";
             if (m_us_dm_nhan_su.strANH != "")
             {
                 m_cmd_xoa_anh.Visible = true;
@@ -190,7 +190,7 @@ namespace BKI_HRM
             m_us_dm_nhan_su.strTEN = m_txt_ten.Text.Trim();
             m_us_dm_nhan_su.strGIOI_TINH = ((m_cbo_gioi_tinh.SelectedIndex == 0) ? "Nam" : "Nữ");
 
-         //   m_us_dm_nhan_su.strANH = m_txt_ma_nhan_vien.Text;
+            //   m_us_dm_nhan_su.strANH = m_txt_ma_nhan_vien.Text;
 
 
             if (m_dat_ngay_sinh.Checked == true)
@@ -392,16 +392,16 @@ namespace BKI_HRM
                     graphics.DrawImage(image, 0, 0, newWidth, newHeight);
                 }
 
-                newImage.Save(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg", ImageFormat.Jpeg);
+                newImage.Save(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_txt_ma_nhan_vien.Text + ".jpg", ImageFormat.Jpeg);
                 switch (m_e_file_mode)
                 {
                     case DataEntryFileMode.DeleteFile:
                         File.Delete(m_str_directory_to + m_us_dm_nhan_su.strMA_NV + ".jpg");
-                        
+
                         m_us_dm_nhan_su.SetANHNull();
                         break;
                     case DataEntryFileMode.EditFile:
-                       if (File.Exists(m_str_directory_to + m_txt_ma_nhan_vien.Text + ".jpg"))
+                        if (File.Exists(m_str_directory_to + m_txt_ma_nhan_vien.Text + ".jpg"))
                         {
                             File.Delete(m_str_directory_to + m_txt_ma_nhan_vien.Text + ".jpg");
                         }
@@ -416,10 +416,10 @@ namespace BKI_HRM
                         }
                         FileExplorer.UploadFile_with_filename(m_str_domain, m_str_directory_to, Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\", m_txt_ma_nhan_vien.Text + ".jpg");
                         // m_us_dm_nhan_su.strANH = Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg";
-                        m_us_dm_nhan_su.strANH = m_us_dm_nhan_su.strMA_NV;
+                        m_us_dm_nhan_su.strANH = m_txt_ma_nhan_vien.Text;
                         break;
                     default:
-                        
+
                         break;
                 }
 
@@ -437,7 +437,7 @@ namespace BKI_HRM
                         return;
                     else
                     {
-                        save_image(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg");
+                        save_image(m_ofd_chon_anh.FileName);
                         form_to_us_object();
                         m_us_dm_nhan_su.Update();
                     }
@@ -515,7 +515,13 @@ namespace BKI_HRM
                 case DataEntryFormMode.UpdateDataState:
                     us_object_to_form();
                     if (m_us_dm_nhan_su.strANH != "")
-                        m_ptb_anh.Image = new Bitmap(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg");
+                    {
+                        string v_str_imagepath = m_str_directory_to + m_us_dm_nhan_su.strMA_NV + ".jpg";
+                        FileStream fs;
+                        fs = new System.IO.FileStream(v_str_imagepath, System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                        m_ptb_anh.Image = System.Drawing.Image.FromStream(fs);
+                        fs.Close();
+                    }
                     else
                     {
                         m_ptb_anh.Image = m_ptb_anh.ErrorImage;
@@ -783,7 +789,7 @@ namespace BKI_HRM
                 m_ptb_anh.Image = System.Drawing.Image.FromStream(fs);
                 fs.Close();
             }
-            
+
         }
 
         private void m_cmd_xoa_anh_Click(object sender, EventArgs e)
