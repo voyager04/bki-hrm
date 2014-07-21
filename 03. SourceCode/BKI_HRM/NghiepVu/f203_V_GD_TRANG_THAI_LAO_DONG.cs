@@ -289,6 +289,8 @@ namespace BKI_HRM
             this.Controls.Add(this.m_grv_trang_thai_ld);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(856, 448);
+            this.MinimumSize = new System.Drawing.Size(856, 448);
             this.Name = "f203_v_gd_trang_thai_lao_dong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F203 - Thay đổi trạng thái lao động";

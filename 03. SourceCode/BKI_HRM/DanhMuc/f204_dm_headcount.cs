@@ -225,6 +225,8 @@ namespace BKI_HRM
             this.ClientSize = new System.Drawing.Size(742, 409);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
+            this.MaximumSize = new System.Drawing.Size(758, 448);
+            this.MinimumSize = new System.Drawing.Size(758, 448);
             this.Name = "f204_dm_headcount";
             this.Text = "F204 Danh mục Headcount";
             this.Load += new System.EventHandler(this.f204_dm_headcount_Load);

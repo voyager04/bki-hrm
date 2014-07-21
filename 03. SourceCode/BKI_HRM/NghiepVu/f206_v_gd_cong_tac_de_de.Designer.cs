@@ -366,6 +366,8 @@
             this.Controls.Add(this.m_txt_ma_quyet_dinh);
             this.Controls.Add(this.m_lbl_ma_quyet_dinh);
             this.Controls.Add(this.m_pnl_out_place_dm);
+            this.MaximumSize = new System.Drawing.Size(863, 434);
+            this.MinimumSize = new System.Drawing.Size(863, 434);
             this.Name = "f206_v_gd_cong_tac_de_de";
             this.Text = "F206 - Thông tin nhân viên đi công tác";
             this.Load += new System.EventHandler(this.f206_v_gd_cong_tac_de_de_Load);

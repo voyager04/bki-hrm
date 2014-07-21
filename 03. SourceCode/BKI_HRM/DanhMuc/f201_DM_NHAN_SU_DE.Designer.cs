@@ -55,6 +55,7 @@
             this.m_lbl_ngay_cap = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.m_cmd_xoa_anh = new SIS.Controls.Button.SiSButton();
             this.m_ptb_anh = new System.Windows.Forms.PictureBox();
             this.m_lbl_ma_headcount = new System.Windows.Forms.Label();
             this.m_lbl_dan_toc = new System.Windows.Forms.Label();
@@ -95,7 +96,6 @@
             this.m_txt_ma_so_thue = new System.Windows.Forms.TextBox();
             this.m_ma_so_thue = new System.Windows.Forms.Label();
             this.m_ofd_chon_anh = new System.Windows.Forms.OpenFileDialog();
-            this.m_cmd_xoa_anh = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -413,6 +413,22 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Thông tin cá nhân";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // m_cmd_xoa_anh
+            // 
+            this.m_cmd_xoa_anh.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xoa_anh.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xoa_anh.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xoa_anh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xoa_anh.ImageIndex = 4;
+            this.m_cmd_xoa_anh.ImageList = this.ImageList;
+            this.m_cmd_xoa_anh.Location = new System.Drawing.Point(643, 211);
+            this.m_cmd_xoa_anh.Name = "m_cmd_xoa_anh";
+            this.m_cmd_xoa_anh.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_xoa_anh.TabIndex = 49;
+            this.m_cmd_xoa_anh.Text = "&Xóa ảnh";
+            this.m_cmd_xoa_anh.Visible = false;
+            this.m_cmd_xoa_anh.Click += new System.EventHandler(this.m_cmd_xoa_anh_Click);
             // 
             // m_ptb_anh
             // 
@@ -795,22 +811,6 @@
             this.m_ma_so_thue.TabIndex = 44;
             this.m_ma_so_thue.Text = "Mã số thuế";
             // 
-            // m_cmd_xoa_anh
-            // 
-            this.m_cmd_xoa_anh.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_xoa_anh.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_xoa_anh.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_xoa_anh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_xoa_anh.ImageIndex = 4;
-            this.m_cmd_xoa_anh.ImageList = this.ImageList;
-            this.m_cmd_xoa_anh.Location = new System.Drawing.Point(643, 211);
-            this.m_cmd_xoa_anh.Name = "m_cmd_xoa_anh";
-            this.m_cmd_xoa_anh.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_xoa_anh.TabIndex = 49;
-            this.m_cmd_xoa_anh.Text = "&Xóa ảnh";
-            this.m_cmd_xoa_anh.Visible = false;
-            this.m_cmd_xoa_anh.Click += new System.EventHandler(this.m_cmd_xoa_anh_Click);
-            // 
             // f201_DM_NHAN_SU_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -820,6 +820,8 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(828, 432);
+            this.MinimumSize = new System.Drawing.Size(828, 432);
             this.Name = "f201_DM_NHAN_SU_DE";
             this.Text = "F201 - Chi tiết hồ sơ nhân sự";
             this.m_pnl_out_place_dm.ResumeLayout(false);
