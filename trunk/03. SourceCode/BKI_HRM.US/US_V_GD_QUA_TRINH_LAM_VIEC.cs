@@ -970,11 +970,12 @@ namespace BKI_HRM.US {
              v_sp.addDecimalInputParam("@ip_lua_chon", ip_lua_chon);
              v_sp.fillDataSetByCommand(this, op_ds);
          }
-         public void count_chuc_vu_chinh_hien_tai(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds, decimal ip_dc_id_nhan_su, decimal ip_dc_id_update, ref decimal op_dc_count)
+         public void count_chuc_vu_chinh_hien_tai(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds, decimal ip_dc_id_nhan_su, decimal ip_dc_id_update,decimal ip_dc_id_phap_nhan, ref decimal op_dc_count)
          {
              CStoredProc v_sp = new CStoredProc("[pr_V_GD_QUA_TRINH_LAM_VIEC_count_chuc_vu_chinh_hien_tai]");
              v_sp.addDecimalInputParam("@ID_NHAN_SU", ip_dc_id_nhan_su);
              v_sp.addDecimalInputParam("@ID_UPDATE", ip_dc_id_update);
+             v_sp.addDecimalInputParam("@ID_PHAP_NHAN", ip_dc_id_phap_nhan);
              SqlParameter v_sql = v_sp.addDecimalOutputParam("@Count", op_dc_count);
             
              v_sp.fillDataSetByCommand(this, op_ds);

@@ -310,6 +310,8 @@ namespace BKI_HRM
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(1112, 509);
+            this.MinimumSize = new System.Drawing.Size(1112, 509);
             this.Name = "f202_V_GD_QUA_TRINH_LAM_VIEC";
             this.Text = "F202-Thay đổi chức vụ, đơn vị công tác";
             this.Load += new System.EventHandler(this.f202_V_GD_QUA_TRINH_LAM_VIEC_Load);

@@ -223,6 +223,7 @@ namespace BKI_HRM
             this.m_dat_tu_ngay_du_an = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_thoidiem = new System.Windows.Forms.Label();
             this.m_tpg_chuc_vu = new System.Windows.Forms.TabPage();
+            this.m_cmd_update_chuc_vu = new SIS.Controls.Button.SiSButton();
             this.m_cmd_them_chuc_vu = new SIS.Controls.Button.SiSButton();
             this.m_cmd_mien_nhiem = new SIS.Controls.Button.SiSButton();
             this.m_grv_chuc_vu_hien_tai = new C1.Win.C1FlexGrid.C1FlexGrid();
@@ -281,7 +282,6 @@ namespace BKI_HRM
             this.m_dat_den_ngay_chuc_vu = new System.Windows.Forms.DateTimePicker();
             this.m_dat_tu_ngay_chuc_vu = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
-            this.m_cmd_update_chuc_vu = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).BeginInit();
             this.panel1.SuspendLayout();
@@ -446,7 +446,7 @@ namespace BKI_HRM
             this.m_grv_nhan_su.Location = new System.Drawing.Point(0, 57);
             this.m_grv_nhan_su.Name = "m_grv_nhan_su";
             this.m_grv_nhan_su.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Row;
-            this.m_grv_nhan_su.Size = new System.Drawing.Size(1008, 208);
+            this.m_grv_nhan_su.Size = new System.Drawing.Size(998, 208);
             this.m_grv_nhan_su.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_nhan_su.Styles"));
             this.m_grv_nhan_su.TabIndex = 3;
             this.m_grv_nhan_su.Click += new System.EventHandler(this.m_grv_nhan_su_Click);
@@ -498,7 +498,7 @@ namespace BKI_HRM
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1008, 265);
+            this.panel1.Size = new System.Drawing.Size(998, 265);
             this.panel1.TabIndex = 24;
             // 
             // panel2
@@ -509,7 +509,7 @@ namespace BKI_HRM
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1008, 51);
+            this.panel2.Size = new System.Drawing.Size(998, 51);
             this.panel2.TabIndex = 22;
             // 
             // m_lbl
@@ -811,7 +811,6 @@ namespace BKI_HRM
             // 
             this.m_grv_du_an.AllowEditing = false;
             this.m_grv_du_an.ColumnInfo = resources.GetString("m_grv_du_an.ColumnInfo");
-            this.m_grv_du_an.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_du_an.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_du_an.Location = new System.Drawing.Point(3, 31);
             this.m_grv_du_an.Name = "m_grv_du_an";
@@ -861,6 +860,21 @@ namespace BKI_HRM
             this.m_tpg_chuc_vu.ToolTipText = "Chức vụ hiện tại";
             this.m_tpg_chuc_vu.UseVisualStyleBackColor = true;
             // 
+            // m_cmd_update_chuc_vu
+            // 
+            this.m_cmd_update_chuc_vu.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_update_chuc_vu.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_update_chuc_vu.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_update_chuc_vu.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_update_chuc_vu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_update_chuc_vu.ImageIndex = 9;
+            this.m_cmd_update_chuc_vu.ImageList = this.ImageList;
+            this.m_cmd_update_chuc_vu.Location = new System.Drawing.Point(655, 205);
+            this.m_cmd_update_chuc_vu.Name = "m_cmd_update_chuc_vu";
+            this.m_cmd_update_chuc_vu.Size = new System.Drawing.Size(115, 28);
+            this.m_cmd_update_chuc_vu.TabIndex = 33;
+            this.m_cmd_update_chuc_vu.Text = "&Sửa thông tin";
+            // 
             // m_cmd_them_chuc_vu
             // 
             this.m_cmd_them_chuc_vu.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -897,7 +911,6 @@ namespace BKI_HRM
             // 
             this.m_grv_chuc_vu_hien_tai.AllowEditing = false;
             this.m_grv_chuc_vu_hien_tai.ColumnInfo = resources.GetString("m_grv_chuc_vu_hien_tai.ColumnInfo");
-            this.m_grv_chuc_vu_hien_tai.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_chuc_vu_hien_tai.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_grv_chuc_vu_hien_tai.Location = new System.Drawing.Point(0, 0);
             this.m_grv_chuc_vu_hien_tai.Name = "m_grv_chuc_vu_hien_tai";
@@ -951,7 +964,7 @@ namespace BKI_HRM
             this.m_tpg_thong_tin_ca_nhan.Location = new System.Drawing.Point(4, 22);
             this.m_tpg_thong_tin_ca_nhan.Name = "m_tpg_thong_tin_ca_nhan";
             this.m_tpg_thong_tin_ca_nhan.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tpg_thong_tin_ca_nhan.Size = new System.Drawing.Size(1000, 233);
+            this.m_tpg_thong_tin_ca_nhan.Size = new System.Drawing.Size(990, 233);
             this.m_tpg_thong_tin_ca_nhan.TabIndex = 0;
             this.m_tpg_thong_tin_ca_nhan.Text = "Thông tin cơ bản";
             this.m_tpg_thong_tin_ca_nhan.ToolTipText = "Thông tin cá nhân";
@@ -1342,10 +1355,10 @@ namespace BKI_HRM
             this.m_tct_chi_tiet_nhan_vien.Controls.Add(this.m_tpg_hop_dong);
             this.m_tct_chi_tiet_nhan_vien.Controls.Add(this.m_tpg_thong_tin_khac);
             this.m_tct_chi_tiet_nhan_vien.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_tct_chi_tiet_nhan_vien.Location = new System.Drawing.Point(0, 334);
+            this.m_tct_chi_tiet_nhan_vien.Location = new System.Drawing.Point(0, 324);
             this.m_tct_chi_tiet_nhan_vien.Name = "m_tct_chi_tiet_nhan_vien";
             this.m_tct_chi_tiet_nhan_vien.SelectedIndex = 0;
-            this.m_tct_chi_tiet_nhan_vien.Size = new System.Drawing.Size(1008, 259);
+            this.m_tct_chi_tiet_nhan_vien.Size = new System.Drawing.Size(998, 259);
             this.m_tct_chi_tiet_nhan_vien.TabIndex = 23;
             this.m_tct_chi_tiet_nhan_vien.SelectedIndexChanged += new System.EventHandler(this.m_tct_chi_tiet_nhan_vien_SelectedIndexChanged);
             // 
@@ -1378,7 +1391,6 @@ namespace BKI_HRM
             // 
             this.m_grv_di_cong_tac.AllowEditing = false;
             this.m_grv_di_cong_tac.ColumnInfo = resources.GetString("m_grv_di_cong_tac.ColumnInfo");
-            this.m_grv_di_cong_tac.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_di_cong_tac.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_di_cong_tac.Location = new System.Drawing.Point(3, 31);
             this.m_grv_di_cong_tac.Name = "m_grv_di_cong_tac";
@@ -1443,7 +1455,6 @@ namespace BKI_HRM
             // 
             this.m_grv_chuc_vu.AllowEditing = false;
             this.m_grv_chuc_vu.ColumnInfo = resources.GetString("m_grv_chuc_vu.ColumnInfo");
-            this.m_grv_chuc_vu.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_chuc_vu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_chuc_vu.Location = new System.Drawing.Point(3, 31);
             this.m_grv_chuc_vu.Name = "m_grv_chuc_vu";
@@ -1479,27 +1490,12 @@ namespace BKI_HRM
             this.label8.TabIndex = 52;
             this.label8.Text = "Từ ngày:";
             // 
-            // m_cmd_update_chuc_vu
-            // 
-            this.m_cmd_update_chuc_vu.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_update_chuc_vu.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_update_chuc_vu.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_update_chuc_vu.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_update_chuc_vu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_update_chuc_vu.ImageIndex = 9;
-            this.m_cmd_update_chuc_vu.ImageList = this.ImageList;
-            this.m_cmd_update_chuc_vu.Location = new System.Drawing.Point(655, 205);
-            this.m_cmd_update_chuc_vu.Name = "m_cmd_update_chuc_vu";
-            this.m_cmd_update_chuc_vu.Size = new System.Drawing.Size(115, 28);
-            this.m_cmd_update_chuc_vu.TabIndex = 33;
-            this.m_cmd_update_chuc_vu.Text = "&Sửa thông tin";
-            // 
             // f201_dm_nhan_su
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.AutoSize = true;
             this.CancelButton = this.m_cmd_exit;
-            this.ClientSize = new System.Drawing.Size(1008, 593);
+            this.ClientSize = new System.Drawing.Size(998, 583);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.m_lbl2);
@@ -1511,6 +1507,7 @@ namespace BKI_HRM
             this.Controls.Add(this.m_tct_chi_tiet_nhan_vien);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(1014, 622);
             this.MinimumSize = new System.Drawing.Size(1014, 622);
             this.Name = "f201_dm_nhan_su";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

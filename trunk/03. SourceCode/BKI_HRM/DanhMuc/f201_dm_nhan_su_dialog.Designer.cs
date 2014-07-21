@@ -181,6 +181,8 @@
             this.Controls.Add(this.m_cmd_them_hop_dong);
             this.Controls.Add(this.m_cmd_them_trang_thai);
             this.Controls.Add(this.m_cmd_them_chuc_vu);
+            this.MaximumSize = new System.Drawing.Size(470, 346);
+            this.MinimumSize = new System.Drawing.Size(470, 346);
             this.Name = "f201_dm_nhan_su_dialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F201 - Bổ sung thông tin nhân viên";

@@ -265,7 +265,10 @@ namespace BKI_HRM
                         m_dat_ngay_ket_thuc.Checked = false;
 //                     m_lbl_ngay_ket_thuc.Text = "Ngày miễn nhiệm";
 //                     m_lbl_chuc_vu_moi.Text = "Chức vụ miễn nhiệm";
-
+                    if (m_b_check_is_mien_nhiem)
+                    {
+                        m_dat_ngay_ket_thuc.Checked = true;
+                    }
                     m_cbo_ma_chuc_vu_moi.SelectedValue = m_us_v_qua_trinh_lam_viec.dcID_CHUC_VU;
                     if (m_us_v_qua_trinh_lam_viec.strTRANG_THAI_CHUC_VU_YN == "Y")
                     {
@@ -275,6 +278,7 @@ namespace BKI_HRM
                     else
                     {
                         m_ckb_cv_hien_tai_yn.Checked = false;
+                        m_ckb_cv_hien_tai_yn.Text = "Không";
                     }
 //                     m_lbl_ma_chuc_vu_moi.Text = "Mã chức vụ miễn nhiệm";
 //                     m_lbl_don_vi_moi.Text = "Đơn vị hiện tại";
@@ -369,6 +373,7 @@ namespace BKI_HRM
             if (m_b_check_is_mien_nhiem)
             {
                 m_ckb_cv_hien_tai_yn.Checked = false;
+                m_ckb_cv_hien_tai_yn.Text = "Không";
             }
         }
         private void form_to_us_object_chi_tiet_chuc_vu()
@@ -506,7 +511,7 @@ namespace BKI_HRM
         private bool check_chuc_vu_chinh()
         {
             decimal v_dc_count = 0;
-            m_us_v_qua_trinh_lam_viec.count_chuc_vu_chinh_hien_tai(m_ds_v_qua_trinh_lam_viec, m_us_v_qua_trinh_lam_viec.dcID_NHAN_SU, m_us_chi_tiet_chuc_vu.dcID, ref v_dc_count);
+            m_us_v_qua_trinh_lam_viec.count_chuc_vu_chinh_hien_tai(m_ds_v_qua_trinh_lam_viec, m_us_v_qua_trinh_lam_viec.dcID_NHAN_SU, m_us_chi_tiet_chuc_vu.dcID,CAppContext_201.getCurrentIDPhapnhan(), ref v_dc_count);
             if (m_ckb_cv_hien_tai_yn.Checked == true
                 && m_rdb_cv_chinh.Checked == true
                 && v_dc_count > 0)

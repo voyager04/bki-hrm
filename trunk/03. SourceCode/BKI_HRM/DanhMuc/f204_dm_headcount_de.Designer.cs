@@ -217,6 +217,8 @@
             this.Controls.Add(this.m_lbl_trang_thai);
             this.Controls.Add(this.m_txt_ma_headcount);
             this.Controls.Add(this.m_lbl_ma_headcount);
+            this.MaximumSize = new System.Drawing.Size(747, 416);
+            this.MinimumSize = new System.Drawing.Size(747, 416);
             this.Name = "f204_dm_headcount_de";
             this.Text = "F204 Chi tiết Headcount";
             this.m_pnl_out_place_dm.ResumeLayout(false);

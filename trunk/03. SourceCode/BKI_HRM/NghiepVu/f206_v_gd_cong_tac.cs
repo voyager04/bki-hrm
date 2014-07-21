@@ -404,6 +404,8 @@ namespace BKI_HRM
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(1278, 557);
+            this.MinimumSize = new System.Drawing.Size(1278, 557);
             this.Name = "f206_v_gd_cong_tac";
             this.Text = "F206 - Quá trình đi công tác";
             this.Load += new System.EventHandler(this.f206_v_gd_cong_tac_Load);

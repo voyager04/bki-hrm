@@ -586,6 +586,8 @@
             this.Controls.Add(this.m_lbl_trang_thai_hien_tai);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(771, 473);
+            this.MinimumSize = new System.Drawing.Size(771, 473);
             this.Name = "f203_v_gd_trang_thai_lao_dong_de";
             this.Text = "F203 - Thay đổi trạng thái lao động";
             this.m_pnl_out_place_dm.ResumeLayout(false);

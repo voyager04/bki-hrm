@@ -1031,6 +1031,8 @@
             this.Controls.Add(this.m_lbl_ngay_ket_thuc);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(867, 578);
+            this.MinimumSize = new System.Drawing.Size(867, 578);
             this.Name = "f202_v_gd_qua_trinh_lam_viec_de";
             this.Text = "F202 - Chi tiết thay đổi";
             this.Load += new System.EventHandler(this.f202_v_gd_qua_trinh_lam_viec_de_Load);
