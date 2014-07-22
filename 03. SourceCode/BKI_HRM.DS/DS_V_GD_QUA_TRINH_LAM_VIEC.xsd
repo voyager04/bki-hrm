@@ -14,7 +14,7 @@
               <DbSource ConnectionRef="BKI_HRMConnectionString1 (Settings)" DbObjectName="BKI_HRM.dbo.V_GD_QUA_TRINH_LAM_VIEC" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT MA_NV, HO_DEM, TEN, MA_CV, TEN_CV, MA_DON_VI, TEN_DON_VI, ID_CAP_DON_VI, CAP_DON_VI, ID_LOAI_DON_VI, LOAI_DON_VI, ID_DON_VI_CAP_TREN, DIA_BAN, MA_QUYET_DINH, NGAY_CO_HIEU_LUC, NGAY_HET_HIEU_LUC, ID_LOAI_CV, LOAI_CV, NGAY_BAT_DAU, NGAY_KET_THUC, ID_NHAN_SU, ID, ID_NGACH, ID_DON_VI, NGACH, TRANG_THAI_CHUC_VU_YN, TRANG_THAI_CV, MA_QUYET_DINH_MIEN_NHIEM, ID_QUYET_DINH, ID_QUYET_DINH_MIEN_NHIEM, LUA_CHON, TY_LE_THAM_GIA, ID_CHUC_VU, MA_DV_CAP_TREN, TEN_DV_CAP_TREN, ID_LOAI_QD, LOAI_QD FROM dbo.V_GD_QUA_TRINH_LAM_VIEC</CommandText>
+                    <CommandText>SELECT MA_NV, HO_DEM, TEN, MA_CV, TEN_CV, MA_DON_VI, TEN_DON_VI, ID_CAP_DON_VI, CAP_DON_VI, ID_LOAI_DON_VI, LOAI_DON_VI, ID_DON_VI_CAP_TREN, DIA_BAN, MA_QUYET_DINH, NGAY_CO_HIEU_LUC, NGAY_HET_HIEU_LUC, ID_LOAI_CV, LOAI_CV, NGAY_BAT_DAU, NGAY_KET_THUC, ID_NHAN_SU, ID, ID_NGACH, ID_DON_VI, NGACH, TRANG_THAI_CHUC_VU_YN, TRANG_THAI_CV, MA_QUYET_DINH_MIEN_NHIEM, ID_QUYET_DINH, ID_QUYET_DINH_MIEN_NHIEM, LUA_CHON, TY_LE_THAM_GIA, ID_CHUC_VU, MA_DV_CAP_TREN, TEN_DV_CAP_TREN, ID_LOAI_QD, LOAI_QD, ID_PHAP_NHAN, MA_PHAP_NHAN, TEN_PHAP_NHAN FROM dbo.V_GD_QUA_TRINH_LAM_VIEC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -58,6 +58,9 @@
               <Mapping SourceColumn="TEN_DV_CAP_TREN" DataSetColumn="TEN_DV_CAP_TREN" />
               <Mapping SourceColumn="ID_LOAI_QD" DataSetColumn="ID_LOAI_QD" />
               <Mapping SourceColumn="LOAI_QD" DataSetColumn="LOAI_QD" />
+              <Mapping SourceColumn="ID_PHAP_NHAN" DataSetColumn="ID_PHAP_NHAN" />
+              <Mapping SourceColumn="MA_PHAP_NHAN" DataSetColumn="MA_PHAP_NHAN" />
+              <Mapping SourceColumn="TEN_PHAP_NHAN" DataSetColumn="TEN_PHAP_NHAN" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -69,7 +72,7 @@
   <xs:element name="DS_V_GD_QUA_TRINH_LAM_VIEC" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_GD_QUA_TRINH_LAM_VIEC" msprop:Generator_UserDSName="DS_V_GD_QUA_TRINH_LAM_VIEC">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="V_GD_QUA_TRINH_LAM_VIEC" msprop:Generator_TableClassName="V_GD_QUA_TRINH_LAM_VIECDataTable" msprop:Generator_TableVarName="tableV_GD_QUA_TRINH_LAM_VIEC" msprop:Generator_RowChangedName="V_GD_QUA_TRINH_LAM_VIECRowChanged" msprop:Generator_TablePropName="V_GD_QUA_TRINH_LAM_VIEC" msprop:Generator_RowDeletingName="V_GD_QUA_TRINH_LAM_VIECRowDeleting" msprop:Generator_RowChangingName="V_GD_QUA_TRINH_LAM_VIECRowChanging" msprop:Generator_RowEvHandlerName="V_GD_QUA_TRINH_LAM_VIECRowChangeEventHandler" msprop:Generator_RowDeletedName="V_GD_QUA_TRINH_LAM_VIECRowDeleted" msprop:Generator_RowClassName="V_GD_QUA_TRINH_LAM_VIECRow" msprop:Generator_UserTableName="V_GD_QUA_TRINH_LAM_VIEC" msprop:Generator_RowEvArgName="V_GD_QUA_TRINH_LAM_VIECRowChangeEvent">
+        <xs:element name="V_GD_QUA_TRINH_LAM_VIEC" msprop:Generator_TableClassName="V_GD_QUA_TRINH_LAM_VIECDataTable" msprop:Generator_TableVarName="tableV_GD_QUA_TRINH_LAM_VIEC" msprop:Generator_TablePropName="V_GD_QUA_TRINH_LAM_VIEC" msprop:Generator_RowDeletingName="V_GD_QUA_TRINH_LAM_VIECRowDeleting" msprop:Generator_RowChangingName="V_GD_QUA_TRINH_LAM_VIECRowChanging" msprop:Generator_RowEvHandlerName="V_GD_QUA_TRINH_LAM_VIECRowChangeEventHandler" msprop:Generator_RowDeletedName="V_GD_QUA_TRINH_LAM_VIECRowDeleted" msprop:Generator_UserTableName="V_GD_QUA_TRINH_LAM_VIEC" msprop:Generator_RowChangedName="V_GD_QUA_TRINH_LAM_VIECRowChanged" msprop:Generator_RowEvArgName="V_GD_QUA_TRINH_LAM_VIECRowChangeEvent" msprop:Generator_RowClassName="V_GD_QUA_TRINH_LAM_VIECRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MA_NV" msprop:Generator_ColumnVarNameInTable="columnMA_NV" msprop:Generator_ColumnPropNameInRow="MA_NV" msprop:Generator_ColumnPropNameInTable="MA_NVColumn" msprop:Generator_UserColumnName="MA_NV">
@@ -229,10 +232,29 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="ID_PHAP_NHAN" msprop:Generator_ColumnVarNameInTable="columnID_PHAP_NHAN" msprop:Generator_ColumnPropNameInRow="ID_PHAP_NHAN" msprop:Generator_ColumnPropNameInTable="ID_PHAP_NHANColumn" msprop:Generator_UserColumnName="ID_PHAP_NHAN" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MA_PHAP_NHAN" msprop:Generator_ColumnVarNameInTable="columnMA_PHAP_NHAN" msprop:Generator_ColumnPropNameInRow="MA_PHAP_NHAN" msprop:Generator_ColumnPropNameInTable="MA_PHAP_NHANColumn" msprop:Generator_UserColumnName="MA_PHAP_NHAN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEN_PHAP_NHAN" msprop:Generator_ColumnVarNameInTable="columnTEN_PHAP_NHAN" msprop:Generator_ColumnPropNameInRow="TEN_PHAP_NHAN" msprop:Generator_ColumnPropNameInTable="TEN_PHAP_NHANColumn" msprop:Generator_UserColumnName="TEN_PHAP_NHAN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>
     </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:V_GD_QUA_TRINH_LAM_VIEC" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
   </xs:element>
 </xs:schema>
