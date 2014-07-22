@@ -2280,9 +2280,6 @@ namespace BKI_HRM
             m_cmd_update_chuc_vu.Click += m_cmd_update_chuc_vu_Click;
 		}
 
-      
-
-       
 		#endregion
 
         #region EVENT HANLDERS

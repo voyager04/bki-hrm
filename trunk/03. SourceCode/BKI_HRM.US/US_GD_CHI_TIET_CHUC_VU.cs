@@ -264,6 +264,28 @@ public class US_GD_CHI_TIET_CHUC_VU : US_Object
         pm_objDR["NGAY_KET_THUC"] = System.Convert.DBNull;
     }
 
+    public string strLUA_CHON
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "LUA_CHON", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["LUA_CHON"] = value;
+        }
+    }
+
+    public bool IsLUA_CHONNull()
+    {
+        return pm_objDR.IsNull("LUA_CHON");
+    }
+
+    public void SetLUA_CHONNull()
+    {
+        pm_objDR["LUA_CHON"] = System.Convert.DBNull;
+    }
+
     #endregion
     #region "Init Functions"
     public US_GD_CHI_TIET_CHUC_VU()
