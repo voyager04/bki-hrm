@@ -464,8 +464,10 @@ namespace BKI_HRM.US {
             v_stored_proc.fillDataSetByCommand(this, op_ds_v_v_dm_don_vi);
         }
 
-        public void FillDatasetByKeyWord(DS_V_DM_DON_VI op_ds_v_v_dm_don_vi) {
+        public void FillDatasetByKeyWord(DS_V_DM_DON_VI op_ds_v_v_dm_don_vi,string ip_str_trang_thai,decimal ip_dc_phap_nhan) {
             CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DON_VI_search_all");
+            v_stored_proc.addDecimalInputParam("@ip_dc_phap_nhan", ip_dc_phap_nhan);
+            v_stored_proc.addNVarcharInputParam("@ip_str_trang_thai", ip_str_trang_thai);
             v_stored_proc.fillDataSetByCommand(this, op_ds_v_v_dm_don_vi);
         }
         public void FillDataset_search_by_ma_dv(DS_V_DM_DON_VI op_ds, string ip_str_ma_dv)
