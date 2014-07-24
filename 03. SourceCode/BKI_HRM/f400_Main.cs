@@ -59,7 +59,7 @@ namespace BKI_HRM
             US_V_DM_DU_LIEU_NHAN_VIEN v_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
             DS_V_DM_DU_LIEU_NHAN_VIEN v_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
             decimal v_dc_so_luong_nv_hien_tai = 0;
-            v_us.count_nhan_vien(v_ds, "hiện tại", 
+            v_us.count_nhan_vien(v_ds, "hiện tại",
                 CAppContext_201.getCurrentIDPhapnhan(),
                 ref v_dc_so_luong_nv_hien_tai);
 
@@ -150,7 +150,17 @@ namespace BKI_HRM
             try
             {
                 m_exitmode = IPConstants.HowUserWantTo_Exit_MainForm.Login_As_DifferentUser;
-                this.Close();
+                List<Form> v_list_openForms = new List<Form>();
+
+                foreach (Form v_f in Application.OpenForms)
+                    v_list_openForms.Add(v_f);
+
+                foreach (Form v_f in v_list_openForms)
+                {
+
+                    v_f.Close();
+                }
+
             }
             catch (Exception v_e)
             {
