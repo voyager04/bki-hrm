@@ -211,10 +211,11 @@ public class US_RPT_DON_VI_TRANG_THAI : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-    public void FillDatasetByProc(DS_RPT_DON_VI_TRANG_THAI op_ds_rpt, DateTime ip_dat_thoi_diem)
+    public void FillDatasetByProc(DS_RPT_DON_VI_TRANG_THAI op_ds_rpt, DateTime ip_dat_thoi_diem, decimal ip_dc_phap_nhan)
     {
         CStoredProc v_sp = new CStoredProc("pr_RPT_DON_VI_TRANG_THAI");
         v_sp.addDatetimeInputParam("@THOI_DIEM", ip_dat_thoi_diem);
+        v_sp.addDecimalInputParam("@ID_PHAP_NHAN",ip_dc_phap_nhan);
         v_sp.fillDataSetByCommand(this, op_ds_rpt);
     }
 	}

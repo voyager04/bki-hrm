@@ -169,7 +169,7 @@ namespace BKI_HRM {
             this.m_lbl_phim_tat.Size = new System.Drawing.Size(465, 13);
             this.m_lbl_phim_tat.TabIndex = 1001;
             this.m_lbl_phim_tat.Text = "Phím tắt: F6_Mở rộng-Thu gọn danh sách; F2_Xem danh sách nhân viên của phòng ban," +
-    " đơn vị";
+                " đơn vị";
             // 
             // m_cmd_chon_don_vi
             // 
