@@ -147,6 +147,7 @@ namespace BKI_HRM
         private DateTimePicker m_dat_tu_ngay_chuc_vu;
         private Label label8;
         internal SIS.Controls.Button.SiSButton m_cmd_update_chuc_vu;
+        internal SIS.Controls.Button.SiSButton m_cmd_chon_phap_nhan;
 		private System.ComponentModel.IContainer components;
 
 		
@@ -282,6 +283,7 @@ namespace BKI_HRM
             this.m_dat_den_ngay_chuc_vu = new System.Windows.Forms.DateTimePicker();
             this.m_dat_tu_ngay_chuc_vu = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
+            this.m_cmd_chon_phap_nhan = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).BeginInit();
             this.panel1.SuspendLayout();
@@ -560,6 +562,7 @@ namespace BKI_HRM
             this.m_lbl_headcount.Size = new System.Drawing.Size(35, 13);
             this.m_lbl_headcount.TabIndex = 27;
             this.m_lbl_headcount.Text = "label4";
+            this.m_lbl_headcount.Visible = false;
             // 
             // label3
             // 
@@ -569,6 +572,7 @@ namespace BKI_HRM
             this.label3.Size = new System.Drawing.Size(81, 13);
             this.label3.TabIndex = 28;
             this.label3.Text = "Mã Headcount:";
+            this.label3.Visible = false;
             // 
             // m_tpg_thong_tin_khac
             // 
@@ -577,7 +581,7 @@ namespace BKI_HRM
             this.m_tpg_thong_tin_khac.Location = new System.Drawing.Point(4, 22);
             this.m_tpg_thong_tin_khac.Name = "m_tpg_thong_tin_khac";
             this.m_tpg_thong_tin_khac.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tpg_thong_tin_khac.Size = new System.Drawing.Size(1000, 233);
+            this.m_tpg_thong_tin_khac.Size = new System.Drawing.Size(990, 233);
             this.m_tpg_thong_tin_khac.TabIndex = 3;
             this.m_tpg_thong_tin_khac.Text = "Thông tin khác";
             this.m_tpg_thong_tin_khac.ToolTipText = "Thông tin khác";
@@ -594,7 +598,7 @@ namespace BKI_HRM
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox4.Location = new System.Drawing.Point(3, 103);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(994, 116);
+            this.groupBox4.Size = new System.Drawing.Size(984, 116);
             this.groupBox4.TabIndex = 71;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Người liên hệ";
@@ -666,7 +670,7 @@ namespace BKI_HRM
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(994, 100);
+            this.groupBox3.Size = new System.Drawing.Size(984, 100);
             this.groupBox3.TabIndex = 70;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Trình độ học vấn";
@@ -749,7 +753,7 @@ namespace BKI_HRM
             this.m_tpg_hop_dong.Controls.Add(this.m_grv_hop_dong_ld);
             this.m_tpg_hop_dong.Location = new System.Drawing.Point(4, 22);
             this.m_tpg_hop_dong.Name = "m_tpg_hop_dong";
-            this.m_tpg_hop_dong.Size = new System.Drawing.Size(1000, 233);
+            this.m_tpg_hop_dong.Size = new System.Drawing.Size(990, 233);
             this.m_tpg_hop_dong.TabIndex = 5;
             this.m_tpg_hop_dong.Text = "Hợp đồng lao động";
             this.m_tpg_hop_dong.ToolTipText = "Hợp đồng lao động";
@@ -764,7 +768,7 @@ namespace BKI_HRM
             this.m_cmd_them_hop_dong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_them_hop_dong.ImageIndex = 2;
             this.m_cmd_them_hop_dong.ImageList = this.ImageList;
-            this.m_cmd_them_hop_dong.Location = new System.Drawing.Point(885, 204);
+            this.m_cmd_them_hop_dong.Location = new System.Drawing.Point(875, 204);
             this.m_cmd_them_hop_dong.Name = "m_cmd_them_hop_dong";
             this.m_cmd_them_hop_dong.Size = new System.Drawing.Size(115, 29);
             this.m_cmd_them_hop_dong.TabIndex = 34;
@@ -778,7 +782,7 @@ namespace BKI_HRM
             this.m_grv_hop_dong_ld.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_grv_hop_dong_ld.Location = new System.Drawing.Point(0, 0);
             this.m_grv_hop_dong_ld.Name = "m_grv_hop_dong_ld";
-            this.m_grv_hop_dong_ld.Size = new System.Drawing.Size(1000, 204);
+            this.m_grv_hop_dong_ld.Size = new System.Drawing.Size(990, 204);
             this.m_grv_hop_dong_ld.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_hop_dong_ld.Styles"));
             this.m_grv_hop_dong_ld.TabIndex = 21;
             // 
@@ -792,7 +796,7 @@ namespace BKI_HRM
             this.m_tpg_du_an.Location = new System.Drawing.Point(4, 22);
             this.m_tpg_du_an.Name = "m_tpg_du_an";
             this.m_tpg_du_an.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tpg_du_an.Size = new System.Drawing.Size(1000, 233);
+            this.m_tpg_du_an.Size = new System.Drawing.Size(990, 233);
             this.m_tpg_du_an.TabIndex = 6;
             this.m_tpg_du_an.Text = "Dự án";
             this.m_tpg_du_an.ToolTipText = "Dự án";
@@ -814,7 +818,7 @@ namespace BKI_HRM
             this.m_grv_du_an.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_du_an.Location = new System.Drawing.Point(3, 31);
             this.m_grv_du_an.Name = "m_grv_du_an";
-            this.m_grv_du_an.Size = new System.Drawing.Size(994, 199);
+            this.m_grv_du_an.Size = new System.Drawing.Size(984, 199);
             this.m_grv_du_an.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_du_an.Styles"));
             this.m_grv_du_an.TabIndex = 21;
             // 
@@ -854,7 +858,7 @@ namespace BKI_HRM
             this.m_tpg_chuc_vu.Controls.Add(this.m_grv_chuc_vu_hien_tai);
             this.m_tpg_chuc_vu.Location = new System.Drawing.Point(4, 22);
             this.m_tpg_chuc_vu.Name = "m_tpg_chuc_vu";
-            this.m_tpg_chuc_vu.Size = new System.Drawing.Size(1000, 233);
+            this.m_tpg_chuc_vu.Size = new System.Drawing.Size(990, 233);
             this.m_tpg_chuc_vu.TabIndex = 2;
             this.m_tpg_chuc_vu.Text = "Chức vụ hiện tại";
             this.m_tpg_chuc_vu.ToolTipText = "Chức vụ hiện tại";
@@ -869,7 +873,7 @@ namespace BKI_HRM
             this.m_cmd_update_chuc_vu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update_chuc_vu.ImageIndex = 9;
             this.m_cmd_update_chuc_vu.ImageList = this.ImageList;
-            this.m_cmd_update_chuc_vu.Location = new System.Drawing.Point(655, 205);
+            this.m_cmd_update_chuc_vu.Location = new System.Drawing.Point(645, 205);
             this.m_cmd_update_chuc_vu.Name = "m_cmd_update_chuc_vu";
             this.m_cmd_update_chuc_vu.Size = new System.Drawing.Size(115, 28);
             this.m_cmd_update_chuc_vu.TabIndex = 33;
@@ -884,7 +888,7 @@ namespace BKI_HRM
             this.m_cmd_them_chuc_vu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_them_chuc_vu.ImageIndex = 2;
             this.m_cmd_them_chuc_vu.ImageList = this.ImageList;
-            this.m_cmd_them_chuc_vu.Location = new System.Drawing.Point(770, 205);
+            this.m_cmd_them_chuc_vu.Location = new System.Drawing.Point(760, 205);
             this.m_cmd_them_chuc_vu.Name = "m_cmd_them_chuc_vu";
             this.m_cmd_them_chuc_vu.Size = new System.Drawing.Size(115, 28);
             this.m_cmd_them_chuc_vu.TabIndex = 32;
@@ -900,7 +904,7 @@ namespace BKI_HRM
             this.m_cmd_mien_nhiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_mien_nhiem.ImageIndex = 4;
             this.m_cmd_mien_nhiem.ImageList = this.ImageList;
-            this.m_cmd_mien_nhiem.Location = new System.Drawing.Point(885, 205);
+            this.m_cmd_mien_nhiem.Location = new System.Drawing.Point(875, 205);
             this.m_cmd_mien_nhiem.Name = "m_cmd_mien_nhiem";
             this.m_cmd_mien_nhiem.Size = new System.Drawing.Size(115, 28);
             this.m_cmd_mien_nhiem.TabIndex = 31;
@@ -914,7 +918,7 @@ namespace BKI_HRM
             this.m_grv_chuc_vu_hien_tai.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_grv_chuc_vu_hien_tai.Location = new System.Drawing.Point(0, 0);
             this.m_grv_chuc_vu_hien_tai.Name = "m_grv_chuc_vu_hien_tai";
-            this.m_grv_chuc_vu_hien_tai.Size = new System.Drawing.Size(1000, 205);
+            this.m_grv_chuc_vu_hien_tai.Size = new System.Drawing.Size(990, 205);
             this.m_grv_chuc_vu_hien_tai.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_chuc_vu_hien_tai.Styles"));
             this.m_grv_chuc_vu_hien_tai.TabIndex = 21;
             // 
@@ -1372,7 +1376,7 @@ namespace BKI_HRM
             this.m_tpg_di_cong_tac.Location = new System.Drawing.Point(4, 22);
             this.m_tpg_di_cong_tac.Name = "m_tpg_di_cong_tac";
             this.m_tpg_di_cong_tac.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tpg_di_cong_tac.Size = new System.Drawing.Size(1000, 233);
+            this.m_tpg_di_cong_tac.Size = new System.Drawing.Size(990, 233);
             this.m_tpg_di_cong_tac.TabIndex = 7;
             this.m_tpg_di_cong_tac.Text = "Đi công tác";
             this.m_tpg_di_cong_tac.ToolTipText = "Đi công tác";
@@ -1394,7 +1398,7 @@ namespace BKI_HRM
             this.m_grv_di_cong_tac.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_di_cong_tac.Location = new System.Drawing.Point(3, 31);
             this.m_grv_di_cong_tac.Name = "m_grv_di_cong_tac";
-            this.m_grv_di_cong_tac.Size = new System.Drawing.Size(994, 199);
+            this.m_grv_di_cong_tac.Size = new System.Drawing.Size(984, 199);
             this.m_grv_di_cong_tac.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_di_cong_tac.Styles"));
             this.m_grv_di_cong_tac.TabIndex = 50;
             // 
@@ -1436,7 +1440,7 @@ namespace BKI_HRM
             this.m_tpg_qua_trinh_chuc_vu.Location = new System.Drawing.Point(4, 22);
             this.m_tpg_qua_trinh_chuc_vu.Name = "m_tpg_qua_trinh_chuc_vu";
             this.m_tpg_qua_trinh_chuc_vu.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tpg_qua_trinh_chuc_vu.Size = new System.Drawing.Size(1000, 233);
+            this.m_tpg_qua_trinh_chuc_vu.Size = new System.Drawing.Size(990, 233);
             this.m_tpg_qua_trinh_chuc_vu.TabIndex = 8;
             this.m_tpg_qua_trinh_chuc_vu.Text = "Quá trình công tác";
             this.m_tpg_qua_trinh_chuc_vu.ToolTipText = "Chức vụ";
@@ -1458,7 +1462,7 @@ namespace BKI_HRM
             this.m_grv_chuc_vu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_chuc_vu.Location = new System.Drawing.Point(3, 31);
             this.m_grv_chuc_vu.Name = "m_grv_chuc_vu";
-            this.m_grv_chuc_vu.Size = new System.Drawing.Size(994, 199);
+            this.m_grv_chuc_vu.Size = new System.Drawing.Size(984, 199);
             this.m_grv_chuc_vu.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_chuc_vu.Styles"));
             this.m_grv_chuc_vu.TabIndex = 50;
             // 
@@ -1490,12 +1494,28 @@ namespace BKI_HRM
             this.label8.TabIndex = 52;
             this.label8.Text = "Từ ngày:";
             // 
+            // m_cmd_chon_phap_nhan
+            // 
+            this.m_cmd_chon_phap_nhan.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_chon_phap_nhan.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_chon_phap_nhan.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_chon_phap_nhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_chon_phap_nhan.ImageIndex = 5;
+            this.m_cmd_chon_phap_nhan.ImageList = this.ImageList;
+            this.m_cmd_chon_phap_nhan.Location = new System.Drawing.Point(870, 304);
+            this.m_cmd_chon_phap_nhan.Name = "m_cmd_chon_phap_nhan";
+            this.m_cmd_chon_phap_nhan.Size = new System.Drawing.Size(128, 28);
+            this.m_cmd_chon_phap_nhan.TabIndex = 34;
+            this.m_cmd_chon_phap_nhan.Text = "&Chọn pháp nhân";
+            this.m_cmd_chon_phap_nhan.Visible = false;
+            // 
             // f201_dm_nhan_su
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.AutoSize = true;
             this.CancelButton = this.m_cmd_exit;
             this.ClientSize = new System.Drawing.Size(998, 583);
+            this.Controls.Add(this.m_cmd_chon_phap_nhan);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.m_lbl2);
@@ -1962,6 +1982,15 @@ namespace BKI_HRM
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_nhan_su)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;
             grid2us_object(m_us, m_grv_nhan_su.Row);
+
+            if (m_us.check_phap_nhan_is_null(m_us.dcID) && CAppContext_201.getCurrentIDPhapnhan() == PHAP_NHAN.TEG)
+            {
+                m_cmd_chon_phap_nhan.Visible = true;
+            }
+            else
+            {
+                m_cmd_chon_phap_nhan.Visible = false;
+            }
            // us_object_to_form();
             m_lbl_ho_ten.Text = m_us.strHO_DEM + " " + m_us.strTEN;
             m_lbl_ma_nhan_vien.Text = m_us.strMA_NV;
@@ -1976,6 +2005,7 @@ namespace BKI_HRM
             }
             else
             {
+                m_lbl_headcount.Visible = false;
                 m_lbl_headcount.Text = "Chưa có mã Headcount.";
             }
             switch (m_tct_chi_tiet_nhan_vien.SelectedIndex)
@@ -2178,7 +2208,7 @@ namespace BKI_HRM
                 v_fDE.get_us(ref m_us);
                 WinFormControls.set_focus_for_grid(m_grv_nhan_su, m_us.strMA_NV, 1);
                 f201_dm_nhan_su_dialog v_frm = new f201_dm_nhan_su_dialog();
-                v_frm.display(m_us);
+                v_frm.display_them_nhan_vien(m_us);
             }
            
            
@@ -2226,7 +2256,16 @@ namespace BKI_HRM
 			load_data_2_grid_search();
             load_chi_tiet_nhan_vien();
 		}
-				
+
+        private void them_phap_nhan()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_nhan_su)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;
+            f201_dm_nhan_su_dialog v_frm = new f201_dm_nhan_su_dialog();
+            v_frm.display_chon_phap_nhan(m_us);
+            load_chi_tiet_nhan_vien();
+        }
+
 		private void delete_dm_nhan_su(){
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_nhan_su)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;
@@ -2278,7 +2317,10 @@ namespace BKI_HRM
             m_dat_tu_ngay_chuc_vu.ValueChanged += m_dat_chuc_vu_ValueChanged;
             m_dat_den_ngay_chuc_vu.ValueChanged += m_dat_chuc_vu_ValueChanged;
             m_cmd_update_chuc_vu.Click += m_cmd_update_chuc_vu_Click;
+            m_cmd_chon_phap_nhan.Click += m_cmd_chon_phap_nhan_Click;
 		}
+
+       
 
 		#endregion
 
@@ -2322,7 +2364,18 @@ namespace BKI_HRM
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
+        private void m_cmd_chon_phap_nhan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                them_phap_nhan();
+            }
+            catch (Exception v_e)
+            {
 
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 		private void m_cmd_delete_Click(object sender, EventArgs e) {
 			try{
 				delete_dm_nhan_su();

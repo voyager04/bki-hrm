@@ -33,9 +33,27 @@ namespace BKI_HRM
             InitializeComponent();
             format_controls();
         }
-        public void display(US_DM_NHAN_SU i_us)
+        public void display_them_nhan_vien(US_DM_NHAN_SU i_us)
         {
             m_us_nhan_su = i_us;
+            this.Show();
+        }
+        public void display_chon_phap_nhan(US_DM_NHAN_SU i_us)
+        {
+            m_us_nhan_su = i_us;
+            m_cmd_them_cap_bac.Visible = false;
+            m_cmd_them_chuc_vu.Visible = false;
+            m_cmd_them_du_an.Visible = false;
+            m_cmd_them_hop_dong.Visible = false;
+            m_cmd_them_trang_thai.Visible = false;
+            m_cmd_phap_nhan_te.Visible = true;
+            m_cmd_phap_nhan_te.Enabled = true;
+            m_cmd_phap_nhan_tu.Visible = true;
+            m_cmd_phap_nhan_tu.Enabled = true;
+            this.Text = "F201 - Chọn pháp nhân";
+            this.MinimumSize = new Size(470, 194);
+            this.MaximumSize = new Size(470, 194);
+            this.Size = new Size (470,194);
             this.Show();
         }
 #endregion
@@ -146,8 +164,6 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-#endregion
-
         private void m_cmd_them_du_an_Click(object sender, EventArgs e)
         {
             try
@@ -156,9 +172,82 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle(v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_cmd_phap_nhan_tu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                US_GD_CHI_TIET_CHUC_VU v_us_chuc_vu = new US_GD_CHI_TIET_CHUC_VU();
+                v_us_chuc_vu.dcID_NHAN_SU = m_us_nhan_su.dcID;
+                v_us_chuc_vu.dcID_DON_VI = 235;
+                v_us_chuc_vu.dcID_CHUC_VU = 25;
+                v_us_chuc_vu.strLUA_CHON = "A";
+                v_us_chuc_vu.Insert();
+
+                US_GD_CHI_TIET_TRANG_THAI_LD v_us_trang_thai = new US_GD_CHI_TIET_TRANG_THAI_LD();
+                v_us_trang_thai.dcID_NHAN_SU = m_us_nhan_su.dcID;
+                v_us_trang_thai.dcID_TRANG_LAO_DONG = 742;
+                v_us_trang_thai.strTRANG_THAI_HIEN_TAI = "Y";
+                v_us_trang_thai.dcID_QUYET_DINH = 1538; // ID quyet dinh TEG
+                v_us_trang_thai.Insert();
+
+                v_us_trang_thai = new US_GD_CHI_TIET_TRANG_THAI_LD();
+                v_us_trang_thai.dcID_NHAN_SU = m_us_nhan_su.dcID;
+                v_us_trang_thai.dcID_TRANG_LAO_DONG = 742;
+                v_us_trang_thai.strTRANG_THAI_HIEN_TAI = "Y";
+                v_us_trang_thai.dcID_QUYET_DINH = 1541; // ID quyet dinh TU
+                v_us_trang_thai.Insert();
+                BaseMessages.MsgBox_Infor("Chuyển pháp nhân thành công.");
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_phap_nhan_te_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                US_GD_CHI_TIET_CHUC_VU v_us_chuc_vu = new US_GD_CHI_TIET_CHUC_VU();
+                v_us_chuc_vu.dcID_NHAN_SU = m_us_nhan_su.dcID;
+                v_us_chuc_vu.dcID_DON_VI = 235;
+                v_us_chuc_vu.dcID_CHUC_VU = 25;
+                v_us_chuc_vu.strLUA_CHON = "A";
+                v_us_chuc_vu.Insert();
+
+                US_GD_CHI_TIET_TRANG_THAI_LD v_us_trang_thai = new US_GD_CHI_TIET_TRANG_THAI_LD();
+                v_us_trang_thai.dcID_NHAN_SU = m_us_nhan_su.dcID;
+                v_us_trang_thai.dcID_TRANG_LAO_DONG = 742;
+                v_us_trang_thai.strTRANG_THAI_HIEN_TAI = "Y";
+                v_us_trang_thai.dcID_QUYET_DINH = 1538; // ID quyet dinh TEG
+                v_us_trang_thai.Insert();
+
+                v_us_trang_thai = new US_GD_CHI_TIET_TRANG_THAI_LD();
+                v_us_trang_thai.dcID_NHAN_SU = m_us_nhan_su.dcID;
+                v_us_trang_thai.dcID_TRANG_LAO_DONG = 742;
+                v_us_trang_thai.strTRANG_THAI_HIEN_TAI = "Y";
+                v_us_trang_thai.dcID_QUYET_DINH = 1540; // ID quyet dinh TE
+                v_us_trang_thai.Insert();
+                BaseMessages.MsgBox_Infor("Chuyển pháp nhân thành công.");
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+#endregion
+
+       
+        
         
     }
 }

@@ -36,6 +36,8 @@
             this.m_cmd_them_hop_dong = new SIS.Controls.Button.SiSButton();
             this.m_cmd_them_cap_bac = new SIS.Controls.Button.SiSButton();
             this.m_cmd_them_du_an = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_phap_nhan_tu = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_phap_nhan_te = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.SuspendLayout();
             // 
@@ -151,6 +153,42 @@
             this.m_cmd_them_du_an.Text = "Thêm dự án";
             this.m_cmd_them_du_an.Click += new System.EventHandler(this.m_cmd_them_du_an_Click);
             // 
+            // m_cmd_phap_nhan_tu
+            // 
+            this.m_cmd_phap_nhan_tu.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_phap_nhan_tu.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_phap_nhan_tu.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_phap_nhan_tu.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.m_cmd_phap_nhan_tu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_cmd_phap_nhan_tu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.m_cmd_phap_nhan_tu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_phap_nhan_tu.ImageIndex = 12;
+            this.m_cmd_phap_nhan_tu.Location = new System.Drawing.Point(0, 255);
+            this.m_cmd_phap_nhan_tu.Name = "m_cmd_phap_nhan_tu";
+            this.m_cmd_phap_nhan_tu.Size = new System.Drawing.Size(454, 51);
+            this.m_cmd_phap_nhan_tu.TabIndex = 40;
+            this.m_cmd_phap_nhan_tu.Text = "TU - EDUTOP64";
+            this.m_cmd_phap_nhan_tu.Visible = false;
+            this.m_cmd_phap_nhan_tu.Click += new System.EventHandler(this.m_cmd_phap_nhan_tu_Click);
+            // 
+            // m_cmd_phap_nhan_te
+            // 
+            this.m_cmd_phap_nhan_te.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_phap_nhan_te.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_phap_nhan_te.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_phap_nhan_te.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.m_cmd_phap_nhan_te.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_cmd_phap_nhan_te.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.m_cmd_phap_nhan_te.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_phap_nhan_te.ImageIndex = 12;
+            this.m_cmd_phap_nhan_te.Location = new System.Drawing.Point(0, 306);
+            this.m_cmd_phap_nhan_te.Name = "m_cmd_phap_nhan_te";
+            this.m_cmd_phap_nhan_te.Size = new System.Drawing.Size(454, 51);
+            this.m_cmd_phap_nhan_te.TabIndex = 41;
+            this.m_cmd_phap_nhan_te.Text = "TE - TPE";
+            this.m_cmd_phap_nhan_te.Visible = false;
+            this.m_cmd_phap_nhan_te.Click += new System.EventHandler(this.m_cmd_phap_nhan_te_Click);
+            // 
             // m_cmd_exit
             // 
             this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -162,10 +200,10 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(0, 255);
+            this.m_cmd_exit.Location = new System.Drawing.Point(0, 357);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(454, 51);
-            this.m_cmd_exit.TabIndex = 39;
+            this.m_cmd_exit.TabIndex = 42;
             this.m_cmd_exit.Text = "Thoát";
             this.m_cmd_exit.Click += new System.EventHandler(this.m_cmd_exit_Click);
             // 
@@ -173,9 +211,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.m_cmd_exit;
             this.ClientSize = new System.Drawing.Size(454, 307);
             this.Controls.Add(this.m_cmd_exit);
+            this.Controls.Add(this.m_cmd_phap_nhan_te);
+            this.Controls.Add(this.m_cmd_phap_nhan_tu);
             this.Controls.Add(this.m_cmd_them_du_an);
             this.Controls.Add(this.m_cmd_them_cap_bac);
             this.Controls.Add(this.m_cmd_them_hop_dong);
@@ -198,6 +237,8 @@
         internal SIS.Controls.Button.SiSButton m_cmd_them_hop_dong;
         internal SIS.Controls.Button.SiSButton m_cmd_them_cap_bac;
         internal SIS.Controls.Button.SiSButton m_cmd_them_du_an;
+        internal SIS.Controls.Button.SiSButton m_cmd_phap_nhan_tu;
+        internal SIS.Controls.Button.SiSButton m_cmd_phap_nhan_te;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
     }
 }
