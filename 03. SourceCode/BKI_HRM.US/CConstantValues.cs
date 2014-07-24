@@ -74,4 +74,10 @@ namespace BKI_HRM.US {
         public const decimal CHUC_VU_CHINH = 650;
         public const decimal CHUC_VU_KIEM_NHIEM = 651;
     }
+    public class PHAP_NHAN
+    {
+        public const decimal TU = 1;
+        public const decimal TE = 2;
+        public const decimal TEG = 3;
+    }
 }

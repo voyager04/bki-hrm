@@ -751,7 +751,19 @@ public class US_DM_NHAN_SU : US_Object
         cstored.addDecimalInputParam("@ID_NS", ip_dc_id);
         cstored.fillDataSetByCommand(this, op_ds_dm_nhan_su);
     }
-    
+
+    public bool check_phap_nhan_is_null(decimal ip_dc_id_nhan_su)
+    {
+        CStoredProc v_cst = new CStoredProc("pr_DM_NHAN_SU_check_phap_nhan_null");
+        v_cst.addDecimalInputParam("@ID_NHAN_SU", ip_dc_id_nhan_su);
+        SqlParameter v_sql = v_cst.addDecimalOutputParam("@Count", 1);
+        v_cst.ExecuteCommand(this);
+        if (CIPConvert.ToDecimal(v_sql.Value) > 0)
+        {
+            return false;
+        }
+        return true;
+    }
 #endregion
 
 
