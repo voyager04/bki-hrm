@@ -448,7 +448,7 @@ namespace BKI_HRM
             this.m_grv_nhan_su.Location = new System.Drawing.Point(0, 57);
             this.m_grv_nhan_su.Name = "m_grv_nhan_su";
             this.m_grv_nhan_su.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Row;
-            this.m_grv_nhan_su.Size = new System.Drawing.Size(998, 208);
+            this.m_grv_nhan_su.Size = new System.Drawing.Size(1011, 208);
             this.m_grv_nhan_su.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_nhan_su.Styles"));
             this.m_grv_nhan_su.TabIndex = 3;
             this.m_grv_nhan_su.Click += new System.EventHandler(this.m_grv_nhan_su_Click);
@@ -500,7 +500,7 @@ namespace BKI_HRM
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(998, 265);
+            this.panel1.Size = new System.Drawing.Size(1011, 265);
             this.panel1.TabIndex = 24;
             // 
             // panel2
@@ -511,7 +511,7 @@ namespace BKI_HRM
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(998, 51);
+            this.panel2.Size = new System.Drawing.Size(1011, 51);
             this.panel2.TabIndex = 22;
             // 
             // m_lbl
@@ -968,7 +968,7 @@ namespace BKI_HRM
             this.m_tpg_thong_tin_ca_nhan.Location = new System.Drawing.Point(4, 22);
             this.m_tpg_thong_tin_ca_nhan.Name = "m_tpg_thong_tin_ca_nhan";
             this.m_tpg_thong_tin_ca_nhan.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tpg_thong_tin_ca_nhan.Size = new System.Drawing.Size(990, 233);
+            this.m_tpg_thong_tin_ca_nhan.Size = new System.Drawing.Size(1003, 233);
             this.m_tpg_thong_tin_ca_nhan.TabIndex = 0;
             this.m_tpg_thong_tin_ca_nhan.Text = "Thông tin cơ bản";
             this.m_tpg_thong_tin_ca_nhan.ToolTipText = "Thông tin cá nhân";
@@ -1362,7 +1362,7 @@ namespace BKI_HRM
             this.m_tct_chi_tiet_nhan_vien.Location = new System.Drawing.Point(0, 324);
             this.m_tct_chi_tiet_nhan_vien.Name = "m_tct_chi_tiet_nhan_vien";
             this.m_tct_chi_tiet_nhan_vien.SelectedIndex = 0;
-            this.m_tct_chi_tiet_nhan_vien.Size = new System.Drawing.Size(998, 259);
+            this.m_tct_chi_tiet_nhan_vien.Size = new System.Drawing.Size(1011, 259);
             this.m_tct_chi_tiet_nhan_vien.TabIndex = 23;
             this.m_tct_chi_tiet_nhan_vien.SelectedIndexChanged += new System.EventHandler(this.m_tct_chi_tiet_nhan_vien_SelectedIndexChanged);
             // 
@@ -1502,7 +1502,7 @@ namespace BKI_HRM
             this.m_cmd_chon_phap_nhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_chon_phap_nhan.ImageIndex = 5;
             this.m_cmd_chon_phap_nhan.ImageList = this.ImageList;
-            this.m_cmd_chon_phap_nhan.Location = new System.Drawing.Point(870, 304);
+            this.m_cmd_chon_phap_nhan.Location = new System.Drawing.Point(881, 304);
             this.m_cmd_chon_phap_nhan.Name = "m_cmd_chon_phap_nhan";
             this.m_cmd_chon_phap_nhan.Size = new System.Drawing.Size(128, 28);
             this.m_cmd_chon_phap_nhan.TabIndex = 34;
@@ -1514,7 +1514,7 @@ namespace BKI_HRM
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.AutoSize = true;
             this.CancelButton = this.m_cmd_exit;
-            this.ClientSize = new System.Drawing.Size(998, 583);
+            this.ClientSize = new System.Drawing.Size(1011, 583);
             this.Controls.Add(this.m_cmd_chon_phap_nhan);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.label3);
@@ -1527,8 +1527,8 @@ namespace BKI_HRM
             this.Controls.Add(this.m_tct_chi_tiet_nhan_vien);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(1014, 622);
-            this.MinimumSize = new System.Drawing.Size(1014, 622);
+            this.MaximumSize = new System.Drawing.Size(1027, 622);
+            this.MinimumSize = new System.Drawing.Size(1027, 622);
             this.Name = "f201_dm_nhan_su";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F201 - Quản lý hồ sơ nhân sự";
