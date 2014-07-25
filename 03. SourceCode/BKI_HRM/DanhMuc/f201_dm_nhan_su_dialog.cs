@@ -187,12 +187,12 @@ namespace BKI_HRM
                 v_us_chuc_vu.strLUA_CHON = "A";
                 v_us_chuc_vu.Insert();
 
-                US_GD_CHI_TIET_TRANG_THAI_LD v_us_trang_thai = new US_GD_CHI_TIET_TRANG_THAI_LD();
-                v_us_trang_thai.dcID_NHAN_SU = m_us_nhan_su.dcID;
-                v_us_trang_thai.dcID_TRANG_LAO_DONG = 742;
-                v_us_trang_thai.strTRANG_THAI_HIEN_TAI = "Y";
-                v_us_trang_thai.dcID_QUYET_DINH = 1538; // ID quyet dinh TEG
-                v_us_trang_thai.Insert();
+                 US_GD_CHI_TIET_TRANG_THAI_LD v_us_trang_thai = new US_GD_CHI_TIET_TRANG_THAI_LD();
+//                 v_us_trang_thai.dcID_NHAN_SU = m_us_nhan_su.dcID;
+//                 v_us_trang_thai.dcID_TRANG_LAO_DONG = 742;
+//                 v_us_trang_thai.strTRANG_THAI_HIEN_TAI = "Y";
+//                 v_us_trang_thai.dcID_QUYET_DINH = 1538; // ID quyet dinh TEG
+//                 v_us_trang_thai.Insert();
 
                 v_us_trang_thai = new US_GD_CHI_TIET_TRANG_THAI_LD();
                 v_us_trang_thai.dcID_NHAN_SU = m_us_nhan_su.dcID;
@@ -222,11 +222,11 @@ namespace BKI_HRM
                 v_us_chuc_vu.Insert();
 
                 US_GD_CHI_TIET_TRANG_THAI_LD v_us_trang_thai = new US_GD_CHI_TIET_TRANG_THAI_LD();
-                v_us_trang_thai.dcID_NHAN_SU = m_us_nhan_su.dcID;
-                v_us_trang_thai.dcID_TRANG_LAO_DONG = 742;
-                v_us_trang_thai.strTRANG_THAI_HIEN_TAI = "Y";
-                v_us_trang_thai.dcID_QUYET_DINH = 1538; // ID quyet dinh TEG
-                v_us_trang_thai.Insert();
+//                 v_us_trang_thai.dcID_NHAN_SU = m_us_nhan_su.dcID;
+//                 v_us_trang_thai.dcID_TRANG_LAO_DONG = 742;
+//                 v_us_trang_thai.strTRANG_THAI_HIEN_TAI = "Y";
+//                 v_us_trang_thai.dcID_QUYET_DINH = 1538; // ID quyet dinh TEG
+//                 v_us_trang_thai.Insert();
 
                 v_us_trang_thai = new US_GD_CHI_TIET_TRANG_THAI_LD();
                 v_us_trang_thai.dcID_NHAN_SU = m_us_nhan_su.dcID;
