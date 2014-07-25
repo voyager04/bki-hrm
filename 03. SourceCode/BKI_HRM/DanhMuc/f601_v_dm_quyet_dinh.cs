@@ -299,9 +299,9 @@ namespace BKI_HRM {
             this.ShowDialog();
         }
       
-        public void select_data(string ip_str_loai_quyet_dinh, ref US_DM_QUYET_DINH op_us)
+        public void select_data(decimal ip_dc_chon_quyet_dinh, ref US_DM_QUYET_DINH op_us)
         {
-            m_str_loai_quyet_dinh = ip_str_loai_quyet_dinh;
+            m_dc_loai_quyet_dinh = ip_dc_chon_quyet_dinh;
             m_e_form_mode = DataEntryFormMode.SelectDataState;
             m_cmd_delete.Visible = false;
             m_cmd_insert.Visible = false;
@@ -337,7 +337,7 @@ namespace BKI_HRM {
         US_DM_QUYET_DINH m_us = new US_DM_QUYET_DINH();
         DS_DM_QUYET_DINH m_ds = new DS_DM_QUYET_DINH();
         private const String m_str_tim_kiem = "Nhập loại quyết định, mã quyết định, nội dung cần tìm";
-        private string m_str_loai_quyet_dinh;
+        private decimal m_dc_loai_quyet_dinh = -1;
         #endregion
 
         #region Private Methods
@@ -391,9 +391,9 @@ namespace BKI_HRM {
         private void load_data_2_grid() {
             m_v_ds = new DS_V_DM_QUYET_DINH();
             if (m_txt_tim_kiem.Text.Trim() == m_str_tim_kiem || m_txt_tim_kiem.Text.Trim() == "") 
-                m_v_us.FillDatasetSearch(m_v_ds, "",m_str_loai_quyet_dinh, CAppContext_201.getCurrentIDPhapnhan());
+                m_v_us.FillDatasetSearch(m_v_ds, "",m_dc_loai_quyet_dinh, CAppContext_201.getCurrentIDPhapnhan());
             else 
-                m_v_us.FillDatasetSearch(m_v_ds, m_txt_tim_kiem.Text.Trim(),m_str_loai_quyet_dinh, CAppContext_201.getCurrentIDPhapnhan());
+                m_v_us.FillDatasetSearch(m_v_ds, m_txt_tim_kiem.Text.Trim(),m_dc_loai_quyet_dinh, CAppContext_201.getCurrentIDPhapnhan());
             //m_us.FillDataset(m_ds);
             var v_str_search = m_txt_tim_kiem.Text.Trim();
             if (v_str_search.Equals(m_str_tim_kiem)) {

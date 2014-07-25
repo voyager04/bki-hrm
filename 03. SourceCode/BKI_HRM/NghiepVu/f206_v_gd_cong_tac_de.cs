@@ -426,7 +426,7 @@ namespace BKI_HRM
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             m_grb_quyet_dinh.Enabled = true;
             f600_v_dm_quyet_dinh v_frm = new f600_v_dm_quyet_dinh();
-            v_frm.select_data("Đi công tác", ref m_us_dm_quyet_dinh);
+            v_frm.select_data(CHON_QUYET_DINH.CONG_TAC, ref m_us_dm_quyet_dinh);
 
             if (m_us_dm_quyet_dinh.dcID == -1) return;
             m_grb_quyet_dinh.Enabled = false;

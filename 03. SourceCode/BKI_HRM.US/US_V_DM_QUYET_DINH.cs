@@ -239,11 +239,11 @@ public class US_V_DM_QUYET_DINH : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-    public void FillDatasetSearch(DS_V_DM_QUYET_DINH op_ds, string i_str_search, string i_str_loai_qd, decimal ip_dc_id_phap_nhan)
+    public void FillDatasetSearch(DS_V_DM_QUYET_DINH op_ds, string i_str_search, decimal ip_dc_loai_quyet_dinh, decimal ip_dc_id_phap_nhan)
     {
         CStoredProc v_sp = new CStoredProc("pr_V_DM_QUYET_DINH_search");
         v_sp.addNVarcharInputParam("@STR_SEARCH", i_str_search);
-        v_sp.addNVarcharInputParam("@STR_LOAI_QD", i_str_loai_qd);
+        v_sp.addDecimalInputParam("@LOAI_QUYET_DINH", ip_dc_loai_quyet_dinh);
         v_sp.addDecimalInputParam("@ID_PHAP_NHAN", ip_dc_id_phap_nhan);
         v_sp.fillDataSetByCommand(this, op_ds);
     }
