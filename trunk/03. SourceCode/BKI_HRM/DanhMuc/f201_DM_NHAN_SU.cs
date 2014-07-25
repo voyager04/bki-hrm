@@ -1983,7 +1983,7 @@ namespace BKI_HRM
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;
             grid2us_object(m_us, m_grv_nhan_su.Row);
 
-            if (m_us.check_phap_nhan_is_null(m_us.dcID) && CAppContext_201.getCurrentIDPhapnhan() == PHAP_NHAN.TEG)
+            if (/*m_us.check_phap_nhan_is_null(m_us.dcID) &&*/ CAppContext_201.getCurrentIDPhapnhan() == PHAP_NHAN.TEG)
             {
                 m_cmd_chon_phap_nhan.Visible = true;
             }

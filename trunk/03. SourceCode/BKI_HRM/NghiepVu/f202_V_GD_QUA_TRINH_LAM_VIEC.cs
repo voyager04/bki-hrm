@@ -39,7 +39,7 @@ namespace BKI_HRM
         internal SIS.Controls.Button.SiSButton m_cmd_tim_nhan_vien;
         private C1FlexGrid m_grv_qua_trinh_lam_viec;
         internal SIS.Controls.Button.SiSButton m_cmd_delete;
-        internal SIS.Controls.Button.SiSButton m_cmd_kiem_nhiem;
+        internal SIS.Controls.Button.SiSButton m_cmd_bo_nhiem;
         internal SIS.Controls.Button.SiSButton m_cmd_mien_nhiem;
         internal SIS.Controls.Button.SiSButton m_cmd_update;
         private Label m_lbl_mess;
@@ -88,7 +88,7 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_lbl_phim_tat = new System.Windows.Forms.Label();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_kiem_nhiem = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_bo_nhiem = new SIS.Controls.Button.SiSButton();
             this.m_cmd_mien_nhiem = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
@@ -133,7 +133,7 @@ namespace BKI_HRM
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.m_lbl_phim_tat);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_kiem_nhiem);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_bo_nhiem);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_mien_nhiem);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
@@ -170,20 +170,20 @@ namespace BKI_HRM
             this.m_cmd_update.Visible = false;
             this.m_cmd_update.Click += new System.EventHandler(this.m_cmd_update_Click);
             // 
-            // m_cmd_kiem_nhiem
+            // m_cmd_bo_nhiem
             // 
-            this.m_cmd_kiem_nhiem.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_kiem_nhiem.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_kiem_nhiem.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_kiem_nhiem.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_kiem_nhiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_kiem_nhiem.ImageIndex = 6;
-            this.m_cmd_kiem_nhiem.ImageList = this.ImageList;
-            this.m_cmd_kiem_nhiem.Location = new System.Drawing.Point(700, 4);
-            this.m_cmd_kiem_nhiem.Name = "m_cmd_kiem_nhiem";
-            this.m_cmd_kiem_nhiem.Size = new System.Drawing.Size(105, 28);
-            this.m_cmd_kiem_nhiem.TabIndex = 17;
-            this.m_cmd_kiem_nhiem.Text = "&Bổ nhiệm";
+            this.m_cmd_bo_nhiem.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_bo_nhiem.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_bo_nhiem.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_bo_nhiem.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_bo_nhiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_bo_nhiem.ImageIndex = 6;
+            this.m_cmd_bo_nhiem.ImageList = this.ImageList;
+            this.m_cmd_bo_nhiem.Location = new System.Drawing.Point(700, 4);
+            this.m_cmd_bo_nhiem.Name = "m_cmd_bo_nhiem";
+            this.m_cmd_bo_nhiem.Size = new System.Drawing.Size(105, 28);
+            this.m_cmd_bo_nhiem.TabIndex = 17;
+            this.m_cmd_bo_nhiem.Text = "&Bổ nhiệm";
             // 
             // m_cmd_mien_nhiem
             // 
@@ -522,7 +522,7 @@ namespace BKI_HRM
 
         private void update_data()
         {
-            m_cmd_kiem_nhiem.Visible = true;
+            m_cmd_bo_nhiem.Visible = true;
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_qua_trinh_lam_viec)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row)) return;
             if (m_grv_qua_trinh_lam_viec.Rows[m_grv_qua_trinh_lam_viec.Row].UserData != null)
@@ -574,8 +574,8 @@ namespace BKI_HRM
                 load_data_2_grid_search();
             }
             
-            m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, "",CAppContext_201.getCurrentIDPhapnhan());
-            int v_i_count = m_ds_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Count;
+//             m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, "",CAppContext_201.getCurrentIDPhapnhan());
+//             int v_i_count = m_ds_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Count;
             f202_v_gd_qua_trinh_lam_viec_de v_fDE = new f202_v_gd_qua_trinh_lam_viec_de();
             v_fDE.display_for_bo_nhiem(m_us_qua_trinh_lam_viec, ip_str_loai_thay_doi);
 
@@ -590,24 +590,12 @@ namespace BKI_HRM
                 load_data_2_grid_search();
             }
             
-   //         m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, "",CAppContext_201.getCurrentIDPhapnhan());
-//             if (m_ds_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Count > v_i_count)
-//             {
-//                 bool v_dlr = BaseMessages.MsgBox_Confirm("Có miễn nhiệm chức vũ cũ không?");
-//                 if (v_dlr)
-//                 {
-//                     US_V_GD_QUA_TRINH_LAM_VIEC v_us_qua_trinh_lam_viec = new US_V_GD_QUA_TRINH_LAM_VIEC();
-//                     v_fDE.get_us(ref v_us_qua_trinh_lam_viec);
-//                     m_txt_tim_kiem.Text = v_us_qua_trinh_lam_viec.strMA_NV;
-//                     load_data_2_grid_search();
-//                     m_cmd_kiem_nhiem.Visible = false;
-//                 }
-//             }
+  
 		}
 
 		private void update_v_gd_qua_trinh_lam_viec()
         {
-            m_cmd_kiem_nhiem.Visible = true;
+            m_cmd_bo_nhiem.Visible = true;
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_qua_trinh_lam_viec)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row)) return;			
             if (m_grv_qua_trinh_lam_viec.Rows[m_grv_qua_trinh_lam_viec.Row].UserData != null)
@@ -666,7 +654,7 @@ namespace BKI_HRM
 		}
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-			m_cmd_kiem_nhiem.Click += new EventHandler(m_cmd_kiem_nhiem_Click);
+			m_cmd_bo_nhiem.Click += new EventHandler(m_cmd_bo_nhiem_Click);
 			
 			m_cmd_mien_nhiem.Click += new EventHandler(m_cmd_mien_nhiem_Click);
            m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
@@ -756,7 +744,7 @@ namespace BKI_HRM
 			}
 		}
 
-		private void m_cmd_kiem_nhiem_Click(object sender, EventArgs e) {
+		private void m_cmd_bo_nhiem_Click(object sender, EventArgs e) {
 			try{
 				insert_v_gd_qua_trinh_lam_viec("kiem_nhiem");
 			}
