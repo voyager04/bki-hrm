@@ -551,31 +551,35 @@ namespace BKI_HRM
         }
         private void m_grv_trang_thai_ld_Click(object sender, EventArgs e)
         {
-            if (m_grv_trang_thai_ld.Col == (int)e_col_Number.MA_QUYET_DINH)
+            if (m_grv_trang_thai_ld.Rows[m_grv_trang_thai_ld.Row].UserData != null)
             {
-                if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_trang_thai_ld)) return;
-                if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_trang_thai_ld, m_grv_trang_thai_ld.Row)) return;
-                grid2us_object(m_us, m_grv_trang_thai_ld.Row);
-                if (m_us.dcID_QUYET_DINH > 0)
+                if (m_grv_trang_thai_ld.Col == (int)e_col_Number.MA_QUYET_DINH)
                 {
-                    US_DM_QUYET_DINH v_us = new US_DM_QUYET_DINH(m_us.dcID_QUYET_DINH);
-                    if (v_us.strLINK != "")
+                    if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_trang_thai_ld)) return;
+                    if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_trang_thai_ld, m_grv_trang_thai_ld.Row)) return;
+                    grid2us_object(m_us, m_grv_trang_thai_ld.Row);
+                    if (m_us.dcID_QUYET_DINH > 0)
                     {
-                        //FileExplorer.DownloadFile(v_us.strLINK);
-                        f202_v_gd_qua_trinh_lam_viec_view v_frm = new f202_v_gd_qua_trinh_lam_viec_view();
-                        v_frm.display_for_view_quyet_dinh(v_us);
+                        US_DM_QUYET_DINH v_us = new US_DM_QUYET_DINH(m_us.dcID_QUYET_DINH);
+                        if (v_us.strLINK != "")
+                        {
+                            //FileExplorer.DownloadFile(v_us.strLINK);
+                            f202_v_gd_qua_trinh_lam_viec_view v_frm = new f202_v_gd_qua_trinh_lam_viec_view();
+                            v_frm.display_for_view_quyet_dinh(v_us);
+                        }
+                        else
+                        {
+                            BaseMessages.MsgBox_Error("Chưa có file đính kèm.");
+                        }
                     }
+
                     else
                     {
                         BaseMessages.MsgBox_Error("Chưa có file đính kèm.");
                     }
                 }
-
-                else
-                {
-                    BaseMessages.MsgBox_Error("Chưa có file đính kèm.");
-                }
             }
+            
          
             
         }
