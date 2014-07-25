@@ -216,7 +216,7 @@ namespace BKI_HRM
             {
                 US_GD_CHI_TIET_CHUC_VU v_us_chuc_vu = new US_GD_CHI_TIET_CHUC_VU();
                 v_us_chuc_vu.dcID_NHAN_SU = m_us_nhan_su.dcID;
-                v_us_chuc_vu.dcID_DON_VI = 235;
+                v_us_chuc_vu.dcID_DON_VI = 236;
                 v_us_chuc_vu.dcID_CHUC_VU = 25;
                 v_us_chuc_vu.strLUA_CHON = "A";
                 v_us_chuc_vu.Insert();
