@@ -80,4 +80,14 @@ namespace BKI_HRM.US {
         public const decimal TE = 2;
         public const decimal TEG = 3;
     }
+    public class CHON_QUYET_DINH
+    {
+        public const decimal TAT_CA = -1;
+        public const decimal BO_NHIEM = 1;
+        public const decimal MIEN_NHIEM = 2;
+        public const decimal DU_AN = 679;
+        public const decimal CONG_TAC = 715;
+        public const decimal DIEU_CHUYEN = 646;
+        public const decimal TRANG_THAI_LD = 6;
+    }
 }
