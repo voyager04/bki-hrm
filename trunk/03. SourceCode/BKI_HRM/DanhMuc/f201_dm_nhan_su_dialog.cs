@@ -197,7 +197,7 @@ namespace BKI_HRM
                 v_us_trang_thai = new US_GD_CHI_TIET_TRANG_THAI_LD();
                 v_us_trang_thai.dcID_NHAN_SU = m_us_nhan_su.dcID;
                 v_us_trang_thai.dcID_TRANG_LAO_DONG = 742;
-                v_us_trang_thai.strTRANG_THAI_HIEN_TAI = "Y";
+                v_us_trang_thai.strTRANG_THAI_HIEN_TAI = "N";
                 v_us_trang_thai.dcID_QUYET_DINH = 1541; // ID quyet dinh TU
                 v_us_trang_thai.Insert();
                 BaseMessages.MsgBox_Infor("Chuyển pháp nhân thành công.");
@@ -231,7 +231,7 @@ namespace BKI_HRM
                 v_us_trang_thai = new US_GD_CHI_TIET_TRANG_THAI_LD();
                 v_us_trang_thai.dcID_NHAN_SU = m_us_nhan_su.dcID;
                 v_us_trang_thai.dcID_TRANG_LAO_DONG = 742;
-                v_us_trang_thai.strTRANG_THAI_HIEN_TAI = "Y";
+                v_us_trang_thai.strTRANG_THAI_HIEN_TAI = "N";
                 v_us_trang_thai.dcID_QUYET_DINH = 1540; // ID quyet dinh TE
                 v_us_trang_thai.Insert();
                 BaseMessages.MsgBox_Infor("Chuyển pháp nhân thành công.");
