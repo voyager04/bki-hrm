@@ -50,6 +50,10 @@ namespace BKI_HRM.NghiepVu
             m_str_ma_du_an_old = ip_us.strMA_DU_AN;
         }
 
+        public string lay_ma_du_an_vua_insert()
+        {
+            return m_str_ma_du_an;
+        }
         #endregion
 
         #region Data Structure
@@ -91,11 +95,9 @@ namespace BKI_HRM.NghiepVu
         ITransferDataRow m_obj_trans_nhan_vien;
         ITransferDataRow m_obj_trans_quyet_dinh;
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
-        private bool m_b_data_is_null_mode = false;
+        private string m_str_ma_du_an = "";
 
         US_V_DM_DU_AN_QUYET_DINH_TU_DIEN m_us = new US_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
-        US_V_DM_NHAN_SU_DU_AN m_us_nhan_vien = new US_V_DM_NHAN_SU_DU_AN();
-        US_V_DM_QUYET_DINH m_us_quyet_dinh = new US_V_DM_QUYET_DINH();
 
         private DataEntryFileMode m_e_file_mode;
         private string m_str_domain = ConfigurationSettings.AppSettings["DOMAIN"];
@@ -175,6 +177,7 @@ namespace BKI_HRM.NghiepVu
             {
                 coll.Add(v_rows[i][DM_NHAN_SU.HO_DEM] + " - " + v_rows[i][DM_NHAN_SU.TEN] + " - " + v_rows[i][DM_NHAN_SU.MA_NV]);
                 coll.Add(v_rows[i][DM_NHAN_SU.TEN] + " - " + v_rows[i][DM_NHAN_SU.HO_DEM] + " " + v_rows[i][DM_NHAN_SU.TEN] + " - " + v_rows[i][DM_NHAN_SU.MA_NV]);
+                coll.Add(v_rows[i][DM_NHAN_SU.MA_NV] + " - " + v_rows[i][DM_NHAN_SU.HO_DEM] + " " + v_rows[i][DM_NHAN_SU.TEN] + " - " + v_rows[i][DM_NHAN_SU.MA_NV]);
             }
             m_txt_search_nhan_vien.AutoCompleteCustomSource = coll;
         }
@@ -891,6 +894,7 @@ namespace BKI_HRM.NghiepVu
                 #endregion
 
                 m_us.CommitTransaction();
+                m_str_ma_du_an = m_txt_ma_du_an.Text;
                 BaseMessages.MsgBox_Infor("Lưu dữ liệu thành công");
                 this.Close();
             }
