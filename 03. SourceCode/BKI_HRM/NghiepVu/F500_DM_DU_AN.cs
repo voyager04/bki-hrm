@@ -711,18 +711,24 @@ namespace BKI_HRM
             f500_dm_du_an_detail v_fDE = new f500_dm_du_an_detail();
             v_fDE.display();
             load_data_2_grid_du_an();
+            load_data_2_grid_nhan_su();
+            m_fg_du_an.Select(m_fg_du_an.FindRow(v_fDE.lay_ma_du_an_vua_insert(), 1, (int)e_col_Number_du_an.MA_DU_AN, true), (int)e_col_Number_du_an.MA_DU_AN);
         }
 
         private void update_v_dm_du_an_quyet_dinh_tu_dien()
         {
+            var currentRow = 0;
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg_du_an)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg_du_an, m_fg_du_an.Row)) return;
+            currentRow = m_fg_du_an.Row;
             grid2us_object_du_an(m_us_du_an, m_fg_du_an.Row);
 
             f500_dm_du_an_detail v_fDE = new f500_dm_du_an_detail();
             v_fDE.set_us_du_an(m_us_du_an);
             v_fDE.display();
             load_data_2_grid_du_an();
+            load_data_2_grid_nhan_su();
+            m_fg_du_an.Select(currentRow, (int)e_col_Number_du_an.MA_DU_AN);
         }
 
         private void delete_du_an()
@@ -738,16 +744,15 @@ namespace BKI_HRM
                                                                 m_us_du_an.dcID));
             if (v_ds_ct_da.GD_CHI_TIET_DU_AN.Rows.Count > 0 && BaseMessages.MsgBox_Confirm("Đang có nhân viên trong dự án. Bạn có chắc chắn muốn xóa không?"))
             {
-                m_fg_du_an.Rows.Remove(m_fg_du_an.Row);
                 delete_quyet_dinh_cua_du_an(new US_DM_DU_AN(m_us_du_an.dcID));
             }
             if (v_ds_ct_da.GD_CHI_TIET_DU_AN.Rows.Count == 0 && BaseMessages.MsgBox_Confirm("Bạn có chắc chắn muốn xóa dự án này không?"))
             {
-                m_fg_du_an.Rows.Remove(m_fg_du_an.Row);
                 delete_quyet_dinh_cua_du_an(new US_DM_DU_AN(m_us_du_an.dcID));
             }
             load_data_2_grid_du_an();
             load_data_2_grid_nhan_su();
+            m_fg_du_an.Select(1, (int)e_col_Number_du_an.MA_DU_AN);
         }
 
         private void delete_quyet_dinh_cua_du_an(US_DM_DU_AN ip_us)
