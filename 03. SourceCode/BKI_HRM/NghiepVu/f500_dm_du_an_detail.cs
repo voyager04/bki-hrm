@@ -546,6 +546,13 @@ namespace BKI_HRM.NghiepVu
                 US_DM_QUYET_DINH v_us = new US_DM_QUYET_DINH();
                 DS_DM_QUYET_DINH v_ds = new DS_DM_QUYET_DINH();
                 var v_str_ma_quyet_dinh = m_fg_quyet_dinh[v_i_cur_row, (int)e_col_Number_quyet_dinh.MA_QUYET_DINH].ToString();
+                var v_col_link = m_fg_quyet_dinh[v_i_cur_row, (int)e_col_Number_quyet_dinh.LINK];
+                string v_str_file_name = "";
+                if (v_col_link != null)
+                {
+                    v_str_file_name = v_col_link.ToString();
+                }
+
                 // Lấy ID QĐ theo Mã QĐ trên gird
                 v_us.FillDataset(v_ds, string.Format("WHERE {0} = '{1}'",
                                                     V_DM_QUYET_DINH.MA_QUYET_DINH,
@@ -575,7 +582,6 @@ namespace BKI_HRM.NghiepVu
                         }
 
                         #region Check File đính kèm
-                        var v_str_file_name = m_fg_quyet_dinh[v_i_cur_row, (int)e_col_Number_quyet_dinh.LINK].ToString();
                         if (FileExplorer.IsExistedFile(m_str_directory_to + v_str_file_name))
                         {
                             BaseMessages.MsgBox_Infor("Tên file đã tồn tại.");
@@ -598,7 +604,7 @@ namespace BKI_HRM.NghiepVu
                     }
 
                     #region Check File đính kèm
-                    var v_str_file_name = m_fg_quyet_dinh[v_i_cur_row, (int)e_col_Number_quyet_dinh.LINK].ToString();
+
                     if (FileExplorer.IsExistedFile(m_str_directory_to + v_str_file_name))
                     {
                         BaseMessages.MsgBox_Infor("Tên file đã tồn tại.");
@@ -701,17 +707,21 @@ namespace BKI_HRM.NghiepVu
             {
                 m_us.BeginTransaction();
                 #region Xử lý file đính kèm
-
                 for (int v_i_cur_row = m_fg_quyet_dinh.Rows.Fixed; v_i_cur_row < m_fg_quyet_dinh.Rows.Count - 1; v_i_cur_row++)
                 {
-                    FileExplorer.fileName = m_fg_quyet_dinh[v_i_cur_row, (int)e_col_Number_quyet_dinh.LINK].ToString();
-                    if (FileExplorer.IsExistedFile(m_str_directory_to + FileExplorer.fileName) == false)
+                    var v_col_link = m_fg_quyet_dinh[v_i_cur_row, (int)e_col_Number_quyet_dinh.LINK];
+                    if (v_col_link != null)
                     {
-                        if (m_str_user_name != "")
-                            FileExplorer.UploadFile(m_str_domain, m_str_directory_to, m_str_user_name, m_str_password);
-                        else
-                            FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
+                        FileExplorer.fileName = v_col_link.ToString();
+                        if (FileExplorer.IsExistedFile(m_str_directory_to + FileExplorer.fileName) == false)
+                        {
+                            if (m_str_user_name != "")
+                                FileExplorer.UploadFile(m_str_domain, m_str_directory_to, m_str_user_name, m_str_password);
+                            else
+                                FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
+                        }
                     }
+
                 }
 
                 //switch (m_e_file_mode)
