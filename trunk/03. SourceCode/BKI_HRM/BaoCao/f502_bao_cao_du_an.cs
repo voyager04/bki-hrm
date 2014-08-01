@@ -498,7 +498,8 @@ namespace BKI_HRM
                                         -1,
                                         -1,
                                         0,
-                                        CAppContext_201.getCurrentIDPhapnhan());
+                                        CAppContext_201.getCurrentIDPhapnhan(),
+                                        (decimal)e_tu_dien.QĐ_THANH_LAP_DU_AN);
             if (v_ds.Tables[0].Rows.Count > 0)
             {
                 result = v_ds.Tables[0].Rows.Count;

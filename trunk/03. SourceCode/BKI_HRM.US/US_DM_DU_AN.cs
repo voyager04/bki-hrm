@@ -221,28 +221,6 @@ namespace BKI_HRM.US
             pm_objDR["ID_CO_CHE"] = System.Convert.DBNull;
         }
 
-        public decimal dcID_QUYET_DINH
-        {
-            get
-            {
-                return CNull.RowNVLDecimal(pm_objDR, "ID_QUYET_DINH", IPConstants.c_DefaultDecimal);
-            }
-            set
-            {
-                pm_objDR["ID_QUYET_DINH"] = value;
-            }
-        }
-
-        public bool IsID_QUYET_DINHNull()
-        {
-            return pm_objDR.IsNull("ID_QUYET_DINH");
-        }
-
-        public void SetID_QUYET_DINHNull()
-        {
-            pm_objDR["ID_QUYET_DINH"] = System.Convert.DBNull;
-        }
-
         #endregion
         #region "Init Functions"
         public US_DM_DU_AN()

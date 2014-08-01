@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -16,19 +17,24 @@ using BKI_HRM.DS.CDBNames;
 using IP.Core.IPSystemAdmin;
 using IP.Core.IPUserService;
 using IP.Core.IPData;
+using US_CM_DM_TU_DIEN = BKI_HRM.US.US_CM_DM_TU_DIEN;
 
 namespace BKI_HRM.NghiepVu
 {
     public partial class F500_gd_chi_tiet_du_an_de : Form
     {
         #region public Interface
-        public void display_for_insert(string ip_str_ma_du_an)
+        public void display_for_insert(US_V_DM_DU_AN_QUYET_DINH_TU_DIEN ip_us)
         {
-            // insert 1 nhân viên vào dự án
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             m_e_file_mode = DataEntryFileMode.UploadFile;
+            m_e_quyet_dinh_mode = DataEntryFormMode.ViewDataState;
+
+            m_us_quyet_dinh = new US_DM_QUYET_DINH(ip_us.dcID_QUYET_DINH);
+            us_quyet_dinh_to_form(m_us_quyet_dinh);
+
+            m_us_du_an = ip_us;
             load_data_2_control();
-            m_txt_ma_du_an.Text = ip_str_ma_du_an;
             this.ShowDialog();
         }
 
@@ -51,9 +57,10 @@ namespace BKI_HRM.NghiepVu
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             load_data_2_control();
             us_obj_2_form(i_dc_id_gd_chi_tiet_du_an);
-            m_us.dcID = i_dc_id_gd_chi_tiet_du_an;
+            //m_us.dcID = i_dc_id_gd_chi_tiet_du_an;
             m_e_file_mode = DataEntryFileMode.EditFile;
             m_str_link_old = m_lbl_file_name.Text;
+            m_str_ma_quyet_dinh_old = m_op_v_dm_da_qd_td.strMA_QUYET_DINH;
             this.ShowDialog();
         }
 
@@ -66,10 +73,19 @@ namespace BKI_HRM.NghiepVu
         #endregion
 
         #region Members
-        US_GD_CHI_TIET_DU_AN m_us = new US_GD_CHI_TIET_DU_AN();
-        DS_GD_CHI_TIET_DU_AN m_ds = new DS_GD_CHI_TIET_DU_AN();
+        ITransferDataRow m_obj_trans;
+        DataEntryFormMode m_dgl_result = DataEntryFormMode.ViewDataState;
+        US_V_DM_DU_AN_QUYET_DINH_TU_DIEN m_us_du_an = new US_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
+        DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN m_ds_du_an = new DS_V_DM_DU_AN_QUYET_DINH_TU_DIEN();
+        US_V_DM_NHAN_SU_DU_AN m_us = new US_V_DM_NHAN_SU_DU_AN();
+        DS_V_DM_NHAN_SU_DU_AN m_ds = new DS_V_DM_NHAN_SU_DU_AN();
+
         US_DM_QUYET_DINH m_us_quyet_dinh = new US_DM_QUYET_DINH();
+        private string m_str_ma_quyet_dinh_old;
+
+
         DataEntryFormMode m_e_form_mode;
+        DataEntryFormMode m_e_quyet_dinh_mode;
         bool m_b_check_quyet_dinh_save;
         bool m_b_check_quyet_dinh_null = false;
         private string m_str_ma_qd = "";
@@ -81,11 +97,28 @@ namespace BKI_HRM.NghiepVu
         private string m_str_password = ConfigurationSettings.AppSettings["PASSWORD_SHARE"];
         private decimal m_str_id_hop_dong_old;
         private string m_str_link_old;
+        #endregion
 
+        #region Data Structure
         enum e_number
         {
             VI_TRI_DU_AN = 11,
             DANH_HIEU = 12
+        }
+
+        private enum e_col_Number_nhan_vien
+        {
+            HO_DEM = 1,
+            TEN = 2,
+            VI_TRI = 3,
+            TRANG_THAI_LAO_DONG = 4,
+            THOI_DIEM_TG = 5,
+            THOI_DIEM_KT = 6,
+            THOI_GIAN_TG = 7,
+            DANH_HIEU = 8,
+            MA_QUYET_DINH = 9,
+            LOAI_QD = 10,
+            MO_TA = 11
         }
         #endregion
 
@@ -94,6 +127,58 @@ namespace BKI_HRM.NghiepVu
         {
             CControlFormat.setFormStyle(this);
             m_txt_ma_du_an.Enabled = false;
+        }
+
+        private void set_inital_form_load()
+        {
+            m_obj_trans = get_trans_object_nhan_vien(m_fg_nhan_su);
+        }
+
+        private ITransferDataRow get_trans_object_nhan_vien(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
+        {
+            Hashtable v_htb = new Hashtable();
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.HO_DEM, e_col_Number_nhan_vien.HO_DEM);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.TEN, e_col_Number_nhan_vien.TEN);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.VI_TRI, e_col_Number_nhan_vien.VI_TRI);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.TRANG_THAI_LAO_DONG, e_col_Number_nhan_vien.TRANG_THAI_LAO_DONG);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_DIEM_TG, e_col_Number_nhan_vien.THOI_DIEM_TG);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_DIEM_KT, e_col_Number_nhan_vien.THOI_DIEM_KT);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_GIAN_TG, e_col_Number_nhan_vien.THOI_GIAN_TG);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.DANH_HIEU, e_col_Number_nhan_vien.DANH_HIEU);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_QUYET_DINH, e_col_Number_nhan_vien.MA_QUYET_DINH);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.LOAI_QD, e_col_Number_nhan_vien.LOAI_QD);
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.MO_TA, e_col_Number_nhan_vien.MO_TA);
+
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_DM_NHAN_SU_DU_AN.NewRow());
+            return v_obj_trans;
+        }
+
+        private void add_new_nhan_su_to_grid(US_V_DM_NHAN_SU_DU_AN ip_us, int i_grid_row)
+        {
+            DS_V_DM_NHAN_SU_DU_AN v_ds = new DS_V_DM_NHAN_SU_DU_AN();
+            var v_dr = v_ds.V_DM_NHAN_SU_DU_AN.NewRow();
+            v_dr[V_DM_NHAN_SU_DU_AN.HO_DEM] = ip_us.strHO_DEM;
+            v_dr[V_DM_NHAN_SU_DU_AN.TEN] = ip_us.strTEN;
+            v_dr[V_DM_NHAN_SU_DU_AN.VI_TRI] = ip_us.strVI_TRI;
+            v_dr[V_DM_NHAN_SU_DU_AN.TRANG_THAI_LAO_DONG] = ip_us.strTRANG_THAI_LAO_DONG;
+            v_dr[V_DM_NHAN_SU_DU_AN.THOI_DIEM_TG] = ip_us.datTHOI_DIEM_TG;
+            v_dr[V_DM_NHAN_SU_DU_AN.THOI_DIEM_KT] = ip_us.datTHOI_DIEM_KT;
+            v_dr[V_DM_NHAN_SU_DU_AN.THOI_GIAN_TG] = ip_us.dcTHOI_GIAN_TG;
+            v_dr[V_DM_NHAN_SU_DU_AN.DANH_HIEU] = ip_us.strDANH_HIEU;
+            v_dr[V_DM_NHAN_SU_DU_AN.MA_QUYET_DINH] = ip_us.strMA_QUYET_DINH;
+            v_dr[V_DM_NHAN_SU_DU_AN.LOAI_QD] = ip_us.strLOAI_QD;
+            v_dr[V_DM_NHAN_SU_DU_AN.MO_TA] = ip_us.strMO_TA;
+
+            ip_us.Me2DataRow(v_dr);
+
+            m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
+        }
+
+        private void grid2us_object(US_V_DM_NHAN_SU_DU_AN i_us, int i_grid_row)
+        {
+            var v_dr = (DataRow)m_fg_nhan_su.Rows[i_grid_row].UserData;
+            m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
+            i_us.DataRow2Me(v_dr);
         }
 
         private void auto_suggest_text()
@@ -221,47 +306,86 @@ namespace BKI_HRM.NghiepVu
             }
         }
 
-        private void form_2_us_du_an()
+        private void us_quyet_dinh_to_form(US_DM_QUYET_DINH ip_us)
         {
-            m_us.dcID_VI_TRI = CIPConvert.ToDecimal(m_cbo_vi_tri.SelectedValue.ToString());
+            m_str_ma_quyet_dinh_old = ip_us.strMA_QUYET_DINH;
+
+            m_txt_ma_quyet_dinh.Text = ip_us.strMA_QUYET_DINH.Trim();
+            m_lbl_loai_qd.Text = new US_CM_DM_TU_DIEN(CIPConvert.ToDecimal(TU_DIEN.QD_THANH_LAP_DU_AN)).strTEN;
+            m_dat_ngay_ky.Value = ip_us.datNGAY_KY;
+            m_dat_ngay_co_hieu_luc_qd.Value = ip_us.datNGAY_CO_HIEU_LUC;
+            if (ip_us.datNGAY_HET_HIEU_LUC > DateTime.Parse("01/01/1900"))
+            {
+                m_dat_ngay_het_hieu_luc_qd.Checked = true;
+                m_dat_ngay_het_hieu_luc_qd.Value = ip_us.datNGAY_HET_HIEU_LUC;
+            }
+            else
+            {
+                m_dat_ngay_kt.Checked = false;
+            }
+
+            m_lbl_file_name.Text = ip_us.strLINK;
+            m_txt_noi_dung.Text = ip_us.strNOI_DUNG;
+        }
+
+        private void form_2_us_nhan_vien()
+        {
+            m_us.dcID_DU_AN = m_us_du_an.dcID;
+            m_us.strMA_DU_AN = m_us_du_an.strMA_DU_AN;
+            m_us.strTEN_DU_AN = m_us_du_an.strTEN_DU_AN;
+
+
+            US_DM_NHAN_SU v_us_nhan_su = new US_DM_NHAN_SU();
+            DS_DM_NHAN_SU v_ds_nhan_su = new DS_DM_NHAN_SU();
+            v_us_nhan_su.FillDataset_search_by_ma_nv(v_ds_nhan_su, m_lbl_ma_nhan_vien.Text);
+            if (v_ds_nhan_su.DM_NHAN_SU.Rows.Count > 0)
+            {
+                m_us.dcID_NHAN_SU = (decimal)v_ds_nhan_su.DM_NHAN_SU.Rows[0][DM_NHAN_SU.ID];
+                m_us.strMA_NV = v_ds_nhan_su.DM_NHAN_SU.Rows[0][DM_NHAN_SU.MA_NV].ToString();
+                m_us.strHO_DEM = v_ds_nhan_su.DM_NHAN_SU.Rows[0][DM_NHAN_SU.HO_DEM].ToString();
+                m_us.strTEN = v_ds_nhan_su.DM_NHAN_SU.Rows[0][DM_NHAN_SU.TEN].ToString();
+            }
+
+            m_us.dcID_VI_TRI = (decimal)m_cbo_vi_tri.SelectedValue;
+            m_us.strVI_TRI = m_cbo_vi_tri.Text;
+
+            US_V_GD_TRANG_THAI_LAO_DONG v_us_trang_thai_ld = new US_V_GD_TRANG_THAI_LAO_DONG();
+            DS_V_GD_TRANG_THAI_LAO_DONG v_ds_trang_thai_ld = new DS_V_GD_TRANG_THAI_LAO_DONG();
+            v_us_trang_thai_ld.FillDatasetByManhanvien_trang_thai_hien_tai(v_ds_trang_thai_ld, m_lbl_ma_nhan_vien.Text, CAppContext_201.getCurrentIDPhapnhan());
+            if (v_ds_trang_thai_ld.V_GD_TRANG_THAI_LAO_DONG.Rows.Count > 0)
+            {
+                m_us.strTRANG_THAI_LAO_DONG = v_ds_trang_thai_ld.V_GD_TRANG_THAI_LAO_DONG.Rows[0][V_GD_TRANG_THAI_LAO_DONG.TRANG_THAI_LAO_DONG].ToString();
+            }
+
+            m_us.datTHOI_DIEM_TG = m_dat_tham_gia.Value;
+            m_us.datTHOI_DIEM_KT = m_dat_ngay_kt.Value;
+            m_us.dcTHOI_GIAN_TG = CIPConvert.ToDecimal(m_txt_thoi_gian_tham_gia.Text);
+
+            m_us.dcID_DANH_HIEU = (decimal)m_cbo_danh_hieu.SelectedValue;
+            m_us.strDANH_HIEU = m_cbo_danh_hieu.Text;
+
+            m_us.strMA_QUYET_DINH = m_txt_ma_quyet_dinh.Text;
+            m_us.strLOAI_QD = m_lbl_loai_quyet_dinh.Text;
             m_us.strMO_TA = m_txt_mo_ta.Text;
-
-            if (m_cbo_danh_hieu.SelectedValue.ToString() != "-1")
-                m_us.dcID_DANH_HIEU = CIPConvert.ToDecimal(m_cbo_danh_hieu.SelectedValue.ToString());
-
-            if (m_dat_ngay_kt.Checked)
-                m_us.datTHOI_DIEM_KT = m_dat_ngay_kt.Value.Date;
-            else
-                m_us.SetTHOI_DIEM_KTNull();
-
-            m_us.datTHOI_DIEM_TG = m_dat_tham_gia.Checked ? m_dat_tham_gia.Value : DateTime.Parse("01/01/1900");
-
-            if (m_txt_thoi_gian_tham_gia.Text != "")
-                m_us.dcTHOI_GIAN_TG = CIPConvert.ToDecimal(m_txt_thoi_gian_tham_gia.Text);
-            else
-                m_us.SetTHOI_GIAN_TGNull();
-
-            DS_DM_NHAN_SU v_ds_dm_nhan_su = new DS_DM_NHAN_SU();
-            US_DM_NHAN_SU v_us_dm_nhan_su = new US_DM_NHAN_SU();
-            v_us_dm_nhan_su.FillDataset_search_by_ma_nv(v_ds_dm_nhan_su, m_lbl_ho_dem.Text);
-            if (v_ds_dm_nhan_su.Tables[0].Rows.Count != 0)
-                m_us.dcID_NHAN_SU = CIPConvert.ToDecimal(v_ds_dm_nhan_su.Tables[0].Rows[0]["ID"]);
         }
 
         private void form_to_us_quyet_dinh()
         {
-            m_us_quyet_dinh.strMA_QUYET_DINH = m_txt_ma_quyet_dinh.Text.Trim();
-            m_us_quyet_dinh.strNOI_DUNG = m_txt_noi_dung.Text.Trim();
-            m_us_quyet_dinh.strLINK = m_lbl_file_name.Text;
-            m_us_quyet_dinh.dcID_LOAI_QD = CIPConvert.ToDecimal(TU_DIEN.QD_THANH_LAP_DU_AN);
-            m_us_quyet_dinh.datNGAY_KY = m_dat_ngay_ky.Value;
-            m_us_quyet_dinh.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc_qd.Value;
+            m_us.strMA_QUYET_DINH = m_txt_ma_quyet_dinh.Text;
+            m_us.datNGAY_KY = m_dat_ngay_ky.Value;
+            m_us.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc_qd.Value;
             if (m_dat_ngay_het_hieu_luc_qd.Checked)
-                m_us_quyet_dinh.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc_qd.Value;
+                m_us.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc_qd.Value;
             else
-                m_us_quyet_dinh.SetNGAY_HET_HIEU_LUCNull();
-            m_str_ma_qd = m_txt_ma_quyet_dinh.Text.Trim();
+                m_us.SetNGAY_HET_HIEU_LUCNull();
+            m_us.strNOI_DUNG = m_txt_noi_dung.Text;
         }
+
+
+
+
+
+
 
         private bool check_data_is_ok()
         {
@@ -288,7 +412,7 @@ namespace BKI_HRM.NghiepVu
                 MessageBox.Show("Phải có mã nhân sự");
                 return false;
             }
-            if (m_lbl_ho_dem.Text == "")
+            if (m_lbl_ma_nhan_vien.Text == "")
             {
                 MessageBox.Show("Phải có mã nhân sự");
                 return false;
@@ -310,7 +434,7 @@ namespace BKI_HRM.NghiepVu
             v_us_dm_nhan_su.FillDataset_search_by_ma_nv(v_ds_dm_nhan_su, v_strs[v_strs.Length - 1].Trim());
             if (v_ds_dm_nhan_su.Tables[0].Rows.Count == 0)
                 return;
-            m_lbl_ho_dem.Text = v_ds_dm_nhan_su.Tables[0].Rows[0]["MA_NV"].ToString();
+            m_lbl_ma_nhan_vien.Text = v_ds_dm_nhan_su.Tables[0].Rows[0]["MA_NV"].ToString();
             m_lbl_ho_va_ten.Text = v_ds_dm_nhan_su.Tables[0].Rows[0]["HO_DEM"] + " " +
                                    v_ds_dm_nhan_su.Tables[0].Rows[0]["TEN"];
             m_lbl_ngay_sinh.Text = v_ds_dm_nhan_su.Tables[0].Rows[0]["NGAY_SINH"].ToString().Split(' ')[0];
@@ -319,45 +443,46 @@ namespace BKI_HRM.NghiepVu
 
         private void chon_quyet_dinh()
         {
-            m_b_check_quyet_dinh_save = false;
+            m_e_quyet_dinh_mode = DataEntryFormMode.SelectDataState;
             m_grb_quyet_dinh.Enabled = true;
             f600_v_dm_quyet_dinh v_frm = new f600_v_dm_quyet_dinh();
-            v_frm.select_data(CHON_QUYET_DINH.DU_AN ,ref m_us_quyet_dinh);
-            if (m_us_quyet_dinh.dcID != -1)
-            {
+            //v_frm.select_data("Tấ, ref m_us_quyet_dinh);
 
-                m_ofd_chon_file.FileName = m_us_quyet_dinh.strLINK;
-                m_txt_ma_quyet_dinh.Text = m_us_quyet_dinh.strMA_QUYET_DINH;
+            if (m_us_quyet_dinh.dcID == -1) return;
+            m_grb_quyet_dinh.Enabled = false;
 
-                m_lbl_loai_qd.Text = new US.US_CM_DM_TU_DIEN(CIPConvert.ToDecimal(TU_DIEN.QD_THANH_LAP_DU_AN)).strTEN;
+            us_quyet_dinh_to_form(m_us_quyet_dinh);
+        }
 
-                m_dat_ngay_ky.Value = m_us_quyet_dinh.datNGAY_KY;
-                if (m_us_quyet_dinh.datNGAY_CO_HIEU_LUC > DateTime.Parse("01/01/1900") &&
-                    m_us_quyet_dinh.datNGAY_CO_HIEU_LUC != null)
-                    m_dat_ngay_co_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_CO_HIEU_LUC;
-                else
-                    m_dat_ngay_co_hieu_luc_qd.Checked = false;
-                if (m_us_quyet_dinh.datNGAY_HET_HIEU_LUC != null &&
-                    m_us_quyet_dinh.datNGAY_HET_HIEU_LUC > DateTime.Parse("1/1/1900"))
-                    m_dat_ngay_het_hieu_luc_qd.Value = m_us_quyet_dinh.datNGAY_HET_HIEU_LUC;
-                else
-                    m_dat_ngay_het_hieu_luc_qd.Checked = false;
-                m_txt_noi_dung.Text = m_us_quyet_dinh.strNOI_DUNG;
-                m_ofd_chon_file.FileName = m_us_quyet_dinh.strLINK;
-
-            }
-            else
-            {
-                m_b_check_quyet_dinh_null = true;
-            }
+        private void reset_form_quyet_dinh()
+        {
+            m_us_quyet_dinh = new US_DM_QUYET_DINH();
+            m_txt_ma_quyet_dinh.Text = "";
+            m_dat_ngay_ky.Value = DateTime.Now;
+            m_dat_ngay_co_hieu_luc_qd.Value = DateTime.Now;
+            m_dat_ngay_het_hieu_luc_qd.Value = DateTime.Now;
+            m_txt_noi_dung.Text = "";
+            m_lbl_file_name.Text = "";
         }
 
         private void them_quyet_dinh()
         {
-            m_b_check_quyet_dinh_save = true;
-            m_grb_quyet_dinh.Enabled = true;
+            m_e_quyet_dinh_mode = DataEntryFormMode.InsertDataState;
+            reset_form_quyet_dinh();
             m_lbl_loai_qd.Text = new US.US_CM_DM_TU_DIEN(CIPConvert.ToDecimal(TU_DIEN.QD_THANH_LAP_DU_AN)).strTEN;
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            m_grb_quyet_dinh.Enabled = true;
             m_txt_ma_quyet_dinh.Focus();
+        }
+
+        private bool is_exist_quyet_dinh(string ip_str_ma_quyet_dinh)
+        {
+            US_DM_QUYET_DINH v_us = new US_DM_QUYET_DINH();
+            DS_DM_QUYET_DINH v_ds = new DS_DM_QUYET_DINH();
+            v_us.FillDataset_By_Ma_qd(v_ds, ip_str_ma_quyet_dinh);
+            if (v_ds.DM_QUYET_DINH.Rows.Count > 0)
+                return true;
+            return false;
         }
 
         private void chuyen_trang_thai_ve_no(decimal dc_id_nv)
@@ -385,63 +510,107 @@ namespace BKI_HRM.NghiepVu
             if (check_data_is_ok() == false)
                 return;
 
-            #region Xử lý file đính kèm
-            switch (m_e_file_mode)
+            try
             {
-                case DataEntryFileMode.UploadFile:
-                    // Kiểm tra file đã tồn tại trên server hay chưa
-                    if (FileExplorer.IsExistedFile(m_str_directory_to + FileExplorer.fileName))
-                    {
-                        BaseMessages.MsgBox_Infor("Tên file đã tồn tại. Vui lòng đổi tên khác");
-                        return;
-                    }
+                m_us.BeginTransaction();
 
-                    // Nếu đã chọn file 
-                    if (m_lbl_file_name.Text != "")
-                    {
-                        // Upload server có sử dụng user và pass
-                        if (m_str_user_name != "")
-                            FileExplorer.UploadFile(m_str_domain, m_str_directory_to, m_str_user_name, m_str_password);
-                        // Upload không sử dụng user và pass
-                        else
-                            FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
-                    }
-                    break;
-                case DataEntryFileMode.EditFile:
-                    // Nếu ko up lên file mới sẽ bỏ qua bước này
-                    if (m_str_link_old != m_lbl_file_name.Text)
-                    {
-                        // Kiểm tra file vừa upload đã tồn tại hay chưa
+                #region Xử lý file đính kèm
+                switch (m_e_file_mode)
+                {
+                    case DataEntryFileMode.UploadFile:
+                        // Kiểm tra file đã tồn tại trên server hay chưa
                         if (FileExplorer.IsExistedFile(m_str_directory_to + FileExplorer.fileName))
                         {
                             BaseMessages.MsgBox_Infor("Tên file đã tồn tại. Vui lòng đổi tên khác");
                             return;
                         }
 
-                        // Xóa file cũ
-                        if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old))
-                            FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
+                        // Nếu đã chọn file 
+                        if (m_lbl_file_name.Text != "")
+                        {
+                            // Upload server có sử dụng user và pass
+                            if (m_str_user_name != "")
+                                FileExplorer.UploadFile(m_str_domain, m_str_directory_to, m_str_user_name, m_str_password);
+                            // Upload không sử dụng user và pass
+                            else
+                                FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
+                        }
+                        break;
+                    case DataEntryFileMode.EditFile:
+                        // Nếu ko up lên file mới sẽ bỏ qua bước này
+                        if (m_str_link_old != m_lbl_file_name.Text)
+                        {
+                            // Kiểm tra file vừa upload đã tồn tại hay chưa
+                            if (FileExplorer.IsExistedFile(m_str_directory_to + FileExplorer.fileName))
+                            {
+                                BaseMessages.MsgBox_Infor("Tên file đã tồn tại. Vui lòng đổi tên khác");
+                                return;
+                            }
 
-                        // Upload file mới lên
-                        if (m_str_user_name != "")
-                            FileExplorer.UploadFile(m_str_domain, m_str_directory_to, m_str_user_name, m_str_password);
-                        else
-                            FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
-                    }
-                    break;
-                case DataEntryFileMode.DeleteFile:
-                    // Kiểm tra file có tồn tại hay không
-                    if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old) == false)
-                    {
-                        BaseMessages.MsgBox_Infor("File không tồn tại!");
-                        return;
-                    }
-                    FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
-                    break;
+                            // Xóa file cũ
+                            if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old))
+                                FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
+
+                            // Upload file mới lên
+                            if (m_str_user_name != "")
+                                FileExplorer.UploadFile(m_str_domain, m_str_directory_to, m_str_user_name, m_str_password);
+                            else
+                                FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
+                        }
+                        break;
+                    case DataEntryFileMode.DeleteFile:
+                        // Kiểm tra file có tồn tại hay không
+                        if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old) == false)
+                        {
+                            BaseMessages.MsgBox_Infor("File không tồn tại!");
+                            return;
+                        }
+                        FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
+                        break;
+                }
+                #endregion
+
+                #region Xử lý quyết định
+                form_to_us_quyet_dinh();
+                switch (m_e_quyet_dinh_mode)
+                {
+                    case DataEntryFormMode.InsertDataState:
+                        if (is_exist_quyet_dinh(m_txt_ma_quyet_dinh.Text))
+                        {
+                            BaseMessages.MsgBox_Error("Mã quyết định đã tồn tại.");
+                            m_txt_ma_quyet_dinh.Focus();
+                            return;
+                        }
+                        m_us.Insert();
+                        break;
+                    case DataEntryFormMode.UpdateDataState:
+                        if (!m_txt_ma_quyet_dinh.Text.Equals(m_str_ma_quyet_dinh_old))
+                        {
+                            if (is_exist_quyet_dinh(m_txt_ma_quyet_dinh.Text))
+                            {
+                                BaseMessages.MsgBox_Error("Mã quyết định đã tồn tại hoặc đang được dùng cho dự án khác.");
+                                m_txt_ma_quyet_dinh.Focus();
+                                return;
+                            }
+                        }
+                        m_us.Update();
+                        break;
+                }
+                #endregion
+
+                m_us.CommitTransaction();
             }
-            #endregion
+            catch (Exception)
+            {
+                if (m_us.is_having_transaction())
+                    m_us.Rollback();
+            }
 
-            form_2_us_du_an();
+
+
+
+
+            form_2_us_nhan_vien();
 
             US_DM_QUYET_DINH v_us_qd = new US_DM_QUYET_DINH();
             DS_DM_QUYET_DINH v_ds_qd = new DS_DM_QUYET_DINH();
@@ -501,88 +670,7 @@ namespace BKI_HRM.NghiepVu
             this.Close();
         }
 
-        public static void load_data_to_cbo_tu_dien(
-             WinFormControls.eLOAI_TU_DIEN ip_e
-            , WinFormControls.eTAT_CA ip_e_tat_ca
-            , ComboBox ip_obj_cbo_trang_thai)
-        {
-
-            IP.Core.IPUserService.US_CM_DM_TU_DIEN v_us_dm_tu_dien = new IP.Core.IPUserService.US_CM_DM_TU_DIEN();
-            IP.Core.IPData.DS_CM_DM_TU_DIEN v_ds_dm_tu_dien = new IP.Core.IPData.DS_CM_DM_TU_DIEN();
-            string v_str_loai_tu_dien = "";
-            switch (ip_e)
-            {
-                case WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_CHUC_VU:
-                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.TRANG_THAI_CHUC_VU;
-                    break;
-                case WinFormControls.eLOAI_TU_DIEN.LOAI_HOP_DONG:
-                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.LOAI_HOP_DONG;
-                    break;
-                case WinFormControls.eLOAI_TU_DIEN.LOAI_DON_VI:
-                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.LOAI_DON_VI;
-                    break;
-                case WinFormControls.eLOAI_TU_DIEN.CAP_DON_VI:
-                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.CAP_DON_VI;
-                    break;
-                case WinFormControls.eLOAI_TU_DIEN.LOAI_QUYET_DINH:
-                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.LOAI_QUYET_DINH;
-                    break;
-                case WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_LAO_DONG:
-                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.TRANG_THAI_LAO_DONG;
-                    break;
-                case WinFormControls.eLOAI_TU_DIEN.NGACH:
-                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.NGACH;
-                    break;
-                case WinFormControls.eLOAI_TU_DIEN.LOAI_CHUC_VU:
-                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.LOAI_CHUC_VU;
-                    break;
-                case WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_HOP_DONG:
-                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.TRANG_THAI_HOP_DONG;
-                    break;
-                case WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_DU_AN:
-                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.TRANG_THAI_DU_AN;
-                    break;
-                case WinFormControls.eLOAI_TU_DIEN.MA_HOP_DONG:
-                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.MA_HOP_DONG;
-                    break;
-                case WinFormControls.eLOAI_TU_DIEN.DANH_HIEU:
-                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.DANH_HIEU;
-                    break;
-                case WinFormControls.eLOAI_TU_DIEN.CO_CHE:
-                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.CO_CHE;
-                    break;
-                case WinFormControls.eLOAI_TU_DIEN.LOAI_DU_AN:
-                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.LOAI_DU_AN;
-                    break;
-                case WinFormControls.eLOAI_TU_DIEN.MA_QUYET_DINH:
-                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.MA_QUYET_DINH;
-                    break;
-                case WinFormControls.eLOAI_TU_DIEN.DIA_BAN:
-                    v_str_loai_tu_dien = MA_LOAI_TU_DIEN.DIA_BAN;
-                    break;
-            }
-            v_us_dm_tu_dien.fill_tu_dien_cung_loai_ds(
-                v_str_loai_tu_dien
-                , CM_DM_TU_DIEN.GHI_CHU
-                , v_ds_dm_tu_dien);
-
-
-            ip_obj_cbo_trang_thai.DisplayMember = CM_DM_TU_DIEN.TEN;
-            ip_obj_cbo_trang_thai.ValueMember = CM_DM_TU_DIEN.ID;
-            ip_obj_cbo_trang_thai.DataSource = v_ds_dm_tu_dien.CM_DM_TU_DIEN;
-            if (ip_e_tat_ca == WinFormControls.eTAT_CA.YES)
-            {
-                DataRow v_dr = v_ds_dm_tu_dien.CM_DM_TU_DIEN.NewRow();
-                v_dr[CM_DM_TU_DIEN.ID] = -1;
-                v_dr[CM_DM_TU_DIEN.TEN] = "------ Không danh hiệu ------";
-                v_dr[CM_DM_TU_DIEN.MA_TU_DIEN] = "";
-                v_dr[CM_DM_TU_DIEN.TEN_NGAN] = "";
-                v_dr[CM_DM_TU_DIEN.ID_LOAI_TU_DIEN] = 1;
-                v_dr[CM_DM_TU_DIEN.GHI_CHU] = "";
-                v_ds_dm_tu_dien.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
-                ip_obj_cbo_trang_thai.SelectedIndex = 0;
-            }
-        }
+        
         #endregion
 
         #region eventHandle
@@ -667,7 +755,8 @@ namespace BKI_HRM.NghiepVu
 
         private void F500_gd_chi_tiet_du_an_de_Load(object sender, EventArgs e)
         {
-            load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.DANH_HIEU, WinFormControls.eTAT_CA.YES, m_cbo_danh_hieu);
+            set_inital_form_load();
+            m_txt_ma_du_an.Text = m_us_du_an.strMA_DU_AN;
         }
 
         private void m_cmd_chon_file_Click(object sender, EventArgs e)
@@ -687,7 +776,7 @@ namespace BKI_HRM.NghiepVu
             if (m_lbl_file_name.Text == "")
                 return;
             f701_v_gd_hop_dong_lao_dong_View frm = new f701_v_gd_hop_dong_lao_dong_View();
-            frm.display_for_view_quyet_dinh(m_us_quyet_dinh);
+            frm.display(ConfigurationSettings.AppSettings["DESTINATION_NAME"] + m_us_quyet_dinh.strLINK);
         }
 
         private void m_cmd_go_dinh_kem_Click(object sender, EventArgs e)

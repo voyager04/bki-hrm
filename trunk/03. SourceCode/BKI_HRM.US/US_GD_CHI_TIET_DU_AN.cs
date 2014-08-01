@@ -314,41 +314,42 @@ namespace BKI_HRM.US
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
-#region public method
-    public void DeleteChiTietDuAnById(DS_GD_CHI_TIET_DU_AN v_ds_gd_chi_tiet_da, decimal i_dc_id)
-    {
-        CStoredProc v_sp = new CStoredProc("pr_GD_CHI_TIET_DU_AN_Delete");
-        v_sp.addDecimalInputParam("@ID", i_dc_id);
-        v_sp.fillDataSetByCommand(this, v_ds_gd_chi_tiet_da);
-    }
 
-    public void FillDatasetByID(DS_GD_CHI_TIET_DU_AN v_ds, decimal i_dc_id)
-    {
-        CStoredProc v_sp = new CStoredProc("pr_GD_CHI_TIET_DU_AN_select_by_ID");
-        v_sp.addDecimalInputParam("@ID", i_dc_id);
-        v_sp.fillDataSetByCommand(this, v_ds);
-    }
+        #region public method
+        public void DeleteChiTietDuAnById(DS_GD_CHI_TIET_DU_AN v_ds_gd_chi_tiet_da, decimal i_dc_id)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_GD_CHI_TIET_DU_AN_Delete");
+            v_sp.addDecimalInputParam("@ID", i_dc_id);
+            v_sp.fillDataSetByCommand(this, v_ds_gd_chi_tiet_da);
+        }
 
-    public void FillDatasetByIDNS(DS_GD_CHI_TIET_DU_AN v_ds, decimal v_dc_id_ns)
-    {
-        CStoredProc v_sp = new CStoredProc("pr_GD_CHI_TIET_DU_AN_select_by_ID_NS");
-        v_sp.addDecimalInputParam("@ID_NS", v_dc_id_ns);
-        v_sp.fillDataSetByCommand(this, v_ds);
-    }
-    #endregion    
+        public void FillDatasetByID(DS_GD_CHI_TIET_DU_AN v_ds, decimal i_dc_id)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_GD_CHI_TIET_DU_AN_select_by_ID");
+            v_sp.addDecimalInputParam("@ID", i_dc_id);
+            v_sp.fillDataSetByCommand(this, v_ds);
+        }
 
-    public void FillDatasetTrangThaiYes(DS_GD_CHI_TIET_DU_AN v_ds, decimal dc_id_nv)
-    {
-        CStoredProc v_sp = new CStoredProc("pr_GD_CHI_TIET_DU_AN_select_trang_thai_yes");
-        v_sp.addDecimalInputParam("@ID_NV", dc_id_nv);
-        v_sp.fillDataSetByCommand(this, v_ds);
-    }
+        public void FillDatasetByIDNS(DS_GD_CHI_TIET_DU_AN v_ds, decimal v_dc_id_ns)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_GD_CHI_TIET_DU_AN_select_by_ID_NS");
+            v_sp.addDecimalInputParam("@ID_NS", v_dc_id_ns);
+            v_sp.fillDataSetByCommand(this, v_ds);
+        }
+        #endregion
 
-    public void FillDatasetByIDDuAn(DS_GD_CHI_TIET_DU_AN v_ds, decimal i_dc_id)
-    {
-        CStoredProc v_sp = new CStoredProc("pr_GD_CHI_TIET_DU_AN_select_by_id_du_an");
-        v_sp.addDecimalInputParam("@ID_DA", i_dc_id);
-        v_sp.fillDataSetByCommand(this, v_ds);
-    }
+        public void FillDatasetTrangThaiYes(DS_GD_CHI_TIET_DU_AN v_ds, decimal dc_id_nv)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_GD_CHI_TIET_DU_AN_select_trang_thai_yes");
+            v_sp.addDecimalInputParam("@ID_NV", dc_id_nv);
+            v_sp.fillDataSetByCommand(this, v_ds);
+        }
+
+        public void FillDatasetByIDDuAn(DS_GD_CHI_TIET_DU_AN v_ds, decimal i_dc_id)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_GD_CHI_TIET_DU_AN_select_by_id_du_an");
+            v_sp.addDecimalInputParam("@ID_DA", i_dc_id);
+            v_sp.fillDataSetByCommand(this, v_ds);
+        }
     }
 }

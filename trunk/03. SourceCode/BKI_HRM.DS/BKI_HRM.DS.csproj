@@ -136,6 +136,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_GD_QUA_TRINH_CONG_TAC.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_GD_QUYET_DINH_DU_AN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_GD_QUYET_DINH_DU_AN.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_GD_QUYET_DINH_PHAP_NHAN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -484,6 +489,17 @@
     </None>
     <None Include="DS_GD_QUA_TRINH_CONG_TAC.xss">
       <DependentUpon>DS_GD_QUA_TRINH_CONG_TAC.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_QUYET_DINH_DU_AN.xsc">
+      <DependentUpon>DS_GD_QUYET_DINH_DU_AN.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_QUYET_DINH_DU_AN.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_GD_QUYET_DINH_DU_AN.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_GD_QUYET_DINH_DU_AN.xss">
+      <DependentUpon>DS_GD_QUYET_DINH_DU_AN.xsd</DependentUpon>
     </None>
     <None Include="DS_GD_QUYET_DINH_PHAP_NHAN.xsc">
       <DependentUpon>DS_GD_QUYET_DINH_PHAP_NHAN.xsd</DependentUpon>

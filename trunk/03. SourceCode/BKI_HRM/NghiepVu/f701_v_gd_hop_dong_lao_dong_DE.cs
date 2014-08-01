@@ -367,7 +367,7 @@ namespace BKI_HRM.NghiepVu
         private void view_hop_dong_saved()
         {
             f701_v_gd_hop_dong_lao_dong_View frm = new f701_v_gd_hop_dong_lao_dong_View();
-            frm.display_for_view_hop_dong(new US_GD_HOP_DONG(m_us.dcID));
+            frm.display(ConfigurationSettings.AppSettings["DESTINATION_NAME"] + new US_GD_HOP_DONG(m_us.dcID).strLINK);
         }
 
         private bool check_trung_ma_hop_dong(string ip_str_ma_hop_dong)
