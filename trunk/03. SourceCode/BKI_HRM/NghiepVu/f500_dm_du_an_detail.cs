@@ -130,8 +130,8 @@ namespace BKI_HRM.NghiepVu
 
 
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.LOAI_DU_AN, WinFormControls.eTAT_CA.NO, m_cbo_loai_du_an);
-            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.CO_CHE, WinFormControls.eTAT_CA.YES, m_cbo_co_che);
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_DU_AN, WinFormControls.eTAT_CA.NO, m_cbo_trang_thai);
+            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.CO_CHE, WinFormControls.eTAT_CA.YES, m_cbo_co_che);
 
             load_cbo_to_column_of_grid(e_loai_tu_dien.VI_TRI_DU_AN, m_fg_nhan_vien, (int)e_col_Number_nhan_vien.VI_TRI);
             load_cbo_to_column_of_grid(e_loai_tu_dien.DANH_HIEU, m_fg_nhan_vien, (int)e_col_Number_nhan_vien.DANH_HIEU);
@@ -338,7 +338,7 @@ namespace BKI_HRM.NghiepVu
                 op_us.SetNGAY_KET_THUCNull();
 
             op_us.strNOI_DUNG = m_txt_noi_dung_du_an.Text;
-            if ((int)m_cbo_co_che.SelectedValue == -1)
+            if (m_cbo_co_che.SelectedValue.ToString() == "-1")
                 op_us.SetID_CO_CHENull();
             else
                 op_us.dcID_CO_CHE = (decimal)m_cbo_co_che.SelectedValue;
@@ -360,7 +360,11 @@ namespace BKI_HRM.NghiepVu
                 m_dat_ngay_kt.Checked = false;
             }
 
-            m_cbo_co_che.SelectedValue = ip_us.dcID_CO_CHE;
+            if (ip_us.dcID_CO_CHE == null || ip_us.dcID_CO_CHE == 0)
+                m_cbo_co_che.SelectedIndex = 0;
+            else
+                m_cbo_co_che.SelectedValue = ip_us.dcID_CO_CHE;
+
             m_cbo_trang_thai.SelectedValue = ip_us.dcID_TRANG_THAI;
             m_txt_noi_dung_du_an.Text = ip_us.strNOI_DUNG;
         }
