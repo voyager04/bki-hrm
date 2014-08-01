@@ -725,7 +725,7 @@ namespace BKI_HRM
             load_data_2_grid_du_an();
         }
 
-        private void delete_v_dm_du_an_quyet_dinh_tu_dien()
+        private void delete_du_an()
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg_du_an)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg_du_an, m_fg_du_an.Row)) return;
@@ -733,20 +733,64 @@ namespace BKI_HRM
 
             US_GD_CHI_TIET_DU_AN v_us_ct_da = new US_GD_CHI_TIET_DU_AN();
             DS_GD_CHI_TIET_DU_AN v_ds_ct_da = new DS_GD_CHI_TIET_DU_AN();
-            v_us_ct_da.FillDatasetByIDDuAn(v_ds_ct_da, m_us_du_an.dcID);
+            v_us_ct_da.FillDataset(v_ds_ct_da, string.Format("WHERE {0} = {1}",
+                                                                GD_CHI_TIET_DU_AN.ID_DU_AN,
+                                                                m_us_du_an.dcID));
             if (v_ds_ct_da.GD_CHI_TIET_DU_AN.Rows.Count > 0 && BaseMessages.MsgBox_Confirm("Đang có nhân viên trong dự án. Bạn có chắc chắn muốn xóa không?"))
             {
                 m_fg_du_an.Rows.Remove(m_fg_du_an.Row);
-                m_us_du_an.Delete();
+                delete_quyet_dinh_cua_du_an(new US_DM_DU_AN(m_us_du_an.dcID));
             }
             if (v_ds_ct_da.GD_CHI_TIET_DU_AN.Rows.Count == 0 && BaseMessages.MsgBox_Confirm("Bạn có chắc chắn muốn xóa dự án này không?"))
             {
                 m_fg_du_an.Rows.Remove(m_fg_du_an.Row);
-                US_DM_DU_AN v_us_dm_da = new US_DM_DU_AN(m_us_du_an.dcID);
-                v_us_dm_da.Delete();
+                delete_quyet_dinh_cua_du_an(new US_DM_DU_AN(m_us_du_an.dcID));
             }
             load_data_2_grid_du_an();
             load_data_2_grid_nhan_su();
+        }
+
+        private void delete_quyet_dinh_cua_du_an(US_DM_DU_AN ip_us)
+        {
+            try
+            {
+                ip_us.BeginTransaction();
+                US_GD_QUYET_DINH_DU_AN v_us_qd_du_an = new US_GD_QUYET_DINH_DU_AN();
+                DS_GD_QUYET_DINH_DU_AN v_ds_qd_du_an = new DS_GD_QUYET_DINH_DU_AN();
+                v_us_qd_du_an.FillDataset(v_ds_qd_du_an, string.Format("WHERE {0} = {1}",
+                                                                        GD_QUYET_DINH_DU_AN.ID_DU_AN,
+                                                                        ip_us.dcID));
+                if (v_ds_qd_du_an.GD_QUYET_DINH_DU_AN.Rows.Count > 0)
+                {
+                    for (int i = 0; i < v_ds_qd_du_an.GD_QUYET_DINH_DU_AN.Rows.Count; i++)
+                    {
+                        var v_dc_id_quyet_dinh =
+                            (decimal) v_ds_qd_du_an.GD_QUYET_DINH_DU_AN.Rows[i][GD_QUYET_DINH_DU_AN.ID_QUYET_DINH];
+                        US_GD_QUYET_DINH_PHAP_NHAN v_us_qd_pn = new US_GD_QUYET_DINH_PHAP_NHAN();
+                        v_us_qd_pn.UseTransOfUSObject(ip_us);
+                        v_us_qd_pn.DeleteByID(v_dc_id_quyet_dinh);
+
+                        v_us_qd_du_an.UseTransOfUSObject(ip_us);
+                        v_us_qd_du_an.DeleteByID(v_dc_id_quyet_dinh);
+
+                        US_GD_CHI_TIET_DU_AN v_us_ct_da = new US_GD_CHI_TIET_DU_AN();
+                        v_us_ct_da.UseTransOfUSObject(ip_us);
+                        v_us_ct_da.DeleteByID(v_dc_id_quyet_dinh);
+
+                        US_DM_QUYET_DINH v_us_qd = new US_DM_QUYET_DINH();
+                        v_us_qd.UseTransOfUSObject(ip_us);
+                        v_us_qd.DeleteByID(v_dc_id_quyet_dinh);
+                    }
+                    ip_us.Delete();
+                }
+                ip_us.CommitTransaction();
+            }
+            catch (Exception)
+            {
+                if (ip_us.is_having_transaction())
+                    ip_us.Rollback();
+                throw;
+            }
         }
 
         private void view_v_dm_du_an_quyet_dinh_tu_dien()
@@ -808,7 +852,7 @@ namespace BKI_HRM
         {
             try
             {
-                delete_v_dm_du_an_quyet_dinh_tu_dien();
+                delete_du_an();
             }
             catch (Exception v_e)
             {
