@@ -130,7 +130,7 @@ namespace BKI_HRM.NghiepVu
 
 
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.LOAI_DU_AN, WinFormControls.eTAT_CA.NO, m_cbo_loai_du_an);
-            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.CO_CHE, WinFormControls.eTAT_CA.NO, m_cbo_co_che);
+            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.CO_CHE, WinFormControls.eTAT_CA.YES, m_cbo_co_che);
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_DU_AN, WinFormControls.eTAT_CA.NO, m_cbo_trang_thai);
 
             load_cbo_to_column_of_grid(e_loai_tu_dien.VI_TRI_DU_AN, m_fg_nhan_vien, (int)e_col_Number_nhan_vien.VI_TRI);
@@ -333,7 +333,10 @@ namespace BKI_HRM.NghiepVu
                 op_us.SetNGAY_KET_THUCNull();
 
             op_us.strNOI_DUNG = m_txt_noi_dung_du_an.Text;
-            op_us.dcID_CO_CHE = (decimal)m_cbo_co_che.SelectedValue;
+            if (m_cbo_co_che.SelectedValue == null)
+                op_us.SetID_CO_CHENull();
+            else
+                op_us.dcID_CO_CHE = (decimal)m_cbo_co_che.SelectedValue;
         }
 
         private void us_2_form_du_an(US_V_DM_DU_AN_QUYET_DINH_TU_DIEN ip_us)
@@ -611,7 +614,7 @@ namespace BKI_HRM.NghiepVu
                         #endregion
                     }
                     // Nếu đang dc dùng cho dự án hiện tại
-                    else 
+                    else
                     {
                         for (int i = m_fg_quyet_dinh.Rows.Fixed; i < m_fg_quyet_dinh.Rows.Count - 1; i++)
                         {
@@ -631,28 +634,17 @@ namespace BKI_HRM.NghiepVu
                 }
                 else // Nếu QĐ hiện tại chưa tồn tại
                 {
-                    // Dùng mã QĐ trên gird kiểm tra có trùng mã QĐ nào ko
-                    if (is_exist_quyet_dinh(v_str_ma_quyet_dinh))
+                    for (int i = m_fg_quyet_dinh.Rows.Fixed; i < m_fg_quyet_dinh.Rows.Count - 1; i++)
                     {
-                        BaseMessages.MsgBox_Error("Mã quyết định đã tồn tại.");
-                        m_fg_quyet_dinh.Select(v_i_cur_row, (int)e_col_Number_quyet_dinh.MA_QUYET_DINH);
-                        m_tab_du_an.SelectTab("tabQuyetDinh");
-                        return false;
-                    }
-                    else
-                    {
-                        for (int i = m_fg_quyet_dinh.Rows.Fixed; i < m_fg_quyet_dinh.Rows.Count - 1; i++)
+                        if (i != v_i_cur_row)
                         {
-                            if (i != v_i_cur_row)
+                            var v_str_ma_qd_grid = m_fg_quyet_dinh[i, (int)e_col_Number_quyet_dinh.MA_QUYET_DINH].ToString();
+                            if (v_str_ma_quyet_dinh == v_str_ma_qd_grid)
                             {
-                                var v_str_ma_qd_grid = m_fg_quyet_dinh[i, (int)e_col_Number_quyet_dinh.MA_QUYET_DINH].ToString();
-                                if (v_str_ma_quyet_dinh == v_str_ma_qd_grid)
-                                {
-                                    BaseMessages.MsgBox_Error("Mã quyết định đã tồn tại.");
-                                    m_fg_quyet_dinh.Select(v_i_cur_row, (int)e_col_Number_quyet_dinh.MA_QUYET_DINH);
-                                    m_tab_du_an.SelectTab("tabQuyetDinh");
-                                    return false;
-                                }
+                                BaseMessages.MsgBox_Error("Mã quyết định đã tồn tại.");
+                                m_fg_quyet_dinh.Select(v_i_cur_row, (int)e_col_Number_quyet_dinh.MA_QUYET_DINH);
+                                m_tab_du_an.SelectTab("tabQuyetDinh");
+                                return false;
                             }
                         }
                     }
@@ -777,45 +769,6 @@ namespace BKI_HRM.NghiepVu
                     }
 
                 }
-
-                //switch (m_e_file_mode)
-                //{
-                //    case DataEntryFileMode.UploadFile:
-                //        if (FileExplorer.IsExistedFile(m_str_directory_to + FileExplorer.fileName))
-                //        {
-                //            BaseMessages.MsgBox_Infor("Tên file đã tồn tại. Vui lòng đổi tên khác");
-                //            return;
-                //        }
-
-                //        if (m_str_user_name != "")
-                //            FileExplorer.UploadFile(m_str_domain, m_str_directory_to, m_str_user_name, m_str_password);
-                //        else
-                //            FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
-                //        break;
-                //    case DataEntryFileMode.EditFile:
-                //        if (FileExplorer.IsExistedFile(m_str_directory_to + FileExplorer.fileName))
-                //        {
-                //            BaseMessages.MsgBox_Infor("Tên file đã tồn tại. Vui lòng đổi tên khác");
-                //            return;
-                //        }
-
-                //        if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old))
-                //            FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
-
-                //        if (m_str_user_name != "")
-                //            FileExplorer.UploadFile(m_str_domain, m_str_directory_to, m_str_user_name, m_str_password);
-                //        else
-                //            FileExplorer.UploadFile(m_str_domain, m_str_directory_to);
-                //        break;
-                //    case DataEntryFileMode.DeleteFile:
-                //        if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old) == false)
-                //        {
-                //            BaseMessages.MsgBox_Infor("File không tồn tại!");
-                //            return;
-                //        }
-                //        FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
-                //        break;
-                //}
                 #endregion
 
                 #region Xử lý dự án
