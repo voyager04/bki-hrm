@@ -479,7 +479,21 @@ namespace BKI_HRM
                             form_to_us_object_trang_thai_ld();
                             if (m_us_trang_thai_ld.dcID_QUYET_DINH == 0)
                             {
-                                m_us_trang_thai_ld.dcID_QUYET_DINH = 1541;
+                                switch ((int)CAppContext_201.getCurrentIDPhapnhan())
+                                {
+                                    case 1:
+                                        m_us_trang_thai_ld.dcID_QUYET_DINH = 1541;
+                                        break;
+                                    case 2:
+                                        m_us_trang_thai_ld.dcID_QUYET_DINH = 1540;
+                                        break;
+                                    case 3:
+                                        m_us_trang_thai_ld.dcID_QUYET_DINH = 1538;
+                                        break;
+                                    default:
+                                        break;
+                                }
+                                
                             }
                             m_us_trang_thai_ld.Insert();
                         }
