@@ -162,6 +162,8 @@ namespace BKI_HRM.NghiepVu
                 column.ComboList = "...";
             }
             m_fg_quyet_dinh.Redraw = true;
+
+            m_txt_ma_du_an.Focus();
         }
 
         private void auto_suggest_text()
@@ -217,6 +219,9 @@ namespace BKI_HRM.NghiepVu
                 m_fg_nhan_vien.Rows[m_fg_nhan_vien.Row][(int)e_col_Number_nhan_vien.TRANG_THAI_LAO_DONG] = v_ds_trang_thai_ld.V_GD_TRANG_THAI_LAO_DONG.Rows[0][V_GD_TRANG_THAI_LAO_DONG.TRANG_THAI_LAO_DONG].ToString();
             else
                 m_fg_nhan_vien.Rows[m_fg_nhan_vien.Row][(int)e_col_Number_nhan_vien.TRANG_THAI_LAO_DONG] = string.Empty;
+
+            m_fg_nhan_vien.Select(m_fg_nhan_vien.Row, (int)e_col_Number_nhan_vien.VI_TRI);
+            m_tab_du_an.SelectTab("tabNhanVien");
         }
 
         private ITransferDataRow get_trans_object_nhan_vien(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
@@ -333,7 +338,7 @@ namespace BKI_HRM.NghiepVu
                 op_us.SetNGAY_KET_THUCNull();
 
             op_us.strNOI_DUNG = m_txt_noi_dung_du_an.Text;
-            if (m_cbo_co_che.SelectedValue == null)
+            if ((int)m_cbo_co_che.SelectedValue == -1)
                 op_us.SetID_CO_CHENull();
             else
                 op_us.dcID_CO_CHE = (decimal)m_cbo_co_che.SelectedValue;
