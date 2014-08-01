@@ -299,6 +299,23 @@ namespace BKI_HRM.NghiepVu
 
 
 
+
+        private void refresh()
+        {
+            if (m_e_form_mode == DataEntryFormMode.InsertDataState)
+            {
+                m_txt_ma_du_an.Text = "";
+                m_txt_noi_dung_du_an.Text = "";
+                m_txt_ten_du_an.Text = "";
+            }
+            if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
+            {
+                us_2_form_du_an(m_us);
+            }
+        }
+
+
+
         private void form_to_us_du_an(US_DM_DU_AN op_us)
         {
             op_us.dcID = m_us.dcID;
@@ -568,7 +585,6 @@ namespace BKI_HRM.NghiepVu
                                                                     v_dc_id_quyet_dinh,
                                                                     GD_QUYET_DINH_DU_AN.ID_DU_AN,
                                                                     m_us.dcID));
-                    // Nếu đang dc dùng cho dự án hiện tại thì bỏ qua
                     // Nếu ko dc dùng cho dự án hiện tại.....
                     if (v_ds_qd_da.GD_QUYET_DINH_DU_AN.Rows.Count == 0)
                     {
@@ -591,6 +607,24 @@ namespace BKI_HRM.NghiepVu
                         }
                         #endregion
                     }
+                    // Nếu đang dc dùng cho dự án hiện tại
+                    else 
+                    {
+                        for (int i = m_fg_quyet_dinh.Rows.Fixed; i < m_fg_quyet_dinh.Rows.Count - 1; i++)
+                        {
+                            if (i != v_i_cur_row)
+                            {
+                                var v_str_ma_qd_grid = m_fg_quyet_dinh[i, (int)e_col_Number_quyet_dinh.MA_QUYET_DINH].ToString();
+                                if (v_str_ma_quyet_dinh == v_str_ma_qd_grid)
+                                {
+                                    BaseMessages.MsgBox_Error("Mã quyết định đã tồn tại.");
+                                    m_fg_quyet_dinh.Select(v_i_cur_row, (int)e_col_Number_quyet_dinh.MA_QUYET_DINH);
+                                    m_tab_du_an.SelectTab("tabQuyetDinh");
+                                    return false;
+                                }
+                            }
+                        }
+                    }
                 }
                 else // Nếu QĐ hiện tại chưa tồn tại
                 {
@@ -601,6 +635,23 @@ namespace BKI_HRM.NghiepVu
                         m_fg_quyet_dinh.Select(v_i_cur_row, (int)e_col_Number_quyet_dinh.MA_QUYET_DINH);
                         m_tab_du_an.SelectTab("tabQuyetDinh");
                         return false;
+                    }
+                    else
+                    {
+                        for (int i = m_fg_quyet_dinh.Rows.Fixed; i < m_fg_quyet_dinh.Rows.Count - 1; i++)
+                        {
+                            if (i != v_i_cur_row)
+                            {
+                                var v_str_ma_qd_grid = m_fg_quyet_dinh[i, (int)e_col_Number_quyet_dinh.MA_QUYET_DINH].ToString();
+                                if (v_str_ma_quyet_dinh == v_str_ma_qd_grid)
+                                {
+                                    BaseMessages.MsgBox_Error("Mã quyết định đã tồn tại.");
+                                    m_fg_quyet_dinh.Select(v_i_cur_row, (int)e_col_Number_quyet_dinh.MA_QUYET_DINH);
+                                    m_tab_du_an.SelectTab("tabQuyetDinh");
+                                    return false;
+                                }
+                            }
+                        }
                     }
 
                     #region Check File đính kèm
@@ -991,9 +1042,7 @@ namespace BKI_HRM.NghiepVu
         {
             try
             {
-                m_txt_ma_du_an.Text = "";
-                m_txt_noi_dung_du_an.Text = "";
-                m_txt_ten_du_an.Text = "";
+                refresh();
             }
             catch (Exception v_e)
             {
