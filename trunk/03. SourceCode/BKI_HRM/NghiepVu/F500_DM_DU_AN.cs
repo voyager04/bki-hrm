@@ -667,6 +667,7 @@ namespace BKI_HRM
             CGridUtils.Dataset2C1Grid(m_ds_du_an, m_fg_du_an, m_obj_trans_du_an);
             m_fg_du_an.Redraw = true;
             m_lbl_total_record_grid1.Text = string.Format("Có {0} dự án", m_ds_du_an.Tables[0].Rows.Count);
+            auto_suggest_text();
         }
 
         private void load_data_2_grid_nhan_su()
