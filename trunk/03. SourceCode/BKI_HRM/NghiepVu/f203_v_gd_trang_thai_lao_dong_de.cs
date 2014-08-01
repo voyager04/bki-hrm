@@ -338,13 +338,7 @@ namespace BKI_HRM
                 BaseMessages.MsgBox_Infor("Ngày hết hiệu lực quyết định không thể trước ngày có hiệu lực quyết định hoặc ngày ký.");
                 return false;
             }
-            if (!check_trang_thai_hien_tai_phap_nhan())
-            {
-
-                BaseMessages.MsgBox_Infor("Tại thời điểm hiện tại, ứng với 1 pháp nhân, mỗi nhân viên chỉ có thể có 1 trạng thái chính thức.");
-                return false;
-
-            }
+          
             return true;
         }
         private bool check_trang_thai_hien_tai_phap_nhan()
@@ -435,8 +429,16 @@ namespace BKI_HRM
                     case DataEntryFormMode.UpdateDataState:
                         if (check_validate_data_is_ok() == false)
                             return;
+
                         else
                         {
+                            if (!check_trang_thai_hien_tai_phap_nhan())
+                            {
+
+                                BaseMessages.MsgBox_Infor("Tại thời điểm hiện tại, ứng với 1 pháp nhân, mỗi nhân viên chỉ có thể có 1 trạng thái chính thức.");
+                                return;
+
+                            }
                             form_to_us_object_quyet_dinh();
                             if (m_b_check_quyet_dinh_save)
                             {
@@ -475,6 +477,10 @@ namespace BKI_HRM
                                 v_us_gd_quyet_dinh_phap_nhan.Insert();
                             }
                             form_to_us_object_trang_thai_ld();
+                            if (m_us_trang_thai_ld.dcID_QUYET_DINH == 0)
+                            {
+                                m_us_trang_thai_ld.dcID_QUYET_DINH = 1541;
+                            }
                             m_us_trang_thai_ld.Insert();
                         }
 
