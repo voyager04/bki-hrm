@@ -6,7 +6,7 @@
        ,
         DIA_DIEM_QUAN_LY = 2
             ,
-        DON_VI_QUAN_LY_CHINH = 3
+        LOAI_QUYET_DINH = 3
             ,
         LEVEL_GIANG_VIEN = 4
             ,
@@ -22,9 +22,9 @@
             ,
         MA_TAN_SUAT = 10
             ,
-        HOC_HAM = 11
+        VI_TRI_DU_AN = 11
             ,
-        HOC_VI = 12
+        DANH_HIEU = 12
             ,
         HINH_THUC_CONG_TAC = 13
             ,
@@ -51,6 +51,12 @@
         LOAI_HO_SO_GV_HD = 26
             , DV_TO_CHUC_SK = 27
     }
+
+    public enum e_tu_dien
+    {
+        QĐ_THANH_LAP_DU_AN = 679,
+    }
+
     public class DM_TRANG_THAI_UNG_VIEN
     {
         public const string ID = "ID";
@@ -296,6 +302,14 @@
         public const string ID_QUYET_DINH = "ID_QUYET_DINH";
     }
 
+    public class GD_QUYET_DINH_DU_AN
+    {
+        public const string ID = "ID";
+        public const string ID_DU_AN = "ID_DU_AN";
+        public const string ID_QUYET_DINH = "ID_QUYET_DINH";
+    }
+
+
     public class V_GD_HOP_DONG_LAO_DONG
     {
         public const string COLS1 = "COLS1";
@@ -454,18 +468,26 @@
        public const string ID = "ID";
        public const string MA_DU_AN = "MA_DU_AN";
        public const string TEN_DU_AN = "TEN_DU_AN";
-       public const string TRANG_THAI = "TRANG_THAI";
+       public const string ID_TRANG_THAI = "ID_TRANG_THAI";
+       public const string TRANG_THAI_DA = "TRANG_THAI_DA";
+       public const string ID_LOAI_DU_AN = "ID_LOAI_DU_AN";
        public const string LOAI_DU_AN = "LOAI_DU_AN";
        public const string NGAY_BAT_DAU = "NGAY_BAT_DAU";
        public const string NGAY_KET_THUC = "NGAY_KET_THUC";
        public const string NOI_DUNG = "NOI_DUNG";
-       public const string CO_CHE = "CO_CHE";
-       public const string MA_QUYET_DINH = "MA_QUYET_DINH";
-       public const string ID_TRANG_THAI = "ID_TRANG_THAI";
        public const string ID_CO_CHE = "ID_CO_CHE";
+       public const string CO_CHE = "CO_CHE";
        public const string ID_QUYET_DINH = "ID_QUYET_DINH";
-       public const string ID_LOAI_DU_AN = "ID_LOAI_DU_AN";
+       public const string MA_QUYET_DINH = "MA_QUYET_DINH";
+       public const string ID_LOAI_QD = "ID_LOAI_QD";
        public const string LOAI_QD = "LOAI_QD";
+       public const string NGAY_CO_HIEU_LUC = "NGAY_CO_HIEU_LUC";
+       public const string NGAY_KY = "NGAY_KY";
+       public const string NGAY_HET_HIEU_LUC = "NGAY_HET_HIEU_LUC";
+       public const string NOI_DUNG_QD = "NOI_DUNG_QD";
+       public const string LINK = "LINK";
+       public const string ID_PHAP_NHAN = "ID_PHAP_NHAN";
+       public const string MA_PHAP_NHAN = "MA_PHAP_NHAN";
    }
 
 
@@ -483,7 +505,6 @@
        public const string THOI_DIEM_KT = "THOI_DIEM_KT";
        public const string THOI_GIAN_TG = "THOI_GIAN_TG";
        public const string DANH_HIEU = "DANH_HIEU";
-       public const string ID = "ID";
        public const string MO_TA = "MO_TA";
        public const string LUA_CHON = "LUA_CHON";
        public const string ID_QUYET_DINH = "ID_QUYET_DINH";
@@ -498,6 +519,11 @@
        public const string ID_TRANG_LAO_DONG = "ID_TRANG_LAO_DONG";
        public const string TRANG_THAI_LAO_DONG = "TRANG_THAI_LAO_DONG";
        public const string TRANG_THAI_HIEN_TAI = "TRANG_THAI_HIEN_TAI";
+       public const string ID_PHAP_NHAN_QD = "ID_PHAP_NHAN_QD";
+       public const string MA_PHAP_NHAN = "MA_PHAP_NHAN";
+       public const string ID_VI_TRI = "ID_VI_TRI";
+       public const string ID_DANH_HIEU = "ID_DANH_HIEU";
+       public const string TRANG_THAI_NHAN_SU_HIEN_TAI = "TRANG_THAI_NHAN_SU_HIEN_TAI";
    }
 
 
@@ -595,6 +621,7 @@
    public class V_DM_QUYET_DINH
    {
        public const string ID = "ID";
+       public const string TEN = "TEN";
        public const string MA_QUYET_DINH = "MA_QUYET_DINH";
        public const string ID_LOAI_QD = "ID_LOAI_QD";
        public const string NGAY_CO_HIEU_LUC = "NGAY_CO_HIEU_LUC";
@@ -602,8 +629,8 @@
        public const string NGAY_HET_HIEU_LUC = "NGAY_HET_HIEU_LUC";
        public const string NOI_DUNG = "NOI_DUNG";
        public const string LINK = "LINK";
-       public const string TEN = "TEN";
    }
+
    public class GD_CHI_TIET_TRANG_THAI_LD
    {
        public const string ID = "ID";

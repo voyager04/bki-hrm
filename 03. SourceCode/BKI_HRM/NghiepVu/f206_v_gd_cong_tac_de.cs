@@ -198,6 +198,8 @@ namespace BKI_HRM
             US_V_GD_CONG_TAC v_us = new US_V_GD_CONG_TAC();
             DS_V_GD_CONG_TAC v_ds = new DS_V_GD_CONG_TAC();
             v_us.FillDatasetSearchByIdQuyetDinh(v_ds, ip_us.dcID_QUYET_DINH);
+            if (v_ds.V_GD_CONG_TAC.Rows.Count < 1)
+                return;
             CGridUtils.Dataset2C1Grid(v_ds, m_fg, get_trans_object(m_fg));
             m_fg.Rows.Add();
         }
@@ -414,8 +416,20 @@ namespace BKI_HRM
             }
         }
 
+
+        private void reset_form_quyet_dinh()
+        {
+            m_us_dm_quyet_dinh = new US_DM_QUYET_DINH();
+            m_txt_ma_quyet_dinh.Text = "";
+            m_dat_ngay_ky.Value = DateTime.Now;
+            m_dat_ngay_co_hieu_luc.Value = DateTime.Now;
+            m_txt_noi_dung.Text = "";
+            m_lbl_file_name.Text = "";
+        }
+
         private void them_quyet_dinh()
         {
+            reset_form_quyet_dinh();
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             m_grb_quyet_dinh.Enabled = true;
             m_txt_ma_quyet_dinh.Focus();
@@ -499,7 +513,7 @@ namespace BKI_HRM
         private void view_quyet_dinh_saved()
         {
             f701_v_gd_hop_dong_lao_dong_View frm = new f701_v_gd_hop_dong_lao_dong_View();
-            frm.display_for_view_quyet_dinh(m_us_dm_quyet_dinh);
+            frm.display(ConfigurationSettings.AppSettings["DESTINATION_NAME"] + m_us_dm_quyet_dinh.strLINK);
         }
 
         private void set_define_event()

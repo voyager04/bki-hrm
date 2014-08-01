@@ -411,8 +411,8 @@ namespace BKI_HRM
             THOI_DIEM_KT = 8,
             THOI_GIAN_TG = 9,
             DANH_HIEU = 10,
-            MO_TA = 11,
-            MA_QUYET_DINH = 12,
+            MA_QUYET_DINH = 11,
+            MO_TA = 12,
         }
         #endregion
 

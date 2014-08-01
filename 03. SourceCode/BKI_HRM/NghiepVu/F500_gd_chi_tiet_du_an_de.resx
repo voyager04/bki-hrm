@@ -120,4 +120,13 @@
   <metadata name="m_ofd_chon_file.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="m_fg_nhan_su.ColumnInfo" xml:space="preserve">
+    <value>12,1,0,0,0,85,Columns:0{Width:13;}	1{Width:111;Caption:"Họ đệm";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	2{Caption:"Tên";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	3{Width:99;Caption:"Vị trí";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	4{Width:100;Caption:"Trạng thái lao động";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	5{Width:113;Caption:"Thời điểm tham gia";DataType:System.DateTime;Format:"dd/MM/yyyy";TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	6{Width:111;Caption:"Thời điểm kết thúc";DataType:System.DateTime;Format:"dd/MM/yyyy";TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	7{Width:133;Caption:"Thời gian tham gia (%)";DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	8{Width:108;Caption:"Danh hiệu";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	9{Width:217;Caption:"Mã quyết định";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	10{Width:100;Caption:"Loại quyết định";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	11{Width:188;Caption:"Mô tả";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	</value>
+  </data>
+  <data name="m_fg_nhan_su.Styles" xml:space="preserve">
+    <value>Normal{Font:Microsoft Sans Serif, 8.25pt;}	Alternate{BackColor:Info;}	Fixed{BackColor:Control;ForeColor:ControlText;Border:Flat,1,ControlDark,Both;}	Highlight{BackColor:Highlight;ForeColor:HighlightText;}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	EmptyArea{BackColor:AppWorkspace;Border:Flat,1,ControlDarkDark,Both;}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal2{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	</value>
+  </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>37</value>
+  </metadata>
 </root>

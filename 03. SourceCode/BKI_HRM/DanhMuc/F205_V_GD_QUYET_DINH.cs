@@ -4,6 +4,7 @@
 /// Goal: Create Form for V_GD_QUYET_DINH
 ///************************************************
 using System;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Collections;
@@ -702,7 +703,7 @@ namespace BKI_HRM
             if (m_fg.Col == (int)e_col_Number.MA_QUYET_DINH)
             {
                 f701_v_gd_hop_dong_lao_dong_View frm = new f701_v_gd_hop_dong_lao_dong_View();
-                frm.display_for_view_quyet_dinh(new US_DM_QUYET_DINH(m_us.dcID));
+                frm.display(ConfigurationSettings.AppSettings["DESTINATION_NAME"] + new US_DM_QUYET_DINH(m_us.dcID).strLINK);
                 load_data_2_grid();
             }
             return false;
