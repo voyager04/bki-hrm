@@ -50,9 +50,10 @@ namespace BKI_HRM {
                 ,
             CAP_DON_VI = 9
                 ,
-            TRANG_THAI_CV = 18
+            TRANG_THAI_CV = 19
                 ,
-           
+            LOAI_CV = 17
+                ,
             MA_QUYET_DINH = 13
                 ,
             DIA_BAN = 1
@@ -67,20 +68,20 @@ namespace BKI_HRM {
                 ,
             HO_DEM = 5
                 ,
-            TY_LE_THAM_GIA = 20
+            TY_LE_THAM_GIA = 21
                 ,
             TEN_CV = 8
                 ,
             NGAY_HET_HIEU_LUC = 16
                 ,
-            TRANG_THAI_LD_HIEN_TAI = 21
+            TRANG_THAI_LD_HIEN_TAI = 22
                 ,
             MA_CV = 7
                 ,
-            MA_QUYET_DINH_MIEN_NHIEM = 19
-                , NGACH = 17
+            MA_QUYET_DINH_MIEN_NHIEM = 20
+                , NGACH = 18
 
-        }
+        }			
         #endregion
 
         #region Members
@@ -138,7 +139,7 @@ namespace BKI_HRM {
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGAY_BAT_DAU, e_col_Number.NGAY_BAT_DAU);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.CAP_DON_VI, e_col_Number.CAP_DON_VI);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.TRANG_THAI_CV, e_col_Number.TRANG_THAI_CV);
-           
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.LOAI_CV, e_col_Number.LOAI_CV);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.MA_QUYET_DINH, e_col_Number.MA_QUYET_DINH);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.DIA_BAN, e_col_Number.DIA_BAN);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.TEN, e_col_Number.TEN);
