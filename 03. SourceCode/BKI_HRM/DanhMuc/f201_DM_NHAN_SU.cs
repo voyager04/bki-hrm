@@ -37,16 +37,16 @@ namespace BKI_HRM
 
 
 
-	public class f201_dm_nhan_su : System.Windows.Forms.Form
-	{
-		internal System.Windows.Forms.ImageList ImageList;
-		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
-		private C1.Win.C1FlexGrid.C1FlexGrid m_grv_nhan_su;
-		internal SIS.Controls.Button.SiSButton m_cmd_delete;
-		internal SIS.Controls.Button.SiSButton m_cmd_update;
-		internal SIS.Controls.Button.SiSButton m_cmd_insert;
-		internal SIS.Controls.Button.SiSButton m_cmd_exit;
-		internal SIS.Controls.Button.SiSButton m_cmd_print_cv;
+    public class f201_dm_nhan_su : System.Windows.Forms.Form
+    {
+        internal System.Windows.Forms.ImageList ImageList;
+        internal System.Windows.Forms.Panel m_pnl_out_place_dm;
+        private C1.Win.C1FlexGrid.C1FlexGrid m_grv_nhan_su;
+        internal SIS.Controls.Button.SiSButton m_cmd_delete;
+        internal SIS.Controls.Button.SiSButton m_cmd_update;
+        internal SIS.Controls.Button.SiSButton m_cmd_insert;
+        internal SIS.Controls.Button.SiSButton m_cmd_exit;
+        internal SIS.Controls.Button.SiSButton m_cmd_print_cv;
         private Label m_lbl_tim_kiem;
         private TextBox m_txt_tim_kiem;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
@@ -148,31 +148,31 @@ namespace BKI_HRM
         private Label label8;
         internal SIS.Controls.Button.SiSButton m_cmd_update_chuc_vu;
         internal SIS.Controls.Button.SiSButton m_cmd_chon_phap_nhan;
-		private System.ComponentModel.IContainer components;
+        private System.ComponentModel.IContainer components;
 
-		
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		protected override void Dispose( bool disposing )
-		{
-			if( disposing )
-			{
-				if(components != null)
-				{
-					components.Dispose();
-				}
-			}
-			base.Dispose( disposing );
-		}
 
-		#region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (components != null)
+                {
+                    components.Dispose();
+                }
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f201_dm_nhan_su));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
@@ -581,7 +581,7 @@ namespace BKI_HRM
             this.m_tpg_thong_tin_khac.Location = new System.Drawing.Point(4, 22);
             this.m_tpg_thong_tin_khac.Name = "m_tpg_thong_tin_khac";
             this.m_tpg_thong_tin_khac.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tpg_thong_tin_khac.Size = new System.Drawing.Size(990, 233);
+            this.m_tpg_thong_tin_khac.Size = new System.Drawing.Size(1003, 233);
             this.m_tpg_thong_tin_khac.TabIndex = 3;
             this.m_tpg_thong_tin_khac.Text = "Thông tin khác";
             this.m_tpg_thong_tin_khac.ToolTipText = "Thông tin khác";
@@ -598,7 +598,7 @@ namespace BKI_HRM
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox4.Location = new System.Drawing.Point(3, 103);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(984, 116);
+            this.groupBox4.Size = new System.Drawing.Size(997, 116);
             this.groupBox4.TabIndex = 71;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Người liên hệ";
@@ -670,7 +670,7 @@ namespace BKI_HRM
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(984, 100);
+            this.groupBox3.Size = new System.Drawing.Size(997, 100);
             this.groupBox3.TabIndex = 70;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Trình độ học vấn";
@@ -753,7 +753,7 @@ namespace BKI_HRM
             this.m_tpg_hop_dong.Controls.Add(this.m_grv_hop_dong_ld);
             this.m_tpg_hop_dong.Location = new System.Drawing.Point(4, 22);
             this.m_tpg_hop_dong.Name = "m_tpg_hop_dong";
-            this.m_tpg_hop_dong.Size = new System.Drawing.Size(990, 233);
+            this.m_tpg_hop_dong.Size = new System.Drawing.Size(1003, 233);
             this.m_tpg_hop_dong.TabIndex = 5;
             this.m_tpg_hop_dong.Text = "Hợp đồng lao động";
             this.m_tpg_hop_dong.ToolTipText = "Hợp đồng lao động";
@@ -768,7 +768,7 @@ namespace BKI_HRM
             this.m_cmd_them_hop_dong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_them_hop_dong.ImageIndex = 2;
             this.m_cmd_them_hop_dong.ImageList = this.ImageList;
-            this.m_cmd_them_hop_dong.Location = new System.Drawing.Point(875, 204);
+            this.m_cmd_them_hop_dong.Location = new System.Drawing.Point(888, 204);
             this.m_cmd_them_hop_dong.Name = "m_cmd_them_hop_dong";
             this.m_cmd_them_hop_dong.Size = new System.Drawing.Size(115, 29);
             this.m_cmd_them_hop_dong.TabIndex = 34;
@@ -782,7 +782,7 @@ namespace BKI_HRM
             this.m_grv_hop_dong_ld.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_grv_hop_dong_ld.Location = new System.Drawing.Point(0, 0);
             this.m_grv_hop_dong_ld.Name = "m_grv_hop_dong_ld";
-            this.m_grv_hop_dong_ld.Size = new System.Drawing.Size(990, 204);
+            this.m_grv_hop_dong_ld.Size = new System.Drawing.Size(1003, 204);
             this.m_grv_hop_dong_ld.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_hop_dong_ld.Styles"));
             this.m_grv_hop_dong_ld.TabIndex = 21;
             // 
@@ -796,7 +796,7 @@ namespace BKI_HRM
             this.m_tpg_du_an.Location = new System.Drawing.Point(4, 22);
             this.m_tpg_du_an.Name = "m_tpg_du_an";
             this.m_tpg_du_an.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tpg_du_an.Size = new System.Drawing.Size(990, 233);
+            this.m_tpg_du_an.Size = new System.Drawing.Size(1003, 233);
             this.m_tpg_du_an.TabIndex = 6;
             this.m_tpg_du_an.Text = "Dự án";
             this.m_tpg_du_an.ToolTipText = "Dự án";
@@ -818,7 +818,7 @@ namespace BKI_HRM
             this.m_grv_du_an.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_du_an.Location = new System.Drawing.Point(3, 31);
             this.m_grv_du_an.Name = "m_grv_du_an";
-            this.m_grv_du_an.Size = new System.Drawing.Size(984, 199);
+            this.m_grv_du_an.Size = new System.Drawing.Size(997, 199);
             this.m_grv_du_an.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_du_an.Styles"));
             this.m_grv_du_an.TabIndex = 21;
             // 
@@ -858,7 +858,7 @@ namespace BKI_HRM
             this.m_tpg_chuc_vu.Controls.Add(this.m_grv_chuc_vu_hien_tai);
             this.m_tpg_chuc_vu.Location = new System.Drawing.Point(4, 22);
             this.m_tpg_chuc_vu.Name = "m_tpg_chuc_vu";
-            this.m_tpg_chuc_vu.Size = new System.Drawing.Size(990, 233);
+            this.m_tpg_chuc_vu.Size = new System.Drawing.Size(1003, 233);
             this.m_tpg_chuc_vu.TabIndex = 2;
             this.m_tpg_chuc_vu.Text = "Chức vụ hiện tại";
             this.m_tpg_chuc_vu.ToolTipText = "Chức vụ hiện tại";
@@ -873,7 +873,7 @@ namespace BKI_HRM
             this.m_cmd_update_chuc_vu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update_chuc_vu.ImageIndex = 9;
             this.m_cmd_update_chuc_vu.ImageList = this.ImageList;
-            this.m_cmd_update_chuc_vu.Location = new System.Drawing.Point(645, 205);
+            this.m_cmd_update_chuc_vu.Location = new System.Drawing.Point(658, 205);
             this.m_cmd_update_chuc_vu.Name = "m_cmd_update_chuc_vu";
             this.m_cmd_update_chuc_vu.Size = new System.Drawing.Size(115, 28);
             this.m_cmd_update_chuc_vu.TabIndex = 33;
@@ -888,7 +888,7 @@ namespace BKI_HRM
             this.m_cmd_them_chuc_vu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_them_chuc_vu.ImageIndex = 2;
             this.m_cmd_them_chuc_vu.ImageList = this.ImageList;
-            this.m_cmd_them_chuc_vu.Location = new System.Drawing.Point(760, 205);
+            this.m_cmd_them_chuc_vu.Location = new System.Drawing.Point(773, 205);
             this.m_cmd_them_chuc_vu.Name = "m_cmd_them_chuc_vu";
             this.m_cmd_them_chuc_vu.Size = new System.Drawing.Size(115, 28);
             this.m_cmd_them_chuc_vu.TabIndex = 32;
@@ -904,7 +904,7 @@ namespace BKI_HRM
             this.m_cmd_mien_nhiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_mien_nhiem.ImageIndex = 4;
             this.m_cmd_mien_nhiem.ImageList = this.ImageList;
-            this.m_cmd_mien_nhiem.Location = new System.Drawing.Point(875, 205);
+            this.m_cmd_mien_nhiem.Location = new System.Drawing.Point(888, 205);
             this.m_cmd_mien_nhiem.Name = "m_cmd_mien_nhiem";
             this.m_cmd_mien_nhiem.Size = new System.Drawing.Size(115, 28);
             this.m_cmd_mien_nhiem.TabIndex = 31;
@@ -918,7 +918,7 @@ namespace BKI_HRM
             this.m_grv_chuc_vu_hien_tai.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_grv_chuc_vu_hien_tai.Location = new System.Drawing.Point(0, 0);
             this.m_grv_chuc_vu_hien_tai.Name = "m_grv_chuc_vu_hien_tai";
-            this.m_grv_chuc_vu_hien_tai.Size = new System.Drawing.Size(990, 205);
+            this.m_grv_chuc_vu_hien_tai.Size = new System.Drawing.Size(1003, 205);
             this.m_grv_chuc_vu_hien_tai.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_chuc_vu_hien_tai.Styles"));
             this.m_grv_chuc_vu_hien_tai.TabIndex = 21;
             // 
@@ -1376,7 +1376,7 @@ namespace BKI_HRM
             this.m_tpg_di_cong_tac.Location = new System.Drawing.Point(4, 22);
             this.m_tpg_di_cong_tac.Name = "m_tpg_di_cong_tac";
             this.m_tpg_di_cong_tac.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tpg_di_cong_tac.Size = new System.Drawing.Size(990, 233);
+            this.m_tpg_di_cong_tac.Size = new System.Drawing.Size(1003, 233);
             this.m_tpg_di_cong_tac.TabIndex = 7;
             this.m_tpg_di_cong_tac.Text = "Đi công tác";
             this.m_tpg_di_cong_tac.ToolTipText = "Đi công tác";
@@ -1398,7 +1398,7 @@ namespace BKI_HRM
             this.m_grv_di_cong_tac.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_di_cong_tac.Location = new System.Drawing.Point(3, 31);
             this.m_grv_di_cong_tac.Name = "m_grv_di_cong_tac";
-            this.m_grv_di_cong_tac.Size = new System.Drawing.Size(984, 199);
+            this.m_grv_di_cong_tac.Size = new System.Drawing.Size(997, 199);
             this.m_grv_di_cong_tac.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_di_cong_tac.Styles"));
             this.m_grv_di_cong_tac.TabIndex = 50;
             // 
@@ -1440,7 +1440,7 @@ namespace BKI_HRM
             this.m_tpg_qua_trinh_chuc_vu.Location = new System.Drawing.Point(4, 22);
             this.m_tpg_qua_trinh_chuc_vu.Name = "m_tpg_qua_trinh_chuc_vu";
             this.m_tpg_qua_trinh_chuc_vu.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tpg_qua_trinh_chuc_vu.Size = new System.Drawing.Size(990, 233);
+            this.m_tpg_qua_trinh_chuc_vu.Size = new System.Drawing.Size(1003, 233);
             this.m_tpg_qua_trinh_chuc_vu.TabIndex = 8;
             this.m_tpg_qua_trinh_chuc_vu.Text = "Quá trình công tác";
             this.m_tpg_qua_trinh_chuc_vu.ToolTipText = "Chức vụ";
@@ -1462,7 +1462,7 @@ namespace BKI_HRM
             this.m_grv_chuc_vu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_chuc_vu.Location = new System.Drawing.Point(3, 31);
             this.m_grv_chuc_vu.Name = "m_grv_chuc_vu";
-            this.m_grv_chuc_vu.Size = new System.Drawing.Size(984, 199);
+            this.m_grv_chuc_vu.Size = new System.Drawing.Size(997, 199);
             this.m_grv_chuc_vu.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_chuc_vu.Styles"));
             this.m_grv_chuc_vu.TabIndex = 50;
             // 
@@ -1563,14 +1563,15 @@ namespace BKI_HRM
             this.ResumeLayout(false);
             this.PerformLayout();
 
-		}
-		#endregion
+        }
+        #endregion
 
-		#region Public Interface
-		public void display(){			
-			this.Show();
-		}
-        
+        #region Public Interface
+        public void display()
+        {
+            this.Show();
+        }
+
         public void select_data(ref US_DM_NHAN_SU op_us_dm_nhan_su)
         {
             m_e_form_mode = DataEntryFormMode.SelectDataState;
@@ -1589,79 +1590,106 @@ namespace BKI_HRM
             // TODO: Add any constructor code after InitializeComponent call
             //
             format_controls();
-            m_txt_tim_kiem.ForeColor = Color.Gray;
+
         }
 
-		#endregion
+        #endregion
 
-		#region Data Structure
-		private enum e_col_Number{
-			CMND = 8
-,MA_NV = 1
-,TON_GIAO = 24
-,DI_DONG_LIEN_HE = 22
-,NOI_CAP_CMND = 10
-,TRANG_THAI = 27
-,EMAIL_CA_NHAN = 16
-,TEN = 3
-,HO_KHAU = 20
-,NOI_SINH = 6
-,DT_NHA = 17
-,NGAY_CAP_CMND = 9
-,CHUYEN_NGANH = 13
-,GIOI_TINH = 4
-,NGUYEN_QUAN = 7
-,DI_DONG = 18
-,QUAN_HE = 23
-,EMAIL_CQ = 15
-,CHO_O = 19
-,DAN_TOC = 25
-,NGAY_SINH = 5
-,TRINH_DO = 11
-,MA_SO_THUE = 26
-,NOI_DAO_TAO = 12
-,NGUOI_LIEN_HE = 21
-,NAM_TOT_NGHIEP = 14
-,HO_DEM = 2
+        #region Data Structure
+        private enum e_col_Number
+        {
+            CMND = 8
+,
+            MA_NV = 1
+                ,
+            TON_GIAO = 24
+                ,
+            DI_DONG_LIEN_HE = 22
+                ,
+            NOI_CAP_CMND = 10
+                ,
+            TRANG_THAI = 27
+                ,
+            EMAIL_CA_NHAN = 16
+                ,
+            TEN = 3
+                ,
+            HO_KHAU = 20
+                ,
+            NOI_SINH = 6
+                ,
+            DT_NHA = 17
+                ,
+            NGAY_CAP_CMND = 9
+                ,
+            CHUYEN_NGANH = 13
+                ,
+            GIOI_TINH = 4
+                ,
+            NGUYEN_QUAN = 7
+                ,
+            DI_DONG = 18
+                ,
+            QUAN_HE = 23
+                ,
+            EMAIL_CQ = 15
+                ,
+            CHO_O = 19
+                ,
+            DAN_TOC = 25
+                ,
+            NGAY_SINH = 5
+                ,
+            TRINH_DO = 11
+                ,
+            MA_SO_THUE = 26
+                ,
+            NOI_DAO_TAO = 12
+                ,
+            NGUOI_LIEN_HE = 21
+                ,
+            NAM_TOT_NGHIEP = 14
+                , HO_DEM = 2
 
-		}
+        }
         private enum e_col_Number_of_qua_trinh_cong_tac
         {
             DEN_NGAY = 2
 ,
-           
+
             VAI_TRO = 5
                 ,
-            
+
             TU_NGAY = 1
                 ,
             LAM_GI = 3
                 ,
             MA_QUYET_DINH = 6
-                , O_DAU = 4
-            , LOAI_QUYET_DINH = 7
-        }		
+                ,
+            O_DAU = 4
+                , LOAI_QUYET_DINH = 7
+        }
         private enum e_col_Number_of_qua_trinh_lam_viec
         {
             NGAY_CO_HIEU_LUC = 13,
             TEN_CV = 4,
-            TEN_DON_VI = 8 ,
+            TEN_DON_VI = 8,
             NGAY_BAT_DAU = 1,
-            MA_DON_VI = 7 ,
-            NGAY_KET_THUC = 2   ,
+            MA_DON_VI = 7,
+            NGAY_KET_THUC = 2,
             MA_CV = 3,
-            CAP_DON_VI = 9 ,
+            CAP_DON_VI = 9,
             LOAI_DON_VI = 10,
-            
+
             TRANG_THAI_CV = 5,
-            MA_QUYET_DINH = 12 ,
+            MA_QUYET_DINH = 12,
             NGAY_HET_HIEU_LUC = 14,
             DIA_BAN = 11,
             TY_LE_THAM_GIA = 6
         }
         private enum e_col_Number_of_trang_thai_lao_dong
         {
-            
+
             MA_QUYET_DINH = 3,
             LOAI_QUYET_DINH = 4,
             TRANG_THAI_LAO_DONG = 1,
@@ -1678,16 +1706,16 @@ namespace BKI_HRM
             NGUOI_KY = 10,
             CHUC_VU_NGUOI_KY = 11
 
-        }	
-		#endregion
+        }
+        #endregion
 
-		#region Members
-		ITransferDataRow m_obj_trans;
+        #region Members
+        ITransferDataRow m_obj_trans;
         ITransferDataRow m_obj_trans_qua_trinh_lam_viec;
 
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
-		DS_DM_NHAN_SU m_ds = new DS_DM_NHAN_SU();
-		US_DM_NHAN_SU m_us = new US_DM_NHAN_SU();
+        DS_DM_NHAN_SU m_ds = new DS_DM_NHAN_SU();
+        US_DM_NHAN_SU m_us = new US_DM_NHAN_SU();
         US_V_GD_QUA_TRINH_LAM_VIEC m_us_qua_trinh_lam_viec = new US_V_GD_QUA_TRINH_LAM_VIEC();
         DS_V_GD_QUA_TRINH_LAM_VIEC m_ds_qua_trinh_lam_viec = new DS_V_GD_QUA_TRINH_LAM_VIEC();
         US_GD_QUA_TRINH_CONG_TAC m_us_qua_trinh_cong_tac = new US_GD_QUA_TRINH_CONG_TAC();
@@ -1696,21 +1724,25 @@ namespace BKI_HRM
         string m_str_trang_thai_cmd = "creat";
         string m_str_lua_chon = "";
         private string m_str_directory_to = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
-		#endregion
+        #endregion
 
-		#region Private Methods
-		private void format_controls(){
-			CControlFormat.setFormStyle(this, new CAppContext_201());
-			CControlFormat.setC1FlexFormat(m_grv_nhan_su);
-			CGridUtils.AddSave_Excel_Handlers(m_grv_nhan_su);
+        #region Private Methods
+        private void format_controls()
+        {
+            CControlFormat.setFormStyle(this, new CAppContext_201());
+            CControlFormat.setC1FlexFormat(m_grv_nhan_su);
+            CGridUtils.AddSave_Excel_Handlers(m_grv_nhan_su);
             CGridUtils.AddSearch_Handlers(m_grv_nhan_su);
-            
+            ControlFormat.setFormat_theo_phap_nhan(this);
+
             //CControlFormat.setC1FlexFormat(m_grv_qua_trinh_lam_viec);
             //CGridUtils.AddSave_Excel_Handlers(m_grv_qua_trinh_lam_viec);
             //CGridUtils.AddSearch_Handlers(m_grv_qua_trinh_lam_viec);
-			set_define_events();
-			this.KeyPreview = true;		
-		}
+            set_define_events();
+            this.KeyPreview = true;
+            m_txt_tim_kiem.ForeColor = Color.Gray;
+
+        }
         private void print_cv()
         {
             grid2us_object(m_us, m_grv_nhan_su.Row);
@@ -1720,10 +1752,10 @@ namespace BKI_HRM
             if (result == DialogResult.OK)
             {
                 CWordReport v_obj_word = new CWordReport("CVTemplate.doc", m_sfd_save_cv.FileName);
-                
+
                 v_obj_word.AddFindAndReplace("<Hoten>", m_us.strHO_DEM + " " + m_us.strTEN);
                 v_obj_word.AddFindAndReplace("<Gioitinh>", m_us.strGIOI_TINH);
-                if(m_us.datNGAY_SINH > DateTime.Parse("1/1/1900"))
+                if (m_us.datNGAY_SINH > DateTime.Parse("1/1/1900"))
                     v_obj_word.AddFindAndReplace("<Ngaysinh>", m_us.datNGAY_SINH.ToShortDateString());
                 else
                 {
@@ -1742,19 +1774,20 @@ namespace BKI_HRM
                 if (m_us.strANH != "")
                 {
                     v_obj_word.AddFindAndReplace("<Anh>", "");
-                   
+
                 }
                 else
                 {
                     v_obj_word.AddFindAndReplace("<Anh>", "Dán Ảnh");
                 }
                 v_obj_word.Export2Word(m_us.strANH, false);
-            
+
             }
 
-            
+
         }
-		private void set_initial_form_load(){
+        private void set_initial_form_load()
+        {
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.UpdateDataState:
@@ -1777,44 +1810,45 @@ namespace BKI_HRM
                     m_cmd_chon_nhan_vien.Visible = false;
                     break;
             }
-			m_obj_trans = get_trans_object(m_grv_nhan_su);
+            m_obj_trans = get_trans_object(m_grv_nhan_su);
 
-			load_data_2_grid_search();
-           
-           
-		}	
-		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
-			Hashtable v_htb = new Hashtable();
-			v_htb.Add(DM_NHAN_SU.CMND, e_col_Number.CMND);
-			v_htb.Add(DM_NHAN_SU.MA_NV, e_col_Number.MA_NV);
-			v_htb.Add(DM_NHAN_SU.TON_GIAO, e_col_Number.TON_GIAO);
-			v_htb.Add(DM_NHAN_SU.DI_DONG_LIEN_HE, e_col_Number.DI_DONG_LIEN_HE);
-			v_htb.Add(DM_NHAN_SU.NOI_CAP_CMND, e_col_Number.NOI_CAP_CMND);
-			v_htb.Add(DM_NHAN_SU.TRANG_THAI, e_col_Number.TRANG_THAI);
-			v_htb.Add(DM_NHAN_SU.EMAIL_CA_NHAN, e_col_Number.EMAIL_CA_NHAN);
-			v_htb.Add(DM_NHAN_SU.TEN, e_col_Number.TEN);
-			v_htb.Add(DM_NHAN_SU.HO_KHAU, e_col_Number.HO_KHAU);
-			v_htb.Add(DM_NHAN_SU.NOI_SINH, e_col_Number.NOI_SINH);
-			v_htb.Add(DM_NHAN_SU.DT_NHA, e_col_Number.DT_NHA);
-			v_htb.Add(DM_NHAN_SU.NGAY_CAP_CMND, e_col_Number.NGAY_CAP_CMND);
-			v_htb.Add(DM_NHAN_SU.CHUYEN_NGANH, e_col_Number.CHUYEN_NGANH);
-			v_htb.Add(DM_NHAN_SU.GIOI_TINH, e_col_Number.GIOI_TINH);
-			v_htb.Add(DM_NHAN_SU.NGUYEN_QUAN, e_col_Number.NGUYEN_QUAN);
-			v_htb.Add(DM_NHAN_SU.DI_DONG, e_col_Number.DI_DONG);
-			v_htb.Add(DM_NHAN_SU.QUAN_HE, e_col_Number.QUAN_HE);
-			v_htb.Add(DM_NHAN_SU.EMAIL_CQ, e_col_Number.EMAIL_CQ);
-			v_htb.Add(DM_NHAN_SU.CHO_O, e_col_Number.CHO_O);
-			v_htb.Add(DM_NHAN_SU.DAN_TOC, e_col_Number.DAN_TOC);
-			v_htb.Add(DM_NHAN_SU.NGAY_SINH, e_col_Number.NGAY_SINH);
-			v_htb.Add(DM_NHAN_SU.TRINH_DO, e_col_Number.TRINH_DO);
-			v_htb.Add(DM_NHAN_SU.MA_SO_THUE, e_col_Number.MA_SO_THUE);
-			v_htb.Add(DM_NHAN_SU.NOI_DAO_TAO, e_col_Number.NOI_DAO_TAO);
-			v_htb.Add(DM_NHAN_SU.NGUOI_LIEN_HE, e_col_Number.NGUOI_LIEN_HE);
-			v_htb.Add(DM_NHAN_SU.NAM_TOT_NGHIEP, e_col_Number.NAM_TOT_NGHIEP);
-			v_htb.Add(DM_NHAN_SU.HO_DEM, e_col_Number.HO_DEM);						
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.DM_NHAN_SU.NewRow());
-			return v_obj_trans;			
-		}
+            load_data_2_grid_search();
+
+
+        }
+        private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
+        {
+            Hashtable v_htb = new Hashtable();
+            v_htb.Add(DM_NHAN_SU.CMND, e_col_Number.CMND);
+            v_htb.Add(DM_NHAN_SU.MA_NV, e_col_Number.MA_NV);
+            v_htb.Add(DM_NHAN_SU.TON_GIAO, e_col_Number.TON_GIAO);
+            v_htb.Add(DM_NHAN_SU.DI_DONG_LIEN_HE, e_col_Number.DI_DONG_LIEN_HE);
+            v_htb.Add(DM_NHAN_SU.NOI_CAP_CMND, e_col_Number.NOI_CAP_CMND);
+            v_htb.Add(DM_NHAN_SU.TRANG_THAI, e_col_Number.TRANG_THAI);
+            v_htb.Add(DM_NHAN_SU.EMAIL_CA_NHAN, e_col_Number.EMAIL_CA_NHAN);
+            v_htb.Add(DM_NHAN_SU.TEN, e_col_Number.TEN);
+            v_htb.Add(DM_NHAN_SU.HO_KHAU, e_col_Number.HO_KHAU);
+            v_htb.Add(DM_NHAN_SU.NOI_SINH, e_col_Number.NOI_SINH);
+            v_htb.Add(DM_NHAN_SU.DT_NHA, e_col_Number.DT_NHA);
+            v_htb.Add(DM_NHAN_SU.NGAY_CAP_CMND, e_col_Number.NGAY_CAP_CMND);
+            v_htb.Add(DM_NHAN_SU.CHUYEN_NGANH, e_col_Number.CHUYEN_NGANH);
+            v_htb.Add(DM_NHAN_SU.GIOI_TINH, e_col_Number.GIOI_TINH);
+            v_htb.Add(DM_NHAN_SU.NGUYEN_QUAN, e_col_Number.NGUYEN_QUAN);
+            v_htb.Add(DM_NHAN_SU.DI_DONG, e_col_Number.DI_DONG);
+            v_htb.Add(DM_NHAN_SU.QUAN_HE, e_col_Number.QUAN_HE);
+            v_htb.Add(DM_NHAN_SU.EMAIL_CQ, e_col_Number.EMAIL_CQ);
+            v_htb.Add(DM_NHAN_SU.CHO_O, e_col_Number.CHO_O);
+            v_htb.Add(DM_NHAN_SU.DAN_TOC, e_col_Number.DAN_TOC);
+            v_htb.Add(DM_NHAN_SU.NGAY_SINH, e_col_Number.NGAY_SINH);
+            v_htb.Add(DM_NHAN_SU.TRINH_DO, e_col_Number.TRINH_DO);
+            v_htb.Add(DM_NHAN_SU.MA_SO_THUE, e_col_Number.MA_SO_THUE);
+            v_htb.Add(DM_NHAN_SU.NOI_DAO_TAO, e_col_Number.NOI_DAO_TAO);
+            v_htb.Add(DM_NHAN_SU.NGUOI_LIEN_HE, e_col_Number.NGUOI_LIEN_HE);
+            v_htb.Add(DM_NHAN_SU.NAM_TOT_NGHIEP, e_col_Number.NAM_TOT_NGHIEP);
+            v_htb.Add(DM_NHAN_SU.HO_DEM, e_col_Number.HO_DEM);
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.DM_NHAN_SU.NewRow());
+            return v_obj_trans;
+        }
         private ITransferDataRow get_trans_object_qua_trinh_cong_tac(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
             Hashtable v_htb = new Hashtable();
@@ -1841,7 +1875,7 @@ namespace BKI_HRM
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_CV, e_col_Number_of_qua_trinh_lam_viec.MA_CV);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.CAP_DON_VI, e_col_Number_of_qua_trinh_lam_viec.CAP_DON_VI);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.LOAI_DON_VI, e_col_Number_of_qua_trinh_lam_viec.LOAI_DON_VI);
-          //  v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.LOAI_CV, e_col_Number_of_qua_trinh_lam_viec.LOAI_CV);
+            //  v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.LOAI_CV, e_col_Number_of_qua_trinh_lam_viec.LOAI_CV);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.TRANG_THAI_CV, e_col_Number_of_qua_trinh_lam_viec.TRANG_THAI_CV);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.MA_QUYET_DINH, e_col_Number_of_qua_trinh_lam_viec.MA_QUYET_DINH);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.NGAY_HET_HIEU_LUC, e_col_Number_of_qua_trinh_lam_viec.NGAY_HET_HIEU_LUC);
@@ -1879,16 +1913,16 @@ namespace BKI_HRM
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, v_ds.V_GD_TRANG_THAI_LAO_DONG.NewRow());
             return v_obj_trans;
         }
-       
+
         private void load_data_2_grv_chuc_vu_hien_tai()
         {
-           
+
 
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_nhan_su)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;
             grid2us_object(m_us, m_grv_nhan_su.Row);
 
-          //  v_us.FillDatasetByManhanvien(v_ds, m_us.strMA_NV, m_dat_bat_dau.Value, m_dat_ket_thuc.Value);
+            //  v_us.FillDatasetByManhanvien(v_ds, m_us.strMA_NV, m_dat_bat_dau.Value, m_dat_ket_thuc.Value);
             //m_grv_qua_trinh_lam_viec.Redraw = false;
             //// phai viet 1 ham get_trans_object khac
             //ITransferDataRow v_obj_trans = get_trans_object_qua_trinh_lam_viec(m_grv_qua_trinh_lam_viec);
@@ -1900,12 +1934,12 @@ namespace BKI_HRM
             DS_V_GD_QUA_TRINH_LAM_VIEC v_ds_qua_trinh_lam_viec = new DS_V_GD_QUA_TRINH_LAM_VIEC();
             v_us_qua_trinh_lam_viec.FillDataset_chuc_vu_hien_tai(v_ds_qua_trinh_lam_viec, m_us.strMA_NV, CAppContext_201.getCurrentIDPhapnhan());
             m_grv_chuc_vu_hien_tai.Redraw = false;
-            
+
             CGridUtils.Dataset2C1Grid(v_ds_qua_trinh_lam_viec, m_grv_chuc_vu_hien_tai, m_obj_trans_qua_trinh_lam_viec);
             m_grv_chuc_vu_hien_tai.Redraw = true;
-            
+
         }
-      
+
         private void bo_nhiem()
         {
             US_V_GD_QUA_TRINH_LAM_VIEC v_us = new US_V_GD_QUA_TRINH_LAM_VIEC();
@@ -1914,8 +1948,8 @@ namespace BKI_HRM
             //    grid2us_object_chuc_vu(v_us, m_grv_chuc_vu_hien_tai.Row);
             //else
             //{
-                v_us.FillDatasetByManhanvien(v_ds, m_us.strMA_NV, DateTime.Parse("1/1/1900"), DateTime.Today);
-                v_us.DataRow2Me((DataRow)v_ds.V_GD_QUA_TRINH_LAM_VIEC.Rows[0]);
+            v_us.FillDatasetByManhanvien(v_ds, m_us.strMA_NV, DateTime.Parse("1/1/1900"), DateTime.Today);
+            v_us.DataRow2Me((DataRow)v_ds.V_GD_QUA_TRINH_LAM_VIEC.Rows[0]);
             //}
             f202_v_gd_qua_trinh_lam_viec_de v_frm = new f202_v_gd_qua_trinh_lam_viec_de();
             v_frm.display_for_bo_nhiem(v_us, "kiem_nhiem");
@@ -1925,27 +1959,40 @@ namespace BKI_HRM
         {
             US_V_GD_QUA_TRINH_LAM_VIEC v_us = new US_V_GD_QUA_TRINH_LAM_VIEC();
             DS_V_GD_QUA_TRINH_LAM_VIEC v_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC();
-            
-            v_us.FillDatasetByManhanvien(v_ds, m_us.strMA_NV, DateTime.Parse("1/1/1900"), DateTime.Today);
-            v_us.DataRow2Me((DataRow)v_ds.V_GD_QUA_TRINH_LAM_VIEC.Rows[0]);
-            US_V_GD_QUA_TRINH_LAM_VIEC v_us_qua_trinh_lam_viec = new US_V_GD_QUA_TRINH_LAM_VIEC(v_us.dcID);
-            f202_v_gd_qua_trinh_lam_viec_de v_frm = new f202_v_gd_qua_trinh_lam_viec_de();
-            v_frm.display_for_update(v_us_qua_trinh_lam_viec);
-            load_data_2_grv_chuc_vu_hien_tai();
+
+            if (m_grv_chuc_vu_hien_tai.Row < 0)
+            {
+                MessageBox.Show("Hãy chọn 1 dòng để sửa.");
+            }
+            else
+            {
+                grid2us_object_chuc_vu(v_us, m_grv_chuc_vu_hien_tai.Row);
+                US_V_GD_QUA_TRINH_LAM_VIEC v_us_qua_trinh_lam_viec = new US_V_GD_QUA_TRINH_LAM_VIEC(v_us.dcID);
+                f202_v_gd_qua_trinh_lam_viec_de v_frm = new f202_v_gd_qua_trinh_lam_viec_de();
+                v_frm.display_for_update(v_us_qua_trinh_lam_viec);
+                load_data_2_grv_chuc_vu_hien_tai();
+            }
         }
-        private void mien_nhiem() 
+        private void mien_nhiem()
         {
             US_V_GD_QUA_TRINH_LAM_VIEC v_us = new US_V_GD_QUA_TRINH_LAM_VIEC();
             DS_V_GD_QUA_TRINH_LAM_VIEC v_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC();
-            
-            //v_us.FillDatasetByManhanvien(v_ds, m_us.strMA_NV, DateTime.Parse("1/1/1900"), DateTime.Today);
-            //v_us.DataRow2Me((DataRow)v_ds.V_GD_QUA_TRINH_LAM_VIEC.Rows[0]);
-            grid2us_object_chuc_vu(v_us, m_grv_chuc_vu_hien_tai.Row);
-            f202_v_gd_qua_trinh_lam_viec_de v_frm = new f202_v_gd_qua_trinh_lam_viec_de();
-            v_frm.display_for_mien_nhiem(v_us);
-            load_data_2_grv_chuc_vu_hien_tai();
+
+            if (m_grv_chuc_vu_hien_tai.Row < 0)
+            {
+                MessageBox.Show("Hãy chọn 1 dòng để miễn nhiệm.");
+            }
+            else
+            {
+                grid2us_object_chuc_vu(v_us, m_grv_chuc_vu_hien_tai.Row);
+                f202_v_gd_qua_trinh_lam_viec_de v_frm = new f202_v_gd_qua_trinh_lam_viec_de();
+                v_frm.display_for_mien_nhiem(v_us);
+                load_data_2_grv_chuc_vu_hien_tai();
+            }
+          
+
         }
-       
+
         private void them_hop_dong()
         {
 
@@ -1969,11 +2016,11 @@ namespace BKI_HRM
             ITransferDataRow v_obj_trans = get_trans_object_hop_dong_lao_dong(m_grv_hop_dong_ld);
             CGridUtils.Dataset2C1Grid(v_ds, m_grv_hop_dong_ld, v_obj_trans);
             m_grv_hop_dong_ld.Redraw = true;
-             
 
-          
+
+
         }
-       
+
         private void load_chi_tiet_nhan_vien()
         {
             CGridUtils.AddSave_Excel_Handlers(m_grv_chuc_vu_hien_tai);
@@ -1983,19 +2030,19 @@ namespace BKI_HRM
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;
             grid2us_object(m_us, m_grv_nhan_su.Row);
 
-            if (/*m_us.check_phap_nhan_is_null(m_us.dcID) &&*/ CAppContext_201.getCurrentIDPhapnhan() == PHAP_NHAN.TEG)
-            {
-                m_cmd_chon_phap_nhan.Visible = true;
-            }
-            else
-            {
-                m_cmd_chon_phap_nhan.Visible = false;
-            }
-           // us_object_to_form();
+            //             if (/*m_us.check_phap_nhan_is_null(m_us.dcID) &&*/ CAppContext_201.getCurrentIDPhapnhan() == PHAP_NHAN.TEG)
+            //             {
+            //                 m_cmd_chon_phap_nhan.Visible = true;
+            //             }
+            //             else
+            //             {
+            //                 m_cmd_chon_phap_nhan.Visible = false;
+            //             }
+            // us_object_to_form();
             m_lbl_ho_ten.Text = m_us.strHO_DEM + " " + m_us.strTEN;
             m_lbl_ma_nhan_vien.Text = m_us.strMA_NV;
-           // m_cbo_ma_headcount.Visible = false;
-          //  m_cmd_thay_headcount.Text = "Thay Headcount";
+            // m_cbo_ma_headcount.Visible = false;
+            //  m_cmd_thay_headcount.Text = "Thay Headcount";
             m_lbl_headcount.Visible = true;
             m_str_trang_thai_cmd = "creat";
             if (m_us.dcID_HEADCOUNT != 0)
@@ -2025,7 +2072,7 @@ namespace BKI_HRM
                     m_str_lua_chon = "D";
                     load_data_2_grv_qua_trinh_lam_viec(m_grv_di_cong_tac);
                     break;
-               
+
                 case 4:
                     m_str_lua_chon = "A";
                     load_data_2_grv_qua_trinh_lam_viec(m_grv_chuc_vu);
@@ -2036,9 +2083,9 @@ namespace BKI_HRM
                 case 6:
                     load_thong_tin_khac();
                     break;
-                
+
             }
-           
+
         }
         private void load_data_2_grid()
         {
@@ -2050,7 +2097,8 @@ namespace BKI_HRM
 
             load_chi_tiet_nhan_vien();
         }
-        private void load_data_2_grid_search(){
+        private void load_data_2_grid_search()
+        {
             m_ds = new DS_DM_NHAN_SU();
             if (m_txt_tim_kiem.Text.Trim() == m_str_message_tim_kiem)
             {
@@ -2097,7 +2145,7 @@ namespace BKI_HRM
             m_txt_noi_cap.Text = m_us.strNOI_CAP_CMND;
             m_txt_ton_giao.Text = m_us.strTON_GIAO;
             m_txt_dan_toc.Text = m_us.strDAN_TOC;
-            
+
             m_txt_email_co_quan.Text = m_us.strEMAIL_CQ;
             m_txt_email_ca_nhan.Text = m_us.strEMAIL_CA_NHAN;
             m_txt_so_dtdd.Text = m_us.strDI_DONG;
@@ -2105,16 +2153,16 @@ namespace BKI_HRM
             m_txt_ma_so_thue.Text = m_us.strMA_SO_THUE;
             m_txt_dia_chi.Text = m_us.strCHO_O;
             m_txt_ho_khau.Text = m_us.strHO_KHAU;
-           
+
             if (m_us.strANH != "")
                 try
                 {
                     string v_str_imagepath = m_str_directory_to + m_us.strMA_NV + ".jpg";
-                    FileStream fs ;
-                    fs = new System.IO.FileStream(v_str_imagepath,System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                    FileStream fs;
+                    fs = new System.IO.FileStream(v_str_imagepath, System.IO.FileMode.Open, System.IO.FileAccess.Read);
                     m_ptb_anh.Image = System.Drawing.Image.FromStream(fs);
                     fs.Close();
-                   
+
                 }
                 catch (Exception v_e)
                 {
@@ -2124,7 +2172,7 @@ namespace BKI_HRM
             else
                 m_ptb_anh.Image = m_ptb_anh.ErrorImage;
             m_txt_ma_headcount.Text = m_us.strMA_HEADCOUNT;
-            
+
             // Load trạng thái lao động
             US_V_GD_TRANG_THAI_LAO_DONG v_us_trang_thai_lao_dong = new US_V_GD_TRANG_THAI_LAO_DONG();
             DS_V_GD_TRANG_THAI_LAO_DONG v_ds_trang_thai_lao_dong = new DS_V_GD_TRANG_THAI_LAO_DONG();
@@ -2147,13 +2195,13 @@ namespace BKI_HRM
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;
             grid2us_object(m_us, m_grv_nhan_su.Row);
 
-            v_us.FillDatasetByProc(v_ds, m_us.strMA_NV,m_str_lua_chon ,m_dat_tu_ngay_du_an.Value, m_dat_den_ngay_du_an.Value, CAppContext_201.getCurrentIDPhapnhan());
+            v_us.FillDatasetByProc(v_ds, m_us.strMA_NV, m_str_lua_chon, m_dat_tu_ngay_du_an.Value, m_dat_den_ngay_du_an.Value, CAppContext_201.getCurrentIDPhapnhan());
             m_grv_du_an.Redraw = false;
             // phai viet 1 ham get_trans_object khac
             ITransferDataRow v_obj_trans = get_trans_object_qua_trinh_cong_tac(i_cfg);
             CGridUtils.Dataset2C1Grid(v_ds, i_cfg, v_obj_trans);
             m_grv_du_an.Redraw = true;
-             
+
         }
 
         private void load_custom_source_2_m_txt_tim_kiem()
@@ -2168,14 +2216,15 @@ namespace BKI_HRM
             }
             m_txt_tim_kiem.AutoCompleteCustomSource = v_acsc_search;
         }
-        
-		private void grid2us_object(US_DM_NHAN_SU i_us
-			, int i_grid_row) {
-			DataRow v_dr;
-			v_dr = (DataRow) m_grv_nhan_su.Rows[i_grid_row].UserData;
-			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
-			i_us.DataRow2Me(v_dr);
-		}
+
+        private void grid2us_object(US_DM_NHAN_SU i_us
+            , int i_grid_row)
+        {
+            DataRow v_dr;
+            v_dr = (DataRow)m_grv_nhan_su.Rows[i_grid_row].UserData;
+            m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
+            i_us.DataRow2Me(v_dr);
+        }
 
         private void grid2us_object_chuc_vu(US_V_GD_QUA_TRINH_LAM_VIEC i_us, int i_grid_row)
         {
@@ -2184,24 +2233,26 @@ namespace BKI_HRM
             m_obj_trans_qua_trinh_lam_viec.GridRow2DataRow(i_grid_row, v_dr);
             i_us.DataRow2Me(v_dr);
         }
-		private void us_object2grid(US_DM_NHAN_SU i_us
-			, int i_grid_row) {
-			DataRow v_dr = (DataRow) m_grv_nhan_su.Rows[i_grid_row].UserData;
-			i_us.Me2DataRow(v_dr);
-			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
-		}
+        private void us_object2grid(US_DM_NHAN_SU i_us
+            , int i_grid_row)
+        {
+            DataRow v_dr = (DataRow)m_grv_nhan_su.Rows[i_grid_row].UserData;
+            i_us.Me2DataRow(v_dr);
+            m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
+        }
 
 
-		private void insert_dm_nhan_su(){
+        private void insert_dm_nhan_su()
+        {
             load_data_2_grid_search();
             m_us.FillDataset_search(m_ds, "");
             int v_i_count = m_ds.DM_NHAN_SU.Count;
-			f201_DM_NHAN_SU_DE v_fDE = new  f201_DM_NHAN_SU_DE();
+            f201_DM_NHAN_SU_DE v_fDE = new f201_DM_NHAN_SU_DE();
             v_fDE.display_for_insert();
             load_data_2_grid_search();
             load_chi_tiet_nhan_vien();
-            
-            
+
+
             m_us.FillDataset_search(m_ds, "");
             if (m_ds.DM_NHAN_SU.Count > v_i_count)
             {
@@ -2210,19 +2261,19 @@ namespace BKI_HRM
                 f201_dm_nhan_su_dialog v_frm = new f201_dm_nhan_su_dialog();
                 v_frm.display_them_nhan_vien(m_us);
             }
-           
-           
 
-            
-		}
 
-		private void update_dm_nhan_su()
+
+
+        }
+
+        private void update_dm_nhan_su()
         {
             if (File.Exists(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us.strMA_NV + ".jpg"))
             {
                 File.Delete(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us.strMA_NV + ".jpg");
             }
-            
+
             File.Copy(m_str_directory_to + m_us.strMA_NV + ".jpg", Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us.strMA_NV + ".jpg");
             if (m_us.strANH != "")
                 try
@@ -2234,10 +2285,10 @@ namespace BKI_HRM
                     FileStream fs;
                     fs = new System.IO.FileStream(v_str_imagepath, System.IO.FileMode.Open, System.IO.FileAccess.Read);
                     m_ptb_anh.Image = System.Drawing.Image.FromStream(fs);
-                    
+
                     fs.Close();
-                  //  m_us.strANH = Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\temp.jpg";
-                  
+                    //  m_us.strANH = Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\temp.jpg";
+
                 }
                 catch (Exception v_e)
                 {
@@ -2248,14 +2299,14 @@ namespace BKI_HRM
                 m_ptb_anh.Image = m_ptb_anh.ErrorImage;
 
 
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_nhan_su)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;			
-			//grid2us_object(m_us, m_grv_nhan_su.Row);
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_nhan_su)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;
+            //grid2us_object(m_us, m_grv_nhan_su.Row);
             f201_DM_NHAN_SU_DE v_fDE = new f201_DM_NHAN_SU_DE();
             v_fDE.display_for_update(m_us);
-			load_data_2_grid_search();
+            load_data_2_grid_search();
             load_chi_tiet_nhan_vien();
-		}
+        }
 
         private void them_phap_nhan()
         {
@@ -2266,48 +2317,53 @@ namespace BKI_HRM
             load_chi_tiet_nhan_vien();
         }
 
-		private void delete_dm_nhan_su(){
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_nhan_su)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;
-			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			US_DM_NHAN_SU v_us = new US_DM_NHAN_SU();
-			grid2us_object(v_us, m_grv_nhan_su.Row);
-			try {			
-				v_us.BeginTransaction();    											
-				v_us.Delete();                      								
-				v_us.CommitTransaction();
-				m_grv_nhan_su.Rows.Remove(m_grv_nhan_su.Row);
+        private void delete_dm_nhan_su()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_nhan_su)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;
+            if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
+            US_DM_NHAN_SU v_us = new US_DM_NHAN_SU();
+            grid2us_object(v_us, m_grv_nhan_su.Row);
+            try
+            {
+                v_us.BeginTransaction();
+                v_us.Delete();
+                v_us.CommitTransaction();
+                m_grv_nhan_su.Rows.Remove(m_grv_nhan_su.Row);
                 BaseMessages.MsgBox_Infor("Đã xóa thành công.");
-			}
-			catch (Exception v_e) {
-				v_us.Rollback();
-				CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
-					new CDBClientDBExceptionInterpret());
-				v_objErrHandler.showErrorMessage();
-			}
+            }
+            catch (Exception v_e)
+            {
+                v_us.Rollback();
+                CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
+                    new CDBClientDBExceptionInterpret());
+                v_objErrHandler.showErrorMessage();
+            }
             load_chi_tiet_nhan_vien();
-		}
+        }
 
-		private void view_dm_nhan_su(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_nhan_su)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;
-			grid2us_object(m_us, m_grv_nhan_su.Row);
-            f201_DM_NHAN_SU_DE v_fde = new f201_DM_NHAN_SU_DE();
-            v_fde.display_for_view(m_us);
-		}
-
-        private void select_data_2_us()
-	    {
+        private void view_dm_nhan_su()
+        {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_nhan_su)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;
             grid2us_object(m_us, m_grv_nhan_su.Row);
-	        this.Close();
-	    }
-		private void set_define_events(){
-			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
-			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
-			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
+            f201_DM_NHAN_SU_DE v_fde = new f201_DM_NHAN_SU_DE();
+            v_fde.display_for_view(m_us);
+        }
+
+        private void select_data_2_us()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_nhan_su)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;
+            grid2us_object(m_us, m_grv_nhan_su.Row);
+            this.Close();
+        }
+        private void set_define_events()
+        {
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
+            m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
+            m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             m_cmd_search.Click += new EventHandler(m_cmd_search_Click);
             m_txt_tim_kiem.KeyDown += new KeyEventHandler(m_txt_tim_kiem_KeyDown);
             m_dat_tu_ngay_du_an.ValueChanged += m_dat_du_an_ValueChanged;
@@ -2318,52 +2374,64 @@ namespace BKI_HRM
             m_dat_den_ngay_chuc_vu.ValueChanged += m_dat_chuc_vu_ValueChanged;
             m_cmd_update_chuc_vu.Click += m_cmd_update_chuc_vu_Click;
             m_cmd_chon_phap_nhan.Click += m_cmd_chon_phap_nhan_Click;
-		}
+        }
 
-       
 
-		#endregion
+
+        #endregion
 
         #region EVENT HANLDERS
 
 
-        private void f201_DM_NHAN_SU_Load(object sender, System.EventArgs e) {
-			try{
-				set_initial_form_load();
+        private void f201_DM_NHAN_SU_Load(object sender, System.EventArgs e)
+        {
+            try
+            {
+                set_initial_form_load();
                 load_custom_source_2_m_txt_tim_kiem();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		
-		}
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
 
-		private void m_cmd_exit_Click(object sender, EventArgs e) {
-			try{
-				this.Close();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        }
 
-		private void m_cmd_insert_Click(object sender, EventArgs e) {
-			try{
-				insert_dm_nhan_su();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_update_Click(object sender, EventArgs e) {
-			try{
-				update_dm_nhan_su();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_insert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                insert_dm_nhan_su();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                update_dm_nhan_su();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         private void m_cmd_chon_phap_nhan_Click(object sender, EventArgs e)
         {
             try
@@ -2376,14 +2444,17 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-		private void m_cmd_delete_Click(object sender, EventArgs e) {
-			try{
-				delete_dm_nhan_su();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                delete_dm_nhan_su();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
         //private void m_cmd_view_Click(object sender, EventArgs e) {
         //    try{
@@ -2409,21 +2480,22 @@ namespace BKI_HRM
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle( v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
         private void m_txt_tim_kiem_KeyDown(object sender, KeyEventArgs e)
         {
             try
             {
-                if(e.KeyData == Keys.Enter){
+                if (e.KeyData == Keys.Enter)
+                {
                     load_data_2_grid_search();
                     load_chi_tiet_nhan_vien();
                 }
             }
             catch (Exception v_e)
             {
-            	CSystemLog_301.ExceptionHandle(v_e);
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
         private void m_grv_nhan_su_Click(object sender, EventArgs e)
@@ -2438,7 +2510,7 @@ namespace BKI_HRM
             }
 
         }
-        
+
 
         private void m_grv_nhan_su_KeyDown(object sender, KeyEventArgs e)
         {
@@ -2589,7 +2661,7 @@ namespace BKI_HRM
             }
         }
 
-        
+
 
         private void m_cmd_them_hop_dong_Click(object sender, EventArgs e)
         {
@@ -2626,7 +2698,7 @@ namespace BKI_HRM
 
         }
 
-       
+
         private void m_dat_du_an_ValueChanged(object sender, EventArgs e)
         {
 

@@ -49,6 +49,7 @@ namespace BKI_HRM
         private void format_controls()
         {
             //CControlFormat.setFormStyle(this, new CAppContext_201());
+            ControlFormat.setFormat_theo_phap_nhan(this);
             set_define_events();
             ShowInTaskbar = true;
 
@@ -140,8 +141,8 @@ namespace BKI_HRM
             m_menuitem_chi_tiet_cap_bac.Click += m_menuitem_chi_tiet_cap_bac_Click;
             m_menuitem_qldonvi.Click += m_menuitem_quan_ly_don_vi_Click;
             m_lbl_thu_viec_sap_het_han.Click += m_lbl_thu_viec_sap_het_han_Click;
-            m_menuitem_chuyen_nhan_vien.Click += m_menuitem_chuyen_nhan_vien_Click;
-            m_menuitem_chuyen_don_vi.Click += m_menuitem_chuyen_don_vi_Click;
+         //   m_menuitem_chuyen_nhan_vien.Click += m_menuitem_chuyen_nhan_vien_Click;
+         //   m_menuitem_chuyen_don_vi.Click += m_menuitem_chuyen_don_vi_Click;
             m_menuitem_dang_xuat.Click += m_menuitem_dang_xuat_Click;
         }
 

@@ -79,6 +79,7 @@ namespace BKI_HRM.US {
         public const decimal TU = 1;
         public const decimal TE = 2;
         public const decimal TEG = 3;
+        public const decimal Tatca = -1;
     }
     public class CHON_QUYET_DINH
     {
