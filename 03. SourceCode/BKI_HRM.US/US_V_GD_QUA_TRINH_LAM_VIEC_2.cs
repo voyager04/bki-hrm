@@ -1041,44 +1041,48 @@ namespace BKI_HRM.US
         }
         #endregion
         #region Addtional
-        public void FillDatase_NhanSu_TheoPhongBan(DS_V_GD_QUA_TRINH_LAM_VIEC_2 op_ds, string ip_str_search, DateTime ip_dat_thoi_diem, decimal ip_dc_phap_nhan)
+        public void FillDatase_NhanSu_TheoPhongBan(DS_V_GD_QUA_TRINH_LAM_VIEC_2 op_ds, string ip_str_search, DateTime ip_dat_thoi_diem, decimal ip_dc_phap_nhan, decimal ip_dc_kiem_nhiem)
         {
             CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_2_Search_NhanVien_TheoPhongBanTaiMotThoiDiem");
             v_sp.addNVarcharInputParam("@ip_str_tim_kiem", ip_str_search);
             v_sp.addDecimalInputParam("@ip_dc_phap_nhan", ip_dc_phap_nhan);
             v_sp.addDatetimeInputParam("@ip_dat_thoi_diem", ip_dat_thoi_diem);
+            v_sp.addDecimalInputParam("@ip_dc_kiem_nhiem", ip_dc_kiem_nhiem);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
-        public void count_nhan_vien_theo_phong_ban(DS_V_GD_QUA_TRINH_LAM_VIEC_2 op_ds, string ip_str_search, DateTime ip_dat_thoi_diem, ref decimal op_count, decimal ip_dc_phap_nhan)
+        public void count_nhan_vien_theo_phong_ban(DS_V_GD_QUA_TRINH_LAM_VIEC_2 op_ds, string ip_str_search, DateTime ip_dat_thoi_diem, ref decimal op_count, decimal ip_dc_phap_nhan, decimal ip_dc_kiem_nhiem)
         {
 
             CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_2_Count_NhanVien_TheoPhongBanTaiMotThoiDiem");
             v_sp.addNVarcharInputParam("@ip_str_tim_kiem", ip_str_search);
             v_sp.addDatetimeInputParam("@ip_dat_thoi_diem", ip_dat_thoi_diem);
             v_sp.addDecimalInputParam("@ip_dc_phap_nhan", ip_dc_phap_nhan);
+            v_sp.addDecimalInputParam("@ip_dc_kiem_nhiem", ip_dc_kiem_nhiem);
             SqlParameter v_sql = v_sp.addDecimalOutputParam("@count", op_count);
             v_sp.fillDataSetByCommand(this, op_ds);
             op_count = CIPConvert.ToDecimal(v_sql.Value.ToString());
         }
         public void FillDatasetSearchChucVuThoiDiem(DS_V_GD_QUA_TRINH_LAM_VIEC_2 op_ds,
                 string ip_str_ma_cv,
-                DateTime ip_dat_thoi_diem, decimal ip_dc_phap_nhan)
+                DateTime ip_dat_thoi_diem, decimal ip_dc_phap_nhan, decimal ip_dc_kiem_nhiem)
         {
             CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_2_select_by_MA_CHUC_VU_THOI_DIEM");
             v_sp.addNVarcharInputParam("@MA_CHUC_VU", ip_str_ma_cv);
             v_sp.addDatetimeInputParam("@THOI_DIEM", ip_dat_thoi_diem);
             v_sp.addDecimalInputParam("@ID_PHAP_NHAN", ip_dc_phap_nhan);
+            v_sp.addDecimalInputParam("@ID_KIEM_NHIEM", ip_dc_kiem_nhiem);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
         public void count_nhan_vien_theo_chuc_vu(DS_V_GD_QUA_TRINH_LAM_VIEC_2 op_ds,
                 string ip_str_ma_cv,
                 DateTime ip_dat_thoi_diem, decimal ip_dc_phap_nhan
-            , ref decimal op_dc_count)
+            , ref decimal op_dc_count, decimal ip_dc_kiem_nhiem)
         {
             CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_2_Count_MA_CHUC_VU_THOI_DIEM");
             v_sp.addNVarcharInputParam("@MA_CHUC_VU", ip_str_ma_cv);
             v_sp.addDatetimeInputParam("@THOI_DIEM", ip_dat_thoi_diem);
             v_sp.addDecimalInputParam("@ID_PHAP_NHAN", ip_dc_phap_nhan);
+            v_sp.addDecimalInputParam("@ID_KIEM_NHIEM", ip_dc_kiem_nhiem);
             SqlParameter v_sql = v_sp.addDecimalOutputParam("@Count", op_dc_count);
             v_sp.fillDataSetByCommand(this, op_ds);
             op_dc_count = CIPConvert.ToDecimal(v_sql.Value);
