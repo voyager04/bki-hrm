@@ -390,6 +390,11 @@ namespace BKI_HRM
         {
             try
             {
+                if (CAppContext_201.getCurrentIDPhapnhan() == 3)
+                {
+                    m_menuitem_hopdong.Visible = false;
+                    m_menuitem_bao_cao_hop_dong.Visible = false;
+                }
                 if (CAppContext_201.getCurrentIDPhapnhan() != -1)
                 {
                     US_DM_PHAP_NHAN v_us = new US_DM_PHAP_NHAN(CAppContext_201.getCurrentIDPhapnhan());
