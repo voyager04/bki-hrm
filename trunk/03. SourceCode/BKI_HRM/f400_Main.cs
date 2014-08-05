@@ -775,7 +775,7 @@ namespace BKI_HRM
         {
             try
             {
-                ProcessStartInfo sInfo = new ProcessStartInfo("http://goo.gl/DFhioS");
+                ProcessStartInfo sInfo = new ProcessStartInfo("http://1drv.ms/XzwLat");
                 Process.Start(sInfo);
             }
             catch (Exception v_e)
