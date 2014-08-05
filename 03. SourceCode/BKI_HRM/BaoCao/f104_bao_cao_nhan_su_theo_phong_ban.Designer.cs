@@ -27,6 +27,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f104_bao_cao_nhan_su_theo_phong_ban));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.m_ckb_kiem_nhiem = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.m_rdb_nhom = new System.Windows.Forms.RadioButton();
             this.m_rdb_ko_nhom = new System.Windows.Forms.RadioButton();
@@ -44,7 +45,6 @@
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_ckb_kiem_nhiem = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -95,6 +95,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1189, 81);
             this.panel2.TabIndex = 25;
+            // 
+            // m_ckb_kiem_nhiem
+            // 
+            this.m_ckb_kiem_nhiem.AutoSize = true;
+            this.m_ckb_kiem_nhiem.Location = new System.Drawing.Point(785, 61);
+            this.m_ckb_kiem_nhiem.Name = "m_ckb_kiem_nhiem";
+            this.m_ckb_kiem_nhiem.Size = new System.Drawing.Size(118, 17);
+            this.m_ckb_kiem_nhiem.TabIndex = 42;
+            this.m_ckb_kiem_nhiem.Text = "Hiển thị kiêm nhiệm";
+            this.m_ckb_kiem_nhiem.UseVisualStyleBackColor = true;
+            this.m_ckb_kiem_nhiem.CheckedChanged += new System.EventHandler(this.m_ckb_kiem_nhiem_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -272,16 +283,6 @@
             this.m_fg.Size = new System.Drawing.Size(1189, 417);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 33;
-            // 
-            // m_ckb_kiem_nhiem
-            // 
-            this.m_ckb_kiem_nhiem.AutoSize = true;
-            this.m_ckb_kiem_nhiem.Location = new System.Drawing.Point(785, 61);
-            this.m_ckb_kiem_nhiem.Name = "m_ckb_kiem_nhiem";
-            this.m_ckb_kiem_nhiem.Size = new System.Drawing.Size(118, 17);
-            this.m_ckb_kiem_nhiem.TabIndex = 42;
-            this.m_ckb_kiem_nhiem.Text = "Hiển thị kiêm nhiệm";
-            this.m_ckb_kiem_nhiem.UseVisualStyleBackColor = true;
             // 
             // f104_bao_cao_nhan_su_theo_phong_ban
             // 
