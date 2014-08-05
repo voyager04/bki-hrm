@@ -481,14 +481,14 @@ namespace BKI_HRM
                             {
                                 switch ((int)CAppContext_201.getCurrentIDPhapnhan())
                                 {
-                                    case 1:
-                                        m_us_trang_thai_ld.dcID_QUYET_DINH = 1541;
+                                    case (int)PHAP_NHAN.TU:
+                                        m_us_trang_thai_ld.dcID_QUYET_DINH = 1515;
                                         break;
-                                    case 2:
-                                        m_us_trang_thai_ld.dcID_QUYET_DINH = 1540;
+                                    case (int)PHAP_NHAN.TE:
+                                        m_us_trang_thai_ld.dcID_QUYET_DINH = 1517;
                                         break;
-                                    case 3:
-                                        m_us_trang_thai_ld.dcID_QUYET_DINH = 1538;
+                                    case (int)PHAP_NHAN.TEG:
+                                        m_us_trang_thai_ld.dcID_QUYET_DINH = 1516;
                                         break;
                                     default:
                                         break;
