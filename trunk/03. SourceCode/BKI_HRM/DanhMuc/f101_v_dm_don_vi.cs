@@ -43,7 +43,7 @@ namespace BKI_HRM {
         private Label m_lbl_so_luong_ban_ghi;
         private Label label2;
         private ToolTip m_tooltip;
-        internal SiSButton m_cmd_view;
+        internal SiSButton m_cmd_chuyennv;
         internal SiSButton m_cmd_chon_don_vi;
         private ComboBox m_cbo_trangthai;
         private ComboBox m_cbo_capdv;
@@ -94,7 +94,7 @@ namespace BKI_HRM {
             this.m_cmd_chon_don_vi = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_view = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_chuyennv = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_lbl_so_luong_ban_ghi = new System.Windows.Forms.Label();
@@ -151,7 +151,7 @@ namespace BKI_HRM {
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_chon_don_vi);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_chuyennv);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -217,21 +217,21 @@ namespace BKI_HRM {
             this.m_cmd_update.TabIndex = 6;
             this.m_cmd_update.Text = "&Sửa";
             // 
-            // m_cmd_view
+            // m_cmd_chuyennv
             // 
-            this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_view.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_view.ImageIndex = 18;
-            this.m_cmd_view.ImageList = this.ImageList;
-            this.m_cmd_view.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_view.Name = "m_cmd_view";
-            this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_view.TabIndex = 4;
-            this.m_cmd_view.Text = "Xem";
-            this.m_cmd_view.Visible = false;
+            this.m_cmd_chuyennv.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_chuyennv.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_chuyennv.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_chuyennv.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_chuyennv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_chuyennv.ImageIndex = 18;
+            this.m_cmd_chuyennv.ImageList = this.ImageList;
+            this.m_cmd_chuyennv.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_chuyennv.Name = "m_cmd_chuyennv";
+            this.m_cmd_chuyennv.Size = new System.Drawing.Size(136, 28);
+            this.m_cmd_chuyennv.TabIndex = 4;
+            this.m_cmd_chuyennv.Text = "Chuyển nhân viên";
+            this.m_cmd_chuyennv.Click += new System.EventHandler(this.m_cmd_view_Click);
             // 
             // m_cmd_delete
             // 
@@ -770,6 +770,15 @@ namespace BKI_HRM {
             var frm = new f104_bao_cao_nhan_su_theo_phong_ban();
             frm.display_for_dm_don_vi(m_v_us.strMA_DON_VI.ToString());
         }
+        private void chuyen_nhan_su()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            //if (m_fg.Rows[m_fg.Row].IsNode) return;
+            grid2us_object(m_v_us, m_fg.Row);
+            var frm = new f410_chuyen_nhan_vien();
+            frm.display_for_dm_don_vi(m_v_us.strMA_DON_VI.ToString());
+        }
         private void load_data_2_cbo_trang_thai()
         {
             DataTable v_dt = new DataTable();
@@ -948,6 +957,18 @@ namespace BKI_HRM {
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        private void m_cmd_view_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                chuyen_nhan_su();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            } 
         }
     }
 }

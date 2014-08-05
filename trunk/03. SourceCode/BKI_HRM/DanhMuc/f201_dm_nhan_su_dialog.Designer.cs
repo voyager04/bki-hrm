@@ -33,12 +33,12 @@
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_cmd_them_chuc_vu = new SIS.Controls.Button.SiSButton();
             this.m_cmd_them_trang_thai = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_them_hop_dong = new SIS.Controls.Button.SiSButton();
             this.m_cmd_them_cap_bac = new SIS.Controls.Button.SiSButton();
             this.m_cmd_them_du_an = new SIS.Controls.Button.SiSButton();
             this.m_cmd_phap_nhan_tu = new SIS.Controls.Button.SiSButton();
             this.m_cmd_phap_nhan_te = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_them_hop_dong = new SIS.Controls.Button.SiSButton();
             this.SuspendLayout();
             // 
             // ImageList
@@ -101,23 +101,6 @@
             this.m_cmd_them_trang_thai.TabIndex = 35;
             this.m_cmd_them_trang_thai.Text = "Thêm trạng thái lao động";
             this.m_cmd_them_trang_thai.Click += new System.EventHandler(this.m_cmd_them_trang_thai_Click);
-            // 
-            // m_cmd_them_hop_dong
-            // 
-            this.m_cmd_them_hop_dong.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_them_hop_dong.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_them_hop_dong.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_them_hop_dong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_cmd_them_hop_dong.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.m_cmd_them_hop_dong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_them_hop_dong.ImageIndex = 13;
-            this.m_cmd_them_hop_dong.ImageList = this.ImageList;
-            this.m_cmd_them_hop_dong.Location = new System.Drawing.Point(0, 102);
-            this.m_cmd_them_hop_dong.Name = "m_cmd_them_hop_dong";
-            this.m_cmd_them_hop_dong.Size = new System.Drawing.Size(454, 51);
-            this.m_cmd_them_hop_dong.TabIndex = 36;
-            this.m_cmd_them_hop_dong.Text = "Thêm hợp đồng lao động";
-            this.m_cmd_them_hop_dong.Click += new System.EventHandler(this.m_cmd_them_hop_dong_Click);
             // 
             // m_cmd_them_cap_bac
             // 
@@ -207,6 +190,23 @@
             this.m_cmd_exit.Text = "Thoát";
             this.m_cmd_exit.Click += new System.EventHandler(this.m_cmd_exit_Click);
             // 
+            // m_cmd_them_hop_dong
+            // 
+            this.m_cmd_them_hop_dong.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_them_hop_dong.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_them_hop_dong.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_them_hop_dong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_cmd_them_hop_dong.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.m_cmd_them_hop_dong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_them_hop_dong.ImageIndex = 13;
+            this.m_cmd_them_hop_dong.ImageList = this.ImageList;
+            this.m_cmd_them_hop_dong.Location = new System.Drawing.Point(0, 102);
+            this.m_cmd_them_hop_dong.Name = "m_cmd_them_hop_dong";
+            this.m_cmd_them_hop_dong.Size = new System.Drawing.Size(454, 51);
+            this.m_cmd_them_hop_dong.TabIndex = 36;
+            this.m_cmd_them_hop_dong.Text = "Thêm hợp đồng lao động";
+            this.m_cmd_them_hop_dong.Click += new System.EventHandler(this.m_cmd_them_hop_dong_Click);
+            // 
             // f201_dm_nhan_su_dialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,11 +234,11 @@
         internal System.Windows.Forms.ImageList ImageList;
         internal SIS.Controls.Button.SiSButton m_cmd_them_chuc_vu;
         internal SIS.Controls.Button.SiSButton m_cmd_them_trang_thai;
-        internal SIS.Controls.Button.SiSButton m_cmd_them_hop_dong;
         internal SIS.Controls.Button.SiSButton m_cmd_them_cap_bac;
         internal SIS.Controls.Button.SiSButton m_cmd_them_du_an;
         internal SIS.Controls.Button.SiSButton m_cmd_phap_nhan_tu;
         internal SIS.Controls.Button.SiSButton m_cmd_phap_nhan_te;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
+        internal SIS.Controls.Button.SiSButton m_cmd_them_hop_dong;
     }
 }

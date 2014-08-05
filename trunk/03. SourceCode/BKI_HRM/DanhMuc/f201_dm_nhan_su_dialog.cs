@@ -35,6 +35,7 @@ namespace BKI_HRM
         }
         public void display_them_nhan_vien(US_DM_NHAN_SU i_us)
         {
+            m_cmd_them_hop_dong.Visible = false;
             m_us_nhan_su = i_us;
             this.Show();
         }
