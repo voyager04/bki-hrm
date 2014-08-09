@@ -1,0 +1,122 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<%@ Import Namespace="IP.Core.IPCommon" %>
+<%@ Import Namespace="BKI_HRM.US" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <title>Tra cứu kế toán</title>
+    <link href="~/Styles/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/Admin.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/menu.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src='<%=ResolveClientUrl("~/Scripts/jquery-1.4.1.js")%>'></script>
+    <script type="text/javascript" src='<%=ResolveClientUrl("~/Scripts/jquery-1.4.1.min.js")%>'></script>
+    <script type="text/javascript" src='<%=ResolveClientUrl("~/Scripts/jquery-1.4.1-vsdoc.js")%>'></script>
+    <script type="text/javascript" src='<%=ResolveClientUrl("~/Scripts/script.js")%>'></script>
+    <script type="text/javascript" src='<%=ResolveClientUrl("~/Scripts/jquery-ui.min.js")%>'></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <%--    <script type="text/javascript">
+        $("#nav").delegate("*", "focus blur", function () {
+            var elem = $(this);
+            setTimeout(function () {
+                elem.toggleClass("focused", elem.is(":focus"));
+            }, 0);
+        });
+    </script>--%>
+    <form id="Form1" runat="server">
+    <div class="page">
+        <div class="loginDisplay">
+            <div class="loginer_header">
+                <img src="/DatPhongHop/Images/Login/loginer-header-item.png" alt="" width="20px"
+                    class="loginer_header" /></div>
+            <%--<div class="line_header">
+            <img src="/DatPhongHop/Images/line-loginer.png" alt="" width="auto" height="20px"
+                class="line_header" /></div>--%>
+            <div class="loginer_header">
+                <asp:HyperLink ID="m_lhk_user_name" runat="server" CssClass="accountInfo" Style="color: White;
+                    border-right: 1px double White; padding: 4px; padding-right: 10px;">m_lhk_user_name</asp:HyperLink></div>
+            <div class="loginer_header">
+                <asp:HyperLink ID="m_lnk_logout" runat="server" CssClass="accountInfo" Style="color: White;
+                    margin-left: 7px; bottom: 6px;" NavigateUrl="/DatPhongHop/Account/Logout.aspx">Đăng xuất</asp:HyperLink></div>
+        </div>
+        <div>
+            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                    <td>
+                        <br />
+                    </td>
+                </tr>
+                </tr>
+                <tr>
+                    <%--<td align="center">
+                        <asp:HyperLink ID="HyperLink1" runat="Server" NavigateUrl="#">
+                            <asp:Image ID="Image1" runat="server" Height='73px' Width='200px' ImageUrl="~/Images/MenuTop/logo-default.png" /></asp:HyperLink>
+                    </td>--%>
+                </tr>
+                <tr>
+                    <td>
+                        <br />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <%if (isUser())  // kiểm tra xem có đăng nhập bằng email topica không?
+          {%>
+        <ul id="menu">
+            <asp:Repeater ID="rptMainMenu" runat="server" OnItemDataBound="rptCategory_ItemDataBound" Visible="false">
+                <ItemTemplate>
+                    <li>
+                        <asp:HyperLink runat="server" NavigateUrl='<%# Eval("URL_FORM") %>'><%# Eval("TEN_CHUC_NANG")%></asp:HyperLink>
+                        <ul>
+                            <asp:Repeater ID="rpt_child_Menu" runat="server" OnItemDataBound="rptCategory_ItemDataBound_cap_ba">
+                                <ItemTemplate>
+                                    <li>
+                                        <asp:HyperLink runat="server" NavigateUrl='<%# Eval("URL_FORM") %>'><%# Eval("TEN_CHUC_NANG")%></asp:HyperLink>
+                                        <ul>
+                                            <asp:Repeater ID="rpt_child_Menu_cap_ba" runat="server" OnItemDataBound="rptCategory_ItemDataBound_cap_bon">
+                                                <ItemTemplate>
+                                                    <li>
+                                                        <asp:HyperLink runat="server" NavigateUrl='<%# Eval("URL_FORM") %>'><%# Eval("TEN_CHUC_NANG")%></asp:HyperLink>
+                                                        <ul>
+                                                            <asp:Repeater ID="rpt_child_Menu_cap_bon" runat="server">
+                                                                <ItemTemplate>
+                                                                    <li>
+                                                                        <asp:HyperLink runat="server" NavigateUrl='<%# Eval("URL_FORM") %>'><%# Eval("TEN_CHUC_NANG")%></asp:HyperLink>
+                                                                    </li>
+                                                                </ItemTemplate>
+                                                            </asp:Repeater>
+                                                        </ul>
+                                                    </li>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
+                                        </ul>
+                                    </li>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </ul>
+                    </li>
+                </ItemTemplate>
+            </asp:Repeater>
+        </ul>
+        <%}
+          else
+          { %>
+        <p class="cssManField">
+            Chúng tôi phát hiện bạn đang login bằng email không phải email @topica.edu.vn
+        </p>
+        <%} %>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+    </div>
+    </form>
+</body>
+</html>

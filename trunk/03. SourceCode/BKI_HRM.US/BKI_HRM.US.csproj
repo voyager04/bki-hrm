@@ -71,11 +71,13 @@
     <Compile Include="US_GD_QUA_TRINH_CONG_TAC.cs" />
     <Compile Include="US_GD_QUYET_DINH_DU_AN.cs" />
     <Compile Include="US_GD_QUYET_DINH_PHAP_NHAN.cs" />
+    <Compile Include="US_HT_CHUC_NANG.cs" />
     <Compile Include="US_HT_FORM.cs" />
-    <Compile Include="US_HT_NGUOI_SU_DUNG.cs" />
     <Compile Include="US_HT_PHAN_QUYEN_CHO_NHOM.cs" />
     <Compile Include="US_HT_PHAN_QUYEN_DETAIL.cs" />
     <Compile Include="US_HT_PHAN_QUYEN_HE_THONG.cs" />
+    <Compile Include="US_HT_QUAN_HE_SU_DUNG_DU_LIEU.cs" />
+    <Compile Include="US_HT_QUYEN_GROUP.cs" />
     <Compile Include="US_HT_USER_GROUP.cs" />
     <Compile Include="US_RPT_BO_NHIEM.cs" />
     <Compile Include="US_RPT_CHUC_VU_TRANG_THAI.cs" />
@@ -120,10 +122,6 @@
     <ProjectReference Include="..\IPException\IPException.vbproj">
       <Project>{B73156C2-7034-4DEA-A308-5E1782FF8DB4}</Project>
       <Name>IPException</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IPSystemAdmin\IPSystemAdmin.vbproj">
-      <Project>{455CD3A5-79BA-480A-B9BD-D4A7DDA397A8}</Project>
-      <Name>IPSystemAdmin</Name>
     </ProjectReference>
     <ProjectReference Include="..\IPUserService\IPUserService.vbproj">
       <Project>{B490EA92-2990-4CBB-B58B-12901AFCCCB5}</Project>

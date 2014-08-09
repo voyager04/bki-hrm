@@ -13,12 +13,15 @@ using IP.Core.IPCommon;
 using IP.Core.IPUserService;
 using System.Data.SqlClient;
 using System.Data;
+using BKI_HRM.DS.CDBNames;
 
 
 
-namespace BKI_HRM.US {
+namespace BKI_HRM.US
+{
 
-    public class US_DM_DON_VI : US_Object {
+    public class US_DM_DON_VI : US_Object
+    {
         private const string c_TableName = "DM_DON_VI";
         #region "Public Properties"
         public decimal dcID
@@ -313,7 +316,34 @@ namespace BKI_HRM.US {
         }
         #endregion
         #region "Addtional"
-        
+        public void FillDataset(
+            decimal ip_id_user_group
+            , bool is_user_group_using_data
+            , DS_DM_DON_VI op_ds_don_vi)
+        {
+
+            string v_str_sql_condition = " WHERE " + DM_DON_VI.ID;
+
+
+            if (is_user_group_using_data)
+            {
+                v_str_sql_condition += " IN (SELECT ID_DON_VI FROM HT_QUAN_HE_SU_DUNG_DU_LIEU WHERE ID_USER_GROUP =" + ip_id_user_group.ToString() + ")";
+            }
+            else
+            {
+                v_str_sql_condition += " NOT IN (SELECT ID_DON_VI FROM HT_QUAN_HE_SU_DUNG_DU_LIEU WHERE ID_USER_GROUP =" + ip_id_user_group.ToString() + ")";
+            }
+            this.FillDataset(op_ds_don_vi, v_str_sql_condition);
+        }
+
+        public void FillDataSet_Load_data_to_grid_danh_muc_don_vi_by_key_word(
+            DS_DM_DON_VI op_ds_don_vi
+            , string ip_str_key_word)
+        {
+            CStoredProc cstored = new CStoredProc("pr_DM_DON_VI_Load_to_grid_danh_muc_by_key_word");
+            cstored.addNVarcharInputParam("@ip_str_key_word", ip_str_key_word);
+            cstored.fillDataSetByCommand(this, op_ds_don_vi);
+        }
         #endregion
     }
 }
