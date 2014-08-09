@@ -1,0 +1,3 @@
+20140804 15:11:15 Cannot insert duplicate key row in object 'dbo.HT_NGUOI_SU_DUNG' with unique index 'HT_NGUOI_SU_DUNG_UK'.
+The statement has been terminated.
+.Net SqlClient Data Provider

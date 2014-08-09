@@ -91,4 +91,20 @@ namespace BKI_HRM.US {
         public const decimal DIEU_CHUYEN = 646;
         public const decimal TRANG_THAI_LD = 6;
     }
+    public class SESSION
+    {
+        public const string UserFullName = "UserFullName";
+        public const string UserName = "UserName";
+        public const string UserID = "UserID";
+        public const string AccounLoginYN = "AccounLoginYN";
+        public const string UserQuyen = "user_quyen";
+        public const string Allow2DeleteDataYN = "Allow2DeleteDataYN";
+        public const string NHOM_PHAN_QUYEN = "NHOM_PHAN_QUYEN";
+    }
+    public class ID_USER_GROUP
+    {
+        public const decimal ADMIN = 5;
+        public const decimal NHAN_DAN = 6;
+        public const decimal QUAN_LY = 7;
+    }
 }

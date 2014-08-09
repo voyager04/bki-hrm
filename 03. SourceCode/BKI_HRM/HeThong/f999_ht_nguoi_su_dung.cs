@@ -20,6 +20,7 @@ using IP.Core.IPSystemAdmin;
 
 using IP.Core.IPData.DBNames;
 using BKI_HRM.US;
+using IP.Core.IPUserService;
 
 
 

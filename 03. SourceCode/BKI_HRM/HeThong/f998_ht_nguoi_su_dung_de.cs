@@ -15,6 +15,7 @@ using BKI_HRM;
 using BKI_HRM.DS.CDBNames;
 using BKI_HRM.DS;
 using BKI_HRM.US;
+using IP.Core.IPUserService;
 
 namespace BKI_HRM
 {
@@ -352,7 +353,7 @@ namespace BKI_HRM
 			m_e_form_mode = DataEntryFormMode.InsertDataState;
 			this.ShowDialog();
 		}
-		public void update_new_user(BKI_HRM.US.US_HT_NGUOI_SU_DUNG i_us_user){
+		public void update_new_user(US_HT_NGUOI_SU_DUNG i_us_user){
 			m_e_form_mode = DataEntryFormMode.UpdateDataState;
 			m_us_user = i_us_user;
 			this.ShowDialog();
