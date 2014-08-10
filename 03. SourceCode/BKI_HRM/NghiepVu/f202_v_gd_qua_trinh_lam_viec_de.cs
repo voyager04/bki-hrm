@@ -656,7 +656,7 @@ namespace BKI_HRM
                     case DataEntryFormMode.InsertDataState:
                         decimal v_dc_ty_le = 0;
                         if (CIPConvert.is_valid_number(m_txt_ty_le_tham_gia.Text.Trim()))
-                            v_dc = CIPConvert.ToDecimal(m_txt_ty_le_tham_gia.Text.Trim());
+                            v_dc_ty_le = CIPConvert.ToDecimal(m_txt_ty_le_tham_gia.Text.Trim());
                         if (m_us_v_qua_trinh_lam_viec.Sum_ty_le_tham_gia(m_us_v_qua_trinh_lam_viec.strMA_NV, m_us_v_qua_trinh_lam_viec.strTRANG_THAI_CHUC_VU_YN) + v_dc_ty_le > 100)
                         {
                             BaseMessages.MsgBox_Infor("Tỷ lệ tham gia đã đã vượt quá 100%.");
