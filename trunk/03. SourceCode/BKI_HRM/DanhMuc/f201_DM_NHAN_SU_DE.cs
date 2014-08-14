@@ -156,8 +156,11 @@ namespace BKI_HRM
             m_txt_noi_cap.Text = m_us_dm_nhan_su.strNOI_CAP_CMND;
             m_txt_ton_giao.Text = m_us_dm_nhan_su.strTON_GIAO;
             m_txt_dan_toc.Text = m_us_dm_nhan_su.strDAN_TOC;
-
-            m_ofd_chon_anh.FileName = m_str_directory_to + m_us_dm_nhan_su.strMA_NV + ".jpg";
+            if (m_us_dm_nhan_su.strANH != "")
+            {
+                m_ofd_chon_anh.FileName = m_str_directory_to + m_us_dm_nhan_su.strMA_NV + ".jpg";
+            }
+            
             if (m_us_dm_nhan_su.strANH != "")
             {
                 m_cmd_xoa_anh.Visible = true;
@@ -356,43 +359,56 @@ namespace BKI_HRM
         private void save_image(string ip_str_pathimage)
         {
 
-            if (ip_str_pathimage != "")
+            if (ip_str_pathimage != "" && m_ofd_chon_anh.FileName != "" )
             {
-
-                if (File.Exists(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg"))
+                if (m_e_file_mode != DataEntryFileMode.DeleteFile)
                 {
-                    File.Delete(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg");
+                    if (File.Exists(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg"))
+                    {
+                        File.Delete(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us_dm_nhan_su.strMA_NV + ".jpg");
+                    }
+                    if (File.Exists(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\temp.jpg"))
+                    {
+                        File.Delete(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\temp.jpg");
+                    }
+                    if (ip_str_pathimage == m_str_directory_to + m_us_dm_nhan_su.strMA_NV + ".jpg")
+                    {
+                        File.Copy(m_str_directory_to + m_us_dm_nhan_su.strMA_NV + ".jpg", Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\temp.jpg");
+                        ip_str_pathimage = Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\temp.jpg";
+                    }
+
+
+                    int maxWidth = 120,
+                        maxHeight = 160;
+                    Bitmap image = new Bitmap(ip_str_pathimage);
+                    // Get the image's original width and height
+                    int originalWidth = image.Width;
+                    int originalHeight = image.Height;
+
+                    // To preserve the aspect ratio
+                    float ratioX = (float)maxWidth / (float)originalWidth;
+                    float ratioY = (float)maxHeight / (float)originalHeight;
+                    float ratio = Math.Min(ratioX, ratioY);
+
+                    // New width and height based on aspect ratio
+                    int newWidth = (int)(originalWidth * ratio);
+                    int newHeight = (int)(originalHeight * ratio);
+
+                    // Convert other formats (including CMYK) to RGB.
+                    Bitmap newImage = new Bitmap(newWidth, newHeight, PixelFormat.Format24bppRgb);
+
+                    // Draws the image in the specified size with quality mode set to HighQuality
+                    using (Graphics graphics = Graphics.FromImage(newImage))
+                    {
+                        graphics.CompositingQuality = CompositingQuality.HighQuality;
+                        graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                        graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+                        graphics.DrawImage(image, 0, 0, newWidth, newHeight);
+                    }
+                    newImage.Save(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_txt_ma_nhan_vien.Text + ".jpg", ImageFormat.Jpeg);
                 }
-
-                int maxWidth = 120,
-                    maxHeight = 160;
-                Bitmap image = new Bitmap(ip_str_pathimage);
-                // Get the image's original width and height
-                int originalWidth = image.Width;
-                int originalHeight = image.Height;
-
-                // To preserve the aspect ratio
-                float ratioX = (float)maxWidth / (float)originalWidth;
-                float ratioY = (float)maxHeight / (float)originalHeight;
-                float ratio = Math.Min(ratioX, ratioY);
-
-                // New width and height based on aspect ratio
-                int newWidth = (int)(originalWidth * ratio);
-                int newHeight = (int)(originalHeight * ratio);
-
-                // Convert other formats (including CMYK) to RGB.
-                Bitmap newImage = new Bitmap(newWidth, newHeight, PixelFormat.Format24bppRgb);
-
-                // Draws the image in the specified size with quality mode set to HighQuality
-                using (Graphics graphics = Graphics.FromImage(newImage))
-                {
-                    graphics.CompositingQuality = CompositingQuality.HighQuality;
-                    graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
-                    graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-                    graphics.DrawImage(image, 0, 0, newWidth, newHeight);
-                }
-
-                newImage.Save(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_txt_ma_nhan_vien.Text + ".jpg", ImageFormat.Jpeg);
+                
+                
                 switch (m_e_file_mode)
                 {
                     case DataEntryFileMode.DeleteFile:
