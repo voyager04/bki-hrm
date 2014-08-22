@@ -47,8 +47,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.m_txt_search = new System.Windows.Forms.TextBox();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_txt_search = new System.Windows.Forms.TextBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_donvi)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -88,9 +88,8 @@
             // m_dat_thoidiem
             // 
             this.m_dat_thoidiem.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_thoidiem.Enabled = false;
             this.m_dat_thoidiem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_thoidiem.Location = new System.Drawing.Point(297, 4);
+            this.m_dat_thoidiem.Location = new System.Drawing.Point(369, 3);
             this.m_dat_thoidiem.Name = "m_dat_thoidiem";
             this.m_dat_thoidiem.Size = new System.Drawing.Size(331, 20);
             this.m_dat_thoidiem.TabIndex = 39;
@@ -99,7 +98,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(234, 10);
+            this.label1.Location = new System.Drawing.Point(306, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 40;
@@ -115,7 +114,7 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(1262, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(1192, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 7;
@@ -145,10 +144,10 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 697);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 625);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1354, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1284, 36);
             this.m_pnl_out_place_dm.TabIndex = 41;
             // 
             // m_lbl_phim_tat
@@ -166,7 +165,7 @@
             this.m_fg_donvi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg_donvi.Location = new System.Drawing.Point(0, 0);
             this.m_fg_donvi.Name = "m_fg_donvi";
-            this.m_fg_donvi.Size = new System.Drawing.Size(450, 667);
+            this.m_fg_donvi.Size = new System.Drawing.Size(426, 613);
             this.m_fg_donvi.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_donvi.Styles"));
             this.m_fg_donvi.TabIndex = 42;
             this.m_fg_donvi.Click += new System.EventHandler(this.m_fg_donvi_Click);
@@ -174,7 +173,7 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 30);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 12);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -185,14 +184,16 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer1.Panel2.Controls.Add(this.m_ckb_kiem_nhiem);
+            this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.m_lbl_so_luong_ban_ghi);
+            this.splitContainer1.Panel2.Controls.Add(this.m_dat_thoidiem);
             this.splitContainer1.Panel2.Controls.Add(this.label4);
             this.splitContainer1.Panel2.Controls.Add(this.m_cmd_search);
             this.splitContainer1.Panel2.Controls.Add(this.label6);
             this.splitContainer1.Panel2.Controls.Add(this.m_txt_search);
             this.splitContainer1.Panel2.Controls.Add(this.m_fg);
-            this.splitContainer1.Size = new System.Drawing.Size(1354, 667);
-            this.splitContainer1.SplitterDistance = 450;
+            this.splitContainer1.Size = new System.Drawing.Size(1284, 613);
+            this.splitContainer1.SplitterDistance = 426;
             this.splitContainer1.TabIndex = 43;
             // 
             // groupBox1
@@ -201,7 +202,7 @@
             this.groupBox1.Controls.Add(this.m_rdb_ko_nhom);
             this.groupBox1.Location = new System.Drawing.Point(3, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(231, 65);
+            this.groupBox1.Size = new System.Drawing.Size(250, 65);
             this.groupBox1.TabIndex = 46;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hiển thị:";
@@ -211,9 +212,9 @@
             this.m_rdb_nhom.AutoSize = true;
             this.m_rdb_nhom.Location = new System.Drawing.Point(21, 44);
             this.m_rdb_nhom.Name = "m_rdb_nhom";
-            this.m_rdb_nhom.Size = new System.Drawing.Size(169, 17);
+            this.m_rdb_nhom.Size = new System.Drawing.Size(194, 17);
             this.m_rdb_nhom.TabIndex = 1;
-            this.m_rdb_nhom.Text = "Nhóm theo địa bàn, mã đơn vị";
+            this.m_rdb_nhom.Text = "Nhóm theo mã đơn vị, trạng thái LĐ";
             this.m_rdb_nhom.UseVisualStyleBackColor = true;
             this.m_rdb_nhom.CheckedChanged += new System.EventHandler(this.m_rdb_nhom_CheckedChanged);
             // 
@@ -280,6 +281,17 @@
             this.label6.Size = new System.Drawing.Size(88, 13);
             this.label6.TabIndex = 36;
             this.label6.Text = "Từ khoá tìm kiếm";
+            this.label6.Visible = false;
+            // 
+            // m_fg
+            // 
+            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_fg.Location = new System.Drawing.Point(0, 77);
+            this.m_fg.Name = "m_fg";
+            this.m_fg.Size = new System.Drawing.Size(854, 536);
+            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
+            this.m_fg.TabIndex = 34;
             // 
             // m_txt_search
             // 
@@ -289,27 +301,16 @@
             this.m_txt_search.Name = "m_txt_search";
             this.m_txt_search.Size = new System.Drawing.Size(433, 20);
             this.m_txt_search.TabIndex = 35;
-            // 
-            // m_fg
-            // 
-            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 77);
-            this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(900, 590);
-            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 34;
+            this.m_txt_search.Visible = false;
             // 
             // f408_bao_cao_don_vi_trang_thai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.m_cmd_exit;
-            this.ClientSize = new System.Drawing.Size(1354, 733);
+            this.ClientSize = new System.Drawing.Size(1284, 661);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.m_pnl_out_place_dm);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.m_dat_thoidiem);
             this.MaximumSize = new System.Drawing.Size(1600, 1000);
             this.MinimumSize = new System.Drawing.Size(877, 451);
             this.Name = "f408_bao_cao_don_vi_trang_thai";
@@ -327,7 +328,6 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -343,7 +343,6 @@
         private System.Windows.Forms.Label m_lbl_phim_tat;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
-        private System.Windows.Forms.TextBox m_txt_search;
         private System.Windows.Forms.Label label6;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
         private System.Windows.Forms.CheckBox m_ckb_kiem_nhiem;
@@ -352,6 +351,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton m_rdb_nhom;
         private System.Windows.Forms.RadioButton m_rdb_ko_nhom;
+        private System.Windows.Forms.TextBox m_txt_search;
 
     }
 }
