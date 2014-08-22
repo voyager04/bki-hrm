@@ -54,6 +54,7 @@ namespace BKI_HRM {
         private Label label3;
         private Label m_lbl_phim_tat;
         private C1FlexGrid m_fg;
+        private CheckBox m_ckb_trangthai;
         private IContainer components;
 
         public f101_v_dm_don_vi() {
@@ -100,6 +101,7 @@ namespace BKI_HRM {
             this.m_lbl_so_luong_ban_ghi = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_ckb_trangthai = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.m_cbo_capdv = new System.Windows.Forms.ComboBox();
@@ -286,6 +288,7 @@ namespace BKI_HRM {
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_ckb_trangthai);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.m_lbl_so_luong_ban_ghi);
             this.panel1.Controls.Add(this.m_cmd_search);
@@ -297,6 +300,17 @@ namespace BKI_HRM {
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1189, 53);
             this.panel1.TabIndex = 21;
+            // 
+            // m_ckb_trangthai
+            // 
+            this.m_ckb_trangthai.AutoSize = true;
+            this.m_ckb_trangthai.Location = new System.Drawing.Point(116, 27);
+            this.m_ckb_trangthai.Name = "m_ckb_trangthai";
+            this.m_ckb_trangthai.Size = new System.Drawing.Size(176, 17);
+            this.m_ckb_trangthai.TabIndex = 31;
+            this.m_ckb_trangthai.Text = "Hiển thị đơn vị không dùng nữa";
+            this.m_ckb_trangthai.UseVisualStyleBackColor = true;
+            this.m_ckb_trangthai.CheckedChanged += new System.EventHandler(this.m_ckb_trangthai_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -372,7 +386,7 @@ namespace BKI_HRM {
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(799, 11);
+            this.m_cmd_search.Location = new System.Drawing.Point(979, 19);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 2;
@@ -383,7 +397,7 @@ namespace BKI_HRM {
             this.m_txt_search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.m_txt_search.ForeColor = System.Drawing.Color.DimGray;
-            this.m_txt_search.Location = new System.Drawing.Point(325, 16);
+            this.m_txt_search.Location = new System.Drawing.Point(505, 24);
             this.m_txt_search.Name = "m_txt_search";
             this.m_txt_search.Size = new System.Drawing.Size(468, 20);
             this.m_txt_search.TabIndex = 1;
@@ -392,7 +406,7 @@ namespace BKI_HRM {
             // m_lbl_tim_kiem
             // 
             this.m_lbl_tim_kiem.AutoSize = true;
-            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(231, 19);
+            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(411, 27);
             this.m_lbl_tim_kiem.Name = "m_lbl_tim_kiem";
             this.m_lbl_tim_kiem.Size = new System.Drawing.Size(88, 13);
             this.m_lbl_tim_kiem.TabIndex = 24;
@@ -483,6 +497,7 @@ namespace BKI_HRM {
         //const int TAT_CA = -1;
         const string DANG_SU_DUNG = "Y";
         const string HET_SU_DUNG = "N";
+        const string TAT_CA = "A";
         #endregion
 
         #region Private Methods
@@ -787,6 +802,7 @@ namespace BKI_HRM {
            // v_dt.Rows.Add(TAT_CA, "------ Tất cả ------");
             v_dt.Rows.Add(DANG_SU_DUNG, "Đang sử dụng");
             v_dt.Rows.Add(HET_SU_DUNG, "Hết sử dụng");
+            v_dt.Rows.Add(TAT_CA, "Tất cả");
             m_cbo_trangthai.DisplayMember = "HIEN_THI";
             m_cbo_trangthai.ValueMember = "GIA_TRI";
             m_cbo_trangthai.DataSource = v_dt;
@@ -969,6 +985,27 @@ namespace BKI_HRM {
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             } 
+        }
+
+        private void m_ckb_trangthai_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_ckb_trangthai.Checked)
+                {
+                    m_cbo_trangthai.SelectedValue = TAT_CA;
+                    load_data_2_grid();
+                }
+                else
+                {
+                    m_cbo_trangthai.SelectedValue = DANG_SU_DUNG;
+                    load_data_2_grid();
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
     }
 }
