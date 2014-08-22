@@ -176,7 +176,7 @@ namespace BKI_HRM {
             }
             var v_dat_thoi_diem = DateTime.Now;
             if (m_dtp_thoidiem.Checked){
-                v_dat_thoi_diem = m_dtp_thoidiem.Value.Date;
+                v_dat_thoi_diem = m_dtp_thoidiem.Value;
             }
             m_us.FillDatase_NhanSu_TheoPhongBan(m_ds, v_str_search, v_dat_thoi_diem,CAppContext_201.getCurrentIDPhapnhan(),v_kiem_nhiem);
             m_fg.Redraw = false;
