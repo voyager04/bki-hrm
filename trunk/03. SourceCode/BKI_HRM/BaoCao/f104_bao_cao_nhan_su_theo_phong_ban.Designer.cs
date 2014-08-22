@@ -113,7 +113,7 @@
             this.groupBox1.Controls.Add(this.m_rdb_ko_nhom);
             this.groupBox1.Location = new System.Drawing.Point(16, 10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(231, 65);
+            this.groupBox1.Size = new System.Drawing.Size(247, 65);
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hiển thị:";
@@ -123,9 +123,9 @@
             this.m_rdb_nhom.AutoSize = true;
             this.m_rdb_nhom.Location = new System.Drawing.Point(21, 44);
             this.m_rdb_nhom.Name = "m_rdb_nhom";
-            this.m_rdb_nhom.Size = new System.Drawing.Size(169, 17);
+            this.m_rdb_nhom.Size = new System.Drawing.Size(194, 17);
             this.m_rdb_nhom.TabIndex = 1;
-            this.m_rdb_nhom.Text = "Nhóm theo địa bàn, mã đơn vị";
+            this.m_rdb_nhom.Text = "Nhóm theo mã đơn vị, trạng thái LĐ";
             this.m_rdb_nhom.UseVisualStyleBackColor = true;
             this.m_rdb_nhom.CheckedChanged += new System.EventHandler(this.m_rdb_nhom_CheckedChanged);
             // 
@@ -204,16 +204,16 @@
             // 
             this.m_txt_search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_search.Location = new System.Drawing.Point(343, 23);
+            this.m_txt_search.Location = new System.Drawing.Point(363, 23);
             this.m_txt_search.Name = "m_txt_search";
-            this.m_txt_search.Size = new System.Drawing.Size(433, 20);
+            this.m_txt_search.Size = new System.Drawing.Size(413, 20);
             this.m_txt_search.TabIndex = 1;
             this.m_tooltip.SetToolTip(this.m_txt_search, "Nhập Tên hoặc Mã sô phòng ban, trung tâm, khối để tìm kiếm");
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(249, 28);
+            this.label6.Location = new System.Drawing.Point(269, 28);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 13);
             this.label6.TabIndex = 24;
