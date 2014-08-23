@@ -491,10 +491,6 @@ namespace BKI_HRM.DanhMuc
                         break;
                 }
                 #endregion
-
-
-                
-                    
                         decimal v_dc_ty_le = 0;
                         if (CIPConvert.is_valid_number(m_txt_ty_le_tham_gia.Text.Trim()))
                             v_dc_ty_le = CIPConvert.ToDecimal(m_txt_ty_le_tham_gia.Text.Trim());
