@@ -390,6 +390,7 @@ namespace BKI_HRM
         {
             try
             {
+                m_pnl_thong_bao.Height = m_cmd_thong_bao.Height - m_tab_form.Height;
                 if (CAppContext_201.getCurrentIDPhapnhan() == 3)
                 {
                     m_menuitem_hopdong.Visible = false;
@@ -891,5 +892,70 @@ namespace BKI_HRM
             }
         }
 
+        private bool statusPanel = true;
+
+        private void m_cmd_thong_bao_Click(object sender, EventArgs e)
+        {
+            if (statusPanel)
+            {
+                statusPanel = false;
+                m_pnl_thong_bao.Visible = true;
+            }
+            else
+            {
+                statusPanel = true;
+                m_pnl_thong_bao.Visible = false;
+            }
+        }
+
+        private void f400_Main_MdiChildActivate(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild == null)
+                m_tab_form.Visible = false; // If no any child form, hide tabControl
+            else
+            {
+                // If child form is new and no has tabPage, create new tabPage
+                if (this.ActiveMdiChild.Tag == null)
+                {
+                    // Add a tabPage to tabControl with child form caption
+                    TabPage tp = new TabPage(this.ActiveMdiChild.Text);
+                    tp.Tag = this.ActiveMdiChild;
+                    tp.Parent = m_tab_form;
+                    m_tab_form.SelectedTab = tp;
+
+                    this.ActiveMdiChild.Tag = tp;
+                    this.ActiveMdiChild.FormClosed += ActiveMdiChild_FormClosed;
+                }
+
+                if (!m_tab_form.Visible) m_tab_form.Visible = true;
+            }
+        }
+
+        void ActiveMdiChild_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ((sender as Form).Tag as TabPage).Dispose();
+        }
+
+        private void m_cmd_ql_chuc_vu_Click(object sender, EventArgs e)
+        {
+            f401_V_DM_CHUC_VU frm = new f401_V_DM_CHUC_VU();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+        }
+
+        private void m_cmd_ql_cap_bac_Click(object sender, EventArgs e)
+        {
+            F604_v_dm_cap_bac frm = new F604_v_dm_cap_bac();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+        }
+
+        private void m_tab_form_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if ((m_tab_form.SelectedTab != null) && (m_tab_form.SelectedTab.Tag != null))
+                (m_tab_form.SelectedTab.Tag as Form).Select();
+        }
     }
 }
