@@ -64,7 +64,7 @@ namespace BKI_HRM
                 CAppContext_201.getCurrentIDPhapnhan(),
                 ref v_dc_so_luong_nv_hien_tai);
 
-            m_lbl_so_luong_nv_hien_tai.Text = "Số lượng nhân viên hiện tại: " + v_dc_so_luong_nv_hien_tai;
+           toolStripStatusLabel2.Text = "Số lượng nhân viên hiện tại: " + v_dc_so_luong_nv_hien_tai;
         }
         private void thu_viec_sap_het_han()
         {
@@ -82,7 +82,7 @@ namespace BKI_HRM
             else
             {
                 m_lbl_thu_viec_sap_het_han.Text = @"Có " + v_dc_so_luong_nv.ToString() +
-                                                  " Thử việc sắp hết hạn. Click để xem chi tiết!";
+                                                  " Thử việc sắp hết hạn!";
             }
             // v_frm.display_thu_viec_sap_het_han();
         }
@@ -103,7 +103,7 @@ namespace BKI_HRM
             else
             {
                 m_lbl_sap_quay_lai.Text = @"Có " + v_dc_so_luong_nv.ToString() +
-                                                  " Nhân viên đang nghỉ. Click để xem chi tiết!";
+                                                  " Nhân viên đang nghỉ!";
             }
             //v_frm.display_nghi_sap_quay_lai();
         }
@@ -112,9 +112,9 @@ namespace BKI_HRM
         {
             f702_bao_cao_hdld frm = new f702_bao_cao_hdld();
             m_lbl_thong_bao_hop_dong_sap_het_han.Text =
-                string.Format("Có {0} hợp đồng sắp hết hạn. Click để xem chi tiết!", frm.count_record_bao_cao_sap_het_han());
+                string.Format("Có {0} hợp đồng sắp hết hạn!", frm.count_record_bao_cao_sap_het_han());
             m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text =
-                string.Format("Có {0} hợp đồng đã quá hạn và chưa ký mới. Click để xem chi tiết!",
+                string.Format("Có {0} hợp đồng đã quá hạn và chưa ký mới!",
                               frm.count_record_bao_cao_het_han_nhung_chua_ky_moi());
         }
         #endregion
@@ -140,7 +140,7 @@ namespace BKI_HRM
             m_menuitem_nhan_su_theo_phong_ban.Click += m_menuitem_nhan_su_theo_phong_ban_Click;
             m_menuitem_chi_tiet_cap_bac.Click += m_menuitem_chi_tiet_cap_bac_Click;
             m_menuitem_qldonvi.Click += m_menuitem_quan_ly_don_vi_Click;
-            m_lbl_thu_viec_sap_het_han.Click += m_lbl_thu_viec_sap_het_han_Click;
+            //m_lbl_thu_viec_sap_het_han.Click += m_lbl_thu_viec_sap_het_han_Click;
          //   m_menuitem_chuyen_nhan_vien.Click += m_menuitem_chuyen_nhan_vien_Click;
          //   m_menuitem_chuyen_don_vi.Click += m_menuitem_chuyen_don_vi_Click;
             m_menuitem_dang_xuat.Click += m_menuitem_dang_xuat_Click;
@@ -271,7 +271,7 @@ namespace BKI_HRM
                 F500_DM_DU_AN frm = new F500_DM_DU_AN();
                 frm.ShowDialog();
                 f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
-                m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc. Click để xem chi tiết!",
+                m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc!",
                                                         frm502.count_record_du_an_sap_ket_thuc());
             }
             catch (Exception v_e)
@@ -399,38 +399,24 @@ namespace BKI_HRM
                 if (CAppContext_201.getCurrentIDPhapnhan() != -1)
                 {
                     US_DM_PHAP_NHAN v_us = new US_DM_PHAP_NHAN(CAppContext_201.getCurrentIDPhapnhan());
-                    m_lbl_phap_nhan.Text = v_us.strMA_PHAP_NHAN + " - " + v_us.strTEN_PHAP_NHAN;
+                    toolStripStatusLabel1.Text = v_us.strMA_PHAP_NHAN + " - " + v_us.strTEN_PHAP_NHAN;
                 }
                 else
                 {
-                    m_lbl_phap_nhan.Text = "Tất cả";
+                    toolStripStatusLabel1.Text = "Tất cả";
                 }
                 f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
-                m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc. Click để xem chi tiết!",
+                m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc!",
                                                         frm502.count_record_du_an_sap_ket_thuc());
 
                 canh_bao_hop_dong();
-
                 thu_viec_sap_het_han();
                 nghi_viec_sap_quay_lai();
-
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void m_lbl_du_an_sap_kt_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                F500_DM_DU_AN frm = new F500_DM_DU_AN();
-                frm.DisplaySapKetThuc();
+                f408_bao_cao_don_vi_trang_thai frm = new f408_bao_cao_don_vi_trang_thai();
+                frm.MdiParent = this;
+                frm.Dock = DockStyle.Fill;
                 frm.Show();
-                f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
-                m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc. Click để xem chi tiết!",
-                                                        frm502.count_record_du_an_sap_ket_thuc());
+                frm.FormBorderStyle = FormBorderStyle.None;
             }
             catch (Exception v_e)
             {
@@ -445,25 +431,6 @@ namespace BKI_HRM
                 f702_bao_cao_hdld frm = new f702_bao_cao_hdld();
                 frm.set_form_mode_for_report(1);
                 frm.ShowDialog();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void m_lbl_thong_bao_hop_dong_sap_het_han_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                f702_bao_cao_hdld frm = new f702_bao_cao_hdld();
-                frm.set_form_mode_for_report(2);
-                frm.ShowDialog();
-                m_lbl_thong_bao_hop_dong_sap_het_han.Text =
-                    string.Format("Có {0} hợp đồng sắp hết hạn. Click để xem chi tiết!", frm.count_record_bao_cao_sap_het_han());
-                m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text =
-                    string.Format("Có {0} hợp đồng đã quá hạn và chưa ký mới. Click để xem chi tiết!",
-                                  frm.count_record_bao_cao_het_han_nhung_chua_ky_moi());
             }
             catch (Exception v_e)
             {
@@ -597,25 +564,6 @@ namespace BKI_HRM
             }
         }
 
-        private void m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                f702_bao_cao_hdld frm = new f702_bao_cao_hdld();
-                frm.set_form_mode_for_report(3);
-                frm.ShowDialog();
-                m_lbl_thong_bao_hop_dong_sap_het_han.Text =
-                    string.Format("Có {0} hợp đồng sắp hết hạn. Click để xem chi tiết!", frm.count_record_bao_cao_sap_het_han());
-                m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text =
-                    string.Format("Có {0} hợp đồng đã quá hạn và chưa ký mới. Click để xem chi tiết!",
-                                  frm.count_record_bao_cao_het_han_nhung_chua_ky_moi());
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
         private void m_menuitem_phan_quyen_cho_nhom_Click(object sender, EventArgs e)
         {
             try
@@ -661,19 +609,6 @@ namespace BKI_HRM
             {
                 f991_v_ht_control_in_form frm = new f991_v_ht_control_in_form();
                 frm.ShowDialog();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void m_lbl_thu_viec_sap_het_han_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                f103_bao_cao_tra_cuu_nhan_su v_frm = new f103_bao_cao_tra_cuu_nhan_su();
-                v_frm.display_thu_viec_sap_het_han();
             }
             catch (Exception v_e)
             {
@@ -739,19 +674,6 @@ namespace BKI_HRM
             {
                 f108_chuyen_don_vi frm = new f108_chuyen_don_vi();
                 frm.Show();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void m_lbl_sap_quay_lai_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                f103_bao_cao_tra_cuu_nhan_su v_frm = new f103_bao_cao_tra_cuu_nhan_su();
-                v_frm.display_nghi_sap_quay_lai();
             }
             catch (Exception v_e)
             {
@@ -956,6 +878,161 @@ namespace BKI_HRM
         {
             if ((m_tab_form.SelectedTab != null) && (m_tab_form.SelectedTab.Tag != null))
                 (m_tab_form.SelectedTab.Tag as Form).Select();
+        }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f103_bao_cao_tra_cuu_nhan_su v_frm = new f103_bao_cao_tra_cuu_nhan_su();
+                v_frm.display_nghi_sap_quay_lai();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void panel2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f103_bao_cao_tra_cuu_nhan_su v_frm = new f103_bao_cao_tra_cuu_nhan_su();
+                v_frm.display_thu_viec_sap_het_han();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void panel3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f702_bao_cao_hdld frm = new f702_bao_cao_hdld();
+                frm.set_form_mode_for_report(2);
+                frm.ShowDialog();
+                m_lbl_thong_bao_hop_dong_sap_het_han.Text =
+                    string.Format("Có {0} hợp đồng sắp hết hạn. Click để xem chi tiết!", frm.count_record_bao_cao_sap_het_han());
+                m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text =
+                    string.Format("Có {0} hợp đồng đã quá hạn và chưa ký mới. Click để xem chi tiết!",
+                                  frm.count_record_bao_cao_het_han_nhung_chua_ky_moi());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void panel4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f702_bao_cao_hdld frm = new f702_bao_cao_hdld();
+                frm.set_form_mode_for_report(3);
+                frm.ShowDialog();
+                m_lbl_thong_bao_hop_dong_sap_het_han.Text =
+                    string.Format("Có {0} hợp đồng sắp hết hạn. Click để xem chi tiết!", frm.count_record_bao_cao_sap_het_han());
+                m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text =
+                    string.Format("Có {0} hợp đồng đã quá hạn và chưa ký mới. Click để xem chi tiết!",
+                                  frm.count_record_bao_cao_het_han_nhung_chua_ky_moi());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void panel5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                F500_DM_DU_AN frm = new F500_DM_DU_AN();
+                frm.DisplaySapKetThuc();
+                frm.Show();
+                f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
+                m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc. Click để xem chi tiết!",
+                                                        frm502.count_record_du_an_sap_ket_thuc());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void panel1_MouseHover(object sender, EventArgs e)
+        {
+            panel1.BackColor = Color.Aquamarine;
+        }
+
+        private void panel1_MouseLeave(object sender, EventArgs e)
+        {
+            panel1.BackColor = SystemColors.Control;
+        }
+
+        private void panel2_MouseHover(object sender, EventArgs e)
+        {
+            panel2.BackColor = Color.Aquamarine;
+        }
+
+        private void panel2_MouseLeave(object sender, EventArgs e)
+        {
+            panel2.BackColor = SystemColors.Control;
+        }
+
+        private void panel3_MouseHover(object sender, EventArgs e)
+        {
+            panel3.BackColor = Color.Aquamarine;
+        }
+
+        private void panel3_MouseLeave(object sender, EventArgs e)
+        {
+            panel3.BackColor = SystemColors.Control;
+        }
+
+        private void panel4_MouseHover(object sender, EventArgs e)
+        {
+            panel4.BackColor = Color.Aquamarine;
+        }
+
+        private void panel4_MouseLeave(object sender, EventArgs e)
+        {
+            panel4.BackColor = SystemColors.Control;
+        }
+
+        private void panel5_MouseHover(object sender, EventArgs e)
+        {
+            panel5.BackColor = Color.Aquamarine;
+        }
+
+        private void panel5_MouseLeave(object sender, EventArgs e)
+        {
+            panel5.BackColor = SystemColors.Control;
+        }
+
+        private void m_lbl_sap_quay_lai_MouseHover(object sender, EventArgs e)
+        {
+            panel1.BackColor = Color.Aquamarine;
+        }
+
+        private void m_lbl_thu_viec_sap_het_han_MouseHover(object sender, EventArgs e)
+        {
+            panel2.BackColor = Color.Aquamarine;
+        }
+
+        private void m_lbl_thong_bao_hop_dong_sap_het_han_MouseHover(object sender, EventArgs e)
+        {
+            panel3.BackColor = Color.Aquamarine;
+        }
+
+        private void m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky_MouseHover(object sender, EventArgs e)
+        {
+            panel4.BackColor = Color.Aquamarine;
+        }
+
+        private void m_lbl_du_an_sap_kt_MouseHover(object sender, EventArgs e)
+        {
+            panel5.BackColor = Color.Aquamarine;
         }
     }
 }

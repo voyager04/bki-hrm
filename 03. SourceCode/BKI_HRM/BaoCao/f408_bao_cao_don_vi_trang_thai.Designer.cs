@@ -47,8 +47,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_txt_search = new System.Windows.Forms.TextBox();
+            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_donvi)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -165,7 +165,7 @@
             this.m_fg_donvi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg_donvi.Location = new System.Drawing.Point(0, 0);
             this.m_fg_donvi.Name = "m_fg_donvi";
-            this.m_fg_donvi.Size = new System.Drawing.Size(426, 613);
+            this.m_fg_donvi.Size = new System.Drawing.Size(426, 520);
             this.m_fg_donvi.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_donvi.Styles"));
             this.m_fg_donvi.TabIndex = 42;
             this.m_fg_donvi.Click += new System.EventHandler(this.m_fg_donvi_Click);
@@ -173,7 +173,7 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 12);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 105);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -192,7 +192,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.label6);
             this.splitContainer1.Panel2.Controls.Add(this.m_txt_search);
             this.splitContainer1.Panel2.Controls.Add(this.m_fg);
-            this.splitContainer1.Size = new System.Drawing.Size(1284, 613);
+            this.splitContainer1.Size = new System.Drawing.Size(1284, 520);
             this.splitContainer1.SplitterDistance = 426;
             this.splitContainer1.TabIndex = 43;
             // 
@@ -283,16 +283,6 @@
             this.label6.Text = "Từ khoá tìm kiếm";
             this.label6.Visible = false;
             // 
-            // m_fg
-            // 
-            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 77);
-            this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(854, 536);
-            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 34;
-            // 
             // m_txt_search
             // 
             this.m_txt_search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
@@ -303,6 +293,16 @@
             this.m_txt_search.TabIndex = 35;
             this.m_txt_search.Visible = false;
             // 
+            // m_fg
+            // 
+            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_fg.Location = new System.Drawing.Point(0, 79);
+            this.m_fg.Name = "m_fg";
+            this.m_fg.Size = new System.Drawing.Size(854, 441);
+            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
+            this.m_fg.TabIndex = 34;
+            // 
             // f408_bao_cao_don_vi_trang_thai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,6 +311,7 @@
             this.ClientSize = new System.Drawing.Size(1284, 661);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.m_pnl_out_place_dm);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(1600, 1000);
             this.MinimumSize = new System.Drawing.Size(877, 451);
             this.Name = "f408_bao_cao_don_vi_trang_thai";

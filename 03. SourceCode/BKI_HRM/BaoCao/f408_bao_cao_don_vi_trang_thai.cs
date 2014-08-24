@@ -97,6 +97,7 @@ namespace BKI_HRM
             CControlFormat.setC1FlexFormat(m_fg_donvi);
             CGridUtils.AddSave_Excel_Handlers(m_fg_donvi);
             CGridUtils.AddSearch_Handlers(m_fg_donvi);
+            //splitContainer1.Height = this.Height - m_pnl_out_place_dm.Height - 50;
             m_fg_donvi.Tree.Column = 1;
             m_fg_donvi.Tree.Style = TreeStyleFlags.SimpleLeaf;
             CControlFormat.setC1FlexFormat(m_fg);

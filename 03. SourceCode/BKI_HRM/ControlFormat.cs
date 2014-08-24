@@ -60,8 +60,8 @@ namespace BKI_HRM
                         // item cua menu strip chua lam duoc
 //                         set_control_visible(v_c, "m_menuitem_hopdong", true, true, false);
 //                         set_control_visible(v_c, "m_menuitem_bao_cao_hop_dong", true, true, false);
-                        set_control_visible(v_c, "m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky", true, true, false);
-                        set_control_visible(v_c, "m_lbl_thong_bao_hop_dong_sap_het_han", true, true, false);
+                        set_control_visible(v_c, "panel4", true, true, false);
+                        set_control_visible(v_c, "panel3", true, true, false);
 
                     }
                     #endregion
