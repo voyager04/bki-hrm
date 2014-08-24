@@ -99,6 +99,7 @@ namespace BKI_HRM
             this.m_tab_form = new System.Windows.Forms.TabControl();
             this.m_cmd_thong_bao = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.m_cmd_bao_cao_nghi_viec = new System.Windows.Forms.Button();
             this.m_cmd_bao_cao_danh_sach_bo_nhiem = new System.Windows.Forms.Button();
@@ -780,6 +781,7 @@ namespace BKI_HRM
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.groupBox11);
             this.tabPage4.Controls.Add(this.groupBox10);
             this.tabPage4.Controls.Add(this.groupBox9);
             this.tabPage4.Controls.Add(this.groupBox8);
@@ -790,6 +792,16 @@ namespace BKI_HRM
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Báo cáo";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Location = new System.Drawing.Point(1138, 6);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(216, 90);
+            this.groupBox11.TabIndex = 11;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Thay đổi pháp nhân";
+            this.groupBox11.Visible = false;
             // 
             // groupBox10
             // 
@@ -1362,7 +1374,6 @@ namespace BKI_HRM
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.m_mst_menu;
-            this.MaximizeBox = false;
             this.Name = "f400_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F400 - Chương trình quản lý nhân sự";
@@ -1527,5 +1538,6 @@ namespace BKI_HRM
         private Button m_cmd_phan_quyen_he_thong;
         private Button m_cmd_phan_quyen_chi_tiet;
         private TabControl m_tab_menu;
+        private GroupBox groupBox11;
     }
 }

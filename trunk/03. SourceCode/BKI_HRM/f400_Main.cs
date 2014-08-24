@@ -427,11 +427,7 @@ namespace BKI_HRM
                 canh_bao_hop_dong();
                 thu_viec_sap_het_han();
                 nghi_viec_sap_quay_lai();
-                f408_bao_cao_don_vi_trang_thai frm = new f408_bao_cao_don_vi_trang_thai();
-                frm.MdiParent = this;
-                frm.Dock = DockStyle.Fill;
-                frm.Show();
-                frm.FormBorderStyle = FormBorderStyle.None;
+                show_form(new f408_bao_cao_don_vi_trang_thai());
             }
             catch (Exception v_e)
             {
