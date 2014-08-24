@@ -64,7 +64,7 @@ namespace BKI_HRM
                 CAppContext_201.getCurrentIDPhapnhan(),
                 ref v_dc_so_luong_nv_hien_tai);
 
-           toolStripStatusLabel2.Text = "Số lượng nhân viên hiện tại: " + v_dc_so_luong_nv_hien_tai;
+            toolStripStatusLabel2.Text = "Số lượng nhân viên hiện tại: " + v_dc_so_luong_nv_hien_tai;
         }
         private void thu_viec_sap_het_han()
         {
@@ -117,6 +117,21 @@ namespace BKI_HRM
                 string.Format("Có {0} hợp đồng đã quá hạn và chưa ký mới!",
                               frm.count_record_bao_cao_het_han_nhung_chua_ky_moi());
         }
+
+        private void show_form(Form frm)
+        {
+            try
+            {
+                frm.MdiParent = this;
+                frm.Dock = DockStyle.Fill;
+                frm.Show();
+                frm.FormBorderStyle = FormBorderStyle.None;
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         #endregion
 
         #region Members
@@ -141,8 +156,8 @@ namespace BKI_HRM
             m_menuitem_chi_tiet_cap_bac.Click += m_menuitem_chi_tiet_cap_bac_Click;
             m_menuitem_qldonvi.Click += m_menuitem_quan_ly_don_vi_Click;
             //m_lbl_thu_viec_sap_het_han.Click += m_lbl_thu_viec_sap_het_han_Click;
-         //   m_menuitem_chuyen_nhan_vien.Click += m_menuitem_chuyen_nhan_vien_Click;
-         //   m_menuitem_chuyen_don_vi.Click += m_menuitem_chuyen_don_vi_Click;
+            //   m_menuitem_chuyen_nhan_vien.Click += m_menuitem_chuyen_nhan_vien_Click;
+            //   m_menuitem_chuyen_don_vi.Click += m_menuitem_chuyen_don_vi_Click;
             m_menuitem_dang_xuat.Click += m_menuitem_dang_xuat_Click;
         }
 
@@ -872,20 +887,12 @@ namespace BKI_HRM
 
         private void m_cmd_ql_chuc_vu_Click(object sender, EventArgs e)
         {
-            f401_V_DM_CHUC_VU frm = new f401_V_DM_CHUC_VU();
-            frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
-            frm.FormBorderStyle = FormBorderStyle.None;
+            show_form(new f401_V_DM_CHUC_VU());
         }
 
         private void m_cmd_ql_cap_bac_Click(object sender, EventArgs e)
         {
-            F604_v_dm_cap_bac frm = new F604_v_dm_cap_bac();
-            frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
-            frm.FormBorderStyle = FormBorderStyle.None;
+            show_form(new F604_v_dm_cap_bac());
         }
 
         private void m_tab_form_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -894,6 +901,7 @@ namespace BKI_HRM
                 (m_tab_form.SelectedTab.Tag as Form).Select();
         }
 
+        #region Hover Notice
         private void panel1_Click(object sender, EventArgs e)
         {
             try
@@ -974,6 +982,7 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
         private void panel1_MouseHover(object sender, EventArgs e)
         {
             panel1.BackColor = Color.Aquamarine;
@@ -1047,6 +1056,360 @@ namespace BKI_HRM
         private void m_lbl_du_an_sap_kt_MouseHover(object sender, EventArgs e)
         {
             panel5.BackColor = Color.Aquamarine;
+        }
+        #endregion
+
+        private void m_cmd_phan_quyen_chi_tiet_Click(object sender, EventArgs e)
+        {
+            show_form(new f994_phan_quyen_detail());
+        }
+
+        private void m_cmd_phan_quyen_he_thong_Click(object sender, EventArgs e)
+        {
+            show_form(new f993_phan_quyen_he_thong());
+        }
+
+        private void m_cmd_nhom_nguoi_su_dung_Click(object sender, EventArgs e)
+        {
+            show_form(new f997_ht_nhom_nguoi_su_dung());
+        }
+
+        private void m_cmd_phan_quyen_cho_nhom_Click(object sender, EventArgs e)
+        {
+            show_form(new f995_ht_phan_quyen_cho_nhom());
+        }
+
+        private void m_cmd_nguoi_su_dung_Click(object sender, EventArgs e)
+        {
+            show_form(new f999_ht_nguoi_su_dung());
+        }
+
+        private void m_cmd_danh_muc_control_Click(object sender, EventArgs e)
+        {
+            show_form(new f991_v_ht_control_in_form());
+        }
+
+        private void m_cmd_tu_dien_he_thong_Click(object sender, EventArgs e)
+        {
+            show_form(new f100_TuDien());
+        }
+
+        private void m_cmd_backup_recovery_Click(object sender, EventArgs e)
+        {
+            show_form(new f400_dialog());
+        }
+
+        private void m_cmd_huong_dan_su_dung_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ProcessStartInfo sInfo = new ProcessStartInfo("http://1drv.ms/XzwLat");
+                Process.Start(sInfo);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void m_cmd_phan_hoi_loi_pm_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ProcessStartInfo sInfo = new ProcessStartInfo("http://goo.gl/swobCf");
+                Process.Start(sInfo);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void m_cmd_ql_don_vi_Click(object sender, EventArgs e)
+        {
+            show_form(new f101_v_dm_don_vi());
+        }
+
+        private void m_cmd_ql_phap_nhan_Click(object sender, EventArgs e)
+        {
+            show_form(new f703_dm_phap_nhan());
+        }
+
+        private void m_cmd_ql_quyet_dinh_Click(object sender, EventArgs e)
+        {
+            show_form(new F205_V_GD_QUYET_DINH());
+        }
+
+        private void m_cmd_ho_so_nhan_su_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                show_form(new f201_dm_nhan_su());
+                nhan_vien_hien_tai();
+                thu_viec_sap_het_han();
+                nghi_viec_sap_quay_lai();
+                canh_bao_hop_dong();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_thay_doi_chuc_vu_don_vi_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                show_form(new f202_V_GD_QUA_TRINH_LAM_VIEC());
+                nhan_vien_hien_tai();
+                thu_viec_sap_het_han();
+                nghi_viec_sap_quay_lai();
+                canh_bao_hop_dong();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_trang_thai_lao_dong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                show_form(new f203_v_gd_trang_thai_lao_dong());
+                nhan_vien_hien_tai();
+                thu_viec_sap_het_han();
+                nghi_viec_sap_quay_lai();
+                canh_bao_hop_dong();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_chi_tiet_cap_bac_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                show_form(new f105_v_gd_chi_tiet_cap_bac());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_qua_trinh_di_cong_tac_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                show_form(new f206_v_gd_cong_tac());
+
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_thong_tin_du_an_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                show_form(new F500_DM_DU_AN());
+                f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
+                m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc!",
+                                                        frm502.count_record_du_an_sap_ket_thuc());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_hop_dong_lao_dong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                show_form(new f701_v_hop_dong_lao_dong());
+                f702_bao_cao_hdld frm2 = new f702_bao_cao_hdld();
+                m_lbl_thong_bao_hop_dong_sap_het_han.Text =
+                    string.Format("Có {0} hợp đồng sắp hết hạn. Click để xem chi tiết!", frm2.count_record_bao_cao_sap_het_han());
+                m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text =
+                    string.Format("Có {0} hợp đồng đã quá hạn và chưa ký mới. Click để xem chi tiết!",
+                                  frm2.count_record_bao_cao_het_han_nhung_chua_ky_moi());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_bao_cao_du_an_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                show_form(new f502_bao_cao_du_an());
+                f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
+                m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc. Click để xem chi tiết!",
+                                                        frm502.count_record_du_an_sap_ket_thuc());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_tra_cuu_nhan_su_du_an_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                show_form(new f501_v_dm_nhan_su_du_an());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_bao_cao_hop_dong_lao_dong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f702_bao_cao_hdld frm = new f702_bao_cao_hdld();
+                frm.set_form_mode_for_report(1);
+                frm.MdiParent = this;
+                frm.Dock = DockStyle.Fill;
+                frm.Show();
+                frm.FormBorderStyle = FormBorderStyle.None;
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_tra_cuu_nhan_su_chung_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //show_form(new f103_bao_cao_tra_cuu_nhan_su());
+                f103_bao_cao_tra_cuu_nhan_su frm = new f103_bao_cao_tra_cuu_nhan_su();
+                frm.Show();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_nhan_su_theo_phong_ban_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                show_form(new f104_bao_cao_nhan_su_theo_phong_ban());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_nhan_su_theo_chuc_vu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                show_form(new f402_BAO_CAO_NHAN_SU_CHUC_VU());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_nhan_su_theo_cap_bac_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                show_form(new f403_BAO_CAO_NHAN_SU_CAP_BAC());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_qua_trinh_lam_viec_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                show_form(new f404_GD_QUA_TRINH_CONG_TAC());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_bien_dong_chuc_vu_trang_thai_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                show_form(new f405_bao_cao_chuc_vu_trang_thai());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_bao_cao_so_luong_bo_nhiem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                show_form(new f406_bao_cao_bo_nhiem());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_bao_cao_danh_sach_bo_nhiem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                show_form(new f407_bao_cao_bo_nhiem());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_bien_dong_don_vi_trang_thai_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                show_form(new f408_bao_cao_don_vi_trang_thai());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_bao_cao_nghi_viec_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                show_form(new f409_bao_cao_nghi_viec());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
     }
 }
