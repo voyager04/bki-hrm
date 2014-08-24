@@ -399,7 +399,7 @@ namespace BKI_HRM
                 if (CAppContext_201.getCurrentIDPhapnhan() != -1)
                 {
                     US_DM_PHAP_NHAN v_us = new US_DM_PHAP_NHAN(CAppContext_201.getCurrentIDPhapnhan());
-                    toolStripStatusLabel1.Text = v_us.strMA_PHAP_NHAN + " - " + v_us.strTEN_PHAP_NHAN;
+                    toolStripStatusLabel1.Text = "Pháp nhân: " + v_us.strMA_PHAP_NHAN + " - " + v_us.strTEN_PHAP_NHAN;
                 }
                 else
                 {
@@ -839,14 +839,26 @@ namespace BKI_HRM
                 // If child form is new and no has tabPage, create new tabPage
                 if (this.ActiveMdiChild.Tag == null)
                 {
-                    // Add a tabPage to tabControl with child form caption
-                    TabPage tp = new TabPage(this.ActiveMdiChild.Text);
-                    tp.Tag = this.ActiveMdiChild;
-                    tp.Parent = m_tab_form;
-                    m_tab_form.SelectedTab = tp;
+                    bool tabExist = false;
+                    foreach (TabPage tabPage in m_tab_form.TabPages)
+                    {
+                        if (this.ActiveMdiChild.Text.Equals(tabPage.Text))
+                        {
+                            m_tab_form.SelectedTab = tabPage;
+                            tabExist = true;
+                        }
+                    }
+                    if (!tabExist)
+                    {
+                        // Add a tabPage to tabControl with child form caption
+                        TabPage tp = new TabPage(this.ActiveMdiChild.Text);
+                        tp.Tag = this.ActiveMdiChild;
+                        tp.Parent = m_tab_form;
+                        m_tab_form.SelectedTab = tp;
 
-                    this.ActiveMdiChild.Tag = tp;
-                    this.ActiveMdiChild.FormClosed += ActiveMdiChild_FormClosed;
+                        this.ActiveMdiChild.Tag = tp;
+                        this.ActiveMdiChild.FormClosed += ActiveMdiChild_FormClosed;
+                    }
                 }
 
                 if (!m_tab_form.Visible) m_tab_form.Visible = true;
@@ -864,6 +876,7 @@ namespace BKI_HRM
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
             frm.Show();
+            frm.FormBorderStyle = FormBorderStyle.None;
         }
 
         private void m_cmd_ql_cap_bac_Click(object sender, EventArgs e)
@@ -872,6 +885,7 @@ namespace BKI_HRM
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
             frm.Show();
+            frm.FormBorderStyle = FormBorderStyle.None;
         }
 
         private void m_tab_form_SelectedIndexChanged_1(object sender, EventArgs e)
