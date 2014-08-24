@@ -355,8 +355,32 @@ namespace BKI_HRM.DanhMuc
 
             v_us_dm_chuc_vu.FillDatasetByID(v_ds_dm_chuc_vu, CIPConvert.ToDecimal(m_cbo_chuc_vu_moi.SelectedValue), ref v_str_chuc_vu);
             if (m_b_check_is_mien_nhiem)
-                return BaseMessages.MsgBox_Confirm("Bạn có thực sự muốn miễn nhiệm chức vụ \"" + v_str_chuc_vu + "\" của " + m_us.strHO_DEM + " " + m_us.strTEN + "\" tại\n \"" + m_txt_don_vi_moi.Text + "\" không?");
-            return BaseMessages.MsgBox_Confirm("Bạn có thực sự muốn thay đổi chức vụ của \"" + m_us.strHO_DEM + " " + m_us.strTEN + "\" thành\n \"" + v_str_chuc_vu + "\" tại \"" + m_txt_don_vi_moi.Text + "\" không?");
+            {
+                if (BaseMessages.MsgBox_Confirm("Bạn có thực sự muốn miễn nhiệm chức vụ \"" + v_str_chuc_vu + "\" của " + m_us.strHO_DEM + " " + m_us.strTEN + "\" tại\n \"" + m_txt_don_vi_moi.Text + "\" không?"))
+                {
+                    if (BaseMessages.MsgBox_Confirm("Bạn có muốn miễn nhiệm chức vụ hiện tại của " + m_us.strHO_DEM + " " + m_us.strTEN + " không ?"))
+                    {
+                        mien_nhiem_chuc_vu();
+                        return true;
+                    }
+                    else return false;
+                }
+                else
+                    return false;
+            }
+            else
+                if (BaseMessages.MsgBox_Confirm("Bạn có thực sự muốn thay đổi chức vụ của \"" + m_us.strHO_DEM + " " + m_us.strTEN + "\" thành\n \"" + v_str_chuc_vu + "\" tại \"" + m_txt_don_vi_moi.Text + "\" không?"))
+                {
+                    if (BaseMessages.MsgBox_Confirm("Bạn có muốn miễn nhiệm chức vụ hiện tại của " + m_us.strHO_DEM + " " + m_us.strTEN + " không ?"))
+                    {
+                        mien_nhiem_chuc_vu();
+                        return true;
+                    }
+                    else return false;
+                }
+                else
+                    return false;
+
 
         }
         private bool check_validate_data_is_ok()
@@ -428,8 +452,17 @@ namespace BKI_HRM.DanhMuc
             m_us_chi_tiet_chuc_vu.datNGAY_BAT_DAU = m_dat_ngay_bat_dau.Value;
                 m_us_chi_tiet_chuc_vu.SetNGAY_KET_THUCNull();
                 m_us_chi_tiet_chuc_vu.strTRANG_THAI_CV = "Y";
-            }
-
+        }
+        private void mien_nhiem_chuc_vu()
+        {
+            US_GD_CHI_TIET_CHUC_VU v_us = new US_GD_CHI_TIET_CHUC_VU();
+            DS_GD_CHI_TIET_CHUC_VU v_ds = new DS_GD_CHI_TIET_CHUC_VU();
+            v_us.DataRow2Me((DataRow)m_fg.Rows[m_fg.Row].UserData);
+            v_us = new US_GD_CHI_TIET_CHUC_VU(v_us.dcID);
+            v_us.strTRANG_THAI_CV = "N";
+            v_us.datNGAY_KET_THUC = DateTime.Today;
+            v_us.Update();
+        }
         private void save_data()
         {
             US_GD_QUYET_DINH_PHAP_NHAN v_us_gd_quyet_dinh_phap_nhan = new US_GD_QUYET_DINH_PHAP_NHAN();
