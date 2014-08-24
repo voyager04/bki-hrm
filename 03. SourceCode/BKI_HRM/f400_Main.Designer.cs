@@ -87,26 +87,6 @@ namespace BKI_HRM
             this.m_lbl_thu_viec_sap_het_han = new System.Windows.Forms.Label();
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky = new System.Windows.Forms.Label();
             this.m_lbl_sap_quay_lai = new System.Windows.Forms.Label();
-            this.m_tab_menu = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.m_cmd_ql_cap_bac = new System.Windows.Forms.Button();
-            this.m_cmd_ql_chuc_vu = new System.Windows.Forms.Button();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.m_pnl_thong_bao = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -116,14 +96,62 @@ namespace BKI_HRM
             this.m_stt_form = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.m_cmd_thong_bao = new System.Windows.Forms.Button();
             this.m_tab_form = new System.Windows.Forms.TabControl();
+            this.m_cmd_thong_bao = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.m_cmd_bao_cao_nghi_viec = new System.Windows.Forms.Button();
+            this.m_cmd_bao_cao_danh_sach_bo_nhiem = new System.Windows.Forms.Button();
+            this.m_cmd_bien_dong_don_vi_trang_thai = new System.Windows.Forms.Button();
+            this.m_cmd_bao_cao_so_luong_bo_nhiem = new System.Windows.Forms.Button();
+            this.m_cmd_bien_dong_chuc_vu_trang_thai = new System.Windows.Forms.Button();
+            this.m_cmd_qua_trinh_lam_viec = new System.Windows.Forms.Button();
+            this.m_cmd_nhan_su_theo_cap_bac = new System.Windows.Forms.Button();
+            this.m_cmd_nhan_su_theo_chuc_vu = new System.Windows.Forms.Button();
+            this.m_cmd_tra_cuu_nhan_su_chung = new System.Windows.Forms.Button();
+            this.m_cmd_nhan_su_theo_phong_ban = new System.Windows.Forms.Button();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.m_cmd_bao_cao_hop_dong_lao_dong = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.m_cmd_bao_cao_du_an = new System.Windows.Forms.Button();
+            this.m_cmd_tra_cuu_nhan_su_du_an = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.m_cmd_hop_dong_lao_dong = new System.Windows.Forms.Button();
+            this.m_cmd_thong_tin_du_an = new System.Windows.Forms.Button();
+            this.m_cmd_qua_trinh_di_cong_tac = new System.Windows.Forms.Button();
+            this.m_cmd_chi_tiet_cap_bac = new System.Windows.Forms.Button();
+            this.m_cmd_trang_thai_lao_dong = new System.Windows.Forms.Button();
+            this.m_cmd_ho_so_nhan_su = new System.Windows.Forms.Button();
+            this.m_cmd_thay_doi_chuc_vu_don_vi = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.m_cmd_ql_quyet_dinh = new System.Windows.Forms.Button();
+            this.m_cmd_ql_phap_nhan = new System.Windows.Forms.Button();
+            this.m_cmd_ql_don_vi = new System.Windows.Forms.Button();
+            this.m_cmd_ql_cap_bac = new System.Windows.Forms.Button();
+            this.m_cmd_ql_chuc_vu = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.m_cmd_danh_muc_control = new System.Windows.Forms.Button();
+            this.m_cmd_nguoi_su_dung = new System.Windows.Forms.Button();
+            this.m_cmd_nhom_nguoi_su_dung = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.m_cmd_phan_hoi_loi_pm = new System.Windows.Forms.Button();
+            this.m_cmd_huong_dan_su_dung = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.m_cmd_backup_recovery = new System.Windows.Forms.Button();
+            this.m_cmd_nhat_ky_he_thong = new System.Windows.Forms.Button();
+            this.m_cmd_tu_dien_he_thong = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.m_cmd_phan_quyen_cho_nhom = new System.Windows.Forms.Button();
+            this.m_cmd_phan_quyen_he_thong = new System.Windows.Forms.Button();
+            this.m_cmd_phan_quyen_chi_tiet = new System.Windows.Forms.Button();
+            this.m_tab_menu = new System.Windows.Forms.TabControl();
             this.m_mst_menu.SuspendLayout();
-            this.m_tab_menu.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.m_pnl_thong_bao.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -131,6 +159,21 @@ namespace BKI_HRM
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.m_stt_form.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.m_tab_menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_mst_menu
@@ -143,7 +186,7 @@ namespace BKI_HRM
             this.m_menuitem_tro_giup});
             this.m_mst_menu.Location = new System.Drawing.Point(0, 0);
             this.m_mst_menu.Name = "m_mst_menu";
-            this.m_mst_menu.Size = new System.Drawing.Size(1301, 24);
+            this.m_mst_menu.Size = new System.Drawing.Size(1370, 24);
             this.m_mst_menu.TabIndex = 0;
             this.m_mst_menu.Text = "menuStrip1";
             this.m_mst_menu.Visible = false;
@@ -608,212 +651,6 @@ namespace BKI_HRM
             this.m_lbl_sap_quay_lai.Text = "Danh sách nhân viên sắp quay lại sau nghỉ";
             this.m_lbl_sap_quay_lai.MouseHover += new System.EventHandler(this.m_lbl_sap_quay_lai_MouseHover);
             // 
-            // m_tab_menu
-            // 
-            this.m_tab_menu.Controls.Add(this.tabPage1);
-            this.m_tab_menu.Controls.Add(this.tabPage2);
-            this.m_tab_menu.Controls.Add(this.tabPage3);
-            this.m_tab_menu.Controls.Add(this.tabPage4);
-            this.m_tab_menu.Controls.Add(this.tabPage5);
-            this.m_tab_menu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_tab_menu.Location = new System.Drawing.Point(0, 0);
-            this.m_tab_menu.Name = "m_tab_menu";
-            this.m_tab_menu.SelectedIndex = 0;
-            this.m_tab_menu.Size = new System.Drawing.Size(1370, 128);
-            this.m_tab_menu.TabIndex = 9;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1362, 102);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Hệ thống";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.button7);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(8, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(574, 90);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(492, 19);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 65);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(411, 19);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 65);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(330, 19);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 65);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(249, 19);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 65);
-            this.button6.TabIndex = 3;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(168, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 65);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(87, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 65);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(6, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 65);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1364, 102);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Danh mục";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.button10);
-            this.groupBox2.Controls.Add(this.button11);
-            this.groupBox2.Controls.Add(this.button12);
-            this.groupBox2.Controls.Add(this.m_cmd_ql_cap_bac);
-            this.groupBox2.Controls.Add(this.m_cmd_ql_chuc_vu);
-            this.groupBox2.Location = new System.Drawing.Point(8, 6);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(413, 90);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Quản lý";
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(330, 19);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 65);
-            this.button10.TabIndex = 4;
-            this.button10.Text = "Quyết định";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(249, 19);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 65);
-            this.button11.TabIndex = 3;
-            this.button11.Text = "Pháp nhân";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(168, 19);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 65);
-            this.button12.TabIndex = 2;
-            this.button12.Text = "Đơn vị";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // m_cmd_ql_cap_bac
-            // 
-            this.m_cmd_ql_cap_bac.Location = new System.Drawing.Point(87, 19);
-            this.m_cmd_ql_cap_bac.Name = "m_cmd_ql_cap_bac";
-            this.m_cmd_ql_cap_bac.Size = new System.Drawing.Size(75, 65);
-            this.m_cmd_ql_cap_bac.TabIndex = 1;
-            this.m_cmd_ql_cap_bac.Text = "Cấp bậc";
-            this.m_cmd_ql_cap_bac.UseVisualStyleBackColor = true;
-            this.m_cmd_ql_cap_bac.Click += new System.EventHandler(this.m_cmd_ql_cap_bac_Click);
-            // 
-            // m_cmd_ql_chuc_vu
-            // 
-            this.m_cmd_ql_chuc_vu.Location = new System.Drawing.Point(6, 19);
-            this.m_cmd_ql_chuc_vu.Name = "m_cmd_ql_chuc_vu";
-            this.m_cmd_ql_chuc_vu.Size = new System.Drawing.Size(75, 65);
-            this.m_cmd_ql_chuc_vu.TabIndex = 0;
-            this.m_cmd_ql_chuc_vu.Text = "Chức vụ";
-            this.m_cmd_ql_chuc_vu.UseVisualStyleBackColor = true;
-            this.m_cmd_ql_chuc_vu.Click += new System.EventHandler(this.m_cmd_ql_chuc_vu_Click);
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1364, 102);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Nghiệp vụ";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1364, 102);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Báo cáo";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1364, 102);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Trợ giúp";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
             // m_pnl_thong_bao
             // 
             this.m_pnl_thong_bao.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -822,9 +659,9 @@ namespace BKI_HRM
             this.m_pnl_thong_bao.Controls.Add(this.panel3);
             this.m_pnl_thong_bao.Controls.Add(this.panel2);
             this.m_pnl_thong_bao.Controls.Add(this.panel1);
-            this.m_pnl_thong_bao.Location = new System.Drawing.Point(49, 159);
+            this.m_pnl_thong_bao.Location = new System.Drawing.Point(49, 154);
             this.m_pnl_thong_bao.Name = "m_pnl_thong_bao";
-            this.m_pnl_thong_bao.Size = new System.Drawing.Size(371, 286);
+            this.m_pnl_thong_bao.Size = new System.Drawing.Size(371, 551);
             this.m_pnl_thong_bao.TabIndex = 10;
             this.m_pnl_thong_bao.Visible = false;
             // 
@@ -918,26 +755,596 @@ namespace BKI_HRM
             this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
             this.toolStripStatusLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // m_cmd_thong_bao
-            // 
-            this.m_cmd_thong_bao.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_thong_bao.Location = new System.Drawing.Point(0, 128);
-            this.m_cmd_thong_bao.Name = "m_cmd_thong_bao";
-            this.m_cmd_thong_bao.Size = new System.Drawing.Size(48, 599);
-            this.m_cmd_thong_bao.TabIndex = 11;
-            this.m_cmd_thong_bao.Text = "Thông báo";
-            this.m_cmd_thong_bao.UseVisualStyleBackColor = true;
-            this.m_cmd_thong_bao.Click += new System.EventHandler(this.m_cmd_thong_bao_Click);
-            // 
             // m_tab_form
             // 
             this.m_tab_form.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_tab_form.Location = new System.Drawing.Point(48, 128);
             this.m_tab_form.Name = "m_tab_form";
             this.m_tab_form.SelectedIndex = 0;
-            this.m_tab_form.Size = new System.Drawing.Size(1322, 30);
+            this.m_tab_form.Size = new System.Drawing.Size(1322, 25);
             this.m_tab_form.TabIndex = 15;
             this.m_tab_form.SelectedIndexChanged += new System.EventHandler(this.m_tab_form_SelectedIndexChanged_1);
+            // 
+            // m_cmd_thong_bao
+            // 
+            this.m_cmd_thong_bao.BackgroundImage = global::BKI_HRM.Properties.Resources.thong_bao;
+            this.m_cmd_thong_bao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.m_cmd_thong_bao.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_thong_bao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_cmd_thong_bao.Location = new System.Drawing.Point(0, 128);
+            this.m_cmd_thong_bao.Name = "m_cmd_thong_bao";
+            this.m_cmd_thong_bao.Size = new System.Drawing.Size(48, 599);
+            this.m_cmd_thong_bao.TabIndex = 11;
+            this.m_cmd_thong_bao.UseVisualStyleBackColor = true;
+            this.m_cmd_thong_bao.Click += new System.EventHandler(this.m_cmd_thong_bao_Click);
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.groupBox10);
+            this.tabPage4.Controls.Add(this.groupBox9);
+            this.tabPage4.Controls.Add(this.groupBox8);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1362, 102);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Báo cáo";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.m_cmd_bao_cao_nghi_viec);
+            this.groupBox10.Controls.Add(this.m_cmd_bao_cao_danh_sach_bo_nhiem);
+            this.groupBox10.Controls.Add(this.m_cmd_bien_dong_don_vi_trang_thai);
+            this.groupBox10.Controls.Add(this.m_cmd_bao_cao_so_luong_bo_nhiem);
+            this.groupBox10.Controls.Add(this.m_cmd_bien_dong_chuc_vu_trang_thai);
+            this.groupBox10.Controls.Add(this.m_cmd_qua_trinh_lam_viec);
+            this.groupBox10.Controls.Add(this.m_cmd_nhan_su_theo_cap_bac);
+            this.groupBox10.Controls.Add(this.m_cmd_nhan_su_theo_chuc_vu);
+            this.groupBox10.Controls.Add(this.m_cmd_tra_cuu_nhan_su_chung);
+            this.groupBox10.Controls.Add(this.m_cmd_nhan_su_theo_phong_ban);
+            this.groupBox10.Location = new System.Drawing.Point(313, 6);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(819, 90);
+            this.groupBox10.TabIndex = 10;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Nhân sự";
+            // 
+            // m_cmd_bao_cao_nghi_viec
+            // 
+            this.m_cmd_bao_cao_nghi_viec.Location = new System.Drawing.Point(735, 19);
+            this.m_cmd_bao_cao_nghi_viec.Name = "m_cmd_bao_cao_nghi_viec";
+            this.m_cmd_bao_cao_nghi_viec.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_bao_cao_nghi_viec.TabIndex = 17;
+            this.m_cmd_bao_cao_nghi_viec.Text = "Báo cáo nghỉ việc";
+            this.m_cmd_bao_cao_nghi_viec.UseVisualStyleBackColor = true;
+            this.m_cmd_bao_cao_nghi_viec.Click += new System.EventHandler(this.m_cmd_bao_cao_nghi_viec_Click);
+            // 
+            // m_cmd_bao_cao_danh_sach_bo_nhiem
+            // 
+            this.m_cmd_bao_cao_danh_sach_bo_nhiem.Location = new System.Drawing.Point(573, 19);
+            this.m_cmd_bao_cao_danh_sach_bo_nhiem.Name = "m_cmd_bao_cao_danh_sach_bo_nhiem";
+            this.m_cmd_bao_cao_danh_sach_bo_nhiem.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_bao_cao_danh_sach_bo_nhiem.TabIndex = 16;
+            this.m_cmd_bao_cao_danh_sach_bo_nhiem.Text = "Báo cáo danh sách bổ nhiệm";
+            this.m_cmd_bao_cao_danh_sach_bo_nhiem.UseVisualStyleBackColor = true;
+            this.m_cmd_bao_cao_danh_sach_bo_nhiem.Click += new System.EventHandler(this.m_cmd_bao_cao_danh_sach_bo_nhiem_Click);
+            // 
+            // m_cmd_bien_dong_don_vi_trang_thai
+            // 
+            this.m_cmd_bien_dong_don_vi_trang_thai.Location = new System.Drawing.Point(654, 19);
+            this.m_cmd_bien_dong_don_vi_trang_thai.Name = "m_cmd_bien_dong_don_vi_trang_thai";
+            this.m_cmd_bien_dong_don_vi_trang_thai.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_bien_dong_don_vi_trang_thai.TabIndex = 15;
+            this.m_cmd_bien_dong_don_vi_trang_thai.Text = "Biến động đơn vị trạng thái";
+            this.m_cmd_bien_dong_don_vi_trang_thai.UseVisualStyleBackColor = true;
+            this.m_cmd_bien_dong_don_vi_trang_thai.Click += new System.EventHandler(this.m_cmd_bien_dong_don_vi_trang_thai_Click);
+            // 
+            // m_cmd_bao_cao_so_luong_bo_nhiem
+            // 
+            this.m_cmd_bao_cao_so_luong_bo_nhiem.Location = new System.Drawing.Point(492, 19);
+            this.m_cmd_bao_cao_so_luong_bo_nhiem.Name = "m_cmd_bao_cao_so_luong_bo_nhiem";
+            this.m_cmd_bao_cao_so_luong_bo_nhiem.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_bao_cao_so_luong_bo_nhiem.TabIndex = 14;
+            this.m_cmd_bao_cao_so_luong_bo_nhiem.Text = "Báo cáo số lượng bổ nhiệm";
+            this.m_cmd_bao_cao_so_luong_bo_nhiem.UseVisualStyleBackColor = true;
+            this.m_cmd_bao_cao_so_luong_bo_nhiem.Click += new System.EventHandler(this.m_cmd_bao_cao_so_luong_bo_nhiem_Click);
+            // 
+            // m_cmd_bien_dong_chuc_vu_trang_thai
+            // 
+            this.m_cmd_bien_dong_chuc_vu_trang_thai.Location = new System.Drawing.Point(411, 19);
+            this.m_cmd_bien_dong_chuc_vu_trang_thai.Name = "m_cmd_bien_dong_chuc_vu_trang_thai";
+            this.m_cmd_bien_dong_chuc_vu_trang_thai.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_bien_dong_chuc_vu_trang_thai.TabIndex = 13;
+            this.m_cmd_bien_dong_chuc_vu_trang_thai.Text = "Biến động chức vụ trạng thái";
+            this.m_cmd_bien_dong_chuc_vu_trang_thai.UseVisualStyleBackColor = true;
+            this.m_cmd_bien_dong_chuc_vu_trang_thai.Click += new System.EventHandler(this.m_cmd_bien_dong_chuc_vu_trang_thai_Click);
+            // 
+            // m_cmd_qua_trinh_lam_viec
+            // 
+            this.m_cmd_qua_trinh_lam_viec.Location = new System.Drawing.Point(330, 19);
+            this.m_cmd_qua_trinh_lam_viec.Name = "m_cmd_qua_trinh_lam_viec";
+            this.m_cmd_qua_trinh_lam_viec.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_qua_trinh_lam_viec.TabIndex = 12;
+            this.m_cmd_qua_trinh_lam_viec.Text = "Quá trình làm việc";
+            this.m_cmd_qua_trinh_lam_viec.UseVisualStyleBackColor = true;
+            this.m_cmd_qua_trinh_lam_viec.Click += new System.EventHandler(this.m_cmd_qua_trinh_lam_viec_Click);
+            // 
+            // m_cmd_nhan_su_theo_cap_bac
+            // 
+            this.m_cmd_nhan_su_theo_cap_bac.Location = new System.Drawing.Point(249, 19);
+            this.m_cmd_nhan_su_theo_cap_bac.Name = "m_cmd_nhan_su_theo_cap_bac";
+            this.m_cmd_nhan_su_theo_cap_bac.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_nhan_su_theo_cap_bac.TabIndex = 11;
+            this.m_cmd_nhan_su_theo_cap_bac.Text = "Nhân sự theo cấp bậc";
+            this.m_cmd_nhan_su_theo_cap_bac.UseVisualStyleBackColor = true;
+            this.m_cmd_nhan_su_theo_cap_bac.Click += new System.EventHandler(this.m_cmd_nhan_su_theo_cap_bac_Click);
+            // 
+            // m_cmd_nhan_su_theo_chuc_vu
+            // 
+            this.m_cmd_nhan_su_theo_chuc_vu.Location = new System.Drawing.Point(168, 19);
+            this.m_cmd_nhan_su_theo_chuc_vu.Name = "m_cmd_nhan_su_theo_chuc_vu";
+            this.m_cmd_nhan_su_theo_chuc_vu.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_nhan_su_theo_chuc_vu.TabIndex = 9;
+            this.m_cmd_nhan_su_theo_chuc_vu.Text = "Nhân sự theo chức vụ";
+            this.m_cmd_nhan_su_theo_chuc_vu.UseVisualStyleBackColor = true;
+            this.m_cmd_nhan_su_theo_chuc_vu.Click += new System.EventHandler(this.m_cmd_nhan_su_theo_chuc_vu_Click);
+            // 
+            // m_cmd_tra_cuu_nhan_su_chung
+            // 
+            this.m_cmd_tra_cuu_nhan_su_chung.Location = new System.Drawing.Point(6, 19);
+            this.m_cmd_tra_cuu_nhan_su_chung.Name = "m_cmd_tra_cuu_nhan_su_chung";
+            this.m_cmd_tra_cuu_nhan_su_chung.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_tra_cuu_nhan_su_chung.TabIndex = 8;
+            this.m_cmd_tra_cuu_nhan_su_chung.Text = "Tra cứu nhân sự chung";
+            this.m_cmd_tra_cuu_nhan_su_chung.UseVisualStyleBackColor = true;
+            this.m_cmd_tra_cuu_nhan_su_chung.Click += new System.EventHandler(this.m_cmd_tra_cuu_nhan_su_chung_Click);
+            // 
+            // m_cmd_nhan_su_theo_phong_ban
+            // 
+            this.m_cmd_nhan_su_theo_phong_ban.Location = new System.Drawing.Point(87, 19);
+            this.m_cmd_nhan_su_theo_phong_ban.Name = "m_cmd_nhan_su_theo_phong_ban";
+            this.m_cmd_nhan_su_theo_phong_ban.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_nhan_su_theo_phong_ban.TabIndex = 7;
+            this.m_cmd_nhan_su_theo_phong_ban.Text = "Nhân sự theo phòng ban";
+            this.m_cmd_nhan_su_theo_phong_ban.UseVisualStyleBackColor = true;
+            this.m_cmd_nhan_su_theo_phong_ban.Click += new System.EventHandler(this.m_cmd_nhan_su_theo_phong_ban_Click);
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.m_cmd_bao_cao_hop_dong_lao_dong);
+            this.groupBox9.Location = new System.Drawing.Point(182, 6);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(125, 90);
+            this.groupBox9.TabIndex = 9;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Hợp đồng lao động";
+            // 
+            // m_cmd_bao_cao_hop_dong_lao_dong
+            // 
+            this.m_cmd_bao_cao_hop_dong_lao_dong.Location = new System.Drawing.Point(26, 19);
+            this.m_cmd_bao_cao_hop_dong_lao_dong.Name = "m_cmd_bao_cao_hop_dong_lao_dong";
+            this.m_cmd_bao_cao_hop_dong_lao_dong.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_bao_cao_hop_dong_lao_dong.TabIndex = 8;
+            this.m_cmd_bao_cao_hop_dong_lao_dong.Text = "Báo cáo hợp đồng lao động";
+            this.m_cmd_bao_cao_hop_dong_lao_dong.UseVisualStyleBackColor = true;
+            this.m_cmd_bao_cao_hop_dong_lao_dong.Click += new System.EventHandler(this.m_cmd_bao_cao_hop_dong_lao_dong_Click);
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.m_cmd_bao_cao_du_an);
+            this.groupBox8.Controls.Add(this.m_cmd_tra_cuu_nhan_su_du_an);
+            this.groupBox8.Location = new System.Drawing.Point(6, 6);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(170, 90);
+            this.groupBox8.TabIndex = 1;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Dự án";
+            // 
+            // m_cmd_bao_cao_du_an
+            // 
+            this.m_cmd_bao_cao_du_an.Location = new System.Drawing.Point(6, 19);
+            this.m_cmd_bao_cao_du_an.Name = "m_cmd_bao_cao_du_an";
+            this.m_cmd_bao_cao_du_an.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_bao_cao_du_an.TabIndex = 8;
+            this.m_cmd_bao_cao_du_an.Text = "Báo cáo dự án";
+            this.m_cmd_bao_cao_du_an.UseVisualStyleBackColor = true;
+            this.m_cmd_bao_cao_du_an.Click += new System.EventHandler(this.m_cmd_bao_cao_du_an_Click);
+            // 
+            // m_cmd_tra_cuu_nhan_su_du_an
+            // 
+            this.m_cmd_tra_cuu_nhan_su_du_an.Location = new System.Drawing.Point(87, 19);
+            this.m_cmd_tra_cuu_nhan_su_du_an.Name = "m_cmd_tra_cuu_nhan_su_du_an";
+            this.m_cmd_tra_cuu_nhan_su_du_an.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_tra_cuu_nhan_su_du_an.TabIndex = 7;
+            this.m_cmd_tra_cuu_nhan_su_du_an.Text = "Tra cứu nhân sự dự án";
+            this.m_cmd_tra_cuu_nhan_su_du_an.UseVisualStyleBackColor = true;
+            this.m_cmd_tra_cuu_nhan_su_du_an.Click += new System.EventHandler(this.m_cmd_tra_cuu_nhan_su_du_an_Click);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.groupBox7);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1362, 102);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Nghiệp vụ";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.m_cmd_hop_dong_lao_dong);
+            this.groupBox7.Controls.Add(this.m_cmd_thong_tin_du_an);
+            this.groupBox7.Controls.Add(this.m_cmd_qua_trinh_di_cong_tac);
+            this.groupBox7.Controls.Add(this.m_cmd_chi_tiet_cap_bac);
+            this.groupBox7.Controls.Add(this.m_cmd_trang_thai_lao_dong);
+            this.groupBox7.Controls.Add(this.m_cmd_ho_so_nhan_su);
+            this.groupBox7.Controls.Add(this.m_cmd_thay_doi_chuc_vu_don_vi);
+            this.groupBox7.Location = new System.Drawing.Point(8, 6);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(576, 90);
+            this.groupBox7.TabIndex = 0;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Quản lý nhân sự";
+            // 
+            // m_cmd_hop_dong_lao_dong
+            // 
+            this.m_cmd_hop_dong_lao_dong.Location = new System.Drawing.Point(492, 19);
+            this.m_cmd_hop_dong_lao_dong.Name = "m_cmd_hop_dong_lao_dong";
+            this.m_cmd_hop_dong_lao_dong.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_hop_dong_lao_dong.TabIndex = 14;
+            this.m_cmd_hop_dong_lao_dong.Text = "Hợp đồng lao động";
+            this.m_cmd_hop_dong_lao_dong.UseVisualStyleBackColor = true;
+            this.m_cmd_hop_dong_lao_dong.Click += new System.EventHandler(this.m_cmd_hop_dong_lao_dong_Click);
+            // 
+            // m_cmd_thong_tin_du_an
+            // 
+            this.m_cmd_thong_tin_du_an.Location = new System.Drawing.Point(411, 19);
+            this.m_cmd_thong_tin_du_an.Name = "m_cmd_thong_tin_du_an";
+            this.m_cmd_thong_tin_du_an.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_thong_tin_du_an.TabIndex = 13;
+            this.m_cmd_thong_tin_du_an.Text = "Thông tin dự án";
+            this.m_cmd_thong_tin_du_an.UseVisualStyleBackColor = true;
+            this.m_cmd_thong_tin_du_an.Click += new System.EventHandler(this.m_cmd_thong_tin_du_an_Click);
+            // 
+            // m_cmd_qua_trinh_di_cong_tac
+            // 
+            this.m_cmd_qua_trinh_di_cong_tac.Location = new System.Drawing.Point(330, 19);
+            this.m_cmd_qua_trinh_di_cong_tac.Name = "m_cmd_qua_trinh_di_cong_tac";
+            this.m_cmd_qua_trinh_di_cong_tac.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_qua_trinh_di_cong_tac.TabIndex = 12;
+            this.m_cmd_qua_trinh_di_cong_tac.Text = "Quá trình đi công tác";
+            this.m_cmd_qua_trinh_di_cong_tac.UseVisualStyleBackColor = true;
+            this.m_cmd_qua_trinh_di_cong_tac.Click += new System.EventHandler(this.m_cmd_qua_trinh_di_cong_tac_Click);
+            // 
+            // m_cmd_chi_tiet_cap_bac
+            // 
+            this.m_cmd_chi_tiet_cap_bac.Location = new System.Drawing.Point(249, 19);
+            this.m_cmd_chi_tiet_cap_bac.Name = "m_cmd_chi_tiet_cap_bac";
+            this.m_cmd_chi_tiet_cap_bac.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_chi_tiet_cap_bac.TabIndex = 11;
+            this.m_cmd_chi_tiet_cap_bac.Text = "Chi tiết cấp bậc";
+            this.m_cmd_chi_tiet_cap_bac.UseVisualStyleBackColor = true;
+            this.m_cmd_chi_tiet_cap_bac.Click += new System.EventHandler(this.m_cmd_chi_tiet_cap_bac_Click);
+            // 
+            // m_cmd_trang_thai_lao_dong
+            // 
+            this.m_cmd_trang_thai_lao_dong.Location = new System.Drawing.Point(168, 19);
+            this.m_cmd_trang_thai_lao_dong.Name = "m_cmd_trang_thai_lao_dong";
+            this.m_cmd_trang_thai_lao_dong.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_trang_thai_lao_dong.TabIndex = 9;
+            this.m_cmd_trang_thai_lao_dong.Text = "Trạng thái lao động";
+            this.m_cmd_trang_thai_lao_dong.UseVisualStyleBackColor = true;
+            this.m_cmd_trang_thai_lao_dong.Click += new System.EventHandler(this.m_cmd_trang_thai_lao_dong_Click);
+            // 
+            // m_cmd_ho_so_nhan_su
+            // 
+            this.m_cmd_ho_so_nhan_su.Location = new System.Drawing.Point(6, 19);
+            this.m_cmd_ho_so_nhan_su.Name = "m_cmd_ho_so_nhan_su";
+            this.m_cmd_ho_so_nhan_su.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_ho_so_nhan_su.TabIndex = 8;
+            this.m_cmd_ho_so_nhan_su.Text = "Hồ sơ nhân sự";
+            this.m_cmd_ho_so_nhan_su.UseVisualStyleBackColor = true;
+            this.m_cmd_ho_so_nhan_su.Click += new System.EventHandler(this.m_cmd_ho_so_nhan_su_Click);
+            // 
+            // m_cmd_thay_doi_chuc_vu_don_vi
+            // 
+            this.m_cmd_thay_doi_chuc_vu_don_vi.Location = new System.Drawing.Point(87, 19);
+            this.m_cmd_thay_doi_chuc_vu_don_vi.Name = "m_cmd_thay_doi_chuc_vu_don_vi";
+            this.m_cmd_thay_doi_chuc_vu_don_vi.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_thay_doi_chuc_vu_don_vi.TabIndex = 7;
+            this.m_cmd_thay_doi_chuc_vu_don_vi.Text = "Thay đổi chức vụ, đơn vị";
+            this.m_cmd_thay_doi_chuc_vu_don_vi.UseVisualStyleBackColor = true;
+            this.m_cmd_thay_doi_chuc_vu_don_vi.Click += new System.EventHandler(this.m_cmd_thay_doi_chuc_vu_don_vi_Click);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1362, 102);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Danh mục";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.m_cmd_ql_quyet_dinh);
+            this.groupBox2.Controls.Add(this.m_cmd_ql_phap_nhan);
+            this.groupBox2.Controls.Add(this.m_cmd_ql_don_vi);
+            this.groupBox2.Controls.Add(this.m_cmd_ql_cap_bac);
+            this.groupBox2.Controls.Add(this.m_cmd_ql_chuc_vu);
+            this.groupBox2.Location = new System.Drawing.Point(8, 6);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(416, 90);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Quản lý";
+            // 
+            // m_cmd_ql_quyet_dinh
+            // 
+            this.m_cmd_ql_quyet_dinh.Location = new System.Drawing.Point(330, 19);
+            this.m_cmd_ql_quyet_dinh.Name = "m_cmd_ql_quyet_dinh";
+            this.m_cmd_ql_quyet_dinh.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_ql_quyet_dinh.TabIndex = 4;
+            this.m_cmd_ql_quyet_dinh.Text = "Quyết định";
+            this.m_cmd_ql_quyet_dinh.UseVisualStyleBackColor = true;
+            this.m_cmd_ql_quyet_dinh.Click += new System.EventHandler(this.m_cmd_ql_quyet_dinh_Click);
+            // 
+            // m_cmd_ql_phap_nhan
+            // 
+            this.m_cmd_ql_phap_nhan.Location = new System.Drawing.Point(249, 19);
+            this.m_cmd_ql_phap_nhan.Name = "m_cmd_ql_phap_nhan";
+            this.m_cmd_ql_phap_nhan.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_ql_phap_nhan.TabIndex = 3;
+            this.m_cmd_ql_phap_nhan.Text = "Pháp nhân";
+            this.m_cmd_ql_phap_nhan.UseVisualStyleBackColor = true;
+            this.m_cmd_ql_phap_nhan.Click += new System.EventHandler(this.m_cmd_ql_phap_nhan_Click);
+            // 
+            // m_cmd_ql_don_vi
+            // 
+            this.m_cmd_ql_don_vi.Location = new System.Drawing.Point(168, 19);
+            this.m_cmd_ql_don_vi.Name = "m_cmd_ql_don_vi";
+            this.m_cmd_ql_don_vi.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_ql_don_vi.TabIndex = 2;
+            this.m_cmd_ql_don_vi.Text = "Đơn vị";
+            this.m_cmd_ql_don_vi.UseVisualStyleBackColor = true;
+            this.m_cmd_ql_don_vi.Click += new System.EventHandler(this.m_cmd_ql_don_vi_Click);
+            // 
+            // m_cmd_ql_cap_bac
+            // 
+            this.m_cmd_ql_cap_bac.Location = new System.Drawing.Point(87, 19);
+            this.m_cmd_ql_cap_bac.Name = "m_cmd_ql_cap_bac";
+            this.m_cmd_ql_cap_bac.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_ql_cap_bac.TabIndex = 1;
+            this.m_cmd_ql_cap_bac.Text = "Cấp bậc";
+            this.m_cmd_ql_cap_bac.UseVisualStyleBackColor = true;
+            this.m_cmd_ql_cap_bac.Click += new System.EventHandler(this.m_cmd_ql_cap_bac_Click);
+            // 
+            // m_cmd_ql_chuc_vu
+            // 
+            this.m_cmd_ql_chuc_vu.Location = new System.Drawing.Point(6, 19);
+            this.m_cmd_ql_chuc_vu.Name = "m_cmd_ql_chuc_vu";
+            this.m_cmd_ql_chuc_vu.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_ql_chuc_vu.TabIndex = 0;
+            this.m_cmd_ql_chuc_vu.Text = "Chức vụ";
+            this.m_cmd_ql_chuc_vu.UseVisualStyleBackColor = true;
+            this.m_cmd_ql_chuc_vu.Click += new System.EventHandler(this.m_cmd_ql_chuc_vu_Click);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.groupBox6);
+            this.tabPage1.Controls.Add(this.groupBox5);
+            this.tabPage1.Controls.Add(this.groupBox4);
+            this.tabPage1.Controls.Add(this.groupBox3);
+            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1362, 102);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Quản trị - Hệ thống - Trợ giúp";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.button15);
+            this.groupBox6.Controls.Add(this.button16);
+            this.groupBox6.Location = new System.Drawing.Point(954, 6);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(169, 90);
+            this.groupBox6.TabIndex = 4;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Khác";
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(87, 19);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(75, 65);
+            this.button15.TabIndex = 12;
+            this.button15.Text = "Thoát";
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(6, 19);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(75, 65);
+            this.button16.TabIndex = 11;
+            this.button16.Text = "Đăng xuất";
+            this.button16.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.m_cmd_danh_muc_control);
+            this.groupBox5.Controls.Add(this.m_cmd_nguoi_su_dung);
+            this.groupBox5.Controls.Add(this.m_cmd_nhom_nguoi_su_dung);
+            this.groupBox5.Location = new System.Drawing.Point(265, 6);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(251, 90);
+            this.groupBox5.TabIndex = 3;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Danh mục hệ thống";
+            // 
+            // m_cmd_danh_muc_control
+            // 
+            this.m_cmd_danh_muc_control.Location = new System.Drawing.Point(168, 19);
+            this.m_cmd_danh_muc_control.Name = "m_cmd_danh_muc_control";
+            this.m_cmd_danh_muc_control.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_danh_muc_control.TabIndex = 6;
+            this.m_cmd_danh_muc_control.Text = "Danh mục control";
+            this.m_cmd_danh_muc_control.UseVisualStyleBackColor = true;
+            this.m_cmd_danh_muc_control.Click += new System.EventHandler(this.m_cmd_danh_muc_control_Click);
+            // 
+            // m_cmd_nguoi_su_dung
+            // 
+            this.m_cmd_nguoi_su_dung.Location = new System.Drawing.Point(6, 19);
+            this.m_cmd_nguoi_su_dung.Name = "m_cmd_nguoi_su_dung";
+            this.m_cmd_nguoi_su_dung.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_nguoi_su_dung.TabIndex = 4;
+            this.m_cmd_nguoi_su_dung.Text = "Người sử dụng";
+            this.m_cmd_nguoi_su_dung.UseVisualStyleBackColor = true;
+            this.m_cmd_nguoi_su_dung.Click += new System.EventHandler(this.m_cmd_nguoi_su_dung_Click);
+            // 
+            // m_cmd_nhom_nguoi_su_dung
+            // 
+            this.m_cmd_nhom_nguoi_su_dung.Location = new System.Drawing.Point(87, 19);
+            this.m_cmd_nhom_nguoi_su_dung.Name = "m_cmd_nhom_nguoi_su_dung";
+            this.m_cmd_nhom_nguoi_su_dung.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_nhom_nguoi_su_dung.TabIndex = 2;
+            this.m_cmd_nhom_nguoi_su_dung.Text = "Nhóm người sử dụng";
+            this.m_cmd_nhom_nguoi_su_dung.UseVisualStyleBackColor = true;
+            this.m_cmd_nhom_nguoi_su_dung.Click += new System.EventHandler(this.m_cmd_nhom_nguoi_su_dung_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.m_cmd_phan_hoi_loi_pm);
+            this.groupBox4.Controls.Add(this.m_cmd_huong_dan_su_dung);
+            this.groupBox4.Location = new System.Drawing.Point(779, 6);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(169, 90);
+            this.groupBox4.TabIndex = 2;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Trợ giúp";
+            // 
+            // m_cmd_phan_hoi_loi_pm
+            // 
+            this.m_cmd_phan_hoi_loi_pm.Location = new System.Drawing.Point(87, 19);
+            this.m_cmd_phan_hoi_loi_pm.Name = "m_cmd_phan_hoi_loi_pm";
+            this.m_cmd_phan_hoi_loi_pm.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_phan_hoi_loi_pm.TabIndex = 10;
+            this.m_cmd_phan_hoi_loi_pm.Text = "Phản hồi lỗi phần mềm";
+            this.m_cmd_phan_hoi_loi_pm.UseVisualStyleBackColor = true;
+            this.m_cmd_phan_hoi_loi_pm.Click += new System.EventHandler(this.m_cmd_phan_hoi_loi_pm_Click);
+            // 
+            // m_cmd_huong_dan_su_dung
+            // 
+            this.m_cmd_huong_dan_su_dung.Location = new System.Drawing.Point(6, 19);
+            this.m_cmd_huong_dan_su_dung.Name = "m_cmd_huong_dan_su_dung";
+            this.m_cmd_huong_dan_su_dung.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_huong_dan_su_dung.TabIndex = 9;
+            this.m_cmd_huong_dan_su_dung.Text = "Hướng dẫn sử dụng";
+            this.m_cmd_huong_dan_su_dung.UseVisualStyleBackColor = true;
+            this.m_cmd_huong_dan_su_dung.Click += new System.EventHandler(this.m_cmd_huong_dan_su_dung_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.m_cmd_backup_recovery);
+            this.groupBox3.Controls.Add(this.m_cmd_nhat_ky_he_thong);
+            this.groupBox3.Controls.Add(this.m_cmd_tu_dien_he_thong);
+            this.groupBox3.Location = new System.Drawing.Point(522, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(251, 90);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Hệ thống";
+            // 
+            // m_cmd_backup_recovery
+            // 
+            this.m_cmd_backup_recovery.Location = new System.Drawing.Point(168, 19);
+            this.m_cmd_backup_recovery.Name = "m_cmd_backup_recovery";
+            this.m_cmd_backup_recovery.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_backup_recovery.TabIndex = 8;
+            this.m_cmd_backup_recovery.Text = "Sao lưu/Khôi phục dữ liệu";
+            this.m_cmd_backup_recovery.UseVisualStyleBackColor = true;
+            this.m_cmd_backup_recovery.Click += new System.EventHandler(this.m_cmd_backup_recovery_Click);
+            // 
+            // m_cmd_nhat_ky_he_thong
+            // 
+            this.m_cmd_nhat_ky_he_thong.Location = new System.Drawing.Point(6, 19);
+            this.m_cmd_nhat_ky_he_thong.Name = "m_cmd_nhat_ky_he_thong";
+            this.m_cmd_nhat_ky_he_thong.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_nhat_ky_he_thong.TabIndex = 5;
+            this.m_cmd_nhat_ky_he_thong.Text = "Nhật ký hệ thống";
+            this.m_cmd_nhat_ky_he_thong.UseVisualStyleBackColor = true;
+            // 
+            // m_cmd_tu_dien_he_thong
+            // 
+            this.m_cmd_tu_dien_he_thong.Location = new System.Drawing.Point(87, 19);
+            this.m_cmd_tu_dien_he_thong.Name = "m_cmd_tu_dien_he_thong";
+            this.m_cmd_tu_dien_he_thong.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_tu_dien_he_thong.TabIndex = 7;
+            this.m_cmd_tu_dien_he_thong.Text = "Từ điển hệ thống";
+            this.m_cmd_tu_dien_he_thong.UseVisualStyleBackColor = true;
+            this.m_cmd_tu_dien_he_thong.Click += new System.EventHandler(this.m_cmd_tu_dien_he_thong_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.m_cmd_phan_quyen_cho_nhom);
+            this.groupBox1.Controls.Add(this.m_cmd_phan_quyen_he_thong);
+            this.groupBox1.Controls.Add(this.m_cmd_phan_quyen_chi_tiet);
+            this.groupBox1.Location = new System.Drawing.Point(8, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(251, 90);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Phân quyền";
+            // 
+            // m_cmd_phan_quyen_cho_nhom
+            // 
+            this.m_cmd_phan_quyen_cho_nhom.Location = new System.Drawing.Point(168, 19);
+            this.m_cmd_phan_quyen_cho_nhom.Name = "m_cmd_phan_quyen_cho_nhom";
+            this.m_cmd_phan_quyen_cho_nhom.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_phan_quyen_cho_nhom.TabIndex = 3;
+            this.m_cmd_phan_quyen_cho_nhom.Text = "Phân quyền cho nhóm";
+            this.m_cmd_phan_quyen_cho_nhom.UseVisualStyleBackColor = true;
+            this.m_cmd_phan_quyen_cho_nhom.Click += new System.EventHandler(this.m_cmd_phan_quyen_cho_nhom_Click);
+            // 
+            // m_cmd_phan_quyen_he_thong
+            // 
+            this.m_cmd_phan_quyen_he_thong.Location = new System.Drawing.Point(87, 19);
+            this.m_cmd_phan_quyen_he_thong.Name = "m_cmd_phan_quyen_he_thong";
+            this.m_cmd_phan_quyen_he_thong.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_phan_quyen_he_thong.TabIndex = 1;
+            this.m_cmd_phan_quyen_he_thong.Text = "Phân quyền hệ thống";
+            this.m_cmd_phan_quyen_he_thong.UseVisualStyleBackColor = true;
+            this.m_cmd_phan_quyen_he_thong.Click += new System.EventHandler(this.m_cmd_phan_quyen_he_thong_Click);
+            // 
+            // m_cmd_phan_quyen_chi_tiet
+            // 
+            this.m_cmd_phan_quyen_chi_tiet.Location = new System.Drawing.Point(6, 19);
+            this.m_cmd_phan_quyen_chi_tiet.Name = "m_cmd_phan_quyen_chi_tiet";
+            this.m_cmd_phan_quyen_chi_tiet.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_phan_quyen_chi_tiet.TabIndex = 0;
+            this.m_cmd_phan_quyen_chi_tiet.Text = "Phân quyền chi tiết";
+            this.m_cmd_phan_quyen_chi_tiet.UseVisualStyleBackColor = true;
+            this.m_cmd_phan_quyen_chi_tiet.Click += new System.EventHandler(this.m_cmd_phan_quyen_chi_tiet_Click);
+            // 
+            // m_tab_menu
+            // 
+            this.m_tab_menu.Controls.Add(this.tabPage1);
+            this.m_tab_menu.Controls.Add(this.tabPage2);
+            this.m_tab_menu.Controls.Add(this.tabPage3);
+            this.m_tab_menu.Controls.Add(this.tabPage4);
+            this.m_tab_menu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_tab_menu.Location = new System.Drawing.Point(0, 0);
+            this.m_tab_menu.Name = "m_tab_menu";
+            this.m_tab_menu.SelectedIndex = 0;
+            this.m_tab_menu.Size = new System.Drawing.Size(1370, 128);
+            this.m_tab_menu.TabIndex = 9;
             // 
             // f400_Main
             // 
@@ -964,11 +1371,6 @@ namespace BKI_HRM
             this.MdiChildActivate += new System.EventHandler(this.f400_Main_MdiChildActivate);
             this.m_mst_menu.ResumeLayout(false);
             this.m_mst_menu.PerformLayout();
-            this.m_tab_menu.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             this.m_pnl_thong_bao.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -982,6 +1384,21 @@ namespace BKI_HRM
             this.panel1.PerformLayout();
             this.m_stt_form.ResumeLayout(false);
             this.m_stt_form.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.m_tab_menu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1046,26 +1463,6 @@ namespace BKI_HRM
         private ToolStripMenuItem m_menuitem_qua_trinh_di_cong_tac;
         private ToolStripMenuItem restoreDBToolStripMenuItem;
         private ToolStripMenuItem m_menuitem_dang_xuat;
-        private TabControl m_tab_menu;
-        private TabPage tabPage1;
-        private GroupBox groupBox1;
-        private Button button3;
-        private Button button2;
-        private Button button1;
-        private TabPage tabPage2;
-        private Button button7;
-        private Button button4;
-        private Button button5;
-        private Button button6;
-        private GroupBox groupBox2;
-        private Button button10;
-        private Button button11;
-        private Button button12;
-        private Button m_cmd_ql_cap_bac;
-        private Button m_cmd_ql_chuc_vu;
-        private TabPage tabPage3;
-        private TabPage tabPage4;
-        private TabPage tabPage5;
         private Panel m_pnl_thong_bao;
         private StatusStrip m_stt_form;
         private ToolStripStatusLabel toolStripStatusLabel1;
@@ -1077,5 +1474,58 @@ namespace BKI_HRM
         private Panel panel3;
         private Panel panel2;
         private Panel panel1;
+        private TabPage tabPage4;
+        private GroupBox groupBox10;
+        private Button m_cmd_bao_cao_nghi_viec;
+        private Button m_cmd_bao_cao_danh_sach_bo_nhiem;
+        private Button m_cmd_bien_dong_don_vi_trang_thai;
+        private Button m_cmd_bao_cao_so_luong_bo_nhiem;
+        private Button m_cmd_bien_dong_chuc_vu_trang_thai;
+        private Button m_cmd_qua_trinh_lam_viec;
+        private Button m_cmd_nhan_su_theo_cap_bac;
+        private Button m_cmd_nhan_su_theo_chuc_vu;
+        private Button m_cmd_tra_cuu_nhan_su_chung;
+        private Button m_cmd_nhan_su_theo_phong_ban;
+        private GroupBox groupBox9;
+        private Button m_cmd_bao_cao_hop_dong_lao_dong;
+        private GroupBox groupBox8;
+        private Button m_cmd_bao_cao_du_an;
+        private Button m_cmd_tra_cuu_nhan_su_du_an;
+        private TabPage tabPage3;
+        private GroupBox groupBox7;
+        private Button m_cmd_hop_dong_lao_dong;
+        private Button m_cmd_thong_tin_du_an;
+        private Button m_cmd_qua_trinh_di_cong_tac;
+        private Button m_cmd_chi_tiet_cap_bac;
+        private Button m_cmd_trang_thai_lao_dong;
+        private Button m_cmd_ho_so_nhan_su;
+        private Button m_cmd_thay_doi_chuc_vu_don_vi;
+        private TabPage tabPage2;
+        private GroupBox groupBox2;
+        private Button m_cmd_ql_quyet_dinh;
+        private Button m_cmd_ql_phap_nhan;
+        private Button m_cmd_ql_don_vi;
+        private Button m_cmd_ql_cap_bac;
+        private Button m_cmd_ql_chuc_vu;
+        private TabPage tabPage1;
+        private GroupBox groupBox6;
+        private Button button15;
+        private Button button16;
+        private GroupBox groupBox5;
+        private Button m_cmd_danh_muc_control;
+        private Button m_cmd_nguoi_su_dung;
+        private Button m_cmd_nhom_nguoi_su_dung;
+        private GroupBox groupBox4;
+        private Button m_cmd_phan_hoi_loi_pm;
+        private Button m_cmd_huong_dan_su_dung;
+        private GroupBox groupBox3;
+        private Button m_cmd_backup_recovery;
+        private Button m_cmd_nhat_ky_he_thong;
+        private Button m_cmd_tu_dien_he_thong;
+        private GroupBox groupBox1;
+        private Button m_cmd_phan_quyen_cho_nhom;
+        private Button m_cmd_phan_quyen_he_thong;
+        private Button m_cmd_phan_quyen_chi_tiet;
+        private TabControl m_tab_menu;
     }
 }
