@@ -122,10 +122,23 @@ namespace BKI_HRM
         {
             try
             {
-                frm.MdiParent = this;
-                frm.Dock = DockStyle.Fill;
-                frm.Show();
-                frm.FormBorderStyle = FormBorderStyle.None;
+                bool tabExist = false;
+                foreach (TabPage tabPage in m_tab_form.TabPages)
+                {
+                    if (frm.Text.Equals(tabPage.Text))
+                    {
+                        m_tab_form.SelectedTab = tabPage;
+                        tabExist = true;
+                    }
+                }
+
+                if (!tabExist)
+                {
+                    frm.MdiParent = this;
+                    frm.Dock = DockStyle.Fill;
+                    frm.Show();
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                }
             }
             catch (Exception v_e)
             {
@@ -831,23 +844,23 @@ namespace BKI_HRM
         {
             try
             {
-            if (statusPanel)
-            {
-                statusPanel = false;
-                m_pnl_thong_bao.Visible = true;
-            }
-            else
-            {
-                statusPanel = true;
-                m_pnl_thong_bao.Visible = false;
-            }
-            f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
-            m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc!",
-                                                    frm502.count_record_du_an_sap_ket_thuc());
+                if (statusPanel)
+                {
+                    statusPanel = false;
+                    m_pnl_thong_bao.Visible = true;
+                }
+                else
+                {
+                    statusPanel = true;
+                    m_pnl_thong_bao.Visible = false;
+                }
+                f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
+                m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc!",
+                                                        frm502.count_record_du_an_sap_ket_thuc());
 
-            canh_bao_hop_dong();
-            thu_viec_sap_het_han();
-            nghi_viec_sap_quay_lai();
+                canh_bao_hop_dong();
+                thu_viec_sap_het_han();
+                nghi_viec_sap_quay_lai();
             }
             catch (Exception v_e)
             {
@@ -864,26 +877,13 @@ namespace BKI_HRM
                 // If child form is new and no has tabPage, create new tabPage
                 if (this.ActiveMdiChild.Tag == null)
                 {
-                    bool tabExist = false;
-                    foreach (TabPage tabPage in m_tab_form.TabPages)
-                    {
-                        if (this.ActiveMdiChild.Text.Equals(tabPage.Text))
-                        {
-                            m_tab_form.SelectedTab = tabPage;
-                            tabExist = true;
-                        }
-                    }
-                    if (!tabExist)
-                    {
-                        // Add a tabPage to tabControl with child form caption
-                        TabPage tp = new TabPage(this.ActiveMdiChild.Text);
-                        tp.Tag = this.ActiveMdiChild;
-                        tp.Parent = m_tab_form;
-                        m_tab_form.SelectedTab = tp;
-
-                        this.ActiveMdiChild.Tag = tp;
-                        this.ActiveMdiChild.FormClosed += ActiveMdiChild_FormClosed;
-                    }
+                    // Add a tabPage to tabControl with child form caption
+                    TabPage tp = new TabPage(this.ActiveMdiChild.Text);
+                    tp.Tag = this.ActiveMdiChild;
+                    tp.Parent = m_tab_form;
+                    m_tab_form.SelectedTab = tp;
+                    this.ActiveMdiChild.Tag = tp;
+                    this.ActiveMdiChild.FormClosed += ActiveMdiChild_FormClosed;
                 }
 
                 if (!m_tab_form.Visible) m_tab_form.Visible = true;
