@@ -829,6 +829,8 @@ namespace BKI_HRM
 
         private void m_cmd_thong_bao_Click(object sender, EventArgs e)
         {
+            try
+            {
             if (statusPanel)
             {
                 statusPanel = false;
@@ -838,6 +840,18 @@ namespace BKI_HRM
             {
                 statusPanel = true;
                 m_pnl_thong_bao.Visible = false;
+            }
+            f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
+            m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc!",
+                                                    frm502.count_record_du_an_sap_ket_thuc());
+
+            canh_bao_hop_dong();
+            thu_viec_sap_het_han();
+            nghi_viec_sap_quay_lai();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
@@ -968,9 +982,9 @@ namespace BKI_HRM
             {
                 F500_DM_DU_AN frm = new F500_DM_DU_AN();
                 frm.DisplaySapKetThuc();
-                frm.Show();
+                frm.ShowDialog();
                 f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
-                m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc. Click để xem chi tiết!",
+                m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc!",
                                                         frm502.count_record_du_an_sap_ket_thuc());
             }
             catch (Exception v_e)
@@ -1291,8 +1305,7 @@ namespace BKI_HRM
             try
             {
                 //show_form(new f103_bao_cao_tra_cuu_nhan_su());
-                f103_bao_cao_tra_cuu_nhan_su frm = new f103_bao_cao_tra_cuu_nhan_su();
-                frm.Show();
+                show_form(new f103_bao_cao_tra_cuu_nhan_su());
             }
             catch (Exception v_e)
             {
@@ -1410,7 +1423,15 @@ namespace BKI_HRM
 
         private void toolStripStatusLabel2_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                //show_form(new f103_bao_cao_tra_cuu_nhan_su());
+                show_form(new f103_bao_cao_tra_cuu_nhan_su());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
     }
 }
