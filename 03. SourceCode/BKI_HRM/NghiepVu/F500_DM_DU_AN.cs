@@ -175,7 +175,7 @@ namespace BKI_HRM
             this.m_cmd_insert.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
-            this.m_cmd_insert.Location = new System.Drawing.Point(734, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(662, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(150, 28);
             this.m_cmd_insert.TabIndex = 12;
@@ -188,7 +188,7 @@ namespace BKI_HRM
             this.m_cmd_delete.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
-            this.m_cmd_delete.Location = new System.Drawing.Point(1032, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(974, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(150, 28);
             this.m_cmd_delete.TabIndex = 14;
@@ -201,7 +201,7 @@ namespace BKI_HRM
             this.m_cmd_update.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
-            this.m_cmd_update.Location = new System.Drawing.Point(883, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(818, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(150, 28);
             this.m_cmd_update.TabIndex = 13;
@@ -491,7 +491,6 @@ namespace BKI_HRM
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F500 Danh mục dự án";
             this.Load += new System.EventHandler(this.F500_V_DM_DU_AN_Load);
-            this.Click += new System.EventHandler(this.m_cmd_exit_Click);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.m_pnl_out_place_dm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_du_an)).EndInit();
@@ -911,18 +910,6 @@ namespace BKI_HRM
 
         }
 
-        private void m_cmd_exit_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.Close();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
         private void m_cbo_trang_thai_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -1052,6 +1039,18 @@ namespace BKI_HRM
             }
         }
         #endregion
+
+        private void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
 
