@@ -90,6 +90,11 @@ namespace BKI_HRM.DanhMuc
             return false;
         }
 
+        private bool check_format_ma_qd()
+        {
+             return m_txt_ma_quyet_dinh.Text.Contains("/")?true: false;
+        }
+
         private void us_object_2_form(US_V_DM_QUYET_DINH ip_us_v_dm_quyet_dinh)
         {
             m_us.dcID = ip_us_v_dm_quyet_dinh.dcID;
@@ -138,14 +143,18 @@ namespace BKI_HRM.DanhMuc
             //    return false;
             //}
             //return CValidateTextBox.IsValid(m_txt_ma_quyet_dinh, DataType.StringType, allowNull.NO, true) && kiem_tra_ngay_truoc_sau();
-
+            if (!check_format_ma_qd())
+            {
+                BaseMessages.MsgBox_Infor("Mã quyết định chưa đúng định dạng.");
+                return false;
+            }
             if (!CValidateTextBox.IsValid(m_txt_ma_quyet_dinh, DataType.StringType, allowNull.NO, true))
             {
-                BaseMessages.MsgBox_Infor("Bạn chưa nhập mã quyết định");
+                BaseMessages.MsgBox_Infor("Bạn chưa nhập mã quyết định.");
                 return false;
             }
             string[] v_arstr = m_txt_ma_quyet_dinh.Text.Trim().Split('/');
-            if (!CIPConvert.is_valid_number(v_arstr[0].Substring(0,v_arstr[0].Length-1)))
+            if (!CIPConvert.is_valid_number(v_arstr[0].Substring(0, v_arstr[0].Length - 1)))
             {
                 BaseMessages.MsgBox_Infor("Mã quyết định không đúng định dạng.");
                 return false;
@@ -190,7 +199,7 @@ namespace BKI_HRM.DanhMuc
             m_us_quyet_dinh_phap_nhan.dcID_PHAP_NHAN = CAppContext_201.getCurrentIDPhapnhan();
             m_us_quyet_dinh_phap_nhan.dcID_QUYET_DINH = m_us.dcID;
         }
-
+       
         private void save_data()
         {
             if (check_data_is_ok() == false)
