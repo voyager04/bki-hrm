@@ -929,6 +929,7 @@ namespace BKI_HRM
         private void m_cmd_exit_Click(object sender, EventArgs e)
         {
             this.Close();
+
         }
 
         private void m_cmd_refresh_Click(object sender, EventArgs e)

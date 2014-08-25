@@ -41,7 +41,10 @@ namespace BKI_HRM
             }
 
         }
-
+        public void refresh()
+        {
+            nhan_vien_hien_tai();
+        }
         #endregion
 
         #region Private Method
@@ -436,7 +439,7 @@ namespace BKI_HRM
                 f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
                 m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc!",
                                                         frm502.count_record_du_an_sap_ket_thuc());
-
+                m_tab_menu.SelectedTab = tabPage3;
                 canh_bao_hop_dong();
                 thu_viec_sap_het_han();
                 nghi_viec_sap_quay_lai();
@@ -1171,10 +1174,10 @@ namespace BKI_HRM
             try
             {
                 show_form(new f202_V_GD_QUA_TRINH_LAM_VIEC());
-                nhan_vien_hien_tai();
-                thu_viec_sap_het_han();
-                nghi_viec_sap_quay_lai();
-                canh_bao_hop_dong();
+                //nhan_vien_hien_tai();
+                //thu_viec_sap_het_han();
+                //nghi_viec_sap_quay_lai();
+                //canh_bao_hop_dong();
             }
             catch (Exception v_e)
             {
@@ -1187,10 +1190,10 @@ namespace BKI_HRM
             try
             {
                 show_form(new f203_v_gd_trang_thai_lao_dong());
-                nhan_vien_hien_tai();
-                thu_viec_sap_het_han();
-                nghi_viec_sap_quay_lai();
-                canh_bao_hop_dong();
+                //nhan_vien_hien_tai();
+                //thu_viec_sap_het_han();
+                //nghi_viec_sap_quay_lai();
+                //canh_bao_hop_dong();
             }
             catch (Exception v_e)
             {
@@ -1244,11 +1247,11 @@ namespace BKI_HRM
             {
                 show_form(new f701_v_hop_dong_lao_dong());
                 f702_bao_cao_hdld frm2 = new f702_bao_cao_hdld();
-                m_lbl_thong_bao_hop_dong_sap_het_han.Text =
-                    string.Format("Có {0} hợp đồng sắp hết hạn. Click để xem chi tiết!", frm2.count_record_bao_cao_sap_het_han());
-                m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text =
-                    string.Format("Có {0} hợp đồng đã quá hạn và chưa ký mới. Click để xem chi tiết!",
-                                  frm2.count_record_bao_cao_het_han_nhung_chua_ky_moi());
+                //m_lbl_thong_bao_hop_dong_sap_het_han.Text =
+                    //string.Format("Có {0} hợp đồng sắp hết hạn. Click để xem chi tiết!", frm2.count_record_bao_cao_sap_het_han());
+                //m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text =
+                  //  string.Format("Có {0} hợp đồng đã quá hạn và chưa ký mới. Click để xem chi tiết!",
+                    //              frm2.count_record_bao_cao_het_han_nhung_chua_ky_moi());
             }
             catch (Exception v_e)
             {
@@ -1427,6 +1430,42 @@ namespace BKI_HRM
             {
                 //show_form(new f103_bao_cao_tra_cuu_nhan_su());
                 show_form(new f103_bao_cao_tra_cuu_nhan_su());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                m_exitmode = IPConstants.HowUserWantTo_Exit_MainForm.Login_As_DifferentUser;
+                List<Form> v_list_openForms = new List<Form>();
+
+                foreach (Form v_f in Application.OpenForms)
+                    v_list_openForms.Add(v_f);
+
+                foreach (Form v_f in v_list_openForms)
+                {
+
+                    v_f.Close();
+                }
+
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Application.Exit();
             }
             catch (Exception v_e)
             {

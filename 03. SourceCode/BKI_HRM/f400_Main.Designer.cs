@@ -94,8 +94,8 @@ namespace BKI_HRM
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_stt_form = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.m_tab_form = new System.Windows.Forms.TabControl();
             this.m_cmd_thong_bao = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -187,7 +187,7 @@ namespace BKI_HRM
             this.m_menuitem_tro_giup});
             this.m_mst_menu.Location = new System.Drawing.Point(0, 0);
             this.m_mst_menu.Name = "m_mst_menu";
-            this.m_mst_menu.Size = new System.Drawing.Size(1370, 24);
+            this.m_mst_menu.Size = new System.Drawing.Size(1364, 24);
             this.m_mst_menu.TabIndex = 0;
             this.m_mst_menu.Text = "menuStrip1";
             this.m_mst_menu.Visible = false;
@@ -737,6 +737,18 @@ namespace BKI_HRM
             this.m_stt_form.TabIndex = 12;
             this.m_stt_form.Text = "statusStrip1";
             // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(1250, 17);
+            this.toolStripStatusLabel2.Spring = true;
+            this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripStatusLabel2.Click += new System.EventHandler(this.toolStripStatusLabel2_Click);
+            // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -745,18 +757,6 @@ namespace BKI_HRM
             this.toolStripStatusLabel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(99, 17);
             this.toolStripStatusLabel1.Text = "Pháp nhân: TU";
-            // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripStatusLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(1219, 17);
-            this.toolStripStatusLabel2.Spring = true;
-            this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolStripStatusLabel2.Click += new System.EventHandler(this.toolStripStatusLabel2_Click);
             // 
             // m_tab_form
             // 
@@ -790,7 +790,7 @@ namespace BKI_HRM
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1362, 102);
+            this.tabPage4.Size = new System.Drawing.Size(1356, 102);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Báo cáo";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -981,7 +981,7 @@ namespace BKI_HRM
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1362, 102);
+            this.tabPage3.Size = new System.Drawing.Size(1356, 102);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Nghiệp vụ";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1181,6 +1181,7 @@ namespace BKI_HRM
             this.button15.TabIndex = 12;
             this.button15.Text = "Thoát";
             this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // button16
             // 
@@ -1190,6 +1191,7 @@ namespace BKI_HRM
             this.button16.TabIndex = 11;
             this.button16.Text = "Đăng xuất";
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // groupBox5
             // 

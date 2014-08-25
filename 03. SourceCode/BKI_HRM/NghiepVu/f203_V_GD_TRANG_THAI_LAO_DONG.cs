@@ -43,6 +43,7 @@ namespace BKI_HRM
         private TextBox m_txt_tim_kiem;
         internal SIS.Controls.Button.SiSButton m_cmd_tim_kiem;
         private Label m_lbl_phim_tat;
+        private Panel panel1;
 		private System.ComponentModel.IContainer components;
 
 		public f203_v_gd_trang_thai_lao_dong()
@@ -94,8 +95,10 @@ namespace BKI_HRM
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_cmd_tim_kiem = new SIS.Controls.Button.SiSButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_trang_thai_ld)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ImageList
@@ -242,7 +245,7 @@ namespace BKI_HRM
             // m_lbl_tim_kiem
             // 
             this.m_lbl_tim_kiem.AutoSize = true;
-            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(113, 15);
+            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(82, 77);
             this.m_lbl_tim_kiem.Name = "m_lbl_tim_kiem";
             this.m_lbl_tim_kiem.Size = new System.Drawing.Size(49, 13);
             this.m_lbl_tim_kiem.TabIndex = 21;
@@ -254,7 +257,7 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.m_txt_tim_kiem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_txt_tim_kiem.ForeColor = System.Drawing.Color.Gray;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(173, 12);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(142, 74);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(430, 20);
             this.m_txt_tim_kiem.TabIndex = 22;
@@ -271,21 +274,30 @@ namespace BKI_HRM
             this.m_cmd_tim_kiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_tim_kiem.ImageIndex = 5;
             this.m_cmd_tim_kiem.ImageList = this.ImageList;
-            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(628, 7);
+            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(597, 69);
             this.m_cmd_tim_kiem.Name = "m_cmd_tim_kiem";
             this.m_cmd_tim_kiem.Size = new System.Drawing.Size(100, 28);
             this.m_cmd_tim_kiem.TabIndex = 23;
             this.m_cmd_tim_kiem.Text = "Tìm kiếm(&S)";
             this.m_cmd_tim_kiem.Click += new System.EventHandler(this.m_cmd_tim_kiem_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.m_cmd_tim_kiem);
+            this.panel1.Controls.Add(this.m_lbl_tim_kiem);
+            this.panel1.Controls.Add(this.m_txt_tim_kiem);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 77);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1284, 100);
+            this.panel1.TabIndex = 24;
+            // 
             // f203_v_gd_trang_thai_lao_dong
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.CancelButton = this.m_cmd_exit;
             this.ClientSize = new System.Drawing.Size(1284, 661);
-            this.Controls.Add(this.m_cmd_tim_kiem);
-            this.Controls.Add(this.m_txt_tim_kiem);
-            this.Controls.Add(this.m_lbl_tim_kiem);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_grv_trang_thai_ld);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -297,8 +309,9 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.m_pnl_out_place_dm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_trang_thai_ld)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
 		}
 		#endregion
