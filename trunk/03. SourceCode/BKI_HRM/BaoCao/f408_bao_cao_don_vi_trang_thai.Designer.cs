@@ -119,6 +119,7 @@
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 7;
             this.m_cmd_exit.Text = "Thoát (Esc)";
+            this.m_cmd_exit.Visible = false;
             this.m_cmd_exit.Click += new System.EventHandler(this.m_cmd_exit_Click);
             // 
             // m_cmd_xuat_excel
@@ -165,7 +166,7 @@
             this.m_fg_donvi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg_donvi.Location = new System.Drawing.Point(0, 0);
             this.m_fg_donvi.Name = "m_fg_donvi";
-            this.m_fg_donvi.Size = new System.Drawing.Size(426, 520);
+            this.m_fg_donvi.Size = new System.Drawing.Size(426, 485);
             this.m_fg_donvi.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_donvi.Styles"));
             this.m_fg_donvi.TabIndex = 42;
             this.m_fg_donvi.Click += new System.EventHandler(this.m_fg_donvi_Click);
@@ -173,7 +174,7 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 105);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 140);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -192,7 +193,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.label6);
             this.splitContainer1.Panel2.Controls.Add(this.m_txt_search);
             this.splitContainer1.Panel2.Controls.Add(this.m_fg);
-            this.splitContainer1.Size = new System.Drawing.Size(1284, 520);
+            this.splitContainer1.Size = new System.Drawing.Size(1284, 485);
             this.splitContainer1.SplitterDistance = 426;
             this.splitContainer1.TabIndex = 43;
             // 
@@ -297,9 +298,9 @@
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 79);
+            this.m_fg.Location = new System.Drawing.Point(0, 77);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(854, 441);
+            this.m_fg.Size = new System.Drawing.Size(854, 408);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 34;
             // 
