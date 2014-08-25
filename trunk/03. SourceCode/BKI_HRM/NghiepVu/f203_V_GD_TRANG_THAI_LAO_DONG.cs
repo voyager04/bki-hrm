@@ -134,10 +134,10 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 373);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 625);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(840, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1284, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_lbl_phim_tat
@@ -158,7 +158,7 @@ namespace BKI_HRM
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(404, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(848, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(134, 28);
             this.m_cmd_insert.TabIndex = 12;
@@ -173,7 +173,7 @@ namespace BKI_HRM
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(538, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(982, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(122, 28);
             this.m_cmd_update.TabIndex = 13;
@@ -205,7 +205,7 @@ namespace BKI_HRM
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(660, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(1104, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 14;
@@ -221,7 +221,7 @@ namespace BKI_HRM
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(748, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(1192, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -233,16 +233,16 @@ namespace BKI_HRM
             this.m_grv_trang_thai_ld.AllowEditing = false;
             this.m_grv_trang_thai_ld.ColumnInfo = resources.GetString("m_grv_trang_thai_ld.ColumnInfo");
             this.m_grv_trang_thai_ld.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_grv_trang_thai_ld.Location = new System.Drawing.Point(0, 60);
+            this.m_grv_trang_thai_ld.Location = new System.Drawing.Point(0, 177);
             this.m_grv_trang_thai_ld.Name = "m_grv_trang_thai_ld";
-            this.m_grv_trang_thai_ld.Size = new System.Drawing.Size(840, 313);
+            this.m_grv_trang_thai_ld.Size = new System.Drawing.Size(1284, 448);
             this.m_grv_trang_thai_ld.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_trang_thai_ld.Styles"));
             this.m_grv_trang_thai_ld.TabIndex = 20;
             // 
             // m_lbl_tim_kiem
             // 
             this.m_lbl_tim_kiem.AutoSize = true;
-            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(114, 25);
+            this.m_lbl_tim_kiem.Location = new System.Drawing.Point(113, 15);
             this.m_lbl_tim_kiem.Name = "m_lbl_tim_kiem";
             this.m_lbl_tim_kiem.Size = new System.Drawing.Size(49, 13);
             this.m_lbl_tim_kiem.TabIndex = 21;
@@ -254,7 +254,7 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.m_txt_tim_kiem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_txt_tim_kiem.ForeColor = System.Drawing.Color.Gray;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(174, 22);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(173, 12);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(430, 20);
             this.m_txt_tim_kiem.TabIndex = 22;
@@ -271,7 +271,7 @@ namespace BKI_HRM
             this.m_cmd_tim_kiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_tim_kiem.ImageIndex = 5;
             this.m_cmd_tim_kiem.ImageList = this.ImageList;
-            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(629, 17);
+            this.m_cmd_tim_kiem.Location = new System.Drawing.Point(628, 7);
             this.m_cmd_tim_kiem.Name = "m_cmd_tim_kiem";
             this.m_cmd_tim_kiem.Size = new System.Drawing.Size(100, 28);
             this.m_cmd_tim_kiem.TabIndex = 23;
@@ -282,15 +282,14 @@ namespace BKI_HRM
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.CancelButton = this.m_cmd_exit;
-            this.ClientSize = new System.Drawing.Size(840, 409);
+            this.ClientSize = new System.Drawing.Size(1284, 661);
             this.Controls.Add(this.m_cmd_tim_kiem);
             this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.m_lbl_tim_kiem);
             this.Controls.Add(this.m_grv_trang_thai_ld);
             this.Controls.Add(this.m_pnl_out_place_dm);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(856, 448);
-            this.MinimumSize = new System.Drawing.Size(856, 448);
             this.Name = "f203_v_gd_trang_thai_lao_dong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F203 - Thay đổi trạng thái lao động";

@@ -143,17 +143,17 @@ namespace BKI_HRM
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.label6);
             this.m_pnl_out_place_dm.Controls.Add(this.m_lbl_total_record_grid2);
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 346);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(3, 286);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1335, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1284, 25);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label6.Location = new System.Drawing.Point(4, 19);
+            this.label6.Location = new System.Drawing.Point(4, 8);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(142, 13);
             this.label6.TabIndex = 16;
@@ -210,10 +210,11 @@ namespace BKI_HRM
             // m_fg_du_an
             // 
             this.m_fg_du_an.ColumnInfo = resources.GetString("m_fg_du_an.ColumnInfo");
-            this.m_fg_du_an.Location = new System.Drawing.Point(0, 103);
+            this.m_fg_du_an.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_fg_du_an.Location = new System.Drawing.Point(0, 100);
             this.m_fg_du_an.Name = "m_fg_du_an";
             this.m_fg_du_an.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Row;
-            this.m_fg_du_an.Size = new System.Drawing.Size(1335, 237);
+            this.m_fg_du_an.Size = new System.Drawing.Size(1284, 180);
             this.m_fg_du_an.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_du_an.Styles"));
             this.m_fg_du_an.TabIndex = 20;
             this.m_fg_du_an.RowColChange += new System.EventHandler(this.m_fg_du_an_RowColChange);
@@ -278,10 +279,10 @@ namespace BKI_HRM
             this.panel1.Controls.Add(this.m_cmd_update);
             this.panel1.Controls.Add(this.m_cmd_exit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 568);
+            this.panel1.Location = new System.Drawing.Point(0, 564);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(4);
-            this.panel1.Size = new System.Drawing.Size(1335, 36);
+            this.panel1.Size = new System.Drawing.Size(1284, 36);
             this.panel1.TabIndex = 22;
             // 
             // m_cmd_exit
@@ -292,7 +293,7 @@ namespace BKI_HRM
             this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
-            this.m_cmd_exit.Location = new System.Drawing.Point(1181, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(1130, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(150, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -311,7 +312,7 @@ namespace BKI_HRM
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1335, 100);
+            this.panel2.Size = new System.Drawing.Size(1284, 100);
             this.panel2.TabIndex = 53;
             // 
             // label7
@@ -342,7 +343,7 @@ namespace BKI_HRM
             this.groupBox2.Controls.Add(this.m_cbo_trang_thai);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox2.Location = new System.Drawing.Point(724, 0);
+            this.groupBox2.Location = new System.Drawing.Point(673, 0);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(312, 100);
             this.groupBox2.TabIndex = 41;
@@ -415,7 +416,7 @@ namespace BKI_HRM
             this.groupBox1.Controls.Add(this.m_lbl_tu_ngay);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox1.Location = new System.Drawing.Point(1036, 0);
+            this.groupBox1.Location = new System.Drawing.Point(985, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(299, 100);
             this.groupBox1.TabIndex = 37;
@@ -469,22 +470,25 @@ namespace BKI_HRM
             // m_fg_nhan_su
             // 
             this.m_fg_nhan_su.ColumnInfo = resources.GetString("m_fg_nhan_su.ColumnInfo");
-            this.m_fg_nhan_su.Location = new System.Drawing.Point(0, 384);
+            this.m_fg_nhan_su.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_fg_nhan_su.Location = new System.Drawing.Point(0, 383);
             this.m_fg_nhan_su.Name = "m_fg_nhan_su";
-            this.m_fg_nhan_su.Size = new System.Drawing.Size(1335, 181);
+            this.m_fg_nhan_su.Size = new System.Drawing.Size(1284, 181);
             this.m_fg_nhan_su.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_nhan_su.Styles"));
             this.m_fg_nhan_su.TabIndex = 54;
             // 
             // F500_DM_DU_AN
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(1335, 604);
+            this.ClientSize = new System.Drawing.Size(1284, 600);
             this.Controls.Add(this.m_fg_du_an);
             this.Controls.Add(this.m_fg_nhan_su);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_pnl_out_place_dm);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "F500_DM_DU_AN";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F500 Danh mục dự án";
             this.Load += new System.EventHandler(this.F500_V_DM_DU_AN_Load);
             this.Click += new System.EventHandler(this.m_cmd_exit_Click);
