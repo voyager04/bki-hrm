@@ -107,7 +107,7 @@ namespace BKI_HRM
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f103_bao_cao_tra_cuu_nhan_su));
-            Checkbox_Combobox.CheckBoxProperties checkBoxProperties1 = new Checkbox_Combobox.CheckBoxProperties();
+            Checkbox_Combobox.CheckBoxProperties checkBoxProperties2 = new Checkbox_Combobox.CheckBoxProperties();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cbo_gioi_tinh = new System.Windows.Forms.ComboBox();
@@ -208,7 +208,7 @@ namespace BKI_HRM
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1189, 133);
+            this.panel1.Size = new System.Drawing.Size(1268, 133);
             this.panel1.TabIndex = 24;
             // 
             // m_cbo_gioi_tinh
@@ -266,7 +266,7 @@ namespace BKI_HRM
             this.m_txt_trinh_do.Size = new System.Drawing.Size(120, 20);
             this.m_txt_trinh_do.TabIndex = 45;
             this.m_tooltip.SetToolTip(this.m_txt_trinh_do, "Gợi ý tìm kiếm:\r\nGiới tính: nữ, đơn vị: Phòng hành chính\r\nhoặc Nguyễn Danh Tú, gi" +
-        "ới tính: Nam");
+                    "ới tính: Nam");
             // 
             // label1
             // 
@@ -436,8 +436,8 @@ namespace BKI_HRM
             // 
             // m_cbc_choose_columns
             // 
-            checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.m_cbc_choose_columns.CheckBoxProperties = checkBoxProperties1;
+            checkBoxProperties2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.m_cbc_choose_columns.CheckBoxProperties = checkBoxProperties2;
             this.m_cbc_choose_columns.DisplayMemberSingleItem = "";
             this.m_cbc_choose_columns.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbc_choose_columns.FormattingEnabled = true;
@@ -503,10 +503,10 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 536);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 586);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1189, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1268, 36);
             this.m_pnl_out_place_dm.TabIndex = 31;
             // 
             // m_lbl_phim_tat
@@ -546,7 +546,7 @@ namespace BKI_HRM
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(1067, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(1146, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(118, 28);
             this.m_cmd_exit.TabIndex = 4;
@@ -558,7 +558,7 @@ namespace BKI_HRM
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.Location = new System.Drawing.Point(0, 133);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1189, 403);
+            this.m_fg.Size = new System.Drawing.Size(1268, 453);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 32;
             // 
@@ -566,12 +566,14 @@ namespace BKI_HRM
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.CancelButton = this.m_cmd_exit;
-            this.ClientSize = new System.Drawing.Size(1189, 572);
+            this.ClientSize = new System.Drawing.Size(1268, 622);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "f103_bao_cao_tra_cuu_nhan_su";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F103 - Tra cứu nhân sự chung";
             this.Load += new System.EventHandler(this.f103_bao_cao_tra_cuu_nhan_su_Load);
             this.panel1.ResumeLayout(false);

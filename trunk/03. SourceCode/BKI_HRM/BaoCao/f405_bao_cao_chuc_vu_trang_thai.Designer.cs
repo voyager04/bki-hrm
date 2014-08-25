@@ -46,7 +46,6 @@
             // m_dat_thoidiem
             // 
             this.m_dat_thoidiem.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_thoidiem.Enabled = false;
             this.m_dat_thoidiem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_thoidiem.Location = new System.Drawing.Point(297, 8);
             this.m_dat_thoidiem.Name = "m_dat_thoidiem";
@@ -68,10 +67,10 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 275);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 586);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(784, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1268, 36);
             this.m_pnl_out_place_dm.TabIndex = 36;
             // 
             // m_cmd_xuat_excel
@@ -128,7 +127,7 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(692, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(1176, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 7;
@@ -139,9 +138,9 @@
             // 
             this.m_fg.ColumnInfo = "1,1,0,0,0,85,Columns:0{Width:13;}\t";
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 53);
+            this.m_fg.Location = new System.Drawing.Point(0, 175);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(784, 222);
+            this.m_fg.Size = new System.Drawing.Size(1268, 411);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 37;
             // 
@@ -152,7 +151,7 @@
             this.m_cbc_choose_columns.DisplayMemberSingleItem = "";
             this.m_cbc_choose_columns.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbc_choose_columns.FormattingEnabled = true;
-            this.m_cbc_choose_columns.Location = new System.Drawing.Point(589, 26);
+            this.m_cbc_choose_columns.Location = new System.Drawing.Point(503, 7);
             this.m_cbc_choose_columns.Name = "m_cbc_choose_columns";
             this.m_cbc_choose_columns.Size = new System.Drawing.Size(183, 21);
             this.m_cbc_choose_columns.TabIndex = 38;
@@ -163,15 +162,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.m_cmd_exit;
-            this.ClientSize = new System.Drawing.Size(784, 311);
+            this.ClientSize = new System.Drawing.Size(1268, 622);
             this.Controls.Add(this.m_cbc_choose_columns);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_dat_thoidiem);
-            this.MaximumSize = new System.Drawing.Size(800, 350);
-            this.MinimumSize = new System.Drawing.Size(800, 350);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "f405_bao_cao_chuc_vu_trang_thai";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F405 - Báo cáo biến động nhân sự theo chức vụ trạng thái lao động";
             this.Load += new System.EventHandler(this.f405_bao_cao_chuc_vu_trang_thai_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);

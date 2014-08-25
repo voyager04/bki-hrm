@@ -143,10 +143,10 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 442);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 586);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1009, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1268, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_lbl_phim_tat
@@ -185,7 +185,7 @@ namespace BKI_HRM
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(917, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(1176, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -294,9 +294,9 @@ namespace BKI_HRM
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 78);
+            this.m_fg.Location = new System.Drawing.Point(0, 222);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1009, 364);
+            this.m_fg.Size = new System.Drawing.Size(1268, 364);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 43;
             // 
@@ -322,7 +322,7 @@ namespace BKI_HRM
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.CancelButton = this.m_cmd_exit;
-            this.ClientSize = new System.Drawing.Size(1009, 478);
+            this.ClientSize = new System.Drawing.Size(1268, 622);
             this.Controls.Add(this.m_lbl_soluongns);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.m_fg);
@@ -334,9 +334,9 @@ namespace BKI_HRM
             this.Controls.Add(this.m_cmd_search);
             this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.m_pnl_out_place_dm);
-            this.MaximumSize = new System.Drawing.Size(1025, 517);
-            this.MinimumSize = new System.Drawing.Size(1025, 517);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "f409_bao_cao_nghi_viec";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F409 - Báo cáo nghỉ việc";
             this.Load += new System.EventHandler(this.f409_bao_cao_nghi_viec_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);

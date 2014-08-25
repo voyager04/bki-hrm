@@ -142,10 +142,10 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 621);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 592);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1330, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1274, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_insert
@@ -156,7 +156,7 @@ namespace BKI_HRM
             this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
-            this.m_cmd_insert.Location = new System.Drawing.Point(974, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(918, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 12;
@@ -170,7 +170,7 @@ namespace BKI_HRM
             this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
-            this.m_cmd_update.Location = new System.Drawing.Point(1062, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(1006, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 13;
@@ -199,7 +199,7 @@ namespace BKI_HRM
             this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
-            this.m_cmd_delete.Location = new System.Drawing.Point(1150, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(1094, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 14;
@@ -214,7 +214,7 @@ namespace BKI_HRM
             this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
-            this.m_cmd_exit.Location = new System.Drawing.Point(1238, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(1182, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -226,7 +226,7 @@ namespace BKI_HRM
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.Location = new System.Drawing.Point(0, 157);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1330, 464);
+            this.m_fg.Size = new System.Drawing.Size(1274, 435);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -273,7 +273,7 @@ namespace BKI_HRM
             this.label2.ForeColor = System.Drawing.Color.Maroon;
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1330, 41);
+            this.label2.Size = new System.Drawing.Size(1274, 41);
             this.label2.TabIndex = 45;
             this.label2.Text = "Báo cáo dự án";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -289,7 +289,7 @@ namespace BKI_HRM
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 41);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1330, 116);
+            this.panel1.Size = new System.Drawing.Size(1274, 116);
             this.panel1.TabIndex = 46;
             // 
             // m_lbl_total_record_grid1
@@ -454,15 +454,14 @@ namespace BKI_HRM
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.AutoSize = true;
             this.CancelButton = this.m_cmd_exit;
-            this.ClientSize = new System.Drawing.Size(1330, 657);
+            this.ClientSize = new System.Drawing.Size(1274, 628);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.m_pnl_out_place_dm);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.MaximumSize = new System.Drawing.Size(1350, 700);
-            this.MinimumSize = new System.Drawing.Size(1350, 700);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "f502_bao_cao_du_an";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F502 - Báo cáo dự án";
             this.Load += new System.EventHandler(this.f502_bao_cao_du_an_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
