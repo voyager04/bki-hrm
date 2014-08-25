@@ -128,10 +128,10 @@ namespace BKI_HRM {
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 426);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 586);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(845, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1268, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_lbl_phim_tat
@@ -152,7 +152,7 @@ namespace BKI_HRM {
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 21;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(405, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(828, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(137, 28);
             this.m_cmd_insert.TabIndex = 3;
@@ -167,7 +167,7 @@ namespace BKI_HRM {
             this.m_cmd_them_quyet_dinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_them_quyet_dinh.ImageIndex = 3;
             this.m_cmd_them_quyet_dinh.ImageList = this.ImageList;
-            this.m_cmd_them_quyet_dinh.Location = new System.Drawing.Point(542, 4);
+            this.m_cmd_them_quyet_dinh.Location = new System.Drawing.Point(965, 4);
             this.m_cmd_them_quyet_dinh.Name = "m_cmd_them_quyet_dinh";
             this.m_cmd_them_quyet_dinh.Size = new System.Drawing.Size(123, 28);
             this.m_cmd_them_quyet_dinh.TabIndex = 4;
@@ -183,7 +183,7 @@ namespace BKI_HRM {
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(665, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(1088, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 5;
@@ -198,7 +198,7 @@ namespace BKI_HRM {
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(753, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(1176, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 6;
@@ -214,7 +214,7 @@ namespace BKI_HRM {
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(845, 72);
+            this.panel1.Size = new System.Drawing.Size(1268, 72);
             this.panel1.TabIndex = 22;
             // 
             // m_lbl_so_luong_ban_ghi
@@ -277,7 +277,7 @@ namespace BKI_HRM {
             this.m_fg.Location = new System.Drawing.Point(0, 72);
             this.m_fg.Name = "m_fg";
             this.m_fg.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Row;
-            this.m_fg.Size = new System.Drawing.Size(845, 354);
+            this.m_fg.Size = new System.Drawing.Size(1268, 514);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 23;
             this.m_fg.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick);
@@ -285,12 +285,14 @@ namespace BKI_HRM {
             // f105_v_gd_chi_tiet_cap_bac
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(845, 462);
+            this.ClientSize = new System.Drawing.Size(1268, 622);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_pnl_out_place_dm);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "f105_v_gd_chi_tiet_cap_bac";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F105 - Chi tết cấp bậc";
             this.Load += new System.EventHandler(this.f105_v_gd_chi_tiet_cap_bac_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
