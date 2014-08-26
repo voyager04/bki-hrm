@@ -47,14 +47,15 @@ namespace BKI_HRM
         private Label m_lbl_phim_tat;
         private Panel panel1;
 		private System.ComponentModel.IContainer components;
+        private readonly f400_Main form;
 
-		public f202_V_GD_QUA_TRINH_LAM_VIEC()
+		public f202_V_GD_QUA_TRINH_LAM_VIEC(f400_Main frm)
 		{
 			//
 			// Required for Windows Form Designer support
 			//
 			InitializeComponent();
-
+            form = frm;
 			//
 			// TODO: Add any constructor code after InitializeComponent call
 			//
@@ -401,7 +402,8 @@ namespace BKI_HRM
             m_txt_tim_kiem.ForeColor = Color.Gray;
 			m_obj_trans = get_trans_object(m_grv_qua_trinh_lam_viec);
 			load_data_2_grid();		
-		}	
+		}
+
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC.LOAI_CV, e_col_Number.LOAI_CV);
@@ -765,6 +767,7 @@ namespace BKI_HRM
 		private void m_cmd_bo_nhiem_Click(object sender, EventArgs e) {
 			try{
 				insert_v_gd_qua_trinh_lam_viec("kiem_nhiem");
+                form.refresh();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
@@ -774,6 +777,7 @@ namespace BKI_HRM
 		private void m_cmd_delete_Click(object sender, EventArgs e) {
 			try{
 				delete_v_gd_qua_trinh_lam_viec();
+                form.refresh();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
@@ -842,6 +846,7 @@ namespace BKI_HRM
             try
             {
                 update_v_gd_qua_trinh_lam_viec();
+                form.refresh();
             }
             catch (Exception v_e)
             {
@@ -854,7 +859,7 @@ namespace BKI_HRM
             try
             {
                 update_data();
-                f400_Main
+                form.refresh();
             }
             catch (Exception v_e)
             {
