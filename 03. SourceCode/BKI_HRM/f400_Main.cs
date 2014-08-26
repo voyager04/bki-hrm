@@ -1455,7 +1455,8 @@ namespace BKI_HRM
             try
             {
                 //show_form(new f103_bao_cao_tra_cuu_nhan_su());
-                show_form(new f103_bao_cao_tra_cuu_nhan_su());
+                f103_bao_cao_tra_cuu_nhan_su frm = new f103_bao_cao_tra_cuu_nhan_su();
+                frm.ShowDialog();
             }
             catch (Exception v_e)
             {
