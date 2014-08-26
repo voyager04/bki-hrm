@@ -329,7 +329,7 @@ namespace BKI_HRM
         {
             try
             {
-                f203_v_gd_trang_thai_lao_dong frm = new f203_v_gd_trang_thai_lao_dong();
+                f203_v_gd_trang_thai_lao_dong frm = new f203_v_gd_trang_thai_lao_dong(this);
                 frm.display();
                 nhan_vien_hien_tai();
                 thu_viec_sap_het_han();
@@ -378,7 +378,7 @@ namespace BKI_HRM
         {
             try
             {
-                f202_V_GD_QUA_TRINH_LAM_VIEC frm = new f202_V_GD_QUA_TRINH_LAM_VIEC();
+                f202_V_GD_QUA_TRINH_LAM_VIEC frm = new f202_V_GD_QUA_TRINH_LAM_VIEC(this);
                 frm.display();
                 nhan_vien_hien_tai();
                 thu_viec_sap_het_han();
@@ -1173,11 +1173,24 @@ namespace BKI_HRM
         {
             try
             {
-                show_form(new f202_V_GD_QUA_TRINH_LAM_VIEC());
-                //nhan_vien_hien_tai();
-                //thu_viec_sap_het_han();
-                //nghi_viec_sap_quay_lai();
-                //canh_bao_hop_dong();
+                f202_V_GD_QUA_TRINH_LAM_VIEC frm = new f202_V_GD_QUA_TRINH_LAM_VIEC(this);
+                bool tabExist = false;
+                foreach (TabPage tabPage in m_tab_form.TabPages)
+                {
+                    if (frm.Text.Equals(tabPage.Text))
+                    {
+                        m_tab_form.SelectedTab = tabPage;
+                        tabExist = true;
+                    }
+                }
+
+                if (!tabExist)
+                {
+                    frm.MdiParent = this;
+                    frm.Dock = DockStyle.Fill;
+                    frm.Show();
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                }
             }
             catch (Exception v_e)
             {
@@ -1189,11 +1202,24 @@ namespace BKI_HRM
         {
             try
             {
-                show_form(new f203_v_gd_trang_thai_lao_dong());
-                //nhan_vien_hien_tai();
-                //thu_viec_sap_het_han();
-                //nghi_viec_sap_quay_lai();
-                //canh_bao_hop_dong();
+                f203_v_gd_trang_thai_lao_dong frm = new f203_v_gd_trang_thai_lao_dong(this);
+                bool tabExist = false;
+                foreach (TabPage tabPage in m_tab_form.TabPages)
+                {
+                    if (frm.Text.Equals(tabPage.Text))
+                    {
+                        m_tab_form.SelectedTab = tabPage;
+                        tabExist = true;
+                    }
+                }
+
+                if (!tabExist)
+                {
+                    frm.MdiParent = this;
+                    frm.Dock = DockStyle.Fill;
+                    frm.Show();
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                }
             }
             catch (Exception v_e)
             {

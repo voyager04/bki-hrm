@@ -45,14 +45,14 @@ namespace BKI_HRM
         private Label m_lbl_phim_tat;
         private Panel panel1;
 		private System.ComponentModel.IContainer components;
-
-		public f203_v_gd_trang_thai_lao_dong()
+        private readonly f400_Main form;
+        public f203_v_gd_trang_thai_lao_dong(f400_Main frm)
 		{
 			//
 			// Required for Windows Form Designer support
 			//
 			InitializeComponent();
-
+            form = frm;
 			//
 			// TODO: Add any constructor code after InitializeComponent call
 			//
@@ -620,6 +620,7 @@ namespace BKI_HRM
                 }
                 else
                     load_data_2_grid_search();
+                form.refresh();
             }
             catch (Exception v_e)
             {
@@ -640,6 +641,7 @@ namespace BKI_HRM
                 }
                 else
                     load_data_2_grid_search();
+                form.refresh();
             }
             catch (Exception v_e)
             {
@@ -652,6 +654,7 @@ namespace BKI_HRM
             try
             {
                 delete_v_gd_trang_thai_lao_dong();
+                form.refresh();
             }
             catch (Exception v_e)
             {
