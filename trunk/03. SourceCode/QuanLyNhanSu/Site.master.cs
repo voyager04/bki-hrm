@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
 using IP.Core.IPBusinessService;
 using IP.Core.IPCommon;
 using IP.Core.IPData;
@@ -27,6 +25,10 @@ public partial class SiteMaster : System.Web.UI.MasterPage
     protected bool isUser()
     {
         if (Context.User.Identity.Name.EndsWith("@topica.edu.vn"))
+        {
+            return true;
+        }
+        if (Context.User.Identity.Name.EndsWith("@gmail.com"))
         {
             return true;
         }
@@ -65,11 +67,12 @@ public partial class SiteMaster : System.Web.UI.MasterPage
                     //m_str_user_name = CIPConvert.ToStr(Session[SESSION.UserName]);
                     //if (Context.User.Identity.Name.Equals("dmt.20102514@gmail.com") || Context.User.Identity.Name.Equals("tund@topica.edu.vn"))
                     //    m_hpl_menu_tu_khoa.Visible = true;
+                    
                     //else m_hpl_menu_tu_khoa.Visible = false;
                     if (!IsPostBack)
                     {
                         m_ds_ht_chuc_nang.Clear();
-                        if (CIPConvert.ToDecimal(Session[SESSION.UserID]) == -1)
+                        /*if (CIPConvert.ToDecimal(Session[SESSION.UserID]) == -1)
                         {
                             m_us_ht_chuc_nang.get_parent_table_by_id_user_group(ID_USER_GROUP.NHAN_DAN, m_ds_ht_chuc_nang);
                         }
@@ -77,7 +80,7 @@ public partial class SiteMaster : System.Web.UI.MasterPage
                         {
                             m_us_ht_chuc_nang.get_parent_table(CIPConvert.ToDecimal(Session[SESSION.UserID]), m_ds_ht_chuc_nang);
                         }
-                        
+                        */
                         // Lấy toàn bộ các menu cấp 1 được cấp quyền và được hiển thị
                         rptMainMenu.DataSource = m_ds_ht_chuc_nang.HT_CHUC_NANG.Select("CHUC_NANG_PARENT_ID IS NULL AND HIEN_THI_YN='Y'", "VI_TRI");
                         rptMainMenu.DataBind();
@@ -85,11 +88,11 @@ public partial class SiteMaster : System.Web.UI.MasterPage
                     }
                 }
                 else {
-                    Response.Redirect("/DatPhongHop/Account/LoginGoogle.aspx");
+                    Response.Redirect("/QuanLyNhanSu/Account/LoginGoogle.aspx");
                 }
             }
             else {
-                Response.Redirect("/DatPhongHop/Account/LoginGoogle.aspx", false);
+                Response.Redirect("/QuanLyNhanSu/Account/LoginGoogle.aspx", false);
             }
         }
         catch (Exception v_e) {
