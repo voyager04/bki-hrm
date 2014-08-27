@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using BKI_HRM;
 using BKI_HRM.DS;
+using BKI_HRM.DS.CDBNames;
 using BKI_HRM.US;
 using IP.Core.IPCommon;
 using IP.Core.IPExcelReport;
@@ -151,7 +152,7 @@ namespace BKI_HRM
         #endregion
 
         #region Members
-
+        private int m_i_selected_tab_index = 0;
         private DataEntryFormMode m_e_form_mode;
         decimal hien_tai;
         DS_V_GD_TRANG_THAI_LAO_DONG m_ds_trang_thai_lao_dong = new DS_V_GD_TRANG_THAI_LAO_DONG();
@@ -422,6 +423,15 @@ namespace BKI_HRM
             try
             {
                 m_pnl_thong_bao.Height = m_cmd_thong_bao.Height - m_tab_form.Height;
+
+                US_DM_PHAP_NHAN v_us_pn = new US_DM_PHAP_NHAN();
+                DS_DM_PHAP_NHAN v_ds_pn = new DS_DM_PHAP_NHAN();
+                v_us_pn.FillDataset(v_ds_pn);
+
+                m_clk_phap_nhan.DataSource = v_ds_pn.DM_PHAP_NHAN;
+                m_clk_phap_nhan.DisplayMember = DM_PHAP_NHAN.TEN_PHAP_NHAN;
+                m_clk_phap_nhan.ValueMember = DM_PHAP_NHAN.ID;
+
                 if (CAppContext_201.getCurrentIDPhapnhan() == 3)
                 {
                     m_menuitem_hopdong.Visible = false;
@@ -895,6 +905,8 @@ namespace BKI_HRM
 
         void ActiveMdiChild_FormClosed(object sender, FormClosedEventArgs e)
         {
+            if ((m_tab_form.SelectedTab != null) && (m_tab_form.SelectedTab.Tag != null))
+                m_tab_form.SelectTab(m_i_selected_tab_index - 1);
             ((sender as Form).Tag as TabPage).Dispose();
         }
 
@@ -911,7 +923,10 @@ namespace BKI_HRM
         private void m_tab_form_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if ((m_tab_form.SelectedTab != null) && (m_tab_form.SelectedTab.Tag != null))
+            {
                 (m_tab_form.SelectedTab.Tag as Form).Select();
+                m_i_selected_tab_index = m_tab_form.SelectedIndex;
+            }
         }
 
         #region Hover Notice
@@ -1274,10 +1289,10 @@ namespace BKI_HRM
                 show_form(new f701_v_hop_dong_lao_dong());
                 f702_bao_cao_hdld frm2 = new f702_bao_cao_hdld();
                 //m_lbl_thong_bao_hop_dong_sap_het_han.Text =
-                    //string.Format("Có {0} hợp đồng sắp hết hạn. Click để xem chi tiết!", frm2.count_record_bao_cao_sap_het_han());
+                //string.Format("Có {0} hợp đồng sắp hết hạn. Click để xem chi tiết!", frm2.count_record_bao_cao_sap_het_han());
                 //m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text =
-                  //  string.Format("Có {0} hợp đồng đã quá hạn và chưa ký mới. Click để xem chi tiết!",
-                    //              frm2.count_record_bao_cao_het_han_nhung_chua_ky_moi());
+                //  string.Format("Có {0} hợp đồng đã quá hạn và chưa ký mới. Click để xem chi tiết!",
+                //              frm2.count_record_bao_cao_het_han_nhung_chua_ky_moi());
             }
             catch (Exception v_e)
             {
@@ -1499,5 +1514,24 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void m_clk_phap_nhan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < m_clk_phap_nhan.Items.Count; i++)
+            {
+                m_clk_phap_nhan.SetItemChecked(i, false);
+            }
+            if (m_clk_phap_nhan.SelectedValue.ToString() != "System.Data.DataRowView")
+            {
+                if (m_clk_phap_nhan.SelectedValue != null)
+                {
+                    var v_id_phap_nhan = CAppContext_201.setCurrentIDPhapnhan(int.Parse(m_clk_phap_nhan.SelectedValue.ToString()));
+                    nhan_vien_hien_tai();
+                    US_DM_PHAP_NHAN v_us = new US_DM_PHAP_NHAN(CAppContext_201.getCurrentIDPhapnhan());
+                    toolStripStatusLabel1.Text = "Pháp nhân: " + v_us.strMA_PHAP_NHAN + " - " + v_us.strTEN_PHAP_NHAN;
+                }
+            }
+        }
+
     }
 }

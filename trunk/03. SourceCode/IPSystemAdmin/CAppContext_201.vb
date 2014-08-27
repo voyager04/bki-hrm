@@ -81,6 +81,11 @@ Public Class CAppContext_201
         Return m_dc_id_phap_nhan
     End Function
 
+    Public Shared Function setCurrentIDPhapnhan(ByVal id_phap_nhan As Integer) As Decimal
+        m_dc_id_phap_nhan = id_phap_nhan
+        Return m_dc_id_phap_nhan
+    End Function
+
     Public Shared Function getCurrentUser() As String
         Return m_us_user.strTEN
     End Function
