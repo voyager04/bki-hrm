@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -148,6 +149,36 @@ namespace BKI_HRM
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        private void load_phap_nhan_to_list_checkbox()
+        {
+            US_DM_PHAP_NHAN v_us_pn = new US_DM_PHAP_NHAN();
+            DS_DM_PHAP_NHAN v_ds_pn = new DS_DM_PHAP_NHAN();
+            v_us_pn.FillDataset(v_ds_pn);
+
+            m_clk_phap_nhan.DataSource = v_ds_pn.DM_PHAP_NHAN;
+            m_clk_phap_nhan.DisplayMember = DM_PHAP_NHAN.TEN_PHAP_NHAN;
+            m_clk_phap_nhan.ValueMember = DM_PHAP_NHAN.ID;
+
+            for (int i = 0; i < v_ds_pn.DM_PHAP_NHAN.Rows.Count; i++)
+            {
+                if ((decimal)v_ds_pn.DM_PHAP_NHAN.Rows[i][DM_PHAP_NHAN.ID] == CAppContext_201.getCurrentIDPhapnhan())
+                    m_clk_phap_nhan.SetItemChecked(i, true);
+                else
+                    m_clk_phap_nhan.SetItemChecked(i, false);
+            }
+        }
+
+        private void auto_sugget_phap_nhan()
+        {
+            US_HT_FORM v_us = new US_HT_FORM();
+            DS_HT_FORM v_ds = new DS_HT_FORM();
+            v_us.FillDataset(v_ds);
+            cbbPhapNhan.DataSource = v_ds.HT_FORM;
+            cbbPhapNhan.DisplayMember = HT_FORM.DISPLAY_NAME;
+            cbbPhapNhan.ValueMember = HT_FORM.ID;
+            cbbPhapNhan.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
         #endregion
 
@@ -424,13 +455,9 @@ namespace BKI_HRM
             {
                 m_pnl_thong_bao.Height = m_cmd_thong_bao.Height - m_tab_form.Height;
 
-                US_DM_PHAP_NHAN v_us_pn = new US_DM_PHAP_NHAN();
-                DS_DM_PHAP_NHAN v_ds_pn = new DS_DM_PHAP_NHAN();
-                v_us_pn.FillDataset(v_ds_pn);
+                load_phap_nhan_to_list_checkbox();
+                auto_sugget_phap_nhan();
 
-                m_clk_phap_nhan.DataSource = v_ds_pn.DM_PHAP_NHAN;
-                m_clk_phap_nhan.DisplayMember = DM_PHAP_NHAN.TEN_PHAP_NHAN;
-                m_clk_phap_nhan.ValueMember = DM_PHAP_NHAN.ID;
 
                 if (CAppContext_201.getCurrentIDPhapnhan() == 3)
                 {
@@ -1515,20 +1542,32 @@ namespace BKI_HRM
             }
         }
 
-        private void m_clk_phap_nhan_SelectedIndexChanged(object sender, EventArgs e)
+        private void m_clk_phap_nhan_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            for (int i = 0; i < m_clk_phap_nhan.Items.Count; i++)
+            // bỏ check các checkbox khác
+            if (e.NewValue == CheckState.Checked)
             {
-                m_clk_phap_nhan.SetItemChecked(i, false);
-            }
-            if (m_clk_phap_nhan.SelectedValue.ToString() != "System.Data.DataRowView")
-            {
-                if (m_clk_phap_nhan.SelectedValue != null)
+                IEnumerator myEnumerator;
+                myEnumerator = m_clk_phap_nhan.CheckedIndices.GetEnumerator();
+                int y;
+                while (myEnumerator.MoveNext() != false)
                 {
-                    var v_id_phap_nhan = CAppContext_201.setCurrentIDPhapnhan(int.Parse(m_clk_phap_nhan.SelectedValue.ToString()));
-                    nhan_vien_hien_tai();
-                    US_DM_PHAP_NHAN v_us = new US_DM_PHAP_NHAN(CAppContext_201.getCurrentIDPhapnhan());
-                    toolStripStatusLabel1.Text = "Pháp nhân: " + v_us.strMA_PHAP_NHAN + " - " + v_us.strTEN_PHAP_NHAN;
+                    y = (int)myEnumerator.Current;
+                    m_clk_phap_nhan.SetItemChecked(y, false);
+                }
+            }
+
+            if (m_clk_phap_nhan.SelectedIndex != -1)
+            {
+                CAppContext_201.setCurrentIDPhapnhan(int.Parse(m_clk_phap_nhan.SelectedValue.ToString()));
+                nhan_vien_hien_tai();
+                US_DM_PHAP_NHAN v_us = new US_DM_PHAP_NHAN(CAppContext_201.getCurrentIDPhapnhan());
+                toolStripStatusLabel1.Text = "Pháp nhân: " + v_us.strMA_PHAP_NHAN + " - " + v_us.strTEN_PHAP_NHAN;
+
+                foreach (TabPage tabPage in m_tab_form.TabPages)
+                {
+                    if (tabPage.TabIndex != 0)
+                        tabPage.Dispose();
                 }
             }
         }

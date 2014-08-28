@@ -117,6 +117,10 @@ namespace BKI_HRM
             this.m_cmd_bao_cao_du_an = new System.Windows.Forms.Button();
             this.m_cmd_tra_cuu_nhan_su_du_an = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.m_cmd_search = new System.Windows.Forms.Button();
+            this.m_txt_search = new System.Windows.Forms.TextBox();
+            this.m_clk_phap_nhan = new System.Windows.Forms.CheckedListBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.m_cmd_hop_dong_lao_dong = new System.Windows.Forms.Button();
             this.m_cmd_thong_tin_du_an = new System.Windows.Forms.Button();
@@ -153,10 +157,7 @@ namespace BKI_HRM
             this.m_cmd_phan_quyen_chi_tiet = new System.Windows.Forms.Button();
             this.m_tab_menu = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.m_clk_phap_nhan = new System.Windows.Forms.CheckedListBox();
+            this.cbbPhapNhan = new System.Windows.Forms.ComboBox();
             this.m_mst_menu.SuspendLayout();
             this.m_pnl_thong_bao.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -170,6 +171,7 @@ namespace BKI_HRM
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.groupBox12.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -180,8 +182,6 @@ namespace BKI_HRM
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.m_tab_menu.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            this.groupBox12.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_mst_menu
@@ -797,7 +797,7 @@ namespace BKI_HRM
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1356, 102);
+            this.tabPage4.Size = new System.Drawing.Size(1354, 102);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Báo cáo";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -984,6 +984,7 @@ namespace BKI_HRM
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.groupBox12);
             this.tabPage3.Controls.Add(this.m_clk_phap_nhan);
             this.tabPage3.Controls.Add(this.groupBox7);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -993,6 +994,45 @@ namespace BKI_HRM
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Nghiệp vụ";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.cbbPhapNhan);
+            this.groupBox12.Controls.Add(this.m_cmd_search);
+            this.groupBox12.Controls.Add(this.m_txt_search);
+            this.groupBox12.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox12.Location = new System.Drawing.Point(579, 3);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(517, 96);
+            this.groupBox12.TabIndex = 6;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Tìm kiếm chức năng";
+            // 
+            // m_cmd_search
+            // 
+            this.m_cmd_search.Location = new System.Drawing.Point(362, 38);
+            this.m_cmd_search.Name = "m_cmd_search";
+            this.m_cmd_search.Size = new System.Drawing.Size(145, 23);
+            this.m_cmd_search.TabIndex = 2;
+            this.m_cmd_search.Text = "Tìm kiếm chức năng";
+            this.m_cmd_search.UseVisualStyleBackColor = true;
+            // 
+            // m_txt_search
+            // 
+            this.m_txt_search.Location = new System.Drawing.Point(6, 40);
+            this.m_txt_search.Name = "m_txt_search";
+            this.m_txt_search.Size = new System.Drawing.Size(350, 20);
+            this.m_txt_search.TabIndex = 1;
+            // 
+            // m_clk_phap_nhan
+            // 
+            this.m_clk_phap_nhan.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_clk_phap_nhan.FormattingEnabled = true;
+            this.m_clk_phap_nhan.Location = new System.Drawing.Point(1156, 3);
+            this.m_clk_phap_nhan.Name = "m_clk_phap_nhan";
+            this.m_clk_phap_nhan.Size = new System.Drawing.Size(195, 96);
+            this.m_clk_phap_nhan.TabIndex = 5;
+            this.m_clk_phap_nhan.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.m_clk_phap_nhan_ItemCheck);
             // 
             // groupBox7
             // 
@@ -1087,7 +1127,7 @@ namespace BKI_HRM
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1356, 102);
+            this.tabPage2.Size = new System.Drawing.Size(1354, 102);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Danh mục";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1374,7 +1414,6 @@ namespace BKI_HRM
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.groupBox12);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -1383,41 +1422,15 @@ namespace BKI_HRM
             this.tabPage5.Text = "Tìm kiếm chức năng - Thay đổi pháp nhân";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // groupBox12
+            // cbbPhapNhan
             // 
-            this.groupBox12.Controls.Add(this.button1);
-            this.groupBox12.Controls.Add(this.textBox1);
-            this.groupBox12.Location = new System.Drawing.Point(8, 7);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(626, 89);
-            this.groupBox12.TabIndex = 0;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Tìm kiếm chức năng";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(475, 31);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Tìm kiếm chức năng";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(6, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(463, 20);
-            this.textBox1.TabIndex = 1;
-            // 
-            // m_clk_phap_nhan
-            // 
-            this.m_clk_phap_nhan.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_clk_phap_nhan.FormattingEnabled = true;
-            this.m_clk_phap_nhan.Location = new System.Drawing.Point(1156, 3);
-            this.m_clk_phap_nhan.Name = "m_clk_phap_nhan";
-            this.m_clk_phap_nhan.Size = new System.Drawing.Size(195, 96);
-            this.m_clk_phap_nhan.TabIndex = 5;
+            this.cbbPhapNhan.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbbPhapNhan.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
+            this.cbbPhapNhan.FormattingEnabled = true;
+            this.cbbPhapNhan.Location = new System.Drawing.Point(99, 67);
+            this.cbbPhapNhan.Name = "cbbPhapNhan";
+            this.cbbPhapNhan.Size = new System.Drawing.Size(316, 21);
+            this.cbbPhapNhan.TabIndex = 3;
             // 
             // f400_Main
             // 
@@ -1461,6 +1474,8 @@ namespace BKI_HRM
             this.groupBox9.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -1471,9 +1486,6 @@ namespace BKI_HRM
             this.groupBox3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.m_tab_menu.ResumeLayout(false);
-            this.tabPage5.ResumeLayout(false);
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1604,9 +1616,10 @@ namespace BKI_HRM
         private TabControl m_tab_menu;
         private GroupBox groupBox11;
         private TabPage tabPage5;
-        private GroupBox groupBox12;
-        private Button button1;
-        private TextBox textBox1;
         private CheckedListBox m_clk_phap_nhan;
+        private GroupBox groupBox12;
+        private Button m_cmd_search;
+        private TextBox m_txt_search;
+        private ComboBox cbbPhapNhan;
     }
 }
