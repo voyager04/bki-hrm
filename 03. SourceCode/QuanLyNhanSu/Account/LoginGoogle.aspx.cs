@@ -31,58 +31,67 @@ public partial class Account_LoginGoogle : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        OpenIdRelyingParty openidd = new OpenIdRelyingParty();
-        IAuthenticationResponse response = openidd.GetResponse();
-
-        if (response != null && response.Status == AuthenticationStatus.Authenticated && response.Provider.Uri == new Uri("https://www.google.com/accounts/o8/ud"))
+        try
         {
-            FetchResponse fetch = response.GetExtension<FetchResponse>();
-            string email = String.Empty;
-            if (fetch != null)
+            OpenIdRelyingParty openidd = new OpenIdRelyingParty();
+            IAuthenticationResponse response = openidd.GetResponse();
+
+            if (response != null && response.Status == AuthenticationStatus.Authenticated && response.Provider.Uri == new Uri("https://www.google.com/accounts/o8/ud"))
             {
-                email = fetch.GetAttributeValue(WellKnownAttributes.Contact.Email); //Fetching requested emailid
-                IP.Core.IPUserService.US_HT_NGUOI_SU_DUNG v_us_ht_nguoi_su_dung = new IP.Core.IPUserService.US_HT_NGUOI_SU_DUNG();
-                DS_HT_NGUOI_SU_DUNG v_ds_ht_nguoi_su_dung = new DS_HT_NGUOI_SU_DUNG();
-                //string email = "dmt.20102514@gmail.com";
-                v_us_ht_nguoi_su_dung.FillDataset(v_ds_ht_nguoi_su_dung, "where ten_truy_cap = '" + email + "' and trang_thai=0 and built_in_yn='Y'");
-
-                if (v_ds_ht_nguoi_su_dung.HT_NGUOI_SU_DUNG.Count == 0)
+                FetchResponse fetch = response.GetExtension<FetchResponse>();
+                string email = String.Empty;
+                if (fetch != null)
                 {
-                    Session[SESSION.NHOM_PHAN_QUYEN] = ID_USER_GROUP.NHAN_DAN;
-                    Session[SESSION.UserID] = -1;
-                    Session[SESSION.UserName] = email;
-                    Session[SESSION.AccounLoginYN] = "Y";
-                    FormsAuthentication.RedirectFromLoginPage(email.Trim(), false);
-                    Response.Redirect("~/ChucNang/F100_thong_tin_ca_nhan.aspx", false);
-                }
-                else
-                {
-                    DataRow v_dr = v_ds_ht_nguoi_su_dung.HT_NGUOI_SU_DUNG.Rows[0];
-                    if (CIPConvert.ToDecimal(v_dr[7]) == ID_USER_GROUP.QUAN_LY)
-                    {
-                        Session[SESSION.NHOM_PHAN_QUYEN] = ID_USER_GROUP.QUAN_LY;
-                        Session[SESSION.UserID] = v_dr[0];
-                        Session[SESSION.UserName] = v_dr[2];
-                    }
-                    if (CIPConvert.ToDecimal(v_dr[7]) == ID_USER_GROUP.ADMIN)
-                    {
-                        Session[SESSION.NHOM_PHAN_QUYEN] = ID_USER_GROUP.ADMIN;
-                        Session[SESSION.UserID] = v_dr[0];
-                        Session[SESSION.UserName] = v_dr[2];
-                    }
+                    email = fetch.GetAttributeValue(WellKnownAttributes.Contact.Email); //Fetching requested emailid
+                    IP.Core.IPUserService.US_HT_NGUOI_SU_DUNG v_us_ht_nguoi_su_dung = new IP.Core.IPUserService.US_HT_NGUOI_SU_DUNG();
+                    DS_HT_NGUOI_SU_DUNG v_ds_ht_nguoi_su_dung = new DS_HT_NGUOI_SU_DUNG();
+                    //string email = "dmt.20102514@gmail.com";
+                    v_us_ht_nguoi_su_dung.FillDataset(v_ds_ht_nguoi_su_dung, "where ten_truy_cap = '" + email + "' and trang_thai=0 and built_in_yn='Y'");
 
-                    if (CIPConvert.ToDecimal(v_dr[7]) == ID_USER_GROUP.NHAN_DAN)
+                    if (v_ds_ht_nguoi_su_dung.HT_NGUOI_SU_DUNG.Count == 0)
                     {
                         Session[SESSION.NHOM_PHAN_QUYEN] = ID_USER_GROUP.NHAN_DAN;
                         Session[SESSION.UserID] = -1;
                         Session[SESSION.UserName] = email;
+                        Session[SESSION.AccounLoginYN] = "Y";
+                        FormsAuthentication.RedirectFromLoginPage(email.Trim(), false);
+                        Response.Redirect("~/ChucNang/F100_thong_tin_ca_nhan.aspx", false);
                     }
+                    else
+                    {
+                        DataRow v_dr = v_ds_ht_nguoi_su_dung.HT_NGUOI_SU_DUNG.Rows[0];
+                        if (CIPConvert.ToDecimal(v_dr[7]) == ID_USER_GROUP.QUAN_LY)
+                        {
+                            Session[SESSION.NHOM_PHAN_QUYEN] = ID_USER_GROUP.QUAN_LY;
+                            Session[SESSION.UserID] = v_dr[0];
+                            Session[SESSION.UserName] = v_dr[2];
+                        }
+                        if (CIPConvert.ToDecimal(v_dr[7]) == ID_USER_GROUP.ADMIN)
+                        {
+                            Session[SESSION.NHOM_PHAN_QUYEN] = ID_USER_GROUP.ADMIN;
+                            Session[SESSION.UserID] = v_dr[0];
+                            Session[SESSION.UserName] = v_dr[2];
+                        }
+
+                        if (CIPConvert.ToDecimal(v_dr[7]) == ID_USER_GROUP.NHAN_DAN)
+                        {
+                            Session[SESSION.NHOM_PHAN_QUYEN] = ID_USER_GROUP.NHAN_DAN;
+                            Session[SESSION.UserID] = -1;
+                            Session[SESSION.UserName] = email;
+                        }
+                    }
+                    Session[SESSION.AccounLoginYN] = "Y";
+                    FormsAuthentication.RedirectFromLoginPage(email.Trim(), false);
                 }
-                Session[SESSION.AccounLoginYN] = "Y";
-                FormsAuthentication.RedirectFromLoginPage(email.Trim(), false);
+
             }
-            
         }
+        catch (Exception v_e)
+        {
+
+            CSystemLog_301.ExceptionHandle(this,v_e);
+        }
+
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
