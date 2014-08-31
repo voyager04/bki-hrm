@@ -28,10 +28,10 @@ public partial class SiteMaster : System.Web.UI.MasterPage
         {
             return true;
         }
-        if (Context.User.Identity.Name.EndsWith("@gmail.com"))
-        {
-            return true;
-        }
+        //if (Context.User.Identity.Name.EndsWith("@gmail.com"))
+        //{
+        //    return true;
+        //}
         if (Context.User.Identity.Name.Equals("dmt.20102514@gmail.com"))
         {
             return true;
@@ -53,6 +53,14 @@ public partial class SiteMaster : System.Web.UI.MasterPage
             return true;
         }
         if (Context.User.Identity.Name.Equals("minhtu.bkhn@gmail.com"))
+        {
+            return true;
+        }
+        if (Context.User.Identity.Name.Equals("anhhtbk@gmail.com"))
+        {
+            return true;
+        }
+        if (Context.User.Identity.Name.Equals("tr.anh1234@gmail.com"))
         {
             return true;
         }
