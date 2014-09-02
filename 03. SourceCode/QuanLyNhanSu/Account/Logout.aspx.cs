@@ -22,7 +22,7 @@ public partial class Account_Logout : System.Web.UI.Page
     {
         Session[SESSION.AccounLoginYN] = "";
         Session[SESSION.UserName] = "";
-        Session[SESSION.UserID] = "";
+       // Session[SESSION.UserID] = "";
         Session.Abandon();
         Response.Cookies.Remove("UserName");
         Response.Cookies.Remove("PassWord");
