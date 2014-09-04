@@ -183,6 +183,7 @@ namespace BKI_HRM
         #endregion
 
         #region Members
+        AlertForm alert;
         private int m_i_selected_tab_index = 0;
         private DataEntryFormMode m_e_form_mode;
         decimal hien_tai;
@@ -453,7 +454,18 @@ namespace BKI_HRM
         {
             try
             {
-                m_pnl_thong_bao.Height = m_cmd_thong_bao.Height - m_tab_form.Height;
+                if (backgroundWorker1.IsBusy != true)
+                {
+                    // create a new instance of the alert form
+                    alert = new AlertForm();
+                    // event handler for the Cancel button in AlertForm
+                    //alert.Canceled += new EventHandler<EventArgs>(buttonCancel_Click);
+                    alert.Show();
+                    alert.TopMost = true;
+                    // Start the asynchronous operation.
+                    backgroundWorker1.RunWorkerAsync();
+                }
+                /*m_pnl_thong_bao.Height = m_cmd_thong_bao.Height - m_tab_form.Height;
 
                 load_phap_nhan_to_list_checkbox();
                 auto_sugget_phap_nhan();
@@ -480,7 +492,7 @@ namespace BKI_HRM
                 canh_bao_hop_dong();
                 thu_viec_sap_het_han();
                 nghi_viec_sap_quay_lai();
-                show_form(new f408_bao_cao_don_vi_trang_thai());
+                show_form(new f408_bao_cao_don_vi_trang_thai());*/
             }
             catch (Exception v_e)
             {
@@ -1572,5 +1584,79 @@ namespace BKI_HRM
             }
         }
 
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+
+            for (int i = 1; i <= 10; i++)
+            {
+                if (worker.CancellationPending == true)
+                {
+                    e.Cancel = true;
+                    break;
+                }
+                else
+                {
+                    // Perform a time consuming operation and report progress.
+                    worker.ReportProgress(i * 10);
+                    //System.Threading.Thread.Sleep(500);
+                }
+            }
+        }
+
+        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            if (!backgroundWorker1.CancellationPending)
+            {
+                alert.Message = "In progress, please wait... " + e.ProgressPercentage.ToString() + "%";
+                alert.ProgressValue = e.ProgressPercentage;
+            }
+            m_pnl_thong_bao.Height = m_cmd_thong_bao.Height - m_tab_form.Height;
+
+            load_phap_nhan_to_list_checkbox();
+            auto_sugget_phap_nhan();
+
+
+            if (CAppContext_201.getCurrentIDPhapnhan() == 3)
+            {
+                m_menuitem_hopdong.Visible = false;
+                m_menuitem_bao_cao_hop_dong.Visible = false;
+            }
+            if (CAppContext_201.getCurrentIDPhapnhan() != -1)
+            {
+                US_DM_PHAP_NHAN v_us = new US_DM_PHAP_NHAN(CAppContext_201.getCurrentIDPhapnhan());
+                toolStripStatusLabel1.Text = "Pháp nhân: " + v_us.strMA_PHAP_NHAN + " - " + v_us.strTEN_PHAP_NHAN;
+            }
+            else
+            {
+                toolStripStatusLabel1.Text = "Tất cả";
+            }
+            f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
+            m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc!",
+                                                    frm502.count_record_du_an_sap_ket_thuc());
+            m_tab_menu.SelectedTab = tabPage3;
+            canh_bao_hop_dong();
+            thu_viec_sap_het_han();
+            nghi_viec_sap_quay_lai();
+            show_form(new f408_bao_cao_don_vi_trang_thai());
+            //alert.Message = "In progress, please wait... " + e.ProgressPercentage.ToString() + "%";
+            //alert.ProgressValue = e.ProgressPercentage;
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            alert.Close();
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            if (backgroundWorker1.WorkerSupportsCancellation == true)
+            {
+                // Cancel the asynchronous operation.
+                backgroundWorker1.CancelAsync();
+                // Close the AlertForm
+                alert.Close();
+            }
+        }
     }
 }
