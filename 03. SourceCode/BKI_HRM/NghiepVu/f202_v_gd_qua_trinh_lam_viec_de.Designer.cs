@@ -125,7 +125,8 @@
             // m_dat_ngay_ket_thuc
             // 
             this.m_dat_ngay_ket_thuc.Checked = false;
-            this.m_dat_ngay_ket_thuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_ngay_ket_thuc.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_ket_thuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_ket_thuc.Location = new System.Drawing.Point(419, 161);
             this.m_dat_ngay_ket_thuc.Name = "m_dat_ngay_ket_thuc";
             this.m_dat_ngay_ket_thuc.ShowCheckBox = true;
@@ -415,7 +416,8 @@
             // m_dat_ngay_het_hieu_luc_qd
             // 
             this.m_dat_ngay_het_hieu_luc_qd.Checked = false;
-            this.m_dat_ngay_het_hieu_luc_qd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_ngay_het_hieu_luc_qd.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_het_hieu_luc_qd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_het_hieu_luc_qd.Location = new System.Drawing.Point(459, 84);
             this.m_dat_ngay_het_hieu_luc_qd.Name = "m_dat_ngay_het_hieu_luc_qd";
             this.m_dat_ngay_het_hieu_luc_qd.ShowCheckBox = true;
@@ -424,7 +426,8 @@
             // 
             // m_dat_ngay_ky
             // 
-            this.m_dat_ngay_ky.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_ngay_ky.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_ky.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_ky.Location = new System.Drawing.Point(458, 23);
             this.m_dat_ngay_ky.Name = "m_dat_ngay_ky";
             this.m_dat_ngay_ky.Size = new System.Drawing.Size(101, 20);
@@ -432,7 +435,8 @@
             // 
             // m_dat_ngay_co_hieu_luc_qd
             // 
-            this.m_dat_ngay_co_hieu_luc_qd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_ngay_co_hieu_luc_qd.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_co_hieu_luc_qd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_co_hieu_luc_qd.Location = new System.Drawing.Point(459, 51);
             this.m_dat_ngay_co_hieu_luc_qd.Name = "m_dat_ngay_co_hieu_luc_qd";
             this.m_dat_ngay_co_hieu_luc_qd.Size = new System.Drawing.Size(100, 20);
@@ -691,7 +695,8 @@
             // 
             // m_dat_ngay_ky_mien_nhiem
             // 
-            this.m_dat_ngay_ky_mien_nhiem.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_ngay_ky_mien_nhiem.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_ky_mien_nhiem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_ky_mien_nhiem.Location = new System.Drawing.Point(458, 23);
             this.m_dat_ngay_ky_mien_nhiem.Name = "m_dat_ngay_ky_mien_nhiem";
             this.m_dat_ngay_ky_mien_nhiem.Size = new System.Drawing.Size(101, 20);
@@ -699,7 +704,8 @@
             // 
             // m_dat_ngay_co_hieu_luc_qd_mien_nhiem
             // 
-            this.m_dat_ngay_co_hieu_luc_qd_mien_nhiem.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_ngay_co_hieu_luc_qd_mien_nhiem.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_co_hieu_luc_qd_mien_nhiem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_co_hieu_luc_qd_mien_nhiem.Location = new System.Drawing.Point(459, 51);
             this.m_dat_ngay_co_hieu_luc_qd_mien_nhiem.Name = "m_dat_ngay_co_hieu_luc_qd_mien_nhiem";
             this.m_dat_ngay_co_hieu_luc_qd_mien_nhiem.Size = new System.Drawing.Size(100, 20);
@@ -804,7 +810,8 @@
             // 
             // m_dat_ngay_bat_dau
             // 
-            this.m_dat_ngay_bat_dau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_ngay_bat_dau.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_bat_dau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_bat_dau.Location = new System.Drawing.Point(107, 160);
             this.m_dat_ngay_bat_dau.Name = "m_dat_ngay_bat_dau";
             this.m_dat_ngay_bat_dau.Size = new System.Drawing.Size(100, 20);
