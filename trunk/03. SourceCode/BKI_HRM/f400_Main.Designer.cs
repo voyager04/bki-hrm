@@ -118,6 +118,7 @@ namespace BKI_HRM
             this.m_cmd_tra_cuu_nhan_su_du_an = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.cbbPhapNhan = new System.Windows.Forms.ComboBox();
             this.m_cmd_search = new System.Windows.Forms.Button();
             this.m_txt_search = new System.Windows.Forms.TextBox();
             this.m_clk_phap_nhan = new System.Windows.Forms.CheckedListBox();
@@ -157,7 +158,7 @@ namespace BKI_HRM
             this.m_cmd_phan_quyen_chi_tiet = new System.Windows.Forms.Button();
             this.m_tab_menu = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.cbbPhapNhan = new System.Windows.Forms.ComboBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.m_mst_menu.SuspendLayout();
             this.m_pnl_thong_bao.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -641,7 +642,7 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.ForeColor = System.Drawing.Color.Red;
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Location = new System.Drawing.Point(0, 17);
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Name = "m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky";
-            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Size = new System.Drawing.Size(346, 18);
+            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Size = new System.Drawing.Size(345, 18);
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.TabIndex = 5;
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text = "Danh sách Hợp đồng đã hết hạn nhưng chưa ký";
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.MouseHover += new System.EventHandler(this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky_MouseHover);
@@ -654,7 +655,7 @@ namespace BKI_HRM
             this.m_lbl_sap_quay_lai.ForeColor = System.Drawing.Color.Red;
             this.m_lbl_sap_quay_lai.Location = new System.Drawing.Point(0, 17);
             this.m_lbl_sap_quay_lai.Name = "m_lbl_sap_quay_lai";
-            this.m_lbl_sap_quay_lai.Size = new System.Drawing.Size(305, 18);
+            this.m_lbl_sap_quay_lai.Size = new System.Drawing.Size(306, 18);
             this.m_lbl_sap_quay_lai.TabIndex = 6;
             this.m_lbl_sap_quay_lai.Text = "Danh sách nhân viên sắp quay lại sau nghỉ";
             this.m_lbl_sap_quay_lai.MouseHover += new System.EventHandler(this.m_lbl_sap_quay_lai_MouseHover);
@@ -1007,6 +1008,16 @@ namespace BKI_HRM
             this.groupBox12.TabIndex = 6;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Tìm kiếm chức năng";
+            // 
+            // cbbPhapNhan
+            // 
+            this.cbbPhapNhan.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbbPhapNhan.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
+            this.cbbPhapNhan.FormattingEnabled = true;
+            this.cbbPhapNhan.Location = new System.Drawing.Point(99, 67);
+            this.cbbPhapNhan.Name = "cbbPhapNhan";
+            this.cbbPhapNhan.Size = new System.Drawing.Size(316, 21);
+            this.cbbPhapNhan.TabIndex = 3;
             // 
             // m_cmd_search
             // 
@@ -1422,15 +1433,12 @@ namespace BKI_HRM
             this.tabPage5.Text = "Tìm kiếm chức năng - Thay đổi pháp nhân";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // cbbPhapNhan
+            // backgroundWorker1
             // 
-            this.cbbPhapNhan.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cbbPhapNhan.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
-            this.cbbPhapNhan.FormattingEnabled = true;
-            this.cbbPhapNhan.Location = new System.Drawing.Point(99, 67);
-            this.cbbPhapNhan.Name = "cbbPhapNhan";
-            this.cbbPhapNhan.Size = new System.Drawing.Size(316, 21);
-            this.cbbPhapNhan.TabIndex = 3;
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
             // f400_Main
             // 
@@ -1621,5 +1629,6 @@ namespace BKI_HRM
         private Button m_cmd_search;
         private TextBox m_txt_search;
         private ComboBox cbbPhapNhan;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
