@@ -133,11 +133,15 @@ namespace BKI_HRM.NghiepVu
                 return false;
             }
 
-            if ((m_dat_ngay_het_han.Value - m_dat_ngay_co_hieu_luc.Value).TotalHours < -1)
+            if (m_dat_ngay_het_han.Checked)
             {
-                BaseMessages.MsgBox_Infor("Ngày Hợp Đồng có hiệu lực không thể lớn hơn ngày Hợp Đồng hết hạn.");
-                return false;
+                if ((m_dat_ngay_het_han.Value - m_dat_ngay_co_hieu_luc.Value).TotalHours < -1)
+                {
+                    BaseMessages.MsgBox_Infor("Ngày Hợp Đồng có hiệu lực không thể lớn hơn ngày Hợp Đồng hết hạn.");
+                    return false;
+                }
             }
+            
             return true;
         }
 
@@ -223,12 +227,8 @@ namespace BKI_HRM.NghiepVu
                     break;
                 case DataEntryFileMode.DeleteFile:
                     // Kiểm tra file có tồn tại hay không
-                    if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old) == false)
-                    {
-                        BaseMessages.MsgBox_Infor("File không tồn tại!");
-                        return;
-                    }
-                    FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
+                    if (FileExplorer.IsExistedFile(m_str_directory_to + m_str_link_old))
+                        FileExplorer.DeleteFile(m_str_directory_to + m_str_link_old);
                     break;
             }
             #endregion
@@ -383,6 +383,11 @@ namespace BKI_HRM.NghiepVu
 
         private void xuat_word()
         {
+            if (m_us.dcID == -1)
+            {
+                BaseMessages.MsgBox_Infor("Phải lưu thông tin hợp đồng trước khi in.");
+                return;
+            }
             US_GD_HOP_DONG v_us_gd_hop_dong = new US_GD_HOP_DONG(m_us.dcID);
             US_DM_NHAN_SU v_us_dm_nhan_su = new US_DM_NHAN_SU(v_us_gd_hop_dong.dcID_NHAN_SU);
             US_CM_DM_TU_DIEN v_us_tu_dien = new US_CM_DM_TU_DIEN(v_us_gd_hop_dong.dcID_LOAI_HOP_DONG);
