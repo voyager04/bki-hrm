@@ -159,6 +159,7 @@ namespace BKI_HRM
             this.m_tab_menu = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.m_cmd_luongqd = new System.Windows.Forms.Button();
             this.m_mst_menu.SuspendLayout();
             this.m_pnl_thong_bao.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -1002,9 +1003,9 @@ namespace BKI_HRM
             this.groupBox12.Controls.Add(this.m_cmd_search);
             this.groupBox12.Controls.Add(this.m_txt_search);
             this.groupBox12.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox12.Location = new System.Drawing.Point(579, 3);
+            this.groupBox12.Location = new System.Drawing.Point(663, 3);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(517, 96);
+            this.groupBox12.Size = new System.Drawing.Size(477, 96);
             this.groupBox12.TabIndex = 6;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Tìm kiếm chức năng";
@@ -1021,7 +1022,7 @@ namespace BKI_HRM
             // 
             // m_cmd_search
             // 
-            this.m_cmd_search.Location = new System.Drawing.Point(362, 38);
+            this.m_cmd_search.Location = new System.Drawing.Point(239, 40);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(145, 23);
             this.m_cmd_search.TabIndex = 2;
@@ -1032,7 +1033,7 @@ namespace BKI_HRM
             // 
             this.m_txt_search.Location = new System.Drawing.Point(6, 40);
             this.m_txt_search.Name = "m_txt_search";
-            this.m_txt_search.Size = new System.Drawing.Size(350, 20);
+            this.m_txt_search.Size = new System.Drawing.Size(227, 20);
             this.m_txt_search.TabIndex = 1;
             // 
             // m_clk_phap_nhan
@@ -1047,6 +1048,7 @@ namespace BKI_HRM
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.m_cmd_luongqd);
             this.groupBox7.Controls.Add(this.m_cmd_hop_dong_lao_dong);
             this.groupBox7.Controls.Add(this.m_cmd_thong_tin_du_an);
             this.groupBox7.Controls.Add(this.m_cmd_qua_trinh_di_cong_tac);
@@ -1057,7 +1059,7 @@ namespace BKI_HRM
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox7.Location = new System.Drawing.Point(3, 3);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(576, 96);
+            this.groupBox7.Size = new System.Drawing.Size(660, 96);
             this.groupBox7.TabIndex = 0;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Quản lý nhân sự";
@@ -1440,6 +1442,15 @@ namespace BKI_HRM
             this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
+            // m_cmd_luongqd
+            // 
+            this.m_cmd_luongqd.Location = new System.Drawing.Point(573, 19);
+            this.m_cmd_luongqd.Name = "m_cmd_luongqd";
+            this.m_cmd_luongqd.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_luongqd.TabIndex = 15;
+            this.m_cmd_luongqd.Text = "Lương theo quyết định";
+            this.m_cmd_luongqd.UseVisualStyleBackColor = true;
+            // 
             // f400_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1630,5 +1641,6 @@ namespace BKI_HRM
         private TextBox m_txt_search;
         private ComboBox cbbPhapNhan;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Button m_cmd_luongqd;
     }
 }
