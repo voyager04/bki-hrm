@@ -177,7 +177,7 @@
             this.m_cbo_trang_thai.Location = new System.Drawing.Point(858, 90);
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
             this.m_cbo_trang_thai.Size = new System.Drawing.Size(157, 21);
-            this.m_cbo_trang_thai.TabIndex = 36;
+            this.m_cbo_trang_thai.TabIndex = 6;
             // 
             // m_lbl_trang_thai
             // 
@@ -213,7 +213,7 @@
             this.m_cbo_loai_du_an.Location = new System.Drawing.Point(825, 39);
             this.m_cbo_loai_du_an.Name = "m_cbo_loai_du_an";
             this.m_cbo_loai_du_an.Size = new System.Drawing.Size(190, 21);
-            this.m_cbo_loai_du_an.TabIndex = 38;
+            this.m_cbo_loai_du_an.TabIndex = 1;
             // 
             // m_dat_ngay_bd
             // 
@@ -222,7 +222,7 @@
             this.m_dat_ngay_bd.Location = new System.Drawing.Point(149, 90);
             this.m_dat_ngay_bd.Name = "m_dat_ngay_bd";
             this.m_dat_ngay_bd.Size = new System.Drawing.Size(157, 20);
-            this.m_dat_ngay_bd.TabIndex = 34;
+            this.m_dat_ngay_bd.TabIndex = 3;
             // 
             // m_lbl_co_che
             // 
@@ -249,7 +249,7 @@
             this.m_cbo_co_che.Location = new System.Drawing.Point(611, 90);
             this.m_cbo_co_che.Name = "m_cbo_co_che";
             this.m_cbo_co_che.Size = new System.Drawing.Size(157, 21);
-            this.m_cbo_co_che.TabIndex = 40;
+            this.m_cbo_co_che.TabIndex = 5;
             // 
             // m_dat_ngay_kt
             // 
@@ -260,7 +260,7 @@
             this.m_dat_ngay_kt.Name = "m_dat_ngay_kt";
             this.m_dat_ngay_kt.ShowCheckBox = true;
             this.m_dat_ngay_kt.Size = new System.Drawing.Size(157, 20);
-            this.m_dat_ngay_kt.TabIndex = 32;
+            this.m_dat_ngay_kt.TabIndex = 4;
             // 
             // m_txt_ten_du_an
             // 
@@ -268,7 +268,7 @@
             this.m_txt_ten_du_an.Location = new System.Drawing.Point(149, 65);
             this.m_txt_ten_du_an.Name = "m_txt_ten_du_an";
             this.m_txt_ten_du_an.Size = new System.Drawing.Size(866, 20);
-            this.m_txt_ten_du_an.TabIndex = 24;
+            this.m_txt_ten_du_an.TabIndex = 2;
             // 
             // m_lbl_ten_du_an
             // 
@@ -286,7 +286,7 @@
             this.m_txt_noi_dung_du_an.Multiline = true;
             this.m_txt_noi_dung_du_an.Name = "m_txt_noi_dung_du_an";
             this.m_txt_noi_dung_du_an.Size = new System.Drawing.Size(866, 71);
-            this.m_txt_noi_dung_du_an.TabIndex = 45;
+            this.m_txt_noi_dung_du_an.TabIndex = 7;
             // 
             // m_lbl_ma_du_an
             // 
@@ -312,7 +312,7 @@
             this.m_txt_ma_du_an.Location = new System.Drawing.Point(149, 39);
             this.m_txt_ma_du_an.Name = "m_txt_ma_du_an";
             this.m_txt_ma_du_an.Size = new System.Drawing.Size(579, 20);
-            this.m_txt_ma_du_an.TabIndex = 22;
+            this.m_txt_ma_du_an.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -390,10 +390,10 @@
             this.m_fg_quyet_dinh.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_fg_quyet_dinh.Location = new System.Drawing.Point(3, 32);
             this.m_fg_quyet_dinh.Name = "m_fg_quyet_dinh";
-            this.m_fg_quyet_dinh.Rows.Count = 6;
+            this.m_fg_quyet_dinh.Rows.Count = 7;
             this.m_fg_quyet_dinh.Size = new System.Drawing.Size(1079, 327);
             this.m_fg_quyet_dinh.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_quyet_dinh.Styles"));
-            this.m_fg_quyet_dinh.TabIndex = 21;
+            this.m_fg_quyet_dinh.TabIndex = 0;
             // 
             // tabNhanVien
             // 
@@ -416,7 +416,7 @@
             this.m_fg_nhan_vien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg_nhan_vien.Location = new System.Drawing.Point(3, 80);
             this.m_fg_nhan_vien.Name = "m_fg_nhan_vien";
-            this.m_fg_nhan_vien.Rows.Count = 6;
+            this.m_fg_nhan_vien.Rows.Count = 7;
             this.m_fg_nhan_vien.Size = new System.Drawing.Size(1079, 279);
             this.m_fg_nhan_vien.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_nhan_vien.Styles"));
             this.m_fg_nhan_vien.TabIndex = 108;

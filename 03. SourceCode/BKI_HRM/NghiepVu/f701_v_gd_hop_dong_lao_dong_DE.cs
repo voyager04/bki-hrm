@@ -281,7 +281,7 @@ namespace BKI_HRM.NghiepVu
         {
             m_lbl_ma_nhan_vien.Text = m_us_dm_nhan_su.strMA_NV;
             m_lbl_ho_va_ten.Text = m_us_dm_nhan_su.strHO_DEM + " " + m_us_dm_nhan_su.strTEN;
-            m_lbl_ngay_sinh.Text = m_us_dm_nhan_su.datNGAY_SINH.ToShortDateString();
+            m_lbl_ngay_sinh.Text = m_us_dm_nhan_su.datNGAY_SINH.ToString("dd/MM/yyyy");
             m_lbl_dia_chi.Text = m_us_dm_nhan_su.strCHO_O;
         }
 

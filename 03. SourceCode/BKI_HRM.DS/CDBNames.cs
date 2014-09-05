@@ -758,7 +758,10 @@
        public const string ID = "ID";
        public const string FORM_NAME = "FORM_NAME";
        public const string DISPLAY_NAME = "DISPLAY_NAME";
+       public const string DESCRIPTION = "DESCRIPTION";
+       public const string KEY_WORD = "KEY_WORD";
    }
+
    public class DM_HEADCOUNT
    {
        public const string ID = "ID";
