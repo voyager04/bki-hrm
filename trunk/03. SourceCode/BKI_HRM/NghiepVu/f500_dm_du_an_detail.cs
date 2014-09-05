@@ -164,6 +164,9 @@ namespace BKI_HRM.NghiepVu
             m_fg_quyet_dinh.Redraw = true;
 
             m_txt_ma_du_an.Focus();
+            m_fg_nhan_vien.Cols[(int) e_col_Number_nhan_vien.HO_DEM].AllowEditing = false;
+            m_fg_nhan_vien.Cols[(int)e_col_Number_nhan_vien.TEN].AllowEditing = false;
+            m_fg_nhan_vien.Cols[(int)e_col_Number_nhan_vien.TRANG_THAI_LAO_DONG].AllowEditing = false;
         }
 
         private void load_data_to_cbo_co_che(
@@ -655,6 +658,14 @@ namespace BKI_HRM.NghiepVu
                     m_tab_du_an.SelectTab("tabQuyetDinh");
                     return false;
                 }
+
+                if (DateTime.Parse(m_fg_quyet_dinh[v_i_cur_row, (int)e_col_Number_quyet_dinh.NGAY_CO_HIEU_LUC].ToString()) < DateTime.Parse(m_fg_quyet_dinh[v_i_cur_row, (int)e_col_Number_quyet_dinh.NGAY_KY].ToString()))
+                {
+                    BaseMessages.MsgBox_Infor("Ngày có hiệu lực phải nhỏ hơn ngày ký");
+                    m_fg_quyet_dinh.Select(v_i_cur_row, (int)e_col_Number_quyet_dinh.NGAY_CO_HIEU_LUC);
+                    m_tab_du_an.SelectTab("tabQuyetDinh");
+                    return false;
+                }
                 #endregion
 
                 #region Check exist Quyet Dinh
@@ -730,8 +741,7 @@ namespace BKI_HRM.NghiepVu
                     {
                         if (i != v_i_cur_row)
                         {
-                            var v_str_ma_qd_grid = m_fg_quyet_dinh[i, (int)e_col_Number_quyet_dinh.MA_QUYET_DINH].ToString();
-                            if (v_str_ma_quyet_dinh == v_str_ma_qd_grid)
+                            if (v_str_ma_quyet_dinh == (string) m_fg_quyet_dinh[i, (int)e_col_Number_quyet_dinh.MA_QUYET_DINH])
                             {
                                 BaseMessages.MsgBox_Error("Mã quyết định đã tồn tại.");
                                 m_fg_quyet_dinh.Select(v_i_cur_row, (int)e_col_Number_quyet_dinh.MA_QUYET_DINH);
