@@ -49,6 +49,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.m_txt_search = new System.Windows.Forms.TextBox();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_donvi)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -56,6 +58,8 @@
             this.splitContainer1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ImageList
@@ -89,16 +93,16 @@
             // 
             this.m_dat_thoidiem.CustomFormat = "dd/MM/yyyy";
             this.m_dat_thoidiem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_thoidiem.Location = new System.Drawing.Point(369, 3);
+            this.m_dat_thoidiem.Location = new System.Drawing.Point(368, 28);
             this.m_dat_thoidiem.Name = "m_dat_thoidiem";
-            this.m_dat_thoidiem.Size = new System.Drawing.Size(331, 20);
+            this.m_dat_thoidiem.Size = new System.Drawing.Size(313, 20);
             this.m_dat_thoidiem.TabIndex = 39;
             this.m_dat_thoidiem.ValueChanged += new System.EventHandler(this.m_dat_thoidiem_ValueChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(306, 6);
+            this.label1.Location = new System.Drawing.Point(305, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 40;
@@ -114,7 +118,7 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(1192, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(1225, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 7;
@@ -145,10 +149,10 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 625);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 609);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1284, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1317, 36);
             this.m_pnl_out_place_dm.TabIndex = 41;
             // 
             // m_lbl_phim_tat
@@ -166,15 +170,15 @@
             this.m_fg_donvi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg_donvi.Location = new System.Drawing.Point(0, 0);
             this.m_fg_donvi.Name = "m_fg_donvi";
-            this.m_fg_donvi.Size = new System.Drawing.Size(426, 485);
+            this.m_fg_donvi.Size = new System.Drawing.Size(436, 609);
             this.m_fg_donvi.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_donvi.Styles"));
             this.m_fg_donvi.TabIndex = 42;
             this.m_fg_donvi.Click += new System.EventHandler(this.m_fg_donvi_Click);
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 140);
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -183,25 +187,17 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer1.Panel2.Controls.Add(this.m_ckb_kiem_nhiem);
-            this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Panel2.Controls.Add(this.m_lbl_so_luong_ban_ghi);
-            this.splitContainer1.Panel2.Controls.Add(this.m_dat_thoidiem);
-            this.splitContainer1.Panel2.Controls.Add(this.label4);
-            this.splitContainer1.Panel2.Controls.Add(this.m_cmd_search);
-            this.splitContainer1.Panel2.Controls.Add(this.label6);
-            this.splitContainer1.Panel2.Controls.Add(this.m_txt_search);
             this.splitContainer1.Panel2.Controls.Add(this.m_fg);
-            this.splitContainer1.Size = new System.Drawing.Size(1284, 485);
-            this.splitContainer1.SplitterDistance = 426;
+            this.splitContainer1.Panel2.Controls.Add(this.panel2);
+            this.splitContainer1.Size = new System.Drawing.Size(1317, 609);
+            this.splitContainer1.SplitterDistance = 436;
             this.splitContainer1.TabIndex = 43;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.m_rdb_nhom);
             this.groupBox1.Controls.Add(this.m_rdb_ko_nhom);
-            this.groupBox1.Location = new System.Drawing.Point(3, 6);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(250, 65);
             this.groupBox1.TabIndex = 46;
@@ -234,7 +230,7 @@
             // m_ckb_kiem_nhiem
             // 
             this.m_ckb_kiem_nhiem.AutoSize = true;
-            this.m_ckb_kiem_nhiem.Location = new System.Drawing.Point(684, 29);
+            this.m_ckb_kiem_nhiem.Location = new System.Drawing.Point(671, 54);
             this.m_ckb_kiem_nhiem.Name = "m_ckb_kiem_nhiem";
             this.m_ckb_kiem_nhiem.Size = new System.Drawing.Size(118, 17);
             this.m_ckb_kiem_nhiem.TabIndex = 45;
@@ -245,7 +241,7 @@
             // m_lbl_so_luong_ban_ghi
             // 
             this.m_lbl_so_luong_ban_ghi.AutoSize = true;
-            this.m_lbl_so_luong_ban_ghi.Location = new System.Drawing.Point(457, 30);
+            this.m_lbl_so_luong_ban_ghi.Location = new System.Drawing.Point(456, 55);
             this.m_lbl_so_luong_ban_ghi.Name = "m_lbl_so_luong_ban_ghi";
             this.m_lbl_so_luong_ban_ghi.Size = new System.Drawing.Size(25, 13);
             this.m_lbl_so_luong_ban_ghi.TabIndex = 44;
@@ -254,7 +250,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(275, 30);
+            this.label4.Location = new System.Drawing.Point(274, 55);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(176, 13);
             this.label4.TabIndex = 43;
@@ -268,7 +264,7 @@
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(808, 3);
+            this.m_cmd_search.Location = new System.Drawing.Point(701, 24);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 26);
             this.m_cmd_search.TabIndex = 38;
@@ -277,7 +273,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(275, 6);
+            this.label6.Location = new System.Drawing.Point(274, 31);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 13);
             this.label6.TabIndex = 36;
@@ -288,29 +284,55 @@
             // 
             this.m_txt_search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_search.Location = new System.Drawing.Point(369, 3);
+            this.m_txt_search.Location = new System.Drawing.Point(368, 28);
             this.m_txt_search.Name = "m_txt_search";
-            this.m_txt_search.Size = new System.Drawing.Size(433, 20);
+            this.m_txt_search.Size = new System.Drawing.Size(327, 20);
             this.m_txt_search.TabIndex = 35;
             this.m_txt_search.Visible = false;
             // 
             // m_fg
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 77);
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_fg.Location = new System.Drawing.Point(0, 89);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(854, 408);
+            this.m_fg.Size = new System.Drawing.Size(877, 520);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 34;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.splitContainer1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1317, 609);
+            this.panel1.TabIndex = 44;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.groupBox1);
+            this.panel2.Controls.Add(this.m_cmd_search);
+            this.panel2.Controls.Add(this.m_ckb_kiem_nhiem);
+            this.panel2.Controls.Add(this.m_dat_thoidiem);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.m_txt_search);
+            this.panel2.Controls.Add(this.m_lbl_so_luong_ban_ghi);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(877, 89);
+            this.panel2.TabIndex = 47;
             // 
             // f408_bao_cao_don_vi_trang_thai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.m_cmd_exit;
-            this.ClientSize = new System.Drawing.Size(1284, 661);
-            this.Controls.Add(this.splitContainer1);
+            this.ClientSize = new System.Drawing.Size(1317, 645);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(1600, 1000);
@@ -324,11 +346,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_donvi)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
             this.splitContainer1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -354,6 +378,8 @@
         private System.Windows.Forms.RadioButton m_rdb_nhom;
         private System.Windows.Forms.RadioButton m_rdb_ko_nhom;
         private System.Windows.Forms.TextBox m_txt_search;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
 
     }
 }
