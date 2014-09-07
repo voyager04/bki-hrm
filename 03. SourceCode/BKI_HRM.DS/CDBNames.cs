@@ -923,4 +923,37 @@
        public const string ID_DON_VI = "ID_DON_VI";
        public const string ID_PHAP_NHAN = "ID_PHAP_NHAN";
    }
+   public class HT_LOGIN_WEB
+   {
+       public const string ID = "ID";
+       public const string USER_LOGIN = "USER_LOGIN";
+       public const string DATETIME_LOGIN = "DATETIME_LOGIN";
+       public const string STATUS_LOGIN = "STATUS_LOGIN";
+   }
+   public class HT_NGUOI_SU_DUNG_WEB
+   {
+       public const string ID = "ID";
+       public const string TEN_TRUY_CAP = "TEN_TRUY_CAP";
+       public const string TEN = "TEN";
+       public const string MAT_KHAU = "MAT_KHAU";
+       public const string NGAY_TAO = "NGAY_TAO";
+       public const string NGUOI_TAO = "NGUOI_TAO";
+       public const string TRANG_THAI = "TRANG_THAI";
+       public const string BUILT_IN_YN = "BUILT_IN_YN";
+       public const string ID_USER_GROUP_WEB = "ID_USER_GROUP_WEB";
+       public const string ID_TRAINING_PROJECT = "ID_TRAINING_PROJECT";
+   }
+   public class HT_QUYEN_USER_WEB
+   {
+       public const string ID = "ID";
+       public const string ID_USER = "ID_USER";
+       public const string ID_QUYEN = "ID_QUYEN";
+   }
+   public class HT_USER_GROUP_WEB
+   {
+       public const string ID = "ID";
+       public const string USER_GROUP_NAME = "USER_GROUP_NAME";
+       public const string DESCRIPTION = "DESCRIPTION";
+   }
+
 }

@@ -156,6 +156,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_HT_FORM.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_HT_LOGIN_WEB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_HT_LOGIN_WEB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_HT_NGUOI_SU_DUNG_WEB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_HT_NGUOI_SU_DUNG_WEB.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_HT_PHAN_QUYEN_CHO_NHOM1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -181,6 +191,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_HT_QUYEN_GROUP.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_HT_QUYEN_USER_WEB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_HT_QUYEN_USER_WEB.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_HT_USER_GROUP.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -200,6 +215,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_RPT_DON_VI_TRANG_THAI.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_HT_USER_GROUP_WEB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_HT_USER_GROUP_WEB.xsd</DependentUpon>
     </Compile>
     <Compile Include="DS_V_DM_CAP_BAC.cs">
       <DependentUpon>DS_V_DM_CAP_BAC.xsd</DependentUpon>
@@ -549,6 +569,28 @@
     <None Include="DS_HT_FORM.xss">
       <DependentUpon>DS_HT_FORM.xsd</DependentUpon>
     </None>
+    <None Include="DS_HT_LOGIN_WEB.xsc">
+      <DependentUpon>DS_HT_LOGIN_WEB.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_LOGIN_WEB.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_HT_LOGIN_WEB.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_HT_LOGIN_WEB.xss">
+      <DependentUpon>DS_HT_LOGIN_WEB.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_NGUOI_SU_DUNG_WEB.xsc">
+      <DependentUpon>DS_HT_NGUOI_SU_DUNG_WEB.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_NGUOI_SU_DUNG_WEB.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_HT_NGUOI_SU_DUNG_WEB.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_HT_NGUOI_SU_DUNG_WEB.xss">
+      <DependentUpon>DS_HT_NGUOI_SU_DUNG_WEB.xsd</DependentUpon>
+    </None>
     <None Include="DS_HT_PHAN_QUYEN_CHO_NHOM.xsc">
       <DependentUpon>DS_HT_PHAN_QUYEN_CHO_NHOM.xsd</DependentUpon>
     </None>
@@ -604,6 +646,17 @@
     <None Include="DS_HT_QUYEN_GROUP.xss">
       <DependentUpon>DS_HT_QUYEN_GROUP.xsd</DependentUpon>
     </None>
+    <None Include="DS_HT_QUYEN_USER_WEB.xsc">
+      <DependentUpon>DS_HT_QUYEN_USER_WEB.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_QUYEN_USER_WEB.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_HT_QUYEN_USER_WEB.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_HT_QUYEN_USER_WEB.xss">
+      <DependentUpon>DS_HT_QUYEN_USER_WEB.xsd</DependentUpon>
+    </None>
     <None Include="DS_HT_USER_GROUP.xsc">
       <DependentUpon>DS_HT_USER_GROUP.xsd</DependentUpon>
     </None>
@@ -647,6 +700,17 @@
     </None>
     <None Include="DS_RPT_DON_VI_TRANG_THAI.xss">
       <DependentUpon>DS_RPT_DON_VI_TRANG_THAI.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_USER_GROUP_WEB.xsc">
+      <DependentUpon>DS_HT_USER_GROUP_WEB.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_USER_GROUP_WEB.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_HT_USER_GROUP_WEB.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_HT_USER_GROUP_WEB.xss">
+      <DependentUpon>DS_HT_USER_GROUP_WEB.xsd</DependentUpon>
     </None>
     <None Include="DS_V_DM_CAP_BAC.xsc">
       <DependentUpon>DS_V_DM_CAP_BAC.xsd</DependentUpon>
