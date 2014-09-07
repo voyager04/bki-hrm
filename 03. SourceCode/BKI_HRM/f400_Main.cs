@@ -140,7 +140,9 @@ namespace BKI_HRM
                 if (!tabExist)
                 {
                     frm.MdiParent = this;
-                    frm.Dock = DockStyle.Fill;
+                    frm.Height = m_cmd_thong_bao.Height - m_tab_form.Height + 30;
+                    frm.Width = m_tab_form.Width + 10;
+
                     frm.Show();
                     frm.FormBorderStyle = FormBorderStyle.None;
                 }
