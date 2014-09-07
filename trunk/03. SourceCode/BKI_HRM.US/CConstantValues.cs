@@ -103,8 +103,8 @@ namespace BKI_HRM.US {
     }
     public class ID_USER_GROUP
     {
-        public const decimal ADMIN = 5;
-        public const decimal NHAN_DAN = 6;
-        public const decimal QUAN_LY = 7;
+        public const decimal ADMIN = 1;
+        public const decimal NHAN_DAN = 2;
+        public const decimal QUAN_LY = 3;
     }
 }
