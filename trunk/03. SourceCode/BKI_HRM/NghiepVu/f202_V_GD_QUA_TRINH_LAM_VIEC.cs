@@ -37,7 +37,6 @@ namespace BKI_HRM
         private Label label1;
         private TextBox m_txt_tim_kiem;
         internal SIS.Controls.Button.SiSButton m_cmd_tim_nhan_vien;
-        private C1FlexGrid m_grv_qua_trinh_lam_viec;
         internal SIS.Controls.Button.SiSButton m_cmd_delete;
         internal SIS.Controls.Button.SiSButton m_cmd_bo_nhiem;
         internal SIS.Controls.Button.SiSButton m_cmd_mien_nhiem;
@@ -47,6 +46,7 @@ namespace BKI_HRM
         private Label m_lbl_phim_tat;
         private Panel panel1;
 		private System.ComponentModel.IContainer components;
+        private C1FlexGrid m_grv_qua_trinh_lam_viec;
         private readonly f400_Main form;
 
 		public f202_V_GD_QUA_TRINH_LAM_VIEC(f400_Main frm)
@@ -97,13 +97,13 @@ namespace BKI_HRM
             this.label1 = new System.Windows.Forms.Label();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_cmd_tim_nhan_vien = new SIS.Controls.Button.SiSButton();
-            this.m_grv_qua_trinh_lam_viec = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_lbl_mess = new System.Windows.Forms.Label();
             this.m_lbl_so_nhan_vien = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_grv_qua_trinh_lam_viec = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grv_qua_trinh_lam_viec)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv_qua_trinh_lam_viec)).BeginInit();
             this.SuspendLayout();
             // 
             // ImageList
@@ -238,7 +238,7 @@ namespace BKI_HRM
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(179, 80);
+            this.label1.Location = new System.Drawing.Point(178, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 13);
             this.label1.TabIndex = 21;
@@ -249,7 +249,7 @@ namespace BKI_HRM
             this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.m_txt_tim_kiem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(287, 77);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(286, 17);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(422, 20);
             this.m_txt_tim_kiem.TabIndex = 22;
@@ -263,23 +263,12 @@ namespace BKI_HRM
             this.m_cmd_tim_nhan_vien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_tim_nhan_vien.ImageIndex = 5;
             this.m_cmd_tim_nhan_vien.ImageList = this.ImageList;
-            this.m_cmd_tim_nhan_vien.Location = new System.Drawing.Point(724, 72);
+            this.m_cmd_tim_nhan_vien.Location = new System.Drawing.Point(723, 12);
             this.m_cmd_tim_nhan_vien.Name = "m_cmd_tim_nhan_vien";
             this.m_cmd_tim_nhan_vien.Size = new System.Drawing.Size(111, 28);
             this.m_cmd_tim_nhan_vien.TabIndex = 23;
             this.m_cmd_tim_nhan_vien.Text = "Tìm nhân viên";
             this.m_cmd_tim_nhan_vien.Click += new System.EventHandler(this.m_cmd_tim_nhan_vien_Click);
-            // 
-            // m_grv_qua_trinh_lam_viec
-            // 
-            this.m_grv_qua_trinh_lam_viec.AllowEditing = false;
-            this.m_grv_qua_trinh_lam_viec.ColumnInfo = resources.GetString("m_grv_qua_trinh_lam_viec.ColumnInfo");
-            this.m_grv_qua_trinh_lam_viec.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_grv_qua_trinh_lam_viec.Location = new System.Drawing.Point(0, 225);
-            this.m_grv_qua_trinh_lam_viec.Name = "m_grv_qua_trinh_lam_viec";
-            this.m_grv_qua_trinh_lam_viec.Size = new System.Drawing.Size(1284, 400);
-            this.m_grv_qua_trinh_lam_viec.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_qua_trinh_lam_viec.Styles"));
-            this.m_grv_qua_trinh_lam_viec.TabIndex = 24;
             // 
             // m_lbl_mess
             // 
@@ -306,21 +295,32 @@ namespace BKI_HRM
             this.panel1.Controls.Add(this.m_cmd_tim_nhan_vien);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.m_txt_tim_kiem);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 125);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1284, 100);
+            this.panel1.Size = new System.Drawing.Size(1284, 46);
             this.panel1.TabIndex = 27;
+            // 
+            // m_grv_qua_trinh_lam_viec
+            // 
+            this.m_grv_qua_trinh_lam_viec.AllowEditing = false;
+            this.m_grv_qua_trinh_lam_viec.ColumnInfo = resources.GetString("m_grv_qua_trinh_lam_viec.ColumnInfo");
+            this.m_grv_qua_trinh_lam_viec.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_grv_qua_trinh_lam_viec.Location = new System.Drawing.Point(0, 46);
+            this.m_grv_qua_trinh_lam_viec.Name = "m_grv_qua_trinh_lam_viec";
+            this.m_grv_qua_trinh_lam_viec.Size = new System.Drawing.Size(1284, 579);
+            this.m_grv_qua_trinh_lam_viec.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_qua_trinh_lam_viec.Styles"));
+            this.m_grv_qua_trinh_lam_viec.TabIndex = 28;
             // 
             // f202_V_GD_QUA_TRINH_LAM_VIEC
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.CancelButton = this.m_cmd_exit;
             this.ClientSize = new System.Drawing.Size(1284, 661);
+            this.Controls.Add(this.m_grv_qua_trinh_lam_viec);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_lbl_so_nhan_vien);
             this.Controls.Add(this.m_lbl_mess);
-            this.Controls.Add(this.m_grv_qua_trinh_lam_viec);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -330,9 +330,9 @@ namespace BKI_HRM
             this.Load += new System.EventHandler(this.f202_V_GD_QUA_TRINH_LAM_VIEC_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.m_pnl_out_place_dm.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grv_qua_trinh_lam_viec)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv_qua_trinh_lam_viec)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

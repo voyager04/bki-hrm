@@ -44,6 +44,7 @@ namespace BKI_HRM
         private RadioButton m_rdb_nhom;
         private RadioButton m_rdb_ko_nhom;
         private Label m_lbl_phim_tat;
+        private Panel panel1;
         private C1FlexGrid m_fg;
 		private System.ComponentModel.IContainer components;
 
@@ -96,9 +97,11 @@ namespace BKI_HRM
             this.m_rdb_nhom = new System.Windows.Forms.RadioButton();
             this.m_rdb_ko_nhom = new System.Windows.Forms.RadioButton();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -187,7 +190,7 @@ namespace BKI_HRM
             // 
             this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(253, 12);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(262, 8);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(420, 20);
             this.m_txt_tim_kiem.TabIndex = 21;
@@ -198,7 +201,7 @@ namespace BKI_HRM
             // m_lbl_thoidiem
             // 
             this.m_lbl_thoidiem.AutoSize = true;
-            this.m_lbl_thoidiem.Location = new System.Drawing.Point(773, 18);
+            this.m_lbl_thoidiem.Location = new System.Drawing.Point(782, 14);
             this.m_lbl_thoidiem.Name = "m_lbl_thoidiem";
             this.m_lbl_thoidiem.Size = new System.Drawing.Size(41, 13);
             this.m_lbl_thoidiem.TabIndex = 40;
@@ -209,7 +212,7 @@ namespace BKI_HRM
             this.m_dtp_thoidiem.CustomFormat = "MM/yyyy";
             this.m_dtp_thoidiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_dtp_thoidiem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_thoidiem.Location = new System.Drawing.Point(820, 12);
+            this.m_dtp_thoidiem.Location = new System.Drawing.Point(829, 8);
             this.m_dtp_thoidiem.Name = "m_dtp_thoidiem";
             this.m_dtp_thoidiem.Size = new System.Drawing.Size(102, 20);
             this.m_dtp_thoidiem.TabIndex = 39;
@@ -219,7 +222,7 @@ namespace BKI_HRM
             // 
             this.groupBox1.Controls.Add(this.m_rdb_nhom);
             this.groupBox1.Controls.Add(this.m_rdb_ko_nhom);
-            this.groupBox1.Location = new System.Drawing.Point(12, 7);
+            this.groupBox1.Location = new System.Drawing.Point(21, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(235, 65);
             this.groupBox1.TabIndex = 41;
@@ -258,22 +261,35 @@ namespace BKI_HRM
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(679, 7);
+            this.m_cmd_search.Location = new System.Drawing.Point(688, 3);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 22;
             this.m_cmd_search.Text = "Tìm kiếm";
             this.m_cmd_search.Click += new System.EventHandler(this.m_cmd_search_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.m_cmd_search);
+            this.panel1.Controls.Add(this.m_txt_tim_kiem);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.m_dtp_thoidiem);
+            this.panel1.Controls.Add(this.m_lbl_thoidiem);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1284, 77);
+            this.panel1.TabIndex = 43;
+            // 
             // m_fg
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 219);
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_fg.Location = new System.Drawing.Point(0, 77);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1284, 406);
+            this.m_fg.Size = new System.Drawing.Size(1284, 548);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 42;
+            this.m_fg.TabIndex = 44;
             // 
             // f406_bao_cao_bo_nhiem
             // 
@@ -281,11 +297,7 @@ namespace BKI_HRM
             this.CancelButton = this.m_cmd_exit;
             this.ClientSize = new System.Drawing.Size(1284, 661);
             this.Controls.Add(this.m_fg);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.m_lbl_thoidiem);
-            this.Controls.Add(this.m_dtp_thoidiem);
-            this.Controls.Add(this.m_cmd_search);
-            this.Controls.Add(this.m_txt_tim_kiem);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "f406_bao_cao_bo_nhiem";
@@ -296,9 +308,10 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
 		}
 		#endregion

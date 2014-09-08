@@ -33,8 +33,7 @@ namespace BKI_HRM
 	public class f403_BAO_CAO_NHAN_SU_CAP_BAC : System.Windows.Forms.Form
 	{
 		internal System.Windows.Forms.ImageList ImageList;
-		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
-        private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
+        internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private Label m_lbl_thoidiem;
         private DateTimePicker m_dtp_thoidiem;
@@ -44,6 +43,8 @@ namespace BKI_HRM
         private Label label1;
         internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
         private Label m_lbl_phim_tat;
+        private Panel panel1;
+        private C1FlexGrid m_fg;
 		private System.ComponentModel.IContainer components;
 
 		public f403_BAO_CAO_NHAN_SU_CAP_BAC()
@@ -88,14 +89,16 @@ namespace BKI_HRM
             this.m_lbl_phim_tat = new System.Windows.Forms.Label();
             this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_lbl_thoidiem = new System.Windows.Forms.Label();
             this.m_dtp_thoidiem = new System.Windows.Forms.DateTimePicker();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_lbl_soluongns = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -180,20 +183,10 @@ namespace BKI_HRM
             this.m_cmd_exit.TabIndex = 5;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
-            // m_fg
-            // 
-            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 177);
-            this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1268, 409);
-            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 20;
-            // 
             // m_lbl_thoidiem
             // 
             this.m_lbl_thoidiem.AutoSize = true;
-            this.m_lbl_thoidiem.Location = new System.Drawing.Point(422, 15);
+            this.m_lbl_thoidiem.Location = new System.Drawing.Point(405, 22);
             this.m_lbl_thoidiem.Name = "m_lbl_thoidiem";
             this.m_lbl_thoidiem.Size = new System.Drawing.Size(57, 13);
             this.m_lbl_thoidiem.TabIndex = 38;
@@ -203,7 +196,7 @@ namespace BKI_HRM
             // 
             this.m_dtp_thoidiem.CustomFormat = "dd/MM/yyyy";
             this.m_dtp_thoidiem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_thoidiem.Location = new System.Drawing.Point(485, 9);
+            this.m_dtp_thoidiem.Location = new System.Drawing.Point(468, 16);
             this.m_dtp_thoidiem.Name = "m_dtp_thoidiem";
             this.m_dtp_thoidiem.Size = new System.Drawing.Size(176, 20);
             this.m_dtp_thoidiem.TabIndex = 3;
@@ -217,7 +210,7 @@ namespace BKI_HRM
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(312, 7);
+            this.m_cmd_search.Location = new System.Drawing.Point(295, 14);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 2;
@@ -228,7 +221,7 @@ namespace BKI_HRM
             // 
             this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(39, 12);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(22, 19);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(267, 20);
             this.m_txt_tim_kiem.TabIndex = 1;
@@ -239,7 +232,7 @@ namespace BKI_HRM
             // m_lbl_soluongns
             // 
             this.m_lbl_soluongns.AutoSize = true;
-            this.m_lbl_soluongns.Location = new System.Drawing.Point(161, 45);
+            this.m_lbl_soluongns.Location = new System.Drawing.Point(144, 52);
             this.m_lbl_soluongns.Name = "m_lbl_soluongns";
             this.m_lbl_soluongns.Size = new System.Drawing.Size(35, 13);
             this.m_lbl_soluongns.TabIndex = 40;
@@ -248,24 +241,43 @@ namespace BKI_HRM
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(62, 45);
+            this.label1.Location = new System.Drawing.Point(45, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 13);
             this.label1.TabIndex = 39;
             this.label1.Text = "Số lượng nhân sự:";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.m_txt_tim_kiem);
+            this.panel1.Controls.Add(this.m_lbl_soluongns);
+            this.panel1.Controls.Add(this.m_cmd_search);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.m_dtp_thoidiem);
+            this.panel1.Controls.Add(this.m_lbl_thoidiem);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1268, 100);
+            this.panel1.TabIndex = 41;
+            // 
+            // m_fg
+            // 
+            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_fg.Location = new System.Drawing.Point(0, 100);
+            this.m_fg.Name = "m_fg";
+            this.m_fg.Size = new System.Drawing.Size(1268, 486);
+            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
+            this.m_fg.TabIndex = 42;
             // 
             // f403_BAO_CAO_NHAN_SU_CAP_BAC
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.CancelButton = this.m_cmd_exit;
             this.ClientSize = new System.Drawing.Size(1268, 622);
-            this.Controls.Add(this.m_lbl_soluongns);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.m_lbl_thoidiem);
-            this.Controls.Add(this.m_dtp_thoidiem);
-            this.Controls.Add(this.m_cmd_search);
-            this.Controls.Add(this.m_txt_tim_kiem);
             this.Controls.Add(this.m_fg);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "f403_BAO_CAO_NHAN_SU_CAP_BAC";
@@ -274,9 +286,10 @@ namespace BKI_HRM
             this.Load += new System.EventHandler(this.f403_BAO_CAO_NHAN_SU_CAP_BAC_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.m_pnl_out_place_dm.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
 		}
 		#endregion

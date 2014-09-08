@@ -33,8 +33,7 @@ namespace BKI_HRM
 	public class f407_bao_cao_bo_nhiem : System.Windows.Forms.Form
 	{
 		internal System.Windows.Forms.ImageList ImageList;
-		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
-        private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
+        internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private Label m_lbl_thoidiem;
         private DateTimePicker m_dtp_thoidiem;
@@ -50,6 +49,8 @@ namespace BKI_HRM
         private Label m_lbl_soluongns;
         private Label label1;
         private Label m_lbl_phim_tat;
+        private Panel panel1;
+        private C1FlexGrid m_fg;
 		private System.ComponentModel.IContainer components;
 
 		public f407_bao_cao_bo_nhiem()
@@ -94,7 +95,6 @@ namespace BKI_HRM
             this.m_lbl_phim_tat = new System.Windows.Forms.Label();
             this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_lbl_thoidiem = new System.Windows.Forms.Label();
             this.m_dtp_thoidiem = new System.Windows.Forms.DateTimePicker();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
@@ -107,10 +107,13 @@ namespace BKI_HRM
             this.m_rdb_ko_nhom = new System.Windows.Forms.RadioButton();
             this.m_lbl_soluongns = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
             // 
             // ImageList
@@ -194,20 +197,10 @@ namespace BKI_HRM
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
-            // m_fg
-            // 
-            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 201);
-            this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1268, 385);
-            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 20;
-            // 
             // m_lbl_thoidiem
             // 
             this.m_lbl_thoidiem.AutoSize = true;
-            this.m_lbl_thoidiem.Location = new System.Drawing.Point(744, 15);
+            this.m_lbl_thoidiem.Location = new System.Drawing.Point(746, 11);
             this.m_lbl_thoidiem.Name = "m_lbl_thoidiem";
             this.m_lbl_thoidiem.Size = new System.Drawing.Size(41, 13);
             this.m_lbl_thoidiem.TabIndex = 38;
@@ -217,7 +210,7 @@ namespace BKI_HRM
             // 
             this.m_dtp_thoidiem.CustomFormat = "MM/yyyy";
             this.m_dtp_thoidiem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_thoidiem.Location = new System.Drawing.Point(791, 12);
+            this.m_dtp_thoidiem.Location = new System.Drawing.Point(793, 8);
             this.m_dtp_thoidiem.Name = "m_dtp_thoidiem";
             this.m_dtp_thoidiem.Size = new System.Drawing.Size(85, 20);
             this.m_dtp_thoidiem.TabIndex = 37;
@@ -231,7 +224,7 @@ namespace BKI_HRM
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(650, 7);
+            this.m_cmd_search.Location = new System.Drawing.Point(652, 3);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 36;
@@ -242,7 +235,7 @@ namespace BKI_HRM
             // 
             this.groupBox1.Controls.Add(this.m_rdb_koqd);
             this.groupBox1.Controls.Add(this.m_rdb_coqd);
-            this.groupBox1.Location = new System.Drawing.Point(882, 7);
+            this.groupBox1.Location = new System.Drawing.Point(884, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 74);
             this.groupBox1.TabIndex = 39;
@@ -277,7 +270,7 @@ namespace BKI_HRM
             // 
             this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(233, 12);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(235, 8);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(411, 20);
             this.m_txt_tim_kiem.TabIndex = 2;
@@ -289,7 +282,7 @@ namespace BKI_HRM
             // 
             this.groupBox2.Controls.Add(this.m_rdb_nhom);
             this.groupBox2.Controls.Add(this.m_rdb_ko_nhom);
-            this.groupBox2.Location = new System.Drawing.Point(5, 7);
+            this.groupBox2.Location = new System.Drawing.Point(7, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(222, 74);
             this.groupBox2.TabIndex = 41;
@@ -322,7 +315,7 @@ namespace BKI_HRM
             // m_lbl_soluongns
             // 
             this.m_lbl_soluongns.AutoSize = true;
-            this.m_lbl_soluongns.Location = new System.Drawing.Point(772, 68);
+            this.m_lbl_soluongns.Location = new System.Drawing.Point(774, 64);
             this.m_lbl_soluongns.Name = "m_lbl_soluongns";
             this.m_lbl_soluongns.Size = new System.Drawing.Size(35, 13);
             this.m_lbl_soluongns.TabIndex = 43;
@@ -331,26 +324,45 @@ namespace BKI_HRM
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(673, 68);
+            this.label1.Location = new System.Drawing.Point(675, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 13);
             this.label1.TabIndex = 42;
             this.label1.Text = "Số lượng nhân sự:";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.groupBox2);
+            this.panel1.Controls.Add(this.m_lbl_soluongns);
+            this.panel1.Controls.Add(this.m_cmd_search);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.m_dtp_thoidiem);
+            this.panel1.Controls.Add(this.m_lbl_thoidiem);
+            this.panel1.Controls.Add(this.m_txt_tim_kiem);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1268, 86);
+            this.panel1.TabIndex = 44;
+            // 
+            // m_fg
+            // 
+            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_fg.Location = new System.Drawing.Point(0, 86);
+            this.m_fg.Name = "m_fg";
+            this.m_fg.Size = new System.Drawing.Size(1268, 500);
+            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
+            this.m_fg.TabIndex = 45;
             // 
             // f407_bao_cao_bo_nhiem
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.CancelButton = this.m_cmd_exit;
             this.ClientSize = new System.Drawing.Size(1268, 622);
-            this.Controls.Add(this.m_lbl_soluongns);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.m_txt_tim_kiem);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.m_lbl_thoidiem);
-            this.Controls.Add(this.m_dtp_thoidiem);
-            this.Controls.Add(this.m_cmd_search);
             this.Controls.Add(this.m_fg);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "f407_bao_cao_bo_nhiem";
@@ -359,13 +371,14 @@ namespace BKI_HRM
             this.Load += new System.EventHandler(this.f407_bao_cao_bo_nhiem_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.m_pnl_out_place_dm.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
 		}
 		#endregion
