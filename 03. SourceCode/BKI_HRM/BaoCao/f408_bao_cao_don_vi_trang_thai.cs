@@ -27,8 +27,13 @@ namespace BKI_HRM
             InitializeComponent();
             format_controls();
         }
-
+        public void refresh()
+        {
+            load_data_2_grid_donvi();
+            load_data_2_grid();
+        }
         #region Members
+        AlertForm alert;
         ITransferDataRow m_obj_trans;
         private bool load_invisible = true;
         DS_V_DM_DON_VI m_ds_1 = new DS_V_DM_DON_VI();
@@ -433,7 +438,17 @@ namespace BKI_HRM
         {
             try
             {
-                set_initial_form_load();
+                if (backgroundWorker1.IsBusy != true)
+                {
+                    // create a new instance of the alert form
+                    alert = new AlertForm();
+                    // event handler for the Cancel button in AlertForm
+                    //alert.Canceled += new EventHandler<EventArgs>(buttonCancel_Click);
+                    alert.Show();
+                    alert.TopMost = true;
+                    // Start the asynchronous operation.
+                    backgroundWorker1.RunWorkerAsync();
+                }
             }
             catch (Exception v_e)
             {
@@ -513,6 +528,41 @@ namespace BKI_HRM
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+
+            for (int i = 1; i <= 10; i++)
+            {
+                if (worker.CancellationPending == true)
+                {
+                    e.Cancel = true;
+                    break;
+                }
+                else
+                {
+                    // Perform a time consuming operation and report progress.
+                    worker.ReportProgress(i * 10);
+                    //System.Threading.Thread.Sleep(500);
+                }
+            }
+        }
+
+        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            if (!backgroundWorker1.CancellationPending)
+            {
+                alert.Message = "In progress, please wait... " + e.ProgressPercentage.ToString() + "%";
+                alert.ProgressValue = e.ProgressPercentage;
+            }
+            set_initial_form_load();
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            alert.Close();
         }
     }
 }
