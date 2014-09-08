@@ -32,8 +32,6 @@ namespace BKI_HRM
 
     public class F500_DM_DU_AN : System.Windows.Forms.Form
     {
-        internal System.Windows.Forms.Panel m_pnl_out_place_dm;
-        private C1.Win.C1FlexGrid.C1FlexGrid m_fg_du_an;
         internal SIS.Controls.Button.SiSButton m_cmd_delete;
         internal SIS.Controls.Button.SiSButton m_cmd_update;
         internal SIS.Controls.Button.SiSButton m_cmd_insert;
@@ -51,7 +49,6 @@ namespace BKI_HRM
         private Label m_lbl_total_record_grid1;
         private ComboBox m_cbo_trang_thai;
         private Label label4;
-        private Label m_lbl_total_record_grid2;
         private DateTimePicker m_dat_den_ngay;
         private DateTimePicker m_dat_tu_ngay;
         private GroupBox groupBox2;
@@ -60,8 +57,11 @@ namespace BKI_HRM
         private ComboBox m_cbo_loai_du_an;
         private Label label3;
         private C1FlexGrid m_fg_nhan_su;
-        private Label label6;
         private Label label7;
+        internal Panel m_pnl_out_place_dm;
+        private Label label6;
+        private Label m_lbl_total_record_grid2;
+        private C1FlexGrid m_fg_du_an;
         private System.ComponentModel.IContainer components;
 
         public F500_DM_DU_AN()
@@ -100,13 +100,9 @@ namespace BKI_HRM
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F500_DM_DU_AN));
-            this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.m_lbl_total_record_grid2 = new System.Windows.Forms.Label();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
-            this.m_fg_du_an = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_lbl_tim_kiem = new System.Windows.Forms.Label();
@@ -130,43 +126,18 @@ namespace BKI_HRM
             this.m_cbo_tim_kiem_theo_ngay = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.m_fg_nhan_su = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_pnl_out_place_dm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg_du_an)).BeginInit();
+            this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.m_lbl_total_record_grid2 = new System.Windows.Forms.Label();
+            this.m_fg_du_an = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_nhan_su)).BeginInit();
+            this.m_pnl_out_place_dm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg_du_an)).BeginInit();
             this.SuspendLayout();
-            // 
-            // m_pnl_out_place_dm
-            // 
-            this.m_pnl_out_place_dm.Controls.Add(this.label6);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_lbl_total_record_grid2);
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(3, 286);
-            this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
-            this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1284, 25);
-            this.m_pnl_out_place_dm.TabIndex = 19;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label6.Location = new System.Drawing.Point(4, 8);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(142, 13);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Danh sách thành viên dự án";
-            // 
-            // m_lbl_total_record_grid2
-            // 
-            this.m_lbl_total_record_grid2.AutoSize = true;
-            this.m_lbl_total_record_grid2.Location = new System.Drawing.Point(1094, 19);
-            this.m_lbl_total_record_grid2.Name = "m_lbl_total_record_grid2";
-            this.m_lbl_total_record_grid2.Size = new System.Drawing.Size(16, 13);
-            this.m_lbl_total_record_grid2.TabIndex = 15;
-            this.m_lbl_total_record_grid2.Text = "...";
             // 
             // m_cmd_insert
             // 
@@ -206,19 +177,6 @@ namespace BKI_HRM
             this.m_cmd_update.Size = new System.Drawing.Size(150, 28);
             this.m_cmd_update.TabIndex = 13;
             this.m_cmd_update.Text = "&Sửa dự án";
-            // 
-            // m_fg_du_an
-            // 
-            this.m_fg_du_an.ColumnInfo = resources.GetString("m_fg_du_an.ColumnInfo");
-            this.m_fg_du_an.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_fg_du_an.Location = new System.Drawing.Point(0, 100);
-            this.m_fg_du_an.Name = "m_fg_du_an";
-            this.m_fg_du_an.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Row;
-            this.m_fg_du_an.Size = new System.Drawing.Size(1284, 180);
-            this.m_fg_du_an.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_du_an.Styles"));
-            this.m_fg_du_an.TabIndex = 20;
-            this.m_fg_du_an.RowColChange += new System.EventHandler(this.m_fg_du_an_RowColChange);
-            this.m_fg_du_an.Click += new System.EventHandler(this.m_grv_du_an_Click);
             // 
             // m_txt_tim_kiem
             // 
@@ -477,23 +435,61 @@ namespace BKI_HRM
             this.m_fg_nhan_su.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_nhan_su.Styles"));
             this.m_fg_nhan_su.TabIndex = 54;
             // 
+            // m_pnl_out_place_dm
+            // 
+            this.m_pnl_out_place_dm.Controls.Add(this.label6);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_lbl_total_record_grid2);
+            this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 358);
+            this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
+            this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1284, 25);
+            this.m_pnl_out_place_dm.TabIndex = 55;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label6.Location = new System.Drawing.Point(4, 8);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(142, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Danh sách thành viên dự án";
+            // 
+            // m_lbl_total_record_grid2
+            // 
+            this.m_lbl_total_record_grid2.AutoSize = true;
+            this.m_lbl_total_record_grid2.Location = new System.Drawing.Point(1094, 19);
+            this.m_lbl_total_record_grid2.Name = "m_lbl_total_record_grid2";
+            this.m_lbl_total_record_grid2.Size = new System.Drawing.Size(16, 13);
+            this.m_lbl_total_record_grid2.TabIndex = 15;
+            this.m_lbl_total_record_grid2.Text = "...";
+            // 
+            // m_fg_du_an
+            // 
+            this.m_fg_du_an.ColumnInfo = resources.GetString("m_fg_du_an.ColumnInfo");
+            this.m_fg_du_an.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_fg_du_an.Location = new System.Drawing.Point(0, 100);
+            this.m_fg_du_an.Name = "m_fg_du_an";
+            this.m_fg_du_an.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Row;
+            this.m_fg_du_an.Size = new System.Drawing.Size(1284, 258);
+            this.m_fg_du_an.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_du_an.Styles"));
+            this.m_fg_du_an.TabIndex = 56;
+            // 
             // F500_DM_DU_AN
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(1284, 600);
             this.Controls.Add(this.m_fg_du_an);
+            this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_fg_nhan_su);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.m_pnl_out_place_dm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "F500_DM_DU_AN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F500 Danh mục dự án";
             this.Load += new System.EventHandler(this.F500_V_DM_DU_AN_Load);
-            this.m_pnl_out_place_dm.ResumeLayout(false);
-            this.m_pnl_out_place_dm.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg_du_an)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -502,6 +498,9 @@ namespace BKI_HRM
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_nhan_su)).EndInit();
+            this.m_pnl_out_place_dm.ResumeLayout(false);
+            this.m_pnl_out_place_dm.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg_du_an)).EndInit();
             this.ResumeLayout(false);
 
         }

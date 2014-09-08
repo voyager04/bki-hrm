@@ -37,9 +37,11 @@
             this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_cbc_choose_columns = new Checkbox_Combobox.CheckBoxComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +49,7 @@
             // 
             this.m_dat_thoidiem.CustomFormat = "dd/MM/yyyy";
             this.m_dat_thoidiem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_thoidiem.Location = new System.Drawing.Point(297, 8);
+            this.m_dat_thoidiem.Location = new System.Drawing.Point(461, 13);
             this.m_dat_thoidiem.Name = "m_dat_thoidiem";
             this.m_dat_thoidiem.Size = new System.Drawing.Size(200, 20);
             this.m_dat_thoidiem.TabIndex = 34;
@@ -56,7 +58,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(234, 14);
+            this.label1.Location = new System.Drawing.Point(398, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 35;
@@ -134,16 +136,6 @@
             this.m_cmd_exit.Text = "Thoát (Esc)";
             this.m_cmd_exit.Click += new System.EventHandler(this.m_cmd_exit_Click);
             // 
-            // m_fg
-            // 
-            this.m_fg.ColumnInfo = "1,1,0,0,0,85,Columns:0{Width:13;}\t";
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 175);
-            this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1268, 411);
-            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 37;
-            // 
             // m_cbc_choose_columns
             // 
             checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -151,11 +143,32 @@
             this.m_cbc_choose_columns.DisplayMemberSingleItem = "";
             this.m_cbc_choose_columns.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbc_choose_columns.FormattingEnabled = true;
-            this.m_cbc_choose_columns.Location = new System.Drawing.Point(503, 7);
+            this.m_cbc_choose_columns.Location = new System.Drawing.Point(667, 12);
             this.m_cbc_choose_columns.Name = "m_cbc_choose_columns";
             this.m_cbc_choose_columns.Size = new System.Drawing.Size(183, 21);
             this.m_cbc_choose_columns.TabIndex = 38;
             this.m_cbc_choose_columns.SelectedIndexChanged += new System.EventHandler(this.m_cbc_choose_columns_SelectedIndexChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.m_cbc_choose_columns);
+            this.panel1.Controls.Add(this.m_dat_thoidiem);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1268, 53);
+            this.panel1.TabIndex = 39;
+            // 
+            // m_fg
+            // 
+            this.m_fg.ColumnInfo = "1,1,0,0,0,85,Columns:0{Width:13;}\t";
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_fg.Location = new System.Drawing.Point(0, 53);
+            this.m_fg.Name = "m_fg";
+            this.m_fg.Size = new System.Drawing.Size(1268, 533);
+            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
+            this.m_fg.TabIndex = 40;
             // 
             // f405_bao_cao_chuc_vu_trang_thai
             // 
@@ -163,20 +176,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.m_cmd_exit;
             this.ClientSize = new System.Drawing.Size(1268, 622);
-            this.Controls.Add(this.m_cbc_choose_columns);
             this.Controls.Add(this.m_fg);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_pnl_out_place_dm);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.m_dat_thoidiem);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "f405_bao_cao_chuc_vu_trang_thai";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F405 - Báo cáo biến động nhân sự theo chức vụ trạng thái lao động";
             this.Load += new System.EventHandler(this.f405_bao_cao_chuc_vu_trang_thai_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -188,8 +200,9 @@
         internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         internal System.Windows.Forms.ImageList ImageList;
-        private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
         private Checkbox_Combobox.CheckBoxComboBox m_cbc_choose_columns;
+        private System.Windows.Forms.Panel panel1;
+        private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
 
 
     }
