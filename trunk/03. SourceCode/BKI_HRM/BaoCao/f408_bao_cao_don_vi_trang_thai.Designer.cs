@@ -39,27 +39,28 @@
             this.m_lbl_phim_tat = new System.Windows.Forms.Label();
             this.m_fg_donvi = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.m_rdb_nhom = new System.Windows.Forms.RadioButton();
             this.m_rdb_ko_nhom = new System.Windows.Forms.RadioButton();
-            this.m_ckb_kiem_nhiem = new System.Windows.Forms.CheckBox();
-            this.m_lbl_so_luong_ban_ghi = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
-            this.label6 = new System.Windows.Forms.Label();
+            this.m_ckb_kiem_nhiem = new System.Windows.Forms.CheckBox();
             this.m_txt_search = new System.Windows.Forms.TextBox();
-            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_lbl_so_luong_ban_ghi = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_donvi)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ImageList
@@ -193,6 +194,33 @@
             this.splitContainer1.SplitterDistance = 436;
             this.splitContainer1.TabIndex = 43;
             // 
+            // m_fg
+            // 
+            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_fg.Location = new System.Drawing.Point(0, 89);
+            this.m_fg.Name = "m_fg";
+            this.m_fg.Size = new System.Drawing.Size(877, 520);
+            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
+            this.m_fg.TabIndex = 34;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.groupBox1);
+            this.panel2.Controls.Add(this.m_cmd_search);
+            this.panel2.Controls.Add(this.m_ckb_kiem_nhiem);
+            this.panel2.Controls.Add(this.m_dat_thoidiem);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.m_txt_search);
+            this.panel2.Controls.Add(this.m_lbl_so_luong_ban_ghi);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(877, 89);
+            this.panel2.TabIndex = 47;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.m_rdb_nhom);
@@ -227,35 +255,6 @@
             this.m_rdb_ko_nhom.Text = "Không nhóm";
             this.m_rdb_ko_nhom.UseVisualStyleBackColor = true;
             // 
-            // m_ckb_kiem_nhiem
-            // 
-            this.m_ckb_kiem_nhiem.AutoSize = true;
-            this.m_ckb_kiem_nhiem.Location = new System.Drawing.Point(671, 54);
-            this.m_ckb_kiem_nhiem.Name = "m_ckb_kiem_nhiem";
-            this.m_ckb_kiem_nhiem.Size = new System.Drawing.Size(118, 17);
-            this.m_ckb_kiem_nhiem.TabIndex = 45;
-            this.m_ckb_kiem_nhiem.Text = "Hiển thị kiêm nhiệm";
-            this.m_ckb_kiem_nhiem.UseVisualStyleBackColor = true;
-            this.m_ckb_kiem_nhiem.CheckedChanged += new System.EventHandler(this.m_ckb_kiem_nhiem_CheckedChanged);
-            // 
-            // m_lbl_so_luong_ban_ghi
-            // 
-            this.m_lbl_so_luong_ban_ghi.AutoSize = true;
-            this.m_lbl_so_luong_ban_ghi.Location = new System.Drawing.Point(456, 55);
-            this.m_lbl_so_luong_ban_ghi.Name = "m_lbl_so_luong_ban_ghi";
-            this.m_lbl_so_luong_ban_ghi.Size = new System.Drawing.Size(25, 13);
-            this.m_lbl_so_luong_ban_ghi.TabIndex = 44;
-            this.m_lbl_so_luong_ban_ghi.Text = "000";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(274, 55);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(176, 13);
-            this.label4.TabIndex = 43;
-            this.label4.Text = "Số nhân viên viên trong danh sách:";
-            // 
             // m_cmd_search
             // 
             this.m_cmd_search.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -270,15 +269,16 @@
             this.m_cmd_search.TabIndex = 38;
             this.m_cmd_search.Text = "Tìm kiếm";
             // 
-            // label6
+            // m_ckb_kiem_nhiem
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(274, 31);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 13);
-            this.label6.TabIndex = 36;
-            this.label6.Text = "Từ khoá tìm kiếm";
-            this.label6.Visible = false;
+            this.m_ckb_kiem_nhiem.AutoSize = true;
+            this.m_ckb_kiem_nhiem.Location = new System.Drawing.Point(671, 54);
+            this.m_ckb_kiem_nhiem.Name = "m_ckb_kiem_nhiem";
+            this.m_ckb_kiem_nhiem.Size = new System.Drawing.Size(118, 17);
+            this.m_ckb_kiem_nhiem.TabIndex = 45;
+            this.m_ckb_kiem_nhiem.Text = "Hiển thị kiêm nhiệm";
+            this.m_ckb_kiem_nhiem.UseVisualStyleBackColor = true;
+            this.m_ckb_kiem_nhiem.CheckedChanged += new System.EventHandler(this.m_ckb_kiem_nhiem_CheckedChanged);
             // 
             // m_txt_search
             // 
@@ -290,15 +290,33 @@
             this.m_txt_search.TabIndex = 35;
             this.m_txt_search.Visible = false;
             // 
-            // m_fg
+            // m_lbl_so_luong_ban_ghi
             // 
-            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 89);
-            this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(877, 520);
-            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 34;
+            this.m_lbl_so_luong_ban_ghi.AutoSize = true;
+            this.m_lbl_so_luong_ban_ghi.Location = new System.Drawing.Point(456, 55);
+            this.m_lbl_so_luong_ban_ghi.Name = "m_lbl_so_luong_ban_ghi";
+            this.m_lbl_so_luong_ban_ghi.Size = new System.Drawing.Size(25, 13);
+            this.m_lbl_so_luong_ban_ghi.TabIndex = 44;
+            this.m_lbl_so_luong_ban_ghi.Text = "000";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(274, 31);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 13);
+            this.label6.TabIndex = 36;
+            this.label6.Text = "Từ khoá tìm kiếm";
+            this.label6.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(274, 55);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(176, 13);
+            this.label4.TabIndex = 43;
+            this.label4.Text = "Số nhân viên viên trong danh sách:";
             // 
             // panel1
             // 
@@ -309,22 +327,12 @@
             this.panel1.Size = new System.Drawing.Size(1317, 609);
             this.panel1.TabIndex = 44;
             // 
-            // panel2
+            // backgroundWorker1
             // 
-            this.panel2.Controls.Add(this.groupBox1);
-            this.panel2.Controls.Add(this.m_cmd_search);
-            this.panel2.Controls.Add(this.m_ckb_kiem_nhiem);
-            this.panel2.Controls.Add(this.m_dat_thoidiem);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.m_txt_search);
-            this.panel2.Controls.Add(this.m_lbl_so_luong_ban_ghi);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(877, 89);
-            this.panel2.TabIndex = 47;
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
             // f408_bao_cao_don_vi_trang_thai
             // 
@@ -347,12 +355,12 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -380,6 +388,7 @@
         private System.Windows.Forms.TextBox m_txt_search;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
 
     }
 }

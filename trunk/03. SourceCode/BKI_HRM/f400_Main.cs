@@ -456,7 +456,7 @@ namespace BKI_HRM
         {
             try
             {
-                if (backgroundWorker1.IsBusy != true)
+                /*if (backgroundWorker1.IsBusy != true)
                 {
                     // create a new instance of the alert form
                     alert = new AlertForm();
@@ -466,11 +466,11 @@ namespace BKI_HRM
                     alert.TopMost = true;
                     // Start the asynchronous operation.
                     backgroundWorker1.RunWorkerAsync();
-                }
-                /*m_pnl_thong_bao.Height = m_cmd_thong_bao.Height - m_tab_form.Height;
+                }*/
+                m_pnl_thong_bao.Height = m_cmd_thong_bao.Height - m_tab_form.Height;
 
                 load_phap_nhan_to_list_checkbox();
-                auto_sugget_phap_nhan();
+                //auto_sugget_phap_nhan();
 
 
                 if (CAppContext_201.getCurrentIDPhapnhan() == 3)
@@ -494,7 +494,7 @@ namespace BKI_HRM
                 canh_bao_hop_dong();
                 thu_viec_sap_het_han();
                 nghi_viec_sap_quay_lai();
-                show_form(new f408_bao_cao_don_vi_trang_thai());*/
+                show_form(new f408_bao_cao_don_vi_trang_thai());
             }
             catch (Exception v_e)
             {
@@ -1580,9 +1580,10 @@ namespace BKI_HRM
 
                 foreach (TabPage tabPage in m_tab_form.TabPages)
                 {
-                    if (tabPage.TabIndex != 0)
+                    //if (tabPage.TabIndex != 0)
                         tabPage.Dispose();
                 }
+                show_form(new f408_bao_cao_don_vi_trang_thai());
             }
         }
 
@@ -1640,7 +1641,7 @@ namespace BKI_HRM
             canh_bao_hop_dong();
             thu_viec_sap_het_han();
             nghi_viec_sap_quay_lai();
-            show_form(new f408_bao_cao_don_vi_trang_thai());
+            //show_form(new f408_bao_cao_don_vi_trang_thai());
             //alert.Message = "In progress, please wait... " + e.ProgressPercentage.ToString() + "%";
             //alert.ProgressValue = e.ProgressPercentage;
         }
