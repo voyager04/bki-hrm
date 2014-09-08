@@ -1616,7 +1616,7 @@ namespace BKI_HRM
             m_pnl_thong_bao.Height = m_cmd_thong_bao.Height - m_tab_form.Height;
 
             load_phap_nhan_to_list_checkbox();
-            auto_sugget_phap_nhan();
+            //auto_sugget_phap_nhan();
 
 
             if (CAppContext_201.getCurrentIDPhapnhan() == 3)
