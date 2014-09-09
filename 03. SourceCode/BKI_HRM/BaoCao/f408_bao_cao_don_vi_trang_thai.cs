@@ -534,7 +534,7 @@ namespace BKI_HRM
         {
             BackgroundWorker worker = sender as BackgroundWorker;
 
-            for (int i = 1; i <= 10; i++)
+            for (int i = 1; i <= 1; i++)
             {
                 if (worker.CancellationPending == true)
                 {
