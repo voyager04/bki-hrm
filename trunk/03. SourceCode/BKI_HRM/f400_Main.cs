@@ -153,22 +153,23 @@ namespace BKI_HRM
             }
         }
 
-        private void load_phap_nhan_to_list_checkbox()
+        private void load_phap_nhan_to_cbo_phap_nhan()
         {
             US_DM_PHAP_NHAN v_us_pn = new US_DM_PHAP_NHAN();
             DS_DM_PHAP_NHAN v_ds_pn = new DS_DM_PHAP_NHAN();
             v_us_pn.FillDataset(v_ds_pn);
 
-            m_clk_phap_nhan.DataSource = v_ds_pn.DM_PHAP_NHAN;
-            m_clk_phap_nhan.DisplayMember = DM_PHAP_NHAN.TEN_PHAP_NHAN;
-            m_clk_phap_nhan.ValueMember = DM_PHAP_NHAN.ID;
+            m_cbo_phap_nhan.DataSource = v_ds_pn.DM_PHAP_NHAN;
+            m_cbo_phap_nhan.DisplayMember = DM_PHAP_NHAN.TEN_PHAP_NHAN;
+            m_cbo_phap_nhan.ValueMember = DM_PHAP_NHAN.ID;
 
             for (int i = 0; i < v_ds_pn.DM_PHAP_NHAN.Rows.Count; i++)
             {
                 if ((decimal)v_ds_pn.DM_PHAP_NHAN.Rows[i][DM_PHAP_NHAN.ID] == CAppContext_201.getCurrentIDPhapnhan())
-                    m_clk_phap_nhan.SetItemChecked(i, true);
-                else
-                    m_clk_phap_nhan.SetItemChecked(i, false);
+                    m_cbo_phap_nhan.SelectedValue = CAppContext_201.getCurrentIDPhapnhan();
+                    //m_clk_phap_nhan.SetItemChecked(i, true);
+                //else
+                    //m_clk_phap_nhan.SetItemChecked(i, false);
             }
         }
 
@@ -469,7 +470,7 @@ namespace BKI_HRM
                 }*/
                 m_pnl_thong_bao.Height = m_cmd_thong_bao.Height - m_tab_form.Height;
 
-                load_phap_nhan_to_list_checkbox();
+                load_phap_nhan_to_cbo_phap_nhan();
                 //auto_sugget_phap_nhan();
 
 
@@ -1556,7 +1557,7 @@ namespace BKI_HRM
             }
         }
 
-        private void m_clk_phap_nhan_ItemCheck(object sender, ItemCheckEventArgs e)
+        /*private void m_clk_phap_nhan_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             // bỏ check các checkbox khác
             if (e.NewValue == CheckState.Checked)
@@ -1586,7 +1587,7 @@ namespace BKI_HRM
                 show_form(new f408_bao_cao_don_vi_trang_thai());
             }
         }
-
+        */
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker worker = sender as BackgroundWorker;
@@ -1616,7 +1617,7 @@ namespace BKI_HRM
             }
             m_pnl_thong_bao.Height = m_cmd_thong_bao.Height - m_tab_form.Height;
 
-            load_phap_nhan_to_list_checkbox();
+            load_phap_nhan_to_cbo_phap_nhan();
             //auto_sugget_phap_nhan();
 
 
@@ -1659,6 +1660,29 @@ namespace BKI_HRM
                 backgroundWorker1.CancelAsync();
                 // Close the AlertForm
                 alert.Close();
+            }
+        }
+
+        private void m_cbo_phap_nhan_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            try
+            {
+                CAppContext_201.setCurrentIDPhapnhan(int.Parse(m_cbo_phap_nhan.SelectedValue.ToString()));
+                nhan_vien_hien_tai();
+                US_DM_PHAP_NHAN v_us = new US_DM_PHAP_NHAN(CAppContext_201.getCurrentIDPhapnhan());
+                toolStripStatusLabel1.Text = "Pháp nhân: " + v_us.strMA_PHAP_NHAN + " - " + v_us.strTEN_PHAP_NHAN;
+
+                foreach (TabPage tabPage in m_tab_form.TabPages)
+                {
+                    //if (tabPage.TabIndex != 0)
+                    tabPage.Dispose();
+                }
+                show_form(new f408_bao_cao_don_vi_trang_thai());
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
     }
