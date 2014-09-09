@@ -117,11 +117,13 @@ namespace BKI_HRM
             this.m_cmd_bao_cao_du_an = new System.Windows.Forms.Button();
             this.m_cmd_tra_cuu_nhan_su_du_an = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_cbo_phap_nhan = new System.Windows.Forms.ComboBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.cbbPhapNhan = new System.Windows.Forms.ComboBox();
             this.m_cmd_search = new System.Windows.Forms.Button();
             this.m_txt_search = new System.Windows.Forms.TextBox();
-            this.m_clk_phap_nhan = new System.Windows.Forms.CheckedListBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.m_cmd_luongqd = new System.Windows.Forms.Button();
             this.m_cmd_hop_dong_lao_dong = new System.Windows.Forms.Button();
@@ -173,6 +175,7 @@ namespace BKI_HRM
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -643,7 +646,7 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.ForeColor = System.Drawing.Color.Red;
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Location = new System.Drawing.Point(0, 17);
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Name = "m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky";
-            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Size = new System.Drawing.Size(346, 18);
+            this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Size = new System.Drawing.Size(345, 18);
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.TabIndex = 5;
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.Text = "Danh sách Hợp đồng đã hết hạn nhưng chưa ký";
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky.MouseHover += new System.EventHandler(this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky_MouseHover);
@@ -656,7 +659,7 @@ namespace BKI_HRM
             this.m_lbl_sap_quay_lai.ForeColor = System.Drawing.Color.Red;
             this.m_lbl_sap_quay_lai.Location = new System.Drawing.Point(0, 17);
             this.m_lbl_sap_quay_lai.Name = "m_lbl_sap_quay_lai";
-            this.m_lbl_sap_quay_lai.Size = new System.Drawing.Size(305, 18);
+            this.m_lbl_sap_quay_lai.Size = new System.Drawing.Size(306, 18);
             this.m_lbl_sap_quay_lai.TabIndex = 6;
             this.m_lbl_sap_quay_lai.Text = "Danh sách nhân viên sắp quay lại sau nghỉ";
             this.m_lbl_sap_quay_lai.MouseHover += new System.EventHandler(this.m_lbl_sap_quay_lai_MouseHover);
@@ -986,8 +989,8 @@ namespace BKI_HRM
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.panel6);
             this.tabPage3.Controls.Add(this.groupBox12);
-            this.tabPage3.Controls.Add(this.m_clk_phap_nhan);
             this.tabPage3.Controls.Add(this.groupBox7);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -996,6 +999,34 @@ namespace BKI_HRM
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Nghiệp vụ";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Controls.Add(this.m_cbo_phap_nhan);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel6.Location = new System.Drawing.Point(1151, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(200, 96);
+            this.panel6.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(31, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Chọn pháp nhân:";
+            // 
+            // m_cbo_phap_nhan
+            // 
+            this.m_cbo_phap_nhan.FormattingEnabled = true;
+            this.m_cbo_phap_nhan.Location = new System.Drawing.Point(34, 42);
+            this.m_cbo_phap_nhan.Name = "m_cbo_phap_nhan";
+            this.m_cbo_phap_nhan.Size = new System.Drawing.Size(121, 21);
+            this.m_cbo_phap_nhan.TabIndex = 7;
+            this.m_cbo_phap_nhan.SelectionChangeCommitted += new System.EventHandler(this.m_cbo_phap_nhan_SelectionChangeCommitted);
             // 
             // groupBox12
             // 
@@ -1035,16 +1066,6 @@ namespace BKI_HRM
             this.m_txt_search.Name = "m_txt_search";
             this.m_txt_search.Size = new System.Drawing.Size(227, 20);
             this.m_txt_search.TabIndex = 1;
-            // 
-            // m_clk_phap_nhan
-            // 
-            this.m_clk_phap_nhan.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_clk_phap_nhan.FormattingEnabled = true;
-            this.m_clk_phap_nhan.Location = new System.Drawing.Point(1156, 3);
-            this.m_clk_phap_nhan.Name = "m_clk_phap_nhan";
-            this.m_clk_phap_nhan.Size = new System.Drawing.Size(195, 96);
-            this.m_clk_phap_nhan.TabIndex = 5;
-            this.m_clk_phap_nhan.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.m_clk_phap_nhan_ItemCheck);
             // 
             // groupBox7
             // 
@@ -1492,6 +1513,8 @@ namespace BKI_HRM
             this.groupBox9.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             this.groupBox7.ResumeLayout(false);
@@ -1634,12 +1657,14 @@ namespace BKI_HRM
         private TabControl m_tab_menu;
         private GroupBox groupBox11;
         private TabPage tabPage5;
-        private CheckedListBox m_clk_phap_nhan;
         private GroupBox groupBox12;
         private Button m_cmd_search;
         private TextBox m_txt_search;
         private ComboBox cbbPhapNhan;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Button m_cmd_luongqd;
+        private Panel panel6;
+        private Label label1;
+        private ComboBox m_cbo_phap_nhan;
     }
 }

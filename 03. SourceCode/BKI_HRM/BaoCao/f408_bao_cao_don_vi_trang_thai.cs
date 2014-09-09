@@ -27,11 +27,11 @@ namespace BKI_HRM
             InitializeComponent();
             format_controls();
         }
-        public void refresh()
+        /*public void refresh()
         {
             load_data_2_grid_donvi();
             load_data_2_grid();
-        }
+        }*/
         #region Members
         AlertForm alert;
         ITransferDataRow m_obj_trans;
@@ -121,7 +121,7 @@ namespace BKI_HRM
             set_search_format_before();
             load_custom_source_2_m_txt_search();
             load_data_2_grid_donvi();
-            load_data_2_grid();
+            //load_data_2_grid();
             //m_txt_tim_kiem.Text = "Nhập mã chức vụ, tên chức vụ";
         }
         private void set_search_format_before()
