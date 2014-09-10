@@ -27,11 +27,11 @@ namespace BKI_HRM
             InitializeComponent();
             format_controls();
         }
-        /*public void refresh()
+        public void refresh()
         {
             load_data_2_grid_donvi();
-            load_data_2_grid();
-        }*/
+            //load_data_2_grid();
+        }
         #region Members
         AlertForm alert;
         ITransferDataRow m_obj_trans;
@@ -563,6 +563,18 @@ namespace BKI_HRM
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             alert.Close();
+        }
+
+        private void m_cmd_refresh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                refresh();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
     }
 }
