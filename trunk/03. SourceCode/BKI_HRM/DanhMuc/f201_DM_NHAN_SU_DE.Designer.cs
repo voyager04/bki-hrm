@@ -280,7 +280,7 @@
             // 
             this.m_dat_ngay_sinh.Checked = false;
             this.m_dat_ngay_sinh.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_ngay_sinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_ngay_sinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_sinh.Location = new System.Drawing.Point(360, 96);
             this.m_dat_ngay_sinh.Name = "m_dat_ngay_sinh";
             this.m_dat_ngay_sinh.ShowCheckBox = true;
@@ -425,7 +425,7 @@
             this.m_cmd_xoa_anh.Location = new System.Drawing.Point(643, 211);
             this.m_cmd_xoa_anh.Name = "m_cmd_xoa_anh";
             this.m_cmd_xoa_anh.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_xoa_anh.TabIndex = 49;
+            this.m_cmd_xoa_anh.TabIndex = 14;
             this.m_cmd_xoa_anh.Text = "&Xóa ảnh";
             this.m_cmd_xoa_anh.Visible = false;
             this.m_cmd_xoa_anh.Click += new System.EventHandler(this.m_cmd_xoa_anh_Click);
@@ -468,7 +468,7 @@
             this.m_txt_ma_headcount.Location = new System.Drawing.Point(599, 288);
             this.m_txt_ma_headcount.Name = "m_txt_ma_headcount";
             this.m_txt_ma_headcount.Size = new System.Drawing.Size(120, 20);
-            this.m_txt_ma_headcount.TabIndex = 12;
+            this.m_txt_ma_headcount.TabIndex = 13;
             // 
             // m_txt_dan_toc
             // 
