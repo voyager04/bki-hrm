@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,6 +30,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -37,11 +39,13 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
@@ -50,12 +54,9 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -112,6 +113,7 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
@@ -179,6 +181,9 @@
     <Compile Include="Models\CM_DM_TU_DIEN.cs">
       <DependentUpon>QLNSData.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\desc_table_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\DM_CAP_BAC.cs">
       <DependentUpon>QLNSData.tt</DependentUpon>
     </Compile>
@@ -192,6 +197,9 @@
       <DependentUpon>QLNSData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DM_HEADCOUNT.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_KY.cs">
       <DependentUpon>QLNSData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DM_NHAN_SU.cs">
@@ -236,6 +244,9 @@
     <Compile Include="Models\GD_HOP_DONG.cs">
       <DependentUpon>QLNSData.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\GD_LUONG_THEO_QD.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\GD_QUA_TRINH_CONG_TAC.cs">
       <DependentUpon>QLNSData.tt</DependentUpon>
     </Compile>
@@ -263,10 +274,16 @@
     <Compile Include="Models\HT_FORM.cs">
       <DependentUpon>QLNSData.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\HT_LOGIN_WEB.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\HT_LOG_LOGIN.cs">
       <DependentUpon>QLNSData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HT_NGUOI_SU_DUNG.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HT_NGUOI_SU_DUNG_WEB.cs">
       <DependentUpon>QLNSData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HT_PHAN_QUYEN_CHO_NHOM.cs">
@@ -287,10 +304,322 @@
     <Compile Include="Models\HT_QUYEN_USER.cs">
       <DependentUpon>QLNSData.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\HT_QUYEN_USER_WEB.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\HT_THAM_SO_HE_THONG.cs">
       <DependentUpon>QLNSData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HT_USER_GROUP.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HT_USER_GROUP_WEB.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_CM_DM_TU_DIEN_Load_loai_quyet_dinh_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_CM_DM_TU_DIEN_Load_trang_thai_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_CM_DM_TU_DIEN_Load_Tu_Dien_By_Loai_Tu_Dien_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_CM_DM_TU_DIEN_search_by_id_loai_td_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_CAP_BAC_search_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_DON_VI_check_ma_don_vi_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_DON_VI_grid_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_DON_VI_Load_to_grid_danh_muc_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_DON_VI_Select_by_user_name_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_DU_AN_QUYET_DINH_TU_DIEN_sap_ket_thuc_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_DU_AN_sap_ket_thuc_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_DU_AN_select_by_ID_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_DU_AN_select_by_ma_da_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_NHAN_SU_Search_by_ID_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_NHAN_SU_Search_by_ma_ns_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_NHAN_SU_Search_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_PHAP_NHAN_Search_by_ma_phap_nhan_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_PHAP_NHAN_Search_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_QUYET_DINH_By_Ma_qd_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_QUYET_DINH_search_by_id_loai_qd_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_QUYET_DINH_search_by_id_qd_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_QUYET_DINH_search_by_ma_qd_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_GD_CHI_TIET_DU_AN_select_by_id_du_an_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_GD_CHI_TIET_DU_AN_select_by_ID_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_GD_CHI_TIET_DU_AN_select_trang_thai_yes_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_GD_HOP_DONG_Search_by_ma_hop_dong_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_GD_HOP_DONG_Search_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_GD_QUA_TRINH_CONG_TAC_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_GD_QUYET_DINH_PHAP_NHAN_Select_by_ID_QUYET_DINH_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_HT_CHUC_NANG_GetQuyenChucNang_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_HT_CHUC_NANG_Select_by_Root_ParentId_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_HT_CHUC_NANG_Select_Chuc_Nang_Max_Vi_Tri_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_HT_CHUC_NANG_select_full_tree_chuc_nang_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_HT_NGUOI_SU_DUNG_fill_data_by_training_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_HT_PHAN_QUYEN_CHO_NHOM_select_by_ma_pq_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_HT_PHAN_QUYEN_DETAIL_fill_dataset_by_user_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_HT_PHAN_QUYEN_HE_THONG_quyen_chua_cap_select_by_id_nhom_quyen_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_HT_PHAN_QUYEN_HE_THONG_quyen_da_cap_select_by_id_nhom_quyen_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_HT_PHAN_QUYEN_HE_THONG_select_by_ma_pq_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_HT_QUAN_HE_SU_DUNG_DU_LIEU_UpdateQuyen4Group_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_HT_QUYEN_GROUP_fill_data_by_group_id_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_HT_QUYEN_GROUP_UpdateQuyen4Group_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_HT_QUYEN_USER_fill_data_by_user_id_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_QUYET_DINH_CUA_DU_AN_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_RPT_BO_NHIEM_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_RPT_CHUC_VU_TRANG_THAI_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_RPT_DON_VI_TRANG_THAI_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_RPT_SO_LUONG_NHAN_VIEN_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_BAO_CAO_NHAN_SU_search_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_CAP_BAC_By_Ma_bac_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_CAP_BAC_By_Ma_cap_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_CAP_BAC_search_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_CHUC_VU_order_by_ma_chuc_vu_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_CHUC_VU_search_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_DON_VI_search_all_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_DON_VI_search_by_id_phap_nhan_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_DON_VI_search_by_ma_dv_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_DON_VI_search_cap_don_vi_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_DON_VI_search_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_DU_AN_QUYET_DINH_TU_DIEN_search_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_DU_LIEU_NHAN_VIEN_nghi_viec_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_DU_LIEU_NHAN_VIEN_Nhan_vien_sap_quay_lai_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_DU_LIEU_NHAN_VIEN_sap_het_han_thu_viec_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_DU_LIEU_NHAN_VIEN_search_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_NHAN_SU_search_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_QUYET_DINH_By_Ma_qd_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_QUYET_DINH_Search_by_ma_quyet_dinh_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_QUYET_DINH_search_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_TRANG_THAI_UNG_VIEN_search_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_TRANG_THAI_UNG_VIEN_Select_by_ID_Parent_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_BAO_CAO_DU_AN_2_search_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_CHI_TIET_CAP_BAC_by_Ma_nhan_vien_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_CHI_TIET_CAP_BAC_search_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_CHI_TIET_CAP_BAC_select_by_MA_CAP_BAC_THOI_DIEM_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_CONG_TAC_search_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_CONG_TAC_Select_by_ID_QUYET_DINH_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_HOP_DONG_LAO_DONG_By_Loai_hop_dong_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_HOP_DONG_LAO_DONG_By_Ma_nhan_vien_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_HOP_DONG_LAO_DONG_by_trang_thai_hop_dong_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_HOP_DONG_LAO_DONG_Search_HDLD_da_het_han_nhung_chua_ky_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_HOP_DONG_LAO_DONG_Search_HD_hien_tai_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_HOP_DONG_LAO_DONG_Search_HD_sap_het_han_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_HOP_DONG_LAO_DONG_Search_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_QUA_TRINH_LAM_VIEC_2_Search_NhanVien_TheoPhongBanTaiMotThoiDiem_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_QUA_TRINH_LAM_VIEC_2_select_by_MA_CHUC_VU_THOI_DIEM_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_QUA_TRINH_LAM_VIEC_All_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_QUA_TRINH_LAM_VIEC_By_Ma_nhan_vien_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_QUA_TRINH_LAM_VIEC_chuc_vu_hien_tai_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_QUA_TRINH_LAM_VIEC_danh_sach_bo_nhiem_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_QUA_TRINH_LAM_VIEC_load_by_id_don_vi_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_QUA_TRINH_LAM_VIEC_Search1_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_QUYET_DINH_FillDataset_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_QUYET_DINH_search_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_TRANG_THAI_LAO_DONG_By_Ma_nhan_vien_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_TRANG_THAI_LAO_DONG_hien_tai_By_Ma_nhan_vien_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_TRANG_THAI_LAO_DONG_Nhan_vien_sap_quay_lai_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_TRANG_THAI_LAO_DONG_search_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_HT_CONTROL_IN_FORM_select_by_ID_CN_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_HT_PHAN_QUYEN_CHO_NHOM_select_by_id_nhom_quyen_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_NHAN_SU_DU_AN_select_by_ID_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_NHAN_SU_DU_AN_tu_ngay_den_ngay_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_QUYET_DINH_select_by_ID_Result.cs">
       <DependentUpon>QLNSData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\QLNSData.Context.cs">
@@ -309,6 +638,12 @@
       <DependentUpon>QLNSData.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\RPT_SO_LUONG_NHAN_VIEN.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
       <DependentUpon>QLNSData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
@@ -345,6 +680,9 @@
       <DependentUpon>QLNSData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\V_DM_QUYET_DINH.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_DM_QUYET_DINH_By_Ten_Result.cs">
       <DependentUpon>QLNSData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\V_DM_TRANG_THAI_UNG_VIEN.cs">
@@ -384,6 +722,9 @@
       <DependentUpon>QLNSData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\V_HT_PHAN_QUYEN_CHO_NHOM.cs">
+      <DependentUpon>QLNSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_HT_PHAN_QUYEN_USER_WEB.cs">
       <DependentUpon>QLNSData.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -530,7 +871,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Shared\_NavBarTopPartial.cshtml" />
+    <Content Include="Views\Home\CreateNavBarTop.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

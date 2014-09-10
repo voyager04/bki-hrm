@@ -20,5 +20,6 @@ namespace QLNhanSu.Models
     
         public virtual HT_CHUC_NANG HT_CHUC_NANG { get; set; }
         public virtual HT_USER_GROUP HT_USER_GROUP { get; set; }
+        public virtual HT_USER_GROUP_WEB HT_USER_GROUP_WEB { get; set; }
     }
 }
