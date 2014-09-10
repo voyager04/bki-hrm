@@ -696,6 +696,7 @@
        public const string LUA_CHON = "LUA_CHON";
        public const string ID_LOAI_QD = "ID_LOAI_QD";
        public const string LOAI_QD = "LOAI_QD";
+       public const string ID_CAP_BAC = "ID_CAP_BAC";
    }
 
    public class DM_CAP_BAC {
