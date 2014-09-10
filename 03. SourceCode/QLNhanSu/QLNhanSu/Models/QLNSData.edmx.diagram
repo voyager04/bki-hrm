@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d1255f17adc64b87bcc9c446cf8150fa" Name="Diagram1">
+      <Diagram DiagramId="d1255f17adc64b87bcc9c446cf8150fa" Name="Diagram1" ZoomLevel="86">
         <EntityTypeShape EntityType="BKI_HRMModel.CM_COMPANY_INFO" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BKI_HRMModel.CM_DM_LOAI_TD" Width="1.5" PointX="0.75" PointY="22.875" IsExpanded="true" />
         <EntityTypeShape EntityType="BKI_HRMModel.CM_DM_TU_DIEN" Width="1.5" PointX="3" PointY="21.25" IsExpanded="true" />
@@ -123,6 +123,17 @@
         <AssociationConnector Association="BKI_HRMModel.FK_HT_PHAN_QUYEN_DETAIL_HT_PHAN_QUYEN_HE_THONG" ManuallyRouted="false" />
         <AssociationConnector Association="BKI_HRMModel.FK_HT_QUAN_HE_SU_DUNG_DU_LIEU_HT_USER_GROUP" ManuallyRouted="false" />
         <AssociationConnector Association="BKI_HRMModel.FK_HT_QUYEN_GROUP_HT_USER_GROUP" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BKI_HRMModel.DM_KY" Width="1.5" PointX="4.9649067935370406" PointY="10.418360551082698" />
+        <EntityTypeShape EntityType="BKI_HRMModel.GD_LUONG_THEO_QD" Width="1.5" PointX="8.875" PointY="3.375" />
+        <EntityTypeShape EntityType="BKI_HRMModel.HT_LOGIN_WEB" Width="1.5" PointX="8.7538194566750072" PointY="25.311844330891894" />
+        <EntityTypeShape EntityType="BKI_HRMModel.HT_NGUOI_SU_DUNG_WEB" Width="1.5" PointX="9.9703358420964037" PointY="19.488213250175217" />
+        <EntityTypeShape EntityType="BKI_HRMModel.HT_QUYEN_USER_WEB" Width="1.5" PointX="7.8224488067545224" PointY="13.297202101581359" />
+        <EntityTypeShape EntityType="BKI_HRMModel.HT_USER_GROUP_WEB" Width="1.5" PointX="7.18048012777254" PointY="31.305237754855881" />
+        <AssociationConnector Association="BKI_HRMModel.FK_HT_QUYEN_USER_WEB_CM_DM_TU_DIEN" />
+        <AssociationConnector Association="BKI_HRMModel.FK_HT_NGUOI_SU_DUNG_WEB_HT_USER_GROUP_WEB" />
+        <AssociationConnector Association="BKI_HRMModel.FK_HT_QUYEN_USER_WEB_HT_NGUOI_SU_DUNG_WEB" />
+        <AssociationConnector Association="BKI_HRMModel.FK_HT_QUYEN_GROUP_HT_USER_GROUP_WEB" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_HT_PHAN_QUYEN_USER_WEB" Width="1.5" PointX="7.0905209384348815" PointY="22.905028786000344" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

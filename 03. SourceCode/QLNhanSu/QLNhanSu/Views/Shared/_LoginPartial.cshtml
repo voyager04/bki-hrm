@@ -1,9 +1,12 @@
-﻿@model ICollection<AuthenticationClientData>
-
-@if (Request.IsAuthenticated)
+﻿@if (Request.IsAuthenticated)
 {
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })</li>
+        @using QLNhanSu.Models
+        @{
+            var db = new BKI_HRMEntities();
+            var userAcount = db.HT_NGUOI_SU_DUNG_WEB.FirstOrDefault(m => m.TEN_TRUY_CAP == User.Identity.Name);
+        }
+        <li>@Html.ActionLink(userAcount.TEN, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })</li>
         <li>
             @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
             {
@@ -16,34 +19,13 @@
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-        @*<li>
-            @if (Model.Count == 0)
+        @*<li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
+        <li>
+            @using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = ViewBag.ReturnUrl }))
             {
-                <div class="message-info">
-                    <p>
-                        There are no external authentication services configured. See <a href="http://go.microsoft.com/fwlink/?LinkId=252166">this article</a>
-                        for details on setting up this ASP.NET application to support logging in via external services.
-                    </p>
-                </div>
-            }
-            else
-            {
-                using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = ViewBag.ReturnUrl }))
-                {
                 @Html.AntiForgeryToken()
-                <fieldset id="socialLoginList">
-                    <legend>Log in using another service</legend>
-                    <p>
-                        @foreach (AuthenticationClientData p in Model)
-                        {
-                            <button type="submit" name="provider" value="@p.AuthenticationClient.ProviderName" title="Log in using your @p.DisplayName account">@p.DisplayName</button>
-                        }
-                    </p>
-                </fieldset>
-                }
+                <button id="btnLoginGoogle" type="submit" name="provider" value="google" title="Log in using your Google account">Log in</button>
             }
-        </li>*@
+        </li>
     </ul>
 }

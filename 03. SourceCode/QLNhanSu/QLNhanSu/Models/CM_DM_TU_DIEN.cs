@@ -30,6 +30,7 @@ namespace QLNhanSu.Models
             this.GD_HOP_DONG = new HashSet<GD_HOP_DONG>();
             this.HT_CONTROL_IN_FORM = new HashSet<HT_CONTROL_IN_FORM>();
             this.HT_QUYEN_USER = new HashSet<HT_QUYEN_USER>();
+            this.HT_QUYEN_USER_WEB = new HashSet<HT_QUYEN_USER_WEB>();
         }
     
         public decimal ID { get; set; }
@@ -54,5 +55,6 @@ namespace QLNhanSu.Models
         public virtual ICollection<GD_HOP_DONG> GD_HOP_DONG { get; set; }
         public virtual ICollection<HT_CONTROL_IN_FORM> HT_CONTROL_IN_FORM { get; set; }
         public virtual ICollection<HT_QUYEN_USER> HT_QUYEN_USER { get; set; }
+        public virtual ICollection<HT_QUYEN_USER_WEB> HT_QUYEN_USER_WEB { get; set; }
     }
 }

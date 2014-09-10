@@ -225,8 +225,6 @@ namespace QLNhanSu.Controllers
 
             if (OAuthWebSecurity.Login(result.Provider, result.ProviderUserId, createPersistentCookie: false))
             {
-                //TODO: Check phân quyền ở đây
-
                 return RedirectToLocal(returnUrl);
             }
 
