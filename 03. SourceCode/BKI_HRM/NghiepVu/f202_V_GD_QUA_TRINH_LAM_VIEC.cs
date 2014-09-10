@@ -544,7 +544,7 @@ namespace BKI_HRM
             if (m_grv_qua_trinh_lam_viec.Rows[m_grv_qua_trinh_lam_viec.Row].UserData != null)
             {
                 grid2us_object(m_us_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row);
-                grid2us_object(m_us_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row);
+              //  grid2us_object(m_us_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row);
                 if (m_us_qua_trinh_lam_viec.dcID_CHUC_VU <= 0)
                 {
                     BaseMessages.MsgBox_Infor("Chưa có Chức vụ.");
