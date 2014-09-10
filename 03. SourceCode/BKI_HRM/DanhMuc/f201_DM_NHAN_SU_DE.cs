@@ -160,7 +160,7 @@ namespace BKI_HRM
             {
                 m_ofd_chon_anh.FileName = m_str_directory_to + m_us_dm_nhan_su.strMA_NV + ".jpg";
             }
-            
+
             if (m_us_dm_nhan_su.strANH != "")
             {
                 m_cmd_xoa_anh.Visible = true;
@@ -211,6 +211,8 @@ namespace BKI_HRM
             m_us_dm_nhan_su.strCHUYEN_NGANH = m_txt_chuyen_nganh.Text.Trim();
             if (m_txt_nam_tot_nghiep.Text.Trim().Length > 0)
                 m_us_dm_nhan_su.dcNAM_TOT_NGHIEP = CIPConvert.ToDecimal(m_txt_nam_tot_nghiep.Text.Trim());
+            else
+                m_us_dm_nhan_su.SetNAM_TOT_NGHIEPNull();
             m_us_dm_nhan_su.strEMAIL_CQ = m_txt_email_co_quan.Text.Trim();
             m_us_dm_nhan_su.strEMAIL_CA_NHAN = m_txt_email_ca_nhan.Text.Trim();
             m_us_dm_nhan_su.strDI_DONG = m_txt_so_dtdd.Text.Trim();
@@ -359,7 +361,7 @@ namespace BKI_HRM
         private void save_image(string ip_str_pathimage)
         {
 
-            if (ip_str_pathimage != "" && m_ofd_chon_anh.FileName != "" )
+            if (ip_str_pathimage != "" && m_ofd_chon_anh.FileName != "")
             {
                 if (m_e_file_mode != DataEntryFileMode.DeleteFile)
                 {
@@ -407,8 +409,8 @@ namespace BKI_HRM
                     }
                     newImage.Save(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_txt_ma_nhan_vien.Text + ".jpg", ImageFormat.Jpeg);
                 }
-                
-                
+
+
                 switch (m_e_file_mode)
                 {
                     case DataEntryFileMode.DeleteFile:
@@ -622,7 +624,98 @@ namespace BKI_HRM
         }
         private void m_cmd_refresh_Click(object sender, EventArgs e)
         {
-
+            switch (m_e_form_mode)
+            {
+                case DataEntryFormMode.InsertDataState:
+                    m_txt_ma_nhan_vien.Text = "";
+                    m_txt_ho_dem.Text = "";
+                    m_txt_ten.Text = "";
+                    m_cbo_gioi_tinh.SelectedIndex = 0;
+                    m_dat_ngay_sinh.Checked = false;
+                    m_dat_ngay_sinh.Value = DateTime.Today;
+                    m_txt_noi_sinh.Text = "";
+                    m_txt_nguyen_quan.Text = "";
+                    m_txt_cmnd.Text = "";
+                    m_dat_ngay_cap.Checked = false;
+                    m_dat_ngay_cap.Value = DateTime.Today;
+                    m_txt_noi_cap.Text = "";
+                    m_txt_ton_giao.Text = "";
+                    m_txt_dan_toc.Text = "";
+                    m_txt_ma_headcount.Text = "";
+                    m_ofd_chon_anh.FileName = "";
+                    m_ptb_anh.Image = m_ptb_anh.ErrorImage;
+                    m_txt_trinh_do.Text = "";
+                    m_txt_noi_dao_tao.Text = "";
+                    m_txt_chuyen_nganh.Text = "";
+                    m_txt_nam_tot_nghiep.Text = "";
+                    m_txt_email_co_quan.Text = "";
+                    m_txt_email_ca_nhan.Text = "";
+                    m_txt_sdt_nha_rieng.Text = "";
+                    m_txt_so_dtdd.Text = "";
+                    m_txt_ma_so_thue.Text = "";
+                    m_txt_ho_khau.Text = "";
+                    m_txt_dia_chi.Text = "";
+                    m_txt_nguoi_lien_he.Text = "";
+                    m_txt_sdt_lien_he.Text = "";
+                    m_txt_quan_he.Text = "";
+                    break;
+                case DataEntryFormMode.UpdateDataState:
+                    m_txt_ma_nhan_vien.Text = m_us_dm_nhan_su.strMA_NV;
+                    m_txt_ho_dem.Text = m_us_dm_nhan_su.strHO_DEM;
+                    m_txt_ten.Text = m_us_dm_nhan_su.strTEN;
+                    m_cbo_gioi_tinh.SelectedIndex = m_us_dm_nhan_su.strGIOI_TINH == "Nam" ? 0 : 1;
+                    m_dat_ngay_sinh.Checked = m_us_dm_nhan_su.datNGAY_SINH > DateTime.Parse("1900/1/1") ? true : false;
+                    m_dat_ngay_sinh.Value = m_us_dm_nhan_su.datNGAY_SINH > DateTime.Parse("1900/1/1") ? m_us_dm_nhan_su.datNGAY_SINH : DateTime.Today;
+                    if (m_dat_ngay_sinh.Value == DateTime.Today)
+                        m_dat_ngay_sinh.Checked = false;
+                    m_txt_noi_sinh.Text = m_us_dm_nhan_su.strNOI_SINH;
+                    m_txt_nguyen_quan.Text = m_us_dm_nhan_su.strNGUYEN_QUAN;
+                    m_txt_cmnd.Text = m_us_dm_nhan_su.strCMND;
+                    m_dat_ngay_cap.Checked = m_us_dm_nhan_su.datNGAY_CAP_CMND > DateTime.Parse("1900/1/1") ? true : false;
+                    m_dat_ngay_cap.Value = m_us_dm_nhan_su.datNGAY_CAP_CMND > DateTime.Parse("1900/1/1") ? m_us_dm_nhan_su.datNGAY_CAP_CMND : DateTime.Today;
+                    if (m_dat_ngay_cap.Value == DateTime.Today)
+                    {
+                        m_dat_ngay_cap.Checked = false;
+                    }
+                    m_txt_noi_cap.Text = m_us_dm_nhan_su.strNOI_CAP_CMND;
+                    m_txt_ton_giao.Text = m_us_dm_nhan_su.strTON_GIAO;
+                    m_txt_dan_toc.Text = m_us_dm_nhan_su.strDAN_TOC;
+                    m_txt_ma_headcount.Text = m_us_dm_nhan_su.strMA_HEADCOUNT;
+                    if (m_us_dm_nhan_su.strANH != "")
+                    {
+                        m_ofd_chon_anh.FileName = m_str_directory_to + m_us_dm_nhan_su.strMA_NV + ".jpg";
+                    }
+                    else
+                        m_ofd_chon_anh.FileName = "";
+                    if (m_us_dm_nhan_su.strANH != "")
+                    {
+                        m_cmd_xoa_anh.Visible = true;
+                        string v_str_imagepath = m_str_directory_to + m_us_dm_nhan_su.strMA_NV + ".jpg";
+                        FileStream fs;
+                        fs = new System.IO.FileStream(v_str_imagepath, System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                        m_ptb_anh.Image = System.Drawing.Image.FromStream(fs);
+                        fs.Close();
+                    }
+                    else
+                    {
+                        m_ptb_anh.Image = m_ptb_anh.ErrorImage;
+                    }
+                    m_txt_trinh_do.Text = m_us_dm_nhan_su.strTRINH_DO;
+                    m_txt_noi_dao_tao.Text = m_us_dm_nhan_su.strNOI_DAO_TAO;
+                    m_txt_chuyen_nganh.Text = m_us_dm_nhan_su.strCHUYEN_NGANH;
+                    m_txt_nam_tot_nghiep.Text = m_us_dm_nhan_su.dcNAM_TOT_NGHIEP.ToString();
+                    m_txt_email_co_quan.Text = m_us_dm_nhan_su.strEMAIL_CQ;
+                    m_txt_email_ca_nhan.Text = m_us_dm_nhan_su.strEMAIL_CA_NHAN;
+                    m_txt_sdt_nha_rieng.Text = m_us_dm_nhan_su.strDT_NHA;
+                    m_txt_so_dtdd.Text = m_us_dm_nhan_su.strDI_DONG;
+                    m_txt_ma_so_thue.Text = m_us_dm_nhan_su.strMA_SO_THUE;
+                    m_txt_ho_khau.Text = m_us_dm_nhan_su.strHO_KHAU;
+                    m_txt_dia_chi.Text = m_us_dm_nhan_su.strCHO_O;
+                    m_txt_nguoi_lien_he.Text = m_us_dm_nhan_su.strNGUOI_LIEN_HE;
+                    m_txt_sdt_lien_he.Text = m_us_dm_nhan_su.strDI_DONG_LIEN_HE;
+                    m_txt_quan_he.Text = m_us_dm_nhan_su.strQUAN_HE;
+                    break;
+            }
         }
         private void m_cmd_exit_Click(object sender, EventArgs e)
         {
