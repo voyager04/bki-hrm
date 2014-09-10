@@ -397,6 +397,28 @@ namespace BKI_HRM.US {
             pm_objDR["LOAI_QD"] = System.Convert.DBNull;
         }
 
+        public decimal dcID_CAP_BAC
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_CAP_BAC", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_CAP_BAC"] = value;
+            }
+        }
+
+        public bool IsID_CAP_BACNull()
+        {
+            return pm_objDR.IsNull("ID_CAP_BAC");
+        }
+
+        public void SetID_CAP_BACNull()
+        {
+            pm_objDR["ID_CAP_BAC"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_V_GD_CHI_TIET_CAP_BAC()
@@ -424,7 +446,6 @@ namespace BKI_HRM.US {
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
-
 	
 
         #region "Addtional"
