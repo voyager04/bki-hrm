@@ -743,9 +743,9 @@ namespace BKI_HRM
             this.m_stt_form.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel1});
-            this.m_stt_form.Location = new System.Drawing.Point(0, 719);
+            this.m_stt_form.Location = new System.Drawing.Point(0, 711);
             this.m_stt_form.Name = "m_stt_form";
-            this.m_stt_form.Size = new System.Drawing.Size(1362, 22);
+            this.m_stt_form.Size = new System.Drawing.Size(1354, 22);
             this.m_stt_form.TabIndex = 12;
             this.m_stt_form.Text = "statusStrip1";
             // 
@@ -755,7 +755,7 @@ namespace BKI_HRM
             this.toolStripStatusLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             this.toolStripStatusLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(1248, 17);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(1240, 17);
             this.toolStripStatusLabel2.Spring = true;
             this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
             this.toolStripStatusLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -776,7 +776,7 @@ namespace BKI_HRM
             this.m_tab_form.Location = new System.Drawing.Point(48, 128);
             this.m_tab_form.Name = "m_tab_form";
             this.m_tab_form.SelectedIndex = 0;
-            this.m_tab_form.Size = new System.Drawing.Size(1314, 25);
+            this.m_tab_form.Size = new System.Drawing.Size(1306, 25);
             this.m_tab_form.TabIndex = 15;
             this.m_tab_form.SelectedIndexChanged += new System.EventHandler(this.m_tab_form_SelectedIndexChanged_1);
             // 
@@ -788,7 +788,7 @@ namespace BKI_HRM
             this.m_cmd_thong_bao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_cmd_thong_bao.Location = new System.Drawing.Point(0, 128);
             this.m_cmd_thong_bao.Name = "m_cmd_thong_bao";
-            this.m_cmd_thong_bao.Size = new System.Drawing.Size(48, 591);
+            this.m_cmd_thong_bao.Size = new System.Drawing.Size(48, 583);
             this.m_cmd_thong_bao.TabIndex = 11;
             this.m_cmd_thong_bao.UseVisualStyleBackColor = true;
             this.m_cmd_thong_bao.Click += new System.EventHandler(this.m_cmd_thong_bao_Click);
@@ -995,17 +995,18 @@ namespace BKI_HRM
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1354, 102);
+            this.tabPage3.Size = new System.Drawing.Size(1346, 102);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Nghiệp vụ";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // panel6
             // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.label1);
             this.panel6.Controls.Add(this.m_cbo_phap_nhan);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(1151, 3);
+            this.panel6.Location = new System.Drawing.Point(1143, 3);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(200, 96);
             this.panel6.TabIndex = 4;
@@ -1040,6 +1041,7 @@ namespace BKI_HRM
             this.groupBox12.TabIndex = 6;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Tìm kiếm chức năng";
+            this.groupBox12.Visible = false;
             // 
             // cbbPhapNhan
             // 
@@ -1249,7 +1251,7 @@ namespace BKI_HRM
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1354, 102);
+            this.tabPage1.Size = new System.Drawing.Size(1346, 102);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Quản trị - Hệ thống - Trợ giúp";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1452,7 +1454,7 @@ namespace BKI_HRM
             this.m_tab_menu.Location = new System.Drawing.Point(0, 0);
             this.m_tab_menu.Name = "m_tab_menu";
             this.m_tab_menu.SelectedIndex = 0;
-            this.m_tab_menu.Size = new System.Drawing.Size(1362, 128);
+            this.m_tab_menu.Size = new System.Drawing.Size(1354, 128);
             this.m_tab_menu.TabIndex = 9;
             // 
             // tabPage5
@@ -1477,7 +1479,7 @@ namespace BKI_HRM
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.ClientSize = new System.Drawing.Size(1354, 733);
             this.Controls.Add(this.m_tab_form);
             this.Controls.Add(this.m_cmd_thong_bao);
             this.Controls.Add(this.m_pnl_thong_bao);
