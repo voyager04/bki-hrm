@@ -5,3 +5,24 @@ C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPData\bin\IPDat
 C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPData\obj\Debug\IPData.dll
 C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPData\obj\Debug\IPData.xml
 C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPData\obj\Debug\IPData.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\IPData\bin\IPData.dll.config
+G:\Work\Project\BKI_HRM\03. SourceCode\IPData\bin\IPData.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPData\bin\IPData.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\IPData\bin\IPData.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\IPData\obj\Debug\IPData.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPData\obj\Debug\IPData.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\IPData\obj\Debug\IPData.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPData\bin\IPData.dll.config
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPData\bin\IPData.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPData\bin\IPData.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPData\bin\IPData.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPData\obj\Debug\IPData.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPData\obj\Debug\IPData.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPData\obj\Debug\IPData.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPData\bin\IPData.dll.config
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPData\bin\IPData.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPData\bin\IPData.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPData\bin\IPData.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPData\obj\Debug\IPData.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPData\obj\Debug\IPData.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPData\obj\Debug\IPData.pdb

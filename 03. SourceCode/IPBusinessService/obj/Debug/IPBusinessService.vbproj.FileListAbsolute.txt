@@ -8,3 +8,33 @@ C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPBusinessServic
 C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPBusinessService\obj\Debug\IPBusinessService.dll
 C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPBusinessService\obj\Debug\IPBusinessService.xml
 C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPBusinessService\obj\Debug\IPBusinessService.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\bin\IPBusinessService.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\bin\IPBusinessService.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\bin\IPBusinessService.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\bin\IPException.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\bin\IPException.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\bin\IPException.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.vbprojResolveAssemblyReference.cache
+G:\Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\bin\IPBusinessService.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\bin\IPBusinessService.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\bin\IPBusinessService.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\bin\IPException.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\bin\IPException.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\bin\IPException.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.vbprojResolveAssemblyReference.cache
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\bin\IPBusinessService.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\bin\IPBusinessService.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\bin\IPBusinessService.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\bin\IPException.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\bin\IPException.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\bin\IPException.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.vbprojResolveAssemblyReference.cache
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPBusinessService\obj\Debug\IPBusinessService.pdb

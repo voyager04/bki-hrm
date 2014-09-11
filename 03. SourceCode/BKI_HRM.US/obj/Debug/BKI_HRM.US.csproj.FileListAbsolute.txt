@@ -3,3 +3,98 @@ C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\BKI_HRM.US\bin\D
 C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\BKI_HRM.US\obj\Debug\BKI_HRM.US.csprojResolveAssemblyReference.cache
 C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\BKI_HRM.US\obj\Debug\BKI_HRM.US.dll
 C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\BKI_HRM.US\obj\Debug\BKI_HRM.US.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\BKI_HRM.US.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\BKI_HRM.US.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\BKI_HRM.DS.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPBusinessService.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPCommon.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPData.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPException.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPSystemAdmin.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPUserService.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\C1.Win.C1FlexGrid.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\C1.Win.C1FlexGrid.Classic.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\CrystalDecisions.Shared.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\CrystalDecisions.Windows.Forms.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\SiSButton.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\C1.Common.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\CrystalDecisions.ReportSource.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\BKI_HRM.DS.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPBusinessService.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPBusinessService.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPCommon.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPCommon.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPData.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPData.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPException.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPException.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPSystemAdmin.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPSystemAdmin.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPUserService.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPUserService.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\obj\Debug\BKI_HRM.US.csprojResolveAssemblyReference.cache
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\obj\Debug\BKI_HRM.US.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\obj\Debug\BKI_HRM.US.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\BKI_HRM.US.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\BKI_HRM.US.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\BKI_HRM.DS.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPBusinessService.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPCommon.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPData.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPException.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPSystemAdmin.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPUserService.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\C1.Win.C1FlexGrid.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\C1.Win.C1FlexGrid.Classic.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\CrystalDecisions.Shared.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\CrystalDecisions.Windows.Forms.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\SiSButton.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\C1.Common.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\CrystalDecisions.ReportSource.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\BKI_HRM.DS.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPBusinessService.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPBusinessService.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPCommon.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPCommon.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPData.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPData.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPException.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPException.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPSystemAdmin.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPSystemAdmin.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPUserService.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPUserService.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\obj\Debug\BKI_HRM.US.csprojResolveAssemblyReference.cache
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\obj\Debug\BKI_HRM.US.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\obj\Debug\BKI_HRM.US.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\BKI_HRM.US.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\BKI_HRM.US.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\BKI_HRM.DS.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPBusinessService.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPCommon.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPData.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPException.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPUserService.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\C1.Win.C1FlexGrid.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\C1.Win.C1FlexGrid.Classic.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\CrystalDecisions.Shared.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\CrystalDecisions.Windows.Forms.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\C1.Common.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\CrystalDecisions.ReportSource.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\BKI_HRM.DS.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPBusinessService.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPBusinessService.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPCommon.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPCommon.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPData.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPData.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPException.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPException.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPUserService.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\bin\Debug\IPUserService.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\obj\Debug\BKI_HRM.US.csprojResolveAssemblyReference.cache
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\obj\Debug\BKI_HRM.US.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.US\obj\Debug\BKI_HRM.US.pdb

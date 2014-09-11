@@ -13,3 +13,11 @@ D:\4. Work\1. BKI\3. Project\BKI_HRM_V1\03. SourceCode\IPComponent\obj\x86\Debug
 D:\4. Work\1. BKI\3. Project\BKI_HRM_V1\03. SourceCode\IPComponent\obj\x86\Debug\IPComponent.csproj.GenerateResource.Cache
 D:\4. Work\1. BKI\3. Project\BKI_HRM_V1\03. SourceCode\IPComponent\obj\x86\Debug\IPComponent.dll
 D:\4. Work\1. BKI\3. Project\BKI_HRM_V1\03. SourceCode\IPComponent\obj\x86\Debug\IPComponent.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\IPComponent\bin\Debug\IPComponent.dll.config
+G:\Work\Project\BKI_HRM\03. SourceCode\IPComponent\bin\Debug\IPComponent.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPComponent\bin\Debug\IPComponent.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\IPComponent\obj\x86\Debug\IPComponent.Form1.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\IPComponent\obj\x86\Debug\IP.Core.IPComponent.Properties.Resources.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\IPComponent\obj\x86\Debug\IPComponent.csproj.GenerateResource.Cache
+G:\Work\Project\BKI_HRM\03. SourceCode\IPComponent\obj\x86\Debug\IPComponent.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPComponent\obj\x86\Debug\IPComponent.pdb

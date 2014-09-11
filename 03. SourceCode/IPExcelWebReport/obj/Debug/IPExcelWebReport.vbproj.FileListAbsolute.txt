@@ -10,3 +10,39 @@ C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPExcelWebReport
 C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPExcelWebReport\obj\Debug\IPExcelWebReport.dll
 C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPExcelWebReport\obj\Debug\IPExcelWebReport.xml
 C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPExcelWebReport\obj\Debug\IPExcelWebReport.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\bin\IPExcelWebReport.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\bin\IPExcelWebReport.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\bin\IPExcelWebReport.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\bin\C1.Win.C1FlexGrid.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\bin\Interop.Excel.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\bin\Interop.Microsoft.Office.Core.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\bin\Interop.Office.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\bin\C1.Common.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\obj\Debug\IPExcelWebReport.vbprojResolveAssemblyReference.cache
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\obj\Debug\IPExcelWebReport.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\obj\Debug\IPExcelWebReport.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\obj\Debug\IPExcelWebReport.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\bin\IPExcelWebReport.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\bin\IPExcelWebReport.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\bin\IPExcelWebReport.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\bin\C1.Win.C1FlexGrid.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\bin\Interop.Excel.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\bin\Interop.Microsoft.Office.Core.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\bin\Interop.Office.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\bin\C1.Common.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\obj\Debug\IPExcelWebReport.vbprojResolveAssemblyReference.cache
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\obj\Debug\IPExcelWebReport.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\obj\Debug\IPExcelWebReport.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\obj\Debug\IPExcelWebReport.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\bin\IPExcelWebReport.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\bin\IPExcelWebReport.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\bin\IPExcelWebReport.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\bin\C1.Win.C1FlexGrid.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\bin\Interop.Excel.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\bin\Interop.Microsoft.Office.Core.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\bin\Interop.Office.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\bin\C1.Common.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\obj\Debug\IPExcelWebReport.vbprojResolveAssemblyReference.cache
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\obj\Debug\IPExcelWebReport.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\obj\Debug\IPExcelWebReport.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelWebReport\obj\Debug\IPExcelWebReport.pdb
