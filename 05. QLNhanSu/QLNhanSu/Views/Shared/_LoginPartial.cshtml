@@ -1,0 +1,31 @@
+﻿@if (Request.IsAuthenticated)
+{
+    <ul class="nav navbar-nav navbar-right">
+        @using QLNhanSu.Models
+        @{
+            var db = new BKI_HRMEntities();
+            var userAcount = db.HT_NGUOI_SU_DUNG_WEB.FirstOrDefault(m => m.TEN_TRUY_CAP == User.Identity.Name);
+        }
+        <li>@Html.ActionLink(userAcount.TEN, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })</li>
+        <li>
+            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+            {
+                @Html.AntiForgeryToken()
+                <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+            }
+        </li>
+    </ul>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        @*<li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
+        <li>
+            @using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = ViewBag.ReturnUrl }))
+            {
+                @Html.AntiForgeryToken()
+                <button id="btnLoginGoogle" type="submit" name="provider" value="google" title="Log in using your Google account">Log in</button>
+            }
+        </li>
+    </ul>
+}
