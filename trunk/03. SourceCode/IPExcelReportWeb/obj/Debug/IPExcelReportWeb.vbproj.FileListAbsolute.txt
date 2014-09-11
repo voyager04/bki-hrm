@@ -7,3 +7,33 @@ C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPExcelReportWeb
 C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPExcelReportWeb\obj\Debug\IPExcelReportWeb.dll
 C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPExcelReportWeb\obj\Debug\IPExcelReportWeb.xml
 C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPExcelReportWeb\obj\Debug\IPExcelReportWeb.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\bin\Debug\IPExcelReportWeb.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\bin\Debug\IPExcelReportWeb.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\bin\Debug\IPExcelReportWeb.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\bin\Debug\C1.Common.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\obj\Debug\IPExcelReportWeb.vbprojResolveAssemblyReference.cache
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\obj\Debug\IPExcelReportWeb.Resources.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\obj\Debug\IPExcelReportWeb.vbproj.GenerateResource.Cache
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\obj\Debug\IPExcelReportWeb.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\obj\Debug\IPExcelReportWeb.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\obj\Debug\IPExcelReportWeb.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\bin\Debug\IPExcelReportWeb.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\bin\Debug\IPExcelReportWeb.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\bin\Debug\IPExcelReportWeb.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\bin\Debug\C1.Common.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\obj\Debug\IPExcelReportWeb.vbprojResolveAssemblyReference.cache
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\obj\Debug\IPExcelReportWeb.Resources.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\obj\Debug\IPExcelReportWeb.vbproj.GenerateResource.Cache
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\obj\Debug\IPExcelReportWeb.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\obj\Debug\IPExcelReportWeb.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\obj\Debug\IPExcelReportWeb.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\bin\Debug\IPExcelReportWeb.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\bin\Debug\IPExcelReportWeb.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\bin\Debug\IPExcelReportWeb.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\bin\Debug\C1.Common.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\obj\Debug\IPExcelReportWeb.vbprojResolveAssemblyReference.cache
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\obj\Debug\IPExcelReportWeb.Resources.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\obj\Debug\IPExcelReportWeb.vbproj.GenerateResource.Cache
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\obj\Debug\IPExcelReportWeb.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\obj\Debug\IPExcelReportWeb.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReportWeb\obj\Debug\IPExcelReportWeb.pdb

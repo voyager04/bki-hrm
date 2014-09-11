@@ -15,11 +15,6 @@ IPExcelReport
 	<param name="i_iSheetStartRow"></param>
 	<returns></returns>
 	<remarks></remarks>
-</member><member name="M:IP.Core.IPExcelReport.CObjectExportColumn.ExportWithoutFixedRowsAsp">
-	<summary>
- Dùng trong ASP.NET
- </summary>
-	<remarks></remarks>
 </member>
 </members>
 </doc>

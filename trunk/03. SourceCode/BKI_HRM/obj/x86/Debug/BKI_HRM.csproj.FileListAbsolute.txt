@@ -8,3 +8,359 @@ C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\BKI_HRM\obj\x86\
 D:\QLNS-HRM\03. SourceCode\BKI_HRM\bin\Debug\BKI_HRM.exe.config
 D:\QLNS-HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.exe
 D:\QLNS-HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\BKI_HRM.exe.config
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.csproj.ResolveComReference.cache
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.exe
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\BKI_HRM.exe
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\BKI_HRM.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\BKI_HRM.DS.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\BKI_HRM.US.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\C1.Common.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\C1.Win.C1FlexGrid.Classic.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\C1.Win.C1FlexGrid.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\C1.Win.C1Input.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IP.Core.IPWordReport.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPBusinessService.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPCommon.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPComponent.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPData.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPExcelReport.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPExcelWebReport.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPException.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPSystemAdmin.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPUserService.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\SiSButton.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\SiSMenu.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\CrystalDecisions.Shared.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\CrystalDecisions.Windows.Forms.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\Interop.Excel.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\Interop.Word.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\CrystalDecisions.ReportSource.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\Interop.VBIDE.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\BKI_HRM.DS.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\BKI_HRM.US.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPBusinessService.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPBusinessService.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPCommon.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPCommon.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPData.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPData.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPExcelReport.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPExcelReport.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPExcelWebReport.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPExcelWebReport.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPException.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPException.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPSystemAdmin.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPSystemAdmin.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPUserService.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPUserService.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IP.Core.IPWordReport.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IP.Core.IPWordReport.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPComponent.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.csprojResolveAssemblyReference.cache
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f103_bao_cao_tra_cuu_nhan_su.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f104_bao_cao_nhan_su_theo_phong_ban.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f200_V_GD_QUA_TRINH_LAM_VIEC.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f300_V_GD_HOP_DONG_LAO_DONG.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f402_BAO_CAO_NHAN_SU_CHUC_VU.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f403_BAO_CAO_NHAN_SU_CAP_BAC.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f404_GD_QUA_TRINH_CONG_TAC.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f502_bao_cao_du_an.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f702_bao_cao_hdld.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f101_v_dm_don_vi.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.DanhMuc.f102_v_dm_don_vi_de.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f201_dm_nhan_su.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f201_DM_NHAN_SU_DE.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f401_V_DM_CHUC_VU_DE.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f401_V_DM_CHUC_VU.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.DanhMuc.F600_V_DM_QUYET_DINH_DE.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f600_v_dm_quyet_dinh.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.DanhMuc.F603_dm_cap_bac_de.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.F602_v_dm_trang_thai_ung_vien.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.DanhMuc.F602_v_dm_trang_thai_ung_vien_de.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.F604_v_dm_cap_bac.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f703_dm_phap_nhan.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.DanhMuc.f703_dm_phap_nhan_DE.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f400_Main.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f990_ht_form.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f991_v_ht_control_in_form.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.HeThong.f992_phan_quyen_he_thong_de.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f993_phan_quyen_he_thong.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.HeThong.f994_phan_quyen_detail.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.HeThong.f995_ht_phan_quyen_cho_nhom.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.HeThong.f996_ht_nhom_nguoi_su_dung_de.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f997_ht_nhom_nguoi_su_dung.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f998_ht_nguoi_su_dung_de.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f999_ht_nguoi_su_dung.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f105_v_gd_chi_tiet_cap_bac.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f202_V_GD_QUA_TRINH_LAM_VIEC.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f202_v_gd_qua_trinh_lam_viec_de.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f203_v_gd_trang_thai_lao_dong.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f203_v_gd_trang_thai_lao_dong_de.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.F500_DM_DU_AN.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.NghiepVu.f500_dm_du_an_detail.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.NghiepVu.F500_gd_chi_tiet_du_an_de.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f501_v_dm_nhan_su_du_an.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.NghiepVu.f701_v_gd_hop_dong_lao_dong_DE.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.NghiepVu.f701_v_gd_hop_dong_lao_dong_View.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f701_v_hop_dong_lao_dong.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.Properties.Resources.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.csproj.GenerateResource.Cache
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.exe.licenses
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f405_bao_cao_chuc_vu_trang_thai.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f204_dm_headcount.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f204_dm_headcount_de.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f201_dm_nhan_su_dialog.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f107_chuyen_nhan_vien.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f108_chuyen_don_vi.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f106_v_gd_chi_tiet_cap_bac_DE.resources
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f503_nhan_vien_sap_quay_tro_lai.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\BKI_HRM.exe.config
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.csproj.ResolveComReference.cache
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.exe
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\BKI_HRM.exe
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\BKI_HRM.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\BKI_HRM.DS.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\BKI_HRM.US.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\C1.Common.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\C1.Win.C1FlexGrid.Classic.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\C1.Win.C1FlexGrid.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\C1.Win.C1Input.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IP.Core.IPWordReport.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPBusinessService.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPCommon.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPComponent.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPData.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPExcelReport.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPExcelWebReport.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPException.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPSystemAdmin.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPUserService.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\SiSButton.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\SiSMenu.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\CrystalDecisions.Shared.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\CrystalDecisions.Windows.Forms.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\Interop.Excel.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\Interop.Word.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\CrystalDecisions.ReportSource.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\Interop.VBIDE.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\BKI_HRM.DS.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\BKI_HRM.US.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPBusinessService.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPBusinessService.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPCommon.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPCommon.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPData.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPData.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPExcelReport.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPExcelReport.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPExcelWebReport.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPExcelWebReport.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPException.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPException.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPSystemAdmin.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPSystemAdmin.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPUserService.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPUserService.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IP.Core.IPWordReport.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IP.Core.IPWordReport.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPComponent.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.csprojResolveAssemblyReference.cache
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f103_bao_cao_tra_cuu_nhan_su.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f104_bao_cao_nhan_su_theo_phong_ban.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f200_V_GD_QUA_TRINH_LAM_VIEC.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f300_V_GD_HOP_DONG_LAO_DONG.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f402_BAO_CAO_NHAN_SU_CHUC_VU.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f403_BAO_CAO_NHAN_SU_CAP_BAC.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f404_GD_QUA_TRINH_CONG_TAC.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f405_bao_cao_chuc_vu_trang_thai.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f502_bao_cao_du_an.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f702_bao_cao_hdld.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f101_v_dm_don_vi.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.DanhMuc.f102_v_dm_don_vi_de.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f107_chuyen_nhan_vien.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f108_chuyen_don_vi.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f201_dm_nhan_su.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f201_DM_NHAN_SU_DE.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f201_dm_nhan_su_dialog.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f204_dm_headcount.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f204_dm_headcount_de.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f401_V_DM_CHUC_VU_DE.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f401_V_DM_CHUC_VU.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.DanhMuc.F600_V_DM_QUYET_DINH_DE.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f600_v_dm_quyet_dinh.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.DanhMuc.F603_dm_cap_bac_de.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.F602_v_dm_trang_thai_ung_vien.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.DanhMuc.F602_v_dm_trang_thai_ung_vien_de.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.F604_v_dm_cap_bac.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f703_dm_phap_nhan.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.DanhMuc.f703_dm_phap_nhan_DE.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f400_Main.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f990_ht_form.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f991_v_ht_control_in_form.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.HeThong.f992_phan_quyen_he_thong_de.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f993_phan_quyen_he_thong.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.HeThong.f994_phan_quyen_detail.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.HeThong.f995_ht_phan_quyen_cho_nhom.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.HeThong.f996_ht_nhom_nguoi_su_dung_de.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f997_ht_nhom_nguoi_su_dung.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f998_ht_nguoi_su_dung_de.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f999_ht_nguoi_su_dung.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f106_v_gd_chi_tiet_cap_bac_DE.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f105_v_gd_chi_tiet_cap_bac.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f202_V_GD_QUA_TRINH_LAM_VIEC.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f202_v_gd_qua_trinh_lam_viec_de.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f203_v_gd_trang_thai_lao_dong.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f203_v_gd_trang_thai_lao_dong_de.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.F500_DM_DU_AN.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.NghiepVu.f500_dm_du_an_detail.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.NghiepVu.F500_gd_chi_tiet_du_an_de.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f501_v_dm_nhan_su_du_an.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f503_nhan_vien_sap_quay_tro_lai.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.NghiepVu.f701_v_gd_hop_dong_lao_dong_DE.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.NghiepVu.f701_v_gd_hop_dong_lao_dong_View.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f701_v_hop_dong_lao_dong.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.Properties.Resources.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.csproj.GenerateResource.Cache
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.exe.licenses
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.F205_V_GD_QUYET_DINH.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f406_bao_cao_bo_nhiem.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f407_bao_cao_bo_nhiem.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f408_bao_cao_don_vi_trang_thai.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f409_bao_cao_nghi_viec.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f206_v_gd_cong_tac.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f206_v_gd_cong_tac_de.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f400_dialog.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f206_v_gd_cong_tac_de_de.resources
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f206_v_gd_cong_tac_view_document.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\BKI_HRM.exe.config
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.csproj.ResolveComReference.cache
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.exe
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\BKI_HRM.exe
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\BKI_HRM.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\BKI_HRM.DS.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\BKI_HRM.US.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\C1.Common.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\C1.Win.C1FlexGrid.Classic.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\C1.Win.C1FlexGrid.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\C1.Win.C1Input.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IP.Core.IPWordReport.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPBusinessService.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPCommon.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPComponent.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPData.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPExcelReport.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPExcelWebReport.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPException.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPSystemAdmin.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPUserService.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\SiSButton.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\SiSMenu.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\CrystalDecisions.Shared.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\CrystalDecisions.Windows.Forms.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\Interop.Excel.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\Interop.Word.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\CrystalDecisions.ReportSource.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\Interop.VBIDE.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\BKI_HRM.DS.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\BKI_HRM.US.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPBusinessService.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPBusinessService.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPCommon.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPCommon.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPData.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPData.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPExcelReport.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPExcelReport.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPExcelWebReport.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPExcelWebReport.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPException.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPException.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPSystemAdmin.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPSystemAdmin.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPUserService.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPUserService.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IP.Core.IPWordReport.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IP.Core.IPWordReport.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\IPComponent.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.csprojResolveAssemblyReference.cache
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f103_bao_cao_tra_cuu_nhan_su.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f104_bao_cao_nhan_su_theo_phong_ban.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f200_V_GD_QUA_TRINH_LAM_VIEC.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f300_V_GD_HOP_DONG_LAO_DONG.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f402_BAO_CAO_NHAN_SU_CHUC_VU.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f403_BAO_CAO_NHAN_SU_CAP_BAC.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f404_GD_QUA_TRINH_CONG_TAC.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f405_bao_cao_chuc_vu_trang_thai.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f406_bao_cao_bo_nhiem.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f407_bao_cao_bo_nhiem.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f408_bao_cao_don_vi_trang_thai.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f409_bao_cao_nghi_viec.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f502_bao_cao_du_an.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f702_bao_cao_hdld.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f101_v_dm_don_vi.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.DanhMuc.f102_v_dm_don_vi_de.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.F205_V_GD_QUYET_DINH.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f400_dialog.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f107_chuyen_nhan_vien.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f108_chuyen_don_vi.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f201_dm_nhan_su.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f201_DM_NHAN_SU_DE.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f201_dm_nhan_su_dialog.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f204_dm_headcount.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f204_dm_headcount_de.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f401_V_DM_CHUC_VU_DE.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f401_V_DM_CHUC_VU.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.DanhMuc.F600_V_DM_QUYET_DINH_DE.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f600_v_dm_quyet_dinh.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.DanhMuc.F603_dm_cap_bac_de.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.F602_v_dm_trang_thai_ung_vien.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.DanhMuc.F602_v_dm_trang_thai_ung_vien_de.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.F604_v_dm_cap_bac.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f703_dm_phap_nhan.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.DanhMuc.f703_dm_phap_nhan_DE.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f400_Main.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f990_ht_form.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f991_v_ht_control_in_form.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.HeThong.f992_phan_quyen_he_thong_de.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f993_phan_quyen_he_thong.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.HeThong.f994_phan_quyen_detail.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.HeThong.f995_ht_phan_quyen_cho_nhom.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.HeThong.f996_ht_nhom_nguoi_su_dung_de.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f997_ht_nhom_nguoi_su_dung.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f998_ht_nguoi_su_dung_de.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f999_ht_nguoi_su_dung.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f106_v_gd_chi_tiet_cap_bac_DE.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f105_v_gd_chi_tiet_cap_bac.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f202_V_GD_QUA_TRINH_LAM_VIEC.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f202_v_gd_qua_trinh_lam_viec_de.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f203_v_gd_trang_thai_lao_dong.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f203_v_gd_trang_thai_lao_dong_de.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f206_v_gd_cong_tac.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f206_v_gd_cong_tac_de.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f206_v_gd_cong_tac_de_de.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f206_v_gd_cong_tac_view_document.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.F500_DM_DU_AN.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.NghiepVu.f500_dm_du_an_detail.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.NghiepVu.F500_gd_chi_tiet_du_an_de.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f501_v_dm_nhan_su_du_an.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f503_nhan_vien_sap_quay_tro_lai.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.NghiepVu.f701_v_gd_hop_dong_lao_dong_DE.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.NghiepVu.f701_v_gd_hop_dong_lao_dong_View.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f701_v_hop_dong_lao_dong.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.Properties.Resources.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.csproj.GenerateResource.Cache
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.exe.licenses
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.f202_v_gd_qua_trinh_lam_viec_view.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\Interop.Microsoft.Office.Core.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\Interop.Office.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\bin\Debug\Microsoft.Office.Interop.Excel.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.DanhMuc.f410_chuyen_nhan_vien.resources
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM\obj\x86\Debug\BKI_HRM.AlertForm.resources

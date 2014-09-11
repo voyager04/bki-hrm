@@ -3,3 +3,21 @@ C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\BKI_HRM.DS\bin\D
 C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\BKI_HRM.DS\bin\Debug\BKI_HRM.DS.pdb
 C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\BKI_HRM.DS\obj\Debug\BKI_HRM.DS.dll
 C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\BKI_HRM.DS\obj\Debug\BKI_HRM.DS.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.DS\bin\Debug\BKI_HRM.DS.dll.config
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.DS\bin\Debug\BKI_HRM.DS.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.DS\bin\Debug\BKI_HRM.DS.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.DS\obj\Debug\BKI_HRM.DS.csprojResolveAssemblyReference.cache
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.DS\obj\Debug\BKI_HRM.DS.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.DS\obj\Debug\BKI_HRM.DS.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.DS\bin\Debug\BKI_HRM.DS.dll.config
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.DS\bin\Debug\BKI_HRM.DS.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.DS\bin\Debug\BKI_HRM.DS.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.DS\obj\Debug\BKI_HRM.DS.csprojResolveAssemblyReference.cache
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.DS\obj\Debug\BKI_HRM.DS.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.DS\obj\Debug\BKI_HRM.DS.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.DS\bin\Debug\BKI_HRM.DS.dll.config
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.DS\bin\Debug\BKI_HRM.DS.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.DS\bin\Debug\BKI_HRM.DS.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.DS\obj\Debug\BKI_HRM.DS.csprojResolveAssemblyReference.cache
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.DS\obj\Debug\BKI_HRM.DS.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\BKI_HRM.DS\obj\Debug\BKI_HRM.DS.pdb

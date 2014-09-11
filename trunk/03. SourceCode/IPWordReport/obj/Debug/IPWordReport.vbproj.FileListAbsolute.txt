@@ -11,3 +11,42 @@ C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPWordReport\obj
 C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPWordReport\obj\Debug\IP.Core.IPWordReport.dll
 C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPWordReport\obj\Debug\IP.Core.IPWordReport.xml
 C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPWordReport\obj\Debug\IP.Core.IPWordReport.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\IPWordReport\bin\IP.Core.IPWordReport.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPWordReport\bin\IP.Core.IPWordReport.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\IPWordReport\bin\IP.Core.IPWordReport.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\IPWordReport\bin\Interop.Microsoft.Office.Core.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPWordReport\bin\Interop.Word.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPWordReport\bin\Interop.VBIDE.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPWordReport\obj\Debug\IPWordReport.vbprojResolveAssemblyReference.cache
+G:\Work\Project\BKI_HRM\03. SourceCode\IPWordReport\obj\Debug\Interop.Microsoft.Office.Core.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPWordReport\obj\Debug\Interop.VBIDE.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPWordReport\obj\Debug\IPWordReport.vbproj.ResolveComReference.cache
+G:\Work\Project\BKI_HRM\03. SourceCode\IPWordReport\obj\Debug\IP.Core.IPWordReport.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPWordReport\obj\Debug\IP.Core.IPWordReport.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\IPWordReport\obj\Debug\IP.Core.IPWordReport.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPWordReport\bin\IP.Core.IPWordReport.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPWordReport\bin\IP.Core.IPWordReport.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPWordReport\bin\IP.Core.IPWordReport.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPWordReport\bin\Interop.Microsoft.Office.Core.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPWordReport\bin\Interop.Word.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPWordReport\bin\Interop.VBIDE.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPWordReport\obj\Debug\IPWordReport.vbprojResolveAssemblyReference.cache
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPWordReport\obj\Debug\Interop.Microsoft.Office.Core.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPWordReport\obj\Debug\Interop.VBIDE.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPWordReport\obj\Debug\IPWordReport.vbproj.ResolveComReference.cache
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPWordReport\obj\Debug\IP.Core.IPWordReport.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPWordReport\obj\Debug\IP.Core.IPWordReport.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPWordReport\obj\Debug\IP.Core.IPWordReport.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPWordReport\bin\IP.Core.IPWordReport.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPWordReport\bin\IP.Core.IPWordReport.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPWordReport\bin\IP.Core.IPWordReport.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPWordReport\bin\Interop.Microsoft.Office.Core.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPWordReport\bin\Interop.Word.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPWordReport\bin\Interop.VBIDE.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPWordReport\obj\Debug\IPWordReport.vbprojResolveAssemblyReference.cache
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPWordReport\obj\Debug\Interop.Microsoft.Office.Core.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPWordReport\obj\Debug\Interop.VBIDE.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPWordReport\obj\Debug\IPWordReport.vbproj.ResolveComReference.cache
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPWordReport\obj\Debug\IP.Core.IPWordReport.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPWordReport\obj\Debug\IP.Core.IPWordReport.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPWordReport\obj\Debug\IP.Core.IPWordReport.pdb

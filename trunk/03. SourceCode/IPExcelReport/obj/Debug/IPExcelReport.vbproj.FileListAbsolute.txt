@@ -19,3 +19,66 @@ C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPExcelReport\ob
 C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPExcelReport\obj\Debug\IPExcelReport.dll
 C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPExcelReport\obj\Debug\IPExcelReport.xml
 C:\Users\AnZVanie\Documents\Visual Studio 2010\Projects\BKI_HRM\IPExcelReport\obj\Debug\IPExcelReport.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\IPExcelReport.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\IPExcelReport.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\IPExcelReport.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\C1.Win.C1FlexGrid.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\Interop.Excel.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\Interop.Microsoft.Office.Core.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\Interop.Office.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\IPCommon.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\C1.Win.C1FlexGrid.Classic.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\CrystalDecisions.Shared.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\CrystalDecisions.Windows.Forms.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\CrystalDecisions.CrystalReports.Engine.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\C1.Common.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\CrystalDecisions.ReportSource.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\IPCommon.pdb
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\IPCommon.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.vbprojResolveAssemblyReference.cache
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.dll.licenses
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.dll
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.xml
+G:\Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\IPExcelReport.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\IPExcelReport.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\IPExcelReport.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\C1.Win.C1FlexGrid.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\Interop.Excel.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\Interop.Microsoft.Office.Core.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\Interop.Office.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\IPCommon.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\C1.Win.C1FlexGrid.Classic.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\CrystalDecisions.Shared.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\CrystalDecisions.Windows.Forms.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\CrystalDecisions.CrystalReports.Engine.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\C1.Common.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\CrystalDecisions.ReportSource.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\IPCommon.pdb
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\IPCommon.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.vbprojResolveAssemblyReference.cache
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.dll.licenses
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.dll
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.xml
+G:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\IPExcelReport.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\IPExcelReport.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\IPExcelReport.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\C1.Win.C1FlexGrid.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\Interop.Excel.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\Interop.Microsoft.Office.Core.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\Interop.Office.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\IPCommon.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\C1.Win.C1FlexGrid.Classic.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\CrystalDecisions.Shared.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\CrystalDecisions.Windows.Forms.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\CrystalDecisions.CrystalReports.Engine.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\C1.Common.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\CrystalDecisions.ReportSource.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\IPCommon.pdb
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\bin\IPCommon.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.vbprojResolveAssemblyReference.cache
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.dll.licenses
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.dll
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.xml
+F:\01. Work\Project\BKI_HRM\03. SourceCode\IPExcelReport\obj\Debug\IPExcelReport.pdb
