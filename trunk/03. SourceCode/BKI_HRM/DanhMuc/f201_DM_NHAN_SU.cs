@@ -403,7 +403,7 @@ namespace BKI_HRM
             this.m_tpg_thong_tin_khac.Location = new System.Drawing.Point(4, 22);
             this.m_tpg_thong_tin_khac.Name = "m_tpg_thong_tin_khac";
             this.m_tpg_thong_tin_khac.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tpg_thong_tin_khac.Size = new System.Drawing.Size(1273, 227);
+            this.m_tpg_thong_tin_khac.Size = new System.Drawing.Size(1272, 227);
             this.m_tpg_thong_tin_khac.TabIndex = 3;
             this.m_tpg_thong_tin_khac.Text = "Thông tin khác";
             this.m_tpg_thong_tin_khac.ToolTipText = "Thông tin khác";
@@ -420,7 +420,7 @@ namespace BKI_HRM
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox4.Location = new System.Drawing.Point(3, 103);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1267, 116);
+            this.groupBox4.Size = new System.Drawing.Size(1266, 116);
             this.groupBox4.TabIndex = 71;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Người liên hệ";
@@ -492,7 +492,7 @@ namespace BKI_HRM
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1267, 100);
+            this.groupBox3.Size = new System.Drawing.Size(1266, 100);
             this.groupBox3.TabIndex = 70;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Trình độ học vấn";
@@ -575,7 +575,7 @@ namespace BKI_HRM
             this.m_tpg_hop_dong.Controls.Add(this.m_grv_hop_dong_ld);
             this.m_tpg_hop_dong.Location = new System.Drawing.Point(4, 22);
             this.m_tpg_hop_dong.Name = "m_tpg_hop_dong";
-            this.m_tpg_hop_dong.Size = new System.Drawing.Size(1273, 227);
+            this.m_tpg_hop_dong.Size = new System.Drawing.Size(1272, 227);
             this.m_tpg_hop_dong.TabIndex = 5;
             this.m_tpg_hop_dong.Text = "Hợp đồng lao động";
             this.m_tpg_hop_dong.ToolTipText = "Hợp đồng lao động";
@@ -590,7 +590,7 @@ namespace BKI_HRM
             this.m_cmd_them_hop_dong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_them_hop_dong.ImageIndex = 2;
             this.m_cmd_them_hop_dong.ImageList = this.ImageList;
-            this.m_cmd_them_hop_dong.Location = new System.Drawing.Point(1158, 198);
+            this.m_cmd_them_hop_dong.Location = new System.Drawing.Point(1157, 198);
             this.m_cmd_them_hop_dong.Name = "m_cmd_them_hop_dong";
             this.m_cmd_them_hop_dong.Size = new System.Drawing.Size(115, 29);
             this.m_cmd_them_hop_dong.TabIndex = 34;
@@ -604,7 +604,7 @@ namespace BKI_HRM
             this.m_grv_hop_dong_ld.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_grv_hop_dong_ld.Location = new System.Drawing.Point(0, 0);
             this.m_grv_hop_dong_ld.Name = "m_grv_hop_dong_ld";
-            this.m_grv_hop_dong_ld.Size = new System.Drawing.Size(1273, 198);
+            this.m_grv_hop_dong_ld.Size = new System.Drawing.Size(1272, 198);
             this.m_grv_hop_dong_ld.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_hop_dong_ld.Styles"));
             this.m_grv_hop_dong_ld.TabIndex = 21;
             // 
@@ -618,7 +618,7 @@ namespace BKI_HRM
             this.m_tpg_du_an.Location = new System.Drawing.Point(4, 22);
             this.m_tpg_du_an.Name = "m_tpg_du_an";
             this.m_tpg_du_an.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tpg_du_an.Size = new System.Drawing.Size(1273, 227);
+            this.m_tpg_du_an.Size = new System.Drawing.Size(1272, 227);
             this.m_tpg_du_an.TabIndex = 6;
             this.m_tpg_du_an.Text = "Dự án";
             this.m_tpg_du_an.ToolTipText = "Dự án";
@@ -637,10 +637,11 @@ namespace BKI_HRM
             // 
             this.m_grv_du_an.AllowEditing = false;
             this.m_grv_du_an.ColumnInfo = resources.GetString("m_grv_du_an.ColumnInfo");
+            this.m_grv_du_an.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_du_an.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_du_an.Location = new System.Drawing.Point(3, 25);
             this.m_grv_du_an.Name = "m_grv_du_an";
-            this.m_grv_du_an.Size = new System.Drawing.Size(1267, 199);
+            this.m_grv_du_an.Size = new System.Drawing.Size(1266, 199);
             this.m_grv_du_an.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_du_an.Styles"));
             this.m_grv_du_an.TabIndex = 21;
             // 
@@ -680,7 +681,7 @@ namespace BKI_HRM
             this.m_tpg_chuc_vu.Controls.Add(this.m_grv_chuc_vu_hien_tai);
             this.m_tpg_chuc_vu.Location = new System.Drawing.Point(4, 22);
             this.m_tpg_chuc_vu.Name = "m_tpg_chuc_vu";
-            this.m_tpg_chuc_vu.Size = new System.Drawing.Size(1273, 227);
+            this.m_tpg_chuc_vu.Size = new System.Drawing.Size(1272, 227);
             this.m_tpg_chuc_vu.TabIndex = 2;
             this.m_tpg_chuc_vu.Text = "Chức vụ hiện tại";
             this.m_tpg_chuc_vu.ToolTipText = "Chức vụ hiện tại";
@@ -695,7 +696,7 @@ namespace BKI_HRM
             this.m_cmd_update_chuc_vu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update_chuc_vu.ImageIndex = 9;
             this.m_cmd_update_chuc_vu.ImageList = this.ImageList;
-            this.m_cmd_update_chuc_vu.Location = new System.Drawing.Point(928, 200);
+            this.m_cmd_update_chuc_vu.Location = new System.Drawing.Point(927, 200);
             this.m_cmd_update_chuc_vu.Name = "m_cmd_update_chuc_vu";
             this.m_cmd_update_chuc_vu.Size = new System.Drawing.Size(115, 27);
             this.m_cmd_update_chuc_vu.TabIndex = 33;
@@ -710,7 +711,7 @@ namespace BKI_HRM
             this.m_cmd_them_chuc_vu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_them_chuc_vu.ImageIndex = 2;
             this.m_cmd_them_chuc_vu.ImageList = this.ImageList;
-            this.m_cmd_them_chuc_vu.Location = new System.Drawing.Point(1043, 200);
+            this.m_cmd_them_chuc_vu.Location = new System.Drawing.Point(1042, 200);
             this.m_cmd_them_chuc_vu.Name = "m_cmd_them_chuc_vu";
             this.m_cmd_them_chuc_vu.Size = new System.Drawing.Size(115, 27);
             this.m_cmd_them_chuc_vu.TabIndex = 32;
@@ -726,7 +727,7 @@ namespace BKI_HRM
             this.m_cmd_mien_nhiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_mien_nhiem.ImageIndex = 4;
             this.m_cmd_mien_nhiem.ImageList = this.ImageList;
-            this.m_cmd_mien_nhiem.Location = new System.Drawing.Point(1158, 200);
+            this.m_cmd_mien_nhiem.Location = new System.Drawing.Point(1157, 200);
             this.m_cmd_mien_nhiem.Name = "m_cmd_mien_nhiem";
             this.m_cmd_mien_nhiem.Size = new System.Drawing.Size(115, 27);
             this.m_cmd_mien_nhiem.TabIndex = 31;
@@ -737,10 +738,11 @@ namespace BKI_HRM
             // 
             this.m_grv_chuc_vu_hien_tai.AllowEditing = false;
             this.m_grv_chuc_vu_hien_tai.ColumnInfo = resources.GetString("m_grv_chuc_vu_hien_tai.ColumnInfo");
+            this.m_grv_chuc_vu_hien_tai.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_chuc_vu_hien_tai.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_grv_chuc_vu_hien_tai.Location = new System.Drawing.Point(0, 0);
             this.m_grv_chuc_vu_hien_tai.Name = "m_grv_chuc_vu_hien_tai";
-            this.m_grv_chuc_vu_hien_tai.Size = new System.Drawing.Size(1273, 200);
+            this.m_grv_chuc_vu_hien_tai.Size = new System.Drawing.Size(1272, 200);
             this.m_grv_chuc_vu_hien_tai.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_chuc_vu_hien_tai.Styles"));
             this.m_grv_chuc_vu_hien_tai.TabIndex = 21;
             // 
@@ -803,7 +805,7 @@ namespace BKI_HRM
             this.m_txt_trang_thai_hien_tai.Name = "m_txt_trang_thai_hien_tai";
             this.m_txt_trang_thai_hien_tai.ReadOnly = true;
             this.m_txt_trang_thai_hien_tai.Size = new System.Drawing.Size(202, 20);
-            this.m_txt_trang_thai_hien_tai.TabIndex = 77;
+            this.m_txt_trang_thai_hien_tai.TabIndex = 23;
             // 
             // label2
             // 
@@ -821,7 +823,7 @@ namespace BKI_HRM
             this.m_txt_ho_khau.Name = "m_txt_ho_khau";
             this.m_txt_ho_khau.ReadOnly = true;
             this.m_txt_ho_khau.Size = new System.Drawing.Size(305, 20);
-            this.m_txt_ho_khau.TabIndex = 25;
+            this.m_txt_ho_khau.TabIndex = 11;
             // 
             // m_txt_dia_chi
             // 
@@ -830,7 +832,7 @@ namespace BKI_HRM
             this.m_txt_dia_chi.Name = "m_txt_dia_chi";
             this.m_txt_dia_chi.ReadOnly = true;
             this.m_txt_dia_chi.Size = new System.Drawing.Size(337, 20);
-            this.m_txt_dia_chi.TabIndex = 24;
+            this.m_txt_dia_chi.TabIndex = 10;
             // 
             // m_txt_ma_headcount
             // 
@@ -839,7 +841,7 @@ namespace BKI_HRM
             this.m_txt_ma_headcount.Name = "m_txt_ma_headcount";
             this.m_txt_ma_headcount.ReadOnly = true;
             this.m_txt_ma_headcount.Size = new System.Drawing.Size(155, 20);
-            this.m_txt_ma_headcount.TabIndex = 23;
+            this.m_txt_ma_headcount.TabIndex = 22;
             // 
             // m_txt_ma_so_thue
             // 
@@ -848,7 +850,7 @@ namespace BKI_HRM
             this.m_txt_ma_so_thue.Name = "m_txt_ma_so_thue";
             this.m_txt_ma_so_thue.ReadOnly = true;
             this.m_txt_ma_so_thue.Size = new System.Drawing.Size(155, 20);
-            this.m_txt_ma_so_thue.TabIndex = 23;
+            this.m_txt_ma_so_thue.TabIndex = 21;
             // 
             // m_txt_sdt_nha_rieng
             // 
@@ -857,7 +859,7 @@ namespace BKI_HRM
             this.m_txt_sdt_nha_rieng.Name = "m_txt_sdt_nha_rieng";
             this.m_txt_sdt_nha_rieng.ReadOnly = true;
             this.m_txt_sdt_nha_rieng.Size = new System.Drawing.Size(156, 20);
-            this.m_txt_sdt_nha_rieng.TabIndex = 22;
+            this.m_txt_sdt_nha_rieng.TabIndex = 20;
             // 
             // m_txt_so_dtdd
             // 
@@ -866,7 +868,7 @@ namespace BKI_HRM
             this.m_txt_so_dtdd.Name = "m_txt_so_dtdd";
             this.m_txt_so_dtdd.ReadOnly = true;
             this.m_txt_so_dtdd.Size = new System.Drawing.Size(155, 20);
-            this.m_txt_so_dtdd.TabIndex = 21;
+            this.m_txt_so_dtdd.TabIndex = 19;
             // 
             // m_txt_email_ca_nhan
             // 
@@ -875,7 +877,7 @@ namespace BKI_HRM
             this.m_txt_email_ca_nhan.Name = "m_txt_email_ca_nhan";
             this.m_txt_email_ca_nhan.ReadOnly = true;
             this.m_txt_email_ca_nhan.Size = new System.Drawing.Size(306, 20);
-            this.m_txt_email_ca_nhan.TabIndex = 20;
+            this.m_txt_email_ca_nhan.TabIndex = 18;
             // 
             // m_txt_email_co_quan
             // 
@@ -884,7 +886,7 @@ namespace BKI_HRM
             this.m_txt_email_co_quan.Name = "m_txt_email_co_quan";
             this.m_txt_email_co_quan.ReadOnly = true;
             this.m_txt_email_co_quan.Size = new System.Drawing.Size(337, 20);
-            this.m_txt_email_co_quan.TabIndex = 19;
+            this.m_txt_email_co_quan.TabIndex = 17;
             // 
             // m_txt_ngay_cap
             // 
@@ -894,7 +896,7 @@ namespace BKI_HRM
             this.m_txt_ngay_cap.Name = "m_txt_ngay_cap";
             this.m_txt_ngay_cap.ReadOnly = true;
             this.m_txt_ngay_cap.Size = new System.Drawing.Size(121, 20);
-            this.m_txt_ngay_cap.TabIndex = 5;
+            this.m_txt_ngay_cap.TabIndex = 13;
             // 
             // m_txt_gioi_tinh
             // 
@@ -904,7 +906,7 @@ namespace BKI_HRM
             this.m_txt_gioi_tinh.Name = "m_txt_gioi_tinh";
             this.m_txt_gioi_tinh.ReadOnly = true;
             this.m_txt_gioi_tinh.Size = new System.Drawing.Size(66, 20);
-            this.m_txt_gioi_tinh.TabIndex = 5;
+            this.m_txt_gioi_tinh.TabIndex = 7;
             // 
             // m_txt_ngay_sinh
             // 
@@ -914,7 +916,7 @@ namespace BKI_HRM
             this.m_txt_ngay_sinh.Name = "m_txt_ngay_sinh";
             this.m_txt_ngay_sinh.ReadOnly = true;
             this.m_txt_ngay_sinh.Size = new System.Drawing.Size(121, 20);
-            this.m_txt_ngay_sinh.TabIndex = 5;
+            this.m_txt_ngay_sinh.TabIndex = 6;
             // 
             // m_txt_ten
             // 
@@ -942,7 +944,7 @@ namespace BKI_HRM
             this.m_txt_dan_toc.Name = "m_txt_dan_toc";
             this.m_txt_dan_toc.ReadOnly = true;
             this.m_txt_dan_toc.Size = new System.Drawing.Size(155, 20);
-            this.m_txt_dan_toc.TabIndex = 12;
+            this.m_txt_dan_toc.TabIndex = 15;
             // 
             // m_txt_ton_giao
             // 
@@ -951,7 +953,7 @@ namespace BKI_HRM
             this.m_txt_ton_giao.Name = "m_txt_ton_giao";
             this.m_txt_ton_giao.ReadOnly = true;
             this.m_txt_ton_giao.Size = new System.Drawing.Size(121, 20);
-            this.m_txt_ton_giao.TabIndex = 13;
+            this.m_txt_ton_giao.TabIndex = 16;
             // 
             // m_txt_noi_cap
             // 
@@ -960,7 +962,7 @@ namespace BKI_HRM
             this.m_txt_noi_cap.Name = "m_txt_noi_cap";
             this.m_txt_noi_cap.ReadOnly = true;
             this.m_txt_noi_cap.Size = new System.Drawing.Size(306, 20);
-            this.m_txt_noi_cap.TabIndex = 11;
+            this.m_txt_noi_cap.TabIndex = 14;
             // 
             // m_txt_noi_sinh
             // 
@@ -969,7 +971,7 @@ namespace BKI_HRM
             this.m_txt_noi_sinh.Name = "m_txt_noi_sinh";
             this.m_txt_noi_sinh.ReadOnly = true;
             this.m_txt_noi_sinh.Size = new System.Drawing.Size(337, 20);
-            this.m_txt_noi_sinh.TabIndex = 7;
+            this.m_txt_noi_sinh.TabIndex = 8;
             // 
             // m_txt_nguyen_quan
             // 
@@ -978,7 +980,7 @@ namespace BKI_HRM
             this.m_txt_nguyen_quan.Name = "m_txt_nguyen_quan";
             this.m_txt_nguyen_quan.ReadOnly = true;
             this.m_txt_nguyen_quan.Size = new System.Drawing.Size(306, 20);
-            this.m_txt_nguyen_quan.TabIndex = 8;
+            this.m_txt_nguyen_quan.TabIndex = 9;
             // 
             // m_txt_cmnd
             // 
@@ -987,7 +989,7 @@ namespace BKI_HRM
             this.m_txt_cmnd.Name = "m_txt_cmnd";
             this.m_txt_cmnd.ReadOnly = true;
             this.m_txt_cmnd.Size = new System.Drawing.Size(155, 20);
-            this.m_txt_cmnd.TabIndex = 9;
+            this.m_txt_cmnd.TabIndex = 12;
             // 
             // m_lbl_ho_khau
             // 
@@ -1186,7 +1188,7 @@ namespace BKI_HRM
             this.m_tct_chi_tiet_nhan_vien.SelectedIndex = 0;
             this.m_tct_chi_tiet_nhan_vien.Size = new System.Drawing.Size(1280, 253);
             this.m_tct_chi_tiet_nhan_vien.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.m_tct_chi_tiet_nhan_vien.TabIndex = 23;
+            this.m_tct_chi_tiet_nhan_vien.TabIndex = 0;
             this.m_tct_chi_tiet_nhan_vien.SelectedIndexChanged += new System.EventHandler(this.m_tct_chi_tiet_nhan_vien_SelectedIndexChanged);
             // 
             // m_tpg_di_cong_tac
@@ -1199,7 +1201,7 @@ namespace BKI_HRM
             this.m_tpg_di_cong_tac.Location = new System.Drawing.Point(4, 22);
             this.m_tpg_di_cong_tac.Name = "m_tpg_di_cong_tac";
             this.m_tpg_di_cong_tac.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tpg_di_cong_tac.Size = new System.Drawing.Size(1273, 227);
+            this.m_tpg_di_cong_tac.Size = new System.Drawing.Size(1272, 227);
             this.m_tpg_di_cong_tac.TabIndex = 7;
             this.m_tpg_di_cong_tac.Text = "Đi công tác";
             this.m_tpg_di_cong_tac.ToolTipText = "Đi công tác";
@@ -1218,10 +1220,11 @@ namespace BKI_HRM
             // 
             this.m_grv_di_cong_tac.AllowEditing = false;
             this.m_grv_di_cong_tac.ColumnInfo = resources.GetString("m_grv_di_cong_tac.ColumnInfo");
+            this.m_grv_di_cong_tac.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_di_cong_tac.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_di_cong_tac.Location = new System.Drawing.Point(3, 25);
             this.m_grv_di_cong_tac.Name = "m_grv_di_cong_tac";
-            this.m_grv_di_cong_tac.Size = new System.Drawing.Size(1267, 199);
+            this.m_grv_di_cong_tac.Size = new System.Drawing.Size(1266, 199);
             this.m_grv_di_cong_tac.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_di_cong_tac.Styles"));
             this.m_grv_di_cong_tac.TabIndex = 50;
             // 
@@ -1263,7 +1266,7 @@ namespace BKI_HRM
             this.m_tpg_qua_trinh_chuc_vu.Location = new System.Drawing.Point(4, 22);
             this.m_tpg_qua_trinh_chuc_vu.Name = "m_tpg_qua_trinh_chuc_vu";
             this.m_tpg_qua_trinh_chuc_vu.Padding = new System.Windows.Forms.Padding(3);
-            this.m_tpg_qua_trinh_chuc_vu.Size = new System.Drawing.Size(1273, 227);
+            this.m_tpg_qua_trinh_chuc_vu.Size = new System.Drawing.Size(1272, 227);
             this.m_tpg_qua_trinh_chuc_vu.TabIndex = 8;
             this.m_tpg_qua_trinh_chuc_vu.Text = "Quá trình công tác";
             this.m_tpg_qua_trinh_chuc_vu.ToolTipText = "Chức vụ";
@@ -1285,7 +1288,7 @@ namespace BKI_HRM
             this.m_grv_chuc_vu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_chuc_vu.Location = new System.Drawing.Point(3, 25);
             this.m_grv_chuc_vu.Name = "m_grv_chuc_vu";
-            this.m_grv_chuc_vu.Size = new System.Drawing.Size(1267, 199);
+            this.m_grv_chuc_vu.Size = new System.Drawing.Size(1266, 199);
             this.m_grv_chuc_vu.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_chuc_vu.Styles"));
             this.m_grv_chuc_vu.TabIndex = 50;
             // 
