@@ -617,6 +617,11 @@ namespace BKI_HRM
             if (m_grv_qua_trinh_lam_viec.Rows[m_grv_qua_trinh_lam_viec.Row].UserData != null)
             {
                 grid2us_object(m_us_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row);
+                if (m_us_qua_trinh_lam_viec.dcID_CHUC_VU <= 0)
+                {
+                    BaseMessages.MsgBox_Infor("Chưa có chức vụ.");
+                    return;
+                }
                 f202_v_gd_qua_trinh_lam_viec_de v_fDE = new f202_v_gd_qua_trinh_lam_viec_de();
                 v_fDE.display_for_mien_nhiem(m_us_qua_trinh_lam_viec);
                 if (m_txt_tim_kiem.Text == m_str_message_tim_kiem)
