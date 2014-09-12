@@ -218,6 +218,7 @@
             this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
             this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
@@ -874,6 +875,7 @@
             this.m_cmd_chon_don_vi.Size = new System.Drawing.Size(111, 28);
             this.m_cmd_chon_don_vi.TabIndex = 107;
             this.m_cmd_chon_don_vi.Text = "Chọn đơn vị";
+            this.m_cmd_chon_don_vi.Click += new System.EventHandler(this.m_cmd_chon_don_vi_Click);
             // 
             // m_txt_don_vi_moi
             // 
@@ -1030,6 +1032,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.m_cmd_exit;
             this.ClientSize = new System.Drawing.Size(851, 539);
             this.Controls.Add(this.m_pnl_2);
             this.Controls.Add(this.m_pnl_1);

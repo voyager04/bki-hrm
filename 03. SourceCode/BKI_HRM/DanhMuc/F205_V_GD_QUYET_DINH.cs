@@ -890,8 +890,7 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        #endregion
-
+     
         private void m_dat_tu_ngay_ValueChanged(object sender, EventArgs e)
         {
             try
@@ -915,6 +914,7 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        #endregion
     }
 }
 
