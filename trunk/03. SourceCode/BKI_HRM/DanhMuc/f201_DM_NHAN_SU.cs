@@ -217,6 +217,7 @@ namespace BKI_HRM
             this.m_cmd_mien_nhiem = new SIS.Controls.Button.SiSButton();
             this.m_grv_chuc_vu_hien_tai = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_tpg_thong_tin_ca_nhan = new System.Windows.Forms.TabPage();
+            this.m_grv_nhan_su = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_txt_trang_thai_hien_tai = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.m_txt_ho_khau = new System.Windows.Forms.TextBox();
@@ -272,7 +273,6 @@ namespace BKI_HRM
             this.m_dat_tu_ngay_chuc_vu = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.m_cmd_chon_phap_nhan = new SIS.Controls.Button.SiSButton();
-            this.m_grv_nhan_su = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -296,13 +296,13 @@ namespace BKI_HRM
             this.m_tpg_chuc_vu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_chuc_vu_hien_tai)).BeginInit();
             this.m_tpg_thong_tin_ca_nhan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_ptb_anh)).BeginInit();
             this.m_tct_chi_tiet_nhan_vien.SuspendLayout();
             this.m_tpg_di_cong_tac.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_di_cong_tac)).BeginInit();
             this.m_tpg_qua_trinh_chuc_vu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_chuc_vu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -637,7 +637,6 @@ namespace BKI_HRM
             // 
             this.m_grv_du_an.AllowEditing = false;
             this.m_grv_du_an.ColumnInfo = resources.GetString("m_grv_du_an.ColumnInfo");
-            this.m_grv_du_an.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_du_an.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_du_an.Location = new System.Drawing.Point(3, 25);
             this.m_grv_du_an.Name = "m_grv_du_an";
@@ -738,7 +737,6 @@ namespace BKI_HRM
             // 
             this.m_grv_chuc_vu_hien_tai.AllowEditing = false;
             this.m_grv_chuc_vu_hien_tai.ColumnInfo = resources.GetString("m_grv_chuc_vu_hien_tai.ColumnInfo");
-            this.m_grv_chuc_vu_hien_tai.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_chuc_vu_hien_tai.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_grv_chuc_vu_hien_tai.Location = new System.Drawing.Point(0, 0);
             this.m_grv_chuc_vu_hien_tai.Name = "m_grv_chuc_vu_hien_tai";
@@ -797,6 +795,18 @@ namespace BKI_HRM
             this.m_tpg_thong_tin_ca_nhan.Text = "Thông tin cơ bản";
             this.m_tpg_thong_tin_ca_nhan.ToolTipText = "Thông tin cá nhân";
             this.m_tpg_thong_tin_ca_nhan.UseVisualStyleBackColor = true;
+            // 
+            // m_grv_nhan_su
+            // 
+            this.m_grv_nhan_su.AllowEditing = false;
+            this.m_grv_nhan_su.ColumnInfo = resources.GetString("m_grv_nhan_su.ColumnInfo");
+            this.m_grv_nhan_su.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_grv_nhan_su.Location = new System.Drawing.Point(0, 42);
+            this.m_grv_nhan_su.Name = "m_grv_nhan_su";
+            this.m_grv_nhan_su.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Row;
+            this.m_grv_nhan_su.Size = new System.Drawing.Size(1280, 196);
+            this.m_grv_nhan_su.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_nhan_su.Styles"));
+            this.m_grv_nhan_su.TabIndex = 23;
             // 
             // m_txt_trang_thai_hien_tai
             // 
@@ -1220,7 +1230,6 @@ namespace BKI_HRM
             // 
             this.m_grv_di_cong_tac.AllowEditing = false;
             this.m_grv_di_cong_tac.ColumnInfo = resources.GetString("m_grv_di_cong_tac.ColumnInfo");
-            this.m_grv_di_cong_tac.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_di_cong_tac.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_di_cong_tac.Location = new System.Drawing.Point(3, 25);
             this.m_grv_di_cong_tac.Name = "m_grv_di_cong_tac";
@@ -1328,24 +1337,12 @@ namespace BKI_HRM
             this.m_cmd_chon_phap_nhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_chon_phap_nhan.ImageIndex = 5;
             this.m_cmd_chon_phap_nhan.ImageList = this.ImageList;
-            this.m_cmd_chon_phap_nhan.Location = new System.Drawing.Point(1150, 246);
+            this.m_cmd_chon_phap_nhan.Location = new System.Drawing.Point(568, 4);
             this.m_cmd_chon_phap_nhan.Name = "m_cmd_chon_phap_nhan";
             this.m_cmd_chon_phap_nhan.Size = new System.Drawing.Size(128, 28);
             this.m_cmd_chon_phap_nhan.TabIndex = 34;
             this.m_cmd_chon_phap_nhan.Text = "&Chọn pháp nhân";
             this.m_cmd_chon_phap_nhan.Visible = false;
-            // 
-            // m_grv_nhan_su
-            // 
-            this.m_grv_nhan_su.AllowEditing = false;
-            this.m_grv_nhan_su.ColumnInfo = resources.GetString("m_grv_nhan_su.ColumnInfo");
-            this.m_grv_nhan_su.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_grv_nhan_su.Location = new System.Drawing.Point(0, 42);
-            this.m_grv_nhan_su.Name = "m_grv_nhan_su";
-            this.m_grv_nhan_su.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Row;
-            this.m_grv_nhan_su.Size = new System.Drawing.Size(1280, 196);
-            this.m_grv_nhan_su.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_grv_nhan_su.Styles"));
-            this.m_grv_nhan_su.TabIndex = 23;
             // 
             // panel3
             // 
@@ -1421,6 +1418,7 @@ namespace BKI_HRM
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_chon_nhan_vien);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_chon_phap_nhan);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_print_cv);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
@@ -1529,7 +1527,6 @@ namespace BKI_HRM
             this.ClientSize = new System.Drawing.Size(1280, 550);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.m_cmd_chon_phap_nhan);
             this.Controls.Add(this.m_tct_chi_tiet_nhan_vien);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1551,6 +1548,7 @@ namespace BKI_HRM
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_chuc_vu_hien_tai)).EndInit();
             this.m_tpg_thong_tin_ca_nhan.ResumeLayout(false);
             this.m_tpg_thong_tin_ca_nhan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_ptb_anh)).EndInit();
             this.m_tct_chi_tiet_nhan_vien.ResumeLayout(false);
             this.m_tpg_di_cong_tac.ResumeLayout(false);
@@ -1559,7 +1557,6 @@ namespace BKI_HRM
             this.m_tpg_qua_trinh_chuc_vu.ResumeLayout(false);
             this.m_tpg_qua_trinh_chuc_vu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_chuc_vu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -2740,6 +2737,8 @@ namespace BKI_HRM
             }
         }
         #endregion
+
+
 
 
 
