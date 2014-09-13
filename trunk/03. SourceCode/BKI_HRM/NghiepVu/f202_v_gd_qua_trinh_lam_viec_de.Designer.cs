@@ -799,6 +799,7 @@
             this.m_txt_ty_le_tham_gia.Name = "m_txt_ty_le_tham_gia";
             this.m_txt_ty_le_tham_gia.Size = new System.Drawing.Size(100, 20);
             this.m_txt_ty_le_tham_gia.TabIndex = 105;
+            this.m_txt_ty_le_tham_gia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.m_txt_ty_le_tham_gia_KeyPress);
             // 
             // m_lbl_ty_le_tham_gia
             // 

@@ -857,7 +857,7 @@ namespace BKI_HRM
 //                 v_us.FillDatasetByName(v_ds, v_arstr[v_arstr.Length - 1], ref v_dc_id);
 //                 m_cbo_ma_quyet_dinh_mien_nhiem.SelectedValue = v_dc_id;
                 m_txt_ma_quyet_dinh_mien_nhiem.Text = m_us_quyet_dinh_mien_nhiem.strMA_QUYET_DINH;
-                m_cbo_loai_quyet_dinh_mien_nhiem.SelectedValue = m_us_quyet_dinh.dcID_LOAI_QD;
+                m_cbo_loai_quyet_dinh_mien_nhiem.SelectedValue = m_us_quyet_dinh_mien_nhiem.dcID_LOAI_QD;
                 m_dat_ngay_ky_mien_nhiem.Value = m_us_quyet_dinh.datNGAY_KY;
                 if (m_us_quyet_dinh.datNGAY_CO_HIEU_LUC > DateTime.Parse("01/01/1900") &&
                     m_us_quyet_dinh.datNGAY_CO_HIEU_LUC != null)
