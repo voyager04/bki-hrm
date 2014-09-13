@@ -87,6 +87,10 @@ namespace BKI_HRM.NghiepVu
             ID_NHAN_SU = 3,
             ID_QUYET_DINH = 0,
         }
+
+        private int ID_LOAI_TU_DIEN_QUYET_DINH = 3;
+        private int ID_QUYET_DINH_THANH_LAP_DU_AN = 679;
+        private int ID_QUYET_DINH_BO_SUNG_DU_AN = 745;
         #endregion
 
         #region Member
@@ -355,7 +359,10 @@ namespace BKI_HRM.NghiepVu
             try
             {
                 v_us.BeginTransaction();
-                v_us.FillDatasetByIdLoaiTuDien(v_ds, (int)ip_e_loai_tu_dien);
+                if ((int)ip_e_loai_tu_dien == ID_LOAI_TU_DIEN_QUYET_DINH)
+                    v_us.FillDataset(v_ds, string.Format("WHERE {0} = {1} OR {0} = {2}", CM_DM_TU_DIEN.ID, ID_QUYET_DINH_BO_SUNG_DU_AN, ID_QUYET_DINH_THANH_LAP_DU_AN));
+                else
+                    v_us.FillDatasetByIdLoaiTuDien(v_ds, (int)ip_e_loai_tu_dien);
                 v_us.CommitTransaction();
             }
             catch (Exception v_e)
