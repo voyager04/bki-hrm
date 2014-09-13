@@ -177,9 +177,10 @@ namespace BKI_HRM {
                 m_dat_ngay_ket_thuc.Value = m_v_us_chi_tiet_cap_bac.datNGAY_KET_THUC;
             }
             m_txt_cap_bac_hien_tai.Text = m_v_us_chi_tiet_cap_bac.strMA_CAP_BAC;
-            US_GD_CHI_TIET_CAP_BAC v_us_chi_tiet_cap_bac = new US_GD_CHI_TIET_CAP_BAC(m_v_us_chi_tiet_cap_bac.dcID);
-            if (v_us_chi_tiet_cap_bac.dcID_QUYET_DINH > 0)
+
+            if (m_v_us_chi_tiet_cap_bac.dcID > 0)
             {
+                US_GD_CHI_TIET_CAP_BAC v_us_chi_tiet_cap_bac = new US_GD_CHI_TIET_CAP_BAC(m_v_us_chi_tiet_cap_bac.dcID);
                 m_us_quyet_dinh = new US_DM_QUYET_DINH(v_us_chi_tiet_cap_bac.dcID_QUYET_DINH);
                 US_DM_QUYET_DINH v_us = new US_DM_QUYET_DINH(v_us_chi_tiet_cap_bac.dcID_QUYET_DINH);
                 m_txt_ma_quyet_dinh.Text = v_us.strMA_QUYET_DINH;
