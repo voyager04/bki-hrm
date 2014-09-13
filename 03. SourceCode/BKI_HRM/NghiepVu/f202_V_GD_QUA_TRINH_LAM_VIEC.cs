@@ -656,6 +656,7 @@ namespace BKI_HRM
                 v_us.CommitTransaction();
                 m_grv_qua_trinh_lam_viec.Rows.Remove(m_grv_qua_trinh_lam_viec.Row);
                 BaseMessages.MsgBox_Infor("Đã xóa thành công!");
+                load_data_2_grid_search();
 			}
 			catch (Exception v_e) {
 				v_us.Rollback();
