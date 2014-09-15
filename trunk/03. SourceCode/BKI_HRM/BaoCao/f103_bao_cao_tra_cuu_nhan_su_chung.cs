@@ -107,7 +107,7 @@ namespace BKI_HRM
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f103_bao_cao_tra_cuu_nhan_su));
-            Checkbox_Combobox.CheckBoxProperties checkBoxProperties2 = new Checkbox_Combobox.CheckBoxProperties();
+            Checkbox_Combobox.CheckBoxProperties checkBoxProperties1 = new Checkbox_Combobox.CheckBoxProperties();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cbo_gioi_tinh = new System.Windows.Forms.ComboBox();
@@ -266,7 +266,7 @@ namespace BKI_HRM
             this.m_txt_trinh_do.Size = new System.Drawing.Size(120, 20);
             this.m_txt_trinh_do.TabIndex = 45;
             this.m_tooltip.SetToolTip(this.m_txt_trinh_do, "Gợi ý tìm kiếm:\r\nGiới tính: nữ, đơn vị: Phòng hành chính\r\nhoặc Nguyễn Danh Tú, gi" +
-                    "ới tính: Nam");
+        "ới tính: Nam");
             // 
             // label1
             // 
@@ -421,6 +421,7 @@ namespace BKI_HRM
             this.m_rdb_thu_viec_sap_het_han.TabStop = true;
             this.m_rdb_thu_viec_sap_het_han.Text = "Thử việc sắp hết hạn";
             this.m_rdb_thu_viec_sap_het_han.UseVisualStyleBackColor = true;
+            this.m_rdb_thu_viec_sap_het_han.Visible = false;
             this.m_rdb_thu_viec_sap_het_han.CheckedChanged += new System.EventHandler(this.m_rdb_thu_viec_sap_het_han_CheckedChanged);
             // 
             // m_rdb_nhan_vien_sap_quay_lai
@@ -432,12 +433,13 @@ namespace BKI_HRM
             this.m_rdb_nhan_vien_sap_quay_lai.TabIndex = 32;
             this.m_rdb_nhan_vien_sap_quay_lai.Text = "Nhân viên đang nghỉ";
             this.m_rdb_nhan_vien_sap_quay_lai.UseVisualStyleBackColor = true;
+            this.m_rdb_nhan_vien_sap_quay_lai.Visible = false;
             this.m_rdb_nhan_vien_sap_quay_lai.CheckedChanged += new System.EventHandler(this.m_rdb_nhan_vien_sap_quay_lai_CheckedChanged);
             // 
             // m_cbc_choose_columns
             // 
-            checkBoxProperties2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.m_cbc_choose_columns.CheckBoxProperties = checkBoxProperties2;
+            checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.m_cbc_choose_columns.CheckBoxProperties = checkBoxProperties1;
             this.m_cbc_choose_columns.DisplayMemberSingleItem = "";
             this.m_cbc_choose_columns.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbc_choose_columns.FormattingEnabled = true;
@@ -597,13 +599,16 @@ namespace BKI_HRM
         }
         public void display_nghi_sap_quay_lai()
         {
-
+            m_rdb_nhan_vien_sap_quay_lai.Visible = true;
+            m_rdb_thu_viec_sap_het_han.Visible = true;
             m_e_form_mode = DataEntryFormMode.ViewDataState;
             this.Show();
             m_rdb_nhan_vien_sap_quay_lai.Checked = true;
         }
         public void display_thu_viec_sap_het_han()
         {
+            m_rdb_nhan_vien_sap_quay_lai.Visible = true;
+            m_rdb_thu_viec_sap_het_han.Visible = true;
             // m_rdb_nhan_vien_sap_quay_lai.Checked = false;
             m_rdb_thu_viec_sap_het_han.Checked = true;
             m_e_form_mode = DataEntryFormMode.ViewDataState;
@@ -611,6 +616,8 @@ namespace BKI_HRM
         }
         internal int SapHetHanThuViec()
         {
+            m_rdb_nhan_vien_sap_quay_lai.Visible = true;
+            m_rdb_thu_viec_sap_het_han.Visible = true;
             m_rdb_thu_viec_sap_het_han.Checked = true;
             Text = "F103 - Danh sách Thử việc sắp hết hạn";
             //m_e_form_mode = DataEntryFormMode.ViewDataState;
