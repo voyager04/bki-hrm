@@ -1685,5 +1685,28 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        private void panel7_MouseHover(object sender, EventArgs e)
+        {
+            panel7.BackColor = Color.Aquamarine;
+        }
+
+        private void panel7_MouseLeave(object sender, EventArgs e)
+        {
+            panel7.BackColor = SystemColors.Control;
+        }
+
+        private void panel7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                F411_bao_cao_so_luong_nv_theo_loai frm = new F411_bao_cao_so_luong_nv_theo_loai();
+                frm.ShowDialog();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }

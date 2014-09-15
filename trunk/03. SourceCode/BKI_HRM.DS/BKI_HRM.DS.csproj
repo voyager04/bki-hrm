@@ -221,6 +221,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_HT_USER_GROUP_WEB.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_RPT_SO_LUONG_NV_THEO_LOAI.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_RPT_SO_LUONG_NV_THEO_LOAI.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_DM_CAP_BAC.cs">
       <DependentUpon>DS_V_DM_CAP_BAC.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -711,6 +716,17 @@
     </None>
     <None Include="DS_HT_USER_GROUP_WEB.xss">
       <DependentUpon>DS_HT_USER_GROUP_WEB.xsd</DependentUpon>
+    </None>
+    <None Include="DS_RPT_SO_LUONG_NV_THEO_LOAI.xsc">
+      <DependentUpon>DS_RPT_SO_LUONG_NV_THEO_LOAI.xsd</DependentUpon>
+    </None>
+    <None Include="DS_RPT_SO_LUONG_NV_THEO_LOAI.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_RPT_SO_LUONG_NV_THEO_LOAI.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_RPT_SO_LUONG_NV_THEO_LOAI.xss">
+      <DependentUpon>DS_RPT_SO_LUONG_NV_THEO_LOAI.xsd</DependentUpon>
     </None>
     <None Include="DS_V_DM_CAP_BAC.xsc">
       <DependentUpon>DS_V_DM_CAP_BAC.xsd</DependentUpon>

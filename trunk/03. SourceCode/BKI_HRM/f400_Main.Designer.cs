@@ -88,6 +88,8 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky = new System.Windows.Forms.Label();
             this.m_lbl_sap_quay_lai = new System.Windows.Forms.Label();
             this.m_pnl_thong_bao = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -99,7 +101,6 @@ namespace BKI_HRM
             this.m_tab_form = new System.Windows.Forms.TabControl();
             this.m_cmd_thong_bao = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.m_cmd_bao_cao_nghi_viec = new System.Windows.Forms.Button();
             this.m_cmd_bao_cao_danh_sach_bo_nhiem = new System.Windows.Forms.Button();
@@ -164,6 +165,7 @@ namespace BKI_HRM
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.m_mst_menu.SuspendLayout();
             this.m_pnl_thong_bao.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -667,6 +669,7 @@ namespace BKI_HRM
             // m_pnl_thong_bao
             // 
             this.m_pnl_thong_bao.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.m_pnl_thong_bao.Controls.Add(this.panel7);
             this.m_pnl_thong_bao.Controls.Add(this.panel5);
             this.m_pnl_thong_bao.Controls.Add(this.panel4);
             this.m_pnl_thong_bao.Controls.Add(this.panel3);
@@ -677,6 +680,30 @@ namespace BKI_HRM
             this.m_pnl_thong_bao.Size = new System.Drawing.Size(371, 551);
             this.m_pnl_thong_bao.TabIndex = 10;
             this.m_pnl_thong_bao.Visible = false;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.label2);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 265);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(367, 53);
+            this.panel7.TabIndex = 5;
+            this.panel7.Click += new System.EventHandler(this.panel7_Click);
+            this.panel7.MouseLeave += new System.EventHandler(this.panel7_MouseLeave);
+            this.panel7.MouseHover += new System.EventHandler(this.panel7_MouseHover);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(0, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(236, 18);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Danh sách nhân viên chính thức";
             // 
             // panel5
             // 
@@ -795,27 +822,16 @@ namespace BKI_HRM
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.groupBox11);
             this.tabPage4.Controls.Add(this.groupBox10);
             this.tabPage4.Controls.Add(this.groupBox9);
             this.tabPage4.Controls.Add(this.groupBox8);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1354, 102);
+            this.tabPage4.Size = new System.Drawing.Size(1346, 102);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Báo cáo";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.Location = new System.Drawing.Point(1138, 6);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(216, 90);
-            this.groupBox11.TabIndex = 11;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Thay đổi pháp nhân";
-            this.groupBox11.Visible = false;
             // 
             // groupBox10
             // 
@@ -1172,7 +1188,7 @@ namespace BKI_HRM
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1354, 102);
+            this.tabPage2.Size = new System.Drawing.Size(1346, 102);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Danh mục";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1462,7 +1478,7 @@ namespace BKI_HRM
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1354, 102);
+            this.tabPage5.Size = new System.Drawing.Size(1346, 102);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Tìm kiếm chức năng - Thay đổi pháp nhân";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1498,6 +1514,8 @@ namespace BKI_HRM
             this.m_mst_menu.ResumeLayout(false);
             this.m_mst_menu.PerformLayout();
             this.m_pnl_thong_bao.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -1657,7 +1675,6 @@ namespace BKI_HRM
         private Button m_cmd_phan_quyen_he_thong;
         private Button m_cmd_phan_quyen_chi_tiet;
         private TabControl m_tab_menu;
-        private GroupBox groupBox11;
         private TabPage tabPage5;
         private GroupBox groupBox12;
         private Button m_cmd_search;
@@ -1668,5 +1685,7 @@ namespace BKI_HRM
         private Panel panel6;
         private Label label1;
         private ComboBox m_cbo_phap_nhan;
+        private Panel panel7;
+        private Label label2;
     }
 }
