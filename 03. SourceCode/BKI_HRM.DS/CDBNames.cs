@@ -956,5 +956,12 @@
        public const string USER_GROUP_NAME = "USER_GROUP_NAME";
        public const string DESCRIPTION = "DESCRIPTION";
    }
+   public class RPT_SO_LUONG_NV_THEO_LOAI
+   {
+       public const string ID = "ID";
+       public const string LOAI_NV = "LOAI_NV";
+       public const string THANG = "THANG";
+       public const string SO_LUONG = "SO_LUONG";
+   }
 
 }
