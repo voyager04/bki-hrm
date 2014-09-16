@@ -764,7 +764,6 @@
             this.m_txt_email_ca_nhan.Name = "m_txt_email_ca_nhan";
             this.m_txt_email_ca_nhan.Size = new System.Drawing.Size(240, 20);
             this.m_txt_email_ca_nhan.TabIndex = 22;
-            this.m_txt_email_ca_nhan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.m_txt_email_KeyPress);
             // 
             // m_lbl_email_ca_nhan
             // 
@@ -782,7 +781,6 @@
             this.m_txt_email_co_quan.Name = "m_txt_email_co_quan";
             this.m_txt_email_co_quan.Size = new System.Drawing.Size(240, 20);
             this.m_txt_email_co_quan.TabIndex = 21;
-            this.m_txt_email_co_quan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.m_txt_email_KeyPress);
             // 
             // m_lbl_email_co_quan
             // 
