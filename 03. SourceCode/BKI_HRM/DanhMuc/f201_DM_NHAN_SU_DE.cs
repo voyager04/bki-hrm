@@ -869,18 +869,6 @@ namespace BKI_HRM
 
         private void m_txt_email_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar)
-        && !char.IsLetterOrDigit(e.KeyChar)
-        && e.KeyChar != '.' && e.KeyChar != '@' && e.KeyChar != '_')
-            {
-                e.Handled = true;
-            }
-            // only allow one @
-            if (e.KeyChar == '@'
-                && (sender as TextBox).Text.IndexOf('@') > -1)
-            {
-                e.Handled = true;
-            }
 
         }
         private void m_ptb_anh_MouseHover(object sender, EventArgs e)
