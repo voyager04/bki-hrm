@@ -89,7 +89,7 @@ namespace BKI_HRM
             this.m_lbl_sap_quay_lai = new System.Windows.Forms.Label();
             this.m_pnl_thong_bao = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.m_lbl_nv_chinh_thuc = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -683,7 +683,7 @@ namespace BKI_HRM
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.label2);
+            this.panel7.Controls.Add(this.m_lbl_nv_chinh_thuc);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 265);
             this.panel7.Name = "panel7";
@@ -693,17 +693,17 @@ namespace BKI_HRM
             this.panel7.MouseLeave += new System.EventHandler(this.panel7_MouseLeave);
             this.panel7.MouseHover += new System.EventHandler(this.panel7_MouseHover);
             // 
-            // label2
+            // m_lbl_nv_chinh_thuc
             // 
-            this.label2.AutoSize = true;
-            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(0, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(236, 18);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Danh sách nhân viên chính thức";
+            this.m_lbl_nv_chinh_thuc.AutoSize = true;
+            this.m_lbl_nv_chinh_thuc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.m_lbl_nv_chinh_thuc.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_nv_chinh_thuc.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_nv_chinh_thuc.Location = new System.Drawing.Point(0, 20);
+            this.m_lbl_nv_chinh_thuc.Name = "m_lbl_nv_chinh_thuc";
+            this.m_lbl_nv_chinh_thuc.Size = new System.Drawing.Size(236, 18);
+            this.m_lbl_nv_chinh_thuc.TabIndex = 2;
+            this.m_lbl_nv_chinh_thuc.Text = "Danh sách nhân viên chính thức";
             // 
             // panel5
             // 
@@ -1686,6 +1686,6 @@ namespace BKI_HRM
         private Label label1;
         private ComboBox m_cbo_phap_nhan;
         private Panel panel7;
-        private Label label2;
+        private Label m_lbl_nv_chinh_thuc;
     }
 }

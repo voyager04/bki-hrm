@@ -53,7 +53,7 @@ namespace BKI_HRM
         {
             //1.tạo danh sách cột chức vụ
             m_fg.Cols.Count = m_dat_thoidiem.Value.Month;
-            m_fg.Cols[0].Width = 150;
+            m_fg.Cols[0].Width = 200;
             //m_fg.Cols[1].Caption = "Trạng thái/Chức vụ";
             m_fg.Cols[0].Caption = "Loại nhân viên";
             m_fg.Cols[0].UserData = 0;
@@ -64,7 +64,7 @@ namespace BKI_HRM
                 m_fg.Cols[i].UserData = i;
             }
             //2. tạo danh sách dòng trạng thái
-            m_fg.Rows.Count = 3;
+            m_fg.Rows.Count = 5;
             //m_fg.Rows[1][0] = "Tổng";
             //m_fg.Rows[1].UserData = 0;
 
@@ -72,7 +72,10 @@ namespace BKI_HRM
             m_fg.Rows[1].UserData = 1;
             m_fg.Rows[2][0] = "Nhân viên chính thức đủ 6 tháng";
             m_fg.Rows[2].UserData = 2;
-
+            m_fg.Rows[3][0] = "Nhân viên thử việc";
+            m_fg.Rows[3].UserData = 3;
+            m_fg.Rows[4][0] = "Nhân viên đang nghỉ";
+            m_fg.Rows[4].UserData = 4;
             //3.Đưa dữ liệu lên lưới
             m_ds_rpt = new DS_RPT_SO_LUONG_NV_THEO_LOAI();
             m_us_rpt.FillDatasetByProc(m_ds_rpt, m_dat_thoidiem.Value, CAppContext_201.getCurrentIDPhapnhan());
