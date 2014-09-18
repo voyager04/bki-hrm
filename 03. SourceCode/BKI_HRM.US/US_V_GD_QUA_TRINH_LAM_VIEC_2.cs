@@ -1062,6 +1062,16 @@ namespace BKI_HRM.US
             v_sp.fillDataSetByCommand(this, op_ds);
             op_count = CIPConvert.ToDecimal(v_sql.Value.ToString());
         }
+        public void count_nhan_vien_chinh_thuc(DS_V_GD_QUA_TRINH_LAM_VIEC_2 op_ds, DateTime ip_dat_thoi_diem, ref decimal op_count, decimal ip_dc_phap_nhan)
+        {
+
+            CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_2_Count_NhanVien_chinh_thuc_tren_6_thang");
+            v_sp.addDatetimeInputParam("@ip_dat_thoi_diem", ip_dat_thoi_diem);
+            v_sp.addDecimalInputParam("@ip_dc_phap_nhan", ip_dc_phap_nhan);
+            SqlParameter v_sql = v_sp.addDecimalOutputParam("@count", op_count);
+            v_sp.fillDataSetByCommand(this, op_ds);
+            op_count = CIPConvert.ToDecimal(v_sql.Value.ToString());
+        }
         public void FillDatasetSearchChucVuThoiDiem(DS_V_GD_QUA_TRINH_LAM_VIEC_2 op_ds,
                 string ip_str_ma_cv,
                 DateTime ip_dat_thoi_diem, decimal ip_dc_phap_nhan, decimal ip_dc_kiem_nhiem)

@@ -91,7 +91,20 @@ namespace BKI_HRM
             }
             // v_frm.display_thu_viec_sap_het_han();
         }
-
+        private void nhan_vien_chinh_thuc()
+        {
+            US_V_GD_QUA_TRINH_LAM_VIEC_2 v_us = new US_V_GD_QUA_TRINH_LAM_VIEC_2();
+            DS_V_GD_QUA_TRINH_LAM_VIEC_2 v_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC_2();
+            decimal v_dc_so_luong_nv = 0;
+            //  f103_bao_cao_tra_cuu_nhan_su v_frm = new f103_bao_cao_tra_cuu_nhan_su();
+            v_us.count_nhan_vien_chinh_thuc(v_ds,DateTime.Now
+                , ref v_dc_so_luong_nv, CAppContext_201.getCurrentIDPhapnhan());
+            
+                m_lbl_nv_chinh_thuc.Text = @"Có " + v_dc_so_luong_nv.ToString() +
+                                                  " nhân viên chính thức trên 6 tháng.";
+            
+            // v_frm.display_thu_viec_sap_het_han();
+        }
         private void nghi_viec_sap_quay_lai()
         {
             US_V_DM_DU_LIEU_NHAN_VIEN v_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
@@ -247,6 +260,7 @@ namespace BKI_HRM
                 thu_viec_sap_het_han();
                 nghi_viec_sap_quay_lai();
                 canh_bao_hop_dong();
+                nhan_vien_chinh_thuc();
             }
             catch (Exception v_e)
             {
@@ -371,6 +385,7 @@ namespace BKI_HRM
                 thu_viec_sap_het_han();
                 nghi_viec_sap_quay_lai();
                 canh_bao_hop_dong();
+                nhan_vien_chinh_thuc();
             }
             catch (Exception v_e)
             {
@@ -420,6 +435,7 @@ namespace BKI_HRM
                 thu_viec_sap_het_han();
                 nghi_viec_sap_quay_lai();
                 canh_bao_hop_dong();
+                nhan_vien_chinh_thuc();
             }
             catch (Exception v_e)
             {
@@ -495,6 +511,7 @@ namespace BKI_HRM
                 canh_bao_hop_dong();
                 thu_viec_sap_het_han();
                 nghi_viec_sap_quay_lai();
+                nhan_vien_chinh_thuc();
                 show_form(new f408_bao_cao_don_vi_trang_thai());
             }
             catch (Exception v_e)
@@ -916,6 +933,7 @@ namespace BKI_HRM
                 canh_bao_hop_dong();
                 thu_viec_sap_het_han();
                 nghi_viec_sap_quay_lai();
+                nhan_vien_chinh_thuc();
             }
             catch (Exception v_e)
             {
@@ -1219,6 +1237,7 @@ namespace BKI_HRM
                 thu_viec_sap_het_han();
                 nghi_viec_sap_quay_lai();
                 canh_bao_hop_dong();
+                nhan_vien_chinh_thuc();
             }
             catch (Exception v_e)
             {
@@ -1642,6 +1661,7 @@ namespace BKI_HRM
             canh_bao_hop_dong();
             thu_viec_sap_het_han();
             nghi_viec_sap_quay_lai();
+            nhan_vien_chinh_thuc();
             //show_form(new f408_bao_cao_don_vi_trang_thai());
             //alert.Message = "In progress, please wait... " + e.ProgressPercentage.ToString() + "%";
             //alert.ProgressValue = e.ProgressPercentage;
