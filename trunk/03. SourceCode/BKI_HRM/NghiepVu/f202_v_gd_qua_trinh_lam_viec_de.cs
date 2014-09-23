@@ -777,9 +777,9 @@ namespace BKI_HRM
           
         }
 
-      
 
-       
+
+
 
         private void text_changed()
         {

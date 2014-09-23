@@ -1576,6 +1576,30 @@ namespace BKI_HRM
             }
         }
 
+        private void m_cmd_luongqd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                show_form(new f301_V_GD_LUONG_THEO_QD());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_ky_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                show_form(new f300_DM_KY());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
         /*private void m_clk_phap_nhan_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             // bỏ check các checkbox khác
@@ -1728,5 +1752,6 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
     }
 }

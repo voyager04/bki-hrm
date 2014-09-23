@@ -16,6 +16,7 @@ using BKI_HRM.DS;
 using BKI_HRM.DS.CDBNames;
 using System.Diagnostics;
 using System.Configuration;
+
 namespace BKI_HRM
 {
     public partial class f203_v_gd_trang_thai_lao_dong_de : Form
@@ -577,9 +578,6 @@ namespace BKI_HRM
             //             m_dat_ngay_ky.ValueChanged += new EventHandler(m_dat_ngay_ky_ValueChanged);
         }
 
-
-
-
         private void them_quyet_dinh()
         {
             m_b_check_quyet_dinh_null = true;
@@ -719,7 +717,6 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
         private void m_cmd_xem_file_Click(object sender, EventArgs e)
         {
             try
@@ -792,9 +789,5 @@ namespace BKI_HRM
             }
         }
         #endregion
-
-
-
-
     }
 }
