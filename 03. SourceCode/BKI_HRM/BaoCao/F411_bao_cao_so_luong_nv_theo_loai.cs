@@ -52,7 +52,7 @@ namespace BKI_HRM
         private void load_data_2_grid()
         {
             //1.tạo danh sách cột chức vụ
-            m_fg.Cols.Count = m_dat_thoidiem.Value.Month;
+            m_fg.Cols.Count = m_dat_thoidiem.Value.Month+1;
             m_fg.Cols[0].Width = 200;
             //m_fg.Cols[1].Caption = "Trạng thái/Chức vụ";
             m_fg.Cols[0].Caption = "Loại nhân viên";
