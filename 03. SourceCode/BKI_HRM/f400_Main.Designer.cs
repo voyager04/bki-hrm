@@ -163,6 +163,7 @@ namespace BKI_HRM
             this.m_tab_menu = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.m_cmd_ky = new System.Windows.Forms.Button();
             this.m_mst_menu.SuspendLayout();
             this.m_pnl_thong_bao.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -1111,6 +1112,7 @@ namespace BKI_HRM
             this.m_cmd_luongqd.TabIndex = 15;
             this.m_cmd_luongqd.Text = "Lương theo quyết định";
             this.m_cmd_luongqd.UseVisualStyleBackColor = true;
+            this.m_cmd_luongqd.Click += new System.EventHandler(this.m_cmd_luongqd_Click);
             // 
             // m_cmd_hop_dong_lao_dong
             // 
@@ -1195,6 +1197,7 @@ namespace BKI_HRM
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.m_cmd_ky);
             this.groupBox2.Controls.Add(this.m_cmd_ql_quyet_dinh);
             this.groupBox2.Controls.Add(this.m_cmd_ql_phap_nhan);
             this.groupBox2.Controls.Add(this.m_cmd_ql_don_vi);
@@ -1202,7 +1205,7 @@ namespace BKI_HRM
             this.groupBox2.Controls.Add(this.m_cmd_ql_chuc_vu);
             this.groupBox2.Location = new System.Drawing.Point(8, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(416, 90);
+            this.groupBox2.Size = new System.Drawing.Size(498, 90);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Quản lý";
@@ -1490,6 +1493,16 @@ namespace BKI_HRM
             this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
+            // m_cmd_ky
+            // 
+            this.m_cmd_ky.Location = new System.Drawing.Point(411, 19);
+            this.m_cmd_ky.Name = "m_cmd_ky";
+            this.m_cmd_ky.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_ky.TabIndex = 5;
+            this.m_cmd_ky.Text = "Kỳ";
+            this.m_cmd_ky.UseVisualStyleBackColor = true;
+            this.m_cmd_ky.Click += new System.EventHandler(this.m_cmd_ky_Click);
+            // 
             // f400_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1687,5 +1700,6 @@ namespace BKI_HRM
         private ComboBox m_cbo_phap_nhan;
         private Panel panel7;
         private Label m_lbl_nv_chinh_thuc;
+        private Button m_cmd_ky;
     }
 }

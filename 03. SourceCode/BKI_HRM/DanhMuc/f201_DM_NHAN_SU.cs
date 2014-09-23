@@ -1992,7 +1992,7 @@ namespace BKI_HRM
                 v_frm.display_for_mien_nhiem(v_us);
                 load_data_2_grv_chuc_vu_hien_tai();
             }
-          
+
 
         }
 
@@ -2277,16 +2277,16 @@ namespace BKI_HRM
                 File.Delete(Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us.strMA_NV + ".jpg");
             }
 
-            
+
             if (m_us.strANH != "")
                 try
                 {
-                   // File.Copy(m_str_directory_to + m_us.strMA_NV + ".jpg", Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us.strMA_NV + "jpg");
+                    // File.Copy(m_str_directory_to + m_us.strMA_NV + ".jpg", Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\" + m_us.strMA_NV + "jpg");
                     m_ptb_anh.Image.Dispose();
 
 
                     string v_str_imagepath = m_str_directory_to + m_us.strMA_NV + ".jpg";
-                    
+
                     FileStream fs;
                     fs = new System.IO.FileStream(v_str_imagepath, System.IO.FileMode.Open, System.IO.FileAccess.Read);
                     m_ptb_anh.Image = System.Drawing.Image.FromStream(fs);

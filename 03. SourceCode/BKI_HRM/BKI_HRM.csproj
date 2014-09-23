@@ -192,6 +192,15 @@
     <Compile Include="DanhMuc\F205_V_GD_QUYET_DINH.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DanhMuc\f300_DM_KY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\f300_DM_KY_DE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\f300_DM_KY_DE.Designer.cs">
+      <DependentUpon>f300_DM_KY_DE.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\f410_chuyen_nhan_vien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +214,7 @@
       <DependentUpon>f400_dialog.cs</DependentUpon>
     </Compile>
     <Compile Include="FileExplorer.cs" />
+    <Compile Include="HelperDucVT\CUtils.cs" />
     <Compile Include="HostedControl.cs" />
     <Compile Include="NghiepVu\f107_chuyen_nhan_vien.cs">
       <SubType>Form</SubType>
@@ -390,6 +400,15 @@
     <Compile Include="NghiepVu\f206_v_gd_cong_tac_view_document.Designer.cs">
       <DependentUpon>f206_v_gd_cong_tac_view_document.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\f301_V_GD_LUONG_THEO_QD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f301_V_GD_LUONG_THEO_QD_DE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\f301_V_GD_LUONG_THEO_QD_DE.Designer.cs">
+      <DependentUpon>f301_V_GD_LUONG_THEO_QD_DE.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\F500_DM_DU_AN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -487,6 +506,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\F205_V_GD_QUYET_DINH.resx">
       <DependentUpon>F205_V_GD_QUYET_DINH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f300_DM_KY.resx">
+      <DependentUpon>f300_DM_KY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f300_DM_KY_DE.resx">
+      <DependentUpon>f300_DM_KY_DE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f410_chuyen_nhan_vien.resx">
       <DependentUpon>f410_chuyen_nhan_vien.cs</DependentUpon>
@@ -623,6 +648,12 @@
     <EmbeddedResource Include="NghiepVu\f206_v_gd_cong_tac_view_document.resx">
       <DependentUpon>f206_v_gd_cong_tac_view_document.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f301_V_GD_LUONG_THEO_QD.resx">
+      <DependentUpon>f301_V_GD_LUONG_THEO_QD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f301_V_GD_LUONG_THEO_QD_DE.resx">
+      <DependentUpon>f301_V_GD_LUONG_THEO_QD_DE.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\F500_DM_DU_AN.resx">
       <DependentUpon>F500_DM_DU_AN.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -758,6 +789,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

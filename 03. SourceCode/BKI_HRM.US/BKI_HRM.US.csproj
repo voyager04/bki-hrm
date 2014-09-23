@@ -57,6 +57,7 @@
     <Compile Include="US_DM_DON_VI.cs" />
     <Compile Include="US_DM_DU_AN.cs" />
     <Compile Include="US_DM_HEADCOUNT.cs" />
+    <Compile Include="US_DM_KY.cs" />
     <Compile Include="US_DM_NHAN_SU.cs" />
     <Compile Include="US_DM_PHAP_NHAN.cs" />
     <Compile Include="US_DM_QUYET_DINH.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="US_GD_CONG_TAC.cs" />
     <Compile Include="US_GD_DON_VI_PHAP_NHAN.cs" />
     <Compile Include="US_GD_HOP_DONG.cs" />
+    <Compile Include="US_GD_LUONG_THEO_QD.cs" />
     <Compile Include="US_GD_QUA_TRINH_CONG_TAC.cs" />
     <Compile Include="US_GD_QUYET_DINH_DU_AN.cs" />
     <Compile Include="US_GD_QUYET_DINH_PHAP_NHAN.cs" />
@@ -100,6 +102,7 @@
     <Compile Include="US_V_GD_CHI_TIET_CAP_BAC.cs" />
     <Compile Include="US_V_GD_CONG_TAC.cs" />
     <Compile Include="US_V_GD_HOP_DONG_LAO_DONG.cs" />
+    <Compile Include="US_V_GD_LUONG_THEO_QD.cs" />
     <Compile Include="US_V_GD_QUA_TRINH_LAM_VIEC.cs" />
     <Compile Include="US_V_GD_QUA_TRINH_LAM_VIEC_2.cs" />
     <Compile Include="US_V_GD_QUYET_DINH.cs" />

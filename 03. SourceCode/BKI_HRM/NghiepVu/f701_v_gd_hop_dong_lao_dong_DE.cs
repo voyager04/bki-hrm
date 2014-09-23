@@ -1,23 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
+﻿using BKI_HRM.DS;
 using BKI_HRM.DS.CDBNames;
 using BKI_HRM.US;
-using BKI_HRM.DS;
 using IP.Core.IPCommon;
 using IP.Core.IPSystemAdmin;
 using IP.Core.IPWordReport;
-using System.Net.NetworkInformation;
+using System;
+using System.Configuration;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace BKI_HRM.NghiepVu
 {
