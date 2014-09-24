@@ -705,6 +705,8 @@
             // m_ckb_kiem_nhiem
             // 
             this.m_ckb_kiem_nhiem.AutoSize = true;
+            this.m_ckb_kiem_nhiem.Checked = true;
+            this.m_ckb_kiem_nhiem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.m_ckb_kiem_nhiem.Location = new System.Drawing.Point(246, 8);
             this.m_ckb_kiem_nhiem.Name = "m_ckb_kiem_nhiem";
             this.m_ckb_kiem_nhiem.Size = new System.Drawing.Size(118, 17);
