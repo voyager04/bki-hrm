@@ -169,7 +169,11 @@ namespace BKI_HRM.DanhMuc
         }
         private void load_data_2_grid()
         {
-            decimal v_kiem_nhiem = 650;
+            decimal v_kiem_nhiem;
+            if (m_ckb_kiem_nhiem.Checked)
+                v_kiem_nhiem = -1;
+            else
+                v_kiem_nhiem = 650;
             m_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC_2();
             var v_dat_thoi_diem = DateTime.Now;
             if (m_dtp_thoidiem.Checked)
@@ -726,6 +730,18 @@ namespace BKI_HRM.DanhMuc
             try
             {
                 save_data();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_ckb_kiem_nhiem_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
             }
             catch (Exception v_e)
             {

@@ -87,6 +87,7 @@
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_ofd_chon_file = new System.Windows.Forms.OpenFileDialog();
             this.m_ofd_openfile_mien_nhiem = new System.Windows.Forms.OpenFileDialog();
+            this.m_ckb_kiem_nhiem = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.m_pnl_1.SuspendLayout();
@@ -97,6 +98,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.m_ckb_kiem_nhiem);
             this.panel2.Controls.Add(this.m_lbl_thong_bao);
             this.panel2.Controls.Add(this.m_dtp_thoidiem);
             this.panel2.Controls.Add(this.m_lbl_so_luong_ban_ghi);
@@ -700,6 +702,17 @@
             this.ImageList.Images.SetKeyName(20, "");
             this.ImageList.Images.SetKeyName(21, "");
             // 
+            // m_ckb_kiem_nhiem
+            // 
+            this.m_ckb_kiem_nhiem.AutoSize = true;
+            this.m_ckb_kiem_nhiem.Location = new System.Drawing.Point(246, 8);
+            this.m_ckb_kiem_nhiem.Name = "m_ckb_kiem_nhiem";
+            this.m_ckb_kiem_nhiem.Size = new System.Drawing.Size(118, 17);
+            this.m_ckb_kiem_nhiem.TabIndex = 43;
+            this.m_ckb_kiem_nhiem.Text = "Hiển thị kiêm nhiệm";
+            this.m_ckb_kiem_nhiem.UseVisualStyleBackColor = true;
+            this.m_ckb_kiem_nhiem.CheckedChanged += new System.EventHandler(this.m_ckb_kiem_nhiem_CheckedChanged);
+            // 
             // f410_chuyen_nhan_vien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -790,5 +803,6 @@
         internal System.Windows.Forms.ImageList ImageList;
         private System.Windows.Forms.OpenFileDialog m_ofd_chon_file;
         private System.Windows.Forms.OpenFileDialog m_ofd_openfile_mien_nhiem;
+        private System.Windows.Forms.CheckBox m_ckb_kiem_nhiem;
     }
 }
