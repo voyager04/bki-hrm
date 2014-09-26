@@ -43,7 +43,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "QuanLyNhanSu", "QuanLyNhanS
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "2437"
+		VWDPort = "57155"
 	EndProjectSection
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "IPWordReport", "IPWordReport\IPWordReport.vbproj", "{0ADF180C-9644-4B81-ABB6-93FEE0C11A01}"

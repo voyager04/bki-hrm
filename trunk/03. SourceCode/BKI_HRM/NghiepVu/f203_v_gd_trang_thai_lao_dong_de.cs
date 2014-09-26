@@ -445,18 +445,60 @@ namespace BKI_HRM
                             {
                                 if (m_b_check_quyet_dinh_null)
                                 {
-                                    m_us_quyet_dinh.Insert();
-                                    v_us_gd_quyet_dinh_phap_nhan = new US_GD_QUYET_DINH_PHAP_NHAN();
-                                    v_us_gd_quyet_dinh_phap_nhan.dcID_QUYET_DINH = m_us_quyet_dinh.dcID;
-                                    v_us_gd_quyet_dinh_phap_nhan.dcID_PHAP_NHAN = CAppContext_201.getCurrentIDPhapnhan();
-                                    v_us_gd_quyet_dinh_phap_nhan.Insert();
+                                    if (m_txt_ma_quyet_dinh.Text != "")
+                                    {
+                                        m_us_quyet_dinh.Insert();
+                                        v_us_gd_quyet_dinh_phap_nhan = new US_GD_QUYET_DINH_PHAP_NHAN();
+                                        v_us_gd_quyet_dinh_phap_nhan.dcID_QUYET_DINH = m_us_quyet_dinh.dcID;
+                                        v_us_gd_quyet_dinh_phap_nhan.dcID_PHAP_NHAN = CAppContext_201.getCurrentIDPhapnhan();
+                                        v_us_gd_quyet_dinh_phap_nhan.Insert();
+                                        form_to_us_object_trang_thai_ld();
+                                    }
+                                    else
+                                    {
+                                        form_to_us_object_trang_thai_ld();
+                                        switch ((int)CAppContext_201.getCurrentIDPhapnhan())
+                                        {
+                                            case (int)PHAP_NHAN.TU:
+                                                m_us_trang_thai_ld.dcID_QUYET_DINH = 1515;
+                                                break;
+                                            case (int)PHAP_NHAN.TE:
+                                                m_us_trang_thai_ld.dcID_QUYET_DINH = 1517;
+                                                break;
+                                            case (int)PHAP_NHAN.TEG:
+                                                m_us_trang_thai_ld.dcID_QUYET_DINH = 1516;
+                                                break;
+                                            default:
+                                                break;
+                                        }
+                                    }
                                 }
                                 else
                                 {
                                     m_us_quyet_dinh.Update();
                                 }
                             }
-                            form_to_us_object_trang_thai_ld();
+                            else
+                            {
+                                form_to_us_object_trang_thai_ld();
+                                if (m_txt_ma_quyet_dinh.Text == "")
+                                {
+                                    switch ((int)CAppContext_201.getCurrentIDPhapnhan())
+                                    {
+                                        case (int)PHAP_NHAN.TU:
+                                            m_us_trang_thai_ld.dcID_QUYET_DINH = 1515;
+                                            break;
+                                        case (int)PHAP_NHAN.TE:
+                                            m_us_trang_thai_ld.dcID_QUYET_DINH = 1517;
+                                            break;
+                                        case (int)PHAP_NHAN.TEG:
+                                            m_us_trang_thai_ld.dcID_QUYET_DINH = 1516;
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                }
+                            }
                             m_us_trang_thai_ld.Update();
 
                         }
@@ -582,8 +624,13 @@ namespace BKI_HRM
         {
             m_b_check_quyet_dinh_null = true;
             m_b_check_quyet_dinh_save = true;
+            m_txt_ma_quyet_dinh.Text = "";
             m_grb_quyet_dinh.Enabled = true;
             m_txt_ma_quyet_dinh.Focus();
+            m_dat_ngay_ky.Value = DateTime.Today;
+            m_dat_ngay_co_hieu_luc_qd.Value = DateTime.Today;
+            m_dat_ngay_het_hieu_luc_qd.Value = DateTime.Today;
+            m_cbo_loai_quyet_dinh.SelectedIndex = 0;
         }
         private void chon_quyet_dinh()
         {
