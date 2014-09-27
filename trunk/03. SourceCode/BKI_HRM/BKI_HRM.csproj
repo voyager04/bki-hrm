@@ -178,6 +178,9 @@
     <Compile Include="BaoCao\f702_bao_cao_hdld.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BaoCao\f800_BC_LUONG_THEO_QD.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CDataBaseProccessing.cs" />
     <Compile Include="ControlFormat.cs" />
     <Compile Include="DanhMuc\f101_v_dm_don_vi.cs">
@@ -496,6 +499,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f702_bao_cao_hdld.resx">
       <DependentUpon>f702_bao_cao_hdld.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f800_BC_LUONG_THEO_QD.resx">
+      <DependentUpon>f800_BC_LUONG_THEO_QD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f101_v_dm_don_vi.resx">
       <DependentUpon>f101_v_dm_don_vi.cs</DependentUpon>

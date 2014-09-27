@@ -141,5 +141,16 @@ namespace BKI_HRM.DS.Properties {
                 return ((string)(this["BKI_HRMConnectionString10"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NGV\\SQLEXPRESS;Initial Catalog=BKI_HRM;Persist Security Info=True;Use" +
+            "r ID=sa;Password=sa")]
+        public string BKI_HRMConnectionString11 {
+            get {
+                return ((string)(this["BKI_HRMConnectionString11"]));
+            }
+        }
     }
 }
