@@ -1,0 +1,9 @@
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\Framework.Extensions\bin\Release\Framework.Extensions.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\Framework.Extensions\bin\Release\Framework.Extensions.pdb
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\Framework.Extensions\bin\Release\log4net.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\Framework.Extensions\bin\Release\Newtonsoft.Json.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\Framework.Extensions\bin\Release\log4net.xml
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\Framework.Extensions\bin\Release\Newtonsoft.Json.xml
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\Framework.Extensions\obj\Release\Framework.Extensions.csprojResolveAssemblyReference.cache
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\Framework.Extensions\obj\Release\Framework.Extensions.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\Framework.Extensions\obj\Release\Framework.Extensions.pdb

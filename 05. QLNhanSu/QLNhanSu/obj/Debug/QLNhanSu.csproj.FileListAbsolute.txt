@@ -1,0 +1,124 @@
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\obj\Debug\QLNhanSu.csprojResolveAssemblyReference.cache
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\QLNhanSu.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\QLNhanSu.pdb
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\Antlr3.Runtime.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\BusinessLogic.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\DotNetOpenAuth.Core.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\EntityFramework.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\Newtonsoft.Json.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\System.Net.Http.Formatting.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\System.Web.Helpers.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\System.Web.Http.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\System.Web.Http.WebHost.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\System.Web.Mvc.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\System.Web.Optimization.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\System.Web.Razor.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\System.Web.WebPages.Deployment.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\System.Web.WebPages.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\System.Web.WebPages.Razor.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\WebGrease.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\WebMatrix.Data.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\WebMatrix.WebData.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\Framework.Extensions.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\BKISystemAdmin.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\log4net.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\IPCommon.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\DataAccess.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\BusinessLogic.pdb
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\EntityFramework.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\Newtonsoft.Json.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\System.Net.Http.Formatting.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\System.Web.Helpers.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\System.Web.Http.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\System.Web.Http.WebHost.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\System.Web.Mvc.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\System.Web.Razor.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\System.Web.WebPages.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\System.Web.WebPages.Deployment.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\System.Web.WebPages.Razor.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\WebMatrix.Data.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\WebMatrix.WebData.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\DotNetOpenAuth.Core.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\Framework.Extensions.pdb
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\BKISystemAdmin.pdb
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\log4net.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\IPCommon.pdb
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\IPCommon.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\bin\DataAccess.pdb
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\obj\Debug\QLNhanSu.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\QLNhanSu\obj\Debug\QLNhanSu.pdb
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\QLNhanSu.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\QLNhanSu.pdb
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\Antlr3.Runtime.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\BKISystemAdmin.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\BusinessLogic.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\DotNetOpenAuth.Core.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\EntityFramework.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\Framework.Extensions.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\Newtonsoft.Json.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\System.Net.Http.Formatting.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\System.Web.Helpers.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\System.Web.Http.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\System.Web.Http.WebHost.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\System.Web.Mvc.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\System.Web.Optimization.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\System.Web.Razor.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\System.Web.WebPages.Deployment.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\System.Web.WebPages.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\System.Web.WebPages.Razor.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\WebGrease.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\WebMatrix.Data.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\WebMatrix.WebData.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\IPCommon.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\DataAccess.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\log4net.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\BKISystemAdmin.pdb
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\BusinessLogic.pdb
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\Framework.Extensions.pdb
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\EntityFramework.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\Newtonsoft.Json.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\System.Net.Http.Formatting.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\System.Web.Helpers.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\System.Web.Http.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\System.Web.Http.WebHost.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\System.Web.Mvc.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\System.Web.Razor.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\System.Web.WebPages.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\System.Web.WebPages.Deployment.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\System.Web.WebPages.Razor.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\WebMatrix.Data.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\WebMatrix.WebData.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\DotNetOpenAuth.Core.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\IPCommon.pdb
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\IPCommon.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\DataAccess.pdb
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\bin\log4net.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\obj\Debug\QLNhanSu.csprojResolveAssemblyReference.cache
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\obj\Debug\QLNhanSu.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\QLNhanSu\obj\Debug\QLNhanSu.pdb

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<BKISystemAdmin.Model.CChucNangModel>
+
+<ul class="nav navbar-nav">
+    @*<li><a href="@Url.Action("Index", "Home")"><span class="glyphicon glyphicon-home"></span>&nbsp;TRANG CHỦ</a></li>*@
+    @*<li class='dropdown'>
+        <a href='#' class='dropdown-toggle' data-toggle='dropdown'>BÁO CÁO <span class='caret'></span></a>
+        <ul class='dropdown-menu' role='menu'>
+            <li><a href='#'>AAAAA</a></li>
+            <li><a href='#'>BBBBB</a></li>
+        </ul>
+    </li>*@
+
+    @if (Model != null)
+    {
+        foreach (var lp_item in Model)
+        {
+            if (lp_item.HIEN_THI_YN)
+            {
+                <li class="dropdown">
+                    <a href="@(lp_item.HAS_LINK ? Url.Action(lp_item.ACTIVITY_NAME, lp_item.CONTROLLER_NAME) : "#")" class="dropdown-toggle" data-toggle="dropdown">
+                        @if (lp_item.CHUC_NANG_CON != null && lp_item.CHUC_NANG_CON.Any())
+                        {
+                            <span class="@lp_item.ICON_CLASS"></span> @lp_item.HIEN_THI_MENU
+                            <span class='caret'></span>
+                        } else
+                        {
+                            <span class="@lp_item.ICON_CLASS"></span> @lp_item.HIEN_THI_MENU
+                        }
+                    </a>
+
+                    @if (lp_item.CHUC_NANG_CON != null && lp_item.CHUC_NANG_CON.Any())
+                    {
+                        <ul class="dropdown-menu" role="menu">
+                            @foreach (var item in lp_item.CHUC_NANG_CON.OrderBy(m => m.VI_TRI))
+                            {
+                                <li>
+                                    <a href="@(item.HAS_LINK ? Url.Action(item.ACTIVITY_NAME, item.CONTROLLER_NAME) : "#")">
+                                        <span class="@item.ICON_CLASS"></span>&nbsp;
+                                        @item.HIEN_THI_MENU
+                                    </a>
+                                </li>
+                            }
+
+                        </ul>
+                    }
+                </li>
+            }
+        }
+    }
+</ul>

@@ -1,0 +1,26 @@
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\Framework.Extensions\bin\Debug\Framework.Extensions.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\Framework.Extensions\bin\Debug\Framework.Extensions.pdb
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\Framework.Extensions\bin\Debug\log4net.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\Framework.Extensions\bin\Debug\Newtonsoft.Json.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\Framework.Extensions\bin\Debug\log4net.xml
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\Framework.Extensions\bin\Debug\Newtonsoft.Json.xml
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\Framework.Extensions\obj\Debug\Framework.Extensions.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\Framework.Extensions\obj\Debug\Framework.Extensions.pdb
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\Framework.Extensions\obj\Debug\Framework.Extensions.csprojResolveAssemblyReference.cache
+F:\01. Work\Support\Source Code\C#\EHR\Framework.Extensions\bin\Debug\Framework.Extensions.dll
+F:\01. Work\Support\Source Code\C#\EHR\Framework.Extensions\bin\Debug\Framework.Extensions.pdb
+F:\01. Work\Support\Source Code\C#\EHR\Framework.Extensions\bin\Debug\log4net.dll
+F:\01. Work\Support\Source Code\C#\EHR\Framework.Extensions\bin\Debug\Newtonsoft.Json.dll
+F:\01. Work\Support\Source Code\C#\EHR\Framework.Extensions\bin\Debug\log4net.xml
+F:\01. Work\Support\Source Code\C#\EHR\Framework.Extensions\bin\Debug\Newtonsoft.Json.xml
+F:\01. Work\Support\Source Code\C#\EHR\Framework.Extensions\obj\Debug\Framework.Extensions.csprojResolveAssemblyReference.cache
+F:\01. Work\Support\Source Code\C#\EHR\Framework.Extensions\obj\Debug\Framework.Extensions.dll
+F:\01. Work\Support\Source Code\C#\EHR\Framework.Extensions\obj\Debug\Framework.Extensions.pdb
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\Framework.Extensions\bin\Debug\Framework.Extensions.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\Framework.Extensions\bin\Debug\Framework.Extensions.pdb
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\Framework.Extensions\bin\Debug\log4net.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\Framework.Extensions\bin\Debug\log4net.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\Framework.Extensions\bin\Debug\Newtonsoft.Json.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\Framework.Extensions\obj\Debug\Framework.Extensions.csprojResolveAssemblyReference.cache
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\Framework.Extensions\obj\Debug\Framework.Extensions.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\Framework.Extensions\obj\Debug\Framework.Extensions.pdb

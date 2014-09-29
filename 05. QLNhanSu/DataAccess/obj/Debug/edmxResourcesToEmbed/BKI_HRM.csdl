@@ -1,0 +1,2500 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BKI_HRMModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="BKI_HRMEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="CM_COMPANY_INFO" EntityType="BKI_HRMModel.CM_COMPANY_INFO" />
+    <EntitySet Name="CM_DM_LOAI_TD" EntityType="BKI_HRMModel.CM_DM_LOAI_TD" />
+    <EntitySet Name="CM_DM_TU_DIEN" EntityType="BKI_HRMModel.CM_DM_TU_DIEN" />
+    <EntitySet Name="DM_CAP_BAC" EntityType="BKI_HRMModel.DM_CAP_BAC" />
+    <EntitySet Name="DM_CHUC_VU" EntityType="BKI_HRMModel.DM_CHUC_VU" />
+    <EntitySet Name="DM_DON_VI" EntityType="BKI_HRMModel.DM_DON_VI" />
+    <EntitySet Name="DM_DU_AN" EntityType="BKI_HRMModel.DM_DU_AN" />
+    <EntitySet Name="DM_HEADCOUNT" EntityType="BKI_HRMModel.DM_HEADCOUNT" />
+    <EntitySet Name="DM_KY" EntityType="BKI_HRMModel.DM_KY" />
+    <EntitySet Name="DM_NHAN_SU" EntityType="BKI_HRMModel.DM_NHAN_SU" />
+    <EntitySet Name="DM_PHAP_NHAN" EntityType="BKI_HRMModel.DM_PHAP_NHAN" />
+    <EntitySet Name="DM_QUYET_DINH" EntityType="BKI_HRMModel.DM_QUYET_DINH" />
+    <EntitySet Name="DM_TRANG_THAI_UNG_VIEN" EntityType="BKI_HRMModel.DM_TRANG_THAI_UNG_VIEN" />
+    <EntitySet Name="DOC_COLUMN_COMMENT" EntityType="BKI_HRMModel.DOC_COLUMN_COMMENT" />
+    <EntitySet Name="DOC_TABLE_COMMENT" EntityType="BKI_HRMModel.DOC_TABLE_COMMENT" />
+    <EntitySet Name="GD_CHI_TIET_CAP_BAC" EntityType="BKI_HRMModel.GD_CHI_TIET_CAP_BAC" />
+    <EntitySet Name="GD_CHI_TIET_CHUC_VU" EntityType="BKI_HRMModel.GD_CHI_TIET_CHUC_VU" />
+    <EntitySet Name="GD_CHI_TIET_DU_AN" EntityType="BKI_HRMModel.GD_CHI_TIET_DU_AN" />
+    <EntitySet Name="GD_CHI_TIET_TRANG_THAI_LD" EntityType="BKI_HRMModel.GD_CHI_TIET_TRANG_THAI_LD" />
+    <EntitySet Name="GD_CHI_TIET_TUYEN_DUNG" EntityType="BKI_HRMModel.GD_CHI_TIET_TUYEN_DUNG" />
+    <EntitySet Name="GD_CONG_TAC" EntityType="BKI_HRMModel.GD_CONG_TAC" />
+    <EntitySet Name="GD_DON_VI_PHAP_NHAN" EntityType="BKI_HRMModel.GD_DON_VI_PHAP_NHAN" />
+    <EntitySet Name="GD_HOP_DONG" EntityType="BKI_HRMModel.GD_HOP_DONG" />
+    <EntitySet Name="GD_LUONG_THEO_QD" EntityType="BKI_HRMModel.GD_LUONG_THEO_QD" />
+    <EntitySet Name="GD_QUA_TRINH_CONG_TAC" EntityType="BKI_HRMModel.GD_QUA_TRINH_CONG_TAC" />
+    <EntitySet Name="GD_QUYET_DINH_DU_AN" EntityType="BKI_HRMModel.GD_QUYET_DINH_DU_AN" />
+    <EntitySet Name="GD_QUYET_DINH_PHAP_NHAN" EntityType="BKI_HRMModel.GD_QUYET_DINH_PHAP_NHAN" />
+    <EntitySet Name="GD_TINH_HINH_NV_MOI" EntityType="BKI_HRMModel.GD_TINH_HINH_NV_MOI" />
+    <EntitySet Name="HT_BACKUP_HISTORY" EntityType="BKI_HRMModel.HT_BACKUP_HISTORY" />
+    <EntitySet Name="HT_BUSINESS_PROCESS_LOCK" EntityType="BKI_HRMModel.HT_BUSINESS_PROCESS_LOCK" />
+    <EntitySet Name="HT_CONTROL_IN_FORM" EntityType="BKI_HRMModel.HT_CONTROL_IN_FORM" />
+    <EntitySet Name="HT_CONTROLLER" EntityType="BKI_HRMModel.HT_CONTROLLER" />
+    <EntitySet Name="HT_FORM" EntityType="BKI_HRMModel.HT_FORM" />
+    <EntitySet Name="HT_LOG_LOGIN" EntityType="BKI_HRMModel.HT_LOG_LOGIN" />
+    <EntitySet Name="HT_LOGIN_WEB" EntityType="BKI_HRMModel.HT_LOGIN_WEB" />
+    <EntitySet Name="HT_NGUOI_SU_DUNG" EntityType="BKI_HRMModel.HT_NGUOI_SU_DUNG" />
+    <EntitySet Name="HT_PHAN_QUYEN_CHO_NHOM" EntityType="BKI_HRMModel.HT_PHAN_QUYEN_CHO_NHOM" />
+    <EntitySet Name="HT_PHAN_QUYEN_CHUC_NANG" EntityType="BKI_HRMModel.HT_PHAN_QUYEN_CHUC_NANG" />
+    <EntitySet Name="HT_PHAN_QUYEN_DETAIL" EntityType="BKI_HRMModel.HT_PHAN_QUYEN_DETAIL" />
+    <EntitySet Name="HT_PHAN_QUYEN_HE_THONG" EntityType="BKI_HRMModel.HT_PHAN_QUYEN_HE_THONG" />
+    <EntitySet Name="HT_QUAN_HE_SU_DUNG_DU_LIEU" EntityType="BKI_HRMModel.HT_QUAN_HE_SU_DUNG_DU_LIEU" />
+    <EntitySet Name="HT_QUYEN_USER" EntityType="BKI_HRMModel.HT_QUYEN_USER" />
+    <EntitySet Name="HT_QUYEN_USER_WEB" EntityType="BKI_HRMModel.HT_QUYEN_USER_WEB" />
+    <EntitySet Name="HT_THAM_SO_HE_THONG" EntityType="BKI_HRMModel.HT_THAM_SO_HE_THONG" />
+    <EntitySet Name="HT_USER" EntityType="BKI_HRMModel.HT_USER" />
+    <EntitySet Name="HT_USER_GROUP" EntityType="BKI_HRMModel.HT_USER_GROUP" />
+    <EntitySet Name="HT_USER_GROUP_WEB" EntityType="BKI_HRMModel.HT_USER_GROUP_WEB" />
+    <EntitySet Name="sysdiagrams" EntityType="BKI_HRMModel.sysdiagram" />
+    <EntitySet Name="V_BAO_CAO_NHAN_SU" EntityType="BKI_HRMModel.V_BAO_CAO_NHAN_SU" />
+    <EntitySet Name="V_DM_CAP_BAC" EntityType="BKI_HRMModel.V_DM_CAP_BAC" />
+    <EntitySet Name="V_DM_CAP_BAC_2" EntityType="BKI_HRMModel.V_DM_CAP_BAC_2" />
+    <EntitySet Name="V_DM_CHUC_VU" EntityType="BKI_HRMModel.V_DM_CHUC_VU" />
+    <EntitySet Name="V_DM_DON_VI" EntityType="BKI_HRMModel.V_DM_DON_VI" />
+    <EntitySet Name="V_DM_DU_AN_QUYET_DINH_TU_DIEN" EntityType="BKI_HRMModel.V_DM_DU_AN_QUYET_DINH_TU_DIEN" />
+    <EntitySet Name="V_DM_DU_LIEU_NHAN_VIEN" EntityType="BKI_HRMModel.V_DM_DU_LIEU_NHAN_VIEN" />
+    <EntitySet Name="V_DM_NHAN_SU" EntityType="BKI_HRMModel.V_DM_NHAN_SU" />
+    <EntitySet Name="V_DM_NHAN_SU_DU_AN" EntityType="BKI_HRMModel.V_DM_NHAN_SU_DU_AN" />
+    <EntitySet Name="V_DM_QUYET_DINH" EntityType="BKI_HRMModel.V_DM_QUYET_DINH" />
+    <EntitySet Name="V_DM_TRANG_THAI_UNG_VIEN" EntityType="BKI_HRMModel.V_DM_TRANG_THAI_UNG_VIEN" />
+    <EntitySet Name="V_GD_BAO_CAO_DU_AN" EntityType="BKI_HRMModel.V_GD_BAO_CAO_DU_AN" />
+    <EntitySet Name="V_GD_BAO_CAO_DU_AN_2" EntityType="BKI_HRMModel.V_GD_BAO_CAO_DU_AN_2" />
+    <EntitySet Name="V_GD_CHI_TIET_CAP_BAC" EntityType="BKI_HRMModel.V_GD_CHI_TIET_CAP_BAC" />
+    <EntitySet Name="V_GD_CONG_TAC" EntityType="BKI_HRMModel.V_GD_CONG_TAC" />
+    <EntitySet Name="V_GD_HOP_DONG_LAO_DONG" EntityType="BKI_HRMModel.V_GD_HOP_DONG_LAO_DONG" />
+    <EntitySet Name="V_GD_LUONG_THEO_QD" EntityType="BKI_HRMModel.V_GD_LUONG_THEO_QD" />
+    <EntitySet Name="V_GD_QUA_TRINH_LAM_VIEC" EntityType="BKI_HRMModel.V_GD_QUA_TRINH_LAM_VIEC" />
+    <EntitySet Name="V_GD_QUA_TRINH_LAM_VIEC_2" EntityType="BKI_HRMModel.V_GD_QUA_TRINH_LAM_VIEC_2" />
+    <EntitySet Name="V_GD_QUYET_DINH" EntityType="BKI_HRMModel.V_GD_QUYET_DINH" />
+    <EntitySet Name="V_GD_QUYET_DINH_temp" EntityType="BKI_HRMModel.V_GD_QUYET_DINH_temp" />
+    <EntitySet Name="V_GD_TRA_CUU_NHAN_SU" EntityType="BKI_HRMModel.V_GD_TRA_CUU_NHAN_SU" />
+    <EntitySet Name="V_GD_TRANG_THAI_LAO_DONG" EntityType="BKI_HRMModel.V_GD_TRANG_THAI_LAO_DONG" />
+    <EntitySet Name="V_HT_CONTROL_IN_FORM" EntityType="BKI_HRMModel.V_HT_CONTROL_IN_FORM" />
+    <EntitySet Name="V_HT_PHAN_QUYEN_CHO_NHOM" EntityType="BKI_HRMModel.V_HT_PHAN_QUYEN_CHO_NHOM" />
+    <EntitySet Name="V_NHAN_VIEN_HIEN_TAI" EntityType="BKI_HRMModel.V_NHAN_VIEN_HIEN_TAI" />
+    <EntitySet Name="View_2" EntityType="BKI_HRMModel.View_2" />
+    <AssociationSet Name="FK_CM_DM_TU_DIEN_CM_DM_LOAI_TD" Association="BKI_HRMModel.FK_CM_DM_TU_DIEN_CM_DM_LOAI_TD">
+      <End Role="CM_DM_LOAI_TD" EntitySet="CM_DM_LOAI_TD" />
+      <End Role="CM_DM_TU_DIEN" EntitySet="CM_DM_TU_DIEN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DM_CHUC_VU_CM_DM_TU_DIEN" Association="BKI_HRMModel.FK_DM_CHUC_VU_CM_DM_TU_DIEN">
+      <End Role="CM_DM_TU_DIEN" EntitySet="CM_DM_TU_DIEN" />
+      <End Role="DM_CHUC_VU" EntitySet="DM_CHUC_VU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DM_DON_VI_CM_DM_TU_DIEN" Association="BKI_HRMModel.FK_DM_DON_VI_CM_DM_TU_DIEN">
+      <End Role="CM_DM_TU_DIEN" EntitySet="CM_DM_TU_DIEN" />
+      <End Role="DM_DON_VI" EntitySet="DM_DON_VI" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DM_DON_VI_CM_DM_TU_DIEN1" Association="BKI_HRMModel.FK_DM_DON_VI_CM_DM_TU_DIEN1">
+      <End Role="CM_DM_TU_DIEN" EntitySet="CM_DM_TU_DIEN" />
+      <End Role="DM_DON_VI" EntitySet="DM_DON_VI" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DM_DU_AN_CM_DM_TU_DIEN" Association="BKI_HRMModel.FK_DM_DU_AN_CM_DM_TU_DIEN">
+      <End Role="CM_DM_TU_DIEN" EntitySet="CM_DM_TU_DIEN" />
+      <End Role="DM_DU_AN" EntitySet="DM_DU_AN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DM_DU_AN_CM_DM_TU_DIEN1" Association="BKI_HRMModel.FK_DM_DU_AN_CM_DM_TU_DIEN1">
+      <End Role="CM_DM_TU_DIEN" EntitySet="CM_DM_TU_DIEN" />
+      <End Role="DM_DU_AN" EntitySet="DM_DU_AN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DM_DU_AN_CM_DM_TU_DIEN2" Association="BKI_HRMModel.FK_DM_DU_AN_CM_DM_TU_DIEN2">
+      <End Role="CM_DM_TU_DIEN" EntitySet="CM_DM_TU_DIEN" />
+      <End Role="DM_DU_AN" EntitySet="DM_DU_AN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DM_QUYET_DINH_CM_DM_TU_DIEN" Association="BKI_HRMModel.FK_DM_QUYET_DINH_CM_DM_TU_DIEN">
+      <End Role="CM_DM_TU_DIEN" EntitySet="CM_DM_TU_DIEN" />
+      <End Role="DM_QUYET_DINH" EntitySet="DM_QUYET_DINH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_CHI_TIET_CHUC_VU_CM_DM_TU_DIEN" Association="BKI_HRMModel.FK_GD_CHI_TIET_CHUC_VU_CM_DM_TU_DIEN">
+      <End Role="CM_DM_TU_DIEN" EntitySet="CM_DM_TU_DIEN" />
+      <End Role="GD_CHI_TIET_CHUC_VU" EntitySet="GD_CHI_TIET_CHUC_VU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_CHI_TIET_DU_AN_CM_DM_TU_DIEN" Association="BKI_HRMModel.FK_GD_CHI_TIET_DU_AN_CM_DM_TU_DIEN">
+      <End Role="CM_DM_TU_DIEN" EntitySet="CM_DM_TU_DIEN" />
+      <End Role="GD_CHI_TIET_DU_AN" EntitySet="GD_CHI_TIET_DU_AN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_CHI_TIET_DU_AN_CM_DM_TU_DIEN1" Association="BKI_HRMModel.FK_GD_CHI_TIET_DU_AN_CM_DM_TU_DIEN1">
+      <End Role="CM_DM_TU_DIEN" EntitySet="CM_DM_TU_DIEN" />
+      <End Role="GD_CHI_TIET_DU_AN" EntitySet="GD_CHI_TIET_DU_AN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_CHI_TIET_TRANG_THAI_LD_CM_DM_TU_DIEN" Association="BKI_HRMModel.FK_GD_CHI_TIET_TRANG_THAI_LD_CM_DM_TU_DIEN">
+      <End Role="CM_DM_TU_DIEN" EntitySet="CM_DM_TU_DIEN" />
+      <End Role="GD_CHI_TIET_TRANG_THAI_LD" EntitySet="GD_CHI_TIET_TRANG_THAI_LD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_HOP_DONG_CM_DM_TU_DIEN" Association="BKI_HRMModel.FK_GD_HOP_DONG_CM_DM_TU_DIEN">
+      <End Role="CM_DM_TU_DIEN" EntitySet="CM_DM_TU_DIEN" />
+      <End Role="GD_HOP_DONG" EntitySet="GD_HOP_DONG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HT_CONTROL_IN_FORM_CM_DM_TU_DIEN" Association="BKI_HRMModel.FK_HT_CONTROL_IN_FORM_CM_DM_TU_DIEN">
+      <End Role="CM_DM_TU_DIEN" EntitySet="CM_DM_TU_DIEN" />
+      <End Role="HT_CONTROL_IN_FORM" EntitySet="HT_CONTROL_IN_FORM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HT_QUYEN_USER_CM_DM_TU_DIEN" Association="BKI_HRMModel.FK_HT_QUYEN_USER_CM_DM_TU_DIEN">
+      <End Role="CM_DM_TU_DIEN" EntitySet="CM_DM_TU_DIEN" />
+      <End Role="HT_QUYEN_USER" EntitySet="HT_QUYEN_USER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HT_QUYEN_USER_WEB_CM_DM_TU_DIEN" Association="BKI_HRMModel.FK_HT_QUYEN_USER_WEB_CM_DM_TU_DIEN">
+      <End Role="CM_DM_TU_DIEN" EntitySet="CM_DM_TU_DIEN" />
+      <End Role="HT_QUYEN_USER_WEB" EntitySet="HT_QUYEN_USER_WEB" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_CHI_TIET_CAP_BAC_DM_CAP_BAC" Association="BKI_HRMModel.FK_GD_CHI_TIET_CAP_BAC_DM_CAP_BAC">
+      <End Role="DM_CAP_BAC" EntitySet="DM_CAP_BAC" />
+      <End Role="GD_CHI_TIET_CAP_BAC" EntitySet="GD_CHI_TIET_CAP_BAC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_CHI_TIET_CHUC_VU_DM_CHUC_VU" Association="BKI_HRMModel.FK_GD_CHI_TIET_CHUC_VU_DM_CHUC_VU">
+      <End Role="DM_CHUC_VU" EntitySet="DM_CHUC_VU" />
+      <End Role="GD_CHI_TIET_CHUC_VU" EntitySet="GD_CHI_TIET_CHUC_VU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DM_DON_VI_DM_DON_VI" Association="BKI_HRMModel.FK_DM_DON_VI_DM_DON_VI">
+      <End Role="DM_DON_VI" EntitySet="DM_DON_VI" />
+      <End Role="DM_DON_VI1" EntitySet="DM_DON_VI" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_CHI_TIET_CHUC_VU_DM_DON_VI" Association="BKI_HRMModel.FK_GD_CHI_TIET_CHUC_VU_DM_DON_VI">
+      <End Role="DM_DON_VI" EntitySet="DM_DON_VI" />
+      <End Role="GD_CHI_TIET_CHUC_VU" EntitySet="GD_CHI_TIET_CHUC_VU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_DON_VI_PHAP_NHAN_GD_DON_VI_PHAP_NHAN" Association="BKI_HRMModel.FK_GD_DON_VI_PHAP_NHAN_GD_DON_VI_PHAP_NHAN">
+      <End Role="DM_DON_VI" EntitySet="DM_DON_VI" />
+      <End Role="GD_DON_VI_PHAP_NHAN" EntitySet="GD_DON_VI_PHAP_NHAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_CHI_TIET_DU_AN_DM_DU_AN" Association="BKI_HRMModel.FK_GD_CHI_TIET_DU_AN_DM_DU_AN">
+      <End Role="DM_DU_AN" EntitySet="DM_DU_AN" />
+      <End Role="GD_CHI_TIET_DU_AN" EntitySet="GD_CHI_TIET_DU_AN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_QUYET_DINH_DU_AN_DM_DU_AN" Association="BKI_HRMModel.FK_GD_QUYET_DINH_DU_AN_DM_DU_AN">
+      <End Role="DM_DU_AN" EntitySet="DM_DU_AN" />
+      <End Role="GD_QUYET_DINH_DU_AN" EntitySet="GD_QUYET_DINH_DU_AN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DM_NHAN_SU_DM_HEADCOUNT" Association="BKI_HRMModel.FK_DM_NHAN_SU_DM_HEADCOUNT">
+      <End Role="DM_HEADCOUNT" EntitySet="DM_HEADCOUNT" />
+      <End Role="DM_NHAN_SU" EntitySet="DM_NHAN_SU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_CHI_TIET_CAP_BAC_DM_NHAN_SU" Association="BKI_HRMModel.FK_GD_CHI_TIET_CAP_BAC_DM_NHAN_SU">
+      <End Role="DM_NHAN_SU" EntitySet="DM_NHAN_SU" />
+      <End Role="GD_CHI_TIET_CAP_BAC" EntitySet="GD_CHI_TIET_CAP_BAC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_CHI_TIET_CHUC_VU_DM_NHAN_SU" Association="BKI_HRMModel.FK_GD_CHI_TIET_CHUC_VU_DM_NHAN_SU">
+      <End Role="DM_NHAN_SU" EntitySet="DM_NHAN_SU" />
+      <End Role="GD_CHI_TIET_CHUC_VU" EntitySet="GD_CHI_TIET_CHUC_VU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_CHI_TIET_DU_AN_DM_NHAN_SU" Association="BKI_HRMModel.FK_GD_CHI_TIET_DU_AN_DM_NHAN_SU">
+      <End Role="DM_NHAN_SU" EntitySet="DM_NHAN_SU" />
+      <End Role="GD_CHI_TIET_DU_AN" EntitySet="GD_CHI_TIET_DU_AN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_CHI_TIET_TRANG_THAI_LD_DM_NHAN_SU" Association="BKI_HRMModel.FK_GD_CHI_TIET_TRANG_THAI_LD_DM_NHAN_SU">
+      <End Role="DM_NHAN_SU" EntitySet="DM_NHAN_SU" />
+      <End Role="GD_CHI_TIET_TRANG_THAI_LD" EntitySet="GD_CHI_TIET_TRANG_THAI_LD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_CHI_TIET_TUYEN_DUNG_DM_NHAN_SU" Association="BKI_HRMModel.FK_GD_CHI_TIET_TUYEN_DUNG_DM_NHAN_SU">
+      <End Role="DM_NHAN_SU" EntitySet="DM_NHAN_SU" />
+      <End Role="GD_CHI_TIET_TUYEN_DUNG" EntitySet="GD_CHI_TIET_TUYEN_DUNG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_CONG_TAC_DM_NHAN_SU" Association="BKI_HRMModel.FK_GD_CONG_TAC_DM_NHAN_SU">
+      <End Role="DM_NHAN_SU" EntitySet="DM_NHAN_SU" />
+      <End Role="GD_CONG_TAC" EntitySet="GD_CONG_TAC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_HOP_DONG_DM_NHAN_SU" Association="BKI_HRMModel.FK_GD_HOP_DONG_DM_NHAN_SU">
+      <End Role="DM_NHAN_SU" EntitySet="DM_NHAN_SU" />
+      <End Role="GD_HOP_DONG" EntitySet="GD_HOP_DONG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_DON_VI_PHAP_NHAN_DM_PHAP_NHAN" Association="BKI_HRMModel.FK_GD_DON_VI_PHAP_NHAN_DM_PHAP_NHAN">
+      <End Role="DM_PHAP_NHAN" EntitySet="DM_PHAP_NHAN" />
+      <End Role="GD_DON_VI_PHAP_NHAN" EntitySet="GD_DON_VI_PHAP_NHAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_HOP_DONG_DM_PHAP_NHAN" Association="BKI_HRMModel.FK_GD_HOP_DONG_DM_PHAP_NHAN">
+      <End Role="DM_PHAP_NHAN" EntitySet="DM_PHAP_NHAN" />
+      <End Role="GD_HOP_DONG" EntitySet="GD_HOP_DONG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_QUYET_DINH_PHAP_NHAN_DM_PHAP_NHAN" Association="BKI_HRMModel.FK_GD_QUYET_DINH_PHAP_NHAN_DM_PHAP_NHAN">
+      <End Role="DM_PHAP_NHAN" EntitySet="DM_PHAP_NHAN" />
+      <End Role="GD_QUYET_DINH_PHAP_NHAN" EntitySet="GD_QUYET_DINH_PHAP_NHAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_CHI_TIET_CAP_BAC_DM_QUYET_DINH" Association="BKI_HRMModel.FK_GD_CHI_TIET_CAP_BAC_DM_QUYET_DINH">
+      <End Role="DM_QUYET_DINH" EntitySet="DM_QUYET_DINH" />
+      <End Role="GD_CHI_TIET_CAP_BAC" EntitySet="GD_CHI_TIET_CAP_BAC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_CHI_TIET_CHUC_VU_DM_QUYET_DINH" Association="BKI_HRMModel.FK_GD_CHI_TIET_CHUC_VU_DM_QUYET_DINH">
+      <End Role="DM_QUYET_DINH" EntitySet="DM_QUYET_DINH" />
+      <End Role="GD_CHI_TIET_CHUC_VU" EntitySet="GD_CHI_TIET_CHUC_VU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_CHI_TIET_DU_AN_DM_QUYET_DINH" Association="BKI_HRMModel.FK_GD_CHI_TIET_DU_AN_DM_QUYET_DINH">
+      <End Role="DM_QUYET_DINH" EntitySet="DM_QUYET_DINH" />
+      <End Role="GD_CHI_TIET_DU_AN" EntitySet="GD_CHI_TIET_DU_AN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_CHI_TIET_TRANG_THAI_LD_DM_QUYET_DINH" Association="BKI_HRMModel.FK_GD_CHI_TIET_TRANG_THAI_LD_DM_QUYET_DINH">
+      <End Role="DM_QUYET_DINH" EntitySet="DM_QUYET_DINH" />
+      <End Role="GD_CHI_TIET_TRANG_THAI_LD" EntitySet="GD_CHI_TIET_TRANG_THAI_LD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_CONG_TAC_DM_QUYET_DINH" Association="BKI_HRMModel.FK_GD_CONG_TAC_DM_QUYET_DINH">
+      <End Role="DM_QUYET_DINH" EntitySet="DM_QUYET_DINH" />
+      <End Role="GD_CONG_TAC" EntitySet="GD_CONG_TAC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_QUYET_DINH_DU_AN_DM_QUYET_DINH" Association="BKI_HRMModel.FK_GD_QUYET_DINH_DU_AN_DM_QUYET_DINH">
+      <End Role="DM_QUYET_DINH" EntitySet="DM_QUYET_DINH" />
+      <End Role="GD_QUYET_DINH_DU_AN" EntitySet="GD_QUYET_DINH_DU_AN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_QUYET_DINH_PHAP_NHAN_DM_QUYET_DINH" Association="BKI_HRMModel.FK_GD_QUYET_DINH_PHAP_NHAN_DM_QUYET_DINH">
+      <End Role="DM_QUYET_DINH" EntitySet="DM_QUYET_DINH" />
+      <End Role="GD_QUYET_DINH_PHAP_NHAN" EntitySet="GD_QUYET_DINH_PHAP_NHAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DM_TRANG_THAI_UNG_VIEN_DM_TRANG_THAI_UNG_VIEN" Association="BKI_HRMModel.FK_DM_TRANG_THAI_UNG_VIEN_DM_TRANG_THAI_UNG_VIEN">
+      <End Role="DM_TRANG_THAI_UNG_VIEN" EntitySet="DM_TRANG_THAI_UNG_VIEN" />
+      <End Role="DM_TRANG_THAI_UNG_VIEN1" EntitySet="DM_TRANG_THAI_UNG_VIEN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GD_CHI_TIET_TUYEN_DUNG_DM_TRANG_THAI_UNG_VIEN" Association="BKI_HRMModel.FK_GD_CHI_TIET_TUYEN_DUNG_DM_TRANG_THAI_UNG_VIEN">
+      <End Role="DM_TRANG_THAI_UNG_VIEN" EntitySet="DM_TRANG_THAI_UNG_VIEN" />
+      <End Role="GD_CHI_TIET_TUYEN_DUNG" EntitySet="GD_CHI_TIET_TUYEN_DUNG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HT_CONTROL_IN_FORM_HT_FORM" Association="BKI_HRMModel.FK_HT_CONTROL_IN_FORM_HT_FORM">
+      <End Role="HT_FORM" EntitySet="HT_FORM" />
+      <End Role="HT_CONTROL_IN_FORM" EntitySet="HT_CONTROL_IN_FORM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HT_PHAN_QUYEN_CHUC_NANG_HT_CONTROLLER" Association="BKI_HRMModel.FK_HT_PHAN_QUYEN_CHUC_NANG_HT_CONTROLLER">
+      <End Role="HT_CONTROLLER" EntitySet="HT_CONTROLLER" />
+      <End Role="HT_PHAN_QUYEN_CHUC_NANG" EntitySet="HT_PHAN_QUYEN_CHUC_NANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HT_NGUOI_SU_DUNG_DM_USER_GROUP" Association="BKI_HRMModel.FK_HT_NGUOI_SU_DUNG_DM_USER_GROUP">
+      <End Role="HT_USER_GROUP" EntitySet="HT_USER_GROUP" />
+      <End Role="HT_NGUOI_SU_DUNG" EntitySet="HT_NGUOI_SU_DUNG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HT_QUYEN_USER_HT_NGUOI_SU_DUNG" Association="BKI_HRMModel.FK_HT_QUYEN_USER_HT_NGUOI_SU_DUNG">
+      <End Role="HT_NGUOI_SU_DUNG" EntitySet="HT_NGUOI_SU_DUNG" />
+      <End Role="HT_QUYEN_USER" EntitySet="HT_QUYEN_USER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HT_PHAN_QUYEN_CHO_NHOM_HT_PHAN_QUYEN_HE_THONG" Association="BKI_HRMModel.FK_HT_PHAN_QUYEN_CHO_NHOM_HT_PHAN_QUYEN_HE_THONG">
+      <End Role="HT_PHAN_QUYEN_HE_THONG" EntitySet="HT_PHAN_QUYEN_HE_THONG" />
+      <End Role="HT_PHAN_QUYEN_CHO_NHOM" EntitySet="HT_PHAN_QUYEN_CHO_NHOM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HT_PHAN_QUYEN_CHO_NHOM_HT_USER_GROUP" Association="BKI_HRMModel.FK_HT_PHAN_QUYEN_CHO_NHOM_HT_USER_GROUP">
+      <End Role="HT_USER_GROUP" EntitySet="HT_USER_GROUP" />
+      <End Role="HT_PHAN_QUYEN_CHO_NHOM" EntitySet="HT_PHAN_QUYEN_CHO_NHOM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HT_PHAN_QUYEN_CHUC_NANG_HT_PHAN_QUYEN_CHUC_NANG" Association="BKI_HRMModel.FK_HT_PHAN_QUYEN_CHUC_NANG_HT_PHAN_QUYEN_CHUC_NANG">
+      <End Role="HT_PHAN_QUYEN_CHUC_NANG" EntitySet="HT_PHAN_QUYEN_CHUC_NANG" />
+      <End Role="HT_PHAN_QUYEN_CHUC_NANG1" EntitySet="HT_PHAN_QUYEN_CHUC_NANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HT_PHAN_QUYEN_CHUC_NANG_HT_USER_GROUP_WEB" Association="BKI_HRMModel.FK_HT_PHAN_QUYEN_CHUC_NANG_HT_USER_GROUP_WEB">
+      <End Role="HT_USER_GROUP_WEB" EntitySet="HT_USER_GROUP_WEB" />
+      <End Role="HT_PHAN_QUYEN_CHUC_NANG" EntitySet="HT_PHAN_QUYEN_CHUC_NANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HT_PHAN_QUYEN_DETAIL_HT_PHAN_QUYEN_HE_THONG" Association="BKI_HRMModel.FK_HT_PHAN_QUYEN_DETAIL_HT_PHAN_QUYEN_HE_THONG">
+      <End Role="HT_PHAN_QUYEN_HE_THONG" EntitySet="HT_PHAN_QUYEN_HE_THONG" />
+      <End Role="HT_PHAN_QUYEN_DETAIL" EntitySet="HT_PHAN_QUYEN_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HT_QUAN_HE_SU_DUNG_DU_LIEU_HT_USER_GROUP" Association="BKI_HRMModel.FK_HT_QUAN_HE_SU_DUNG_DU_LIEU_HT_USER_GROUP">
+      <End Role="HT_USER_GROUP" EntitySet="HT_USER_GROUP" />
+      <End Role="HT_QUAN_HE_SU_DUNG_DU_LIEU" EntitySet="HT_QUAN_HE_SU_DUNG_DU_LIEU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HT_USER_HT_USER_GROUP_WEB" Association="BKI_HRMModel.FK_HT_USER_HT_USER_GROUP_WEB">
+      <End Role="HT_USER_GROUP_WEB" EntitySet="HT_USER_GROUP_WEB" />
+      <End Role="HT_USER" EntitySet="HT_USER" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CM_COMPANY_INFO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="COMPANY_NAME" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="COMPANY_ADDRESS" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CM_DM_LOAI_TD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_LOAI" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_LOAI" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CM_DM_TU_DIEN" Relationship="BKI_HRMModel.FK_CM_DM_TU_DIEN_CM_DM_LOAI_TD" FromRole="CM_DM_LOAI_TD" ToRole="CM_DM_TU_DIEN" />
+  </EntityType>
+  <EntityType Name="CM_DM_TU_DIEN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MA_TU_DIEN" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_LOAI_TU_DIEN" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="TEN_NGAN" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="GHI_CHU" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CM_DM_LOAI_TD" Relationship="BKI_HRMModel.FK_CM_DM_TU_DIEN_CM_DM_LOAI_TD" FromRole="CM_DM_TU_DIEN" ToRole="CM_DM_LOAI_TD" />
+    <NavigationProperty Name="DM_CHUC_VU" Relationship="BKI_HRMModel.FK_DM_CHUC_VU_CM_DM_TU_DIEN" FromRole="CM_DM_TU_DIEN" ToRole="DM_CHUC_VU" />
+    <NavigationProperty Name="DM_DON_VI" Relationship="BKI_HRMModel.FK_DM_DON_VI_CM_DM_TU_DIEN" FromRole="CM_DM_TU_DIEN" ToRole="DM_DON_VI" />
+    <NavigationProperty Name="DM_DON_VI1" Relationship="BKI_HRMModel.FK_DM_DON_VI_CM_DM_TU_DIEN1" FromRole="CM_DM_TU_DIEN" ToRole="DM_DON_VI" />
+    <NavigationProperty Name="DM_DU_AN" Relationship="BKI_HRMModel.FK_DM_DU_AN_CM_DM_TU_DIEN" FromRole="CM_DM_TU_DIEN" ToRole="DM_DU_AN" />
+    <NavigationProperty Name="DM_DU_AN1" Relationship="BKI_HRMModel.FK_DM_DU_AN_CM_DM_TU_DIEN1" FromRole="CM_DM_TU_DIEN" ToRole="DM_DU_AN" />
+    <NavigationProperty Name="DM_DU_AN2" Relationship="BKI_HRMModel.FK_DM_DU_AN_CM_DM_TU_DIEN2" FromRole="CM_DM_TU_DIEN" ToRole="DM_DU_AN" />
+    <NavigationProperty Name="DM_QUYET_DINH" Relationship="BKI_HRMModel.FK_DM_QUYET_DINH_CM_DM_TU_DIEN" FromRole="CM_DM_TU_DIEN" ToRole="DM_QUYET_DINH" />
+    <NavigationProperty Name="GD_CHI_TIET_CHUC_VU" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_CHUC_VU_CM_DM_TU_DIEN" FromRole="CM_DM_TU_DIEN" ToRole="GD_CHI_TIET_CHUC_VU" />
+    <NavigationProperty Name="GD_CHI_TIET_DU_AN" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_DU_AN_CM_DM_TU_DIEN" FromRole="CM_DM_TU_DIEN" ToRole="GD_CHI_TIET_DU_AN" />
+    <NavigationProperty Name="GD_CHI_TIET_DU_AN1" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_DU_AN_CM_DM_TU_DIEN1" FromRole="CM_DM_TU_DIEN" ToRole="GD_CHI_TIET_DU_AN" />
+    <NavigationProperty Name="GD_CHI_TIET_TRANG_THAI_LD" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_TRANG_THAI_LD_CM_DM_TU_DIEN" FromRole="CM_DM_TU_DIEN" ToRole="GD_CHI_TIET_TRANG_THAI_LD" />
+    <NavigationProperty Name="GD_HOP_DONG" Relationship="BKI_HRMModel.FK_GD_HOP_DONG_CM_DM_TU_DIEN" FromRole="CM_DM_TU_DIEN" ToRole="GD_HOP_DONG" />
+    <NavigationProperty Name="HT_CONTROL_IN_FORM" Relationship="BKI_HRMModel.FK_HT_CONTROL_IN_FORM_CM_DM_TU_DIEN" FromRole="CM_DM_TU_DIEN" ToRole="HT_CONTROL_IN_FORM" />
+    <NavigationProperty Name="HT_QUYEN_USER" Relationship="BKI_HRMModel.FK_HT_QUYEN_USER_CM_DM_TU_DIEN" FromRole="CM_DM_TU_DIEN" ToRole="HT_QUYEN_USER" />
+    <NavigationProperty Name="HT_QUYEN_USER_WEB" Relationship="BKI_HRMModel.FK_HT_QUYEN_USER_WEB_CM_DM_TU_DIEN" FromRole="CM_DM_TU_DIEN" ToRole="HT_QUYEN_USER_WEB" />
+  </EntityType>
+  <EntityType Name="DM_CAP_BAC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MA_CAP" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_BAC" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRANG_THAI" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_AP_DUNG" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_KET_THUC" Precision="3" />
+    <NavigationProperty Name="GD_CHI_TIET_CAP_BAC" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_CAP_BAC_DM_CAP_BAC" FromRole="DM_CAP_BAC" ToRole="GD_CHI_TIET_CAP_BAC" />
+  </EntityType>
+  <EntityType Name="DM_CHUC_VU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MA_CV" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_CV" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_CV_TA" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRANG_THAI" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_AP_DUNG" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_KET_THUC" Precision="3" />
+    <Property Type="Decimal" Name="ID_NGACH" Precision="18" Scale="0" />
+    <NavigationProperty Name="CM_DM_TU_DIEN" Relationship="BKI_HRMModel.FK_DM_CHUC_VU_CM_DM_TU_DIEN" FromRole="DM_CHUC_VU" ToRole="CM_DM_TU_DIEN" />
+    <NavigationProperty Name="GD_CHI_TIET_CHUC_VU" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_CHUC_VU_DM_CHUC_VU" FromRole="DM_CHUC_VU" ToRole="GD_CHI_TIET_CHUC_VU" />
+  </EntityType>
+  <EntityType Name="DM_DON_VI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MA_DON_VI" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_DON_VI" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_TA" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_CAP_DON_VI" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_DON_VI_CAP_TREN" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_LOAI_DON_VI" Precision="18" Scale="0" />
+    <Property Type="String" Name="DIA_BAN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRANG_THAI" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="TU_NGAY" Precision="3" />
+    <Property Type="Decimal" Name="SO_LUONG" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_LEVEL" Precision="18" Scale="0" />
+    <NavigationProperty Name="CM_DM_TU_DIEN" Relationship="BKI_HRMModel.FK_DM_DON_VI_CM_DM_TU_DIEN" FromRole="DM_DON_VI" ToRole="CM_DM_TU_DIEN" />
+    <NavigationProperty Name="CM_DM_TU_DIEN1" Relationship="BKI_HRMModel.FK_DM_DON_VI_CM_DM_TU_DIEN1" FromRole="DM_DON_VI" ToRole="CM_DM_TU_DIEN" />
+    <NavigationProperty Name="DM_DON_VI1" Relationship="BKI_HRMModel.FK_DM_DON_VI_DM_DON_VI" FromRole="DM_DON_VI" ToRole="DM_DON_VI1" />
+    <NavigationProperty Name="DM_DON_VI2" Relationship="BKI_HRMModel.FK_DM_DON_VI_DM_DON_VI" FromRole="DM_DON_VI1" ToRole="DM_DON_VI" />
+    <NavigationProperty Name="GD_CHI_TIET_CHUC_VU" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_CHUC_VU_DM_DON_VI" FromRole="DM_DON_VI" ToRole="GD_CHI_TIET_CHUC_VU" />
+    <NavigationProperty Name="GD_DON_VI_PHAP_NHAN" Relationship="BKI_HRMModel.FK_GD_DON_VI_PHAP_NHAN_GD_DON_VI_PHAP_NHAN" FromRole="DM_DON_VI" ToRole="GD_DON_VI_PHAP_NHAN" />
+  </EntityType>
+  <EntityType Name="DM_DU_AN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MA_DU_AN" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_DU_AN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_TRANG_THAI" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_LOAI_DU_AN" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="NGAY_BAT_DAU" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_KET_THUC" Precision="3" />
+    <Property Type="String" Name="NOI_DUNG" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_CO_CHE" Precision="18" Scale="0" />
+    <NavigationProperty Name="CM_DM_TU_DIEN" Relationship="BKI_HRMModel.FK_DM_DU_AN_CM_DM_TU_DIEN" FromRole="DM_DU_AN" ToRole="CM_DM_TU_DIEN" />
+    <NavigationProperty Name="CM_DM_TU_DIEN1" Relationship="BKI_HRMModel.FK_DM_DU_AN_CM_DM_TU_DIEN1" FromRole="DM_DU_AN" ToRole="CM_DM_TU_DIEN" />
+    <NavigationProperty Name="CM_DM_TU_DIEN2" Relationship="BKI_HRMModel.FK_DM_DU_AN_CM_DM_TU_DIEN2" FromRole="DM_DU_AN" ToRole="CM_DM_TU_DIEN" />
+    <NavigationProperty Name="GD_CHI_TIET_DU_AN" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_DU_AN_DM_DU_AN" FromRole="DM_DU_AN" ToRole="GD_CHI_TIET_DU_AN" />
+    <NavigationProperty Name="GD_QUYET_DINH_DU_AN" Relationship="BKI_HRMModel.FK_GD_QUYET_DINH_DU_AN_DM_DU_AN" FromRole="DM_DU_AN" ToRole="GD_QUYET_DINH_DU_AN" />
+  </EntityType>
+  <EntityType Name="DM_HEADCOUNT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MA_HEADCOUNT" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRANG_THAI" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ACTIONS" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MO_TA" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DM_NHAN_SU" Relationship="BKI_HRMModel.FK_DM_NHAN_SU_DM_HEADCOUNT" FromRole="DM_HEADCOUNT" ToRole="DM_NHAN_SU" />
+  </EntityType>
+  <EntityType Name="DM_KY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MA_KY" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_BAT_DAU_KY" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_KET_THUC_KY" Precision="3" />
+  </EntityType>
+  <EntityType Name="DM_NHAN_SU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MA_NV" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HO_DEM" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="GIOI_TINH" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_SINH" Precision="3" />
+    <Property Type="String" Name="NOI_SINH" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NGUYEN_QUAN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ANH" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CMND" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_CAP_CMND" Precision="3" />
+    <Property Type="String" Name="NOI_CAP_CMND" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRINH_DO" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NOI_DAO_TAO" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CHUYEN_NGANH" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="NAM_TOT_NGHIEP" Precision="18" Scale="0" />
+    <Property Type="String" Name="EMAIL_CQ" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EMAIL_CA_NHAN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DT_NHA" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DI_DONG" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CHO_O" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HO_KHAU" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NGUOI_LIEN_HE" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DI_DONG_LIEN_HE" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="QUAN_HE" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TON_GIAO" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DAN_TOC" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="MA_SO_THUE" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRANG_THAI" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_HEADCOUNT" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_HEADCOUNT" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DM_HEADCOUNT" Relationship="BKI_HRMModel.FK_DM_NHAN_SU_DM_HEADCOUNT" FromRole="DM_NHAN_SU" ToRole="DM_HEADCOUNT" />
+    <NavigationProperty Name="GD_CHI_TIET_CAP_BAC" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_CAP_BAC_DM_NHAN_SU" FromRole="DM_NHAN_SU" ToRole="GD_CHI_TIET_CAP_BAC" />
+    <NavigationProperty Name="GD_CHI_TIET_CHUC_VU" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_CHUC_VU_DM_NHAN_SU" FromRole="DM_NHAN_SU" ToRole="GD_CHI_TIET_CHUC_VU" />
+    <NavigationProperty Name="GD_CHI_TIET_DU_AN" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_DU_AN_DM_NHAN_SU" FromRole="DM_NHAN_SU" ToRole="GD_CHI_TIET_DU_AN" />
+    <NavigationProperty Name="GD_CHI_TIET_TRANG_THAI_LD" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_TRANG_THAI_LD_DM_NHAN_SU" FromRole="DM_NHAN_SU" ToRole="GD_CHI_TIET_TRANG_THAI_LD" />
+    <NavigationProperty Name="GD_CHI_TIET_TUYEN_DUNG" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_TUYEN_DUNG_DM_NHAN_SU" FromRole="DM_NHAN_SU" ToRole="GD_CHI_TIET_TUYEN_DUNG" />
+    <NavigationProperty Name="GD_CONG_TAC" Relationship="BKI_HRMModel.FK_GD_CONG_TAC_DM_NHAN_SU" FromRole="DM_NHAN_SU" ToRole="GD_CONG_TAC" />
+    <NavigationProperty Name="GD_HOP_DONG" Relationship="BKI_HRMModel.FK_GD_HOP_DONG_DM_NHAN_SU" FromRole="DM_NHAN_SU" ToRole="GD_HOP_DONG" />
+  </EntityType>
+  <EntityType Name="DM_PHAP_NHAN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MA_PHAP_NHAN" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_PHAP_NHAN" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_SO_THUE" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_DK_KINH_DOANH" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_DK_KINH_DOANH" Precision="3" />
+    <Property Type="String" Name="DIA_CHI" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NGUOI_DAI_DIEN" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="GD_DON_VI_PHAP_NHAN" Relationship="BKI_HRMModel.FK_GD_DON_VI_PHAP_NHAN_DM_PHAP_NHAN" FromRole="DM_PHAP_NHAN" ToRole="GD_DON_VI_PHAP_NHAN" />
+    <NavigationProperty Name="GD_HOP_DONG" Relationship="BKI_HRMModel.FK_GD_HOP_DONG_DM_PHAP_NHAN" FromRole="DM_PHAP_NHAN" ToRole="GD_HOP_DONG" />
+    <NavigationProperty Name="GD_QUYET_DINH_PHAP_NHAN" Relationship="BKI_HRMModel.FK_GD_QUYET_DINH_PHAP_NHAN_DM_PHAP_NHAN" FromRole="DM_PHAP_NHAN" ToRole="GD_QUYET_DINH_PHAP_NHAN" />
+  </EntityType>
+  <EntityType Name="DM_QUYET_DINH">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MA_QUYET_DINH" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_LOAI_QD" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="NGAY_CO_HIEU_LUC" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_KY" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_HET_HIEU_LUC" Precision="3" />
+    <Property Type="String" Name="NOI_DUNG" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LINK" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CM_DM_TU_DIEN" Relationship="BKI_HRMModel.FK_DM_QUYET_DINH_CM_DM_TU_DIEN" FromRole="DM_QUYET_DINH" ToRole="CM_DM_TU_DIEN" />
+    <NavigationProperty Name="GD_CHI_TIET_CAP_BAC" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_CAP_BAC_DM_QUYET_DINH" FromRole="DM_QUYET_DINH" ToRole="GD_CHI_TIET_CAP_BAC" />
+    <NavigationProperty Name="GD_CHI_TIET_CHUC_VU" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_CHUC_VU_DM_QUYET_DINH" FromRole="DM_QUYET_DINH" ToRole="GD_CHI_TIET_CHUC_VU" />
+    <NavigationProperty Name="GD_CHI_TIET_DU_AN" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_DU_AN_DM_QUYET_DINH" FromRole="DM_QUYET_DINH" ToRole="GD_CHI_TIET_DU_AN" />
+    <NavigationProperty Name="GD_CHI_TIET_TRANG_THAI_LD" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_TRANG_THAI_LD_DM_QUYET_DINH" FromRole="DM_QUYET_DINH" ToRole="GD_CHI_TIET_TRANG_THAI_LD" />
+    <NavigationProperty Name="GD_CONG_TAC" Relationship="BKI_HRMModel.FK_GD_CONG_TAC_DM_QUYET_DINH" FromRole="DM_QUYET_DINH" ToRole="GD_CONG_TAC" />
+    <NavigationProperty Name="GD_QUYET_DINH_DU_AN" Relationship="BKI_HRMModel.FK_GD_QUYET_DINH_DU_AN_DM_QUYET_DINH" FromRole="DM_QUYET_DINH" ToRole="GD_QUYET_DINH_DU_AN" />
+    <NavigationProperty Name="GD_QUYET_DINH_PHAP_NHAN" Relationship="BKI_HRMModel.FK_GD_QUYET_DINH_PHAP_NHAN_DM_QUYET_DINH" FromRole="DM_QUYET_DINH" ToRole="GD_QUYET_DINH_PHAP_NHAN" />
+  </EntityType>
+  <EntityType Name="DM_TRANG_THAI_UNG_VIEN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MA_TRANG_THAI" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_TRANG_THAI_PARENT" Precision="18" Scale="0" />
+    <Property Type="String" Name="DINH_NGHIA" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DAU_HIEU" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="VIEC_CAN_LAM" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DM_TRANG_THAI_UNG_VIEN1" Relationship="BKI_HRMModel.FK_DM_TRANG_THAI_UNG_VIEN_DM_TRANG_THAI_UNG_VIEN" FromRole="DM_TRANG_THAI_UNG_VIEN" ToRole="DM_TRANG_THAI_UNG_VIEN1" />
+    <NavigationProperty Name="DM_TRANG_THAI_UNG_VIEN2" Relationship="BKI_HRMModel.FK_DM_TRANG_THAI_UNG_VIEN_DM_TRANG_THAI_UNG_VIEN" FromRole="DM_TRANG_THAI_UNG_VIEN1" ToRole="DM_TRANG_THAI_UNG_VIEN" />
+    <NavigationProperty Name="GD_CHI_TIET_TUYEN_DUNG" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_TUYEN_DUNG_DM_TRANG_THAI_UNG_VIEN" FromRole="DM_TRANG_THAI_UNG_VIEN" ToRole="GD_CHI_TIET_TUYEN_DUNG" />
+  </EntityType>
+  <EntityType Name="DOC_COLUMN_COMMENT">
+    <Key>
+      <PropertyRef Name="COLUMN_NAME" />
+      <PropertyRef Name="TABLE_NAME" />
+    </Key>
+    <Property Type="String" Name="COLUMN_NAME" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TABLE_NAME" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="COLUMN_COMMENT" MaxLength="4000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DOC_TABLE_COMMENT">
+    <Key>
+      <PropertyRef Name="TABLE_NAME" />
+    </Key>
+    <Property Type="String" Name="TABLE_NAME" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TABLE_COMMENT" MaxLength="4000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GD_CHI_TIET_CAP_BAC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Decimal" Name="ID_NHAN_SU" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_CAP_BAC" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="TRANG_THAI_CB" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_QUYET_DINH" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="NGAY_BAT_DAU" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_KET_THUC" Precision="3" />
+    <Property Type="String" Name="LUA_CHON" MaxLength="15" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DM_CAP_BAC" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_CAP_BAC_DM_CAP_BAC" FromRole="GD_CHI_TIET_CAP_BAC" ToRole="DM_CAP_BAC" />
+    <NavigationProperty Name="DM_NHAN_SU" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_CAP_BAC_DM_NHAN_SU" FromRole="GD_CHI_TIET_CAP_BAC" ToRole="DM_NHAN_SU" />
+    <NavigationProperty Name="DM_QUYET_DINH" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_CAP_BAC_DM_QUYET_DINH" FromRole="GD_CHI_TIET_CAP_BAC" ToRole="DM_QUYET_DINH" />
+  </EntityType>
+  <EntityType Name="GD_CHI_TIET_CHUC_VU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Decimal" Name="ID_NHAN_SU" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_CHUC_VU" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_DON_VI" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_QUYET_DINH" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_QUYET_DINH_MIEN_NHIEM" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_LOAI_CV" Precision="18" Scale="0" />
+    <Property Type="String" Name="TRANG_THAI_CV" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="TY_LE_THAM_GIA" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="NGAY_BAT_DAU" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_KET_THUC" Precision="3" />
+    <Property Type="String" Name="LUA_CHON" MaxLength="15" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CM_DM_TU_DIEN" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_CHUC_VU_CM_DM_TU_DIEN" FromRole="GD_CHI_TIET_CHUC_VU" ToRole="CM_DM_TU_DIEN" />
+    <NavigationProperty Name="DM_CHUC_VU" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_CHUC_VU_DM_CHUC_VU" FromRole="GD_CHI_TIET_CHUC_VU" ToRole="DM_CHUC_VU" />
+    <NavigationProperty Name="DM_DON_VI" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_CHUC_VU_DM_DON_VI" FromRole="GD_CHI_TIET_CHUC_VU" ToRole="DM_DON_VI" />
+    <NavigationProperty Name="DM_NHAN_SU" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_CHUC_VU_DM_NHAN_SU" FromRole="GD_CHI_TIET_CHUC_VU" ToRole="DM_NHAN_SU" />
+    <NavigationProperty Name="DM_QUYET_DINH" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_CHUC_VU_DM_QUYET_DINH" FromRole="GD_CHI_TIET_CHUC_VU" ToRole="DM_QUYET_DINH" />
+  </EntityType>
+  <EntityType Name="GD_CHI_TIET_DU_AN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Decimal" Name="ID_DU_AN" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_NHAN_SU" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_VI_TRI" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="MO_TA" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_DANH_HIEU" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="THOI_DIEM_TG" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="THOI_DIEM_KT" Precision="3" />
+    <Property Type="Decimal" Name="THOI_GIAN_TG" Precision="18" Scale="0" />
+    <Property Type="String" Name="TRANG_THAI_HIEN_TAI" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LUA_CHON" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_QUYET_DINH" Precision="18" Scale="0" />
+    <NavigationProperty Name="CM_DM_TU_DIEN" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_DU_AN_CM_DM_TU_DIEN" FromRole="GD_CHI_TIET_DU_AN" ToRole="CM_DM_TU_DIEN" />
+    <NavigationProperty Name="CM_DM_TU_DIEN1" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_DU_AN_CM_DM_TU_DIEN1" FromRole="GD_CHI_TIET_DU_AN" ToRole="CM_DM_TU_DIEN" />
+    <NavigationProperty Name="DM_DU_AN" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_DU_AN_DM_DU_AN" FromRole="GD_CHI_TIET_DU_AN" ToRole="DM_DU_AN" />
+    <NavigationProperty Name="DM_NHAN_SU" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_DU_AN_DM_NHAN_SU" FromRole="GD_CHI_TIET_DU_AN" ToRole="DM_NHAN_SU" />
+    <NavigationProperty Name="DM_QUYET_DINH" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_DU_AN_DM_QUYET_DINH" FromRole="GD_CHI_TIET_DU_AN" ToRole="DM_QUYET_DINH" />
+  </EntityType>
+  <EntityType Name="GD_CHI_TIET_TRANG_THAI_LD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Decimal" Name="ID_NHAN_SU" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_TRANG_LAO_DONG" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_QUYET_DINH" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="NGAY_CO_HIEU_LUC" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_HET_HIEU_LUC" Precision="3" />
+    <Property Type="String" Name="TRANG_THAI_HIEN_TAI" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CM_DM_TU_DIEN" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_TRANG_THAI_LD_CM_DM_TU_DIEN" FromRole="GD_CHI_TIET_TRANG_THAI_LD" ToRole="CM_DM_TU_DIEN" />
+    <NavigationProperty Name="DM_NHAN_SU" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_TRANG_THAI_LD_DM_NHAN_SU" FromRole="GD_CHI_TIET_TRANG_THAI_LD" ToRole="DM_NHAN_SU" />
+    <NavigationProperty Name="DM_QUYET_DINH" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_TRANG_THAI_LD_DM_QUYET_DINH" FromRole="GD_CHI_TIET_TRANG_THAI_LD" ToRole="DM_QUYET_DINH" />
+  </EntityType>
+  <EntityType Name="GD_CHI_TIET_TUYEN_DUNG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Decimal" Name="ID_NHAN_SU" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_LEVEL" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="NGAY_CHUYEN_LEVEL" Nullable="false" Precision="3" />
+    <Property Type="String" Name="GHI_CHU" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DM_NHAN_SU" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_TUYEN_DUNG_DM_NHAN_SU" FromRole="GD_CHI_TIET_TUYEN_DUNG" ToRole="DM_NHAN_SU" />
+    <NavigationProperty Name="DM_TRANG_THAI_UNG_VIEN" Relationship="BKI_HRMModel.FK_GD_CHI_TIET_TUYEN_DUNG_DM_TRANG_THAI_UNG_VIEN" FromRole="GD_CHI_TIET_TUYEN_DUNG" ToRole="DM_TRANG_THAI_UNG_VIEN" />
+  </EntityType>
+  <EntityType Name="GD_CONG_TAC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Decimal" Name="ID_NHAN_SU" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_QUYET_DINH" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="NGAY_DI" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_VE" Nullable="false" Precision="3" />
+    <Property Type="String" Name="DIA_DIEM" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MO_TA_CONG_VIEC" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LUA_CHON" MaxLength="15" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DM_NHAN_SU" Relationship="BKI_HRMModel.FK_GD_CONG_TAC_DM_NHAN_SU" FromRole="GD_CONG_TAC" ToRole="DM_NHAN_SU" />
+    <NavigationProperty Name="DM_QUYET_DINH" Relationship="BKI_HRMModel.FK_GD_CONG_TAC_DM_QUYET_DINH" FromRole="GD_CONG_TAC" ToRole="DM_QUYET_DINH" />
+  </EntityType>
+  <EntityType Name="GD_DON_VI_PHAP_NHAN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Decimal" Name="ID_DON_VI" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_PHAP_NHAN" Nullable="false" Precision="18" Scale="0" />
+    <NavigationProperty Name="DM_DON_VI" Relationship="BKI_HRMModel.FK_GD_DON_VI_PHAP_NHAN_GD_DON_VI_PHAP_NHAN" FromRole="GD_DON_VI_PHAP_NHAN" ToRole="DM_DON_VI" />
+    <NavigationProperty Name="DM_PHAP_NHAN" Relationship="BKI_HRMModel.FK_GD_DON_VI_PHAP_NHAN_DM_PHAP_NHAN" FromRole="GD_DON_VI_PHAP_NHAN" ToRole="DM_PHAP_NHAN" />
+  </EntityType>
+  <EntityType Name="GD_HOP_DONG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MA_HOP_DONG" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_LOAI_HOP_DONG" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_NHAN_SU" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="NGAY_KY_HOP_DONG" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_CO_HIEU_LUC" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_HET_HAN" Precision="3" />
+    <Property Type="String" Name="TRANG_THAI_HOP_DONG" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LINK" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NGUOI_KY" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CHUC_VU_NGUOI_KY" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_PHAP_NHAN" Precision="18" Scale="0" />
+    <NavigationProperty Name="CM_DM_TU_DIEN" Relationship="BKI_HRMModel.FK_GD_HOP_DONG_CM_DM_TU_DIEN" FromRole="GD_HOP_DONG" ToRole="CM_DM_TU_DIEN" />
+    <NavigationProperty Name="DM_NHAN_SU" Relationship="BKI_HRMModel.FK_GD_HOP_DONG_DM_NHAN_SU" FromRole="GD_HOP_DONG" ToRole="DM_NHAN_SU" />
+    <NavigationProperty Name="DM_PHAP_NHAN" Relationship="BKI_HRMModel.FK_GD_HOP_DONG_DM_PHAP_NHAN" FromRole="GD_HOP_DONG" ToRole="DM_PHAP_NHAN" />
+  </EntityType>
+  <EntityType Name="GD_LUONG_THEO_QD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MA_NV" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_KY" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_QD" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="LUONG" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="NGAY_AP_DUNG" Precision="3" />
+    <Property Type="Decimal" Name="THANG_AP_DUNG" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="NAM_AP_DUNG" Precision="18" Scale="0" />
+    <Property Type="String" Name="LUONG_HIEN_TAI_YN" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GD_QUA_TRINH_CONG_TAC">
+    <Key>
+      <PropertyRef Name="MA_NV" />
+      <PropertyRef Name="HO_DEM" />
+      <PropertyRef Name="TEN" />
+    </Key>
+    <Property Type="Decimal" Name="ID_NHAN_SU" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_NV" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HO_DEM" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="TU_NGAY" Precision="3" />
+    <Property Type="DateTime" Name="DEN_NGAY" Precision="3" />
+    <Property Type="String" Name="LAM_GI" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="O_DAU" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="VAI_TRO" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="TY_LE_THAM_GIA" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_QUYET_DINH" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LOAI_QD" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_QUYET_DINH_MIEN_NHIEM" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GD_QUYET_DINH_DU_AN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Decimal" Name="ID_DU_AN" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_QUYET_DINH" Nullable="false" Precision="18" Scale="0" />
+    <NavigationProperty Name="DM_DU_AN" Relationship="BKI_HRMModel.FK_GD_QUYET_DINH_DU_AN_DM_DU_AN" FromRole="GD_QUYET_DINH_DU_AN" ToRole="DM_DU_AN" />
+    <NavigationProperty Name="DM_QUYET_DINH" Relationship="BKI_HRMModel.FK_GD_QUYET_DINH_DU_AN_DM_QUYET_DINH" FromRole="GD_QUYET_DINH_DU_AN" ToRole="DM_QUYET_DINH" />
+  </EntityType>
+  <EntityType Name="GD_QUYET_DINH_PHAP_NHAN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Decimal" Name="ID_QUYET_DINH" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_PHAP_NHAN" Nullable="false" Precision="18" Scale="0" />
+    <NavigationProperty Name="DM_PHAP_NHAN" Relationship="BKI_HRMModel.FK_GD_QUYET_DINH_PHAP_NHAN_DM_PHAP_NHAN" FromRole="GD_QUYET_DINH_PHAP_NHAN" ToRole="DM_PHAP_NHAN" />
+    <NavigationProperty Name="DM_QUYET_DINH" Relationship="BKI_HRMModel.FK_GD_QUYET_DINH_PHAP_NHAN_DM_QUYET_DINH" FromRole="GD_QUYET_DINH_PHAP_NHAN" ToRole="DM_QUYET_DINH" />
+  </EntityType>
+  <EntityType Name="GD_TINH_HINH_NV_MOI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Decimal" Name="ID_NHAN_SU" Precision="18" Scale="0" />
+    <Property Type="String" Name="THU_MOI" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="QD_TIEP_NHAN_THU_VIEC" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="BAN_KHAI_TT_CA_NHAN" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CAM_KET_BAO_MAT" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HO_SO_CA_NHAN" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CHO_NGOI_LAM_VIEC" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MAY_TINH" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DIEN_THOAI" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TK_CA_NHAN" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EMAIL_PASS" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EMAIL_CTY" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NOI_BO_DON_VI" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SN_DAU_THANG" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MENTOR_HUONG_DAN" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MENTOR_AN_TRUA" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MENTOR_GIAO_LUU" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NHAN_TAI_LIEU" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DAO_TAO_TONG_QUAN" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DAO_TAO_CHUYEN_MON" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DANH_GIA_DAO_TAO" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CHUNG_CHI_NHAP_MON" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DANH_GIA_HET_THU_VIEC" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TIEP_NHAN_CHINH_THUC" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HT_BACKUP_HISTORY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="NGUOI_BACKUP" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_BACKUP" Nullable="false" Precision="3" />
+    <Property Type="String" Name="NOI_LUU" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_FILE" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="GhI_CHU" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HT_BUSINESS_PROCESS_LOCK">
+    <Key>
+      <PropertyRef Name="LOCK_NAME" />
+    </Key>
+    <Property Type="String" Name="LOCK_NAME" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="GRANTED_SYS_DATETIME" Precision="3" />
+  </EntityType>
+  <EntityType Name="HT_CONTROL_IN_FORM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Decimal" Name="ID_FORM" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="CONTROL_NAME" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CONTROL_TYPE" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_CHUC_NANG" Nullable="false" Precision="18" Scale="0" />
+    <NavigationProperty Name="CM_DM_TU_DIEN" Relationship="BKI_HRMModel.FK_HT_CONTROL_IN_FORM_CM_DM_TU_DIEN" FromRole="HT_CONTROL_IN_FORM" ToRole="CM_DM_TU_DIEN" />
+    <NavigationProperty Name="HT_FORM" Relationship="BKI_HRMModel.FK_HT_CONTROL_IN_FORM_HT_FORM" FromRole="HT_CONTROL_IN_FORM" ToRole="HT_FORM" />
+  </EntityType>
+  <EntityType Name="HT_CONTROLLER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Guid" Name="ID" Nullable="false" />
+    <Property Type="String" Name="CONTROLLER_NAME" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ACTIVITY_NAME" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HT_PHAN_QUYEN_CHUC_NANG" Relationship="BKI_HRMModel.FK_HT_PHAN_QUYEN_CHUC_NANG_HT_CONTROLLER" FromRole="HT_CONTROLLER" ToRole="HT_PHAN_QUYEN_CHUC_NANG" />
+  </EntityType>
+  <EntityType Name="HT_FORM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="FORM_NAME" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DISPLAY_NAME" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DESCRIPTION" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="KEY_WORD" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HT_CONTROL_IN_FORM" Relationship="BKI_HRMModel.FK_HT_CONTROL_IN_FORM_HT_FORM" FromRole="HT_FORM" ToRole="HT_CONTROL_IN_FORM" />
+  </EntityType>
+  <EntityType Name="HT_LOG_LOGIN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="USER_LOGIN" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="DATETIME_LOGIN" Nullable="false" Precision="3" />
+    <Property Type="String" Name="STATUS_LOGIN" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HT_LOGIN_WEB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="USER_LOGIN" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="DATETIME_LOGIN" Nullable="false" Precision="3" />
+    <Property Type="String" Name="STATUS_LOGIN" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HT_NGUOI_SU_DUNG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="TEN_TRUY_CAP" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MAT_KHAU" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_TAO" Nullable="false" Precision="3" />
+    <Property Type="String" Name="NGUOI_TAO" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRANG_THAI" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="BUILT_IN_YN" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_USER_GROUP" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_TRAINING_PROJECT" Precision="18" Scale="0" />
+    <NavigationProperty Name="HT_USER_GROUP" Relationship="BKI_HRMModel.FK_HT_NGUOI_SU_DUNG_DM_USER_GROUP" FromRole="HT_NGUOI_SU_DUNG" ToRole="HT_USER_GROUP" />
+    <NavigationProperty Name="HT_QUYEN_USER" Relationship="BKI_HRMModel.FK_HT_QUYEN_USER_HT_NGUOI_SU_DUNG" FromRole="HT_NGUOI_SU_DUNG" ToRole="HT_QUYEN_USER" />
+  </EntityType>
+  <EntityType Name="HT_PHAN_QUYEN_CHO_NHOM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Decimal" Name="ID_USER_GROUP" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_PHAN_QUYEN_HE_THONG" Nullable="false" Precision="18" Scale="0" />
+    <NavigationProperty Name="HT_PHAN_QUYEN_HE_THONG" Relationship="BKI_HRMModel.FK_HT_PHAN_QUYEN_CHO_NHOM_HT_PHAN_QUYEN_HE_THONG" FromRole="HT_PHAN_QUYEN_CHO_NHOM" ToRole="HT_PHAN_QUYEN_HE_THONG" />
+    <NavigationProperty Name="HT_USER_GROUP" Relationship="BKI_HRMModel.FK_HT_PHAN_QUYEN_CHO_NHOM_HT_USER_GROUP" FromRole="HT_PHAN_QUYEN_CHO_NHOM" ToRole="HT_USER_GROUP" />
+  </EntityType>
+  <EntityType Name="HT_PHAN_QUYEN_CHUC_NANG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Guid" Name="ID" Nullable="false" />
+    <Property Type="Guid" Name="ID_HT_USER_GROUP" Nullable="false" />
+    <Property Type="Guid" Name="ID_HT_CONTROLLER" />
+    <Property Type="Decimal" Name="VI_TRI" Precision="4" Scale="0" />
+    <Property Type="Boolean" Name="TRANG_THAI_YN" Nullable="false" />
+    <Property Type="Guid" Name="ID_CHUC_NANG_CHA" />
+    <Property Type="Boolean" Name="HIEN_THI_YN" Nullable="false" />
+    <Property Type="String" Name="ICON_CLASS" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HIEN_THI_MENU" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HT_CONTROLLER" Relationship="BKI_HRMModel.FK_HT_PHAN_QUYEN_CHUC_NANG_HT_CONTROLLER" FromRole="HT_PHAN_QUYEN_CHUC_NANG" ToRole="HT_CONTROLLER" />
+    <NavigationProperty Name="HT_PHAN_QUYEN_CHUC_NANG_CHILDREN" Relationship="BKI_HRMModel.FK_HT_PHAN_QUYEN_CHUC_NANG_HT_PHAN_QUYEN_CHUC_NANG" FromRole="HT_PHAN_QUYEN_CHUC_NANG" ToRole="HT_PHAN_QUYEN_CHUC_NANG1" />
+    <NavigationProperty Name="HT_PHAN_QUYEN_CHUC_NANG_PARENT" Relationship="BKI_HRMModel.FK_HT_PHAN_QUYEN_CHUC_NANG_HT_PHAN_QUYEN_CHUC_NANG" FromRole="HT_PHAN_QUYEN_CHUC_NANG1" ToRole="HT_PHAN_QUYEN_CHUC_NANG" />
+    <NavigationProperty Name="HT_USER_GROUP_WEB" Relationship="BKI_HRMModel.FK_HT_PHAN_QUYEN_CHUC_NANG_HT_USER_GROUP_WEB" FromRole="HT_PHAN_QUYEN_CHUC_NANG" ToRole="HT_USER_GROUP_WEB" />
+  </EntityType>
+  <EntityType Name="HT_PHAN_QUYEN_DETAIL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="FORM_NAME" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CONTROL_NAME" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CONTROL_TYPE" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="VISIBLE_YN" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ENABLED_YN" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_PHAN_QUYEN_HT" Nullable="false" Precision="18" Scale="0" />
+    <NavigationProperty Name="HT_PHAN_QUYEN_HE_THONG" Relationship="BKI_HRMModel.FK_HT_PHAN_QUYEN_DETAIL_HT_PHAN_QUYEN_HE_THONG" FromRole="HT_PHAN_QUYEN_DETAIL" ToRole="HT_PHAN_QUYEN_HE_THONG" />
+  </EntityType>
+  <EntityType Name="HT_PHAN_QUYEN_HE_THONG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_PHAN_QUYEN" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="GHI_CHU" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LOAI_PHAN_QUYEN" MaxLength="35" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HT_PHAN_QUYEN_CHO_NHOM" Relationship="BKI_HRMModel.FK_HT_PHAN_QUYEN_CHO_NHOM_HT_PHAN_QUYEN_HE_THONG" FromRole="HT_PHAN_QUYEN_HE_THONG" ToRole="HT_PHAN_QUYEN_CHO_NHOM" />
+    <NavigationProperty Name="HT_PHAN_QUYEN_DETAIL" Relationship="BKI_HRMModel.FK_HT_PHAN_QUYEN_DETAIL_HT_PHAN_QUYEN_HE_THONG" FromRole="HT_PHAN_QUYEN_HE_THONG" ToRole="HT_PHAN_QUYEN_DETAIL" />
+  </EntityType>
+  <EntityType Name="HT_QUAN_HE_SU_DUNG_DU_LIEU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Decimal" Name="ID_DON_VI" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_USER_GROUP" Nullable="false" Precision="18" Scale="0" />
+    <NavigationProperty Name="HT_USER_GROUP" Relationship="BKI_HRMModel.FK_HT_QUAN_HE_SU_DUNG_DU_LIEU_HT_USER_GROUP" FromRole="HT_QUAN_HE_SU_DUNG_DU_LIEU" ToRole="HT_USER_GROUP" />
+  </EntityType>
+  <EntityType Name="HT_QUYEN_USER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Decimal" Name="ID_USER" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_QUYEN" Nullable="false" Precision="18" Scale="0" />
+    <NavigationProperty Name="CM_DM_TU_DIEN" Relationship="BKI_HRMModel.FK_HT_QUYEN_USER_CM_DM_TU_DIEN" FromRole="HT_QUYEN_USER" ToRole="CM_DM_TU_DIEN" />
+    <NavigationProperty Name="HT_NGUOI_SU_DUNG" Relationship="BKI_HRMModel.FK_HT_QUYEN_USER_HT_NGUOI_SU_DUNG" FromRole="HT_QUYEN_USER" ToRole="HT_NGUOI_SU_DUNG" />
+  </EntityType>
+  <EntityType Name="HT_QUYEN_USER_WEB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Decimal" Name="ID_USER" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_QUYEN" Nullable="false" Precision="18" Scale="0" />
+    <NavigationProperty Name="CM_DM_TU_DIEN" Relationship="BKI_HRMModel.FK_HT_QUYEN_USER_WEB_CM_DM_TU_DIEN" FromRole="HT_QUYEN_USER_WEB" ToRole="CM_DM_TU_DIEN" />
+  </EntityType>
+  <EntityType Name="HT_THAM_SO_HE_THONG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="LOAI_THAM_SO" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_THAM_SO" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PHAN_HE" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="GHI_CHU" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="KIEU_DU_LIEU" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="GIA_TRI" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CO_THE_NULL_YN" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HT_USER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Guid" Name="ID" Nullable="false" />
+    <Property Type="String" Name="BHYT" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CMND" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MSBN" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="USERNAME" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PASSWORD" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HO" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IS_ACTIVE" Nullable="false" />
+    <Property Type="Guid" Name="ID_USER_GROUP" Nullable="false" />
+    <NavigationProperty Name="HT_USER_GROUP_WEB" Relationship="BKI_HRMModel.FK_HT_USER_HT_USER_GROUP_WEB" FromRole="HT_USER" ToRole="HT_USER_GROUP_WEB" />
+  </EntityType>
+  <EntityType Name="HT_USER_GROUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="USER_GROUP_NAME" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DESCRIPTION" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HT_NGUOI_SU_DUNG" Relationship="BKI_HRMModel.FK_HT_NGUOI_SU_DUNG_DM_USER_GROUP" FromRole="HT_USER_GROUP" ToRole="HT_NGUOI_SU_DUNG" />
+    <NavigationProperty Name="HT_PHAN_QUYEN_CHO_NHOM" Relationship="BKI_HRMModel.FK_HT_PHAN_QUYEN_CHO_NHOM_HT_USER_GROUP" FromRole="HT_USER_GROUP" ToRole="HT_PHAN_QUYEN_CHO_NHOM" />
+    <NavigationProperty Name="HT_QUAN_HE_SU_DUNG_DU_LIEU" Relationship="BKI_HRMModel.FK_HT_QUAN_HE_SU_DUNG_DU_LIEU_HT_USER_GROUP" FromRole="HT_USER_GROUP" ToRole="HT_QUAN_HE_SU_DUNG_DU_LIEU" />
+  </EntityType>
+  <EntityType Name="HT_USER_GROUP_WEB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Guid" Name="ID" Nullable="false" />
+    <Property Type="String" Name="USER_GROUP_NAME" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DESCRIPTION" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HT_PHAN_QUYEN_CHUC_NANG" Relationship="BKI_HRMModel.FK_HT_PHAN_QUYEN_CHUC_NANG_HT_USER_GROUP_WEB" FromRole="HT_USER_GROUP_WEB" ToRole="HT_PHAN_QUYEN_CHUC_NANG" />
+    <NavigationProperty Name="HT_USER" Relationship="BKI_HRMModel.FK_HT_USER_HT_USER_GROUP_WEB" FromRole="HT_USER_GROUP_WEB" ToRole="HT_USER" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="principal_id" Nullable="false" />
+    <Property Type="Int32" Name="diagram_id" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="version" />
+    <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="V_BAO_CAO_NHAN_SU">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="MA_NV" />
+      <PropertyRef Name="HO_DEM" />
+      <PropertyRef Name="TEN" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MA_NV" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HO_DEM" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="GIOI_TINH" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_SINH" Precision="3" />
+    <Property Type="String" Name="NOI_SINH" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NGUYEN_QUAN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CMND" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NGAY_CAP_CMND" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NOI_CAP_CMND" Precision="3" />
+    <Property Type="String" Name="TRINH_DO" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NOI_DAO_TAO" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CHUYEN_NGANH" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NAM_TOT_NGHIEP" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="EMAIL_CQ" Precision="18" Scale="0" />
+    <Property Type="String" Name="EMAIL_CA_NHAN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DT_NHA" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DI_DONG" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CHO_O" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HO_KHAU" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NGUOI_LIEN_HE" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DI_DONG_LIEN_HE" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="QUAN_HE" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TON_GIAO" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DAN_TOC" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_SO_THUE" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="TRANG_THAI" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Expr1" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="V_DM_CAP_BAC">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="MA_CAP" />
+      <PropertyRef Name="MA_BAC" />
+      <PropertyRef Name="TRANG_THAI_SU_DUNG" />
+      <PropertyRef Name="MA_CAP_BAC" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MA_CAP" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_BAC" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRANG_THAI_SU_DUNG" Nullable="false" MaxLength="13" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_AP_DUNG" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_KET_THUC" Precision="3" />
+    <Property Type="String" Name="MA_CAP_BAC" Nullable="false" MaxLength="31" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="V_DM_CAP_BAC_2">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="MA_CAP" />
+      <PropertyRef Name="MA_BAC" />
+      <PropertyRef Name="TRANG_THAI_SU_DUNG" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MA_CAP" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_BAC" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRANG_THAI_SU_DUNG" Nullable="false" MaxLength="13" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_AP_DUNG" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_KET_THUC" Precision="3" />
+  </EntityType>
+  <EntityType Name="V_DM_CHUC_VU">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="MA_CV" />
+      <PropertyRef Name="TRANG_THAI" />
+      <PropertyRef Name="TRANG_THAI_SU_DUNG" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_CV" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_CV" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_CV_TA" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_NGACH" Precision="18" Scale="0" />
+    <Property Type="String" Name="TEN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRANG_THAI" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_AP_DUNG" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_KET_THUC" Precision="3" />
+    <Property Type="String" Name="TRANG_THAI_SU_DUNG" Nullable="false" MaxLength="13" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="V_DM_DON_VI">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ID_CAP_DON_VI" />
+      <PropertyRef Name="MA_DON_VI" />
+      <PropertyRef Name="TRANG_THAI" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_DON_VI_CAP_TREN" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_CAP_DON_VI" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_LOAI_DON_VI" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_DON_VI_CAP_TREN" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_DON_VI_CAP_TREN" MaxLength="266" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_TIENG_ANH_DON_VI_CAP_TREN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_DON_VI" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_DON_VI" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_TIENG_ANH" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CAP_DON_VI" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LOAI_DON_VI" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="TU_NGAY" Precision="3" />
+    <Property Type="String" Name="DIA_BAN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRANG_THAI" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRANG_THAI_YN" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="SO_LUONG" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_LEVEL" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_PHAP_NHAN" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_PHAP_NHAN" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_PHAP_NHAN" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="V_DM_DU_AN_QUYET_DINH_TU_DIEN">
+    <Key>
+      <PropertyRef Name="ID_QUYET_DINH" />
+      <PropertyRef Name="MA_QUYET_DINH" />
+      <PropertyRef Name="ID_LOAI_QD" />
+      <PropertyRef Name="ID_PHAP_NHAN" />
+      <PropertyRef Name="MA_PHAP_NHAN" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_DU_AN" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_DU_AN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_TRANG_THAI" Precision="18" Scale="0" />
+    <Property Type="String" Name="TRANG_THAI_DA" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_LOAI_DU_AN" Precision="18" Scale="0" />
+    <Property Type="String" Name="LOAI_DU_AN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_BAT_DAU" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_KET_THUC" Precision="3" />
+    <Property Type="String" Name="NOI_DUNG" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_CO_CHE" Precision="18" Scale="0" />
+    <Property Type="String" Name="CO_CHE" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_QUYET_DINH" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_QUYET_DINH" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_LOAI_QD" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="LOAI_QD" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_CO_HIEU_LUC" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_KY" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_HET_HIEU_LUC" Precision="3" />
+    <Property Type="String" Name="NOI_DUNG_QD" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LINK" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_PHAP_NHAN" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_PHAP_NHAN" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="V_DM_DU_LIEU_NHAN_VIEN">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="MA_NV" />
+      <PropertyRef Name="HO_DEM" />
+      <PropertyRef Name="TEN" />
+      <PropertyRef Name="ID_TRANG_LAO_DONG" />
+      <PropertyRef Name="TRANG_THAI_LAO_DONG" />
+      <PropertyRef Name="TRANG_THAI_HIEN_TAI" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_NV" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HO_DEM" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="GIOI_TINH" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_SINH" Precision="3" />
+    <Property Type="String" Name="TRINH_DO" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_CHUC_VU" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_CV" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_CV" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LOAI_CV" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="TY_LE_THAM_GIA" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_DON_VI" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_DON_VI" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_DON_VI" MaxLength="266" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_DON_VI_CAP_TREN" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_LOAI_DON_VI" Precision="18" Scale="0" />
+    <Property Type="String" Name="LOAI_DON_VI" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_CAP_DON_VI" Precision="18" Scale="0" />
+    <Property Type="String" Name="CAP_DON_VI" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DIA_BAN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_BAT_DAU" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_KET_THUC" Precision="3" />
+    <Property Type="Decimal" Name="ID_TRANG_LAO_DONG" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="TRANG_THAI_LAO_DONG" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_CO_HIEU_LUC_LD" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_HET_HIEU_LUC_LD" Precision="3" />
+    <Property Type="String" Name="TRANG_THAI_HIEN_TAI" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRANG_THAI_CV" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_DV_CAP_TREN" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_DV_CAP_TREN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_QD_TRANG_THAI_LD" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_LOAI_QD" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="NGAY_CO_HIEU_LUC" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_KY" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_HET_HIEU_LUC" Precision="3" />
+    <Property Type="String" Name="LOAI_QD_LD" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_HEADCOUNT" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_PHAP_NHAN" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_PHAP_NHAN" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_PHAP_NHAN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_PHAP_NHAN_QD" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_LOAI_CV" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="V_DM_NHAN_SU">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="MA_NV" />
+      <PropertyRef Name="HO_DEM" />
+      <PropertyRef Name="TEN" />
+      <PropertyRef Name="HO_TEN" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MA_NV" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HO_DEM" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="GIOI_TINH" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_SINH" Precision="3" />
+    <Property Type="String" Name="NOI_SINH" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NGUYEN_QUAN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ANH" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CMND" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_CAP_CMND" Precision="3" />
+    <Property Type="String" Name="NOI_CAP_CMND" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRINH_DO" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NOI_DAO_TAO" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CHUYEN_NGANH" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="NAM_TOT_NGHIEP" Precision="18" Scale="0" />
+    <Property Type="String" Name="EMAIL_CQ" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EMAIL_CA_NHAN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DT_NHA" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DI_DONG" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CHO_O" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HO_KHAU" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NGUOI_LIEN_HE" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DI_DONG_LIEN_HE" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="QUAN_HE" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TON_GIAO" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DAN_TOC" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="MA_SO_THUE" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRANG_THAI" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_HEADCOUNT" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_HEADCOUNT" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HO_TEN" Nullable="false" MaxLength="101" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="V_DM_NHAN_SU_DU_AN">
+    <Key>
+      <PropertyRef Name="ID_DU_AN" />
+      <PropertyRef Name="MA_DU_AN" />
+      <PropertyRef Name="ID_NHAN_SU" />
+      <PropertyRef Name="MA_NV" />
+      <PropertyRef Name="HO_DEM" />
+      <PropertyRef Name="TEN" />
+      <PropertyRef Name="VI_TRI" />
+      <PropertyRef Name="THOI_DIEM_TG" />
+      <PropertyRef Name="ID_VI_TRI" />
+      <PropertyRef Name="TRANG_THAI_NHAN_SU_HIEN_TAI" />
+    </Key>
+    <Property Type="Decimal" Name="ID_DU_AN" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_DU_AN" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_DU_AN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_NHAN_SU" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_NV" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HO_DEM" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="VI_TRI" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="THOI_DIEM_TG" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="THOI_DIEM_KT" Precision="3" />
+    <Property Type="Decimal" Name="THOI_GIAN_TG" Precision="18" Scale="0" />
+    <Property Type="String" Name="DANH_HIEU" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MO_TA" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LUA_CHON" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_QUYET_DINH" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_QUYET_DINH" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_LOAI_QD" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="NGAY_CO_HIEU_LUC" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_KY" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_HET_HIEU_LUC" Precision="3" />
+    <Property Type="String" Name="NOI_DUNG" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LINK" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LOAI_QD" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_TRANG_LAO_DONG" Precision="18" Scale="0" />
+    <Property Type="String" Name="TRANG_THAI_LAO_DONG" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRANG_THAI_HIEN_TAI" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_PHAP_NHAN_QD" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_PHAP_NHAN" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_VI_TRI" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_DANH_HIEU" Precision="18" Scale="0" />
+    <Property Type="String" Name="TRANG_THAI_NHAN_SU_HIEN_TAI" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_PHAP_NHAN_TTLD" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="V_DM_QUYET_DINH">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="TEN" />
+      <PropertyRef Name="MA_QUYET_DINH" />
+      <PropertyRef Name="ID_LOAI_QD" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="TEN" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_QUYET_DINH" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_LOAI_QD" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="NGAY_CO_HIEU_LUC" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_KY" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_HET_HIEU_LUC" Precision="3" />
+    <Property Type="String" Name="NOI_DUNG" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LINK" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="V_DM_TRANG_THAI_UNG_VIEN">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="MA_TRANG_THAI" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_TRANG_THAI_CAP_TREN" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="MA_TRANG_THAI_CAP_TREN" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="MA_TRANG_THAI" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="DINH_NGHIA" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DAU_HIEU" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="VIEC_CAN_LAM" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="V_GD_BAO_CAO_DU_AN">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="MA_DU_AN" />
+      <PropertyRef Name="NGAY_BAT_DAU" />
+      <PropertyRef Name="ID_LOAI_DU_AN" />
+      <PropertyRef Name="ID_TRANG_THAI" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_DU_AN" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_DU_AN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_BAT_DAU" Nullable="false" Precision="3" />
+    <Property Type="String" Name="HO_DEM" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_KET_THUC" Precision="3" />
+    <Property Type="String" Name="CO_CHE" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NOI_DUNG" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_VI_TRI" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_NHAN_SU" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_LOAI_DU_AN" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_CO_CHE" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_TRANG_THAI" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="TRANG_THAI" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LOAI_DU_AN" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="V_GD_BAO_CAO_DU_AN_2">
+    <Key>
+      <PropertyRef Name="MA_DU_AN" />
+      <PropertyRef Name="NGAY_BAT_DAU" />
+      <PropertyRef Name="ID_LOAI_DU_AN" />
+      <PropertyRef Name="ID_TRANG_THAI" />
+    </Key>
+    <Property Type="String" Name="TEN_DU_AN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_DU_AN" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_BAT_DAU" Nullable="false" Precision="3" />
+    <Property Type="String" Name="TRUONG_DU_AN" MaxLength="101" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SL_THANH_VIEN" />
+    <Property Type="DateTime" Name="NGAY_KET_THUC" Precision="3" />
+    <Property Type="String" Name="CO_CHE" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="GHI_CHU" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_QUYET_DINH" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_QUYET_DINH" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_LOAI_DU_AN" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_TRANG_THAI" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_CO_CHE" Precision="18" Scale="0" />
+    <Property Type="String" Name="TRANG_THAI" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LOAI_DU_AN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LOAI_QD" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_PHAP_NHAN" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_PHAP_NHAN" MaxLength="35" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="V_GD_CHI_TIET_CAP_BAC">
+    <Key>
+      <PropertyRef Name="ID_NHAN_SU" />
+      <PropertyRef Name="MA_NV" />
+      <PropertyRef Name="HO_DEM" />
+      <PropertyRef Name="TEN" />
+      <PropertyRef Name="TRANG_THAI_CB" />
+    </Key>
+    <Property Type="Decimal" Name="ID_NHAN_SU" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_NV" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HO_DEM" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_BAT_DAU" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_KET_THUC" Precision="3" />
+    <Property Type="String" Name="TRANG_THAI_CB" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_CAP" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_BAC" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_QUYET_DINH" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_CO_HIEU_LUC" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_HET_HIEU_LUC" Precision="3" />
+    <Property Type="String" Name="MA_CAP_BAC" MaxLength="31" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LUA_CHON" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_LOAI_QD" Precision="18" Scale="0" />
+    <Property Type="String" Name="LOAI_QD" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="V_GD_CONG_TAC">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ID_NHAN_SU" />
+      <PropertyRef Name="MA_NV" />
+      <PropertyRef Name="HO_DEM" />
+      <PropertyRef Name="TEN" />
+      <PropertyRef Name="NGAY_DI" />
+      <PropertyRef Name="NGAY_VE" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_NHAN_SU" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_NV" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HO_DEM" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_QUYET_DINH" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_QUYET_DINH" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_LOAI_QD" Precision="18" Scale="0" />
+    <Property Type="String" Name="LOAI_QD" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_CO_HIEU_LUC" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_KY" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_HET_HIEU_LUC" Precision="3" />
+    <Property Type="String" Name="NOI_DUNG" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_DI" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_VE" Nullable="false" Precision="3" />
+    <Property Type="String" Name="DIA_DIEM" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MO_TA_CONG_VIEC" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LUA_CHON" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LINK" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_PHAP_NHAN" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_PHAP_NHAN" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_PHAP_NHAN" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="V_GD_HOP_DONG_LAO_DONG">
+    <Key>
+      <PropertyRef Name="MA_HOP_DONG" />
+      <PropertyRef Name="ID_LOAI_HOP_DONG" />
+      <PropertyRef Name="LOAI_HOP_DONG" />
+      <PropertyRef Name="TRANG_THAI_HOP_DONG" />
+      <PropertyRef Name="ID_NHAN_SU" />
+      <PropertyRef Name="TRANG_THAI" />
+    </Key>
+    <Property Type="String" Name="COLS1" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MA_NV" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HO_DEM" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_HOP_DONG" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_LOAI_HOP_DONG" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="LOAI_HOP_DONG" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_CO_HIEU_LUC" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_HET_HAN" Precision="3" />
+    <Property Type="String" Name="TRANG_THAI_HOP_DONG" Nullable="false" MaxLength="17" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_NHAN_SU" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="TRANG_THAI" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NGUOI_KY" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CHUC_VU_NGUOI_KY" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_KY_HOP_DONG" Precision="3" />
+    <Property Type="Decimal" Name="ID_PHAP_NHAN" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_PHAP_NHAN" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_PHAP_NHAN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_TRANG_LAO_DONG" Precision="18" Scale="0" />
+    <Property Type="String" Name="TRANG_THAI_HIEN_TAI" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LINK" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRANG_THAI_LAO_DONG" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_CO_HIEU_LUC_TRANG_THAI_LAO_DONG" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_HET_HIEU_LUC_TRANG_THAI_LAO_DONG" Precision="3" />
+    <Property Type="Decimal" Name="ID_PHAP_NHAN_LD" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="V_GD_LUONG_THEO_QD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_NV" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_NV" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HO_DEM" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="GIOI_TINH" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_SINH" Precision="3" />
+    <Property Type="Decimal" Name="LUONG" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="NGAY_AP_DUNG" Precision="3" />
+    <Property Type="Decimal" Name="THANG_AP_DUNG" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="NAM_AP_DUNG" Precision="18" Scale="0" />
+    <Property Type="String" Name="LUONG_HIEN_TAI_YN" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_KY" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_KY" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_BAT_DAU_KY" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_KET_THUC_KY" Precision="3" />
+    <Property Type="Decimal" Name="ID_QUYET_DINH" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_QD" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_LOAI_QD" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="NGAY_CO_HIEU_LUC" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_KY" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_HET_HIEU_LUC" Precision="3" />
+    <Property Type="String" Name="NOI_DUNG" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LINK" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NOI_SINH" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NGUYEN_QUAN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ANH" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CMND" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NOI_CAP_CMND" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_CAP_CMND" Precision="3" />
+    <Property Type="String" Name="TRINH_DO" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NOI_DAO_TAO" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CHUYEN_NGANH" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="NAM_TOT_NGHIEP" Precision="18" Scale="0" />
+    <Property Type="String" Name="EMAIL_CQ" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EMAIL_CA_NHAN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DT_NHA" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DI_DONG" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CHO_O" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HO_KHAU" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NGUOI_LIEN_HE" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DI_DONG_LIEN_HE" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="QUAN_HE" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TON_GIAO" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DAN_TOC" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="MA_SO_THUE" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRANG_THAI" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_HEADCOUNT" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_HEADCOUNT" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_TU_DIEN" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_LOAI_TU_DIEN" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_LOAI" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_LOAI" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_NGAN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_QD" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="GHI_CHU" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_GD_QD_PN" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_PHAP_NHAN" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_PHAP_NHAN" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_PHAP_NHAN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_SO_THUE_PN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_DK_KINH_DOANH" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_DK_KINH_DOANH" Precision="3" />
+    <Property Type="String" Name="DIA_CHI" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NGUOI_DAI_DIEN" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="V_GD_QUA_TRINH_LAM_VIEC">
+    <Key>
+      <PropertyRef Name="MA_NV" />
+      <PropertyRef Name="HO_DEM" />
+      <PropertyRef Name="TEN" />
+      <PropertyRef Name="ID_NHAN_SU" />
+      <PropertyRef Name="TRANG_THAI_CV" />
+    </Key>
+    <Property Type="String" Name="MA_NV" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HO_DEM" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_CV" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_CV" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_DON_VI" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_DON_VI" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_CAP_DON_VI" Precision="18" Scale="0" />
+    <Property Type="String" Name="CAP_DON_VI" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_LOAI_DON_VI" Precision="18" Scale="0" />
+    <Property Type="String" Name="LOAI_DON_VI" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_DON_VI_CAP_TREN" Precision="18" Scale="0" />
+    <Property Type="String" Name="DIA_BAN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_QUYET_DINH" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_CO_HIEU_LUC" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_HET_HIEU_LUC" Precision="3" />
+    <Property Type="Decimal" Name="ID_LOAI_CV" Precision="18" Scale="0" />
+    <Property Type="String" Name="LOAI_CV" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_BAT_DAU" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_KET_THUC" Precision="3" />
+    <Property Type="Decimal" Name="ID_NHAN_SU" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_NGACH" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_DON_VI" Precision="18" Scale="0" />
+    <Property Type="String" Name="NGACH" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRANG_THAI_CHUC_VU_YN" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRANG_THAI_CV" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_QUYET_DINH_MIEN_NHIEM" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_QUYET_DINH" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_QUYET_DINH_MIEN_NHIEM" Precision="18" Scale="0" />
+    <Property Type="String" Name="LUA_CHON" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="TY_LE_THAM_GIA" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_CHUC_VU" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_DV_CAP_TREN" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_DV_CAP_TREN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_LOAI_QD" Precision="18" Scale="0" />
+    <Property Type="String" Name="LOAI_QD" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_PHAP_NHAN" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_PHAP_NHAN" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_PHAP_NHAN" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="V_GD_QUA_TRINH_LAM_VIEC_2">
+    <Key>
+      <PropertyRef Name="MA_NV" />
+      <PropertyRef Name="HO_DEM" />
+      <PropertyRef Name="TEN" />
+      <PropertyRef Name="ID_LOAI_CV" />
+      <PropertyRef Name="LOAI_CV" />
+      <PropertyRef Name="ID_NHAN_SU" />
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ID_DON_VI" />
+      <PropertyRef Name="TRANG_THAI_CV" />
+      <PropertyRef Name="ID_CHUC_VU" />
+      <PropertyRef Name="ID_TRANG_LAO_DONG" />
+      <PropertyRef Name="TRANG_THAI_HIEN_TAI" />
+      <PropertyRef Name="TRANG_THAI_LD_HIEN_TAI" />
+    </Key>
+    <Property Type="String" Name="MA_NV" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HO_DEM" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_CV" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_CV" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_DON_VI" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_DON_VI" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_CAP_DON_VI" Precision="18" Scale="0" />
+    <Property Type="String" Name="CAP_DON_VI" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_LOAI_DON_VI" Precision="18" Scale="0" />
+    <Property Type="String" Name="LOAI_DON_VI" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_DON_VI_CAP_TREN" Precision="18" Scale="0" />
+    <Property Type="String" Name="DIA_BAN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_QUYET_DINH" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_CO_HIEU_LUC" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_HET_HIEU_LUC" Precision="3" />
+    <Property Type="Decimal" Name="ID_LOAI_CV" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="LOAI_CV" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_BAT_DAU" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_KET_THUC" Precision="3" />
+    <Property Type="Decimal" Name="ID_NHAN_SU" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_NGACH" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_DON_VI" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="NGACH" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRANG_THAI_CHUC_VU_YN" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRANG_THAI_CV" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_QUYET_DINH_MIEN_NHIEM" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_QUYET_DINH" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_QUYET_DINH_MIEN_NHIEM" Precision="18" Scale="0" />
+    <Property Type="String" Name="LUA_CHON" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="TY_LE_THAM_GIA" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_CHUC_VU" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_DV_CAP_TREN" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_DV_CAP_TREN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_LOAI_QD" Precision="18" Scale="0" />
+    <Property Type="String" Name="LOAI_QD" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_TRANG_LAO_DONG" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="TRANG_THAI_HIEN_TAI" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRANG_THAI_LD_HIEN_TAI" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_CO_HIEU_LUC_LD" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_HET_HIEU_LUC_LD" Precision="3" />
+    <Property Type="String" Name="TRANG_THAI" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_PHAP_NHAN" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_PHAP_NHAN_QD" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="V_GD_QUYET_DINH">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="MA_QUYET_DINH" />
+      <PropertyRef Name="ID_LOAI_QD" />
+      <PropertyRef Name="LOAI_QUYET_DINH" />
+      <PropertyRef Name="ID_PHAP_NHAN" />
+      <PropertyRef Name="MA_PHAP_NHAN" />
+      <PropertyRef Name="TEN_PHAP_NHAN" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_QUYET_DINH" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_LOAI_QD" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="NGAY_CO_HIEU_LUC" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_KY" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_HET_HIEU_LUC" Precision="3" />
+    <Property Type="String" Name="NOI_DUNG" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LINK" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LOAI_QUYET_DINH" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_NV" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HO_DEM" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_PHAP_NHAN" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_PHAP_NHAN" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_PHAP_NHAN" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="V_GD_QUYET_DINH_temp">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="MA_QUYET_DINH" />
+      <PropertyRef Name="ID_LOAI_QD" />
+      <PropertyRef Name="LOAI_QUYET_DINH" />
+      <PropertyRef Name="MA_NV" />
+      <PropertyRef Name="HO_DEM" />
+      <PropertyRef Name="TEN" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_QUYET_DINH" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_LOAI_QD" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="NGAY_CO_HIEU_LUC" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_KY" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_HET_HIEU_LUC" Precision="3" />
+    <Property Type="String" Name="NOI_DUNG" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LINK" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LOAI_QUYET_DINH" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_NV" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HO_DEM" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="V_GD_TRA_CUU_NHAN_SU">
+    <Key>
+      <PropertyRef Name="MA_NV" />
+      <PropertyRef Name="HO_DEM" />
+      <PropertyRef Name="TEN" />
+      <PropertyRef Name="ID_TRANG_LAO_DONG" />
+      <PropertyRef Name="TRANG_THAI_LAO_DONG" />
+      <PropertyRef Name="TRANG_THAI_HIEN_TAI" />
+    </Key>
+    <Property Type="String" Name="MA_NV" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HO_DEM" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="GIOI_TINH" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_SINH" Precision="3" />
+    <Property Type="String" Name="NOI_SINH" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NGUYEN_QUAN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CMND" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_CAP_CMND" Precision="3" />
+    <Property Type="String" Name="NOI_CAP_CMND" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRINH_DO" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NOI_DAO_TAO" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CHUYEN_NGANH" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="NAM_TOT_NGHIEP" Precision="18" Scale="0" />
+    <Property Type="String" Name="EMAIL_CQ" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EMAIL_CA_NHAN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DT_NHA" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DI_DONG" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CHO_O" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HO_KHAU" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NGUOI_LIEN_HE" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DI_DONG_LIEN_HE" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="QUAN_HE" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TON_GIAO" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DAN_TOC" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="MA_SO_THUE" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRANG_THAI" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_HEADCOUNT" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_HEADCOUNT" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_CHUC_VU" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_CV" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_CV" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LOAI_CV" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="TY_LE_THAM_GIA" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_DON_VI" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_DON_VI" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_DON_VI" MaxLength="266" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_DON_VI_CAP_TREN" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_LOAI_DON_VI" Precision="18" Scale="0" />
+    <Property Type="String" Name="LOAI_DON_VI" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_CAP_DON_VI" Precision="18" Scale="0" />
+    <Property Type="String" Name="CAP_DON_VI" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DIA_BAN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_BAT_DAU" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_KET_THUC" Precision="3" />
+    <Property Type="Decimal" Name="ID_TRANG_LAO_DONG" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="TRANG_THAI_LAO_DONG" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_CO_HIEU_LUC_LD" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_HET_HIEU_LUC_LD" Precision="3" />
+    <Property Type="String" Name="TRANG_THAI_HIEN_TAI" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRANG_THAI_CV" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_DV_CAP_TREN" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_DV_CAP_TREN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_QD_TRANG_THAI_LD" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_LOAI_QD" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="NGAY_CO_HIEU_LUC" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_KY" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_HET_HIEU_LUC" Precision="3" />
+    <Property Type="String" Name="LOAI_QD_LD" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_PHAP_NHAN" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_PHAP_NHAN" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_PHAP_NHAN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_PHAP_NHAN_QD" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_LOAI_CV" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="V_GD_TRANG_THAI_LAO_DONG">
+    <Key>
+      <PropertyRef Name="MA_NV" />
+      <PropertyRef Name="HO_DEM" />
+      <PropertyRef Name="TEN" />
+      <PropertyRef Name="TRANG_THAI_HIEN_TAI" />
+      <PropertyRef Name="ID_NHAN_SU" />
+    </Key>
+    <Property Type="String" Name="MA_NV" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HO_DEM" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_TRANG_LAO_DONG" Precision="18" Scale="0" />
+    <Property Type="String" Name="TRANG_THAI_LAO_DONG" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_QUYET_DINH" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="NGAY_CO_HIEU_LUC" Precision="3" />
+    <Property Type="DateTime" Name="NGAY_HET_HIEU_LUC" Precision="3" />
+    <Property Type="Decimal" Name="ID_LOAI_QD" Precision="18" Scale="0" />
+    <Property Type="String" Name="LOAI_QUYET_DINH" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TRANG_THAI_HIEN_TAI" Nullable="false" MaxLength="19" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_NHAN_SU" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_QUYET_DINH" Precision="18" Scale="0" />
+    <Property Type="String" Name="TRANG_THAI_HIEN_TAI_YN" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_PHAP_NHAN" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_PHAP_NHAN" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN_PHAP_NHAN" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="V_HT_CONTROL_IN_FORM">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="FORM_NAME" />
+      <PropertyRef Name="CONTROL_NAME" />
+      <PropertyRef Name="CONTROL_TYPE" />
+      <PropertyRef Name="MA_TU_DIEN" />
+      <PropertyRef Name="ID_TU_DIEN" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="FORM_NAME" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DISPLAY_NAME" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CONTROL_NAME" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CONTROL_TYPE" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MA_TU_DIEN" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_TU_DIEN" Nullable="false" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="V_HT_PHAN_QUYEN_CHO_NHOM">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ID_USER_GROUP" />
+      <PropertyRef Name="ID_PHAN_QUYEN_HE_THONG" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_USER_GROUP" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_PHAN_QUYEN_HE_THONG" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_PHAN_QUYEN" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="GHI_CHU" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LOAI_PHAN_QUYEN" MaxLength="35" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="V_NHAN_VIEN_HIEN_TAI">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="MA_NV" />
+      <PropertyRef Name="HO_DEM" />
+      <PropertyRef Name="TEN" />
+      <PropertyRef Name="ID_CHUC_VU" />
+      <PropertyRef Name="MA_CV" />
+      <PropertyRef Name="ID_DON_VI" />
+      <PropertyRef Name="MA_DON_VI" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_NV" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HO_DEM" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EMAIL_CQ" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EMAIL_CA_NHAN" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DI_DONG" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_CHUC_VU" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_CV" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_DON_VI" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_DON_VI" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_2">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="MA_NV" />
+      <PropertyRef Name="HO_DEM" />
+      <PropertyRef Name="TEN" />
+      <PropertyRef Name="ID_CHUC_VU" />
+      <PropertyRef Name="ID_DON_VI" />
+      <PropertyRef Name="ID_TRANG_LAO_DONG" />
+      <PropertyRef Name="TRANG_THAI_HIEN_TAI" />
+    </Key>
+    <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_NV" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HO_DEM" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TEN" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_CHUC_VU" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ID_DON_VI" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="TRANG_THAI_CV" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="ID_TRANG_LAO_DONG" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="TRANG_THAI_HIEN_TAI" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_CM_DM_TU_DIEN_CM_DM_LOAI_TD">
+    <End Type="BKI_HRMModel.CM_DM_LOAI_TD" Role="CM_DM_LOAI_TD" Multiplicity="1" />
+    <End Type="BKI_HRMModel.CM_DM_TU_DIEN" Role="CM_DM_TU_DIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CM_DM_LOAI_TD">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CM_DM_TU_DIEN">
+        <PropertyRef Name="ID_LOAI_TU_DIEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DM_CHUC_VU_CM_DM_TU_DIEN">
+    <End Type="BKI_HRMModel.CM_DM_TU_DIEN" Role="CM_DM_TU_DIEN" Multiplicity="0..1" />
+    <End Type="BKI_HRMModel.DM_CHUC_VU" Role="DM_CHUC_VU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CM_DM_TU_DIEN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DM_CHUC_VU">
+        <PropertyRef Name="ID_NGACH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DM_DON_VI_CM_DM_TU_DIEN">
+    <End Type="BKI_HRMModel.CM_DM_TU_DIEN" Role="CM_DM_TU_DIEN" Multiplicity="1" />
+    <End Type="BKI_HRMModel.DM_DON_VI" Role="DM_DON_VI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CM_DM_TU_DIEN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DM_DON_VI">
+        <PropertyRef Name="ID_CAP_DON_VI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DM_DON_VI_CM_DM_TU_DIEN1">
+    <End Type="BKI_HRMModel.CM_DM_TU_DIEN" Role="CM_DM_TU_DIEN" Multiplicity="0..1" />
+    <End Type="BKI_HRMModel.DM_DON_VI" Role="DM_DON_VI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CM_DM_TU_DIEN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DM_DON_VI">
+        <PropertyRef Name="ID_LOAI_DON_VI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DM_DU_AN_CM_DM_TU_DIEN">
+    <End Type="BKI_HRMModel.CM_DM_TU_DIEN" Role="CM_DM_TU_DIEN" Multiplicity="1" />
+    <End Type="BKI_HRMModel.DM_DU_AN" Role="DM_DU_AN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CM_DM_TU_DIEN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DM_DU_AN">
+        <PropertyRef Name="ID_LOAI_DU_AN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DM_DU_AN_CM_DM_TU_DIEN1">
+    <End Type="BKI_HRMModel.CM_DM_TU_DIEN" Role="CM_DM_TU_DIEN" Multiplicity="1" />
+    <End Type="BKI_HRMModel.DM_DU_AN" Role="DM_DU_AN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CM_DM_TU_DIEN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DM_DU_AN">
+        <PropertyRef Name="ID_TRANG_THAI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DM_DU_AN_CM_DM_TU_DIEN2">
+    <End Type="BKI_HRMModel.CM_DM_TU_DIEN" Role="CM_DM_TU_DIEN" Multiplicity="0..1" />
+    <End Type="BKI_HRMModel.DM_DU_AN" Role="DM_DU_AN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CM_DM_TU_DIEN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DM_DU_AN">
+        <PropertyRef Name="ID_CO_CHE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DM_QUYET_DINH_CM_DM_TU_DIEN">
+    <End Type="BKI_HRMModel.CM_DM_TU_DIEN" Role="CM_DM_TU_DIEN" Multiplicity="1" />
+    <End Type="BKI_HRMModel.DM_QUYET_DINH" Role="DM_QUYET_DINH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CM_DM_TU_DIEN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DM_QUYET_DINH">
+        <PropertyRef Name="ID_LOAI_QD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_CHI_TIET_CHUC_VU_CM_DM_TU_DIEN">
+    <End Type="BKI_HRMModel.CM_DM_TU_DIEN" Role="CM_DM_TU_DIEN" Multiplicity="0..1" />
+    <End Type="BKI_HRMModel.GD_CHI_TIET_CHUC_VU" Role="GD_CHI_TIET_CHUC_VU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CM_DM_TU_DIEN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_CHI_TIET_CHUC_VU">
+        <PropertyRef Name="ID_LOAI_CV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_CHI_TIET_DU_AN_CM_DM_TU_DIEN">
+    <End Type="BKI_HRMModel.CM_DM_TU_DIEN" Role="CM_DM_TU_DIEN" Multiplicity="1" />
+    <End Type="BKI_HRMModel.GD_CHI_TIET_DU_AN" Role="GD_CHI_TIET_DU_AN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CM_DM_TU_DIEN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_CHI_TIET_DU_AN">
+        <PropertyRef Name="ID_VI_TRI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_CHI_TIET_DU_AN_CM_DM_TU_DIEN1">
+    <End Type="BKI_HRMModel.CM_DM_TU_DIEN" Role="CM_DM_TU_DIEN" Multiplicity="0..1" />
+    <End Type="BKI_HRMModel.GD_CHI_TIET_DU_AN" Role="GD_CHI_TIET_DU_AN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CM_DM_TU_DIEN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_CHI_TIET_DU_AN">
+        <PropertyRef Name="ID_DANH_HIEU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_CHI_TIET_TRANG_THAI_LD_CM_DM_TU_DIEN">
+    <End Type="BKI_HRMModel.CM_DM_TU_DIEN" Role="CM_DM_TU_DIEN" Multiplicity="1" />
+    <End Type="BKI_HRMModel.GD_CHI_TIET_TRANG_THAI_LD" Role="GD_CHI_TIET_TRANG_THAI_LD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CM_DM_TU_DIEN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_CHI_TIET_TRANG_THAI_LD">
+        <PropertyRef Name="ID_TRANG_LAO_DONG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_HOP_DONG_CM_DM_TU_DIEN">
+    <End Type="BKI_HRMModel.CM_DM_TU_DIEN" Role="CM_DM_TU_DIEN" Multiplicity="1" />
+    <End Type="BKI_HRMModel.GD_HOP_DONG" Role="GD_HOP_DONG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CM_DM_TU_DIEN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_HOP_DONG">
+        <PropertyRef Name="ID_LOAI_HOP_DONG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HT_CONTROL_IN_FORM_CM_DM_TU_DIEN">
+    <End Type="BKI_HRMModel.CM_DM_TU_DIEN" Role="CM_DM_TU_DIEN" Multiplicity="1" />
+    <End Type="BKI_HRMModel.HT_CONTROL_IN_FORM" Role="HT_CONTROL_IN_FORM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CM_DM_TU_DIEN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HT_CONTROL_IN_FORM">
+        <PropertyRef Name="ID_CHUC_NANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HT_QUYEN_USER_CM_DM_TU_DIEN">
+    <End Type="BKI_HRMModel.CM_DM_TU_DIEN" Role="CM_DM_TU_DIEN" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="BKI_HRMModel.HT_QUYEN_USER" Role="HT_QUYEN_USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CM_DM_TU_DIEN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HT_QUYEN_USER">
+        <PropertyRef Name="ID_QUYEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HT_QUYEN_USER_WEB_CM_DM_TU_DIEN">
+    <End Type="BKI_HRMModel.CM_DM_TU_DIEN" Role="CM_DM_TU_DIEN" Multiplicity="1" />
+    <End Type="BKI_HRMModel.HT_QUYEN_USER_WEB" Role="HT_QUYEN_USER_WEB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CM_DM_TU_DIEN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HT_QUYEN_USER_WEB">
+        <PropertyRef Name="ID_QUYEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_CHI_TIET_CAP_BAC_DM_CAP_BAC">
+    <End Type="BKI_HRMModel.DM_CAP_BAC" Role="DM_CAP_BAC" Multiplicity="1" />
+    <End Type="BKI_HRMModel.GD_CHI_TIET_CAP_BAC" Role="GD_CHI_TIET_CAP_BAC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_CAP_BAC">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_CHI_TIET_CAP_BAC">
+        <PropertyRef Name="ID_CAP_BAC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_CHI_TIET_CHUC_VU_DM_CHUC_VU">
+    <End Type="BKI_HRMModel.DM_CHUC_VU" Role="DM_CHUC_VU" Multiplicity="1" />
+    <End Type="BKI_HRMModel.GD_CHI_TIET_CHUC_VU" Role="GD_CHI_TIET_CHUC_VU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_CHUC_VU">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_CHI_TIET_CHUC_VU">
+        <PropertyRef Name="ID_CHUC_VU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DM_DON_VI_DM_DON_VI">
+    <End Type="BKI_HRMModel.DM_DON_VI" Role="DM_DON_VI" Multiplicity="0..1" />
+    <End Type="BKI_HRMModel.DM_DON_VI" Role="DM_DON_VI1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_DON_VI">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DM_DON_VI1">
+        <PropertyRef Name="ID_DON_VI_CAP_TREN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_CHI_TIET_CHUC_VU_DM_DON_VI">
+    <End Type="BKI_HRMModel.DM_DON_VI" Role="DM_DON_VI" Multiplicity="1" />
+    <End Type="BKI_HRMModel.GD_CHI_TIET_CHUC_VU" Role="GD_CHI_TIET_CHUC_VU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_DON_VI">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_CHI_TIET_CHUC_VU">
+        <PropertyRef Name="ID_DON_VI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_DON_VI_PHAP_NHAN_GD_DON_VI_PHAP_NHAN">
+    <End Type="BKI_HRMModel.DM_DON_VI" Role="DM_DON_VI" Multiplicity="1" />
+    <End Type="BKI_HRMModel.GD_DON_VI_PHAP_NHAN" Role="GD_DON_VI_PHAP_NHAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_DON_VI">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_DON_VI_PHAP_NHAN">
+        <PropertyRef Name="ID_DON_VI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_CHI_TIET_DU_AN_DM_DU_AN">
+    <End Type="BKI_HRMModel.DM_DU_AN" Role="DM_DU_AN" Multiplicity="1" />
+    <End Type="BKI_HRMModel.GD_CHI_TIET_DU_AN" Role="GD_CHI_TIET_DU_AN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_DU_AN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_CHI_TIET_DU_AN">
+        <PropertyRef Name="ID_DU_AN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_QUYET_DINH_DU_AN_DM_DU_AN">
+    <End Type="BKI_HRMModel.DM_DU_AN" Role="DM_DU_AN" Multiplicity="1" />
+    <End Type="BKI_HRMModel.GD_QUYET_DINH_DU_AN" Role="GD_QUYET_DINH_DU_AN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_DU_AN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_QUYET_DINH_DU_AN">
+        <PropertyRef Name="ID_DU_AN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DM_NHAN_SU_DM_HEADCOUNT">
+    <End Type="BKI_HRMModel.DM_HEADCOUNT" Role="DM_HEADCOUNT" Multiplicity="0..1" />
+    <End Type="BKI_HRMModel.DM_NHAN_SU" Role="DM_NHAN_SU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_HEADCOUNT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DM_NHAN_SU">
+        <PropertyRef Name="ID_HEADCOUNT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_CHI_TIET_CAP_BAC_DM_NHAN_SU">
+    <End Type="BKI_HRMModel.DM_NHAN_SU" Role="DM_NHAN_SU" Multiplicity="1" />
+    <End Type="BKI_HRMModel.GD_CHI_TIET_CAP_BAC" Role="GD_CHI_TIET_CAP_BAC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_NHAN_SU">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_CHI_TIET_CAP_BAC">
+        <PropertyRef Name="ID_NHAN_SU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_CHI_TIET_CHUC_VU_DM_NHAN_SU">
+    <End Type="BKI_HRMModel.DM_NHAN_SU" Role="DM_NHAN_SU" Multiplicity="1" />
+    <End Type="BKI_HRMModel.GD_CHI_TIET_CHUC_VU" Role="GD_CHI_TIET_CHUC_VU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_NHAN_SU">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_CHI_TIET_CHUC_VU">
+        <PropertyRef Name="ID_NHAN_SU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_CHI_TIET_DU_AN_DM_NHAN_SU">
+    <End Type="BKI_HRMModel.DM_NHAN_SU" Role="DM_NHAN_SU" Multiplicity="1" />
+    <End Type="BKI_HRMModel.GD_CHI_TIET_DU_AN" Role="GD_CHI_TIET_DU_AN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_NHAN_SU">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_CHI_TIET_DU_AN">
+        <PropertyRef Name="ID_NHAN_SU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_CHI_TIET_TRANG_THAI_LD_DM_NHAN_SU">
+    <End Type="BKI_HRMModel.DM_NHAN_SU" Role="DM_NHAN_SU" Multiplicity="1" />
+    <End Type="BKI_HRMModel.GD_CHI_TIET_TRANG_THAI_LD" Role="GD_CHI_TIET_TRANG_THAI_LD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_NHAN_SU">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_CHI_TIET_TRANG_THAI_LD">
+        <PropertyRef Name="ID_NHAN_SU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_CHI_TIET_TUYEN_DUNG_DM_NHAN_SU">
+    <End Type="BKI_HRMModel.DM_NHAN_SU" Role="DM_NHAN_SU" Multiplicity="1" />
+    <End Type="BKI_HRMModel.GD_CHI_TIET_TUYEN_DUNG" Role="GD_CHI_TIET_TUYEN_DUNG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_NHAN_SU">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_CHI_TIET_TUYEN_DUNG">
+        <PropertyRef Name="ID_NHAN_SU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_CONG_TAC_DM_NHAN_SU">
+    <End Type="BKI_HRMModel.DM_NHAN_SU" Role="DM_NHAN_SU" Multiplicity="1" />
+    <End Type="BKI_HRMModel.GD_CONG_TAC" Role="GD_CONG_TAC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_NHAN_SU">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_CONG_TAC">
+        <PropertyRef Name="ID_NHAN_SU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_HOP_DONG_DM_NHAN_SU">
+    <End Type="BKI_HRMModel.DM_NHAN_SU" Role="DM_NHAN_SU" Multiplicity="1" />
+    <End Type="BKI_HRMModel.GD_HOP_DONG" Role="GD_HOP_DONG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_NHAN_SU">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_HOP_DONG">
+        <PropertyRef Name="ID_NHAN_SU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_DON_VI_PHAP_NHAN_DM_PHAP_NHAN">
+    <End Type="BKI_HRMModel.DM_PHAP_NHAN" Role="DM_PHAP_NHAN" Multiplicity="1" />
+    <End Type="BKI_HRMModel.GD_DON_VI_PHAP_NHAN" Role="GD_DON_VI_PHAP_NHAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_PHAP_NHAN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_DON_VI_PHAP_NHAN">
+        <PropertyRef Name="ID_PHAP_NHAN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_HOP_DONG_DM_PHAP_NHAN">
+    <End Type="BKI_HRMModel.DM_PHAP_NHAN" Role="DM_PHAP_NHAN" Multiplicity="0..1" />
+    <End Type="BKI_HRMModel.GD_HOP_DONG" Role="GD_HOP_DONG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_PHAP_NHAN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_HOP_DONG">
+        <PropertyRef Name="ID_PHAP_NHAN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_QUYET_DINH_PHAP_NHAN_DM_PHAP_NHAN">
+    <End Type="BKI_HRMModel.DM_PHAP_NHAN" Role="DM_PHAP_NHAN" Multiplicity="1" />
+    <End Type="BKI_HRMModel.GD_QUYET_DINH_PHAP_NHAN" Role="GD_QUYET_DINH_PHAP_NHAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_PHAP_NHAN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_QUYET_DINH_PHAP_NHAN">
+        <PropertyRef Name="ID_PHAP_NHAN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_CHI_TIET_CAP_BAC_DM_QUYET_DINH">
+    <End Type="BKI_HRMModel.DM_QUYET_DINH" Role="DM_QUYET_DINH" Multiplicity="0..1" />
+    <End Type="BKI_HRMModel.GD_CHI_TIET_CAP_BAC" Role="GD_CHI_TIET_CAP_BAC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_QUYET_DINH">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_CHI_TIET_CAP_BAC">
+        <PropertyRef Name="ID_QUYET_DINH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_CHI_TIET_CHUC_VU_DM_QUYET_DINH">
+    <End Type="BKI_HRMModel.DM_QUYET_DINH" Role="DM_QUYET_DINH" Multiplicity="0..1" />
+    <End Type="BKI_HRMModel.GD_CHI_TIET_CHUC_VU" Role="GD_CHI_TIET_CHUC_VU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_QUYET_DINH">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_CHI_TIET_CHUC_VU">
+        <PropertyRef Name="ID_QUYET_DINH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_CHI_TIET_DU_AN_DM_QUYET_DINH">
+    <End Type="BKI_HRMModel.DM_QUYET_DINH" Role="DM_QUYET_DINH" Multiplicity="0..1" />
+    <End Type="BKI_HRMModel.GD_CHI_TIET_DU_AN" Role="GD_CHI_TIET_DU_AN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_QUYET_DINH">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_CHI_TIET_DU_AN">
+        <PropertyRef Name="ID_QUYET_DINH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_CHI_TIET_TRANG_THAI_LD_DM_QUYET_DINH">
+    <End Type="BKI_HRMModel.DM_QUYET_DINH" Role="DM_QUYET_DINH" Multiplicity="0..1" />
+    <End Type="BKI_HRMModel.GD_CHI_TIET_TRANG_THAI_LD" Role="GD_CHI_TIET_TRANG_THAI_LD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_QUYET_DINH">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_CHI_TIET_TRANG_THAI_LD">
+        <PropertyRef Name="ID_QUYET_DINH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_CONG_TAC_DM_QUYET_DINH">
+    <End Type="BKI_HRMModel.DM_QUYET_DINH" Role="DM_QUYET_DINH" Multiplicity="0..1" />
+    <End Type="BKI_HRMModel.GD_CONG_TAC" Role="GD_CONG_TAC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_QUYET_DINH">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_CONG_TAC">
+        <PropertyRef Name="ID_QUYET_DINH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_QUYET_DINH_DU_AN_DM_QUYET_DINH">
+    <End Type="BKI_HRMModel.DM_QUYET_DINH" Role="DM_QUYET_DINH" Multiplicity="1" />
+    <End Type="BKI_HRMModel.GD_QUYET_DINH_DU_AN" Role="GD_QUYET_DINH_DU_AN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_QUYET_DINH">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_QUYET_DINH_DU_AN">
+        <PropertyRef Name="ID_QUYET_DINH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_QUYET_DINH_PHAP_NHAN_DM_QUYET_DINH">
+    <End Type="BKI_HRMModel.DM_QUYET_DINH" Role="DM_QUYET_DINH" Multiplicity="1" />
+    <End Type="BKI_HRMModel.GD_QUYET_DINH_PHAP_NHAN" Role="GD_QUYET_DINH_PHAP_NHAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_QUYET_DINH">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_QUYET_DINH_PHAP_NHAN">
+        <PropertyRef Name="ID_QUYET_DINH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DM_TRANG_THAI_UNG_VIEN_DM_TRANG_THAI_UNG_VIEN">
+    <End Type="BKI_HRMModel.DM_TRANG_THAI_UNG_VIEN" Role="DM_TRANG_THAI_UNG_VIEN" Multiplicity="0..1" />
+    <End Type="BKI_HRMModel.DM_TRANG_THAI_UNG_VIEN" Role="DM_TRANG_THAI_UNG_VIEN1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_TRANG_THAI_UNG_VIEN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DM_TRANG_THAI_UNG_VIEN1">
+        <PropertyRef Name="ID_TRANG_THAI_PARENT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GD_CHI_TIET_TUYEN_DUNG_DM_TRANG_THAI_UNG_VIEN">
+    <End Type="BKI_HRMModel.DM_TRANG_THAI_UNG_VIEN" Role="DM_TRANG_THAI_UNG_VIEN" Multiplicity="1" />
+    <End Type="BKI_HRMModel.GD_CHI_TIET_TUYEN_DUNG" Role="GD_CHI_TIET_TUYEN_DUNG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DM_TRANG_THAI_UNG_VIEN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GD_CHI_TIET_TUYEN_DUNG">
+        <PropertyRef Name="ID_LEVEL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HT_CONTROL_IN_FORM_HT_FORM">
+    <End Type="BKI_HRMModel.HT_FORM" Role="HT_FORM" Multiplicity="1" />
+    <End Type="BKI_HRMModel.HT_CONTROL_IN_FORM" Role="HT_CONTROL_IN_FORM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HT_FORM">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HT_CONTROL_IN_FORM">
+        <PropertyRef Name="ID_FORM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HT_PHAN_QUYEN_CHUC_NANG_HT_CONTROLLER">
+    <End Type="BKI_HRMModel.HT_CONTROLLER" Role="HT_CONTROLLER" Multiplicity="0..1" />
+    <End Type="BKI_HRMModel.HT_PHAN_QUYEN_CHUC_NANG" Role="HT_PHAN_QUYEN_CHUC_NANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HT_CONTROLLER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HT_PHAN_QUYEN_CHUC_NANG">
+        <PropertyRef Name="ID_HT_CONTROLLER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HT_NGUOI_SU_DUNG_DM_USER_GROUP">
+    <End Type="BKI_HRMModel.HT_USER_GROUP" Role="HT_USER_GROUP" Multiplicity="0..1" />
+    <End Type="BKI_HRMModel.HT_NGUOI_SU_DUNG" Role="HT_NGUOI_SU_DUNG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HT_USER_GROUP">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HT_NGUOI_SU_DUNG">
+        <PropertyRef Name="ID_USER_GROUP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HT_QUYEN_USER_HT_NGUOI_SU_DUNG">
+    <End Type="BKI_HRMModel.HT_NGUOI_SU_DUNG" Role="HT_NGUOI_SU_DUNG" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="BKI_HRMModel.HT_QUYEN_USER" Role="HT_QUYEN_USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HT_NGUOI_SU_DUNG">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HT_QUYEN_USER">
+        <PropertyRef Name="ID_USER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HT_PHAN_QUYEN_CHO_NHOM_HT_PHAN_QUYEN_HE_THONG">
+    <End Type="BKI_HRMModel.HT_PHAN_QUYEN_HE_THONG" Role="HT_PHAN_QUYEN_HE_THONG" Multiplicity="1" />
+    <End Type="BKI_HRMModel.HT_PHAN_QUYEN_CHO_NHOM" Role="HT_PHAN_QUYEN_CHO_NHOM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HT_PHAN_QUYEN_HE_THONG">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HT_PHAN_QUYEN_CHO_NHOM">
+        <PropertyRef Name="ID_PHAN_QUYEN_HE_THONG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HT_PHAN_QUYEN_CHO_NHOM_HT_USER_GROUP">
+    <End Type="BKI_HRMModel.HT_USER_GROUP" Role="HT_USER_GROUP" Multiplicity="1" />
+    <End Type="BKI_HRMModel.HT_PHAN_QUYEN_CHO_NHOM" Role="HT_PHAN_QUYEN_CHO_NHOM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HT_USER_GROUP">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HT_PHAN_QUYEN_CHO_NHOM">
+        <PropertyRef Name="ID_USER_GROUP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HT_PHAN_QUYEN_CHUC_NANG_HT_PHAN_QUYEN_CHUC_NANG">
+    <End Type="BKI_HRMModel.HT_PHAN_QUYEN_CHUC_NANG" Role="HT_PHAN_QUYEN_CHUC_NANG" Multiplicity="0..1" />
+    <End Type="BKI_HRMModel.HT_PHAN_QUYEN_CHUC_NANG" Role="HT_PHAN_QUYEN_CHUC_NANG1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HT_PHAN_QUYEN_CHUC_NANG">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HT_PHAN_QUYEN_CHUC_NANG1">
+        <PropertyRef Name="ID_CHUC_NANG_CHA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HT_PHAN_QUYEN_CHUC_NANG_HT_USER_GROUP_WEB">
+    <End Type="BKI_HRMModel.HT_USER_GROUP_WEB" Role="HT_USER_GROUP_WEB" Multiplicity="1" />
+    <End Type="BKI_HRMModel.HT_PHAN_QUYEN_CHUC_NANG" Role="HT_PHAN_QUYEN_CHUC_NANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HT_USER_GROUP_WEB">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HT_PHAN_QUYEN_CHUC_NANG">
+        <PropertyRef Name="ID_HT_USER_GROUP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HT_PHAN_QUYEN_DETAIL_HT_PHAN_QUYEN_HE_THONG">
+    <End Type="BKI_HRMModel.HT_PHAN_QUYEN_HE_THONG" Role="HT_PHAN_QUYEN_HE_THONG" Multiplicity="1" />
+    <End Type="BKI_HRMModel.HT_PHAN_QUYEN_DETAIL" Role="HT_PHAN_QUYEN_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HT_PHAN_QUYEN_HE_THONG">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HT_PHAN_QUYEN_DETAIL">
+        <PropertyRef Name="ID_PHAN_QUYEN_HT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HT_QUAN_HE_SU_DUNG_DU_LIEU_HT_USER_GROUP">
+    <End Type="BKI_HRMModel.HT_USER_GROUP" Role="HT_USER_GROUP" Multiplicity="1" />
+    <End Type="BKI_HRMModel.HT_QUAN_HE_SU_DUNG_DU_LIEU" Role="HT_QUAN_HE_SU_DUNG_DU_LIEU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HT_USER_GROUP">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HT_QUAN_HE_SU_DUNG_DU_LIEU">
+        <PropertyRef Name="ID_USER_GROUP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HT_USER_HT_USER_GROUP_WEB">
+    <End Type="BKI_HRMModel.HT_USER_GROUP_WEB" Role="HT_USER_GROUP_WEB" Multiplicity="1" />
+    <End Type="BKI_HRMModel.HT_USER" Role="HT_USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HT_USER_GROUP_WEB">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HT_USER">
+        <PropertyRef Name="ID_USER_GROUP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,40 @@
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\BKISystemAdmin.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\BKISystemAdmin.pdb
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\EHR.Caching.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\EHR.SQLDataAccess.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\Framework.Extensions.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\IPCommon.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\log4net.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\EntityFramework.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\EHR.Caching.pdb
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\EHR.SQLDataAccess.pdb
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\Framework.Extensions.pdb
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\IPCommon.pdb
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\IPCommon.xml
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\log4net.xml
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\EntityFramework.xml
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\obj\Release\BKISystemAdmin.csprojResolveAssemblyReference.cache
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\obj\Release\BKISystemAdmin.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\obj\Release\BKISystemAdmin.pdb
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\Newtonsoft.Json.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\Newtonsoft.Json.xml
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Release\BKISystemAdmin.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Release\BKISystemAdmin.pdb
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Release\EHR.Caching.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Release\EHR.SQLDataAccess.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Release\Framework.Extensions.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Release\IPCommon.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Release\log4net.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Release\EntityFramework.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Release\Newtonsoft.Json.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Release\EHR.Caching.pdb
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Release\EHR.SQLDataAccess.pdb
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Release\Framework.Extensions.pdb
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Release\IPCommon.xml
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Release\log4net.xml
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Release\EntityFramework.xml
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Release\Newtonsoft.Json.xml
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\obj\Release\BKISystemAdmin.csprojResolveAssemblyReference.cache
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\obj\Release\BKISystemAdmin.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\obj\Release\BKISystemAdmin.pdb
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Release\IPCommon.pdb

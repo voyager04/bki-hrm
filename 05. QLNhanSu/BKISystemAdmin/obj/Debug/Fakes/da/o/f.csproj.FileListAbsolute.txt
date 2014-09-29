@@ -1,0 +1,11 @@
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\DataAccess.Fakes.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\DataAccess.Fakes.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\DataAccess.Fakes.pdb
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\DataAccess.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\EntityFramework.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\DataAccess.pdb
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\EntityFramework.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\o\f.csprojResolveAssemblyReference.cache
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\o\DataAccess.Fakes.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\o\DataAccess.Fakes.pdb

@@ -1,0 +1,66 @@
+﻿<RecentFiles>
+  <RecentFiles>
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/d:Controllers/f:AccountController.cs" caret="1604" fromTop="15" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/f:Global.asax.cs" caret="4698" fromTop="17" />
+    <File id="2D5335E7-40BC-4A16-B6D7-D114A02045C5/f:packages.config" caret="0" fromTop="0" />
+    <File id="2D5335E7-40BC-4A16-B6D7-D114A02045C5/d:Interface/f:IRepository.cs" caret="0" fromTop="0" />
+    <File id="2D5335E7-40BC-4A16-B6D7-D114A02045C5/d:Interface/f:IUnitOfWork.cs" caret="0" fromTop="0" />
+    <File id="2D5335E7-40BC-4A16-B6D7-D114A02045C5/d:Interface/f:IDbContext.cs" caret="0" fromTop="0" />
+    <File id="2D5335E7-40BC-4A16-B6D7-D114A02045C5/f:DbContextExtensions.cs" caret="0" fromTop="0" />
+    <File id="2D5335E7-40BC-4A16-B6D7-D114A02045C5/f:EDataState.cs" caret="0" fromTop="0" />
+    <File id="2D5335E7-40BC-4A16-B6D7-D114A02045C5/f:UnitOfWork.cs" caret="0" fromTop="0" />
+    <File id="2D5335E7-40BC-4A16-B6D7-D114A02045C5/f:Repository.cs" caret="746" fromTop="22" />
+    <File id="2D5335E7-40BC-4A16-B6D7-D114A02045C5/f:RepositoryQuery.cs" caret="0" fromTop="0" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/d:Views/d:Shared/f:_LoginPartial.cshtml" caret="474" fromTop="8" />
+    <File id="2D5335E7-40BC-4A16-B6D7-D114A02045C5/f:BKI_HRMEntities.cs" caret="301" fromTop="12" />
+    <File id="2D5335E7-40BC-4A16-B6D7-D114A02045C5/f:HT_PHAN_QUYEN_CHUC_NANG.cs" caret="1488" fromTop="21" />
+    <File id="666FB270-8520-4B3C-8884-7ECBA46E9E5D/d:Model/f:TaiKhoanDangNhapModel.cs" caret="0" fromTop="0" />
+    <File id="666FB270-8520-4B3C-8884-7ECBA46E9E5D/d:Management/f:TaiKhoanDangNhapManager.cs" caret="1952" fromTop="18" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/d:Filters/f:InitializeSimpleMembershipAttribute.cs" caret="963" fromTop="24" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/f:Web.config" caret="696" fromTop="11" />
+    <File id="666FB270-8520-4B3C-8884-7ECBA46E9E5D/d:Principal/f:Identity.cs" caret="815" fromTop="8" />
+    <File id="2D5335E7-40BC-4A16-B6D7-D114A02045C5/f:App.Config" caret="487" fromTop="7" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/d:Controllers/f:BaseController.cs" caret="758" fromTop="28" />
+    <File id="666FB270-8520-4B3C-8884-7ECBA46E9E5D/d:Principal/f:Roles.cs" caret="1256" fromTop="19" />
+    <File id="666FB270-8520-4B3C-8884-7ECBA46E9E5D/d:Model/f:CoCauTopicaModel.cs" caret="926" fromTop="24" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/d:Controllers/f:HomeController.cs" caret="527" fromTop="17" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/d:Views/d:Shared/f:_Navigation.cshtml" caret="1019" fromTop="13" />
+    <File id="666FB270-8520-4B3C-8884-7ECBA46E9E5D/d:Management/f:CoCauTopicaManager.cs" caret="829" fromTop="18" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/d:Controllers/f:ReportController.cs" caret="252" fromTop="10" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/d:Views/d:Shared/f:_Layout.cshtml" caret="2232" fromTop="21" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/d:Views/d:Home/f:Index.cshtml" caret="39" fromTop="2" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/d:Views/d:Report/f:CoCauTopica.cshtml" caret="210" fromTop="12" />
+  </RecentFiles>
+  <RecentEdits>
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/d:CustomRoutes/f:DomainRouteHelper.cs" caret="233" fromTop="9" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/d:Helper/f:CSystemConfiguration.cs" caret="101" fromTop="5" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/d:Helper/f:CViewName.cs" caret="101" fromTop="5" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/d:Helper/f:ImageHelper.cs" caret="2" fromTop="0" />
+    <File id="666FB270-8520-4B3C-8884-7ECBA46E9E5D/d:Utils/f:CacheKeys.cs" caret="275" fromTop="11" />
+    <File id="666FB270-8520-4B3C-8884-7ECBA46E9E5D/d:Utils/f:CryptoUtils.cs" caret="157" fromTop="7" />
+    <File id="666FB270-8520-4B3C-8884-7ECBA46E9E5D/d:Utils/f:Helper.cs" caret="102" fromTop="5" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/d:Helper/f:CookieHelper.cs" caret="129" fromTop="6" />
+    <File id="666FB270-8520-4B3C-8884-7ECBA46E9E5D/d:Model/f:TaiKhoanDangNhapModel.cs" caret="131" fromTop="6" />
+    <File id="2D5335E7-40BC-4A16-B6D7-D114A02045C5/f:HT_USER.cs" caret="923" fromTop="17" />
+    <File id="666FB270-8520-4B3C-8884-7ECBA46E9E5D/d:Utils/f:StateHelper.cs" caret="102" fromTop="5" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/d:Helper/f:Utilities.cs" caret="2461" fromTop="9" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/f:Global.asax.cs" caret="4740" fromTop="6" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/d:Views/d:Account/f:Login.cshtml" caret="211" fromTop="13" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/d:App_Start/f:AuthConfig.cs" caret="918" fromTop="28" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/d:Views/d:Shared/f:_LoginPartial.cshtml" caret="127" fromTop="3" />
+    <File id="2D5335E7-40BC-4A16-B6D7-D114A02045C5/f:HT_PHAN_QUYEN_CHUC_NANG.cs" caret="1488" fromTop="21" />
+    <File id="666FB270-8520-4B3C-8884-7ECBA46E9E5D/d:Management/f:TaiKhoanDangNhapManager.cs" caret="1015" fromTop="12" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/f:Web.config" caret="867" fromTop="11" />
+    <File id="666FB270-8520-4B3C-8884-7ECBA46E9E5D/d:Principal/f:Identity.cs" caret="1201" fromTop="18" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/d:Controllers/f:BaseController.cs" caret="908" fromTop="11" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/d:Views/d:Shared/f:_Navigation.cshtml" caret="1601" fromTop="21" />
+    <File id="666FB270-8520-4B3C-8884-7ECBA46E9E5D/d:Principal/f:Roles.cs" caret="1256" fromTop="16" />
+    <File id="666FB270-8520-4B3C-8884-7ECBA46E9E5D/d:Model/f:CoCauTopicaModel.cs" caret="1218" fromTop="30" />
+    <File id="666FB270-8520-4B3C-8884-7ECBA46E9E5D/d:Management/f:CoCauTopicaManager.cs" caret="249" fromTop="11" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/d:Controllers/f:HomeController.cs" caret="780" fromTop="20" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/d:Controllers/f:ReportController.cs" caret="260" fromTop="10" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/d:Views/d:Shared/f:_Layout.cshtml" caret="2244" fromTop="21" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/d:Views/d:Home/f:Index.cshtml" caret="39" fromTop="2" />
+    <File id="904E8F02-0894-4408-AC60-4A206D83C5EB/d:Views/d:Report/f:CoCauTopica.cshtml" caret="209" fromTop="12" />
+  </RecentEdits>
+</RecentFiles>

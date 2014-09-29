@@ -1,0 +1,44 @@
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BusinessLogic\bin\Debug\BKISystemAdmin.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BusinessLogic\bin\Debug\DataAccess.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BusinessLogic\bin\Debug\DotNetOpenAuth.OpenId.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BusinessLogic\bin\Debug\Framework.Extensions.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BusinessLogic\bin\Debug\IPCommon.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BusinessLogic\bin\Debug\log4net.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BusinessLogic\bin\Debug\Newtonsoft.Json.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BusinessLogic\bin\Debug\BKISystemAdmin.pdb
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BusinessLogic\bin\Debug\DataAccess.pdb
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BusinessLogic\bin\Debug\Framework.Extensions.pdb
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BusinessLogic\bin\Debug\DotNetOpenAuth.OpenId.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BusinessLogic\bin\Debug\IPCommon.pdb
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BusinessLogic\bin\Debug\IPCommon.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BusinessLogic\bin\Debug\log4net.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BusinessLogic\bin\Debug\Newtonsoft.Json.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BusinessLogic\obj\Debug\BusinessLogic.pdb
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BusinessLogic\bin\Debug\BKISystemAdmin.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BusinessLogic\bin\Debug\DataAccess.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BusinessLogic\bin\Debug\DotNetOpenAuth.OpenId.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BusinessLogic\bin\Debug\Framework.Extensions.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BusinessLogic\bin\Debug\IPCommon.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BusinessLogic\bin\Debug\log4net.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BusinessLogic\bin\Debug\Newtonsoft.Json.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BusinessLogic\bin\Debug\BKISystemAdmin.pdb
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BusinessLogic\bin\Debug\DataAccess.pdb
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BusinessLogic\bin\Debug\Framework.Extensions.pdb
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BusinessLogic\bin\Debug\DotNetOpenAuth.OpenId.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BusinessLogic\bin\Debug\IPCommon.pdb
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BusinessLogic\bin\Debug\IPCommon.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BusinessLogic\bin\Debug\log4net.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BusinessLogic\bin\Debug\Newtonsoft.Json.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BusinessLogic\obj\Debug\BusinessLogic.pdb
