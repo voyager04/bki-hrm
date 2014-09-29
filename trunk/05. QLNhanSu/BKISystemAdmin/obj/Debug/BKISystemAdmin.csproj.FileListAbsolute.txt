@@ -1,0 +1,138 @@
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\obj\Debug\BKISystemAdmin.csprojResolveAssemblyReference.cache
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\BKISystemAdmin.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\BKISystemAdmin.pdb
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\EHR.Caching.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\EHR.SQLDataAccess.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\Framework.Extensions.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\IPCommon.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\log4net.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\EntityFramework.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\EHR.Caching.pdb
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\EHR.SQLDataAccess.pdb
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\Framework.Extensions.pdb
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\IPCommon.pdb
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\IPCommon.xml
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\log4net.xml
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\EntityFramework.xml
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\obj\Debug\BKISystemAdmin.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\obj\Debug\BKISystemAdmin.pdb
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\Newtonsoft.Json.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\Newtonsoft.Json.xml
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\BKISystemAdmin.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\BKISystemAdmin.pdb
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\EHR.Caching.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\EHR.SQLDataAccess.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\Framework.Extensions.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\IPCommon.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\log4net.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\EntityFramework.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\Newtonsoft.Json.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\EHR.Caching.pdb
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\EHR.SQLDataAccess.pdb
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\Framework.Extensions.pdb
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\IPCommon.pdb
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\IPCommon.xml
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\log4net.xml
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\EntityFramework.xml
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\bin\Debug\Newtonsoft.Json.xml
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\obj\Debug\BKISystemAdmin.csprojResolveAssemblyReference.cache
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\obj\Debug\BKISystemAdmin.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\BKISystemAdmin\obj\Debug\BKISystemAdmin.pdb
+F:\01. Work\Support\Source Code\C#\EHR\BKISystemAdmin\obj\Debug\BKISystemAdmin.csprojResolveAssemblyReference.cache
+F:\01. Work\Support\Source Code\C#\EHR\BKISystemAdmin\obj\Debug\BKISystemAdmin.dll
+F:\01. Work\Support\Source Code\C#\EHR\BKISystemAdmin\obj\Debug\BKISystemAdmin.pdb
+F:\01. Work\Support\Source Code\C#\EHR\BKISystemAdmin\bin\Debug\BKISystemAdmin.dll
+F:\01. Work\Support\Source Code\C#\EHR\BKISystemAdmin\bin\Debug\BKISystemAdmin.pdb
+F:\01. Work\Support\Source Code\C#\EHR\BKISystemAdmin\bin\Debug\EHR.Caching.dll
+F:\01. Work\Support\Source Code\C#\EHR\BKISystemAdmin\bin\Debug\EHR.SQLDataAccess.dll
+F:\01. Work\Support\Source Code\C#\EHR\BKISystemAdmin\bin\Debug\Framework.Extensions.dll
+F:\01. Work\Support\Source Code\C#\EHR\BKISystemAdmin\bin\Debug\IPCommon.dll
+F:\01. Work\Support\Source Code\C#\EHR\BKISystemAdmin\bin\Debug\log4net.dll
+F:\01. Work\Support\Source Code\C#\EHR\BKISystemAdmin\bin\Debug\EntityFramework.dll
+F:\01. Work\Support\Source Code\C#\EHR\BKISystemAdmin\bin\Debug\Newtonsoft.Json.dll
+F:\01. Work\Support\Source Code\C#\EHR\BKISystemAdmin\bin\Debug\EHR.Caching.pdb
+F:\01. Work\Support\Source Code\C#\EHR\BKISystemAdmin\bin\Debug\EHR.SQLDataAccess.pdb
+F:\01. Work\Support\Source Code\C#\EHR\BKISystemAdmin\bin\Debug\Framework.Extensions.pdb
+F:\01. Work\Support\Source Code\C#\EHR\BKISystemAdmin\bin\Debug\IPCommon.pdb
+F:\01. Work\Support\Source Code\C#\EHR\BKISystemAdmin\bin\Debug\log4net.xml
+F:\01. Work\Support\Source Code\C#\EHR\BKISystemAdmin\bin\Debug\EntityFramework.xml
+F:\01. Work\Support\Source Code\C#\EHR\BKISystemAdmin\bin\Debug\Newtonsoft.Json.xml
+F:\01. Work\Support\Source Code\C#\EHR\BKISystemAdmin\obj\Debug\BKISystemAdmin.csprojFakesResolveAssemblyReference.cache
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\BKISystemAdmin.csprojResolveAssemblyReference.cache
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\BKISystemAdmin.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\BKISystemAdmin.pdb
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\BKISystemAdmin.csprojFakesResolveAssemblyReference.cache
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\DataAccess.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\DataAccess.Fakes.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\DataAccess.Fakes.pdb
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\DataAccess.Fakes.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\DataAccess.pdb
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\EntityFramework.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\EntityFramework.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\f.ah
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\f.ch
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\f.cs
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\f.csproj
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\f.fakes
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\f.fakesconfig
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\o\DataAccess.Fakes.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\o\DataAccess.Fakes.pdb
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\o\f.csproj.FileListAbsolute.txt
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\o\f.csprojResolveAssemblyReference.cache
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\fakes.args
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\bin\Debug\BKISystemAdmin.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\bin\Debug\BKISystemAdmin.pdb
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\bin\Debug\DataAccess.Fakes.fakesconfig
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\bin\Debug\DataAccess.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\bin\Debug\Framework.Extensions.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\bin\Debug\IPCommon.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\bin\Debug\log4net.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\bin\Debug\EntityFramework.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\bin\Debug\Newtonsoft.Json.dll
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\bin\Debug\DataAccess.pdb
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\bin\Debug\Framework.Extensions.pdb
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\bin\Debug\IPCommon.pdb
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\bin\Debug\log4net.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\bin\Debug\EntityFramework.xml
+C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\bin\Debug\Newtonsoft.Json.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\bin\Debug\BKISystemAdmin.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\bin\Debug\BKISystemAdmin.pdb
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\bin\Debug\DataAccess.Fakes.fakesconfig
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\bin\Debug\DataAccess.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\bin\Debug\Framework.Extensions.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\bin\Debug\IPCommon.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\bin\Debug\log4net.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\bin\Debug\EntityFramework.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\bin\Debug\Newtonsoft.Json.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\bin\Debug\DataAccess.pdb
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\bin\Debug\Framework.Extensions.pdb
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\bin\Debug\IPCommon.pdb
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\bin\Debug\log4net.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\bin\Debug\EntityFramework.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\bin\Debug\Newtonsoft.Json.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\BKISystemAdmin.csprojFakesResolveAssemblyReference.cache
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\DataAccess.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\DataAccess.Fakes.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\DataAccess.Fakes.pdb
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\DataAccess.Fakes.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\DataAccess.pdb
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\EntityFramework.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\EntityFramework.xml
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\f.ah
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\f.ch
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\f.cs
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\f.csproj
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\f.fakes
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\f.fakesconfig
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\o\DataAccess.Fakes.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\o\DataAccess.Fakes.pdb
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\o\f.csproj.FileListAbsolute.txt
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\o\f.csprojResolveAssemblyReference.cache
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\fakes.args
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\BKISystemAdmin.csprojResolveAssemblyReference.cache
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\BKISystemAdmin.dll
+C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\BKISystemAdmin.pdb

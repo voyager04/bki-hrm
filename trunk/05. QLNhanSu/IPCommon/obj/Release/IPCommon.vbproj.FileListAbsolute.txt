@@ -1,0 +1,4 @@
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\IPCommon\bin\IPCommon.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\IPCommon\bin\IPCommon.xml
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\IPCommon\obj\Release\IPCommon.dll
+D:\1.My Project\SVN Code\EHR\03.SourceCode\EHR\IPCommon\obj\Release\IPCommon.xml

@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2D5335E7-40BC-4A16-B6D7-D114A02045C5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataAccess</RootNamespace>
+    <AssemblyName>DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BKI_HRM.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BKI_HRM.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BKI_HRM.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BKI_HRM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BKI_HRM.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="BKI_HRMEntities.cs" />
+    <Compile Include="CM_COMPANY_INFO.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CM_DM_LOAI_TD.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CM_DM_TU_DIEN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContextExtensions.cs" />
+    <Compile Include="DM_CAP_BAC.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DM_CHUC_VU.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DM_DON_VI.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DM_DU_AN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DM_HEADCOUNT.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DM_KY.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DM_NHAN_SU.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DM_PHAP_NHAN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DM_QUYET_DINH.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DM_TRANG_THAI_UNG_VIEN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DOC_COLUMN_COMMENT.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DOC_TABLE_COMMENT.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDataState.cs" />
+    <Compile Include="Entities\BaseData.cs" />
+    <Compile Include="GD_CHI_TIET_CAP_BAC.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD_CHI_TIET_CHUC_VU.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD_CHI_TIET_DU_AN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD_CHI_TIET_TRANG_THAI_LD.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD_CHI_TIET_TUYEN_DUNG.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD_CONG_TAC.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD_DON_VI_PHAP_NHAN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD_HOP_DONG.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD_LUONG_THEO_QD.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD_QUA_TRINH_CONG_TAC.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD_QUYET_DINH_DU_AN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD_QUYET_DINH_PHAP_NHAN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD_TINH_HINH_NV_MOI.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_BACKUP_HISTORY.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_BUSINESS_PROCESS_LOCK.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_CONTROLLER.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_CONTROL_IN_FORM.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_FORM.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_LOGIN_WEB.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_LOG_LOGIN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_NGUOI_SU_DUNG.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_PHAN_QUYEN_CHO_NHOM.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_PHAN_QUYEN_CHUC_NANG.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_PHAN_QUYEN_DETAIL.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_PHAN_QUYEN_HE_THONG.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_QUAN_HE_SU_DUNG_DU_LIEU.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_QUYEN_USER.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_QUYEN_USER_WEB.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_THAM_SO_HE_THONG.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_USER.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_USER_GROUP.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_USER_GROUP_WEB.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\IDbContext.cs" />
+    <Compile Include="Interface\IRepository.cs" />
+    <Compile Include="Interface\IUnitOfWork.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository.cs" />
+    <Compile Include="RepositoryQuery.cs" />
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnitOfWork.cs" />
+    <Compile Include="View_2.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_BAO_CAO_NHAN_SU.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DM_CAP_BAC.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DM_CAP_BAC_2.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DM_CHUC_VU.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DM_DON_VI.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DM_DU_AN_QUYET_DINH_TU_DIEN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DM_DU_LIEU_NHAN_VIEN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DM_NHAN_SU.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DM_NHAN_SU_DU_AN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DM_QUYET_DINH.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DM_TRANG_THAI_UNG_VIEN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GD_BAO_CAO_DU_AN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GD_BAO_CAO_DU_AN_2.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GD_CHI_TIET_CAP_BAC.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GD_CONG_TAC.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GD_HOP_DONG_LAO_DONG.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GD_LUONG_THEO_QD.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GD_QUA_TRINH_LAM_VIEC.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GD_QUA_TRINH_LAM_VIEC_2.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GD_QUYET_DINH.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GD_QUYET_DINH_temp.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GD_TRANG_THAI_LAO_DONG.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GD_TRA_CUU_NHAN_SU.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_HT_CONTROL_IN_FORM.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_HT_PHAN_QUYEN_CHO_NHOM.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_NHAN_VIEN_HIEN_TAI.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="BKI_HRM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BKI_HRM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BKI_HRM.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BKI_HRM.edmx</DependentUpon>
+      <LastGenOutput>BKI_HRM.Context.cs</LastGenOutput>
+    </None>
+    <None Include="BKI_HRM.edmx.diagram">
+      <DependentUpon>BKI_HRM.edmx</DependentUpon>
+    </None>
+    <None Include="BKI_HRM.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BKI_HRM.edmx</DependentUpon>
+      <LastGenOutput>BKI_HRM.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
