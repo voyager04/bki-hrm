@@ -1,0 +1,14 @@
+2014/09/29-20:10:32.628 1aa8 Recovering log #585
+2014/09/29-20:10:32.638 1aa8 Level-0 table #587: started
+2014/09/29-20:10:32.717 1aa8 Level-0 table #587: 110358 bytes OK
+2014/09/29-20:10:32.854 1aa8 Delete type=0 #585
+2014/09/29-20:10:32.855 1aa8 Delete type=3 #583
+2014/09/29-20:10:32.856 1bdc Compacting 4@0 + 1@1 files
+2014/09/29-20:10:33.112 1bdc Generated table #589: 3412 keys, 996376 bytes
+2014/09/29-20:10:33.112 1bdc Compacted 4@0 + 1@1 files => 996376 bytes
+2014/09/29-20:10:33.134 1bdc Delete type=2 #576
+2014/09/29-20:10:33.135 1bdc Delete type=2 #578
+2014/09/29-20:10:33.135 1bdc Delete type=2 #581
+2014/09/29-20:10:33.135 1bdc Delete type=2 #584
+2014/09/29-20:10:33.136 1bdc Delete type=2 #587
+2014/09/29-20:10:33.136 1bdc compacted to: files[ 0 1 0 0 0 0 0 ]
