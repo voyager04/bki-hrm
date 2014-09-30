@@ -90,6 +90,7 @@
     <Compile Include="US_RPT_DON_VI_TRANG_THAI.cs" />
     <Compile Include="US_RPT_LUONG_THEO_QD.cs" />
     <Compile Include="US_RPT_SO_LUONG_NV_THEO_LOAI.cs" />
+    <Compile Include="US_RPT_TONG_LUONG.cs" />
     <Compile Include="US_V_DM_CAP_BAC.cs" />
     <Compile Include="US_V_DM_CHUC_VU.cs" />
     <Compile Include="US_V_DM_DON_VI.cs" />

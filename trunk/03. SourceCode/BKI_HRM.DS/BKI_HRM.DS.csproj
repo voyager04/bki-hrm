@@ -241,6 +241,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_RPT_SO_LUONG_NV_THEO_LOAI.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_RPT_TONG_LUONG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_RPT_TONG_LUONG.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_DM_CAP_BAC.cs">
       <DependentUpon>DS_V_DM_CAP_BAC.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -784,6 +789,17 @@
     </None>
     <None Include="DS_RPT_SO_LUONG_NV_THEO_LOAI.xss">
       <DependentUpon>DS_RPT_SO_LUONG_NV_THEO_LOAI.xsd</DependentUpon>
+    </None>
+    <None Include="DS_RPT_TONG_LUONG.xsc">
+      <DependentUpon>DS_RPT_TONG_LUONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_RPT_TONG_LUONG.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_RPT_TONG_LUONG.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DS_RPT_TONG_LUONG.xss">
+      <DependentUpon>DS_RPT_TONG_LUONG.xsd</DependentUpon>
     </None>
     <None Include="DS_V_DM_CAP_BAC.xsc">
       <DependentUpon>DS_V_DM_CAP_BAC.xsd</DependentUpon>

@@ -1120,4 +1120,10 @@
        public const string LUONG_CUOI_KY_II =  "LUONG_CUOI_KY_II";
    }
 
+   public class RPT_TONG_LUONG
+   {
+       public const string ID = "ID";
+       public const string MA_KY = "MA_KY";
+       public const string TONG_LUONG = "TONG_LUONG";
+   }
 }
