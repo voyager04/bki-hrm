@@ -83,7 +83,9 @@ namespace QLNhanSu
                     var authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
                     if (authCookie != null)
                     {
-                        var u = UserManager.Instance.GetByUsername(usr.Identity.Name);
+                        UserManager vUserManager = UserManager.Instance;
+
+                        var u = vUserManager.GetByUsername(User.Identity.Name);
                         if (u != null)
                         {
                             identity = new Identity(u.ID, u.USERNAME, u.DISPLAY_NAME
