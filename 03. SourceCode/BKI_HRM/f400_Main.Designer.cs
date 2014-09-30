@@ -102,6 +102,7 @@ namespace BKI_HRM
             this.m_cmd_thong_bao = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.m_cmd_bc_luong_theo_qd = new System.Windows.Forms.Button();
             this.m_cmd_bao_cao_nghi_viec = new System.Windows.Forms.Button();
             this.m_cmd_bao_cao_danh_sach_bo_nhiem = new System.Windows.Forms.Button();
             this.m_cmd_bien_dong_don_vi_trang_thai = new System.Windows.Forms.Button();
@@ -164,7 +165,7 @@ namespace BKI_HRM
             this.m_tab_menu = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.m_cmd_bc_luong_theo_qd = new System.Windows.Forms.Button();
+            this.m_cmd_rpt_tong_luong = new System.Windows.Forms.Button();
             this.m_mst_menu.SuspendLayout();
             this.m_pnl_thong_bao.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -837,6 +838,7 @@ namespace BKI_HRM
             // 
             // groupBox10
             // 
+            this.groupBox10.Controls.Add(this.m_cmd_rpt_tong_luong);
             this.groupBox10.Controls.Add(this.m_cmd_bc_luong_theo_qd);
             this.groupBox10.Controls.Add(this.m_cmd_bao_cao_nghi_viec);
             this.groupBox10.Controls.Add(this.m_cmd_bao_cao_danh_sach_bo_nhiem);
@@ -850,10 +852,19 @@ namespace BKI_HRM
             this.groupBox10.Controls.Add(this.m_cmd_nhan_su_theo_phong_ban);
             this.groupBox10.Location = new System.Drawing.Point(313, 6);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(898, 90);
+            this.groupBox10.Size = new System.Drawing.Size(981, 90);
             this.groupBox10.TabIndex = 10;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Nhân sự";
+            // 
+            // m_cmd_bc_luong_theo_qd
+            // 
+            this.m_cmd_bc_luong_theo_qd.Location = new System.Drawing.Point(816, 19);
+            this.m_cmd_bc_luong_theo_qd.Name = "m_cmd_bc_luong_theo_qd";
+            this.m_cmd_bc_luong_theo_qd.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_bc_luong_theo_qd.TabIndex = 18;
+            this.m_cmd_bc_luong_theo_qd.Text = "Báo cáo lương theo quyết định";
+            this.m_cmd_bc_luong_theo_qd.UseVisualStyleBackColor = true;
             // 
             // m_cmd_bao_cao_nghi_viec
             // 
@@ -1505,14 +1516,15 @@ namespace BKI_HRM
             this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
-            // m_cmd_bc_luong_theo_qd
+            // m_cmd_rpt_tong_luong
             // 
-            this.m_cmd_bc_luong_theo_qd.Location = new System.Drawing.Point(816, 19);
-            this.m_cmd_bc_luong_theo_qd.Name = "m_cmd_bc_luong_theo_qd";
-            this.m_cmd_bc_luong_theo_qd.Size = new System.Drawing.Size(75, 65);
-            this.m_cmd_bc_luong_theo_qd.TabIndex = 18;
-            this.m_cmd_bc_luong_theo_qd.Text = "Báo cáo lương theo quyết định";
-            this.m_cmd_bc_luong_theo_qd.UseVisualStyleBackColor = true;
+            this.m_cmd_rpt_tong_luong.Location = new System.Drawing.Point(897, 19);
+            this.m_cmd_rpt_tong_luong.Name = "m_cmd_rpt_tong_luong";
+            this.m_cmd_rpt_tong_luong.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_rpt_tong_luong.TabIndex = 19;
+            this.m_cmd_rpt_tong_luong.Text = "Báo cáo tổng lương";
+            this.m_cmd_rpt_tong_luong.UseVisualStyleBackColor = true;
+            this.m_cmd_rpt_tong_luong.Click += new System.EventHandler(this.m_cmd_rpt_tong_luong_Click);
             // 
             // f400_Main
             // 
@@ -1713,5 +1725,6 @@ namespace BKI_HRM
         private Label m_lbl_nv_chinh_thuc;
         private Button m_cmd_ky;
         private Button m_cmd_bc_luong_theo_qd;
+        private Button m_cmd_rpt_tong_luong;
     }
 }

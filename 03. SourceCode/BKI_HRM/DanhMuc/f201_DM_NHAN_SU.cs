@@ -1727,6 +1727,8 @@ namespace BKI_HRM
         string m_str_trang_thai_cmd = "creat";
         string m_str_lua_chon = "";
         private string m_str_directory_to = ConfigurationSettings.AppSettings["DESTINATION_NAME"];
+
+        private Boolean is_form_finish_load = false;
         #endregion
 
         #region Private Methods
@@ -2379,6 +2381,23 @@ namespace BKI_HRM
             m_dat_den_ngay_chuc_vu.ValueChanged += m_dat_chuc_vu_ValueChanged;
             m_cmd_update_chuc_vu.Click += m_cmd_update_chuc_vu_Click;
             m_cmd_chon_phap_nhan.Click += m_cmd_chon_phap_nhan_Click;
+
+            m_grv_nhan_su.RowColChange += m_grv_nhan_su_RowColChange;
+            m_txt_tim_kiem.Leave += m_txt_tim_kiem_Leave;
+            m_txt_tim_kiem.MouseClick += m_txt_tim_kiem_MouseClick;
+        }
+
+        private void m_grv_nhan_su_RowColChange(object sender, EventArgs e)
+        {
+            try
+            {
+                if (is_form_finish_load)
+                    load_chi_tiet_nhan_vien();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
 
@@ -2394,6 +2413,8 @@ namespace BKI_HRM
             {
                 set_initial_form_load();
                 load_custom_source_2_m_txt_tim_kiem();
+
+                is_form_finish_load = true;
             }
             catch (Exception v_e)
             {

@@ -1764,5 +1764,18 @@ namespace BKI_HRM
             }
         }
 
+        private void m_cmd_rpt_tong_luong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                show_form(new BKI_HRM.BaoCao.f302_RPT_TONG_LUONG());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+                
+            }
+        }
+
     }
 }
