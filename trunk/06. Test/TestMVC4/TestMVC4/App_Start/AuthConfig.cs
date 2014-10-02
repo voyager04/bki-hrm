@@ -26,7 +26,7 @@ namespace TestMVC4
             //    appId: "",
             //    appSecret: "");
 
-            //OAuthWebSecurity.RegisterGoogleClient();
+            OAuthWebSecurity.RegisterGoogleClient();
         }
     }
 }
