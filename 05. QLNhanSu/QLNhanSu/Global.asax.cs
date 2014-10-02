@@ -27,8 +27,17 @@ namespace QLNhanSu
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
+            //BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
+
+            // Optimize JS
+            App_Start.BundleConfig.JsOptimize();
+
+            // Optimize Css
+            App_Start.BundleConfig.CssOptimize();
+
+            // Init log4net
+            //log4net.Config.XmlConfigurator.Configure();
         }
 
         public override void Init()
