@@ -86,6 +86,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_DM_NHAN_SU.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_DM_NHAN_SU_1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_DM_NHAN_SU_1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_DM_PHAP_NHAN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -448,6 +453,17 @@
     </None>
     <None Include="DS_DM_NHAN_SU.xss">
       <DependentUpon>DS_DM_NHAN_SU.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_NHAN_SU_1.xsc">
+      <DependentUpon>DS_DM_NHAN_SU_1.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_NHAN_SU_1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_DM_NHAN_SU_1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_DM_NHAN_SU_1.xss">
+      <DependentUpon>DS_DM_NHAN_SU_1.xsd</DependentUpon>
     </None>
     <None Include="DS_DM_PHAP_NHAN.xsc">
       <DependentUpon>DS_DM_PHAP_NHAN.xsd</DependentUpon>

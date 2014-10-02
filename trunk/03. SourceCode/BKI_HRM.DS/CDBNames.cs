@@ -376,8 +376,8 @@
         public const string GIOI_TINH = "GIOI_TINH";
         public const string NGAY_SINH = "NGAY_SINH";
         public const string NOI_SINH = "NOI_SINH";
-        public const string ANH = "ANH";
         public const string NGUYEN_QUAN = "NGUYEN_QUAN";
+        public const string ANH = "ANH";
         public const string CMND = "CMND";
         public const string NGAY_CAP_CMND = "NGAY_CAP_CMND";
         public const string NOI_CAP_CMND = "NOI_CAP_CMND";
@@ -400,6 +400,15 @@
         public const string TRANG_THAI = "TRANG_THAI";
         public const string ID_HEADCOUNT = "ID_HEADCOUNT";
         public const string MA_HEADCOUNT = "MA_HEADCOUNT";
+        public const string SO_TAI_KHOAN = "SO_TAI_KHOAN";
+        public const string CHI_NHANH_NGANHANG = "CHI_NHANH_NGANHANG";
+        public const string DIA_DIEM_LV = "DIA_DIEM_LV";
+        public const string HO_TEN_BO = "HO_TEN_BO";
+        public const string NGHE_NGHIEP_BO = "NGHE_NGHIEP_BO";
+        public const string NAM_SINH_BO = "NAM_SINH_BO";
+        public const string HO_TEN_ME = "HO_TEN_ME";
+        public const string NGHE_NGHIEP_ME = "NGHE_NGHIEP_ME";
+        public const string NAM_SINH_ME = "NAM_SINH_ME";
     }
     public class V_DM_DON_VI
     {
