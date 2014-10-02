@@ -1,0 +1,33 @@
+﻿@using BusinessLogic.Model
+@model List<CoCauTopicaModel>
+
+@{
+    ViewBag.Title = "CoCauTopica";
+}
+
+<h2>CoCauTopica</h2>
+
+<table class="table table-bordered tree">
+    <thead>
+        <tr>
+            <th>Mã đơn vị</th>
+            <th>Tên đơn vị</th>
+            <th>Địa bàn</th>
+            <th>Số lượng nhân viên</th>
+            <th>Tên tiếng anh</th>
+            <th>Loại đơn vị</th>
+            <th>Cấp đơn vị</th>
+            <th>Trạng thái</th>
+            <th>Ngày thành lập</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.MA_DON_VI</td>
+                <td>@item.TEN_DON_VI</td>
+            </tr>
+        }
+    </tbody>
+</table>

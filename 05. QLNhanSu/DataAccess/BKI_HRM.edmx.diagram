@@ -134,6 +134,7 @@
         <AssociationConnector Association="BKI_HRMModel.FK_HT_PHAN_QUYEN_DETAIL_HT_PHAN_QUYEN_HE_THONG" />
         <AssociationConnector Association="BKI_HRMModel.FK_HT_QUAN_HE_SU_DUNG_DU_LIEU_HT_USER_GROUP" />
         <AssociationConnector Association="BKI_HRMModel.FK_HT_USER_HT_USER_GROUP_WEB" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_HT_USER" Width="1.5" PointX="10.705950652577892" PointY="23.18097050077327" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

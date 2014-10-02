@@ -10,7 +10,7 @@ namespace QLNhanSu.Controllers
 {
     public class ReportController : BaseController
     {
-        #region Fields
+        #region Member
         private CoCauTopicaManager m_manager_CoCauTopica = CoCauTopicaManager.Instance;
         #endregion
 
@@ -19,33 +19,33 @@ namespace QLNhanSu.Controllers
             return View();
         }
 
-        public ActionResult CoCauTopica()
+        public ActionResult F101_CoCauTopica()
         {
             var v_AllDonVi = m_manager_CoCauTopica.GetAllDonVi();
             return View(v_AllDonVi);
         }
 
-        public ActionResult TraCuuQuaTrinhLamViecCaNhan()
+        public ActionResult F102_TraCuuQuaTrinhLamViecCaNhan()
         {
             return View();
         }
 
-        public ActionResult TraCuuThuNhapCaNhan()
+        public ActionResult F103_TraCuuThuNhapCaNhan()
         {
             return View();
         }
 
-        public ActionResult DanhSachNhanVienPhongBan()
+        public ActionResult F104_DanhSachNhanVienPhongBan()
         {
             return View();
         }
 
-        public ActionResult QuaTrinhLamViecCuaCacNhanVienPhongBan()
+        public ActionResult F105_QuaTrinhLamViecCuaCacNhanVienPhongBan()
         {
             return View();
         }
 
-        public ActionResult ThuNhapCuaCacNhanVienTrongPhongBan()
+        public ActionResult F106_ThuNhapCuaCacNhanVienTrongPhongBan()
         {
             return View();
         }
