@@ -33,8 +33,13 @@
     <Reference Include="DotNetOpenAuth.OpenId">
       <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\QLNhanSu\bin\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,8 +49,10 @@
   <ItemGroup>
     <Compile Include="Management\TaiKhoanDangNhapManager.cs" />
     <Compile Include="Management\CoCauTopicaManager.cs" />
+    <Compile Include="Management\V_DM_DON_VI_Manager.cs" />
     <Compile Include="Model\CoCauTopicaModel.cs" />
     <Compile Include="Model\TaiKhoanDangNhapModel.cs" />
+    <Compile Include="Model\V_DM_DON_VI_Model.cs" />
     <Compile Include="Principal\Identity.cs" />
     <Compile Include="Principal\Principal.cs" />
     <Compile Include="Principal\Roles.cs" />
