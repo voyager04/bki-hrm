@@ -43,6 +43,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -158,6 +159,8 @@
   <ItemGroup>
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\BundleCssConfig.cs" />
+    <Compile Include="App_Start\BundleJsConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -185,7 +188,9 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\jquery.treegrid.css" />
+    <Content Include="Content\jquery.treetable.css" />
+    <Content Include="Content\jquery.treetable.theme.default.css" />
+    <Content Include="Content\screen.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -249,6 +254,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="App_Data\Minify\file.cssmin" />
+    <Content Include="App_Data\Minify\file.jsmin" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Images\default-body.png" />
     <Content Include="Images\logo.png" />
@@ -257,11 +264,10 @@
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery-bki.js" />
+    <Content Include="Scripts\jquery.treetable.js" />
+    <Content Include="Scripts\jquerybki.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
-    <Content Include="Scripts\jquery.treegrid.bootstrap3.js" />
-    <Content Include="Scripts\jquery.treegrid.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -315,9 +321,9 @@
     <Content Include="Views\Shared\_Navigation.cshtml" />
     <Content Include="Views\Report\F101_CoCauTopica.cshtml" />
     <Content Include="Views\HeThong\F201_GetAllUsers.cshtml" />
+    <Content Include="App_Data\Minify\jqueryhrm.jsmin" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Content\Upload\" />
   </ItemGroup>
   <ItemGroup>
