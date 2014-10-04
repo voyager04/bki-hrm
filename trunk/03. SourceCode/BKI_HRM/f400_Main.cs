@@ -225,6 +225,17 @@ namespace BKI_HRM
             //   m_menuitem_chuyen_don_vi.Click += m_menuitem_chuyen_don_vi_Click;
             m_menuitem_dang_xuat.Click += m_menuitem_dang_xuat_Click;
             m_cmd_bc_luong_theo_qd.Click += new EventHandler(m_cmd_bc_luong_theo_qd_Click);
+            m_cmd_import_luong_theo_qd.Click +=m_cmd_import_luong_theo_qd_Click;
+        }
+
+        private void m_cmd_import_luong_theo_qd_Click(object sender, EventArgs e) {
+            try {
+                show_form(new f801_import_excel_luong_theo_qd());
+            }
+            catch(Exception v_e) {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void m_cmd_bc_luong_theo_qd_Click(object sender, EventArgs e) {

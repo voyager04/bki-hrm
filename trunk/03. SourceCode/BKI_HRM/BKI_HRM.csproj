@@ -71,6 +71,15 @@
     <Reference Include="C1.WPF.FlexGrid">
       <HintPath>C:\Users\Hoàng\Desktop\C1.WPF.FlexGrid\C1.WPF.FlexGrid\X86\3.0.20111.140\C1.WPF.FlexGrid.dll</HintPath>
     </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>..\packages\EPPlus.3.1.3.3\lib\net35\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Excel">
+      <HintPath>..\packages\ExcelDataReader.2.1.2.3\lib\net20\Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="Interop.Excel">
       <HintPath>..\DLL\Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -454,6 +463,9 @@
     <Compile Include="NghiepVu\f701_v_hop_dong_lao_dong.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="NghiepVu\f801_import_excel_luong_theo_qd.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RemoteAccessHelper.cs" />
     <Compile Include="WinFormControls.cs" />
@@ -699,6 +711,9 @@
     <EmbeddedResource Include="NghiepVu\f701_v_hop_dong_lao_dong.resx">
       <DependentUpon>f701_v_hop_dong_lao_dong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\f801_import_excel_luong_theo_qd.resx">
+      <DependentUpon>f801_import_excel_luong_theo_qd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -711,6 +726,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">

@@ -1135,4 +1135,18 @@
        public const string MA_KY = "MA_KY";
        public const string TONG_LUONG = "TONG_LUONG";
    }
+   public class IMPORT_EXCEL_LUONG_THEO_QD {
+       public const string ID =  "ID";
+       public const string MA_NV =  "MA_NV";
+       public const string HO_TEN =  "HO_TEN";
+       public const string MA_KY =  "MA_KY";
+       public const string MA_QD =  "MA_QD";
+       public const string NGAY_KY =  "NGAY_KY";
+       public const string NGAY_CO_HIEU_LUC =  "NGAY_CO_HIEU_LUC";
+       public const string NGAY_HET_HIEU_LUC =  "NGAY_HET_HIEU_LUC";
+       public const string NOI_DUNG =  "NOI_DUNG";
+       public const string LINK =  "LINK";
+       public const string LUONG =  "LUONG";
+       public const string NGAY_AP_DUNG =  "NGAY_AP_DUNG";
+   }
 }
