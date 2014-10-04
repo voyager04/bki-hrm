@@ -85,6 +85,7 @@
     <Compile Include="US_HT_QUYEN_USER_WEB.cs" />
     <Compile Include="US_HT_USER_GROUP.cs" />
     <Compile Include="US_HT_USER_GROUP_WEB.cs" />
+    <Compile Include="US_IMPORT_EXCEL_LUONG_THEO_QD.cs" />
     <Compile Include="US_RPT_BO_NHIEM.cs" />
     <Compile Include="US_RPT_CHUC_VU_TRANG_THAI.cs" />
     <Compile Include="US_RPT_DON_VI_TRANG_THAI.cs" />

@@ -102,6 +102,7 @@ namespace BKI_HRM
             this.m_cmd_thong_bao = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.m_cmd_rpt_tong_luong = new System.Windows.Forms.Button();
             this.m_cmd_bc_luong_theo_qd = new System.Windows.Forms.Button();
             this.m_cmd_bao_cao_nghi_viec = new System.Windows.Forms.Button();
             this.m_cmd_bao_cao_danh_sach_bo_nhiem = new System.Windows.Forms.Button();
@@ -165,7 +166,7 @@ namespace BKI_HRM
             this.m_tab_menu = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.m_cmd_rpt_tong_luong = new System.Windows.Forms.Button();
+            this.m_cmd_import_luong_theo_qd = new System.Windows.Forms.Button();
             this.m_mst_menu.SuspendLayout();
             this.m_pnl_thong_bao.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -857,6 +858,16 @@ namespace BKI_HRM
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Nhân sự";
             // 
+            // m_cmd_rpt_tong_luong
+            // 
+            this.m_cmd_rpt_tong_luong.Location = new System.Drawing.Point(897, 19);
+            this.m_cmd_rpt_tong_luong.Name = "m_cmd_rpt_tong_luong";
+            this.m_cmd_rpt_tong_luong.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_rpt_tong_luong.TabIndex = 19;
+            this.m_cmd_rpt_tong_luong.Text = "Báo cáo tổng lương";
+            this.m_cmd_rpt_tong_luong.UseVisualStyleBackColor = true;
+            this.m_cmd_rpt_tong_luong.Click += new System.EventHandler(this.m_cmd_rpt_tong_luong_Click);
+            // 
             // m_cmd_bc_luong_theo_qd
             // 
             this.m_cmd_bc_luong_theo_qd.Location = new System.Drawing.Point(816, 19);
@@ -1036,9 +1047,9 @@ namespace BKI_HRM
             this.panel6.Controls.Add(this.label1);
             this.panel6.Controls.Add(this.m_cbo_phap_nhan);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(1143, 3);
+            this.panel6.Location = new System.Drawing.Point(1175, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(200, 96);
+            this.panel6.Size = new System.Drawing.Size(168, 96);
             this.panel6.TabIndex = 4;
             // 
             // label1
@@ -1065,7 +1076,7 @@ namespace BKI_HRM
             this.groupBox12.Controls.Add(this.m_cmd_search);
             this.groupBox12.Controls.Add(this.m_txt_search);
             this.groupBox12.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox12.Location = new System.Drawing.Point(663, 3);
+            this.groupBox12.Location = new System.Drawing.Point(751, 3);
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.Size = new System.Drawing.Size(477, 96);
             this.groupBox12.TabIndex = 6;
@@ -1101,6 +1112,7 @@ namespace BKI_HRM
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.m_cmd_import_luong_theo_qd);
             this.groupBox7.Controls.Add(this.m_cmd_luongqd);
             this.groupBox7.Controls.Add(this.m_cmd_hop_dong_lao_dong);
             this.groupBox7.Controls.Add(this.m_cmd_thong_tin_du_an);
@@ -1112,7 +1124,7 @@ namespace BKI_HRM
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox7.Location = new System.Drawing.Point(3, 3);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(660, 96);
+            this.groupBox7.Size = new System.Drawing.Size(748, 96);
             this.groupBox7.TabIndex = 0;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Quản lý nhân sự";
@@ -1516,15 +1528,14 @@ namespace BKI_HRM
             this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
-            // m_cmd_rpt_tong_luong
+            // m_cmd_import_luong_theo_qd
             // 
-            this.m_cmd_rpt_tong_luong.Location = new System.Drawing.Point(897, 19);
-            this.m_cmd_rpt_tong_luong.Name = "m_cmd_rpt_tong_luong";
-            this.m_cmd_rpt_tong_luong.Size = new System.Drawing.Size(75, 65);
-            this.m_cmd_rpt_tong_luong.TabIndex = 19;
-            this.m_cmd_rpt_tong_luong.Text = "Báo cáo tổng lương";
-            this.m_cmd_rpt_tong_luong.UseVisualStyleBackColor = true;
-            this.m_cmd_rpt_tong_luong.Click += new System.EventHandler(this.m_cmd_rpt_tong_luong_Click);
+            this.m_cmd_import_luong_theo_qd.Location = new System.Drawing.Point(654, 19);
+            this.m_cmd_import_luong_theo_qd.Name = "m_cmd_import_luong_theo_qd";
+            this.m_cmd_import_luong_theo_qd.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_import_luong_theo_qd.TabIndex = 16;
+            this.m_cmd_import_luong_theo_qd.Text = "Import lương theo QĐ";
+            this.m_cmd_import_luong_theo_qd.UseVisualStyleBackColor = true;
             // 
             // f400_Main
             // 
@@ -1726,5 +1737,6 @@ namespace BKI_HRM
         private Button m_cmd_ky;
         private Button m_cmd_bc_luong_theo_qd;
         private Button m_cmd_rpt_tong_luong;
+        private Button m_cmd_import_luong_theo_qd;
     }
 }
