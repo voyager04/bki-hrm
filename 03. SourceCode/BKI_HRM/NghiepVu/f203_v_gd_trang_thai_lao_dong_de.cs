@@ -309,7 +309,32 @@ namespace BKI_HRM
                 m_us_trang_thai_ld.strTRANG_THAI_HIEN_TAI = "N";
             }
         }
+        private void form_to_us_object_v_trang_thai_ld()
+        {
+            //m_us_trang_thai_ld.dcID = m_us_v_trang_thai_ld.dcID;
+            //m_us_trang_thai_ld.dcID_NHAN_SU = m_us_v_trang_thai_ld.dcID_NHAN_SU;
+            m_us_v_trang_thai_ld.dcID_PHAP_NHAN = CAppContext_201.getCurrentIDPhapnhan();
+            m_us_v_trang_thai_ld.dcID_TRANG_LAO_DONG = CIPConvert.ToDecimal(m_cbo_trang_thai_moi.SelectedValue);
+            if (m_txt_ma_quyet_dinh.Text.Trim() != "")
+                m_us_v_trang_thai_ld.dcID_QUYET_DINH = m_us_quyet_dinh.dcID;
+            else
+            {
+                m_us_v_trang_thai_ld.SetID_QUYET_DINHNull();
+            }
+            m_us_v_trang_thai_ld.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc.Value;
 
+            if (m_dat_ngay_het_hieu_luc.Checked)
+                m_us_v_trang_thai_ld.datNGAY_HET_HIEU_LUC = m_dat_ngay_het_hieu_luc.Value;
+            else m_us_v_trang_thai_ld.SetNGAY_HET_HIEU_LUCNull();
+            if (m_ckb_trang_thai_hien_tai_yn.Checked == true)
+            {
+                m_us_v_trang_thai_ld.strTRANG_THAI_HIEN_TAI = "Y";
+            }
+            else
+            {
+                m_us_v_trang_thai_ld.strTRANG_THAI_HIEN_TAI = "N";
+            }
+        }
         private void load_cbo_ma_quyet_dinh()
         {
             WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.MA_QUYET_DINH
@@ -519,26 +544,26 @@ namespace BKI_HRM
                                 v_us_gd_quyet_dinh_phap_nhan.dcID_PHAP_NHAN = CAppContext_201.getCurrentIDPhapnhan();
                                 v_us_gd_quyet_dinh_phap_nhan.Insert();
                             }
-                            form_to_us_object_trang_thai_ld();
-                            if (m_us_trang_thai_ld.dcID_QUYET_DINH == 0)
+                            form_to_us_object_v_trang_thai_ld();
+                            if (m_us_v_trang_thai_ld.dcID_QUYET_DINH == 0)
                             {
                                 switch ((int)CAppContext_201.getCurrentIDPhapnhan())
                                 {
                                     case (int)PHAP_NHAN.TU:
-                                        m_us_trang_thai_ld.dcID_QUYET_DINH = 1515;
+                                        m_us_v_trang_thai_ld.dcID_QUYET_DINH = 1515;
                                         break;
                                     case (int)PHAP_NHAN.TE:
-                                        m_us_trang_thai_ld.dcID_QUYET_DINH = 1517;
+                                        m_us_v_trang_thai_ld.dcID_QUYET_DINH = 1517;
                                         break;
                                     case (int)PHAP_NHAN.TEG:
-                                        m_us_trang_thai_ld.dcID_QUYET_DINH = 1516;
+                                        m_us_v_trang_thai_ld.dcID_QUYET_DINH = 1516;
                                         break;
                                     default:
                                         break;
                                 }
                                 
                             }
-                            m_us_trang_thai_ld.Insert();
+                            m_us_v_trang_thai_ld.Insert();
                         }
 
                         break;
