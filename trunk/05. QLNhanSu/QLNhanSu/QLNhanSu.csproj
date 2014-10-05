@@ -324,6 +324,7 @@
     <Content Include="Views\Report\F101_CoCauTopica.cshtml" />
     <Content Include="Views\HeThong\F201_GetAllUsers.cshtml" />
     <Content Include="App_Data\Minify\jqueryhrm.jsmin" />
+    <Content Include="Views\Report\F102_TraCuuQuaTrinhLamViecCaNhan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />

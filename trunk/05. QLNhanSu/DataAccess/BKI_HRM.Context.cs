@@ -2550,7 +2550,7 @@ namespace DataAccess
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_GD_LUONG_THEO_QD_UpdateAllWMA_QDLogic", mA_QDParameter, mA_QDOldParameter);
         }
     
-        public virtual ObjectResult<pr_GD_QUA_TRINH_CONG_TAC_Result> pr_GD_QUA_TRINH_CONG_TAC(string ip_str_search, string ip_str_lua_chon, Nullable<System.DateTime> ip_dat_tu_ngay, Nullable<System.DateTime> ip_dat_den_ngay, Nullable<decimal> ip_dc_phap_nhan)
+        public virtual ObjectResult<GD_QUA_TRINH_CONG_TAC> pr_GD_QUA_TRINH_CONG_TAC(string ip_str_search, string ip_str_lua_chon, Nullable<System.DateTime> ip_dat_tu_ngay, Nullable<System.DateTime> ip_dat_den_ngay, Nullable<decimal> ip_dc_phap_nhan)
         {
             var ip_str_searchParameter = ip_str_search != null ?
                 new ObjectParameter("ip_str_search", ip_str_search) :
@@ -2572,7 +2572,32 @@ namespace DataAccess
                 new ObjectParameter("ip_dc_phap_nhan", ip_dc_phap_nhan) :
                 new ObjectParameter("ip_dc_phap_nhan", typeof(decimal));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_GD_QUA_TRINH_CONG_TAC_Result>("pr_GD_QUA_TRINH_CONG_TAC", ip_str_searchParameter, ip_str_lua_chonParameter, ip_dat_tu_ngayParameter, ip_dat_den_ngayParameter, ip_dc_phap_nhanParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GD_QUA_TRINH_CONG_TAC>("pr_GD_QUA_TRINH_CONG_TAC", ip_str_searchParameter, ip_str_lua_chonParameter, ip_dat_tu_ngayParameter, ip_dat_den_ngayParameter, ip_dc_phap_nhanParameter);
+        }
+    
+        public virtual ObjectResult<GD_QUA_TRINH_CONG_TAC> pr_GD_QUA_TRINH_CONG_TAC(string ip_str_search, string ip_str_lua_chon, Nullable<System.DateTime> ip_dat_tu_ngay, Nullable<System.DateTime> ip_dat_den_ngay, Nullable<decimal> ip_dc_phap_nhan, MergeOption mergeOption)
+        {
+            var ip_str_searchParameter = ip_str_search != null ?
+                new ObjectParameter("ip_str_search", ip_str_search) :
+                new ObjectParameter("ip_str_search", typeof(string));
+    
+            var ip_str_lua_chonParameter = ip_str_lua_chon != null ?
+                new ObjectParameter("ip_str_lua_chon", ip_str_lua_chon) :
+                new ObjectParameter("ip_str_lua_chon", typeof(string));
+    
+            var ip_dat_tu_ngayParameter = ip_dat_tu_ngay.HasValue ?
+                new ObjectParameter("ip_dat_tu_ngay", ip_dat_tu_ngay) :
+                new ObjectParameter("ip_dat_tu_ngay", typeof(System.DateTime));
+    
+            var ip_dat_den_ngayParameter = ip_dat_den_ngay.HasValue ?
+                new ObjectParameter("ip_dat_den_ngay", ip_dat_den_ngay) :
+                new ObjectParameter("ip_dat_den_ngay", typeof(System.DateTime));
+    
+            var ip_dc_phap_nhanParameter = ip_dc_phap_nhan.HasValue ?
+                new ObjectParameter("ip_dc_phap_nhan", ip_dc_phap_nhan) :
+                new ObjectParameter("ip_dc_phap_nhan", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GD_QUA_TRINH_CONG_TAC>("pr_GD_QUA_TRINH_CONG_TAC", mergeOption, ip_str_searchParameter, ip_str_lua_chonParameter, ip_dat_tu_ngayParameter, ip_dat_den_ngayParameter, ip_dc_phap_nhanParameter);
         }
     
         public virtual int pr_GD_QUYET_DINH_DU_AN_Delete(Nullable<decimal> iD)
@@ -4821,7 +4846,7 @@ namespace DataAccess
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_V_GD_QUA_TRINH_LAM_VIEC_2_Count_NhanVien_TheoPhongBanTaiMotThoiDiem", ip_str_tim_kiemParameter, ip_dat_thoi_diemParameter, count, ip_dc_phap_nhanParameter, ip_dc_kiem_nhiemParameter);
         }
     
-        public virtual ObjectResult<pr_V_GD_QUA_TRINH_LAM_VIEC_2_Search_NhanVien_TheoPhongBanTaiMotThoiDiem_Result> pr_V_GD_QUA_TRINH_LAM_VIEC_2_Search_NhanVien_TheoPhongBanTaiMotThoiDiem(string ip_str_tim_kiem, Nullable<System.DateTime> ip_dat_thoi_diem, Nullable<decimal> ip_dc_phap_nhan, Nullable<decimal> ip_dc_kiem_nhiem)
+        public virtual ObjectResult<V_GD_QUA_TRINH_LAM_VIEC_2> pr_V_GD_QUA_TRINH_LAM_VIEC_2_Search_NhanVien_TheoPhongBanTaiMotThoiDiem(string ip_str_tim_kiem, Nullable<System.DateTime> ip_dat_thoi_diem, Nullable<decimal> ip_dc_phap_nhan, Nullable<decimal> ip_dc_kiem_nhiem)
         {
             var ip_str_tim_kiemParameter = ip_str_tim_kiem != null ?
                 new ObjectParameter("ip_str_tim_kiem", ip_str_tim_kiem) :
@@ -4839,7 +4864,28 @@ namespace DataAccess
                 new ObjectParameter("ip_dc_kiem_nhiem", ip_dc_kiem_nhiem) :
                 new ObjectParameter("ip_dc_kiem_nhiem", typeof(decimal));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_V_GD_QUA_TRINH_LAM_VIEC_2_Search_NhanVien_TheoPhongBanTaiMotThoiDiem_Result>("pr_V_GD_QUA_TRINH_LAM_VIEC_2_Search_NhanVien_TheoPhongBanTaiMotThoiDiem", ip_str_tim_kiemParameter, ip_dat_thoi_diemParameter, ip_dc_phap_nhanParameter, ip_dc_kiem_nhiemParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<V_GD_QUA_TRINH_LAM_VIEC_2>("pr_V_GD_QUA_TRINH_LAM_VIEC_2_Search_NhanVien_TheoPhongBanTaiMotThoiDiem", ip_str_tim_kiemParameter, ip_dat_thoi_diemParameter, ip_dc_phap_nhanParameter, ip_dc_kiem_nhiemParameter);
+        }
+    
+        public virtual ObjectResult<V_GD_QUA_TRINH_LAM_VIEC_2> pr_V_GD_QUA_TRINH_LAM_VIEC_2_Search_NhanVien_TheoPhongBanTaiMotThoiDiem(string ip_str_tim_kiem, Nullable<System.DateTime> ip_dat_thoi_diem, Nullable<decimal> ip_dc_phap_nhan, Nullable<decimal> ip_dc_kiem_nhiem, MergeOption mergeOption)
+        {
+            var ip_str_tim_kiemParameter = ip_str_tim_kiem != null ?
+                new ObjectParameter("ip_str_tim_kiem", ip_str_tim_kiem) :
+                new ObjectParameter("ip_str_tim_kiem", typeof(string));
+    
+            var ip_dat_thoi_diemParameter = ip_dat_thoi_diem.HasValue ?
+                new ObjectParameter("ip_dat_thoi_diem", ip_dat_thoi_diem) :
+                new ObjectParameter("ip_dat_thoi_diem", typeof(System.DateTime));
+    
+            var ip_dc_phap_nhanParameter = ip_dc_phap_nhan.HasValue ?
+                new ObjectParameter("ip_dc_phap_nhan", ip_dc_phap_nhan) :
+                new ObjectParameter("ip_dc_phap_nhan", typeof(decimal));
+    
+            var ip_dc_kiem_nhiemParameter = ip_dc_kiem_nhiem.HasValue ?
+                new ObjectParameter("ip_dc_kiem_nhiem", ip_dc_kiem_nhiem) :
+                new ObjectParameter("ip_dc_kiem_nhiem", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<V_GD_QUA_TRINH_LAM_VIEC_2>("pr_V_GD_QUA_TRINH_LAM_VIEC_2_Search_NhanVien_TheoPhongBanTaiMotThoiDiem", mergeOption, ip_str_tim_kiemParameter, ip_dat_thoi_diemParameter, ip_dc_phap_nhanParameter, ip_dc_kiem_nhiemParameter);
         }
     
         public virtual ObjectResult<pr_V_GD_QUA_TRINH_LAM_VIEC_2_select_by_MA_CHUC_VU_THOI_DIEM_Result> pr_V_GD_QUA_TRINH_LAM_VIEC_2_select_by_MA_CHUC_VU_THOI_DIEM(string mA_CHUC_VU, Nullable<System.DateTime> tHOI_DIEM, Nullable<decimal> iD_PHAP_NHAN, Nullable<decimal> iD_KIEM_NHIEM)
