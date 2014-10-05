@@ -6,6 +6,7 @@ using IP.Core.IPSystemAdmin;
 using IP.Core.IPWordReport;
 using System;
 using System.Configuration;
+using System.Data;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -21,6 +22,12 @@ namespace BKI_HRM.NghiepVu
             CControlFormat.setFormStyle(this);
             load_data_2_cbo_loai_hop_dong();
             m_cbo_trang_thai.SelectedIndex = 0;
+
+            m_lbl_chuc_vu.Text = String.Empty;
+            m_lbl_ma_nhan_vien.Text = String.Empty;
+            m_lbl_ho_va_ten.Text = String.Empty;
+            m_lbl_don_vi.Text = String.Empty;
+            m_lbl_email_co_quan.Text = String.Empty;
         }
 
         public void display_for_insert()
@@ -48,7 +55,8 @@ namespace BKI_HRM.NghiepVu
             m_e_file_mode = DataEntryFileMode.EditFile;
             m_str_link_old = m_lbl_file_name.Text;
 
-            
+            view_info_Nhan_Su(ip_m_us_gd_hop_dong.dcID_NHAN_SU);
+
             this.ShowDialog();
         }
 
@@ -271,8 +279,47 @@ namespace BKI_HRM.NghiepVu
         {
             m_lbl_ma_nhan_vien.Text = m_us_dm_nhan_su.strMA_NV;
             m_lbl_ho_va_ten.Text = m_us_dm_nhan_su.strHO_DEM + " " + m_us_dm_nhan_su.strTEN;
-            m_lbl_ngay_sinh.Text = m_us_dm_nhan_su.datNGAY_SINH.ToString("dd/MM/yyyy");
-            m_lbl_dia_chi.Text = m_us_dm_nhan_su.strCHO_O;
+
+            // DucVT
+            m_lbl_email_co_quan.Text = m_us_dm_nhan_su.strEMAIL_CQ;
+
+            // Lấy chức vụ bằng Id nhân sự
+            DS_V_GD_QUA_TRINH_LAM_VIEC v_ds_gd_qua_trinh_lam_viec = new DS_V_GD_QUA_TRINH_LAM_VIEC();
+            US_V_GD_QUA_TRINH_LAM_VIEC v_us_gd_qua_trinh_lam_viec = new US_V_GD_QUA_TRINH_LAM_VIEC();
+
+            v_us_gd_qua_trinh_lam_viec.FillDataSet_Now_By_Ma_NV_Id_PN(v_ds_gd_qua_trinh_lam_viec, m_us_dm_nhan_su.strMA_NV, CAppContext_201.getCurrentIDPhapnhan());
+
+            if (v_ds_gd_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows.Count > 0)
+            {
+                m_lbl_chuc_vu.Text = v_ds_gd_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.TEN_CV].ToString();
+                m_lbl_don_vi.Text = v_ds_gd_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.TEN_DON_VI].ToString();
+            }
+            // ~DucVT
+        }
+
+        private void view_info_Nhan_Su(decimal ip_id_nhan_su)
+        {
+            DS_DM_NHAN_SU v_ds_dm_nhan_su = new DS_DM_NHAN_SU();
+            m_us_dm_nhan_su.FillDatasetByID(v_ds_dm_nhan_su, ip_id_nhan_su);
+
+            m_lbl_ma_nhan_vien.Text = v_ds_dm_nhan_su.DM_NHAN_SU.Rows[0][DM_NHAN_SU.MA_NV].ToString();
+            m_lbl_ho_va_ten.Text = v_ds_dm_nhan_su.DM_NHAN_SU.Rows[0][DM_NHAN_SU.HO_DEM].ToString() + " " + v_ds_dm_nhan_su.DM_NHAN_SU.Rows[0][DM_NHAN_SU.TEN].ToString();
+
+            // DucVT
+            m_lbl_email_co_quan.Text = v_ds_dm_nhan_su.DM_NHAN_SU.Rows[0][DM_NHAN_SU.EMAIL_CQ].ToString();
+
+            // Lấy chức vụ bằng Id nhân sự
+            DS_V_GD_QUA_TRINH_LAM_VIEC v_ds_gd_qua_trinh_lam_viec = new DS_V_GD_QUA_TRINH_LAM_VIEC();
+            US_V_GD_QUA_TRINH_LAM_VIEC v_us_gd_qua_trinh_lam_viec = new US_V_GD_QUA_TRINH_LAM_VIEC();
+
+            v_us_gd_qua_trinh_lam_viec.FillDataSet_Now_By_Ma_NV_Id_PN(v_ds_gd_qua_trinh_lam_viec, v_ds_dm_nhan_su.DM_NHAN_SU.Rows[0][DM_NHAN_SU.MA_NV].ToString(), CAppContext_201.getCurrentIDPhapnhan());
+
+            if (v_ds_gd_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows.Count > 0)
+            {
+                m_lbl_chuc_vu.Text = v_ds_gd_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.TEN_CV].ToString();
+                m_lbl_don_vi.Text = v_ds_gd_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.TEN_DON_VI].ToString();
+            }
+            // ~DucVT
         }
 
         private void us_object_2_form(US_GD_HOP_DONG ip_us_gd_hop_dong)
@@ -289,8 +336,22 @@ namespace BKI_HRM.NghiepVu
             US_DM_NHAN_SU v_us_dm_nhan_su = new US_DM_NHAN_SU(ip_us_gd_hop_dong.dcID_NHAN_SU);
             m_lbl_ma_nhan_vien.Text = v_us_dm_nhan_su.strMA_NV;
             m_lbl_ho_va_ten.Text = v_us_dm_nhan_su.strHO_DEM + " " + v_us_dm_nhan_su.strTEN;
-            m_lbl_ngay_sinh.Text = v_us_dm_nhan_su.datNGAY_SINH.ToShortDateString();
-            m_lbl_dia_chi.Text = v_us_dm_nhan_su.strCHO_O;
+
+            // DucVT
+            m_lbl_email_co_quan.Text = v_us_dm_nhan_su.strEMAIL_CQ;
+
+            // Lấy chức vụ bằng Id nhân sự
+            DS_V_GD_QUA_TRINH_LAM_VIEC v_ds_gd_qua_trinh_lam_viec = new DS_V_GD_QUA_TRINH_LAM_VIEC();
+            US_V_GD_QUA_TRINH_LAM_VIEC v_us_gd_qua_trinh_lam_viec = new US_V_GD_QUA_TRINH_LAM_VIEC();
+
+            v_us_gd_qua_trinh_lam_viec.FillDataSet_Now_By_Ma_NV_Id_PN(v_ds_gd_qua_trinh_lam_viec, v_us_dm_nhan_su.strMA_NV, CAppContext_201.getCurrentIDPhapnhan());
+
+            if (v_ds_gd_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows.Count > 0)
+            {
+                m_lbl_chuc_vu.Text = v_ds_gd_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.TEN_CV].ToString();
+                m_lbl_don_vi.Text = v_ds_gd_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.TEN_DON_VI].ToString();
+            }
+            // ~DucVT
 
             m_cbo_loai_hop_dong.SelectedValue = ip_us_gd_hop_dong.dcID_LOAI_HOP_DONG;
             m_cbo_trang_thai.SelectedIndex = (ip_us_gd_hop_dong.strTRANG_THAI_HOP_DONG.Equals("Y")) ? 0 : 1;
@@ -329,8 +390,22 @@ namespace BKI_HRM.NghiepVu
             m_lbl_ma_nhan_vien.Text = v_ds_dm_nhan_su.Tables[0].Rows[0]["MA_NV"].ToString();
             m_lbl_ho_va_ten.Text = v_ds_dm_nhan_su.Tables[0].Rows[0]["HO_DEM"] + " " +
                                    v_ds_dm_nhan_su.Tables[0].Rows[0]["TEN"];
-            m_lbl_ngay_sinh.Text = v_ds_dm_nhan_su.Tables[0].Rows[0]["NGAY_SINH"].ToString().Split(' ')[0];
-            m_lbl_dia_chi.Text = v_ds_dm_nhan_su.Tables[0].Rows[0]["CHO_O"].ToString();
+
+            // DucVT
+            m_lbl_email_co_quan.Text = v_ds_dm_nhan_su.Tables[0].Rows[0][DM_NHAN_SU.EMAIL_CQ].ToString();
+
+            // Lấy chức vụ bằng Id nhân sự
+            DS_V_GD_QUA_TRINH_LAM_VIEC v_ds_gd_qtlv = new DS_V_GD_QUA_TRINH_LAM_VIEC();
+            US_V_GD_QUA_TRINH_LAM_VIEC v_us_gd_qtlv = new US_V_GD_QUA_TRINH_LAM_VIEC();
+
+            v_us_gd_qtlv.FillDataSet_Now_By_Ma_NV_Id_PN(v_ds_gd_qtlv, v_ds_dm_nhan_su.DM_NHAN_SU.Rows[0][DM_NHAN_SU.MA_NV].ToString(), CAppContext_201.getCurrentIDPhapnhan());
+
+            if (v_ds_gd_qtlv.V_GD_QUA_TRINH_LAM_VIEC.Rows.Count > 0)
+            {
+                m_lbl_chuc_vu.Text = v_ds_gd_qtlv.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.TEN_CV].ToString();
+                m_lbl_don_vi.Text = v_ds_gd_qtlv.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.TEN_DON_VI].ToString();
+            }
+            // ~DucVT
         }
 
         private void auto_suggest_text()

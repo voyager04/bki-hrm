@@ -1,27 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Transactions;
-using System.Windows.Forms;
-using BKI_HRM.DS;
+﻿using BKI_HRM.DS;
+//using BKI_HRM.US;
+//using BKI_HRM.DS;
+using BKI_HRM.DS.CDBNames;
 using BKI_HRM.US;
 using C1.Win.C1FlexGrid;
 using IP.Core.IPCommon;
-//using BKI_HRM.US;
-//using BKI_HRM.DS;
-using IP.Core.IPData;
-using IP.Core.IPUserService;
-using BKI_HRM.DS.CDBNames;
-using System.Collections;
 using IP.Core.IPSystemAdmin;
+using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Windows.Forms;
 using DS_CM_DM_TU_DIEN = IP.Core.IPData.DS_CM_DM_TU_DIEN;
 using US_CM_DM_TU_DIEN = IP.Core.IPUserService.US_CM_DM_TU_DIEN;
 
@@ -142,7 +131,9 @@ namespace BKI_HRM.NghiepVu
             load_cbo_to_column_of_grid(e_loai_tu_dien.LOAI_QUYET_DINH, m_fg_quyet_dinh, (int)e_col_Number_quyet_dinh.LOAI_QUYET_DINH);
             auto_suggest_text();
 
-
+            m_lbl_chuc_vu.Text = "";
+            m_lbl_don_vi.Text = "";
+            m_lbl_email_ca_nhan.Text = "";
 
             this.KeyPreview = true;
             set_define_events();
@@ -285,8 +276,25 @@ namespace BKI_HRM.NghiepVu
             m_lbl_ma_nhan_vien.Text = v_ds_dm_nhan_su.Tables[0].Rows[0][DM_NHAN_SU.MA_NV].ToString();
             m_lbl_ho_va_ten.Text = v_ds_dm_nhan_su.Tables[0].Rows[0][DM_NHAN_SU.HO_DEM] + " " +
                                    v_ds_dm_nhan_su.Tables[0].Rows[0][DM_NHAN_SU.TEN];
-            m_lbl_ngay_sinh.Text = v_ds_dm_nhan_su.Tables[0].Rows[0][DM_NHAN_SU.NGAY_SINH].ToString().Split(' ')[0];
-            m_lbl_dia_chi.Text = v_ds_dm_nhan_su.Tables[0].Rows[0][DM_NHAN_SU.CHO_O].ToString();
+            //m_lbl_ngay_sinh.Text = v_ds_dm_nhan_su.Tables[0].Rows[0][DM_NHAN_SU.NGAY_SINH].ToString().Split(' ')[0];
+            //m_lbl_dia_chi.Text = v_ds_dm_nhan_su.Tables[0].Rows[0][DM_NHAN_SU.CHO_O].ToString();
+
+            // DucVT
+            m_lbl_email_ca_nhan.Text = v_ds_dm_nhan_su.Tables[0].Rows[0][DM_NHAN_SU.EMAIL_CQ].ToString();
+
+            // Lấy chức vụ bằng Id nhân sự
+            DS_V_GD_QUA_TRINH_LAM_VIEC v_ds_gd_qtlv = new DS_V_GD_QUA_TRINH_LAM_VIEC();
+            US_V_GD_QUA_TRINH_LAM_VIEC v_us_gd_qtlv = new US_V_GD_QUA_TRINH_LAM_VIEC();
+
+            v_us_gd_qtlv.FillDataSet_Now_By_Ma_NV_Id_PN(v_ds_gd_qtlv, v_ds_dm_nhan_su.DM_NHAN_SU.Rows[0][DM_NHAN_SU.MA_NV].ToString(), CAppContext_201.getCurrentIDPhapnhan());
+
+            if (v_ds_gd_qtlv.V_GD_QUA_TRINH_LAM_VIEC.Rows.Count > 0)
+            {
+                m_lbl_chuc_vu.Text = v_ds_gd_qtlv.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.TEN_CV].ToString();
+                m_lbl_don_vi.Text = v_ds_gd_qtlv.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.TEN_DON_VI].ToString();
+            }
+            // ~DucVT
+            
 
             // Đưa thông tin nhân viên vào Grid
             m_fg_nhan_vien.Rows[m_fg_nhan_vien.Row][(int)e_col_Number_nhan_vien.HO_DEM] = v_ds_dm_nhan_su.Tables[0].Rows[0][DM_NHAN_SU.HO_DEM];
