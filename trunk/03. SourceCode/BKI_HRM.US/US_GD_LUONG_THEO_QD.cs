@@ -249,6 +249,20 @@ namespace BKI_HRM.US
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
+        public void insert_kem_id_phap_nhan(string ip_ma_nv, string ip_ma_ky, string ip_ma_qd, decimal ip_luong, DateTime ip_ngay_ap_dung, string luong_ht_yn, decimal ip_thang_ap_dung, decimal ip_nam_ad, decimal ip_id_phap_nhan) {
 
+            CStoredProc v_sp = new CStoredProc("pr_gd_luong_theo_qd_insert_kem_id_phap_nhan");
+            v_sp.addNVarcharInputParam("@MA_NV", ip_ma_nv);
+            v_sp.addNVarcharInputParam("@MA_KY", ip_ma_ky);
+            v_sp.addNVarcharInputParam("@MA_QD", ip_ma_qd);
+            v_sp.addDecimalInputParam("@LUONG", ip_luong);
+            v_sp.addDatetimeInputParam("@NGAY_AP_DUNG", ip_ngay_ap_dung);
+            v_sp.addNVarcharInputParam("@LUONG_HIEN_TAI_YN", luong_ht_yn);
+            v_sp.addDecimalInputParam("@THANG_AP_DUNG", ip_thang_ap_dung);
+            v_sp.addDecimalInputParam("@NAM_AP_DUNG", ip_nam_ad);
+            v_sp.addDecimalInputParam("@ID_PHAP_NHAN", ip_id_phap_nhan);
+            v_sp.addDecimalInputParam("@ID", -1);
+            v_sp.ExecuteCommand(this);
+        }
     }
 }

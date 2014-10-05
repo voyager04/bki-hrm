@@ -52,6 +52,7 @@ namespace BKI_HRM {
         private ComboBox m_cbo_ky;
         private Label label6;
         private Label label7;
+        private TextBox m_txt_ky;
         private System.ComponentModel.IContainer components;
 
         public f801_import_excel_luong_theo_qd() {
@@ -64,6 +65,7 @@ namespace BKI_HRM {
             // TODO: Add any constructor code after InitializeComponent call
             //
             format_controls();
+            load_data_2_cbo();
         }
 
         /// <summary>
@@ -104,10 +106,11 @@ namespace BKI_HRM {
             this.label5 = new System.Windows.Forms.Label();
             this.m_cmd_luu = new SIS.Controls.Button.SiSButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.m_lbl_load = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.m_cbo_ky = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.m_cbo_ky = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.m_lbl_load = new System.Windows.Forms.Label();
+            this.m_txt_ky = new System.Windows.Forms.TextBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
@@ -247,7 +250,7 @@ namespace BKI_HRM {
             this.m_cmd_chon_file.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_chon_file.ImageIndex = 19;
             this.m_cmd_chon_file.ImageList = this.ImageList;
-            this.m_cmd_chon_file.Location = new System.Drawing.Point(190, 36);
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(190, 40);
             this.m_cmd_chon_file.Name = "m_cmd_chon_file";
             this.m_cmd_chon_file.Size = new System.Drawing.Size(121, 28);
             this.m_cmd_chon_file.TabIndex = 23;
@@ -267,16 +270,16 @@ namespace BKI_HRM {
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(189, 17);
+            this.label1.Location = new System.Drawing.Point(73, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(19, 13);
             this.label1.TabIndex = 25;
-            this.label1.Text = "Bước 1:";
+            this.label1.Text = "Kỳ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(327, 44);
+            this.label2.Location = new System.Drawing.Point(327, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(19, 13);
             this.label2.TabIndex = 26;
@@ -290,7 +293,7 @@ namespace BKI_HRM {
             this.m_cmd_kiem_tra_dl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_kiem_tra_dl.ImageIndex = 13;
             this.m_cmd_kiem_tra_dl.ImageList = this.ImageList;
-            this.m_cmd_kiem_tra_dl.Location = new System.Drawing.Point(365, 36);
+            this.m_cmd_kiem_tra_dl.Location = new System.Drawing.Point(365, 40);
             this.m_cmd_kiem_tra_dl.Name = "m_cmd_kiem_tra_dl";
             this.m_cmd_kiem_tra_dl.Size = new System.Drawing.Size(121, 28);
             this.m_cmd_kiem_tra_dl.TabIndex = 27;
@@ -299,25 +302,25 @@ namespace BKI_HRM {
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(365, 17);
+            this.label3.Location = new System.Drawing.Point(191, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 28;
-            this.label3.Text = "Bước 2:";
+            this.label3.Text = "Bước 1:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(553, 17);
+            this.label4.Location = new System.Drawing.Point(364, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 13);
             this.label4.TabIndex = 29;
-            this.label4.Text = "Bước 3:";
+            this.label4.Text = "Bước 2:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(509, 44);
+            this.label5.Location = new System.Drawing.Point(509, 48);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(19, 13);
             this.label5.TabIndex = 30;
@@ -331,7 +334,7 @@ namespace BKI_HRM {
             this.m_cmd_luu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_luu.ImageIndex = 16;
             this.m_cmd_luu.ImageList = this.ImageList;
-            this.m_cmd_luu.Location = new System.Drawing.Point(551, 36);
+            this.m_cmd_luu.Location = new System.Drawing.Point(551, 40);
             this.m_cmd_luu.Name = "m_cmd_luu";
             this.m_cmd_luu.Size = new System.Drawing.Size(134, 28);
             this.m_cmd_luu.TabIndex = 31;
@@ -339,6 +342,7 @@ namespace BKI_HRM {
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_txt_ky);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.m_cbo_ky);
             this.panel1.Controls.Add(this.label6);
@@ -356,6 +360,35 @@ namespace BKI_HRM {
             this.panel1.Size = new System.Drawing.Size(950, 84);
             this.panel1.TabIndex = 32;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(151, 48);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(19, 13);
+            this.label7.TabIndex = 34;
+            this.label7.Text = "-->";
+            // 
+            // m_cbo_ky
+            // 
+            this.m_cbo_ky.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.m_cbo_ky.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.m_cbo_ky.FormattingEnabled = true;
+            this.m_cbo_ky.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.m_cbo_ky.Location = new System.Drawing.Point(786, 20);
+            this.m_cbo_ky.Name = "m_cbo_ky";
+            this.m_cbo_ky.Size = new System.Drawing.Size(95, 21);
+            this.m_cbo_ky.TabIndex = 33;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(554, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 13);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "Bước 3:";
+            // 
             // m_lbl_load
             // 
             this.m_lbl_load.AutoSize = true;
@@ -365,31 +398,16 @@ namespace BKI_HRM {
             this.m_lbl_load.TabIndex = 33;
             this.m_lbl_load.Text = "Đang load file, đợi chút nhé...";
             // 
-            // label6
+            // m_txt_ky
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(38, 17);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 13);
-            this.label6.TabIndex = 32;
-            this.label6.Text = "Bước 1:";
-            // 
-            // m_cbo_ky
-            // 
-            this.m_cbo_ky.FormattingEnabled = true;
-            this.m_cbo_ky.Location = new System.Drawing.Point(37, 41);
-            this.m_cbo_ky.Name = "m_cbo_ky";
-            this.m_cbo_ky.Size = new System.Drawing.Size(95, 21);
-            this.m_cbo_ky.TabIndex = 33;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(151, 44);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(19, 13);
-            this.label7.TabIndex = 34;
-            this.label7.Text = "-->";
+            this.m_txt_ky.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.m_txt_ky.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_txt_ky.ForeColor = System.Drawing.Color.Maroon;
+            this.m_txt_ky.Location = new System.Drawing.Point(33, 42);
+            this.m_txt_ky.Name = "m_txt_ky";
+            this.m_txt_ky.ReadOnly = true;
+            this.m_txt_ky.Size = new System.Drawing.Size(100, 26);
+            this.m_txt_ky.TabIndex = 35;
             // 
             // f801_import_excel_luong_theo_qd
             // 
@@ -421,26 +439,26 @@ namespace BKI_HRM {
 
         #region Data Structure
         private enum e_col_Number {
-            LUONG = 10
+            LUONG = 9
 ,
             MA_NV = 1
                 ,
-            NGAY_KY = 5
+            NGAY_KY = 4
                 ,
-            NGAY_HET_HIEU_LUC = 7
+            NGAY_HET_HIEU_LUC = 6
                 ,
-            NOI_DUNG = 8
+            NOI_DUNG = 7
                 ,
             HO_TEN = 2
                 ,
-            NGAY_AP_DUNG = 11
+            NGAY_AP_DUNG = 10
                 ,
-            LINK = 9
+            LINK = 8
+                
+            //MA_KY = 3
                 ,
-            MA_KY = 3
-                ,
-            MA_QD = 4
-                , NGAY_CO_HIEU_LUC = 6
+            MA_QD = 3
+                , NGAY_CO_HIEU_LUC = 5
 
         }
         #endregion
@@ -463,8 +481,19 @@ namespace BKI_HRM {
             m_lbl_load.Visible = false;
             this.KeyPreview = true;
         }
+        private void load_data_2_cbo(){
+            US_DM_KY v_us = new US_DM_KY();
+            DS_DM_KY v_ds = new DS_DM_KY();
+            v_us.FillDataset(v_ds, "where NGAY_KET_THUC_KY = (select max(NGAY_KET_THUC_KY) from DM_KY)");
+
+            m_cbo_ky.DataSource = v_ds.DM_KY;
+            m_cbo_ky.ValueMember = DM_KY.ID;
+            m_cbo_ky.DisplayMember = DM_KY.MA_KY;
+        }
         private void set_initial_form_load() {
             m_obj_trans = get_trans_object(m_fg);
+            m_cbo_ky.Visible = false;
+            m_txt_ky.Text = m_cbo_ky.Text;
             load_data_2_grid();
         }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg) {
@@ -477,7 +506,7 @@ namespace BKI_HRM {
             v_htb.Add(IMPORT_EXCEL_LUONG_THEO_QD.HO_TEN, e_col_Number.HO_TEN);
             v_htb.Add(IMPORT_EXCEL_LUONG_THEO_QD.NGAY_AP_DUNG, e_col_Number.NGAY_AP_DUNG);
             v_htb.Add(IMPORT_EXCEL_LUONG_THEO_QD.LINK, e_col_Number.LINK);
-            v_htb.Add(IMPORT_EXCEL_LUONG_THEO_QD.MA_KY, e_col_Number.MA_KY);
+            //v_htb.Add(IMPORT_EXCEL_LUONG_THEO_QD.MA_KY, e_col_Number.MA_KY);
             v_htb.Add(IMPORT_EXCEL_LUONG_THEO_QD.MA_QD, e_col_Number.MA_QD);
             v_htb.Add(IMPORT_EXCEL_LUONG_THEO_QD.NGAY_CO_HIEU_LUC, e_col_Number.NGAY_CO_HIEU_LUC);
 
@@ -600,16 +629,17 @@ namespace BKI_HRM {
         private void insert_2_gd_luong_theo_qd(US_GD_LUONG_THEO_QD ip_us_gd_luong_theo_qd
                                                , C1.Win.C1FlexGrid.C1FlexGrid i_fg
                                                 , Int32 ip_row_in_grid
-                                                  , string ip_ma_qd) {
-            ip_us_gd_luong_theo_qd.strMA_NV = m_us.strMA_NV;
-            ip_us_gd_luong_theo_qd.strMA_KY = m_us.strMA_KY;
-            ip_us_gd_luong_theo_qd.strMA_QD = m_us.strMA_QD;
-            ip_us_gd_luong_theo_qd.dcLUONG = m_us.dcLUONG;
-            ip_us_gd_luong_theo_qd.datNGAY_AP_DUNG = m_us.datNGAY_AP_DUNG;
-            ip_us_gd_luong_theo_qd.strLUONG_HIEN_TAI_YN = "Y";
-            ip_us_gd_luong_theo_qd.dcTHANG_AP_DUNG = m_us.datNGAY_AP_DUNG.Month;
-            ip_us_gd_luong_theo_qd.dcNAM_AP_DUNG = m_us.datNGAY_AP_DUNG.Year;
-            ip_us_gd_luong_theo_qd.Insert();
+                                                  , string ip_ma_qd
+                                                    , decimal ip_id_phap_nhan) {
+            string v_ma_nv = m_us.strMA_NV;
+            string v_ma_ky = m_cbo_ky.Text;
+            string v_ma_qd = m_us.strMA_QD;
+            decimal v_luong = m_us.dcLUONG;
+            DateTime v_ngay_ap_dung = m_us.datNGAY_AP_DUNG;
+            string v_luong_hien_tai_yn = "Y";
+            decimal v_thang_ap_dung = m_us.datNGAY_AP_DUNG.Month;
+            decimal v_nam_ap_dung = m_us.datNGAY_AP_DUNG.Year;
+            ip_us_gd_luong_theo_qd.insert_kem_id_phap_nhan(v_ma_nv, v_ma_ky, v_ma_qd, v_luong, v_ngay_ap_dung, v_luong_hien_tai_yn, v_thang_ap_dung, v_nam_ap_dung, CAppContext_201.getCurrentIDPhapnhan());
         }
         private void save_data() {
             //Thực hiện theo 3 bước và phải đặt trong transaction
@@ -636,7 +666,7 @@ namespace BKI_HRM {
                 insert_2_gd_quyet_dinh_phap_nhan(v_us_gd_quyet_dinh_phap_nhan, m_fg, v_row_in_grid, v_us_dm_quyet_dinh.dcID);
                 //4. Bước 3: Insert vào bảng GD_LUONG_THEO_QUYET_DINH
                 v_us_gd_luong_theo_qd.UseTransOfUSObject(v_us_dm_quyet_dinh);
-                insert_2_gd_luong_theo_qd(v_us_gd_luong_theo_qd, m_fg, v_row_in_grid, v_us_dm_quyet_dinh.strMA_QUYET_DINH);
+                insert_2_gd_luong_theo_qd(v_us_gd_luong_theo_qd, m_fg, v_row_in_grid, v_us_dm_quyet_dinh.strMA_QUYET_DINH, CAppContext_201.getCurrentIDPhapnhan());
 
             }
             v_us_dm_quyet_dinh.CommitTransaction();
