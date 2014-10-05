@@ -34,6 +34,7 @@ namespace QLNhanSu.Controllers
                 _result += "<td>" + item.CAP_DON_VI + "</td>";
                 _result += "<td>" + item.TRANG_THAI + "</td>";
                 _result += "<td>" + string.Format("{0:dd/MM/yyyy}", item.TU_NGAY) + "</td>";
+                _result += "<td><span class='glyphicon glyphicon-user'></span></td>";
                 _result += "</tr>";
                 GetAllChildNode(item, ip_allDonVi);
             }
@@ -61,6 +62,7 @@ namespace QLNhanSu.Controllers
                 _result += "<td>" + rootDonVi.CAP_DON_VI + "</td>";
                 _result += "<td>" + rootDonVi.TRANG_THAI + "</td>";
                 _result += "<td>" + string.Format("{0:dd/MM/yyyy}", rootDonVi.TU_NGAY) + "</td>";
+                _result += "<td><span class='glyphicon glyphicon-user'></span></td>";
                 _result += "</tr>";
             }
             GetAllChildNode(rootDonVi, v_allDonVi);
