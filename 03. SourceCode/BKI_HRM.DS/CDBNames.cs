@@ -409,6 +409,15 @@
         public const string HO_TEN_ME = "HO_TEN_ME";
         public const string NGHE_NGHIEP_ME = "NGHE_NGHIEP_ME";
         public const string NAM_SINH_ME = "NAM_SINH_ME";
+        public const string HO_TEN_CON_THU_1 = "HO_TEN_CON_THU_1";
+        public const string NGHE_NGHIEP_CON_THU_1 = "NGHE_NGHIEP_CON_THU_1";
+        public const string NAM_SINH_CON_THU_1 = "NAM_SINH_CON_THU_1";
+        public const string HO_TEN_CON_THU_2 = "HO_TEN_CON_THU_2";
+        public const string NGHE_NGHIEP_CON_THU_2 = "NGHE_NGHIEP_CON_THU_2";
+        public const string NAM_SINH_CON_THU_2 = "NAM_SINH_CON_THU_2";
+        public const string HO_TEN_CON_THU_3 = "HO_TEN_CON_THU_3";
+        public const string NGHE_NGHIEP_CON_THU_3 = "NGHE_NGHIEP_CON_THU_3";
+        public const string NAM_SINH_CON_THU_3 = "NAM_SINH_CON_THU_3";
     }
     public class V_DM_DON_VI
     {

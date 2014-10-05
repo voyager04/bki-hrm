@@ -75,12 +75,12 @@
             this.m_txt_trinh_do = new System.Windows.Forms.TextBox();
             this.m_lbl_trinh_do = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.m_txt_sdt_lien_he = new System.Windows.Forms.TextBox();
+            this.m_txt_quan_he = new System.Windows.Forms.TextBox();
+            this.m_txt_nguoi_lien_he = new System.Windows.Forms.TextBox();
+            this.m_lbl_dtdd_lien_he = new System.Windows.Forms.Label();
+            this.m_lbl_quan_he = new System.Windows.Forms.Label();
+            this.m_lbl_nguoi_lien_he = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -96,17 +96,42 @@
             this.m_lbl_email_ca_nhan = new System.Windows.Forms.Label();
             this.m_txt_email_co_quan = new System.Windows.Forms.TextBox();
             this.m_lbl_email_co_quan = new System.Windows.Forms.Label();
-            this.m_txt_nam_sinh_me = new System.Windows.Forms.TextBox();
             this.m_txt_chi_nhanh_ngan_hang = new System.Windows.Forms.TextBox();
-            this.m_txt_nghe_nghiep_me = new System.Windows.Forms.TextBox();
-            this.m_txt_nam_sinh_bo = new System.Windows.Forms.TextBox();
-            this.m_txt_ho_ten_me = new System.Windows.Forms.TextBox();
-            this.m_txt_nghe_nghiep_bo = new System.Windows.Forms.TextBox();
-            this.m_txt_ho_ten_bo = new System.Windows.Forms.TextBox();
             this.m_txt_dia_diem_lam_viec = new System.Windows.Forms.TextBox();
             this.m_txt_so_tai_khoan = new System.Windows.Forms.TextBox();
             this.m_txt_ma_so_thue = new System.Windows.Forms.TextBox();
             this.m_ma_so_thue = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.m_txt_nam_sinh_con_3 = new System.Windows.Forms.TextBox();
+            this.m_txt_nam_sinh_con_2 = new System.Windows.Forms.TextBox();
+            this.m_txt_nam_sinh_con_1 = new System.Windows.Forms.TextBox();
+            this.m_txt_nam_sinh_me = new System.Windows.Forms.TextBox();
+            this.m_txt_nghe_nghiep_con_3 = new System.Windows.Forms.TextBox();
+            this.m_txt_nghe_nghiep_con_2 = new System.Windows.Forms.TextBox();
+            this.m_txt_nghe_nghiep_con_1 = new System.Windows.Forms.TextBox();
+            this.m_txt_nghe_nghiep_me = new System.Windows.Forms.TextBox();
+            this.m_txt_nam_sinh_bo = new System.Windows.Forms.TextBox();
+            this.m_txt_ho_ten_con_3 = new System.Windows.Forms.TextBox();
+            this.m_txt_ho_ten_con_2 = new System.Windows.Forms.TextBox();
+            this.m_txt_ho_ten_con_1 = new System.Windows.Forms.TextBox();
+            this.m_txt_ho_ten_me = new System.Windows.Forms.TextBox();
+            this.m_txt_nghe_nghiep_bo = new System.Windows.Forms.TextBox();
+            this.m_txt_ho_ten_bo = new System.Windows.Forms.TextBox();
             this.m_ofd_chon_anh = new System.Windows.Forms.OpenFileDialog();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -114,6 +139,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_ptb_anh)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_pnl_out_place_dm
@@ -381,6 +407,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -618,12 +645,12 @@
             // tabPage3
             // 
             this.tabPage3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tabPage3.Controls.Add(this.label10);
-            this.tabPage3.Controls.Add(this.label8);
-            this.tabPage3.Controls.Add(this.label9);
-            this.tabPage3.Controls.Add(this.label6);
-            this.tabPage3.Controls.Add(this.label7);
-            this.tabPage3.Controls.Add(this.label5);
+            this.tabPage3.Controls.Add(this.m_txt_sdt_lien_he);
+            this.tabPage3.Controls.Add(this.m_txt_quan_he);
+            this.tabPage3.Controls.Add(this.m_txt_nguoi_lien_he);
+            this.tabPage3.Controls.Add(this.m_lbl_dtdd_lien_he);
+            this.tabPage3.Controls.Add(this.m_lbl_quan_he);
+            this.tabPage3.Controls.Add(this.m_lbl_nguoi_lien_he);
             this.tabPage3.Controls.Add(this.label4);
             this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Controls.Add(this.label1);
@@ -639,13 +666,7 @@
             this.tabPage3.Controls.Add(this.m_lbl_email_ca_nhan);
             this.tabPage3.Controls.Add(this.m_txt_email_co_quan);
             this.tabPage3.Controls.Add(this.m_lbl_email_co_quan);
-            this.tabPage3.Controls.Add(this.m_txt_nam_sinh_me);
             this.tabPage3.Controls.Add(this.m_txt_chi_nhanh_ngan_hang);
-            this.tabPage3.Controls.Add(this.m_txt_nghe_nghiep_me);
-            this.tabPage3.Controls.Add(this.m_txt_nam_sinh_bo);
-            this.tabPage3.Controls.Add(this.m_txt_ho_ten_me);
-            this.tabPage3.Controls.Add(this.m_txt_nghe_nghiep_bo);
-            this.tabPage3.Controls.Add(this.m_txt_ho_ten_bo);
             this.tabPage3.Controls.Add(this.m_txt_dia_diem_lam_viec);
             this.tabPage3.Controls.Add(this.m_txt_so_tai_khoan);
             this.tabPage3.Controls.Add(this.m_txt_ma_so_thue);
@@ -657,64 +678,64 @@
             this.tabPage3.Text = "Liên hệ";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // label10
+            // m_txt_sdt_lien_he
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(527, 282);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 13);
-            this.label10.TabIndex = 60;
-            this.label10.Text = "Năm sinh Mẹ";
+            this.m_txt_sdt_lien_he.BackColor = System.Drawing.SystemColors.Window;
+            this.m_txt_sdt_lien_he.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_sdt_lien_he.Location = new System.Drawing.Point(105, 296);
+            this.m_txt_sdt_lien_he.Name = "m_txt_sdt_lien_he";
+            this.m_txt_sdt_lien_he.Size = new System.Drawing.Size(167, 20);
+            this.m_txt_sdt_lien_he.TabIndex = 33;
             // 
-            // label8
+            // m_txt_quan_he
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(529, 250);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 13);
-            this.label8.TabIndex = 60;
-            this.label8.Text = "Năm sinh Bố";
+            this.m_txt_quan_he.BackColor = System.Drawing.SystemColors.Window;
+            this.m_txt_quan_he.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_quan_he.Location = new System.Drawing.Point(536, 258);
+            this.m_txt_quan_he.Name = "m_txt_quan_he";
+            this.m_txt_quan_he.Size = new System.Drawing.Size(164, 20);
+            this.m_txt_quan_he.TabIndex = 32;
             // 
-            // label9
+            // m_txt_nguoi_lien_he
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(268, 282);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(86, 13);
-            this.label9.TabIndex = 60;
-            this.label9.Text = "Nghề nghiệp Mẹ";
+            this.m_txt_nguoi_lien_he.BackColor = System.Drawing.SystemColors.Window;
+            this.m_txt_nguoi_lien_he.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_nguoi_lien_he.Location = new System.Drawing.Point(105, 258);
+            this.m_txt_nguoi_lien_he.Name = "m_txt_nguoi_lien_he";
+            this.m_txt_nguoi_lien_he.Size = new System.Drawing.Size(240, 20);
+            this.m_txt_nguoi_lien_he.TabIndex = 31;
             // 
-            // label6
+            // m_lbl_dtdd_lien_he
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(45, 282);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 13);
-            this.label6.TabIndex = 60;
-            this.label6.Text = "Họ tên Mẹ";
+            this.m_lbl_dtdd_lien_he.AutoSize = true;
+            this.m_lbl_dtdd_lien_he.Location = new System.Drawing.Point(39, 299);
+            this.m_lbl_dtdd_lien_he.Name = "m_lbl_dtdd_lien_he";
+            this.m_lbl_dtdd_lien_he.Size = new System.Drawing.Size(54, 13);
+            this.m_lbl_dtdd_lien_he.TabIndex = 93;
+            this.m_lbl_dtdd_lien_he.Text = "Số ĐTDĐ";
             // 
-            // label7
+            // m_lbl_quan_he
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(268, 250);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 13);
-            this.label7.TabIndex = 60;
-            this.label7.Text = "Nghề nghiệp Bố";
+            this.m_lbl_quan_he.AutoSize = true;
+            this.m_lbl_quan_he.Location = new System.Drawing.Point(479, 265);
+            this.m_lbl_quan_he.Name = "m_lbl_quan_he";
+            this.m_lbl_quan_he.Size = new System.Drawing.Size(48, 13);
+            this.m_lbl_quan_he.TabIndex = 92;
+            this.m_lbl_quan_he.Text = "Quan hệ";
             // 
-            // label5
+            // m_lbl_nguoi_lien_he
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(45, 250);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 13);
-            this.label5.TabIndex = 60;
-            this.label5.Text = "Họ tên Bố";
+            this.m_lbl_nguoi_lien_he.AutoSize = true;
+            this.m_lbl_nguoi_lien_he.Location = new System.Drawing.Point(54, 261);
+            this.m_lbl_nguoi_lien_he.Name = "m_lbl_nguoi_lien_he";
+            this.m_lbl_nguoi_lien_he.Size = new System.Drawing.Size(39, 13);
+            this.m_lbl_nguoi_lien_he.TabIndex = 91;
+            this.m_lbl_nguoi_lien_he.Text = "Họ tên";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 215);
+            this.label4.Location = new System.Drawing.Point(8, 216);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 13);
             this.label4.TabIndex = 59;
@@ -723,7 +744,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(418, 180);
+            this.label3.Location = new System.Drawing.Point(418, 218);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 13);
             this.label3.TabIndex = 58;
@@ -732,7 +753,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 180);
+            this.label1.Location = new System.Drawing.Point(460, 102);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 57;
@@ -741,16 +762,16 @@
             // m_txt_ho_khau
             // 
             this.m_txt_ho_khau.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_ho_khau.Location = new System.Drawing.Point(533, 119);
+            this.m_txt_ho_khau.Location = new System.Drawing.Point(533, 144);
             this.m_txt_ho_khau.Multiline = true;
             this.m_txt_ho_khau.Name = "m_txt_ho_khau";
             this.m_txt_ho_khau.Size = new System.Drawing.Size(240, 46);
-            this.m_txt_ho_khau.TabIndex = 27;
+            this.m_txt_ho_khau.TabIndex = 28;
             // 
             // m_lbl_ho_khau
             // 
             this.m_lbl_ho_khau.AutoSize = true;
-            this.m_lbl_ho_khau.Location = new System.Drawing.Point(479, 119);
+            this.m_lbl_ho_khau.Location = new System.Drawing.Point(479, 146);
             this.m_lbl_ho_khau.Name = "m_lbl_ho_khau";
             this.m_lbl_ho_khau.Size = new System.Drawing.Size(48, 13);
             this.m_lbl_ho_khau.TabIndex = 56;
@@ -759,16 +780,16 @@
             // m_txt_dia_chi
             // 
             this.m_txt_dia_chi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_dia_chi.Location = new System.Drawing.Point(105, 119);
+            this.m_txt_dia_chi.Location = new System.Drawing.Point(105, 144);
             this.m_txt_dia_chi.Multiline = true;
             this.m_txt_dia_chi.Name = "m_txt_dia_chi";
             this.m_txt_dia_chi.Size = new System.Drawing.Size(240, 46);
-            this.m_txt_dia_chi.TabIndex = 26;
+            this.m_txt_dia_chi.TabIndex = 27;
             // 
             // m_lbl_dia_chi
             // 
             this.m_lbl_dia_chi.AutoSize = true;
-            this.m_lbl_dia_chi.Location = new System.Drawing.Point(59, 119);
+            this.m_lbl_dia_chi.Location = new System.Drawing.Point(59, 146);
             this.m_lbl_dia_chi.Name = "m_lbl_dia_chi";
             this.m_lbl_dia_chi.Size = new System.Drawing.Size(40, 13);
             this.m_lbl_dia_chi.TabIndex = 54;
@@ -777,7 +798,7 @@
             // m_txt_sdt_nha_rieng
             // 
             this.m_txt_sdt_nha_rieng.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_sdt_nha_rieng.Location = new System.Drawing.Point(533, 49);
+            this.m_txt_sdt_nha_rieng.Location = new System.Drawing.Point(533, 56);
             this.m_txt_sdt_nha_rieng.Name = "m_txt_sdt_nha_rieng";
             this.m_txt_sdt_nha_rieng.Size = new System.Drawing.Size(240, 20);
             this.m_txt_sdt_nha_rieng.TabIndex = 24;
@@ -786,7 +807,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(442, 49);
+            this.label2.Location = new System.Drawing.Point(442, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 13);
             this.label2.TabIndex = 52;
@@ -795,7 +816,7 @@
             // m_txt_so_dtdd
             // 
             this.m_txt_so_dtdd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_so_dtdd.Location = new System.Drawing.Point(105, 49);
+            this.m_txt_so_dtdd.Location = new System.Drawing.Point(105, 56);
             this.m_txt_so_dtdd.Name = "m_txt_so_dtdd";
             this.m_txt_so_dtdd.Size = new System.Drawing.Size(240, 20);
             this.m_txt_so_dtdd.TabIndex = 23;
@@ -804,7 +825,7 @@
             // m_lbl_dtdd
             // 
             this.m_lbl_dtdd.AutoSize = true;
-            this.m_lbl_dtdd.Location = new System.Drawing.Point(45, 49);
+            this.m_lbl_dtdd.Location = new System.Drawing.Point(45, 58);
             this.m_lbl_dtdd.Name = "m_lbl_dtdd";
             this.m_lbl_dtdd.Size = new System.Drawing.Size(54, 13);
             this.m_lbl_dtdd.TabIndex = 50;
@@ -844,85 +865,35 @@
             this.m_lbl_email_co_quan.TabIndex = 46;
             this.m_lbl_email_co_quan.Text = "Email cơ quan";
             // 
-            // m_txt_nam_sinh_me
-            // 
-            this.m_txt_nam_sinh_me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_nam_sinh_me.Location = new System.Drawing.Point(602, 285);
-            this.m_txt_nam_sinh_me.Name = "m_txt_nam_sinh_me";
-            this.m_txt_nam_sinh_me.Size = new System.Drawing.Size(96, 20);
-            this.m_txt_nam_sinh_me.TabIndex = 36;
-            this.m_txt_nam_sinh_me.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.m_txt_ma_so_thue_KeyPress);
-            // 
             // m_txt_chi_nhanh_ngan_hang
             // 
             this.m_txt_chi_nhanh_ngan_hang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_chi_nhanh_ngan_hang.Location = new System.Drawing.Point(533, 180);
+            this.m_txt_chi_nhanh_ngan_hang.Location = new System.Drawing.Point(533, 216);
             this.m_txt_chi_nhanh_ngan_hang.Name = "m_txt_chi_nhanh_ngan_hang";
             this.m_txt_chi_nhanh_ngan_hang.Size = new System.Drawing.Size(240, 20);
-            this.m_txt_chi_nhanh_ngan_hang.TabIndex = 29;
-            // 
-            // m_txt_nghe_nghiep_me
-            // 
-            this.m_txt_nghe_nghiep_me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_nghe_nghiep_me.Location = new System.Drawing.Point(357, 285);
-            this.m_txt_nghe_nghiep_me.Name = "m_txt_nghe_nghiep_me";
-            this.m_txt_nghe_nghiep_me.Size = new System.Drawing.Size(164, 20);
-            this.m_txt_nghe_nghiep_me.TabIndex = 35;
-            // 
-            // m_txt_nam_sinh_bo
-            // 
-            this.m_txt_nam_sinh_bo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_nam_sinh_bo.Location = new System.Drawing.Point(602, 250);
-            this.m_txt_nam_sinh_bo.Name = "m_txt_nam_sinh_bo";
-            this.m_txt_nam_sinh_bo.Size = new System.Drawing.Size(96, 20);
-            this.m_txt_nam_sinh_bo.TabIndex = 33;
-            this.m_txt_nam_sinh_bo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.m_txt_ma_so_thue_KeyPress);
-            // 
-            // m_txt_ho_ten_me
-            // 
-            this.m_txt_ho_ten_me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_ho_ten_me.Location = new System.Drawing.Point(105, 285);
-            this.m_txt_ho_ten_me.Name = "m_txt_ho_ten_me";
-            this.m_txt_ho_ten_me.Size = new System.Drawing.Size(140, 20);
-            this.m_txt_ho_ten_me.TabIndex = 34;
-            // 
-            // m_txt_nghe_nghiep_bo
-            // 
-            this.m_txt_nghe_nghiep_bo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_nghe_nghiep_bo.Location = new System.Drawing.Point(357, 250);
-            this.m_txt_nghe_nghiep_bo.Name = "m_txt_nghe_nghiep_bo";
-            this.m_txt_nghe_nghiep_bo.Size = new System.Drawing.Size(164, 20);
-            this.m_txt_nghe_nghiep_bo.TabIndex = 32;
-            // 
-            // m_txt_ho_ten_bo
-            // 
-            this.m_txt_ho_ten_bo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_ho_ten_bo.Location = new System.Drawing.Point(105, 250);
-            this.m_txt_ho_ten_bo.Name = "m_txt_ho_ten_bo";
-            this.m_txt_ho_ten_bo.Size = new System.Drawing.Size(140, 20);
-            this.m_txt_ho_ten_bo.TabIndex = 31;
+            this.m_txt_chi_nhanh_ngan_hang.TabIndex = 30;
             // 
             // m_txt_dia_diem_lam_viec
             // 
             this.m_txt_dia_diem_lam_viec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_dia_diem_lam_viec.Location = new System.Drawing.Point(105, 215);
+            this.m_txt_dia_diem_lam_viec.Location = new System.Drawing.Point(105, 214);
             this.m_txt_dia_diem_lam_viec.Name = "m_txt_dia_diem_lam_viec";
-            this.m_txt_dia_diem_lam_viec.Size = new System.Drawing.Size(593, 20);
-            this.m_txt_dia_diem_lam_viec.TabIndex = 30;
+            this.m_txt_dia_diem_lam_viec.Size = new System.Drawing.Size(240, 20);
+            this.m_txt_dia_diem_lam_viec.TabIndex = 29;
             // 
             // m_txt_so_tai_khoan
             // 
             this.m_txt_so_tai_khoan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_so_tai_khoan.Location = new System.Drawing.Point(105, 180);
+            this.m_txt_so_tai_khoan.Location = new System.Drawing.Point(533, 100);
             this.m_txt_so_tai_khoan.Name = "m_txt_so_tai_khoan";
             this.m_txt_so_tai_khoan.Size = new System.Drawing.Size(240, 20);
-            this.m_txt_so_tai_khoan.TabIndex = 28;
+            this.m_txt_so_tai_khoan.TabIndex = 26;
             this.m_txt_so_tai_khoan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.m_txt_ma_so_thue_KeyPress);
             // 
             // m_txt_ma_so_thue
             // 
             this.m_txt_ma_so_thue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_ma_so_thue.Location = new System.Drawing.Point(105, 84);
+            this.m_txt_ma_so_thue.Location = new System.Drawing.Point(105, 100);
             this.m_txt_ma_so_thue.Name = "m_txt_ma_so_thue";
             this.m_txt_ma_so_thue.Size = new System.Drawing.Size(240, 20);
             this.m_txt_ma_so_thue.TabIndex = 25;
@@ -931,11 +902,306 @@
             // m_ma_so_thue
             // 
             this.m_ma_so_thue.AutoSize = true;
-            this.m_ma_so_thue.Location = new System.Drawing.Point(39, 84);
+            this.m_ma_so_thue.Location = new System.Drawing.Point(39, 102);
             this.m_ma_so_thue.Name = "m_ma_so_thue";
             this.m_ma_so_thue.Size = new System.Drawing.Size(60, 13);
             this.m_ma_so_thue.TabIndex = 44;
             this.m_ma_so_thue.Text = "Mã số thuế";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.label19);
+            this.tabPage4.Controls.Add(this.label16);
+            this.tabPage4.Controls.Add(this.label13);
+            this.tabPage4.Controls.Add(this.label10);
+            this.tabPage4.Controls.Add(this.label8);
+            this.tabPage4.Controls.Add(this.label18);
+            this.tabPage4.Controls.Add(this.label15);
+            this.tabPage4.Controls.Add(this.label12);
+            this.tabPage4.Controls.Add(this.label9);
+            this.tabPage4.Controls.Add(this.label17);
+            this.tabPage4.Controls.Add(this.label14);
+            this.tabPage4.Controls.Add(this.label11);
+            this.tabPage4.Controls.Add(this.label6);
+            this.tabPage4.Controls.Add(this.label7);
+            this.tabPage4.Controls.Add(this.label5);
+            this.tabPage4.Controls.Add(this.m_txt_nam_sinh_con_3);
+            this.tabPage4.Controls.Add(this.m_txt_nam_sinh_con_2);
+            this.tabPage4.Controls.Add(this.m_txt_nam_sinh_con_1);
+            this.tabPage4.Controls.Add(this.m_txt_nam_sinh_me);
+            this.tabPage4.Controls.Add(this.m_txt_nghe_nghiep_con_3);
+            this.tabPage4.Controls.Add(this.m_txt_nghe_nghiep_con_2);
+            this.tabPage4.Controls.Add(this.m_txt_nghe_nghiep_con_1);
+            this.tabPage4.Controls.Add(this.m_txt_nghe_nghiep_me);
+            this.tabPage4.Controls.Add(this.m_txt_nam_sinh_bo);
+            this.tabPage4.Controls.Add(this.m_txt_ho_ten_con_3);
+            this.tabPage4.Controls.Add(this.m_txt_ho_ten_con_2);
+            this.tabPage4.Controls.Add(this.m_txt_ho_ten_con_1);
+            this.tabPage4.Controls.Add(this.m_txt_ho_ten_me);
+            this.tabPage4.Controls.Add(this.m_txt_nghe_nghiep_bo);
+            this.tabPage4.Controls.Add(this.m_txt_ho_ten_bo);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(804, 331);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Gia đình";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(522, 267);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(82, 13);
+            this.label19.TabIndex = 67;
+            this.label19.Text = "Năm sinh Con 3";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(522, 207);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(82, 13);
+            this.label16.TabIndex = 67;
+            this.label16.Text = "Năm sinh Con 2";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(522, 147);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(82, 13);
+            this.label13.TabIndex = 67;
+            this.label13.Text = "Năm sinh Con 1";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(535, 87);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(69, 13);
+            this.label10.TabIndex = 67;
+            this.label10.Text = "Năm sinh Mẹ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(537, 27);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 13);
+            this.label8.TabIndex = 68;
+            this.label8.Text = "Năm sinh Bố";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(232, 267);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(99, 13);
+            this.label18.TabIndex = 69;
+            this.label18.Text = "Nghề nghiệp Con 3";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(232, 207);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(99, 13);
+            this.label15.TabIndex = 69;
+            this.label15.Text = "Nghề nghiệp Con 2";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(232, 147);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(99, 13);
+            this.label12.TabIndex = 69;
+            this.label12.Text = "Nghề nghiệp Con 1";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(245, 87);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(86, 13);
+            this.label9.TabIndex = 69;
+            this.label9.Text = "Nghề nghiệp Mẹ";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(9, 267);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(70, 13);
+            this.label17.TabIndex = 70;
+            this.label17.Text = "Họ tên Con 3";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(9, 207);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(70, 13);
+            this.label14.TabIndex = 70;
+            this.label14.Text = "Họ tên Con 2";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(9, 147);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(70, 13);
+            this.label11.TabIndex = 70;
+            this.label11.Text = "Họ tên Con 1";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(22, 87);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 13);
+            this.label6.TabIndex = 70;
+            this.label6.Text = "Họ tên Mẹ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(247, 27);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(84, 13);
+            this.label7.TabIndex = 71;
+            this.label7.Text = "Nghề nghiệp Bố";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(24, 27);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.TabIndex = 72;
+            this.label5.Text = "Họ tên Bố";
+            // 
+            // m_txt_nam_sinh_con_3
+            // 
+            this.m_txt_nam_sinh_con_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_nam_sinh_con_3.Location = new System.Drawing.Point(610, 265);
+            this.m_txt_nam_sinh_con_3.Name = "m_txt_nam_sinh_con_3";
+            this.m_txt_nam_sinh_con_3.Size = new System.Drawing.Size(96, 20);
+            this.m_txt_nam_sinh_con_3.TabIndex = 48;
+            // 
+            // m_txt_nam_sinh_con_2
+            // 
+            this.m_txt_nam_sinh_con_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_nam_sinh_con_2.Location = new System.Drawing.Point(610, 207);
+            this.m_txt_nam_sinh_con_2.Name = "m_txt_nam_sinh_con_2";
+            this.m_txt_nam_sinh_con_2.Size = new System.Drawing.Size(96, 20);
+            this.m_txt_nam_sinh_con_2.TabIndex = 45;
+            // 
+            // m_txt_nam_sinh_con_1
+            // 
+            this.m_txt_nam_sinh_con_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_nam_sinh_con_1.Location = new System.Drawing.Point(610, 145);
+            this.m_txt_nam_sinh_con_1.Name = "m_txt_nam_sinh_con_1";
+            this.m_txt_nam_sinh_con_1.Size = new System.Drawing.Size(96, 20);
+            this.m_txt_nam_sinh_con_1.TabIndex = 42;
+            // 
+            // m_txt_nam_sinh_me
+            // 
+            this.m_txt_nam_sinh_me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_nam_sinh_me.Location = new System.Drawing.Point(610, 85);
+            this.m_txt_nam_sinh_me.Name = "m_txt_nam_sinh_me";
+            this.m_txt_nam_sinh_me.Size = new System.Drawing.Size(96, 20);
+            this.m_txt_nam_sinh_me.TabIndex = 39;
+            // 
+            // m_txt_nghe_nghiep_con_3
+            // 
+            this.m_txt_nghe_nghiep_con_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_nghe_nghiep_con_3.Location = new System.Drawing.Point(336, 265);
+            this.m_txt_nghe_nghiep_con_3.Name = "m_txt_nghe_nghiep_con_3";
+            this.m_txt_nghe_nghiep_con_3.Size = new System.Drawing.Size(164, 20);
+            this.m_txt_nghe_nghiep_con_3.TabIndex = 47;
+            // 
+            // m_txt_nghe_nghiep_con_2
+            // 
+            this.m_txt_nghe_nghiep_con_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_nghe_nghiep_con_2.Location = new System.Drawing.Point(336, 207);
+            this.m_txt_nghe_nghiep_con_2.Name = "m_txt_nghe_nghiep_con_2";
+            this.m_txt_nghe_nghiep_con_2.Size = new System.Drawing.Size(164, 20);
+            this.m_txt_nghe_nghiep_con_2.TabIndex = 44;
+            // 
+            // m_txt_nghe_nghiep_con_1
+            // 
+            this.m_txt_nghe_nghiep_con_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_nghe_nghiep_con_1.Location = new System.Drawing.Point(336, 145);
+            this.m_txt_nghe_nghiep_con_1.Name = "m_txt_nghe_nghiep_con_1";
+            this.m_txt_nghe_nghiep_con_1.Size = new System.Drawing.Size(164, 20);
+            this.m_txt_nghe_nghiep_con_1.TabIndex = 41;
+            // 
+            // m_txt_nghe_nghiep_me
+            // 
+            this.m_txt_nghe_nghiep_me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_nghe_nghiep_me.Location = new System.Drawing.Point(336, 85);
+            this.m_txt_nghe_nghiep_me.Name = "m_txt_nghe_nghiep_me";
+            this.m_txt_nghe_nghiep_me.Size = new System.Drawing.Size(164, 20);
+            this.m_txt_nghe_nghiep_me.TabIndex = 38;
+            // 
+            // m_txt_nam_sinh_bo
+            // 
+            this.m_txt_nam_sinh_bo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_nam_sinh_bo.Location = new System.Drawing.Point(610, 25);
+            this.m_txt_nam_sinh_bo.Name = "m_txt_nam_sinh_bo";
+            this.m_txt_nam_sinh_bo.Size = new System.Drawing.Size(96, 20);
+            this.m_txt_nam_sinh_bo.TabIndex = 36;
+            // 
+            // m_txt_ho_ten_con_3
+            // 
+            this.m_txt_ho_ten_con_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_ho_ten_con_3.Location = new System.Drawing.Point(84, 265);
+            this.m_txt_ho_ten_con_3.Name = "m_txt_ho_ten_con_3";
+            this.m_txt_ho_ten_con_3.Size = new System.Drawing.Size(140, 20);
+            this.m_txt_ho_ten_con_3.TabIndex = 46;
+            // 
+            // m_txt_ho_ten_con_2
+            // 
+            this.m_txt_ho_ten_con_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_ho_ten_con_2.Location = new System.Drawing.Point(84, 207);
+            this.m_txt_ho_ten_con_2.Name = "m_txt_ho_ten_con_2";
+            this.m_txt_ho_ten_con_2.Size = new System.Drawing.Size(140, 20);
+            this.m_txt_ho_ten_con_2.TabIndex = 43;
+            // 
+            // m_txt_ho_ten_con_1
+            // 
+            this.m_txt_ho_ten_con_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_ho_ten_con_1.Location = new System.Drawing.Point(84, 145);
+            this.m_txt_ho_ten_con_1.Name = "m_txt_ho_ten_con_1";
+            this.m_txt_ho_ten_con_1.Size = new System.Drawing.Size(140, 20);
+            this.m_txt_ho_ten_con_1.TabIndex = 40;
+            // 
+            // m_txt_ho_ten_me
+            // 
+            this.m_txt_ho_ten_me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_ho_ten_me.Location = new System.Drawing.Point(84, 85);
+            this.m_txt_ho_ten_me.Name = "m_txt_ho_ten_me";
+            this.m_txt_ho_ten_me.Size = new System.Drawing.Size(140, 20);
+            this.m_txt_ho_ten_me.TabIndex = 37;
+            // 
+            // m_txt_nghe_nghiep_bo
+            // 
+            this.m_txt_nghe_nghiep_bo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_nghe_nghiep_bo.Location = new System.Drawing.Point(336, 25);
+            this.m_txt_nghe_nghiep_bo.Name = "m_txt_nghe_nghiep_bo";
+            this.m_txt_nghe_nghiep_bo.Size = new System.Drawing.Size(164, 20);
+            this.m_txt_nghe_nghiep_bo.TabIndex = 35;
+            // 
+            // m_txt_ho_ten_bo
+            // 
+            this.m_txt_ho_ten_bo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_ho_ten_bo.Location = new System.Drawing.Point(84, 25);
+            this.m_txt_ho_ten_bo.Name = "m_txt_ho_ten_bo";
+            this.m_txt_ho_ten_bo.Size = new System.Drawing.Size(140, 20);
+            this.m_txt_ho_ten_bo.TabIndex = 34;
             // 
             // f201_DM_NHAN_SU_DE
             // 
@@ -959,6 +1225,8 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1025,23 +1293,48 @@
         private System.Windows.Forms.Label m_lbl_ma_headcount;
         private System.Windows.Forms.TextBox m_txt_ma_headcount;
         internal SIS.Controls.Button.SiSButton m_cmd_xoa_anh;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox m_txt_chi_nhanh_ngan_hang;
+        private System.Windows.Forms.TextBox m_txt_dia_diem_lam_viec;
+        private System.Windows.Forms.TextBox m_txt_so_tai_khoan;
+        private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox m_txt_nam_sinh_me;
-        private System.Windows.Forms.TextBox m_txt_chi_nhanh_ngan_hang;
         private System.Windows.Forms.TextBox m_txt_nghe_nghiep_me;
         private System.Windows.Forms.TextBox m_txt_nam_sinh_bo;
         private System.Windows.Forms.TextBox m_txt_ho_ten_me;
         private System.Windows.Forms.TextBox m_txt_nghe_nghiep_bo;
         private System.Windows.Forms.TextBox m_txt_ho_ten_bo;
-        private System.Windows.Forms.TextBox m_txt_dia_diem_lam_viec;
-        private System.Windows.Forms.TextBox m_txt_so_tai_khoan;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox m_txt_nam_sinh_con_3;
+        private System.Windows.Forms.TextBox m_txt_nam_sinh_con_2;
+        private System.Windows.Forms.TextBox m_txt_nam_sinh_con_1;
+        private System.Windows.Forms.TextBox m_txt_nghe_nghiep_con_3;
+        private System.Windows.Forms.TextBox m_txt_nghe_nghiep_con_2;
+        private System.Windows.Forms.TextBox m_txt_nghe_nghiep_con_1;
+        private System.Windows.Forms.TextBox m_txt_ho_ten_con_3;
+        private System.Windows.Forms.TextBox m_txt_ho_ten_con_2;
+        private System.Windows.Forms.TextBox m_txt_ho_ten_con_1;
+        private System.Windows.Forms.TextBox m_txt_sdt_lien_he;
+        private System.Windows.Forms.TextBox m_txt_quan_he;
+        private System.Windows.Forms.TextBox m_txt_nguoi_lien_he;
+        private System.Windows.Forms.Label m_lbl_dtdd_lien_he;
+        private System.Windows.Forms.Label m_lbl_quan_he;
+        private System.Windows.Forms.Label m_lbl_nguoi_lien_he;
     }
 }

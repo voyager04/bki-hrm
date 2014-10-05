@@ -87,6 +87,11 @@ namespace BKI_HRM
             m_txt_sdt_nha_rieng.Enabled = false;
             m_txt_ma_so_thue.Enabled = false;
 
+            m_txt_nguoi_lien_he.Enabled = false;
+            m_txt_quan_he.Enabled = false;
+            m_txt_sdt_lien_he.Enabled = false;
+
+            // DucVT
             m_txt_so_tai_khoan.Enabled = false;
             m_txt_chi_nhanh_ngan_hang.Enabled = false;
             m_txt_dia_diem_lam_viec.Enabled = false;
@@ -96,6 +101,10 @@ namespace BKI_HRM
             m_txt_ho_ten_me.Enabled = false;
             m_txt_nghe_nghiep_me.Enabled = false;
             m_txt_nam_sinh_me.Enabled = false;
+            m_txt_ho_ten_con_1.Enabled = false;
+            m_txt_ho_ten_con_2.Enabled = false;
+            m_txt_ho_ten_con_3.Enabled = false;
+            // ~DucVT
 
             m_cmd_refresh.Visible = false;
             m_cmd_save.Visible = false;
@@ -189,6 +198,11 @@ namespace BKI_HRM
             m_txt_ho_khau.Text = m_us_dm_nhan_su.strHO_KHAU;
             m_txt_ma_headcount.Text = m_us_dm_nhan_su.strMA_HEADCOUNT;
 
+            m_txt_nguoi_lien_he.Text = m_us_dm_nhan_su.strNGUOI_LIEN_HE;
+            m_txt_quan_he.Text = m_us_dm_nhan_su.strQUAN_HE;
+            m_txt_sdt_lien_he.Text = m_us_dm_nhan_su.strDI_DONG_LIEN_HE;
+
+            // DucVT
             m_txt_chi_nhanh_ngan_hang.Text = m_us_dm_nhan_su.strCHI_NHANH_NGANHANG;
             m_txt_so_tai_khoan.Text = m_us_dm_nhan_su.strSO_TAI_KHOAN;
             m_txt_dia_diem_lam_viec.Text = m_us_dm_nhan_su.strDIA_DIEM_LV;
@@ -198,6 +212,16 @@ namespace BKI_HRM
             m_txt_ho_ten_me.Text = m_us_dm_nhan_su.strHO_TEN_ME;
             m_txt_nghe_nghiep_me.Text = m_us_dm_nhan_su.strNGHE_NGHIEP_ME;
             m_txt_nam_sinh_me.Text = m_us_dm_nhan_su.dcNAM_SINH_ME.ToString();
+            m_txt_ho_ten_con_1.Text = m_us_dm_nhan_su.strHO_TEN_CON_THU_1;
+            m_txt_nam_sinh_con_1.Text = m_us_dm_nhan_su.dcNAM_SINH_CON_THU_1.ToString();
+            m_txt_nghe_nghiep_con_1.Text = m_us_dm_nhan_su.strNGHE_NGHIEP_CON_THU_1;
+            m_txt_ho_ten_con_2.Text = m_us_dm_nhan_su.strHO_TEN_CON_THU_2;
+            m_txt_nam_sinh_con_2.Text = m_us_dm_nhan_su.dcNAM_SINH_CON_THU_2.ToString();
+            m_txt_nghe_nghiep_con_2.Text = m_us_dm_nhan_su.strNGHE_NGHIEP_CON_THU_2;
+            m_txt_ho_ten_con_3.Text = m_us_dm_nhan_su.strHO_TEN_CON_THU_3;
+            m_txt_nam_sinh_con_3.Text = m_us_dm_nhan_su.dcNAM_SINH_CON_THU_3.ToString();
+            m_txt_nghe_nghiep_con_3.Text = m_us_dm_nhan_su.strNGHE_NGHIEP_CON_THU_3;
+            // ~DucVT
         }
         private void form_to_us_object()
         {
@@ -235,6 +259,11 @@ namespace BKI_HRM
             m_us_dm_nhan_su.strHO_KHAU = m_txt_ho_khau.Text.Trim();
             m_us_dm_nhan_su.strMA_HEADCOUNT = m_txt_ma_headcount.Text.Trim();
 
+            m_us_dm_nhan_su.strNGUOI_LIEN_HE = m_txt_nguoi_lien_he.Text;
+            m_us_dm_nhan_su.strQUAN_HE = m_txt_quan_he.Text;
+            m_us_dm_nhan_su.strDI_DONG_LIEN_HE = m_txt_sdt_lien_he.Text;
+
+            // DucVT
             m_us_dm_nhan_su.strCHI_NHANH_NGANHANG = m_txt_chi_nhanh_ngan_hang.Text.Trim();
             m_us_dm_nhan_su.strSO_TAI_KHOAN = m_txt_so_tai_khoan.Text.Trim();
             m_us_dm_nhan_su.strDIA_DIEM_LV = m_txt_dia_diem_lam_viec.Text.Trim();
@@ -244,6 +273,17 @@ namespace BKI_HRM
             m_us_dm_nhan_su.strHO_TEN_ME = m_txt_ho_ten_me.Text.Trim();
             m_us_dm_nhan_su.strNGHE_NGHIEP_ME = m_txt_nghe_nghiep_me.Text.Trim();
             m_us_dm_nhan_su.dcNAM_SINH_ME = CIPConvert.ToDecimal(m_txt_nam_sinh_me.Text.Trim());
+
+            m_us_dm_nhan_su.strHO_TEN_CON_THU_1 = m_txt_ho_ten_con_1.Text;
+            m_us_dm_nhan_su.dcNAM_SINH_CON_THU_1 = CIPConvert.ToDecimal(m_txt_nam_sinh_con_1.Text.Trim());
+            m_us_dm_nhan_su.strNGHE_NGHIEP_CON_THU_1 = m_txt_nghe_nghiep_con_1.Text;
+            m_us_dm_nhan_su.strHO_TEN_CON_THU_2 = m_txt_ho_ten_con_2.Text;
+            m_us_dm_nhan_su.dcNAM_SINH_CON_THU_2 = CIPConvert.ToDecimal(m_txt_nam_sinh_con_2.Text.Trim());
+            m_us_dm_nhan_su.strNGHE_NGHIEP_CON_THU_2 = m_txt_nghe_nghiep_con_2.Text;
+            m_us_dm_nhan_su.strHO_TEN_CON_THU_3 = m_txt_ho_ten_con_3.Text;
+            m_us_dm_nhan_su.dcNAM_SINH_CON_THU_3 = CIPConvert.ToDecimal(m_txt_nam_sinh_con_3.Text.Trim());
+            m_us_dm_nhan_su.strNGHE_NGHIEP_CON_THU_3 = m_txt_nghe_nghiep_con_3.Text;
+            // ~DucVT
         }
         private bool check_trung_ma_nv(string ip_str_ma_nv)
         {
@@ -540,6 +580,11 @@ namespace BKI_HRM
                     m_txt_dia_chi.Text = "";
                     m_txt_ho_khau.Text = "";
 
+                    m_txt_nguoi_lien_he.Text = "";
+                    m_txt_quan_he.Text = "";
+                    m_txt_sdt_lien_he.Text = "";
+
+                    // DucVT
                     m_txt_chi_nhanh_ngan_hang.Text = "";
                     m_txt_so_tai_khoan.Text = "";
                     m_txt_dia_diem_lam_viec.Text = "";
@@ -549,6 +594,16 @@ namespace BKI_HRM
                     m_txt_ho_ten_me.Text = "";
                     m_txt_nghe_nghiep_me.Text = "";
                     m_txt_nam_sinh_me.Text = "";
+                    m_txt_ho_ten_con_1.Text = "";
+                    m_txt_nam_sinh_con_1.Text = "";
+                    m_txt_nghe_nghiep_con_1.Text = "";
+                    m_txt_ho_ten_con_2.Text = "";
+                    m_txt_nam_sinh_con_2.Text = "";
+                    m_txt_nghe_nghiep_con_2.Text = "";
+                    m_txt_ho_ten_con_3.Text = "";
+                    m_txt_nam_sinh_con_3.Text = "";
+                    m_txt_nghe_nghiep_con_3.Text = "";
+                    // ~DucVT
 
                     m_ptb_anh.Image = m_ptb_anh.ErrorImage;
                     m_ofd_chon_anh.FileName = "";
@@ -681,6 +736,11 @@ namespace BKI_HRM
                     m_txt_ho_khau.Text = "";
                     m_txt_dia_chi.Text = "";
 
+                    m_txt_nguoi_lien_he.Text = "";
+                    m_txt_quan_he.Text = "";
+                    m_txt_sdt_lien_he.Text = "";
+
+                    // DucVT
                     m_txt_chi_nhanh_ngan_hang.Text = "";
                     m_txt_so_tai_khoan.Text = "";
                     m_txt_dia_diem_lam_viec.Text = "";
@@ -690,6 +750,16 @@ namespace BKI_HRM
                     m_txt_ho_ten_me.Text = "";
                     m_txt_nghe_nghiep_me.Text = "";
                     m_txt_nam_sinh_me.Text = "";
+                    m_txt_ho_ten_con_1.Text = "";
+                    m_txt_nam_sinh_con_1.Text = "";
+                    m_txt_nghe_nghiep_con_1.Text = "";
+                    m_txt_ho_ten_con_2.Text = "";
+                    m_txt_nam_sinh_con_2.Text = "";
+                    m_txt_nghe_nghiep_con_2.Text = "";
+                    m_txt_ho_ten_con_3.Text = "";
+                    m_txt_nam_sinh_con_3.Text = "";
+                    m_txt_nghe_nghiep_con_3.Text = "";
+                    // ~DucVT
 
                     break;
                 case DataEntryFormMode.UpdateDataState:
@@ -745,6 +815,11 @@ namespace BKI_HRM
                     m_txt_ho_khau.Text = m_us_dm_nhan_su.strHO_KHAU;
                     m_txt_dia_chi.Text = m_us_dm_nhan_su.strCHO_O;
 
+                    m_txt_nguoi_lien_he.Text = m_us_dm_nhan_su.strNGUOI_LIEN_HE;
+                    m_txt_quan_he.Text = m_us_dm_nhan_su.strQUAN_HE;
+                    m_txt_sdt_lien_he.Text = m_us_dm_nhan_su.strDI_DONG_LIEN_HE;
+
+                    // DucVT
                     m_txt_chi_nhanh_ngan_hang.Text = m_us_dm_nhan_su.strCHI_NHANH_NGANHANG;
                     m_txt_so_tai_khoan.Text = m_us_dm_nhan_su.strSO_TAI_KHOAN;
                     m_txt_dia_diem_lam_viec.Text = m_us_dm_nhan_su.strDIA_DIEM_LV;
@@ -754,6 +829,16 @@ namespace BKI_HRM
                     m_txt_ho_ten_me.Text = m_us_dm_nhan_su.strHO_TEN_ME;
                     m_txt_nghe_nghiep_me.Text = m_us_dm_nhan_su.strNGHE_NGHIEP_ME;
                     m_txt_nam_sinh_me.Text = m_us_dm_nhan_su.dcNAM_SINH_ME.ToString();
+                    m_txt_ho_ten_con_1.Text = m_us_dm_nhan_su.strHO_TEN_CON_THU_1;
+                    m_txt_nam_sinh_con_1.Text = m_us_dm_nhan_su.dcNAM_SINH_CON_THU_1.ToString();
+                    m_txt_nghe_nghiep_con_1.Text = m_us_dm_nhan_su.strNGHE_NGHIEP_CON_THU_1;
+                    m_txt_ho_ten_con_2.Text = m_us_dm_nhan_su.strHO_TEN_CON_THU_2;
+                    m_txt_nam_sinh_con_2.Text = m_us_dm_nhan_su.dcNAM_SINH_CON_THU_2.ToString();
+                    m_txt_nghe_nghiep_con_2.Text = m_us_dm_nhan_su.strNGHE_NGHIEP_CON_THU_2;
+                    m_txt_ho_ten_con_3.Text = m_us_dm_nhan_su.strHO_TEN_CON_THU_3;
+                    m_txt_nam_sinh_con_3.Text = m_us_dm_nhan_su.dcNAM_SINH_CON_THU_3.ToString();
+                    m_txt_nghe_nghiep_con_3.Text = m_us_dm_nhan_su.strNGHE_NGHIEP_CON_THU_3;
+                    // ~DucVT
 
                     break;
             }
