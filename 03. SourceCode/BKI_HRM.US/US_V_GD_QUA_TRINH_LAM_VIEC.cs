@@ -1049,6 +1049,14 @@ namespace BKI_HRM.US {
              
              op_dc_count = CIPConvert.ToDecimal(v_sql.Value);
          }
+
+         public void FillDataSet_Now_By_Ma_NV_Id_PN(DS_V_GD_QUA_TRINH_LAM_VIEC op_ds, string ip_ma_nv, decimal ip_id_phap_nhan)
+         {
+             CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_Now_By_Ma_NV_Id_PN");
+             v_sp.addDecimalInputParam("@ip_id_phap_nhan", ip_id_phap_nhan);
+             v_sp.addNVarcharInputParam("@ip_ma_nhan_vien", ip_ma_nv);
+             v_sp.fillDataSetByCommand(this, op_ds);
+         }
         #endregion
         
     }

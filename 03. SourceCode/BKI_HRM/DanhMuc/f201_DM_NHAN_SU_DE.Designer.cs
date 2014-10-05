@@ -850,7 +850,7 @@
             this.m_txt_nam_sinh_me.Location = new System.Drawing.Point(602, 285);
             this.m_txt_nam_sinh_me.Name = "m_txt_nam_sinh_me";
             this.m_txt_nam_sinh_me.Size = new System.Drawing.Size(96, 20);
-            this.m_txt_nam_sinh_me.TabIndex = 25;
+            this.m_txt_nam_sinh_me.TabIndex = 36;
             this.m_txt_nam_sinh_me.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.m_txt_ma_so_thue_KeyPress);
             // 
             // m_txt_chi_nhanh_ngan_hang
@@ -859,7 +859,7 @@
             this.m_txt_chi_nhanh_ngan_hang.Location = new System.Drawing.Point(533, 180);
             this.m_txt_chi_nhanh_ngan_hang.Name = "m_txt_chi_nhanh_ngan_hang";
             this.m_txt_chi_nhanh_ngan_hang.Size = new System.Drawing.Size(240, 20);
-            this.m_txt_chi_nhanh_ngan_hang.TabIndex = 25;
+            this.m_txt_chi_nhanh_ngan_hang.TabIndex = 29;
             // 
             // m_txt_nghe_nghiep_me
             // 
@@ -867,7 +867,7 @@
             this.m_txt_nghe_nghiep_me.Location = new System.Drawing.Point(357, 285);
             this.m_txt_nghe_nghiep_me.Name = "m_txt_nghe_nghiep_me";
             this.m_txt_nghe_nghiep_me.Size = new System.Drawing.Size(164, 20);
-            this.m_txt_nghe_nghiep_me.TabIndex = 25;
+            this.m_txt_nghe_nghiep_me.TabIndex = 35;
             // 
             // m_txt_nam_sinh_bo
             // 
@@ -875,7 +875,7 @@
             this.m_txt_nam_sinh_bo.Location = new System.Drawing.Point(602, 250);
             this.m_txt_nam_sinh_bo.Name = "m_txt_nam_sinh_bo";
             this.m_txt_nam_sinh_bo.Size = new System.Drawing.Size(96, 20);
-            this.m_txt_nam_sinh_bo.TabIndex = 25;
+            this.m_txt_nam_sinh_bo.TabIndex = 33;
             this.m_txt_nam_sinh_bo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.m_txt_ma_so_thue_KeyPress);
             // 
             // m_txt_ho_ten_me
@@ -884,7 +884,7 @@
             this.m_txt_ho_ten_me.Location = new System.Drawing.Point(105, 285);
             this.m_txt_ho_ten_me.Name = "m_txt_ho_ten_me";
             this.m_txt_ho_ten_me.Size = new System.Drawing.Size(140, 20);
-            this.m_txt_ho_ten_me.TabIndex = 25;
+            this.m_txt_ho_ten_me.TabIndex = 34;
             // 
             // m_txt_nghe_nghiep_bo
             // 
@@ -892,7 +892,7 @@
             this.m_txt_nghe_nghiep_bo.Location = new System.Drawing.Point(357, 250);
             this.m_txt_nghe_nghiep_bo.Name = "m_txt_nghe_nghiep_bo";
             this.m_txt_nghe_nghiep_bo.Size = new System.Drawing.Size(164, 20);
-            this.m_txt_nghe_nghiep_bo.TabIndex = 25;
+            this.m_txt_nghe_nghiep_bo.TabIndex = 32;
             // 
             // m_txt_ho_ten_bo
             // 
@@ -900,7 +900,7 @@
             this.m_txt_ho_ten_bo.Location = new System.Drawing.Point(105, 250);
             this.m_txt_ho_ten_bo.Name = "m_txt_ho_ten_bo";
             this.m_txt_ho_ten_bo.Size = new System.Drawing.Size(140, 20);
-            this.m_txt_ho_ten_bo.TabIndex = 25;
+            this.m_txt_ho_ten_bo.TabIndex = 31;
             // 
             // m_txt_dia_diem_lam_viec
             // 
@@ -908,7 +908,7 @@
             this.m_txt_dia_diem_lam_viec.Location = new System.Drawing.Point(105, 215);
             this.m_txt_dia_diem_lam_viec.Name = "m_txt_dia_diem_lam_viec";
             this.m_txt_dia_diem_lam_viec.Size = new System.Drawing.Size(593, 20);
-            this.m_txt_dia_diem_lam_viec.TabIndex = 25;
+            this.m_txt_dia_diem_lam_viec.TabIndex = 30;
             // 
             // m_txt_so_tai_khoan
             // 
@@ -916,7 +916,7 @@
             this.m_txt_so_tai_khoan.Location = new System.Drawing.Point(105, 180);
             this.m_txt_so_tai_khoan.Name = "m_txt_so_tai_khoan";
             this.m_txt_so_tai_khoan.Size = new System.Drawing.Size(240, 20);
-            this.m_txt_so_tai_khoan.TabIndex = 25;
+            this.m_txt_so_tai_khoan.TabIndex = 28;
             this.m_txt_so_tai_khoan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.m_txt_ma_so_thue_KeyPress);
             // 
             // m_txt_ma_so_thue
