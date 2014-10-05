@@ -6090,7 +6090,7 @@
             <Parameter Name="MA_QD" Mode="In" Type="String" />
             <Parameter Name="MA_QDOld" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="pr_GD_QUA_TRINH_CONG_TAC" ReturnType="Collection(BKI_HRMModel.pr_GD_QUA_TRINH_CONG_TAC_Result)">
+          <FunctionImport Name="pr_GD_QUA_TRINH_CONG_TAC" EntitySet="GD_QUA_TRINH_CONG_TAC" ReturnType="Collection(BKI_HRMModel.GD_QUA_TRINH_CONG_TAC)">
             <Parameter Name="ip_str_search" Mode="In" Type="String" />
             <Parameter Name="ip_str_lua_chon" Mode="In" Type="String" />
             <Parameter Name="ip_dat_tu_ngay" Mode="In" Type="DateTime" />
@@ -6766,7 +6766,7 @@
             <Parameter Name="ip_dc_phap_nhan" Mode="In" Type="Decimal" />
             <Parameter Name="ip_dc_kiem_nhiem" Mode="In" Type="Decimal" />
           </FunctionImport>
-          <FunctionImport Name="pr_V_GD_QUA_TRINH_LAM_VIEC_2_Search_NhanVien_TheoPhongBanTaiMotThoiDiem" ReturnType="Collection(BKI_HRMModel.pr_V_GD_QUA_TRINH_LAM_VIEC_2_Search_NhanVien_TheoPhongBanTaiMotThoiDiem_Result)">
+          <FunctionImport Name="pr_V_GD_QUA_TRINH_LAM_VIEC_2_Search_NhanVien_TheoPhongBanTaiMotThoiDiem" EntitySet="V_GD_QUA_TRINH_LAM_VIEC_2" ReturnType="Collection(BKI_HRMModel.V_GD_QUA_TRINH_LAM_VIEC_2)">
             <Parameter Name="ip_str_tim_kiem" Mode="In" Type="String" />
             <Parameter Name="ip_dat_thoi_diem" Mode="In" Type="DateTime" />
             <Parameter Name="ip_dc_phap_nhan" Mode="In" Type="Decimal" />
@@ -13220,24 +13220,6 @@
           <FunctionImportMapping FunctionImportName="pr_GD_LUONG_THEO_QD_UpdateAllWMA_NVLogic" FunctionName="BKI_HRMModel.Store.pr_GD_LUONG_THEO_QD_UpdateAllWMA_NVLogic" />
           <FunctionImportMapping FunctionImportName="pr_GD_LUONG_THEO_QD_UpdateAllWMA_QDLogic" FunctionName="BKI_HRMModel.Store.pr_GD_LUONG_THEO_QD_UpdateAllWMA_QDLogic" />
           <FunctionImportMapping FunctionImportName="pr_GD_QUA_TRINH_CONG_TAC" FunctionName="BKI_HRMModel.Store.pr_GD_QUA_TRINH_CONG_TAC">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="BKI_HRMModel.pr_GD_QUA_TRINH_CONG_TAC_Result">
-                <ScalarProperty Name="ID_NHAN_SU" ColumnName="ID_NHAN_SU" />
-                <ScalarProperty Name="MA_NV" ColumnName="MA_NV" />
-                <ScalarProperty Name="HO_DEM" ColumnName="HO_DEM" />
-                <ScalarProperty Name="TEN" ColumnName="TEN" />
-                <ScalarProperty Name="TU_NGAY" ColumnName="TU_NGAY" />
-                <ScalarProperty Name="DEN_NGAY" ColumnName="DEN_NGAY" />
-                <ScalarProperty Name="LAM_GI" ColumnName="LAM_GI" />
-                <ScalarProperty Name="O_DAU" ColumnName="O_DAU" />
-                <ScalarProperty Name="VAI_TRO" ColumnName="VAI_TRO" />
-                <ScalarProperty Name="TY_LE_THAM_GIA" ColumnName="TY_LE_THAM_GIA" />
-                <ScalarProperty Name="MA_QUYET_DINH" ColumnName="MA_QUYET_DINH" />
-                <ScalarProperty Name="LOAI_QD" ColumnName="LOAI_QD" />
-                <ScalarProperty Name="MA_QUYET_DINH_MIEN_NHIEM" ColumnName="MA_QUYET_DINH_MIEN_NHIEM" />
-                <ScalarProperty Name="LUA_CHON" ColumnName="LUA_CHON" />
-              </ComplexTypeMapping>
-            </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="pr_GD_QUYET_DINH_DU_AN_Delete" FunctionName="BKI_HRMModel.Store.pr_GD_QUYET_DINH_DU_AN_Delete" />
           <FunctionImportMapping FunctionImportName="pr_GD_QUYET_DINH_DU_AN_Insert" FunctionName="BKI_HRMModel.Store.pr_GD_QUYET_DINH_DU_AN_Insert" />
@@ -14515,43 +14497,6 @@
           <FunctionImportMapping FunctionImportName="pr_V_GD_QUA_TRINH_LAM_VIEC_2_Count_NhanVien_chinh_thuc_tren_6_thang" FunctionName="BKI_HRMModel.Store.pr_V_GD_QUA_TRINH_LAM_VIEC_2_Count_NhanVien_chinh_thuc_tren_6_thang" />
           <FunctionImportMapping FunctionImportName="pr_V_GD_QUA_TRINH_LAM_VIEC_2_Count_NhanVien_TheoPhongBanTaiMotThoiDiem" FunctionName="BKI_HRMModel.Store.pr_V_GD_QUA_TRINH_LAM_VIEC_2_Count_NhanVien_TheoPhongBanTaiMotThoiDiem" />
           <FunctionImportMapping FunctionImportName="pr_V_GD_QUA_TRINH_LAM_VIEC_2_Search_NhanVien_TheoPhongBanTaiMotThoiDiem" FunctionName="BKI_HRMModel.Store.pr_V_GD_QUA_TRINH_LAM_VIEC_2_Search_NhanVien_TheoPhongBanTaiMotThoiDiem">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="BKI_HRMModel.pr_V_GD_QUA_TRINH_LAM_VIEC_2_Search_NhanVien_TheoPhongBanTaiMotThoiDiem_Result">
-                <ScalarProperty Name="MA_NV" ColumnName="MA_NV" />
-                <ScalarProperty Name="HO_DEM" ColumnName="HO_DEM" />
-                <ScalarProperty Name="TEN" ColumnName="TEN" />
-                <ScalarProperty Name="MA_CV" ColumnName="MA_CV" />
-                <ScalarProperty Name="TEN_CV" ColumnName="TEN_CV" />
-                <ScalarProperty Name="MA_DON_VI" ColumnName="MA_DON_VI" />
-                <ScalarProperty Name="TEN_DON_VI" ColumnName="TEN_DON_VI" />
-                <ScalarProperty Name="ID_CAP_DON_VI" ColumnName="ID_CAP_DON_VI" />
-                <ScalarProperty Name="CAP_DON_VI" ColumnName="CAP_DON_VI" />
-                <ScalarProperty Name="ID_LOAI_DON_VI" ColumnName="ID_LOAI_DON_VI" />
-                <ScalarProperty Name="LOAI_DON_VI" ColumnName="LOAI_DON_VI" />
-                <ScalarProperty Name="ID_DON_VI_CAP_TREN" ColumnName="ID_DON_VI_CAP_TREN" />
-                <ScalarProperty Name="DIA_BAN" ColumnName="DIA_BAN" />
-                <ScalarProperty Name="MA_QUYET_DINH" ColumnName="MA_QUYET_DINH" />
-                <ScalarProperty Name="NGAY_CO_HIEU_LUC" ColumnName="NGAY_CO_HIEU_LUC" />
-                <ScalarProperty Name="NGAY_HET_HIEU_LUC" ColumnName="NGAY_HET_HIEU_LUC" />
-                <ScalarProperty Name="ID_LOAI_CV" ColumnName="ID_LOAI_CV" />
-                <ScalarProperty Name="LOAI_CV" ColumnName="LOAI_CV" />
-                <ScalarProperty Name="NGAY_BAT_DAU" ColumnName="NGAY_BAT_DAU" />
-                <ScalarProperty Name="NGAY_KET_THUC" ColumnName="NGAY_KET_THUC" />
-                <ScalarProperty Name="ID_NHAN_SU" ColumnName="ID_NHAN_SU" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="ID_NGACH" ColumnName="ID_NGACH" />
-                <ScalarProperty Name="ID_DON_VI" ColumnName="ID_DON_VI" />
-                <ScalarProperty Name="NGACH" ColumnName="NGACH" />
-                <ScalarProperty Name="TRANG_THAI_CHUC_VU_YN" ColumnName="TRANG_THAI_CHUC_VU_YN" />
-                <ScalarProperty Name="TRANG_THAI_CV" ColumnName="TRANG_THAI_CV" />
-                <ScalarProperty Name="MA_QUYET_DINH_MIEN_NHIEM" ColumnName="MA_QUYET_DINH_MIEN_NHIEM" />
-                <ScalarProperty Name="ID_QUYET_DINH" ColumnName="ID_QUYET_DINH" />
-                <ScalarProperty Name="ID_QUYET_DINH_MIEN_NHIEM" ColumnName="ID_QUYET_DINH_MIEN_NHIEM" />
-                <ScalarProperty Name="LUA_CHON" ColumnName="LUA_CHON" />
-                <ScalarProperty Name="TY_LE_THAM_GIA" ColumnName="TY_LE_THAM_GIA" />
-                <ScalarProperty Name="TRANG_THAI_LD_HIEN_TAI" ColumnName="TRANG_THAI_LD_HIEN_TAI" />
-              </ComplexTypeMapping>
-            </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="pr_V_GD_QUA_TRINH_LAM_VIEC_2_select_by_MA_CHUC_VU_THOI_DIEM" FunctionName="BKI_HRMModel.Store.pr_V_GD_QUA_TRINH_LAM_VIEC_2_select_by_MA_CHUC_VU_THOI_DIEM">
             <ResultMapping>
