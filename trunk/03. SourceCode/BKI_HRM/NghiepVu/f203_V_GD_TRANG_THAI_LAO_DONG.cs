@@ -455,7 +455,7 @@ namespace BKI_HRM
 			, int i_grid_row) {
 			DataRow v_dr;
 			v_dr = (DataRow) m_grv_trang_thai_ld.Rows[i_grid_row].UserData;
-			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
+			//m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
 			i_us.DataRow2Me(v_dr);
 		}
 

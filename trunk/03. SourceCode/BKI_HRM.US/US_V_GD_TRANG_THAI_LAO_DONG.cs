@@ -153,7 +153,6 @@ public class US_V_GD_TRANG_THAI_LAO_DONG : US_Object
     {
         pm_objDR["MA_QUYET_DINH"] = System.Convert.DBNull;
     }
-
     public DateTime datNGAY_CO_HIEU_LUC
     {
         get
@@ -220,7 +219,7 @@ public class US_V_GD_TRANG_THAI_LAO_DONG : US_Object
         pm_objDR["ID_LOAI_QD"] = System.Convert.DBNull;
     }
 
-    public string strLOAI_QUYET_DINH
+    /*public string strLOAI_QUYET_DINH
     {
         get
         {
@@ -240,7 +239,7 @@ public class US_V_GD_TRANG_THAI_LAO_DONG : US_Object
     public void SetLOAI_QUYET_DINHNull()
     {
         pm_objDR["LOAI_QUYET_DINH"] = System.Convert.DBNull;
-    }
+    }*/
 
     public string strTRANG_THAI_HIEN_TAI
     {
@@ -308,6 +307,28 @@ public class US_V_GD_TRANG_THAI_LAO_DONG : US_Object
         pm_objDR["ID_NHAN_SU"] = System.Convert.DBNull;
     }
 
+    public decimal dcID_QUYET_DINH
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "ID_QUYET_DINH", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["ID_QUYET_DINH"] = value;
+        }
+    }
+
+    public bool IsID_QUYET_DINHNull()
+    {
+        return pm_objDR.IsNull("ID_QUYET_DINH");
+    }
+
+    public void SetID_QUYET_DINHNull()
+    {
+        pm_objDR["ID_QUYET_DINH"] = System.Convert.DBNull;
+    }
+
     public string strTRANG_THAI_HIEN_TAI_YN
     {
         get
@@ -330,26 +351,70 @@ public class US_V_GD_TRANG_THAI_LAO_DONG : US_Object
         pm_objDR["TRANG_THAI_HIEN_TAI_YN"] = System.Convert.DBNull;
     }
 
-    public decimal dcID_QUYET_DINH
+    public decimal dcID_PHAP_NHAN
     {
         get
         {
-            return CNull.RowNVLDecimal(pm_objDR, "ID_QUYET_DINH", IPConstants.c_DefaultDecimal);
+            return CNull.RowNVLDecimal(pm_objDR, "ID_PHAP_NHAN", IPConstants.c_DefaultDecimal);
         }
         set
         {
-            pm_objDR["ID_QUYET_DINH"] = value;
+            pm_objDR["ID_PHAP_NHAN"] = value;
         }
     }
 
-    public bool IsID_QUYET_DINHNull()
+    public bool IsID_PHAP_NHANNull()
     {
-        return pm_objDR.IsNull("ID_QUYET_DINH");
+        return pm_objDR.IsNull("ID_PHAP_NHAN");
     }
 
-    public void SetID_QUYET_DINHNull()
+    public void SetID_PHAP_NHANNull()
     {
-        pm_objDR["ID_QUYET_DINH"] = System.Convert.DBNull;
+        pm_objDR["ID_PHAP_NHAN"] = System.Convert.DBNull;
+    }
+
+    public string strMA_PHAP_NHAN
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "MA_PHAP_NHAN", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["MA_PHAP_NHAN"] = value;
+        }
+    }
+
+    public bool IsMA_PHAP_NHANNull()
+    {
+        return pm_objDR.IsNull("MA_PHAP_NHAN");
+    }
+
+    public void SetMA_PHAP_NHANNull()
+    {
+        pm_objDR["MA_PHAP_NHAN"] = System.Convert.DBNull;
+    }
+
+    public string strTEN_PHAP_NHAN
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "TEN_PHAP_NHAN", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["TEN_PHAP_NHAN"] = value;
+        }
+    }
+
+    public bool IsTEN_PHAP_NHANNull()
+    {
+        return pm_objDR.IsNull("TEN_PHAP_NHAN");
+    }
+
+    public void SetTEN_PHAP_NHANNull()
+    {
+        pm_objDR["TEN_PHAP_NHAN"] = System.Convert.DBNull;
     }
 
     #endregion
