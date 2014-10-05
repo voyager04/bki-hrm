@@ -26,9 +26,6 @@ using C1.Win.C1FlexGrid;
 
 namespace BKI_HRM
 {
-
-
-
 	public class f202_V_GD_QUA_TRINH_LAM_VIEC : System.Windows.Forms.Form
 	{
 		internal System.Windows.Forms.ImageList ImageList;

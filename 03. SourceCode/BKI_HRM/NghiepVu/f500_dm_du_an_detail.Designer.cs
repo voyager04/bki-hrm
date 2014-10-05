@@ -62,16 +62,18 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.m_lbl_ma_nhan_vien = new System.Windows.Forms.Label();
             this.m_cmd_delete_nhan_vien = new SIS.Controls.Button.SiSButton();
-            this.m_lbl_dia_chi = new System.Windows.Forms.Label();
-            this.m_lbl_ngay_sinh = new System.Windows.Forms.Label();
             this.m_txt_search_nhan_vien = new System.Windows.Forms.TextBox();
             this.m_lbl_ma_nhan_su = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.m_lbl_ho_va_ten = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.cM_DM_TU_DIENTableAdapter1 = new BKI_HRM.DS.DS_CM_DM_TU_DIENTableAdapters.CM_DM_TU_DIENTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.m_lbl_email_ca_nhan = new System.Windows.Forms.Label();
+            this.m_lbl_chuc_vu = new System.Windows.Forms.Label();
+            this.m_lbl_don_vi = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.m_tab_du_an.SuspendLayout();
@@ -390,7 +392,7 @@
             this.m_fg_quyet_dinh.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_fg_quyet_dinh.Location = new System.Drawing.Point(3, 32);
             this.m_fg_quyet_dinh.Name = "m_fg_quyet_dinh";
-            this.m_fg_quyet_dinh.Rows.Count = 7;
+            this.m_fg_quyet_dinh.Rows.Count = 8;
             this.m_fg_quyet_dinh.Size = new System.Drawing.Size(1079, 327);
             this.m_fg_quyet_dinh.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_quyet_dinh.Styles"));
             this.m_fg_quyet_dinh.TabIndex = 0;
@@ -416,23 +418,25 @@
             this.m_fg_nhan_vien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg_nhan_vien.Location = new System.Drawing.Point(3, 80);
             this.m_fg_nhan_vien.Name = "m_fg_nhan_vien";
-            this.m_fg_nhan_vien.Rows.Count = 7;
+            this.m_fg_nhan_vien.Rows.Count = 8;
             this.m_fg_nhan_vien.Size = new System.Drawing.Size(1079, 279);
             this.m_fg_nhan_vien.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_nhan_vien.Styles"));
             this.m_fg_nhan_vien.TabIndex = 108;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.m_lbl_don_vi);
+            this.groupBox2.Controls.Add(this.m_lbl_chuc_vu);
+            this.groupBox2.Controls.Add(this.m_lbl_email_ca_nhan);
             this.groupBox2.Controls.Add(this.m_lbl_ma_nhan_vien);
             this.groupBox2.Controls.Add(this.m_cmd_delete_nhan_vien);
-            this.groupBox2.Controls.Add(this.m_lbl_dia_chi);
-            this.groupBox2.Controls.Add(this.m_lbl_ngay_sinh);
             this.groupBox2.Controls.Add(this.m_txt_search_nhan_vien);
             this.groupBox2.Controls.Add(this.m_lbl_ma_nhan_su);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.m_lbl_ho_va_ten);
             this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
@@ -447,7 +451,7 @@
             this.m_lbl_ma_nhan_vien.AutoSize = true;
             this.m_lbl_ma_nhan_vien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_ma_nhan_vien.ForeColor = System.Drawing.Color.Blue;
-            this.m_lbl_ma_nhan_vien.Location = new System.Drawing.Point(558, 17);
+            this.m_lbl_ma_nhan_vien.Location = new System.Drawing.Point(552, 17);
             this.m_lbl_ma_nhan_vien.Name = "m_lbl_ma_nhan_vien";
             this.m_lbl_ma_nhan_vien.Size = new System.Drawing.Size(0, 17);
             this.m_lbl_ma_nhan_vien.TabIndex = 75;
@@ -466,26 +470,6 @@
             this.m_cmd_delete_nhan_vien.TabIndex = 109;
             this.m_cmd_delete_nhan_vien.Text = "&Xoá thành viên";
             // 
-            // m_lbl_dia_chi
-            // 
-            this.m_lbl_dia_chi.AutoSize = true;
-            this.m_lbl_dia_chi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_dia_chi.ForeColor = System.Drawing.Color.Blue;
-            this.m_lbl_dia_chi.Location = new System.Drawing.Point(113, 49);
-            this.m_lbl_dia_chi.Name = "m_lbl_dia_chi";
-            this.m_lbl_dia_chi.Size = new System.Drawing.Size(0, 17);
-            this.m_lbl_dia_chi.TabIndex = 74;
-            // 
-            // m_lbl_ngay_sinh
-            // 
-            this.m_lbl_ngay_sinh.AutoSize = true;
-            this.m_lbl_ngay_sinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_ngay_sinh.ForeColor = System.Drawing.Color.Blue;
-            this.m_lbl_ngay_sinh.Location = new System.Drawing.Point(989, 17);
-            this.m_lbl_ngay_sinh.Name = "m_lbl_ngay_sinh";
-            this.m_lbl_ngay_sinh.Size = new System.Drawing.Size(0, 17);
-            this.m_lbl_ngay_sinh.TabIndex = 73;
-            // 
             // m_txt_search_nhan_vien
             // 
             this.m_txt_search_nhan_vien.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
@@ -503,24 +487,6 @@
             this.m_lbl_ma_nhan_su.Size = new System.Drawing.Size(49, 13);
             this.m_lbl_ma_nhan_su.TabIndex = 27;
             this.m_lbl_ma_nhan_su.Text = "Tìm kiếm";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(61, 51);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(40, 13);
-            this.label9.TabIndex = 72;
-            this.label9.Text = "Địa chỉ";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(923, 19);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 13);
-            this.label10.TabIndex = 71;
-            this.label10.Text = "Ngày sinh";
             // 
             // m_lbl_ho_va_ten
             // 
@@ -553,6 +519,60 @@
             // cM_DM_TU_DIENTableAdapter1
             // 
             this.cM_DM_TU_DIENTableAdapter1.ClearBeforeFill = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(33, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.TabIndex = 64;
+            this.label1.Text = "Email";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(280, 51);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.TabIndex = 64;
+            this.label2.Text = "Chức vụ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(552, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.TabIndex = 64;
+            this.label3.Text = "Đơn vị";
+            // 
+            // m_lbl_email_ca_nhan
+            // 
+            this.m_lbl_email_ca_nhan.AutoSize = true;
+            this.m_lbl_email_ca_nhan.Location = new System.Drawing.Point(71, 51);
+            this.m_lbl_email_ca_nhan.Name = "m_lbl_email_ca_nhan";
+            this.m_lbl_email_ca_nhan.Size = new System.Drawing.Size(37, 13);
+            this.m_lbl_email_ca_nhan.TabIndex = 110;
+            this.m_lbl_email_ca_nhan.Text = "(email)";
+            // 
+            // m_lbl_chuc_vu
+            // 
+            this.m_lbl_chuc_vu.AutoSize = true;
+            this.m_lbl_chuc_vu.Location = new System.Drawing.Point(333, 51);
+            this.m_lbl_chuc_vu.Name = "m_lbl_chuc_vu";
+            this.m_lbl_chuc_vu.Size = new System.Drawing.Size(52, 13);
+            this.m_lbl_chuc_vu.TabIndex = 110;
+            this.m_lbl_chuc_vu.Text = "(chức vụ)";
+            // 
+            // m_lbl_don_vi
+            // 
+            this.m_lbl_don_vi.AutoSize = true;
+            this.m_lbl_don_vi.Location = new System.Drawing.Point(596, 51);
+            this.m_lbl_don_vi.Name = "m_lbl_don_vi";
+            this.m_lbl_don_vi.Size = new System.Drawing.Size(43, 13);
+            this.m_lbl_don_vi.TabIndex = 110;
+            this.m_lbl_don_vi.Text = "(đơn vị)";
             // 
             // f500_dm_du_an_detail
             // 
@@ -612,17 +632,19 @@
         internal SIS.Controls.Button.SiSButton m_cmd_delete_nhan_vien;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label m_lbl_ma_nhan_vien;
-        private System.Windows.Forms.Label m_lbl_ngay_sinh;
         private System.Windows.Forms.TextBox m_txt_search_nhan_vien;
         private System.Windows.Forms.Label m_lbl_ma_nhan_su;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label m_lbl_ho_va_ten;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg_quyet_dinh;
-        private System.Windows.Forms.Label m_lbl_dia_chi;
-        private System.Windows.Forms.Label label9;
         internal SIS.Controls.Button.SiSButton m_cmd_delete_quyet_dinh;
+        private System.Windows.Forms.Label m_lbl_don_vi;
+        private System.Windows.Forms.Label m_lbl_chuc_vu;
+        private System.Windows.Forms.Label m_lbl_email_ca_nhan;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
 
     }
 }
