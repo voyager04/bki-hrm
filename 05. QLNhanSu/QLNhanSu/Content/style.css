@@ -56,7 +56,13 @@
 }
 
 
-
+.title-page {
+    color: #4183D7;
+    margin: 10px;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #b1141f;
+}
 
 
 

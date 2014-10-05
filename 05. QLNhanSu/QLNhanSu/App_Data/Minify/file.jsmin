@@ -4,4 +4,6 @@
 ~/Scripts/modernizr-{version}.js
 ~/Scripts/bootstrap.js
 ~/Scripts/jquery.treetable.js
+~/Scripts/jquery.dataTables.js
+~/Scripts/jquery.dataTables.columnFilter.js
 ~/Scripts/jquerybki.js

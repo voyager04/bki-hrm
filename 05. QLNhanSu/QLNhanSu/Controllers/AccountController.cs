@@ -225,14 +225,16 @@ namespace QLNhanSu.Controllers
 
             if (OAuthWebSecurity.Login(result.Provider, result.ProviderUserId, createPersistentCookie: false))
             {
-                return RedirectToLocal(returnUrl);
+                //return RedirectToLocal(returnUrl);
+                return RedirectToAction("F101_CoCauTopica", "Report");
             }
 
             if (User.Identity.IsAuthenticated)
             {
                 // If the current user is logged in add the new account
                 OAuthWebSecurity.CreateOrUpdateAccount(result.Provider, result.ProviderUserId, User.Identity.Name);
-                return RedirectToLocal(returnUrl);
+                //return RedirectToLocal(returnUrl);
+                return RedirectToAction("F101_CoCauTopica", "Report");
             }
             else
             {
@@ -240,6 +242,11 @@ namespace QLNhanSu.Controllers
                 string loginData = OAuthWebSecurity.SerializeProviderUserId(result.Provider, result.ProviderUserId);
                 ViewBag.ProviderDisplayName = OAuthWebSecurity.GetOAuthClientData(result.Provider).DisplayName;
                 ViewBag.ReturnUrl = returnUrl;
+                RegisterExternalLoginModel externalLoginModel = new RegisterExternalLoginModel
+                                                                    {
+                                                                        UserName = result.UserName,
+                                                                        ExternalLoginData = loginData
+                                                                    };
                 return View("ExternalLoginConfirmation", new RegisterExternalLoginModel { UserName = result.UserName, ExternalLoginData = loginData });
             }
         }

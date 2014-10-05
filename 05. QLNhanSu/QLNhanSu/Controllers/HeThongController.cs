@@ -12,16 +12,18 @@ namespace QLNhanSu.Controllers
     public class HeThongController : BaseController
     {
         #region Member
-        private string _result = "";
-        private UserManager m_UserManager = UserManager.Instance;
+        BKI_HRMEntities _db = new BKI_HRMEntities();
         #endregion
 
         [HttpGet]
         public ActionResult F201_GetAllUsers()
         {
-            return View();
+            return View(_db.V_HT_USER);
         }
 
-
+        public ActionResult F202_AddNewUser()
+        {
+            return View();
+        }
     }
 }
