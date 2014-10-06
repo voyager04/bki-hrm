@@ -9,7 +9,7 @@ using BusinessLogic.Principal;
 
 namespace QLNhanSu.Controllers
 {
-    public class HomeController : BaseController
+    public class HomeController : Controller
     {
         [AllowAnonymous]
         public ActionResult Index()

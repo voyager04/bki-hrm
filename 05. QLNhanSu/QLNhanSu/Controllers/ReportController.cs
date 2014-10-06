@@ -9,7 +9,8 @@ using DataAccess;
 
 namespace QLNhanSu.Controllers
 {
-    public class ReportController : BaseController
+    [AllowAnonymous]
+    public class ReportController : Controller
     {
         #region Member
         BKI_HRMEntities _db = new BKI_HRMEntities();
@@ -79,6 +80,7 @@ namespace QLNhanSu.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult F101_CoCauTopica()
         {
             var v_allDonVi = _db.pr_V_DM_DON_VI_search("", -1, -1, "Y", 3).ToList();
@@ -104,6 +106,7 @@ namespace QLNhanSu.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult F102_TraCuuQuaTrinhLamViecCaNhan()
         {
             var v_User = _db.HT_USER.FirstOrDefault(m => m.USERNAME == User.Identity.Name);
@@ -135,21 +138,25 @@ namespace QLNhanSu.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult F103_TraCuuThuNhapCaNhan()
         {
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult F104_DanhSachNhanVienPhongBan()
         {
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult F105_QuaTrinhLamViecCuaCacNhanVienPhongBan()
         {
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult F106_ThuNhapCuaCacNhanVienTrongPhongBan()
         {
             return View();
