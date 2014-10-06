@@ -94,12 +94,12 @@ namespace BKI_HRM
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.m_cmd_ok = new SIS.Controls.Button.SiSButton();
             this.m_cmd_tim_kiem = new SIS.Controls.Button.SiSButton();
             this.m_txt_tim_kiem = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.m_dat_nam = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
@@ -245,6 +245,15 @@ namespace BKI_HRM
             this.panel1.Size = new System.Drawing.Size(1036, 99);
             this.panel1.TabIndex = 21;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(275, 62);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "Tìm kiếm";
+            // 
             // m_cmd_ok
             // 
             this.m_cmd_ok.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -272,7 +281,6 @@ namespace BKI_HRM
             this.m_cmd_tim_kiem.Size = new System.Drawing.Size(101, 28);
             this.m_cmd_tim_kiem.TabIndex = 33;
             this.m_cmd_tim_kiem.Text = "&Tìm kiếm";
-            this.m_cmd_tim_kiem.Visible = false;
             // 
             // m_txt_tim_kiem
             // 
@@ -299,15 +307,6 @@ namespace BKI_HRM
             this.m_dat_nam.ShowUpDown = true;
             this.m_dat_nam.Size = new System.Drawing.Size(54, 20);
             this.m_dat_nam.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(275, 62);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 35;
-            this.label2.Text = "Tìm kiếm";
             // 
             // f800_BC_LUONG_THEO_QD
             // 
