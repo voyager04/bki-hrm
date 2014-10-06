@@ -333,10 +333,10 @@ namespace BKI_HRM
 		public void display(){			
 			this.ShowDialog();
 		}
-        public static AutoCompleteStringCollection LoadAutoComplete(DataTable ip_dt) {
+        public static AutoCompleteStringCollection LoadAutoComplete(DS_RPT_LUONG_THEO_QD ip_ds) {
             AutoCompleteStringCollection stringCol = new AutoCompleteStringCollection();
-            foreach(DataRow row in ip_dt.Rows) {
-                for(int v_col = 0; v_col < ip_dt.Columns.Count -1 ; v_col++)
+            foreach(DataRow row in ip_ds.RPT_LUONG_THEO_QD) {
+                for(int v_col = 0; v_col < ip_ds.RPT_LUONG_THEO_QD.Columns.Count -1 ; v_col++)
                     stringCol.Add(Convert.ToString(row[v_col]));
             }
             return stringCol; //return the string collection with added records
@@ -463,8 +463,9 @@ namespace BKI_HRM
         }
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
-            //auto_complete_text();
-			load_data_2_grid();		
+            
+			load_data_2_grid();
+            auto_complete_text();
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -565,7 +566,7 @@ namespace BKI_HRM
 		//	v_fDE.display(m_us);
 		}
         private void auto_complete_text() {
-            m_txt_tim_kiem.AutoCompleteCustomSource = LoadAutoComplete(m_ds.RPT_LUONG_THEO_QD);
+            m_txt_tim_kiem.AutoCompleteCustomSource = LoadAutoComplete(m_ds);
             m_txt_tim_kiem.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             m_txt_tim_kiem.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
@@ -579,9 +580,9 @@ namespace BKI_HRM
             m_cmd_ok.Click += new EventHandler(m_cmd_ok_Click);
             m_cmd_tim_kiem.Click += m_cmd_tim_kiem_Click;
             m_txt_tim_kiem.TextChanged += m_txt_tim_kiem_TextChanged;
+            m_txt_tim_kiem.KeyUp += m_txt_tim_kiem_KeyUp;
 		}
 
-        
 
         
         private void tim_kiem(DS_RPT_LUONG_THEO_QD ip_ds, string ip_search_text){
@@ -623,9 +624,22 @@ namespace BKI_HRM
 		//
 		//		EVENT HANLDERS
 		//
-        void m_txt_tim_kiem_TextChanged(object sender, EventArgs e) {
+
+
+        void m_txt_tim_kiem_KeyUp(object sender, KeyEventArgs e) {
             try {
-                tim_kiem(m_ds, m_txt_tim_kiem.Text);
+                if (e.KeyCode == Keys.Enter)
+                    tim_kiem(m_ds, m_txt_tim_kiem.Text);
+            }
+            catch(Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        
+        private void m_txt_tim_kiem_TextChanged(object sender, EventArgs e) {
+            try {
+                //tim_kiem(m_ds, m_txt_tim_kiem.Text);
             }
             catch(Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
