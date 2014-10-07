@@ -269,19 +269,35 @@ namespace BKI_HRM
             m_us_dm_nhan_su.strDIA_DIEM_LV = m_txt_dia_diem_lam_viec.Text.Trim();
             m_us_dm_nhan_su.strHO_TEN_BO = m_txt_ho_ten_bo.Text.Trim();
             m_us_dm_nhan_su.strNGHE_NGHIEP_BO = m_txt_nghe_nghiep_bo.Text.Trim();
-            m_us_dm_nhan_su.dcNAM_SINH_BO = CIPConvert.ToDecimal(m_txt_nam_sinh_bo.Text.Trim());
+            if (m_txt_nam_sinh_bo.Text.Trim().Length > 0)
+                m_us_dm_nhan_su.dcNAM_SINH_BO = CIPConvert.ToDecimal(m_txt_nam_sinh_bo.Text.Trim());
+            else
+                m_us_dm_nhan_su.SetNAM_SINH_BONull();
             m_us_dm_nhan_su.strHO_TEN_ME = m_txt_ho_ten_me.Text.Trim();
             m_us_dm_nhan_su.strNGHE_NGHIEP_ME = m_txt_nghe_nghiep_me.Text.Trim();
-            m_us_dm_nhan_su.dcNAM_SINH_ME = CIPConvert.ToDecimal(m_txt_nam_sinh_me.Text.Trim());
-
+            if (m_txt_nam_sinh_me.Text.Trim().Length > 0)
+                m_us_dm_nhan_su.dcNAM_SINH_ME = CIPConvert.ToDecimal(m_txt_nam_sinh_me.Text.Trim());
+            else
+                m_us_dm_nhan_su.SetNAM_SINH_MENull();
             m_us_dm_nhan_su.strHO_TEN_CON_THU_1 = m_txt_ho_ten_con_1.Text;
-            m_us_dm_nhan_su.dcNAM_SINH_CON_THU_1 = CIPConvert.ToDecimal(m_txt_nam_sinh_con_1.Text.Trim());
+            if (m_txt_nam_sinh_con_1.Text.Trim().Length > 0)
+                m_us_dm_nhan_su.dcNAM_SINH_CON_THU_1 = CIPConvert.ToDecimal(m_txt_nam_sinh_con_1.Text.Trim());
+            else
+                m_us_dm_nhan_su.SetNAM_SINH_CON_THU_1Null();
+
             m_us_dm_nhan_su.strNGHE_NGHIEP_CON_THU_1 = m_txt_nghe_nghiep_con_1.Text;
             m_us_dm_nhan_su.strHO_TEN_CON_THU_2 = m_txt_ho_ten_con_2.Text;
-            m_us_dm_nhan_su.dcNAM_SINH_CON_THU_2 = CIPConvert.ToDecimal(m_txt_nam_sinh_con_2.Text.Trim());
+            if (m_txt_nam_sinh_con_2.Text.Trim().Length > 0)
+                m_us_dm_nhan_su.dcNAM_SINH_CON_THU_2 = CIPConvert.ToDecimal(m_txt_nam_sinh_con_2.Text.Trim());
+            else
+                m_us_dm_nhan_su.SetNAM_SINH_CON_THU_2Null();
+            
             m_us_dm_nhan_su.strNGHE_NGHIEP_CON_THU_2 = m_txt_nghe_nghiep_con_2.Text;
             m_us_dm_nhan_su.strHO_TEN_CON_THU_3 = m_txt_ho_ten_con_3.Text;
-            m_us_dm_nhan_su.dcNAM_SINH_CON_THU_3 = CIPConvert.ToDecimal(m_txt_nam_sinh_con_3.Text.Trim());
+            if (m_txt_nam_sinh_con_3.Text.Trim().Length > 0)
+                m_us_dm_nhan_su.dcNAM_SINH_CON_THU_3 = CIPConvert.ToDecimal(m_txt_nam_sinh_con_3.Text.Trim());
+            else
+                m_us_dm_nhan_su.SetNAM_SINH_CON_THU_3Null();
             m_us_dm_nhan_su.strNGHE_NGHIEP_CON_THU_3 = m_txt_nghe_nghiep_con_3.Text;
             // ~DucVT
         }
