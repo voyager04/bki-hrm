@@ -653,7 +653,7 @@ namespace BKI_HRM {
             US_GD_LUONG_THEO_QD v_us_gd_luong_theo_qd = new US_GD_LUONG_THEO_QD();
             //try {
             v_us_dm_quyet_dinh.BeginTransaction();
-            for(int v_row_in_grid = 1; v_row_in_grid < m_fg.Rows.Count - 1; v_row_in_grid++) {
+            for(int v_row_in_grid = 1; v_row_in_grid <= m_fg.Rows.Count - 1; v_row_in_grid++) {
                 //1. Do du lieu hang tu grid len m_us
                 if(!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
                 if(!CGridUtils.isValid_NonFixed_RowIndex(m_fg, v_row_in_grid)) return;
