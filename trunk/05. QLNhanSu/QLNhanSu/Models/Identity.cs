@@ -9,11 +9,6 @@ namespace QLNhanSu.Models
 {
     public class Identity : IIdentity
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         public string Name { get; private set; }
         public string AuthenticationType { get; private set; }
         public bool IsAuthenticated { get; private set; }
