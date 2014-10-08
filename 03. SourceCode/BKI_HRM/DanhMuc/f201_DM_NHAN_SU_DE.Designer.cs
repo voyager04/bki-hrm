@@ -726,11 +726,11 @@
             // m_lbl_nguoi_lien_he
             // 
             this.m_lbl_nguoi_lien_he.AutoSize = true;
-            this.m_lbl_nguoi_lien_he.Location = new System.Drawing.Point(54, 261);
+            this.m_lbl_nguoi_lien_he.Location = new System.Drawing.Point(-3, 265);
             this.m_lbl_nguoi_lien_he.Name = "m_lbl_nguoi_lien_he";
-            this.m_lbl_nguoi_lien_he.Size = new System.Drawing.Size(39, 13);
+            this.m_lbl_nguoi_lien_he.Size = new System.Drawing.Size(102, 13);
             this.m_lbl_nguoi_lien_he.TabIndex = 91;
-            this.m_lbl_nguoi_lien_he.Text = "Họ tên";
+            this.m_lbl_nguoi_lien_he.Text = "Họ tên người liên hệ";
             // 
             // label4
             // 
