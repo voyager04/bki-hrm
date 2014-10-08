@@ -136,3 +136,42 @@ C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\fakes.arg
 C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\BKISystemAdmin.csprojResolveAssemblyReference.cache
 C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\BKISystemAdmin.dll
 C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BKISystemAdmin\obj\Debug\BKISystemAdmin.pdb
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\BKISystemAdmin.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\BKISystemAdmin.pdb
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\DataAccess.Fakes.fakesconfig
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\DataAccess.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\Framework.Extensions.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\IPCommon.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\log4net.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\EntityFramework.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\Newtonsoft.Json.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\DataAccess.pdb
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\Framework.Extensions.pdb
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\IPCommon.pdb
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\log4net.xml
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\EntityFramework.xml
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\Newtonsoft.Json.xml
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\BKISystemAdmin.csprojFakesResolveAssemblyReference.cache
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\DataAccess.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\DataAccess.Fakes.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\DataAccess.Fakes.pdb
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\DataAccess.Fakes.xml
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\DataAccess.pdb
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\EntityFramework.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\EntityFramework.xml
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\Microsoft.QualityTools.Testing.Fakes.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\f.ah
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\f.ch
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\f.cs
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\f.csproj
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\f.fakes
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\f.fakesconfig
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\o\DataAccess.Fakes.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\o\DataAccess.Fakes.pdb
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\o\f.csproj.FileListAbsolute.txt
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\o\f.csprojResolveAssemblyReference.cache
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\fakes.args
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\BKISystemAdmin.csprojResolveAssemblyReference.cache
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\BKISystemAdmin.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\BKISystemAdmin.pdb

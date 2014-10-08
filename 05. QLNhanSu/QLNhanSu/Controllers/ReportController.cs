@@ -22,7 +22,6 @@ namespace QLNhanSu.Controllers
         public ActionResult GetNhanVienByPhongBan(string ipMaDonVi)
         {
             var v_NhanVien = _db.pr_V_GD_QUA_TRINH_LAM_VIEC_2_Search_NhanVien_TheoPhongBanTaiMotThoiDiem(ipMaDonVi, DateTime.Now, 3, -1).ToList();
-            var count = v_NhanVien.Count();
             return Json(v_NhanVien.Select(m => new
                                                    {
                                                        MA_DON_VI = m.MA_DON_VI,
@@ -80,6 +79,7 @@ namespace QLNhanSu.Controllers
             return View();
         }
 
+        [HttpGet]
         [AllowAnonymous]
         public ActionResult F101_CoCauTopica()
         {
@@ -97,7 +97,8 @@ namespace QLNhanSu.Controllers
                 _result += "<td>" + rootDonVi.CAP_DON_VI + "</td>";
                 _result += "<td>" + rootDonVi.TRANG_THAI + "</td>";
                 _result += "<td>" + string.Format("{0:dd/MM/yyyy}", rootDonVi.TU_NGAY) + "</td>";
-                _result += "<td class='btnViewDetails' data-don-vi='" + rootDonVi.MA_DON_VI + "' ><span class='glyphicon glyphicon-user'></span></td>";
+                _result += "<td class='btnViewDetails' data-don-vi='" + rootDonVi.MA_DON_VI + "' >";
+                _result += "<span class='glyphicon glyphicon-user'></span></td>";
                 _result += "</tr>";
             }
             GetAllChildNode(rootDonVi, v_allDonVi);
@@ -145,7 +146,7 @@ namespace QLNhanSu.Controllers
         }
 
         [AllowAnonymous]
-        public ActionResult F104_DanhSachNhanVienPhongBan()
+        public ActionResult F104_DanhSachNhanVienPhongBan(string ipMaDonVi)
         {
             return View();
         }

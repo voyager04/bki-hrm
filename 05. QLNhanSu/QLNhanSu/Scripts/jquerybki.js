@@ -29,7 +29,6 @@ $(document).ready(function () {
             data: { ipMaDonVi: maDonVi },
             success: function (json) {
                 jQuery.each(json, function (index, item) {
-                    console.log(item);
                     result += "<tr>";
                     result += "<td>" + item.MA_NHAN_VIEN + "</td>";
                     result += "<td>" + item.HO_DEM + "</td>";

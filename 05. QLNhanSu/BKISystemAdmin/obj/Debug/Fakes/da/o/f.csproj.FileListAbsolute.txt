@@ -9,3 +9,14 @@ C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\EntityFr
 C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\o\f.csprojResolveAssemblyReference.cache
 C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\o\DataAccess.Fakes.dll
 C:\Users\APPLE8-PC\Desktop\QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\o\DataAccess.Fakes.pdb
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\DataAccess.Fakes.xml
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\DataAccess.Fakes.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\DataAccess.Fakes.pdb
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\DataAccess.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\EntityFramework.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\Microsoft.QualityTools.Testing.Fakes.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\DataAccess.pdb
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\b\EntityFramework.xml
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\o\f.csprojResolveAssemblyReference.cache
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\o\DataAccess.Fakes.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\Fakes\da\o\DataAccess.Fakes.pdb

@@ -1,5 +1,5 @@
-2014/09/29-20:43:31.121 f10 Recovering log #49
-2014/09/29-20:43:31.121 f10 Level-0 table #51: started
-2014/09/29-20:43:31.157 f10 Level-0 table #51: 1169 bytes OK
-2014/09/29-20:43:31.264 f10 Delete type=0 #49
-2014/09/29-20:43:31.265 f10 Delete type=3 #47
+2014/10/06-21:05:31.946 39c Recovering log #91
+2014/10/06-21:05:31.947 39c Level-0 table #93: started
+2014/10/06-21:05:32.140 39c Level-0 table #93: 41173 bytes OK
+2014/10/06-21:05:32.230 39c Delete type=0 #91
+2014/10/06-21:05:32.231 39c Delete type=3 #89

@@ -8,7 +8,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.21022</ProductVersion>
-    <ProjectGuid>e4e04f7e-867d-47a1-abee-54c94a7431ab</ProjectGuid>
+    <ProjectGuid>d0cf643a-22f0-4742-b7f8-3a34359dff52</ProjectGuid>
     <!-- update GUID here -->
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -51,12 +51,12 @@
       <Aliases>mqttf</Aliases>
     </Reference>
     <Reference Include="DataAccess">
-      <HintPath>C:\Users\APPLE8-PC\Desktop\QLNhanSu\DataAccess\bin\Debug\DataAccess.dll</HintPath>
+      <HintPath>F:\01. Work\Project\BKI_HRM\05. QLNhanSu\DataAccess\bin\Debug\DataAccess.dll</HintPath>
       <Aliases>da</Aliases>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="EntityFramework">
-      <HintPath>C:\Users\APPLE8-PC\Desktop\QLNhanSu\DataAccess\bin\Debug\EntityFramework.dll</HintPath>
+      <HintPath>F:\01. Work\Project\BKI_HRM\05. QLNhanSu\DataAccess\bin\Debug\EntityFramework.dll</HintPath>
       <Aliases>ef</Aliases>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
@@ -65,14 +65,14 @@
       <Aliases>global</Aliases>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
-    <Reference Include="System">
-      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll</HintPath>
-      <Aliases>global</Aliases>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-    </Reference>
     <Reference Include="System.Data.Entity">
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.Entity.dll</HintPath>
       <Aliases>sde</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll</HintPath>
+      <Aliases>global</Aliases>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
   </ItemGroup>
