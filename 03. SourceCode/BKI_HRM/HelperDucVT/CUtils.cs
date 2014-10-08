@@ -18,6 +18,18 @@ namespace BKI_HRM.HelperDucVT
 {
     class CUtils
     {
+        #region Nháp
+
+        /* Các SP mới thêm: 
+         * - 18/10/2014:
+         *      pr_V_GD_LUONG_THEO_QD_is_exist_luong_hien_tai
+         *      pr_V_GD_LUONG_THEO_QD_Insert
+         *      
+         * 
+         */
+
+        #endregion
+
         #region Ghi chép
 
         /* Ghi chép 1:

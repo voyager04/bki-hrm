@@ -20,7 +20,7 @@ namespace BKI_HRM.NghiepVu
         private US_DM_QUYET_DINH m_us_dm_quyet_dinh;
         private DS_DM_QUYET_DINH m_ds_dm_quyet_dinh;
 
-        private US_GD_LUONG_THEO_QD m_us_gd_luong_theo_qd;
+        private US_V_GD_LUONG_THEO_QD m_us_v_gd_luong_theo_qd;
         private DS_GD_LUONG_THEO_QD m_ds_gd_luong_theo_qd;
 
         DataEntryFileMode m_e_file_mode;
@@ -102,7 +102,7 @@ namespace BKI_HRM.NghiepVu
             m_us_dm_quyet_dinh = new US_DM_QUYET_DINH();
             m_ds_dm_quyet_dinh = new DS_DM_QUYET_DINH();
 
-            m_us_gd_luong_theo_qd = new US_GD_LUONG_THEO_QD();
+            m_us_v_gd_luong_theo_qd = new US_V_GD_LUONG_THEO_QD();
             m_ds_gd_luong_theo_qd = new DS_GD_LUONG_THEO_QD();
         }
 
@@ -115,6 +115,7 @@ namespace BKI_HRM.NghiepVu
             m_us_dm_quyet_dinh.strMA_QUYET_DINH = m_txt_ma_quyet_dinh.Text;
             m_us_dm_quyet_dinh.strNOI_DUNG = m_txt_noi_dung.Text.Trim();
             m_us_dm_quyet_dinh.dcID_LOAI_QD = CIPConvert.ToDecimal(m_cbo_loai_quyet_dinh.SelectedValue);
+
             m_us_dm_quyet_dinh.datNGAY_KY = m_dat_ngay_ky.Value;
             m_us_dm_quyet_dinh.datNGAY_CO_HIEU_LUC = m_dat_ngay_co_hieu_luc_qd.Value;
             if (m_dat_ngay_het_hieu_luc_qd.Checked)
@@ -126,17 +127,19 @@ namespace BKI_HRM.NghiepVu
 
         private void load_data_2_us_gd_luong_theo_qd()
         {
-            m_us_gd_luong_theo_qd.dcLUONG = m_num_luong.Value;
-            m_us_gd_luong_theo_qd.datNGAY_AP_DUNG = m_dat_ngay_ap_dung.Value;
-            m_us_gd_luong_theo_qd.dcTHANG_AP_DUNG = m_dat_ngay_ap_dung.Value.Month;
-            m_us_gd_luong_theo_qd.dcNAM_AP_DUNG = m_dat_ngay_ap_dung.Value.Year;
-            m_us_gd_luong_theo_qd.strLUONG_HIEN_TAI_YN = m_ckb_luong_hien_tai.Checked ? "Y" : "N";
+            m_us_v_gd_luong_theo_qd.dcLUONG = m_num_luong.Value;
+            m_us_v_gd_luong_theo_qd.datNGAY_AP_DUNG = m_dat_ngay_ap_dung.Value;
+            m_us_v_gd_luong_theo_qd.dcTHANG_AP_DUNG = m_dat_ngay_ap_dung.Value.Month;
+            m_us_v_gd_luong_theo_qd.dcNAM_AP_DUNG = m_dat_ngay_ap_dung.Value.Year;
+            m_us_v_gd_luong_theo_qd.strLUONG_HIEN_TAI_YN = m_ckb_luong_hien_tai.Checked ? "Y" : "N";
 
-            m_us_gd_luong_theo_qd.strMA_KY = m_txt_ky.Text;
-            m_us_gd_luong_theo_qd.strMA_NV = get_ma_nv_from(m_txt_nhan_vien.Text, '-');
+            m_us_v_gd_luong_theo_qd.strMA_KY = m_txt_ky.Text;
+            m_us_v_gd_luong_theo_qd.strMA_NV = get_ma_nv_from(m_txt_nhan_vien.Text, '-');
 
 
-            m_us_gd_luong_theo_qd.strMA_QD = m_txt_ma_quyet_dinh.Text;
+            m_us_v_gd_luong_theo_qd.strMA_QD = m_txt_ma_quyet_dinh.Text;
+
+            m_us_v_gd_luong_theo_qd.dcID_PHAP_NHAN = CAppContext_201.getCurrentIDPhapnhan();
         }
 
         #endregion
@@ -174,7 +177,7 @@ namespace BKI_HRM.NghiepVu
             m_ofd_chon_file.FileName = ip_us.strLINK;
 
             // To group box Lương
-            m_us_gd_luong_theo_qd.dcID = ip_us.dcID > 0 ? ip_us.dcID : -1;
+            m_us_v_gd_luong_theo_qd.dcID = ip_us.dcID > 0 ? ip_us.dcID : -1;
 
             m_txt_nhan_vien.Text = ip_us.strHO_DEM + " - " + ip_us.strTEN + " - " + ip_us.strMA_NV;
             m_txt_ky.Text = ip_us.strMA_KY;
@@ -199,6 +202,9 @@ namespace BKI_HRM.NghiepVu
                 return false;
 
             if (!validate_txt_ma_ky())
+                return false;
+
+            if (!validate_luong_hien_tai())
                 return false;
 
             return true;
@@ -279,6 +285,30 @@ namespace BKI_HRM.NghiepVu
                         throw new Exception("Ngày có hiệu lực không được nhỏ hơn ngày áp dụng");
                 }
                     
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool validate_luong_hien_tai()
+        {
+            try
+            {
+                // Trong trạng thái update
+                // Nếu Check vào ô luong_hien_tai và tồn tại lương hiện tại rồi thì thông báo không cho phép check vào ô luong_hien_tai
+                if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
+                {
+                    if (m_ckb_luong_hien_tai.Checked)
+                    {
+                        if (m_us_v_gd_luong_theo_qd.is_exist_luong_hien_tai(m_us_v_gd_luong_theo_qd.dcID, get_ma_nv_from(m_txt_nhan_vien.Text, '-'), CAppContext_201.getCurrentIDPhapnhan()))
+                            throw new Exception("Đã tồn tại lương hiện tại");
+                    }
+                }
             }
             catch (Exception v_e)
             {
@@ -369,7 +399,7 @@ namespace BKI_HRM.NghiepVu
                 }
                 #endregion
 
-                m_us_gd_luong_theo_qd.BeginTransaction();
+                m_us_v_gd_luong_theo_qd.BeginTransaction();
 
                 #region Prepare for update
 
@@ -379,9 +409,9 @@ namespace BKI_HRM.NghiepVu
                 if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
                 {
                     load_data_2_us_gd_luong_theo_qd();
-                    m_us_gd_luong_theo_qd.strMA_QD = String.Empty;
+                    m_us_v_gd_luong_theo_qd.strMA_QD = String.Empty;
 
-                    m_us_gd_luong_theo_qd.Update();
+                    m_us_v_gd_luong_theo_qd.Update();
                 }
 
                 #endregion
@@ -391,7 +421,7 @@ namespace BKI_HRM.NghiepVu
 
                 // Commit trans thông qua US m_us_gd_luong_theo_qd.
                 // Việc này giúp Rollback() - ngừng connection tới DB nếu xảy ra lỗi.
-                m_us_dm_quyet_dinh.UseTransOfUSObject(m_us_gd_luong_theo_qd);
+                m_us_dm_quyet_dinh.UseTransOfUSObject(m_us_v_gd_luong_theo_qd);
 
                 switch (m_e_form_mode)
                 {
@@ -410,7 +440,7 @@ namespace BKI_HRM.NghiepVu
                         v_us_qd_pn.dcID_QUYET_DINH = CUtils.get_current_auto_id("DM_QUYET_DINH");
 
                         // Commit trans thông qua US m_us_gd_luong_theo_qd.
-                        v_us_qd_pn.UseTransOfUSObject(m_us_gd_luong_theo_qd);
+                        v_us_qd_pn.UseTransOfUSObject(m_us_v_gd_luong_theo_qd);
 
                         // Insert gd quyết định, pháp nhân
                         v_us_qd_pn.Insert();
@@ -436,7 +466,7 @@ namespace BKI_HRM.NghiepVu
                 switch (m_e_form_mode)
                 {
                     case DataEntryFormMode.InsertDataState:
-                        m_us_gd_luong_theo_qd.Insert();
+                        m_us_v_gd_luong_theo_qd.Insert();
                         // Refresh mới lại form để insert bản ghi mới
                         CUtils.show_success_message("Thêm thành công Lương theo quyết định mới");
                         reset_form();
@@ -444,7 +474,7 @@ namespace BKI_HRM.NghiepVu
                     case DataEntryFormMode.SelectDataState:
                         break;
                     case DataEntryFormMode.UpdateDataState:
-                        m_us_gd_luong_theo_qd.Update();
+                        m_us_v_gd_luong_theo_qd.Update();
                         this.Close();
                         break;
                     case DataEntryFormMode.ViewDataState:
@@ -455,15 +485,15 @@ namespace BKI_HRM.NghiepVu
 
                 #endregion
 
-                m_us_gd_luong_theo_qd.CommitTransaction();
+                m_us_v_gd_luong_theo_qd.CommitTransaction();
 
                 if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
                     this.Close();
             }
             catch (Exception v_e)
             {
-                if (m_us_gd_luong_theo_qd.is_having_transaction())
-                    m_us_gd_luong_theo_qd.Rollback();
+                if (m_us_v_gd_luong_theo_qd.is_having_transaction())
+                    m_us_v_gd_luong_theo_qd.Rollback();
 
                 CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
                     new CDBClientDBExceptionInterpret());

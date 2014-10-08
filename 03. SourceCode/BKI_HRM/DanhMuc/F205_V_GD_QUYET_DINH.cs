@@ -493,9 +493,11 @@ namespace BKI_HRM
             v_dt.Rows.Add(NGAY_KY, "Ngày ký");
             v_dt.Rows.Add(NGAY_CO_HIEU_LUC, "Ngày có hiệu lực");
             v_dt.Rows.Add(NGAY_HET_HIEU_LUC, "Ngày hết hiệu lực");
+
+            m_cbo_tim_kiem_theo.DataSource = v_dt;
+
             m_cbo_tim_kiem_theo.DisplayMember = "TEN_COT";
             m_cbo_tim_kiem_theo.ValueMember = "SO_COT";
-            m_cbo_tim_kiem_theo.DataSource = v_dt;
         }
         
         private void load_custom_source_2_m_txt_tim_kiem()

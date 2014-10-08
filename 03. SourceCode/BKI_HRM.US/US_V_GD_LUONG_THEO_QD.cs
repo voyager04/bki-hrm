@@ -1506,5 +1506,46 @@ namespace BKI_HRM.US
 
             v_sp.fillDataSetByCommand(this, op_ds);
         }
+
+        /// <summary>
+        /// Kiểm tra xem nhân viên ở pháp nhân đã có lương hiện tại hay chưa
+        /// </summary>
+        /// <param name="ip_ma_nv">Mã nhân viên</param>
+        /// <param name="ip_id_phap_nhan">Id pháp nhân</param>
+        /// <returns>Có lương hiện tại hay không</returns>
+        public bool is_exist_luong_hien_tai(String ip_ma_nv, decimal ip_id_phap_nhan)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_V_GD_LUONG_THEO_QD_is_exist_luong_hien_tai");
+
+            Decimal op_existed_rows = 0;
+
+            v_sp.addNVarcharInputParam("@ip_ma_nv", ip_ma_nv);
+            v_sp.addDecimalInputParam("@ip_id_phap_nhan", ip_id_phap_nhan);
+            v_sp.addDecimalOutputParam("@op_existed_rows", op_existed_rows);
+
+            return op_existed_rows > 0;
+        }
+
+        /// <summary>
+        /// Kiểm tra xem ngoài bản ghi hiện tại, còn bản ghi nào có cùng mã nhân viên + pháp nhân đã có lương hiện tại hay không
+        /// </summary>
+        /// <param name="ip_id_gd_luong_theo_qd">Id bản ghi hiện tại</param>
+        /// <param name="ip_ma_nv">Mã nhân viên của bản ghi hiện tại</param>
+        /// <param name="ip_id_phap_nhan">Id pháp nhân ban quyết định thuộc bản ghi hiện tại</param>
+        /// <returns>Có lương hiện tại hay không</returns>
+        public bool is_exist_luong_hien_tai(decimal ip_id_gd_luong_theo_qd, string ip_ma_nv, decimal ip_id_phap_nhan)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_V_GD_LUONG_THEO_QD_is_exist_luong_hien_tai");
+
+            v_sp.addDecimalInputParam("@ip_id_gd_luong_theo_qd", ip_id_gd_luong_theo_qd);
+            v_sp.addNVarcharInputParam("@ip_ma_nv", ip_ma_nv);
+            v_sp.addDecimalInputParam("@ip_id_phap_nhan", ip_id_phap_nhan);
+            
+            SqlParameter op_existed_rows = v_sp.addDecimalOutputParam("@op_existed_rows", 1);
+
+            v_sp.ExecuteCommand(this);
+
+            return CIPConvert.ToDecimal(op_existed_rows.Value) > 0;
+        }
     }
 }

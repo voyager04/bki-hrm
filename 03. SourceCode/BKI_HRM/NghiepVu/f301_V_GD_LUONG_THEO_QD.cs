@@ -293,7 +293,7 @@ namespace BKI_HRM
             this.m_dat_ap_dung_den_ngay.Name = "m_dat_ap_dung_den_ngay";
             this.m_dat_ap_dung_den_ngay.Size = new System.Drawing.Size(163, 20);
             this.m_dat_ap_dung_den_ngay.TabIndex = 2;
-            this.m_dat_ap_dung_den_ngay.Value = new System.DateTime(2014, 9, 19, 0, 0, 0, 0);
+            this.m_dat_ap_dung_den_ngay.Value = new System.DateTime(2014, 10, 8, 0, 0, 0, 0);
             // 
             // m_dat_ap_dung_tu_ngay
             // 
