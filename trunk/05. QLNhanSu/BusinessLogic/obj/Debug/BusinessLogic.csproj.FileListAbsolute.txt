@@ -42,3 +42,25 @@ C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BusinessLogic\bin\Debug\Newtonsoft.Json.
 C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
 C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BusinessLogic\obj\Debug\BusinessLogic.dll
 C:\Users\APPLE8-PC\Desktop\05. QLNhanSu\BusinessLogic\obj\Debug\BusinessLogic.pdb
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Debug\BusinessLogic.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Debug\BusinessLogic.pdb
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Debug\BKISystemAdmin.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Debug\DataAccess.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Debug\DotNetOpenAuth.OpenId.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Debug\Framework.Extensions.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Debug\IPCommon.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Debug\EntityFramework.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Debug\log4net.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Debug\Newtonsoft.Json.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Debug\BKISystemAdmin.pdb
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Debug\DataAccess.pdb
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Debug\Framework.Extensions.pdb
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Debug\DotNetOpenAuth.OpenId.xml
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Debug\IPCommon.pdb
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Debug\IPCommon.xml
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Debug\EntityFramework.xml
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Debug\log4net.xml
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Debug\Newtonsoft.Json.xml
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BusinessLogic\obj\Debug\BusinessLogic.dll
+F:\01. Work\Project\BKI_HRM\05. QLNhanSu\BusinessLogic\obj\Debug\BusinessLogic.pdb

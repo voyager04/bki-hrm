@@ -754,6 +754,22 @@
       [V_HT_PHAN_QUYEN_CHO_NHOM].[LOAI_PHAN_QUYEN] AS [LOAI_PHAN_QUYEN]
       FROM [dbo].[V_HT_PHAN_QUYEN_CHO_NHOM] AS [V_HT_PHAN_QUYEN_CHO_NHOM]</DefiningQuery>
     </EntitySet>
+    <EntitySet Name="V_HT_USER" EntityType="BKI_HRMModel.Store.V_HT_USER" store:Type="Views" store:Schema="dbo" store:Name="V_HT_USER">
+      <DefiningQuery>SELECT 
+      [V_HT_USER].[ID] AS [ID], 
+      [V_HT_USER].[BHYT] AS [BHYT], 
+      [V_HT_USER].[CMND] AS [CMND], 
+      [V_HT_USER].[MSBN] AS [MSBN], 
+      [V_HT_USER].[USERNAME] AS [USERNAME], 
+      [V_HT_USER].[PASSWORD] AS [PASSWORD], 
+      [V_HT_USER].[HO] AS [HO], 
+      [V_HT_USER].[TEN] AS [TEN], 
+      [V_HT_USER].[IS_ACTIVE] AS [IS_ACTIVE], 
+      [V_HT_USER].[ID_USER_GROUP] AS [ID_USER_GROUP], 
+      [V_HT_USER].[USER_GROUP_NAME] AS [USER_GROUP_NAME], 
+      [V_HT_USER].[DESCRIPTION] AS [DESCRIPTION]
+      FROM [dbo].[V_HT_USER] AS [V_HT_USER]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="V_NHAN_VIEN_HIEN_TAI" EntityType="BKI_HRMModel.Store.V_NHAN_VIEN_HIEN_TAI" store:Type="Views" store:Schema="dbo" store:Name="V_NHAN_VIEN_HIEN_TAI">
       <DefiningQuery>SELECT 
       [V_NHAN_VIEN_HIEN_TAI].[ID] AS [ID], 
@@ -2481,6 +2497,30 @@
     <Property Name="LOAI_PHAN_QUYEN" Type="nvarchar" MaxLength="35" />
   </EntityType>
   <!--Errors Found During Generation:
+      warning 6002: The table/view 'BKI_HRM.dbo.V_HT_USER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="V_HT_USER">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="PASSWORD" />
+      <PropertyRef Name="IS_ACTIVE" />
+      <PropertyRef Name="ID_USER_GROUP" />
+      <PropertyRef Name="USER_GROUP_NAME" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="BHYT" Type="nvarchar" MaxLength="35" />
+    <Property Name="CMND" Type="nvarchar" MaxLength="15" />
+    <Property Name="MSBN" Type="nvarchar" MaxLength="35" />
+    <Property Name="USERNAME" Type="nvarchar" MaxLength="35" />
+    <Property Name="PASSWORD" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="HO" Type="nvarchar" MaxLength="50" />
+    <Property Name="TEN" Type="nvarchar" MaxLength="50" />
+    <Property Name="IS_ACTIVE" Type="bit" Nullable="false" />
+    <Property Name="ID_USER_GROUP" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="USER_GROUP_NAME" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <!--Errors Found During Generation:
       warning 6002: The table/view 'BKI_HRM.dbo.V_NHAN_VIEN_HIEN_TAI' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_NHAN_VIEN_HIEN_TAI">
@@ -3182,6 +3222,1717 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="C_EXTREM_DATE" ReturnType="datetime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="C_EXTREM_NUMBER" ReturnType="numeric" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="C_EXTREM_STR" ReturnType="nvarchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="C_RECORD_DELETED" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="C_RECORD_LOCKED" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="C_RECORD_UPDATABLE" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="c_record_updated" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="create_code_contact" ReturnType="nvarchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_dc_id_contact" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="desc_table" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_table_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="DOC_COMMENT_column" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="table_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="column_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="comment" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="DOC_COMMENT_TABLE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="table_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="comment" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="doc_reconcile_columns" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="table_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="doc_reconcile_tables" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="f_get_id_gd_luong_theo_qd_dau_ky" ReturnType="numeric" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NGAY_DAU_KY" Type="datetime" Mode="In" />
+    <Parameter Name="MA_NV" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="f_get_id_gd_luong_theo_qd_giua_ky" ReturnType="numeric" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NGAY_DAU_KY" Type="datetime" Mode="In" />
+    <Parameter Name="MA_NV" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="f_tra_ve_ngay_dua_vao_thang_nam" ReturnType="datetime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="thang" Type="decimal" Mode="In" />
+    <Parameter Name="nam" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="fn_create_code_contact" ReturnType="nvarchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_training_project" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_str_contact_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_dc_nguoi_cham_soc" Type="numeric" Mode="In" />
+    <Parameter Name="ip_dc_stt" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="fn_create_code_contact_temp" ReturnType="nvarchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_stt" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="fn_get_mapping_don_vi" ReturnType="nvarchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_id_don_vi" Type="numeric" Mode="In" />
+    <Parameter Name="ip_str_search" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="fn_get_so_luong_bo_nhiem" ReturnType="numeric" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_ma_don_vi" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_id_trang_thai" Type="numeric" Mode="In" />
+    <Parameter Name="ip_dat_tai_ngay" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="fn_get_so_luong_by_chuc_vu_trang_thai" ReturnType="numeric" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_id_chuc_vu" Type="numeric" Mode="In" />
+    <Parameter Name="ip_id_trang_thai" Type="numeric" Mode="In" />
+    <Parameter Name="ip_dat_tai_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="ip_dc_phap_nhan" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="fn_get_so_luong_by_don_vi_trang_thai" ReturnType="numeric" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_id_don_vi" Type="numeric" Mode="In" />
+    <Parameter Name="ip_id_trang_thai" Type="numeric" Mode="In" />
+    <Parameter Name="ip_dat_tai_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="ip_str_ma_don_vi" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_dc_phap_nhan" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="fn_get_so_luong_nv_hien_tai_theo_don_vi" ReturnType="numeric" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" StoreFunctionName="fn_get_so_luong_nv_hien_tai_theo don_vi" Schema="dbo">
+    <Parameter Name="ip_id_don_vi" Type="numeric" Mode="In" />
+    <Parameter Name="ip_str_search" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="fn_get_so_luong_theo_loai_nv" ReturnType="numeric" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_dc_loai_nv" Type="numeric" Mode="In" />
+    <Parameter Name="ip_dc_phap_nhan" Type="numeric" Mode="In" />
+    <Parameter Name="ip_dat_thoi_diem" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="fn_tach_ho_ten" ReturnType="nvarchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="text" Type="nvarchar" Mode="In" />
+    <Parameter Name="giatri" Type="int" Mode="In" />
+  </Function>
+  <Function Name="gen_colname_for_table" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_table_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="gen_cols" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_table_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_prefix" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_suffix" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="gen_cols_name" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_table_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="gen_columns_name" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_table_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="gen_make_db_name" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="gen_null_constraint" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_table_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="get_dien_tich_tang_giam" ReturnType="numeric" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_dc_dvsd" Type="numeric" Mode="In" />
+    <Parameter Name="ip_id_loai_tai_san" Type="numeric" Mode="In" />
+    <Parameter Name="ip_str_tang_giam_yn" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_from_date" Type="datetime" Mode="In" />
+    <Parameter Name="ip_to_date" Type="datetime" Mode="In" />
+    <Parameter Name="ip_str_loai_hinh_don_vi" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="get_gia_tri_tang_giam" ReturnType="numeric" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_dc_dvsd" Type="numeric" Mode="In" />
+    <Parameter Name="ip_id_loai_tai_san" Type="numeric" Mode="In" />
+    <Parameter Name="ip_str_tang_giam_yn" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_from_date" Type="datetime" Mode="In" />
+    <Parameter Name="ip_to_date" Type="datetime" Mode="In" />
+    <Parameter Name="ip_str_loai_hinh_don_vi" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="get_id_nguoi_su_dung" ReturnType="decimal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_ten" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="get_id_tp" ReturnType="decimal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_city_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="get_id_tu_dien" ReturnType="decimal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_ten" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_dc_id_loai_tu_dien" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="get_id_tu_dien_by_ma" ReturnType="decimal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_ten" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_dc_id_loai_tu_dien" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="get_ma_dang_ky" ReturnType="nvarchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_auction_id" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="get_nhom" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nhom" Type="nvarchar" Mode="In" />
+    <Parameter Name="input" Type="nvarchar" Mode="In" />
+    <Parameter Name="return" Type="char" Mode="InOut" />
+  </Function>
+  <Function Name="get_so_luong_nhan_vien" ReturnType="numeric" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_dc_id_chuc_vu" Type="numeric" Mode="In" />
+    <Parameter Name="ip_dc_id_trang_thai_lao_dong" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="get_so_luong_tang_giam" ReturnType="numeric" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_dc_dvsd" Type="numeric" Mode="In" />
+    <Parameter Name="ip_id_loai_tai_san" Type="numeric" Mode="In" />
+    <Parameter Name="ip_str_tang_giam_yn" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_from_date" Type="datetime" Mode="In" />
+    <Parameter Name="ip_to_date" Type="datetime" Mode="In" />
+    <Parameter Name="ip_str_loai_hinh_don_vi" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="HT_QUYEN_USER_Delele_All_Quyen_Of_user" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_dc_user_id" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_check_and_make_bp_lock_123" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_lock_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_CM_DM_TU_DIEN_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_CM_DM_TU_DIEN_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_TU_DIEN" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_LOAI_TU_DIEN" Type="numeric" Mode="In" />
+    <Parameter Name="TEN_NGAN" Type="nvarchar" Mode="In" />
+    <Parameter Name="TEN" Type="nvarchar" Mode="In" />
+    <Parameter Name="GHI_CHU" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_CM_DM_TU_DIEN_IsUpdatable" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_TU_DIEN" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_LOAI_TU_DIEN" Type="numeric" Mode="In" />
+    <Parameter Name="TEN_NGAN" Type="nvarchar" Mode="In" />
+    <Parameter Name="TEN" Type="nvarchar" Mode="In" />
+    <Parameter Name="GHI_CHU" Type="nvarchar" Mode="In" />
+    <Parameter Name="op_Error_Code" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="pr_CM_DM_TU_DIEN_Load_DV_Quan_Ly" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="USERNAME" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_CM_DM_TU_DIEN_Load_Loai_HD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="USERNAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_DV_QUAN_LY" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_CM_DM_TU_DIEN_Load_loai_quyet_dinh" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LOAI" Type="nvarchar" Mode="In" />
+    <Parameter Name="MIEN_NHIEM_YN" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="pr_CM_DM_TU_DIEN_Load_trang_thai" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="pr_CM_DM_TU_DIEN_Load_Tu_Dien_By_Loai_Tu_Dien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_LOAI_TU_DIEN" Type="decimal" Mode="In" />
+    <Parameter Name="USERNAME" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_CM_DM_TU_DIEN_search_by_id" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="decimal" Mode="In" />
+    <Parameter Name="TEN" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="pr_CM_DM_TU_DIEN_search_by_id_loai_td" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_LOAI_TD" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_CM_DM_TU_DIEN_search_by_name" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_search" Type="nvarchar" Mode="In" />
+    <Parameter Name="id" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_CM_DM_TU_DIEN_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="MA_TU_DIEN" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_LOAI_TU_DIEN" Type="numeric" Mode="In" />
+    <Parameter Name="TEN_NGAN" Type="nvarchar" Mode="In" />
+    <Parameter Name="TEN" Type="nvarchar" Mode="In" />
+    <Parameter Name="GHI_CHU" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_CM_DM_TU_DIEN_UpdateAllWID_LOAI_TU_DIENLogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_LOAI_TU_DIEN" Type="numeric" Mode="In" />
+    <Parameter Name="ID_LOAI_TU_DIENOld" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_CreateColCode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Table_Name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_CAP_BAC_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_CAP_BAC_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_CAP" Type="nvarchar" Mode="In" />
+    <Parameter Name="MA_BAC" Type="nvarchar" Mode="In" />
+    <Parameter Name="TRANG_THAI" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGAY_AP_DUNG" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_KET_THUC" Type="datetime" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_DM_CAP_BAC_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="STR_SEARCH" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_CAP_BAC_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="MA_CAP" Type="nvarchar" Mode="In" />
+    <Parameter Name="MA_BAC" Type="nvarchar" Mode="In" />
+    <Parameter Name="TRANG_THAI" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGAY_AP_DUNG" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_KET_THUC" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_CHUC_VU_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_CHUC_VU_DeleteAllWID_NGACHLogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_NGACH" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_CHUC_VU_filldataset_by_id" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="decimal" Mode="In" />
+    <Parameter Name="TEN" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="pr_DM_CHUC_VU_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_CV" Type="nvarchar" Mode="In" />
+    <Parameter Name="TEN_CV" Type="nvarchar" Mode="In" />
+    <Parameter Name="TEN_CV_TA" Type="nvarchar" Mode="In" />
+    <Parameter Name="TRANG_THAI" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGAY_AP_DUNG" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_KET_THUC" Type="datetime" Mode="In" />
+    <Parameter Name="ID_NGACH" Type="numeric" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_DM_CHUC_VU_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="MA_CV" Type="nvarchar" Mode="In" />
+    <Parameter Name="TEN_CV" Type="nvarchar" Mode="In" />
+    <Parameter Name="TEN_CV_TA" Type="nvarchar" Mode="In" />
+    <Parameter Name="TRANG_THAI" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGAY_AP_DUNG" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_KET_THUC" Type="datetime" Mode="In" />
+    <Parameter Name="ID_NGACH" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_CHUC_VU_UpdateAllWID_NGACHLogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_NGACH" Type="numeric" Mode="In" />
+    <Parameter Name="ID_NGACHOld" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_DON_VI_check_ma_don_vi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_ma_don_vi" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_DON_VI_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_DON_VI_grid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_LOAI_DON_VI" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_DON_VI_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_DON_VI" Type="nvarchar" Mode="In" />
+    <Parameter Name="TEN_DON_VI" Type="nvarchar" Mode="In" />
+    <Parameter Name="TEN_TA" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_CAP_DON_VI" Type="numeric" Mode="In" />
+    <Parameter Name="ID_DON_VI_CAP_TREN" Type="numeric" Mode="In" />
+    <Parameter Name="ID_LOAI_DON_VI" Type="numeric" Mode="In" />
+    <Parameter Name="DIA_BAN" Type="nvarchar" Mode="In" />
+    <Parameter Name="TRANG_THAI" Type="nvarchar" Mode="In" />
+    <Parameter Name="TU_NGAY" Type="datetime" Mode="In" />
+    <Parameter Name="SO_LUONG" Type="numeric" Mode="In" />
+    <Parameter Name="ID_LEVEL" Type="numeric" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_DM_DON_VI_Load_to_grid_danh_muc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_user_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_dc_loai_don_vi" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_DON_VI_Select_by_user_name" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_user_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_dc_loai_don_vi" Type="numeric" Mode="In" />
+    <Parameter Name="ip_dc_id_dv_cap_tren1" Type="numeric" Mode="In" />
+    <Parameter Name="ip_dc_id_dv_cap_tren2" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_DON_VI_THANH_TOAN_Load_Phan_Quyen" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="USERNAME" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_DON_VI_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="MA_DON_VI" Type="nvarchar" Mode="In" />
+    <Parameter Name="TEN_DON_VI" Type="nvarchar" Mode="In" />
+    <Parameter Name="TEN_TA" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_CAP_DON_VI" Type="numeric" Mode="In" />
+    <Parameter Name="ID_DON_VI_CAP_TREN" Type="numeric" Mode="In" />
+    <Parameter Name="ID_LOAI_DON_VI" Type="numeric" Mode="In" />
+    <Parameter Name="DIA_BAN" Type="nvarchar" Mode="In" />
+    <Parameter Name="TRANG_THAI" Type="nvarchar" Mode="In" />
+    <Parameter Name="TU_NGAY" Type="datetime" Mode="In" />
+    <Parameter Name="SO_LUONG" Type="numeric" Mode="In" />
+    <Parameter Name="ID_LEVEL" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_DU_AN_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_DU_AN_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_DU_AN" Type="nvarchar" Mode="In" />
+    <Parameter Name="TEN_DU_AN" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_TRANG_THAI" Type="numeric" Mode="In" />
+    <Parameter Name="ID_LOAI_DU_AN" Type="numeric" Mode="In" />
+    <Parameter Name="NGAY_BAT_DAU" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_KET_THUC" Type="datetime" Mode="In" />
+    <Parameter Name="NOI_DUNG" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_CO_CHE" Type="numeric" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_DM_DU_AN_QUYET_DINH_TU_DIEN_sap_ket_thuc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DAT_NOW" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_DU_AN_sap_ket_thuc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DAT_NOW" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_DU_AN_select_by_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_DU_AN_select_by_id_quyet_dinh" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_quyet_dinh" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_DU_AN_select_by_ma_da" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_DA" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_DU_AN_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="MA_DU_AN" Type="nvarchar" Mode="In" />
+    <Parameter Name="TEN_DU_AN" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_TRANG_THAI" Type="numeric" Mode="In" />
+    <Parameter Name="ID_LOAI_DU_AN" Type="numeric" Mode="In" />
+    <Parameter Name="NGAY_BAT_DAU" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_KET_THUC" Type="datetime" Mode="In" />
+    <Parameter Name="NOI_DUNG" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_CO_CHE" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_HEADCOUNT_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_HEADCOUNT_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_HEADCOUNT" Type="nvarchar" Mode="In" />
+    <Parameter Name="TRANG_THAI" Type="nvarchar" Mode="In" />
+    <Parameter Name="ACTIONS" Type="nvarchar" Mode="In" />
+    <Parameter Name="MO_TA" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_DM_HEADCOUNT_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="MA_HEADCOUNT" Type="nvarchar" Mode="In" />
+    <Parameter Name="TRANG_THAI" Type="nvarchar" Mode="In" />
+    <Parameter Name="ACTIONS" Type="nvarchar" Mode="In" />
+    <Parameter Name="MO_TA" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_KY_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_KY_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_KY" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGAY_BAT_DAU_KY" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_KET_THUC_KY" Type="datetime" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_DM_KY_Search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_key_word" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_KY_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="MA_KY" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGAY_BAT_DAU_KY" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_KET_THUC_KY" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_LOC_BAO_CAO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_dc_id_loai_tai_san" Type="numeric" Mode="In" />
+    <Parameter Name="ip_dc_id_loai_bao_cao" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_NHAN_SU_check_phap_nhan_null" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_NHAN_SU" Type="decimal" Mode="In" />
+    <Parameter Name="Count" Type="decimal" Mode="InOut" />
+  </Function>
+  <Function Name="pr_DM_NHAN_SU_Count_Ma_NV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_NV" Type="nvarchar" Mode="In" />
+    <Parameter Name="Count" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="pr_DM_NHAN_SU_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_NHAN_SU_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_NV" Type="nvarchar" Mode="In" />
+    <Parameter Name="HO_DEM" Type="nvarchar" Mode="In" />
+    <Parameter Name="TEN" Type="nvarchar" Mode="In" />
+    <Parameter Name="GIOI_TINH" Type="nvarchar" Mode="In" />
+    <Parameter Name="ANH" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGAY_SINH" Type="datetime" Mode="In" />
+    <Parameter Name="NOI_SINH" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGUYEN_QUAN" Type="nvarchar" Mode="In" />
+    <Parameter Name="CMND" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGAY_CAP_CMND" Type="datetime" Mode="In" />
+    <Parameter Name="NOI_CAP_CMND" Type="nvarchar" Mode="In" />
+    <Parameter Name="TRINH_DO" Type="nvarchar" Mode="In" />
+    <Parameter Name="NOI_DAO_TAO" Type="nvarchar" Mode="In" />
+    <Parameter Name="CHUYEN_NGANH" Type="nvarchar" Mode="In" />
+    <Parameter Name="NAM_TOT_NGHIEP" Type="numeric" Mode="In" />
+    <Parameter Name="EMAIL_CQ" Type="nvarchar" Mode="In" />
+    <Parameter Name="EMAIL_CA_NHAN" Type="nvarchar" Mode="In" />
+    <Parameter Name="DT_NHA" Type="nvarchar" Mode="In" />
+    <Parameter Name="DI_DONG" Type="nvarchar" Mode="In" />
+    <Parameter Name="CHO_O" Type="nvarchar" Mode="In" />
+    <Parameter Name="HO_KHAU" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGUOI_LIEN_HE" Type="nvarchar" Mode="In" />
+    <Parameter Name="DI_DONG_LIEN_HE" Type="nvarchar" Mode="In" />
+    <Parameter Name="QUAN_HE" Type="nvarchar" Mode="In" />
+    <Parameter Name="TON_GIAO" Type="nvarchar" Mode="In" />
+    <Parameter Name="DAN_TOC" Type="nchar" Mode="In" />
+    <Parameter Name="MA_SO_THUE" Type="nvarchar" Mode="In" />
+    <Parameter Name="TRANG_THAI" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_HEADCOUNT" Type="numeric" Mode="In" />
+    <Parameter Name="MA_HEADCOUNT" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_DM_NHAN_SU_Search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_search" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_NHAN_SU_Search_by_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_NS" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_NHAN_SU_Search_by_ma_ns" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_search" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_NHAN_SU_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="MA_NV" Type="nvarchar" Mode="In" />
+    <Parameter Name="HO_DEM" Type="nvarchar" Mode="In" />
+    <Parameter Name="TEN" Type="nvarchar" Mode="In" />
+    <Parameter Name="GIOI_TINH" Type="nvarchar" Mode="In" />
+    <Parameter Name="ANH" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGAY_SINH" Type="datetime" Mode="In" />
+    <Parameter Name="NOI_SINH" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGUYEN_QUAN" Type="nvarchar" Mode="In" />
+    <Parameter Name="CMND" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGAY_CAP_CMND" Type="datetime" Mode="In" />
+    <Parameter Name="NOI_CAP_CMND" Type="nvarchar" Mode="In" />
+    <Parameter Name="TRINH_DO" Type="nvarchar" Mode="In" />
+    <Parameter Name="NOI_DAO_TAO" Type="nvarchar" Mode="In" />
+    <Parameter Name="CHUYEN_NGANH" Type="nvarchar" Mode="In" />
+    <Parameter Name="NAM_TOT_NGHIEP" Type="numeric" Mode="In" />
+    <Parameter Name="EMAIL_CQ" Type="nvarchar" Mode="In" />
+    <Parameter Name="EMAIL_CA_NHAN" Type="nvarchar" Mode="In" />
+    <Parameter Name="DT_NHA" Type="nvarchar" Mode="In" />
+    <Parameter Name="DI_DONG" Type="nvarchar" Mode="In" />
+    <Parameter Name="CHO_O" Type="nvarchar" Mode="In" />
+    <Parameter Name="HO_KHAU" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGUOI_LIEN_HE" Type="nvarchar" Mode="In" />
+    <Parameter Name="DI_DONG_LIEN_HE" Type="nvarchar" Mode="In" />
+    <Parameter Name="QUAN_HE" Type="nvarchar" Mode="In" />
+    <Parameter Name="TON_GIAO" Type="nvarchar" Mode="In" />
+    <Parameter Name="DAN_TOC" Type="nchar" Mode="In" />
+    <Parameter Name="MA_SO_THUE" Type="nvarchar" Mode="In" />
+    <Parameter Name="TRANG_THAI" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_HEADCOUNT" Type="numeric" Mode="In" />
+    <Parameter Name="MA_HEADCOUNT" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_PHAP_NHAN_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_PHAP_NHAN_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_PHAP_NHAN" Type="nvarchar" Mode="In" />
+    <Parameter Name="TEN_PHAP_NHAN" Type="nvarchar" Mode="In" />
+    <Parameter Name="MA_SO_THUE" Type="nvarchar" Mode="In" />
+    <Parameter Name="MA_DK_KINH_DOANH" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGAY_DK_KINH_DOANH" Type="datetime" Mode="In" />
+    <Parameter Name="DIA_CHI" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGUOI_DAI_DIEN" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_DM_PHAP_NHAN_Search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_keyword" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_PHAP_NHAN_Search_by_ma_phap_nhan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_PHAP_NHAN" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_PHAP_NHAN_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="MA_PHAP_NHAN" Type="nvarchar" Mode="In" />
+    <Parameter Name="TEN_PHAP_NHAN" Type="nvarchar" Mode="In" />
+    <Parameter Name="MA_SO_THUE" Type="nvarchar" Mode="In" />
+    <Parameter Name="MA_DK_KINH_DOANH" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGAY_DK_KINH_DOANH" Type="datetime" Mode="In" />
+    <Parameter Name="DIA_CHI" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGUOI_DAI_DIEN" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_QUYET_DINH_By_Ma_qd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_ma_qd" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_QUYET_DINH_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_QUYET_DINH_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_QUYET_DINH" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_LOAI_QD" Type="numeric" Mode="In" />
+    <Parameter Name="NGAY_CO_HIEU_LUC" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_KY" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_HET_HIEU_LUC" Type="datetime" Mode="In" />
+    <Parameter Name="NOI_DUNG" Type="nvarchar" Mode="In" />
+    <Parameter Name="LINK" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_DM_QUYET_DINH_search_by_id_loai_qd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_LOAI_QD" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_QUYET_DINH_search_by_id_qd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_QD" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_QUYET_DINH_search_by_ma_qd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="STR_MA_QD" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_QUYET_DINH_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="MA_QUYET_DINH" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_LOAI_QD" Type="numeric" Mode="In" />
+    <Parameter Name="NGAY_CO_HIEU_LUC" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_KY" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_HET_HIEU_LUC" Type="datetime" Mode="In" />
+    <Parameter Name="NOI_DUNG" Type="nvarchar" Mode="In" />
+    <Parameter Name="LINK" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_TRANG_THAI_UNG_VIEN_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_TRANG_THAI_UNG_VIEN_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_TRANG_THAI" Type="numeric" Mode="In" />
+    <Parameter Name="ID_TRANG_THAI_PARENT" Type="numeric" Mode="In" />
+    <Parameter Name="DINH_NGHIA" Type="nvarchar" Mode="In" />
+    <Parameter Name="DAU_HIEU" Type="nvarchar" Mode="In" />
+    <Parameter Name="VIEC_CAN_LAM" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_DM_TRANG_THAI_UNG_VIEN_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="MA_TRANG_THAI" Type="numeric" Mode="In" />
+    <Parameter Name="ID_TRANG_THAI_PARENT" Type="numeric" Mode="In" />
+    <Parameter Name="DINH_NGHIA" Type="nvarchar" Mode="In" />
+    <Parameter Name="DAU_HIEU" Type="nvarchar" Mode="In" />
+    <Parameter Name="VIEC_CAN_LAM" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_CHI_TIET_CAP_BAC_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_CHI_TIET_CAP_BAC_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_NHAN_SU" Type="numeric" Mode="In" />
+    <Parameter Name="ID_CAP_BAC" Type="numeric" Mode="In" />
+    <Parameter Name="TRANG_THAI_CB" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_QUYET_DINH" Type="numeric" Mode="In" />
+    <Parameter Name="NGAY_BAT_DAU" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_KET_THUC" Type="datetime" Mode="In" />
+    <Parameter Name="LUA_CHON" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_GD_CHI_TIET_CAP_BAC_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="ID_NHAN_SU" Type="numeric" Mode="In" />
+    <Parameter Name="ID_CAP_BAC" Type="numeric" Mode="In" />
+    <Parameter Name="TRANG_THAI_CB" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_QUYET_DINH" Type="numeric" Mode="In" />
+    <Parameter Name="NGAY_BAT_DAU" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_KET_THUC" Type="datetime" Mode="In" />
+    <Parameter Name="LUA_CHON" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_CHI_TIET_CHUC_VU_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_CHI_TIET_CHUC_VU_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_NHAN_SU" Type="numeric" Mode="In" />
+    <Parameter Name="ID_CHUC_VU" Type="numeric" Mode="In" />
+    <Parameter Name="ID_DON_VI" Type="numeric" Mode="In" />
+    <Parameter Name="ID_QUYET_DINH" Type="numeric" Mode="In" />
+    <Parameter Name="ID_QUYET_DINH_MIEN_NHIEM" Type="numeric" Mode="In" />
+    <Parameter Name="ID_LOAI_CV" Type="numeric" Mode="In" />
+    <Parameter Name="TRANG_THAI_CV" Type="nvarchar" Mode="In" />
+    <Parameter Name="TY_LE_THAM_GIA" Type="numeric" Mode="In" />
+    <Parameter Name="NGAY_BAT_DAU" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_KET_THUC" Type="datetime" Mode="In" />
+    <Parameter Name="LUA_CHON" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_GD_CHI_TIET_CHUC_VU_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="ID_NHAN_SU" Type="numeric" Mode="In" />
+    <Parameter Name="ID_CHUC_VU" Type="numeric" Mode="In" />
+    <Parameter Name="ID_DON_VI" Type="numeric" Mode="In" />
+    <Parameter Name="ID_QUYET_DINH" Type="numeric" Mode="In" />
+    <Parameter Name="ID_QUYET_DINH_MIEN_NHIEM" Type="numeric" Mode="In" />
+    <Parameter Name="ID_LOAI_CV" Type="numeric" Mode="In" />
+    <Parameter Name="TRANG_THAI_CV" Type="nvarchar" Mode="In" />
+    <Parameter Name="TY_LE_THAM_GIA" Type="numeric" Mode="In" />
+    <Parameter Name="NGAY_BAT_DAU" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_KET_THUC" Type="datetime" Mode="In" />
+    <Parameter Name="LUA_CHON" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_CHI_TIET_DU_AN_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_CHI_TIET_DU_AN_DeleteAllWID_DANH_HIEULogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_DANH_HIEU" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_CHI_TIET_DU_AN_DeleteAllWID_DU_ANLogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_DU_AN" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_CHI_TIET_DU_AN_DeleteAllWID_NHAN_SULogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_NHAN_SU" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_CHI_TIET_DU_AN_DeleteAllWID_VI_TRILogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_VI_TRI" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_CHI_TIET_DU_AN_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_DU_AN" Type="numeric" Mode="In" />
+    <Parameter Name="ID_NHAN_SU" Type="numeric" Mode="In" />
+    <Parameter Name="ID_VI_TRI" Type="numeric" Mode="In" />
+    <Parameter Name="MO_TA" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_DANH_HIEU" Type="numeric" Mode="In" />
+    <Parameter Name="THOI_DIEM_TG" Type="datetime" Mode="In" />
+    <Parameter Name="THOI_DIEM_KT" Type="datetime" Mode="In" />
+    <Parameter Name="THOI_GIAN_TG" Type="numeric" Mode="In" />
+    <Parameter Name="TRANG_THAI_HIEN_TAI" Type="nvarchar" Mode="In" />
+    <Parameter Name="LUA_CHON" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_QUYET_DINH" Type="numeric" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_GD_CHI_TIET_DU_AN_select_by_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_CHI_TIET_DU_AN_select_by_id_du_an" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_DA" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_CHI_TIET_DU_AN_select_trang_thai_yes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_NV" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_CHI_TIET_DU_AN_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="ID_DU_AN" Type="numeric" Mode="In" />
+    <Parameter Name="ID_NHAN_SU" Type="numeric" Mode="In" />
+    <Parameter Name="ID_VI_TRI" Type="numeric" Mode="In" />
+    <Parameter Name="MO_TA" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_DANH_HIEU" Type="numeric" Mode="In" />
+    <Parameter Name="THOI_DIEM_TG" Type="datetime" Mode="In" />
+    <Parameter Name="THOI_DIEM_KT" Type="datetime" Mode="In" />
+    <Parameter Name="THOI_GIAN_TG" Type="numeric" Mode="In" />
+    <Parameter Name="TRANG_THAI_HIEN_TAI" Type="nvarchar" Mode="In" />
+    <Parameter Name="LUA_CHON" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_QUYET_DINH" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_CHI_TIET_DU_AN_UpdateAllWID_DANH_HIEULogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_DANH_HIEU" Type="numeric" Mode="In" />
+    <Parameter Name="ID_DANH_HIEUOld" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_CHI_TIET_DU_AN_UpdateAllWID_DU_ANLogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_DU_AN" Type="numeric" Mode="In" />
+    <Parameter Name="ID_DU_ANOld" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_CHI_TIET_DU_AN_UpdateAllWID_NHAN_SULogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_NHAN_SU" Type="numeric" Mode="In" />
+    <Parameter Name="ID_NHAN_SUOld" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_CHI_TIET_DU_AN_UpdateAllWID_VI_TRILogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_VI_TRI" Type="numeric" Mode="In" />
+    <Parameter Name="ID_VI_TRIOld" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_CHI_TIET_TRANG_THAI_LD_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_CHI_TIET_TRANG_THAI_LD_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_NHAN_SU" Type="numeric" Mode="In" />
+    <Parameter Name="ID_TRANG_LAO_DONG" Type="numeric" Mode="In" />
+    <Parameter Name="ID_QUYET_DINH" Type="numeric" Mode="In" />
+    <Parameter Name="NGAY_CO_HIEU_LUC" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_HET_HIEU_LUC" Type="datetime" Mode="In" />
+    <Parameter Name="TRANG_THAI_HIEN_TAI" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_GD_CHI_TIET_TRANG_THAI_LD_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="ID_NHAN_SU" Type="numeric" Mode="In" />
+    <Parameter Name="ID_TRANG_LAO_DONG" Type="numeric" Mode="In" />
+    <Parameter Name="ID_QUYET_DINH" Type="numeric" Mode="In" />
+    <Parameter Name="NGAY_CO_HIEU_LUC" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_HET_HIEU_LUC" Type="datetime" Mode="In" />
+    <Parameter Name="TRANG_THAI_HIEN_TAI" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_CHI_TIET_TRANG_THAI_LD_UpdateAllWID_NHAN_SULogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_NHAN_SU" Type="numeric" Mode="In" />
+    <Parameter Name="ID_NHAN_SUOld" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_CHI_TIET_TRANG_THAI_LD_UpdateAllWID_TRANG_LAO_DONGLogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_TRANG_LAO_DONG" Type="numeric" Mode="In" />
+    <Parameter Name="ID_TRANG_LAO_DONGOld" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_CONG_TAC_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_CONG_TAC_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_NHAN_SU" Type="numeric" Mode="In" />
+    <Parameter Name="ID_QUYET_DINH" Type="numeric" Mode="In" />
+    <Parameter Name="NGAY_DI" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_VE" Type="datetime" Mode="In" />
+    <Parameter Name="DIA_DIEM" Type="nvarchar" Mode="In" />
+    <Parameter Name="MO_TA_CONG_VIEC" Type="nvarchar" Mode="In" />
+    <Parameter Name="LUA_CHON" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_GD_CONG_TAC_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="ID_NHAN_SU" Type="numeric" Mode="In" />
+    <Parameter Name="ID_QUYET_DINH" Type="numeric" Mode="In" />
+    <Parameter Name="NGAY_DI" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_VE" Type="datetime" Mode="In" />
+    <Parameter Name="DIA_DIEM" Type="nvarchar" Mode="In" />
+    <Parameter Name="MO_TA_CONG_VIEC" Type="nvarchar" Mode="In" />
+    <Parameter Name="LUA_CHON" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_DON_VI_PHAP_NHAN_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_DON_VI" Type="numeric" Mode="In" />
+    <Parameter Name="ID_PHAP_NHAN" Type="numeric" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_GD_HOP_DONG_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_HOP_DONG_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_HOP_DONG" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_LOAI_HOP_DONG" Type="numeric" Mode="In" />
+    <Parameter Name="ID_NHAN_SU" Type="numeric" Mode="In" />
+    <Parameter Name="NGAY_KY_HOP_DONG" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_CO_HIEU_LUC" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_HET_HAN" Type="datetime" Mode="In" />
+    <Parameter Name="TRANG_THAI_HOP_DONG" Type="nvarchar" Mode="In" />
+    <Parameter Name="LINK" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_PHAP_NHAN" Type="numeric" Mode="In" />
+    <Parameter Name="NGUOI_KY" Type="nvarchar" Mode="In" />
+    <Parameter Name="CHUC_VU_NGUOI_KY" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_GD_HOP_DONG_Search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_keyword" Type="nvarchar" Mode="In" />
+    <Parameter Name="id_loai_hop_dong" Type="numeric" Mode="In" />
+    <Parameter Name="trang_thai_hop_dong" Type="nvarchar" Mode="In" />
+    <Parameter Name="tu_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="den_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="tim_kiem_theo_ngay" Type="numeric" Mode="In" />
+    <Parameter Name="id_phap_nhan" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_HOP_DONG_Search_by_ma_hop_dong" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_HOP_DONG" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_HOP_DONG_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="MA_HOP_DONG" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_LOAI_HOP_DONG" Type="numeric" Mode="In" />
+    <Parameter Name="ID_NHAN_SU" Type="numeric" Mode="In" />
+    <Parameter Name="NGAY_KY_HOP_DONG" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_CO_HIEU_LUC" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_HET_HAN" Type="datetime" Mode="In" />
+    <Parameter Name="TRANG_THAI_HOP_DONG" Type="nvarchar" Mode="In" />
+    <Parameter Name="LINK" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_PHAP_NHAN" Type="numeric" Mode="In" />
+    <Parameter Name="NGUOI_KY" Type="nvarchar" Mode="In" />
+    <Parameter Name="CHUC_VU_NGUOI_KY" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_HOP_DONG_Update_Trang_thai_hop_dong" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_LUONG_THEO_QD_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_LUONG_THEO_QD_DeleteAllWMA_KYLogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_KY" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_LUONG_THEO_QD_DeleteAllWMA_NVLogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_NV" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_LUONG_THEO_QD_DeleteAllWMA_QDLogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_QD" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_LUONG_THEO_QD_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_NV" Type="nvarchar" Mode="In" />
+    <Parameter Name="MA_KY" Type="nvarchar" Mode="In" />
+    <Parameter Name="MA_QD" Type="nvarchar" Mode="In" />
+    <Parameter Name="LUONG" Type="numeric" Mode="In" />
+    <Parameter Name="NGAY_AP_DUNG" Type="datetime" Mode="In" />
+    <Parameter Name="THANG_AP_DUNG" Type="numeric" Mode="In" />
+    <Parameter Name="NAM_AP_DUNG" Type="numeric" Mode="In" />
+    <Parameter Name="LUONG_HIEN_TAI_YN" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_GD_LUONG_THEO_QD_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="MA_NV" Type="nvarchar" Mode="In" />
+    <Parameter Name="MA_KY" Type="nvarchar" Mode="In" />
+    <Parameter Name="MA_QD" Type="nvarchar" Mode="In" />
+    <Parameter Name="LUONG" Type="numeric" Mode="In" />
+    <Parameter Name="NGAY_AP_DUNG" Type="datetime" Mode="In" />
+    <Parameter Name="THANG_AP_DUNG" Type="numeric" Mode="In" />
+    <Parameter Name="NAM_AP_DUNG" Type="numeric" Mode="In" />
+    <Parameter Name="LUONG_HIEN_TAI_YN" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_LUONG_THEO_QD_UpdateAllWMA_KYLogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_KY" Type="nvarchar" Mode="In" />
+    <Parameter Name="MA_KYOld" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_LUONG_THEO_QD_UpdateAllWMA_NVLogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_NV" Type="nvarchar" Mode="In" />
+    <Parameter Name="MA_NVOld" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_LUONG_THEO_QD_UpdateAllWMA_QDLogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_QD" Type="nvarchar" Mode="In" />
+    <Parameter Name="MA_QDOld" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_QUA_TRINH_CONG_TAC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_search" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_str_lua_chon" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_dat_tu_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="ip_dat_den_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="ip_dc_phap_nhan" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_QUYET_DINH_DU_AN_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_QUYET_DINH_DU_AN_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_DU_AN" Type="numeric" Mode="In" />
+    <Parameter Name="ID_QUYET_DINH" Type="numeric" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_GD_QUYET_DINH_DU_AN_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="ID_DU_AN" Type="numeric" Mode="In" />
+    <Parameter Name="ID_QUYET_DINH" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_QUYET_DINH_PHAP_NHAN_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_QUYET_DINH_PHAP_NHAN_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_QUYET_DINH" Type="numeric" Mode="In" />
+    <Parameter Name="ID_PHAP_NHAN" Type="numeric" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_GD_QUYET_DINH_PHAP_NHAN_Select_by_ID_QUYET_DINH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_QUYET_DINH" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_GD_QUYET_DINH_PHAP_NHAN_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="ID_QUYET_DINH" Type="numeric" Mode="In" />
+    <Parameter Name="ID_PHAP_NHAN" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_get_tham_so_he_thong" ReturnType="nvarchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_ma_tham_so" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_ma_phan_he" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_Check_User_PWD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_ten_truy_cap" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_mat_khau" Type="nvarchar" Mode="In" />
+    <Parameter Name="op_ket_qua" Type="decimal" Mode="InOut" />
+  </Function>
+  <Function Name="pr_HT_CHUC_NANG_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_CHUC_NANG_GetQuyenChucNang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="USER_NAME" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_CHUC_NANG_GetQuyenChucNang_by_ID_user_group" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_USER_group" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_CHUC_NANG_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TEN_CHUC_NANG" Type="nvarchar" Mode="In" />
+    <Parameter Name="URL_FORM" Type="nvarchar" Mode="In" />
+    <Parameter Name="TRANG_THAI_YN" Type="nvarchar" Mode="In" />
+    <Parameter Name="VI_TRI" Type="int" Mode="In" />
+    <Parameter Name="CHUC_NANG_PARENT_ID" Type="numeric" Mode="In" />
+    <Parameter Name="HIEN_THI_YN" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_HT_CHUC_NANG_Select_by_Root_ParentId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CHUC_NANG_PARENT_ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_CHUC_NANG_Select_Chuc_Nang_Max_Vi_Tri" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CHUC_NANG_PARENT_ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_CHUC_NANG_select_full_tree_chuc_nang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_hien_thi_yn" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_id_user_group" Type="numeric" Mode="In" />
+    <Parameter Name="ip_str_having_quyen_yn" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_CHUC_NANG_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="TEN_CHUC_NANG" Type="nvarchar" Mode="In" />
+    <Parameter Name="URL_FORM" Type="nvarchar" Mode="In" />
+    <Parameter Name="TRANG_THAI_YN" Type="nvarchar" Mode="In" />
+    <Parameter Name="VI_TRI" Type="int" Mode="In" />
+    <Parameter Name="CHUC_NANG_PARENT_ID" Type="numeric" Mode="In" />
+    <Parameter Name="HIEN_THI_YN" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_ht_get_object_id" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="op_next_object_id" Type="numeric" Mode="InOut" />
+    <Parameter Name="ip_sequence_increment" Type="int" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_NGUOI_SU_DUNG_Change_Password" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="v_str_ten_dang_nhap" Type="nvarchar" Mode="In" />
+    <Parameter Name="v_str_mat_khau_moi" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_NGUOI_SU_DUNG_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_NGUOI_SU_DUNG_fill_data_by_training" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="i_dc_id_training" Type="numeric" Mode="In" />
+    <Parameter Name="i_dc_id_user_group" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_NGUOI_SU_DUNG_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TEN_TRUY_CAP" Type="nvarchar" Mode="In" />
+    <Parameter Name="TEN" Type="nvarchar" Mode="In" />
+    <Parameter Name="MAT_KHAU" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGAY_TAO" Type="datetime" Mode="In" />
+    <Parameter Name="NGUOI_TAO" Type="nvarchar" Mode="In" />
+    <Parameter Name="TRANG_THAI" Type="nvarchar" Mode="In" />
+    <Parameter Name="BUILT_IN_YN" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_USER_GROUP" Type="numeric" Mode="In" />
+    <Parameter Name="ID_TRAINING_PROJECT" Type="numeric" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_HT_NGUOI_SU_DUNG_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="TEN_TRUY_CAP" Type="nvarchar" Mode="In" />
+    <Parameter Name="TEN" Type="nvarchar" Mode="In" />
+    <Parameter Name="MAT_KHAU" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGAY_TAO" Type="datetime" Mode="In" />
+    <Parameter Name="NGUOI_TAO" Type="nvarchar" Mode="In" />
+    <Parameter Name="TRANG_THAI" Type="nvarchar" Mode="In" />
+    <Parameter Name="BUILT_IN_YN" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_USER_GROUP" Type="numeric" Mode="In" />
+    <Parameter Name="ID_TRAINING_PROJECT" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_PHAN_QUYEN_CHO_NHOM_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_PHAN_QUYEN_CHO_NHOM_DeleteAllWID_PHAN_QUYEN_HE_THONGLogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_PHAN_QUYEN_HE_THONG" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_PHAN_QUYEN_CHO_NHOM_DeleteAllWID_USER_GROUPLogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_USER_GROUP" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_PHAN_QUYEN_CHO_NHOM_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_USER_GROUP" Type="numeric" Mode="In" />
+    <Parameter Name="ID_PHAN_QUYEN_HE_THONG" Type="numeric" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_HT_PHAN_QUYEN_CHO_NHOM_select_by_ma_pq" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_PHAN_QUYEN" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_USER_GROUP" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_PHAN_QUYEN_CHO_NHOM_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="ID_USER_GROUP" Type="numeric" Mode="In" />
+    <Parameter Name="ID_PHAN_QUYEN_HE_THONG" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_PHAN_QUYEN_CHO_NHOM_UpdateAllWID_PHAN_QUYEN_HE_THONGLogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_PHAN_QUYEN_HE_THONG" Type="numeric" Mode="In" />
+    <Parameter Name="ID_PHAN_QUYEN_HE_THONGOld" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_PHAN_QUYEN_CHO_NHOM_UpdateAllWID_USER_GROUPLogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_USER_GROUP" Type="numeric" Mode="In" />
+    <Parameter Name="ID_USER_GROUPOld" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_PHAN_QUYEN_DETAIL_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_PHAN_QUYEN_DETAIL_DeleteAllWID_PHAN_QUYEN_HTLogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_PHAN_QUYEN_HT" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_PHAN_QUYEN_DETAIL_fill_dataset_by_user" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_user_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_PHAN_QUYEN_DETAIL_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FORM_NAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="CONTROL_NAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="CONTROL_TYPE" Type="nvarchar" Mode="In" />
+    <Parameter Name="VISIBLE_YN" Type="nvarchar" Mode="In" />
+    <Parameter Name="ENABLED_YN" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_PHAN_QUYEN_HT" Type="numeric" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_HT_PHAN_QUYEN_DETAIL_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="FORM_NAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="CONTROL_NAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="CONTROL_TYPE" Type="nvarchar" Mode="In" />
+    <Parameter Name="VISIBLE_YN" Type="nvarchar" Mode="In" />
+    <Parameter Name="ENABLED_YN" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_PHAN_QUYEN_HT" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_PHAN_QUYEN_DETAIL_UpdateAllWID_PHAN_QUYEN_HTLogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_PHAN_QUYEN_HT" Type="numeric" Mode="In" />
+    <Parameter Name="ID_PHAN_QUYEN_HTOld" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_PHAN_QUYEN_HE_THONG_Delele_All_Quyen_Of_group_user" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_dc_group_user_id" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_PHAN_QUYEN_HE_THONG_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_PHAN_QUYEN_HE_THONG_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_PHAN_QUYEN" Type="nvarchar" Mode="In" />
+    <Parameter Name="GHI_CHU" Type="nvarchar" Mode="In" />
+    <Parameter Name="LOAI_PHAN_QUYEN" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_HT_PHAN_QUYEN_HE_THONG_quyen_chua_cap_select_by_id_nhom_quyen" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_USER_GROUP" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_PHAN_QUYEN_HE_THONG_quyen_da_cap_select_by_id_nhom_quyen" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_USER_GROUP" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_PHAN_QUYEN_HE_THONG_select_by_ma_pq" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_PHAN_QUYEN" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_PHAN_QUYEN_HE_THONG_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="MA_PHAN_QUYEN" Type="nvarchar" Mode="In" />
+    <Parameter Name="GHI_CHU" Type="nvarchar" Mode="In" />
+    <Parameter Name="LOAI_PHAN_QUYEN" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_QUAN_HE_SU_DUNG_DU_LIEU_UpdateQuyen4Group" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_DON_VI" Type="varchar" Mode="In" />
+    <Parameter Name="ID_USER_GROUP" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_QUYEN_GROUP_Delele_All_Quyen_Of_group" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="i_dc_id_group" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_QUYEN_GROUP_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_QUYEN_GROUP_fill_data_by_group_id" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="i_dc_id_group" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_QUYEN_GROUP_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_USER_GROUP" Type="numeric" Mode="In" />
+    <Parameter Name="ID_QUYEN" Type="numeric" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_HT_QUYEN_GROUP_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="ID_USER_GROUP" Type="numeric" Mode="In" />
+    <Parameter Name="ID_QUYEN" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_QUYEN_GROUP_UpdateQuyen4Group" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_CHUC_NANG" Type="varchar" Mode="In" />
+    <Parameter Name="ID_USER_GROUP" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_QUYEN_USER_Delele_All_Quyen_Of_user" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_dc_user_id" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_QUYEN_USER_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_QUYEN_USER_fill_data_by_user_id" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="i_dc_id_user" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_QUYEN_USER_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+    <Parameter Name="ID_USER" Type="numeric" Mode="In" />
+    <Parameter Name="ID_QUYEN" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_QUYEN_USER_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="ID_USER" Type="numeric" Mode="In" />
+    <Parameter Name="ID_QUYEN" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_THAM_SO_HE_THONG_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="LOAI_THAM_SO" Type="nvarchar" Mode="In" />
+    <Parameter Name="MA_THAM_SO" Type="nvarchar" Mode="In" />
+    <Parameter Name="PHAN_HE" Type="nvarchar" Mode="In" />
+    <Parameter Name="GHI_CHU" Type="nvarchar" Mode="In" />
+    <Parameter Name="KIEU_DU_LIEU" Type="nvarchar" Mode="In" />
+    <Parameter Name="GIA_TRI" Type="nvarchar" Mode="In" />
+    <Parameter Name="CO_THE_NULL_YN" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_USER_GROUP_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_USER_GROUP_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="USER_GROUP_NAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="DESCRIPTION" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_HT_USER_GROUP_IsUpdatable" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="USER_GROUP_NAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="DESCRIPTION" Type="nvarchar" Mode="In" />
+    <Parameter Name="op_Error_Code" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="pr_HT_USER_GROUP_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="USER_GROUP_NAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="DESCRIPTION" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_is_having_inventor_in_register_and_auction" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="inventor_code" Type="nvarchar" Mode="In" />
+    <Parameter Name="id_auction" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_is_having_quyen_user" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_dc_user_id" Type="numeric" Mode="In" />
+    <Parameter Name="ip_str_ma_quyen" Type="nvarchar" Mode="In" />
+    <Parameter Name="op_str_is_having_quyen" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="pr_Lock_Business_Process_124" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_lock_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_lock_entire_nam_table_122" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="pr_QUYET_DINH_CUA_DU_AN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_dc_id_du_an" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_Release_Business_Process_Lock_125" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_lock_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_RPT_BO_NHIEM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_keyword" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_dc_phap_nhan" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_RPT_CHUC_VU_TRANG_THAI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="THOI_DIEM" Type="datetime" Mode="In" />
+    <Parameter Name="ID_PHAP_NHAN" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_RPT_DON_VI_TRANG_THAI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="THOI_DIEM" Type="datetime" Mode="In" />
+    <Parameter Name="ID_PHAP_NHAN" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_RPT_SO_LUONG_NHAN_VIEN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="pr_RPT_SO_LUONG_NV_THEO_LOAI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_dat_thoi_diem" Type="datetime" Mode="In" />
+    <Parameter Name="ip_dc_phap_nhan" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_Select_V_User_Info" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_strMaDonVi" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_strTenTruyCap" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_V_BAO_CAO_NHAN_SU_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_search" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_CAP_BAC_By_Ma_bac" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_ma_bac" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_CAP_BAC_By_Ma_cap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_ma_cap" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_CAP_BAC_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_CAP_BAC_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_CAP" Type="nvarchar" Mode="In" />
+    <Parameter Name="MA_BAC" Type="nvarchar" Mode="In" />
+    <Parameter Name="TRANG_THAI" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGAY_AP_DUNG" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_KET_THUC" Type="datetime" Mode="In" />
+    <Parameter Name="MA_CAP_BAC" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="pr_V_DM_CAP_BAC_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="STR_SEARCH" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_CHUC_VU_order_by_ma_chuc_vu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="pr_V_DM_CHUC_VU_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="STR_SEARCH" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_DON_VI_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_DON_VI_Delete_by_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_DON_VI_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_search" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_dc_loai_dv" Type="decimal" Mode="In" />
+    <Parameter Name="ip_dc_cap_dv" Type="decimal" Mode="In" />
+    <Parameter Name="ip_str_trang_thai" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_dc_phap_nhan" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_DON_VI_search_all" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_trang_thai" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_dc_phap_nhan" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_DON_VI_search_by_id_phap_nhan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_phap_nhan" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_DON_VI_search_by_ma_dv" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_ma_dv" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_DON_VI_search_cap_don_vi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_dc_level" Type="decimal" Mode="In" />
+    <Parameter Name="ip_dc_phap_nhan" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_DU_AN_QUYET_DINH_TU_DIEN_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_DU_AN_QUYET_DINH_TU_DIEN_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+    <Parameter Name="MA_DU_AN" Type="nvarchar" Mode="In" />
+    <Parameter Name="TEN_DU_AN" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_TRANG_THAI" Type="numeric" Mode="In" />
+    <Parameter Name="TRANG_THAI_DA" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_LOAI_DU_AN" Type="numeric" Mode="In" />
+    <Parameter Name="LOAI_DU_AN" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGAY_BAT_DAU" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_KET_THUC" Type="datetime" Mode="In" />
+    <Parameter Name="NOI_DUNG" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_CO_CHE" Type="numeric" Mode="In" />
+    <Parameter Name="CO_CHE" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_QUYET_DINH" Type="numeric" Mode="In" />
+    <Parameter Name="MA_QUYET_DINH" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_LOAI_QD" Type="numeric" Mode="In" />
+    <Parameter Name="LOAI_QD" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGAY_CO_HIEU_LUC" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_KY" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_HET_HIEU_LUC" Type="datetime" Mode="In" />
+    <Parameter Name="NOI_DUNG_QD" Type="nvarchar" Mode="In" />
+    <Parameter Name="LINK" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_PHAP_NHAN" Type="numeric" Mode="In" />
+    <Parameter Name="MA_PHAP_NHAN" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_DU_AN_QUYET_DINH_TU_DIEN_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="form_mode" Type="numeric" Mode="In" />
+    <Parameter Name="str_search" Type="nvarchar" Mode="In" />
+    <Parameter Name="tu_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="den_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="id_trang_thai_du_an" Type="numeric" Mode="In" />
+    <Parameter Name="id_loai_du_an" Type="numeric" Mode="In" />
+    <Parameter Name="id_co_che" Type="numeric" Mode="In" />
+    <Parameter Name="tim_kiem_theo_ngay" Type="numeric" Mode="In" />
+    <Parameter Name="id_phap_nhan" Type="numeric" Mode="In" />
+    <Parameter Name="id_loai_quyet_dinh" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_DU_AN_QUYET_DINH_TU_DIEN_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="MA_DU_AN" Type="nvarchar" Mode="In" />
+    <Parameter Name="TEN_DU_AN" Type="nvarchar" Mode="In" />
+    <Parameter Name="TRANG_THAI" Type="nvarchar" Mode="In" />
+    <Parameter Name="LOAI_DU_AN" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGAY_BAT_DAU" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_KET_THUC" Type="datetime" Mode="In" />
+    <Parameter Name="NOI_DUNG" Type="nvarchar" Mode="In" />
+    <Parameter Name="CO_CHE" Type="nvarchar" Mode="In" />
+    <Parameter Name="MA_QUYET_DINH" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_TRANG_THAI" Type="numeric" Mode="In" />
+    <Parameter Name="ID_CO_CHE" Type="numeric" Mode="In" />
+    <Parameter Name="ID_QUYET_DINH" Type="numeric" Mode="In" />
+    <Parameter Name="ID_LOAI_DU_AN" Type="numeric" Mode="In" />
+    <Parameter Name="LOAI_QD" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_PHAP_NHAN" Type="numeric" Mode="In" />
+    <Parameter Name="MA_PHAP_NHAN" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_LOAI_QD" Type="numeric" Mode="In" />
+    <Parameter Name="NGAY_CO_HIEU_LUC" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_KY" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_HET_HIEU_LUC" Type="datetime" Mode="In" />
+    <Parameter Name="NOI_DUNG_QUYET_DINH" Type="nvarchar" Mode="In" />
+    <Parameter Name="LINK" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_DU_LIEU_NHAN_VIEN_count_nhan_vien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="loai_count" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_PHAP_NHAN" Type="numeric" Mode="In" />
+    <Parameter Name="COUNT" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="pr_V_DM_DU_LIEU_NHAN_VIEN_count_nhan_vien_hien_tai" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="COUNT" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="pr_V_DM_DU_LIEU_NHAN_VIEN_count_nhan_vien1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_01_search" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_str_trinh_do" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_dc_gioi_tinh" Type="numeric" Mode="In" />
+    <Parameter Name="ip_dc_id_chuc_vu" Type="numeric" Mode="In" />
+    <Parameter Name="ip_dc_id_don_vi" Type="numeric" Mode="In" />
+    <Parameter Name="ip_dc_id_dia_ban" Type="numeric" Mode="In" />
+    <Parameter Name="ip_dat_tu_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="ip_dat_den_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="ip_dc_thang_sinh" Type="decimal" Mode="In" />
+    <Parameter Name="ip_str_24_trang_thai_lao_dong" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_str_31_trang_thai_hien_tai" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_str_32_trang_thai_chuc_vu" Type="nvarchar" Mode="In" />
+    <Parameter Name="loai_count" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_PHAP_NHAN" Type="numeric" Mode="In" />
+    <Parameter Name="COUNT" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="pr_V_DM_DU_LIEU_NHAN_VIEN_nghi_viec" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_tim_kiem" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_dat_tu_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="ip_dat_den_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="ip_dc_phap_nhan" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_DU_LIEU_NHAN_VIEN_Nhan_vien_sap_quay_lai" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="pr_V_DM_DU_LIEU_NHAN_VIEN_sap_het_han_thu_viec" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_search" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_DU_LIEU_NHAN_VIEN_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_01_search" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_str_trinh_do" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_dc_gioi_tinh" Type="numeric" Mode="In" />
+    <Parameter Name="ip_dc_id_chuc_vu" Type="numeric" Mode="In" />
+    <Parameter Name="ip_dc_id_don_vi" Type="numeric" Mode="In" />
+    <Parameter Name="ip_dc_id_dia_ban" Type="numeric" Mode="In" />
+    <Parameter Name="ip_dat_tu_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="ip_dat_den_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="ip_dc_thang_sinh" Type="decimal" Mode="In" />
+    <Parameter Name="ip_str_24_trang_thai_lao_dong" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_str_31_trang_thai_hien_tai" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_str_32_trang_thai_chuc_vu" Type="nvarchar" Mode="In" />
+    <Parameter Name="loai_tim_kiem" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_PHAP_NHAN" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_NHAN_SU_DU_AN_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_NHAN_SU_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_QUYET_DINH_By_Ma_qd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_ma_qd" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_QUYET_DINH_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_QUYET_DINH_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="STR_SEARCH" Type="nvarchar" Mode="In" />
+    <Parameter Name="LOAI_QUYET_DINH" Type="decimal" Mode="In" />
+    <Parameter Name="ID_PHAP_NHAN" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_QUYET_DINH_Search_by_ma_quyet_dinh" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_search" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_TRANG_THAI_UNG_VIEN_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_TRANG_THAI_UNG_VIEN_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="STR_SEARCH" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_V_DM_TRANG_THAI_UNG_VIEN_Select_by_ID_Parent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="pr_V_GD_BAO_CAO_DU_AN_2_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="str_search" Type="nvarchar" Mode="In" />
+    <Parameter Name="tu_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="den_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="id_trang_thai_du_an" Type="numeric" Mode="In" />
+    <Parameter Name="id_loai_du_an" Type="numeric" Mode="In" />
+    <Parameter Name="id_co_che" Type="numeric" Mode="In" />
+    <Parameter Name="tim_kiem_theo_ngay" Type="numeric" Mode="In" />
+    <Parameter Name="id_phap_nhan" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_CHI_TIET_CAP_BAC_by_Ma_nhan_vien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_search" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_CHI_TIET_CAP_BAC_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_search" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_CHI_TIET_CAP_BAC_select_by_MA_CAP_BAC_THOI_DIEM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_CAP_BAC" Type="nvarchar" Mode="In" />
+    <Parameter Name="THOI_DIEM" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_CONG_TAC_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_CONG_TAC_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="InOut" />
+    <Parameter Name="ID_NHAN_SU" Type="numeric" Mode="In" />
+    <Parameter Name="MA_NV" Type="nvarchar" Mode="In" />
+    <Parameter Name="HO_DEM" Type="nvarchar" Mode="In" />
+    <Parameter Name="TEN" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_QUYET_DINH" Type="numeric" Mode="In" />
+    <Parameter Name="MA_QUYET_DINH" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_LOAI_QD" Type="numeric" Mode="In" />
+    <Parameter Name="LOAI_QD" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGAY_CO_HIEU_LUC" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_KY" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_HET_HIEU_LUC" Type="datetime" Mode="In" />
+    <Parameter Name="NOI_DUNG" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGAY_DI" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_VE" Type="datetime" Mode="In" />
+    <Parameter Name="DIA_DIEM" Type="nvarchar" Mode="In" />
+    <Parameter Name="MO_TA_CONG_VIEC" Type="nvarchar" Mode="In" />
+    <Parameter Name="LUA_CHON" Type="nvarchar" Mode="In" />
+    <Parameter Name="LINK" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_PHAP_NHAN" Type="numeric" Mode="In" />
+    <Parameter Name="MA_PHAP_NHAN" Type="nvarchar" Mode="In" />
+    <Parameter Name="TEN_PHAP_NHAN" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_CONG_TAC_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_search" Type="nvarchar" Mode="In" />
+    <Parameter Name="tu_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="den_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="tim_kiem_theo_ngay" Type="numeric" Mode="In" />
+    <Parameter Name="id_phap_nhan" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_CONG_TAC_Select_by_ID_QUYET_DINH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_QUYET_DINH" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_CONG_TAC_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+    <Parameter Name="ID_NHAN_SU" Type="numeric" Mode="In" />
+    <Parameter Name="MA_NV" Type="nvarchar" Mode="In" />
+    <Parameter Name="HO_DEM" Type="nvarchar" Mode="In" />
+    <Parameter Name="TEN" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_QUYET_DINH" Type="numeric" Mode="In" />
+    <Parameter Name="MA_QUYET_DINH" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_LOAI_QD" Type="numeric" Mode="In" />
+    <Parameter Name="LOAI_QD" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGAY_CO_HIEU_LUC" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_KY" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_HET_HIEU_LUC" Type="datetime" Mode="In" />
+    <Parameter Name="NOI_DUNG" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGAY_DI" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_VE" Type="datetime" Mode="In" />
+    <Parameter Name="DIA_DIEM" Type="nvarchar" Mode="In" />
+    <Parameter Name="MO_TA_CONG_VIEC" Type="nvarchar" Mode="In" />
+    <Parameter Name="LUA_CHON" Type="nvarchar" Mode="In" />
+    <Parameter Name="LINK" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_PHAP_NHAN" Type="numeric" Mode="In" />
+    <Parameter Name="MA_PHAP_NHAN" Type="nvarchar" Mode="In" />
+    <Parameter Name="TEN_PHAP_NHAN" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_HOP_DONG_LAO_DONG_By_Loai_hop_dong" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_loai_hop_dong" Type="numeric" Mode="In" />
+    <Parameter Name="ip_str_keyword" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_HOP_DONG_LAO_DONG_By_Ma_nhan_vien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_NHAN_VIEN" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_PHAP_NHAN" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_HOP_DONG_LAO_DONG_by_trang_thai_hop_dong" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="trang_thai_hop_dong" Type="nvarchar" Mode="In" />
+    <Parameter Name="id_nhan_su" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_HOP_DONG_LAO_DONG_Search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NHAN_VIEN" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_LOAI_HOP_DONG" Type="decimal" Mode="In" />
+    <Parameter Name="NGAY_BAT_DAU" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_KET_THUC" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_HOP_DONG_LAO_DONG_Search_HD_hien_tai" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_keyword" Type="nvarchar" Mode="In" />
+    <Parameter Name="id_loai_hop_dong" Type="numeric" Mode="In" />
+    <Parameter Name="tu_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="den_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="tim_kiem_theo_ngay" Type="numeric" Mode="In" />
+    <Parameter Name="id_phap_nhan" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_HOP_DONG_LAO_DONG_Search_HD_sap_het_han" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_keyword" Type="nvarchar" Mode="In" />
+    <Parameter Name="id_loai_hop_dong" Type="numeric" Mode="In" />
+    <Parameter Name="tu_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="den_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="tim_kiem_theo_ngay" Type="numeric" Mode="In" />
+    <Parameter Name="id_phap_nhan" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_HOP_DONG_LAO_DONG_Search_HDLD_da_het_han_nhung_chua_ky" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_keyword" Type="nvarchar" Mode="In" />
+    <Parameter Name="id_loai_hop_dong" Type="numeric" Mode="In" />
+    <Parameter Name="tu_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="den_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="tim_kiem_theo_ngay" Type="numeric" Mode="In" />
+    <Parameter Name="id_phap_nhan" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_v_gd_luong_theo_qd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IP_DAU_NAM" Type="datetime" Mode="In" />
+    <Parameter Name="ID_PHAP_NHAN" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_LUONG_THEO_QD_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_LUONG_THEO_QD_Search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_dc_id_phap_nhan" Type="decimal" Mode="In" />
+    <Parameter Name="ip_str_keyword" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_str_luong_hien_tai" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_dc_id_ky" Type="decimal" Mode="In" />
+    <Parameter Name="ip_dat_tu_ngay_ap_dung" Type="datetime" Mode="In" />
+    <Parameter Name="ip_dat_den_ngay_ap_dung" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_QUA_TRINH_LAM_VIEC_2_Count_MA_CHUC_VU_THOI_DIEM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_CHUC_VU" Type="nvarchar" Mode="In" />
+    <Parameter Name="THOI_DIEM" Type="datetime" Mode="In" />
+    <Parameter Name="ID_PHAP_NHAN" Type="decimal" Mode="In" />
+    <Parameter Name="Count" Type="decimal" Mode="InOut" />
+    <Parameter Name="ID_KIEM_NHIEM" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_QUA_TRINH_LAM_VIEC_2_Count_NhanVien_chinh_thuc_tren_6_thang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_dat_thoi_diem" Type="datetime" Mode="In" />
+    <Parameter Name="count" Type="decimal" Mode="InOut" />
+    <Parameter Name="ip_dc_phap_nhan" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_QUA_TRINH_LAM_VIEC_2_Count_NhanVien_TheoPhongBanTaiMotThoiDiem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_tim_kiem" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_dat_thoi_diem" Type="datetime" Mode="In" />
+    <Parameter Name="count" Type="decimal" Mode="InOut" />
+    <Parameter Name="ip_dc_phap_nhan" Type="decimal" Mode="In" />
+    <Parameter Name="ip_dc_kiem_nhiem" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_QUA_TRINH_LAM_VIEC_2_Search_NhanVien_TheoPhongBanTaiMotThoiDiem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_tim_kiem" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_dat_thoi_diem" Type="datetime" Mode="In" />
+    <Parameter Name="ip_dc_phap_nhan" Type="decimal" Mode="In" />
+    <Parameter Name="ip_dc_kiem_nhiem" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_QUA_TRINH_LAM_VIEC_2_select_by_MA_CHUC_VU_THOI_DIEM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_CHUC_VU" Type="nvarchar" Mode="In" />
+    <Parameter Name="THOI_DIEM" Type="datetime" Mode="In" />
+    <Parameter Name="ID_PHAP_NHAN" Type="decimal" Mode="In" />
+    <Parameter Name="ID_KIEM_NHIEM" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_QUA_TRINH_LAM_VIEC_All" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="pr_V_GD_QUA_TRINH_LAM_VIEC_By_Ma_nhan_vien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_NHAN_VIEN" Type="nvarchar" Mode="In" />
+    <Parameter Name="NGAY_BAT_DAU" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_KET_THUC" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_QUA_TRINH_LAM_VIEC_chuc_vu_hien_tai" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_NHAN_VIEN" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_PHAP_NHAN" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_QUA_TRINH_LAM_VIEC_Count" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SO_LUONG_HIEN_TAI" Type="decimal" Mode="InOut" />
+    <Parameter Name="TONG_SO" Type="decimal" Mode="InOut" />
+  </Function>
+  <Function Name="pr_V_GD_QUA_TRINH_LAM_VIEC_count_chuc_vu_chinh_hien_tai" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_NHAN_SU" Type="numeric" Mode="In" />
+    <Parameter Name="ID_UPDATE" Type="numeric" Mode="In" />
+    <Parameter Name="ID_PHAP_NHAN" Type="numeric" Mode="In" />
+    <Parameter Name="Count" Type="decimal" Mode="InOut" />
+  </Function>
+  <Function Name="pr_V_GD_QUA_TRINH_LAM_VIEC_danh_sach_bo_nhiem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_tim_kiem" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_dat_thoi_diem" Type="datetime" Mode="In" />
+    <Parameter Name="ip_lua_chon" Type="decimal" Mode="In" />
+    <Parameter Name="ip_dc_phap_nhan" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_QUA_TRINH_LAM_VIEC_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_QUA_TRINH_LAM_VIEC_load_by_id_don_vi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_DON_VI" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_QUA_TRINH_LAM_VIEC_Search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TIM_KIEM" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_TRANG_THAI_CV" Type="decimal" Mode="In" />
+    <Parameter Name="NGAY_BAT_DAU" Type="datetime" Mode="In" />
+    <Parameter Name="NGAY_KET_THUC" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_QUA_TRINH_LAM_VIEC_Search1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TIM_KIEM" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_PHAP_NHAN" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_QUA_TRINH_LAM_VIEC_Sum_Ty_le_tham_gia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_NV" Type="nvarchar" Mode="In" />
+    <Parameter Name="TRANG_THAI_CHUC_VU_YN" Type="nvarchar" Mode="In" />
+    <Parameter Name="TONG_TY_LE" Type="decimal" Mode="InOut" />
+  </Function>
+  <Function Name="pr_V_GD_QUYET_DINH_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_QUYET_DINH_FillDataset" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="pr_V_GD_QUYET_DINH_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="STR_SEARCH" Type="nvarchar" Mode="In" />
+    <Parameter Name="LOAI_QUYET_DINH" Type="decimal" Mode="In" />
+    <Parameter Name="LOAI_NGAY" Type="decimal" Mode="In" />
+    <Parameter Name="TU_NGAY" Type="datetime" Mode="In" />
+    <Parameter Name="DEN_NGAY" Type="datetime" Mode="In" />
+    <Parameter Name="id_phap_nhan" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_TRANG_THAI_LAO_DONG_By_Ma_nhan_vien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_NHAN_VIEN" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_TRANG_THAI_LAO_DONG_count_hien_tai_theo_phap_nhan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_NHAN_SU" Type="numeric" Mode="In" />
+    <Parameter Name="ID_PHAP_NHAN" Type="numeric" Mode="In" />
+    <Parameter Name="ID_UPDATE" Type="numeric" Mode="In" />
+    <Parameter Name="count" Type="decimal" Mode="InOut" />
+  </Function>
+  <Function Name="pr_V_GD_TRANG_THAI_LAO_DONG_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_TRANG_THAI_LAO_DONG_hien_tai_By_Ma_nhan_vien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MA_NHAN_VIEN" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_PHAP_NHAN" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_TRANG_THAI_LAO_DONG_Nhan_vien_sap_quay_lai" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="pr_V_GD_TRANG_THAI_LAO_DONG_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_search" Type="nvarchar" Mode="In" />
+    <Parameter Name="id_phap_nhan" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_TRANG_THAI_LAO_DONG_search_combobox_key" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_search_key" Type="varchar" Mode="In" />
+    <Parameter Name="ip_str_search" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_TRANG_THAI_LAO_DONG_search_datetime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_dat_bat_dau" Type="datetime" Mode="In" />
+    <Parameter Name="ip_dat_ket_thuc" Type="datetime" Mode="In" />
+    <Parameter Name="ip_str_search" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_V_GD_TRANG_THAI_LD_Count" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SO_LUONG_HIEN_TAI" Type="decimal" Mode="InOut" />
+  </Function>
+  <Function Name="pr_V_HT_CONTROL_IN_FORM_select_by_ID_CN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_CHUC_NANG" Type="decimal" Mode="In" />
+    <Parameter Name="FORM_NAME" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_V_HT_PHAN_QUYEN_CHO_NHOM_select_by_id_nhom_quyen" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_USER_GROUP" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="pr_V_HT_USER_DV_QUAN_LY_Update_DV_Quan_Ly_Cho_User" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_NGUOI_SU_DUNG" Type="numeric" Mode="In" />
+    <Parameter Name="LIST_ID_DV_QUAN_LY" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="pr_V_MA_NHOM_fill_data" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="pr_V_MA_NHOM_fill_data_by_seach" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_ma_nhom" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_V_MA_NHOM_update_data" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="pr_V_NHAN_SU_DU_AN_search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="STR_DU_AN" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_V_NHAN_SU_DU_AN_select_by_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_du_an" Type="decimal" Mode="In" />
+    <Parameter Name="id_phap_nhan" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_NHAN_SU_DU_AN_tu_ngay_den_ngay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_str_keyword" Type="nvarchar" Mode="In" />
+    <Parameter Name="tu_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="den_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="tim_kiem_theo_ngay" Type="numeric" Mode="In" />
+    <Parameter Name="id_phap_nhan" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_V_QUYET_DINH_select_by_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_QUYET_DINH" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="rpt_pr_DM_GIANG_VIEN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="rpt_pr_DM_HOP_DONG_KHUNG_So_Thanh_Toan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="edutop_or_elc" Type="nvarchar" Mode="In" />
+    <Parameter Name="thang" Type="decimal" Mode="In" />
+    <Parameter Name="nam" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="update_level_contact" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="i_id" Type="numeric" Mode="In" />
+    <Parameter Name="p_id_user" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="update_v_contact" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_contact" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="ut_next_sequence" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Name" Type="varchar" Mode="In" />
+    <Parameter Name="ip_sequence_increment" Type="int" Mode="In" />
+    <Parameter Name="Val" Type="numeric" Mode="InOut" />
+  </Function>
+  <Function Name="V_DM_QUYET_DINH_By_Ten" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Ten" Type="nvarchar" Mode="In" />
+  </Function>
   <!--Errors Found During Generation:
       warning 6013: The table/view 'BKI_HRM.dbo.RPT_BO_NHIEM' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
       
