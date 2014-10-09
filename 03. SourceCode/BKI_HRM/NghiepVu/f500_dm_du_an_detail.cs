@@ -383,6 +383,12 @@ namespace BKI_HRM.NghiepVu
                 v_htb.Add(v_dr[CM_DM_TU_DIEN.ID], v_dr[CM_DM_TU_DIEN.TEN]);
             }
 
+            #region DucVT
+            Decimal v_null_value = -1;
+            v_htb.Add(v_null_value, "(Bỏ Trống)");
+
+            #endregion
+
             m_fg.Cols[ip_i_col_index].DataMap = v_htb;
         }
 
@@ -493,7 +499,12 @@ namespace BKI_HRM.NghiepVu
         private void grid_row_to_us_quyet_dinh(int i_grid_row, US_V_DM_DU_AN_QUYET_DINH_TU_DIEN op_us)
         {
             op_us.strMA_QUYET_DINH = m_fg_quyet_dinh[i_grid_row, (int)e_col_Number_quyet_dinh.MA_QUYET_DINH].ToString();
-            op_us.dcID_LOAI_QD = (decimal)m_fg_quyet_dinh[i_grid_row, (int)e_col_Number_quyet_dinh.LOAI_QUYET_DINH];
+            decimal v_id_quyet_dinh = (decimal)m_fg_quyet_dinh[i_grid_row, (int)e_col_Number_quyet_dinh.LOAI_QUYET_DINH];
+            if (v_id_quyet_dinh != -1)
+                op_us.SetID_QUYET_DINHNull();
+            else
+                op_us.dcID_LOAI_QD = v_id_quyet_dinh;
+
             op_us.datNGAY_KY = (DateTime)m_fg_quyet_dinh[i_grid_row, (int)e_col_Number_quyet_dinh.NGAY_KY];
             op_us.datNGAY_CO_HIEU_LUC = (DateTime)m_fg_quyet_dinh[i_grid_row, (int)e_col_Number_quyet_dinh.NGAY_CO_HIEU_LUC];
 
@@ -517,7 +528,12 @@ namespace BKI_HRM.NghiepVu
             op_us.dcID_DU_AN = ip_us_du_an.dcID;
             var v_data_row = (DataRow)m_fg_nhan_vien.Rows[i_grid_row].UserData;
             op_us.dcID_NHAN_SU = decimal.Parse(v_data_row.ItemArray[(int)e_number.ID_NHAN_SU].ToString());
-            op_us.dcID_VI_TRI = (decimal)m_fg_nhan_vien[i_grid_row, (int)e_col_Number_nhan_vien.VI_TRI];
+            decimal v_id_vi_tri = (decimal)m_fg_nhan_vien[i_grid_row, (int)e_col_Number_nhan_vien.VI_TRI];
+            if (v_id_vi_tri == -1)
+                op_us.SetID_VI_TRINull();
+            else
+                op_us.dcID_VI_TRI = v_id_vi_tri;
+
 
             //var v_obj_trang_thai = m_fg_nhan_vien[i_grid_row, (int) e_col_Number_nhan_vien.TRANG_THAI_LAO_DONG];
             //if (v_obj_trang_thai != null)
@@ -540,11 +556,20 @@ namespace BKI_HRM.NghiepVu
             else
                 op_us.SetTHOI_GIAN_TGNull();
 
+            #region DucVT
             var v_obj_danh_hieu = m_fg_nhan_vien[i_grid_row, (int)e_col_Number_nhan_vien.DANH_HIEU];
             if (v_obj_danh_hieu != null)
-                op_us.dcID_DANH_HIEU = (decimal)v_obj_danh_hieu;
+            {
+                decimal v_id_danh_hieu = (decimal)v_obj_danh_hieu;
+
+                if (v_id_danh_hieu == -1)
+                    op_us.SetID_DANH_HIEUNull();
+                else
+                    op_us.dcID_DANH_HIEU = v_id_danh_hieu;
+            }
             else
                 op_us.SetID_DANH_HIEUNull();
+            #endregion
 
             for (int i = m_fg_quyet_dinh.Rows.Fixed; i < m_fg_quyet_dinh.Rows.Count - 1; i++)
             {

@@ -58,6 +58,20 @@ namespace BKI_HRM.HelperDucVT
          * 1. Hàm constructor của form
          * 2. Hàm form_load
          */ 
+        
+        /* Ghi chép 4: Lỗi mất handle event khi đổi tên component
+         * Khi đổi tên component cần chú ý là có thể sẽ bị mất event handle.
+         * Ví dụ: m_grv -> m_fg
+         * => m_grv.Click += 
+         */
+
+        /* Ghi chép 5: Lỗi trên cbo hiển thị value thay vì display member
+         * Mô tả: Khi chọn cbo thì thay vì hiển thị đoạn text của DisplayMember (mặc dù lúc xổ xuống chọn nó vẫn hiện), 
+         *      nó lại hiển thị ValueMember. Các giá trị khác bình thường, chỉ có 1 hoặc 1 số bị như vậy.
+         * Nguyên nhân: Là do những dòng đó có type value khác với type value của các dòng khác.
+         *          Ví dụ: Các dòng khác là Decimal, dòng đó lại là Int.
+         * Giải quyết: Đổi thành Decimal cho giống với các dòng khác.
+         */
         #endregion
 
         #region Không dùng
