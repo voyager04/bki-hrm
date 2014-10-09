@@ -337,7 +337,7 @@ namespace QLNhanSu.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("F101_CoCauTopica", "Report");
             }
         }
 

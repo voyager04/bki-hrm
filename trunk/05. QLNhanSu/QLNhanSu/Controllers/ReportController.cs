@@ -93,7 +93,7 @@ namespace QLNhanSu.Controllers
                 _result += "<td>" + rootDonVi.CAP_DON_VI + "</td>";
                 _result += "<td>" + rootDonVi.TRANG_THAI + "</td>";
                 _result += "<td>" + string.Format("{0:dd/MM/yyyy}", rootDonVi.TU_NGAY) + "</td>";
-                _result += "<td class='btnViewDetails' data-don-vi='" + rootDonVi.MA_DON_VI + "' >";
+                _result += "<td class='btnViewDetails' data-don-vi='" + rootDonVi.MA_DON_VI + "' data-toggle='modal' data-target='.model-donvi-detail'>";
                 _result += "<span class='glyphicon glyphicon-user'></span></td>";
                 _result += "</tr>";
             }
