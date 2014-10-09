@@ -24,15 +24,14 @@ namespace BKI_HRM.HelperDucVT
          * - 18/10/2014:
          *      pr_V_GD_LUONG_THEO_QD_is_exist_luong_hien_tai
          *      pr_V_GD_LUONG_THEO_QD_Insert
-         *      
+         *      pr_V_GD_LUONG_THEO_QD_Update
          * 
          */
 
         #endregion
 
         #region Ghi chép
-
-        /* Ghi chép 1:
+        /* Ghi chép 1: Cách sử dụng Rollback()
          * v_us.BeginTransaction(); // 
          * v_us.Delete();
          * v_us.CommitTransaction();
@@ -41,12 +40,24 @@ namespace BKI_HRM.HelperDucVT
          *                  // Chấm dứt kết nối.
          */
 
-        /* Ghi chép 2:
+        /* Ghi chép 2: Thao tác với dữ liệu :Sử dụng store procedure hay load lên ds để xử lý?
          * Tốt nhất mọi công việc Select/Insert/Update/Delete dù cho là thao tác trên 1 bảng hay nhiều bảng thì nên làm việc đó ở DataBase
          * Tức là dùng Store Procedure để thực hiện, chỉ cần truyền thông tin cần thiết cho nó.
          */
 
-
+        /* Ghi chép 3: Lỗi vô tình sử dụng component chưa được load dữ liệu
+         * Mô tả: Lỗi xảy ra khi sử dụng dữ liệu ở 1 component khi component đó chưa được load dữ liệu
+         *      Thường xảy ra khi dùng Event.
+         *      Ví dụ: Event SelectedIndexChange của Cbo sẽ được bắt khi DataSource của nó được gán. 
+         *              Nhưng trong event này lại sử dụng dữ liệu của 1 component nào đó chưa được load dữ liệu (sau đó mới load).
+         *              Điều này khiến xảy ra lỗi.
+         * Giải pháp: Sử dụng 1 biến flag (ví dụ: bool is_form_loaded) để kiểm tra xem form đã được load hoàn toàn hay chưa 
+         *              (Cuối hàm Event Form_Load gán is_form_loaded = true).
+         *              
+         * Chú ý ở đây sẽ có ít nhất 2 hàm chạy ở quá trình khởi tạo form: 
+         * 1. Hàm constructor của form
+         * 2. Hàm form_load
+         */ 
         #endregion
 
         #region Không dùng

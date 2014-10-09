@@ -418,11 +418,6 @@ namespace BKI_HRM
             }
             if (!CValidateTextBox.IsValid(m_txt_ho_khau, DataType.StringType, allowNull.YES, true))
                 return false;
-            if (m_dat_ngay_cap.Value.Year - m_dat_ngay_sinh.Value.Year < 10)
-            {
-                BaseMessages.MsgBox_Infor("Ngày cấp CMND không phù hợp với ngày sinh đã nhập.");
-                return false;
-            }
             if (!CValidateTextBox.IsValid(m_txt_so_tai_khoan, DataType.NumberType, allowNull.YES, true))
                 return false;
             if (!CValidateTextBox.IsValid(m_txt_nam_sinh_bo, DataType.NumberType, allowNull.YES, true))
