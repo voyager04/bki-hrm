@@ -331,7 +331,6 @@
     <Compile Include="Models\HT_USER_GROUP_WEB.cs">
       <DependentUpon>BKI_HRM.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Identity.cs" />
     <Compile Include="Models\pr_CM_DM_TU_DIEN_Load_loai_quyet_dinh_Result.cs">
       <DependentUpon>BKI_HRM.tt</DependentUpon>
     </Compile>
