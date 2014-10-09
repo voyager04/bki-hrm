@@ -60,20 +60,20 @@
             this.tabNhanVien = new System.Windows.Forms.TabPage();
             this.m_fg_nhan_vien = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.m_lbl_don_vi = new System.Windows.Forms.Label();
+            this.m_lbl_chuc_vu = new System.Windows.Forms.Label();
+            this.m_lbl_email_ca_nhan = new System.Windows.Forms.Label();
             this.m_lbl_ma_nhan_vien = new System.Windows.Forms.Label();
             this.m_cmd_delete_nhan_vien = new SIS.Controls.Button.SiSButton();
             this.m_txt_search_nhan_vien = new System.Windows.Forms.TextBox();
             this.m_lbl_ma_nhan_su = new System.Windows.Forms.Label();
             this.m_lbl_ho_va_ten = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.cM_DM_TU_DIENTableAdapter1 = new BKI_HRM.DS.DS_CM_DM_TU_DIENTableAdapters.CM_DM_TU_DIENTableAdapter();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.m_lbl_email_ca_nhan = new System.Windows.Forms.Label();
-            this.m_lbl_chuc_vu = new System.Windows.Forms.Label();
-            this.m_lbl_don_vi = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.m_tab_du_an.SuspendLayout();
@@ -392,7 +392,7 @@
             this.m_fg_quyet_dinh.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_fg_quyet_dinh.Location = new System.Drawing.Point(3, 32);
             this.m_fg_quyet_dinh.Name = "m_fg_quyet_dinh";
-            this.m_fg_quyet_dinh.Rows.Count = 8;
+            this.m_fg_quyet_dinh.Rows.Count = 9;
             this.m_fg_quyet_dinh.Size = new System.Drawing.Size(1079, 327);
             this.m_fg_quyet_dinh.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_quyet_dinh.Styles"));
             this.m_fg_quyet_dinh.TabIndex = 0;
@@ -418,7 +418,7 @@
             this.m_fg_nhan_vien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg_nhan_vien.Location = new System.Drawing.Point(3, 80);
             this.m_fg_nhan_vien.Name = "m_fg_nhan_vien";
-            this.m_fg_nhan_vien.Rows.Count = 8;
+            this.m_fg_nhan_vien.Rows.Count = 9;
             this.m_fg_nhan_vien.Size = new System.Drawing.Size(1079, 279);
             this.m_fg_nhan_vien.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_nhan_vien.Styles"));
             this.m_fg_nhan_vien.TabIndex = 108;
@@ -445,6 +445,33 @@
             this.groupBox2.TabIndex = 110;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chọn nhân sự";
+            // 
+            // m_lbl_don_vi
+            // 
+            this.m_lbl_don_vi.AutoSize = true;
+            this.m_lbl_don_vi.Location = new System.Drawing.Point(596, 51);
+            this.m_lbl_don_vi.Name = "m_lbl_don_vi";
+            this.m_lbl_don_vi.Size = new System.Drawing.Size(43, 13);
+            this.m_lbl_don_vi.TabIndex = 110;
+            this.m_lbl_don_vi.Text = "(đơn vị)";
+            // 
+            // m_lbl_chuc_vu
+            // 
+            this.m_lbl_chuc_vu.AutoSize = true;
+            this.m_lbl_chuc_vu.Location = new System.Drawing.Point(333, 51);
+            this.m_lbl_chuc_vu.Name = "m_lbl_chuc_vu";
+            this.m_lbl_chuc_vu.Size = new System.Drawing.Size(52, 13);
+            this.m_lbl_chuc_vu.TabIndex = 110;
+            this.m_lbl_chuc_vu.Text = "(chức vụ)";
+            // 
+            // m_lbl_email_ca_nhan
+            // 
+            this.m_lbl_email_ca_nhan.AutoSize = true;
+            this.m_lbl_email_ca_nhan.Location = new System.Drawing.Point(71, 51);
+            this.m_lbl_email_ca_nhan.Name = "m_lbl_email_ca_nhan";
+            this.m_lbl_email_ca_nhan.Size = new System.Drawing.Size(37, 13);
+            this.m_lbl_email_ca_nhan.TabIndex = 110;
+            this.m_lbl_email_ca_nhan.Text = "(email)";
             // 
             // m_lbl_ma_nhan_vien
             // 
@@ -507,6 +534,33 @@
             this.label11.TabIndex = 66;
             this.label11.Text = "Họ và tên";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(552, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.TabIndex = 64;
+            this.label3.Text = "Đơn vị";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(280, 51);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.TabIndex = 64;
+            this.label2.Text = "Chức vụ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(33, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.TabIndex = 64;
+            this.label1.Text = "Email";
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -520,60 +574,6 @@
             // 
             this.cM_DM_TU_DIENTableAdapter1.ClearBeforeFill = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 64;
-            this.label1.Text = "Email";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(280, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
-            this.label2.TabIndex = 64;
-            this.label2.Text = "Chức vụ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(552, 51);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
-            this.label3.TabIndex = 64;
-            this.label3.Text = "Đơn vị";
-            // 
-            // m_lbl_email_ca_nhan
-            // 
-            this.m_lbl_email_ca_nhan.AutoSize = true;
-            this.m_lbl_email_ca_nhan.Location = new System.Drawing.Point(71, 51);
-            this.m_lbl_email_ca_nhan.Name = "m_lbl_email_ca_nhan";
-            this.m_lbl_email_ca_nhan.Size = new System.Drawing.Size(37, 13);
-            this.m_lbl_email_ca_nhan.TabIndex = 110;
-            this.m_lbl_email_ca_nhan.Text = "(email)";
-            // 
-            // m_lbl_chuc_vu
-            // 
-            this.m_lbl_chuc_vu.AutoSize = true;
-            this.m_lbl_chuc_vu.Location = new System.Drawing.Point(333, 51);
-            this.m_lbl_chuc_vu.Name = "m_lbl_chuc_vu";
-            this.m_lbl_chuc_vu.Size = new System.Drawing.Size(52, 13);
-            this.m_lbl_chuc_vu.TabIndex = 110;
-            this.m_lbl_chuc_vu.Text = "(chức vụ)";
-            // 
-            // m_lbl_don_vi
-            // 
-            this.m_lbl_don_vi.AutoSize = true;
-            this.m_lbl_don_vi.Location = new System.Drawing.Point(596, 51);
-            this.m_lbl_don_vi.Name = "m_lbl_don_vi";
-            this.m_lbl_don_vi.Size = new System.Drawing.Size(43, 13);
-            this.m_lbl_don_vi.TabIndex = 110;
-            this.m_lbl_don_vi.Text = "(đơn vị)";
-            // 
             // f500_dm_du_an_detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -582,6 +582,7 @@
             this.Controls.Add(this.m_tab_du_an);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_pnl_out_place_dm);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "f500_dm_du_an_detail";
             this.Text = "F500 -  Chi tiết dự án ";
             this.Load += new System.EventHandler(this.f500_dm_du_an_detail_Load);

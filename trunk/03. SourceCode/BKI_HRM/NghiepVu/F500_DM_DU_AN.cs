@@ -815,6 +815,9 @@ namespace BKI_HRM
             m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
             m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
+
+            m_fg_du_an.Click += m_grv_du_an_Click;
+            m_fg_du_an.RowColChange += m_fg_du_an_RowColChange;
         }
         #endregion
 
