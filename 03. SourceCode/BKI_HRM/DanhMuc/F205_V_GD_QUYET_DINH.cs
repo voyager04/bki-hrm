@@ -479,29 +479,56 @@ namespace BKI_HRM
         const int NGAY_CO_HIEU_LUC = 2;
         const int NGAY_HET_HIEU_LUC = 3;
         const int TAT_CA = -1;
+
+        bool is_form_loaded = false;
         #endregion
 
         #region Private Methods
         private void load_data_2_cbo()
         {
-            WinFormControls.load_data_to_cbo_tu_dien(BKI_HRM.WinFormControls.eLOAI_TU_DIEN.LOAI_QUYET_DINH, 
-                WinFormControls.eTAT_CA.YES, m_cbo_loai_quyet_dinh);
+            WinFormControls.load_data_to_cbo_tu_dien(BKI_HRM.WinFormControls.eLOAI_TU_DIEN.LOAI_QUYET_DINH, WinFormControls.eTAT_CA.YES, m_cbo_loai_quyet_dinh);
             DataTable v_dt = new DataTable();
-            v_dt.Columns.Add("SO_COT");
-            v_dt.Columns.Add("TEN_COT");
-            v_dt.Rows.Add(TAT_CA, "---- Không tìm kiếm ----");
-            v_dt.Rows.Add(NGAY_KY, "Ngày ký");
-            v_dt.Rows.Add(NGAY_CO_HIEU_LUC, "Ngày có hiệu lực");
-            v_dt.Rows.Add(NGAY_HET_HIEU_LUC, "Ngày hết hiệu lực");
+            v_dt.TableName = "CBO_Source";
 
-            m_cbo_tim_kiem_theo.DataSource = v_dt;
+            DataColumn v_dc;
+            v_dc = v_dt.Columns.Add("SO_COT");
+            v_dc.DataType = typeof(int);
+            v_dc = v_dt.Columns.Add("TEN_COT");
+            v_dc.DataType = typeof(string);
+
+            DataRow v_dr;
+
+            v_dr = v_dt.NewRow();
+            v_dr[0] = TAT_CA;
+            v_dr[1] = "---- Không tìm kiếm ----";
+            v_dt.Rows.Add(v_dr);
+
+            v_dr = v_dt.NewRow();
+            v_dr[0] = NGAY_KY;
+            v_dr[1] = "Ngày ký";
+            v_dt.Rows.Add(v_dr);
+
+            v_dr = v_dt.NewRow();
+            v_dr[0] = NGAY_CO_HIEU_LUC;
+            v_dr[1] = "Ngày có hiệu lực";
+            v_dt.Rows.Add(v_dr);
+
+            v_dr = v_dt.NewRow();
+            v_dr[0] = NGAY_HET_HIEU_LUC;
+            v_dr[1] = "Ngày hết hiệu lực";
+            v_dt.Rows.Add(v_dr);
 
             m_cbo_tim_kiem_theo.DisplayMember = "TEN_COT";
             m_cbo_tim_kiem_theo.ValueMember = "SO_COT";
+            m_cbo_tim_kiem_theo.DataSource = v_dt;
+
+            m_cbo_tim_kiem_theo.SelectedIndex = 0;
         }
         
         private void load_custom_source_2_m_txt_tim_kiem()
         {
+            // DEBUG DucVT
+
             //m_us.FillDataset(m_ds);
             DS_V_GD_QUYET_DINH v_ds = new DS_V_GD_QUYET_DINH();
             m_us.FillDataset(v_ds);
@@ -719,6 +746,8 @@ namespace BKI_HRM
             try
             {
                 set_initial_form_load();
+
+                is_form_loaded = true;
             }
             catch (Exception v_e)
             {
@@ -861,7 +890,8 @@ namespace BKI_HRM
         {
             try
             {
-                load_data_2_grid();
+                if (is_form_loaded)
+                    load_data_2_grid();
             }
             catch (Exception v_e)
             {
@@ -873,7 +903,8 @@ namespace BKI_HRM
         {
             try
             {
-                load_data_2_grid();
+                if (is_form_loaded)
+                    load_data_2_grid();
             }
             catch (Exception v_e)
             {
