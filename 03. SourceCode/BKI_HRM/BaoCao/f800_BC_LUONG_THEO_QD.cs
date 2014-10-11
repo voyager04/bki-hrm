@@ -24,21 +24,19 @@ using BKI_HRM.DS.CDBNames;
 
 using C1.Win.C1FlexGrid;
 
-namespace BKI_HRM
-{
+namespace BKI_HRM {
 
 
 
-	public class f800_BC_LUONG_THEO_QD : System.Windows.Forms.Form
-	{
-		internal System.Windows.Forms.ImageList ImageList;
-		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
-		private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
-		internal SIS.Controls.Button.SiSButton m_cmd_delete;
-		internal SIS.Controls.Button.SiSButton m_cmd_update;
-		internal SIS.Controls.Button.SiSButton m_cmd_insert;
-		internal SIS.Controls.Button.SiSButton m_cmd_exit;
-		internal SIS.Controls.Button.SiSButton m_cmd_view;
+    public class f800_BC_LUONG_THEO_QD : System.Windows.Forms.Form {
+        internal System.Windows.Forms.ImageList ImageList;
+        internal System.Windows.Forms.Panel m_pnl_out_place_dm;
+        private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
+        internal SIS.Controls.Button.SiSButton m_cmd_delete;
+        internal SIS.Controls.Button.SiSButton m_cmd_update;
+        internal SIS.Controls.Button.SiSButton m_cmd_insert;
+        internal SIS.Controls.Button.SiSButton m_cmd_exit;
+        internal SIS.Controls.Button.SiSButton m_cmd_view;
         private Panel panel1;
         private DateTimePicker m_dat_nam;
         private Label label1;
@@ -46,43 +44,38 @@ namespace BKI_HRM
         internal SIS.Controls.Button.SiSButton m_cmd_tim_kiem;
         internal SIS.Controls.Button.SiSButton m_cmd_ok;
         private Label label2;
-		private System.ComponentModel.IContainer components;
+        private System.ComponentModel.IContainer components;
 
-		public f800_BC_LUONG_THEO_QD()
-		{
-			//
-			// Required for Windows Form Designer support
-			//
-			InitializeComponent();
+        public f800_BC_LUONG_THEO_QD() {
+            //
+            // Required for Windows Form Designer support
+            //
+            InitializeComponent();
 
-			//
-			// TODO: Add any constructor code after InitializeComponent call
-			//
-			format_controls();
-		}
+            //
+            // TODO: Add any constructor code after InitializeComponent call
+            //
+            format_controls();
+        }
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		protected override void Dispose( bool disposing )
-		{
-			if( disposing )
-			{
-				if(components != null)
-				{
-					components.Dispose();
-				}
-			}
-			base.Dispose( disposing );
-		}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        protected override void Dispose(bool disposing) {
+            if(disposing) {
+                if(components != null) {
+                    components.Dispose();
+                }
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
+        #region Windows Form Designer generated code
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f800_BC_LUONG_THEO_QD));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
@@ -325,68 +318,98 @@ namespace BKI_HRM
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
-		}
-		#endregion
+        }
+        #endregion
 
-		#region Public Interface
-		public void display(){			
-			this.ShowDialog();
-		}
+        #region Public Interface
+        public void display() {
+            this.ShowDialog();
+        }
         public static AutoCompleteStringCollection LoadAutoComplete(DS_RPT_LUONG_THEO_QD ip_ds) {
             AutoCompleteStringCollection stringCol = new AutoCompleteStringCollection();
+
+            //for(int v_col = 0; v_col < ip_ds.RPT_LUONG_THEO_QD.Columns.Count -1; v_col++) {
+            //    stringCol.Add(Convert.ToString(ip_ds.RPT_LUONG_THEO_QD.Rows[0]));
+            //    stringCol.Add(Convert.ToString(ip_ds.RPT_LUONG_THEO_QD.Rows[1]) + Convert.ToString(ip_ds.RPT_LUONG_THEO_QD.Rows[2]));
+            //}
+
             foreach(DataRow row in ip_ds.RPT_LUONG_THEO_QD) {
-                for(int v_col = 0; v_col < ip_ds.RPT_LUONG_THEO_QD.Columns.Count -1 ; v_col++)
-                    stringCol.Add(Convert.ToString(row[v_col]));
+                    for(int v_col = 0; v_col < ip_ds.RPT_LUONG_THEO_QD.Columns.Count -1; v_col++){
+                        if(v_col == 1) continue;
+                        if(v_col == 2) {
+                            stringCol.Add(Convert.ToString(row[1]) +" " + Convert.ToString(row[2]));
+                            continue;
+                        }
+                        stringCol.Add(Convert.ToString(row[v_col]));
+                }
             }
             return stringCol; //return the string collection with added records
         }
-		#endregion
+        #endregion
 
-		#region Data Structure
-		private enum e_col_Number{
-			MA_NV = 1
-,NGAY_AP_DUNG_KY_II = 15
-,MA_QD_DAU_KY_I = 9
-,NGAY_AP_DUNG_GIUA_KY_II = 18
-,LUONG_CUOI_KY_I = 13
-,TEN = 3
-,LUONG_CUOI_KY_II = 20
-,MA_DON_VI = 5
-,HO_DEM = 2
-,MA_QD_GIUA_KI_I = 12
-,MA_QD_GIUA_KI_II = 19
-,LUONG_DAU_KY_II = 14
-,LUONG_DAU_KY_I = 7
-,LUONG_GIUA_KY_II = 17
-,TRANG_THAI_LD_HIEN_TAI = 6
-,MA_QD_DAU_KY_II = 16
-,NGAY_AP_DUNG_KY_I = 8
-,MA_CV = 4
-,NGAY_AP_DUNG_GIUA_KY_I = 11
-,LUONG_GIUA_KY_I = 10
+        #region Data Structure
+        private enum e_col_Number {
+            MA_NV = 1
+,
+            NGAY_AP_DUNG_KY_II = 15
+                ,
+            MA_QD_DAU_KY_I = 9
+                ,
+            NGAY_AP_DUNG_GIUA_KY_II = 18
+                ,
+            LUONG_CUOI_KY_I = 13
+                ,
+            TEN = 3
+                ,
+            LUONG_CUOI_KY_II = 20
+                ,
+            MA_DON_VI = 5
+                ,
+            HO_DEM = 2
+                ,
+            MA_QD_GIUA_KI_I = 12
+                ,
+            MA_QD_GIUA_KI_II = 19
+                ,
+            LUONG_DAU_KY_II = 14
+                ,
+            LUONG_DAU_KY_I = 7
+                ,
+            LUONG_GIUA_KY_II = 17
+                ,
+            TRANG_THAI_LD_HIEN_TAI = 6
+                ,
+            MA_QD_DAU_KY_II = 16
+                ,
+            NGAY_AP_DUNG_KY_I = 8
+                ,
+            MA_CV = 4
+                ,
+            NGAY_AP_DUNG_GIUA_KY_I = 11
+                , LUONG_GIUA_KY_I = 10
 
-		}			
-		#endregion
+        }
+        #endregion
 
-		#region Members
-		ITransferDataRow m_obj_trans;		
-		DS_RPT_LUONG_THEO_QD m_ds = new DS_RPT_LUONG_THEO_QD();
-		US_RPT_LUONG_THEO_QD m_us = new US_RPT_LUONG_THEO_QD();
-		#endregion
+        #region Members
+        ITransferDataRow m_obj_trans;
+        DS_RPT_LUONG_THEO_QD m_ds = new DS_RPT_LUONG_THEO_QD();
+        US_RPT_LUONG_THEO_QD m_us = new US_RPT_LUONG_THEO_QD();
+        #endregion
 
-		#region Private Methods
+        #region Private Methods
         public DataTable LoadDataTable() {
             return m_ds.RPT_LUONG_THEO_QD;
         }
-		private void format_controls(){
-			CControlFormat.setFormStyle(this, new CAppContext_201());
-			CControlFormat.setC1FlexFormat(m_fg);
-			CGridUtils.AddSave_Excel_Handlers(m_fg);
-            			CGridUtils.AddSearch_Handlers(m_fg);
-                        format_fixed_rows_in_grid();
-			set_define_events();
-			this.KeyPreview = true;		
-		}
+        private void format_controls() {
+            CControlFormat.setFormStyle(this, new CAppContext_201());
+            CControlFormat.setC1FlexFormat(m_fg);
+            CGridUtils.AddSave_Excel_Handlers(m_fg);
+            CGridUtils.AddSearch_Handlers(m_fg);
+            format_fixed_rows_in_grid();
+            set_define_events();
+            this.KeyPreview = true;
+        }
         private void wrap_text_all_cells() {
             m_fg.Styles[CellStyleEnum.Normal].WordWrap = true;
             m_fg.AllowResizing = AllowResizingEnum.Rows;
@@ -462,131 +485,131 @@ namespace BKI_HRM
             m_fg[1, (int)e_col_Number.LUONG_CUOI_KY_II] = "Lương cuối kỳ";
 
         }
-		private void set_initial_form_load(){						
-			m_obj_trans = get_trans_object(m_fg);
-            
-			load_data_2_grid();
+        private void set_initial_form_load() {
+            m_obj_trans = get_trans_object(m_fg);
+
+            load_data_2_grid();
             auto_complete_text();
-		}	
-		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
-			Hashtable v_htb = new Hashtable();
-			v_htb.Add(RPT_LUONG_THEO_QD.MA_NV, e_col_Number.MA_NV);
-			v_htb.Add(RPT_LUONG_THEO_QD.NGAY_AP_DUNG_KY_II, e_col_Number.NGAY_AP_DUNG_KY_II);
-			v_htb.Add(RPT_LUONG_THEO_QD.MA_QD_DAU_KY_I, e_col_Number.MA_QD_DAU_KY_I);
-			v_htb.Add(RPT_LUONG_THEO_QD.NGAY_AP_DUNG_GIUA_KY_II, e_col_Number.NGAY_AP_DUNG_GIUA_KY_II);
-			v_htb.Add(RPT_LUONG_THEO_QD.LUONG_CUOI_KY_I, e_col_Number.LUONG_CUOI_KY_I);
-			v_htb.Add(RPT_LUONG_THEO_QD.TEN, e_col_Number.TEN);
-			v_htb.Add(RPT_LUONG_THEO_QD.LUONG_CUOI_KY_II, e_col_Number.LUONG_CUOI_KY_II);
-			v_htb.Add(RPT_LUONG_THEO_QD.MA_DON_VI, e_col_Number.MA_DON_VI);
-			v_htb.Add(RPT_LUONG_THEO_QD.HO_DEM, e_col_Number.HO_DEM);
-			v_htb.Add(RPT_LUONG_THEO_QD.MA_QD_GIUA_KI_I, e_col_Number.MA_QD_GIUA_KI_I);
-			v_htb.Add(RPT_LUONG_THEO_QD.MA_QD_GIUA_KI_II, e_col_Number.MA_QD_GIUA_KI_II);
-			v_htb.Add(RPT_LUONG_THEO_QD.LUONG_DAU_KY_II, e_col_Number.LUONG_DAU_KY_II);
-			v_htb.Add(RPT_LUONG_THEO_QD.LUONG_DAU_KY_I, e_col_Number.LUONG_DAU_KY_I);
-			v_htb.Add(RPT_LUONG_THEO_QD.LUONG_GIUA_KY_II, e_col_Number.LUONG_GIUA_KY_II);
-			v_htb.Add(RPT_LUONG_THEO_QD.TRANG_THAI_LD_HIEN_TAI, e_col_Number.TRANG_THAI_LD_HIEN_TAI);
-			v_htb.Add(RPT_LUONG_THEO_QD.MA_QD_DAU_KY_II, e_col_Number.MA_QD_DAU_KY_II);
-			v_htb.Add(RPT_LUONG_THEO_QD.NGAY_AP_DUNG_KY_I, e_col_Number.NGAY_AP_DUNG_KY_I);
-			v_htb.Add(RPT_LUONG_THEO_QD.MA_CV, e_col_Number.MA_CV);
-			v_htb.Add(RPT_LUONG_THEO_QD.NGAY_AP_DUNG_GIUA_KY_I, e_col_Number.NGAY_AP_DUNG_GIUA_KY_I);
-			v_htb.Add(RPT_LUONG_THEO_QD.LUONG_GIUA_KY_I, e_col_Number.LUONG_GIUA_KY_I);
-									
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.RPT_LUONG_THEO_QD.NewRow());
-			return v_obj_trans;			
-		}
-		private void load_data_2_grid(){
-			//Lay ngay dau nam
+        }
+        private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg) {
+            Hashtable v_htb = new Hashtable();
+            v_htb.Add(RPT_LUONG_THEO_QD.MA_NV, e_col_Number.MA_NV);
+            v_htb.Add(RPT_LUONG_THEO_QD.NGAY_AP_DUNG_KY_II, e_col_Number.NGAY_AP_DUNG_KY_II);
+            v_htb.Add(RPT_LUONG_THEO_QD.MA_QD_DAU_KY_I, e_col_Number.MA_QD_DAU_KY_I);
+            v_htb.Add(RPT_LUONG_THEO_QD.NGAY_AP_DUNG_GIUA_KY_II, e_col_Number.NGAY_AP_DUNG_GIUA_KY_II);
+            v_htb.Add(RPT_LUONG_THEO_QD.LUONG_CUOI_KY_I, e_col_Number.LUONG_CUOI_KY_I);
+            v_htb.Add(RPT_LUONG_THEO_QD.TEN, e_col_Number.TEN);
+            v_htb.Add(RPT_LUONG_THEO_QD.LUONG_CUOI_KY_II, e_col_Number.LUONG_CUOI_KY_II);
+            v_htb.Add(RPT_LUONG_THEO_QD.MA_DON_VI, e_col_Number.MA_DON_VI);
+            v_htb.Add(RPT_LUONG_THEO_QD.HO_DEM, e_col_Number.HO_DEM);
+            v_htb.Add(RPT_LUONG_THEO_QD.MA_QD_GIUA_KI_I, e_col_Number.MA_QD_GIUA_KI_I);
+            v_htb.Add(RPT_LUONG_THEO_QD.MA_QD_GIUA_KI_II, e_col_Number.MA_QD_GIUA_KI_II);
+            v_htb.Add(RPT_LUONG_THEO_QD.LUONG_DAU_KY_II, e_col_Number.LUONG_DAU_KY_II);
+            v_htb.Add(RPT_LUONG_THEO_QD.LUONG_DAU_KY_I, e_col_Number.LUONG_DAU_KY_I);
+            v_htb.Add(RPT_LUONG_THEO_QD.LUONG_GIUA_KY_II, e_col_Number.LUONG_GIUA_KY_II);
+            v_htb.Add(RPT_LUONG_THEO_QD.TRANG_THAI_LD_HIEN_TAI, e_col_Number.TRANG_THAI_LD_HIEN_TAI);
+            v_htb.Add(RPT_LUONG_THEO_QD.MA_QD_DAU_KY_II, e_col_Number.MA_QD_DAU_KY_II);
+            v_htb.Add(RPT_LUONG_THEO_QD.NGAY_AP_DUNG_KY_I, e_col_Number.NGAY_AP_DUNG_KY_I);
+            v_htb.Add(RPT_LUONG_THEO_QD.MA_CV, e_col_Number.MA_CV);
+            v_htb.Add(RPT_LUONG_THEO_QD.NGAY_AP_DUNG_GIUA_KY_I, e_col_Number.NGAY_AP_DUNG_GIUA_KY_I);
+            v_htb.Add(RPT_LUONG_THEO_QD.LUONG_GIUA_KY_I, e_col_Number.LUONG_GIUA_KY_I);
+
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.RPT_LUONG_THEO_QD.NewRow());
+            return v_obj_trans;
+        }
+        private void load_data_2_grid() {
+            //Lay ngay dau nam
             string v_str_dau_nam = "01/01/"+ m_dat_nam.Value.Year;
             DateTime v_dat = CIPConvert.ToDatetime(v_str_dau_nam);
 
-			m_ds = new DS_RPT_LUONG_THEO_QD();			
-			m_us.FillDatasetByProc(m_ds, v_dat, CAppContext_201.getCurrentIDPhapnhan());
-			m_fg.Redraw = false;
-			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-			m_fg.Redraw = true;
+            m_ds = new DS_RPT_LUONG_THEO_QD();
+            m_us.FillDatasetByProc(m_ds, v_dat, CAppContext_201.getCurrentIDPhapnhan());
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            m_fg.Redraw = true;
 
             wrap_text_all_cells();
             CGridUtils.MakeSoTT(0, m_fg);
-		}
-		private void grid2us_object(US_RPT_LUONG_THEO_QD i_us
-			, int i_grid_row) {
-			DataRow v_dr;
-			v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
-			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
-			i_us.DataRow2Me(v_dr);
-		}
-
-	
-		private void us_object2grid(US_RPT_LUONG_THEO_QD i_us
-			, int i_grid_row) {
-			DataRow v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
-			i_us.Me2DataRow(v_dr);
-			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
-		}
+        }
+        private void grid2us_object(US_RPT_LUONG_THEO_QD i_us
+            , int i_grid_row) {
+            DataRow v_dr;
+            v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
+            m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
+            i_us.DataRow2Me(v_dr);
+        }
 
 
-		private void insert_rpt_luong_theo_qd(){			
-		//	f800_BC_LUONG_THEO_QD_DE v_fDE = new  f800_BC_LUONG_THEO_QD_DE();								
-		//	v_fDE.display();
-			load_data_2_grid();
-		}
+        private void us_object2grid(US_RPT_LUONG_THEO_QD i_us
+            , int i_grid_row) {
+            DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
+            i_us.Me2DataRow(v_dr);
+            m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
+        }
 
-		private void update_rpt_luong_theo_qd(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
-			grid2us_object(m_us, m_fg.Row);
-		//	f800_BC_LUONG_THEO_QD_DE v_fDE = new f800_BC_LUONG_THEO_QD_DE();
-		//	v_fDE.display(m_us);
-			load_data_2_grid();
-		}
-				
-		private void delete_rpt_luong_theo_qd(){
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			US_RPT_LUONG_THEO_QD v_us = new US_RPT_LUONG_THEO_QD();
-			grid2us_object(v_us, m_fg.Row);
-			try {			
-				v_us.BeginTransaction();    											
-				v_us.Delete();                      								
-				v_us.CommitTransaction();
-				m_fg.Rows.Remove(m_fg.Row);				
-			}
-			catch (Exception v_e) {
-				v_us.Rollback();
-				CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
-					new CDBClientDBExceptionInterpret());
-				v_objErrHandler.showErrorMessage();
-			}
-		}
-		private void view_rpt_luong_theo_qd(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			grid2us_object(m_us, m_fg.Row);
-		//	f800_BC_LUONG_THEO_QD_DE v_fDE = new f800_BC_LUONG_THEO_QD_DE();			
-		//	v_fDE.display(m_us);
-		}
+
+        private void insert_rpt_luong_theo_qd() {
+            //	f800_BC_LUONG_THEO_QD_DE v_fDE = new  f800_BC_LUONG_THEO_QD_DE();								
+            //	v_fDE.display();
+            load_data_2_grid();
+        }
+
+        private void update_rpt_luong_theo_qd() {
+            if(!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if(!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us, m_fg.Row);
+            //	f800_BC_LUONG_THEO_QD_DE v_fDE = new f800_BC_LUONG_THEO_QD_DE();
+            //	v_fDE.display(m_us);
+            load_data_2_grid();
+        }
+
+        private void delete_rpt_luong_theo_qd() {
+            if(!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if(!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if(BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
+            US_RPT_LUONG_THEO_QD v_us = new US_RPT_LUONG_THEO_QD();
+            grid2us_object(v_us, m_fg.Row);
+            try {
+                v_us.BeginTransaction();
+                v_us.Delete();
+                v_us.CommitTransaction();
+                m_fg.Rows.Remove(m_fg.Row);
+            }
+            catch(Exception v_e) {
+                v_us.Rollback();
+                CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
+                    new CDBClientDBExceptionInterpret());
+                v_objErrHandler.showErrorMessage();
+            }
+        }
+        private void view_rpt_luong_theo_qd() {
+            if(!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if(!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us, m_fg.Row);
+            //	f800_BC_LUONG_THEO_QD_DE v_fDE = new f800_BC_LUONG_THEO_QD_DE();			
+            //	v_fDE.display(m_us);
+        }
         private void auto_complete_text() {
             m_txt_tim_kiem.AutoCompleteCustomSource = LoadAutoComplete(m_ds);
             m_txt_tim_kiem.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             m_txt_tim_kiem.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
-		private void set_define_events(){
-			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
-			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
-			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+        private void set_define_events() {
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
+            m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
+            m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
+            m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
             //m_dat_nam.ValueChanged += new EventHandler(m_dat_nam_ValueChanged);
             m_cmd_ok.Click += new EventHandler(m_cmd_ok_Click);
             m_cmd_tim_kiem.Click += m_cmd_tim_kiem_Click;
             m_txt_tim_kiem.TextChanged += m_txt_tim_kiem_TextChanged;
             m_txt_tim_kiem.KeyUp += m_txt_tim_kiem_KeyUp;
-		}
+        }
 
 
-        
-        private void tim_kiem(DS_RPT_LUONG_THEO_QD ip_ds, string ip_search_text){
+
+        private void tim_kiem(DS_RPT_LUONG_THEO_QD ip_ds, string ip_search_text) {
             DataView v_dv = new DataView(ip_ds.RPT_LUONG_THEO_QD);
             v_dv.RowFilter = string.Format("MA_NV like '%{0}%' or " +
                                             //"NGAY_AP_DUNG_KY_II like '%{0}%' or " +
@@ -606,8 +629,8 @@ namespace BKI_HRM
                                             "MA_QD_DAU_KY_II like '%{0}%' or " +
                                             //"NGAY_AP_DUNG_KY_I like '%{0}%' or " +
                                             "MA_CV like '%{0}%'", ip_search_text);
-                                            //"NGAY_AP_DUNG_GIUA_KY_I like '%{0}%'", ip_search_text);
-                                            //"LUONG_GIUA_KY_I like '%{0}%'", ip_search_text);
+            //"NGAY_AP_DUNG_GIUA_KY_I like '%{0}%'", ip_search_text);
+            //"LUONG_GIUA_KY_I like '%{0}%'", ip_search_text);
             DataTable v_dt = v_dv.ToTable();
             DataSet v_ds =  new DataSet();
             v_ds.Tables.Add(v_dt);
@@ -616,20 +639,20 @@ namespace BKI_HRM
             m_fg.Redraw = true;
 
             format_fixed_rows_in_grid();
-            CGridUtils.MakeSoTT(0,m_fg);
+            CGridUtils.MakeSoTT(0, m_fg);
         }
-       
-		#endregion
 
-//
-		//
-		//		EVENT HANLDERS
-		//
+        #endregion
+
+        //
+        //
+        //		EVENT HANLDERS
+        //
 
 
         void m_txt_tim_kiem_KeyUp(object sender, KeyEventArgs e) {
             try {
-                if (e.KeyCode == Keys.Enter)
+                if(e.KeyCode == Keys.Enter)
                     tim_kiem(m_ds, m_txt_tim_kiem.Text);
             }
             catch(Exception v_e) {
@@ -637,7 +660,7 @@ namespace BKI_HRM
             }
         }
 
-        
+
         private void m_txt_tim_kiem_TextChanged(object sender, EventArgs e) {
             try {
                 //tim_kiem(m_ds, m_txt_tim_kiem.Text);
@@ -671,61 +694,61 @@ namespace BKI_HRM
         //        CSystemLog_301.ExceptionHandle(v_e);
         //    }
         //}
-		private void f800_BC_LUONG_THEO_QD_Load(object sender, System.EventArgs e) {
-			try{
-				set_initial_form_load();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		
-		}
+        private void f800_BC_LUONG_THEO_QD_Load(object sender, System.EventArgs e) {
+            try {
+                set_initial_form_load();
+            }
+            catch(Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
 
-		private void m_cmd_exit_Click(object sender, EventArgs e) {
-			try{
-				this.Close();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        }
 
-		private void m_cmd_insert_Click(object sender, EventArgs e) {
-			try{
-				insert_rpt_luong_theo_qd();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_exit_Click(object sender, EventArgs e) {
+            try {
+                this.Close();
+            }
+            catch(Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_update_Click(object sender, EventArgs e) {
-			try{
-				update_rpt_luong_theo_qd();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_insert_Click(object sender, EventArgs e) {
+            try {
+                insert_rpt_luong_theo_qd();
+            }
+            catch(Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_delete_Click(object sender, EventArgs e) {
-			try{
-				delete_rpt_luong_theo_qd();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_update_Click(object sender, EventArgs e) {
+            try {
+                update_rpt_luong_theo_qd();
+            }
+            catch(Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-		private void m_cmd_view_Click(object sender, EventArgs e) {
-			try{
-				view_rpt_luong_theo_qd();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        private void m_cmd_delete_Click(object sender, EventArgs e) {
+            try {
+                delete_rpt_luong_theo_qd();
+            }
+            catch(Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-	}
+        private void m_cmd_view_Click(object sender, EventArgs e) {
+            try {
+                view_rpt_luong_theo_qd();
+            }
+            catch(Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+    }
 }
 
