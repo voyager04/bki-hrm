@@ -627,6 +627,7 @@ namespace BKI_HRM {
                                             //"LUONG_GIUA_KY_II like '%{0}%' or " +
                                             "TRANG_THAI_LD_HIEN_TAI like '%{0}%' or " +
                                             "MA_QD_DAU_KY_II like '%{0}%' or " +
+                                            "HO_DEM + ' '+ TEN like '%{0}%' or " +
                                             //"NGAY_AP_DUNG_KY_I like '%{0}%' or " +
                                             "MA_CV like '%{0}%'", ip_search_text);
             //"NGAY_AP_DUNG_GIUA_KY_I like '%{0}%'", ip_search_text);
