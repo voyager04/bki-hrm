@@ -418,30 +418,32 @@ namespace BKI_HRM
             m_fg[1, (int)e_col_Number.MA_CV] = "Mã CV hiện tại";
 
             m_fg.Cols[(int)e_col_Number.MA_DON_VI].AllowMerging = true;
-            m_fg[0, (int)e_col_Number.MA_DON_VI] = "Mã DV hiện tại";
-            m_fg[1, (int)e_col_Number.MA_DON_VI] = "Mã DV hiện tại";
+            m_fg[0, (int)e_col_Number.MA_DON_VI] = "Mã ĐV hiện tại";
+            m_fg[1, (int)e_col_Number.MA_DON_VI] = "Mã ĐV hiện tại";
 
             m_fg.Cols[(int)e_col_Number.TRANG_THAI_LD_HIEN_TAI].AllowMerging = true;
             m_fg[0, (int)e_col_Number.TRANG_THAI_LD_HIEN_TAI] = "Trạng thái LĐ hiện tại";
             m_fg[1, (int)e_col_Number.TRANG_THAI_LD_HIEN_TAI] = "Trạng thái LĐ hiện tại";
 
             //Merge nhiều cột thành các kỳ
+            string v_str_ky_1 = "KỲ I/" + m_dat_nam.Value.Year;
             m_fg.Rows[0].AllowMerging = true;
-            m_fg[0, (int)e_col_Number.LUONG_DAU_KY_I] = "KỲ I";
-            m_fg[0, (int)e_col_Number.NGAY_AP_DUNG_KY_I] = "KỲ I";
-            m_fg[0, (int)e_col_Number.MA_QD_DAU_KY_I] = "KỲ I";
-            m_fg[0, (int)e_col_Number.LUONG_GIUA_KY_I] = "KỲ I";
-            m_fg[0, (int)e_col_Number.NGAY_AP_DUNG_GIUA_KY_I] = "KỲ I";
-            m_fg[0, (int)e_col_Number.MA_QD_GIUA_KI_I] = "KỲ I";
-            m_fg[0, (int)e_col_Number.LUONG_CUOI_KY_I] = "KỲ I";
+            m_fg[0, (int)e_col_Number.LUONG_DAU_KY_I] = v_str_ky_1;
+            m_fg[0, (int)e_col_Number.NGAY_AP_DUNG_KY_I] = v_str_ky_1;
+            m_fg[0, (int)e_col_Number.MA_QD_DAU_KY_I] = v_str_ky_1;
+            m_fg[0, (int)e_col_Number.LUONG_GIUA_KY_I] = v_str_ky_1;
+            m_fg[0, (int)e_col_Number.NGAY_AP_DUNG_GIUA_KY_I] = v_str_ky_1;
+            m_fg[0, (int)e_col_Number.MA_QD_GIUA_KI_I] = v_str_ky_1;
+            m_fg[0, (int)e_col_Number.LUONG_CUOI_KY_I] = v_str_ky_1;
 
-            m_fg[0, (int)e_col_Number.LUONG_DAU_KY_II] = "KỲ II";
-            m_fg[0, (int)e_col_Number.NGAY_AP_DUNG_KY_II] = "KỲ II";
-            m_fg[0, (int)e_col_Number.MA_QD_DAU_KY_II] = "KỲ II";
-            m_fg[0, (int)e_col_Number.LUONG_GIUA_KY_II] = "KỲ II";
-            m_fg[0, (int)e_col_Number.NGAY_AP_DUNG_GIUA_KY_II] = "KỲ II";
-            m_fg[0, (int)e_col_Number.MA_QD_GIUA_KI_II] = "KỲ II";
-            m_fg[0, (int)e_col_Number.LUONG_CUOI_KY_II] = "KỲ II";
+            string v_str_ky_2 = "KỲ II/" + m_dat_nam.Value.Year;
+            m_fg[0, (int)e_col_Number.LUONG_DAU_KY_II] = v_str_ky_2;
+            m_fg[0, (int)e_col_Number.NGAY_AP_DUNG_KY_II] = v_str_ky_2;
+            m_fg[0, (int)e_col_Number.MA_QD_DAU_KY_II] = v_str_ky_2;
+            m_fg[0, (int)e_col_Number.LUONG_GIUA_KY_II] = v_str_ky_2;
+            m_fg[0, (int)e_col_Number.NGAY_AP_DUNG_GIUA_KY_II] = v_str_ky_2;
+            m_fg[0, (int)e_col_Number.MA_QD_GIUA_KI_II] = v_str_ky_2;
+            m_fg[0, (int)e_col_Number.LUONG_CUOI_KY_II] = v_str_ky_2;
             //
             m_fg[1, (int)e_col_Number.LUONG_DAU_KY_I] = "Lương đầu kỳ";
             m_fg[1, (int)e_col_Number.NGAY_AP_DUNG_KY_I] = "Ngày áp dụng";
