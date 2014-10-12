@@ -385,4 +385,73 @@ Public Class CExcelReport
             Throw v_e
         End Try
     End Sub
+
+    'Export dữ liệu từ Excel ra DS
+    'Cột đầu tiên (ID) CỦA DS sẽ luôn được set = 1
+    'Cột đầu tiên CỦA FILE EXCEL có Index = 1
+    Public Sub Export2DatasetDS_by_DucVT(ByVal i_DataSet As System.Data.DataSet _
+                               , ByVal i_TableName As String _
+                              , ByVal i_iSheetStartRow As Integer)
+        Try
+            'Initialize
+            System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US")
+            m_objExcelApp = New Excel.Application
+
+            'Mở file excel từ filename
+            m_objExcelApp.Workbooks.Open(m_strTemplateFileNameWithPath)
+
+            'Mở và lấy worksheet thứ 1
+            m_objExcelApp.Workbooks(1).Worksheets.Select(1)
+            m_objExcelWorksheet = CType(m_objExcelApp.Workbooks(1).Worksheets(1), Excel.Worksheet)
+
+            'Init
+            Dim i_iExcelRow As Integer = 0 'index excel row
+            Dim v_bol_stop As Boolean = False 'điều kiện dừng vòng lặp
+
+
+            While Not v_bol_stop
+                'Init
+                Dim i_iExcelCol As Integer = 0 'index excel col
+                Dim v_iDataRow As System.Data.DataRow 'DataRow
+
+                'Tạo DataRow mới từ DataTable trong DS truyền vào
+                v_iDataRow = i_DataSet.Tables(i_DataSet.Tables(i_TableName).TableName).NewRow()
+                v_iDataRow(i_iExcelCol) = i_iExcelRow + 1 'Set cột đầu tiên của DS với giá trị tăng dần (Số thứ tự)
+
+                'Kiểm tra cell đầu tiên của row hiện tại có dữ liệu hay không, không có thì kết thúc duyệt file excel
+                'Vì cột đầu tiên của Excel bằng 1, nên ở đây ta đặt index_col = 1 chứ không phải bằng 0
+                If Not Object.ReferenceEquals(CType(m_objExcelWorksheet.Cells(i_iExcelRow + i_iSheetStartRow, 1), Excel.Range).Value(), Nothing) Then
+
+                    ' Khi cột đầu tiên có dữ liệu.
+                    ' Lặp với số lượng trường trong DS, duyệt đúng số lượng đó để convert dữ liệu trên excel sang cột DS tương ứng (trừ trường đầu tiên trong DS, vì nó mặc định là DS)
+                    For i_iExcelCol = 1 To i_DataSet.Tables(i_TableName).Columns.Count - 1
+                        If Not CType(m_objExcelWorksheet.Cells(i_iExcelRow + i_iSheetStartRow, i_iExcelCol), Excel.Range).Value() Is Nothing Then
+                            v_iDataRow(i_iExcelCol) = CType(m_objExcelWorksheet.Cells(i_iExcelRow + i_iSheetStartRow, i_iExcelCol), Excel.Range).Value()
+                        End If
+                    Next
+
+                Else
+                    v_bol_stop = True
+                End If
+
+
+                If Not v_bol_stop Then
+                    i_DataSet.Tables(i_TableName).Rows.InsertAt(v_iDataRow, i_iExcelRow)
+                    i_iExcelRow += 1
+                End If
+            End While
+            m_objExcelApp.DisplayAlerts = False
+            m_objExcelApp.Workbooks.Close()
+            m_objExcelApp.DisplayAlerts = True
+            m_objExcelApp.Quit()
+            Unmount()
+        Catch v_e As Exception
+            m_objExcelApp.DisplayAlerts = False
+            m_objExcelApp.Workbooks.Close()
+            m_objExcelApp.DisplayAlerts = True
+            m_objExcelApp.Quit()
+            Unmount()
+            Throw v_e
+        End Try
+    End Sub
 End Class

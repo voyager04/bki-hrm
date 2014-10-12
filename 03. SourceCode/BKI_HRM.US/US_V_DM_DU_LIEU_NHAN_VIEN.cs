@@ -16,9 +16,11 @@ using System.Data;
 
 
 
-namespace BKI_HRM.US {
+namespace BKI_HRM.US
+{
 
-    public class US_V_DM_DU_LIEU_NHAN_VIEN : US_Object {
+    public class US_V_DM_DU_LIEU_NHAN_VIEN : US_Object
+    {
         private const string c_TableName = "V_DM_DU_LIEU_NHAN_VIEN";
 
         #region "Public Properties"
@@ -998,7 +1000,8 @@ namespace BKI_HRM.US {
 
         #region "Addtional"
 
-        public void FillDatasetByIdCV(DS_V_DM_DU_LIEU_NHAN_VIEN op_ds_nhan_su, decimal i_dc_id) {
+        public void FillDatasetByIdCV(DS_V_DM_DU_LIEU_NHAN_VIEN op_ds_nhan_su, decimal i_dc_id)
+        {
             CStoredProc v_sp = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_select_by_ID_CHUC_VU");
             v_sp.addDecimalInputParam("@ID_CHUC_VU", i_dc_id);
             v_sp.fillDataSetByCommand(this, op_ds_nhan_su);
@@ -1011,7 +1014,7 @@ namespace BKI_HRM.US {
                                            , decimal ip_dc_id_chuc_vu
                                             , decimal ip_dc_id_don_vi
                                             , decimal ip_dc_id_dia_ban
-                                           // , DateTime ip_dat_thoi_diem
+            // , DateTime ip_dat_thoi_diem
                                             , DateTime ip_dat_tu_ngay
                                             , DateTime ip_dat_den_ngay
                                             , decimal ip_dc_thang_sinh
@@ -1039,13 +1042,14 @@ namespace BKI_HRM.US {
             v_stored_proc.addDecimalInputParam("@ID_PHAP_NHAN", ip_dc_id_phap_nhan);
             v_stored_proc.fillDataSetByCommand(this, op_ds_v_dm_du_lieu_nhan_vien);
         }
+        
         public void count_nhan_vien(DS_V_DM_DU_LIEU_NHAN_VIEN op_ds
             , string ip_str_loai_count
             , decimal ip_dc_id_phap_nhan
             , ref decimal op_dc)
         {
             CStoredProc v_store = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_count_nhan_vien");
-           
+
             v_store.addNVarcharInputParam("@loai_count", ip_str_loai_count);
             v_store.addDecimalInputParam("@ID_PHAP_NHAN", ip_dc_id_phap_nhan);
             SqlParameter v_sql = v_store.addDecimalOutputParam("@COUNT", op_dc);
@@ -1054,22 +1058,22 @@ namespace BKI_HRM.US {
         }
 
         public void count_nhan_vien1(DS_V_DM_DU_LIEU_NHAN_VIEN op_ds
-             , string ip_str_search
+                                            , string ip_str_search
                                             , string ip_str_trinh_do
                                             , decimal ip_dc_gioi_tinh
-                                           , decimal ip_dc_id_chuc_vu
+                                            , decimal ip_dc_id_chuc_vu
                                             , decimal ip_dc_id_don_vi
                                             , decimal ip_dc_id_dia_ban
-            // , DateTime ip_dat_thoi_diem
+                                         // , DateTime ip_dat_thoi_diem
                                             , DateTime ip_dat_tu_ngay
                                             , DateTime ip_dat_den_ngay
                                             , decimal ip_dc_thang_sinh
                                             , string ip_str_trang_thai_lao_dong
                                             , string ip_str_trang_thai_hien_tai
                                             , string ip_str_trang_thai_chuc_vu
-            , string ip_str_loai_count
-            , decimal ip_dc_id_phap_nhan
-            , ref decimal op_dc)
+                                            , string ip_str_loai_count
+                                            , decimal ip_dc_id_phap_nhan
+                                            , ref decimal op_dc)
         {
             CStoredProc v_store = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_count_nhan_vien1");
             v_store.addNVarcharInputParam("@ip_str_01_search", ip_str_search);
@@ -1092,7 +1096,8 @@ namespace BKI_HRM.US {
             op_dc = CIPConvert.ToDecimal(v_sql.Value);
         }
 
-        public void FillDatasetByIdDonVi(DS_V_DM_DU_LIEU_NHAN_VIEN op_ds_v_dm_du_lieu_nhan_vien, decimal ip_dc_id_don_vi) {
+        public void FillDatasetByIdDonVi(DS_V_DM_DU_LIEU_NHAN_VIEN op_ds_v_dm_du_lieu_nhan_vien, decimal ip_dc_id_don_vi)
+        {
             CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_search_by_id_don_vi");
             v_stored_proc.addDecimalInputParam("@ip_dc_id_don_vi", ip_dc_id_don_vi);
             v_stored_proc.fillDataSetByCommand(this, op_ds_v_dm_du_lieu_nhan_vien);
@@ -1101,7 +1106,8 @@ namespace BKI_HRM.US {
         public void FillDatasetTraCuuThongTinNhanVienChung(DS_V_DM_DU_LIEU_NHAN_VIEN op_ds_v_dm_du_lieu_nhan_vien
                                                             , string ip_str_key_word
                                                             , string ip_str_gender
-                                                            , string ip_str_trang_thai_lao_dong) {
+                                                            , string ip_str_trang_thai_lao_dong)
+        {
             CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_Search_TraCuuThongTinNhanVienChung");
             v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_str_key_word);
             v_stored_proc.addNVarcharInputParam("@ip_str_gioi_tinh", ip_str_gender);
@@ -1109,7 +1115,8 @@ namespace BKI_HRM.US {
             v_stored_proc.fillDataSetByCommand(this, op_ds_v_dm_du_lieu_nhan_vien);
         }
 
-        public void FillDatasetSapHetHanThuViec(DS_V_DM_DU_LIEU_NHAN_VIEN op_m_ds, string ip_str_key_word) {
+        public void FillDatasetSapHetHanThuViec(DS_V_DM_DU_LIEU_NHAN_VIEN op_m_ds, string ip_str_key_word)
+        {
             CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_sap_het_han_thu_viec");
             v_stored_proc.addNVarcharInputParam("@ip_str_search", ip_str_key_word);
             v_stored_proc.fillDataSetByCommand(this, op_m_ds);
@@ -1129,7 +1136,7 @@ namespace BKI_HRM.US {
             v_stored_proc.fillDataSetByCommand(this, op_m_ds);
         }
         #endregion
-       
+
 
         public object ip_str_ngay_truoc_het_han { get; set; }
     }

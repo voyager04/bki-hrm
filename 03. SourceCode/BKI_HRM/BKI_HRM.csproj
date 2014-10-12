@@ -219,6 +219,9 @@
     <Compile Include="DanhMuc\f300_DM_KY_DE.Designer.cs">
       <DependentUpon>f300_DM_KY_DE.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\f303_DM_NHAN_SU_import_excel.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DanhMuc\f410_chuyen_nhan_vien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -539,6 +542,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f300_DM_KY_DE.resx">
       <DependentUpon>f300_DM_KY_DE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f303_DM_NHAN_SU_import_excel.resx">
+      <DependentUpon>f303_DM_NHAN_SU_import_excel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f410_chuyen_nhan_vien.resx">
       <DependentUpon>f410_chuyen_nhan_vien.cs</DependentUpon>
