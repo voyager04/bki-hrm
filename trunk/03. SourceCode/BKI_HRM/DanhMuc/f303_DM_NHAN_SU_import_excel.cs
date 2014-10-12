@@ -12,9 +12,11 @@ using C1.Win.C1FlexGrid;
 using IP.Core.IPCommon;
 using IP.Core.IPExcelReport;
 using IP.Core.IPException;
+using IP.Core.IPSystemAdmin;
 using System;
 using System.Collections;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace BKI_HRM
@@ -44,6 +46,10 @@ namespace BKI_HRM
         internal SIS.Controls.Button.SiSButton m_cmd_kiem_tra_du_lieu;
         private Label label5;
         private Label m_lbl_loading_mes;
+        private Label label9;
+        private Label label7;
+        private Label m_lbl_green;
+        private Label m_lbl_red;
         private System.ComponentModel.IContainer components;
 
         public f303_DM_NHAN_SU_import_excel()
@@ -103,6 +109,10 @@ namespace BKI_HRM
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_ofd_exel_file = new System.Windows.Forms.OpenFileDialog();
             this.m_lbl_loading_mes = new System.Windows.Forms.Label();
+            this.m_lbl_red = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.m_lbl_green = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -230,6 +240,10 @@ namespace BKI_HRM
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.m_lbl_green);
+            this.panel1.Controls.Add(this.m_lbl_red);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.m_cmd_kiem_tra_du_lieu);
             this.panel1.Controls.Add(this.m_cmd_save_data);
@@ -370,6 +384,42 @@ namespace BKI_HRM
             this.m_lbl_loading_mes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.m_lbl_loading_mes.Visible = false;
             // 
+            // m_lbl_red
+            // 
+            this.m_lbl_red.BackColor = System.Drawing.Color.Red;
+            this.m_lbl_red.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.m_lbl_red.Location = new System.Drawing.Point(845, 43);
+            this.m_lbl_red.Name = "m_lbl_red";
+            this.m_lbl_red.Size = new System.Drawing.Size(56, 23);
+            this.m_lbl_red.TabIndex = 41;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(907, 45);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 13);
+            this.label7.TabIndex = 41;
+            this.label7.Text = "Dữ liệu trống";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(907, 73);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(78, 13);
+            this.label9.TabIndex = 41;
+            this.label9.Text = "Dữ liệu bị trùng";
+            // 
+            // m_lbl_green
+            // 
+            this.m_lbl_green.BackColor = System.Drawing.Color.Green;
+            this.m_lbl_green.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.m_lbl_green.Location = new System.Drawing.Point(845, 72);
+            this.m_lbl_green.Name = "m_lbl_green";
+            this.m_lbl_green.Size = new System.Drawing.Size(56, 23);
+            this.m_lbl_green.TabIndex = 41;
+            // 
             // f303_DM_NHAN_SU_import_excel
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -508,7 +558,7 @@ namespace BKI_HRM
         #region Private Methods
         private void format_controls()
         {
-            //CControlFormat.setFormStyle(this, new CAppContext_201());
+            CControlFormat.setFormStyle(this, new CAppContext_201());
             CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
@@ -662,6 +712,12 @@ namespace BKI_HRM
             m_cmd_chon_file_excel.Click += new EventHandler(m_cmd_chon_file_excel_Click);
             m_cmd_kiem_tra_du_lieu.Click += new EventHandler(m_cmd_kiem_tra_du_lieu_Click);
             m_cmd_save_data.Click += new EventHandler(m_cmd_save_data_Click);
+            m_fg.AfterEdit += new RowColEventHandler(m_fg_AfterEdit);
+        }
+
+        private void m_fg_AfterEdit(object sender, RowColEventArgs e)
+        {
+            m_fg.Redraw = true;
         }
 
         // Event private methods
@@ -692,23 +748,88 @@ namespace BKI_HRM
 
         private void kiem_tra_du_lieu()
         {
-            if (m_ds != null)
+            if ((string)m_fg[1, 0] != "")
             {
+                CellStyle red_cell = m_fg.Styles.Add("v_blank");
+                red_cell.BackColor = Color.Red;
+                CellStyle green_cell = m_fg.Styles.Add("v_duplicate");
+                green_cell.BackColor = Color.Green;
+                CellStyle default_cell = m_fg.Styles.Add("v_default");
+                default_cell.BackColor = Color.WhiteSmoke;
+
+                int i_ma_nv = 2;
+                int i_ho_dem = 3;
+                int i_ten = 4;
+                bool is_error = false;
+
                 // Tổ đỏ nền và cho phép sửa dữ liệu dòng đó.
                 foreach (Row v_row in m_fg.Rows)
                 {
-                    // Kiểm tra dữ liệu trống trong các cột mã nv, họ đệm, tên
-                    if (((string)v_row[DM_NHAN_SU.MA_NV]) == ""
-                        || ((string)v_row[DM_NHAN_SU.HO_DEM]) == ""
-                        || ((string)v_row[DM_NHAN_SU.TEN]) == "")
+                    if (v_row.Index > 0)
                     {
-                        v_row.StyleDisplay.BackColor = System.Drawing.Color.Red;
-                        v_row.AllowEditing = true;
-                    }
+                        // Kiểm tra dữ liệu trống trong các cột mã nv, họ đệm, tên
 
-                    // Kiểm tra dữ liệu trùng ở cột mã nv
-                    
+                        if ((string)v_row[i_ma_nv] == null)
+                        {
+                            m_fg.SetCellStyle(v_row.Index, i_ma_nv, red_cell);
+                            is_error = true;
+                        }
+                        else
+                            m_fg.SetCellStyle(v_row.Index, i_ma_nv, default_cell);
+
+                        if ((string)v_row[i_ho_dem] == null)
+                        {
+                            m_fg.SetCellStyle(v_row.Index, i_ho_dem, red_cell);
+                            is_error = true;
+                        }
+                        else
+                            m_fg.SetCellStyle(v_row.Index, i_ho_dem, default_cell);
+
+                        if ((string)v_row[i_ten] == null)
+                        {
+                            m_fg.SetCellStyle(v_row.Index, i_ten, red_cell);
+                            is_error = true;
+                        }
+                        else
+                            m_fg.SetCellStyle(v_row.Index, i_ten, default_cell);
+
+
+
+                        // Kiểm tra dữ liệu trùng ở cột mã nv
+                        for (int index = v_row.Index + 1; index < m_fg.Rows.Count; index++)
+                        {
+                            Row v_cur_row = m_fg.Rows[index];
+                            if (((string)v_row[i_ma_nv]) == ((string)v_cur_row[i_ma_nv]))
+                            {
+                                m_fg.SetCellStyle(v_row.Index, i_ma_nv, green_cell);
+                                m_fg.SetCellStyle(v_cur_row.Index, i_ma_nv, green_cell);
+                                is_error = true;
+                            }
+                            else
+                            {
+                                if (m_fg.GetCellStyle(v_row.Index, i_ma_nv).BackColor != Color.Red)
+                                    m_fg.SetCellStyle(v_row.Index, i_ma_nv, default_cell);
+                            }
+                        }
+                    }
                 }
+
+                if (is_error)
+                {
+                    m_fg.AllowEditing = true;
+                    m_fg.Redraw = true;
+                    throw new Exception("Có dữ liệu lỗi. Vui lòng kiểm tra lại");
+                }
+                else
+                {
+                    m_fg.Redraw = true;
+                    HelperDucVT.CUtils.show_success_message("Dữ liệu không có lỗi");
+                }
+            }
+            else
+            {
+                m_fg.Redraw = true;
+                throw new Exception("Bạn cần chọn file excel trước");
             }
         }
 
@@ -733,6 +854,9 @@ namespace BKI_HRM
             try
             {
                 set_initial_form_load();
+
+                m_lbl_green.BackColor = Color.Green;
+                m_lbl_red.BackColor = Color.Red;
             }
             catch (Exception v_e)
             {

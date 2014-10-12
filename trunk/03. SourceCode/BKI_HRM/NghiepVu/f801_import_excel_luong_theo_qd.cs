@@ -742,6 +742,7 @@ namespace BKI_HRM
             cs.BackColor = Color.Red;
             //Bước 1: Kiểm tra dữ liệu theo từng cột xem có ô nào trống không
             for(int v_col = 1; v_col < m_fg.Cols.Count - 1; v_col++) {
+
                 if(v_col == (int)e_col_Number.HO_TEN || v_col == (int)e_col_Number.LINK || v_col == (int)e_col_Number.NGAY_HET_HIEU_LUC || v_col == (int)e_col_Number.NOI_DUNG) continue;
                 for(int v_row = m_fg.Rows.Fixed; v_row < m_fg.Rows.Count; v_row++) {
                     if(m_fg.Rows[v_row][v_col] == null || m_fg.Rows[v_row][v_col].ToString() == "") {
@@ -778,7 +779,11 @@ namespace BKI_HRM
             for(int v_row = m_fg.Rows.Fixed; v_row < m_fg.Rows.Count; v_row++) {
                 DataView dv = v_ds_qd.DM_QUYET_DINH.DefaultView;
                 dv.Sort = "MA_QUYET_DINH";
-                if(m_fg.Rows[v_row][3] == null || m_fg.Rows[v_row][3].ToString() == "") { m_flag =0; continue; }
+                if(m_fg.Rows[v_row][3] == null || m_fg.Rows[v_row][3].ToString() == "") 
+                { 
+                    m_flag =0; 
+                    continue; 
+                }
                 else if(dv.Find(m_fg.Rows[v_row][3]) > 0) {
                     m_fg.SetCellStyle(v_row, 3, ts);
                     m_flag =0;

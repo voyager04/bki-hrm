@@ -428,6 +428,11 @@ namespace BKI_HRM.HelperDucVT
 
         #endregion
 
+        #region Format FlexGrid
+        public void format_fg_default(C1.Win.C1FlexGrid.C1FlexGrid ip_fg)
+        {
+        }
+        #endregion
         #endregion
 
         #region Private Methods
