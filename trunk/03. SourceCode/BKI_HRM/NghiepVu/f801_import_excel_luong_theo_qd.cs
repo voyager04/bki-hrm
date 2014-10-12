@@ -788,12 +788,12 @@ namespace BKI_HRM
             if(m_flag == 0) { BaseMessages.MsgBox_Error("Một số ô chưa có dữ liệu được tô màu đỏ, chưa có mã nhân viên trong CSDL tô màu vàng, quyết định đã tồn tại tô màu vàng!"); }
             else BaseMessages.MsgBox_Infor("Dữ liệu đã được kiểm tra");
         }
-        private void insert_2_dm_quyet_dinh(US_DM_QUYET_DINH ip_us_dm_quyet_dinh, C1.Win.C1FlexGrid.C1FlexGrid i_fg, Int32 ip_row_in_grid) {
-            ip_us_dm_quyet_dinh.strNOI_DUNG = m_us.strNOI_DUNG;
-            ip_us_dm_quyet_dinh.strLINK = m_us.strLINK;
-            ip_us_dm_quyet_dinh.strMA_QUYET_DINH = m_us.strMA_QD;
+        //private void insert_2_dm_quyet_dinh(US_DM_QUYET_DINH ip_us_dm_quyet_dinh, C1.Win.C1FlexGrid.C1FlexGrid i_fg, Int32 ip_row_in_grid) {
+        //    ip_us_dm_quyet_dinh.strNOI_DUNG = m_us.strNOI_DUNG;
+        //    ip_us_dm_quyet_dinh.strLINK = m_us.strLINK;
+        //    ip_us_dm_quyet_dinh.strMA_QUYET_DINH = m_us.strMA_QD;
 
-        }
+        //}
 
         private void save_data()
         {
