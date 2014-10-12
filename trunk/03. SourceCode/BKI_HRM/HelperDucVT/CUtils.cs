@@ -72,6 +72,14 @@ namespace BKI_HRM.HelperDucVT
          *          Ví dụ: Các dòng khác là Decimal, dòng đó lại là Int.
          * Giải quyết: Đổi thành Decimal cho giống với các dòng khác.
          */
+        
+        /* (VIP) Ghi chép 6: Các bước để hiểu mình cần làm gì để thiết kế đáp ứng yêu cầu?
+         * 1. Tìm hiểu xem mình cần làm việc với những Object/Entity nào? (Đối với DataBase là Table, View nào?)
+         *  Để bao quát hơn thì nên tìm hiểu ở góc nhìn Domain Model (Các classes là domain classes)
+         * 
+         * 1.a Nếu cần làm giống giống 1 cái nào đó, thì xem cái đó làm gì, tác động tới những Object/Entity nào.
+         */
+
         #endregion
 
         #region Không dùng

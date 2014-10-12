@@ -25,11 +25,13 @@ using BKI_HRM.DS.CDBNames;
 using C1.Win.C1FlexGrid;
 using IP.Core.IPExcelReport;
 
-namespace BKI_HRM {
+namespace BKI_HRM
+{
 
 
 
-    public class f801_import_excel_luong_theo_qd : System.Windows.Forms.Form {
+    public class f801_import_excel_luong_theo_qd : System.Windows.Forms.Form
+    {
         internal System.Windows.Forms.ImageList ImageList;
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
@@ -55,7 +57,8 @@ namespace BKI_HRM {
         private TextBox m_txt_ky;
         private System.ComponentModel.IContainer components;
 
-        public f801_import_excel_luong_theo_qd() {
+        public f801_import_excel_luong_theo_qd()
+        {
             //
             // Required for Windows Form Designer support
             //
@@ -71,9 +74,12 @@ namespace BKI_HRM {
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
-        protected override void Dispose(bool disposing) {
-            if(disposing) {
-                if(components != null) {
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (components != null)
+                {
                     components.Dispose();
                 }
             }
@@ -85,7 +91,8 @@ namespace BKI_HRM {
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+        private void InitializeComponent()
+        {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f801_import_excel_luong_theo_qd));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
@@ -432,13 +439,15 @@ namespace BKI_HRM {
         #endregion
 
         #region Public Interface
-        public void display() {
+        public void display()
+        {
             this.ShowDialog();
         }
         #endregion
 
         #region Data Structure
-        private enum e_col_Number {
+        private enum e_col_Number
+        {
             LUONG = 9
 ,
             MA_NV = 1
@@ -454,7 +463,7 @@ namespace BKI_HRM {
             NGAY_AP_DUNG = 10
                 ,
             LINK = 8
-                
+
             //MA_KY = 3
                 ,
             MA_QD = 3
@@ -471,7 +480,8 @@ namespace BKI_HRM {
         #endregion
 
         #region Private Methods
-        private void format_controls() {
+        private void format_controls()
+        {
             CControlFormat.setFormStyle(this, new CAppContext_201());
             this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             CControlFormat.setC1FlexFormat(m_fg);
@@ -481,7 +491,8 @@ namespace BKI_HRM {
             m_lbl_load.Visible = false;
             this.KeyPreview = true;
         }
-        private void load_data_2_cbo(){
+        private void load_data_2_cbo()
+        {
             US_DM_KY v_us = new US_DM_KY();
             DS_DM_KY v_ds = new DS_DM_KY();
             v_us.FillDataset(v_ds, "where NGAY_KET_THUC_KY = (select max(NGAY_KET_THUC_KY) from DM_KY)");
@@ -490,13 +501,16 @@ namespace BKI_HRM {
             m_cbo_ky.ValueMember = DM_KY.ID;
             m_cbo_ky.DisplayMember = DM_KY.MA_KY;
         }
-        private void set_initial_form_load() {
+        private void set_initial_form_load()
+        {
             m_obj_trans = get_trans_object(m_fg);
             m_cbo_ky.Visible = false;
             m_txt_ky.Text = m_cbo_ky.Text;
             load_data_2_grid();
         }
-        private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg) {
+
+        private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
+        {
             Hashtable v_htb = new Hashtable();
             v_htb.Add(IMPORT_EXCEL_LUONG_THEO_QD.LUONG, e_col_Number.LUONG);
             v_htb.Add(IMPORT_EXCEL_LUONG_THEO_QD.MA_NV, e_col_Number.MA_NV);
@@ -513,7 +527,9 @@ namespace BKI_HRM {
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.IMPORT_EXCEL_LUONG_THEO_QD.NewRow());
             return v_obj_trans;
         }
-        private void load_data_2_grid() {
+        
+        private void load_data_2_grid()
+        {
             m_ds = new DS_IMPORT_EXCEL_LUONG_THEO_QD();
             m_us.FillDataset(m_ds);
             m_fg.Redraw = false;
@@ -527,7 +543,8 @@ namespace BKI_HRM {
             m_fg.Redraw = true;
         }
         private void grid2us_object(US_IMPORT_EXCEL_LUONG_THEO_QD i_us
-            , int i_grid_row) {
+            , int i_grid_row)
+        {
             DataRow v_dr;
             v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
             m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
@@ -536,41 +553,47 @@ namespace BKI_HRM {
 
 
         private void us_object2grid(US_IMPORT_EXCEL_LUONG_THEO_QD i_us
-            , int i_grid_row) {
+            , int i_grid_row)
+        {
             DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
             i_us.Me2DataRow(v_dr);
             m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
         }
 
 
-        private void insert_import_excel_luong_theo_qd() {
+        private void insert_import_excel_luong_theo_qd()
+        {
             //	f801_import_excel_luong_theo_qd_DE v_fDE = new  f801_import_excel_luong_theo_qd_DE();								
             //	v_fDE.display();
             load_data_2_grid();
         }
 
-        private void update_import_excel_luong_theo_qd() {
-            if(!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-            if(!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+        private void update_import_excel_luong_theo_qd()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             grid2us_object(m_us, m_fg.Row);
             //	f801_import_excel_luong_theo_qd_DE v_fDE = new f801_import_excel_luong_theo_qd_DE();
             //	v_fDE.display(m_us);
             load_data_2_grid();
         }
 
-        private void delete_import_excel_luong_theo_qd() {
-            if(!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-            if(!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            if(BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
+        private void delete_import_excel_luong_theo_qd()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
             US_IMPORT_EXCEL_LUONG_THEO_QD v_us = new US_IMPORT_EXCEL_LUONG_THEO_QD();
             grid2us_object(v_us, m_fg.Row);
-            try {
+            try
+            {
                 v_us.BeginTransaction();
                 v_us.Delete();
                 v_us.CommitTransaction();
                 m_fg.Rows.Remove(m_fg.Row);
             }
-            catch(Exception v_e) {
+            catch (Exception v_e)
+            {
                 v_us.Rollback();
                 CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
                     new CDBClientDBExceptionInterpret());
@@ -578,70 +601,60 @@ namespace BKI_HRM {
             }
         }
 
-        private void view_import_excel_luong_theo_qd() {
-            if(!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-            if(!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+        private void view_import_excel_luong_theo_qd()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             grid2us_object(m_us, m_fg.Row);
             //	f801_import_excel_luong_theo_qd_DE v_fDE = new f801_import_excel_luong_theo_qd_DE();			
             //	v_fDE.display(m_us);
         }
-        private void load_danh_sach_excel() {
-            if(m_dgl_open_file.ShowDialog() == DialogResult.OK) {
+        
+        // Chọn và load file excel
+        private void load_danh_sach_excel()
+        {
+            // Mở chọn file
+            if (m_dgl_open_file.ShowDialog() == DialogResult.OK)
+            {
+                // Lấy đường dẫn file
                 string v_str_path_and_file_name = m_dgl_open_file.FileName;
                 string v_str_file_name = v_str_path_and_file_name.Substring(v_str_path_and_file_name.LastIndexOf("\\") + 1, v_str_path_and_file_name.Length - v_str_path_and_file_name.LastIndexOf("\\") - 1);
+
+                // Khai báo var
                 CExcelReport v_xls_file = new CExcelReport(v_str_path_and_file_name);
                 DS_IMPORT_EXCEL_LUONG_THEO_QD v_ds_import_excel_luong_theo_qd = new DS_IMPORT_EXCEL_LUONG_THEO_QD();
-                try {
+
+                // Bắt đầu loading
+                try
+                {
+                    // Hiện thông báo chờ
                     m_lbl_load.Visible = true;
+
                     v_ds_import_excel_luong_theo_qd.EnforceConstraints = false;
+
+                    // Export 2 DS
                     v_xls_file.Export2DatasetDSPhongThi(v_ds_import_excel_luong_theo_qd, v_ds_import_excel_luong_theo_qd.IMPORT_EXCEL_LUONG_THEO_QD.TableName, 2);
 
                     //DataSet v_ds_cm_dm_bang_modify = ModifyDateToUSFormat(v_ds_cm_dm_bang_chi_tiet_cuoi_thang);
+                    // DS 2 FlexGrid
                     CGridUtils.Dataset2C1Grid(v_ds_import_excel_luong_theo_qd, m_fg, m_obj_trans);
                     //m_i_flag = 0;
                     m_lbl_load.Visible = false;
                 }
-                catch(Exception v_e) {
+                catch (Exception v_e)
+                {
                     CSystemLog_301.ExceptionHandle(v_e);
                 }
             }
         }
-        private void kiem_tra_du_lieu() {
+        
+        private void kiem_tra_du_lieu()
+        {
 
         }
-        private void insert_2_dm_quyet_dinh(US_DM_QUYET_DINH ip_us_dm_quyet_dinh, C1.Win.C1FlexGrid.C1FlexGrid i_fg, Int32 ip_row_in_grid) {
-            ip_us_dm_quyet_dinh.strNOI_DUNG = m_us.strNOI_DUNG;
-            ip_us_dm_quyet_dinh.strLINK = m_us.strLINK;
-            ip_us_dm_quyet_dinh.strMA_QUYET_DINH = m_us.strMA_QD;
 
-            ip_us_dm_quyet_dinh.dcID_LOAI_QD = 746;
-            ip_us_dm_quyet_dinh.datNGAY_CO_HIEU_LUC = m_us.datNGAY_CO_HIEU_LUC;
-            ip_us_dm_quyet_dinh.datNGAY_HET_HIEU_LUC = m_us.datNGAY_HET_HIEU_LUC;
-            ip_us_dm_quyet_dinh.datNGAY_KY = m_us.datNGAY_KY;
-
-            ip_us_dm_quyet_dinh.Insert();
-        }
-        private void insert_2_gd_quyet_dinh_phap_nhan(US_GD_QUYET_DINH_PHAP_NHAN ip_us_gd_quyet_dinh_phap_nhan, C1.Win.C1FlexGrid.C1FlexGrid i_fg, Int32 ip_row_in_grid, decimal ip_id_quyet_dinh) {
-            ip_us_gd_quyet_dinh_phap_nhan.dcID_PHAP_NHAN = CAppContext_201.getCurrentIDPhapnhan();
-            ip_us_gd_quyet_dinh_phap_nhan.dcID_QUYET_DINH = ip_id_quyet_dinh;
-            ip_us_gd_quyet_dinh_phap_nhan.Insert();
-        }
-        private void insert_2_gd_luong_theo_qd(US_GD_LUONG_THEO_QD ip_us_gd_luong_theo_qd
-                                               , C1.Win.C1FlexGrid.C1FlexGrid i_fg
-                                                , Int32 ip_row_in_grid
-                                                  , string ip_ma_qd
-                                                    , decimal ip_id_phap_nhan) {
-            string v_ma_nv = m_us.strMA_NV;
-            string v_ma_ky = m_cbo_ky.Text;
-            string v_ma_qd = m_us.strMA_QD;
-            decimal v_luong = m_us.dcLUONG;
-            DateTime v_ngay_ap_dung = m_us.datNGAY_AP_DUNG;
-            string v_luong_hien_tai_yn = "Y";
-            decimal v_thang_ap_dung = m_us.datNGAY_AP_DUNG.Month;
-            decimal v_nam_ap_dung = m_us.datNGAY_AP_DUNG.Year;
-            ip_us_gd_luong_theo_qd.insert_kem_id_phap_nhan(v_ma_nv, v_ma_ky, v_ma_qd, v_luong, v_ngay_ap_dung, v_luong_hien_tai_yn, v_thang_ap_dung, v_nam_ap_dung, CAppContext_201.getCurrentIDPhapnhan());
-        }
-        private void save_data() {
+        private void save_data()
+        {
             //Thực hiện theo 3 bước và phải đặt trong transaction
             //Ta insert từng bản ghi ứng với từng hàng trên grid theo từng bước
             //Bước 1: Insert vào bảng DM_QUYET_DINH
@@ -651,19 +664,23 @@ namespace BKI_HRM {
             US_DM_QUYET_DINH v_us_dm_quyet_dinh = new US_DM_QUYET_DINH();
             US_GD_QUYET_DINH_PHAP_NHAN v_us_gd_quyet_dinh_phap_nhan = new US_GD_QUYET_DINH_PHAP_NHAN();
             US_GD_LUONG_THEO_QD v_us_gd_luong_theo_qd = new US_GD_LUONG_THEO_QD();
+
             //try {
             v_us_dm_quyet_dinh.BeginTransaction();
-            for(int v_row_in_grid = 1; v_row_in_grid <= m_fg.Rows.Count - 1; v_row_in_grid++) {
+            for (int v_row_in_grid = 1; v_row_in_grid <= m_fg.Rows.Count - 1; v_row_in_grid++)
+            {
                 //1. Do du lieu hang tu grid len m_us
-                if(!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-                if(!CGridUtils.isValid_NonFixed_RowIndex(m_fg, v_row_in_grid)) return;
+                if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+                if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, v_row_in_grid)) return;
                 grid2us_object(m_us, v_row_in_grid);
 
                 //2. Bước 1: Insert vào bảng DM_QUYET_DINH
                 insert_2_dm_quyet_dinh(v_us_dm_quyet_dinh, m_fg, v_row_in_grid);
+
                 //3. Bước 2: Insert vào bảng GD_QUYET_DINH_PHAP_NHAN với id_phap_nhan là id_phap_nhan_dang_dang_nhap
                 v_us_gd_quyet_dinh_phap_nhan.UseTransOfUSObject(v_us_dm_quyet_dinh);
                 insert_2_gd_quyet_dinh_phap_nhan(v_us_gd_quyet_dinh_phap_nhan, m_fg, v_row_in_grid, v_us_dm_quyet_dinh.dcID);
+
                 //4. Bước 3: Insert vào bảng GD_LUONG_THEO_QUYET_DINH
                 v_us_gd_luong_theo_qd.UseTransOfUSObject(v_us_dm_quyet_dinh);
                 insert_2_gd_luong_theo_qd(v_us_gd_luong_theo_qd, m_fg, v_row_in_grid, v_us_dm_quyet_dinh.strMA_QUYET_DINH, CAppContext_201.getCurrentIDPhapnhan());
@@ -680,6 +697,44 @@ namespace BKI_HRM {
             //Thong bao thanh cong
             BaseMessages.MsgBox_Infor("Bạn đã cập nhật xong lương theo quyết định!");
         }
+
+        private void insert_2_dm_quyet_dinh(US_DM_QUYET_DINH ip_us_dm_quyet_dinh, C1.Win.C1FlexGrid.C1FlexGrid i_fg, Int32 ip_row_in_grid)
+        {
+            ip_us_dm_quyet_dinh.strNOI_DUNG = m_us.strNOI_DUNG;
+            ip_us_dm_quyet_dinh.strLINK = m_us.strLINK;
+            ip_us_dm_quyet_dinh.strMA_QUYET_DINH = m_us.strMA_QD;
+
+            ip_us_dm_quyet_dinh.dcID_LOAI_QD = 746;
+            ip_us_dm_quyet_dinh.datNGAY_CO_HIEU_LUC = m_us.datNGAY_CO_HIEU_LUC;
+            ip_us_dm_quyet_dinh.datNGAY_HET_HIEU_LUC = m_us.datNGAY_HET_HIEU_LUC;
+            ip_us_dm_quyet_dinh.datNGAY_KY = m_us.datNGAY_KY;
+
+            ip_us_dm_quyet_dinh.Insert();
+        }
+
+        private void insert_2_gd_quyet_dinh_phap_nhan(US_GD_QUYET_DINH_PHAP_NHAN ip_us_gd_quyet_dinh_phap_nhan, C1.Win.C1FlexGrid.C1FlexGrid i_fg, Int32 ip_row_in_grid, decimal ip_id_quyet_dinh)
+        {
+            ip_us_gd_quyet_dinh_phap_nhan.dcID_PHAP_NHAN = CAppContext_201.getCurrentIDPhapnhan();
+            ip_us_gd_quyet_dinh_phap_nhan.dcID_QUYET_DINH = ip_id_quyet_dinh;
+            ip_us_gd_quyet_dinh_phap_nhan.Insert();
+        }
+        
+        private void insert_2_gd_luong_theo_qd(US_GD_LUONG_THEO_QD ip_us_gd_luong_theo_qd
+                                               , C1.Win.C1FlexGrid.C1FlexGrid i_fg
+                                                , Int32 ip_row_in_grid
+                                                  , string ip_ma_qd
+                                                    , decimal ip_id_phap_nhan)
+        {
+            string v_ma_nv = m_us.strMA_NV;
+            string v_ma_ky = m_cbo_ky.Text;
+            string v_ma_qd = m_us.strMA_QD;
+            decimal v_luong = m_us.dcLUONG;
+            DateTime v_ngay_ap_dung = m_us.datNGAY_AP_DUNG;
+            string v_luong_hien_tai_yn = "Y";
+            decimal v_thang_ap_dung = m_us.datNGAY_AP_DUNG.Month;
+            decimal v_nam_ap_dung = m_us.datNGAY_AP_DUNG.Year;
+            ip_us_gd_luong_theo_qd.insert_kem_id_phap_nhan(v_ma_nv, v_ma_ky, v_ma_qd, v_luong, v_ngay_ap_dung, v_luong_hien_tai_yn, v_thang_ap_dung, v_nam_ap_dung, CAppContext_201.getCurrentIDPhapnhan());
+        }
         #endregion
 
         //
@@ -687,7 +742,8 @@ namespace BKI_HRM {
         //		EVENT HANLDERS
         //
         //
-        private void set_define_events() {
+        private void set_define_events()
+        {
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
             m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
@@ -698,84 +754,112 @@ namespace BKI_HRM {
             m_cmd_luu.Click += m_cmd_luu_Click;
         }
 
-        private void m_cmd_luu_Click(object sender, EventArgs e) {
-            try {
+        private void m_cmd_luu_Click(object sender, EventArgs e)
+        {
+            try
+            {
                 save_data();
 
             }
-            catch(Exception v_e) {
+            catch (Exception v_e)
+            {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
-        void m_cmd_kiem_tra_dl_Click(object sender, EventArgs e) {
-            try {
+        void m_cmd_kiem_tra_dl_Click(object sender, EventArgs e)
+        {
+            try
+            {
                 kiem_tra_du_lieu();
             }
-            catch(Exception v_e) {
+            catch (Exception v_e)
+            {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
-        private void m_cmd_chon_file_Click(object sender, EventArgs e) {
-            try {
+        private void m_cmd_chon_file_Click(object sender, EventArgs e)
+        {
+            try
+            {
                 load_danh_sach_excel();
             }
-            catch(Exception v_e) {
+            catch (Exception v_e)
+            {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        private void f801_import_excel_luong_theo_qd_Load(object sender, System.EventArgs e) {
-            try {
+        
+        private void f801_import_excel_luong_theo_qd_Load(object sender, System.EventArgs e)
+        {
+            try
+            {
                 set_initial_form_load();
             }
-            catch(Exception v_e) {
+            catch (Exception v_e)
+            {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
 
         }
 
-        private void m_cmd_exit_Click(object sender, EventArgs e) {
-            try {
+        private void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            try
+            {
                 this.Close();
             }
-            catch(Exception v_e) {
+            catch (Exception v_e)
+            {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
-        private void m_cmd_insert_Click(object sender, EventArgs e) {
-            try {
+        private void m_cmd_insert_Click(object sender, EventArgs e)
+        {
+            try
+            {
                 insert_import_excel_luong_theo_qd();
             }
-            catch(Exception v_e) {
+            catch (Exception v_e)
+            {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
-        private void m_cmd_update_Click(object sender, EventArgs e) {
-            try {
+        private void m_cmd_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
                 update_import_excel_luong_theo_qd();
             }
-            catch(Exception v_e) {
+            catch (Exception v_e)
+            {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
-        private void m_cmd_delete_Click(object sender, EventArgs e) {
-            try {
+        private void m_cmd_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
                 delete_import_excel_luong_theo_qd();
             }
-            catch(Exception v_e) {
+            catch (Exception v_e)
+            {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
 
-        private void m_cmd_view_Click(object sender, EventArgs e) {
-            try {
+        private void m_cmd_view_Click(object sender, EventArgs e)
+        {
+            try
+            {
                 view_import_excel_luong_theo_qd();
             }
-            catch(Exception v_e) {
+            catch (Exception v_e)
+            {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }

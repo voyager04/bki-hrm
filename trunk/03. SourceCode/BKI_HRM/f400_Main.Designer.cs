@@ -88,6 +88,8 @@ namespace BKI_HRM
             this.m_lbl_thong_bao_hdld_da_het_han_nhung_chua_ky = new System.Windows.Forms.Label();
             this.m_lbl_sap_quay_lai = new System.Windows.Forms.Label();
             this.m_pnl_thong_bao = new System.Windows.Forms.Panel();
+            this.m_pnl_thu_viec_da_het_han = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.m_lbl_nv_chinh_thuc = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -128,6 +130,7 @@ namespace BKI_HRM
             this.m_cmd_search = new System.Windows.Forms.Button();
             this.m_txt_search = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.m_cmd_import_luong_theo_qd = new System.Windows.Forms.Button();
             this.m_cmd_luongqd = new System.Windows.Forms.Button();
             this.m_cmd_hop_dong_lao_dong = new System.Windows.Forms.Button();
             this.m_cmd_thong_tin_du_an = new System.Windows.Forms.Button();
@@ -166,9 +169,9 @@ namespace BKI_HRM
             this.m_tab_menu = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.m_cmd_import_luong_theo_qd = new System.Windows.Forms.Button();
             this.m_mst_menu.SuspendLayout();
             this.m_pnl_thong_bao.SuspendLayout();
+            this.m_pnl_thu_viec_da_het_han.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -673,6 +676,7 @@ namespace BKI_HRM
             // m_pnl_thong_bao
             // 
             this.m_pnl_thong_bao.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.m_pnl_thong_bao.Controls.Add(this.m_pnl_thu_viec_da_het_han);
             this.m_pnl_thong_bao.Controls.Add(this.panel7);
             this.m_pnl_thong_bao.Controls.Add(this.panel5);
             this.m_pnl_thong_bao.Controls.Add(this.panel4);
@@ -684,6 +688,30 @@ namespace BKI_HRM
             this.m_pnl_thong_bao.Size = new System.Drawing.Size(371, 551);
             this.m_pnl_thong_bao.TabIndex = 10;
             this.m_pnl_thong_bao.Visible = false;
+            // 
+            // m_pnl_thu_viec_da_het_han
+            // 
+            this.m_pnl_thu_viec_da_het_han.Controls.Add(this.label2);
+            this.m_pnl_thu_viec_da_het_han.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_pnl_thu_viec_da_het_han.Location = new System.Drawing.Point(0, 318);
+            this.m_pnl_thu_viec_da_het_han.Name = "m_pnl_thu_viec_da_het_han";
+            this.m_pnl_thu_viec_da_het_han.Size = new System.Drawing.Size(367, 53);
+            this.m_pnl_thu_viec_da_het_han.TabIndex = 6;
+            this.m_pnl_thu_viec_da_het_han.Click += new System.EventHandler(this.m_pnl_thu_viec_da_het_han_Click);
+            this.m_pnl_thu_viec_da_het_han.MouseLeave += new System.EventHandler(this.panel_change_bgcolor_MouseLeave);
+            this.m_pnl_thu_viec_da_het_han.MouseHover += new System.EventHandler(this.panel_change_bgcolor_MouseHover);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(0, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(228, 18);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Danh sách Thử việc đã hết hạn";
             // 
             // panel7
             // 
@@ -1129,6 +1157,15 @@ namespace BKI_HRM
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Quản lý nhân sự";
             // 
+            // m_cmd_import_luong_theo_qd
+            // 
+            this.m_cmd_import_luong_theo_qd.Location = new System.Drawing.Point(654, 19);
+            this.m_cmd_import_luong_theo_qd.Name = "m_cmd_import_luong_theo_qd";
+            this.m_cmd_import_luong_theo_qd.Size = new System.Drawing.Size(75, 65);
+            this.m_cmd_import_luong_theo_qd.TabIndex = 16;
+            this.m_cmd_import_luong_theo_qd.Text = "Import lương theo QĐ";
+            this.m_cmd_import_luong_theo_qd.UseVisualStyleBackColor = true;
+            // 
             // m_cmd_luongqd
             // 
             this.m_cmd_luongqd.Location = new System.Drawing.Point(573, 19);
@@ -1528,15 +1565,6 @@ namespace BKI_HRM
             this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
-            // m_cmd_import_luong_theo_qd
-            // 
-            this.m_cmd_import_luong_theo_qd.Location = new System.Drawing.Point(654, 19);
-            this.m_cmd_import_luong_theo_qd.Name = "m_cmd_import_luong_theo_qd";
-            this.m_cmd_import_luong_theo_qd.Size = new System.Drawing.Size(75, 65);
-            this.m_cmd_import_luong_theo_qd.TabIndex = 16;
-            this.m_cmd_import_luong_theo_qd.Text = "Import lương theo QĐ";
-            this.m_cmd_import_luong_theo_qd.UseVisualStyleBackColor = true;
-            // 
             // f400_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1561,6 +1589,8 @@ namespace BKI_HRM
             this.m_mst_menu.ResumeLayout(false);
             this.m_mst_menu.PerformLayout();
             this.m_pnl_thong_bao.ResumeLayout(false);
+            this.m_pnl_thu_viec_da_het_han.ResumeLayout(false);
+            this.m_pnl_thu_viec_da_het_han.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -1738,5 +1768,7 @@ namespace BKI_HRM
         private Button m_cmd_bc_luong_theo_qd;
         private Button m_cmd_rpt_tong_luong;
         private Button m_cmd_import_luong_theo_qd;
+        private Panel m_pnl_thu_viec_da_het_han;
+        private Label label2;
     }
 }

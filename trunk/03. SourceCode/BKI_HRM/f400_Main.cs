@@ -16,6 +16,7 @@ using IP.Core.IPExcelReport;
 using IP.Core.IPSystemAdmin;
 using BKI_HRM.HeThong;
 using System.Diagnostics;
+using BKI_HRM.HelperDucVT;
 
 namespace BKI_HRM
 {
@@ -1143,6 +1144,32 @@ namespace BKI_HRM
             panel5.BackColor = SystemColors.Control;
         }
 
+        private void panel_change_bgcolor_MouseHover(object sender, EventArgs e)
+        {
+            try
+            {
+                Panel v_pnl = (Panel)sender;
+                v_pnl.BackColor = Color.Aquamarine;
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void panel_change_bgcolor_MouseLeave(object sender, EventArgs e)
+        {
+            try
+            {
+                Panel v_pnl = (Panel)sender;
+                v_pnl.BackColor = SystemColors.Control;
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
         private void m_lbl_sap_quay_lai_MouseHover(object sender, EventArgs e)
         {
             panel1.BackColor = Color.Aquamarine;
@@ -1788,5 +1815,17 @@ namespace BKI_HRM
             }
         }
 
+        private void m_pnl_thu_viec_da_het_han_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                f103_bao_cao_tra_cuu_nhan_su v_frm = new f103_bao_cao_tra_cuu_nhan_su();
+                v_frm.display_thu_viec_da_het_han();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }

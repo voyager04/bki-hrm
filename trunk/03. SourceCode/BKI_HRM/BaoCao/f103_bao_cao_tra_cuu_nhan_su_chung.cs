@@ -68,6 +68,7 @@ namespace BKI_HRM
         private C1FlexGrid m_fg;
         private ComboBox m_cbo_gioi_tinh;
         private Label m_lbl_gioi_tinh;
+        private RadioButton m_rdb_thu_viec_da_het_han;
         private IContainer components;
 
         public f103_bao_cao_tra_cuu_nhan_su()
@@ -107,7 +108,7 @@ namespace BKI_HRM
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f103_bao_cao_tra_cuu_nhan_su));
-            Checkbox_Combobox.CheckBoxProperties checkBoxProperties1 = new Checkbox_Combobox.CheckBoxProperties();
+            Checkbox_Combobox.CheckBoxProperties checkBoxProperties2 = new Checkbox_Combobox.CheckBoxProperties();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cbo_gioi_tinh = new System.Windows.Forms.ComboBox();
@@ -145,6 +146,7 @@ namespace BKI_HRM
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_tooltip = new System.Windows.Forms.ToolTip(this.components);
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_rdb_thu_viec_da_het_han = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.m_grb_ngay_sinh.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -197,6 +199,7 @@ namespace BKI_HRM
             this.panel1.Controls.Add(this.m_cbo_chon_chuc_vu);
             this.panel1.Controls.Add(this.m_lbl_chon_chuc_vu);
             this.panel1.Controls.Add(this.m_lbl_chon_cot);
+            this.panel1.Controls.Add(this.m_rdb_thu_viec_da_het_han);
             this.panel1.Controls.Add(this.m_rdb_thu_viec_sap_het_han);
             this.panel1.Controls.Add(this.m_rdb_nhan_vien_sap_quay_lai);
             this.panel1.Controls.Add(this.m_cbc_choose_columns);
@@ -231,7 +234,7 @@ namespace BKI_HRM
             // m_ckb_group_yn
             // 
             this.m_ckb_group_yn.AutoSize = true;
-            this.m_ckb_group_yn.Location = new System.Drawing.Point(730, 108);
+            this.m_ckb_group_yn.Location = new System.Drawing.Point(780, 108);
             this.m_ckb_group_yn.Name = "m_ckb_group_yn";
             this.m_ckb_group_yn.Size = new System.Drawing.Size(86, 17);
             this.m_ckb_group_yn.TabIndex = 49;
@@ -413,12 +416,10 @@ namespace BKI_HRM
             // m_rdb_thu_viec_sap_het_han
             // 
             this.m_rdb_thu_viec_sap_het_han.AutoSize = true;
-            this.m_rdb_thu_viec_sap_het_han.Checked = true;
-            this.m_rdb_thu_viec_sap_het_han.Location = new System.Drawing.Point(548, 108);
+            this.m_rdb_thu_viec_sap_het_han.Location = new System.Drawing.Point(525, 108);
             this.m_rdb_thu_viec_sap_het_han.Name = "m_rdb_thu_viec_sap_het_han";
             this.m_rdb_thu_viec_sap_het_han.Size = new System.Drawing.Size(126, 17);
             this.m_rdb_thu_viec_sap_het_han.TabIndex = 33;
-            this.m_rdb_thu_viec_sap_het_han.TabStop = true;
             this.m_rdb_thu_viec_sap_het_han.Text = "Thử việc sắp hết hạn";
             this.m_rdb_thu_viec_sap_het_han.UseVisualStyleBackColor = true;
             this.m_rdb_thu_viec_sap_het_han.Visible = false;
@@ -427,7 +428,7 @@ namespace BKI_HRM
             // m_rdb_nhan_vien_sap_quay_lai
             // 
             this.m_rdb_nhan_vien_sap_quay_lai.AutoSize = true;
-            this.m_rdb_nhan_vien_sap_quay_lai.Location = new System.Drawing.Point(370, 108);
+            this.m_rdb_nhan_vien_sap_quay_lai.Location = new System.Drawing.Point(396, 108);
             this.m_rdb_nhan_vien_sap_quay_lai.Name = "m_rdb_nhan_vien_sap_quay_lai";
             this.m_rdb_nhan_vien_sap_quay_lai.Size = new System.Drawing.Size(125, 17);
             this.m_rdb_nhan_vien_sap_quay_lai.TabIndex = 32;
@@ -438,8 +439,8 @@ namespace BKI_HRM
             // 
             // m_cbc_choose_columns
             // 
-            checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.m_cbc_choose_columns.CheckBoxProperties = checkBoxProperties1;
+            checkBoxProperties2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.m_cbc_choose_columns.CheckBoxProperties = checkBoxProperties2;
             this.m_cbc_choose_columns.DisplayMemberSingleItem = "";
             this.m_cbc_choose_columns.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbc_choose_columns.FormattingEnabled = true;
@@ -564,6 +565,20 @@ namespace BKI_HRM
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 32;
             // 
+            // m_rdb_thu_viec_da_het_han
+            // 
+            this.m_rdb_thu_viec_da_het_han.AutoSize = true;
+            this.m_rdb_thu_viec_da_het_han.Checked = true;
+            this.m_rdb_thu_viec_da_het_han.Location = new System.Drawing.Point(648, 108);
+            this.m_rdb_thu_viec_da_het_han.Name = "m_rdb_thu_viec_da_het_han";
+            this.m_rdb_thu_viec_da_het_han.Size = new System.Drawing.Size(122, 17);
+            this.m_rdb_thu_viec_da_het_han.TabIndex = 33;
+            this.m_rdb_thu_viec_da_het_han.TabStop = true;
+            this.m_rdb_thu_viec_da_het_han.Text = "Thử việc đã hết hạn";
+            this.m_rdb_thu_viec_da_het_han.UseVisualStyleBackColor = true;
+            this.m_rdb_thu_viec_da_het_han.Visible = false;
+            this.m_rdb_thu_viec_da_het_han.CheckedChanged += new System.EventHandler(this.m_rdb_thu_viec_sap_het_han_CheckedChanged);
+            // 
             // f103_bao_cao_tra_cuu_nhan_su
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -601,6 +616,7 @@ namespace BKI_HRM
         {
             m_rdb_nhan_vien_sap_quay_lai.Visible = true;
             m_rdb_thu_viec_sap_het_han.Visible = true;
+            m_rdb_thu_viec_da_het_han.Visible = true;
             m_e_form_mode = DataEntryFormMode.ViewDataState;
             this.Show();
             m_rdb_nhan_vien_sap_quay_lai.Checked = true;
@@ -609,8 +625,19 @@ namespace BKI_HRM
         {
             m_rdb_nhan_vien_sap_quay_lai.Visible = true;
             m_rdb_thu_viec_sap_het_han.Visible = true;
+            m_rdb_thu_viec_da_het_han.Visible = true;
             // m_rdb_nhan_vien_sap_quay_lai.Checked = false;
             m_rdb_thu_viec_sap_het_han.Checked = true;
+            m_e_form_mode = DataEntryFormMode.ViewDataState;
+            this.Show();
+        }
+        public void display_thu_viec_da_het_han()
+        {
+            m_rdb_nhan_vien_sap_quay_lai.Visible = true;
+            m_rdb_thu_viec_sap_het_han.Visible = true;
+            m_rdb_thu_viec_da_het_han.Visible = true;
+
+            m_rdb_thu_viec_da_het_han.Checked = true;
             m_e_form_mode = DataEntryFormMode.ViewDataState;
             this.Show();
         }
@@ -647,7 +674,7 @@ namespace BKI_HRM
                 ,
             TRANG_THAI_LAO_DONG = 13
                 ,
-           
+
             DIA_BAN = 1
                 ,
             TEN = 9
@@ -722,6 +749,7 @@ namespace BKI_HRM
         private string m_str_nam_het_hieu_luc = "";
         private string m_str_trang_thai_chuc_vu = "";
 
+        private bool is_form_loaded = false;
         #endregion
 
         #region Private Methods
@@ -742,7 +770,7 @@ namespace BKI_HRM
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_grid();
             set_define_events();
-            
+
         }
         private void load_custom_source_2_m_txt_search()
         {
@@ -756,14 +784,14 @@ namespace BKI_HRM
             {
                 v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.MA_NV].ToString());
                 v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.TEN].ToString());
-//                 v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.TEN_CV] + "");
-//                 v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.TRINH_DO] + "");
-//                 v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.MA_CV] + "");
-//                 v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.TEN_CV] + "");
-//                 v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.LOAI_CV] + "");
-//                 v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.MA_DON_VI] + "");
-//                 v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.TEN_DON_VI] + "");
-//                 v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.DIA_BAN] + "");
+                //                 v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.TEN_CV] + "");
+                //                 v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.TRINH_DO] + "");
+                //                 v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.MA_CV] + "");
+                //                 v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.TEN_CV] + "");
+                //                 v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.LOAI_CV] + "");
+                //                 v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.MA_DON_VI] + "");
+                //                 v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.TEN_DON_VI] + "");
+                //                 v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.DIA_BAN] + "");
                 v_coll.Add(v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.HO_DEM] + " " + v_rows[i][V_DM_DU_LIEU_NHAN_VIEN.TEN]);
             }
             m_txt_search.AutoCompleteCustomSource = v_coll;
@@ -787,7 +815,7 @@ namespace BKI_HRM
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_BAT_DAU, e_col_Number.NGAY_BAT_DAU);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.CAP_DON_VI, e_col_Number.CAP_DON_VI);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRANG_THAI_LAO_DONG, e_col_Number.TRANG_THAI_LAO_DONG);
-           
+
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.DIA_BAN, e_col_Number.DIA_BAN);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN, e_col_Number.TEN);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_HEADCOUNT, e_col_Number.MA_HEADCOUNT);
@@ -840,8 +868,10 @@ namespace BKI_HRM
                         , "nghỉ việc quay lại"
                         , CAppContext_201.getCurrentIDPhapnhan()
                         , ref v_dc_so_luong_nv);
+
                     m_lbl_so_luong_nv.Text = "Số lượng nhân viên đang nghỉ: ";
                     m_lbl_so_luong_nv.Text += v_dc_so_luong_nv.ToString();
+
                     m_us.FillDatasetSearch(m_ds
                         , m_txt_search.Text.Trim()
                         , m_txt_trinh_do.Text.Trim()
@@ -858,53 +888,100 @@ namespace BKI_HRM
                         , ""
                         , "search nghỉ việc quay lại"
                         , CAppContext_201.getCurrentIDPhapnhan());
+
                     m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC_LD].Caption = "Ngày quay lại";
                     m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC_LD].Visible = true;
                     m_fg.Cols[(int)e_col_Number.NGAY_CO_HIEU_LUC_LD].Caption = "Ngày bắt đầu nghỉ";
                 }
-                else
-                    if (m_rdb_thu_viec_sap_het_han.Checked)
-                    {
-                        v_us.count_nhan_vien1(v_ds
-                            , m_txt_search.Text.Trim()
-                            , m_txt_trinh_do.Text.Trim()
-                             , CIPConvert.ToDecimal(m_cbo_gioi_tinh.SelectedValue)
-                            , CIPConvert.ToDecimal(m_cbo_chon_chuc_vu.SelectedValue)
-                            , CIPConvert.ToDecimal(m_cbo_chon_don_vi.SelectedValue)
-                            , CIPConvert.ToDecimal(m_cbo_chon_dia_ban.SelectedValue)
-                            //      , m_dat_thoi_diem.Value
-                            , m_dat_tu_ngay.Value.Date
-                            , m_dat_den_ngay.Value.Date
-                            , CIPConvert.ToDecimal(m_cbo_thang_sinh.SelectedValue)
-                            , ""
-                            , "Y"
-                            , ""
-                            , "thử việc hết hạn"
-                            , CAppContext_201.getCurrentIDPhapnhan()
-                            , ref v_dc_so_luong_nv);
-                        m_lbl_so_luong_nv.Text = "Số lượng nhân viên thử việc sắp hết hạn (còn <= 7 ngày): ";
-                        m_lbl_so_luong_nv.Text += v_dc_so_luong_nv.ToString();
-                        m_us.FillDatasetSearch(m_ds
-                            , m_txt_search.Text.Trim()
-                            , m_txt_trinh_do.Text.Trim()
-                            , CIPConvert.ToDecimal(m_cbo_gioi_tinh.SelectedValue)
-                            , CIPConvert.ToDecimal(m_cbo_chon_chuc_vu.SelectedValue)
-                            , CIPConvert.ToDecimal(m_cbo_chon_don_vi.SelectedValue)
-                            , CIPConvert.ToDecimal(m_cbo_chon_dia_ban.SelectedValue)
-                            //      , m_dat_thoi_diem.Value
-                            , m_dat_tu_ngay.Value.Date
-                            , m_dat_den_ngay.Value.Date
-                            , CIPConvert.ToDecimal(m_cbo_thang_sinh.SelectedValue)
-                            , ""
-                            , "Y"
-                            , ""
-                            , "search thử việc hết hạn"
-                            , CAppContext_201.getCurrentIDPhapnhan());
-                        m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC_LD].Caption = "Ngày hết hạn thử việc";
-                        m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC_LD].Visible = true;
-                        m_fg.Cols[(int)e_col_Number.NGAY_CO_HIEU_LUC_LD].Caption = "Ngày bắt đầu thử việc";
-                    }
+                else if (m_rdb_thu_viec_sap_het_han.Checked)
+                {
+                    v_us.count_nhan_vien1(v_ds
+                        , m_txt_search.Text.Trim()
+                        , m_txt_trinh_do.Text.Trim()
+                         , CIPConvert.ToDecimal(m_cbo_gioi_tinh.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_chon_chuc_vu.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_chon_don_vi.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_chon_dia_ban.SelectedValue)
+                        //      , m_dat_thoi_diem.Value
+                        , m_dat_tu_ngay.Value.Date
+                        , m_dat_den_ngay.Value.Date
+                        , CIPConvert.ToDecimal(m_cbo_thang_sinh.SelectedValue)
+                        , ""
+                        , "Y"
+                        , ""
+                        , "thử việc hết hạn"
+                        , CAppContext_201.getCurrentIDPhapnhan()
+                        , ref v_dc_so_luong_nv);
+
+                    m_lbl_so_luong_nv.Text = "Số lượng nhân viên thử việc sắp hết hạn (còn <= 7 ngày): ";
+                    m_lbl_so_luong_nv.Text += v_dc_so_luong_nv.ToString();
+
+                    m_us.FillDatasetSearch(m_ds
+                        , m_txt_search.Text.Trim()
+                        , m_txt_trinh_do.Text.Trim()
+                        , CIPConvert.ToDecimal(m_cbo_gioi_tinh.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_chon_chuc_vu.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_chon_don_vi.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_chon_dia_ban.SelectedValue)
+                        //      , m_dat_thoi_diem.Value
+                        , m_dat_tu_ngay.Value.Date
+                        , m_dat_den_ngay.Value.Date
+                        , CIPConvert.ToDecimal(m_cbo_thang_sinh.SelectedValue)
+                        , ""
+                        , "Y"
+                        , ""
+                        , "search thử việc hết hạn"
+                        , CAppContext_201.getCurrentIDPhapnhan());
+
+                    m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC_LD].Caption = "Ngày hết hạn thử việc";
+                    m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC_LD].Visible = true;
+                    m_fg.Cols[(int)e_col_Number.NGAY_CO_HIEU_LUC_LD].Caption = "Ngày bắt đầu thử việc";
+                }
                 // m_so_luong_thu_viec_sap_het_han = m_ds.V_DM_DU_LIEU_NHAN_VIEN.Rows.Count;
+                else if (m_rdb_thu_viec_da_het_han.Checked)
+                {
+                    v_us.count_nhan_vien1(v_ds
+                        , m_txt_search.Text.Trim()
+                        , m_txt_trinh_do.Text.Trim()
+                         , CIPConvert.ToDecimal(m_cbo_gioi_tinh.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_chon_chuc_vu.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_chon_don_vi.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_chon_dia_ban.SelectedValue)
+                        , m_dat_tu_ngay.Value.Date
+                        , m_dat_den_ngay.Value.Date
+                        , CIPConvert.ToDecimal(m_cbo_thang_sinh.SelectedValue)
+                        , ""
+                        , "Y"
+                        , ""
+                        , "thử việc đã hết hạn"
+                        , CAppContext_201.getCurrentIDPhapnhan()
+                        , ref v_dc_so_luong_nv);
+
+                    m_lbl_so_luong_nv.Text = "Số lượng nhân viên đã hết hạn: ";
+                    m_lbl_so_luong_nv.Text += v_dc_so_luong_nv.ToString();
+
+                    // search thử việc đã hết hạn
+                    m_us.FillDatasetSearch(m_ds
+                        , m_txt_search.Text.Trim()
+                        , m_txt_trinh_do.Text.Trim()
+                        , CIPConvert.ToDecimal(m_cbo_gioi_tinh.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_chon_chuc_vu.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_chon_don_vi.SelectedValue)
+                        , CIPConvert.ToDecimal(m_cbo_chon_dia_ban.SelectedValue)
+                        //      , m_dat_thoi_diem.Value
+                        , m_dat_tu_ngay.Value.Date
+                        , m_dat_den_ngay.Value.Date
+                        , CIPConvert.ToDecimal(m_cbo_thang_sinh.SelectedValue)
+                        , ""
+                        , "Y"
+                        , ""
+                        , "search thử việc đã hết hạn"
+                        , CAppContext_201.getCurrentIDPhapnhan());
+
+                    m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC_LD].Caption = "Ngày hết hạn thử việc";
+                    m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC_LD].Visible = true;
+                    m_fg.Cols[(int)e_col_Number.NGAY_CO_HIEU_LUC_LD].Caption = "Ngày bắt đầu thử việc";
+                }
             }
             else
             {
@@ -951,7 +1028,7 @@ namespace BKI_HRM
                         , CAppContext_201.getCurrentIDPhapnhan()
                     );
                 refresh_key_value();
-                
+
                 //test();
             }
             load_custom_source_2_m_txt_search();
@@ -1434,6 +1511,8 @@ namespace BKI_HRM
             try
             {
                 set_initial_form_load();
+
+                is_form_loaded = true;
             }
             catch (Exception v_e)
             {
@@ -1555,7 +1634,8 @@ namespace BKI_HRM
         {
             try
             {
-                load_data_2_grid();
+                if (is_form_loaded)
+                    load_data_2_grid();
             }
             catch (Exception v_e)
             {
