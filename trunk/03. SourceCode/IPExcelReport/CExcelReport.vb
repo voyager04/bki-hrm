@@ -358,13 +358,13 @@ Public Class CExcelReport
                 v_iDataRow(i_iExcelCol) = i_iExcelCol + 1
                 For i_iExcelCol = 0 To i_DataSet.Tables(i_TableName).Columns.Count - 2
                     If Not Object.ReferenceEquals(CType(m_objExcelWorksheet.Cells(i_iExcelRow + i_iSheetStartRow, 4), Excel.Range).Value(), Nothing) Then
-                        If Not CType(m_objExcelWorksheet.Cells(i_iExcelRow + i_iSheetStartRow, i_iExcelCol + 1), Excel.Range).Value() Is Nothing Then
-                            v_iDataRow(i_iExcelCol + 1) = _
-                                CType(m_objExcelWorksheet.Cells(i_iExcelRow + i_iSheetStartRow, i_iExcelCol + 2), Excel.Range).Value()
+                        'If Not CType(m_objExcelWorksheet.Cells(i_iExcelRow + i_iSheetStartRow, i_iExcelCol + 1), Excel.Range).Value() Is Nothing Then
+                        v_iDataRow(i_iExcelCol + 1) = _
+                            CType(m_objExcelWorksheet.Cells(i_iExcelRow + i_iSheetStartRow, i_iExcelCol + 2), Excel.Range).Value()
+                        'End If
+                        Else
+                    v_bol_stop = True
                         End If
-                    Else
-                        v_bol_stop = True
-                    End If
                 Next
                 If Not v_bol_stop Then
                     i_DataSet.Tables(i_TableName).Rows.InsertAt(v_iDataRow, i_iExcelRow)
