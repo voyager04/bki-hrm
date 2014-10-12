@@ -30,6 +30,8 @@ namespace BKI_HRM
             try
             {
 
+
+
                 IP.Core.IPSystemAdmin.f101_Dang_Nhap v_frm_login_form = new f101_Dang_Nhap();
                 US_HT_NGUOI_SU_DUNG v_us_user = new US_HT_NGUOI_SU_DUNG();
                 decimal v_dc_id_phap_nhan = CAppContext_201.getCurrentIDPhapnhan();

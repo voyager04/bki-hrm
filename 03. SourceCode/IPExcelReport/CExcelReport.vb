@@ -418,15 +418,15 @@ Public Class CExcelReport
                 v_iDataRow = i_DataSet.Tables(i_DataSet.Tables(i_TableName).TableName).NewRow()
                 v_iDataRow(i_iExcelCol) = i_iExcelRow + 1 'Set cột đầu tiên của DS với giá trị tăng dần (Số thứ tự)
 
-                'Kiểm tra cell đầu tiên của row hiện tại có dữ liệu hay không, không có thì kết thúc duyệt file excel
+                'Kiểm tra cell đầu tiên của row hiện tại có dữ liệu hay không (cột STT), không có thì kết thúc duyệt file excel
                 'Vì cột đầu tiên của Excel bằng 1, nên ở đây ta đặt index_col = 1 chứ không phải bằng 0
                 If Not Object.ReferenceEquals(CType(m_objExcelWorksheet.Cells(i_iExcelRow + i_iSheetStartRow, 1), Excel.Range).Value(), Nothing) Then
 
                     ' Khi cột đầu tiên có dữ liệu.
                     ' Lặp với số lượng trường trong DS, duyệt đúng số lượng đó để convert dữ liệu trên excel sang cột DS tương ứng (trừ trường đầu tiên trong DS, vì nó mặc định là DS)
-                    For i_iExcelCol = 1 To i_DataSet.Tables(i_TableName).Columns.Count - 1
+                    For i_iExcelCol = 2 To i_DataSet.Tables(i_TableName).Columns.Count - 1
                         If Not CType(m_objExcelWorksheet.Cells(i_iExcelRow + i_iSheetStartRow, i_iExcelCol), Excel.Range).Value() Is Nothing Then
-                            v_iDataRow(i_iExcelCol) = CType(m_objExcelWorksheet.Cells(i_iExcelRow + i_iSheetStartRow, i_iExcelCol), Excel.Range).Value()
+                            v_iDataRow(i_iExcelCol - 1) = CType(m_objExcelWorksheet.Cells(i_iExcelRow + i_iSheetStartRow, i_iExcelCol), Excel.Range).Value()
                         End If
                     Next
 
