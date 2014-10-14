@@ -85,7 +85,7 @@ namespace BKI_HRM
                     file_write.WriteLine(v_obj_login_info.m_us_user.strMAT_KHAU);
                     file_write.Close();
 	                //v_obj_login_info.m_us_user.str
-                    f002_main_form v_frm_main = new f002_main_form();
+                    f400_Main v_frm_main = new f400_Main();
                     v_frm_main.display(ref v_exitmode);
                     v_frm_main.Dispose();
                     // sau main form hiện thì login hoặc thóat
