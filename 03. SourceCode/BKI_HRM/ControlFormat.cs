@@ -53,7 +53,7 @@ namespace BKI_HRM
             int i_id_phap_nhan = (int)CAppContext_201.getCurrentIDPhapnhan();
             switch (ip_f.Name)
             {
-                case "f400_Main":
+                case "f002_main_form":
                     #region "f400_Main"
                     foreach (Control v_c in ip_f.Controls)
                     {
