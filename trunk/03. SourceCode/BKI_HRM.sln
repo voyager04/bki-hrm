@@ -1,6 +1,5 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BKI_HRM.DS", "BKI_HRM.DS\BKI_HRM.DS.csproj", "{4AEBA63F-E5B5-4D0C-B1B5-E6BCB13E1B5A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BKI_HRM.US", "BKI_HRM.US\BKI_HRM.US.csproj", "{CAFDA83F-D091-49BF-816F-F7A7A72C68EC}"

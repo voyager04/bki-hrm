@@ -20,6 +20,8 @@ namespace BKI_HRM.HeThong
         public void load_data_2_txt_form(US_HT_FORM ip_us){
             m_txt_form.Text = ip_us.strFORM_NAME;
         }
+        public delegate void close_tab(bool ip_y_n);
+        public close_tab close_tab_B;
 
         public f994_phan_quyen_detail()
         {
@@ -34,7 +36,7 @@ namespace BKI_HRM.HeThong
 
         private void m_cmd_exit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            close_tab_B(true);
         }
 
         private void m_cmd_save_Click(object sender, EventArgs e)
