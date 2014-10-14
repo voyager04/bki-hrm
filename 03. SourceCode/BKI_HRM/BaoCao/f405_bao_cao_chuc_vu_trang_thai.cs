@@ -28,6 +28,9 @@ namespace BKI_HRM
             InitializeComponent();
             format_controls();
         }
+        public delegate void close_tab(bool ip_y_n);
+        public close_tab close_tab_B;
+
         #region Members
         ITransferDataRow m_obj_trans;
         private bool load_invisible = true;
@@ -181,7 +184,8 @@ namespace BKI_HRM
         {
             
 			try{
-				this.Close();
+                close_tab_B(true);
+
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
