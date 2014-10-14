@@ -102,7 +102,6 @@
             this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.m_pnl_thong_bao = new System.Windows.Forms.Panel();
             this.m_pnl_thu_viec_da_het_han = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -119,8 +118,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_lbl_sap_quay_lai = new System.Windows.Forms.Label();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
-            this.m_cmd_thong_bao = new System.Windows.Forms.Button();
             this.m_xtab_control = new DevExpress.XtraTab.XtraTabControl();
+            this.m_lbl_tong_so_nv = new System.Windows.Forms.Label();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_cbo_phap_nhan = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.m_tab_menu)).BeginInit();
             this.m_pnl_thong_bao.SuspendLayout();
             this.m_pnl_thu_viec_da_het_han.SuspendLayout();
@@ -132,10 +135,14 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_xtab_control)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_tab_menu
             // 
+            this.m_tab_menu.AllowMinimizeRibbon = false;
             this.m_tab_menu.AutoSizeItems = true;
             this.m_tab_menu.ExpandCollapseItem.Id = 0;
             this.m_tab_menu.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
@@ -209,8 +216,14 @@
             this.ribbonPage3,
             this.ribbonPage5,
             this.ribbonPage6});
+            this.m_tab_menu.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
+            this.m_tab_menu.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
+            this.m_tab_menu.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.True;
+            this.m_tab_menu.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.False;
+            this.m_tab_menu.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show;
+            this.m_tab_menu.ShowToolbarCustomizeItem = false;
             this.m_tab_menu.Size = new System.Drawing.Size(1193, 142);
-            this.m_tab_menu.StatusBar = this.ribbonStatusBar1;
+            this.m_tab_menu.Toolbar.ShowCustomizeItem = false;
             // 
             // m_cmd_phan_quyen_chi_tiet
             // 
@@ -786,13 +799,6 @@
             this.ribbonPage6.Name = "ribbonPage6";
             this.ribbonPage6.Text = "Tìm kiếm chức năng - Thay đổi pháp nhân";
             // 
-            // ribbonStatusBar1
-            // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 556);
-            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
-            this.ribbonStatusBar1.Ribbon = this.m_tab_menu;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1193, 27);
-            // 
             // m_pnl_thong_bao
             // 
             this.m_pnl_thong_bao.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -970,37 +976,76 @@
             "DevExpress.XtraBars.Ribbon.RibbonStatusBar",
             "DevExpress.XtraBars.Ribbon.RibbonControl"});
             // 
-            // m_cmd_thong_bao
-            // 
-            this.m_cmd_thong_bao.BackgroundImage = global::BKI_HRM.Properties.Resources.thong_bao;
-            this.m_cmd_thong_bao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.m_cmd_thong_bao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_cmd_thong_bao.Location = new System.Drawing.Point(570, 0);
-            this.m_cmd_thong_bao.Name = "m_cmd_thong_bao";
-            this.m_cmd_thong_bao.Size = new System.Drawing.Size(48, 65);
-            this.m_cmd_thong_bao.TabIndex = 17;
-            this.m_cmd_thong_bao.UseVisualStyleBackColor = true;
-            this.m_cmd_thong_bao.Visible = false;
-            // 
             // m_xtab_control
             // 
             this.m_xtab_control.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_xtab_control.Location = new System.Drawing.Point(0, 142);
             this.m_xtab_control.Name = "m_xtab_control";
-            this.m_xtab_control.Size = new System.Drawing.Size(1193, 414);
+            this.m_xtab_control.Size = new System.Drawing.Size(1193, 409);
             this.m_xtab_control.TabIndex = 21;
+            // 
+            // m_lbl_tong_so_nv
+            // 
+            this.m_lbl_tong_so_nv.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_lbl_tong_so_nv.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_tong_so_nv.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_tong_so_nv.Location = new System.Drawing.Point(2, 2);
+            this.m_lbl_tong_so_nv.Name = "m_lbl_tong_so_nv";
+            this.m_lbl_tong_so_nv.Size = new System.Drawing.Size(368, 28);
+            this.m_lbl_tong_so_nv.TabIndex = 25;
+            this.m_lbl_tong_so_nv.Text = "label3";
+            this.m_lbl_tong_so_nv.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.panel6);
+            this.panelControl1.Controls.Add(this.m_lbl_tong_so_nv);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl1.Location = new System.Drawing.Point(0, 551);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(1193, 32);
+            this.panelControl1.TabIndex = 26;
+            // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Controls.Add(this.m_cbo_phap_nhan);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel6.Location = new System.Drawing.Point(800, 2);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(391, 28);
+            this.panel6.TabIndex = 26;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(87, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Chọn pháp nhân:";
+            // 
+            // m_cbo_phap_nhan
+            // 
+            this.m_cbo_phap_nhan.FormattingEnabled = true;
+            this.m_cbo_phap_nhan.Location = new System.Drawing.Point(200, 3);
+            this.m_cbo_phap_nhan.Name = "m_cbo_phap_nhan";
+            this.m_cbo_phap_nhan.Size = new System.Drawing.Size(121, 21);
+            this.m_cbo_phap_nhan.TabIndex = 7;
             // 
             // f002_main_form
             // 
             this.ClientSize = new System.Drawing.Size(1193, 583);
             this.Controls.Add(this.m_xtab_control);
-            this.Controls.Add(this.m_cmd_thong_bao);
+            this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.m_pnl_thong_bao);
-            this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.m_tab_menu);
             this.DoubleBuffered = true;
             this.Name = "f002_main_form";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "F002 - Chương trình quản lý nhân sự ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.f002_main_form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.m_tab_menu)).EndInit();
@@ -1021,6 +1066,10 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_xtab_control)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1120,9 +1169,12 @@
         private System.Windows.Forms.Label m_lbl_thu_viec_sap_het_han;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label m_lbl_sap_quay_lai;
-        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private DevExpress.XtraBars.Docking.DockManager dockManager1;
-        private System.Windows.Forms.Button m_cmd_thong_bao;
         private DevExpress.XtraTab.XtraTabControl m_xtab_control;
+        private System.Windows.Forms.Label m_lbl_tong_so_nv;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox m_cbo_phap_nhan;
     }
 }
