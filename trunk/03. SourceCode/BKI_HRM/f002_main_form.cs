@@ -17,6 +17,7 @@ using System.Diagnostics;
 using BKI_HRM.US;
 using BKI_HRM.DS;
 using BKI_HRM.NghiepVu;
+using BKI_HRM.BaoCao;
 namespace BKI_HRM {
     public partial class f002_main_form : DevComponents.DotNetBar.OfficeForm {
         public f002_main_form() {
@@ -61,7 +62,11 @@ namespace BKI_HRM {
             v_pnl.Options.ShowCloseButton = false;
             v_pnl.Visibility = DockVisibility.AutoHide;
             v_pnl.DockManager.DockingOptions.HideImmediatelyOnAutoHide = true;
+
+            v_pnl.Click += v_pnl_Click;
         }
+
+        
         private void format_control() {
             set_define_events();
         }
@@ -163,7 +168,226 @@ namespace BKI_HRM {
             m_cmd_hop_dong_lao_dong.ItemClick += m_cmd_hop_dong_lao_dong_ItemClick;
             m_cmd_luongqd.ItemClick += m_cmd_luongqd_ItemClick;
             m_cmd_import_luong_theo_qd.ItemClick += m_cmd_import_luong_theo_qd_ItemClick;
+
+            //Báo cáo
             m_cmd_bao_cao_du_an.ItemClick += m_cmd_bao_cao_du_an_ItemClick;
+            m_cmd_tra_cuu_nhan_su_du_an.ItemClick += m_cmd_tra_cuu_nhan_su_du_an_ItemClick;
+            m_cmd_bao_cao_hop_dong_lao_dong.ItemClick += m_cmd_bao_cao_hop_dong_lao_dong_ItemClick;
+            m_cmd_tra_cuu_nhan_su_chung.ItemClick += m_cmd_tra_cuu_nhan_su_chung_ItemClick;
+            m_cmd_nhan_su_theo_phong_ban.ItemClick += m_cmd_nhan_su_theo_phong_ban_ItemClick;
+            m_cmd_nhan_su_theo_chuc_vu.ItemClick += m_cmd_nhan_su_theo_chuc_vu_ItemClick;
+            m_cmd_nhan_su_theo_cap_bac.ItemClick += m_cmd_nhan_su_theo_cap_bac_ItemClick;
+            m_cmd_qua_trinh_lam_viec.ItemClick += m_cmd_qua_trinh_lam_viec_ItemClick;
+            m_cmd_bien_dong_chuc_vu_trang_thai.ItemClick += m_cmd_bien_dong_chuc_vu_trang_thai_ItemClick;
+            m_cmd_bao_cao_so_luong_bo_nhiem.ItemClick += m_cmd_bao_cao_so_luong_bo_nhiem_ItemClick;
+            m_cmd_bao_cao_danh_sach_bo_nhiem.ItemClick += m_cmd_bao_cao_danh_sach_bo_nhiem_ItemClick;
+            m_cmd_bien_dong_don_vi_trang_thai.ItemClick += m_cmd_bien_dong_don_vi_trang_thai_ItemClick;
+            m_cmd_bao_cao_nghi_viec.ItemClick += m_cmd_bao_cao_nghi_viec_ItemClick;
+            m_cmd_bc_luong_theo_qd.ItemClick += m_cmd_bc_luong_theo_qd_ItemClick;
+            m_cmd_rpt_tong_luong.ItemClick += m_cmd_rpt_tong_luong_ItemClick;
+        }
+
+        void m_cmd_rpt_tong_luong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            try {
+                f302_RPT_TONG_LUONG v_frm = new f302_RPT_TONG_LUONG();
+                v_frm.close_tab_B = new f302_RPT_TONG_LUONG.close_tab(close_tab_A);
+                uc_for_form v_uc = new uc_for_form();
+                m_obj_tab.AddFormToUC(v_frm, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_uc);
+            }
+            catch(Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }   
+        }
+
+        void m_cmd_bc_luong_theo_qd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            try {
+                f800_BC_LUONG_THEO_QD v_frm = new f800_BC_LUONG_THEO_QD();
+                v_frm.close_tab_B = new f800_BC_LUONG_THEO_QD.close_tab(close_tab_A);
+                uc_for_form v_uc = new uc_for_form();
+                m_obj_tab.AddFormToUC(v_frm, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_uc);
+            }
+            catch(Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_bao_cao_nghi_viec_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            try {
+                f409_bao_cao_nghi_viec v_frm = new f409_bao_cao_nghi_viec();
+                v_frm.close_tab_B = new f409_bao_cao_nghi_viec.close_tab(close_tab_A);
+                uc_for_form v_uc = new uc_for_form();
+                m_obj_tab.AddFormToUC(v_frm, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_uc);
+            }
+            catch(Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_bien_dong_don_vi_trang_thai_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            try {
+                f407_bao_cao_bo_nhiem v_frm = new f407_bao_cao_bo_nhiem();
+                v_frm.close_tab_B = new f407_bao_cao_bo_nhiem.close_tab(close_tab_A);
+                uc_for_form v_uc = new uc_for_form();
+                m_obj_tab.AddFormToUC(v_frm, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_uc);
+
+            }
+            catch(Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_bao_cao_danh_sach_bo_nhiem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            try {
+                f408_bao_cao_don_vi_trang_thai v_frm = new f408_bao_cao_don_vi_trang_thai();
+                v_frm.close_tab_B = new f408_bao_cao_don_vi_trang_thai.close_tab(close_tab_A);
+                uc_for_form v_uc = new uc_for_form();
+                m_obj_tab.AddFormToUC(v_frm, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_uc);
+
+            }
+            catch(Exception v_e) {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_bao_cao_so_luong_bo_nhiem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            try {
+                f406_bao_cao_bo_nhiem v_frm = new f406_bao_cao_bo_nhiem();
+                v_frm.close_tab_B = new f406_bao_cao_bo_nhiem.close_tab(close_tab_A);
+                uc_for_form v_uc = new uc_for_form();
+                m_obj_tab.AddFormToUC(v_frm, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "bc_sl_bo_nhiem", v_frm.Text, v_uc);
+
+            }
+            catch(Exception v_e) {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_bien_dong_chuc_vu_trang_thai_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            try {
+                f405_bao_cao_chuc_vu_trang_thai v_frm = new f405_bao_cao_chuc_vu_trang_thai();
+                v_frm.close_tab_B = new f405_bao_cao_chuc_vu_trang_thai.close_tab(close_tab_A);
+                uc_for_form v_uc = new uc_for_form();
+                m_obj_tab.AddFormToUC(v_frm, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_bien_dong_chuc_vu", v_frm.Text, v_uc);
+
+            }
+            catch(Exception v_e) {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_qua_trinh_lam_viec_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            try {
+                f404_GD_QUA_TRINH_CONG_TAC v_frm = new f404_GD_QUA_TRINH_CONG_TAC();
+                v_frm.close_tab_B = new f404_GD_QUA_TRINH_CONG_TAC.close_tab(close_tab_A);
+                uc_for_form v_uc = new uc_for_form();
+                m_obj_tab.AddFormToUC(v_frm, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_qua_trinh_cong_tac", v_frm.Text, v_uc);
+
+            }
+            catch(Exception v_e) {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_nhan_su_theo_cap_bac_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            try {
+                f403_BAO_CAO_NHAN_SU_CAP_BAC v_frm = new f403_BAO_CAO_NHAN_SU_CAP_BAC();
+                v_frm.close_tab_B = new f403_BAO_CAO_NHAN_SU_CAP_BAC.close_tab(close_tab_A);
+                uc_for_form v_uc = new uc_for_form();
+                m_obj_tab.AddFormToUC(v_frm, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_bc_nhan_su_cap_bac", v_frm.Text, v_uc);
+
+            }
+            catch(Exception v_e) {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_nhan_su_theo_chuc_vu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            try {
+                f402_BAO_CAO_NHAN_SU_CHUC_VU v_frm = new f402_BAO_CAO_NHAN_SU_CHUC_VU();
+                v_frm.close_tab_B = new f402_BAO_CAO_NHAN_SU_CHUC_VU.close_tab(close_tab_A);
+                uc_for_form v_uc = new uc_for_form();
+                m_obj_tab.AddFormToUC(v_frm, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_bc_nhan_su_chuc_vu", v_frm.Text, v_uc);
+
+            }
+            catch(Exception v_e) {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_nhan_su_theo_phong_ban_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            try {
+                f104_bao_cao_nhan_su_theo_phong_ban v_frm = new f104_bao_cao_nhan_su_theo_phong_ban();
+                v_frm.close_tab_B = new f104_bao_cao_nhan_su_theo_phong_ban.close_tab(close_tab_A);
+                uc_for_form v_uc = new uc_for_form();
+                m_obj_tab.AddFormToUC(v_frm, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_bc_nhan_su_theo_pb", v_frm.Text, v_uc);
+
+            }
+            catch(Exception v_e) {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_tra_cuu_nhan_su_chung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            try {
+                f103_bao_cao_tra_cuu_nhan_su v_frm = new f103_bao_cao_tra_cuu_nhan_su();
+                v_frm.close_tab_B = new f103_bao_cao_tra_cuu_nhan_su.close_tab(close_tab_A);
+                uc_for_form v_uc = new uc_for_form();
+                m_obj_tab.AddFormToUC(v_frm, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_bc_tra_cuu_nhan_su", v_frm.Text, v_uc);
+
+            }
+            catch(Exception v_e) {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_bao_cao_hop_dong_lao_dong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            try {
+                f702_bao_cao_hdld v_frm = new f702_bao_cao_hdld();
+                v_frm.close_tab_B = new f702_bao_cao_hdld.close_tab(close_tab_A);
+                uc_for_form v_uc = new uc_for_form();
+                m_obj_tab.AddFormToUC(v_frm, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_bao_cao_hdld", v_frm.Text, v_uc);
+
+                v_frm.set_form_mode_for_report(1);
+            }
+            catch(Exception v_e) {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_tra_cuu_nhan_su_du_an_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            try {
+                f501_v_dm_nhan_su_du_an v_frm = new f501_v_dm_nhan_su_du_an();
+                v_frm.close_tab_B = new f501_v_dm_nhan_su_du_an.close_tab(close_tab_A);
+                uc_for_form v_uc = new uc_for_form();
+                m_obj_tab.AddFormToUC(v_frm, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_tra_cuu_nhan_su_du_an", v_frm.Text, v_uc);
+            }
+            catch(Exception v_e) {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_bao_cao_du_an_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
@@ -521,6 +745,23 @@ namespace BKI_HRM {
         private void m_xtab_control_CloseButtonClick(object sender, EventArgs e) {
             try {
                 m_xtab_control.TabPages.RemoveAt(m_xtab_control.SelectedTabPageIndex);
+            }
+            catch(Exception v_e) {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void v_pnl_Click(object sender, EventArgs e) {
+            try {
+                f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
+                m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc!",
+                                                        frm502.count_record_du_an_sap_ket_thuc());
+
+                canh_bao_hop_dong();
+                thu_viec_sap_het_han();
+                nghi_viec_sap_quay_lai();
+                nhan_vien_chinh_thuc();
             }
             catch(Exception v_e) {
 

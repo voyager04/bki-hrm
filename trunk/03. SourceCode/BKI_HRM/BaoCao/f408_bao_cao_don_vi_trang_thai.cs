@@ -32,6 +32,9 @@ namespace BKI_HRM
             load_data_2_grid_donvi();
             //load_data_2_grid();
         }
+        public delegate void close_tab(bool ip_y_n);
+        public close_tab close_tab_B;
+
         #region Members
         AlertForm alert;
         ITransferDataRow m_obj_trans;
@@ -473,7 +476,8 @@ namespace BKI_HRM
         {
             try
             {
-                this.Close();
+                close_tab_B(true);
+
             }
             catch (Exception v_e)
             {
