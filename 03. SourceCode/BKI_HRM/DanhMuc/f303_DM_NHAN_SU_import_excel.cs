@@ -5,19 +5,25 @@
 ///************************************************
 
 
-using BKI_HRM.DS;
-using BKI_HRM.DS.CDBNames;
-using BKI_HRM.US;
-using C1.Win.C1FlexGrid;
-using IP.Core.IPCommon;
-using IP.Core.IPExcelReport;
-using IP.Core.IPException;
-using IP.Core.IPSystemAdmin;
 using System;
-using System.Collections;
 using System.Data;
 using System.Drawing;
+using System.Collections;
+using System.ComponentModel;
 using System.Windows.Forms;
+
+using IP.Core.IPCommon;
+using IP.Core.IPException;
+using IP.Core.IPData;
+using IP.Core.IPUserService;
+using IP.Core.IPSystemAdmin;
+using System.Diagnostics;
+using BKI_HRM.US;
+using BKI_HRM.DS;
+using BKI_HRM.DS.CDBNames;
+
+using C1.Win.C1FlexGrid;
+using IP.Core.IPExcelReport;
 
 namespace BKI_HRM
 {
@@ -50,6 +56,7 @@ namespace BKI_HRM
         private Label label7;
         private Label m_lbl_green;
         private Label m_lbl_red;
+        private LinkLabel m_llbl_mau_import;
         private System.ComponentModel.IContainer components;
 
         public f303_DM_NHAN_SU_import_excel()
@@ -97,6 +104,11 @@ namespace BKI_HRM
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_llbl_mau_import = new System.Windows.Forms.LinkLabel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.m_lbl_green = new System.Windows.Forms.Label();
+            this.m_lbl_red = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.m_cmd_kiem_tra_du_lieu = new SIS.Controls.Button.SiSButton();
             this.m_cmd_save_data = new SIS.Controls.Button.SiSButton();
@@ -109,10 +121,6 @@ namespace BKI_HRM
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_ofd_exel_file = new System.Windows.Forms.OpenFileDialog();
             this.m_lbl_loading_mes = new System.Windows.Forms.Label();
-            this.m_lbl_red = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.m_lbl_green = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -240,6 +248,7 @@ namespace BKI_HRM
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_llbl_mau_import);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.m_lbl_green);
@@ -258,6 +267,53 @@ namespace BKI_HRM
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1081, 110);
             this.panel1.TabIndex = 20;
+            // 
+            // m_llbl_mau_import
+            // 
+            this.m_llbl_mau_import.AutoSize = true;
+            this.m_llbl_mau_import.Location = new System.Drawing.Point(73, 72);
+            this.m_llbl_mau_import.Name = "m_llbl_mau_import";
+            this.m_llbl_mau_import.Size = new System.Drawing.Size(77, 13);
+            this.m_llbl_mau_import.TabIndex = 42;
+            this.m_llbl_mau_import.TabStop = true;
+            this.m_llbl_mau_import.Text = "Tải mẫu Import";
+            this.m_llbl_mau_import.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.m_llbl_mau_import_LinkClicked);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(907, 73);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(78, 13);
+            this.label9.TabIndex = 41;
+            this.label9.Text = "Dữ liệu bị trùng";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(907, 45);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 13);
+            this.label7.TabIndex = 41;
+            this.label7.Text = "Dữ liệu trống";
+            // 
+            // m_lbl_green
+            // 
+            this.m_lbl_green.BackColor = System.Drawing.Color.Green;
+            this.m_lbl_green.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.m_lbl_green.Location = new System.Drawing.Point(845, 72);
+            this.m_lbl_green.Name = "m_lbl_green";
+            this.m_lbl_green.Size = new System.Drawing.Size(56, 23);
+            this.m_lbl_green.TabIndex = 41;
+            // 
+            // m_lbl_red
+            // 
+            this.m_lbl_red.BackColor = System.Drawing.Color.Red;
+            this.m_lbl_red.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.m_lbl_red.Location = new System.Drawing.Point(845, 43);
+            this.m_lbl_red.Name = "m_lbl_red";
+            this.m_lbl_red.Size = new System.Drawing.Size(56, 23);
+            this.m_lbl_red.TabIndex = 41;
             // 
             // label6
             // 
@@ -383,42 +439,6 @@ namespace BKI_HRM
             this.m_lbl_loading_mes.Text = "Vui lòng đợi trong giây lát ...";
             this.m_lbl_loading_mes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.m_lbl_loading_mes.Visible = false;
-            // 
-            // m_lbl_red
-            // 
-            this.m_lbl_red.BackColor = System.Drawing.Color.Red;
-            this.m_lbl_red.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.m_lbl_red.Location = new System.Drawing.Point(845, 43);
-            this.m_lbl_red.Name = "m_lbl_red";
-            this.m_lbl_red.Size = new System.Drawing.Size(56, 23);
-            this.m_lbl_red.TabIndex = 41;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(907, 45);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 13);
-            this.label7.TabIndex = 41;
-            this.label7.Text = "Dữ liệu trống";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(907, 73);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(78, 13);
-            this.label9.TabIndex = 41;
-            this.label9.Text = "Dữ liệu bị trùng";
-            // 
-            // m_lbl_green
-            // 
-            this.m_lbl_green.BackColor = System.Drawing.Color.Green;
-            this.m_lbl_green.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.m_lbl_green.Location = new System.Drawing.Point(845, 72);
-            this.m_lbl_green.Name = "m_lbl_green";
-            this.m_lbl_green.Size = new System.Drawing.Size(56, 23);
-            this.m_lbl_green.TabIndex = 41;
             // 
             // f303_DM_NHAN_SU_import_excel
             // 
@@ -961,6 +981,18 @@ namespace BKI_HRM
             }
         }
         #endregion
+
+        private void m_llbl_mau_import_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                Process.Start("https://drive.google.com/file/d/0B5V_Ym_0mOhPQWdzM0hHX2gxX2s/view?usp=sharing");
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
 
