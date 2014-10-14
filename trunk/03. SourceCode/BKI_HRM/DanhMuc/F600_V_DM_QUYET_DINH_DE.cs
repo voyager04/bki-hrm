@@ -143,11 +143,11 @@ namespace BKI_HRM.DanhMuc
             //    return false;
             //}
             //return CValidateTextBox.IsValid(m_txt_ma_quyet_dinh, DataType.StringType, allowNull.NO, true) && kiem_tra_ngay_truoc_sau();
-            if (!check_format_ma_qd())
+            /*if (!check_format_ma_qd())
             {
                 BaseMessages.MsgBox_Infor("Mã quyết định chưa đúng định dạng.");
                 return false;
-            }
+            }*/
             if (!CValidateTextBox.IsValid(m_txt_ma_quyet_dinh, DataType.StringType, allowNull.NO, true))
             {
                 BaseMessages.MsgBox_Infor("Bạn chưa nhập mã quyết định.");
