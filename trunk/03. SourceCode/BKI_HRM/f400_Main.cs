@@ -402,13 +402,13 @@ namespace BKI_HRM
         {
             try
             {
-                f203_v_gd_trang_thai_lao_dong frm = new f203_v_gd_trang_thai_lao_dong(this);
-                frm.display();
-                nhan_vien_hien_tai();
-                thu_viec_sap_het_han();
-                nghi_viec_sap_quay_lai();
-                canh_bao_hop_dong();
-                nhan_vien_chinh_thuc();
+                //f203_v_gd_trang_thai_lao_dong frm = new f203_v_gd_trang_thai_lao_dong(this);
+                //frm.display();
+                //nhan_vien_hien_tai();
+                //thu_viec_sap_het_han();
+                //nghi_viec_sap_quay_lai();
+                //canh_bao_hop_dong();
+                //nhan_vien_chinh_thuc();
             }
             catch (Exception v_e)
             {
@@ -452,13 +452,13 @@ namespace BKI_HRM
         {
             try
             {
-                f202_V_GD_QUA_TRINH_LAM_VIEC frm = new f202_V_GD_QUA_TRINH_LAM_VIEC(this);
-                frm.display();
-                nhan_vien_hien_tai();
-                thu_viec_sap_het_han();
-                nghi_viec_sap_quay_lai();
-                canh_bao_hop_dong();
-                nhan_vien_chinh_thuc();
+                //f202_V_GD_QUA_TRINH_LAM_VIEC frm = new f202_V_GD_QUA_TRINH_LAM_VIEC(this);
+                //frm.display();
+                //nhan_vien_hien_tai();
+                //thu_viec_sap_het_han();
+                //nghi_viec_sap_quay_lai();
+                //canh_bao_hop_dong();
+                //nhan_vien_chinh_thuc();
             }
             catch (Exception v_e)
             {
@@ -1298,24 +1298,24 @@ namespace BKI_HRM
         {
             try
             {
-                f202_V_GD_QUA_TRINH_LAM_VIEC frm = new f202_V_GD_QUA_TRINH_LAM_VIEC(this);
-                bool tabExist = false;
-                foreach (TabPage tabPage in m_tab_form.TabPages)
-                {
-                    if (frm.Text.Equals(tabPage.Text))
-                    {
-                        m_tab_form.SelectedTab = tabPage;
-                        tabExist = true;
-                    }
-                }
+                //f202_V_GD_QUA_TRINH_LAM_VIEC frm = new f202_V_GD_QUA_TRINH_LAM_VIEC(this);
+                //bool tabExist = false;
+                //foreach (TabPage tabPage in m_tab_form.TabPages)
+                //{
+                //    if (frm.Text.Equals(tabPage.Text))
+                //    {
+                //        m_tab_form.SelectedTab = tabPage;
+                //        tabExist = true;
+                //    }
+                //}
 
-                if (!tabExist)
-                {
-                    frm.MdiParent = this;
-                    frm.Dock = DockStyle.Fill;
-                    frm.Show();
-                    frm.FormBorderStyle = FormBorderStyle.None;
-                }
+                //if (!tabExist)
+                //{
+                //    frm.MdiParent = this;
+                //    frm.Dock = DockStyle.Fill;
+                //    frm.Show();
+                //    frm.FormBorderStyle = FormBorderStyle.None;
+                //}
             }
             catch (Exception v_e)
             {
@@ -1327,24 +1327,24 @@ namespace BKI_HRM
         {
             try
             {
-                f203_v_gd_trang_thai_lao_dong frm = new f203_v_gd_trang_thai_lao_dong(this);
-                bool tabExist = false;
-                foreach (TabPage tabPage in m_tab_form.TabPages)
-                {
-                    if (frm.Text.Equals(tabPage.Text))
-                    {
-                        m_tab_form.SelectedTab = tabPage;
-                        tabExist = true;
-                    }
-                }
+                //f203_v_gd_trang_thai_lao_dong frm = new f203_v_gd_trang_thai_lao_dong(this);
+                //bool tabExist = false;
+                //foreach (TabPage tabPage in m_tab_form.TabPages)
+                //{
+                //    if (frm.Text.Equals(tabPage.Text))
+                //    {
+                //        m_tab_form.SelectedTab = tabPage;
+                //        tabExist = true;
+                //    }
+                //}
 
-                if (!tabExist)
-                {
-                    frm.MdiParent = this;
-                    frm.Dock = DockStyle.Fill;
-                    frm.Show();
-                    frm.FormBorderStyle = FormBorderStyle.None;
-                }
+                //if (!tabExist)
+                //{
+                //    frm.MdiParent = this;
+                //    frm.Dock = DockStyle.Fill;
+                //    frm.Show();
+                //    frm.FormBorderStyle = FormBorderStyle.None;
+                //}
             }
             catch (Exception v_e)
             {

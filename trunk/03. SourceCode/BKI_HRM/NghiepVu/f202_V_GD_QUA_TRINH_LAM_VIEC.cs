@@ -44,9 +44,9 @@ namespace BKI_HRM
         private Panel panel1;
 		private System.ComponentModel.IContainer components;
         private C1FlexGrid m_grv_qua_trinh_lam_viec;
-        private readonly f400_Main form;
+        private readonly f002_main_form form;
 
-		public f202_V_GD_QUA_TRINH_LAM_VIEC(f400_Main frm)
+		public f202_V_GD_QUA_TRINH_LAM_VIEC(f002_main_form frm)
 		{
 			//
 			// Required for Windows Form Designer support
@@ -340,6 +340,8 @@ namespace BKI_HRM
 		public void display(){			
 			this.ShowDialog();
 		}
+        public delegate void close_tab(bool ip_y_n);
+        public close_tab close_tab_B;
 
 		#endregion
 
@@ -760,7 +762,8 @@ namespace BKI_HRM
 
 		private void m_cmd_exit_Click(object sender, EventArgs e) {
 			try{
-				this.Close();
+                close_tab_B(true);
+
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);

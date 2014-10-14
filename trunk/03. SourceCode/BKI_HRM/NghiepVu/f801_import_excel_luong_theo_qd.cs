@@ -528,6 +528,9 @@ namespace BKI_HRM
         {
             this.ShowDialog();
         }
+        public delegate void close_tab(bool ip_y_n);
+        public close_tab close_tab_B;
+
         #endregion
 
         #region Data Structure
@@ -946,7 +949,8 @@ namespace BKI_HRM
         {
             try
             {
-                this.Close();
+                close_tab_B(true);
+
             }
             catch (Exception v_e)
             {
