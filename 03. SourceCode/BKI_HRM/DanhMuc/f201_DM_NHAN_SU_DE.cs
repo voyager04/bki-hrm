@@ -104,6 +104,9 @@ namespace BKI_HRM
             m_txt_ho_ten_con_1.Enabled = false;
             m_txt_ho_ten_con_2.Enabled = false;
             m_txt_ho_ten_con_3.Enabled = false;
+            m_txt_ho_ten_vo_chong.Enabled = false;
+            m_txt_nam_sinh_vo_chong.Enabled = false;
+            m_txt_nghe_nghiep_vo_chong.Enabled = false;
             // ~DucVT
 
             m_cmd_refresh.Visible = false;
@@ -221,6 +224,9 @@ namespace BKI_HRM
             m_txt_ho_ten_con_3.Text = m_us_dm_nhan_su.strHO_TEN_CON_THU_3;
             m_txt_nam_sinh_con_3.Text = m_us_dm_nhan_su.dcNAM_SINH_CON_THU_3.ToString();
             m_txt_nghe_nghiep_con_3.Text = m_us_dm_nhan_su.strNGHE_NGHIEP_CON_THU_3;
+            m_txt_ho_ten_vo_chong.Text = m_us_dm_nhan_su.strHO_TEN_VO_OR_CHONG;
+            m_txt_nghe_nghiep_vo_chong.Text = m_us_dm_nhan_su.strNGHE_NGHIEP_VO_OR_CHONG;
+            m_txt_nam_sinh_vo_chong.Text = m_us_dm_nhan_su.dcNAM_SINH_VO_OR_CHONG.ToString();
             // ~DucVT
         }
         private void form_to_us_object()
@@ -290,15 +296,22 @@ namespace BKI_HRM
             if (m_txt_nam_sinh_con_2.Text.Trim().Length > 0)
                 m_us_dm_nhan_su.dcNAM_SINH_CON_THU_2 = CIPConvert.ToDecimal(m_txt_nam_sinh_con_2.Text.Trim());
             else
-                m_us_dm_nhan_su.SetNAM_SINH_CON_THU_2Null();
-            
+                m_us_dm_nhan_su.SetNAM_SINH_CON_THU_2Null();            
             m_us_dm_nhan_su.strNGHE_NGHIEP_CON_THU_2 = m_txt_nghe_nghiep_con_2.Text;
+
             m_us_dm_nhan_su.strHO_TEN_CON_THU_3 = m_txt_ho_ten_con_3.Text;
             if (m_txt_nam_sinh_con_3.Text.Trim().Length > 0)
                 m_us_dm_nhan_su.dcNAM_SINH_CON_THU_3 = CIPConvert.ToDecimal(m_txt_nam_sinh_con_3.Text.Trim());
             else
                 m_us_dm_nhan_su.SetNAM_SINH_CON_THU_3Null();
             m_us_dm_nhan_su.strNGHE_NGHIEP_CON_THU_3 = m_txt_nghe_nghiep_con_3.Text;
+
+            m_us_dm_nhan_su.strHO_TEN_VO_OR_CHONG = m_txt_ho_ten_vo_chong.Text;
+            m_us_dm_nhan_su.strNGHE_NGHIEP_VO_OR_CHONG = m_txt_nghe_nghiep_vo_chong.Text;
+            if (m_txt_nam_sinh_vo_chong.Text.Trim().Length > 0)
+                m_us_dm_nhan_su.dcNAM_SINH_VO_OR_CHONG = CIPConvert.ToDecimal(m_txt_nam_sinh_vo_chong.Text.Trim());
+            else
+                m_us_dm_nhan_su.SetNAM_SINH_VO_OR_CHONGNull();
             // ~DucVT
         }
         private bool check_trung_ma_nv(string ip_str_ma_nv)
@@ -614,6 +627,9 @@ namespace BKI_HRM
                     m_txt_ho_ten_con_3.Text = "";
                     m_txt_nam_sinh_con_3.Text = "";
                     m_txt_nghe_nghiep_con_3.Text = "";
+                    m_txt_ho_ten_vo_chong.Text = "";
+                    m_txt_nam_sinh_vo_chong.Text = "";
+                    m_txt_nghe_nghiep_vo_chong.Text = "";
                     // ~DucVT
 
                     m_ptb_anh.Image = m_ptb_anh.ErrorImage;
@@ -770,6 +786,9 @@ namespace BKI_HRM
                     m_txt_ho_ten_con_3.Text = "";
                     m_txt_nam_sinh_con_3.Text = "";
                     m_txt_nghe_nghiep_con_3.Text = "";
+                    m_txt_ho_ten_vo_chong.Text = "";
+                    m_txt_nam_sinh_vo_chong.Text = "";
+                    m_txt_nghe_nghiep_vo_chong.Text = "";
                     // ~DucVT
 
                     break;
@@ -849,6 +868,9 @@ namespace BKI_HRM
                     m_txt_ho_ten_con_3.Text = m_us_dm_nhan_su.strHO_TEN_CON_THU_3;
                     m_txt_nam_sinh_con_3.Text = m_us_dm_nhan_su.dcNAM_SINH_CON_THU_3.ToString();
                     m_txt_nghe_nghiep_con_3.Text = m_us_dm_nhan_su.strNGHE_NGHIEP_CON_THU_3;
+                    m_txt_ho_ten_vo_chong.Text = m_us_dm_nhan_su.strHO_TEN_VO_OR_CHONG;
+                    m_txt_nghe_nghiep_vo_chong.Text = m_us_dm_nhan_su.strNGHE_NGHIEP_VO_OR_CHONG;
+                    m_txt_nam_sinh_vo_chong.Text = m_us_dm_nhan_su.dcNAM_SINH_VO_OR_CHONG.ToString();
                     // ~DucVT
 
                     break;
@@ -1008,6 +1030,7 @@ namespace BKI_HRM
         {
 
         }
+        
         private void m_ptb_anh_MouseHover(object sender, EventArgs e)
         {
             m_ptb_anh.Image = m_ptb_anh.ErrorImage;

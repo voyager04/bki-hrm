@@ -424,7 +424,8 @@ Public Class CExcelReport
 
                     ' Khi cột đầu tiên có dữ liệu.
                     ' Lặp với số lượng trường trong DS, duyệt đúng số lượng đó để convert dữ liệu trên excel sang cột DS tương ứng (trừ trường đầu tiên trong DS, vì nó mặc định là DS)
-                    For i_iExcelCol = 2 To i_DataSet.Tables(i_TableName).Columns.Count - 1
+                    ' Ở đây không trừ 1 nữa, vì ví dụ: Có 52 cột, cột 1 Excel ứng với dòng 1 của DS (dòng 1 nhưng có Index = 0)
+                    For i_iExcelCol = 2 To i_DataSet.Tables(i_TableName).Columns.Count
                         If Not CType(m_objExcelWorksheet.Cells(i_iExcelRow + i_iSheetStartRow, i_iExcelCol), Excel.Range).Value() Is Nothing Then
                             v_iDataRow(i_iExcelCol - 1) = CType(m_objExcelWorksheet.Cells(i_iExcelRow + i_iSheetStartRow, i_iExcelCol), Excel.Range).Value()
                         End If

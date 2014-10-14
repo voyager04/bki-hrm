@@ -1101,6 +1101,72 @@ namespace BKI_HRM.US
             pm_objDR["NAM_SINH_CON_THU_3"] = System.Convert.DBNull;
         }
 
+        public string strHO_TEN_VO_OR_CHONG
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "HO_TEN_VO_OR_CHONG", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["HO_TEN_VO_OR_CHONG"] = value;
+            }
+        }
+
+        public bool IsHO_TEN_VO_OR_CHONGNull()
+        {
+            return pm_objDR.IsNull("HO_TEN_VO_OR_CHONG");
+        }
+
+        public void SetHO_TEN_VO_OR_CHONGNull()
+        {
+            pm_objDR["HO_TEN_VO_OR_CHONG"] = System.Convert.DBNull;
+        }
+
+        public string strNGHE_NGHIEP_VO_OR_CHONG
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "NGHE_NGHIEP_VO_OR_CHONG", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["NGHE_NGHIEP_VO_OR_CHONG"] = value;
+            }
+        }
+
+        public bool IsNGHE_NGHIEP_VO_OR_CHONGNull()
+        {
+            return pm_objDR.IsNull("NGHE_NGHIEP_VO_OR_CHONG");
+        }
+
+        public void SetNGHE_NGHIEP_VO_OR_CHONGNull()
+        {
+            pm_objDR["NGHE_NGHIEP_VO_OR_CHONG"] = System.Convert.DBNull;
+        }
+
+        public decimal dcNAM_SINH_VO_OR_CHONG
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "NAM_SINH_VO_OR_CHONG", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["NAM_SINH_VO_OR_CHONG"] = value;
+            }
+        }
+
+        public bool IsNAM_SINH_VO_OR_CHONGNull()
+        {
+            return pm_objDR.IsNull("NAM_SINH_VO_OR_CHONG");
+        }
+
+        public void SetNAM_SINH_VO_OR_CHONGNull()
+        {
+            pm_objDR["NAM_SINH_VO_OR_CHONG"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_DM_NHAN_SU()

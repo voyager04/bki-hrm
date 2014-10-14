@@ -418,6 +418,9 @@
         public const string HO_TEN_CON_THU_3 = "HO_TEN_CON_THU_3";
         public const string NGHE_NGHIEP_CON_THU_3 = "NGHE_NGHIEP_CON_THU_3";
         public const string NAM_SINH_CON_THU_3 = "NAM_SINH_CON_THU_3";
+        public const string HO_TEN_VO_OR_CHONG = "HO_TEN_VO_OR_CHONG";
+        public const string NGHE_NGHIEP_VO_OR_CHONG = "NGHE_NGHIEP_VO_OR_CHONG";
+        public const string NAM_SINH_VO_OR_CHONG = "NAM_SINH_VO_OR_CHONG";
     }
     public class V_DM_DON_VI
     {
