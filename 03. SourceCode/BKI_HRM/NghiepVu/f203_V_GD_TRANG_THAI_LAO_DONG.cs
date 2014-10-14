@@ -45,8 +45,8 @@ namespace BKI_HRM
         private Panel panel1;
 		private System.ComponentModel.IContainer components;
         private C1FlexGrid m_grv_trang_thai_ld;
-        private readonly f400_Main form;
-        public f203_v_gd_trang_thai_lao_dong(f400_Main frm)
+        private readonly f002_main_form form;
+        public f203_v_gd_trang_thai_lao_dong(f002_main_form frm)
 		{
 			//
 			// Required for Windows Form Designer support
@@ -329,6 +329,9 @@ namespace BKI_HRM
             m_e_form_mode = DataEntryFormMode.ViewDataState;
             this.ShowDialog();
         }
+        public delegate void close_tab(bool ip_y_n);
+        public close_tab close_tab_B;
+
 		#endregion
 
 		#region Data Structure
@@ -599,7 +602,8 @@ namespace BKI_HRM
         {
             try
             {
-                this.Close();
+                close_tab_B(true);
+
             }
             catch (Exception v_e)
             {
