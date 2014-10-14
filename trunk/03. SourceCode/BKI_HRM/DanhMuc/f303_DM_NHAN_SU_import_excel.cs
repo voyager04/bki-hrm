@@ -5,25 +5,20 @@
 ///************************************************
 
 
-using System;
-using System.Data;
-using System.Drawing;
-using System.Collections;
-using System.ComponentModel;
-using System.Windows.Forms;
-
-using IP.Core.IPCommon;
-using IP.Core.IPException;
-using IP.Core.IPData;
-using IP.Core.IPUserService;
-using IP.Core.IPSystemAdmin;
-using System.Diagnostics;
-using BKI_HRM.US;
 using BKI_HRM.DS;
 using BKI_HRM.DS.CDBNames;
-
+using BKI_HRM.US;
 using C1.Win.C1FlexGrid;
+using IP.Core.IPCommon;
 using IP.Core.IPExcelReport;
+using IP.Core.IPException;
+using IP.Core.IPSystemAdmin;
+using System;
+using System.Collections;
+using System.Data;
+using System.Diagnostics;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace BKI_HRM
 {
@@ -40,7 +35,6 @@ namespace BKI_HRM
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         internal SIS.Controls.Button.SiSButton m_cmd_view;
         private Panel panel1;
-        private C1FlexGrid m_fg;
         private Label m_lbl_header;
         internal SIS.Controls.Button.SiSButton m_cmd_save_data;
         internal SIS.Controls.Button.SiSButton m_cmd_chon_file_excel;
@@ -51,12 +45,13 @@ namespace BKI_HRM
         private Label label6;
         internal SIS.Controls.Button.SiSButton m_cmd_kiem_tra_du_lieu;
         private Label label5;
-        private Label m_lbl_loading_mes;
         private Label label9;
         private Label label7;
         private Label m_lbl_green;
         private Label m_lbl_red;
         private LinkLabel m_llbl_mau_import;
+        private C1FlexGrid m_fg;
+        private Label m_lbl_loading_mes;
         private System.ComponentModel.IContainer components;
 
         public f303_DM_NHAN_SU_import_excel()
@@ -118,8 +113,8 @@ namespace BKI_HRM
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.m_lbl_header = new System.Windows.Forms.Label();
-            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_ofd_exel_file = new System.Windows.Forms.OpenFileDialog();
+            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_lbl_loading_mes = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -413,6 +408,10 @@ namespace BKI_HRM
             this.m_lbl_header.Text = "IMPORT EXCEL DANH MỤC NHÂN SỰ";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // m_ofd_exel_file
+            // 
+            this.m_ofd_exel_file.Filter = "\"Excel Workbook|*.xlsx|Excel 97-2\"003|*.xls|All files|*.*\"";
+            // 
             // m_fg
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
@@ -421,21 +420,17 @@ namespace BKI_HRM
             this.m_fg.Name = "m_fg";
             this.m_fg.Size = new System.Drawing.Size(1081, 313);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 21;
-            // 
-            // m_ofd_exel_file
-            // 
-            this.m_ofd_exel_file.Filter = "\"Excel Workbook|*.xlsx|Excel 97-2\"003|*.xls|All files|*.*\"";
+            this.m_fg.TabIndex = 24;
             // 
             // m_lbl_loading_mes
             // 
             this.m_lbl_loading_mes.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.m_lbl_loading_mes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_lbl_loading_mes.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_loading_mes.Location = new System.Drawing.Point(353, 197);
+            this.m_lbl_loading_mes.Location = new System.Drawing.Point(380, 216);
             this.m_lbl_loading_mes.Name = "m_lbl_loading_mes";
-            this.m_lbl_loading_mes.Size = new System.Drawing.Size(321, 57);
-            this.m_lbl_loading_mes.TabIndex = 22;
+            this.m_lbl_loading_mes.Size = new System.Drawing.Size(301, 68);
+            this.m_lbl_loading_mes.TabIndex = 25;
             this.m_lbl_loading_mes.Text = "Vui lòng đợi trong giây lát ...";
             this.m_lbl_loading_mes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.m_lbl_loading_mes.Visible = false;
@@ -450,7 +445,7 @@ namespace BKI_HRM
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "f303_DM_NHAN_SU_import_excel";
-            this.Text = "f303_DM_NHAN_SU_import_excel";
+            this.Text = "F303 - Import Excel Danh Mục Nhân Sự";
             this.Load += new System.EventHandler(this.f303_DM_NHAN_SU_import_excel_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -472,8 +467,8 @@ namespace BKI_HRM
         private enum e_col_Number
         {
             EMAIL_CQ = 17
-,
-            DIA_DIEM_LV = 34
+                ,
+            ID = 1
                 ,
             NGHE_NGHIEP_CON_THU_3 = 48
                 ,
@@ -485,17 +480,17 @@ namespace BKI_HRM
                 ,
             TRANG_THAI = 29
                 ,
-            MA_HEADCOUNT = 31
-                ,
             ANH = 9
                 ,
             NAM_SINH_CON_THU_2 = 46
                 ,
-            MA_SO_THUE = 28
+            MA_HEADCOUNT = 31
                 ,
             HO_DEM = 3
                 ,
             CHI_NHANH_NGANHANG = 33
+                ,
+            NAM_SINH_VO_OR_CHONG = 52
                 ,
             EMAIL_CA_NHAN = 18
                 ,
@@ -504,8 +499,6 @@ namespace BKI_HRM
             SO_TAI_KHOAN = 32
                 ,
             TON_GIAO = 26
-                ,
-            NOI_DAO_TAO = 14
                 ,
             HO_TEN_ME = 38
                 ,
@@ -521,11 +514,13 @@ namespace BKI_HRM
                 ,
             HO_KHAU = 22
                 ,
-            NOI_CAP_CMND = 12
+            NOI_DAO_TAO = 14
                 ,
-            DT_NHA = 19
+            MA_SO_THUE = 28
                 ,
             DI_DONG = 20
+                ,
+            DT_NHA = 19
                 ,
             ID_HEADCOUNT = 30
                 ,
@@ -543,6 +538,8 @@ namespace BKI_HRM
                 ,
             CHO_O = 21
                 ,
+            HO_TEN_VO_OR_CHONG = 50
+                ,
             NAM_SINH_BO = 37
                 ,
             HO_TEN_CON_THU_1 = 41
@@ -555,6 +552,12 @@ namespace BKI_HRM
                 ,
             NAM_TOT_NGHIEP = 16
                 ,
+            DIA_DIEM_LV = 34
+                ,
+            NOI_CAP_CMND = 12
+                ,
+            NGHE_NGHIEP_VO_OR_CHONG = 51
+                ,
             NAM_SINH_ME = 40
                 ,
             MA_NV = 2
@@ -566,7 +569,7 @@ namespace BKI_HRM
             NGUYEN_QUAN = 8
                 , DAN_TOC = 27
 
-        }
+        }			
         #endregion
 
         #region Members
@@ -593,24 +596,24 @@ namespace BKI_HRM
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
             Hashtable v_htb = new Hashtable();
+
             v_htb.Add(DM_NHAN_SU.EMAIL_CQ, e_col_Number.EMAIL_CQ);
-            v_htb.Add(DM_NHAN_SU.DIA_DIEM_LV, e_col_Number.DIA_DIEM_LV);
+            v_htb.Add(DM_NHAN_SU.ID, e_col_Number.ID);
             v_htb.Add(DM_NHAN_SU.NGHE_NGHIEP_CON_THU_3, e_col_Number.NGHE_NGHIEP_CON_THU_3);
             v_htb.Add(DM_NHAN_SU.NGHE_NGHIEP_CON_THU_2, e_col_Number.NGHE_NGHIEP_CON_THU_2);
             v_htb.Add(DM_NHAN_SU.NGUOI_LIEN_HE, e_col_Number.NGUOI_LIEN_HE);
             v_htb.Add(DM_NHAN_SU.NGHE_NGHIEP_BO, e_col_Number.NGHE_NGHIEP_BO);
             v_htb.Add(DM_NHAN_SU.TRANG_THAI, e_col_Number.TRANG_THAI);
-            v_htb.Add(DM_NHAN_SU.MA_HEADCOUNT, e_col_Number.MA_HEADCOUNT);
             v_htb.Add(DM_NHAN_SU.ANH, e_col_Number.ANH);
             v_htb.Add(DM_NHAN_SU.NAM_SINH_CON_THU_2, e_col_Number.NAM_SINH_CON_THU_2);
-            v_htb.Add(DM_NHAN_SU.MA_SO_THUE, e_col_Number.MA_SO_THUE);
+            v_htb.Add(DM_NHAN_SU.MA_HEADCOUNT, e_col_Number.MA_HEADCOUNT);
             v_htb.Add(DM_NHAN_SU.HO_DEM, e_col_Number.HO_DEM);
             v_htb.Add(DM_NHAN_SU.CHI_NHANH_NGANHANG, e_col_Number.CHI_NHANH_NGANHANG);
+            v_htb.Add(DM_NHAN_SU.NAM_SINH_VO_OR_CHONG, e_col_Number.NAM_SINH_VO_OR_CHONG);
             v_htb.Add(DM_NHAN_SU.EMAIL_CA_NHAN, e_col_Number.EMAIL_CA_NHAN);
             v_htb.Add(DM_NHAN_SU.GIOI_TINH, e_col_Number.GIOI_TINH);
             v_htb.Add(DM_NHAN_SU.SO_TAI_KHOAN, e_col_Number.SO_TAI_KHOAN);
             v_htb.Add(DM_NHAN_SU.TON_GIAO, e_col_Number.TON_GIAO);
-            v_htb.Add(DM_NHAN_SU.NOI_DAO_TAO, e_col_Number.NOI_DAO_TAO);
             v_htb.Add(DM_NHAN_SU.HO_TEN_ME, e_col_Number.HO_TEN_ME);
             v_htb.Add(DM_NHAN_SU.NOI_SINH, e_col_Number.NOI_SINH);
             v_htb.Add(DM_NHAN_SU.NAM_SINH_CON_THU_3, e_col_Number.NAM_SINH_CON_THU_3);
@@ -618,9 +621,10 @@ namespace BKI_HRM
             v_htb.Add(DM_NHAN_SU.TRINH_DO, e_col_Number.TRINH_DO);
             v_htb.Add(DM_NHAN_SU.QUAN_HE, e_col_Number.QUAN_HE);
             v_htb.Add(DM_NHAN_SU.HO_KHAU, e_col_Number.HO_KHAU);
-            v_htb.Add(DM_NHAN_SU.NOI_CAP_CMND, e_col_Number.NOI_CAP_CMND);
-            v_htb.Add(DM_NHAN_SU.DT_NHA, e_col_Number.DT_NHA);
+            v_htb.Add(DM_NHAN_SU.NOI_DAO_TAO, e_col_Number.NOI_DAO_TAO);
+            v_htb.Add(DM_NHAN_SU.MA_SO_THUE, e_col_Number.MA_SO_THUE);
             v_htb.Add(DM_NHAN_SU.DI_DONG, e_col_Number.DI_DONG);
+            v_htb.Add(DM_NHAN_SU.DT_NHA, e_col_Number.DT_NHA);
             v_htb.Add(DM_NHAN_SU.ID_HEADCOUNT, e_col_Number.ID_HEADCOUNT);
             v_htb.Add(DM_NHAN_SU.NGAY_CAP_CMND, e_col_Number.NGAY_CAP_CMND);
             v_htb.Add(DM_NHAN_SU.HO_TEN_CON_THU_2, e_col_Number.HO_TEN_CON_THU_2);
@@ -629,12 +633,16 @@ namespace BKI_HRM
             v_htb.Add(DM_NHAN_SU.NGAY_SINH, e_col_Number.NGAY_SINH);
             v_htb.Add(DM_NHAN_SU.CHUYEN_NGANH, e_col_Number.CHUYEN_NGANH);
             v_htb.Add(DM_NHAN_SU.CHO_O, e_col_Number.CHO_O);
+            v_htb.Add(DM_NHAN_SU.HO_TEN_VO_OR_CHONG, e_col_Number.HO_TEN_VO_OR_CHONG);
             v_htb.Add(DM_NHAN_SU.NAM_SINH_BO, e_col_Number.NAM_SINH_BO);
             v_htb.Add(DM_NHAN_SU.HO_TEN_CON_THU_1, e_col_Number.HO_TEN_CON_THU_1);
             v_htb.Add(DM_NHAN_SU.DI_DONG_LIEN_HE, e_col_Number.DI_DONG_LIEN_HE);
             v_htb.Add(DM_NHAN_SU.HO_TEN_BO, e_col_Number.HO_TEN_BO);
             v_htb.Add(DM_NHAN_SU.HO_TEN_CON_THU_3, e_col_Number.HO_TEN_CON_THU_3);
             v_htb.Add(DM_NHAN_SU.NAM_TOT_NGHIEP, e_col_Number.NAM_TOT_NGHIEP);
+            v_htb.Add(DM_NHAN_SU.DIA_DIEM_LV, e_col_Number.DIA_DIEM_LV);
+            v_htb.Add(DM_NHAN_SU.NOI_CAP_CMND, e_col_Number.NOI_CAP_CMND);
+            v_htb.Add(DM_NHAN_SU.NGHE_NGHIEP_VO_OR_CHONG, e_col_Number.NGHE_NGHIEP_VO_OR_CHONG);
             v_htb.Add(DM_NHAN_SU.NAM_SINH_ME, e_col_Number.NAM_SINH_ME);
             v_htb.Add(DM_NHAN_SU.MA_NV, e_col_Number.MA_NV);
             v_htb.Add(DM_NHAN_SU.CMND, e_col_Number.CMND);
@@ -980,7 +988,6 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        #endregion
 
         private void m_llbl_mau_import_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -993,6 +1000,7 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        #endregion
     }
 }
 
