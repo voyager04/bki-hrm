@@ -352,18 +352,18 @@ namespace BKI_HRM
                 BaseMessages.MsgBox_Warning(205);
                 return false;
             }
-            if ((m_dat_ngay_sinh.Checked == true)
+            /*if ((m_dat_ngay_sinh.Checked == true)
                 && (m_dat_ngay_cap.Checked == true)
                 && (m_dat_ngay_cap.Value.Year - m_dat_ngay_sinh.Value.Year < 10))
             {
                 BaseMessages.MsgBox_Warning(219);
                 return false;
-            }
-            if ((m_dat_ngay_cap.Checked == true) && (m_dat_ngay_cap.Value.Date > DateTime.Today))
+            }*/
+            /*if ((m_dat_ngay_cap.Checked == true) && (m_dat_ngay_cap.Value.Date > DateTime.Today))
             {
                 BaseMessages.MsgBox_Warning(220);
                 return false;
-            }
+            }*/
             if (!CValidateTextBox.IsValid(m_txt_noi_sinh, DataType.StringType, allowNull.YES, true))
             {
                 BaseMessages.MsgBox_Warning(206);
@@ -389,28 +389,28 @@ namespace BKI_HRM
             }
             if (!CValidateTextBox.IsValid(m_txt_dan_toc, DataType.StringType, allowNull.YES, true))
                 return false;
-            if (!CValidateTextBox.IsValid(m_txt_nam_tot_nghiep, DataType.NumberType, allowNull.YES, true)
+            /*if (!CValidateTextBox.IsValid(m_txt_nam_tot_nghiep, DataType.NumberType, allowNull.YES, true)
                 || ((m_txt_nam_tot_nghiep.Text.Trim().Length > 0) && (CIPConvert.ToDecimal(m_txt_nam_tot_nghiep.Text) > DateTime.Today.Year)))
             {
                 //BaseMessages.MsgBox_Warning(211);
                 return false;
-            }
-            if (!CValidateTextBox.IsValid(m_txt_email_ca_nhan, DataType.StringType, allowNull.YES, true) || !check_validate_email(m_txt_email_ca_nhan.Text))
+            }*/
+            /*if (!CValidateTextBox.IsValid(m_txt_email_ca_nhan, DataType.StringType, allowNull.YES, true) || !check_validate_email(m_txt_email_ca_nhan.Text))
             {
                 BaseMessages.MsgBox_Warning(211);
                 m_txt_email_ca_nhan.BackColor = Color.Bisque;
                 m_txt_email_ca_nhan.Focus();
                 m_txt_email_ca_nhan.SelectAll();
                 return false;
-            }
-            if (!CValidateTextBox.IsValid(m_txt_email_co_quan, DataType.StringType, allowNull.YES, true) || !check_validate_email(m_txt_email_co_quan.Text))
+            }*/
+            /*if (!CValidateTextBox.IsValid(m_txt_email_co_quan, DataType.StringType, allowNull.YES, true) || !check_validate_email(m_txt_email_co_quan.Text))
             {
                 BaseMessages.MsgBox_Warning(211);
                 m_txt_email_co_quan.BackColor = Color.Bisque;
                 m_txt_email_co_quan.Focus();
                 m_txt_email_co_quan.SelectAll();
                 return false;
-            }
+            }*/
             if (!CValidateTextBox.IsValid(m_txt_so_dtdd, DataType.StringType, allowNull.YES, true))
             {
 
