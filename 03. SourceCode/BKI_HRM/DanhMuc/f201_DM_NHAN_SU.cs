@@ -2823,11 +2823,11 @@ namespace BKI_HRM
             int v_i_count = m_ds.DM_NHAN_SU.Count;
             f201_DM_NHAN_SU_DE v_fDE = new f201_DM_NHAN_SU_DE();
             v_fDE.display_for_insert();
+
+            m_txt_tim_kiem.Text = "";
             load_data_2_grid_search();
             //load_chi_tiet_nhan_vien();
 
-
-            m_us.FillDataset_search(m_ds, "");
             if (m_ds.DM_NHAN_SU.Count > v_i_count)
             {
                 v_fDE.get_us(ref m_us);
