@@ -755,6 +755,9 @@ namespace BKI_HRM
             {
                 try
                 {
+                    // Reset lại ds mới nếu chọn lại file excel khác
+                    m_ds = new DS_DM_NHAN_SU();
+
                     m_lbl_loading_mes.Visible = true;
                     CExcelReport v_excel_rpt = new CExcelReport(m_ofd_exel_file.FileName);
 
@@ -763,9 +766,14 @@ namespace BKI_HRM
                     v_excel_rpt.Export2DatasetDS_by_DucVT(m_ds, m_ds.DM_NHAN_SU.TableName, 2);
 
                     m_fg.Redraw = false;
+
+                    //Gán DataSource
+                    //m_fg.DataSource = m_ds.DM_NHAN_SU;
+
                     CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
                     m_fg.Redraw = true;
                     m_lbl_loading_mes.Visible = false;
+
                 }
                 catch (Exception v_e)
                 {
@@ -778,6 +786,9 @@ namespace BKI_HRM
         {
             if ((string)m_fg[1, 0] != "")
             {
+                DS_DM_NHAN_SU v_ds_nhan_su_db = new DS_DM_NHAN_SU();
+                m_us.FillDataset(v_ds_nhan_su_db);
+
                 CellStyle red_cell = m_fg.Styles.Add("v_blank");
                 red_cell.BackColor = Color.Red;
                 CellStyle green_cell = m_fg.Styles.Add("v_duplicate");
@@ -785,45 +796,51 @@ namespace BKI_HRM
                 CellStyle default_cell = m_fg.Styles.Add("v_default");
                 default_cell.BackColor = Color.WhiteSmoke;
 
-                int i_ma_nv = 2;
-                int i_ho_dem = 3;
-                int i_ten = 4;
+                int i_ma_nv = (int)e_col_Number.MA_NV;
+                int i_ho_dem = (int)e_col_Number.HO_DEM;
+                int i_ten = (int)e_col_Number.TEN;
+                int i_id = (int)e_col_Number.ID;
+                int i_id_headcount = (int)e_col_Number.ID_HEADCOUNT;
                 bool is_error = false;
 
+                // Clear Style và Format lại
+                m_fg.Clear(ClearFlags.Style);
+                m_fg.Cols[0].Width = 14;
+                m_fg.Rows[0].Height = 35;
+                m_fg.Cols[i_id].Visible = false;
+                m_fg.Cols[i_id_headcount].Visible = false;
+                m_fg.Cols[(int)e_col_Number.NGAY_SINH].Format = "dd/MM/yyyy";
+                m_fg.Cols[(int)e_col_Number.NGAY_SINH].DataType = typeof(DateTime);
+                m_fg.Cols[(int)e_col_Number.NGAY_CAP_CMND].Format = "dd/MM/yyyy";
+                m_fg.Cols[(int)e_col_Number.NGAY_CAP_CMND].DataType = typeof(DateTime);
+
                 // Tổ đỏ nền và cho phép sửa dữ liệu dòng đó.
+                // Chú ý là chỉ cần đổi lại màu của các ô màu bị đổi trước đó (cụ thể là đổi các ô màu đỏ, xanh được tạo trước đó về màu trắng)
                 foreach (Row v_row in m_fg.Rows)
                 {
                     if (v_row.Index > 0)
                     {
                         // Kiểm tra dữ liệu trống trong các cột mã nv, họ đệm, tên
-
                         if ((string)v_row[i_ma_nv] == null)
                         {
                             m_fg.SetCellStyle(v_row.Index, i_ma_nv, red_cell);
                             is_error = true;
                         }
-                        else
-                            m_fg.SetCellStyle(v_row.Index, i_ma_nv, default_cell);
 
                         if ((string)v_row[i_ho_dem] == null)
                         {
                             m_fg.SetCellStyle(v_row.Index, i_ho_dem, red_cell);
                             is_error = true;
                         }
-                        else
-                            m_fg.SetCellStyle(v_row.Index, i_ho_dem, default_cell);
 
                         if ((string)v_row[i_ten] == null)
                         {
                             m_fg.SetCellStyle(v_row.Index, i_ten, red_cell);
                             is_error = true;
                         }
-                        else
-                            m_fg.SetCellStyle(v_row.Index, i_ten, default_cell);
 
-
-
-                        // Kiểm tra dữ liệu trùng ở cột mã nv
+                        // Nếu ô hiện tại bị bôi xanh thì không cần kiểm tra trùng nữa, việc này tránh dư thừa kiểm tra.
+                        // Kiểm tra dữ liệu trùng ở cột mã nv trên grid (file excel)
                         for (int index = v_row.Index + 1; index < m_fg.Rows.Count; index++)
                         {
                             Row v_cur_row = m_fg.Rows[index];
@@ -833,10 +850,16 @@ namespace BKI_HRM
                                 m_fg.SetCellStyle(v_cur_row.Index, i_ma_nv, green_cell);
                                 is_error = true;
                             }
-                            else
+                        }
+
+                        // Kiểm tra dữ liệu tồn tại trong cơ sở dữ liệu
+                        // Nếu ô hiện tại bị bôi xanh thì không cần kiểm tra trùng nữa, việc này tránh dư thừa kiểm tra.
+                        foreach (DataRow v_row_db in v_ds_nhan_su_db.DM_NHAN_SU.Rows)
+                        {
+                            if (((string)v_row[i_ma_nv]) == ((string)v_row_db[DM_NHAN_SU.MA_NV]))
                             {
-                                if (m_fg.GetCellStyle(v_row.Index, i_ma_nv).BackColor != Color.Red)
-                                    m_fg.SetCellStyle(v_row.Index, i_ma_nv, default_cell);
+                                m_fg.SetCellStyle(v_row.Index, i_ma_nv, green_cell);
+                                is_error = true;
                             }
                         }
                     }
