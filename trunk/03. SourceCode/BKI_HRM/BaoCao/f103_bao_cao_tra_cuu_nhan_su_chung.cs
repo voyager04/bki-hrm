@@ -1526,8 +1526,8 @@ namespace BKI_HRM
         {
             try
             {
-                close_tab_B(true);
-
+                //close_tab_B(true);
+                this.Close();
             }
             catch (Exception v_e)
             {
