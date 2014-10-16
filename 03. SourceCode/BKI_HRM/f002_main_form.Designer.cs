@@ -23,7 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f002_main_form));
             this.m_tab_menu = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.m_cmd_phan_quyen_chi_tiet = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_phan_quyen_he_thong = new DevExpress.XtraBars.BarButtonItem();
@@ -117,13 +117,14 @@
             this.m_lbl_thu_viec_sap_het_han = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_lbl_sap_quay_lai = new System.Windows.Forms.Label();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
             this.m_xtab_control = new DevExpress.XtraTab.XtraTabControl();
             this.m_lbl_tong_so_nv = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.m_cbo_phap_nhan = new System.Windows.Forms.ComboBox();
+            this.imageList1 = new System.Windows.Forms.ImageList();
             ((System.ComponentModel.ISupportInitialize)(this.m_tab_menu)).BeginInit();
             this.m_pnl_thong_bao.SuspendLayout();
             this.m_pnl_thu_viec_da_het_han.SuspendLayout();
@@ -145,6 +146,7 @@
             this.m_tab_menu.AllowMinimizeRibbon = false;
             this.m_tab_menu.AutoSizeItems = true;
             this.m_tab_menu.ExpandCollapseItem.Id = 0;
+            this.m_tab_menu.ImeMode = System.Windows.Forms.ImeMode.On;
             this.m_tab_menu.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.m_tab_menu.ExpandCollapseItem,
             this.m_cmd_phan_quyen_chi_tiet,
@@ -218,8 +220,6 @@
             this.ribbonPage6});
             this.m_tab_menu.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
             this.m_tab_menu.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.m_tab_menu.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.True;
-            this.m_tab_menu.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.False;
             this.m_tab_menu.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show;
             this.m_tab_menu.ShowToolbarCustomizeItem = false;
             this.m_tab_menu.Size = new System.Drawing.Size(1193, 142);
@@ -334,6 +334,7 @@
             // 
             this.m_cmd_ql_chuc_vu.Caption = "Chức vụ";
             this.m_cmd_ql_chuc_vu.Id = 34;
+            this.m_cmd_ql_chuc_vu.LargeGlyph = global::BKI_HRM.Properties.Resources._1413449185_126806;
             this.m_cmd_ql_chuc_vu.Name = "m_cmd_ql_chuc_vu";
             this.m_cmd_ql_chuc_vu.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
@@ -341,6 +342,7 @@
             // 
             this.m_cmd_ql_cap_bac.Caption = "Cấp bậc";
             this.m_cmd_ql_cap_bac.Id = 35;
+            this.m_cmd_ql_cap_bac.LargeGlyph = global::BKI_HRM.Properties.Resources.rank;
             this.m_cmd_ql_cap_bac.Name = "m_cmd_ql_cap_bac";
             this.m_cmd_ql_cap_bac.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
@@ -348,6 +350,7 @@
             // 
             this.m_cmd_ql_don_vi.Caption = "Đơn vị";
             this.m_cmd_ql_don_vi.Id = 36;
+            this.m_cmd_ql_don_vi.LargeGlyph = global::BKI_HRM.Properties.Resources._1413449612_49580;
             this.m_cmd_ql_don_vi.Name = "m_cmd_ql_don_vi";
             this.m_cmd_ql_don_vi.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
@@ -355,6 +358,7 @@
             // 
             this.m_cmd_ql_phap_nhan.Caption = "Pháp nhân";
             this.m_cmd_ql_phap_nhan.Id = 37;
+            this.m_cmd_ql_phap_nhan.LargeGlyph = global::BKI_HRM.Properties.Resources._1413453628_131485;
             this.m_cmd_ql_phap_nhan.Name = "m_cmd_ql_phap_nhan";
             this.m_cmd_ql_phap_nhan.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
@@ -362,6 +366,7 @@
             // 
             this.m_cmd_ql_quyet_dinh.Caption = "Quyết định";
             this.m_cmd_ql_quyet_dinh.Id = 38;
+            this.m_cmd_ql_quyet_dinh.LargeGlyph = global::BKI_HRM.Properties.Resources._1413449902_103514;
             this.m_cmd_ql_quyet_dinh.Name = "m_cmd_ql_quyet_dinh";
             this.m_cmd_ql_quyet_dinh.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
@@ -369,12 +374,14 @@
             // 
             this.m_cmd_ky.Caption = "Kỳ";
             this.m_cmd_ky.Id = 39;
+            this.m_cmd_ky.LargeGlyph = global::BKI_HRM.Properties.Resources._1413453730_132159;
             this.m_cmd_ky.Name = "m_cmd_ky";
             this.m_cmd_ky.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
             // m_cmd_ho_so_nhan_su
             // 
             this.m_cmd_ho_so_nhan_su.Caption = "Hồ sơ nhân sự";
+            this.m_cmd_ho_so_nhan_su.Glyph = global::BKI_HRM.Properties.Resources._1413455147_20298;
             this.m_cmd_ho_so_nhan_su.Id = 40;
             this.m_cmd_ho_so_nhan_su.Name = "m_cmd_ho_so_nhan_su";
             this.m_cmd_ho_so_nhan_su.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -382,6 +389,7 @@
             // m_cmd_thay_doi_chuc_vu_don_vi
             // 
             this.m_cmd_thay_doi_chuc_vu_don_vi.Caption = "Thay đổi chức vụ, đơn vị";
+            this.m_cmd_thay_doi_chuc_vu_don_vi.Glyph = global::BKI_HRM.Properties.Resources._1413455230_105225;
             this.m_cmd_thay_doi_chuc_vu_don_vi.Id = 41;
             this.m_cmd_thay_doi_chuc_vu_don_vi.Name = "m_cmd_thay_doi_chuc_vu_don_vi";
             this.m_cmd_thay_doi_chuc_vu_don_vi.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -389,6 +397,7 @@
             // m_cmd_trang_thai_lao_dong
             // 
             this.m_cmd_trang_thai_lao_dong.Caption = "Trạng thái lao động";
+            this.m_cmd_trang_thai_lao_dong.Glyph = global::BKI_HRM.Properties.Resources._1413455698_330395;
             this.m_cmd_trang_thai_lao_dong.Id = 42;
             this.m_cmd_trang_thai_lao_dong.Name = "m_cmd_trang_thai_lao_dong";
             this.m_cmd_trang_thai_lao_dong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -396,6 +405,7 @@
             // m_cmd_chi_tiet_cap_bac
             // 
             this.m_cmd_chi_tiet_cap_bac.Caption = "Chi tiết cấp bậc";
+            this.m_cmd_chi_tiet_cap_bac.Glyph = global::BKI_HRM.Properties.Resources.gnome_status;
             this.m_cmd_chi_tiet_cap_bac.Id = 43;
             this.m_cmd_chi_tiet_cap_bac.Name = "m_cmd_chi_tiet_cap_bac";
             this.m_cmd_chi_tiet_cap_bac.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -403,6 +413,7 @@
             // m_cmd_qua_trinh_di_cong_tac
             // 
             this.m_cmd_qua_trinh_di_cong_tac.Caption = "Quá trình đi công tác";
+            this.m_cmd_qua_trinh_di_cong_tac.Glyph = global::BKI_HRM.Properties.Resources._1413455795_71128;
             this.m_cmd_qua_trinh_di_cong_tac.Id = 44;
             this.m_cmd_qua_trinh_di_cong_tac.Name = "m_cmd_qua_trinh_di_cong_tac";
             this.m_cmd_qua_trinh_di_cong_tac.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -1035,14 +1046,27 @@
             this.m_cbo_phap_nhan.Size = new System.Drawing.Size(121, 21);
             this.m_cbo_phap_nhan.TabIndex = 7;
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "1413449185_126806.ico");
+            this.imageList1.Images.SetKeyName(1, "1413449612_49580.ico");
+            this.imageList1.Images.SetKeyName(2, "1413449845_174971.ico");
+            this.imageList1.Images.SetKeyName(3, "1413449902_103514.ico");
+            this.imageList1.Images.SetKeyName(4, "rank.ico");
+            // 
             // f002_main_form
             // 
+            this.BottomLeftCornerSize = 0;
+            this.BottomRightCornerSize = 0;
             this.ClientSize = new System.Drawing.Size(1193, 583);
             this.Controls.Add(this.m_xtab_control);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.m_pnl_thong_bao);
             this.Controls.Add(this.m_tab_menu);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "f002_main_form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F002 - Chương trình quản lý nhân sự ";
@@ -1176,5 +1200,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox m_cbo_phap_nhan;
+        public System.Windows.Forms.ImageList imageList1;
     }
 }

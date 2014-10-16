@@ -118,11 +118,80 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="1413453628_131485" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1413453628_131485.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="organization" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\organization.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <!--<data name="1413455859_99919" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1413455859_99919.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>-->
+  <!--<data name="1413455859_999191" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1413455859_999191.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>-->
+  <data name="1413449612_49580" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1413449612_49580.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <!--<data name="1413457448_47050" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1413457448_47050.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>-->
+  <data name="gnome_status" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gnome_status.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <!--<data name="1413457579_176975" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1413457579_176975.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>-->
+  <data name="1413455230_105225" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1413455230_105225.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1413457508_100453" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1413457508_100453.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1413453730_132159" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1413453730_132159.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Human resources management v2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Human resources management v2.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="1413449902_103514" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1413449902_103514.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rank.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1413449185_126806" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1413449185_126806.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="excel (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\excel (1).ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1413455698_330395" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1413455698_330395.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="thong-bao" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\thong-bao.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1413449845_174971" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1413449845_174971.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1413455147_20298" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1413455147_20298.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <!--<data name="1413455859_999192" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1413455859_999192.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>-->
+  <data name="1413455938_33993" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1413455938_33993.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="excel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\excel.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1413455795_71128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1413455795_71128.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="1413457508_1004531" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1413457508_1004531.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
