@@ -536,6 +536,11 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="RemoteAccessHelper.cs" />
     <Compile Include="UCControl\uc_for_form.cs">
       <SubType>UserControl</SubType>
@@ -798,14 +803,9 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
@@ -889,6 +889,29 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="iconhrm.ico" />
+    <None Include="Resources\1413457508_1004531.ico" />
+    <None Include="Resources\excel %281%29.ico" />
+    <None Include="Resources\excel.ico" />
+    <None Include="Resources\1413457579_176975.ico" />
+    <None Include="Resources\1413457508_100453.ico" />
+    <None Include="Resources\1413457448_47050.ico" />
+    <None Include="Resources\1413455859_999192.ico" />
+    <None Include="Resources\1413455938_33993.ico" />
+    <None Include="Resources\1413455859_999191.ico" />
+    <None Include="Resources\1413455859_99919.ico" />
+    <None Include="Resources\1413455795_71128.ico" />
+    <None Include="Resources\1413455698_330395.ico" />
+    <None Include="Resources\gnome_status.ico" />
+    <None Include="Resources\1413455230_105225.ico" />
+    <None Include="Resources\1413455147_20298.ico" />
+    <None Include="Resources\1413453730_132159.ico" />
+    <None Include="Resources\1413453628_131485.ico" />
+    <None Include="Resources\rank.ico" />
+    <None Include="Resources\1413449902_103514.ico" />
+    <None Include="Resources\1413449845_174971.ico" />
+    <None Include="Resources\1413449612_49580.ico" />
+    <None Include="Resources\1413449185_126806.ico" />
+    <None Include="Resources\organization.png" />
     <None Include="Resources\thong-bao.png" />
   </ItemGroup>
   <ItemGroup>
