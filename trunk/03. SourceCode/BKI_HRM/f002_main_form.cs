@@ -63,6 +63,9 @@ namespace BKI_HRM {
             v_pnl.Options.ShowCloseButton = false;
             v_pnl.Visibility = DockVisibility.AutoHide;
             v_pnl.DockManager.DockingOptions.HideImmediatelyOnAutoHide = true;
+            v_pnl.DockManager.DockMode = DevExpress.XtraBars.Docking.Helpers.DockMode.VS2005;
+            //v_pnl.DockManager.auto
+            
 
             v_pnl.Click += v_pnl_Click;
             v_pnl.ControlAdded += v_pnl_ControlAdded;
