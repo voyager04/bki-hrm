@@ -104,7 +104,7 @@
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.m_pnl_thong_bao = new System.Windows.Forms.Panel();
             this.m_pnl_thu_viec_da_het_han = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.m_lbl_thu_viec_da_het_han = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.m_lbl_nv_chinh_thuc = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -859,7 +859,7 @@
             // 
             // m_pnl_thu_viec_da_het_han
             // 
-            this.m_pnl_thu_viec_da_het_han.Controls.Add(this.label2);
+            this.m_pnl_thu_viec_da_het_han.Controls.Add(this.m_lbl_thu_viec_da_het_han);
             this.m_pnl_thu_viec_da_het_han.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_pnl_thu_viec_da_het_han.Location = new System.Drawing.Point(0, 318);
             this.m_pnl_thu_viec_da_het_han.Name = "m_pnl_thu_viec_da_het_han";
@@ -868,15 +868,15 @@
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(0, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(228, 18);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Danh sách Thử việc đã hết hạn";
+            this.m_lbl_thu_viec_da_het_han.AutoSize = true;
+            this.m_lbl_thu_viec_da_het_han.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.m_lbl_thu_viec_da_het_han.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_thu_viec_da_het_han.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_thu_viec_da_het_han.Location = new System.Drawing.Point(0, 20);
+            this.m_lbl_thu_viec_da_het_han.Name = "label2";
+            this.m_lbl_thu_viec_da_het_han.Size = new System.Drawing.Size(228, 18);
+            this.m_lbl_thu_viec_da_het_han.TabIndex = 2;
+            this.m_lbl_thu_viec_da_het_han.Text = "Danh sách Thử việc đã hết hạn";
             // 
             // panel7
             // 
@@ -1210,7 +1210,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage6;
         private System.Windows.Forms.Panel m_pnl_thong_bao;
         private System.Windows.Forms.Panel m_pnl_thu_viec_da_het_han;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label m_lbl_thu_viec_da_het_han;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label m_lbl_nv_chinh_thuc;
         private System.Windows.Forms.Panel panel5;

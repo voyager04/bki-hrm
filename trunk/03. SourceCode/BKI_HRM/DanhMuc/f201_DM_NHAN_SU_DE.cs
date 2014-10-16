@@ -241,11 +241,17 @@ namespace BKI_HRM
 
             if (m_dat_ngay_sinh.Checked == true)
                 m_us_dm_nhan_su.datNGAY_SINH = m_dat_ngay_sinh.Value;
+            else
+                m_us_dm_nhan_su.SetNGAY_SINHNull();
+
             m_us_dm_nhan_su.strNOI_SINH = m_txt_noi_sinh.Text.Trim();
             m_us_dm_nhan_su.strNGUYEN_QUAN = m_txt_nguyen_quan.Text.Trim();
             m_us_dm_nhan_su.strCMND = m_txt_cmnd.Text.Trim();
             if (m_dat_ngay_cap.Checked == true)
                 m_us_dm_nhan_su.datNGAY_CAP_CMND = m_dat_ngay_cap.Value;
+            else
+                m_us_dm_nhan_su.SetNGAY_CAP_CMNDNull();
+
             m_us_dm_nhan_su.strNOI_CAP_CMND = m_txt_noi_cap.Text.Trim();
             m_us_dm_nhan_su.strTON_GIAO = m_txt_ton_giao.Text.Trim();
             m_us_dm_nhan_su.strDAN_TOC = m_txt_dan_toc.Text.Trim();

@@ -80,7 +80,7 @@ namespace BKI_HRM {
                                                         frm502.count_record_du_an_sap_ket_thuc());
 
                 canh_bao_hop_dong();
-                thu_viec_sap_het_han();
+                thu_viec_sap_het_han_da_het_han();
                 nghi_viec_sap_quay_lai();
                 nhan_vien_chinh_thuc();
             }
@@ -126,22 +126,40 @@ namespace BKI_HRM {
 
             m_lbl_tong_so_nv.Text = "Số lượng nhân viên hiện tại: " + v_dc_so_luong_nv_hien_tai;
         }
-        private void thu_viec_sap_het_han() {
+        private void thu_viec_sap_het_han_da_het_han() {
             US_V_DM_DU_LIEU_NHAN_VIEN v_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
             DS_V_DM_DU_LIEU_NHAN_VIEN v_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
             decimal v_dc_so_luong_nv = 0;
+
+            // Thử việc sắp hết hạn
             //  f103_bao_cao_tra_cuu_nhan_su v_frm = new f103_bao_cao_tra_cuu_nhan_su();
             v_us.count_nhan_vien(v_ds, "thử việc hết hạn"
                 , CAppContext_201.getCurrentIDPhapnhan()
                 , ref v_dc_so_luong_nv);
-            if(v_dc_so_luong_nv <= 0) {
+            if (v_dc_so_luong_nv <= 0)
+            {
                 m_lbl_thu_viec_sap_het_han.Text = @"Không có Thử việc sắp hết hạn";
             }
-            else {
+            else
+            {
                 m_lbl_thu_viec_sap_het_han.Text = @"Có " + v_dc_so_luong_nv.ToString() +
                                                   " Thử việc sắp hết hạn!";
             }
             // v_frm.display_thu_viec_sap_het_han();
+
+            // Thử việc đã hết hạn
+            v_us.count_nhan_vien(v_ds, "thử việc đã hết hạn"
+                , CAppContext_201.getCurrentIDPhapnhan()
+                , ref v_dc_so_luong_nv);
+            if (v_dc_so_luong_nv <= 0)
+            {
+                m_lbl_thu_viec_da_het_han.Text = @"Không có Thử việc đã hết hạn";
+            }
+            else
+            {
+                m_lbl_thu_viec_da_het_han.Text = @"Có " + v_dc_so_luong_nv.ToString() +
+                                                  " Thử việc đã hết hạn!";
+            }
         }
         private void nhan_vien_chinh_thuc() {
             US_V_GD_QUA_TRINH_LAM_VIEC_2 v_us = new US_V_GD_QUA_TRINH_LAM_VIEC_2();
@@ -220,7 +238,7 @@ namespace BKI_HRM {
                                                         frm502.count_record_du_an_sap_ket_thuc());
 
                 canh_bao_hop_dong();
-                thu_viec_sap_het_han();
+                thu_viec_sap_het_han_da_het_han();
                 nghi_viec_sap_quay_lai();
                 nhan_vien_chinh_thuc();
 
@@ -315,7 +333,21 @@ namespace BKI_HRM {
             panel1.MouseLeave += panel1_MouseLeave;
 
             m_pnl_thu_viec_da_het_han.Click += m_pnl_thu_viec_da_het_han_Click;
+            m_pnl_thu_viec_da_het_han.MouseHover += m_pnl_thu_viec_da_het_han_MouseHover;
+            m_pnl_thu_viec_da_het_han.MouseLeave += m_pnl_thu_viec_da_het_han_MouseLeave;
+
         }
+
+        private void m_pnl_thu_viec_da_het_han_MouseLeave(object sender, EventArgs e)
+        {
+            m_pnl_thu_viec_da_het_han.BackColor = SystemColors.Control;
+        }
+
+        private void m_pnl_thu_viec_da_het_han_MouseHover(object sender, EventArgs e)
+        {
+            m_pnl_thu_viec_da_het_han.BackColor = Color.Aquamarine;
+        }
+
         private void m_pnl_thu_viec_da_het_han_Click(object sender, EventArgs e) {
             try {
                 f103_bao_cao_tra_cuu_nhan_su v_frm = new f103_bao_cao_tra_cuu_nhan_su();
@@ -821,7 +853,7 @@ namespace BKI_HRM {
                 m_obj_tab.AddTab(m_xtab_control, "tab_ho_so_nhan_su", v_frm.Text, v_uc);
 
                 nhan_vien_hien_tai();
-                thu_viec_sap_het_han();
+                thu_viec_sap_het_han_da_het_han();
                 nghi_viec_sap_quay_lai();
                 canh_bao_hop_dong();
                 nhan_vien_chinh_thuc();
@@ -1065,7 +1097,7 @@ namespace BKI_HRM {
                                                         frm502.count_record_du_an_sap_ket_thuc());
                 //m_tab_menu.SelectedTab = tabPage3;
                 canh_bao_hop_dong();
-                thu_viec_sap_het_han();
+                thu_viec_sap_het_han_da_het_han();
                 nghi_viec_sap_quay_lai();
                 nhan_vien_chinh_thuc();
                 nhan_vien_hien_tai();
