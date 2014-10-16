@@ -222,12 +222,13 @@
             this.m_tab_menu.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.m_tab_menu.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show;
             this.m_tab_menu.ShowToolbarCustomizeItem = false;
-            this.m_tab_menu.Size = new System.Drawing.Size(1193, 142);
+            this.m_tab_menu.Size = new System.Drawing.Size(1193, 144);
             this.m_tab_menu.Toolbar.ShowCustomizeItem = false;
             // 
             // m_cmd_phan_quyen_chi_tiet
             // 
             this.m_cmd_phan_quyen_chi_tiet.Caption = "Phân quyền chi tiết";
+            this.m_cmd_phan_quyen_chi_tiet.Glyph = global::BKI_HRM.Properties.Resources.gnome_preferences_system__1_;
             this.m_cmd_phan_quyen_chi_tiet.Id = 10;
             this.m_cmd_phan_quyen_chi_tiet.Name = "m_cmd_phan_quyen_chi_tiet";
             this.m_cmd_phan_quyen_chi_tiet.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -235,6 +236,7 @@
             // m_cmd_phan_quyen_he_thong
             // 
             this.m_cmd_phan_quyen_he_thong.Caption = "Phân quyền hệ thống";
+            this.m_cmd_phan_quyen_he_thong.Glyph = global::BKI_HRM.Properties.Resources.applications_system__1_;
             this.m_cmd_phan_quyen_he_thong.Id = 11;
             this.m_cmd_phan_quyen_he_thong.Name = "m_cmd_phan_quyen_he_thong";
             this.m_cmd_phan_quyen_he_thong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -242,6 +244,7 @@
             // m_cmd_phan_quyen_cho_nhom
             // 
             this.m_cmd_phan_quyen_cho_nhom.Caption = "Phân quyền cho nhóm";
+            this.m_cmd_phan_quyen_cho_nhom.Glyph = global::BKI_HRM.Properties.Resources._1413474392_103572;
             this.m_cmd_phan_quyen_cho_nhom.Id = 12;
             this.m_cmd_phan_quyen_cho_nhom.Name = "m_cmd_phan_quyen_cho_nhom";
             this.m_cmd_phan_quyen_cho_nhom.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -249,6 +252,7 @@
             // m_cmd_nguoi_su_dung
             // 
             this.m_cmd_nguoi_su_dung.Caption = "Người sử dụng";
+            this.m_cmd_nguoi_su_dung.Glyph = global::BKI_HRM.Properties.Resources._1413474281_309035;
             this.m_cmd_nguoi_su_dung.Id = 13;
             this.m_cmd_nguoi_su_dung.Name = "m_cmd_nguoi_su_dung";
             this.m_cmd_nguoi_su_dung.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -256,6 +260,7 @@
             // m_cmd_nhom_nguoi_su_dung
             // 
             this.m_cmd_nhom_nguoi_su_dung.Caption = "Nhóm người sử dụng";
+            this.m_cmd_nhom_nguoi_su_dung.Glyph = global::BKI_HRM.Properties.Resources._1413474343_309041;
             this.m_cmd_nhom_nguoi_su_dung.Id = 14;
             this.m_cmd_nhom_nguoi_su_dung.Name = "m_cmd_nhom_nguoi_su_dung";
             this.m_cmd_nhom_nguoi_su_dung.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -263,6 +268,7 @@
             // m_cmd_danh_muc_control
             // 
             this.m_cmd_danh_muc_control.Caption = "Danh mục Control";
+            this.m_cmd_danh_muc_control.Glyph = global::BKI_HRM.Properties.Resources.multimedia_volume_control;
             this.m_cmd_danh_muc_control.Id = 15;
             this.m_cmd_danh_muc_control.Name = "m_cmd_danh_muc_control";
             this.m_cmd_danh_muc_control.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
@@ -271,6 +277,7 @@
             // m_cmd_nhat_ky_he_thong
             // 
             this.m_cmd_nhat_ky_he_thong.Caption = "Nhật ký hệ thống";
+            this.m_cmd_nhat_ky_he_thong.Glyph = global::BKI_HRM.Properties.Resources.power_log_off;
             this.m_cmd_nhat_ky_he_thong.Id = 16;
             this.m_cmd_nhat_ky_he_thong.Name = "m_cmd_nhat_ky_he_thong";
             this.m_cmd_nhat_ky_he_thong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -278,6 +285,7 @@
             // m_cmd_tu_dien_he_thong
             // 
             this.m_cmd_tu_dien_he_thong.Caption = "Từ điển hệ thống";
+            this.m_cmd_tu_dien_he_thong.Glyph = global::BKI_HRM.Properties.Resources.dictionary;
             this.m_cmd_tu_dien_he_thong.Id = 17;
             this.m_cmd_tu_dien_he_thong.Name = "m_cmd_tu_dien_he_thong";
             this.m_cmd_tu_dien_he_thong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -285,6 +293,7 @@
             // m_cmd_backup_recovery
             // 
             this.m_cmd_backup_recovery.Caption = "Sao lưu/Phục hồi dữ liệu";
+            this.m_cmd_backup_recovery.Glyph = global::BKI_HRM.Properties.Resources.web_database;
             this.m_cmd_backup_recovery.Id = 18;
             this.m_cmd_backup_recovery.Name = "m_cmd_backup_recovery";
             this.m_cmd_backup_recovery.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -305,6 +314,7 @@
             // m_cmd_huong_dan_su_dung
             // 
             this.m_cmd_huong_dan_su_dung.Caption = "Hướng dẫn sử dụng";
+            this.m_cmd_huong_dan_su_dung.Glyph = global::BKI_HRM.Properties.Resources._1413473859_34724;
             this.m_cmd_huong_dan_su_dung.Id = 21;
             this.m_cmd_huong_dan_su_dung.Name = "m_cmd_huong_dan_su_dung";
             this.m_cmd_huong_dan_su_dung.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -312,6 +322,7 @@
             // m_cmd_phan_hoi_loi_pm
             // 
             this.m_cmd_phan_hoi_loi_pm.Caption = "Phản hồi lỗi phần mềm";
+            this.m_cmd_phan_hoi_loi_pm.Glyph = global::BKI_HRM.Properties.Resources._1413473812_88405;
             this.m_cmd_phan_hoi_loi_pm.Id = 22;
             this.m_cmd_phan_hoi_loi_pm.Name = "m_cmd_phan_hoi_loi_pm";
             this.m_cmd_phan_hoi_loi_pm.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -319,6 +330,7 @@
             // button16
             // 
             this.button16.Caption = "Đăng xuất";
+            this.button16.Glyph = global::BKI_HRM.Properties.Resources._1413473730_296817;
             this.button16.Id = 30;
             this.button16.Name = "button16";
             this.button16.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -326,6 +338,7 @@
             // button15
             // 
             this.button15.Caption = "Thoát";
+            this.button15.Glyph = global::BKI_HRM.Properties.Resources._1413473680_34218;
             this.button15.Id = 32;
             this.button15.Name = "button15";
             this.button15.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -421,6 +434,7 @@
             // m_cmd_thong_tin_du_an
             // 
             this.m_cmd_thong_tin_du_an.Caption = "Thông tin dự án";
+            this.m_cmd_thong_tin_du_an.Glyph = global::BKI_HRM.Properties.Resources._1413457508_1004532;
             this.m_cmd_thong_tin_du_an.Id = 45;
             this.m_cmd_thong_tin_du_an.Name = "m_cmd_thong_tin_du_an";
             this.m_cmd_thong_tin_du_an.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -428,6 +442,7 @@
             // m_cmd_hop_dong_lao_dong
             // 
             this.m_cmd_hop_dong_lao_dong.Caption = "Hợp đồng lao động";
+            this.m_cmd_hop_dong_lao_dong.Glyph = global::BKI_HRM.Properties.Resources._1413470086_280257;
             this.m_cmd_hop_dong_lao_dong.Id = 46;
             this.m_cmd_hop_dong_lao_dong.Name = "m_cmd_hop_dong_lao_dong";
             this.m_cmd_hop_dong_lao_dong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -435,6 +450,7 @@
             // m_cmd_luongqd
             // 
             this.m_cmd_luongqd.Caption = "Lương theo quyết định";
+            this.m_cmd_luongqd.Glyph = global::BKI_HRM.Properties.Resources._1413470393_47488;
             this.m_cmd_luongqd.Id = 47;
             this.m_cmd_luongqd.Name = "m_cmd_luongqd";
             this.m_cmd_luongqd.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -442,6 +458,7 @@
             // m_cmd_import_luong_theo_qd
             // 
             this.m_cmd_import_luong_theo_qd.Caption = "Import lương theo quyết định";
+            this.m_cmd_import_luong_theo_qd.Glyph = global::BKI_HRM.Properties.Resources._1413471434_272709;
             this.m_cmd_import_luong_theo_qd.Id = 48;
             this.m_cmd_import_luong_theo_qd.Name = "m_cmd_import_luong_theo_qd";
             this.m_cmd_import_luong_theo_qd.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -554,6 +571,7 @@
             // m_cmd_bao_cao_du_an
             // 
             this.m_cmd_bao_cao_du_an.Caption = "Báo cáo dự án";
+            this.m_cmd_bao_cao_du_an.Glyph = global::BKI_HRM.Properties.Resources._1413457508_1004531;
             this.m_cmd_bao_cao_du_an.Id = 65;
             this.m_cmd_bao_cao_du_an.Name = "m_cmd_bao_cao_du_an";
             this.m_cmd_bao_cao_du_an.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText)));
@@ -561,6 +579,7 @@
             // m_cmd_tra_cuu_nhan_su_du_an
             // 
             this.m_cmd_tra_cuu_nhan_su_du_an.Caption = "Tra cứu nhân sự dự án";
+            this.m_cmd_tra_cuu_nhan_su_du_an.Glyph = global::BKI_HRM.Properties.Resources._1413471689_304724;
             this.m_cmd_tra_cuu_nhan_su_du_an.Id = 66;
             this.m_cmd_tra_cuu_nhan_su_du_an.Name = "m_cmd_tra_cuu_nhan_su_du_an";
             this.m_cmd_tra_cuu_nhan_su_du_an.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -568,6 +587,7 @@
             // m_cmd_bao_cao_hop_dong_lao_dong
             // 
             this.m_cmd_bao_cao_hop_dong_lao_dong.Caption = "Báo cáo hợp đồng lao động";
+            this.m_cmd_bao_cao_hop_dong_lao_dong.Glyph = global::BKI_HRM.Properties.Resources._1413470086_280257;
             this.m_cmd_bao_cao_hop_dong_lao_dong.Id = 67;
             this.m_cmd_bao_cao_hop_dong_lao_dong.Name = "m_cmd_bao_cao_hop_dong_lao_dong";
             this.m_cmd_bao_cao_hop_dong_lao_dong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -575,6 +595,7 @@
             // m_cmd_tra_cuu_nhan_su_chung
             // 
             this.m_cmd_tra_cuu_nhan_su_chung.Caption = "Tra cứu nhân sự chung";
+            this.m_cmd_tra_cuu_nhan_su_chung.Glyph = global::BKI_HRM.Properties.Resources._1413472023_105207;
             this.m_cmd_tra_cuu_nhan_su_chung.Id = 68;
             this.m_cmd_tra_cuu_nhan_su_chung.Name = "m_cmd_tra_cuu_nhan_su_chung";
             this.m_cmd_tra_cuu_nhan_su_chung.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -582,6 +603,7 @@
             // m_cmd_nhan_su_theo_phong_ban
             // 
             this.m_cmd_nhan_su_theo_phong_ban.Caption = "Nhân sự theo phòng ban";
+            this.m_cmd_nhan_su_theo_phong_ban.Glyph = global::BKI_HRM.Properties.Resources._1413472114_274900;
             this.m_cmd_nhan_su_theo_phong_ban.Id = 69;
             this.m_cmd_nhan_su_theo_phong_ban.Name = "m_cmd_nhan_su_theo_phong_ban";
             this.m_cmd_nhan_su_theo_phong_ban.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -589,6 +611,7 @@
             // m_cmd_nhan_su_theo_chuc_vu
             // 
             this.m_cmd_nhan_su_theo_chuc_vu.Caption = "Nhân sự theo chức vụ";
+            this.m_cmd_nhan_su_theo_chuc_vu.Glyph = global::BKI_HRM.Properties.Resources._1413472174_330395;
             this.m_cmd_nhan_su_theo_chuc_vu.Id = 70;
             this.m_cmd_nhan_su_theo_chuc_vu.Name = "m_cmd_nhan_su_theo_chuc_vu";
             this.m_cmd_nhan_su_theo_chuc_vu.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -596,6 +619,7 @@
             // m_cmd_nhan_su_theo_cap_bac
             // 
             this.m_cmd_nhan_su_theo_cap_bac.Caption = "Nhân sự theo cấp bậc";
+            this.m_cmd_nhan_su_theo_cap_bac.Glyph = global::BKI_HRM.Properties.Resources._1413472210_318585;
             this.m_cmd_nhan_su_theo_cap_bac.Id = 71;
             this.m_cmd_nhan_su_theo_cap_bac.Name = "m_cmd_nhan_su_theo_cap_bac";
             this.m_cmd_nhan_su_theo_cap_bac.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -603,6 +627,7 @@
             // m_cmd_qua_trinh_lam_viec
             // 
             this.m_cmd_qua_trinh_lam_viec.Caption = "Quá trình làm việc";
+            this.m_cmd_qua_trinh_lam_viec.Glyph = global::BKI_HRM.Properties.Resources._1413472451_101844;
             this.m_cmd_qua_trinh_lam_viec.Id = 72;
             this.m_cmd_qua_trinh_lam_viec.Name = "m_cmd_qua_trinh_lam_viec";
             this.m_cmd_qua_trinh_lam_viec.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -610,6 +635,7 @@
             // m_cmd_bien_dong_chuc_vu_trang_thai
             // 
             this.m_cmd_bien_dong_chuc_vu_trang_thai.Caption = "Biến động chức vụ trạng thái";
+            this.m_cmd_bien_dong_chuc_vu_trang_thai.Glyph = global::BKI_HRM.Properties.Resources.transfer_up_down;
             this.m_cmd_bien_dong_chuc_vu_trang_thai.Id = 73;
             this.m_cmd_bien_dong_chuc_vu_trang_thai.Name = "m_cmd_bien_dong_chuc_vu_trang_thai";
             this.m_cmd_bien_dong_chuc_vu_trang_thai.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -617,6 +643,7 @@
             // m_cmd_bao_cao_so_luong_bo_nhiem
             // 
             this.m_cmd_bao_cao_so_luong_bo_nhiem.Caption = "Báo cáo số lượng bổ nhiệm";
+            this.m_cmd_bao_cao_so_luong_bo_nhiem.Glyph = global::BKI_HRM.Properties.Resources._1413472741_103845;
             this.m_cmd_bao_cao_so_luong_bo_nhiem.Id = 74;
             this.m_cmd_bao_cao_so_luong_bo_nhiem.Name = "m_cmd_bao_cao_so_luong_bo_nhiem";
             this.m_cmd_bao_cao_so_luong_bo_nhiem.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -624,6 +651,7 @@
             // m_cmd_bao_cao_danh_sach_bo_nhiem
             // 
             this.m_cmd_bao_cao_danh_sach_bo_nhiem.Caption = "Báo cáo danh sách bổ nhiệm";
+            this.m_cmd_bao_cao_danh_sach_bo_nhiem.Glyph = global::BKI_HRM.Properties.Resources.list_all_participants;
             this.m_cmd_bao_cao_danh_sach_bo_nhiem.Id = 75;
             this.m_cmd_bao_cao_danh_sach_bo_nhiem.Name = "m_cmd_bao_cao_danh_sach_bo_nhiem";
             this.m_cmd_bao_cao_danh_sach_bo_nhiem.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -631,6 +659,7 @@
             // m_cmd_bien_dong_don_vi_trang_thai
             // 
             this.m_cmd_bien_dong_don_vi_trang_thai.Caption = "Biến động đơn vị trạng thái";
+            this.m_cmd_bien_dong_don_vi_trang_thai.Glyph = global::BKI_HRM.Properties.Resources.lightning;
             this.m_cmd_bien_dong_don_vi_trang_thai.Id = 76;
             this.m_cmd_bien_dong_don_vi_trang_thai.Name = "m_cmd_bien_dong_don_vi_trang_thai";
             this.m_cmd_bien_dong_don_vi_trang_thai.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -638,6 +667,7 @@
             // m_cmd_bao_cao_nghi_viec
             // 
             this.m_cmd_bao_cao_nghi_viec.Caption = "Báo cáo nghỉ việc";
+            this.m_cmd_bao_cao_nghi_viec.Glyph = global::BKI_HRM.Properties.Resources._1413473283_298869;
             this.m_cmd_bao_cao_nghi_viec.Id = 77;
             this.m_cmd_bao_cao_nghi_viec.Name = "m_cmd_bao_cao_nghi_viec";
             this.m_cmd_bao_cao_nghi_viec.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -645,6 +675,7 @@
             // m_cmd_bc_luong_theo_qd
             // 
             this.m_cmd_bc_luong_theo_qd.Caption = "Báo cáo lương theo quyết định";
+            this.m_cmd_bc_luong_theo_qd.Glyph = global::BKI_HRM.Properties.Resources._1413473410_284225;
             this.m_cmd_bc_luong_theo_qd.Id = 78;
             this.m_cmd_bc_luong_theo_qd.Name = "m_cmd_bc_luong_theo_qd";
             this.m_cmd_bc_luong_theo_qd.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -652,6 +683,7 @@
             // m_cmd_rpt_tong_luong
             // 
             this.m_cmd_rpt_tong_luong.Caption = "Báo cáo tổng lương";
+            this.m_cmd_rpt_tong_luong.Glyph = global::BKI_HRM.Properties.Resources._1413473565_61470;
             this.m_cmd_rpt_tong_luong.Id = 79;
             this.m_cmd_rpt_tong_luong.Name = "m_cmd_rpt_tong_luong";
             this.m_cmd_rpt_tong_luong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -990,9 +1022,9 @@
             // m_xtab_control
             // 
             this.m_xtab_control.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_xtab_control.Location = new System.Drawing.Point(0, 142);
+            this.m_xtab_control.Location = new System.Drawing.Point(0, 144);
             this.m_xtab_control.Name = "m_xtab_control";
-            this.m_xtab_control.Size = new System.Drawing.Size(1193, 409);
+            this.m_xtab_control.Size = new System.Drawing.Size(1193, 407);
             this.m_xtab_control.TabIndex = 21;
             // 
             // m_lbl_tong_so_nv
@@ -1058,16 +1090,14 @@
             // 
             // f002_main_form
             // 
-            this.BottomLeftCornerSize = 0;
-            this.BottomRightCornerSize = 0;
             this.ClientSize = new System.Drawing.Size(1193, 583);
             this.Controls.Add(this.m_xtab_control);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.m_pnl_thong_bao);
             this.Controls.Add(this.m_tab_menu);
-            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "f002_main_form";
+            this.Ribbon = this.m_tab_menu;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F002 - Chương trình quản lý nhân sự ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

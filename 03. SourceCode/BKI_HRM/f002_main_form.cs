@@ -20,7 +20,7 @@ using BKI_HRM.NghiepVu;
 using BKI_HRM.BaoCao;
 using BKI_HRM.DS.CDBNames;
 namespace BKI_HRM {
-    public partial class f002_main_form : DevComponents.DotNetBar.OfficeForm {
+    public partial class f002_main_form : DevExpress.XtraBars.Ribbon.RibbonForm {
         public f002_main_form() {
             InitializeComponent();
             add_thong_bao();
@@ -31,7 +31,7 @@ namespace BKI_HRM {
             try {
                 ShowDialog();
                 v_exitmode = m_exitmode;
-                
+
             }
             catch(Exception v_e) {
 
@@ -107,11 +107,11 @@ namespace BKI_HRM {
         private void format_controls() {
             set_visible_thong_bao();
             set_define_events();
-           // m_tab_menu.Images = imageList1;
-           // m_cmd_ql_chuc_vu.ImageIndex = imageList1.Images[1].;
+            // m_tab_menu.Images = imageList1;
+            // m_cmd_ql_chuc_vu.ImageIndex = imageList1.Images[1].;
             //CControlFormat.setFormStyle(this, new CAppContext_201());
-            
-            
+
+
         }
         private void nhan_vien_hien_tai() {
             US_V_DM_DU_LIEU_NHAN_VIEN v_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
@@ -151,7 +151,7 @@ namespace BKI_HRM {
             m_lbl_nv_chinh_thuc.Text = @"Có " + v_dc_so_luong_nv.ToString() +
                                                   " nhân viên chính thức trên 6 tháng.";
 
-             //v_frm.display_thu_viec_sap_het_han();
+            //v_frm.display_thu_viec_sap_het_han();
         }
         private void nghi_viec_sap_quay_lai() {
             US_V_DM_DU_LIEU_NHAN_VIEN v_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
@@ -283,8 +283,8 @@ namespace BKI_HRM {
 
             ///
             m_lbl_tong_so_nv.Click += m_lbl_tong_so_nv_Click;
-            m_cbo_phap_nhan.SelectionChangeCommitted += m_cbo_phap_nhan_SelectionChangeCommitted;    
-       
+            m_cbo_phap_nhan.SelectionChangeCommitted += m_cbo_phap_nhan_SelectionChangeCommitted;
+
             //m_pnl_thu_viec_da_het_han.Click += m_pnl_thu_viec_da_het_han_Click;
 
             panel1.Click += panel1_Click;
@@ -295,7 +295,7 @@ namespace BKI_HRM {
             panel7.Click += panel7_Click;
             panel7.MouseHover += panel7_MouseHover;
             panel7.MouseLeave += panel7_MouseLeave;
-           
+
             panel5.MouseHover += panel5_MouseHover;
             panel5.MouseLeave += panel5_MouseLeave;
 
@@ -310,7 +310,7 @@ namespace BKI_HRM {
 
             panel1.MouseHover += panel1_MouseHover;
             panel1.MouseLeave += panel1_MouseLeave;
-            
+
             m_pnl_thu_viec_da_het_han.Click += m_pnl_thu_viec_da_het_han_Click;
         }
         private void m_pnl_thu_viec_da_het_han_Click(object sender, EventArgs e) {
@@ -470,7 +470,7 @@ namespace BKI_HRM {
             }
             catch(Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
-            }   
+            }
         }
 
         void m_cmd_rpt_tong_luong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
@@ -483,7 +483,7 @@ namespace BKI_HRM {
             }
             catch(Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
-            }   
+            }
         }
 
         void m_cmd_bc_luong_theo_qd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
@@ -514,12 +514,11 @@ namespace BKI_HRM {
 
         void m_cmd_bien_dong_don_vi_trang_thai_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
             try {
-                f407_bao_cao_bo_nhiem v_frm = new f407_bao_cao_bo_nhiem();
-                v_frm.close_tab_B = new f407_bao_cao_bo_nhiem.close_tab(close_tab_A);
+                f408_bao_cao_don_vi_trang_thai v_frm = new f408_bao_cao_don_vi_trang_thai();
+                v_frm.close_tab_B = new f408_bao_cao_don_vi_trang_thai.close_tab(close_tab_A);
                 uc_for_form v_uc = new uc_for_form();
                 m_obj_tab.AddFormToUC(v_frm, v_uc);
                 m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_uc);
-
             }
             catch(Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
@@ -528,12 +527,11 @@ namespace BKI_HRM {
 
         void m_cmd_bao_cao_danh_sach_bo_nhiem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
             try {
-                f408_bao_cao_don_vi_trang_thai v_frm = new f408_bao_cao_don_vi_trang_thai();
-                v_frm.close_tab_B = new f408_bao_cao_don_vi_trang_thai.close_tab(close_tab_A);
+                f407_bao_cao_bo_nhiem v_frm = new f407_bao_cao_bo_nhiem();
+                v_frm.close_tab_B = new f407_bao_cao_bo_nhiem.close_tab(close_tab_A);
                 uc_for_form v_uc = new uc_for_form();
                 m_obj_tab.AddFormToUC(v_frm, v_uc);
                 m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_uc);
-
             }
             catch(Exception v_e) {
 
@@ -971,7 +969,7 @@ namespace BKI_HRM {
                 m_obj_tab.AddTab(m_xtab_control, "tab_nhom_nguoi_sd", "F997 - Thông tin nhóm người sử dụng", v_uc);
             }
             catch(Exception v_e) {
-                
+
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
