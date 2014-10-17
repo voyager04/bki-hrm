@@ -110,6 +110,7 @@ namespace BKI_HRM {
         private void format_controls() {
             set_visible_thong_bao();
             set_define_events();
+            m_tab_menu.SelectedPage = ribbonPage3;
             // m_tab_menu.Images = imageList1;
             // m_cmd_ql_chuc_vu.ImageIndex = imageList1.Images[1].;
             //CControlFormat.setFormStyle(this, new CAppContext_201());
