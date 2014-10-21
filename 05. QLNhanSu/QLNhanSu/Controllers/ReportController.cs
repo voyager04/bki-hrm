@@ -108,7 +108,7 @@ namespace QLNhanSu.Controllers
             return View();
         }
 
-        public JsonResult GetQuaTrinhLamViec(string ip_MaNhanVien, string ip_DieuKien = "ACD")
+        public JsonResult GetQuaTrinhLamViec(string ip_MaNhanVien, string ip_DieuKien = "")
         {
             if (ip_MaNhanVien == "") return null;
             var v_QuaTrinhLamViec = _db.pr_GD_QUA_TRINH_CONG_TAC_WEB(ip_MaNhanVien, ip_DieuKien, DateTime.Parse("01/01/2009"), DateTime.Now, 3).ToList();
