@@ -220,6 +220,31 @@ namespace BKI_HRM {
         private void m_cbo_phap_nhan_SelectionChangeCommitted(object sender, EventArgs e) {
             try {
                 CAppContext_201.setCurrentIDPhapnhan(int.Parse(m_cbo_phap_nhan.SelectedValue.ToString()));
+
+                //
+                decimal v_id_pn = CAppContext_201.getCurrentIDPhapnhan();
+                switch (v_id_pn.ToString())
+                {
+                    case "1":
+                        break;
+                    case "2": break;
+                    case "3":
+                        m_cmd_bao_cao_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                        ribbonPageGroup10.Visible = false;
+                        m_cmd_bc_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                        m_cmd_rpt_tong_luong.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                        m_cmd_thong_tin_du_an.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                        m_cmd_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                        m_cmd_luongqd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                        m_cmd_import_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                        ribbonPageGroup12.Visible = false;
+                        ribbonPageGroup11.Visible = false;
+                        ribbonPageGroup11.Visible = false;
+                        break;
+                    default: break;
+                }
+                //
+
                 nhan_vien_hien_tai();
                 US_DM_PHAP_NHAN v_us = new US_DM_PHAP_NHAN(CAppContext_201.getCurrentIDPhapnhan());
                 //toolStripStatusLabel1.Text = "Pháp nhân: " + v_us.strMA_PHAP_NHAN + " - " + v_us.strTEN_PHAP_NHAN;
@@ -1108,6 +1133,26 @@ namespace BKI_HRM {
                 nghi_viec_sap_quay_lai();
                 nhan_vien_chinh_thuc();
                 nhan_vien_hien_tai();
+                //
+                decimal v_id_pn = CAppContext_201.getCurrentIDPhapnhan();
+                switch (v_id_pn.ToString())
+                {
+                    case "1":
+                        break;
+                    case "2": break;
+                    case "3":
+                        m_cmd_bao_cao_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                        ribbonPageGroup10.Visible = false;
+                        m_cmd_bc_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                        m_cmd_rpt_tong_luong.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                        m_cmd_thong_tin_du_an.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                        m_cmd_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                        m_cmd_luongqd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                        m_cmd_import_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                        ribbonPageGroup12.Visible = false;
+                        break;
+                    default: break;
+                }
 
                 f408_bao_cao_don_vi_trang_thai v_frm = new f408_bao_cao_don_vi_trang_thai();
                 v_frm.close_tab_B = new f408_bao_cao_don_vi_trang_thai.close_tab(close_tab_A);

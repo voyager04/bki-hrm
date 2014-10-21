@@ -126,6 +126,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.m_cbo_phap_nhan = new System.Windows.Forms.ComboBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.m_tab_menu)).BeginInit();
             this.m_pnl_thong_bao.SuspendLayout();
             this.m_pnl_thu_viec_da_het_han.SuspendLayout();
@@ -626,6 +631,7 @@
             this.m_cmd_nhan_su_theo_cap_bac.Id = 71;
             this.m_cmd_nhan_su_theo_cap_bac.Name = "m_cmd_nhan_su_theo_cap_bac";
             this.m_cmd_nhan_su_theo_cap_bac.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.m_cmd_nhan_su_theo_cap_bac.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // m_cmd_qua_trinh_lam_viec
             // 
@@ -812,29 +818,23 @@
             // ribbonPageGroup10
             // 
             this.ribbonPageGroup10.ItemLinks.Add(this.m_cmd_bao_cao_du_an);
-            this.ribbonPageGroup10.ItemLinks.Add(this.m_cmd_tra_cuu_nhan_su_du_an);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             this.ribbonPageGroup10.Text = "Dự án";
             // 
             // ribbonPageGroup13
             // 
             this.ribbonPageGroup13.AllowTextClipping = false;
-            this.ribbonPageGroup13.ItemLinks.Add(this.m_cmd_bao_cao_hop_dong_lao_dong);
             this.ribbonPageGroup13.Name = "ribbonPageGroup13";
             this.ribbonPageGroup13.Text = "Hợp đồng lao động";
+            this.ribbonPageGroup13.Visible = false;
             // 
             // ribbonPageGroup14
             // 
-            this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_tra_cuu_nhan_su_chung);
-            this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_nhan_su_theo_phong_ban);
-            this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_nhan_su_theo_chuc_vu);
             this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_nhan_su_theo_cap_bac);
             this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_qua_trinh_lam_viec);
             this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_bien_dong_chuc_vu_trang_thai);
             this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_bao_cao_so_luong_bo_nhiem);
-            this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_bao_cao_danh_sach_bo_nhiem);
             this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_bien_dong_don_vi_trang_thai);
-            this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_bao_cao_nghi_viec);
             this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_bc_luong_theo_qd);
             this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_rpt_tong_luong);
             this.ribbonPageGroup14.Name = "ribbonPageGroup14";
@@ -844,8 +844,14 @@
             // 
             this.ribbonPage6.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.ribbonPage6.Appearance.Options.UseFont = true;
+            this.ribbonPage6.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup11,
+            this.ribbonPageGroup12,
+            this.ribbonPageGroup15,
+            this.ribbonPageGroup16,
+            this.ribbonPageGroup17});
             this.ribbonPage6.Name = "ribbonPage6";
-            this.ribbonPage6.Text = "Tìm kiếm chức năng - Thay đổi pháp nhân";
+            this.ribbonPage6.Text = "Tra cứu danh sách";
             // 
             // m_pnl_thong_bao
             // 
@@ -1093,6 +1099,41 @@
             this.imageList1.Images.SetKeyName(3, "1413449902_103514.ico");
             this.imageList1.Images.SetKeyName(4, "rank.ico");
             // 
+            // ribbonPageGroup11
+            // 
+            this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_tra_cuu_nhan_su_du_an);
+            this.ribbonPageGroup11.Name = "ribbonPageGroup11";
+            this.ribbonPageGroup11.Text = "Dự án";
+            // 
+            // ribbonPageGroup12
+            // 
+            this.ribbonPageGroup12.AllowTextClipping = false;
+            this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_bao_cao_hop_dong_lao_dong);
+            this.ribbonPageGroup12.Name = "ribbonPageGroup12";
+            this.ribbonPageGroup12.Text = "Hợp đồng lao động";
+            // 
+            // ribbonPageGroup15
+            // 
+            this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_tra_cuu_nhan_su_chung);
+            this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_nhan_su_theo_phong_ban);
+            this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_nhan_su_theo_chuc_vu);
+            this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_bao_cao_danh_sach_bo_nhiem);
+            this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_bao_cao_nghi_viec);
+            this.ribbonPageGroup15.Name = "ribbonPageGroup15";
+            this.ribbonPageGroup15.Text = "Thông tin nhân sự";
+            // 
+            // ribbonPageGroup16
+            // 
+            this.ribbonPageGroup16.Name = "ribbonPageGroup16";
+            this.ribbonPageGroup16.Text = "ribbonPageGroup16";
+            this.ribbonPageGroup16.Visible = false;
+            // 
+            // ribbonPageGroup17
+            // 
+            this.ribbonPageGroup17.Name = "ribbonPageGroup17";
+            this.ribbonPageGroup17.Text = "ribbonPageGroup17";
+            this.ribbonPageGroup17.Visible = false;
+            // 
             // f002_main_form
             // 
             this.ClientSize = new System.Drawing.Size(1193, 583);
@@ -1236,5 +1277,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox m_cbo_phap_nhan;
         public System.Windows.Forms.ImageList imageList1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup15;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup16;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;
     }
 }
