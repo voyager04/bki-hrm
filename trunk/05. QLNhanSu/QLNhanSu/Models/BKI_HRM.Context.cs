@@ -104,6 +104,7 @@ namespace QLNhanSu.Models
         public DbSet<V_HT_USER> V_HT_USER { get; set; }
         public DbSet<V_NHAN_VIEN_HIEN_TAI> V_NHAN_VIEN_HIEN_TAI { get; set; }
         public DbSet<View_2> View_2 { get; set; }
+        public DbSet<IMPORT_EXCEL_LUONG_THEO_QD> IMPORT_EXCEL_LUONG_THEO_QD { get; set; }
     
         public virtual ObjectResult<desc_table_Result> desc_table(string ip_table_name)
         {
@@ -1074,7 +1075,7 @@ namespace QLNhanSu.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_DM_NHAN_SU_Delete", iDParameter);
         }
     
-        public virtual int pr_DM_NHAN_SU_Insert(string mA_NV, string hO_DEM, string tEN, string gIOI_TINH, string aNH, Nullable<System.DateTime> nGAY_SINH, string nOI_SINH, string nGUYEN_QUAN, string cMND, Nullable<System.DateTime> nGAY_CAP_CMND, string nOI_CAP_CMND, string tRINH_DO, string nOI_DAO_TAO, string cHUYEN_NGANH, Nullable<decimal> nAM_TOT_NGHIEP, string eMAIL_CQ, string eMAIL_CA_NHAN, string dT_NHA, string dI_DONG, string cHO_O, string hO_KHAU, string nGUOI_LIEN_HE, string dI_DONG_LIEN_HE, string qUAN_HE, string tON_GIAO, string dAN_TOC, string mA_SO_THUE, string tRANG_THAI, Nullable<decimal> iD_HEADCOUNT, string mA_HEADCOUNT, ObjectParameter iD)
+        public virtual int pr_DM_NHAN_SU_Insert(string mA_NV, string hO_DEM, string tEN, string gIOI_TINH, Nullable<System.DateTime> nGAY_SINH, string nOI_SINH, string nGUYEN_QUAN, string aNH, string cMND, Nullable<System.DateTime> nGAY_CAP_CMND, string nOI_CAP_CMND, string tRINH_DO, string nOI_DAO_TAO, string cHUYEN_NGANH, Nullable<decimal> nAM_TOT_NGHIEP, string eMAIL_CQ, string eMAIL_CA_NHAN, string dT_NHA, string dI_DONG, string cHO_O, string hO_KHAU, string nGUOI_LIEN_HE, string dI_DONG_LIEN_HE, string qUAN_HE, string tON_GIAO, string dAN_TOC, string mA_SO_THUE, string tRANG_THAI, Nullable<decimal> iD_HEADCOUNT, string mA_HEADCOUNT, string sO_TAI_KHOAN, string cHI_NHANH_NGANHANG, string dIA_DIEM_LV, string hO_TEN_BO, string nGHE_NGHIEP_BO, Nullable<decimal> nAM_SINH_BO, string hO_TEN_ME, string nGHE_NGHIEP_ME, Nullable<decimal> nAM_SINH_ME, string hO_TEN_CON_THU_1, string nGHE_NGHIEP_CON_THU_1, Nullable<decimal> nAM_SINH_CON_THU_1, string hO_TEN_CON_THU_2, string nGHE_NGHIEP_CON_THU_2, Nullable<decimal> nAM_SINH_CON_THU_2, string hO_TEN_CON_THU_3, string nGHE_NGHIEP_CON_THU_3, Nullable<decimal> nAM_SINH_CON_THU_3, string hO_TEN_VO_OR_CHONG, string nGHE_NGHIEP_VO_OR_CHONG, Nullable<decimal> nAM_SINH_VO_OR_CHONG, ObjectParameter iD)
         {
             var mA_NVParameter = mA_NV != null ?
                 new ObjectParameter("MA_NV", mA_NV) :
@@ -1092,10 +1093,6 @@ namespace QLNhanSu.Models
                 new ObjectParameter("GIOI_TINH", gIOI_TINH) :
                 new ObjectParameter("GIOI_TINH", typeof(string));
     
-            var aNHParameter = aNH != null ?
-                new ObjectParameter("ANH", aNH) :
-                new ObjectParameter("ANH", typeof(string));
-    
             var nGAY_SINHParameter = nGAY_SINH.HasValue ?
                 new ObjectParameter("NGAY_SINH", nGAY_SINH) :
                 new ObjectParameter("NGAY_SINH", typeof(System.DateTime));
@@ -1107,6 +1104,10 @@ namespace QLNhanSu.Models
             var nGUYEN_QUANParameter = nGUYEN_QUAN != null ?
                 new ObjectParameter("NGUYEN_QUAN", nGUYEN_QUAN) :
                 new ObjectParameter("NGUYEN_QUAN", typeof(string));
+    
+            var aNHParameter = aNH != null ?
+                new ObjectParameter("ANH", aNH) :
+                new ObjectParameter("ANH", typeof(string));
     
             var cMNDParameter = cMND != null ?
                 new ObjectParameter("CMND", cMND) :
@@ -1196,7 +1197,91 @@ namespace QLNhanSu.Models
                 new ObjectParameter("MA_HEADCOUNT", mA_HEADCOUNT) :
                 new ObjectParameter("MA_HEADCOUNT", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_DM_NHAN_SU_Insert", mA_NVParameter, hO_DEMParameter, tENParameter, gIOI_TINHParameter, aNHParameter, nGAY_SINHParameter, nOI_SINHParameter, nGUYEN_QUANParameter, cMNDParameter, nGAY_CAP_CMNDParameter, nOI_CAP_CMNDParameter, tRINH_DOParameter, nOI_DAO_TAOParameter, cHUYEN_NGANHParameter, nAM_TOT_NGHIEPParameter, eMAIL_CQParameter, eMAIL_CA_NHANParameter, dT_NHAParameter, dI_DONGParameter, cHO_OParameter, hO_KHAUParameter, nGUOI_LIEN_HEParameter, dI_DONG_LIEN_HEParameter, qUAN_HEParameter, tON_GIAOParameter, dAN_TOCParameter, mA_SO_THUEParameter, tRANG_THAIParameter, iD_HEADCOUNTParameter, mA_HEADCOUNTParameter, iD);
+            var sO_TAI_KHOANParameter = sO_TAI_KHOAN != null ?
+                new ObjectParameter("SO_TAI_KHOAN", sO_TAI_KHOAN) :
+                new ObjectParameter("SO_TAI_KHOAN", typeof(string));
+    
+            var cHI_NHANH_NGANHANGParameter = cHI_NHANH_NGANHANG != null ?
+                new ObjectParameter("CHI_NHANH_NGANHANG", cHI_NHANH_NGANHANG) :
+                new ObjectParameter("CHI_NHANH_NGANHANG", typeof(string));
+    
+            var dIA_DIEM_LVParameter = dIA_DIEM_LV != null ?
+                new ObjectParameter("DIA_DIEM_LV", dIA_DIEM_LV) :
+                new ObjectParameter("DIA_DIEM_LV", typeof(string));
+    
+            var hO_TEN_BOParameter = hO_TEN_BO != null ?
+                new ObjectParameter("HO_TEN_BO", hO_TEN_BO) :
+                new ObjectParameter("HO_TEN_BO", typeof(string));
+    
+            var nGHE_NGHIEP_BOParameter = nGHE_NGHIEP_BO != null ?
+                new ObjectParameter("NGHE_NGHIEP_BO", nGHE_NGHIEP_BO) :
+                new ObjectParameter("NGHE_NGHIEP_BO", typeof(string));
+    
+            var nAM_SINH_BOParameter = nAM_SINH_BO.HasValue ?
+                new ObjectParameter("NAM_SINH_BO", nAM_SINH_BO) :
+                new ObjectParameter("NAM_SINH_BO", typeof(decimal));
+    
+            var hO_TEN_MEParameter = hO_TEN_ME != null ?
+                new ObjectParameter("HO_TEN_ME", hO_TEN_ME) :
+                new ObjectParameter("HO_TEN_ME", typeof(string));
+    
+            var nGHE_NGHIEP_MEParameter = nGHE_NGHIEP_ME != null ?
+                new ObjectParameter("NGHE_NGHIEP_ME", nGHE_NGHIEP_ME) :
+                new ObjectParameter("NGHE_NGHIEP_ME", typeof(string));
+    
+            var nAM_SINH_MEParameter = nAM_SINH_ME.HasValue ?
+                new ObjectParameter("NAM_SINH_ME", nAM_SINH_ME) :
+                new ObjectParameter("NAM_SINH_ME", typeof(decimal));
+    
+            var hO_TEN_CON_THU_1Parameter = hO_TEN_CON_THU_1 != null ?
+                new ObjectParameter("HO_TEN_CON_THU_1", hO_TEN_CON_THU_1) :
+                new ObjectParameter("HO_TEN_CON_THU_1", typeof(string));
+    
+            var nGHE_NGHIEP_CON_THU_1Parameter = nGHE_NGHIEP_CON_THU_1 != null ?
+                new ObjectParameter("NGHE_NGHIEP_CON_THU_1", nGHE_NGHIEP_CON_THU_1) :
+                new ObjectParameter("NGHE_NGHIEP_CON_THU_1", typeof(string));
+    
+            var nAM_SINH_CON_THU_1Parameter = nAM_SINH_CON_THU_1.HasValue ?
+                new ObjectParameter("NAM_SINH_CON_THU_1", nAM_SINH_CON_THU_1) :
+                new ObjectParameter("NAM_SINH_CON_THU_1", typeof(decimal));
+    
+            var hO_TEN_CON_THU_2Parameter = hO_TEN_CON_THU_2 != null ?
+                new ObjectParameter("HO_TEN_CON_THU_2", hO_TEN_CON_THU_2) :
+                new ObjectParameter("HO_TEN_CON_THU_2", typeof(string));
+    
+            var nGHE_NGHIEP_CON_THU_2Parameter = nGHE_NGHIEP_CON_THU_2 != null ?
+                new ObjectParameter("NGHE_NGHIEP_CON_THU_2", nGHE_NGHIEP_CON_THU_2) :
+                new ObjectParameter("NGHE_NGHIEP_CON_THU_2", typeof(string));
+    
+            var nAM_SINH_CON_THU_2Parameter = nAM_SINH_CON_THU_2.HasValue ?
+                new ObjectParameter("NAM_SINH_CON_THU_2", nAM_SINH_CON_THU_2) :
+                new ObjectParameter("NAM_SINH_CON_THU_2", typeof(decimal));
+    
+            var hO_TEN_CON_THU_3Parameter = hO_TEN_CON_THU_3 != null ?
+                new ObjectParameter("HO_TEN_CON_THU_3", hO_TEN_CON_THU_3) :
+                new ObjectParameter("HO_TEN_CON_THU_3", typeof(string));
+    
+            var nGHE_NGHIEP_CON_THU_3Parameter = nGHE_NGHIEP_CON_THU_3 != null ?
+                new ObjectParameter("NGHE_NGHIEP_CON_THU_3", nGHE_NGHIEP_CON_THU_3) :
+                new ObjectParameter("NGHE_NGHIEP_CON_THU_3", typeof(string));
+    
+            var nAM_SINH_CON_THU_3Parameter = nAM_SINH_CON_THU_3.HasValue ?
+                new ObjectParameter("NAM_SINH_CON_THU_3", nAM_SINH_CON_THU_3) :
+                new ObjectParameter("NAM_SINH_CON_THU_3", typeof(decimal));
+    
+            var hO_TEN_VO_OR_CHONGParameter = hO_TEN_VO_OR_CHONG != null ?
+                new ObjectParameter("HO_TEN_VO_OR_CHONG", hO_TEN_VO_OR_CHONG) :
+                new ObjectParameter("HO_TEN_VO_OR_CHONG", typeof(string));
+    
+            var nGHE_NGHIEP_VO_OR_CHONGParameter = nGHE_NGHIEP_VO_OR_CHONG != null ?
+                new ObjectParameter("NGHE_NGHIEP_VO_OR_CHONG", nGHE_NGHIEP_VO_OR_CHONG) :
+                new ObjectParameter("NGHE_NGHIEP_VO_OR_CHONG", typeof(string));
+    
+            var nAM_SINH_VO_OR_CHONGParameter = nAM_SINH_VO_OR_CHONG.HasValue ?
+                new ObjectParameter("NAM_SINH_VO_OR_CHONG", nAM_SINH_VO_OR_CHONG) :
+                new ObjectParameter("NAM_SINH_VO_OR_CHONG", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_DM_NHAN_SU_Insert", mA_NVParameter, hO_DEMParameter, tENParameter, gIOI_TINHParameter, nGAY_SINHParameter, nOI_SINHParameter, nGUYEN_QUANParameter, aNHParameter, cMNDParameter, nGAY_CAP_CMNDParameter, nOI_CAP_CMNDParameter, tRINH_DOParameter, nOI_DAO_TAOParameter, cHUYEN_NGANHParameter, nAM_TOT_NGHIEPParameter, eMAIL_CQParameter, eMAIL_CA_NHANParameter, dT_NHAParameter, dI_DONGParameter, cHO_OParameter, hO_KHAUParameter, nGUOI_LIEN_HEParameter, dI_DONG_LIEN_HEParameter, qUAN_HEParameter, tON_GIAOParameter, dAN_TOCParameter, mA_SO_THUEParameter, tRANG_THAIParameter, iD_HEADCOUNTParameter, mA_HEADCOUNTParameter, sO_TAI_KHOANParameter, cHI_NHANH_NGANHANGParameter, dIA_DIEM_LVParameter, hO_TEN_BOParameter, nGHE_NGHIEP_BOParameter, nAM_SINH_BOParameter, hO_TEN_MEParameter, nGHE_NGHIEP_MEParameter, nAM_SINH_MEParameter, hO_TEN_CON_THU_1Parameter, nGHE_NGHIEP_CON_THU_1Parameter, nAM_SINH_CON_THU_1Parameter, hO_TEN_CON_THU_2Parameter, nGHE_NGHIEP_CON_THU_2Parameter, nAM_SINH_CON_THU_2Parameter, hO_TEN_CON_THU_3Parameter, nGHE_NGHIEP_CON_THU_3Parameter, nAM_SINH_CON_THU_3Parameter, hO_TEN_VO_OR_CHONGParameter, nGHE_NGHIEP_VO_OR_CHONGParameter, nAM_SINH_VO_OR_CHONGParameter, iD);
         }
     
         public virtual ObjectResult<pr_DM_NHAN_SU_Search_Result> pr_DM_NHAN_SU_Search(string ip_str_search)
@@ -1226,7 +1311,7 @@ namespace QLNhanSu.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_DM_NHAN_SU_Search_by_ma_ns_Result>("pr_DM_NHAN_SU_Search_by_ma_ns", ip_str_searchParameter);
         }
     
-        public virtual int pr_DM_NHAN_SU_Update(Nullable<decimal> iD, string mA_NV, string hO_DEM, string tEN, string gIOI_TINH, string aNH, Nullable<System.DateTime> nGAY_SINH, string nOI_SINH, string nGUYEN_QUAN, string cMND, Nullable<System.DateTime> nGAY_CAP_CMND, string nOI_CAP_CMND, string tRINH_DO, string nOI_DAO_TAO, string cHUYEN_NGANH, Nullable<decimal> nAM_TOT_NGHIEP, string eMAIL_CQ, string eMAIL_CA_NHAN, string dT_NHA, string dI_DONG, string cHO_O, string hO_KHAU, string nGUOI_LIEN_HE, string dI_DONG_LIEN_HE, string qUAN_HE, string tON_GIAO, string dAN_TOC, string mA_SO_THUE, string tRANG_THAI, Nullable<decimal> iD_HEADCOUNT, string mA_HEADCOUNT)
+        public virtual int pr_DM_NHAN_SU_Update(Nullable<decimal> iD, string mA_NV, string hO_DEM, string tEN, string gIOI_TINH, Nullable<System.DateTime> nGAY_SINH, string nOI_SINH, string nGUYEN_QUAN, string aNH, string cMND, Nullable<System.DateTime> nGAY_CAP_CMND, string nOI_CAP_CMND, string tRINH_DO, string nOI_DAO_TAO, string cHUYEN_NGANH, Nullable<decimal> nAM_TOT_NGHIEP, string eMAIL_CQ, string eMAIL_CA_NHAN, string dT_NHA, string dI_DONG, string cHO_O, string hO_KHAU, string nGUOI_LIEN_HE, string dI_DONG_LIEN_HE, string qUAN_HE, string tON_GIAO, string dAN_TOC, string mA_SO_THUE, string tRANG_THAI, Nullable<decimal> iD_HEADCOUNT, string mA_HEADCOUNT, string sO_TAI_KHOAN, string cHI_NHANH_NGANHANG, string dIA_DIEM_LV, string hO_TEN_BO, string nGHE_NGHIEP_BO, Nullable<decimal> nAM_SINH_BO, string hO_TEN_ME, string nGHE_NGHIEP_ME, Nullable<decimal> nAM_SINH_ME, string hO_TEN_CON_THU_1, string nGHE_NGHIEP_CON_THU_1, Nullable<decimal> nAM_SINH_CON_THU_1, string hO_TEN_CON_THU_2, string nGHE_NGHIEP_CON_THU_2, Nullable<decimal> nAM_SINH_CON_THU_2, string hO_TEN_CON_THU_3, string nGHE_NGHIEP_CON_THU_3, Nullable<decimal> nAM_SINH_CON_THU_3, string hO_TEN_VO_OR_CHONG, string nGHE_NGHIEP_VO_OR_CHONG, Nullable<decimal> nAM_SINH_VO_OR_CHONG)
         {
             var iDParameter = iD.HasValue ?
                 new ObjectParameter("ID", iD) :
@@ -1248,10 +1333,6 @@ namespace QLNhanSu.Models
                 new ObjectParameter("GIOI_TINH", gIOI_TINH) :
                 new ObjectParameter("GIOI_TINH", typeof(string));
     
-            var aNHParameter = aNH != null ?
-                new ObjectParameter("ANH", aNH) :
-                new ObjectParameter("ANH", typeof(string));
-    
             var nGAY_SINHParameter = nGAY_SINH.HasValue ?
                 new ObjectParameter("NGAY_SINH", nGAY_SINH) :
                 new ObjectParameter("NGAY_SINH", typeof(System.DateTime));
@@ -1263,6 +1344,10 @@ namespace QLNhanSu.Models
             var nGUYEN_QUANParameter = nGUYEN_QUAN != null ?
                 new ObjectParameter("NGUYEN_QUAN", nGUYEN_QUAN) :
                 new ObjectParameter("NGUYEN_QUAN", typeof(string));
+    
+            var aNHParameter = aNH != null ?
+                new ObjectParameter("ANH", aNH) :
+                new ObjectParameter("ANH", typeof(string));
     
             var cMNDParameter = cMND != null ?
                 new ObjectParameter("CMND", cMND) :
@@ -1352,7 +1437,91 @@ namespace QLNhanSu.Models
                 new ObjectParameter("MA_HEADCOUNT", mA_HEADCOUNT) :
                 new ObjectParameter("MA_HEADCOUNT", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_DM_NHAN_SU_Update", iDParameter, mA_NVParameter, hO_DEMParameter, tENParameter, gIOI_TINHParameter, aNHParameter, nGAY_SINHParameter, nOI_SINHParameter, nGUYEN_QUANParameter, cMNDParameter, nGAY_CAP_CMNDParameter, nOI_CAP_CMNDParameter, tRINH_DOParameter, nOI_DAO_TAOParameter, cHUYEN_NGANHParameter, nAM_TOT_NGHIEPParameter, eMAIL_CQParameter, eMAIL_CA_NHANParameter, dT_NHAParameter, dI_DONGParameter, cHO_OParameter, hO_KHAUParameter, nGUOI_LIEN_HEParameter, dI_DONG_LIEN_HEParameter, qUAN_HEParameter, tON_GIAOParameter, dAN_TOCParameter, mA_SO_THUEParameter, tRANG_THAIParameter, iD_HEADCOUNTParameter, mA_HEADCOUNTParameter);
+            var sO_TAI_KHOANParameter = sO_TAI_KHOAN != null ?
+                new ObjectParameter("SO_TAI_KHOAN", sO_TAI_KHOAN) :
+                new ObjectParameter("SO_TAI_KHOAN", typeof(string));
+    
+            var cHI_NHANH_NGANHANGParameter = cHI_NHANH_NGANHANG != null ?
+                new ObjectParameter("CHI_NHANH_NGANHANG", cHI_NHANH_NGANHANG) :
+                new ObjectParameter("CHI_NHANH_NGANHANG", typeof(string));
+    
+            var dIA_DIEM_LVParameter = dIA_DIEM_LV != null ?
+                new ObjectParameter("DIA_DIEM_LV", dIA_DIEM_LV) :
+                new ObjectParameter("DIA_DIEM_LV", typeof(string));
+    
+            var hO_TEN_BOParameter = hO_TEN_BO != null ?
+                new ObjectParameter("HO_TEN_BO", hO_TEN_BO) :
+                new ObjectParameter("HO_TEN_BO", typeof(string));
+    
+            var nGHE_NGHIEP_BOParameter = nGHE_NGHIEP_BO != null ?
+                new ObjectParameter("NGHE_NGHIEP_BO", nGHE_NGHIEP_BO) :
+                new ObjectParameter("NGHE_NGHIEP_BO", typeof(string));
+    
+            var nAM_SINH_BOParameter = nAM_SINH_BO.HasValue ?
+                new ObjectParameter("NAM_SINH_BO", nAM_SINH_BO) :
+                new ObjectParameter("NAM_SINH_BO", typeof(decimal));
+    
+            var hO_TEN_MEParameter = hO_TEN_ME != null ?
+                new ObjectParameter("HO_TEN_ME", hO_TEN_ME) :
+                new ObjectParameter("HO_TEN_ME", typeof(string));
+    
+            var nGHE_NGHIEP_MEParameter = nGHE_NGHIEP_ME != null ?
+                new ObjectParameter("NGHE_NGHIEP_ME", nGHE_NGHIEP_ME) :
+                new ObjectParameter("NGHE_NGHIEP_ME", typeof(string));
+    
+            var nAM_SINH_MEParameter = nAM_SINH_ME.HasValue ?
+                new ObjectParameter("NAM_SINH_ME", nAM_SINH_ME) :
+                new ObjectParameter("NAM_SINH_ME", typeof(decimal));
+    
+            var hO_TEN_CON_THU_1Parameter = hO_TEN_CON_THU_1 != null ?
+                new ObjectParameter("HO_TEN_CON_THU_1", hO_TEN_CON_THU_1) :
+                new ObjectParameter("HO_TEN_CON_THU_1", typeof(string));
+    
+            var nGHE_NGHIEP_CON_THU_1Parameter = nGHE_NGHIEP_CON_THU_1 != null ?
+                new ObjectParameter("NGHE_NGHIEP_CON_THU_1", nGHE_NGHIEP_CON_THU_1) :
+                new ObjectParameter("NGHE_NGHIEP_CON_THU_1", typeof(string));
+    
+            var nAM_SINH_CON_THU_1Parameter = nAM_SINH_CON_THU_1.HasValue ?
+                new ObjectParameter("NAM_SINH_CON_THU_1", nAM_SINH_CON_THU_1) :
+                new ObjectParameter("NAM_SINH_CON_THU_1", typeof(decimal));
+    
+            var hO_TEN_CON_THU_2Parameter = hO_TEN_CON_THU_2 != null ?
+                new ObjectParameter("HO_TEN_CON_THU_2", hO_TEN_CON_THU_2) :
+                new ObjectParameter("HO_TEN_CON_THU_2", typeof(string));
+    
+            var nGHE_NGHIEP_CON_THU_2Parameter = nGHE_NGHIEP_CON_THU_2 != null ?
+                new ObjectParameter("NGHE_NGHIEP_CON_THU_2", nGHE_NGHIEP_CON_THU_2) :
+                new ObjectParameter("NGHE_NGHIEP_CON_THU_2", typeof(string));
+    
+            var nAM_SINH_CON_THU_2Parameter = nAM_SINH_CON_THU_2.HasValue ?
+                new ObjectParameter("NAM_SINH_CON_THU_2", nAM_SINH_CON_THU_2) :
+                new ObjectParameter("NAM_SINH_CON_THU_2", typeof(decimal));
+    
+            var hO_TEN_CON_THU_3Parameter = hO_TEN_CON_THU_3 != null ?
+                new ObjectParameter("HO_TEN_CON_THU_3", hO_TEN_CON_THU_3) :
+                new ObjectParameter("HO_TEN_CON_THU_3", typeof(string));
+    
+            var nGHE_NGHIEP_CON_THU_3Parameter = nGHE_NGHIEP_CON_THU_3 != null ?
+                new ObjectParameter("NGHE_NGHIEP_CON_THU_3", nGHE_NGHIEP_CON_THU_3) :
+                new ObjectParameter("NGHE_NGHIEP_CON_THU_3", typeof(string));
+    
+            var nAM_SINH_CON_THU_3Parameter = nAM_SINH_CON_THU_3.HasValue ?
+                new ObjectParameter("NAM_SINH_CON_THU_3", nAM_SINH_CON_THU_3) :
+                new ObjectParameter("NAM_SINH_CON_THU_3", typeof(decimal));
+    
+            var hO_TEN_VO_OR_CHONGParameter = hO_TEN_VO_OR_CHONG != null ?
+                new ObjectParameter("HO_TEN_VO_OR_CHONG", hO_TEN_VO_OR_CHONG) :
+                new ObjectParameter("HO_TEN_VO_OR_CHONG", typeof(string));
+    
+            var nGHE_NGHIEP_VO_OR_CHONGParameter = nGHE_NGHIEP_VO_OR_CHONG != null ?
+                new ObjectParameter("NGHE_NGHIEP_VO_OR_CHONG", nGHE_NGHIEP_VO_OR_CHONG) :
+                new ObjectParameter("NGHE_NGHIEP_VO_OR_CHONG", typeof(string));
+    
+            var nAM_SINH_VO_OR_CHONGParameter = nAM_SINH_VO_OR_CHONG.HasValue ?
+                new ObjectParameter("NAM_SINH_VO_OR_CHONG", nAM_SINH_VO_OR_CHONG) :
+                new ObjectParameter("NAM_SINH_VO_OR_CHONG", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_DM_NHAN_SU_Update", iDParameter, mA_NVParameter, hO_DEMParameter, tENParameter, gIOI_TINHParameter, nGAY_SINHParameter, nOI_SINHParameter, nGUYEN_QUANParameter, aNHParameter, cMNDParameter, nGAY_CAP_CMNDParameter, nOI_CAP_CMNDParameter, tRINH_DOParameter, nOI_DAO_TAOParameter, cHUYEN_NGANHParameter, nAM_TOT_NGHIEPParameter, eMAIL_CQParameter, eMAIL_CA_NHANParameter, dT_NHAParameter, dI_DONGParameter, cHO_OParameter, hO_KHAUParameter, nGUOI_LIEN_HEParameter, dI_DONG_LIEN_HEParameter, qUAN_HEParameter, tON_GIAOParameter, dAN_TOCParameter, mA_SO_THUEParameter, tRANG_THAIParameter, iD_HEADCOUNTParameter, mA_HEADCOUNTParameter, sO_TAI_KHOANParameter, cHI_NHANH_NGANHANGParameter, dIA_DIEM_LVParameter, hO_TEN_BOParameter, nGHE_NGHIEP_BOParameter, nAM_SINH_BOParameter, hO_TEN_MEParameter, nGHE_NGHIEP_MEParameter, nAM_SINH_MEParameter, hO_TEN_CON_THU_1Parameter, nGHE_NGHIEP_CON_THU_1Parameter, nAM_SINH_CON_THU_1Parameter, hO_TEN_CON_THU_2Parameter, nGHE_NGHIEP_CON_THU_2Parameter, nAM_SINH_CON_THU_2Parameter, hO_TEN_CON_THU_3Parameter, nGHE_NGHIEP_CON_THU_3Parameter, nAM_SINH_CON_THU_3Parameter, hO_TEN_VO_OR_CHONGParameter, nGHE_NGHIEP_VO_OR_CHONGParameter, nAM_SINH_VO_OR_CHONGParameter);
         }
     
         public virtual int pr_DM_PHAP_NHAN_Delete(Nullable<decimal> iD)
@@ -5407,6 +5576,716 @@ namespace QLNhanSu.Models
                 new ObjectParameter("Ten", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<V_DM_QUYET_DINH_By_Ten_Result>("V_DM_QUYET_DINH_By_Ten", tenParameter);
+        }
+    
+        public virtual ObjectResult<get_tong_luong_by_ma_cv_Result> get_tong_luong_by_ma_cv(string ip_ma_chuc_vu)
+        {
+            var ip_ma_chuc_vuParameter = ip_ma_chuc_vu != null ?
+                new ObjectParameter("ip_ma_chuc_vu", ip_ma_chuc_vu) :
+                new ObjectParameter("ip_ma_chuc_vu", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<get_tong_luong_by_ma_cv_Result>("get_tong_luong_by_ma_cv", ip_ma_chuc_vuParameter);
+        }
+    
+        public virtual ObjectResult<get_tong_luong_by_ma_ttld_Result> get_tong_luong_by_ma_ttld(string ip_ma_ttld)
+        {
+            var ip_ma_ttldParameter = ip_ma_ttld != null ?
+                new ObjectParameter("ip_ma_ttld", ip_ma_ttld) :
+                new ObjectParameter("ip_ma_ttld", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<get_tong_luong_by_ma_ttld_Result>("get_tong_luong_by_ma_ttld", ip_ma_ttldParameter);
+        }
+    
+        public virtual int pr_DM_NHAN_SU_DeleteAllWID_HEADCOUNTLogic(Nullable<decimal> iD_HEADCOUNT)
+        {
+            var iD_HEADCOUNTParameter = iD_HEADCOUNT.HasValue ?
+                new ObjectParameter("ID_HEADCOUNT", iD_HEADCOUNT) :
+                new ObjectParameter("ID_HEADCOUNT", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_DM_NHAN_SU_DeleteAllWID_HEADCOUNTLogic", iD_HEADCOUNTParameter);
+        }
+    
+        public virtual int pr_DM_NHAN_SU_UpdateAllWID_HEADCOUNTLogic(Nullable<decimal> iD_HEADCOUNT, Nullable<decimal> iD_HEADCOUNTOld)
+        {
+            var iD_HEADCOUNTParameter = iD_HEADCOUNT.HasValue ?
+                new ObjectParameter("ID_HEADCOUNT", iD_HEADCOUNT) :
+                new ObjectParameter("ID_HEADCOUNT", typeof(decimal));
+    
+            var iD_HEADCOUNTOldParameter = iD_HEADCOUNTOld.HasValue ?
+                new ObjectParameter("ID_HEADCOUNTOld", iD_HEADCOUNTOld) :
+                new ObjectParameter("ID_HEADCOUNTOld", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_DM_NHAN_SU_UpdateAllWID_HEADCOUNTLogic", iD_HEADCOUNTParameter, iD_HEADCOUNTOldParameter);
+        }
+    
+        public virtual int pr_gd_luong_theo_qd_insert_kem_id_phap_nhan(string mA_NV, string mA_KY, string mA_QD, Nullable<decimal> lUONG, Nullable<System.DateTime> nGAY_AP_DUNG, Nullable<decimal> tHANG_AP_DUNG, Nullable<decimal> nAM_AP_DUNG, string lUONG_HIEN_TAI_YN, Nullable<decimal> iD_PHAP_NHAN, ObjectParameter iD)
+        {
+            var mA_NVParameter = mA_NV != null ?
+                new ObjectParameter("MA_NV", mA_NV) :
+                new ObjectParameter("MA_NV", typeof(string));
+    
+            var mA_KYParameter = mA_KY != null ?
+                new ObjectParameter("MA_KY", mA_KY) :
+                new ObjectParameter("MA_KY", typeof(string));
+    
+            var mA_QDParameter = mA_QD != null ?
+                new ObjectParameter("MA_QD", mA_QD) :
+                new ObjectParameter("MA_QD", typeof(string));
+    
+            var lUONGParameter = lUONG.HasValue ?
+                new ObjectParameter("LUONG", lUONG) :
+                new ObjectParameter("LUONG", typeof(decimal));
+    
+            var nGAY_AP_DUNGParameter = nGAY_AP_DUNG.HasValue ?
+                new ObjectParameter("NGAY_AP_DUNG", nGAY_AP_DUNG) :
+                new ObjectParameter("NGAY_AP_DUNG", typeof(System.DateTime));
+    
+            var tHANG_AP_DUNGParameter = tHANG_AP_DUNG.HasValue ?
+                new ObjectParameter("THANG_AP_DUNG", tHANG_AP_DUNG) :
+                new ObjectParameter("THANG_AP_DUNG", typeof(decimal));
+    
+            var nAM_AP_DUNGParameter = nAM_AP_DUNG.HasValue ?
+                new ObjectParameter("NAM_AP_DUNG", nAM_AP_DUNG) :
+                new ObjectParameter("NAM_AP_DUNG", typeof(decimal));
+    
+            var lUONG_HIEN_TAI_YNParameter = lUONG_HIEN_TAI_YN != null ?
+                new ObjectParameter("LUONG_HIEN_TAI_YN", lUONG_HIEN_TAI_YN) :
+                new ObjectParameter("LUONG_HIEN_TAI_YN", typeof(string));
+    
+            var iD_PHAP_NHANParameter = iD_PHAP_NHAN.HasValue ?
+                new ObjectParameter("ID_PHAP_NHAN", iD_PHAP_NHAN) :
+                new ObjectParameter("ID_PHAP_NHAN", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_gd_luong_theo_qd_insert_kem_id_phap_nhan", mA_NVParameter, mA_KYParameter, mA_QDParameter, lUONGParameter, nGAY_AP_DUNGParameter, tHANG_AP_DUNGParameter, nAM_AP_DUNGParameter, lUONG_HIEN_TAI_YNParameter, iD_PHAP_NHANParameter, iD);
+        }
+    
+        public virtual int pr_V_GD_LUONG_THEO_QD_Insert(Nullable<decimal> iD_NV, string mA_NV, string hO_DEM, string tEN, string gIOI_TINH, Nullable<System.DateTime> nGAY_SINH, Nullable<decimal> lUONG, Nullable<System.DateTime> nGAY_AP_DUNG, Nullable<decimal> tHANG_AP_DUNG, Nullable<decimal> nAM_AP_DUNG, string lUONG_HIEN_TAI_YN, Nullable<decimal> iD_KY, string mA_KY, Nullable<System.DateTime> nGAY_BAT_DAU_KY, Nullable<System.DateTime> nGAY_KET_THUC_KY, Nullable<decimal> iD_QUYET_DINH, string mA_QD, Nullable<decimal> iD_LOAI_QD, Nullable<System.DateTime> nGAY_CO_HIEU_LUC, Nullable<System.DateTime> nGAY_KY, Nullable<System.DateTime> nGAY_HET_HIEU_LUC, string nOI_DUNG, string lINK, string nOI_SINH, string nGUYEN_QUAN, string aNH, string cMND, string nOI_CAP_CMND, Nullable<System.DateTime> nGAY_CAP_CMND, string tRINH_DO, string nOI_DAO_TAO, string cHUYEN_NGANH, Nullable<decimal> nAM_TOT_NGHIEP, string eMAIL_CQ, string eMAIL_CA_NHAN, string dT_NHA, string dI_DONG, string cHO_O, string hO_KHAU, string nGUOI_LIEN_HE, string dI_DONG_LIEN_HE, string qUAN_HE, string tON_GIAO, string dAN_TOC, string mA_SO_THUE, string tRANG_THAI, Nullable<decimal> iD_HEADCOUNT, string mA_HEADCOUNT, string mA_TU_DIEN, Nullable<decimal> iD_LOAI_TU_DIEN, string mA_LOAI, string tEN_LOAI, string tEN_NGAN, string tEN_QD, string gHI_CHU, Nullable<decimal> iD_GD_QD_PN, Nullable<decimal> iD_PHAP_NHAN, string mA_PHAP_NHAN, string tEN_PHAP_NHAN, string mA_SO_THUE_PN, string mA_DK_KINH_DOANH, Nullable<System.DateTime> nGAY_DK_KINH_DOANH, string dIA_CHI, string nGUOI_DAI_DIEN, ObjectParameter iD)
+        {
+            var iD_NVParameter = iD_NV.HasValue ?
+                new ObjectParameter("ID_NV", iD_NV) :
+                new ObjectParameter("ID_NV", typeof(decimal));
+    
+            var mA_NVParameter = mA_NV != null ?
+                new ObjectParameter("MA_NV", mA_NV) :
+                new ObjectParameter("MA_NV", typeof(string));
+    
+            var hO_DEMParameter = hO_DEM != null ?
+                new ObjectParameter("HO_DEM", hO_DEM) :
+                new ObjectParameter("HO_DEM", typeof(string));
+    
+            var tENParameter = tEN != null ?
+                new ObjectParameter("TEN", tEN) :
+                new ObjectParameter("TEN", typeof(string));
+    
+            var gIOI_TINHParameter = gIOI_TINH != null ?
+                new ObjectParameter("GIOI_TINH", gIOI_TINH) :
+                new ObjectParameter("GIOI_TINH", typeof(string));
+    
+            var nGAY_SINHParameter = nGAY_SINH.HasValue ?
+                new ObjectParameter("NGAY_SINH", nGAY_SINH) :
+                new ObjectParameter("NGAY_SINH", typeof(System.DateTime));
+    
+            var lUONGParameter = lUONG.HasValue ?
+                new ObjectParameter("LUONG", lUONG) :
+                new ObjectParameter("LUONG", typeof(decimal));
+    
+            var nGAY_AP_DUNGParameter = nGAY_AP_DUNG.HasValue ?
+                new ObjectParameter("NGAY_AP_DUNG", nGAY_AP_DUNG) :
+                new ObjectParameter("NGAY_AP_DUNG", typeof(System.DateTime));
+    
+            var tHANG_AP_DUNGParameter = tHANG_AP_DUNG.HasValue ?
+                new ObjectParameter("THANG_AP_DUNG", tHANG_AP_DUNG) :
+                new ObjectParameter("THANG_AP_DUNG", typeof(decimal));
+    
+            var nAM_AP_DUNGParameter = nAM_AP_DUNG.HasValue ?
+                new ObjectParameter("NAM_AP_DUNG", nAM_AP_DUNG) :
+                new ObjectParameter("NAM_AP_DUNG", typeof(decimal));
+    
+            var lUONG_HIEN_TAI_YNParameter = lUONG_HIEN_TAI_YN != null ?
+                new ObjectParameter("LUONG_HIEN_TAI_YN", lUONG_HIEN_TAI_YN) :
+                new ObjectParameter("LUONG_HIEN_TAI_YN", typeof(string));
+    
+            var iD_KYParameter = iD_KY.HasValue ?
+                new ObjectParameter("ID_KY", iD_KY) :
+                new ObjectParameter("ID_KY", typeof(decimal));
+    
+            var mA_KYParameter = mA_KY != null ?
+                new ObjectParameter("MA_KY", mA_KY) :
+                new ObjectParameter("MA_KY", typeof(string));
+    
+            var nGAY_BAT_DAU_KYParameter = nGAY_BAT_DAU_KY.HasValue ?
+                new ObjectParameter("NGAY_BAT_DAU_KY", nGAY_BAT_DAU_KY) :
+                new ObjectParameter("NGAY_BAT_DAU_KY", typeof(System.DateTime));
+    
+            var nGAY_KET_THUC_KYParameter = nGAY_KET_THUC_KY.HasValue ?
+                new ObjectParameter("NGAY_KET_THUC_KY", nGAY_KET_THUC_KY) :
+                new ObjectParameter("NGAY_KET_THUC_KY", typeof(System.DateTime));
+    
+            var iD_QUYET_DINHParameter = iD_QUYET_DINH.HasValue ?
+                new ObjectParameter("ID_QUYET_DINH", iD_QUYET_DINH) :
+                new ObjectParameter("ID_QUYET_DINH", typeof(decimal));
+    
+            var mA_QDParameter = mA_QD != null ?
+                new ObjectParameter("MA_QD", mA_QD) :
+                new ObjectParameter("MA_QD", typeof(string));
+    
+            var iD_LOAI_QDParameter = iD_LOAI_QD.HasValue ?
+                new ObjectParameter("ID_LOAI_QD", iD_LOAI_QD) :
+                new ObjectParameter("ID_LOAI_QD", typeof(decimal));
+    
+            var nGAY_CO_HIEU_LUCParameter = nGAY_CO_HIEU_LUC.HasValue ?
+                new ObjectParameter("NGAY_CO_HIEU_LUC", nGAY_CO_HIEU_LUC) :
+                new ObjectParameter("NGAY_CO_HIEU_LUC", typeof(System.DateTime));
+    
+            var nGAY_KYParameter = nGAY_KY.HasValue ?
+                new ObjectParameter("NGAY_KY", nGAY_KY) :
+                new ObjectParameter("NGAY_KY", typeof(System.DateTime));
+    
+            var nGAY_HET_HIEU_LUCParameter = nGAY_HET_HIEU_LUC.HasValue ?
+                new ObjectParameter("NGAY_HET_HIEU_LUC", nGAY_HET_HIEU_LUC) :
+                new ObjectParameter("NGAY_HET_HIEU_LUC", typeof(System.DateTime));
+    
+            var nOI_DUNGParameter = nOI_DUNG != null ?
+                new ObjectParameter("NOI_DUNG", nOI_DUNG) :
+                new ObjectParameter("NOI_DUNG", typeof(string));
+    
+            var lINKParameter = lINK != null ?
+                new ObjectParameter("LINK", lINK) :
+                new ObjectParameter("LINK", typeof(string));
+    
+            var nOI_SINHParameter = nOI_SINH != null ?
+                new ObjectParameter("NOI_SINH", nOI_SINH) :
+                new ObjectParameter("NOI_SINH", typeof(string));
+    
+            var nGUYEN_QUANParameter = nGUYEN_QUAN != null ?
+                new ObjectParameter("NGUYEN_QUAN", nGUYEN_QUAN) :
+                new ObjectParameter("NGUYEN_QUAN", typeof(string));
+    
+            var aNHParameter = aNH != null ?
+                new ObjectParameter("ANH", aNH) :
+                new ObjectParameter("ANH", typeof(string));
+    
+            var cMNDParameter = cMND != null ?
+                new ObjectParameter("CMND", cMND) :
+                new ObjectParameter("CMND", typeof(string));
+    
+            var nOI_CAP_CMNDParameter = nOI_CAP_CMND != null ?
+                new ObjectParameter("NOI_CAP_CMND", nOI_CAP_CMND) :
+                new ObjectParameter("NOI_CAP_CMND", typeof(string));
+    
+            var nGAY_CAP_CMNDParameter = nGAY_CAP_CMND.HasValue ?
+                new ObjectParameter("NGAY_CAP_CMND", nGAY_CAP_CMND) :
+                new ObjectParameter("NGAY_CAP_CMND", typeof(System.DateTime));
+    
+            var tRINH_DOParameter = tRINH_DO != null ?
+                new ObjectParameter("TRINH_DO", tRINH_DO) :
+                new ObjectParameter("TRINH_DO", typeof(string));
+    
+            var nOI_DAO_TAOParameter = nOI_DAO_TAO != null ?
+                new ObjectParameter("NOI_DAO_TAO", nOI_DAO_TAO) :
+                new ObjectParameter("NOI_DAO_TAO", typeof(string));
+    
+            var cHUYEN_NGANHParameter = cHUYEN_NGANH != null ?
+                new ObjectParameter("CHUYEN_NGANH", cHUYEN_NGANH) :
+                new ObjectParameter("CHUYEN_NGANH", typeof(string));
+    
+            var nAM_TOT_NGHIEPParameter = nAM_TOT_NGHIEP.HasValue ?
+                new ObjectParameter("NAM_TOT_NGHIEP", nAM_TOT_NGHIEP) :
+                new ObjectParameter("NAM_TOT_NGHIEP", typeof(decimal));
+    
+            var eMAIL_CQParameter = eMAIL_CQ != null ?
+                new ObjectParameter("EMAIL_CQ", eMAIL_CQ) :
+                new ObjectParameter("EMAIL_CQ", typeof(string));
+    
+            var eMAIL_CA_NHANParameter = eMAIL_CA_NHAN != null ?
+                new ObjectParameter("EMAIL_CA_NHAN", eMAIL_CA_NHAN) :
+                new ObjectParameter("EMAIL_CA_NHAN", typeof(string));
+    
+            var dT_NHAParameter = dT_NHA != null ?
+                new ObjectParameter("DT_NHA", dT_NHA) :
+                new ObjectParameter("DT_NHA", typeof(string));
+    
+            var dI_DONGParameter = dI_DONG != null ?
+                new ObjectParameter("DI_DONG", dI_DONG) :
+                new ObjectParameter("DI_DONG", typeof(string));
+    
+            var cHO_OParameter = cHO_O != null ?
+                new ObjectParameter("CHO_O", cHO_O) :
+                new ObjectParameter("CHO_O", typeof(string));
+    
+            var hO_KHAUParameter = hO_KHAU != null ?
+                new ObjectParameter("HO_KHAU", hO_KHAU) :
+                new ObjectParameter("HO_KHAU", typeof(string));
+    
+            var nGUOI_LIEN_HEParameter = nGUOI_LIEN_HE != null ?
+                new ObjectParameter("NGUOI_LIEN_HE", nGUOI_LIEN_HE) :
+                new ObjectParameter("NGUOI_LIEN_HE", typeof(string));
+    
+            var dI_DONG_LIEN_HEParameter = dI_DONG_LIEN_HE != null ?
+                new ObjectParameter("DI_DONG_LIEN_HE", dI_DONG_LIEN_HE) :
+                new ObjectParameter("DI_DONG_LIEN_HE", typeof(string));
+    
+            var qUAN_HEParameter = qUAN_HE != null ?
+                new ObjectParameter("QUAN_HE", qUAN_HE) :
+                new ObjectParameter("QUAN_HE", typeof(string));
+    
+            var tON_GIAOParameter = tON_GIAO != null ?
+                new ObjectParameter("TON_GIAO", tON_GIAO) :
+                new ObjectParameter("TON_GIAO", typeof(string));
+    
+            var dAN_TOCParameter = dAN_TOC != null ?
+                new ObjectParameter("DAN_TOC", dAN_TOC) :
+                new ObjectParameter("DAN_TOC", typeof(string));
+    
+            var mA_SO_THUEParameter = mA_SO_THUE != null ?
+                new ObjectParameter("MA_SO_THUE", mA_SO_THUE) :
+                new ObjectParameter("MA_SO_THUE", typeof(string));
+    
+            var tRANG_THAIParameter = tRANG_THAI != null ?
+                new ObjectParameter("TRANG_THAI", tRANG_THAI) :
+                new ObjectParameter("TRANG_THAI", typeof(string));
+    
+            var iD_HEADCOUNTParameter = iD_HEADCOUNT.HasValue ?
+                new ObjectParameter("ID_HEADCOUNT", iD_HEADCOUNT) :
+                new ObjectParameter("ID_HEADCOUNT", typeof(decimal));
+    
+            var mA_HEADCOUNTParameter = mA_HEADCOUNT != null ?
+                new ObjectParameter("MA_HEADCOUNT", mA_HEADCOUNT) :
+                new ObjectParameter("MA_HEADCOUNT", typeof(string));
+    
+            var mA_TU_DIENParameter = mA_TU_DIEN != null ?
+                new ObjectParameter("MA_TU_DIEN", mA_TU_DIEN) :
+                new ObjectParameter("MA_TU_DIEN", typeof(string));
+    
+            var iD_LOAI_TU_DIENParameter = iD_LOAI_TU_DIEN.HasValue ?
+                new ObjectParameter("ID_LOAI_TU_DIEN", iD_LOAI_TU_DIEN) :
+                new ObjectParameter("ID_LOAI_TU_DIEN", typeof(decimal));
+    
+            var mA_LOAIParameter = mA_LOAI != null ?
+                new ObjectParameter("MA_LOAI", mA_LOAI) :
+                new ObjectParameter("MA_LOAI", typeof(string));
+    
+            var tEN_LOAIParameter = tEN_LOAI != null ?
+                new ObjectParameter("TEN_LOAI", tEN_LOAI) :
+                new ObjectParameter("TEN_LOAI", typeof(string));
+    
+            var tEN_NGANParameter = tEN_NGAN != null ?
+                new ObjectParameter("TEN_NGAN", tEN_NGAN) :
+                new ObjectParameter("TEN_NGAN", typeof(string));
+    
+            var tEN_QDParameter = tEN_QD != null ?
+                new ObjectParameter("TEN_QD", tEN_QD) :
+                new ObjectParameter("TEN_QD", typeof(string));
+    
+            var gHI_CHUParameter = gHI_CHU != null ?
+                new ObjectParameter("GHI_CHU", gHI_CHU) :
+                new ObjectParameter("GHI_CHU", typeof(string));
+    
+            var iD_GD_QD_PNParameter = iD_GD_QD_PN.HasValue ?
+                new ObjectParameter("ID_GD_QD_PN", iD_GD_QD_PN) :
+                new ObjectParameter("ID_GD_QD_PN", typeof(decimal));
+    
+            var iD_PHAP_NHANParameter = iD_PHAP_NHAN.HasValue ?
+                new ObjectParameter("ID_PHAP_NHAN", iD_PHAP_NHAN) :
+                new ObjectParameter("ID_PHAP_NHAN", typeof(decimal));
+    
+            var mA_PHAP_NHANParameter = mA_PHAP_NHAN != null ?
+                new ObjectParameter("MA_PHAP_NHAN", mA_PHAP_NHAN) :
+                new ObjectParameter("MA_PHAP_NHAN", typeof(string));
+    
+            var tEN_PHAP_NHANParameter = tEN_PHAP_NHAN != null ?
+                new ObjectParameter("TEN_PHAP_NHAN", tEN_PHAP_NHAN) :
+                new ObjectParameter("TEN_PHAP_NHAN", typeof(string));
+    
+            var mA_SO_THUE_PNParameter = mA_SO_THUE_PN != null ?
+                new ObjectParameter("MA_SO_THUE_PN", mA_SO_THUE_PN) :
+                new ObjectParameter("MA_SO_THUE_PN", typeof(string));
+    
+            var mA_DK_KINH_DOANHParameter = mA_DK_KINH_DOANH != null ?
+                new ObjectParameter("MA_DK_KINH_DOANH", mA_DK_KINH_DOANH) :
+                new ObjectParameter("MA_DK_KINH_DOANH", typeof(string));
+    
+            var nGAY_DK_KINH_DOANHParameter = nGAY_DK_KINH_DOANH.HasValue ?
+                new ObjectParameter("NGAY_DK_KINH_DOANH", nGAY_DK_KINH_DOANH) :
+                new ObjectParameter("NGAY_DK_KINH_DOANH", typeof(System.DateTime));
+    
+            var dIA_CHIParameter = dIA_CHI != null ?
+                new ObjectParameter("DIA_CHI", dIA_CHI) :
+                new ObjectParameter("DIA_CHI", typeof(string));
+    
+            var nGUOI_DAI_DIENParameter = nGUOI_DAI_DIEN != null ?
+                new ObjectParameter("NGUOI_DAI_DIEN", nGUOI_DAI_DIEN) :
+                new ObjectParameter("NGUOI_DAI_DIEN", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_V_GD_LUONG_THEO_QD_Insert", iD_NVParameter, mA_NVParameter, hO_DEMParameter, tENParameter, gIOI_TINHParameter, nGAY_SINHParameter, lUONGParameter, nGAY_AP_DUNGParameter, tHANG_AP_DUNGParameter, nAM_AP_DUNGParameter, lUONG_HIEN_TAI_YNParameter, iD_KYParameter, mA_KYParameter, nGAY_BAT_DAU_KYParameter, nGAY_KET_THUC_KYParameter, iD_QUYET_DINHParameter, mA_QDParameter, iD_LOAI_QDParameter, nGAY_CO_HIEU_LUCParameter, nGAY_KYParameter, nGAY_HET_HIEU_LUCParameter, nOI_DUNGParameter, lINKParameter, nOI_SINHParameter, nGUYEN_QUANParameter, aNHParameter, cMNDParameter, nOI_CAP_CMNDParameter, nGAY_CAP_CMNDParameter, tRINH_DOParameter, nOI_DAO_TAOParameter, cHUYEN_NGANHParameter, nAM_TOT_NGHIEPParameter, eMAIL_CQParameter, eMAIL_CA_NHANParameter, dT_NHAParameter, dI_DONGParameter, cHO_OParameter, hO_KHAUParameter, nGUOI_LIEN_HEParameter, dI_DONG_LIEN_HEParameter, qUAN_HEParameter, tON_GIAOParameter, dAN_TOCParameter, mA_SO_THUEParameter, tRANG_THAIParameter, iD_HEADCOUNTParameter, mA_HEADCOUNTParameter, mA_TU_DIENParameter, iD_LOAI_TU_DIENParameter, mA_LOAIParameter, tEN_LOAIParameter, tEN_NGANParameter, tEN_QDParameter, gHI_CHUParameter, iD_GD_QD_PNParameter, iD_PHAP_NHANParameter, mA_PHAP_NHANParameter, tEN_PHAP_NHANParameter, mA_SO_THUE_PNParameter, mA_DK_KINH_DOANHParameter, nGAY_DK_KINH_DOANHParameter, dIA_CHIParameter, nGUOI_DAI_DIENParameter, iD);
+        }
+    
+        public virtual int pr_V_GD_LUONG_THEO_QD_is_exist_luong_hien_tai(Nullable<decimal> ip_id_gd_luong_theo_qd, string ip_ma_nv, Nullable<decimal> ip_id_phap_nhan, ObjectParameter op_existed_rows)
+        {
+            var ip_id_gd_luong_theo_qdParameter = ip_id_gd_luong_theo_qd.HasValue ?
+                new ObjectParameter("ip_id_gd_luong_theo_qd", ip_id_gd_luong_theo_qd) :
+                new ObjectParameter("ip_id_gd_luong_theo_qd", typeof(decimal));
+    
+            var ip_ma_nvParameter = ip_ma_nv != null ?
+                new ObjectParameter("ip_ma_nv", ip_ma_nv) :
+                new ObjectParameter("ip_ma_nv", typeof(string));
+    
+            var ip_id_phap_nhanParameter = ip_id_phap_nhan.HasValue ?
+                new ObjectParameter("ip_id_phap_nhan", ip_id_phap_nhan) :
+                new ObjectParameter("ip_id_phap_nhan", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_V_GD_LUONG_THEO_QD_is_exist_luong_hien_tai", ip_id_gd_luong_theo_qdParameter, ip_ma_nvParameter, ip_id_phap_nhanParameter, op_existed_rows);
+        }
+    
+        public virtual int pr_V_GD_LUONG_THEO_QD_Update(Nullable<decimal> iD, Nullable<decimal> iD_NV, string mA_NV, string hO_DEM, string tEN, string gIOI_TINH, Nullable<System.DateTime> nGAY_SINH, Nullable<decimal> lUONG, Nullable<System.DateTime> nGAY_AP_DUNG, Nullable<decimal> tHANG_AP_DUNG, Nullable<decimal> nAM_AP_DUNG, string lUONG_HIEN_TAI_YN, Nullable<decimal> iD_KY, string mA_KY, Nullable<System.DateTime> nGAY_BAT_DAU_KY, Nullable<System.DateTime> nGAY_KET_THUC_KY, Nullable<decimal> iD_QUYET_DINH, string mA_QD, Nullable<decimal> iD_LOAI_QD, Nullable<System.DateTime> nGAY_CO_HIEU_LUC, Nullable<System.DateTime> nGAY_KY, Nullable<System.DateTime> nGAY_HET_HIEU_LUC, string nOI_DUNG, string lINK, string nOI_SINH, string nGUYEN_QUAN, string aNH, string cMND, string nOI_CAP_CMND, Nullable<System.DateTime> nGAY_CAP_CMND, string tRINH_DO, string nOI_DAO_TAO, string cHUYEN_NGANH, Nullable<decimal> nAM_TOT_NGHIEP, string eMAIL_CQ, string eMAIL_CA_NHAN, string dT_NHA, string dI_DONG, string cHO_O, string hO_KHAU, string nGUOI_LIEN_HE, string dI_DONG_LIEN_HE, string qUAN_HE, string tON_GIAO, string dAN_TOC, string mA_SO_THUE, string tRANG_THAI, Nullable<decimal> iD_HEADCOUNT, string mA_HEADCOUNT, string mA_TU_DIEN, Nullable<decimal> iD_LOAI_TU_DIEN, string mA_LOAI, string tEN_LOAI, string tEN_NGAN, string tEN_QD, string gHI_CHU, Nullable<decimal> iD_GD_QD_PN, Nullable<decimal> iD_PHAP_NHAN, string mA_PHAP_NHAN, string tEN_PHAP_NHAN, string mA_SO_THUE_PN, string mA_DK_KINH_DOANH, Nullable<System.DateTime> nGAY_DK_KINH_DOANH, string dIA_CHI, string nGUOI_DAI_DIEN)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(decimal));
+    
+            var iD_NVParameter = iD_NV.HasValue ?
+                new ObjectParameter("ID_NV", iD_NV) :
+                new ObjectParameter("ID_NV", typeof(decimal));
+    
+            var mA_NVParameter = mA_NV != null ?
+                new ObjectParameter("MA_NV", mA_NV) :
+                new ObjectParameter("MA_NV", typeof(string));
+    
+            var hO_DEMParameter = hO_DEM != null ?
+                new ObjectParameter("HO_DEM", hO_DEM) :
+                new ObjectParameter("HO_DEM", typeof(string));
+    
+            var tENParameter = tEN != null ?
+                new ObjectParameter("TEN", tEN) :
+                new ObjectParameter("TEN", typeof(string));
+    
+            var gIOI_TINHParameter = gIOI_TINH != null ?
+                new ObjectParameter("GIOI_TINH", gIOI_TINH) :
+                new ObjectParameter("GIOI_TINH", typeof(string));
+    
+            var nGAY_SINHParameter = nGAY_SINH.HasValue ?
+                new ObjectParameter("NGAY_SINH", nGAY_SINH) :
+                new ObjectParameter("NGAY_SINH", typeof(System.DateTime));
+    
+            var lUONGParameter = lUONG.HasValue ?
+                new ObjectParameter("LUONG", lUONG) :
+                new ObjectParameter("LUONG", typeof(decimal));
+    
+            var nGAY_AP_DUNGParameter = nGAY_AP_DUNG.HasValue ?
+                new ObjectParameter("NGAY_AP_DUNG", nGAY_AP_DUNG) :
+                new ObjectParameter("NGAY_AP_DUNG", typeof(System.DateTime));
+    
+            var tHANG_AP_DUNGParameter = tHANG_AP_DUNG.HasValue ?
+                new ObjectParameter("THANG_AP_DUNG", tHANG_AP_DUNG) :
+                new ObjectParameter("THANG_AP_DUNG", typeof(decimal));
+    
+            var nAM_AP_DUNGParameter = nAM_AP_DUNG.HasValue ?
+                new ObjectParameter("NAM_AP_DUNG", nAM_AP_DUNG) :
+                new ObjectParameter("NAM_AP_DUNG", typeof(decimal));
+    
+            var lUONG_HIEN_TAI_YNParameter = lUONG_HIEN_TAI_YN != null ?
+                new ObjectParameter("LUONG_HIEN_TAI_YN", lUONG_HIEN_TAI_YN) :
+                new ObjectParameter("LUONG_HIEN_TAI_YN", typeof(string));
+    
+            var iD_KYParameter = iD_KY.HasValue ?
+                new ObjectParameter("ID_KY", iD_KY) :
+                new ObjectParameter("ID_KY", typeof(decimal));
+    
+            var mA_KYParameter = mA_KY != null ?
+                new ObjectParameter("MA_KY", mA_KY) :
+                new ObjectParameter("MA_KY", typeof(string));
+    
+            var nGAY_BAT_DAU_KYParameter = nGAY_BAT_DAU_KY.HasValue ?
+                new ObjectParameter("NGAY_BAT_DAU_KY", nGAY_BAT_DAU_KY) :
+                new ObjectParameter("NGAY_BAT_DAU_KY", typeof(System.DateTime));
+    
+            var nGAY_KET_THUC_KYParameter = nGAY_KET_THUC_KY.HasValue ?
+                new ObjectParameter("NGAY_KET_THUC_KY", nGAY_KET_THUC_KY) :
+                new ObjectParameter("NGAY_KET_THUC_KY", typeof(System.DateTime));
+    
+            var iD_QUYET_DINHParameter = iD_QUYET_DINH.HasValue ?
+                new ObjectParameter("ID_QUYET_DINH", iD_QUYET_DINH) :
+                new ObjectParameter("ID_QUYET_DINH", typeof(decimal));
+    
+            var mA_QDParameter = mA_QD != null ?
+                new ObjectParameter("MA_QD", mA_QD) :
+                new ObjectParameter("MA_QD", typeof(string));
+    
+            var iD_LOAI_QDParameter = iD_LOAI_QD.HasValue ?
+                new ObjectParameter("ID_LOAI_QD", iD_LOAI_QD) :
+                new ObjectParameter("ID_LOAI_QD", typeof(decimal));
+    
+            var nGAY_CO_HIEU_LUCParameter = nGAY_CO_HIEU_LUC.HasValue ?
+                new ObjectParameter("NGAY_CO_HIEU_LUC", nGAY_CO_HIEU_LUC) :
+                new ObjectParameter("NGAY_CO_HIEU_LUC", typeof(System.DateTime));
+    
+            var nGAY_KYParameter = nGAY_KY.HasValue ?
+                new ObjectParameter("NGAY_KY", nGAY_KY) :
+                new ObjectParameter("NGAY_KY", typeof(System.DateTime));
+    
+            var nGAY_HET_HIEU_LUCParameter = nGAY_HET_HIEU_LUC.HasValue ?
+                new ObjectParameter("NGAY_HET_HIEU_LUC", nGAY_HET_HIEU_LUC) :
+                new ObjectParameter("NGAY_HET_HIEU_LUC", typeof(System.DateTime));
+    
+            var nOI_DUNGParameter = nOI_DUNG != null ?
+                new ObjectParameter("NOI_DUNG", nOI_DUNG) :
+                new ObjectParameter("NOI_DUNG", typeof(string));
+    
+            var lINKParameter = lINK != null ?
+                new ObjectParameter("LINK", lINK) :
+                new ObjectParameter("LINK", typeof(string));
+    
+            var nOI_SINHParameter = nOI_SINH != null ?
+                new ObjectParameter("NOI_SINH", nOI_SINH) :
+                new ObjectParameter("NOI_SINH", typeof(string));
+    
+            var nGUYEN_QUANParameter = nGUYEN_QUAN != null ?
+                new ObjectParameter("NGUYEN_QUAN", nGUYEN_QUAN) :
+                new ObjectParameter("NGUYEN_QUAN", typeof(string));
+    
+            var aNHParameter = aNH != null ?
+                new ObjectParameter("ANH", aNH) :
+                new ObjectParameter("ANH", typeof(string));
+    
+            var cMNDParameter = cMND != null ?
+                new ObjectParameter("CMND", cMND) :
+                new ObjectParameter("CMND", typeof(string));
+    
+            var nOI_CAP_CMNDParameter = nOI_CAP_CMND != null ?
+                new ObjectParameter("NOI_CAP_CMND", nOI_CAP_CMND) :
+                new ObjectParameter("NOI_CAP_CMND", typeof(string));
+    
+            var nGAY_CAP_CMNDParameter = nGAY_CAP_CMND.HasValue ?
+                new ObjectParameter("NGAY_CAP_CMND", nGAY_CAP_CMND) :
+                new ObjectParameter("NGAY_CAP_CMND", typeof(System.DateTime));
+    
+            var tRINH_DOParameter = tRINH_DO != null ?
+                new ObjectParameter("TRINH_DO", tRINH_DO) :
+                new ObjectParameter("TRINH_DO", typeof(string));
+    
+            var nOI_DAO_TAOParameter = nOI_DAO_TAO != null ?
+                new ObjectParameter("NOI_DAO_TAO", nOI_DAO_TAO) :
+                new ObjectParameter("NOI_DAO_TAO", typeof(string));
+    
+            var cHUYEN_NGANHParameter = cHUYEN_NGANH != null ?
+                new ObjectParameter("CHUYEN_NGANH", cHUYEN_NGANH) :
+                new ObjectParameter("CHUYEN_NGANH", typeof(string));
+    
+            var nAM_TOT_NGHIEPParameter = nAM_TOT_NGHIEP.HasValue ?
+                new ObjectParameter("NAM_TOT_NGHIEP", nAM_TOT_NGHIEP) :
+                new ObjectParameter("NAM_TOT_NGHIEP", typeof(decimal));
+    
+            var eMAIL_CQParameter = eMAIL_CQ != null ?
+                new ObjectParameter("EMAIL_CQ", eMAIL_CQ) :
+                new ObjectParameter("EMAIL_CQ", typeof(string));
+    
+            var eMAIL_CA_NHANParameter = eMAIL_CA_NHAN != null ?
+                new ObjectParameter("EMAIL_CA_NHAN", eMAIL_CA_NHAN) :
+                new ObjectParameter("EMAIL_CA_NHAN", typeof(string));
+    
+            var dT_NHAParameter = dT_NHA != null ?
+                new ObjectParameter("DT_NHA", dT_NHA) :
+                new ObjectParameter("DT_NHA", typeof(string));
+    
+            var dI_DONGParameter = dI_DONG != null ?
+                new ObjectParameter("DI_DONG", dI_DONG) :
+                new ObjectParameter("DI_DONG", typeof(string));
+    
+            var cHO_OParameter = cHO_O != null ?
+                new ObjectParameter("CHO_O", cHO_O) :
+                new ObjectParameter("CHO_O", typeof(string));
+    
+            var hO_KHAUParameter = hO_KHAU != null ?
+                new ObjectParameter("HO_KHAU", hO_KHAU) :
+                new ObjectParameter("HO_KHAU", typeof(string));
+    
+            var nGUOI_LIEN_HEParameter = nGUOI_LIEN_HE != null ?
+                new ObjectParameter("NGUOI_LIEN_HE", nGUOI_LIEN_HE) :
+                new ObjectParameter("NGUOI_LIEN_HE", typeof(string));
+    
+            var dI_DONG_LIEN_HEParameter = dI_DONG_LIEN_HE != null ?
+                new ObjectParameter("DI_DONG_LIEN_HE", dI_DONG_LIEN_HE) :
+                new ObjectParameter("DI_DONG_LIEN_HE", typeof(string));
+    
+            var qUAN_HEParameter = qUAN_HE != null ?
+                new ObjectParameter("QUAN_HE", qUAN_HE) :
+                new ObjectParameter("QUAN_HE", typeof(string));
+    
+            var tON_GIAOParameter = tON_GIAO != null ?
+                new ObjectParameter("TON_GIAO", tON_GIAO) :
+                new ObjectParameter("TON_GIAO", typeof(string));
+    
+            var dAN_TOCParameter = dAN_TOC != null ?
+                new ObjectParameter("DAN_TOC", dAN_TOC) :
+                new ObjectParameter("DAN_TOC", typeof(string));
+    
+            var mA_SO_THUEParameter = mA_SO_THUE != null ?
+                new ObjectParameter("MA_SO_THUE", mA_SO_THUE) :
+                new ObjectParameter("MA_SO_THUE", typeof(string));
+    
+            var tRANG_THAIParameter = tRANG_THAI != null ?
+                new ObjectParameter("TRANG_THAI", tRANG_THAI) :
+                new ObjectParameter("TRANG_THAI", typeof(string));
+    
+            var iD_HEADCOUNTParameter = iD_HEADCOUNT.HasValue ?
+                new ObjectParameter("ID_HEADCOUNT", iD_HEADCOUNT) :
+                new ObjectParameter("ID_HEADCOUNT", typeof(decimal));
+    
+            var mA_HEADCOUNTParameter = mA_HEADCOUNT != null ?
+                new ObjectParameter("MA_HEADCOUNT", mA_HEADCOUNT) :
+                new ObjectParameter("MA_HEADCOUNT", typeof(string));
+    
+            var mA_TU_DIENParameter = mA_TU_DIEN != null ?
+                new ObjectParameter("MA_TU_DIEN", mA_TU_DIEN) :
+                new ObjectParameter("MA_TU_DIEN", typeof(string));
+    
+            var iD_LOAI_TU_DIENParameter = iD_LOAI_TU_DIEN.HasValue ?
+                new ObjectParameter("ID_LOAI_TU_DIEN", iD_LOAI_TU_DIEN) :
+                new ObjectParameter("ID_LOAI_TU_DIEN", typeof(decimal));
+    
+            var mA_LOAIParameter = mA_LOAI != null ?
+                new ObjectParameter("MA_LOAI", mA_LOAI) :
+                new ObjectParameter("MA_LOAI", typeof(string));
+    
+            var tEN_LOAIParameter = tEN_LOAI != null ?
+                new ObjectParameter("TEN_LOAI", tEN_LOAI) :
+                new ObjectParameter("TEN_LOAI", typeof(string));
+    
+            var tEN_NGANParameter = tEN_NGAN != null ?
+                new ObjectParameter("TEN_NGAN", tEN_NGAN) :
+                new ObjectParameter("TEN_NGAN", typeof(string));
+    
+            var tEN_QDParameter = tEN_QD != null ?
+                new ObjectParameter("TEN_QD", tEN_QD) :
+                new ObjectParameter("TEN_QD", typeof(string));
+    
+            var gHI_CHUParameter = gHI_CHU != null ?
+                new ObjectParameter("GHI_CHU", gHI_CHU) :
+                new ObjectParameter("GHI_CHU", typeof(string));
+    
+            var iD_GD_QD_PNParameter = iD_GD_QD_PN.HasValue ?
+                new ObjectParameter("ID_GD_QD_PN", iD_GD_QD_PN) :
+                new ObjectParameter("ID_GD_QD_PN", typeof(decimal));
+    
+            var iD_PHAP_NHANParameter = iD_PHAP_NHAN.HasValue ?
+                new ObjectParameter("ID_PHAP_NHAN", iD_PHAP_NHAN) :
+                new ObjectParameter("ID_PHAP_NHAN", typeof(decimal));
+    
+            var mA_PHAP_NHANParameter = mA_PHAP_NHAN != null ?
+                new ObjectParameter("MA_PHAP_NHAN", mA_PHAP_NHAN) :
+                new ObjectParameter("MA_PHAP_NHAN", typeof(string));
+    
+            var tEN_PHAP_NHANParameter = tEN_PHAP_NHAN != null ?
+                new ObjectParameter("TEN_PHAP_NHAN", tEN_PHAP_NHAN) :
+                new ObjectParameter("TEN_PHAP_NHAN", typeof(string));
+    
+            var mA_SO_THUE_PNParameter = mA_SO_THUE_PN != null ?
+                new ObjectParameter("MA_SO_THUE_PN", mA_SO_THUE_PN) :
+                new ObjectParameter("MA_SO_THUE_PN", typeof(string));
+    
+            var mA_DK_KINH_DOANHParameter = mA_DK_KINH_DOANH != null ?
+                new ObjectParameter("MA_DK_KINH_DOANH", mA_DK_KINH_DOANH) :
+                new ObjectParameter("MA_DK_KINH_DOANH", typeof(string));
+    
+            var nGAY_DK_KINH_DOANHParameter = nGAY_DK_KINH_DOANH.HasValue ?
+                new ObjectParameter("NGAY_DK_KINH_DOANH", nGAY_DK_KINH_DOANH) :
+                new ObjectParameter("NGAY_DK_KINH_DOANH", typeof(System.DateTime));
+    
+            var dIA_CHIParameter = dIA_CHI != null ?
+                new ObjectParameter("DIA_CHI", dIA_CHI) :
+                new ObjectParameter("DIA_CHI", typeof(string));
+    
+            var nGUOI_DAI_DIENParameter = nGUOI_DAI_DIEN != null ?
+                new ObjectParameter("NGUOI_DAI_DIEN", nGUOI_DAI_DIEN) :
+                new ObjectParameter("NGUOI_DAI_DIEN", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_V_GD_LUONG_THEO_QD_Update", iDParameter, iD_NVParameter, mA_NVParameter, hO_DEMParameter, tENParameter, gIOI_TINHParameter, nGAY_SINHParameter, lUONGParameter, nGAY_AP_DUNGParameter, tHANG_AP_DUNGParameter, nAM_AP_DUNGParameter, lUONG_HIEN_TAI_YNParameter, iD_KYParameter, mA_KYParameter, nGAY_BAT_DAU_KYParameter, nGAY_KET_THUC_KYParameter, iD_QUYET_DINHParameter, mA_QDParameter, iD_LOAI_QDParameter, nGAY_CO_HIEU_LUCParameter, nGAY_KYParameter, nGAY_HET_HIEU_LUCParameter, nOI_DUNGParameter, lINKParameter, nOI_SINHParameter, nGUYEN_QUANParameter, aNHParameter, cMNDParameter, nOI_CAP_CMNDParameter, nGAY_CAP_CMNDParameter, tRINH_DOParameter, nOI_DAO_TAOParameter, cHUYEN_NGANHParameter, nAM_TOT_NGHIEPParameter, eMAIL_CQParameter, eMAIL_CA_NHANParameter, dT_NHAParameter, dI_DONGParameter, cHO_OParameter, hO_KHAUParameter, nGUOI_LIEN_HEParameter, dI_DONG_LIEN_HEParameter, qUAN_HEParameter, tON_GIAOParameter, dAN_TOCParameter, mA_SO_THUEParameter, tRANG_THAIParameter, iD_HEADCOUNTParameter, mA_HEADCOUNTParameter, mA_TU_DIENParameter, iD_LOAI_TU_DIENParameter, mA_LOAIParameter, tEN_LOAIParameter, tEN_NGANParameter, tEN_QDParameter, gHI_CHUParameter, iD_GD_QD_PNParameter, iD_PHAP_NHANParameter, mA_PHAP_NHANParameter, tEN_PHAP_NHANParameter, mA_SO_THUE_PNParameter, mA_DK_KINH_DOANHParameter, nGAY_DK_KINH_DOANHParameter, dIA_CHIParameter, nGUOI_DAI_DIENParameter);
+        }
+    
+        public virtual ObjectResult<pr_V_GD_QUA_TRINH_LAM_VIEC_Now_By_Ma_NV_Id_PN_Result> pr_V_GD_QUA_TRINH_LAM_VIEC_Now_By_Ma_NV_Id_PN(string ip_ma_nhan_vien, Nullable<decimal> ip_id_phap_nhan)
+        {
+            var ip_ma_nhan_vienParameter = ip_ma_nhan_vien != null ?
+                new ObjectParameter("ip_ma_nhan_vien", ip_ma_nhan_vien) :
+                new ObjectParameter("ip_ma_nhan_vien", typeof(string));
+    
+            var ip_id_phap_nhanParameter = ip_id_phap_nhan.HasValue ?
+                new ObjectParameter("ip_id_phap_nhan", ip_id_phap_nhan) :
+                new ObjectParameter("ip_id_phap_nhan", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_V_GD_QUA_TRINH_LAM_VIEC_Now_By_Ma_NV_Id_PN_Result>("pr_V_GD_QUA_TRINH_LAM_VIEC_Now_By_Ma_NV_Id_PN", ip_ma_nhan_vienParameter, ip_id_phap_nhanParameter);
+        }
+    
+        public virtual int pr_V_GD_TRANG_THAI_LAO_DONG_Insert(string mA_NV, string hO_DEM, string tEN, Nullable<decimal> iD_TRANG_LAO_DONG, string tRANG_THAI_LAO_DONG, string mA_QUYET_DINH, Nullable<System.DateTime> nGAY_CO_HIEU_LUC, Nullable<System.DateTime> nGAY_HET_HIEU_LUC, Nullable<decimal> iD_LOAI_QD, string lOAI_QUYET_DINH, string tRANG_THAI_HIEN_TAI, Nullable<decimal> iD_NHAN_SU, Nullable<decimal> iD_QUYET_DINH, string tRANG_THAI_HIEN_TAI_YN, Nullable<decimal> iD_PHAP_NHAN, string mA_PHAP_NHAN, string tEN_PHAP_NHAN, ObjectParameter iD)
+        {
+            var mA_NVParameter = mA_NV != null ?
+                new ObjectParameter("MA_NV", mA_NV) :
+                new ObjectParameter("MA_NV", typeof(string));
+    
+            var hO_DEMParameter = hO_DEM != null ?
+                new ObjectParameter("HO_DEM", hO_DEM) :
+                new ObjectParameter("HO_DEM", typeof(string));
+    
+            var tENParameter = tEN != null ?
+                new ObjectParameter("TEN", tEN) :
+                new ObjectParameter("TEN", typeof(string));
+    
+            var iD_TRANG_LAO_DONGParameter = iD_TRANG_LAO_DONG.HasValue ?
+                new ObjectParameter("ID_TRANG_LAO_DONG", iD_TRANG_LAO_DONG) :
+                new ObjectParameter("ID_TRANG_LAO_DONG", typeof(decimal));
+    
+            var tRANG_THAI_LAO_DONGParameter = tRANG_THAI_LAO_DONG != null ?
+                new ObjectParameter("TRANG_THAI_LAO_DONG", tRANG_THAI_LAO_DONG) :
+                new ObjectParameter("TRANG_THAI_LAO_DONG", typeof(string));
+    
+            var mA_QUYET_DINHParameter = mA_QUYET_DINH != null ?
+                new ObjectParameter("MA_QUYET_DINH", mA_QUYET_DINH) :
+                new ObjectParameter("MA_QUYET_DINH", typeof(string));
+    
+            var nGAY_CO_HIEU_LUCParameter = nGAY_CO_HIEU_LUC.HasValue ?
+                new ObjectParameter("NGAY_CO_HIEU_LUC", nGAY_CO_HIEU_LUC) :
+                new ObjectParameter("NGAY_CO_HIEU_LUC", typeof(System.DateTime));
+    
+            var nGAY_HET_HIEU_LUCParameter = nGAY_HET_HIEU_LUC.HasValue ?
+                new ObjectParameter("NGAY_HET_HIEU_LUC", nGAY_HET_HIEU_LUC) :
+                new ObjectParameter("NGAY_HET_HIEU_LUC", typeof(System.DateTime));
+    
+            var iD_LOAI_QDParameter = iD_LOAI_QD.HasValue ?
+                new ObjectParameter("ID_LOAI_QD", iD_LOAI_QD) :
+                new ObjectParameter("ID_LOAI_QD", typeof(decimal));
+    
+            var lOAI_QUYET_DINHParameter = lOAI_QUYET_DINH != null ?
+                new ObjectParameter("LOAI_QUYET_DINH", lOAI_QUYET_DINH) :
+                new ObjectParameter("LOAI_QUYET_DINH", typeof(string));
+    
+            var tRANG_THAI_HIEN_TAIParameter = tRANG_THAI_HIEN_TAI != null ?
+                new ObjectParameter("TRANG_THAI_HIEN_TAI", tRANG_THAI_HIEN_TAI) :
+                new ObjectParameter("TRANG_THAI_HIEN_TAI", typeof(string));
+    
+            var iD_NHAN_SUParameter = iD_NHAN_SU.HasValue ?
+                new ObjectParameter("ID_NHAN_SU", iD_NHAN_SU) :
+                new ObjectParameter("ID_NHAN_SU", typeof(decimal));
+    
+            var iD_QUYET_DINHParameter = iD_QUYET_DINH.HasValue ?
+                new ObjectParameter("ID_QUYET_DINH", iD_QUYET_DINH) :
+                new ObjectParameter("ID_QUYET_DINH", typeof(decimal));
+    
+            var tRANG_THAI_HIEN_TAI_YNParameter = tRANG_THAI_HIEN_TAI_YN != null ?
+                new ObjectParameter("TRANG_THAI_HIEN_TAI_YN", tRANG_THAI_HIEN_TAI_YN) :
+                new ObjectParameter("TRANG_THAI_HIEN_TAI_YN", typeof(string));
+    
+            var iD_PHAP_NHANParameter = iD_PHAP_NHAN.HasValue ?
+                new ObjectParameter("ID_PHAP_NHAN", iD_PHAP_NHAN) :
+                new ObjectParameter("ID_PHAP_NHAN", typeof(decimal));
+    
+            var mA_PHAP_NHANParameter = mA_PHAP_NHAN != null ?
+                new ObjectParameter("MA_PHAP_NHAN", mA_PHAP_NHAN) :
+                new ObjectParameter("MA_PHAP_NHAN", typeof(string));
+    
+            var tEN_PHAP_NHANParameter = tEN_PHAP_NHAN != null ?
+                new ObjectParameter("TEN_PHAP_NHAN", tEN_PHAP_NHAN) :
+                new ObjectParameter("TEN_PHAP_NHAN", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_V_GD_TRANG_THAI_LAO_DONG_Insert", mA_NVParameter, hO_DEMParameter, tENParameter, iD_TRANG_LAO_DONGParameter, tRANG_THAI_LAO_DONGParameter, mA_QUYET_DINHParameter, nGAY_CO_HIEU_LUCParameter, nGAY_HET_HIEU_LUCParameter, iD_LOAI_QDParameter, lOAI_QUYET_DINHParameter, tRANG_THAI_HIEN_TAIParameter, iD_NHAN_SUParameter, iD_QUYET_DINHParameter, tRANG_THAI_HIEN_TAI_YNParameter, iD_PHAP_NHANParameter, mA_PHAP_NHANParameter, tEN_PHAP_NHANParameter, iD);
         }
     }
 }

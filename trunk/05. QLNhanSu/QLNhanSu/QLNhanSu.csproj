@@ -275,6 +275,12 @@
     <Compile Include="Models\GD_TINH_HINH_NV_MOI.cs">
       <DependentUpon>BKI_HRM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\get_tong_luong_by_ma_cv_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\get_tong_luong_by_ma_ttld_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\HT_BACKUP_HISTORY.cs">
       <DependentUpon>BKI_HRM.tt</DependentUpon>
     </Compile>
@@ -330,6 +336,9 @@
       <DependentUpon>BKI_HRM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HT_USER_GROUP_WEB.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMPORT_EXCEL_LUONG_THEO_QD.cs">
       <DependentUpon>BKI_HRM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\pr_CM_DM_TU_DIEN_Load_loai_quyet_dinh_Result.cs">
@@ -591,6 +600,9 @@
       <DependentUpon>BKI_HRM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\pr_V_GD_QUA_TRINH_LAM_VIEC_load_by_id_don_vi_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_QUA_TRINH_LAM_VIEC_Now_By_Ma_NV_Id_PN_Result.cs">
       <DependentUpon>BKI_HRM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\pr_V_GD_QUA_TRINH_LAM_VIEC_Search1_Result.cs">
