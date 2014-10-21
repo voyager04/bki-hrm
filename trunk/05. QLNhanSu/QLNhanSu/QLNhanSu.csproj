@@ -428,6 +428,9 @@
     <Compile Include="Models\pr_GD_QUA_TRINH_CONG_TAC_Result.cs">
       <DependentUpon>BKI_HRM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\pr_GD_QUA_TRINH_CONG_TAC_WEB_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\pr_GD_QUYET_DINH_PHAP_NHAN_Select_by_ID_QUYET_DINH_Result.cs">
       <DependentUpon>BKI_HRM.tt</DependentUpon>
     </Compile>
@@ -817,15 +820,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <EntityDeploy Include="Models\BKI_HRM.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BKI_HRM.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <Content Include="Images\default-body.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\slide1.jpg" />
     <Content Include="Images\slide2.jpg" />
     <Content Include="Images\slide3.jpg" />
+    <EntityDeploy Include="Models\BKI_HRM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BKI_HRM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <Content Include="Models\BKI_HRM.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BKI_HRM.edmx</DependentUpon>
