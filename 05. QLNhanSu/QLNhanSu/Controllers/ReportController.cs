@@ -108,10 +108,10 @@ namespace QLNhanSu.Controllers
             return View();
         }
 
-        public JsonResult GetQuaTrinhLamViec(string ip_MaNhanVien)
+        public JsonResult GetQuaTrinhLamViec(string ip_MaNhanVien, string ip_DieuKien = "ACD")
         {
             if (ip_MaNhanVien == "") return null;
-            var v_QuaTrinhLamViec = _db.pr_GD_QUA_TRINH_CONG_TAC_WEB(ip_MaNhanVien, "ABCD", DateTime.Parse("01/01/2009"), DateTime.Now, 3).ToList();
+            var v_QuaTrinhLamViec = _db.pr_GD_QUA_TRINH_CONG_TAC_WEB(ip_MaNhanVien, ip_DieuKien, DateTime.Parse("01/01/2009"), DateTime.Now, 3).ToList();
             return Json(v_QuaTrinhLamViec.Select(m => new
             {
                 TU_NGAY = string.Format("{0: dd/MM/yyyy}", m.TU_NGAY),
