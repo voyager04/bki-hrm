@@ -93,7 +93,7 @@ namespace QLNhanSu.Controllers
                         Session["Email"] = email;
                         Session["LastName"] = lastname;
                         Session["FirstName"] = firstname;
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("F101_CoCauTopica", "Report");
                     case AuthenticationStatus.Canceled:
                         statusMessage = "Canceled at provider";
                         return View("Login", statusMessage);
