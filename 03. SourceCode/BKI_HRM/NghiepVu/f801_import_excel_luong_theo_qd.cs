@@ -62,6 +62,8 @@ namespace BKI_HRM
         private Label label9;
         private Label label8;
         private Label label10;
+        private Label label11;
+        private TextBox textBox4;
         private System.ComponentModel.IContainer components;
 
         public f801_import_excel_luong_theo_qd()
@@ -120,18 +122,20 @@ namespace BKI_HRM
             this.label5 = new System.Windows.Forms.Label();
             this.m_cmd_luu = new SIS.Controls.Button.SiSButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.m_cbo_ky = new System.Windows.Forms.ComboBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.m_txt_ky = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.m_cbo_ky = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.m_lbl_load = new System.Windows.Forms.Label();
             this.m_llbl_mau_import = new System.Windows.Forms.LinkLabel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
@@ -172,10 +176,10 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 373);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 440);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(950, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1132, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_insert
@@ -187,7 +191,7 @@ namespace BKI_HRM
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(594, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(776, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 12;
@@ -202,7 +206,7 @@ namespace BKI_HRM
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(682, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(864, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 13;
@@ -233,7 +237,7 @@ namespace BKI_HRM
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(770, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(952, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 14;
@@ -248,7 +252,7 @@ namespace BKI_HRM
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(858, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(1040, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -258,9 +262,9 @@ namespace BKI_HRM
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 117);
+            this.m_fg.Location = new System.Drawing.Point(0, 121);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(950, 256);
+            this.m_fg.Size = new System.Drawing.Size(1132, 319);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -284,7 +288,7 @@ namespace BKI_HRM
             this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(950, 33);
+            this.m_lbl_header.Size = new System.Drawing.Size(1132, 33);
             this.m_lbl_header.TabIndex = 24;
             this.m_lbl_header.Text = "IMPORT LƯƠNG THEO QUYẾT ĐỊNH TỪ EXCEL";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -364,6 +368,8 @@ namespace BKI_HRM
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.textBox4);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
@@ -385,8 +391,71 @@ namespace BKI_HRM
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 33);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(950, 84);
+            this.panel1.Size = new System.Drawing.Size(1132, 88);
             this.panel1.TabIndex = 32;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(970, 34);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(78, 13);
+            this.label10.TabIndex = 42;
+            this.label10.Text = "Dữ liệu bị trống";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(789, 34);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(107, 13);
+            this.label9.TabIndex = 41;
+            this.label9.Text = "Quyết định đã tồn tại";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(789, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(117, 13);
+            this.label8.TabIndex = 40;
+            this.label8.Text = "Chưa có nhân viên này";
+            // 
+            // m_cbo_ky
+            // 
+            this.m_cbo_ky.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.m_cbo_ky.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.m_cbo_ky.FormattingEnabled = true;
+            this.m_cbo_ky.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.m_cbo_ky.Location = new System.Drawing.Point(110, -4);
+            this.m_cbo_ky.Name = "m_cbo_ky";
+            this.m_cbo_ky.Size = new System.Drawing.Size(95, 21);
+            this.m_cbo_ky.TabIndex = 33;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.Red;
+            this.textBox3.ForeColor = System.Drawing.Color.Red;
+            this.textBox3.Location = new System.Drawing.Point(915, 31);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(47, 20);
+            this.textBox3.TabIndex = 39;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.Green;
+            this.textBox2.Location = new System.Drawing.Point(734, 31);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(47, 20);
+            this.textBox2.TabIndex = 38;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.Yellow;
+            this.textBox1.Location = new System.Drawing.Point(734, 5);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(47, 20);
+            this.textBox1.TabIndex = 37;
             // 
             // m_txt_ky
             // 
@@ -407,17 +476,6 @@ namespace BKI_HRM
             this.label7.Size = new System.Drawing.Size(19, 13);
             this.label7.TabIndex = 34;
             this.label7.Text = "-->";
-            // 
-            // m_cbo_ky
-            // 
-            this.m_cbo_ky.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.m_cbo_ky.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.m_cbo_ky.FormattingEnabled = true;
-            this.m_cbo_ky.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.m_cbo_ky.Location = new System.Drawing.Point(110, -4);
-            this.m_cbo_ky.Name = "m_cbo_ky";
-            this.m_cbo_ky.Size = new System.Drawing.Size(95, 21);
-            this.m_cbo_ky.TabIndex = 33;
             // 
             // label6
             // 
@@ -448,62 +506,27 @@ namespace BKI_HRM
             this.m_llbl_mau_import.Text = "Tải mẫu Import";
             this.m_llbl_mau_import.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.m_llbl_mau_import_LinkClicked);
             // 
-            // textBox1
+            // textBox4
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Yellow;
-            this.textBox1.Location = new System.Drawing.Point(734, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(47, 20);
-            this.textBox1.TabIndex = 37;
+            this.textBox4.BackColor = System.Drawing.SystemColors.Highlight;
+            this.textBox4.Location = new System.Drawing.Point(915, 5);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(47, 20);
+            this.textBox4.TabIndex = 43;
             // 
-            // textBox2
+            // label11
             // 
-            this.textBox2.BackColor = System.Drawing.Color.Green;
-            this.textBox2.Location = new System.Drawing.Point(734, 31);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(47, 20);
-            this.textBox2.TabIndex = 38;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.Red;
-            this.textBox3.ForeColor = System.Drawing.Color.Red;
-            this.textBox3.Location = new System.Drawing.Point(734, 59);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(47, 20);
-            this.textBox3.TabIndex = 39;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(789, 9);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(117, 13);
-            this.label8.TabIndex = 40;
-            this.label8.Text = "Chưa có nhân viên này";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(789, 34);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(107, 13);
-            this.label9.TabIndex = 41;
-            this.label9.Text = "Quyết định đã tồn tại";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(789, 62);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(78, 13);
-            this.label10.TabIndex = 42;
-            this.label10.Text = "Dữ liệu bị trống";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(970, 9);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(131, 13);
+            this.label11.TabIndex = 44;
+            this.label11.Text = "Bị trùng mã nhân viên/QĐ";
             // 
             // f801_import_excel_luong_theo_qd
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(950, 409);
+            this.ClientSize = new System.Drawing.Size(1132, 476);
             this.Controls.Add(this.m_lbl_load);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.panel1);
@@ -551,7 +574,7 @@ namespace BKI_HRM
             NGAY_AP_DUNG = 10
                 ,
             LINK = 8
-                
+
             //MA_KY = 3
                 ,
             MA_QD = 3
@@ -581,7 +604,8 @@ namespace BKI_HRM
             m_lbl_load.Visible = false;
             this.KeyPreview = true;
         }
-        private void load_data_2_cbo() {
+        private void load_data_2_cbo()
+        {
             US_DM_KY v_us = new US_DM_KY();
             DS_DM_KY v_ds = new DS_DM_KY();
             v_us.FillDataset(v_ds, "where NGAY_KET_THUC_KY = (select max(NGAY_KET_THUC_KY) from DM_KY)");
@@ -616,7 +640,7 @@ namespace BKI_HRM
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.IMPORT_EXCEL_LUONG_THEO_QD.NewRow());
             return v_obj_trans;
         }
-        
+
         private void load_data_2_grid()
         {
             m_ds = new DS_IMPORT_EXCEL_LUONG_THEO_QD();
@@ -698,7 +722,7 @@ namespace BKI_HRM
             //	f801_import_excel_luong_theo_qd_DE v_fDE = new f801_import_excel_luong_theo_qd_DE();			
             //	v_fDE.display(m_us);
         }
-        
+
         // Chọn và load file excel
         private void load_danh_sach_excel()
         {
@@ -722,7 +746,7 @@ namespace BKI_HRM
                     v_ds_import_excel_luong_theo_qd.EnforceConstraints = false;
 
                     // Export 2 DS
-                    v_xls_file.Export2DatasetDSPhongThi(v_ds_import_excel_luong_theo_qd, v_ds_import_excel_luong_theo_qd.IMPORT_EXCEL_LUONG_THEO_QD.TableName, 2);
+                    v_xls_file.Export2DatasetDS_by_DucVT(v_ds_import_excel_luong_theo_qd, v_ds_import_excel_luong_theo_qd.IMPORT_EXCEL_LUONG_THEO_QD.TableName, 2);
 
                     //DataSet v_ds_cm_dm_bang_modify = ModifyDateToUSFormat(v_ds_cm_dm_bang_chi_tiet_cuoi_thang);
                     // DS 2 FlexGrid
@@ -735,25 +759,39 @@ namespace BKI_HRM
                     //m_i_flag = 0;
                     m_lbl_load.Visible = false;
                 }
-                catch(Exception v_e) {
+                catch (Exception v_e)
+                {
                     BaseMessages.MsgBox_Error("Có lỗi xảy ra: 1. Do File Excel chưa đúng chuẩn\n" + "2. Do ngày tháng chưa đúng định dạng dd/mm/yyyy \n" + "3. Có ô ngày tháng đang trống " + v_e);
                 }
             }
         }
-        private void kiem_tra_du_lieu() {
+        private void kiem_tra_du_lieu()
+        {
+            CellStyle isis = m_fg.Styles.Add("ok");
+            isis.BackColor = Color.White;
+
             CellStyle cs = m_fg.Styles.Add("v_null");
             cs.BackColor = Color.Red;
             //Bước 1: Kiểm tra dữ liệu theo từng cột xem có ô nào trống không
-            for(int v_col = 1; v_col < m_fg.Cols.Count - 1; v_col++) {
+            for (int v_col = 1; v_col < m_fg.Cols.Count; v_col++)
+            {
 
-                if(v_col == (int)e_col_Number.HO_TEN || v_col == (int)e_col_Number.LINK || v_col == (int)e_col_Number.NGAY_HET_HIEU_LUC || v_col == (int)e_col_Number.NOI_DUNG) continue;
-                for(int v_row = m_fg.Rows.Fixed; v_row < m_fg.Rows.Count; v_row++) {
-                    if(m_fg.Rows[v_row][v_col] == null || m_fg.Rows[v_row][v_col].ToString() == "") {
+                if (v_col == (int)e_col_Number.HO_TEN || v_col == (int)e_col_Number.LINK || v_col == (int)e_col_Number.NGAY_HET_HIEU_LUC || v_col == (int)e_col_Number.NOI_DUNG) continue;
+                for (int v_row = m_fg.Rows.Fixed; v_row < m_fg.Rows.Count; v_row++)
+                {
+                    if (m_fg.Rows[v_row][v_col] == null || m_fg.Rows[v_row][v_col].ToString() == "")
+                    {
                         m_fg.SetCellStyle(v_row, v_col, cs);
                         m_flag = 0;
                     }
+                    else
+                    {
+                        m_fg.SetCellStyle(v_row, v_col, isis);
+                    }
                 }
             }
+            //Kiểm tra mã nhân viên trùng nhau
+            
             //Bước 2: Kiểm tra đối chiếu với ĐB về Mã NV, Mã QĐ
             //2.1: Load DS 
             US_DM_NHAN_SU v_us_nhan_su = new US_DM_NHAN_SU();
@@ -766,34 +804,40 @@ namespace BKI_HRM
             //2.2: Kiểm tra xem nv có chưa, chưa có tô màu vàng
             CellStyle ys = m_fg.Styles.Add("v_exist");
             ys.BackColor = Color.Yellow;
-            for(int v_row = m_fg.Rows.Fixed; v_row < m_fg.Rows.Count; v_row++) {
+            for (int v_row = m_fg.Rows.Fixed; v_row < m_fg.Rows.Count; v_row++)
+            {
                 DataView dv = v_ds_nhan_su.DM_NHAN_SU.DefaultView;
                 dv.Sort = "MA_NV";
-                if(m_fg.Rows[v_row][1] == null || m_fg.Rows[v_row][1].ToString() == "") { m_flag =0; continue; }
-                else if(dv.Find(m_fg.Rows[v_row][1]) < 0) {
+                if (m_fg.Rows[v_row][1] == null || m_fg.Rows[v_row][1].ToString() == "") { m_flag = 0; continue; }
+                else if (dv.Find(m_fg.Rows[v_row][1]) < 0)
+                {
                     m_fg.SetCellStyle(v_row, 1, ys);
-                    m_flag =0;
+                    m_flag = 0;
                     continue;
                 }
+                else { m_fg.SetCellStyle(v_row, 1, isis); }
             }
             //2.3 Kiểm tra xem có mã quyết định đã tồn tại chưa
             CellStyle ts = m_fg.Styles.Add("v_not_exist");
             ts.BackColor = Color.Green;
-            for(int v_row = m_fg.Rows.Fixed; v_row < m_fg.Rows.Count; v_row++) {
+            for (int v_row = m_fg.Rows.Fixed; v_row < m_fg.Rows.Count; v_row++)
+            {
                 DataView dv = v_ds_qd.DM_QUYET_DINH.DefaultView;
                 dv.Sort = "MA_QUYET_DINH";
-                if(m_fg.Rows[v_row][3] == null || m_fg.Rows[v_row][3].ToString() == "") 
-                { 
-                    m_flag =0; 
-                    continue; 
-                }
-                else if(dv.Find(m_fg.Rows[v_row][3]) > 0) {
-                    m_fg.SetCellStyle(v_row, 3, ts);
-                    m_flag =0;
+                if (m_fg.Rows[v_row][3] == null || m_fg.Rows[v_row][3].ToString() == "")
+                {
+                    m_flag = 0;
                     continue;
                 }
+                else if (dv.Find(m_fg.Rows[v_row][3]) > 0)
+                {
+                    m_fg.SetCellStyle(v_row, 3, ts);
+                    m_flag = 0;
+                    continue;
+                }
+                else { m_fg.SetCellStyle(v_row, 3, isis); }
             }
-            if(m_flag == 0) { BaseMessages.MsgBox_Error("Một số ô chưa có dữ liệu được tô màu đỏ, chưa có mã nhân viên trong CSDL tô màu vàng, quyết định đã tồn tại tô màu vàng!"); }
+            if (m_flag == 0) { BaseMessages.MsgBox_Error("Một số ô chưa có dữ liệu được tô màu đỏ, chưa có mã nhân viên trong CSDL tô màu vàng, quyết định đã tồn tại tô màu vàng!"); }
             else BaseMessages.MsgBox_Infor("Dữ liệu đã được kiểm tra");
         }
         //private void insert_2_dm_quyet_dinh(US_DM_QUYET_DINH ip_us_dm_quyet_dinh, C1.Win.C1FlexGrid.C1FlexGrid i_fg, Int32 ip_row_in_grid) {
@@ -861,7 +905,7 @@ namespace BKI_HRM
             ip_us_gd_quyet_dinh_phap_nhan.dcID_QUYET_DINH = ip_id_quyet_dinh;
             ip_us_gd_quyet_dinh_phap_nhan.Insert();
         }
-        
+
         private void insert_2_gd_luong_theo_qd(US_GD_LUONG_THEO_QD ip_us_gd_luong_theo_qd
                                                , C1.Win.C1FlexGrid.C1FlexGrid i_fg
                                                 , Int32 ip_row_in_grid
@@ -897,9 +941,11 @@ namespace BKI_HRM
             m_cmd_luu.Click += m_cmd_luu_Click;
         }
 
-        private void m_cmd_luu_Click(object sender, EventArgs e) {
-            try {
-                if(m_flag == 0) { BaseMessages.MsgBox_Error("Bạn kiểm tra dữ liệu trước nhé!"); return; }
+        private void m_cmd_luu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_flag == 0) { BaseMessages.MsgBox_Error("Bạn kiểm tra dữ liệu trước nhé!"); return; }
                 save_data();
             }
             catch (Exception v_e)
@@ -931,7 +977,7 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        
+
         private void f801_import_excel_luong_theo_qd_Load(object sender, System.EventArgs e)
         {
             try
@@ -1006,11 +1052,14 @@ namespace BKI_HRM
             }
         }
 
-        private void m_llbl_mau_import_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-            try {
+        private void m_llbl_mau_import_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
                 Process.Start("https://drive.google.com/file/d/0B5VALXmEILhMaHhXSlVTWlUxT1U/view?usp=sharing");
             }
-            catch(Exception v_e) {
+            catch (Exception v_e)
+            {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
