@@ -55,6 +55,7 @@ $(document).ready(function () {
         },
         onChange: function (value, item) {
             maNhanVien = value;
+            $('.lien-quan').attr('checked', 'checked');
             $.ajax({
                 type: "GET",
                 url: baseUrl + "/Report/GetQuaTrinhLamViec",
