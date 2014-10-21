@@ -67,6 +67,8 @@ namespace BKI_HRM
         private Label label13;
         private Label label12;
         private ComboBox m_cbo_loai_qd;
+        internal SIS.Controls.Button.SiSButton m_cmd_insert_row;
+        internal SIS.Controls.Button.SiSButton m_cmd_del;
         private System.ComponentModel.IContainer components;
 
         public f801_import_excel_luong_theo_qd()
@@ -126,6 +128,11 @@ namespace BKI_HRM
             this.label5 = new System.Windows.Forms.Label();
             this.m_cmd_luu = new SIS.Controls.Button.SiSButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.m_cbo_loai_qd = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -138,11 +145,8 @@ namespace BKI_HRM
             this.label6 = new System.Windows.Forms.Label();
             this.m_lbl_load = new System.Windows.Forms.Label();
             this.m_llbl_mau_import = new System.Windows.Forms.LinkLabel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.m_cbo_loai_qd = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.m_cmd_insert_row = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_del = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
@@ -269,9 +273,9 @@ namespace BKI_HRM
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 121);
+            this.m_fg.Location = new System.Drawing.Point(0, 148);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1132, 319);
+            this.m_fg.Size = new System.Drawing.Size(1132, 292);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -375,6 +379,8 @@ namespace BKI_HRM
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_cmd_insert_row);
+            this.panel1.Controls.Add(this.m_cmd_del);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.m_cbo_loai_qd);
@@ -401,8 +407,51 @@ namespace BKI_HRM
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 33);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1132, 88);
+            this.panel1.Size = new System.Drawing.Size(1132, 115);
             this.panel1.TabIndex = 32;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(124, 21);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(110, 13);
+            this.label13.TabIndex = 47;
+            this.label13.Text = "Bước 1: Chọn loại QĐ";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(257, 48);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(19, 13);
+            this.label12.TabIndex = 46;
+            this.label12.Text = "-->";
+            // 
+            // m_cbo_loai_qd
+            // 
+            this.m_cbo_loai_qd.FormattingEnabled = true;
+            this.m_cbo_loai_qd.Location = new System.Drawing.Point(122, 45);
+            this.m_cbo_loai_qd.Name = "m_cbo_loai_qd";
+            this.m_cbo_loai_qd.Size = new System.Drawing.Size(121, 21);
+            this.m_cbo_loai_qd.TabIndex = 45;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(970, 9);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(131, 13);
+            this.label11.TabIndex = 44;
+            this.label11.Text = "Bị trùng mã nhân viên/QĐ";
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.SystemColors.Highlight;
+            this.textBox4.Location = new System.Drawing.Point(915, 5);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(47, 20);
+            this.textBox4.TabIndex = 43;
             // 
             // label10
             // 
@@ -516,48 +565,35 @@ namespace BKI_HRM
             this.m_llbl_mau_import.Text = "Tải mẫu Import";
             this.m_llbl_mau_import.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.m_llbl_mau_import_LinkClicked);
             // 
-            // textBox4
+            // m_cmd_insert_row
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.Highlight;
-            this.textBox4.Location = new System.Drawing.Point(915, 5);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(47, 20);
-            this.textBox4.TabIndex = 43;
+            this.m_cmd_insert_row.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_insert_row.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_insert_row.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_insert_row.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_insert_row.ImageIndex = 2;
+            this.m_cmd_insert_row.ImageList = this.ImageList;
+            this.m_cmd_insert_row.Location = new System.Drawing.Point(89, 83);
+            this.m_cmd_insert_row.Name = "m_cmd_insert_row";
+            this.m_cmd_insert_row.Size = new System.Drawing.Size(83, 26);
+            this.m_cmd_insert_row.TabIndex = 49;
+            this.m_cmd_insert_row.TabStop = false;
+            this.m_cmd_insert_row.Text = "&Thêm hàng";
             // 
-            // label11
+            // m_cmd_del
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(970, 9);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(131, 13);
-            this.label11.TabIndex = 44;
-            this.label11.Text = "Bị trùng mã nhân viên/QĐ";
-            // 
-            // m_cbo_loai_qd
-            // 
-            this.m_cbo_loai_qd.FormattingEnabled = true;
-            this.m_cbo_loai_qd.Location = new System.Drawing.Point(122, 45);
-            this.m_cbo_loai_qd.Name = "m_cbo_loai_qd";
-            this.m_cbo_loai_qd.Size = new System.Drawing.Size(121, 21);
-            this.m_cbo_loai_qd.TabIndex = 45;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(257, 48);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(19, 13);
-            this.label12.TabIndex = 46;
-            this.label12.Text = "-->";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(124, 21);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(110, 13);
-            this.label13.TabIndex = 47;
-            this.label13.Text = "Bước 1: Chọn loại QĐ";
+            this.m_cmd_del.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_del.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_del.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_del.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_del.ImageIndex = 4;
+            this.m_cmd_del.ImageList = this.ImageList;
+            this.m_cmd_del.Location = new System.Drawing.Point(12, 82);
+            this.m_cmd_del.Name = "m_cmd_del";
+            this.m_cmd_del.Size = new System.Drawing.Size(71, 27);
+            this.m_cmd_del.TabIndex = 48;
+            this.m_cmd_del.TabStop = false;
+            this.m_cmd_del.Text = "&Xóa hàng";
             // 
             // f801_import_excel_luong_theo_qd
             // 
@@ -635,6 +671,11 @@ namespace BKI_HRM
             CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
+            m_fg.AllowSorting = C1.Win.C1FlexGrid.AllowSortingEnum.None;
+            m_fg.AutoSearch = C1.Win.C1FlexGrid.AutoSearchEnum.None;
+            m_fg.KeyActionTab = C1.Win.C1FlexGrid.KeyActionEnum.MoveAcrossOut;
+            m_fg.KeyActionEnter = C1.Win.C1FlexGrid.KeyActionEnum.MoveAcrossOut;
+
             m_fg.AllowEditing = true;
             set_define_events();
             m_lbl_load.Visible = false;
@@ -976,6 +1017,38 @@ namespace BKI_HRM
             m_cmd_chon_file.Click += m_cmd_chon_file_Click;
             m_cmd_kiem_tra_dl.Click += m_cmd_kiem_tra_dl_Click;
             m_cmd_luu.Click += m_cmd_luu_Click;
+            m_cmd_del.Click += new EventHandler(m_cmd_del_Click);
+            m_cmd_insert_row.Click += m_cmd_insert_row_Click;
+        }
+        private void m_cmd_del_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_fg.Rows.Count == 3)
+                {
+                    if (m_fg.Row == 1)
+                    {
+                        m_fg.Rows[m_fg.Rows.Fixed].Clear(C1.Win.C1FlexGrid.ClearFlags.All);
+                    }
+                    return;
+                }
+                m_fg.Rows.Remove(m_fg.Row);
+            }
+            catch (System.Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_insert_row_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                m_fg.Rows.Insert(m_fg.Row);
+            }
+            catch (System.Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
         private void load_data_2_cbo_loai_qd()
         {
