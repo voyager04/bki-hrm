@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f002_main_form));
             this.m_tab_menu = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.m_cmd_phan_quyen_chi_tiet = new DevExpress.XtraBars.BarButtonItem();
@@ -39,7 +40,7 @@
             this.m_cmd_huong_dan_su_dung = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_phan_hoi_loi_pm = new DevExpress.XtraBars.BarButtonItem();
             this.button16 = new DevExpress.XtraBars.BarButtonItem();
-            this.button15 = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_exit = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_ql_chuc_vu = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_ql_cap_bac = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_ql_don_vi = new DevExpress.XtraBars.BarButtonItem();
@@ -117,14 +118,14 @@
             this.m_lbl_thu_viec_sap_het_han = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_lbl_sap_quay_lai = new System.Windows.Forms.Label();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.m_xtab_control = new DevExpress.XtraTab.XtraTabControl();
             this.m_lbl_tong_so_nv = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.m_cbo_phap_nhan = new System.Windows.Forms.ComboBox();
-            this.imageList1 = new System.Windows.Forms.ImageList();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.m_tab_menu)).BeginInit();
             this.m_pnl_thong_bao.SuspendLayout();
             this.m_pnl_thu_viec_da_het_han.SuspendLayout();
@@ -163,7 +164,7 @@
             this.m_cmd_huong_dan_su_dung,
             this.m_cmd_phan_hoi_loi_pm,
             this.button16,
-            this.button15,
+            this.m_cmd_exit,
             this.m_cmd_ql_chuc_vu,
             this.m_cmd_ql_cap_bac,
             this.m_cmd_ql_don_vi,
@@ -335,13 +336,13 @@
             this.button16.Name = "button16";
             this.button16.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
-            // button15
+            // m_cmd_exit
             // 
-            this.button15.Caption = "Thoát";
-            this.button15.Glyph = global::BKI_HRM.Properties.Resources._1413473680_34218;
-            this.button15.Id = 32;
-            this.button15.Name = "button15";
-            this.button15.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.m_cmd_exit.Caption = "Thoát";
+            this.m_cmd_exit.Glyph = global::BKI_HRM.Properties.Resources._1413473680_34218;
+            this.m_cmd_exit.Id = 32;
+            this.m_cmd_exit.Name = "m_cmd_exit";
+            this.m_cmd_exit.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
             // m_cmd_ql_chuc_vu
             // 
@@ -735,7 +736,7 @@
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.button16);
-            this.ribbonPageGroup4.ItemLinks.Add(this.button15);
+            this.ribbonPageGroup4.ItemLinks.Add(this.m_cmd_exit);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             // 
             // ribbonPage2
@@ -866,14 +867,14 @@
             this.m_pnl_thu_viec_da_het_han.Size = new System.Drawing.Size(366, 53);
             this.m_pnl_thu_viec_da_het_han.TabIndex = 6;
             // 
-            // label2
+            // m_lbl_thu_viec_da_het_han
             // 
             this.m_lbl_thu_viec_da_het_han.AutoSize = true;
             this.m_lbl_thu_viec_da_het_han.Cursor = System.Windows.Forms.Cursors.Hand;
             this.m_lbl_thu_viec_da_het_han.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_thu_viec_da_het_han.ForeColor = System.Drawing.Color.Red;
             this.m_lbl_thu_viec_da_het_han.Location = new System.Drawing.Point(0, 20);
-            this.m_lbl_thu_viec_da_het_han.Name = "label2";
+            this.m_lbl_thu_viec_da_het_han.Name = "m_lbl_thu_viec_da_het_han";
             this.m_lbl_thu_viec_da_het_han.Size = new System.Drawing.Size(228, 18);
             this.m_lbl_thu_viec_da_het_han.TabIndex = 2;
             this.m_lbl_thu_viec_da_het_han.Text = "Danh sách Thử việc đã hết hạn";
@@ -1145,7 +1146,7 @@
         private DevExpress.XtraBars.BarButtonItem m_cmd_huong_dan_su_dung;
         private DevExpress.XtraBars.BarButtonItem m_cmd_phan_hoi_loi_pm;
         private DevExpress.XtraBars.BarButtonItem button16;
-        private DevExpress.XtraBars.BarButtonItem button15;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_exit;
         private DevExpress.XtraBars.BarButtonItem m_cmd_ql_chuc_vu;
         private DevExpress.XtraBars.BarButtonItem m_cmd_ql_cap_bac;
         private DevExpress.XtraBars.BarButtonItem m_cmd_ql_don_vi;
