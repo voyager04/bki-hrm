@@ -7,9 +7,10 @@
     var firstName = Session["FirstName"];
 
     var db = new BKI_HRMEntities();
-    var roleAdmin = Guid.Parse("6dec429d-f251-43c5-8311-6b541ab8b184");
-    var roleTruongBan = Guid.Parse("06c5d8e9-3eae-49cf-99e8-a8f6ea8e6736");
-    var roleNhanVien = Guid.Parse("2a559442-f25c-430e-a28e-fbcf270f55bc");
+    
+    var roleAdmin = "admin";
+    //var roleTruongBan = "TruongBan";
+    var roleNhanVien = "nhanvien";
     var v_User = db.HT_USER.FirstOrDefault(m => m.USERNAME == (string)email);
 }
 
@@ -17,7 +18,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>@ViewBag.Title - HRM - Quản lý nhân sự</title>
+    <title>@ViewBag.Title - Quản lý nhân sự</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
     @Scripts.Render("~/bundles/modernizr")
@@ -57,7 +58,7 @@
                     }
                     else
                     {
-                        if (v_User.ID_USER_GROUP == roleAdmin || v_User.ID_USER_GROUP == roleTruongBan)
+                        if (v_User.HT_USER_GROUP_WEB.DESCRIPTION == roleAdmin)
                         {
                             <ul class="nav navbar-nav">
                                 <li><a href="@Url.Action("Index", "Home")"><span class="glyphicon glyphicon-home"></span>&nbsp;TRANG CHỦ</a></li>
@@ -76,7 +77,7 @@
                                 </li>
                             </ul>
                         }
-                        if (v_User.ID_USER_GROUP == roleNhanVien)
+                        if (v_User.HT_USER_GROUP_WEB.DESCRIPTION == roleNhanVien)
                         {
                             <ul class="nav navbar-nav">
                                 <li><a href="@Url.Action("Index", "Home")"><span class="glyphicon glyphicon-home"></span>&nbsp;TRANG CHỦ</a></li>

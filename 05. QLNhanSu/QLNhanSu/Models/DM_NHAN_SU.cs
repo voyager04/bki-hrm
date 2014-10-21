@@ -56,6 +56,27 @@ namespace QLNhanSu.Models
         public string TRANG_THAI { get; set; }
         public Nullable<decimal> ID_HEADCOUNT { get; set; }
         public string MA_HEADCOUNT { get; set; }
+        public string SO_TAI_KHOAN { get; set; }
+        public string CHI_NHANH_NGANHANG { get; set; }
+        public string DIA_DIEM_LV { get; set; }
+        public string HO_TEN_BO { get; set; }
+        public string NGHE_NGHIEP_BO { get; set; }
+        public Nullable<decimal> NAM_SINH_BO { get; set; }
+        public string HO_TEN_ME { get; set; }
+        public string NGHE_NGHIEP_ME { get; set; }
+        public Nullable<decimal> NAM_SINH_ME { get; set; }
+        public string HO_TEN_CON_THU_1 { get; set; }
+        public string NGHE_NGHIEP_CON_THU_1 { get; set; }
+        public Nullable<decimal> NAM_SINH_CON_THU_1 { get; set; }
+        public string HO_TEN_CON_THU_2 { get; set; }
+        public string NGHE_NGHIEP_CON_THU_2 { get; set; }
+        public Nullable<decimal> NAM_SINH_CON_THU_2 { get; set; }
+        public string HO_TEN_CON_THU_3 { get; set; }
+        public string NGHE_NGHIEP_CON_THU_3 { get; set; }
+        public Nullable<decimal> NAM_SINH_CON_THU_3 { get; set; }
+        public string HO_TEN_VO_OR_CHONG { get; set; }
+        public string NGHE_NGHIEP_VO_OR_CHONG { get; set; }
+        public Nullable<decimal> NAM_SINH_VO_OR_CHONG { get; set; }
     
         public virtual DM_HEADCOUNT DM_HEADCOUNT { get; set; }
         public virtual ICollection<GD_CHI_TIET_CAP_BAC> GD_CHI_TIET_CAP_BAC { get; set; }
