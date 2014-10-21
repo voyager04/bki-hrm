@@ -96,9 +96,6 @@ $(document).ready(function () {
         $.each(checked, function(index, item) {
             strDieuKien += $(item).val();
         });
-        if (strDieuKien.length == 0) {
-            strDieuKien = "ACD";
-        }
         $.ajax({
             type: "GET",
             url: baseUrl + "/Report/GetQuaTrinhLamViec",
