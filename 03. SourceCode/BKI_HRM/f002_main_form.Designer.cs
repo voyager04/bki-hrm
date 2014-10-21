@@ -359,6 +359,7 @@
             this.m_cmd_ql_cap_bac.LargeGlyph = global::BKI_HRM.Properties.Resources.rank;
             this.m_cmd_ql_cap_bac.Name = "m_cmd_ql_cap_bac";
             this.m_cmd_ql_cap_bac.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.m_cmd_ql_cap_bac.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // m_cmd_ql_don_vi
             // 
@@ -423,6 +424,7 @@
             this.m_cmd_chi_tiet_cap_bac.Id = 43;
             this.m_cmd_chi_tiet_cap_bac.Name = "m_cmd_chi_tiet_cap_bac";
             this.m_cmd_chi_tiet_cap_bac.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.m_cmd_chi_tiet_cap_bac.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // m_cmd_qua_trinh_di_cong_tac
             // 
@@ -721,7 +723,6 @@
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_nhat_ky_he_thong);
-            this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_tu_dien_he_thong);
             this.ribbonPageGroup3.ItemLinks.Add(this.m_cmd_backup_recovery);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Hệ thống";
@@ -750,6 +751,7 @@
             // 
             // ribbonPageGroup6
             // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.m_cmd_tu_dien_he_thong);
             this.ribbonPageGroup6.ItemLinks.Add(this.m_cmd_ql_chuc_vu);
             this.ribbonPageGroup6.ItemLinks.Add(this.m_cmd_ql_cap_bac);
             this.ribbonPageGroup6.ItemLinks.Add(this.m_cmd_ql_don_vi);
@@ -788,11 +790,13 @@
             // 
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             this.ribbonPageGroup8.Text = "Tìm kiếm chức năng";
+            this.ribbonPageGroup8.Visible = false;
             // 
             // ribbonPageGroup9
             // 
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "Chọn pháp nhân";
+            this.ribbonPageGroup9.Visible = false;
             // 
             // ribbonPage5
             // 
