@@ -337,6 +337,12 @@ namespace BKI_HRM {
             m_pnl_thu_viec_da_het_han.MouseHover += m_pnl_thu_viec_da_het_han_MouseHover;
             m_pnl_thu_viec_da_het_han.MouseLeave += m_pnl_thu_viec_da_het_han_MouseLeave;
 
+            m_cmd_exit.ItemClick += m_cmd_exit_ItemClick;
+        }
+
+        void m_cmd_exit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
         }
 
         private void m_pnl_thu_viec_da_het_han_MouseLeave(object sender, EventArgs e)
