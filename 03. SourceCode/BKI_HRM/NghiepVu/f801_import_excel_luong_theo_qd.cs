@@ -64,6 +64,9 @@ namespace BKI_HRM
         private Label label10;
         private Label label11;
         private TextBox textBox4;
+        private Label label13;
+        private Label label12;
+        private ComboBox m_cbo_loai_qd;
         private System.ComponentModel.IContainer components;
 
         public f801_import_excel_luong_theo_qd()
@@ -78,6 +81,7 @@ namespace BKI_HRM
             //
             format_controls();
             load_data_2_cbo();
+            load_data_2_cbo_loai_qd();
         }
 
         /// <summary>
@@ -136,6 +140,9 @@ namespace BKI_HRM
             this.m_llbl_mau_import = new System.Windows.Forms.LinkLabel();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.m_cbo_loai_qd = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.panel1.SuspendLayout();
@@ -276,7 +283,7 @@ namespace BKI_HRM
             this.m_cmd_chon_file.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_chon_file.ImageIndex = 19;
             this.m_cmd_chon_file.ImageList = this.ImageList;
-            this.m_cmd_chon_file.Location = new System.Drawing.Point(190, 40);
+            this.m_cmd_chon_file.Location = new System.Drawing.Point(286, 40);
             this.m_cmd_chon_file.Name = "m_cmd_chon_file";
             this.m_cmd_chon_file.Size = new System.Drawing.Size(121, 28);
             this.m_cmd_chon_file.TabIndex = 23;
@@ -296,7 +303,7 @@ namespace BKI_HRM
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(73, 20);
+            this.label1.Location = new System.Drawing.Point(31, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(19, 13);
             this.label1.TabIndex = 25;
@@ -305,7 +312,7 @@ namespace BKI_HRM
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(327, 48);
+            this.label2.Location = new System.Drawing.Point(413, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(19, 13);
             this.label2.TabIndex = 26;
@@ -319,7 +326,7 @@ namespace BKI_HRM
             this.m_cmd_kiem_tra_dl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_kiem_tra_dl.ImageIndex = 13;
             this.m_cmd_kiem_tra_dl.ImageList = this.ImageList;
-            this.m_cmd_kiem_tra_dl.Location = new System.Drawing.Point(365, 40);
+            this.m_cmd_kiem_tra_dl.Location = new System.Drawing.Point(438, 40);
             this.m_cmd_kiem_tra_dl.Name = "m_cmd_kiem_tra_dl";
             this.m_cmd_kiem_tra_dl.Size = new System.Drawing.Size(121, 28);
             this.m_cmd_kiem_tra_dl.TabIndex = 27;
@@ -328,25 +335,25 @@ namespace BKI_HRM
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(191, 20);
+            this.label3.Location = new System.Drawing.Point(287, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 28;
-            this.label3.Text = "Bước 1:";
+            this.label3.Text = "Bước 2:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(364, 20);
+            this.label4.Location = new System.Drawing.Point(437, 20);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 13);
+            this.label4.Size = new System.Drawing.Size(41, 13);
             this.label4.TabIndex = 29;
-            this.label4.Text = "Bước 2:";
+            this.label4.Text = "Bước3:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(509, 48);
+            this.label5.Location = new System.Drawing.Point(565, 48);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(19, 13);
             this.label5.TabIndex = 30;
@@ -360,7 +367,7 @@ namespace BKI_HRM
             this.m_cmd_luu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_luu.ImageIndex = 16;
             this.m_cmd_luu.ImageList = this.ImageList;
-            this.m_cmd_luu.Location = new System.Drawing.Point(551, 40);
+            this.m_cmd_luu.Location = new System.Drawing.Point(584, 40);
             this.m_cmd_luu.Name = "m_cmd_luu";
             this.m_cmd_luu.Size = new System.Drawing.Size(134, 28);
             this.m_cmd_luu.TabIndex = 31;
@@ -368,6 +375,9 @@ namespace BKI_HRM
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.m_cbo_loai_qd);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.textBox4);
             this.panel1.Controls.Add(this.label10);
@@ -462,16 +472,16 @@ namespace BKI_HRM
             this.m_txt_ky.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.m_txt_ky.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_txt_ky.ForeColor = System.Drawing.Color.Maroon;
-            this.m_txt_ky.Location = new System.Drawing.Point(33, 42);
+            this.m_txt_ky.Location = new System.Drawing.Point(18, 40);
             this.m_txt_ky.Name = "m_txt_ky";
             this.m_txt_ky.ReadOnly = true;
-            this.m_txt_ky.Size = new System.Drawing.Size(100, 26);
+            this.m_txt_ky.Size = new System.Drawing.Size(73, 26);
             this.m_txt_ky.TabIndex = 35;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(151, 48);
+            this.label7.Location = new System.Drawing.Point(97, 48);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(19, 13);
             this.label7.TabIndex = 34;
@@ -480,11 +490,11 @@ namespace BKI_HRM
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(554, 20);
+            this.label6.Location = new System.Drawing.Point(587, 20);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 13);
             this.label6.TabIndex = 32;
-            this.label6.Text = "Bước 3:";
+            this.label6.Text = "Bước 4:";
             // 
             // m_lbl_load
             // 
@@ -522,6 +532,32 @@ namespace BKI_HRM
             this.label11.Size = new System.Drawing.Size(131, 13);
             this.label11.TabIndex = 44;
             this.label11.Text = "Bị trùng mã nhân viên/QĐ";
+            // 
+            // m_cbo_loai_qd
+            // 
+            this.m_cbo_loai_qd.FormattingEnabled = true;
+            this.m_cbo_loai_qd.Location = new System.Drawing.Point(122, 45);
+            this.m_cbo_loai_qd.Name = "m_cbo_loai_qd";
+            this.m_cbo_loai_qd.Size = new System.Drawing.Size(121, 21);
+            this.m_cbo_loai_qd.TabIndex = 45;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(257, 48);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(19, 13);
+            this.label12.TabIndex = 46;
+            this.label12.Text = "-->";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(124, 21);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(110, 13);
+            this.label13.TabIndex = 47;
+            this.label13.Text = "Bước 1: Chọn loại QĐ";
             // 
             // f801_import_excel_luong_theo_qd
             // 
@@ -588,7 +624,7 @@ namespace BKI_HRM
         DS_IMPORT_EXCEL_LUONG_THEO_QD m_ds = new DS_IMPORT_EXCEL_LUONG_THEO_QD();
         US_IMPORT_EXCEL_LUONG_THEO_QD m_us = new US_IMPORT_EXCEL_LUONG_THEO_QD();
         OpenFileDialog m_dgl_open_file = new OpenFileDialog();
-        int m_flag = 1;
+        bool status;
         #endregion
 
         #region Private Methods
@@ -765,8 +801,9 @@ namespace BKI_HRM
                 }
             }
         }
-        private void kiem_tra_du_lieu()
+        private bool kiem_tra_du_lieu()
         {
+            int m_flag = 1;
             CellStyle isis = m_fg.Styles.Add("ok");
             isis.BackColor = Color.White;
 
@@ -837,8 +874,8 @@ namespace BKI_HRM
                 }
                 else { m_fg.SetCellStyle(v_row, 3, isis); }
             }
-            if (m_flag == 0) { BaseMessages.MsgBox_Error("Một số ô chưa có dữ liệu được tô màu đỏ, chưa có mã nhân viên trong CSDL tô màu vàng, quyết định đã tồn tại tô màu vàng!"); }
-            else BaseMessages.MsgBox_Infor("Dữ liệu đã được kiểm tra");
+            if (m_flag == 0) { BaseMessages.MsgBox_Error("Một số ô chưa có dữ liệu được tô màu đỏ, chưa có mã nhân viên trong CSDL tô màu vàng, quyết định đã tồn tại tô màu vàng!"); return false;}
+            else { BaseMessages.MsgBox_Infor("Dữ liệu đã được kiểm tra"); return true; }
         }
         //private void insert_2_dm_quyet_dinh(US_DM_QUYET_DINH ip_us_dm_quyet_dinh, C1.Win.C1FlexGrid.C1FlexGrid i_fg, Int32 ip_row_in_grid) {
         //    ip_us_dm_quyet_dinh.strNOI_DUNG = m_us.strNOI_DUNG;
@@ -891,7 +928,7 @@ namespace BKI_HRM
             ip_us_dm_quyet_dinh.strLINK = m_us.strLINK;
             ip_us_dm_quyet_dinh.strMA_QUYET_DINH = m_us.strMA_QD;
 
-            ip_us_dm_quyet_dinh.dcID_LOAI_QD = 746;
+            ip_us_dm_quyet_dinh.dcID_LOAI_QD = CIPConvert.ToDecimal(m_cbo_loai_qd.SelectedValue);
             ip_us_dm_quyet_dinh.datNGAY_CO_HIEU_LUC = m_us.datNGAY_CO_HIEU_LUC;
             ip_us_dm_quyet_dinh.datNGAY_HET_HIEU_LUC = m_us.datNGAY_HET_HIEU_LUC;
             ip_us_dm_quyet_dinh.datNGAY_KY = m_us.datNGAY_KY;
@@ -940,12 +977,22 @@ namespace BKI_HRM
             m_cmd_kiem_tra_dl.Click += m_cmd_kiem_tra_dl_Click;
             m_cmd_luu.Click += m_cmd_luu_Click;
         }
+        private void load_data_2_cbo_loai_qd()
+        {
+            US.US_CM_DM_TU_DIEN v_us = new US.US_CM_DM_TU_DIEN();
+            DS.DS_CM_DM_TU_DIEN v_ds = new DS.DS_CM_DM_TU_DIEN();
 
+            v_us.FillDataset(v_ds, "where ID_LOAI_TU_DIEN = " + BKI_HRM.US.LOAI_TU_DIEN.id_loai_qd);
+
+            m_cbo_loai_qd.DataSource = v_ds.CM_DM_TU_DIEN;
+            m_cbo_loai_qd.DisplayMember = CM_DM_TU_DIEN.TEN_NGAN;
+            m_cbo_loai_qd.ValueMember = CM_DM_TU_DIEN.ID;
+        }
         private void m_cmd_luu_Click(object sender, EventArgs e)
         {
             try
             {
-                if (m_flag == 0) { BaseMessages.MsgBox_Error("Bạn kiểm tra dữ liệu trước nhé!"); return; }
+                if (!status) { BaseMessages.MsgBox_Error("Bạn kiểm tra dữ liệu trước nhé!"); return; }
                 save_data();
             }
             catch (Exception v_e)
@@ -958,7 +1005,7 @@ namespace BKI_HRM
         {
             try
             {
-                kiem_tra_du_lieu();
+                status = kiem_tra_du_lieu();
             }
             catch (Exception v_e)
             {
