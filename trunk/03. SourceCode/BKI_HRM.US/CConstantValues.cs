@@ -29,7 +29,10 @@ namespace BKI_HRM.US {
         public const string MA_QUYET_DINH = "MA_QUYET_DINH";
         public const string DIA_BAN = "DIA_BAN";
     }
-
+    public class LOAI_TU_DIEN
+    {
+        public const decimal id_loai_qd = 3;  
+    }
     public class TU_DIEN {
         public const string Q1 = "1";
         public const string Q2 = "2";

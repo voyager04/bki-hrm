@@ -638,6 +638,17 @@
        public const string TRANG_THAI_HIEN_TAI = "TRANG_THAI_HIEN_TAI";
        public const string LUA_CHON = "LUA_CHON";
    }
+   public class DM_QUYET_DINH
+   {
+       public const string ID = "ID";
+       public const string MA_QUYET_DINH = "MA_QUYET_DINH";
+       public const string ID_LOAI_QD = "ID_LOAI_QD";
+       public const string NGAY_CO_HIEU_LUC = "NGAY_CO_HIEU_LUC";
+       public const string NGAY_KY = "NGAY_KY";
+       public const string NGAY_HET_HIEU_LUC = "NGAY_HET_HIEU_LUC";
+       public const string NOI_DUNG = "NOI_DUNG";
+       public const string LINK = "LINK";
+   }
 
    public class V_DM_QUYET_DINH
    {
