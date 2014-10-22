@@ -48,6 +48,8 @@ namespace BKI_HRM
         private Label label1;
         private TextBox m_txt_search;
         private C1FlexGrid m_fg;
+        private ComboBox m_cbo_loai_luong;
+        private Label label6;
         private System.ComponentModel.IContainer components;
 
         public f301_V_GD_LUONG_THEO_QD()
@@ -101,9 +103,11 @@ namespace BKI_HRM
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.m_dat_ap_dung_den_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_dat_ap_dung_tu_ngay = new System.Windows.Forms.DateTimePicker();
+            this.m_cbo_loai_luong = new System.Windows.Forms.ComboBox();
             this.m_cbo_ky = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -273,9 +277,11 @@ namespace BKI_HRM
             // 
             this.groupBox1.Controls.Add(this.m_dat_ap_dung_den_ngay);
             this.groupBox1.Controls.Add(this.m_dat_ap_dung_tu_ngay);
+            this.groupBox1.Controls.Add(this.m_cbo_loai_luong);
             this.groupBox1.Controls.Add(this.m_cbo_ky);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(488, 12);
@@ -291,7 +297,7 @@ namespace BKI_HRM
             this.m_dat_ap_dung_den_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ap_dung_den_ngay.Location = new System.Drawing.Point(329, 74);
             this.m_dat_ap_dung_den_ngay.Name = "m_dat_ap_dung_den_ngay";
-            this.m_dat_ap_dung_den_ngay.Size = new System.Drawing.Size(163, 20);
+            this.m_dat_ap_dung_den_ngay.Size = new System.Drawing.Size(106, 20);
             this.m_dat_ap_dung_den_ngay.TabIndex = 2;
             this.m_dat_ap_dung_den_ngay.Value = new System.DateTime(2014, 10, 8, 0, 0, 0, 0);
             // 
@@ -301,14 +307,22 @@ namespace BKI_HRM
             this.m_dat_ap_dung_tu_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ap_dung_tu_ngay.Location = new System.Drawing.Point(95, 74);
             this.m_dat_ap_dung_tu_ngay.Name = "m_dat_ap_dung_tu_ngay";
-            this.m_dat_ap_dung_tu_ngay.Size = new System.Drawing.Size(163, 20);
+            this.m_dat_ap_dung_tu_ngay.Size = new System.Drawing.Size(108, 20);
             this.m_dat_ap_dung_tu_ngay.TabIndex = 2;
             this.m_dat_ap_dung_tu_ngay.Value = new System.DateTime(2014, 1, 1, 0, 0, 0, 0);
+            // 
+            // m_cbo_loai_luong
+            // 
+            this.m_cbo_loai_luong.FormattingEnabled = true;
+            this.m_cbo_loai_luong.Location = new System.Drawing.Point(329, 20);
+            this.m_cbo_loai_luong.Name = "m_cbo_loai_luong";
+            this.m_cbo_loai_luong.Size = new System.Drawing.Size(163, 21);
+            this.m_cbo_loai_luong.TabIndex = 1;
             // 
             // m_cbo_ky
             // 
             this.m_cbo_ky.FormattingEnabled = true;
-            this.m_cbo_ky.Location = new System.Drawing.Point(95, 19);
+            this.m_cbo_ky.Location = new System.Drawing.Point(40, 20);
             this.m_cbo_ky.Name = "m_cbo_ky";
             this.m_cbo_ky.Size = new System.Drawing.Size(163, 21);
             this.m_cbo_ky.TabIndex = 1;
@@ -331,6 +345,15 @@ namespace BKI_HRM
             this.label4.TabIndex = 0;
             this.label4.Text = "Từ ngày";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(214, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(109, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Loại quyết định lương";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -343,7 +366,7 @@ namespace BKI_HRM
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(70, 22);
+            this.label2.Location = new System.Drawing.Point(15, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(19, 13);
             this.label2.TabIndex = 0;
@@ -545,6 +568,7 @@ namespace BKI_HRM
 
             // Cần load cbo kỳ trước khi load grid
             load_data_2_cbo();
+            
 
             load_data_2_grid();
         }
@@ -616,8 +640,8 @@ namespace BKI_HRM
         {
             m_ds = new DS_V_GD_LUONG_THEO_QD();
 
+            // Init id ky
             Decimal v_id_ky;
-
             try
             {
                 v_id_ky = (Decimal)m_cbo_ky.SelectedValue;
@@ -626,6 +650,17 @@ namespace BKI_HRM
             {
                 v_id_ky = -1;
             }
+
+            // Init id loai luong
+            Decimal v_id_loai_luong;
+            try
+            {
+                v_id_loai_luong = (Decimal)m_cbo_loai_luong.SelectedValue;
+            }
+            catch (Exception)
+            {
+                v_id_loai_luong = -1;
+            }
             
 
             m_us.FillDatasetSearch(m_ds, 
@@ -633,6 +668,7 @@ namespace BKI_HRM
                                     m_txt_search.Text, 
                                     m_ckb_luong_hien_tai.Checked,
                                     v_id_ky,
+                                    v_id_loai_luong,
                                     m_dat_ap_dung_tu_ngay.Value, m_dat_ap_dung_den_ngay.Value);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
@@ -742,6 +778,7 @@ namespace BKI_HRM
             m_dat_ap_dung_tu_ngay.ValueChanged += m_dat_ap_dung_tu_ngay_ValueChanged;
             m_dat_ap_dung_den_ngay.ValueChanged += m_dat_ap_dung_den_ngay_ValueChanged;
             m_cbo_ky.SelectedValueChanged += m_cbo_ky_SelectedValueChanged;
+            m_cbo_loai_luong.SelectedValueChanged += m_cbo_loai_luong_SelectedValueChanged;
             m_txt_search.KeyDown += m_txt_search_KeyDown;
         }
 
@@ -774,6 +811,7 @@ namespace BKI_HRM
 
         private void load_data_2_cbo()
         {
+            // Cbo ma ky
             US_DM_KY v_us_dm_ky = new US_DM_KY();
             DS_DM_KY v_ds_dm_ky = new DS_DM_KY();
 
@@ -790,6 +828,10 @@ namespace BKI_HRM
             m_cbo_ky.DataSource = v_dt;
             m_cbo_ky.ValueMember = DM_KY.ID;
             m_cbo_ky.DisplayMember = DM_KY.MA_KY;
+
+
+            // Cbo loai luong
+            CUtils.load_datasource_loai_quyet_dinh(m_cbo_loai_luong, 1, true);
 
         }
 
@@ -907,6 +949,18 @@ namespace BKI_HRM
         }
 
         private void m_cbo_ky_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cbo_loai_luong_SelectedValueChanged(object sender, EventArgs e)
         {
             try
             {

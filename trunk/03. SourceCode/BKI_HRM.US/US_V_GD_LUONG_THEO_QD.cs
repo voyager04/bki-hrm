@@ -1547,5 +1547,32 @@ namespace BKI_HRM.US
 
             return CIPConvert.ToDecimal(op_existed_rows.Value) > 0;
         }
+
+        public void FillDatasetSearch(DS_V_GD_LUONG_THEO_QD op_ds,
+                                        decimal ip_dc_id_phap_nhan,
+                                        string ip_str_keyword,
+                                        bool ip_bool_luong_hien_tai,
+                                        decimal ip_dc_id_ky,
+                                        decimal ip_dc_id_loai_luong,
+                                        DateTime ip_dat_tu_ngay_ap_dung, DateTime ip_dat_den_ngay_ap_dung)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_V_GD_LUONG_THEO_QD_Search");
+
+            v_sp.addDecimalInputParam("@ip_dc_id_phap_nhan", ip_dc_id_phap_nhan);
+            v_sp.addNVarcharInputParam("@ip_str_keyword", ip_str_keyword);
+            v_sp.addNVarcharInputParam("@ip_str_luong_hien_tai", ip_bool_luong_hien_tai ? "Y" : "N");
+            v_sp.addDecimalInputParam("@ip_dc_id_ky", ip_dc_id_ky);
+            v_sp.addDecimalInputParam("@ip_dc_id_loai_luong", ip_dc_id_loai_luong);
+
+            DateTime v_dat;
+            // Chuyển thời gian về đầu ngày
+            v_dat = new DateTime(ip_dat_tu_ngay_ap_dung.Year, ip_dat_tu_ngay_ap_dung.Month, ip_dat_tu_ngay_ap_dung.Day, 0, 0, 0);
+            v_sp.addDatetimeInputParam("@ip_dat_tu_ngay_ap_dung", v_dat);
+            // Chuyển thời gian về cuối ngày
+            v_dat = new DateTime(ip_dat_den_ngay_ap_dung.Year, ip_dat_den_ngay_ap_dung.Month, ip_dat_den_ngay_ap_dung.Day, 23, 59, 59);
+            v_sp.addDatetimeInputParam("@ip_dat_den_ngay_ap_dung", v_dat);
+
+            v_sp.fillDataSetByCommand(this, op_ds);
+        }
     }
 }
