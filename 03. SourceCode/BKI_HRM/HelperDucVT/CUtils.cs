@@ -308,8 +308,9 @@ namespace BKI_HRM.HelperDucVT
         /// </summary>
         /// <param name="op_cbo">ComboBox cần load</param>
         /// <param name="ip_type">Loại: default - Tất cả; 1 - Lương</param>
+        /// <param name="have_all_opt">Có thêm lựa chọn "Tất cả" vào combobox hay không</param>
         /// <returns>Trả lại true nếu thành công</returns>
-        public static bool load_datasource_loai_quyet_dinh(ComboBox op_cbo, Int16 ip_type = 0)
+        public static bool load_datasource_loai_quyet_dinh(ComboBox op_cbo, Int16 ip_type = 0, Boolean have_all_opt = false)
         {
             // Convert from int to string
             String v_type = "Tất cả";
@@ -325,8 +326,23 @@ namespace BKI_HRM.HelperDucVT
 
             // Get datasource and load data
             DataSet v_ds = create_datasource_loai_quyet_dinh(v_type);
+
             if (v_ds != null)
             {
+                DataTable v_dt = v_ds.Tables[0];
+                DataRow v_dr = v_dt.NewRow();
+
+                if (have_all_opt)
+                {
+                    v_dr[CM_DM_TU_DIEN.ID] = -1;
+                    v_dr[CM_DM_TU_DIEN.MA_TU_DIEN] = "NULL";
+                    v_dr[CM_DM_TU_DIEN.ID_LOAI_TU_DIEN] = "3";
+                    v_dr[CM_DM_TU_DIEN.TEN_NGAN] = "Tất cả";
+                    v_dr[CM_DM_TU_DIEN.TEN] = "Tất cả";
+
+                    v_dt.Rows.InsertAt(v_dr, 0);
+                }
+
                 op_cbo.DataSource = v_ds.Tables[0];
                 op_cbo.DisplayMember = CM_DM_TU_DIEN.TEN;
                 op_cbo.ValueMember = CM_DM_TU_DIEN.ID;
@@ -426,12 +442,6 @@ namespace BKI_HRM.HelperDucVT
             MessageBox.Show(ip_text, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        #endregion
-
-        #region Format FlexGrid
-        public void format_fg_default(C1.Win.C1FlexGrid.C1FlexGrid ip_fg)
-        {
-        }
         #endregion
         #endregion
 
