@@ -43,7 +43,7 @@ $(document).ready(function () {
 
     $('#tblChucVuNhanVien').bootstrapTable({
         method: 'GET',
-        url: baseUrl + 'Report/GetThongTinNhanVien?ip_MaNhanVien=' + maNhanVien,
+        url: baseUrl + 'Report/GetChucVuNhanVien?ip_MaNhanVien=' + maNhanVien,
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         cache: false,
@@ -55,22 +55,22 @@ $(document).ready(function () {
         minimumCountColumns: 2,
         clickToSelect: true,
         columns: [
-            { field: 'LIST_CHUC_VU.TU_NGAY', title: 'Từ ngày', align: 'right', valign: 'middle', sortable: true, },
-            { field: 'LIST_CHUC_VU.DEN_NGAY', title: 'Đến ngày', align: 'left', valign: 'middle', sortable: true, },
-            { field: 'LIST_CHUC_VU.MA_CHUC_VU', title: 'Mã chức vụ', align: 'center', valign: 'middle', sortable: true },
-            { field: 'LIST_CHUC_VU.TEN_CHUC_VU', title: 'Tên chức vụ', align: 'center', valign: 'middle', sortable: true },
-            { field: 'LIST_CHUC_VU.TRANG_THAI_CHUC_VU', title: 'Trạng thái chức vụ', align: 'center', valign: 'middle', sortable: true },
-            { field: 'LIST_CHUC_VU.TY_LE_THAM_GIA', title: 'Tỷ lệ tham gia', align: 'center', valign: 'middle', sortable: true },
-            { field: 'LIST_CHUC_VU.MA_DON_VI', title: 'Mã đơn vị', align: 'center', valign: 'middle', sortable: true },
-            { field: 'LIST_CHUC_VU.TEN_DON_VI', title: 'Tên đơn vị', align: 'center', valign: 'middle', sortable: true },
-            { field: 'LIST_CHUC_VU.CAP_DON_VI', title: 'Cấp đơn vị', align: 'center', valign: 'middle', sortable: true },
-            { field: 'LIST_CHUC_VU.MA_QUYET_DINH', title: 'Mã quyết định', align: 'center', valign: 'middle', sortable: true },
-            { field: 'LIST_CHUC_VU.NGAY_CO_HIEU_LUC', title: 'Ngày có hiệu lực', align: 'center', valign: 'middle', sortable: true },
-            { field: 'LIST_CHUC_VU.NGAY_HET_HIEU_LUC', title: 'Ngày hết hiệu lực', align: 'center', valign: 'middle', sortable: true },
+            { field: 'TU_NGAY', title: 'Từ ngày', align: 'right', valign: 'middle', sortable: true, },
+            { field: 'DEN_NGAY', title: 'Đến ngày', align: 'left', valign: 'middle', sortable: true, },
+            { field: 'MA_CHUC_VU', title: 'Mã chức vụ', align: 'center', valign: 'middle', sortable: true },
+            { field: 'TEN_CHUC_VU', title: 'Tên chức vụ', align: 'center', valign: 'middle', sortable: true },
+            { field: 'TRANG_THAI_CHUC_VU', title: 'Trạng thái chức vụ', align: 'center', valign: 'middle', sortable: true },
+            { field: 'TY_LE_THAM_GIA', title: 'Tỷ lệ tham gia', align: 'center', valign: 'middle', sortable: true },
+            { field: 'MA_DON_VI', title: 'Mã đơn vị', align: 'center', valign: 'middle', sortable: true },
+            { field: 'TEN_DON_VI', title: 'Tên đơn vị', align: 'center', valign: 'middle', sortable: true },
+            { field: 'CAP_DON_VI', title: 'Cấp đơn vị', align: 'center', valign: 'middle', sortable: true },
+            { field: 'MA_QUYET_DINH', title: 'Mã quyết định', align: 'center', valign: 'middle', sortable: true },
+            { field: 'NGAY_CO_HIEU_LUC', title: 'Ngày có hiệu lực', align: 'center', valign: 'middle', sortable: true },
+            { field: 'NGAY_HET_HIEU_LUC', title: 'Ngày hết hiệu lực', align: 'center', valign: 'middle', sortable: true },
         ]
     });
 
     $('#tblChucVuNhanVien').bootstrapTable('refresh', {
-        url: baseUrl + 'Report/GetThongTinNhanVien?ip_MaNhanVien=' + maNhanVien,
+        url: baseUrl + 'Report/GetChucVuNhanVien?ip_MaNhanVien=' + maNhanVien,
     });
 });
