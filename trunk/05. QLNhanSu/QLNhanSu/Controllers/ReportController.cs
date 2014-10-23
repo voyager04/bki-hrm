@@ -158,6 +158,27 @@ namespace QLNhanSu.Controllers
             return View();
         }
 
+        public JsonResult GetChucVuNhanVien(string ip_MaNhanVien)
+        {
+            var listChucVu = _db.pr_V_GD_QUA_TRINH_LAM_VIEC_chuc_vu_hien_tai(ip_MaNhanVien, 3);
+            var list = listChucVu.Select(item => new ChucVuModel()
+                                                     {
+                                                         TU_NGAY = string.Format("{0: dd/MM/yyyy}", item.NGAY_BAT_DAU),
+                                                         DEN_NGAY = string.Format("{0: dd/MM/yyyy}", item.NGAY_KET_THUC), 
+                                                         MA_CHUC_VU = item.MA_CV, 
+                                                         TEN_CHUC_VU = item.TEN_CV, 
+                                                         TRANG_THAI_CHUC_VU = item.TRANG_THAI_CV,
+                                                         TY_LE_THAM_GIA = item.TY_LE_THAM_GIA ?? 0, 
+                                                         MA_DON_VI = item.MA_DON_VI, 
+                                                         TEN_DON_VI = item.TEN_DON_VI, 
+                                                         CAP_DON_VI = item.CAP_DON_VI, 
+                                                         MA_QUYET_DINH = item.MA_QUYET_DINH,
+                                                         NGAY_CO_HIEU_LUC = string.Format("{0: dd/MM/yyyy}", item.NGAY_CO_HIEU_LUC),
+                                                         NGAY_HET_HIEU_LUC = string.Format("{0: dd/MM/yyyy}", item.NGAY_HET_HIEU_LUC)
+                                                     }).ToList();
+            return Json(list, JsonRequestBehavior.AllowGet);
+        }
+
         public JsonResult GetThongTinNhanVien(string ip_MaNhanVien)
         {
             var inforEmployee = new InforEmployee();
