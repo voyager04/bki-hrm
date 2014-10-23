@@ -17,8 +17,8 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -584,6 +584,9 @@
     <Compile Include="Models\pr_V_GD_LUONG_THEO_QD_Search_Result.cs">
       <DependentUpon>BKI_HRM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\pr_V_GD_LUONG_THEO_QD_WEB_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\pr_V_GD_QUA_TRINH_LAM_VIEC_2_Search_NhanVien_TheoPhongBanTaiMotThoiDiem_Result.cs">
       <DependentUpon>BKI_HRM.tt</DependentUpon>
     </Compile>
@@ -853,6 +856,7 @@
     <Content Include="Scripts\jquery-hethong.js" />
     <Content Include="Scripts\jquery-home-page.js" />
     <Content Include="Scripts\jquery-quatrinhlamviec.js" />
+    <Content Include="Scripts\jquery-thunhap.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
     <Content Include="Scripts\jquery-user.js" />
@@ -870,7 +874,9 @@
     <Content Include="Scripts\selectize.js" />
     <Content Include="Scripts\selectize.min.js" />
     <Content Include="Scripts\typeahead.tagging.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -915,6 +921,7 @@
     <Content Include="Views\HeThong\F203_Update.cshtml" />
     <Content Include="Views\Report\F101_CoCauTopica.cshtml" />
     <Content Include="Views\Report\F102_TraCuuQuaTrinhLamViecCaNhan.cshtml" />
+    <Content Include="Views\Report\F103_TraCuuThuNhapCaNhan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -941,7 +948,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>4476</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:9955/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

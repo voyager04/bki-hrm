@@ -9,6 +9,7 @@ using DotNetOpenAuth.Messaging;
 using DotNetOpenAuth.OpenId;
 using DotNetOpenAuth.OpenId.Extensions.AttributeExchange;
 using DotNetOpenAuth.OpenId.RelyingParty;
+using QLNhanSu.Models;
 
 namespace QLNhanSu.Controllers
 {
@@ -80,20 +81,20 @@ namespace QLNhanSu.Controllers
                             email = fetch.GetAttributeValue(WellKnownAttributes.Contact.Email);
                             firstname = fetch.GetAttributeValue(WellKnownAttributes.Name.First);
                             lastname = fetch.GetAttributeValue(WellKnownAttributes.Name.Last);
-                            //FormsAuthentication.SetAuthCookie(response.ClaimedIdentifier, false);
+                            FormsAuthentication.SetAuthCookie(response.ClaimedIdentifier, false);
                             FormsAuthentication.SetAuthCookie(email, false);
                             //FormsAuthentication.RedirectFromLoginPage(response.ClaimedIdentifier, false);
 
                         }
                         else //we didn't fetch any info. Too bad.
                         {
-                            throw new SecurityException("Authentication failed");
+                            ThrowSecurityException();
                         }
-                        Session["userInfo"] = new QLNhanSu.Models.UserInfor() { Email = email, LastName = lastname, FirstName = firstname };
+                        //Session["userInfo"] = new UserInfor { Email = email, LastName = lastname, FirstName = firstname };
                         Session["Email"] = email;
                         Session["LastName"] = lastname;
                         Session["FirstName"] = firstname;
-                        return RedirectToAction("F101_CoCauTopica", "Report");
+                        return RedirectToAction("Index", "Home");
                     case AuthenticationStatus.Canceled:
                         statusMessage = "Canceled at provider";
                         return View("Login", statusMessage);
@@ -105,7 +106,10 @@ namespace QLNhanSu.Controllers
             }
             return new EmptyResult();
         }
-
+        public void ThrowSecurityException()
+        {
+            throw new SecurityException("Authentication failed");
+        }
         public ActionResult Login()
         {
             return View();
