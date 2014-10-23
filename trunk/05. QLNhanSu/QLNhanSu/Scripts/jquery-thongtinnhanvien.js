@@ -6,6 +6,62 @@ $(document).ready(function () {
     subDomain = jQuery('#sub-domain').val();
     var maNhanVien = $('#ma-nhan-vien').val();
     
+    LoadInforEmployee(maNhanVien);
+
+    var nhanVien = [];
+    $.ajax({
+        type: "GET",
+        url: baseUrl + "/HeThong/GetAllNhanVien",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        async: false,
+        data: {},
+        beforeSend: function (xhr) {
+            jQuery('.loading-ma-nhan-vien').html('Loading...');
+        },
+        success: function (json) {
+            jQuery.each(json, function (index, item) {
+                nhanVien.push({
+                    id: item.ID,
+                    maNhanVien: item.MA_NHAN_VIEN,
+                    hoTen: item.HO_DEM + ' ' + item.TEN,
+                    chucVu: item.MA_CHUC_VU,
+                    donVi: item.MA_DON_VI
+                });
+            });
+            jQuery('.loading-ma-nhan-vien').html('');
+        },
+        error: function (xhr, textStatus, errorThrown) {
+            console.log(textStatus + ": " + errorThrown);
+        }
+    });
+
+    var $selectNhanVien = $('#txtMaNhanVien').selectize({
+        maxItems: 1,
+        maxOptions: 100,
+        valueField: 'maNhanVien',
+        labelField: 'hoTen',
+        searchField: 'hoTen',
+        options: nhanVien,
+        create: false,
+        render: {
+            option: function (item, escape) {
+                var result = "";
+                result += "<div>";
+                result += "<span class='glyphicon glyphicon-user'></span> " + escape(item.hoTen);
+                result += "<p><span>" + item.maNhanVien + " - " + item.chucVu + " - " + item.donVi + "</span></p>";
+                result += "</div>";
+                return result;
+            }
+        },
+        onChange: function (value, item) {
+            maNhanVien = value;
+            LoadInforEmployee(maNhanVien);
+        }
+    });
+});
+
+function LoadInforEmployee(maNhanVien) {
     $.ajax({
         type: "GET",
         url: baseUrl + "/Report/GetThongTinNhanVien",
@@ -34,7 +90,6 @@ $(document).ready(function () {
             $('#lblEmailCoQuan').text(json.EMAIL_CO_QUAN);
             $('#lblEmailCaNhan').text(json.EMAIL_CA_NHAN);
             $('#lblTrangThaiLaoDong').text(json.TRANG_THAI_LAO_DONG);
-            //jQuery('.loading-ma-nhan-vien').html('');
         },
         error: function (xhr, textStatus, errorThrown) {
             console.log(textStatus + ": " + errorThrown);
@@ -73,4 +128,4 @@ $(document).ready(function () {
     $('#tblChucVuNhanVien').bootstrapTable('refresh', {
         url: baseUrl + 'Report/GetChucVuNhanVien?ip_MaNhanVien=' + maNhanVien,
     });
-});
+}
