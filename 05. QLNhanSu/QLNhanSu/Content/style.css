@@ -134,7 +134,9 @@ footer {
     color: #810913;
 }
 
-
+.control-lable-value {
+    border-bottom: 1px dashed black;
+}
 
 
 

@@ -12,6 +12,11 @@
     //var roleTruongBan = "TruongBan";
     var roleNhanVien = "nhanvien";
     var v_User = db.HT_USER.FirstOrDefault(m => m.USERNAME == (string)email);
+    var maNhanVien = "";
+    if (v_User != null)
+    {
+        maNhanVien = v_User.BHYT;
+    }
 }
 
 <!DOCTYPE html>
@@ -34,6 +39,7 @@
 <body>
     <input type="hidden" id="base-url" value="@WebConfigurationManager.AppSettings["BaseURL"]"/>
     <input type="hidden" id="sub-domain" value="@WebConfigurationManager.AppSettings["SubDomain"]"/>
+    <input type="hidden" id="ma-nhan-vien" value="@maNhanVien"/>
     <!-- NavBar-top -->
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
@@ -71,8 +77,8 @@
                                         <li><a href='@Url.Action("F101_CoCauTopica", "Report")'><span class="glyphicon glyphicon-tree-conifer"></span>&nbsp;Cơ cấu TOPICA</a></li>
                                         <li><a href='@Url.Action("F102_TraCuuQuaTrinhLamViecCaNhan", "Report")'><span class="glyphicon glyphicon-calendar"></span>&nbsp;Tra cứu quá trình làm việc của cá nhân</a></li>
                                         <li><a href='@Url.Action("F103_TraCuuThuNhapCaNhan", "Report")'><span class="glyphicon glyphicon-gift"></span>&nbsp;Tra cứu thu nhập của cá nhân</a></li>
-                                        <li><a href='@Url.Action("F105_QuaTrinhLamViecCuaCacNhanVienPhongBan", "Report")'><span class="glyphicon glyphicon-leaf"></span>&nbsp;Quá trình làm việc của các nhân viên</a></li>
-                                        <li><a href='@Url.Action("F106_ThuNhapCuaCacNhanVienTrongPhongBan", "Report")'><span class="glyphicon glyphicon-fire"></span>&nbsp;Thu nhập của các nhân viên trong phòng ban</a></li>
+                                        <li><a href='@Url.Action("F104_ThongTinNhanVien", "Report")'><span class="glyphicon glyphicon-leaf"></span>&nbsp;Thông tin nhân viên</a></li>
+                                        @*<li><a href='@Url.Action("F106_ThuNhapCuaCacNhanVienTrongPhongBan", "Report")'><span class="glyphicon glyphicon-fire"></span>&nbsp;Thu nhập của các nhân viên trong phòng ban</a></li>*@
                                     </ul>
                                 </li>
                             </ul>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Objects;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -152,10 +153,58 @@ namespace QLNhanSu.Controllers
                                  }), JsonRequestBehavior.AllowGet);
         }
 
-        //public ActionResult F104_DanhSachNhanVienPhongBan(string ipMaDonVi)
-        //{
-        //    return View();
-        //}
+        public ActionResult F104_ThongTinNhanVien()
+        {
+            return View();
+        }
+
+        public JsonResult GetThongTinNhanVien(string ip_MaNhanVien)
+        {
+            var inforEmployee = new InforEmployee();
+            var infors = _db.pr_DM_NHAN_SU_Search(ip_MaNhanVien).FirstOrDefault();
+            if (infors == null) return null;
+            var trangThaiLd = _db.pr_V_GD_TRANG_THAI_LAO_DONG_By_Ma_nhan_vien(ip_MaNhanVien).FirstOrDefault();
+            if (trangThaiLd == null) return null;
+            var listChucVu = _db.pr_V_GD_QUA_TRINH_LAM_VIEC_chuc_vu_hien_tai(ip_MaNhanVien, 3);
+
+            inforEmployee.HO_TEN = infors.HO_DEM + " " + infors.TEN;
+            inforEmployee.GIOI_TINH = infors.GIOI_TINH;
+            inforEmployee.NGAY_SINH = string.Format("{0: dd/MM/yyyy}", infors.NGAY_SINH);
+            inforEmployee.NOI_SINH = infors.NOI_SINH;
+            inforEmployee.NGUYEN_QUAN = infors.NGUYEN_QUAN;
+            inforEmployee.DK_HO_KHAU = infors.HO_KHAU;
+            inforEmployee.DIA_CHI = infors.CHO_O;
+            inforEmployee.CMTND = infors.CMND;
+            inforEmployee.NGAY_CAP = string.Format("{0: dd/MM/yyyy}", infors.NGAY_CAP_CMND);
+            inforEmployee.NOI_CAP = infors.NOI_CAP_CMND;
+            inforEmployee.MA_SO_THUE = infors.MA_SO_THUE;
+            inforEmployee.DTDD = infors.DI_DONG;
+            inforEmployee.DT_NHA_RIENG = infors.DT_NHA;
+            inforEmployee.EMAIL_CO_QUAN = infors.EMAIL_CQ;
+            inforEmployee.EMAIL_CA_NHAN = infors.EMAIL_CA_NHAN;
+            inforEmployee.TRANG_THAI_LAO_DONG = trangThaiLd.TRANG_THAI_LAO_DONG;
+
+            inforEmployee.LIST_CHUC_VU = new List<ChucVuModel>();
+            foreach (var item in listChucVu)
+            {
+                inforEmployee.LIST_CHUC_VU.Add(new ChucVuModel()
+                {
+                    TU_NGAY = string.Format("{0}: dd/MM/yyyy", item.NGAY_BAT_DAU),
+                    DEN_NGAY = string.Format("{0}: dd/MM/yyyy", item.NGAY_KET_THUC),
+                    MA_CHUC_VU = item.MA_CV,
+                    TEN_CHUC_VU = item.TEN_CV,
+                    TRANG_THAI_CHUC_VU = item.TRANG_THAI_CV,
+                    TY_LE_THAM_GIA = item.TY_LE_THAM_GIA ?? 0,
+                    MA_DON_VI = item.MA_DON_VI,
+                    TEN_DON_VI = item.TEN_DON_VI,
+                    CAP_DON_VI = item.CAP_DON_VI,
+                    MA_QUYET_DINH = item.MA_QUYET_DINH,
+                    NGAY_CO_HIEU_LUC = string.Format("{0}: dd/MM/yyyy", item.NGAY_CO_HIEU_LUC),
+                    NGAY_HET_HIEU_LUC = string.Format("{0}: dd/MM/yyyy", item.NGAY_HET_HIEU_LUC)
+                });
+            }
+            return Json(inforEmployee, JsonRequestBehavior.AllowGet);
+        }
 
         //public ActionResult F105_QuaTrinhLamViecCuaCacNhanVienPhongBan()
         //{

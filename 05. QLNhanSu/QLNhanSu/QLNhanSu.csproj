@@ -188,6 +188,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BKI_HRM.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\ChucVuModel.cs" />
     <Compile Include="Models\CM_COMPANY_INFO.cs">
       <DependentUpon>BKI_HRM.tt</DependentUpon>
     </Compile>
@@ -341,6 +342,7 @@
     <Compile Include="Models\IMPORT_EXCEL_LUONG_THEO_QD.cs">
       <DependentUpon>BKI_HRM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\InforEmployee.cs" />
     <Compile Include="Models\pr_CM_DM_TU_DIEN_Load_loai_quyet_dinh_Result.cs">
       <DependentUpon>BKI_HRM.tt</DependentUpon>
     </Compile>
@@ -856,6 +858,7 @@
     <Content Include="Scripts\jquery-hethong.js" />
     <Content Include="Scripts\jquery-home-page.js" />
     <Content Include="Scripts\jquery-quatrinhlamviec.js" />
+    <Content Include="Scripts\jquery-thongtinnhanvien.js" />
     <Content Include="Scripts\jquery-thunhap.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
@@ -922,6 +925,7 @@
     <Content Include="Views\Report\F101_CoCauTopica.cshtml" />
     <Content Include="Views\Report\F102_TraCuuQuaTrinhLamViecCaNhan.cshtml" />
     <Content Include="Views\Report\F103_TraCuuThuNhapCaNhan.cshtml" />
+    <Content Include="Views\Report\F104_ThongTinNhanVien.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
