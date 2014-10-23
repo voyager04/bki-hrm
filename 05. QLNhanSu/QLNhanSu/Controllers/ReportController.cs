@@ -126,28 +126,45 @@ namespace QLNhanSu.Controllers
             }), JsonRequestBehavior.AllowGet);
         }
 
-        [AllowAnonymous]
         public ActionResult F103_TraCuuThuNhapCaNhan()
         {
             return View();
         }
 
-        [AllowAnonymous]
-        public ActionResult F104_DanhSachNhanVienPhongBan(string ipMaDonVi)
+        public JsonResult GetThuNhapCaNhan(string ip_MaNhanVien)
         {
-            return View();
+            return Json(_db.pr_V_GD_LUONG_THEO_QD_WEB(3, ip_MaNhanVien, "N", -1, -1, DateTime.Parse("01/01/2009"), DateTime.Now)
+                .Select(m => new
+                                 {
+                                     //HO_TEN = m.HO_DEM + " " + m.TEN,
+                                     LUONG = m.LUONG,
+                                     NGAY_AP_DUNG = string.Format("{0: dd/MM/yyyy}", m.NGAY_AP_DUNG),
+                                     LUONG_HIEN_TAI = m.LUONG_HIEN_TAI_YN,
+                                     MA_KY = m.MA_KY,
+                                     NGAY_BD_KY = string.Format("{0: dd/MM/yyyy}", m.NGAY_BAT_DAU_KY),
+                                     NGAY_KT_KY = string.Format("{0: dd/MM/yyyy}", m.NGAY_KET_THUC_KY),
+                                     MA_QUYET_DINH = m.MA_QD,
+                                     LOAI_QUYET_DINH = m.TEN_QD,
+                                     NGAY_CO_HIEU_LUC = string.Format("{0: dd/MM/yyyy}", m.NGAY_CO_HIEU_LUC),
+                                     NGAY_KY = string.Format("{0: dd/MM/yyyy}", m.NGAY_KY),
+                                     NOI_DUNG = m.NOI_DUNG,
+                                     MA_SO_THUE = m.MA_SO_THUE
+                                 }), JsonRequestBehavior.AllowGet);
         }
 
-        [AllowAnonymous]
-        public ActionResult F105_QuaTrinhLamViecCuaCacNhanVienPhongBan()
-        {
-            return View();
-        }
+        //public ActionResult F104_DanhSachNhanVienPhongBan(string ipMaDonVi)
+        //{
+        //    return View();
+        //}
 
-        [AllowAnonymous]
-        public ActionResult F106_ThuNhapCuaCacNhanVienTrongPhongBan()
-        {
-            return View();
-        }
+        //public ActionResult F105_QuaTrinhLamViecCuaCacNhanVienPhongBan()
+        //{
+        //    return View();
+        //}
+
+        //public ActionResult F106_ThuNhapCuaCacNhanVienTrongPhongBan()
+        //{
+        //    return View();
+        //}
     }
 }
