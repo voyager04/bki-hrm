@@ -136,6 +136,8 @@ footer {
 
 .control-lable-value {
     border-bottom: 1px dashed black;
+    font-style: italic;
+    color: #4183D7;
 }
 
 

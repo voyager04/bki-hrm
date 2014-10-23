@@ -107,7 +107,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         @if (Request.IsAuthenticated)
                         {
-                            <li>@Html.ActionLink(firstName + " " + lastName, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })</li>
+                            <li>@Html.ActionLink(firstName + " " + lastName, "F104_ThongTinNhanVien", "Report", new { @class = "username", title = "Manage" })</li>
                             <li>
                                 @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
                                 {
