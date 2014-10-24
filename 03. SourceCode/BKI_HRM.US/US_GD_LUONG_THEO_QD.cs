@@ -249,6 +249,7 @@ namespace BKI_HRM.US
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
+
         public void insert_kem_id_phap_nhan(string ip_ma_nv, string ip_ma_ky, string ip_ma_qd, decimal ip_luong, DateTime ip_ngay_ap_dung, string luong_ht_yn, decimal ip_thang_ap_dung, decimal ip_nam_ad, decimal ip_id_phap_nhan) {
 
             CStoredProc v_sp = new CStoredProc("pr_gd_luong_theo_qd_insert_kem_id_phap_nhan");

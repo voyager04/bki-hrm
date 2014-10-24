@@ -128,7 +128,7 @@ namespace BKI_HRM.NghiepVu
         private void load_data_2_us_gd_luong_theo_qd()
         {
             m_us_v_gd_luong_theo_qd.dcLUONG = m_num_luong.Value;
-            m_us_v_gd_luong_theo_qd.datNGAY_AP_DUNG = m_dat_ngay_ap_dung.Value;
+            m_us_v_gd_luong_theo_qd.datNGAY_AP_DUNG = m_dat_ngay_ap_dung.Value.Date;
             m_us_v_gd_luong_theo_qd.dcTHANG_AP_DUNG = m_dat_ngay_ap_dung.Value.Month;
             m_us_v_gd_luong_theo_qd.dcNAM_AP_DUNG = m_dat_ngay_ap_dung.Value.Year;
             m_us_v_gd_luong_theo_qd.strLUONG_HIEN_TAI_YN = m_ckb_luong_hien_tai.Checked ? "Y" : "N";
