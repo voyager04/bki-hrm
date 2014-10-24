@@ -40,21 +40,23 @@ $(document).ready(function () {
             clickToSelect: true,
             columns: [
                 { field: 'MA_NHAN_VIEN', title: 'Mã nhân viên', align: 'left', valign: 'middle', sortable: true },
-                { field: 'HO_DEM', title: 'Họ đệm', align: 'right', valign: 'middle', sortable: true, },
-                { field: 'TEN', title: 'Tên', align: 'left', valign: 'middle', sortable: true, },
+                { field: 'HO_TEN', title: 'Họ đệm', align: 'left', valign: 'middle', sortable: true, },
+                { field: 'GIOI_TINH', title: 'Giới tính', align: 'left', valign: 'middle', sortable: true, },
+                { field: 'EMAIL_CQ', title: 'Email', align: 'left', valign: 'middle', sortable: true, },
+                { field: 'DTDD', title: 'Di động', align: 'left', valign: 'middle', sortable: true, },
                 { field: 'TRANG_THAI_LD_HIEN_TAI', title: 'Trạng thái lao động', align: 'center', valign: 'middle', sortable: true },
                 { field: 'TEN_CHUC_VU', title: 'Tên chức vụ', align: 'center', valign: 'middle', sortable: true },
                 { field: 'NGACH', title: 'Ngạch', align: 'center', valign: 'middle', sortable: true },
                 { field: 'LOAI_CHUC_VU', title: 'Loại chức vụ', align: 'center', valign: 'middle', sortable: true },
-                { field: 'TRANG_THAI_CHUC_VU', title: 'Trạng thái chức vụ', align: 'center', valign: 'middle', sortable: true },
+                //{ field: 'TRANG_THAI_CHUC_VU', title: 'Trạng thái chức vụ', align: 'center', valign: 'middle', sortable: true },
                 { field: 'NGAY_BAT_DAU_CHUC_VU', title: 'Ngày bắt đầu CV', align: 'center', valign: 'middle', sortable: true },
-                { field: 'NGAY_KET_THUC_CHUC_VU', title: 'Ngày kết thúc CV', align: 'center', valign: 'middle', sortable: true },
+                //{ field: 'NGAY_KET_THUC_CHUC_VU', title: 'Ngày kết thúc CV', align: 'center', valign: 'middle', sortable: true },
                 { field: 'TY_LE_THAM_GIA', title: 'Tỷ lệ tham gia', align: 'center', valign: 'middle', sortable: true },
                 { field: 'MA_QUYET_DINH', title: 'Mã quyết định', align: 'center', valign: 'middle', sortable: true },
                 { field: 'LOAI_QUYET_DINH', title: 'Loại quyết định', align: 'center', valign: 'middle', sortable: true },
-                { field: 'NGAY_BAT_DAU_QUYET_DINH', title: 'Ngày bất đầu', align: 'center', valign: 'middle', sortable: true },
-                { field: 'NGAY_KET_THUC_QUYET_DINH', title: 'Ngày kết thúc', align: 'center', valign: 'middle', sortable: true },
-                { field: 'MA_QUYET_DINH_MIEN_NHIEM', title: 'Mã quyết định miễn nhiệm', align: 'center', valign: 'middle', sortable: true }
+                //{ field: 'NGAY_BAT_DAU_QUYET_DINH', title: 'Ngày bất đầu', align: 'center', valign: 'middle', sortable: true },
+                //{ field: 'NGAY_KET_THUC_QUYET_DINH', title: 'Ngày kết thúc', align: 'center', valign: 'middle', sortable: true },
+                //{ field: 'MA_QUYET_DINH_MIEN_NHIEM', title: 'Mã quyết định miễn nhiệm', align: 'center', valign: 'middle', sortable: true }
             ]
         });
 
