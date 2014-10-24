@@ -847,6 +847,7 @@
       <DependentUpon>BKI_HRM.edmx</DependentUpon>
       <LastGenOutput>BKI_HRM.cs</LastGenOutput>
     </Content>
+    <None Include="Properties\PublishProfiles\topicahrm.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\bootstrap-table.js" />
     <Content Include="Scripts\bootstrap.js" />
