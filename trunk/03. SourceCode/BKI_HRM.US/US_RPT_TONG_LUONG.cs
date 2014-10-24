@@ -117,18 +117,20 @@ namespace BKI_HRM.US
         }
         #endregion
 
-        public void FillDatasetByMaCV(DS_RPT_TONG_LUONG op_ds_tong_luong, string ip_ma)
+        public void FillDatasetByMaCV(DS_RPT_TONG_LUONG op_ds_tong_luong, string ip_ma, decimal ip_id_phap_nhan)
         {
             CStoredProc v_sp = new CStoredProc("get_tong_luong_by_ma_cv");
             v_sp.addNVarcharInputParam("@ip_ma_chuc_vu", ip_ma);
+            v_sp.addDecimalInputParam("@ip_id_phap_nhan", ip_id_phap_nhan);
 
             v_sp.fillDataSetByCommand(this, op_ds_tong_luong);
         }
 
-        public void FillDatasetByMaTTLD(DS_RPT_TONG_LUONG op_ds_tong_luong, string ip_ma)
+        public void FillDatasetByMaTTLD(DS_RPT_TONG_LUONG op_ds_tong_luong, string ip_ttld, decimal ip_id_phap_nhan)
         {
             CStoredProc v_sp = new CStoredProc("get_tong_luong_by_ma_ttld");
-            v_sp.addNVarcharInputParam("@ip_ma_ttld", ip_ma);
+            v_sp.addNVarcharInputParam("@ip_ttld", ip_ttld);
+            v_sp.addDecimalInputParam("@ip_id_phap_nhan", ip_id_phap_nhan);
 
             v_sp.fillDataSetByCommand(this, op_ds_tong_luong);
         }

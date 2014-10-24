@@ -1,16 +1,12 @@
-﻿using BKI_HRM.US;
-using BKI_HRM.DS;
+﻿using BKI_HRM.DS;
 using BKI_HRM.DS.CDBNames;
+using BKI_HRM.US;
+using C1.Win.C1FlexGrid;
+using IP.Core.IPCommon;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using IP.Core.IPCommon;
-using C1.Win.C1FlexGrid;
 
 namespace BKI_HRM.BaoCao
 {
@@ -44,9 +40,9 @@ namespace BKI_HRM.BaoCao
         /// Lấy danh sách mã trạng thái lao động cần dùng để lấy DS báo cáo tổng lương
         /// </summary>
         /// <returns>Danh sách mã trạng thái lao động</returns>
-        private IEnumerable<string> get_ma_ttld_n()
+        private IEnumerable<string> get_ttld_n()
         {
-            return (new string[] { "THU_VIEC" });
+            return (new string[] { "Thử việc", "Nghỉ khác" });
         }
 
         /// <summary>
@@ -69,15 +65,17 @@ namespace BKI_HRM.BaoCao
             US_RPT_TONG_LUONG v_us_tong_luong = new US_RPT_TONG_LUONG();
             DS_RPT_TONG_LUONG op_ds_tong_luong = new DS_RPT_TONG_LUONG();
 
+            decimal v_id_phap_nhan = IP.Core.IPSystemAdmin.CAppContext_201.getCurrentIDPhapnhan();
+
             try
             {
                 switch (ip_type)
                 {
                     case TONG_LUONG_BY_MA.CHUC_VU:
-                        v_us_tong_luong.FillDatasetByMaCV(op_ds_tong_luong, ip_ma);
+                        v_us_tong_luong.FillDatasetByMaCV(op_ds_tong_luong, ip_ma, v_id_phap_nhan);
                         break;
                     case TONG_LUONG_BY_MA.TRANG_THAI_LAO_DONG:
-                        v_us_tong_luong.FillDatasetByMaTTLD(op_ds_tong_luong, ip_ma);
+                        v_us_tong_luong.FillDatasetByMaTTLD(op_ds_tong_luong, ip_ma, v_id_phap_nhan);
                         break;
                     default:
                         return null;
@@ -129,6 +127,8 @@ namespace BKI_HRM.BaoCao
             v_us_ky.FillDataset(v_ds_ky);
 
             // m_fg
+            m_fg.AllowEditing = false;
+
             Column v_col;
 
             // Add column mã tổng lương
@@ -174,7 +174,7 @@ namespace BKI_HRM.BaoCao
             foreach (string key in get_ma_cv_n())
                 m_ds_tong_luong_n[key] = get_ds_tong_luong(key, TONG_LUONG_BY_MA.CHUC_VU);
 
-            foreach (string key in get_ma_ttld_n())
+            foreach (string key in get_ttld_n())
                 m_ds_tong_luong_n[key] = get_ds_tong_luong(key, TONG_LUONG_BY_MA.TRANG_THAI_LAO_DONG);
         }
 
@@ -192,7 +192,6 @@ namespace BKI_HRM.BaoCao
             foreach (string v_ma in m_ds_tong_luong_n.Keys)
             {
                 // Ô đầu tiên là cột Mã tổng lương, gán bằng mã (Key) được lưu trong từ điển
-                
                 v_row = m_fg.Rows.Add();
                 v_row["MA_TONG_LUONG"] = convert_ma_2_text(v_ma);
 
@@ -204,7 +203,12 @@ namespace BKI_HRM.BaoCao
                 {
                     foreach (DataRow v_dr in v_dt_tong_luong.Rows)
                     {
-                        v_row[(string)v_dr[RPT_TONG_LUONG.MA_KY]] = (decimal)v_dr[RPT_TONG_LUONG.TONG_LUONG];
+                        if (v_dr[RPT_TONG_LUONG.TONG_LUONG] != DBNull.Value)
+                        {
+                            v_row[(string)v_dr[RPT_TONG_LUONG.MA_KY]] = (decimal)v_dr[RPT_TONG_LUONG.TONG_LUONG];
+                        }
+                        else
+                            v_row[(string)v_dr[RPT_TONG_LUONG.MA_KY]] = 0;
                     }
                 }
 
