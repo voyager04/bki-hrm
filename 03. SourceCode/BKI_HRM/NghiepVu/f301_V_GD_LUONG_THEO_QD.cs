@@ -50,6 +50,7 @@ namespace BKI_HRM
         private C1FlexGrid m_fg;
         private ComboBox m_cbo_loai_luong;
         private Label label6;
+        internal SIS.Controls.Button.SiSButton m_cmd_import_excel;
         private System.ComponentModel.IContainer components;
 
         public f301_V_GD_LUONG_THEO_QD()
@@ -112,6 +113,7 @@ namespace BKI_HRM
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_cmd_import_excel = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -147,6 +149,7 @@ namespace BKI_HRM
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_import_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
@@ -390,6 +393,21 @@ namespace BKI_HRM
             this.m_fg.Size = new System.Drawing.Size(1015, 353);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 22;
+            // 
+            // m_cmd_import_excel
+            // 
+            this.m_cmd_import_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_import_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_import_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_import_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_import_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_import_excel.ImageIndex = 19;
+            this.m_cmd_import_excel.ImageList = this.ImageList;
+            this.m_cmd_import_excel.Location = new System.Drawing.Point(92, 4);
+            this.m_cmd_import_excel.Name = "m_cmd_import_excel";
+            this.m_cmd_import_excel.Size = new System.Drawing.Size(128, 28);
+            this.m_cmd_import_excel.TabIndex = 38;
+            this.m_cmd_import_excel.Text = "&Nhập từ Excel";
             // 
             // f301_V_GD_LUONG_THEO_QD
             // 
@@ -780,6 +798,27 @@ namespace BKI_HRM
             m_cbo_ky.SelectedValueChanged += m_cbo_ky_SelectedValueChanged;
             m_cbo_loai_luong.SelectedValueChanged += m_cbo_loai_luong_SelectedValueChanged;
             m_txt_search.KeyDown += m_txt_search_KeyDown;
+
+            m_cmd_import_excel.Click += m_cmd_import_excel_Click;
+        }
+
+        private void m_cmd_import_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                import_excel();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void import_excel()
+        {
+            f801_import_excel_luong_theo_qd v_form = new f801_import_excel_luong_theo_qd();
+            v_form.display();
+            load_data_2_grid();
         }
 
         // ~ DucVT ~
