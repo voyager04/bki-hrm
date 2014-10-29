@@ -49,6 +49,8 @@ namespace BKI_HRM
         private CheckBox m_ckb_kiem_nhiem;
         private Panel panel1;
         private C1FlexGrid m_fg;
+        private CheckedListBox m_clb_chuc_vu;
+        private Label label2;
 		private System.ComponentModel.IContainer components;
 
 		public f402_BAO_CAO_NHAN_SU_CHUC_VU()
@@ -110,7 +112,9 @@ namespace BKI_HRM
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.m_ckb_kiem_nhiem = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_clb_chuc_vu = new System.Windows.Forms.CheckedListBox();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.label2 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -202,10 +206,11 @@ namespace BKI_HRM
             // 
             this.m_txt_tim_kiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_tim_kiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_tim_kiem.Location = new System.Drawing.Point(246, 17);
+            this.m_txt_tim_kiem.Location = new System.Drawing.Point(711, 62);
             this.m_txt_tim_kiem.Name = "m_txt_tim_kiem";
             this.m_txt_tim_kiem.Size = new System.Drawing.Size(358, 20);
             this.m_txt_tim_kiem.TabIndex = 1;
+            this.m_txt_tim_kiem.Visible = false;
             this.m_txt_tim_kiem.MouseClick += new System.Windows.Forms.MouseEventHandler(this.m_txt_tim_kiem_MouseClick);
             this.m_txt_tim_kiem.TextChanged += new System.EventHandler(this.m_txt_tim_kiem_TextChanged);
             this.m_txt_tim_kiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.m_txt_tim_kiem_KeyDown);
@@ -215,7 +220,7 @@ namespace BKI_HRM
             // 
             this.m_dtp_thoidiem.CustomFormat = "dd/MM/yyyy";
             this.m_dtp_thoidiem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_thoidiem.Location = new System.Drawing.Point(778, 14);
+            this.m_dtp_thoidiem.Location = new System.Drawing.Point(529, 18);
             this.m_dtp_thoidiem.Name = "m_dtp_thoidiem";
             this.m_dtp_thoidiem.Size = new System.Drawing.Size(176, 20);
             this.m_dtp_thoidiem.TabIndex = 3;
@@ -224,7 +229,7 @@ namespace BKI_HRM
             // m_lbl_thoidiem
             // 
             this.m_lbl_thoidiem.AutoSize = true;
-            this.m_lbl_thoidiem.Location = new System.Drawing.Point(715, 20);
+            this.m_lbl_thoidiem.Location = new System.Drawing.Point(466, 18);
             this.m_lbl_thoidiem.Name = "m_lbl_thoidiem";
             this.m_lbl_thoidiem.Size = new System.Drawing.Size(57, 13);
             this.m_lbl_thoidiem.TabIndex = 34;
@@ -267,7 +272,7 @@ namespace BKI_HRM
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(508, 66);
+            this.label1.Location = new System.Drawing.Point(468, 92);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 13);
             this.label1.TabIndex = 35;
@@ -276,7 +281,7 @@ namespace BKI_HRM
             // m_lbl_soluongns
             // 
             this.m_lbl_soluongns.AutoSize = true;
-            this.m_lbl_soluongns.Location = new System.Drawing.Point(607, 66);
+            this.m_lbl_soluongns.Location = new System.Drawing.Point(567, 92);
             this.m_lbl_soluongns.Name = "m_lbl_soluongns";
             this.m_lbl_soluongns.Size = new System.Drawing.Size(35, 13);
             this.m_lbl_soluongns.TabIndex = 36;
@@ -290,7 +295,7 @@ namespace BKI_HRM
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(610, 12);
+            this.m_cmd_search.Location = new System.Drawing.Point(711, 16);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_search.TabIndex = 2;
@@ -300,7 +305,7 @@ namespace BKI_HRM
             // m_ckb_kiem_nhiem
             // 
             this.m_ckb_kiem_nhiem.AutoSize = true;
-            this.m_ckb_kiem_nhiem.Location = new System.Drawing.Point(754, 62);
+            this.m_ckb_kiem_nhiem.Location = new System.Drawing.Point(469, 50);
             this.m_ckb_kiem_nhiem.Name = "m_ckb_kiem_nhiem";
             this.m_ckb_kiem_nhiem.Size = new System.Drawing.Size(118, 17);
             this.m_ckb_kiem_nhiem.TabIndex = 43;
@@ -310,6 +315,8 @@ namespace BKI_HRM
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.m_clb_chuc_vu);
             this.panel1.Controls.Add(this.m_cmd_search);
             this.panel1.Controls.Add(this.m_ckb_kiem_nhiem);
             this.panel1.Controls.Add(this.m_txt_tim_kiem);
@@ -321,18 +328,37 @@ namespace BKI_HRM
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1268, 100);
+            this.panel1.Size = new System.Drawing.Size(1268, 126);
             this.panel1.TabIndex = 44;
+            // 
+            // m_clb_chuc_vu
+            // 
+            this.m_clb_chuc_vu.FormattingEnabled = true;
+            this.m_clb_chuc_vu.Location = new System.Drawing.Point(339, 18);
+            this.m_clb_chuc_vu.Name = "m_clb_chuc_vu";
+            this.m_clb_chuc_vu.Size = new System.Drawing.Size(120, 94);
+            this.m_clb_chuc_vu.TabIndex = 44;
+            this.m_clb_chuc_vu.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.m_clb_chuc_vu_ItemCheck);
+            this.m_clb_chuc_vu.SelectedIndexChanged += new System.EventHandler(this.m_clb_chuc_vu_SelectedIndexChanged);
             // 
             // m_fg
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 100);
+            this.m_fg.Location = new System.Drawing.Point(0, 126);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1268, 486);
+            this.m_fg.Size = new System.Drawing.Size(1268, 460);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 45;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(259, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 13);
+            this.label2.TabIndex = 45;
+            this.label2.Text = "Chọn chức vụ:";
             // 
             // f402_BAO_CAO_NHAN_SU_CHUC_VU
             // 
@@ -422,6 +448,7 @@ namespace BKI_HRM
         Boolean m_form_mode = true;
 		DS_V_GD_QUA_TRINH_LAM_VIEC_2 m_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC_2();
 		US_V_GD_QUA_TRINH_LAM_VIEC_2 m_us = new US_V_GD_QUA_TRINH_LAM_VIEC_2();
+        string ma_cv;
 		#endregion
 
 		#region Private Methods
@@ -437,6 +464,7 @@ namespace BKI_HRM
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
+            load_data_to_cbc_choose_columns();
             if (m_form_mode == true)
             {
                 m_txt_tim_kiem.Text = "";
@@ -446,6 +474,26 @@ namespace BKI_HRM
             else
                 load_data_2_grid_search();
 		}
+        private void load_data_to_cbc_choose_columns()
+        {
+            DS_DM_CHUC_VU v_ds_cv = new DS_DM_CHUC_VU();
+            US_DM_CHUC_VU v_us_cv = new US_DM_CHUC_VU();
+            v_us_cv.FillDataset(v_ds_cv);
+            //m_cbc_choose_columns.DisplayMember = DM_CHUC_VU.MA_CV;
+            //m_cbc_choose_columns.ValueMember = DM_CHUC_VU.MA_CV;
+            //m_cbc_choose_columns.DataSource = v_ds_cv.DM_CHUC_VU;
+            foreach (DataRow dr in v_ds_cv.DM_CHUC_VU)
+            {
+                m_clb_chuc_vu.Items.Add(dr[1].ToString());
+                
+                
+            }
+            for (int i = 0; i < m_clb_chuc_vu.Items.Count; i++)
+            {
+                m_clb_chuc_vu.SetItemChecked(i, true);
+                ma_cv = string.Concat(ma_cv, m_clb_chuc_vu.Items[i].ToString());
+            }
+        }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
             Hashtable v_htb = new Hashtable();
@@ -497,7 +545,7 @@ namespace BKI_HRM
                 v_kiem_nhiem = 650;
             m_obj_trans = get_trans_object(m_fg);
             m_ds.Clear();
-            m_us.FillDatasetSearchChucVuThoiDiem(m_ds, m_txt_tim_kiem.Text.Trim(), m_dtp_thoidiem.Value,CAppContext_201.getCurrentIDPhapnhan(), v_kiem_nhiem);
+            m_us.FillDatasetSearchChucVuThoiDiem(m_ds, ma_cv, m_dtp_thoidiem.Value.Date,CAppContext_201.getCurrentIDPhapnhan(), v_kiem_nhiem);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             if (m_rdb_nhom.Checked == true)
@@ -519,7 +567,7 @@ namespace BKI_HRM
           //  m_lbl_soluongns.Text = m_ds.V_GD_QUA_TRINH_LAM_VIEC_2.Count.ToString();
 
             decimal count = 0;
-            m_us.count_nhan_vien_theo_chuc_vu(m_ds, m_txt_tim_kiem.Text.Trim(), m_dtp_thoidiem.Value,CAppContext_201.getCurrentIDPhapnhan(), ref count,v_kiem_nhiem);
+            m_us.count_nhan_vien_theo_chuc_vu(m_ds, ma_cv, m_dtp_thoidiem.Value.Date,CAppContext_201.getCurrentIDPhapnhan(), ref count,v_kiem_nhiem);
             m_lbl_soluongns.Text = CIPConvert.ToStr(count);
         }
 		private void grid2us_object(US_V_GD_QUA_TRINH_LAM_VIEC_2 i_us
@@ -603,14 +651,21 @@ namespace BKI_HRM
         {
             try
             {
-                if (m_txt_tim_kiem.Text.Trim() == "Nhập mã chức vụ, mã nhân viên, họ tên")
+                ma_cv = "";
+                for (int i = 0; i < m_clb_chuc_vu.Items.Count; i++)
+                {
+                    if (m_clb_chuc_vu.GetItemChecked(i))
+                        ma_cv = string.Concat(ma_cv, m_clb_chuc_vu.Items[i].ToString());
+                }
+                load_data_2_grid_search();
+                /*if (m_txt_tim_kiem.Text.Trim() == "Nhập mã chức vụ, mã nhân viên, họ tên")
                 {
                     m_txt_tim_kiem.Text = "";
                     load_data_2_grid_search();
                     m_txt_tim_kiem.Text = "Nhập mã chức vụ, mã nhân viên, họ tên";
                 }
                 else
-                    load_data_2_grid_search();
+                    load_data_2_grid_search();*/
             }
             catch (Exception v_e)
             {
@@ -724,7 +779,18 @@ namespace BKI_HRM
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
-        }		
+        }
+
+        private void m_clb_chuc_vu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void m_clb_chuc_vu_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            
+            //load_data_2_grid_search();
+        }
 
 	}
 }
