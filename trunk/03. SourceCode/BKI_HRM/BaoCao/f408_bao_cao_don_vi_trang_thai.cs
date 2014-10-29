@@ -206,7 +206,7 @@ namespace BKI_HRM
             var v_dat_thoi_diem = DateTime.Now;
             if (m_dat_thoidiem.Checked)
             {
-                v_dat_thoi_diem = m_dat_thoidiem.Value;
+                v_dat_thoi_diem = m_dat_thoidiem.Value.Date;
             }
             m_us.FillDatase_NhanSu_TheoPhongBan(m_ds, v_str_search, v_dat_thoi_diem, CAppContext_201.getCurrentIDPhapnhan(), v_kiem_nhiem);
             m_fg.Redraw = false;
@@ -387,7 +387,7 @@ namespace BKI_HRM
             m_ds_1.Clear();
             //3.Đưa dữ liệu lên lưới
             m_ds_rpt = new DS_RPT_DON_VI_TRANG_THAI();
-            m_us_rpt.FillDatasetByProc(m_ds_rpt, m_dat_thoidiem.Value, CAppContext_201.getCurrentIDPhapnhan());
+            m_us_rpt.FillDatasetByProc(m_ds_rpt, m_dat_thoidiem.Value.Date, CAppContext_201.getCurrentIDPhapnhan());
 
 
             for (int v_i_cur_col = m_fg_donvi.Cols.Fixed+3; v_i_cur_col < m_fg_donvi.Cols.Count; v_i_cur_col++)
