@@ -238,7 +238,7 @@
     <Compile Include="BaoCao\f408_bao_cao_don_vi_trang_thai.Designer.cs">
       <DependentUpon>f408_bao_cao_don_vi_trang_thai.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaoCao\f409_bao_cao_nghi_viec.cs">
+    <Compile Include="BaoCao\f409_bao_cao_nhan_su_theo_ttld.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BaoCao\F411_bao_cao_so_luong_nv_theo_loai.cs">
@@ -588,8 +588,8 @@
     <EmbeddedResource Include="BaoCao\f408_bao_cao_don_vi_trang_thai.resx">
       <DependentUpon>f408_bao_cao_don_vi_trang_thai.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\f409_bao_cao_nghi_viec.resx">
-      <DependentUpon>f409_bao_cao_nghi_viec.cs</DependentUpon>
+    <EmbeddedResource Include="BaoCao\f409_bao_cao_nhan_su_theo_ttld.resx">
+      <DependentUpon>f409_bao_cao_nhan_su_theo_ttld.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\F411_bao_cao_so_luong_nv_theo_loai.resx">
       <DependentUpon>F411_bao_cao_so_luong_nv_theo_loai.cs</DependentUpon>

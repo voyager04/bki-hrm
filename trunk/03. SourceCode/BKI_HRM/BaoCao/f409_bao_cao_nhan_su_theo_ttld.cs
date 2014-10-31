@@ -107,8 +107,8 @@ namespace BKI_HRM
             this.m_lbl_soluongns = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_cbo_trang_thai_ld = new System.Windows.Forms.ComboBox();
+            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -303,6 +303,7 @@ namespace BKI_HRM
             this.m_lbl_soluongns.Size = new System.Drawing.Size(35, 13);
             this.m_lbl_soluongns.TabIndex = 45;
             this.m_lbl_soluongns.Text = "label2";
+            this.m_lbl_soluongns.Visible = false;
             // 
             // label2
             // 
@@ -312,6 +313,7 @@ namespace BKI_HRM
             this.label2.Size = new System.Drawing.Size(93, 13);
             this.label2.TabIndex = 44;
             this.label2.Text = "Số lượng nhân sự:";
+            this.label2.Visible = false;
             // 
             // panel2
             // 
@@ -331,6 +333,15 @@ namespace BKI_HRM
             this.panel2.Size = new System.Drawing.Size(1268, 75);
             this.panel2.TabIndex = 47;
             // 
+            // m_cbo_trang_thai_ld
+            // 
+            this.m_cbo_trang_thai_ld.FormattingEnabled = true;
+            this.m_cbo_trang_thai_ld.Location = new System.Drawing.Point(240, 47);
+            this.m_cbo_trang_thai_ld.Name = "m_cbo_trang_thai_ld";
+            this.m_cbo_trang_thai_ld.Size = new System.Drawing.Size(121, 21);
+            this.m_cbo_trang_thai_ld.TabIndex = 46;
+            this.m_cbo_trang_thai_ld.SelectedValueChanged += new System.EventHandler(this.m_cbo_trang_thai_ld_SelectedValueChanged);
+            // 
             // m_fg
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
@@ -340,14 +351,6 @@ namespace BKI_HRM
             this.m_fg.Size = new System.Drawing.Size(1268, 511);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 48;
-            // 
-            // m_cbo_trang_thai_ld
-            // 
-            this.m_cbo_trang_thai_ld.FormattingEnabled = true;
-            this.m_cbo_trang_thai_ld.Location = new System.Drawing.Point(240, 47);
-            this.m_cbo_trang_thai_ld.Name = "m_cbo_trang_thai_ld";
-            this.m_cbo_trang_thai_ld.Size = new System.Drawing.Size(121, 21);
-            this.m_cbo_trang_thai_ld.TabIndex = 46;
             // 
             // f409_bao_cao_nghi_viec
             // 
@@ -360,7 +363,7 @@ namespace BKI_HRM
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "f409_bao_cao_nghi_viec";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "F409 - Báo cáo nghỉ việc";
+            this.Text = "F409 - Nhân sự theo TTLĐ";
             this.Load += new System.EventHandler(this.f409_bao_cao_nghi_viec_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.m_pnl_out_place_dm.PerformLayout();
@@ -524,7 +527,7 @@ namespace BKI_HRM
 		}
         private void load_custom_source_2_m_txt_tim_kiem()
         {
-            //m_v_us.FillDataset(m_v_ds);
+            m_us.FillDataset(m_ds, "WHERE ID_PHAP_NHAN ="+CAppContext_201.getCurrentIDPhapnhan().ToString());
             int count = m_ds.Tables["V_DM_DU_LIEU_NHAN_VIEN"].Rows.Count;
             AutoCompleteStringCollection v_acsc_search = new AutoCompleteStringCollection();
             foreach (DataRow dr in m_ds.V_DM_DU_LIEU_NHAN_VIEN)
@@ -698,6 +701,25 @@ namespace BKI_HRM
 
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        private void m_cbo_trang_thai_ld_SelectedValueChanged(object sender, EventArgs e)
+        {
+            /*try
+            {
+                if (m_txt_tim_kiem.Text.Trim() == "Nhập mã đơn vị, mã nhân viên, họ tên")
+                {
+                    m_txt_tim_kiem.Text = "";
+                    load_data_2_grid();
+                    m_txt_tim_kiem.Text = "Nhập mã đơn vị, mã nhân viên, họ tên";
+                }
+                else
+                    load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }*/
         }
 	}
 }
