@@ -50,6 +50,7 @@ namespace BKI_HRM
         private Label m_lbl_phim_tat;
         private Panel panel2;
         private C1FlexGrid m_fg;
+        private ComboBox m_cbo_trang_thai_ld;
 		private System.ComponentModel.IContainer components;
 
 		public f409_bao_cao_nghi_viec()
@@ -107,6 +108,7 @@ namespace BKI_HRM
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_cbo_trang_thai_ld = new System.Windows.Forms.ComboBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -313,6 +315,7 @@ namespace BKI_HRM
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.m_cbo_trang_thai_ld);
             this.panel2.Controls.Add(this.m_cmd_search);
             this.panel2.Controls.Add(this.m_lbl_soluongns);
             this.panel2.Controls.Add(this.m_txt_tim_kiem);
@@ -337,6 +340,14 @@ namespace BKI_HRM
             this.m_fg.Size = new System.Drawing.Size(1268, 511);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 48;
+            // 
+            // m_cbo_trang_thai_ld
+            // 
+            this.m_cbo_trang_thai_ld.FormattingEnabled = true;
+            this.m_cbo_trang_thai_ld.Location = new System.Drawing.Point(240, 47);
+            this.m_cbo_trang_thai_ld.Name = "m_cbo_trang_thai_ld";
+            this.m_cbo_trang_thai_ld.Size = new System.Drawing.Size(121, 21);
+            this.m_cbo_trang_thai_ld.TabIndex = 46;
             // 
             // f409_bao_cao_nghi_viec
             // 
@@ -440,6 +451,7 @@ namespace BKI_HRM
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
+            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_LAO_DONG, WinFormControls.eTAT_CA.NO, m_cbo_trang_thai_ld);
             m_txt_tim_kiem.Text = "";
             load_data_2_grid();
             m_txt_tim_kiem.Text = "Nhập mã đơn vị, mã nhân viên, họ tên";		
@@ -474,7 +486,7 @@ namespace BKI_HRM
 		}
 		private void load_data_2_grid(){						
 			m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
-            m_us.FillDatasetNVNghiviec(m_ds,m_txt_tim_kiem.Text.Trim(),m_dtp_tu_ngay.Value,m_dtp_den_ngay.Value, CAppContext_201.getCurrentIDPhapnhan());
+            m_us.FillDatasetNVNghiviec(m_ds,m_txt_tim_kiem.Text.Trim(),m_dtp_tu_ngay.Value,m_dtp_den_ngay.Value,decimal.Parse(m_cbo_trang_thai_ld.SelectedValue.ToString()), CAppContext_201.getCurrentIDPhapnhan());
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             if (m_rdb_nhom.Checked == true)
