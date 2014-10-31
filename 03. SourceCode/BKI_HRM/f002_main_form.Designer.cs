@@ -103,6 +103,11 @@
             this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.m_pnl_thong_bao = new System.Windows.Forms.Panel();
             this.m_pnl_thu_viec_da_het_han = new System.Windows.Forms.Panel();
             this.m_lbl_thu_viec_da_het_han = new System.Windows.Forms.Label();
@@ -126,11 +131,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.m_cbo_phap_nhan = new System.Windows.Forms.ComboBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.m_tab_menu)).BeginInit();
             this.m_pnl_thong_bao.SuspendLayout();
             this.m_pnl_thu_viec_da_het_han.SuspendLayout();
@@ -675,7 +675,7 @@
             // 
             // m_cmd_bao_cao_nghi_viec
             // 
-            this.m_cmd_bao_cao_nghi_viec.Caption = "Báo cáo nghỉ việc";
+            this.m_cmd_bao_cao_nghi_viec.Caption = "Nhân sự theo TTLĐ";
             this.m_cmd_bao_cao_nghi_viec.Glyph = global::BKI_HRM.Properties.Resources._1413473283_298869;
             this.m_cmd_bao_cao_nghi_viec.Id = 77;
             this.m_cmd_bao_cao_nghi_viec.Name = "m_cmd_bao_cao_nghi_viec";
@@ -852,6 +852,41 @@
             this.ribbonPageGroup17});
             this.ribbonPage6.Name = "ribbonPage6";
             this.ribbonPage6.Text = "Tra cứu danh sách";
+            // 
+            // ribbonPageGroup11
+            // 
+            this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_tra_cuu_nhan_su_du_an);
+            this.ribbonPageGroup11.Name = "ribbonPageGroup11";
+            this.ribbonPageGroup11.Text = "Dự án";
+            // 
+            // ribbonPageGroup12
+            // 
+            this.ribbonPageGroup12.AllowTextClipping = false;
+            this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_bao_cao_hop_dong_lao_dong);
+            this.ribbonPageGroup12.Name = "ribbonPageGroup12";
+            this.ribbonPageGroup12.Text = "Hợp đồng lao động";
+            // 
+            // ribbonPageGroup15
+            // 
+            this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_tra_cuu_nhan_su_chung);
+            this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_nhan_su_theo_phong_ban);
+            this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_nhan_su_theo_chuc_vu);
+            this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_bao_cao_danh_sach_bo_nhiem);
+            this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_bao_cao_nghi_viec);
+            this.ribbonPageGroup15.Name = "ribbonPageGroup15";
+            this.ribbonPageGroup15.Text = "Thông tin nhân sự";
+            // 
+            // ribbonPageGroup16
+            // 
+            this.ribbonPageGroup16.Name = "ribbonPageGroup16";
+            this.ribbonPageGroup16.Text = "ribbonPageGroup16";
+            this.ribbonPageGroup16.Visible = false;
+            // 
+            // ribbonPageGroup17
+            // 
+            this.ribbonPageGroup17.Name = "ribbonPageGroup17";
+            this.ribbonPageGroup17.Text = "ribbonPageGroup17";
+            this.ribbonPageGroup17.Visible = false;
             // 
             // m_pnl_thong_bao
             // 
@@ -1098,41 +1133,6 @@
             this.imageList1.Images.SetKeyName(2, "1413449845_174971.ico");
             this.imageList1.Images.SetKeyName(3, "1413449902_103514.ico");
             this.imageList1.Images.SetKeyName(4, "rank.ico");
-            // 
-            // ribbonPageGroup11
-            // 
-            this.ribbonPageGroup11.ItemLinks.Add(this.m_cmd_tra_cuu_nhan_su_du_an);
-            this.ribbonPageGroup11.Name = "ribbonPageGroup11";
-            this.ribbonPageGroup11.Text = "Dự án";
-            // 
-            // ribbonPageGroup12
-            // 
-            this.ribbonPageGroup12.AllowTextClipping = false;
-            this.ribbonPageGroup12.ItemLinks.Add(this.m_cmd_bao_cao_hop_dong_lao_dong);
-            this.ribbonPageGroup12.Name = "ribbonPageGroup12";
-            this.ribbonPageGroup12.Text = "Hợp đồng lao động";
-            // 
-            // ribbonPageGroup15
-            // 
-            this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_tra_cuu_nhan_su_chung);
-            this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_nhan_su_theo_phong_ban);
-            this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_nhan_su_theo_chuc_vu);
-            this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_bao_cao_danh_sach_bo_nhiem);
-            this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_bao_cao_nghi_viec);
-            this.ribbonPageGroup15.Name = "ribbonPageGroup15";
-            this.ribbonPageGroup15.Text = "Thông tin nhân sự";
-            // 
-            // ribbonPageGroup16
-            // 
-            this.ribbonPageGroup16.Name = "ribbonPageGroup16";
-            this.ribbonPageGroup16.Text = "ribbonPageGroup16";
-            this.ribbonPageGroup16.Visible = false;
-            // 
-            // ribbonPageGroup17
-            // 
-            this.ribbonPageGroup17.Name = "ribbonPageGroup17";
-            this.ribbonPageGroup17.Text = "ribbonPageGroup17";
-            this.ribbonPageGroup17.Visible = false;
             // 
             // f002_main_form
             // 
