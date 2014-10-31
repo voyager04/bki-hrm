@@ -11,7 +11,6 @@ using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
-
 using IP.Core.IPCommon;
 using IP.Core.IPException;
 using IP.Core.IPData;
@@ -27,9 +26,6 @@ using C1.Win.C1FlexGrid;
 
 namespace BKI_HRM
 {
-
-
-
 	public class f409_bao_cao_nghi_viec : System.Windows.Forms.Form
 	{
 		internal System.Windows.Forms.ImageList ImageList;
