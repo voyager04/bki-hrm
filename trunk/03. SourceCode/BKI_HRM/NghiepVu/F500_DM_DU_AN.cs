@@ -471,7 +471,6 @@ namespace BKI_HRM
             this.m_fg_du_an.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg_du_an.Location = new System.Drawing.Point(0, 100);
             this.m_fg_du_an.Name = "m_fg_du_an";
-            this.m_fg_du_an.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.Row;
             this.m_fg_du_an.Size = new System.Drawing.Size(1284, 258);
             this.m_fg_du_an.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_du_an.Styles"));
             this.m_fg_du_an.TabIndex = 56;
@@ -519,16 +518,64 @@ namespace BKI_HRM
         #region Data Structure
         private enum e_col_Number_du_an
         {
-            MA_DU_AN = 1,
-            TEN_DU_AN = 2,
+            /*MA_DU_AN = 2,
+            TEN_DU_AN = 4,
             TRANG_THAI_DU_AN = 3,
             LOAI_DU_AN = 4,
-            NGAY_BAT_DAU = 5,
-            NGAY_KET_THUC = 6,
+            NGAY_BAT_DAU = 9,
+            NGAY_KET_THUC = 10,
             NOI_DUNG = 7,
-            CO_CHE = 8,
-            MA_QUYET_DINH = 9,
-            LOAI_QD = 10,
+            CO_CHE = 13,
+            MA_QUYET_DINH = 15,
+            LOAI_QD = 17*/
+
+            ID_LOAI_QD = 16
+                ,
+            MA_PHAP_NHAN = 24
+                ,
+            NGAY_KET_THUC = 10
+                ,
+            NGAY_BAT_DAU = 9
+                ,
+            MA_QUYET_DINH = 15
+                ,
+            ID_PHAP_NHAN = 23
+                ,
+            LOAI_QD = 17
+                ,
+            LINK = 22
+                ,
+            LOAI_DU_AN = 8
+                ,
+            ID_CO_CHE = 12
+                ,
+            MA_DU_AN = 2
+                ,
+            NGAY_CO_HIEU_LUC = 18
+                ,
+            ID_TRANG_THAI = 5
+                ,
+            CO_CHE = 13
+                ,
+            NGAY_KY = 19
+                ,
+            ID_QUYET_DINH = 14
+                ,
+            ID_LOAI_DU_AN = 7
+                ,
+            NGAY_HET_HIEU_LUC = 20
+                ,
+            ID = 1
+                ,
+            TEN_DU_AN = 4
+                ,
+            NOI_DUNG_QD = 21
+                ,
+            NOI_DUNG = 11
+                ,
+            MA_DU_AN_THR = 3
+                , TRANG_THAI_DA = 6
+
         }
 
         private enum e_col_Number_nhan_su
@@ -602,6 +649,7 @@ namespace BKI_HRM
             foreach (DataRow dr in v_ds_v_dm_da_qd_td.V_DM_DU_AN_QUYET_DINH_TU_DIEN)
             {
                 v_acsc_search.Add(dr[V_DM_DU_AN_QUYET_DINH_TU_DIEN.MA_DU_AN].ToString());
+                v_acsc_search.Add(dr[V_DM_DU_AN_QUYET_DINH_TU_DIEN.MA_DU_AN_THR].ToString());
                 v_acsc_search.Add(dr[V_DM_DU_AN_QUYET_DINH_TU_DIEN.TEN_DU_AN].ToString());
                 v_acsc_search.Add(dr[V_DM_DU_AN_QUYET_DINH_TU_DIEN.MA_QUYET_DINH].ToString());
             }
@@ -614,13 +662,14 @@ namespace BKI_HRM
             v_htb.Add(V_DM_DU_AN_QUYET_DINH_TU_DIEN.MA_DU_AN, e_col_Number_du_an.MA_DU_AN);
             v_htb.Add(V_DM_DU_AN_QUYET_DINH_TU_DIEN.LOAI_DU_AN, e_col_Number_du_an.LOAI_DU_AN);
             v_htb.Add(V_DM_DU_AN_QUYET_DINH_TU_DIEN.NGAY_BAT_DAU, e_col_Number_du_an.NGAY_BAT_DAU);
-            v_htb.Add(V_DM_DU_AN_QUYET_DINH_TU_DIEN.TRANG_THAI_DA, e_col_Number_du_an.TRANG_THAI_DU_AN);
+            v_htb.Add(V_DM_DU_AN_QUYET_DINH_TU_DIEN.TRANG_THAI_DA, e_col_Number_du_an.TRANG_THAI_DA);
             v_htb.Add(V_DM_DU_AN_QUYET_DINH_TU_DIEN.NGAY_KET_THUC, e_col_Number_du_an.NGAY_KET_THUC);
             v_htb.Add(V_DM_DU_AN_QUYET_DINH_TU_DIEN.TEN_DU_AN, e_col_Number_du_an.TEN_DU_AN);
             v_htb.Add(V_DM_DU_AN_QUYET_DINH_TU_DIEN.MA_QUYET_DINH, e_col_Number_du_an.MA_QUYET_DINH);
             v_htb.Add(V_DM_DU_AN_QUYET_DINH_TU_DIEN.NOI_DUNG, e_col_Number_du_an.NOI_DUNG);
             v_htb.Add(V_DM_DU_AN_QUYET_DINH_TU_DIEN.CO_CHE, e_col_Number_du_an.CO_CHE);
             v_htb.Add(V_DM_DU_AN_QUYET_DINH_TU_DIEN.LOAI_QD, e_col_Number_du_an.LOAI_QD);
+            v_htb.Add(V_DM_DU_AN_QUYET_DINH_TU_DIEN.MA_DU_AN_THR, e_col_Number_du_an.MA_DU_AN_THR);
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds_du_an.V_DM_DU_AN_QUYET_DINH_TU_DIEN.NewRow());
             return v_obj_trans;

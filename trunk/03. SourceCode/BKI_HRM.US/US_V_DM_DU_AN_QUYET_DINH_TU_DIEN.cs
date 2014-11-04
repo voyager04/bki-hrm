@@ -67,6 +67,28 @@ namespace BKI_HRM.US
             pm_objDR["MA_DU_AN"] = System.Convert.DBNull;
         }
 
+        public string strMA_DU_AN_THR
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "MA_DU_AN_THR", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["MA_DU_AN_THR"] = value;
+            }
+        }
+
+        public bool IsMA_DU_AN_THRNull()
+        {
+            return pm_objDR.IsNull("MA_DU_AN_THR");
+        }
+
+        public void SetMA_DU_AN_THRNull()
+        {
+            pm_objDR["MA_DU_AN_THR"] = System.Convert.DBNull;
+        }
+
         public string strTEN_DU_AN
         {
             get

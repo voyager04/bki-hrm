@@ -451,7 +451,6 @@ namespace BKI_HRM
                 #endregion
                 switch (m_e_form_mode)
                 {
-
                     case DataEntryFormMode.UpdateDataState:
                         if (check_validate_data_is_ok() == false)
                             return;

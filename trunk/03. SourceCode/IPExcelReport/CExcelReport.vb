@@ -1,4 +1,4 @@
-﻿Option Explicit On 
+﻿Option Explicit On
 Option Strict On
 
 Imports C1.Win.C1FlexGrid
@@ -243,8 +243,8 @@ Public Class CExcelReport
 
     End Sub
 
-   
-  
+
+
     Public Sub GotoExportPosition(ByVal i_iSheetStartRow As Integer _
                             , ByVal i_iSheetCol As Integer)
         m_iSheetStartRow = i_iSheetStartRow
@@ -362,9 +362,9 @@ Public Class CExcelReport
                         v_iDataRow(i_iExcelCol + 1) = _
                             CType(m_objExcelWorksheet.Cells(i_iExcelRow + i_iSheetStartRow, i_iExcelCol + 2), Excel.Range).Value()
                         'End If
-                        Else
-                    v_bol_stop = True
-                        End If
+                    Else
+                        v_bol_stop = True
+                    End If
                 Next
                 If Not v_bol_stop Then
                     i_DataSet.Tables(i_TableName).Rows.InsertAt(v_iDataRow, i_iExcelRow)

@@ -165,7 +165,7 @@ namespace BKI_HRM.NghiepVu
         }
 
         private void load_data_to_cbo_co_che(
-             WinFormControls.eLOAI_TU_DIEN ip_e
+              WinFormControls.eLOAI_TU_DIEN ip_e
             , WinFormControls.eTAT_CA ip_e_tat_ca
             , ComboBox ip_obj_cbo_trang_thai)
         {
@@ -384,8 +384,11 @@ namespace BKI_HRM.NghiepVu
             }
 
             #region DucVT
-            Decimal v_null_value = -1;
-            v_htb.Add(v_null_value, "(Bỏ Trống)");
+            if (ip_e_loai_tu_dien != e_loai_tu_dien.LOAI_QUYET_DINH)
+            {
+                Decimal v_null_value = -1;
+                v_htb.Add(v_null_value, "(Bỏ Trống)");
+            }
 
             #endregion
 
@@ -420,6 +423,7 @@ namespace BKI_HRM.NghiepVu
             if (m_e_form_mode == DataEntryFormMode.InsertDataState)
             {
                 m_txt_ma_du_an.Text = "";
+                m_txt_ma_du_an_thr.Text = "";
                 m_txt_noi_dung_du_an.Text = "";
                 m_txt_ten_du_an.Text = "";
             }
@@ -435,6 +439,7 @@ namespace BKI_HRM.NghiepVu
         {
             op_us.dcID = m_us.dcID;
             op_us.strMA_DU_AN = m_txt_ma_du_an.Text;
+            op_us.strMA_DU_AN_THR = m_txt_ma_du_an_thr.Text;
             op_us.strTEN_DU_AN = m_txt_ten_du_an.Text;
             op_us.dcID_TRANG_THAI = (decimal)m_cbo_trang_thai.SelectedValue;
             op_us.dcID_LOAI_DU_AN = (decimal)m_cbo_loai_du_an.SelectedValue;
@@ -454,6 +459,7 @@ namespace BKI_HRM.NghiepVu
         private void us_2_form_du_an(US_V_DM_DU_AN_QUYET_DINH_TU_DIEN ip_us)
         {
             m_txt_ma_du_an.Text = ip_us.strMA_DU_AN;
+            m_txt_ma_du_an_thr.Text = ip_us.strMA_DU_AN_THR;
             m_cbo_loai_du_an.SelectedValue = ip_us.dcID_LOAI_DU_AN;
             m_txt_ten_du_an.Text = ip_us.strTEN_DU_AN;
             m_dat_ngay_bd.Value = ip_us.datNGAY_BAT_DAU;
@@ -499,11 +505,11 @@ namespace BKI_HRM.NghiepVu
         private void grid_row_to_us_quyet_dinh(int i_grid_row, US_V_DM_DU_AN_QUYET_DINH_TU_DIEN op_us)
         {
             op_us.strMA_QUYET_DINH = m_fg_quyet_dinh[i_grid_row, (int)e_col_Number_quyet_dinh.MA_QUYET_DINH].ToString();
-            decimal v_id_quyet_dinh = (decimal)m_fg_quyet_dinh[i_grid_row, (int)e_col_Number_quyet_dinh.LOAI_QUYET_DINH];
-            if (v_id_quyet_dinh != -1)
-                op_us.SetID_QUYET_DINHNull();
+            decimal v_id_loai_quyet_dinh = (decimal)m_fg_quyet_dinh[i_grid_row, (int)e_col_Number_quyet_dinh.LOAI_QUYET_DINH];
+            if (v_id_loai_quyet_dinh == -1)
+                op_us.SetID_LOAI_QDNull();
             else
-                op_us.dcID_LOAI_QD = v_id_quyet_dinh;
+                op_us.dcID_LOAI_QD = v_id_loai_quyet_dinh;
 
             op_us.datNGAY_KY = (DateTime)m_fg_quyet_dinh[i_grid_row, (int)e_col_Number_quyet_dinh.NGAY_KY];
             op_us.datNGAY_CO_HIEU_LUC = (DateTime)m_fg_quyet_dinh[i_grid_row, (int)e_col_Number_quyet_dinh.NGAY_CO_HIEU_LUC];

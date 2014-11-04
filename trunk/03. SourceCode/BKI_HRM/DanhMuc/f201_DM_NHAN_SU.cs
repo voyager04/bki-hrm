@@ -2340,8 +2340,8 @@ namespace BKI_HRM
             m_obj_trans = get_trans_object(m_grv_nhan_su);
 
             load_data_2_grid_search();
-
-
+            load_chi_tiet_nhan_vien();
+            load_custom_source_2_m_txt_tim_kiem();
         }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
@@ -2667,7 +2667,7 @@ namespace BKI_HRM
             CGridUtils.Dataset2C1Grid(m_ds, m_grv_nhan_su, m_obj_trans);
             m_grv_nhan_su.Redraw = true;
 
-            load_chi_tiet_nhan_vien();
+            //load_chi_tiet_nhan_vien();
         }
         private void load_thong_tin_khac()
         {
@@ -2785,6 +2785,9 @@ namespace BKI_HRM
 
         }
 
+        /// <summary>
+        /// Cần fill m_ds trước khi load dữ liệu auto suggest cho m_txt_tim_kiem
+        /// </summary>
         private void load_custom_source_2_m_txt_tim_kiem()
         {
             int count = m_ds.Tables["DM_NHAN_SU"].Rows.Count;
@@ -2814,6 +2817,7 @@ namespace BKI_HRM
             m_obj_trans_qua_trinh_lam_viec.GridRow2DataRow(i_grid_row, v_dr);
             i_us.DataRow2Me(v_dr);
         }
+        
         private void us_object2grid(US_DM_NHAN_SU i_us
             , int i_grid_row)
         {
@@ -2825,20 +2829,25 @@ namespace BKI_HRM
 
         private void insert_dm_nhan_su()
         {
+            
             int v_i_count = m_ds.DM_NHAN_SU.Count;
             f201_DM_NHAN_SU_DE v_fDE = new f201_DM_NHAN_SU_DE();
-            v_fDE.display_for_insert();
+            DialogResult v_result = v_fDE.display_for_insert();
 
-            m_txt_tim_kiem.Text = "";
-            load_data_2_grid_search();
-            //load_chi_tiet_nhan_vien();
-
-            if (m_ds.DM_NHAN_SU.Count > v_i_count)
+            if (v_result == System.Windows.Forms.DialogResult.OK)
             {
-                v_fDE.get_us(ref m_us);
-                WinFormControls.set_focus_for_grid(m_grv_nhan_su, m_us.strMA_NV, 1);
-                f201_dm_nhan_su_dialog v_frm = new f201_dm_nhan_su_dialog();
-                v_frm.display_them_nhan_vien(m_us);
+                m_txt_tim_kiem.Text = "";
+                load_data_2_grid_search();
+                load_chi_tiet_nhan_vien();
+                load_custom_source_2_m_txt_tim_kiem();
+
+                if (m_ds.DM_NHAN_SU.Count > v_i_count)
+                {
+                    v_fDE.get_us(ref m_us);
+                    WinFormControls.set_focus_for_grid(m_grv_nhan_su, m_us.strMA_NV, 1);
+                    f201_dm_nhan_su_dialog v_frm = new f201_dm_nhan_su_dialog();
+                    v_frm.display_them_nhan_vien(m_us);
+                }
             }
         }
 
@@ -2880,9 +2889,14 @@ namespace BKI_HRM
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;
             //grid2us_object(m_us, m_grv_nhan_su.Row);
             f201_DM_NHAN_SU_DE v_fDE = new f201_DM_NHAN_SU_DE();
-            v_fDE.display_for_update(m_us);
-            load_data_2_grid_search();
-            load_chi_tiet_nhan_vien();
+            DialogResult v_result = v_fDE.display_for_update(m_us);
+
+            if (v_result == System.Windows.Forms.DialogResult.OK)
+            {
+                load_data_2_grid_search();
+                load_chi_tiet_nhan_vien();
+                load_custom_source_2_m_txt_tim_kiem();
+            }
         }
 
         private void them_phap_nhan()
@@ -2917,6 +2931,7 @@ namespace BKI_HRM
                 v_objErrHandler.showErrorMessage();
             }
             load_chi_tiet_nhan_vien();
+            load_custom_source_2_m_txt_tim_kiem();
         }
 
         private void view_dm_nhan_su()
@@ -2965,6 +2980,8 @@ namespace BKI_HRM
             f303_DM_NHAN_SU_import_excel v_form_import_excel = new f303_DM_NHAN_SU_import_excel();
             v_form_import_excel.ShowDialog();
             load_data_2_grid_search();
+            load_chi_tiet_nhan_vien();
+            load_custom_source_2_m_txt_tim_kiem();
         }
 
         #endregion
@@ -2977,7 +2994,6 @@ namespace BKI_HRM
             try
             {
                 set_initial_form_load();
-                load_custom_source_2_m_txt_tim_kiem();
 
                 is_form_finish_load = true;
             }

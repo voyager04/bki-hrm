@@ -40,24 +40,25 @@ namespace BKI_HRM
             format_controls();
         }
 
-        public void display_for_insert()
+        public DialogResult display_for_insert()
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             m_cbo_gioi_tinh.SelectedIndex = 0;
             m_txt_ma_nhan_vien.Focus();
-            this.ShowDialog();
-
+            DialogResult v_result = this.ShowDialog();
+            return v_result;
         }
         public void get_us(ref US_DM_NHAN_SU op_us)
         {
             op_us = m_us_dm_nhan_su;
         }
-        public void display_for_update(US_DM_NHAN_SU ip_us_dm_nhan_su)
+        public DialogResult display_for_update(US_DM_NHAN_SU ip_us_dm_nhan_su)
         {
             m_us_dm_nhan_su = ip_us_dm_nhan_su;
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             us_object_to_form();
-            this.ShowDialog();
+            DialogResult v_result = this.ShowDialog();
+            return v_result;
         }
         public void display_for_view(US_DM_NHAN_SU ip_us_dm_nhan_su)
         {
@@ -533,7 +534,6 @@ namespace BKI_HRM
         }
         private void save_data()
         {
-
             switch (m_e_form_mode)
             {
 
@@ -576,7 +576,9 @@ namespace BKI_HRM
                 default:
                     break;
             }
+
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhât!");
+            this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
         }
         private void xoa_trang()
@@ -914,14 +916,11 @@ namespace BKI_HRM
 
         private void m_txt_cmnd_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar)
-        && !char.IsDigit(e.KeyChar)
-        )
+           if (!char.IsDigit(e.KeyChar))
             {
-                e.Handled = true;
+               if (!char.IsControl(e.KeyChar))
+                    e.Handled = true;
             }
-
-
         }
 
         private void m_txt_nam_tot_nghiep_KeyPress(object sender, KeyPressEventArgs e)

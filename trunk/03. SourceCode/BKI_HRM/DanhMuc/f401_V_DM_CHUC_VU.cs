@@ -442,6 +442,10 @@ namespace BKI_HRM
             m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+
+            m_txt_tim_kiem.KeyDown += new KeyEventHandler(m_txt_tim_kiem_KeyDown);
+            m_txt_tim_kiem.Leave += new EventHandler(m_txt_tim_kiem_Leave);
+            m_txt_tim_kiem.MouseClick += new MouseEventHandler(m_txt_tim_kiem_MouseClick);
         }
 
         private void load_custom_source_2_m_txt_tim_kiem()
