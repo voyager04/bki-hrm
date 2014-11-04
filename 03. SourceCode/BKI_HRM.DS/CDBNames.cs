@@ -488,6 +488,7 @@
    {
        public const string ID = "ID";
        public const string MA_DU_AN = "MA_DU_AN";
+       public const string MA_DU_AN_THR = "MA_DU_AN_THR";
        public const string TEN_DU_AN = "TEN_DU_AN";
        public const string ID_TRANG_THAI = "ID_TRANG_THAI";
        public const string TRANG_THAI_DA = "TRANG_THAI_DA";

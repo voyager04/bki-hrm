@@ -2,19 +2,20 @@
 <xs:schema id="DS_DM_DU_AN" targetNamespace="http://tempuri.org/DS_DM_DU_AN.xsd" xmlns:mstns="http://tempuri.org/DS_DM_DU_AN.xsd" xmlns="http://tempuri.org/DS_DM_DU_AN.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BKI_HRMConnectionString4" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BKI_HRMConnectionString4 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_HRM.DS.Properties.Settings.GlobalReference.Default.BKI_HRMConnectionString4" Provider="System.Data.SqlClient" />
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BKI_HRMConnectionString6" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BKI_HRMConnectionString6 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_HRM.DS.Properties.Settings.GlobalReference.Default.BKI_HRMConnectionString6" Provider="System.Data.SqlClient" />
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BKI_HRMConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BKI_HRMConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_HRM.DS.Properties.Settings.GlobalReference.Default.BKI_HRMConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BKI_HRMConnectionString10" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BKI_HRMConnectionString10 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_HRM.DS.Properties.Settings.GlobalReference.Default.BKI_HRMConnectionString10" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DM_DU_ANTableAdapter" GeneratorDataComponentClassName="DM_DU_ANTableAdapter" Name="DM_DU_AN" UserDataComponentName="DM_DU_ANTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BKI_HRMConnectionString1 (Settings)" DbObjectName="BKI_HRM.dbo.DM_DU_AN" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BKI_HRMConnectionString10 (Settings)" DbObjectName="BKI_HRM.dbo.DM_DU_AN" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[DM_DU_AN] WHERE (([ID] = @Original_ID) AND ([MA_DU_AN] = @Original_MA_DU_AN) AND ((@IsNull_TEN_DU_AN = 1 AND [TEN_DU_AN] IS NULL) OR ([TEN_DU_AN] = @Original_TEN_DU_AN)) AND ([ID_TRANG_THAI] = @Original_ID_TRANG_THAI) AND ([ID_LOAI_DU_AN] = @Original_ID_LOAI_DU_AN) AND ([NGAY_BAT_DAU] = @Original_NGAY_BAT_DAU) AND ((@IsNull_NGAY_KET_THUC = 1 AND [NGAY_KET_THUC] IS NULL) OR ([NGAY_KET_THUC] = @Original_NGAY_KET_THUC)) AND ((@IsNull_NOI_DUNG = 1 AND [NOI_DUNG] IS NULL) OR ([NOI_DUNG] = @Original_NOI_DUNG)) AND ((@IsNull_ID_CO_CHE = 1 AND [ID_CO_CHE] IS NULL) OR ([ID_CO_CHE] = @Original_ID_CO_CHE)))</CommandText>
+                    <CommandText>DELETE FROM [dbo].[DM_DU_AN] WHERE (([ID] = @Original_ID) AND ([MA_DU_AN] = @Original_MA_DU_AN) AND ((@IsNull_TEN_DU_AN = 1 AND [TEN_DU_AN] IS NULL) OR ([TEN_DU_AN] = @Original_TEN_DU_AN)) AND ([ID_TRANG_THAI] = @Original_ID_TRANG_THAI) AND ([ID_LOAI_DU_AN] = @Original_ID_LOAI_DU_AN) AND ([NGAY_BAT_DAU] = @Original_NGAY_BAT_DAU) AND ((@IsNull_NGAY_KET_THUC = 1 AND [NGAY_KET_THUC] IS NULL) OR ([NGAY_KET_THUC] = @Original_NGAY_KET_THUC)) AND ((@IsNull_NOI_DUNG = 1 AND [NOI_DUNG] IS NULL) OR ([NOI_DUNG] = @Original_NOI_DUNG)) AND ((@IsNull_ID_CO_CHE = 1 AND [ID_CO_CHE] IS NULL) OR ([ID_CO_CHE] = @Original_ID_CO_CHE)) AND ((@IsNull_MA_DU_AN_THR = 1 AND [MA_DU_AN_THR] IS NULL) OR ([MA_DU_AN_THR] = @Original_MA_DU_AN_THR)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_ID" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_MA_DU_AN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="MA_DU_AN" SourceColumnNullMapping="false" SourceVersion="Original" />
@@ -29,13 +30,15 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_NOI_DUNG" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NOI_DUNG" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ID_CO_CHE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_CO_CHE" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_ID_CO_CHE" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="ID_CO_CHE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MA_DU_AN_THR" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MA_DU_AN_THR" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_MA_DU_AN_THR" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="MA_DU_AN_THR" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[DM_DU_AN] ([MA_DU_AN], [TEN_DU_AN], [ID_TRANG_THAI], [ID_LOAI_DU_AN], [NGAY_BAT_DAU], [NGAY_KET_THUC], [NOI_DUNG], [ID_CO_CHE]) VALUES (@MA_DU_AN, @TEN_DU_AN, @ID_TRANG_THAI, @ID_LOAI_DU_AN, @NGAY_BAT_DAU, @NGAY_KET_THUC, @NOI_DUNG, @ID_CO_CHE);
-SELECT ID, MA_DU_AN, TEN_DU_AN, ID_TRANG_THAI, ID_LOAI_DU_AN, NGAY_BAT_DAU, NGAY_KET_THUC, NOI_DUNG, ID_CO_CHE FROM DM_DU_AN WHERE (ID = SCOPE_IDENTITY())</CommandText>
+                    <CommandText>INSERT INTO [dbo].[DM_DU_AN] ([MA_DU_AN], [TEN_DU_AN], [ID_TRANG_THAI], [ID_LOAI_DU_AN], [NGAY_BAT_DAU], [NGAY_KET_THUC], [NOI_DUNG], [ID_CO_CHE], [MA_DU_AN_THR]) VALUES (@MA_DU_AN, @TEN_DU_AN, @ID_TRANG_THAI, @ID_LOAI_DU_AN, @NGAY_BAT_DAU, @NGAY_KET_THUC, @NOI_DUNG, @ID_CO_CHE, @MA_DU_AN_THR);
+SELECT ID, MA_DU_AN, TEN_DU_AN, ID_TRANG_THAI, ID_LOAI_DU_AN, NGAY_BAT_DAU, NGAY_KET_THUC, NOI_DUNG, ID_CO_CHE, MA_DU_AN_THR FROM DM_DU_AN WHERE (ID = SCOPE_IDENTITY())</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@MA_DU_AN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="MA_DU_AN" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@TEN_DU_AN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TEN_DU_AN" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -45,19 +48,20 @@ SELECT ID, MA_DU_AN, TEN_DU_AN, ID_TRANG_THAI, ID_LOAI_DU_AN, NGAY_BAT_DAU, NGAY
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@NGAY_KET_THUC" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_KET_THUC" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NOI_DUNG" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NOI_DUNG" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@ID_CO_CHE" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="ID_CO_CHE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@MA_DU_AN_THR" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="MA_DU_AN_THR" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, MA_DU_AN, TEN_DU_AN, ID_TRANG_THAI, ID_LOAI_DU_AN, NGAY_BAT_DAU, NGAY_KET_THUC, NOI_DUNG, ID_CO_CHE FROM dbo.DM_DU_AN</CommandText>
+                    <CommandText>SELECT ID, MA_DU_AN, TEN_DU_AN, ID_TRANG_THAI, ID_LOAI_DU_AN, NGAY_BAT_DAU, NGAY_KET_THUC, NOI_DUNG, ID_CO_CHE, MA_DU_AN_THR FROM dbo.DM_DU_AN</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[DM_DU_AN] SET [MA_DU_AN] = @MA_DU_AN, [TEN_DU_AN] = @TEN_DU_AN, [ID_TRANG_THAI] = @ID_TRANG_THAI, [ID_LOAI_DU_AN] = @ID_LOAI_DU_AN, [NGAY_BAT_DAU] = @NGAY_BAT_DAU, [NGAY_KET_THUC] = @NGAY_KET_THUC, [NOI_DUNG] = @NOI_DUNG, [ID_CO_CHE] = @ID_CO_CHE WHERE (([ID] = @Original_ID) AND ([MA_DU_AN] = @Original_MA_DU_AN) AND ((@IsNull_TEN_DU_AN = 1 AND [TEN_DU_AN] IS NULL) OR ([TEN_DU_AN] = @Original_TEN_DU_AN)) AND ([ID_TRANG_THAI] = @Original_ID_TRANG_THAI) AND ([ID_LOAI_DU_AN] = @Original_ID_LOAI_DU_AN) AND ([NGAY_BAT_DAU] = @Original_NGAY_BAT_DAU) AND ((@IsNull_NGAY_KET_THUC = 1 AND [NGAY_KET_THUC] IS NULL) OR ([NGAY_KET_THUC] = @Original_NGAY_KET_THUC)) AND ((@IsNull_NOI_DUNG = 1 AND [NOI_DUNG] IS NULL) OR ([NOI_DUNG] = @Original_NOI_DUNG)) AND ((@IsNull_ID_CO_CHE = 1 AND [ID_CO_CHE] IS NULL) OR ([ID_CO_CHE] = @Original_ID_CO_CHE)));
-SELECT ID, MA_DU_AN, TEN_DU_AN, ID_TRANG_THAI, ID_LOAI_DU_AN, NGAY_BAT_DAU, NGAY_KET_THUC, NOI_DUNG, ID_CO_CHE FROM DM_DU_AN WHERE (ID = @ID)</CommandText>
+                    <CommandText>UPDATE [dbo].[DM_DU_AN] SET [MA_DU_AN] = @MA_DU_AN, [TEN_DU_AN] = @TEN_DU_AN, [ID_TRANG_THAI] = @ID_TRANG_THAI, [ID_LOAI_DU_AN] = @ID_LOAI_DU_AN, [NGAY_BAT_DAU] = @NGAY_BAT_DAU, [NGAY_KET_THUC] = @NGAY_KET_THUC, [NOI_DUNG] = @NOI_DUNG, [ID_CO_CHE] = @ID_CO_CHE, [MA_DU_AN_THR] = @MA_DU_AN_THR WHERE (([ID] = @Original_ID) AND ([MA_DU_AN] = @Original_MA_DU_AN) AND ((@IsNull_TEN_DU_AN = 1 AND [TEN_DU_AN] IS NULL) OR ([TEN_DU_AN] = @Original_TEN_DU_AN)) AND ([ID_TRANG_THAI] = @Original_ID_TRANG_THAI) AND ([ID_LOAI_DU_AN] = @Original_ID_LOAI_DU_AN) AND ([NGAY_BAT_DAU] = @Original_NGAY_BAT_DAU) AND ((@IsNull_NGAY_KET_THUC = 1 AND [NGAY_KET_THUC] IS NULL) OR ([NGAY_KET_THUC] = @Original_NGAY_KET_THUC)) AND ((@IsNull_NOI_DUNG = 1 AND [NOI_DUNG] IS NULL) OR ([NOI_DUNG] = @Original_NOI_DUNG)) AND ((@IsNull_ID_CO_CHE = 1 AND [ID_CO_CHE] IS NULL) OR ([ID_CO_CHE] = @Original_ID_CO_CHE)) AND ((@IsNull_MA_DU_AN_THR = 1 AND [MA_DU_AN_THR] IS NULL) OR ([MA_DU_AN_THR] = @Original_MA_DU_AN_THR)));
+SELECT ID, MA_DU_AN, TEN_DU_AN, ID_TRANG_THAI, ID_LOAI_DU_AN, NGAY_BAT_DAU, NGAY_KET_THUC, NOI_DUNG, ID_CO_CHE, MA_DU_AN_THR FROM DM_DU_AN WHERE (ID = @ID)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@MA_DU_AN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="MA_DU_AN" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@TEN_DU_AN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TEN_DU_AN" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -67,6 +71,7 @@ SELECT ID, MA_DU_AN, TEN_DU_AN, ID_TRANG_THAI, ID_LOAI_DU_AN, NGAY_BAT_DAU, NGAY
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@NGAY_KET_THUC" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_KET_THUC" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NOI_DUNG" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NOI_DUNG" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@ID_CO_CHE" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="ID_CO_CHE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@MA_DU_AN_THR" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="MA_DU_AN_THR" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_ID" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_MA_DU_AN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="MA_DU_AN" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TEN_DU_AN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TEN_DU_AN" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -80,6 +85,8 @@ SELECT ID, MA_DU_AN, TEN_DU_AN, ID_TRANG_THAI, ID_LOAI_DU_AN, NGAY_BAT_DAU, NGAY
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_NOI_DUNG" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NOI_DUNG" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ID_CO_CHE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_CO_CHE" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_ID_CO_CHE" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="ID_CO_CHE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MA_DU_AN_THR" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MA_DU_AN_THR" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_MA_DU_AN_THR" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="MA_DU_AN_THR" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="ID" ColumnName="ID" DataSourceName="" DataTypeServer="DT_POID" DbType="Decimal" Direction="Input" ParameterName="@ID" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
@@ -96,6 +103,7 @@ SELECT ID, MA_DU_AN, TEN_DU_AN, ID_TRANG_THAI, ID_LOAI_DU_AN, NGAY_BAT_DAU, NGAY
               <Mapping SourceColumn="NGAY_KET_THUC" DataSetColumn="NGAY_KET_THUC" />
               <Mapping SourceColumn="NOI_DUNG" DataSetColumn="NOI_DUNG" />
               <Mapping SourceColumn="ID_CO_CHE" DataSetColumn="ID_CO_CHE" />
+              <Mapping SourceColumn="MA_DU_AN_THR" DataSetColumn="MA_DU_AN_THR" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -110,7 +118,7 @@ SELECT ID, MA_DU_AN, TEN_DU_AN, ID_TRANG_THAI, ID_LOAI_DU_AN, NGAY_BAT_DAU, NGAY
         <xs:element name="DM_DU_AN" msprop:Generator_TableClassName="DM_DU_ANDataTable" msprop:Generator_TableVarName="tableDM_DU_AN" msprop:Generator_TablePropName="DM_DU_AN" msprop:Generator_RowDeletingName="DM_DU_ANRowDeleting" msprop:Generator_RowChangingName="DM_DU_ANRowChanging" msprop:Generator_RowEvHandlerName="DM_DU_ANRowChangeEventHandler" msprop:Generator_RowDeletedName="DM_DU_ANRowDeleted" msprop:Generator_UserTableName="DM_DU_AN" msprop:Generator_RowChangedName="DM_DU_ANRowChanged" msprop:Generator_RowEvArgName="DM_DU_ANRowChangeEvent" msprop:Generator_RowClassName="DM_DU_ANRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
               <xs:element name="MA_DU_AN" msprop:Generator_ColumnVarNameInTable="columnMA_DU_AN" msprop:Generator_ColumnPropNameInRow="MA_DU_AN" msprop:Generator_ColumnPropNameInTable="MA_DU_ANColumn" msprop:Generator_UserColumnName="MA_DU_AN">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -137,6 +145,13 @@ SELECT ID, MA_DU_AN, TEN_DU_AN, ID_TRANG_THAI, ID_LOAI_DU_AN, NGAY_BAT_DAU, NGAY
                 </xs:simpleType>
               </xs:element>
               <xs:element name="ID_CO_CHE" msprop:Generator_ColumnVarNameInTable="columnID_CO_CHE" msprop:Generator_ColumnPropNameInRow="ID_CO_CHE" msprop:Generator_ColumnPropNameInTable="ID_CO_CHEColumn" msprop:Generator_UserColumnName="ID_CO_CHE" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MA_DU_AN_THR" msprop:Generator_ColumnVarNameInTable="columnMA_DU_AN_THR" msprop:Generator_ColumnPropNameInRow="MA_DU_AN_THR" msprop:Generator_ColumnPropNameInTable="MA_DU_AN_THRColumn" msprop:Generator_UserColumnName="MA_DU_AN_THR" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
