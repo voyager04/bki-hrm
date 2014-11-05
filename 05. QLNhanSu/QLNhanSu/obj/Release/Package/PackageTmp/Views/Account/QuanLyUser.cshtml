@@ -1,0 +1,169 @@
+﻿@{
+    ViewBag.Title = "Quản lý danh sách user";
+    IEnumerable<BKISystemAdmin.Model.CUserModel> _lst_user = ViewBag._lst_user;
+    IEnumerable<BKISystemAdmin.Model.CUserGroupModel> _lst_user_group = ViewBag._lst_user_group;
+}
+<html>
+<head>
+    <link href="~/Styles/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Themes/Boostrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Themes/Boostrap/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Styles/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Styles/select2.css" rel="stylesheet" />
+    <link href="~/Styles/duyetYBa.css" rel="stylesheet" />
+     <style type="text/css">
+        .popup {
+            background-color: #fff;
+            border-radius: 10px 10px 10px 10px;
+            box-shadow: 0 0 25px 5px #999;
+            color: #111;
+            display: none;
+            min-width: 200px;
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="col-xs-12">
+            <input type="hidden" name="name" value="" id="m_hdf_id_user" />
+            <input type="text" required disabled="true" id="m_txt_email" placeholder="Email" style="width:20%"/>
+            <select id="m_cbo_user_group" style="width:20%">
+                @foreach (var ug in _lst_user_group)
+                {
+                    <option value="@ug.ID">@ug.DESCRIPTION</option>
+                }
+            </select>
+            <button class="btn btn-primary" id="m_cmd_cap_nhat" onclick="update()">Cập nhật thông tin</button>
+        </div>
+
+        <div class="col-xs-12">
+            <table id="m_tbl" class=" table-hover table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Nhóm người dùng</th>
+                        <th>Email</th>
+                        <th>Họ tên</th>
+                        <th>Số điện thoại</th>
+                        <th>Phòng</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var u in _lst_user)
+                    {
+                        <tr>
+                            <td>@u.DESCRIPTION</td>
+                            <td>@u.USER_NAME</td>
+                            <td>@u.HO_TEN</td>
+                            <td>@u.SDT</td>
+                            <td>@u.PHONG</td>
+                            <td>
+                                <button class="btn btn-primary" onclick="grid_to_form('@u.USER_NAME', '@u.ID_USER_GROUP','@u.ID')">Sửa thông tin</button></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div style="display: none; width: 500px" class="popup" id="m_popup">
+
+        <p id="m_lbl_mess"></p>
+        <hr style="border: 1px solid gray" />
+        <div style="text-align: center">
+            <button onclick="closePopup()" id="m_cmd_tro_ve">Trở về</button>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
+@section Scripts{
+
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+    <script src="~/Scripts/jquery-ui-1.8.23.min.js"></script>
+    <script src="~/Scripts/lib/jquery.dataTables.js"></script>
+    <script src="~/Scripts/lib/jquery.ui.datepicker-vi.js"></script>
+    <script src="~/Scripts/lib/select2.min.js"></script>
+    <script src="~/Scripts/lib/jquery.bpopup.min.js"></script>
+    <script type="text/javascript">
+        var email = $('#m_txt_email');
+        var ug = $('#m_cbo_user_group');
+        var cn = $('#m_cmd_cap_nhat');
+        var idus = $('#m_hdf_id_user');
+        $('#m_cbo_user_group').select2();
+        $('#m_tbl').dataTable({
+
+            "sPaginationType": "full_numbers",
+            "iDisplayLength": 20,
+            "bServerSide": false,
+            "bProcessing": true,
+            "bSort": false,
+            "bAutoWidth": false,
+            "bInfo": true,
+            "sDom": '<"top"f>rt<"bottom"ip>',
+            "bFilter": true,
+            "bLengthChange": true,
+            "oLanguage": {
+                "sSearch": "Tìm kiếm: ",
+                "sEmptyTable": "Không có dữ liệu phù hợp!",
+                "sInfo": "Có _TOTAL_ bản ghi (Trang hiện tại: từ _START_ đến _END_)",
+                "sInfoFiltered": " - Có tất cả _MAX_ bản ghi",
+                "oPaginate": {
+                    "sPrevious": "Trang trước",
+                    "sNext": "Trang tiếp",
+                    "sFirst": "Trang đầu",
+                    "sLast": "Trang cuối"
+                },
+                "sProcessing": "Đang tải dữ liệu!"
+            }
+        });
+        function ThongBao(ip_str_mess) {
+            $('#m_lbl_mess').text(ip_str_mess);
+            $("#m_popup").bPopup({
+                modalClose: true,
+                onClose: xoa_trang(),
+            });
+        }
+        function closePopup() {
+            var bPopup = $('#m_popup').bPopup();
+            bPopup.close();
+        }
+        function xoa_trang() {
+            $(email).val('');
+            $(idus).val('');
+            $('#m_lbl_mess').val('');
+        }
+        function grid_to_form(mail, ugid, usid) {
+            xoa_trang();
+            $(email).val(mail);
+            $(idus).val(usid);
+            $('html, body').animate({ scrollTop: 0 }, 'fast');
+            $(ug).select2().select2("val", ugid);
+        }
+        function check_data_is_ok() {
+            if ($(idus).val() == "") {
+                ThongBao("Bạn phải chọn user cần thay đổi thông tin!");
+                return false;
+            }
+            return true;
+        }
+        function update() {
+            if (check_data_is_ok()) {
+                $.ajax({
+                    url: '/Account/UpdateUserGroupOfUser',
+                    data: { ip_guid_id_user_group: $(ug).select2("val"), ip_guid_id_user: $(idus).val() },
+                    datatype: 'text',
+                    type: 'post',
+                    error: function () {
+                        ThongBao("Đã có lỗi xảy ra! Bạn vui lòng thực hiện lại thao tác!");
+                    },
+                    success: function () {
+                        ThongBao("Bạn đã cập nhật thông tin thành công!");
+                        window.setInterval(function () {
+                            location.reload();
+                        }, 1800);
+                    }
+                });
+            }
+        }
+    </script>
+}

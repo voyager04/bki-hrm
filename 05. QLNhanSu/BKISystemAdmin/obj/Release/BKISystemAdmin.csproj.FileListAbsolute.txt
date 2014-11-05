@@ -1,0 +1,41 @@
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\BKISystemAdmin.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\BKISystemAdmin.pdb
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\EHR.Caching.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\EHR.SQLDataAccess.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\Framework.Extensions.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\IPCommon.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\log4net.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\EntityFramework.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\EHR.Caching.pdb
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\EHR.SQLDataAccess.pdb
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\Framework.Extensions.pdb
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\IPCommon.pdb
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\IPCommon.xml
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\log4net.xml
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\EntityFramework.xml
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\obj\Release\BKISystemAdmin.csprojResolveAssemblyReference.cache
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\obj\Release\BKISystemAdmin.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\obj\Release\BKISystemAdmin.pdb
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\Newtonsoft.Json.dll
+D:\1.My Project\YTE\SVN\03.SourceCode\EHR\BKISystemAdmin\bin\Release\Newtonsoft.Json.xml
+E:\0. Working\1. Project\DatPhongHop\03. SourceCode\BKISystemAdmin\obj\Release\BKISystemAdmin.csprojResolveAssemblyReference.cache
+C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\obj\Release\BKISystemAdmin.csprojResolveAssemblyReference.cache
+C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\bin\Release\BKISystemAdmin.dll
+C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\bin\Release\BKISystemAdmin.pdb
+C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\bin\Release\Caching.dll
+C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\bin\Release\Framework.Extensions.dll
+C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\bin\Release\IPCommon.dll
+C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\bin\Release\SQLDataAccess.dll
+C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\bin\Release\log4net.dll
+C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\bin\Release\EntityFramework.dll
+C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\bin\Release\Caching.pdb
+C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\bin\Release\IPCommon.pdb
+C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\bin\Release\IPCommon.xml
+C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\bin\Release\SQLDataAccess.pdb
+C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\bin\Release\log4net.xml
+C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\bin\Release\EntityFramework.xml
+C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\obj\Release\BKISystemAdmin.dll
+C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\obj\Release\BKISystemAdmin.pdb
+C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\bin\Release\Newtonsoft.Json.dll
+C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\bin\Release\Framework.Extensions.pdb
+C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\bin\Release\Newtonsoft.Json.xml

@@ -1,0 +1,8 @@
+C:\Users\Apple\Desktop\QLNhanSu\SQLDataAccess\bin\Release\SQLDataAccess.dll.config
+C:\Users\Apple\Desktop\QLNhanSu\SQLDataAccess\bin\Release\SQLDataAccess.dll
+C:\Users\Apple\Desktop\QLNhanSu\SQLDataAccess\bin\Release\SQLDataAccess.pdb
+C:\Users\Apple\Desktop\QLNhanSu\SQLDataAccess\bin\Release\EntityFramework.dll
+C:\Users\Apple\Desktop\QLNhanSu\SQLDataAccess\bin\Release\EntityFramework.xml
+C:\Users\Apple\Desktop\QLNhanSu\SQLDataAccess\obj\Release\SQLDataAccess.csprojResolveAssemblyReference.cache
+C:\Users\Apple\Desktop\QLNhanSu\SQLDataAccess\obj\Release\SQLDataAccess.dll
+C:\Users\Apple\Desktop\QLNhanSu\SQLDataAccess\obj\Release\SQLDataAccess.pdb

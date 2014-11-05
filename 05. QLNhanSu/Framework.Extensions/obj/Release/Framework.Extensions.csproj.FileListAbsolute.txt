@@ -1,0 +1,9 @@
+C:\Users\Apple\Desktop\QLNhanSu\Framework.Extensions\obj\Release\Framework.Extensions.csprojResolveAssemblyReference.cache
+C:\Users\Apple\Desktop\QLNhanSu\Framework.Extensions\bin\Release\Framework.Extensions.dll
+C:\Users\Apple\Desktop\QLNhanSu\Framework.Extensions\bin\Release\Framework.Extensions.pdb
+C:\Users\Apple\Desktop\QLNhanSu\Framework.Extensions\bin\Release\log4net.dll
+C:\Users\Apple\Desktop\QLNhanSu\Framework.Extensions\bin\Release\Newtonsoft.Json.dll
+C:\Users\Apple\Desktop\QLNhanSu\Framework.Extensions\bin\Release\log4net.xml
+C:\Users\Apple\Desktop\QLNhanSu\Framework.Extensions\bin\Release\Newtonsoft.Json.xml
+C:\Users\Apple\Desktop\QLNhanSu\Framework.Extensions\obj\Release\Framework.Extensions.dll
+C:\Users\Apple\Desktop\QLNhanSu\Framework.Extensions\obj\Release\Framework.Extensions.pdb

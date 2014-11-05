@@ -1,0 +1,12 @@
+C:\Users\Apple\Desktop\QLNhanSu\Caching\obj\Release\Caching.csprojResolveAssemblyReference.cache
+C:\Users\Apple\Desktop\QLNhanSu\Caching\bin\Release\Caching.dll.config
+C:\Users\Apple\Desktop\QLNhanSu\Caching\bin\Release\Caching.dll
+C:\Users\Apple\Desktop\QLNhanSu\Caching\bin\Release\Caching.pdb
+C:\Users\Apple\Desktop\QLNhanSu\Caching\bin\Release\Framework.Extensions.dll
+C:\Users\Apple\Desktop\QLNhanSu\Caching\bin\Release\log4net.dll
+C:\Users\Apple\Desktop\QLNhanSu\Caching\bin\Release\log4net.xml
+C:\Users\Apple\Desktop\QLNhanSu\Caching\obj\Release\Caching.dll
+C:\Users\Apple\Desktop\QLNhanSu\Caching\obj\Release\Caching.pdb
+C:\Users\Apple\Desktop\QLNhanSu\Caching\bin\Release\Newtonsoft.Json.dll
+C:\Users\Apple\Desktop\QLNhanSu\Caching\bin\Release\Framework.Extensions.pdb
+C:\Users\Apple\Desktop\QLNhanSu\Caching\bin\Release\Newtonsoft.Json.xml
