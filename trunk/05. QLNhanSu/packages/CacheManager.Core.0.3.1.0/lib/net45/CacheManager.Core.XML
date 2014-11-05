@@ -1,0 +1,1150 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CacheManager.Core</name>
+    </assembly>
+    <members>
+        <member name="T:CacheManager.Core.CacheFactory">
+            <summary>
+            Helper class to instantiate new <see cref="T:CacheManager.Core.ICacheManager`1"/> instances from configuration.
+            </summary>
+        </member>
+        <member name="M:CacheManager.Core.CacheFactory.FromConfiguration``1(System.String)">
+            <summary>
+            <para>Instantiates a cache manager from app.config or web.config.</para>
+            <para>The <paramref name="name"/> must match with one cache element defined in your config file.</para>
+            </summary>
+            <example>
+            The following example show how to use the CacheFactory to create a new cache manager
+            instance from app/web.config.
+            <code><![CDATA[
+                var cache = CacheFactory.FromConfiguration<object>("myCache");
+                cache.Add("key", "value");
+            ]]></code>
+            </example>
+            <param name="name">
+            The name of the configured cache element within the config file.
+            </param>
+            <typeparam name="TCacheValue">The type of the cache item value.</typeparam>
+            <returns>The cache manager instance.</returns>
+            <seealso cref="T:CacheManager.Core.ICacheManager`1"/>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown if the <paramref name="name"/> is null or an empty string.
+            </exception>
+            <exception cref="T:System.Configuration.ConfigurationErrorsException">
+            Thrown if there are configuration errors within the cacheManager section.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if no cacheManager section is defined or on certain configuration errors
+            related to the cache handles.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.CacheFactory.FromConfiguration``1(CacheManager.Core.Configuration.CacheManagerConfiguration{``0})">
+             <summary>
+             <para>
+             Instantiates a cache manager using the given <paramref name="configuration"/>.
+             </para>
+             </summary>
+             <example>
+             The following example show how to build a <c>CacheManagerConfiguration</c>
+             and then using the <c>CacheFactory</c> to create a new cache manager instance.
+             <code><![CDATA[
+            CacheManagerConfiguration<object> cfg = ConfigurationBuilder.BuildConfiguration<object>("myCacheName", settings =>
+             {
+                 settings.WithUpdateMode(CacheUpdateMode.Up)
+                     .WithHandle<DictionaryCacheHandle<object>>("handle1")
+                         .EnablePerformanceCounters()
+                         .WithExpiration(ExpirationMode.Sliding, TimeSpan.FromSeconds(10));
+             });
+             
+             var cache = CacheFactory.FromConfiguration<object>(cfg);
+             cache.Add("key", "value");
+             ]]></code>
+             </example>
+             <param name="configuration">
+             The configured which will be used to configure the cache manager instance.
+             </param>
+             <typeparam name="TCacheValue">The type of the cache item value.</typeparam>
+             <returns>The cache manager instance.</returns>
+             <see cref="T:CacheManager.Core.Configuration.ConfigurationBuilder"/>
+             <seealso cref="T:CacheManager.Core.ICacheManager`1"/>
+             <seealso cref="!:CacheManagerConfiguration"/>
+             <exception cref="T:System.ArgumentNullException">
+             Thrown if the <paramref name="configuration"/> is null.
+             </exception>
+             <exception cref="T:System.InvalidOperationException">
+             Thrown on certain configuration errors related to the cache handles.
+             </exception>
+        </member>
+        <member name="M:CacheManager.Core.CacheFactory.Build(System.String,System.Action{CacheManager.Core.Configuration.ConfigurationBuilderCachePart{System.Object}})">
+             <summary>
+             <para>
+             Instantiates a cache manager using the inline configuration defined by <paramref name="settings"/>.
+             </para>
+             <para>
+             This Build method returns a <c>ICacheManager</c> with cache item type being <c>System.Object</c>.
+             </para>
+             </summary>
+             <example>
+             The following example show how to build a <c>CacheManagerConfiguration</c>
+             and then using the <c>CacheFactory</c> to create a new cache manager instance.
+             <code><![CDATA[
+            var cache = CacheFactory.Build("myCacheName", settings =>
+            {
+                settings
+                    .WithUpdateMode(CacheUpdateMode.Up)
+                    .WithHandle<DictionaryCacheHandle>("handle1")
+                        .EnablePerformanceCounters()
+                        .WithExpiration(ExpirationMode.Sliding, TimeSpan.FromSeconds(10));
+            });
+            
+            cache.Add("key", "value");
+             ]]></code>
+             </example>
+             <param name="cacheName">
+             The name of the cache manager instance.
+             </param>
+             <param name="settings">
+             The configuration. Use the settings element to configure the cache manager instance,
+             add cache handles and also to configure the cache handles in a fluent way.
+             </param>
+             <returns>The cache manager instance with cache item type being <c>System.Object</c>.</returns>
+             <seealso cref="T:CacheManager.Core.ICacheManager`1"/>
+             <exception cref="T:System.ArgumentNullException">
+             Thrown if the <paramref name="cacheName"/> or <paramref name="settings"/> is null.
+             </exception>
+             <exception cref="T:System.InvalidOperationException">
+             Thrown on certain configuration errors related to the cache handles.
+             </exception>
+        </member>
+        <member name="M:CacheManager.Core.CacheFactory.Build``1(System.String,System.Action{CacheManager.Core.Configuration.ConfigurationBuilderCachePart{``0}})">
+             <summary>
+             <para>
+             Instantiates a cache manager using the inline configuration defined by <paramref name="settings"/>.
+             </para>
+             </summary>
+             <example>
+             The following example show how to build a <c>CacheManagerConfiguration</c>
+             and then using the <c>CacheFactory</c> to create a new cache manager instance.
+             <code><![CDATA[
+            var cache = CacheFactory.Build("myCacheName", settings =>
+            {
+                settings
+                    .WithUpdateMode(CacheUpdateMode.Up)
+                    .WithHandle<DictionaryCacheHandle>("handle1")
+                        .EnablePerformanceCounters()
+                        .WithExpiration(ExpirationMode.Sliding, TimeSpan.FromSeconds(10));
+            });
+            
+            cache.Add("key", "value");
+             ]]></code>
+             </example>
+             <param name="cacheName">
+             The name of the cache manager instance.
+             </param>
+             <param name="settings">
+             The configuration. Use the settings element to configure the cache manager instance,
+             add cache handles and also to configure the cache handles in a fluent way.
+             </param>
+             <typeparam name="TCacheValue">The type of the cache item value.</typeparam>
+             <returns>The cache manager instance with cache item type being <c>TCacheValue</c>.</returns>
+             <seealso cref="T:CacheManager.Core.ICacheManager`1"/>
+             <exception cref="T:System.ArgumentNullException">
+             Thrown if the <paramref name="cacheName"/> or <paramref name="settings"/> is null.
+             </exception>
+             <exception cref="T:System.InvalidOperationException">
+             Thrown on certain configuration errors related to the cache handles.
+             </exception>
+        </member>
+        <member name="T:CacheManager.Core.Cache.BaseCache`1">
+            <summary>
+            The BaseCache class implements the overall logic of this cache library
+            and delegates the concrete implementation of how e.g. add, get or remove should work
+            to a derived class.
+            <para>
+            To use this base class simply override the abstract methods for Add, Get, Put and Remove.<br/>
+            All other methods defined by <c>ICache</c> will be delegated to those methods.
+            </para>
+            </summary>
+            <typeparam name="TCacheValue">The type of the cache value.</typeparam>
+        </member>
+        <member name="T:CacheManager.Core.ICache`1">
+            <summary>
+            This interface is the base contract for the main stack of this library.
+            <para>
+            The <c>ICacheHandle</c> and <c>ICacheManager</c> interfaces are derived from <c>ICache</c>,
+            meaning the method call signature throughout the stack is very similar.
+            </para>
+            <para>
+            We want the flexibility of having a simple get/put/delete cache
+            up to multiple caches layered on top of each other, still using the same simple and
+            easy to understand interface.
+            </para>
+            <para>
+            The <c>TCacheValue</c> can, but most not be used in the sense of
+            strongly typing. This means, you can define and configure a cache for certain object
+            types within your domain. But you can also use <c>object</c> and store anything
+            you want within the cache.
+            All underlying cache technologies usually do not care about types of the cache items.
+            </para>
+            </summary>
+            <typeparam name="TCacheValue">The type of the cache value.</typeparam>
+        </member>
+        <member name="M:CacheManager.Core.ICache`1.Add(System.String,`0)">
+            <summary>
+            Adds a value for the specified key to the cache.
+            <para>
+            The <c>Add</c> method will <b>not</b> be successful if the specified <paramref name="key"/>
+            already exists within the cache!
+            </para>
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <param name="value">The value which should be cached.</param>
+            <returns><c>true</c> if the key was not already added to the cache, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="key"/> or <paramref name="value"/> is null.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.ICache`1.Add(System.String,`0,System.String)">
+            <summary>
+            Adds a value for the specified key and region to the cache.
+            <para>
+            The <c>Add</c> method will <b>not</b> be successful if the specified <paramref name="key"/>
+            already exists within the cache!
+            </para>
+            <para>
+            With <paramref name="region"/> specified, the key will <b>not</b> be found in the global cache.
+            </para>
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <param name="value">The value which should be cached.</param>
+            <param name="region">The cache region.</param>
+            <returns><c>true</c> if the key was not already added to the cache, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="key"/>, <paramref name="value"/> or <paramref name="region"/> is null.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.ICache`1.Add(CacheManager.Core.CacheItem{`0})">
+            <summary>
+            Adds the specified <c>CacheItem</c> to the cache.
+            <para>
+            Use this overload to overrule the configured expiration settings
+            of the cache and to define a custom expiration for this <paramref name="item"/> only.
+            </para>
+            <para>
+            The <c>Add</c> method will <b>not</b> be successful if the specified <paramref name="item"/>
+            already exists within the cache!
+            </para>
+            </summary>
+            <param name="item">The <c>CacheItem</c> to be added to the cache.</param>
+            <returns><c>true</c> if the key was not already added to the cache, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="item"/> or the item's key or value is null.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.ICache`1.Put(System.String,`0)">
+            <summary>
+            Puts a value for the specified key into the cache.
+            <para>
+            If the <paramref name="key"/> already exists within the cache, the existing
+            value will be replaced with the new <paramref name="value"/>.
+            </para>
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <param name="value">The value which should be cached.</param>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="key"/> or <paramref name="value"/> is null.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.ICache`1.Put(System.String,`0,System.String)">
+            <summary>
+            Puts a value for the specified key and region into the cache.
+            <para>
+            If the <paramref name="key"/> already exists within the cache, the existing
+            value will be replaced with the new <paramref name="value"/>.
+            </para>
+            <para>
+            With <paramref name="region"/> specified, the key will <b>not</b> be found in the global cache.
+            </para>
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <param name="value">The value which should be cached.</param>
+            <param name="region">The cache region.</param>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="key"/>, <paramref name="value"/> or <paramref name="region"/> is null.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.ICache`1.Put(CacheManager.Core.CacheItem{`0})">
+            <summary>
+            Puts the specified <c>CacheItem</c> into the cache.
+            <para>
+            If the <paramref name="item"/> already exists within the cache, the existing
+            item will be replaced with the new <paramref name="item"/>.
+            </para>
+            <para>
+            Use this overload to overrule the configured expiration settings
+            of the cache and to define a custom expiration for this <paramref name="item"/> only.
+            </para>
+            </summary>
+            <param name="item">The <c>CacheItem</c> to be cached.</param>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="item"/> or the item's key or value is null.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.ICache`1.Remove(System.String)">
+            <summary>
+            Removes a value from the cache for the specified key.
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <returns><c>true</c> if the key was found and removed from the cache, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="key"/> is null.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.ICache`1.Remove(System.String,System.String)">
+            <summary>
+            Removes a value from the cache for the specified key and region.
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <param name="region">The cache region.</param>
+            <returns><c>true</c> if the key was found and removed from the cache, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="key"/> or <paramref name="region"/> is null.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.ICache`1.Get(System.String)">
+            <summary>
+            Gets a value for the specified key.
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <returns>
+            The value being stored in the cache for the given <paramref name="key"/>.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="key"/> is null.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.ICache`1.Get(System.String,System.String)">
+            <summary>
+            Gets a value for the specified key and region.
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <param name="region">The cache region.</param>
+            <returns>The value being stored in the cache for the given <paramref name="key"/> and
+            <paramref name="region"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="key"/> or <paramref name="region"/> is null.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.ICache`1.Get``1(System.String)">
+            <summary>
+            Gets a value for the specified key and will cast it to the specified type.
+            </summary>
+            <typeparam name="TOut">the type the value is converted and returned.</typeparam>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <returns>
+            The value being stored in the cache for the given <paramref name="key"/>.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="key"/> is null.
+            </exception>
+            <exception cref="T:System.InvalidCastException">
+            If no explicit cast is defined from <c>TCacheValue</c> to <c>TOut</c>.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.ICache`1.Get``1(System.String,System.String)">
+            <summary>
+            Gets a value for the specified key and region and will cast it to the specified type.
+            </summary>
+            <typeparam name="TOut">The type the cached value should be converted to.</typeparam>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <param name="region">The cache region.</param>
+            <returns>The value being stored in the cache for the given <paramref name="key"/> and
+            <paramref name="region"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="key"/> or <paramref name="region"/> is null.
+            </exception>
+            <exception cref="T:System.InvalidCastException">
+            If no explicit cast is defined from <c>TCacheValue</c> to <c>TOut</c>.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.ICache`1.GetCacheItem(System.String)">
+            <summary>
+            Gets the <c>CacheItem</c> for the specified key.
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <returns>The <c>CacheItem</c>.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="key"/> is null.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.ICache`1.GetCacheItem(System.String,System.String)">
+            <summary>
+            Gets the <c>CacheItem</c> for the specified key and region.
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <param name="region">The cache region.</param>
+            <returns>The <c>CacheItem</c>.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="key"/> or <paramref name="region"/> is null.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.ICache`1.Clear">
+            <summary>
+            Clears this cache, removing all items in the base cache and all regions.
+            </summary>
+        </member>
+        <member name="M:CacheManager.Core.ICache`1.ClearRegion(System.String)">
+            <summary>
+            Clears the cache region, removing all items from the specified
+            <paramref name="region"/> only.
+            </summary>
+            <param name="region">The cache region.</param>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="region"/> is null.
+            </exception>
+        </member>
+        <member name="P:CacheManager.Core.ICache`1.Item(System.String)">
+            <summary>
+            Gets or sets a value for the specified key.
+            The indexer is identical to the corresponding <see cref="M:CacheManager.Core.ICache`1.Put(System.String,`0)"/>
+            and <see cref="M:CacheManager.Core.ICache`1.Get(System.String)"/> calls.
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <returns>The value being stored in the cache for the given <paramref name="key"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">If the <paramref name="key"/> is null.</exception>
+        </member>
+        <member name="P:CacheManager.Core.ICache`1.Item(System.String,System.String)">
+            <summary>
+            Gets or sets a value for the specified key and region.
+            The indexer is identical to the corresponding <see cref="M:CacheManager.Core.ICache`1.Put(System.String,`0,System.String)"/>
+            and <see cref="M:CacheManager.Core.ICache`1.Get(System.String,System.String)"/> calls.
+            <para>
+            With <paramref name="region"/> specified, the key will <b>not</b> be found in the global cache.
+            </para>
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <param name="region">The cache region.</param>
+            <returns>The value being stored in the cache for the given <paramref name="key"/> and
+            <paramref name="region"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="key"/> or <paramref name="region"/> is null.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CacheManager.Core.Cache.BaseCache`1"/> class.
+            </summary>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.Finalize">
+            <summary>
+            Finalizes an instance of the <see cref="T:CacheManager.Core.Cache.BaseCache`1"/> class.
+            </summary>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.Add(System.String,`0)">
+            <summary>
+            Adds a value for the specified key to the cache.
+            <para>
+            The <c>Add</c> method will <b>not</b> be successful if the specified <paramref name="key"/>
+            already exists within the cache!
+            </para>
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <param name="value">The value which should be cached.</param>
+            <returns><c>true</c> if the key was not already added to the cache, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="key"/> or <paramref name="value"/> is null.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.Add(System.String,`0,System.String)">
+            <summary>
+            Adds a value for the specified key and region to the cache.
+            <para>
+            The <c>Add</c> method will <b>not</b> be successful if the specified <paramref name="key"/>
+            already exists within the cache!
+            </para>
+            <para>
+            With <paramref name="region"/> specified, the key will <b>not</b> be found in the global cache.
+            </para>
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <param name="value">The value which should be cached.</param>
+            <param name="region">The cache region.</param>
+            <returns><c>true</c> if the key was not already added to the cache, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="key"/>, <paramref name="value"/> or <paramref name="region"/> is null.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.Add(CacheManager.Core.CacheItem{`0})">
+            <summary>
+            Adds the specified <c>CacheItem</c> to the cache.
+            <para>
+            Use this overload to overrule the configured expiration settings
+            of the cache and to define a custom expiration for this <paramref name="item"/> only.
+            </para>
+            <para>
+            The <c>Add</c> method will <b>not</b> be successful if the specified <paramref name="item"/>
+            already exists within the cache!
+            </para>
+            </summary>
+            <param name="item">The <c>CacheItem</c> to be added to the cache.</param>
+            <returns><c>true</c> if the key was not already added to the cache, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="item"/> or the item's key or value is null.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.Put(System.String,`0)">
+            <summary>
+            Puts a value for the specified key into the cache.
+            <para>
+            If the <paramref name="key"/> already exists within the cache, the existing
+            value will be replaced with the new <paramref name="value"/>.
+            </para>
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <param name="value">The value which should be cached.</param>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="key"/> or <paramref name="value"/> is null.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.Put(System.String,`0,System.String)">
+            <summary>
+            Puts a value for the specified key and region into the cache.
+            <para>
+            If the <paramref name="key"/> already exists within the cache, the existing
+            value will be replaced with the new <paramref name="value"/>.
+            </para>
+            <para>
+            With <paramref name="region"/> specified, the key will <b>not</b> be found in the global cache.
+            </para>
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <param name="value">The value which should be cached.</param>
+            <param name="region">The cache region.</param>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="key"/>, <paramref name="value"/> or <paramref name="region"/> is null.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.Put(CacheManager.Core.CacheItem{`0})">
+            <summary>
+            Puts the specified <c>CacheItem</c> into the cache.
+            <para>
+            If the <paramref name="item"/> already exists within the cache, the existing
+            item will be replaced with the new <paramref name="item"/>.
+            </para>
+            <para>
+            Use this overload to overrule the configured expiration settings
+            of the cache and to define a custom expiration for this <paramref name="item"/> only.
+            </para>
+            </summary>
+            <param name="item">The <c>CacheItem</c> to be cached.</param>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="item"/> or the item's key or value is null.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.Remove(System.String)">
+            <summary>
+            Removes a value from the cache for the specified key.
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <returns><c>true</c> if the key was found and removed from the cache, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="key"/> is null.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.Remove(System.String,System.String)">
+            <summary>
+            Removes a value from the cache for the specified key and region.
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <param name="region">The cache region.</param>
+            <returns><c>true</c> if the key was found and removed from the cache, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="key"/> or <paramref name="region"/> is null.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.Get(System.String)">
+            <summary>
+            Gets a value for the specified key.
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <returns>
+            The value being stored in the cache for the given <paramref name="key"/>.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="key"/> is null.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.Get(System.String,System.String)">
+            <summary>
+            Gets a value for the specified key and region.
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <param name="region">The cache region.</param>
+            <returns>The value being stored in the cache for the given <paramref name="key"/> and
+            <paramref name="region"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="key"/> or <paramref name="region"/> is null.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.Get``1(System.String)">
+            <summary>
+            Gets a value for the specified key and will cast it to the specified type.
+            </summary>
+            <typeparam name="TOut">the type the value is converted and returned.</typeparam>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <returns>
+            The value being stored in the cache for the given <paramref name="key"/>.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="key"/> is null.
+            </exception>
+            <exception cref="T:System.InvalidCastException">
+            If no explicit cast is defined from <c>TCacheValue</c> to <c>TOut</c>.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.Get``1(System.String,System.String)">
+            <summary>
+            Gets a value for the specified key and region and will cast it to the specified type.
+            </summary>
+            <typeparam name="TOut">The type the cached value should be converted to.</typeparam>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <param name="region">The cache region.</param>
+            <returns>The value being stored in the cache for the given <paramref name="key"/> and
+            <paramref name="region"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="key"/> or <paramref name="region"/> is null.
+            </exception>
+            <exception cref="T:System.InvalidCastException">
+            If no explicit cast is defined from <c>TCacheValue</c> to <c>TOut</c>.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.GetCacheItem(System.String)">
+            <summary>
+            Gets the <c>CacheItem</c> for the specified key.
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <returns>The <c>CacheItem</c>.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="key"/> is null.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.GetCacheItem(System.String,System.String)">
+            <summary>
+            Gets the <c>CacheItem</c> for the specified key and region.
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <param name="region">The cache region.</param>
+            <returns>The <c>CacheItem</c>.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="key"/> or <paramref name="region"/> is null.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.Clear">
+            <summary>
+            Clears this cache, removing all items in the base cache and all regions.
+            </summary>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.ClearRegion(System.String)">
+            <summary>
+            Clears the cache region, removing all items from the specified
+            <paramref name="region"/> only.
+            </summary>
+            <param name="region">The cache region.</param>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="region"/> is null.
+            </exception>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposeManaged"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.AddInternal(CacheManager.Core.CacheItem{`0})">
+            <summary>
+            Adds a value to the cache.
+            </summary>
+            <param name="item">The <c>CacheItem</c> to be added to the cache.</param>
+            <returns><c>true</c> if the key was not already added to the cache, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.PutInternal(CacheManager.Core.CacheItem{`0})">
+            <summary>
+            Puts a value into the cache.
+            </summary>
+            <param name="item">The <c>CacheItem</c> to be added to the cache.</param>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.GetCacheItemInternal(System.String)">
+            <summary>
+            Gets a <c>CacheItem</c> for the specified key.
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <returns>The <c>CacheItem</c>.</returns>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.GetCacheItemInternal(System.String,System.String)">
+            <summary>
+            Gets a <c>CacheItem</c> for the specified key and region.
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <param name="region">The cache region.</param>
+            <returns>The <c>CacheItem</c>.</returns>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.RemoveInternal(System.String)">
+            <summary>
+            Removes a value from the cache for the specified key.
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <returns><c>true</c> if the key was found and removed from the cache, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.RemoveInternal(System.String,System.String)">
+            <summary>
+            Removes a value from the cache for the specified key and region.
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <param name="region">The cache region.</param>
+            <returns><c>true</c> if the key was found and removed from the cache, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:CacheManager.Core.Cache.BaseCache`1.GetCasted``1(System.Object)">
+            <summary>
+            Casts the value to <c>TOut</c>.
+            </summary>
+            <typeparam name="TOut">The type.</typeparam>
+            <param name="value">The value.</param>
+            <returns>The casted value.</returns>
+        </member>
+        <member name="P:CacheManager.Core.Cache.BaseCache`1.Disposed">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:CacheManager.Core.Cache.BaseCache`1"/> is disposed.
+            </summary>
+            <value><c>true</c> if disposed; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:CacheManager.Core.Cache.BaseCache`1.Disposing">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:CacheManager.Core.Cache.BaseCache`1"/> is disposing.
+            </summary>
+            <value><c>true</c> if disposing; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:CacheManager.Core.Cache.BaseCache`1.Item(System.String)">
+            <summary>
+            Gets or sets a value for the specified key.
+            The indexer is identical to the corresponding <see cref="M:CacheManager.Core.Cache.BaseCache`1.Put(System.String,`0)"/>
+            and <see cref="M:CacheManager.Core.Cache.BaseCache`1.Get(System.String)"/> calls.
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <returns>The value being stored in the cache for the given <paramref name="key"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">If the <paramref name="key"/> is null.</exception>
+        </member>
+        <member name="P:CacheManager.Core.Cache.BaseCache`1.Item(System.String,System.String)">
+            <summary>
+            Gets or sets a value for the specified key and region.
+            The indexer is identical to the corresponding <see cref="M:CacheManager.Core.Cache.BaseCache`1.Put(System.String,`0,System.String)"/>
+            and <see cref="M:CacheManager.Core.Cache.BaseCache`1.Get(System.String,System.String)"/> calls.
+            <para>
+            With <paramref name="region"/> specified, the key will <b>not</b> be found in the global cache.
+            </para>
+            </summary>
+            <param name="key">The key being used to identify the item within the cache.</param>
+            <param name="region">The cache region.</param>
+            <returns>The value being stored in the cache for the given <paramref name="key"/> and
+            <paramref name="region"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            If the <paramref name="key"/> or <paramref name="region"/> is null.
+            </exception>
+        </member>
+        <member name="T:CacheManager.Core.ICacheManager`1">
+            <summary>
+            This interface extends the <c>ICache</c> interface by some cache manager specific methods 
+            and also defines the events someone can register with.
+            </summary>
+            <typeparam name="TCacheValue">The type of the cache item value.</typeparam>
+        </member>
+        <member name="M:CacheManager.Core.ICacheManager`1.AddCacheHandle(CacheManager.Core.ICacheHandle{`0})">
+            <summary>
+            Adds a cache handle to the cache manager instance.
+            </summary>
+            <param name="handle">The cache handle.</param>
+        </member>
+        <member name="P:CacheManager.Core.ICacheManager`1.CacheHandles">
+            <summary>
+            Gets a list of cache handles currently registered within the cache manager.
+            </summary>
+            <remarks>
+            This list is read only, any changes to the returned list instance will not affect the 
+            state of the cache manager instance!
+            </remarks>
+            <value>The cache handles.</value>
+        </member>
+        <member name="P:CacheManager.Core.ICacheManager`1.Configuration">
+            <summary>
+            Gets the configuration.
+            </summary>
+            <value>The configuration.</value>
+        </member>
+        <member name="E:CacheManager.Core.ICacheManager`1.OnRemove">
+            <summary>
+            Occurs when an item was successfully removed from the cache.
+            </summary>
+        </member>
+        <member name="E:CacheManager.Core.ICacheManager`1.OnAdd">
+            <summary>
+            Occurs when an item was successfully added to the cache.
+            <para>
+            The event will not get triggered if <c>Add</c> would return false.
+            </para>
+            </summary>
+        </member>
+        <member name="E:CacheManager.Core.ICacheManager`1.OnPut">
+            <summary>
+            Occurs when an item was put into the cache.
+            </summary>
+        </member>
+        <member name="E:CacheManager.Core.ICacheManager`1.OnUpdate">
+            <summary>
+            Occurs when an item was successfully updated.
+            </summary>
+        </member>
+        <member name="E:CacheManager.Core.ICacheManager`1.OnGet">
+            <summary>
+            Occurs when an item was retrieved from the cache.
+            <para>
+            The event will only get triggered on cache hit. Misses do not trigger!
+            </para>
+            </summary>
+        </member>
+        <member name="E:CacheManager.Core.ICacheManager`1.OnClear">
+            <summary>
+            Occurs when <c>Clear</c> gets called, after the cache has been cleared.
+            </summary>
+        </member>
+        <member name="E:CacheManager.Core.ICacheManager`1.OnClearRegion">
+            <summary>
+            Occurs when <c>ClearRegion</c> gets called, after the cache region has been cleared.
+            </summary>
+        </member>
+        <!-- Ungültiger XML-Kommentar wurde für den Member "M:CacheManager.Core.Cache.BaseCacheManager`1.#ctor(CacheManager.Core.Configuration.ICacheManagerConfiguration,CacheManager.Core.ICacheHandle{`0}[])" ignoriert -->
+        <member name="M:CacheManager.Core.Cache.BaseCacheManager`1.AddCacheHandle(CacheManager.Core.ICacheHandle{`0})">
+            <summary>
+            Adds a cache handle to the cache manager instance.
+            </summary>
+            <param name="handle">The cache handle.</param>
+        </member>
+        <member name="T:CacheManager.Core.Cache.CacheStats`1">
+            <summary>
+            <para>
+            Stores statistical information for a <see cref="T:CacheManager.Core.Cache.BaseCacheHandle`1"/>.
+            </para>
+            <para>
+            Statistical counters are stored globally for the <see cref="T:CacheManager.Core.Cache.BaseCacheHandle`1"/> and for each cache region!
+            </para>
+            <para>
+            To retrieve a counter for a region only, specify the optional region attribute
+            of GetStatistics.
+            </para>
+            </summary>
+            <remarks>
+            The class is primarily used internally. Only the GetStatistics is visible. Therefore the
+            class is sealed.
+            </remarks>
+            <typeparam name="T">Inherited object type of the owning cache handle.</typeparam>
+        </member>
+        <member name="M:CacheManager.Core.Cache.CacheStats`1.GetStatistic(CacheManager.Core.Cache.CacheStatsCounterType,System.String)">
+             <summary>
+             <para>
+             Returns the corresponding statistical information of the <see cref="T:CacheManager.Core.Cache.CacheStatsCounterType"/> type.
+             </para>
+             <para>
+             If the cache handles is configured to disable statistics, the method will always return zero.
+             </para>
+             </summary>
+             <remarks>
+             In multi threaded environments the counters can be changed while reading.
+             Do not rely on those counters as they might not be 100% accurate!
+             </remarks>
+             <example>
+             <code>
+             <![CDATA[
+             var cache = CacheFactory.FromConfiguration("myCache");
+            
+             foreach (var handle in cache.CacheHandles)
+             {
+                var stats = handle.Stats;
+                var region = "myRegion";
+                Console.WriteLine(string.Format(
+                        "Items: {0}, Hits: {1}, Miss: {2}, Remove: {3}, ClearRegion: {4}, Clear: {5}, Adds: {6}, Puts: {7}, Gets: {8}",
+                            stats.GetStatistic(CacheStatsCounterType.Items, region),
+                            stats.GetStatistic(CacheStatsCounterType.Hits, region),
+                            stats.GetStatistic(CacheStatsCounterType.Misses, region),
+                            stats.GetStatistic(CacheStatsCounterType.RemoveCalls, region),
+                            stats.GetStatistic(CacheStatsCounterType.ClearRegionCalls, region),
+                            stats.GetStatistic(CacheStatsCounterType.ClearCalls, region),
+                            stats.GetStatistic(CacheStatsCounterType.AddCalls, region),
+                            stats.GetStatistic(CacheStatsCounterType.PutCalls, region),
+                            stats.GetStatistic(CacheStatsCounterType.GetCalls, region)
+                        ));
+            }
+             ]]>
+             </code>
+             </example>
+             <param name="type">The stats type to retrieve the number for.</param>
+             <param name="region">The region. The returned value will represent the counter of the region only.</param>
+             <returns>A number representing the counts for the specified <see cref="T:CacheManager.Core.Cache.CacheStatsCounterType"/> and region.</returns>
+        </member>
+        <member name="M:CacheManager.Core.Cache.CacheStats`1.GetStatistic(CacheManager.Core.Cache.CacheStatsCounterType)">
+             <summary>
+             <para>
+             Returns the corresponding statistical information of the <see cref="T:CacheManager.Core.Cache.CacheStatsCounterType"/> type.
+             </para>
+             <para>
+             If the cache handles is configured to disable statistics, the method will always return zero.
+             </para>
+             </summary>
+             <remarks>
+             In multithreaded environments the counters can be changed while reading.
+             Do not rely on those counters as they might not be 100% accurate!
+             </remarks>
+             <example>
+             <code>
+             <![CDATA[
+             var cache = CacheFactory.FromConfiguration("myCache");
+            
+             foreach (var handle in cache.CacheHandles)
+             {
+                var stats = handle.Stats;
+                Console.WriteLine(string.Format(
+                        "Items: {0}, Hits: {1}, Miss: {2}, Remove: {3}, ClearRegion: {4}, Clear: {5}, Adds: {6}, Puts: {7}, Gets: {8}",
+                            stats.GetStatistic(CacheStatsCounterType.Items),
+                            stats.GetStatistic(CacheStatsCounterType.Hits),
+                            stats.GetStatistic(CacheStatsCounterType.Misses),
+                            stats.GetStatistic(CacheStatsCounterType.RemoveCalls),
+                            stats.GetStatistic(CacheStatsCounterType.ClearRegionCalls),
+                            stats.GetStatistic(CacheStatsCounterType.ClearCalls),
+                            stats.GetStatistic(CacheStatsCounterType.AddCalls),
+                            stats.GetStatistic(CacheStatsCounterType.PutCalls),
+                            stats.GetStatistic(CacheStatsCounterType.GetCalls)
+                        ));
+            }
+             ]]>
+             </code>
+             </example>
+             <param name="type">The stats type to retrieve the number for.</param>
+             <returns>A number representing the counts for the specified <see cref="T:CacheManager.Core.Cache.CacheStatsCounterType"/>.</returns>
+        </member>
+        <member name="P:CacheManager.Core.Configuration.CacheHandleConfiguration`1.CacheName">
+            <summary>
+            Gets the name of the cache the handle got assigned to.
+            </summary>
+        </member>
+        <member name="P:CacheManager.Core.Configuration.CacheHandleConfiguration`1.HandleName">
+            <summary>
+            Gets the name for the cache handle which is also the identifier of the configuration.
+            </summary>
+        </member>
+        <member name="P:CacheManager.Core.Configuration.CacheManagerConfiguration`1.Name">
+            <summary>
+            Configuration name which serves as Identifier which can be passed in to construct a CacheManager instance.
+            </summary>
+        </member>
+        <member name="P:CacheManager.Core.Configuration.CacheManagerConfiguration`1.CacheUpdateMode">
+            <summary>
+            Gets the <see cref="P:CacheManager.Core.Configuration.CacheManagerConfiguration`1.CacheUpdateMode"/> for the cache manager instance.
+            <para>
+            Drives the behavior of the cache manager how it should update the different cache handles it manages.
+            </para>
+            </summary>
+        </member>
+        <member name="P:CacheManager.Core.Configuration.CacheManagerConfiguration`1.CacheHandles">
+            <summary>
+            Gets the list of cache handle configurations.
+            <para>Internally used only.</para>
+            </summary>
+        </member>
+        <member name="T:CacheManager.Core.Configuration.CacheManagerSection">
+            <summary>
+            Configuration section for the CacheManager.
+            </summary>
+            <example><![CDATA[
+            <cacheManager>
+                <managers>
+                    <cache name="cache1" updateMode="Up">
+                        <handle name="Handle1" ref="MemoryCacheHandle" timeout="1" expirationMode="Sliding" />
+                        <handle name="Handle2" ref="AzureDataCacheHandle" timeout="50" expirationMode="Sliding" />
+                    </cache>
+                    <cache name="cache2">
+                        <handle name="NamedMemCache" useNamedCache="true" ref="MemoryCacheHandle" timeout="10" expirationMode="Absolute" />
+                    </cache>
+                </managers>
+                <cacheHandles>
+                    <handleDef id="MemoryCacheHandle" type="CacheManager.SystemRuntimeCaching.MemoryCacheHandle, CacheManager.SystemRuntimeCaching"
+                        defaultTimeout="20" defaultExpirationMode="Sliding"/>
+                    <handleDef id="AzureDataCacheHandle" type="CacheManager.WindowsAzureCaching.AzureDataCacheHandle, CacheManager.WindowsAzureCaching"/>
+                </cacheHandles>
+            </cacheManager>
+            ]]>
+            </example>
+        </member>
+        <!-- Ungültiger XML-Kommentar wurde für den Member "P:CacheManager.Core.Configuration.CacheManagerHandle.Timeout" ignoriert -->
+        <member name="P:CacheManager.Core.Configuration.CacheHandleDefinition.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <!-- Ungültiger XML-Kommentar wurde für den Member "P:CacheManager.Core.Configuration.CacheHandleDefinition.DefaultTimeout" ignoriert -->
+        <member name="T:CacheManager.Core.Configuration.ConfigurationBuilder">
+            <summary>
+            Helper class to load cache manager configurations from file or to build new configurations in a fluent way.
+            <para>
+            This only loads configurations. To build a cache manager instance, use <c>CacheFactory</c> and pass in the
+            configuration. Or use the <c>Build</c> methods of <c>CacheFactory</c>!
+            </para>
+            </summary>
+            <see cref="T:CacheManager.Core.CacheFactory"/>
+        </member>
+        <member name="M:CacheManager.Core.Configuration.ConfigurationBuilder.BuildConfiguration``1(System.String,System.Action{CacheManager.Core.Configuration.ConfigurationBuilderCachePart{``0}})">
+            <summary>
+            Builds a <c>CacheManagerConfiguration</c> which can be used to create a new cache manager instance.
+            <para>
+            Pass the configuration to <c>CacheFactory.FromConfiguration</c> to create a valid cache manager.
+            </para>
+            </summary>
+            <param name="cacheName">The cache manager's name.</param>
+            <param name="settings">The configuration settings to define the cache handles and other properties.</param>
+            <returns>The <c>CacheManagerConfiguration</c>.</returns>
+        </member>
+        <member name="M:CacheManager.Core.Configuration.ConfigurationBuilder.LoadConfiguration``1(System.String)">
+            <summary>
+            Loads a configuration from web.config or app.config.
+            <para>
+            The <paramref name="configName"/> must match with the name attribute of one of the configured cache elements.
+            </para>
+            </summary>
+            <param name="configName">The name of the cache element within the config file.</param>
+            <returns>The <c>CacheManagerConfiguration</c></returns>
+            <see cref="T:CacheManager.Core.Configuration.CacheManagerConfiguration`1"/>
+        </member>
+        <member name="M:CacheManager.Core.Configuration.ConfigurationBuilder.LoadConfiguration``1(System.String,System.String)">
+            <summary>
+            Loads a configuration from web.config or app.config, by section and config name.
+            <para>
+            The <paramref name="configName"/> must match with the name attribute of one of the configured cache elements.
+            </para>
+            </summary>
+            <param name="sectionName">The name of the section.</param>
+            <param name="configName">The name of the cache element within the config file.</param>
+            <returns>The <c>CacheManagerConfiguration</c></returns>
+            <see cref="T:CacheManager.Core.Configuration.CacheManagerConfiguration`1"/>
+        </member>
+        <member name="M:CacheManager.Core.Configuration.ConfigurationBuilder.LoadConfigurationFile``1(System.String,System.String)">
+            <summary>
+            Loads a configuration from the given <paramref name="configFileName"/>.
+            <para>
+            The <paramref name="configName"/> must match with the name attribute of one of the
+            configured cache elements.</para>
+            </summary>
+            <param name="configFileName">
+            The full path of the file to load the configuration from.
+            </param>
+            <param name="configName">The name of the cache element within the config file.</param>
+            <returns>The <c>CacheManagerConfiguration</c></returns>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="configFileName"/> or <paramref name="configName"/> are null.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            If the file specified by <paramref name="configFileName"/> does not exist.
+            </exception>
+            <see cref="T:CacheManager.Core.Configuration.CacheManagerConfiguration`1"/>
+        </member>
+        <member name="M:CacheManager.Core.Configuration.ConfigurationBuilder.LoadConfigurationFile``1(System.String,System.String,System.String)">
+            <summary>
+            Loads a configuration from the given <paramref name="configFileName"/> and <paramref name="sectionName"/>.
+            <para>
+            The <paramref name="configName"/> must match with the name attribute of one of the
+            configured cache elements.</para>
+            </summary>
+            <param name="configFileName">
+            The full path of the file to load the configuration from.
+            </param>
+            <param name="sectionName">The name of the configuration section.</param>
+            <param name="configName">The name of the cache element within the config file.</param>
+            <returns>The <c>CacheManagerConfiguration</c></returns>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="configFileName"/> or <paramref name="configName"/> are null.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            If the file specified by <paramref name="configFileName"/> does not exist.
+            </exception>
+            <see cref="T:CacheManager.Core.Configuration.CacheManagerConfiguration`1"/>
+        </member>
+        <member name="T:CacheManager.Core.Configuration.ConfigurationBuilderCacheHandlePart`1">
+            <summary>
+            Used to build a <c>CacheHandleConfiguration</c>.
+            </summary>
+            <see cref="T:CacheManager.Core.Configuration.CacheManagerConfiguration`1"/>
+        </member>
+        <member name="M:CacheManager.Core.Configuration.ConfigurationBuilderCacheHandlePart`1.DisablePerformanceCounters">
+            <summary>
+            Disables performance counters for this cache handle.
+            </summary>
+        </member>
+        <member name="M:CacheManager.Core.Configuration.ConfigurationBuilderCacheHandlePart`1.DisableStatistics">
+            <summary>
+            Disables statistic gathering for this cache handle.
+            <para>This also disables performance counters as statistics are required for the counters.</para>
+            </summary>
+        </member>
+        <member name="M:CacheManager.Core.Configuration.ConfigurationBuilderCacheHandlePart`1.EnablePerformanceCounters">
+            <summary>
+            Enables performance counters for this cache handle.
+            <para>This also enables statistics, as this is required for performance counters.</para>
+            </summary>
+        </member>
+        <member name="M:CacheManager.Core.Configuration.ConfigurationBuilderCacheHandlePart`1.EnableStatistics">
+            <summary>
+            Enables statistic gathering for this cache handle.
+            <para>The statistics can be accessed via cacheHandle.Stats.GetStatistic.</para>
+            </summary>
+        </member>
+        <member name="M:CacheManager.Core.Configuration.ConfigurationBuilderCacheHandlePart`1.WithExpiration(CacheManager.Core.Configuration.ExpirationMode,System.TimeSpan)">
+            <summary>
+            Sets the expiration mode and timeout of the cache handle.
+            </summary>
+            <param name="expirationMode">The expiration mode.</param>
+            <param name="timeout">The timeout.</param>
+            <exception cref="T:System.InvalidOperationException">Thrown if expiration mode is not 'None' and timeout is zero.</exception>
+            <seealso cref="T:CacheManager.Core.Configuration.ExpirationMode"/>
+        </member>
+        <member name="P:CacheManager.Core.Configuration.ConfigurationBuilderCacheHandlePart`1.And">
+            <summary>
+            Adds another cache configuration. Can be used to add multiple cache handles.
+            </summary>
+        </member>
+        <member name="T:CacheManager.Core.Configuration.ConfigurationBuilderCachePart`1">
+            <summary>
+            Used to build a <c>CacheManagerConfiguration</c>.
+            </summary>
+            <see cref="T:CacheManager.Core.Configuration.CacheManagerConfiguration`1"/>
+        </member>
+        <member name="M:CacheManager.Core.Configuration.ConfigurationBuilderCachePart`1.WithHandle``1(System.String)">
+            <summary>
+            Add a cache handle configuration with the required name and type attributes.
+            </summary>
+            <param name="handleName">The name to be used for the cache handle.</param>
+            <typeparam name="TCacheHandle">The type of the cache handle implementation</typeparam>
+            <exception cref="T:System.ArgumentNullException">Thrown if handleName or handleType are null.</exception>
+        </member>
+        <member name="M:CacheManager.Core.Configuration.ConfigurationBuilderCachePart`1.WithUpdateMode(CacheManager.Core.Configuration.CacheUpdateMode)">
+            <summary>
+            Sets the update mode of the cache.
+            <para>
+            If nothing is set, the default will be <c>CacheUpdateMode.None</c>.
+            </para>
+            </summary>
+            <param name="updateMode">The update mode.</param>
+            <seealso cref="T:CacheManager.Core.Configuration.CacheUpdateMode"/>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,38 @@
+﻿@model QLNhanSu.Models.RegisterExternalLoginModel
+@{
+    ViewBag.Title = "Xác nhận";
+}
+
+<hgroup class="title">
+    <h2>Xác nhận tài khoản @ViewBag.ProviderDisplayName.</h2>
+</hgroup>
+
+@using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Form xác nhận</legend>
+        <p>
+            Bạn đã đăng nhập thành công với <strong>@ViewBag.ProviderDisplayName</strong>.
+            Hãy nhập user name cho trang web sử dụng (nên giữ nguyên) và click Xác nhận để hoàn thành đăng nhập.
+        </p>
+        <ol>
+            <li class="name">
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+            </li>
+        </ol>
+        @Html.HiddenFor(m => m.ExternalLoginData)
+        <input type="submit" value="Xác nhận" id="m_cmd_xac_nhan_thong_tin_tai_khoan" />
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        document.getElementById('m_cmd_xac_nhan_thong_tin_tai_khoan').click();
+    </script>
+}

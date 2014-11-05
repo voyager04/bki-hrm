@@ -1,0 +1,19 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+IPCommon
+</name>
+</assembly>
+<members>
+<member name="M:IP.Core.IPCommon.CIPConvert.ToStr(System.Decimal)">
+	<summary>
+ Chuyển đổi từ một số sang chuỗi cho chuẩn nhất
+ Vd: 1250 =&gt; 1,250 hay 1.250 (tất cả phải theo 1 chuẩn duy nhất)
+ </summary>
+	<param name="i_dc_Input"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

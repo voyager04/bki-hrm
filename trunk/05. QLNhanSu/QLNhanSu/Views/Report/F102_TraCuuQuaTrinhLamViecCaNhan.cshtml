@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "F102_TraCuuQuaTrinhLamViecCaNhan";
+}
+
+<link href="~/Content/selectize.default.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/selectize.js"></script>
+<script src="~/Scripts/index.js"></script>
+<script src="~/Scripts/jquery-quatrinhlamviec.js"></script>
+
+
+<h2 class="title-page">Quá trình làm việc</h2>
+
+<form class="form-horizontal" role="form">
+    <div class="form-group">
+        <label for="txtMaNhanVien" class="col-sm-2 control-label">Họ tên nhân viên</label>
+        <div class="col-sm-10">
+            <select id="txtMaNhanVien" name="txtMaNhanVien" placeholder="Gõ tên nhân viên để tìm kiếm">
+            </select>
+            <span class="loading-ma-nhan-vien"></span>
+        </div>
+    </div>
+</form>
+
+<div class="col-md-12" style="margin-bottom: 10px;">
+    <label class="checkbox-inline">
+        <input type="checkbox" class="lien-quan" name="optionsChucVuDonVi" id="optionsChucVuDonVi" value="A" checked="checked">
+        Chức vụ/Đơn vị
+    </label>
+    <label class="checkbox-inline">
+        <input type="checkbox" class="lien-quan" name="optionsThamGiaDuAn" id="optionsThamGiaDuAn" value="C" checked="checked">
+        Tham gia dự án
+    </label>
+    <label class="checkbox-inline">
+        <input type="checkbox" class="lien-quan" name="optionsThamGiaDuAn" id="optionsDiCongTac" value="D" checked="checked">
+        Đi công tác
+    </label>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-topica" id="tblQuaTrinhLamViecCaNhan">
+        <thead>
+            <tr>
+                <th>Từ ngày</th>
+                <th>Đến ngày</th>
+                <th>Làm gì</th>
+                <th>Ở đâu</th>
+                <th>Vai trò</th>
+                <th>Tỷ lệ tham gia</th>
+                <th>Mã quyết định</th>
+                <th>Loại quyết định</th>
+                <th>Mã quyết định miễn nhiệm</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+<p class="loading-data"></p>
+<br />
+<br />
