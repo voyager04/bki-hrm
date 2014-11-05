@@ -7,7 +7,7 @@ using QLNhanSu.Models;
 
 namespace QLNhanSu.Controllers
 {
-    public class HeThongController : BaseController
+    public class UserController : BaseController
     {
         BKI_HRMEntitiesModel _db = new BKI_HRMEntitiesModel();
         public ActionResult F201_DanhMucNhanVien()

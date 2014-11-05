@@ -15,7 +15,7 @@ $(document).ready(function () {
     var nhanVien = [];
     $.ajax({
         type: "GET",
-        url: baseUrl + "/HeThong/GetAllNhanVien",
+        url: baseUrl + "/User/GetAllNhanVien",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         async: false,

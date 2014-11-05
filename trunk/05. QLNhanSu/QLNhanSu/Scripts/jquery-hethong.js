@@ -7,7 +7,7 @@ $(document).ready(function () {
     
     $('#tblDanhMucNhanVien').bootstrapTable({
         method: 'GET',
-        url: baseUrl + '/HeThong/GetAllUser',
+        url: baseUrl + '/User/GetAllUser',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         cache: false,
@@ -33,7 +33,7 @@ $(document).ready(function () {
     var nhanVien = [];
     $.ajax({
         type: "GET",
-        url: baseUrl + "/HeThong/GetAllNhanVien/",
+        url: baseUrl + "/User/GetAllNhanVien/",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         async: false,
@@ -84,7 +84,7 @@ $(document).ready(function () {
 
 function operateFormatter(value, row, index) {
     return [
-        '<a class="edit ml10" href="' + baseUrl + '/HeThong/F203_Update/' + row.ID + '" title="Edit">',
+        '<a class="edit ml10" href="' + baseUrl + '/User/F203_Update/' + row.ID + '" title="Edit">',
             '<i class="glyphicon glyphicon-edit"></i>',
         '</a>&nbsp;&nbsp;',
         '<a class="remove ml10" href="" title="Remove">',
@@ -102,7 +102,7 @@ window.operateEvents = {
         if (confirm("Bạn có chắc chắn muốn xóa người dùng?")) {
             $.ajax({
                 type: "GET",
-                url: baseUrl + "/HeThong/F204_Remove",
+                url: baseUrl + "/User/F204_Remove",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 async: false,

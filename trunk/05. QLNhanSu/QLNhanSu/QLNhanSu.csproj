@@ -167,7 +167,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\HeThongController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -933,9 +933,9 @@
     <Content Include="Views\Report\F102_TraCuuQuaTrinhLamViecCaNhan.cshtml" />
     <Content Include="Views\Report\F103_TraCuuThuNhapCaNhan.cshtml" />
     <Content Include="Views\Report\F104_ThongTinNhanVien.cshtml" />
-    <Content Include="Views\HeThong\F201_DanhMucNhanVien.cshtml" />
-    <Content Include="Views\HeThong\F202_Insert.cshtml" />
-    <Content Include="Views\HeThong\F203_Update.cshtml" />
+    <Content Include="Views\User\F201_DanhMucNhanVien.cshtml" />
+    <Content Include="Views\User\F202_Insert.cshtml" />
+    <Content Include="Views\User\F203_Update.cshtml" />
     <Content Include="Views\Shared\_Navigation.cshtml" />
   </ItemGroup>
   <ItemGroup>

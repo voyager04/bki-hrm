@@ -9,9 +9,11 @@
     var roleNhanVien = "nhanvien";
     var v_User = db.HT_USER.FirstOrDefault(m => m.USERNAME == User.Identity.Name);
     var maNhanVien = "";
+    var hoTen = "";
     if (v_User != null)
     {
         maNhanVien = v_User.BHYT;
+        hoTen = v_User.HO + " " + v_User.TEN;
     }
 }
 
@@ -53,27 +55,11 @@
             </div>
             <div class="navbar-collapse collapse">
                 @if (_lst_chuc_nang != null)
-                    {
-                        Html.RenderPartial("_Navigation", _lst_chuc_nang);
-                    }
-                @*<ul class="nav navbar-nav">
-                    <li><a href="@Url.Action("Index", "Home")"><span class="glyphicon glyphicon-home"></span>&nbsp;TRANG CHỦ</a></li>
-                    <li><a href="@Url.Action("F201_DanhMucNhanVien", "HeThong")"><span class="glyphicon glyphicon-wrench"></span>&nbsp;Danh mục người dùng</a></li>
-                    <li class='dropdown'>
-                        <a href='#' class='dropdown-toggle' data-toggle='dropdown'>
-                            <span class="glyphicon glyphicon-list-alt"></span>&nbsp;BÁO CÁO&nbsp;<span class='caret'></span>
-                        </a>
-                        <ul class='dropdown-menu' role='menu'>
-                            <li><a href='@Url.Action("F101_CoCauTopica", "Report")'><span class="glyphicon glyphicon-tree-conifer"></span>&nbsp;Cơ cấu TOPICA</a></li>
-                            <li><a href='@Url.Action("F102_TraCuuQuaTrinhLamViecCaNhan", "Report")'><span class="glyphicon glyphicon-calendar"></span>&nbsp;Tra cứu quá trình làm việc của cá nhân</a></li>
-                            <li><a href='@Url.Action("F103_TraCuuThuNhapCaNhan", "Report")'><span class="glyphicon glyphicon-gift"></span>&nbsp;Tra cứu thu nhập của cá nhân</a></li>
-                            <li><a href='@Url.Action("F104_ThongTinNhanVien", "Report")'><span class="glyphicon glyphicon-leaf"></span>&nbsp;Thông tin nhân viên</a></li>
-                        </ul>
-                    </li>
-                </ul>*@
-                
+                {
+                    Html.RenderPartial("_Navigation", _lst_chuc_nang);
+                }
                 <section id="login">
-                    @Html.Partial("_LoginPartial")
+                    @Html.Partial("_LoginPartial", hoTen)
                 </section>
             </div>
             <!--/.nav-collapse -->

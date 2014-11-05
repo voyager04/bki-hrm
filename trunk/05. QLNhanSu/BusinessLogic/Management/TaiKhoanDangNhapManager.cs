@@ -90,6 +90,7 @@ namespace BusinessLogic.Management
         {
             if (ip_str_mail != "hoangnh2412@gmail.com"
                     && ip_str_mail != "91apple.nguyen@gmail.com"
+                    && ip_str_mail != "tr.anh1234@gmail.com"
                     && ip_str_mail != "hoangnh@zinmed.com"
                     && !ip_str_mail.EndsWith("@topica.edu.vn"))
                 return true;
