@@ -11,7 +11,7 @@ $(document).ready(function () {
     var nhanVien = [];
     $.ajax({
         type: "GET",
-        url: baseUrl + "/HeThong/GetAllNhanVien",
+        url: baseUrl + "/User/GetAllNhanVien",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         async: false,
@@ -73,7 +73,6 @@ function LoadInforEmployee(maNhanVien) {
             //jQuery('.loading-ma-nhan-vien').html('Loading...');
         },
         success: function (json) {
-            console.log(json);
             $('#lblHoTen').text(json.HO_TEN);
             $('#lblGioiTinh').text(json.GIOI_TINH);
             $('#lblNgaySinh').text(json.NGAY_SINH);

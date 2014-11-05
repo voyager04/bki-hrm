@@ -1,7 +1,9 @@
-﻿<ul class="nav navbar-nav navbar-right">
+﻿@model string
+
+<ul class="nav navbar-nav navbar-right">
     @if (Request.IsAuthenticated)
     {
-        <li><a>@User.Identity.Name</a></li>
+        <li><a href="@Url.Action("F104_ThongTinNhanVien", "Report")">@Model</a></li>
         <li>
             @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
             {
