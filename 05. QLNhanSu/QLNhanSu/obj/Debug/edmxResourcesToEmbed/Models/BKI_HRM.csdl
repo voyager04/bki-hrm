@@ -300,6 +300,16 @@
       <End Role="HT_USER_GROUP_WEB" EntitySet="HT_USER_GROUP_WEB" />
       <End Role="HT_USER" EntitySet="HT_USER" />
     </AssociationSet>
+    <FunctionImport Name="fn_get_ma_nv_by_cv_pn_with_time" ReturnType="Collection(BKI_HRMModel.fn_get_ma_nv_by_cv_pn_with_time_Result)" IsComposable="true">
+      <Parameter Name="ip_thoi_diem" Type="DateTime" />
+      <Parameter Name="ip_ma_chuc_vu" Type="String" />
+      <Parameter Name="ip_id_phap_nhan" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="fn_get_ma_nv_by_ttld_pn_with_time" ReturnType="Collection(BKI_HRMModel.fn_get_ma_nv_by_ttld_pn_with_time_Result)" IsComposable="true">
+      <Parameter Name="ip_thoi_diem" Type="DateTime" />
+      <Parameter Name="ip_tt_ld" Type="String" />
+      <Parameter Name="ip_id_phap_nhan" Type="Decimal" />
+    </FunctionImport>
     <FunctionImport Name="desc_table" ReturnType="Collection(BKI_HRMModel.desc_table_Result)">
       <Parameter Name="ip_table_name" Mode="In" Type="String" />
     </FunctionImport>
@@ -339,11 +349,13 @@
       <Parameter Name="input" Mode="In" Type="String" />
       <Parameter Name="return" Mode="InOut" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="get_tong_luong_by_ma_cv" ReturnType="Collection(BKI_HRMModel.get_tong_luong_by_ma_cv_Result)">
+    <FunctionImport Name="get_tong_luong_by_ma_cv">
       <Parameter Name="ip_ma_chuc_vu" Mode="In" Type="String" />
+      <Parameter Name="ip_id_phap_nhan" Mode="In" Type="Decimal" />
     </FunctionImport>
-    <FunctionImport Name="get_tong_luong_by_ma_ttld" ReturnType="Collection(BKI_HRMModel.get_tong_luong_by_ma_ttld_Result)">
-      <Parameter Name="ip_ma_ttld" Mode="In" Type="String" />
+    <FunctionImport Name="get_tong_luong_by_ma_ttld">
+      <Parameter Name="ip_ttld" Mode="In" Type="String" />
+      <Parameter Name="ip_id_phap_nhan" Mode="In" Type="Decimal" />
     </FunctionImport>
     <FunctionImport Name="HT_QUYEN_USER_Delele_All_Quyen_Of_user">
       <Parameter Name="ip_dc_user_id" Mode="In" Type="Decimal" />
@@ -521,6 +533,15 @@
     <FunctionImport Name="pr_DM_DU_AN_Delete">
       <Parameter Name="ID" Mode="In" Type="Decimal" />
     </FunctionImport>
+    <FunctionImport Name="pr_DM_DU_AN_DeleteAllWID_CO_CHELogic">
+      <Parameter Name="ID_CO_CHE" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="pr_DM_DU_AN_DeleteAllWID_LOAI_DU_ANLogic">
+      <Parameter Name="ID_LOAI_DU_AN" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="pr_DM_DU_AN_DeleteAllWID_TRANG_THAILogic">
+      <Parameter Name="ID_TRANG_THAI" Mode="In" Type="Decimal" />
+    </FunctionImport>
     <FunctionImport Name="pr_DM_DU_AN_Insert">
       <Parameter Name="MA_DU_AN" Mode="In" Type="String" />
       <Parameter Name="TEN_DU_AN" Mode="In" Type="String" />
@@ -530,6 +551,7 @@
       <Parameter Name="NGAY_KET_THUC" Mode="In" Type="DateTime" />
       <Parameter Name="NOI_DUNG" Mode="In" Type="String" />
       <Parameter Name="ID_CO_CHE" Mode="In" Type="Decimal" />
+      <Parameter Name="MA_DU_AN_THR" Mode="In" Type="String" />
       <Parameter Name="ID" Mode="InOut" Type="Decimal" />
     </FunctionImport>
     <FunctionImport Name="pr_DM_DU_AN_QUYET_DINH_TU_DIEN_sap_ket_thuc" ReturnType="Collection(BKI_HRMModel.pr_DM_DU_AN_QUYET_DINH_TU_DIEN_sap_ket_thuc_Result)">
@@ -557,6 +579,19 @@
       <Parameter Name="NGAY_KET_THUC" Mode="In" Type="DateTime" />
       <Parameter Name="NOI_DUNG" Mode="In" Type="String" />
       <Parameter Name="ID_CO_CHE" Mode="In" Type="Decimal" />
+      <Parameter Name="MA_DU_AN_THR" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="pr_DM_DU_AN_UpdateAllWID_CO_CHELogic">
+      <Parameter Name="ID_CO_CHE" Mode="In" Type="Decimal" />
+      <Parameter Name="ID_CO_CHEOld" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="pr_DM_DU_AN_UpdateAllWID_LOAI_DU_ANLogic">
+      <Parameter Name="ID_LOAI_DU_AN" Mode="In" Type="Decimal" />
+      <Parameter Name="ID_LOAI_DU_ANOld" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="pr_DM_DU_AN_UpdateAllWID_TRANG_THAILogic">
+      <Parameter Name="ID_TRANG_THAI" Mode="In" Type="Decimal" />
+      <Parameter Name="ID_TRANG_THAIOld" Mode="In" Type="Decimal" />
     </FunctionImport>
     <FunctionImport Name="pr_DM_HEADCOUNT_Delete">
       <Parameter Name="ID" Mode="In" Type="Decimal" />
@@ -1487,6 +1522,7 @@
     <FunctionImport Name="pr_V_DM_DU_AN_QUYET_DINH_TU_DIEN_Insert">
       <Parameter Name="ID" Mode="InOut" Type="Decimal" />
       <Parameter Name="MA_DU_AN" Mode="In" Type="String" />
+      <Parameter Name="MA_DU_AN_THR" Mode="In" Type="String" />
       <Parameter Name="TEN_DU_AN" Mode="In" Type="String" />
       <Parameter Name="ID_TRANG_THAI" Mode="In" Type="Decimal" />
       <Parameter Name="TRANG_THAI_DA" Mode="In" Type="String" />
@@ -1524,34 +1560,32 @@
     <FunctionImport Name="pr_V_DM_DU_AN_QUYET_DINH_TU_DIEN_Update">
       <Parameter Name="ID" Mode="In" Type="Decimal" />
       <Parameter Name="MA_DU_AN" Mode="In" Type="String" />
+      <Parameter Name="MA_DU_AN_THR" Mode="In" Type="String" />
       <Parameter Name="TEN_DU_AN" Mode="In" Type="String" />
-      <Parameter Name="TRANG_THAI" Mode="In" Type="String" />
+      <Parameter Name="ID_TRANG_THAI" Mode="In" Type="Decimal" />
+      <Parameter Name="TRANG_THAI_DA" Mode="In" Type="String" />
+      <Parameter Name="ID_LOAI_DU_AN" Mode="In" Type="Decimal" />
       <Parameter Name="LOAI_DU_AN" Mode="In" Type="String" />
       <Parameter Name="NGAY_BAT_DAU" Mode="In" Type="DateTime" />
       <Parameter Name="NGAY_KET_THUC" Mode="In" Type="DateTime" />
       <Parameter Name="NOI_DUNG" Mode="In" Type="String" />
-      <Parameter Name="CO_CHE" Mode="In" Type="String" />
-      <Parameter Name="MA_QUYET_DINH" Mode="In" Type="String" />
-      <Parameter Name="ID_TRANG_THAI" Mode="In" Type="Decimal" />
       <Parameter Name="ID_CO_CHE" Mode="In" Type="Decimal" />
+      <Parameter Name="CO_CHE" Mode="In" Type="String" />
       <Parameter Name="ID_QUYET_DINH" Mode="In" Type="Decimal" />
-      <Parameter Name="ID_LOAI_DU_AN" Mode="In" Type="Decimal" />
-      <Parameter Name="LOAI_QD" Mode="In" Type="String" />
-      <Parameter Name="ID_PHAP_NHAN" Mode="In" Type="Decimal" />
-      <Parameter Name="MA_PHAP_NHAN" Mode="In" Type="String" />
+      <Parameter Name="MA_QUYET_DINH" Mode="In" Type="String" />
       <Parameter Name="ID_LOAI_QD" Mode="In" Type="Decimal" />
+      <Parameter Name="LOAI_QD" Mode="In" Type="String" />
       <Parameter Name="NGAY_CO_HIEU_LUC" Mode="In" Type="DateTime" />
       <Parameter Name="NGAY_KY" Mode="In" Type="DateTime" />
       <Parameter Name="NGAY_HET_HIEU_LUC" Mode="In" Type="DateTime" />
-      <Parameter Name="NOI_DUNG_QUYET_DINH" Mode="In" Type="String" />
+      <Parameter Name="NOI_DUNG_QD" Mode="In" Type="String" />
       <Parameter Name="LINK" Mode="In" Type="String" />
+      <Parameter Name="ID_PHAP_NHAN" Mode="In" Type="Decimal" />
+      <Parameter Name="MA_PHAP_NHAN" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="pr_V_DM_DU_LIEU_NHAN_VIEN_count_nhan_vien">
       <Parameter Name="loai_count" Mode="In" Type="String" />
       <Parameter Name="ID_PHAP_NHAN" Mode="In" Type="Decimal" />
-      <Parameter Name="COUNT" Mode="InOut" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="pr_V_DM_DU_LIEU_NHAN_VIEN_count_nhan_vien_hien_tai">
       <Parameter Name="COUNT" Mode="InOut" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="pr_V_DM_DU_LIEU_NHAN_VIEN_count_nhan_vien1">
@@ -1575,6 +1609,7 @@
       <Parameter Name="ip_str_tim_kiem" Mode="In" Type="String" />
       <Parameter Name="ip_dat_tu_ngay" Mode="In" Type="DateTime" />
       <Parameter Name="ip_dat_den_ngay" Mode="In" Type="DateTime" />
+      <Parameter Name="ip_dc_trangthaild" Mode="In" Type="Decimal" />
       <Parameter Name="ip_dc_phap_nhan" Mode="In" Type="Decimal" />
     </FunctionImport>
     <FunctionImport Name="pr_V_DM_DU_LIEU_NHAN_VIEN_Nhan_vien_sap_quay_lai" ReturnType="Collection(BKI_HRMModel.pr_V_DM_DU_LIEU_NHAN_VIEN_Nhan_vien_sap_quay_lai_Result)" />
@@ -2145,6 +2180,12 @@
       <Parameter Name="Ten" Mode="In" Type="String" />
     </FunctionImport>
   </EntityContainer>
+  <ComplexType Name="fn_get_ma_nv_by_cv_pn_with_time_Result">
+    <Property Name="MA_NHAN_VIEN" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+  </ComplexType>
+  <ComplexType Name="fn_get_ma_nv_by_ttld_pn_with_time_Result">
+    <Property Name="MA_NHAN_VIEN" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+  </ComplexType>
   <EntityType Name="CM_COMPANY_INFO">
     <Key>
       <PropertyRef Name="ID" />
@@ -2273,6 +2314,7 @@
     <Property Name="NGAY_KET_THUC" Type="DateTime" Precision="3" />
     <Property Name="NOI_DUNG" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
     <Property Name="ID_CO_CHE" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="MA_DU_AN_THR" Type="String" MaxLength="35" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="CM_DM_TU_DIEN" Relationship="BKI_HRMModel.FK_DM_DU_AN_CM_DM_TU_DIEN" FromRole="DM_DU_AN" ToRole="CM_DM_TU_DIEN" />
     <NavigationProperty Name="CM_DM_TU_DIEN1" Relationship="BKI_HRMModel.FK_DM_DU_AN_CM_DM_TU_DIEN1" FromRole="DM_DU_AN" ToRole="CM_DM_TU_DIEN" />
     <NavigationProperty Name="CM_DM_TU_DIEN2" Relationship="BKI_HRMModel.FK_DM_DU_AN_CM_DM_TU_DIEN2" FromRole="DM_DU_AN" ToRole="CM_DM_TU_DIEN" />
@@ -3012,6 +3054,7 @@
     </Key>
     <Property Name="ID" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="MA_DU_AN" Type="String" MaxLength="35" Unicode="true" FixedLength="false" />
+    <Property Name="MA_DU_AN_THR" Type="String" MaxLength="35" Unicode="true" FixedLength="false" />
     <Property Name="TEN_DU_AN" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
     <Property Name="ID_TRANG_THAI" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="TRANG_THAI_DA" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
@@ -3088,6 +3131,27 @@
     <Property Name="TEN_PHAP_NHAN" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
     <Property Name="ID_PHAP_NHAN_QD" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="ID_LOAI_CV" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="NOI_SINH" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="NGUYEN_QUAN" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="ANH" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="CMND" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="NGAY_CAP_CMND" Type="DateTime" Precision="3" />
+    <Property Name="NOI_CAP_CMND" Type="String" MaxLength="35" Unicode="true" FixedLength="false" />
+    <Property Name="NOI_DAO_TAO" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="CHUYEN_NGANH" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="NAM_TOT_NGHIEP" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="EMAIL_CQ" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="EMAIL_CA_NHAN" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="DT_NHA" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="DI_DONG" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="CHO_O" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="HO_KHAU" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="NGUOI_LIEN_HE" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="DI_DONG_LIEN_HE" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="QUAN_HE" Type="String" MaxLength="35" Unicode="true" FixedLength="false" />
+    <Property Name="MA_SO_THUE" Type="String" MaxLength="35" Unicode="true" FixedLength="false" />
+    <Property Name="SO_TAI_KHOAN" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="CHI_NHANH_NGANHANG" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="V_DM_NHAN_SU">
     <Key>
@@ -3721,6 +3785,10 @@
       <PropertyRef Name="IS_ACTIVE" />
       <PropertyRef Name="ID_USER_GROUP" />
       <PropertyRef Name="USER_GROUP_NAME" />
+      <PropertyRef Name="CONTROLLER_NAME" />
+      <PropertyRef Name="ACTIVITY_NAME" />
+      <PropertyRef Name="TRANG_THAI_YN" />
+      <PropertyRef Name="HIEN_THI_YN" />
     </Key>
     <Property Name="ID" Type="Guid" Nullable="false" />
     <Property Name="BHYT" Type="String" MaxLength="35" Unicode="true" FixedLength="false" />
@@ -3734,6 +3802,16 @@
     <Property Name="ID_USER_GROUP" Type="Guid" Nullable="false" />
     <Property Name="USER_GROUP_NAME" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="DESCRIPTION" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="ID_HT_CONTROLLER" Type="Guid" />
+    <Property Name="CONTROLLER_NAME" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ACTIVITY_NAME" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="VI_TRI" Type="Decimal" Precision="4" Scale="0" />
+    <Property Name="TRANG_THAI_YN" Type="Boolean" Nullable="false" />
+    <Property Name="ID_CHUC_NANG_CHA" Type="Guid" />
+    <Property Name="HIEN_THI_YN" Type="Boolean" Nullable="false" />
+    <Property Name="ICON_CLASS" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CHUC_NANG_CON" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CHUC_NANG_CHA" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="V_NHAN_VIEN_HIEN_TAI">
     <Key>
@@ -4449,14 +4527,6 @@
     <Property Type="String" Name="data_type" Nullable="true" MaxLength="128" />
     <Property Type="String" Name="domain_name" Nullable="true" MaxLength="128" />
   </ComplexType>
-  <ComplexType Name="get_tong_luong_by_ma_cv_Result">
-    <Property Type="String" Name="MA_KY" Nullable="true" MaxLength="35" />
-    <Property Type="Decimal" Name="TONG_LUONG" Nullable="true" Precision="38" Scale="0" />
-  </ComplexType>
-  <ComplexType Name="get_tong_luong_by_ma_ttld_Result">
-    <Property Type="String" Name="MA_KY" Nullable="true" MaxLength="35" />
-    <Property Type="Decimal" Name="TONG_LUONG" Nullable="true" Precision="38" Scale="0" />
-  </ComplexType>
   <ComplexType Name="pr_CM_DM_TU_DIEN_Load_loai_quyet_dinh_Result">
     <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
     <Property Type="String" Name="MA_TU_DIEN" Nullable="false" MaxLength="50" />
@@ -4556,6 +4626,7 @@
   <ComplexType Name="pr_DM_DU_AN_QUYET_DINH_TU_DIEN_sap_ket_thuc_Result">
     <Property Type="Decimal" Name="ID" Nullable="true" Precision="18" Scale="0" />
     <Property Type="String" Name="MA_DU_AN" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="MA_DU_AN_THR" Nullable="true" MaxLength="35" />
     <Property Type="String" Name="TEN_DU_AN" Nullable="true" MaxLength="250" />
     <Property Type="Decimal" Name="ID_TRANG_THAI" Nullable="true" Precision="18" Scale="0" />
     <Property Type="String" Name="TRANG_THAI_DA" Nullable="true" MaxLength="250" />
@@ -4588,6 +4659,7 @@
     <Property Type="DateTime" Name="NGAY_KET_THUC" Nullable="true" Precision="23" />
     <Property Type="String" Name="NOI_DUNG" Nullable="true" MaxLength="250" />
     <Property Type="Decimal" Name="ID_CO_CHE" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_DU_AN_THR" Nullable="true" MaxLength="35" />
   </ComplexType>
   <ComplexType Name="pr_DM_DU_AN_select_by_ID_Result">
     <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
@@ -4599,6 +4671,7 @@
     <Property Type="DateTime" Name="NGAY_KET_THUC" Nullable="true" Precision="23" />
     <Property Type="String" Name="NOI_DUNG" Nullable="true" MaxLength="250" />
     <Property Type="Decimal" Name="ID_CO_CHE" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_DU_AN_THR" Nullable="true" MaxLength="35" />
   </ComplexType>
   <ComplexType Name="pr_DM_DU_AN_select_by_ma_da_Result">
     <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
@@ -4610,6 +4683,7 @@
     <Property Type="DateTime" Name="NGAY_KET_THUC" Nullable="true" Precision="23" />
     <Property Type="String" Name="NOI_DUNG" Nullable="true" MaxLength="250" />
     <Property Type="Decimal" Name="ID_CO_CHE" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="MA_DU_AN_THR" Nullable="true" MaxLength="35" />
   </ComplexType>
   <ComplexType Name="pr_DM_KY_Search_Result">
     <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
@@ -5249,6 +5323,7 @@
   <ComplexType Name="pr_V_DM_DU_AN_QUYET_DINH_TU_DIEN_search_Result">
     <Property Type="Decimal" Name="ID" Nullable="true" Precision="18" Scale="0" />
     <Property Type="String" Name="MA_DU_AN" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="MA_DU_AN_THR" Nullable="true" MaxLength="35" />
     <Property Type="String" Name="TEN_DU_AN" Nullable="true" MaxLength="250" />
     <Property Type="Decimal" Name="ID_TRANG_THAI" Nullable="true" Precision="18" Scale="0" />
     <Property Type="String" Name="TRANG_THAI_DA" Nullable="true" MaxLength="250" />
@@ -5315,6 +5390,27 @@
     <Property Type="String" Name="TEN_PHAP_NHAN" Nullable="true" MaxLength="250" />
     <Property Type="Decimal" Name="ID_PHAP_NHAN_QD" Nullable="true" Precision="18" Scale="0" />
     <Property Type="Decimal" Name="ID_LOAI_CV" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="NOI_SINH" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="NGUYEN_QUAN" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="ANH" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="CMND" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="NGAY_CAP_CMND" Nullable="true" Precision="23" />
+    <Property Type="String" Name="NOI_CAP_CMND" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="NOI_DAO_TAO" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="CHUYEN_NGANH" Nullable="true" MaxLength="250" />
+    <Property Type="Decimal" Name="NAM_TOT_NGHIEP" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="EMAIL_CQ" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="EMAIL_CA_NHAN" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="DT_NHA" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="DI_DONG" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="CHO_O" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="HO_KHAU" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="NGUOI_LIEN_HE" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="DI_DONG_LIEN_HE" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="QUAN_HE" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="MA_SO_THUE" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="SO_TAI_KHOAN" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="CHI_NHANH_NGANHANG" Nullable="true" MaxLength="250" />
   </ComplexType>
   <ComplexType Name="pr_V_DM_DU_LIEU_NHAN_VIEN_Nhan_vien_sap_quay_lai_Result">
     <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
@@ -5360,6 +5456,27 @@
     <Property Type="String" Name="TEN_PHAP_NHAN" Nullable="true" MaxLength="250" />
     <Property Type="Decimal" Name="ID_PHAP_NHAN_QD" Nullable="true" Precision="18" Scale="0" />
     <Property Type="Decimal" Name="ID_LOAI_CV" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="NOI_SINH" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="NGUYEN_QUAN" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="ANH" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="CMND" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="NGAY_CAP_CMND" Nullable="true" Precision="23" />
+    <Property Type="String" Name="NOI_CAP_CMND" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="NOI_DAO_TAO" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="CHUYEN_NGANH" Nullable="true" MaxLength="250" />
+    <Property Type="Decimal" Name="NAM_TOT_NGHIEP" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="EMAIL_CQ" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="EMAIL_CA_NHAN" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="DT_NHA" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="DI_DONG" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="CHO_O" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="HO_KHAU" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="NGUOI_LIEN_HE" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="DI_DONG_LIEN_HE" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="QUAN_HE" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="MA_SO_THUE" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="SO_TAI_KHOAN" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="CHI_NHANH_NGANHANG" Nullable="true" MaxLength="250" />
   </ComplexType>
   <ComplexType Name="pr_V_DM_DU_LIEU_NHAN_VIEN_sap_het_han_thu_viec_Result">
     <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
@@ -5405,6 +5522,27 @@
     <Property Type="String" Name="TEN_PHAP_NHAN" Nullable="true" MaxLength="250" />
     <Property Type="Decimal" Name="ID_PHAP_NHAN_QD" Nullable="true" Precision="18" Scale="0" />
     <Property Type="Decimal" Name="ID_LOAI_CV" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="NOI_SINH" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="NGUYEN_QUAN" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="ANH" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="CMND" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="NGAY_CAP_CMND" Nullable="true" Precision="23" />
+    <Property Type="String" Name="NOI_CAP_CMND" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="NOI_DAO_TAO" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="CHUYEN_NGANH" Nullable="true" MaxLength="250" />
+    <Property Type="Decimal" Name="NAM_TOT_NGHIEP" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="EMAIL_CQ" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="EMAIL_CA_NHAN" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="DT_NHA" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="DI_DONG" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="CHO_O" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="HO_KHAU" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="NGUOI_LIEN_HE" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="DI_DONG_LIEN_HE" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="QUAN_HE" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="MA_SO_THUE" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="SO_TAI_KHOAN" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="CHI_NHANH_NGANHANG" Nullable="true" MaxLength="250" />
   </ComplexType>
   <ComplexType Name="pr_V_DM_DU_LIEU_NHAN_VIEN_search_Result">
     <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />
@@ -5450,6 +5588,27 @@
     <Property Type="String" Name="TEN_PHAP_NHAN" Nullable="true" MaxLength="250" />
     <Property Type="Decimal" Name="ID_PHAP_NHAN_QD" Nullable="true" Precision="18" Scale="0" />
     <Property Type="Decimal" Name="ID_LOAI_CV" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="NOI_SINH" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="NGUYEN_QUAN" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="ANH" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="CMND" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="NGAY_CAP_CMND" Nullable="true" Precision="23" />
+    <Property Type="String" Name="NOI_CAP_CMND" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="NOI_DAO_TAO" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="CHUYEN_NGANH" Nullable="true" MaxLength="250" />
+    <Property Type="Decimal" Name="NAM_TOT_NGHIEP" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="EMAIL_CQ" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="EMAIL_CA_NHAN" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="DT_NHA" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="DI_DONG" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="CHO_O" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="HO_KHAU" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="NGUOI_LIEN_HE" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="DI_DONG_LIEN_HE" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="QUAN_HE" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="MA_SO_THUE" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="SO_TAI_KHOAN" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="CHI_NHANH_NGANHANG" Nullable="true" MaxLength="250" />
   </ComplexType>
   <ComplexType Name="pr_V_DM_NHAN_SU_search_Result">
     <Property Type="Decimal" Name="ID" Nullable="false" Precision="18" Scale="0" />

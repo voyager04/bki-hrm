@@ -20,3 +20,25 @@ C:\Users\Apple\Desktop\QLNhanSu\BusinessLogic\obj\Release\BusinessLogic.pdb
 C:\Users\Apple\Desktop\QLNhanSu\BusinessLogic\bin\Release\Newtonsoft.Json.dll
 C:\Users\Apple\Desktop\QLNhanSu\BusinessLogic\bin\Release\Framework.Extensions.pdb
 C:\Users\Apple\Desktop\QLNhanSu\BusinessLogic\bin\Release\Newtonsoft.Json.xml
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Release\BusinessLogic.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Release\BusinessLogic.pdb
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Release\BKISystemAdmin.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Release\Caching.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Release\EntityFramework.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Release\Framework.Extensions.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Release\IPCommon.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Release\log4net.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Release\SQLDataAccess.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Release\Newtonsoft.Json.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Release\BKISystemAdmin.pdb
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Release\Caching.pdb
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Release\Framework.Extensions.pdb
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Release\IPCommon.pdb
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Release\IPCommon.xml
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Release\SQLDataAccess.pdb
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Release\EntityFramework.xml
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Release\log4net.xml
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BusinessLogic\bin\Release\Newtonsoft.Json.xml
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BusinessLogic\obj\Release\BusinessLogic.csprojResolveAssemblyReference.cache
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BusinessLogic\obj\Release\BusinessLogic.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BusinessLogic\obj\Release\BusinessLogic.pdb

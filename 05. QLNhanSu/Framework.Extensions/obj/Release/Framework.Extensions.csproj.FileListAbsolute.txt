@@ -7,3 +7,12 @@ C:\Users\Apple\Desktop\QLNhanSu\Framework.Extensions\bin\Release\log4net.xml
 C:\Users\Apple\Desktop\QLNhanSu\Framework.Extensions\bin\Release\Newtonsoft.Json.xml
 C:\Users\Apple\Desktop\QLNhanSu\Framework.Extensions\obj\Release\Framework.Extensions.dll
 C:\Users\Apple\Desktop\QLNhanSu\Framework.Extensions\obj\Release\Framework.Extensions.pdb
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\Framework.Extensions\bin\Release\Framework.Extensions.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\Framework.Extensions\bin\Release\Framework.Extensions.pdb
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\Framework.Extensions\bin\Release\log4net.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\Framework.Extensions\bin\Release\Newtonsoft.Json.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\Framework.Extensions\bin\Release\log4net.xml
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\Framework.Extensions\bin\Release\Newtonsoft.Json.xml
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\Framework.Extensions\obj\Release\Framework.Extensions.csprojResolveAssemblyReference.cache
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\Framework.Extensions\obj\Release\Framework.Extensions.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\Framework.Extensions\obj\Release\Framework.Extensions.pdb

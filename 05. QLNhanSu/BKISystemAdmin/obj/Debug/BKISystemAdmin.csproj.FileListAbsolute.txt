@@ -116,3 +116,23 @@ C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\bin\Debug\SQLDataAccess.pdb
 C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\bin\Debug\log4net.xml
 C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\bin\Debug\EntityFramework.xml
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\BKISystemAdmin.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\BKISystemAdmin.pdb
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\Caching.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\Framework.Extensions.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\IPCommon.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\SQLDataAccess.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\log4net.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\Newtonsoft.Json.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\EntityFramework.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\Caching.pdb
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\Framework.Extensions.pdb
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\IPCommon.pdb
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\IPCommon.xml
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\SQLDataAccess.pdb
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\log4net.xml
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\Newtonsoft.Json.xml
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Debug\EntityFramework.xml
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\BKISystemAdmin.csprojResolveAssemblyReference.cache
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\BKISystemAdmin.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Debug\BKISystemAdmin.pdb
