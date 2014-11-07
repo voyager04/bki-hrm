@@ -6,11 +6,11 @@
 <script src="~/Scripts/jquery-1.7.1.min.js"></script>
 <script src="~/Scripts/selectize.js"></script>
 <script src="~/Scripts/index.js"></script>
-<script src="~/Scripts/jquery-hethong.js"></script>
+<script src="~/Scripts/jquery-nguoidung.js"></script>
 
 <h2 class="title-page">F202 Thêm mới người dùng</h2>
 
-@using (Html.BeginForm("F202_Insert", "HeThong", FormMethod.Post, new { @class = "form-horizontal", @role = "form" }))
+@using (Html.BeginForm("F202_Insert", "User", FormMethod.Post, new { @class = "form-horizontal", @role = "form" }))
 {
     <div class="form-group">
         <label for="txtMaNhanVien" class="col-sm-2 control-label">Mã nhân viên</label>
@@ -36,7 +36,7 @@
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-success">Lưu</button>
-            <a href="@Url.Action("F201_DanhMucNhanVien", "HeThong")" class="btn btn-danger">Hủy bỏ</a>
+            <a href="@Url.Action("F201_DanhMucNhanVien", "User")" class="btn btn-danger">Hủy bỏ</a>
         </div>
     </div>
 }

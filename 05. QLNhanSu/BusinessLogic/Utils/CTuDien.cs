@@ -51,6 +51,7 @@ namespace BusinessLogic.Utils
         public static string ID_BAC_SY_X_QUANG = "0CECF74C-C175-4DA0-8B68-16747A9FFE45";
 
         public static string ID_NHAN_VIEN = "dff3e0e9-b0de-42b9-86bd-ea25033425e8";
+        public static string ID_ADMIN = "728753db-900c-4f24-9c2a-eb2f74e245fd";
     }
     public class CBenhVien
     {

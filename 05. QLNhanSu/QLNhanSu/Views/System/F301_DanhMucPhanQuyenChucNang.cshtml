@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "F301 - Phân quyền nhóm người dùng";
+}
+
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/jquery-system.js"></script>
+
+<h2 class="title-page">F301 - Phân quyền nhóm người dùng</h2>
+
+<div class="table-responsive">
+    <div id="custem-toolbar-tblDmPhanQuyenNhomNguoiDung">
+        <button type="button" id="btnEditAuthorize" class="btn btn-success" data-toggle="modal" data-target="#myModal">Cập nhật quyền</button>
+    </div>
+
+    <table class="table table-bordered" id="tblDmPhanQuyenNhomNguoiDung" data-toolbar="#custem-toolbar-tblDmPhanQuyenNhomNguoiDung">
+    </table>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="modalAuthorizeTitle">Thêm quyền</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form" id="formAddAuthorize">
+                    <div class="form-group">
+                        <label for="cbbUserGroup" class="col-sm-4 control-label">Nhóm người dùng</label>
+                        <div class="col-sm-8">
+                            <select name="cbbUserGroup" id="cbbUserGroup" class="form-control"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-8" id="listAythorize"></div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <span id="message"></span>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="btnSave">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
