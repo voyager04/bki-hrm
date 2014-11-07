@@ -13,11 +13,12 @@ else
     {
     @Html.AntiForgeryToken()
     <fieldset id="socialLoginList">
-        <legend>Log in using another service</legend>
+        <h3>Đăng nhập tài khoản email TOPICA</h3>
+        <hr class="intro-divider">
         <p>
         @foreach (AuthenticationClientData p in Model)
         {
-            <button type="submit" name="provider" value="@p.AuthenticationClient.ProviderName" title="Log in using your @p.DisplayName account">@p.DisplayName</button>
+            <button type="submit" class="btn btn-default btn-lg" id="m_cmd_login_google" name="provider" value="@p.AuthenticationClient.ProviderName" title="Log in using your @p.DisplayName account">@p.DisplayName</button>
         }
         </p>
     </fieldset>

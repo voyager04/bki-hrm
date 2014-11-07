@@ -6,3 +6,11 @@ C:\Users\Apple\Desktop\QLNhanSu\SQLDataAccess\bin\Release\EntityFramework.xml
 C:\Users\Apple\Desktop\QLNhanSu\SQLDataAccess\obj\Release\SQLDataAccess.csprojResolveAssemblyReference.cache
 C:\Users\Apple\Desktop\QLNhanSu\SQLDataAccess\obj\Release\SQLDataAccess.dll
 C:\Users\Apple\Desktop\QLNhanSu\SQLDataAccess\obj\Release\SQLDataAccess.pdb
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\SQLDataAccess\bin\Release\SQLDataAccess.dll.config
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\SQLDataAccess\bin\Release\SQLDataAccess.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\SQLDataAccess\bin\Release\SQLDataAccess.pdb
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\SQLDataAccess\bin\Release\EntityFramework.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\SQLDataAccess\bin\Release\EntityFramework.xml
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\SQLDataAccess\obj\Release\SQLDataAccess.csprojResolveAssemblyReference.cache
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\SQLDataAccess\obj\Release\SQLDataAccess.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\SQLDataAccess\obj\Release\SQLDataAccess.pdb

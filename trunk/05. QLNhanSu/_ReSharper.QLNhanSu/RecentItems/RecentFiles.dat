@@ -1,50 +1,38 @@
 ﻿<RecentFiles>
   <RecentFiles>
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:App_Start/f:AuthConfig.cs" caret="304" fromTop="7" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:App_Start/f:GooglePlusClient.cs" caret="6091" fromTop="29" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:App_Start/f:OAuthConfig.cs" caret="287" fromTop="12" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Account/f:QuanLyUser.cshtml" caret="0" fromTop="0" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Helper/f:Utilities.cs" caret="278" fromTop="13" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Report/f:F104_ThongTinNhanVien.cshtml" caret="4754" fromTop="128" />
-    <File id="128AC081-CFD9-44B4-9392-B244F0F32019/d:Utils/f:CTuDien.cs" caret="1843" fromTop="17" />
-    <File id="B3CFBDAF-3510-4DCE-8F98-79C6119889FC/f:ObjectExtension.cs" caret="1073" fromTop="14" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Controllers/f:ReportController.cs" caret="457" fromTop="10" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/f:Global.asax.cs" caret="804" fromTop="24" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Filters/f:InitializeSimpleMembershipAttribute.cs" caret="950" fromTop="23" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/f:Web.config" caret="1243" fromTop="15" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/f:Web.config" caret="2039" fromTop="15" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Controllers/f:HeThongController.cs" caret="292" fromTop="0" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:HeThong/f:F201_DanhMucNhanVien.cshtml" caret="0" fromTop="0" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:HeThong/f:F202_Insert.cshtml" caret="0" fromTop="0" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:HeThong/f:F203_Update.cshtml" caret="480" fromTop="12" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Account/f:ExternalLoginFailure.cshtml" caret="0" fromTop="0" />
     <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Account/f:ExternalLoginConfirmation.cshtml" caret="0" fromTop="0" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Content/f:style.css" caret="2844" fromTop="24" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Account/f:Login.cshtml" caret="1418" fromTop="9" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Account/f:TuChoiTaiKhoan.cshtml" caret="124" fromTop="5" />
-    <File id="128AC081-CFD9-44B4-9392-B244F0F32019/d:Management/f:TaiKhoanDangNhapManager.cs" caret="4185" fromTop="34" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Account/f:_ExternalLoginsListPartial.cshtml" caret="653" fromTop="16" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Shared/f:_LoginPartial.cshtml" caret="730" fromTop="17" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Controllers/f:AccountController.cs" caret="661" fromTop="9" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Controllers/f:HomeController.cs" caret="384" fromTop="10" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Controllers/f:BaseController.cs" caret="2063" fromTop="17" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Shared/f:_Navigation.cshtml" caret="884" fromTop="20" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Shared/f:_Layout.cshtml" caret="2458" fromTop="14" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Account/f:_ExternalLoginsListPartial.cshtml" caret="768" fromTop="20" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Controllers/f:HomeController.cs" caret="306" fromTop="13" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Home/f:Index.cshtml" caret="0" fromTop="0" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Shared/f:_LoginPartial.cshtml" caret="168" fromTop="5" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Scripts/f:index.js" caret="739" fromTop="17" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Scripts/f:jquery.treetable.js" caret="509" fromTop="19" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Scripts/f:jquery-thunhap.js" caret="648" fromTop="20" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Scripts/f:jquerybki.js" caret="699" fromTop="23" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Report/f:F104_ThongTinNhanVien.cshtml" caret="333" fromTop="8" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Scripts/f:jquery-quatrinhlamviec.js" caret="547" fromTop="18" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Scripts/f:jquery-home-page.js" caret="42" fromTop="2" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Shared/f:_Layout.cshtml" caret="2476" fromTop="16" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Scripts/f:jquery-thongtinnhanvien.js" caret="370" fromTop="14" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:User/f:F203_Update.cshtml" caret="786" fromTop="10" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:User/f:F202_Insert.cshtml" caret="792" fromTop="0" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:User/f:F201_DanhMucNhanVien.cshtml" caret="508" fromTop="18" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/f:Web.config" caret="909" fromTop="12" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Models/f:AccountModels.cs" caret="0" fromTop="0" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Controllers/f:ReportController.cs" caret="0" fromTop="0" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Controllers/f:UserController.cs" caret="3355" fromTop="23" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Scripts/f:jquery-user.js" caret="576" fromTop="19" />
+    <File id="128AC081-CFD9-44B4-9392-B244F0F32019/d:Utils/f:CTuDien.cs" caret="1446" fromTop="15" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Scripts/f:jquery-nguoidung.js" caret="1920" fromTop="34" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Controllers/f:SystemController.cs" caret="5590" fromTop="15" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Scripts/f:jquery-system.js" caret="4599" fromTop="17" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Controllers/f:BaseController.cs" caret="3305" fromTop="33" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:System/f:F301_DanhMucPhanQuyenChucNang.cshtml" caret="1547" fromTop="15" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Shared/f:_Navigation.cshtml" caret="0" fromTop="0" />
+    <File id="128AC081-CFD9-44B4-9392-B244F0F32019/d:Management/f:TaiKhoanDangNhapManager.cs" caret="2735" fromTop="7" />
   </RecentFiles>
   <RecentEdits>
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:App_Start/f:FilterConfig.cs" caret="316" fromTop="11" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:App_Start/f:AuthConfig.cs" caret="1169" fromTop="26" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Controllers/f:BaseController.cs" caret="1043" fromTop="17" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Account/f:QuanLyUser.cshtml" caret="6585" fromTop="13" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Controllers/f:AccountController.cs" caret="8974" fromTop="17" />
-    <File id="128AC081-CFD9-44B4-9392-B244F0F32019/d:Management/f:ReportManager.cs" caret="794" fromTop="0" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Models/f:ChucVuModel.cs" caret="764" fromTop="21" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Models/f:InforEmployee.cs" caret="978" fromTop="25" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Models/f:UserInfor.cs" caret="290" fromTop="11" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Report/f:F101_CoCauTopica.cshtml" caret="2032" fromTop="32" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Report/f:F102_TraCuuQuaTrinhLamViecCaNhan.cshtml" caret="2121" fromTop="32" />
     <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Report/f:F103_TraCuuThuNhapCaNhan.cshtml" caret="558" fromTop="19" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Report/f:F104_ThongTinNhanVien.cshtml" caret="4754" fromTop="32" />
     <File id="B0E965C9-AEF8-4351-845D-E49DB12D106D/d:Manager/f:CRoleManager.cs" caret="2212" fromTop="24" />
     <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Account/f:ExternalLoginConfirmation.cshtml" caret="558" fromTop="9" />
     <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Account/f:ExternalLoginFailure.cshtml" caret="229" fromTop="8" />
@@ -53,14 +41,26 @@
     <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Helper/f:Utilities.cs" caret="1164" fromTop="13" />
     <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Controllers/f:HomeController.cs" caret="220" fromTop="9" />
     <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Controllers/f:ReportController.cs" caret="213" fromTop="4" />
-    <File id="128AC081-CFD9-44B4-9392-B244F0F32019/d:Management/f:TaiKhoanDangNhapManager.cs" caret="1979" fromTop="16" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/f:Web.config" caret="2039" fromTop="15" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Controllers/f:HeThongController.cs" caret="292" fromTop="11" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Account/f:_ExternalLoginsListPartial.cshtml" caret="653" fromTop="16" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Account/f:Login.cshtml" caret="1418" fromTop="9" />
     <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Content/f:style.css" caret="2844" fromTop="24" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Shared/f:_LoginPartial.cshtml" caret="99" fromTop="3" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Shared/f:_Navigation.cshtml" caret="860" fromTop="20" />
-    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Shared/f:_Layout.cshtml" caret="2489" fromTop="15" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Account/f:Login.cshtml" caret="1441" fromTop="16" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Account/f:_ExternalLoginsListPartial.cshtml" caret="600" fromTop="15" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Report/f:F104_ThongTinNhanVien.cshtml" caret="442" fromTop="12" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Shared/f:_Layout.cshtml" caret="538" fromTop="15" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Shared/f:_LoginPartial.cshtml" caret="168" fromTop="5" />
+    <File id="128AC081-CFD9-44B4-9392-B244F0F32019/d:Management/f:TaiKhoanDangNhapManager.cs" caret="3931" fromTop="17" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Scripts/f:jquery-nguoidung.js" caret="3186" fromTop="17" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Scripts/f:jquery-quatrinhlamviec.js" caret="301" fromTop="12" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Scripts/f:jquery-user.js" caret="475" fromTop="17" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Scripts/f:jquery-thongtinnhanvien.js" caret="2484" fromTop="6" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Controllers/f:UserController.cs" caret="3154" fromTop="19" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:User/f:F203_Update.cshtml" caret="1985" fromTop="12" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:User/f:F201_DanhMucNhanVien.cshtml" caret="205" fromTop="8" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:User/f:F202_Insert.cshtml" caret="266" fromTop="8" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/f:Web.config" caret="1668" fromTop="14" />
+    <File id="128AC081-CFD9-44B4-9392-B244F0F32019/d:Utils/f:CTuDien.cs" caret="1978" fromTop="23" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:System/f:F301_DanhMucPhanQuyenChucNang.cshtml" caret="459" fromTop="11" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Scripts/f:jquery-system.js" caret="4599" fromTop="17" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Views/d:Shared/f:_Navigation.cshtml" caret="121" fromTop="5" />
+    <File id="1AB3A1A7-E91D-4197-8C20-60D29AE5A302/d:Controllers/f:SystemController.cs" caret="5713" fromTop="17" />
   </RecentEdits>
 </RecentFiles>

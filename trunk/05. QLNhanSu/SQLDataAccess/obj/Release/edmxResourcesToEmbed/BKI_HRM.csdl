@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="BKI_HRMModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-  <EntityContainer Name="BKI_HRMEntities" annotation:LazyLoadingEnabled="true">
+<Schema Namespace="BKI_HRMModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="BKI_HRMEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
     <EntitySet Name="CM_COMPANY_INFO" EntityType="BKI_HRMModel.CM_COMPANY_INFO" />
     <EntitySet Name="CM_DM_LOAI_TD" EntityType="BKI_HRMModel.CM_DM_LOAI_TD" />
     <EntitySet Name="CM_DM_LOAI_TD_WEB" EntityType="BKI_HRMModel.CM_DM_LOAI_TD_WEB" />
@@ -2149,7 +2149,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="COMPANY_NAME" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="COMPANY_ADDRESS" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
   </EntityType>
@@ -2175,7 +2175,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="MA_TU_DIEN" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="ID_LOAI_TU_DIEN" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="TEN_NGAN" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
@@ -2214,7 +2214,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="MA_CAP" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
     <Property Name="MA_BAC" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
     <Property Name="TRANG_THAI" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
@@ -2226,7 +2226,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="MA_CV" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
     <Property Name="TEN_CV" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
     <Property Name="TEN_CV_TA" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
@@ -2241,7 +2241,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="MA_DON_VI" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
     <Property Name="TEN_DON_VI" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
     <Property Name="TEN_TA" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
@@ -2264,7 +2264,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="MA_DU_AN" Type="String" Nullable="false" MaxLength="35" Unicode="true" FixedLength="false" />
     <Property Name="TEN_DU_AN" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
     <Property Name="ID_TRANG_THAI" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
@@ -2283,7 +2283,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="MA_HEADCOUNT" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="TRANG_THAI" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
     <Property Name="ACTIONS" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
@@ -2294,7 +2294,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="MA_KY" Type="String" MaxLength="35" Unicode="true" FixedLength="false" />
     <Property Name="NGAY_BAT_DAU_KY" Type="DateTime" Precision="3" />
     <Property Name="NGAY_KET_THUC_KY" Type="DateTime" Precision="3" />
@@ -2303,7 +2303,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="MA_NV" Type="String" Nullable="false" MaxLength="35" Unicode="true" FixedLength="false" />
     <Property Name="HO_DEM" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="TEN" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
@@ -2368,7 +2368,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="MA_PHAP_NHAN" Type="String" Nullable="false" MaxLength="35" Unicode="true" FixedLength="false" />
     <Property Name="TEN_PHAP_NHAN" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
     <Property Name="MA_SO_THUE" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
@@ -2384,7 +2384,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="MA_QUYET_DINH" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="ID_LOAI_QD" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="NGAY_CO_HIEU_LUC" Type="DateTime" Precision="3" />
@@ -2405,7 +2405,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="MA_TRANG_THAI" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
     <Property Name="ID_TRANG_THAI_PARENT" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="DINH_NGHIA" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
@@ -2435,7 +2435,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="ID_NHAN_SU" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="ID_CAP_BAC" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="TRANG_THAI_CB" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="false" />
@@ -2451,7 +2451,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="ID_NHAN_SU" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="ID_CHUC_VU" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="ID_DON_VI" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
@@ -2473,7 +2473,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="ID_DU_AN" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="ID_NHAN_SU" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="ID_VI_TRI" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
@@ -2495,7 +2495,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="ID_NHAN_SU" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="ID_TRANG_LAO_DONG" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="ID_QUYET_DINH" Type="Decimal" Precision="18" Scale="0" />
@@ -2510,7 +2510,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="ID_NHAN_SU" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="ID_LEVEL" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="NGAY_CHUYEN_LEVEL" Type="DateTime" Nullable="false" Precision="3" />
@@ -2522,7 +2522,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="ID_NHAN_SU" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="ID_QUYET_DINH" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="NGAY_DI" Type="DateTime" Nullable="false" Precision="3" />
@@ -2537,7 +2537,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="ID_DON_VI" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="ID_PHAP_NHAN" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <NavigationProperty Name="DM_DON_VI" Relationship="BKI_HRMModel.FK_GD_DON_VI_PHAP_NHAN_GD_DON_VI_PHAP_NHAN" FromRole="GD_DON_VI_PHAP_NHAN" ToRole="DM_DON_VI" />
@@ -2547,7 +2547,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="MA_HOP_DONG" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="ID_LOAI_HOP_DONG" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="ID_NHAN_SU" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
@@ -2567,7 +2567,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="MA_NV" Type="String" MaxLength="35" Unicode="true" FixedLength="false" />
     <Property Name="MA_KY" Type="String" MaxLength="35" Unicode="true" FixedLength="false" />
     <Property Name="MA_QD" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
@@ -2601,7 +2601,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="ID_DU_AN" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="ID_QUYET_DINH" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <NavigationProperty Name="DM_DU_AN" Relationship="BKI_HRMModel.FK_GD_QUYET_DINH_DU_AN_DM_DU_AN" FromRole="GD_QUYET_DINH_DU_AN" ToRole="DM_DU_AN" />
@@ -2611,7 +2611,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="ID_QUYET_DINH" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="ID_PHAP_NHAN" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <NavigationProperty Name="DM_PHAP_NHAN" Relationship="BKI_HRMModel.FK_GD_QUYET_DINH_PHAP_NHAN_DM_PHAP_NHAN" FromRole="GD_QUYET_DINH_PHAP_NHAN" ToRole="DM_PHAP_NHAN" />
@@ -2621,7 +2621,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="ID_NHAN_SU" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="THU_MOI" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
     <Property Name="QD_TIEP_NHAN_THU_VIEC" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
@@ -2669,7 +2669,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="ID_FORM" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="CONTROL_NAME" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
     <Property Name="CONTROL_TYPE" Type="String" Nullable="false" MaxLength="35" Unicode="true" FixedLength="false" />
@@ -2690,7 +2690,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="FORM_NAME" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
     <Property Name="DISPLAY_NAME" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
     <Property Name="DESCRIPTION" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
@@ -2701,7 +2701,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="USER_LOGIN" Type="String" Nullable="false" MaxLength="35" Unicode="true" FixedLength="false" />
     <Property Name="DATETIME_LOGIN" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="STATUS_LOGIN" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
@@ -2719,7 +2719,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="TEN_TRUY_CAP" Type="String" Nullable="false" MaxLength="35" Unicode="true" FixedLength="false" />
     <Property Name="TEN" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
     <Property Name="MAT_KHAU" Type="String" Nullable="false" MaxLength="35" Unicode="true" FixedLength="false" />
@@ -2736,7 +2736,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="ID_USER_GROUP" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="ID_PHAN_QUYEN_HE_THONG" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <NavigationProperty Name="HT_PHAN_QUYEN_HE_THONG" Relationship="BKI_HRMModel.FK_HT_PHAN_QUYEN_CHO_NHOM_HT_PHAN_QUYEN_HE_THONG" FromRole="HT_PHAN_QUYEN_CHO_NHOM" ToRole="HT_PHAN_QUYEN_HE_THONG" />
@@ -2764,7 +2764,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="FORM_NAME" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="CONTROL_NAME" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="CONTROL_TYPE" Type="String" Nullable="false" MaxLength="35" Unicode="true" FixedLength="false" />
@@ -2788,7 +2788,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="ID_DON_VI" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="ID_USER_GROUP" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <NavigationProperty Name="HT_USER_GROUP" Relationship="BKI_HRMModel.FK_HT_QUAN_HE_SU_DUNG_DU_LIEU_HT_USER_GROUP" FromRole="HT_QUAN_HE_SU_DUNG_DU_LIEU" ToRole="HT_USER_GROUP" />
@@ -2797,7 +2797,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="ID_USER" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="ID_QUYEN" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <NavigationProperty Name="CM_DM_TU_DIEN" Relationship="BKI_HRMModel.FK_HT_QUYEN_USER_CM_DM_TU_DIEN" FromRole="HT_QUYEN_USER" ToRole="CM_DM_TU_DIEN" />
@@ -2807,7 +2807,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="ID_USER" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="ID_QUYEN" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <NavigationProperty Name="CM_DM_TU_DIEN" Relationship="BKI_HRMModel.FK_HT_QUYEN_USER_WEB_CM_DM_TU_DIEN" FromRole="HT_QUYEN_USER_WEB" ToRole="CM_DM_TU_DIEN" />
@@ -2884,7 +2884,7 @@
     </Key>
     <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
     <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
@@ -2895,7 +2895,7 @@
       <PropertyRef Name="HO_DEM" />
       <PropertyRef Name="TEN" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="MA_NV" Type="String" Nullable="false" MaxLength="35" Unicode="true" FixedLength="false" />
     <Property Name="HO_DEM" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="TEN" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
@@ -2933,7 +2933,7 @@
       <PropertyRef Name="TRANG_THAI_SU_DUNG" />
       <PropertyRef Name="MA_CAP_BAC" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="MA_CAP" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
     <Property Name="MA_BAC" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
     <Property Name="TRANG_THAI_SU_DUNG" Type="String" Nullable="false" MaxLength="13" Unicode="true" FixedLength="false" />
@@ -2948,7 +2948,7 @@
       <PropertyRef Name="MA_BAC" />
       <PropertyRef Name="TRANG_THAI_SU_DUNG" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="MA_CAP" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
     <Property Name="MA_BAC" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
     <Property Name="TRANG_THAI_SU_DUNG" Type="String" Nullable="false" MaxLength="13" Unicode="true" FixedLength="false" />
@@ -3097,7 +3097,7 @@
       <PropertyRef Name="TEN" />
       <PropertyRef Name="HO_TEN" />
     </Key>
-    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="MA_NV" Type="String" Nullable="false" MaxLength="35" Unicode="true" FixedLength="false" />
     <Property Name="HO_DEM" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="TEN" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />

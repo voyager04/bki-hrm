@@ -165,6 +165,7 @@
       <DefiningQuery>SELECT 
       [V_DM_DU_AN_QUYET_DINH_TU_DIEN].[ID] AS [ID], 
       [V_DM_DU_AN_QUYET_DINH_TU_DIEN].[MA_DU_AN] AS [MA_DU_AN], 
+      [V_DM_DU_AN_QUYET_DINH_TU_DIEN].[MA_DU_AN_THR] AS [MA_DU_AN_THR], 
       [V_DM_DU_AN_QUYET_DINH_TU_DIEN].[TEN_DU_AN] AS [TEN_DU_AN], 
       [V_DM_DU_AN_QUYET_DINH_TU_DIEN].[ID_TRANG_THAI] AS [ID_TRANG_THAI], 
       [V_DM_DU_AN_QUYET_DINH_TU_DIEN].[TRANG_THAI_DA] AS [TRANG_THAI_DA], 
@@ -232,7 +233,28 @@
       [V_DM_DU_LIEU_NHAN_VIEN].[MA_PHAP_NHAN] AS [MA_PHAP_NHAN], 
       [V_DM_DU_LIEU_NHAN_VIEN].[TEN_PHAP_NHAN] AS [TEN_PHAP_NHAN], 
       [V_DM_DU_LIEU_NHAN_VIEN].[ID_PHAP_NHAN_QD] AS [ID_PHAP_NHAN_QD], 
-      [V_DM_DU_LIEU_NHAN_VIEN].[ID_LOAI_CV] AS [ID_LOAI_CV]
+      [V_DM_DU_LIEU_NHAN_VIEN].[ID_LOAI_CV] AS [ID_LOAI_CV], 
+      [V_DM_DU_LIEU_NHAN_VIEN].[NOI_SINH] AS [NOI_SINH], 
+      [V_DM_DU_LIEU_NHAN_VIEN].[NGUYEN_QUAN] AS [NGUYEN_QUAN], 
+      [V_DM_DU_LIEU_NHAN_VIEN].[ANH] AS [ANH], 
+      [V_DM_DU_LIEU_NHAN_VIEN].[CMND] AS [CMND], 
+      [V_DM_DU_LIEU_NHAN_VIEN].[NGAY_CAP_CMND] AS [NGAY_CAP_CMND], 
+      [V_DM_DU_LIEU_NHAN_VIEN].[NOI_CAP_CMND] AS [NOI_CAP_CMND], 
+      [V_DM_DU_LIEU_NHAN_VIEN].[NOI_DAO_TAO] AS [NOI_DAO_TAO], 
+      [V_DM_DU_LIEU_NHAN_VIEN].[CHUYEN_NGANH] AS [CHUYEN_NGANH], 
+      [V_DM_DU_LIEU_NHAN_VIEN].[NAM_TOT_NGHIEP] AS [NAM_TOT_NGHIEP], 
+      [V_DM_DU_LIEU_NHAN_VIEN].[EMAIL_CQ] AS [EMAIL_CQ], 
+      [V_DM_DU_LIEU_NHAN_VIEN].[EMAIL_CA_NHAN] AS [EMAIL_CA_NHAN], 
+      [V_DM_DU_LIEU_NHAN_VIEN].[DT_NHA] AS [DT_NHA], 
+      [V_DM_DU_LIEU_NHAN_VIEN].[DI_DONG] AS [DI_DONG], 
+      [V_DM_DU_LIEU_NHAN_VIEN].[CHO_O] AS [CHO_O], 
+      [V_DM_DU_LIEU_NHAN_VIEN].[HO_KHAU] AS [HO_KHAU], 
+      [V_DM_DU_LIEU_NHAN_VIEN].[NGUOI_LIEN_HE] AS [NGUOI_LIEN_HE], 
+      [V_DM_DU_LIEU_NHAN_VIEN].[DI_DONG_LIEN_HE] AS [DI_DONG_LIEN_HE], 
+      [V_DM_DU_LIEU_NHAN_VIEN].[QUAN_HE] AS [QUAN_HE], 
+      [V_DM_DU_LIEU_NHAN_VIEN].[MA_SO_THUE] AS [MA_SO_THUE], 
+      [V_DM_DU_LIEU_NHAN_VIEN].[SO_TAI_KHOAN] AS [SO_TAI_KHOAN], 
+      [V_DM_DU_LIEU_NHAN_VIEN].[CHI_NHANH_NGANHANG] AS [CHI_NHANH_NGANHANG]
       FROM [dbo].[V_DM_DU_LIEU_NHAN_VIEN] AS [V_DM_DU_LIEU_NHAN_VIEN]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="V_DM_NHAN_SU" EntityType="BKI_HRMModel.Store.V_DM_NHAN_SU" store:Type="Views" store:Schema="dbo" store:Name="V_DM_NHAN_SU">
@@ -773,7 +795,17 @@
       [V_HT_USER].[IS_ACTIVE] AS [IS_ACTIVE], 
       [V_HT_USER].[ID_USER_GROUP] AS [ID_USER_GROUP], 
       [V_HT_USER].[USER_GROUP_NAME] AS [USER_GROUP_NAME], 
-      [V_HT_USER].[DESCRIPTION] AS [DESCRIPTION]
+      [V_HT_USER].[DESCRIPTION] AS [DESCRIPTION], 
+      [V_HT_USER].[ID_HT_CONTROLLER] AS [ID_HT_CONTROLLER], 
+      [V_HT_USER].[CONTROLLER_NAME] AS [CONTROLLER_NAME], 
+      [V_HT_USER].[ACTIVITY_NAME] AS [ACTIVITY_NAME], 
+      [V_HT_USER].[VI_TRI] AS [VI_TRI], 
+      [V_HT_USER].[TRANG_THAI_YN] AS [TRANG_THAI_YN], 
+      [V_HT_USER].[ID_CHUC_NANG_CHA] AS [ID_CHUC_NANG_CHA], 
+      [V_HT_USER].[HIEN_THI_YN] AS [HIEN_THI_YN], 
+      [V_HT_USER].[ICON_CLASS] AS [ICON_CLASS], 
+      [V_HT_USER].[CHUC_NANG_CON] AS [CHUC_NANG_CON], 
+      [V_HT_USER].[CHUC_NANG_CHA] AS [CHUC_NANG_CHA]
       FROM [dbo].[V_HT_USER] AS [V_HT_USER]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="V_NHAN_VIEN_HIEN_TAI" EntityType="BKI_HRMModel.Store.V_NHAN_VIEN_HIEN_TAI" store:Type="Views" store:Schema="dbo" store:Name="V_NHAN_VIEN_HIEN_TAI">
@@ -1125,6 +1157,7 @@
     <Property Name="NGAY_KET_THUC" Type="datetime" />
     <Property Name="NOI_DUNG" Type="nvarchar" MaxLength="250" />
     <Property Name="ID_CO_CHE" Type="numeric" />
+    <Property Name="MA_DU_AN_THR" Type="nvarchar" MaxLength="35" />
   </EntityType>
   <EntityType Name="DM_HEADCOUNT">
     <Key>
@@ -1806,6 +1839,7 @@
     </Key>
     <Property Name="ID" Type="numeric" />
     <Property Name="MA_DU_AN" Type="nvarchar" MaxLength="35" />
+    <Property Name="MA_DU_AN_THR" Type="nvarchar" MaxLength="35" />
     <Property Name="TEN_DU_AN" Type="nvarchar" MaxLength="250" />
     <Property Name="ID_TRANG_THAI" Type="numeric" />
     <Property Name="TRANG_THAI_DA" Type="nvarchar" MaxLength="250" />
@@ -1885,6 +1919,27 @@
     <Property Name="TEN_PHAP_NHAN" Type="nvarchar" MaxLength="250" />
     <Property Name="ID_PHAP_NHAN_QD" Type="numeric" />
     <Property Name="ID_LOAI_CV" Type="numeric" />
+    <Property Name="NOI_SINH" Type="nvarchar" MaxLength="250" />
+    <Property Name="NGUYEN_QUAN" Type="nvarchar" MaxLength="250" />
+    <Property Name="ANH" Type="nvarchar" MaxLength="250" />
+    <Property Name="CMND" Type="nvarchar" MaxLength="15" />
+    <Property Name="NGAY_CAP_CMND" Type="datetime" />
+    <Property Name="NOI_CAP_CMND" Type="nvarchar" MaxLength="35" />
+    <Property Name="NOI_DAO_TAO" Type="nvarchar" MaxLength="250" />
+    <Property Name="CHUYEN_NGANH" Type="nvarchar" MaxLength="250" />
+    <Property Name="NAM_TOT_NGHIEP" Type="numeric" />
+    <Property Name="EMAIL_CQ" Type="nvarchar" MaxLength="250" />
+    <Property Name="EMAIL_CA_NHAN" Type="nvarchar" MaxLength="250" />
+    <Property Name="DT_NHA" Type="nvarchar" MaxLength="15" />
+    <Property Name="DI_DONG" Type="nvarchar" MaxLength="15" />
+    <Property Name="CHO_O" Type="nvarchar" MaxLength="250" />
+    <Property Name="HO_KHAU" Type="nvarchar" MaxLength="250" />
+    <Property Name="NGUOI_LIEN_HE" Type="nvarchar" MaxLength="250" />
+    <Property Name="DI_DONG_LIEN_HE" Type="nvarchar" MaxLength="15" />
+    <Property Name="QUAN_HE" Type="nvarchar" MaxLength="35" />
+    <Property Name="MA_SO_THUE" Type="nvarchar" MaxLength="35" />
+    <Property Name="SO_TAI_KHOAN" Type="nvarchar" MaxLength="250" />
+    <Property Name="CHI_NHANH_NGANHANG" Type="nvarchar" MaxLength="250" />
   </EntityType>
   <!--Errors Found During Generation:
       warning 6002: The table/view 'BKI_HRM.dbo.V_DM_NHAN_SU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
@@ -2575,6 +2630,10 @@
       <PropertyRef Name="IS_ACTIVE" />
       <PropertyRef Name="ID_USER_GROUP" />
       <PropertyRef Name="USER_GROUP_NAME" />
+      <PropertyRef Name="CONTROLLER_NAME" />
+      <PropertyRef Name="ACTIVITY_NAME" />
+      <PropertyRef Name="TRANG_THAI_YN" />
+      <PropertyRef Name="HIEN_THI_YN" />
     </Key>
     <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
     <Property Name="BHYT" Type="nvarchar" MaxLength="35" />
@@ -2588,6 +2647,16 @@
     <Property Name="ID_USER_GROUP" Type="uniqueidentifier" Nullable="false" />
     <Property Name="USER_GROUP_NAME" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="250" />
+    <Property Name="ID_HT_CONTROLLER" Type="uniqueidentifier" />
+    <Property Name="CONTROLLER_NAME" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ACTIVITY_NAME" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="VI_TRI" Type="numeric" Precision="4" />
+    <Property Name="TRANG_THAI_YN" Type="bit" Nullable="false" />
+    <Property Name="ID_CHUC_NANG_CHA" Type="uniqueidentifier" />
+    <Property Name="HIEN_THI_YN" Type="bit" Nullable="false" />
+    <Property Name="ICON_CLASS" Type="nvarchar" MaxLength="50" />
+    <Property Name="CHUC_NANG_CON" Type="nvarchar" MaxLength="50" />
+    <Property Name="CHUC_NANG_CHA" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <!--Errors Found During Generation:
       warning 6002: The table/view 'BKI_HRM.dbo.V_NHAN_VIEN_HIEN_TAI' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
@@ -3379,9 +3448,34 @@
     <Parameter Name="ip_str_stt" Type="numeric" Mode="In" />
   </Function>
   <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="fn_get_ma_nv_by_cv_pn_with_time" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_thoi_diem" Type="datetime" Mode="In" />
+    <Parameter Name="ip_ma_chuc_vu" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_id_phap_nhan" Type="decimal" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="MA_NHAN_VIEN" Type="nvarchar" Nullable="false" MaxLength="30" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="fn_get_ma_nv_by_ttld_pn_with_time" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ip_thoi_diem" Type="datetime" Mode="In" />
+    <Parameter Name="ip_tt_ld" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_id_phap_nhan" Type="decimal" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="MA_NHAN_VIEN" Type="nvarchar" Nullable="false" MaxLength="30" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
   <Function Name="fn_get_mapping_don_vi" ReturnType="nvarchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ip_id_don_vi" Type="numeric" Mode="In" />
     <Parameter Name="ip_str_search" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_dc_phap_nhan" Type="numeric" Mode="In" />
   </Function>
   <Function Name="fn_get_so_luong_bo_nhiem" ReturnType="numeric" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ip_ma_don_vi" Type="nvarchar" Mode="In" />
@@ -3484,9 +3578,11 @@
   </Function>
   <Function Name="get_tong_luong_by_ma_cv" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ip_ma_chuc_vu" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_id_phap_nhan" Type="decimal" Mode="In" />
   </Function>
   <Function Name="get_tong_luong_by_ma_ttld" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ip_ma_ttld" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_ttld" Type="nvarchar" Mode="In" />
+    <Parameter Name="ip_id_phap_nhan" Type="decimal" Mode="In" />
   </Function>
   <Function Name="HT_QUYEN_USER_Delele_All_Quyen_Of_user" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ip_dc_user_id" Type="numeric" Mode="In" />
@@ -3664,6 +3760,15 @@
   <Function Name="pr_DM_DU_AN_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ID" Type="numeric" Mode="In" />
   </Function>
+  <Function Name="pr_DM_DU_AN_DeleteAllWID_CO_CHELogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_CO_CHE" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_DU_AN_DeleteAllWID_LOAI_DU_ANLogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_LOAI_DU_AN" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_DU_AN_DeleteAllWID_TRANG_THAILogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_TRANG_THAI" Type="numeric" Mode="In" />
+  </Function>
   <Function Name="pr_DM_DU_AN_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="MA_DU_AN" Type="nvarchar" Mode="In" />
     <Parameter Name="TEN_DU_AN" Type="nvarchar" Mode="In" />
@@ -3673,6 +3778,7 @@
     <Parameter Name="NGAY_KET_THUC" Type="datetime" Mode="In" />
     <Parameter Name="NOI_DUNG" Type="nvarchar" Mode="In" />
     <Parameter Name="ID_CO_CHE" Type="numeric" Mode="In" />
+    <Parameter Name="MA_DU_AN_THR" Type="nvarchar" Mode="In" />
     <Parameter Name="ID" Type="numeric" Mode="InOut" />
   </Function>
   <Function Name="pr_DM_DU_AN_QUYET_DINH_TU_DIEN_sap_ket_thuc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -3700,6 +3806,19 @@
     <Parameter Name="NGAY_KET_THUC" Type="datetime" Mode="In" />
     <Parameter Name="NOI_DUNG" Type="nvarchar" Mode="In" />
     <Parameter Name="ID_CO_CHE" Type="numeric" Mode="In" />
+    <Parameter Name="MA_DU_AN_THR" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_DU_AN_UpdateAllWID_CO_CHELogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_CO_CHE" Type="numeric" Mode="In" />
+    <Parameter Name="ID_CO_CHEOld" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_DU_AN_UpdateAllWID_LOAI_DU_ANLogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_LOAI_DU_AN" Type="numeric" Mode="In" />
+    <Parameter Name="ID_LOAI_DU_ANOld" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="pr_DM_DU_AN_UpdateAllWID_TRANG_THAILogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_TRANG_THAI" Type="numeric" Mode="In" />
+    <Parameter Name="ID_TRANG_THAIOld" Type="numeric" Mode="In" />
   </Function>
   <Function Name="pr_DM_HEADCOUNT_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ID" Type="numeric" Mode="In" />
@@ -4634,6 +4753,7 @@
   <Function Name="pr_V_DM_DU_AN_QUYET_DINH_TU_DIEN_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ID" Type="numeric" Mode="InOut" />
     <Parameter Name="MA_DU_AN" Type="nvarchar" Mode="In" />
+    <Parameter Name="MA_DU_AN_THR" Type="nvarchar" Mode="In" />
     <Parameter Name="TEN_DU_AN" Type="nvarchar" Mode="In" />
     <Parameter Name="ID_TRANG_THAI" Type="numeric" Mode="In" />
     <Parameter Name="TRANG_THAI_DA" Type="nvarchar" Mode="In" />
@@ -4671,34 +4791,32 @@
   <Function Name="pr_V_DM_DU_AN_QUYET_DINH_TU_DIEN_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ID" Type="numeric" Mode="In" />
     <Parameter Name="MA_DU_AN" Type="nvarchar" Mode="In" />
+    <Parameter Name="MA_DU_AN_THR" Type="nvarchar" Mode="In" />
     <Parameter Name="TEN_DU_AN" Type="nvarchar" Mode="In" />
-    <Parameter Name="TRANG_THAI" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_TRANG_THAI" Type="numeric" Mode="In" />
+    <Parameter Name="TRANG_THAI_DA" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_LOAI_DU_AN" Type="numeric" Mode="In" />
     <Parameter Name="LOAI_DU_AN" Type="nvarchar" Mode="In" />
     <Parameter Name="NGAY_BAT_DAU" Type="datetime" Mode="In" />
     <Parameter Name="NGAY_KET_THUC" Type="datetime" Mode="In" />
     <Parameter Name="NOI_DUNG" Type="nvarchar" Mode="In" />
-    <Parameter Name="CO_CHE" Type="nvarchar" Mode="In" />
-    <Parameter Name="MA_QUYET_DINH" Type="nvarchar" Mode="In" />
-    <Parameter Name="ID_TRANG_THAI" Type="numeric" Mode="In" />
     <Parameter Name="ID_CO_CHE" Type="numeric" Mode="In" />
+    <Parameter Name="CO_CHE" Type="nvarchar" Mode="In" />
     <Parameter Name="ID_QUYET_DINH" Type="numeric" Mode="In" />
-    <Parameter Name="ID_LOAI_DU_AN" Type="numeric" Mode="In" />
-    <Parameter Name="LOAI_QD" Type="nvarchar" Mode="In" />
-    <Parameter Name="ID_PHAP_NHAN" Type="numeric" Mode="In" />
-    <Parameter Name="MA_PHAP_NHAN" Type="nvarchar" Mode="In" />
+    <Parameter Name="MA_QUYET_DINH" Type="nvarchar" Mode="In" />
     <Parameter Name="ID_LOAI_QD" Type="numeric" Mode="In" />
+    <Parameter Name="LOAI_QD" Type="nvarchar" Mode="In" />
     <Parameter Name="NGAY_CO_HIEU_LUC" Type="datetime" Mode="In" />
     <Parameter Name="NGAY_KY" Type="datetime" Mode="In" />
     <Parameter Name="NGAY_HET_HIEU_LUC" Type="datetime" Mode="In" />
-    <Parameter Name="NOI_DUNG_QUYET_DINH" Type="nvarchar" Mode="In" />
+    <Parameter Name="NOI_DUNG_QD" Type="nvarchar" Mode="In" />
     <Parameter Name="LINK" Type="nvarchar" Mode="In" />
+    <Parameter Name="ID_PHAP_NHAN" Type="numeric" Mode="In" />
+    <Parameter Name="MA_PHAP_NHAN" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="pr_V_DM_DU_LIEU_NHAN_VIEN_count_nhan_vien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="loai_count" Type="nvarchar" Mode="In" />
     <Parameter Name="ID_PHAP_NHAN" Type="numeric" Mode="In" />
-    <Parameter Name="COUNT" Type="int" Mode="InOut" />
-  </Function>
-  <Function Name="pr_V_DM_DU_LIEU_NHAN_VIEN_count_nhan_vien_hien_tai" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="COUNT" Type="int" Mode="InOut" />
   </Function>
   <Function Name="pr_V_DM_DU_LIEU_NHAN_VIEN_count_nhan_vien1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -4722,6 +4840,7 @@
     <Parameter Name="ip_str_tim_kiem" Type="nvarchar" Mode="In" />
     <Parameter Name="ip_dat_tu_ngay" Type="datetime" Mode="In" />
     <Parameter Name="ip_dat_den_ngay" Type="datetime" Mode="In" />
+    <Parameter Name="ip_dc_trangthaild" Type="decimal" Mode="In" />
     <Parameter Name="ip_dc_phap_nhan" Type="decimal" Mode="In" />
   </Function>
   <Function Name="pr_V_DM_DU_LIEU_NHAN_VIEN_Nhan_vien_sap_quay_lai" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />

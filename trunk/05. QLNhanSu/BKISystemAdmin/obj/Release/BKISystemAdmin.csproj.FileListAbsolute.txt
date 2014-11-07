@@ -39,3 +39,23 @@ C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\obj\Release\BKISystemAdmin.pdb
 C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\bin\Release\Newtonsoft.Json.dll
 C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\bin\Release\Framework.Extensions.pdb
 C:\Users\Apple\Desktop\QLNhanSu\BKISystemAdmin\bin\Release\Newtonsoft.Json.xml
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Release\BKISystemAdmin.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Release\BKISystemAdmin.pdb
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Release\Caching.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Release\Framework.Extensions.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Release\IPCommon.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Release\SQLDataAccess.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Release\log4net.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Release\Newtonsoft.Json.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Release\EntityFramework.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Release\Caching.pdb
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Release\Framework.Extensions.pdb
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Release\IPCommon.pdb
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Release\IPCommon.xml
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Release\SQLDataAccess.pdb
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Release\log4net.xml
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Release\Newtonsoft.Json.xml
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\bin\Release\EntityFramework.xml
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Release\BKISystemAdmin.csprojResolveAssemblyReference.cache
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Release\BKISystemAdmin.dll
+F:\01. Work\01. Project\2.BKI\BKI_HRM\05. QLNhanSu\BKISystemAdmin\obj\Release\BKISystemAdmin.pdb

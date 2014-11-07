@@ -1,33 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="BKI_HRMModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+<Schema Namespace="BKI_HRMModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityContainer Name="BKI_HRMModelStoreContainer">
-    <EntitySet Name="CM_COMPANY_INFO" EntityType="BKI_HRMModel.Store.CM_COMPANY_INFO" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="CM_DM_LOAI_TD" EntityType="BKI_HRMModel.Store.CM_DM_LOAI_TD" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="CM_DM_LOAI_TD_WEB" EntityType="BKI_HRMModel.Store.CM_DM_LOAI_TD_WEB" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="CM_DM_TU_DIEN" EntityType="BKI_HRMModel.Store.CM_DM_TU_DIEN" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="CM_DM_TU_DIEN_WEB" EntityType="BKI_HRMModel.Store.CM_DM_TU_DIEN_WEB" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="DM_CAP_BAC" EntityType="BKI_HRMModel.Store.DM_CAP_BAC" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="DM_CHUC_VU" EntityType="BKI_HRMModel.Store.DM_CHUC_VU" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="DM_DON_VI" EntityType="BKI_HRMModel.Store.DM_DON_VI" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="DM_DU_AN" EntityType="BKI_HRMModel.Store.DM_DU_AN" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="DM_HEADCOUNT" EntityType="BKI_HRMModel.Store.DM_HEADCOUNT" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="DM_KY" EntityType="BKI_HRMModel.Store.DM_KY" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="DM_NHAN_SU" EntityType="BKI_HRMModel.Store.DM_NHAN_SU" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="DM_PHAP_NHAN" EntityType="BKI_HRMModel.Store.DM_PHAP_NHAN" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="DM_QUYET_DINH" EntityType="BKI_HRMModel.Store.DM_QUYET_DINH" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="DM_TRANG_THAI_UNG_VIEN" EntityType="BKI_HRMModel.Store.DM_TRANG_THAI_UNG_VIEN" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="DOC_COLUMN_COMMENT" EntityType="BKI_HRMModel.Store.DOC_COLUMN_COMMENT" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="DOC_TABLE_COMMENT" EntityType="BKI_HRMModel.Store.DOC_TABLE_COMMENT" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="GD_CHI_TIET_CAP_BAC" EntityType="BKI_HRMModel.Store.GD_CHI_TIET_CAP_BAC" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="GD_CHI_TIET_CHUC_VU" EntityType="BKI_HRMModel.Store.GD_CHI_TIET_CHUC_VU" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="GD_CHI_TIET_DU_AN" EntityType="BKI_HRMModel.Store.GD_CHI_TIET_DU_AN" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="GD_CHI_TIET_TRANG_THAI_LD" EntityType="BKI_HRMModel.Store.GD_CHI_TIET_TRANG_THAI_LD" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="GD_CHI_TIET_TUYEN_DUNG" EntityType="BKI_HRMModel.Store.GD_CHI_TIET_TUYEN_DUNG" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="GD_CONG_TAC" EntityType="BKI_HRMModel.Store.GD_CONG_TAC" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="GD_DON_VI_PHAP_NHAN" EntityType="BKI_HRMModel.Store.GD_DON_VI_PHAP_NHAN" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="GD_HOP_DONG" EntityType="BKI_HRMModel.Store.GD_HOP_DONG" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="GD_LUONG_THEO_QD" EntityType="BKI_HRMModel.Store.GD_LUONG_THEO_QD" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="GD_QUA_TRINH_CONG_TAC" EntityType="BKI_HRMModel.Store.GD_QUA_TRINH_CONG_TAC" store:Type="Tables" store:Schema="dbo" store:Name="GD_QUA_TRINH_CONG_TAC">
+    <EntitySet Name="CM_COMPANY_INFO" EntityType="BKI_HRMModel.Store.CM_COMPANY_INFO" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="CM_DM_LOAI_TD" EntityType="BKI_HRMModel.Store.CM_DM_LOAI_TD" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="CM_DM_LOAI_TD_WEB" EntityType="BKI_HRMModel.Store.CM_DM_LOAI_TD_WEB" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="CM_DM_TU_DIEN" EntityType="BKI_HRMModel.Store.CM_DM_TU_DIEN" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="CM_DM_TU_DIEN_WEB" EntityType="BKI_HRMModel.Store.CM_DM_TU_DIEN_WEB" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="DM_CAP_BAC" EntityType="BKI_HRMModel.Store.DM_CAP_BAC" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="DM_CHUC_VU" EntityType="BKI_HRMModel.Store.DM_CHUC_VU" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="DM_DON_VI" EntityType="BKI_HRMModel.Store.DM_DON_VI" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="DM_DU_AN" EntityType="BKI_HRMModel.Store.DM_DU_AN" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="DM_HEADCOUNT" EntityType="BKI_HRMModel.Store.DM_HEADCOUNT" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="DM_KY" EntityType="BKI_HRMModel.Store.DM_KY" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="DM_NHAN_SU" EntityType="BKI_HRMModel.Store.DM_NHAN_SU" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="DM_PHAP_NHAN" EntityType="BKI_HRMModel.Store.DM_PHAP_NHAN" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="DM_QUYET_DINH" EntityType="BKI_HRMModel.Store.DM_QUYET_DINH" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="DM_TRANG_THAI_UNG_VIEN" EntityType="BKI_HRMModel.Store.DM_TRANG_THAI_UNG_VIEN" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="DOC_COLUMN_COMMENT" EntityType="BKI_HRMModel.Store.DOC_COLUMN_COMMENT" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="DOC_TABLE_COMMENT" EntityType="BKI_HRMModel.Store.DOC_TABLE_COMMENT" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="GD_CHI_TIET_CAP_BAC" EntityType="BKI_HRMModel.Store.GD_CHI_TIET_CAP_BAC" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="GD_CHI_TIET_CHUC_VU" EntityType="BKI_HRMModel.Store.GD_CHI_TIET_CHUC_VU" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="GD_CHI_TIET_DU_AN" EntityType="BKI_HRMModel.Store.GD_CHI_TIET_DU_AN" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="GD_CHI_TIET_TRANG_THAI_LD" EntityType="BKI_HRMModel.Store.GD_CHI_TIET_TRANG_THAI_LD" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="GD_CHI_TIET_TUYEN_DUNG" EntityType="BKI_HRMModel.Store.GD_CHI_TIET_TUYEN_DUNG" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="GD_CONG_TAC" EntityType="BKI_HRMModel.Store.GD_CONG_TAC" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="GD_DON_VI_PHAP_NHAN" EntityType="BKI_HRMModel.Store.GD_DON_VI_PHAP_NHAN" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="GD_HOP_DONG" EntityType="BKI_HRMModel.Store.GD_HOP_DONG" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="GD_LUONG_THEO_QD" EntityType="BKI_HRMModel.Store.GD_LUONG_THEO_QD" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="GD_QUA_TRINH_CONG_TAC" EntityType="BKI_HRMModel.Store.GD_QUA_TRINH_CONG_TAC" store:Type="Tables" store:Schema="dbo" store:Name="GD_QUA_TRINH_CONG_TAC" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [GD_QUA_TRINH_CONG_TAC].[ID_NHAN_SU] AS [ID_NHAN_SU], 
       [GD_QUA_TRINH_CONG_TAC].[MA_NV] AS [MA_NV], 
@@ -44,31 +44,31 @@
       [GD_QUA_TRINH_CONG_TAC].[MA_QUYET_DINH_MIEN_NHIEM] AS [MA_QUYET_DINH_MIEN_NHIEM]
       FROM [dbo].[GD_QUA_TRINH_CONG_TAC] AS [GD_QUA_TRINH_CONG_TAC]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="GD_QUYET_DINH_DU_AN" EntityType="BKI_HRMModel.Store.GD_QUYET_DINH_DU_AN" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="GD_QUYET_DINH_PHAP_NHAN" EntityType="BKI_HRMModel.Store.GD_QUYET_DINH_PHAP_NHAN" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="GD_TINH_HINH_NV_MOI" EntityType="BKI_HRMModel.Store.GD_TINH_HINH_NV_MOI" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="HT_BACKUP_HISTORY" EntityType="BKI_HRMModel.Store.HT_BACKUP_HISTORY" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="HT_BUSINESS_PROCESS_LOCK" EntityType="BKI_HRMModel.Store.HT_BUSINESS_PROCESS_LOCK" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="HT_CONTROL_IN_FORM" EntityType="BKI_HRMModel.Store.HT_CONTROL_IN_FORM" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="HT_CONTROLLER" EntityType="BKI_HRMModel.Store.HT_CONTROLLER" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="HT_FORM" EntityType="BKI_HRMModel.Store.HT_FORM" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="HT_LOG_LOGIN" EntityType="BKI_HRMModel.Store.HT_LOG_LOGIN" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="HT_LOGIN_WEB" EntityType="BKI_HRMModel.Store.HT_LOGIN_WEB" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="HT_NGUOI_SU_DUNG" EntityType="BKI_HRMModel.Store.HT_NGUOI_SU_DUNG" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="HT_PHAN_QUYEN_CHO_NHOM" EntityType="BKI_HRMModel.Store.HT_PHAN_QUYEN_CHO_NHOM" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="HT_PHAN_QUYEN_CHUC_NANG" EntityType="BKI_HRMModel.Store.HT_PHAN_QUYEN_CHUC_NANG" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="HT_PHAN_QUYEN_DETAIL" EntityType="BKI_HRMModel.Store.HT_PHAN_QUYEN_DETAIL" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="HT_PHAN_QUYEN_HE_THONG" EntityType="BKI_HRMModel.Store.HT_PHAN_QUYEN_HE_THONG" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="HT_QUAN_HE_SU_DUNG_DU_LIEU" EntityType="BKI_HRMModel.Store.HT_QUAN_HE_SU_DUNG_DU_LIEU" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="HT_QUYEN_USER" EntityType="BKI_HRMModel.Store.HT_QUYEN_USER" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="HT_QUYEN_USER_WEB" EntityType="BKI_HRMModel.Store.HT_QUYEN_USER_WEB" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="HT_THAM_SO_HE_THONG" EntityType="BKI_HRMModel.Store.HT_THAM_SO_HE_THONG" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="HT_USER" EntityType="BKI_HRMModel.Store.HT_USER" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="HT_USER_GROUP" EntityType="BKI_HRMModel.Store.HT_USER_GROUP" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="HT_USER_GROUP_WEB" EntityType="BKI_HRMModel.Store.HT_USER_GROUP_WEB" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="IMPORT_EXCEL_LUONG_THEO_QD" EntityType="BKI_HRMModel.Store.IMPORT_EXCEL_LUONG_THEO_QD" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="sysdiagrams" EntityType="BKI_HRMModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="V_BAO_CAO_NHAN_SU" EntityType="BKI_HRMModel.Store.V_BAO_CAO_NHAN_SU" store:Type="Views" store:Schema="dbo" store:Name="V_BAO_CAO_NHAN_SU">
+    <EntitySet Name="GD_QUYET_DINH_DU_AN" EntityType="BKI_HRMModel.Store.GD_QUYET_DINH_DU_AN" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="GD_QUYET_DINH_PHAP_NHAN" EntityType="BKI_HRMModel.Store.GD_QUYET_DINH_PHAP_NHAN" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="GD_TINH_HINH_NV_MOI" EntityType="BKI_HRMModel.Store.GD_TINH_HINH_NV_MOI" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="HT_BACKUP_HISTORY" EntityType="BKI_HRMModel.Store.HT_BACKUP_HISTORY" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="HT_BUSINESS_PROCESS_LOCK" EntityType="BKI_HRMModel.Store.HT_BUSINESS_PROCESS_LOCK" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="HT_CONTROL_IN_FORM" EntityType="BKI_HRMModel.Store.HT_CONTROL_IN_FORM" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="HT_CONTROLLER" EntityType="BKI_HRMModel.Store.HT_CONTROLLER" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="HT_FORM" EntityType="BKI_HRMModel.Store.HT_FORM" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="HT_LOG_LOGIN" EntityType="BKI_HRMModel.Store.HT_LOG_LOGIN" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="HT_LOGIN_WEB" EntityType="BKI_HRMModel.Store.HT_LOGIN_WEB" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="HT_NGUOI_SU_DUNG" EntityType="BKI_HRMModel.Store.HT_NGUOI_SU_DUNG" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="HT_PHAN_QUYEN_CHO_NHOM" EntityType="BKI_HRMModel.Store.HT_PHAN_QUYEN_CHO_NHOM" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="HT_PHAN_QUYEN_CHUC_NANG" EntityType="BKI_HRMModel.Store.HT_PHAN_QUYEN_CHUC_NANG" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="HT_PHAN_QUYEN_DETAIL" EntityType="BKI_HRMModel.Store.HT_PHAN_QUYEN_DETAIL" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="HT_PHAN_QUYEN_HE_THONG" EntityType="BKI_HRMModel.Store.HT_PHAN_QUYEN_HE_THONG" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="HT_QUAN_HE_SU_DUNG_DU_LIEU" EntityType="BKI_HRMModel.Store.HT_QUAN_HE_SU_DUNG_DU_LIEU" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="HT_QUYEN_USER" EntityType="BKI_HRMModel.Store.HT_QUYEN_USER" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="HT_QUYEN_USER_WEB" EntityType="BKI_HRMModel.Store.HT_QUYEN_USER_WEB" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="HT_THAM_SO_HE_THONG" EntityType="BKI_HRMModel.Store.HT_THAM_SO_HE_THONG" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="HT_USER" EntityType="BKI_HRMModel.Store.HT_USER" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="HT_USER_GROUP" EntityType="BKI_HRMModel.Store.HT_USER_GROUP" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="HT_USER_GROUP_WEB" EntityType="BKI_HRMModel.Store.HT_USER_GROUP_WEB" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="IMPORT_EXCEL_LUONG_THEO_QD" EntityType="BKI_HRMModel.Store.IMPORT_EXCEL_LUONG_THEO_QD" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="sysdiagrams" EntityType="BKI_HRMModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="V_BAO_CAO_NHAN_SU" EntityType="BKI_HRMModel.Store.V_BAO_CAO_NHAN_SU" store:Type="Views" store:Schema="dbo" store:Name="V_BAO_CAO_NHAN_SU" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_BAO_CAO_NHAN_SU].[ID] AS [ID], 
       [V_BAO_CAO_NHAN_SU].[MA_NV] AS [MA_NV], 
@@ -101,7 +101,7 @@
       [V_BAO_CAO_NHAN_SU].[Expr1] AS [Expr1]
       FROM [dbo].[V_BAO_CAO_NHAN_SU] AS [V_BAO_CAO_NHAN_SU]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_DM_CAP_BAC" EntityType="BKI_HRMModel.Store.V_DM_CAP_BAC" store:Type="Views" store:Schema="dbo" store:Name="V_DM_CAP_BAC">
+    <EntitySet Name="V_DM_CAP_BAC" EntityType="BKI_HRMModel.Store.V_DM_CAP_BAC" store:Type="Views" store:Schema="dbo" store:Name="V_DM_CAP_BAC" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_DM_CAP_BAC].[ID] AS [ID], 
       [V_DM_CAP_BAC].[MA_CAP] AS [MA_CAP], 
@@ -112,7 +112,7 @@
       [V_DM_CAP_BAC].[MA_CAP_BAC] AS [MA_CAP_BAC]
       FROM [dbo].[V_DM_CAP_BAC] AS [V_DM_CAP_BAC]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_DM_CAP_BAC_2" EntityType="BKI_HRMModel.Store.V_DM_CAP_BAC_2" store:Type="Views" store:Schema="dbo" store:Name="V_DM_CAP_BAC_2">
+    <EntitySet Name="V_DM_CAP_BAC_2" EntityType="BKI_HRMModel.Store.V_DM_CAP_BAC_2" store:Type="Views" store:Schema="dbo" store:Name="V_DM_CAP_BAC_2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_DM_CAP_BAC_2].[ID] AS [ID], 
       [V_DM_CAP_BAC_2].[MA_CAP] AS [MA_CAP], 
@@ -122,7 +122,7 @@
       [V_DM_CAP_BAC_2].[NGAY_KET_THUC] AS [NGAY_KET_THUC]
       FROM [dbo].[V_DM_CAP_BAC_2] AS [V_DM_CAP_BAC_2]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_DM_CHUC_VU" EntityType="BKI_HRMModel.Store.V_DM_CHUC_VU" store:Type="Views" store:Schema="dbo" store:Name="V_DM_CHUC_VU">
+    <EntitySet Name="V_DM_CHUC_VU" EntityType="BKI_HRMModel.Store.V_DM_CHUC_VU" store:Type="Views" store:Schema="dbo" store:Name="V_DM_CHUC_VU" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_DM_CHUC_VU].[ID] AS [ID], 
       [V_DM_CHUC_VU].[MA_CV] AS [MA_CV], 
@@ -136,7 +136,7 @@
       [V_DM_CHUC_VU].[TRANG_THAI_SU_DUNG] AS [TRANG_THAI_SU_DUNG]
       FROM [dbo].[V_DM_CHUC_VU] AS [V_DM_CHUC_VU]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_DM_DON_VI" EntityType="BKI_HRMModel.Store.V_DM_DON_VI" store:Type="Views" store:Schema="dbo" store:Name="V_DM_DON_VI">
+    <EntitySet Name="V_DM_DON_VI" EntityType="BKI_HRMModel.Store.V_DM_DON_VI" store:Type="Views" store:Schema="dbo" store:Name="V_DM_DON_VI" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_DM_DON_VI].[ID] AS [ID], 
       [V_DM_DON_VI].[ID_DON_VI_CAP_TREN] AS [ID_DON_VI_CAP_TREN], 
@@ -161,7 +161,7 @@
       [V_DM_DON_VI].[TEN_PHAP_NHAN] AS [TEN_PHAP_NHAN]
       FROM [dbo].[V_DM_DON_VI] AS [V_DM_DON_VI]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_DM_DU_AN_QUYET_DINH_TU_DIEN" EntityType="BKI_HRMModel.Store.V_DM_DU_AN_QUYET_DINH_TU_DIEN" store:Type="Views" store:Schema="dbo" store:Name="V_DM_DU_AN_QUYET_DINH_TU_DIEN">
+    <EntitySet Name="V_DM_DU_AN_QUYET_DINH_TU_DIEN" EntityType="BKI_HRMModel.Store.V_DM_DU_AN_QUYET_DINH_TU_DIEN" store:Type="Views" store:Schema="dbo" store:Name="V_DM_DU_AN_QUYET_DINH_TU_DIEN" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_DM_DU_AN_QUYET_DINH_TU_DIEN].[ID] AS [ID], 
       [V_DM_DU_AN_QUYET_DINH_TU_DIEN].[MA_DU_AN] AS [MA_DU_AN], 
@@ -188,7 +188,7 @@
       [V_DM_DU_AN_QUYET_DINH_TU_DIEN].[MA_PHAP_NHAN] AS [MA_PHAP_NHAN]
       FROM [dbo].[V_DM_DU_AN_QUYET_DINH_TU_DIEN] AS [V_DM_DU_AN_QUYET_DINH_TU_DIEN]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_DM_DU_LIEU_NHAN_VIEN" EntityType="BKI_HRMModel.Store.V_DM_DU_LIEU_NHAN_VIEN" store:Type="Views" store:Schema="dbo" store:Name="V_DM_DU_LIEU_NHAN_VIEN">
+    <EntitySet Name="V_DM_DU_LIEU_NHAN_VIEN" EntityType="BKI_HRMModel.Store.V_DM_DU_LIEU_NHAN_VIEN" store:Type="Views" store:Schema="dbo" store:Name="V_DM_DU_LIEU_NHAN_VIEN" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_DM_DU_LIEU_NHAN_VIEN].[ID] AS [ID], 
       [V_DM_DU_LIEU_NHAN_VIEN].[MA_NV] AS [MA_NV], 
@@ -235,7 +235,7 @@
       [V_DM_DU_LIEU_NHAN_VIEN].[ID_LOAI_CV] AS [ID_LOAI_CV]
       FROM [dbo].[V_DM_DU_LIEU_NHAN_VIEN] AS [V_DM_DU_LIEU_NHAN_VIEN]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_DM_NHAN_SU" EntityType="BKI_HRMModel.Store.V_DM_NHAN_SU" store:Type="Views" store:Schema="dbo" store:Name="V_DM_NHAN_SU">
+    <EntitySet Name="V_DM_NHAN_SU" EntityType="BKI_HRMModel.Store.V_DM_NHAN_SU" store:Type="Views" store:Schema="dbo" store:Name="V_DM_NHAN_SU" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_DM_NHAN_SU].[ID] AS [ID], 
       [V_DM_NHAN_SU].[MA_NV] AS [MA_NV], 
@@ -271,7 +271,7 @@
       [V_DM_NHAN_SU].[HO_TEN] AS [HO_TEN]
       FROM [dbo].[V_DM_NHAN_SU] AS [V_DM_NHAN_SU]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_DM_NHAN_SU_DU_AN" EntityType="BKI_HRMModel.Store.V_DM_NHAN_SU_DU_AN" store:Type="Views" store:Schema="dbo" store:Name="V_DM_NHAN_SU_DU_AN">
+    <EntitySet Name="V_DM_NHAN_SU_DU_AN" EntityType="BKI_HRMModel.Store.V_DM_NHAN_SU_DU_AN" store:Type="Views" store:Schema="dbo" store:Name="V_DM_NHAN_SU_DU_AN" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_DM_NHAN_SU_DU_AN].[ID_DU_AN] AS [ID_DU_AN], 
       [V_DM_NHAN_SU_DU_AN].[MA_DU_AN] AS [MA_DU_AN], 
@@ -307,7 +307,7 @@
       [V_DM_NHAN_SU_DU_AN].[ID_PHAP_NHAN_TTLD] AS [ID_PHAP_NHAN_TTLD]
       FROM [dbo].[V_DM_NHAN_SU_DU_AN] AS [V_DM_NHAN_SU_DU_AN]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_DM_QUYET_DINH" EntityType="BKI_HRMModel.Store.V_DM_QUYET_DINH" store:Type="Views" store:Schema="dbo" store:Name="V_DM_QUYET_DINH">
+    <EntitySet Name="V_DM_QUYET_DINH" EntityType="BKI_HRMModel.Store.V_DM_QUYET_DINH" store:Type="Views" store:Schema="dbo" store:Name="V_DM_QUYET_DINH" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_DM_QUYET_DINH].[ID] AS [ID], 
       [V_DM_QUYET_DINH].[TEN] AS [TEN], 
@@ -320,7 +320,7 @@
       [V_DM_QUYET_DINH].[LINK] AS [LINK]
       FROM [dbo].[V_DM_QUYET_DINH] AS [V_DM_QUYET_DINH]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_DM_TRANG_THAI_UNG_VIEN" EntityType="BKI_HRMModel.Store.V_DM_TRANG_THAI_UNG_VIEN" store:Type="Views" store:Schema="dbo" store:Name="V_DM_TRANG_THAI_UNG_VIEN">
+    <EntitySet Name="V_DM_TRANG_THAI_UNG_VIEN" EntityType="BKI_HRMModel.Store.V_DM_TRANG_THAI_UNG_VIEN" store:Type="Views" store:Schema="dbo" store:Name="V_DM_TRANG_THAI_UNG_VIEN" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_DM_TRANG_THAI_UNG_VIEN].[ID] AS [ID], 
       [V_DM_TRANG_THAI_UNG_VIEN].[ID_TRANG_THAI_CAP_TREN] AS [ID_TRANG_THAI_CAP_TREN], 
@@ -331,7 +331,7 @@
       [V_DM_TRANG_THAI_UNG_VIEN].[VIEC_CAN_LAM] AS [VIEC_CAN_LAM]
       FROM [dbo].[V_DM_TRANG_THAI_UNG_VIEN] AS [V_DM_TRANG_THAI_UNG_VIEN]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_GD_BAO_CAO_DU_AN" EntityType="BKI_HRMModel.Store.V_GD_BAO_CAO_DU_AN" store:Type="Views" store:Schema="dbo" store:Name="V_GD_BAO_CAO_DU_AN">
+    <EntitySet Name="V_GD_BAO_CAO_DU_AN" EntityType="BKI_HRMModel.Store.V_GD_BAO_CAO_DU_AN" store:Type="Views" store:Schema="dbo" store:Name="V_GD_BAO_CAO_DU_AN" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_GD_BAO_CAO_DU_AN].[ID] AS [ID], 
       [V_GD_BAO_CAO_DU_AN].[MA_DU_AN] AS [MA_DU_AN], 
@@ -351,7 +351,7 @@
       [V_GD_BAO_CAO_DU_AN].[LOAI_DU_AN] AS [LOAI_DU_AN]
       FROM [dbo].[V_GD_BAO_CAO_DU_AN] AS [V_GD_BAO_CAO_DU_AN]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_GD_BAO_CAO_DU_AN_2" EntityType="BKI_HRMModel.Store.V_GD_BAO_CAO_DU_AN_2" store:Type="Views" store:Schema="dbo" store:Name="V_GD_BAO_CAO_DU_AN_2">
+    <EntitySet Name="V_GD_BAO_CAO_DU_AN_2" EntityType="BKI_HRMModel.Store.V_GD_BAO_CAO_DU_AN_2" store:Type="Views" store:Schema="dbo" store:Name="V_GD_BAO_CAO_DU_AN_2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_GD_BAO_CAO_DU_AN_2].[TEN_DU_AN] AS [TEN_DU_AN], 
       [V_GD_BAO_CAO_DU_AN_2].[MA_DU_AN] AS [MA_DU_AN], 
@@ -373,7 +373,7 @@
       [V_GD_BAO_CAO_DU_AN_2].[MA_PHAP_NHAN] AS [MA_PHAP_NHAN]
       FROM [dbo].[V_GD_BAO_CAO_DU_AN_2] AS [V_GD_BAO_CAO_DU_AN_2]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_GD_CHI_TIET_CAP_BAC" EntityType="BKI_HRMModel.Store.V_GD_CHI_TIET_CAP_BAC" store:Type="Views" store:Schema="dbo" store:Name="V_GD_CHI_TIET_CAP_BAC">
+    <EntitySet Name="V_GD_CHI_TIET_CAP_BAC" EntityType="BKI_HRMModel.Store.V_GD_CHI_TIET_CAP_BAC" store:Type="Views" store:Schema="dbo" store:Name="V_GD_CHI_TIET_CAP_BAC" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_GD_CHI_TIET_CAP_BAC].[ID_NHAN_SU] AS [ID_NHAN_SU], 
       [V_GD_CHI_TIET_CAP_BAC].[ID] AS [ID], 
@@ -394,7 +394,7 @@
       [V_GD_CHI_TIET_CAP_BAC].[LOAI_QD] AS [LOAI_QD]
       FROM [dbo].[V_GD_CHI_TIET_CAP_BAC] AS [V_GD_CHI_TIET_CAP_BAC]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_GD_CONG_TAC" EntityType="BKI_HRMModel.Store.V_GD_CONG_TAC" store:Type="Views" store:Schema="dbo" store:Name="V_GD_CONG_TAC">
+    <EntitySet Name="V_GD_CONG_TAC" EntityType="BKI_HRMModel.Store.V_GD_CONG_TAC" store:Type="Views" store:Schema="dbo" store:Name="V_GD_CONG_TAC" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_GD_CONG_TAC].[ID] AS [ID], 
       [V_GD_CONG_TAC].[ID_NHAN_SU] AS [ID_NHAN_SU], 
@@ -420,7 +420,7 @@
       [V_GD_CONG_TAC].[TEN_PHAP_NHAN] AS [TEN_PHAP_NHAN]
       FROM [dbo].[V_GD_CONG_TAC] AS [V_GD_CONG_TAC]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_GD_HOP_DONG_LAO_DONG" EntityType="BKI_HRMModel.Store.V_GD_HOP_DONG_LAO_DONG" store:Type="Views" store:Schema="dbo" store:Name="V_GD_HOP_DONG_LAO_DONG">
+    <EntitySet Name="V_GD_HOP_DONG_LAO_DONG" EntityType="BKI_HRMModel.Store.V_GD_HOP_DONG_LAO_DONG" store:Type="Views" store:Schema="dbo" store:Name="V_GD_HOP_DONG_LAO_DONG" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_GD_HOP_DONG_LAO_DONG].[COLS1] AS [COLS1], 
       [V_GD_HOP_DONG_LAO_DONG].[MA_NV] AS [MA_NV], 
@@ -449,7 +449,7 @@
       [V_GD_HOP_DONG_LAO_DONG].[ID_PHAP_NHAN_LD] AS [ID_PHAP_NHAN_LD]
       FROM [dbo].[V_GD_HOP_DONG_LAO_DONG] AS [V_GD_HOP_DONG_LAO_DONG]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_GD_LUONG_THEO_QD" EntityType="BKI_HRMModel.Store.V_GD_LUONG_THEO_QD" store:Type="Views" store:Schema="dbo" store:Name="V_GD_LUONG_THEO_QD">
+    <EntitySet Name="V_GD_LUONG_THEO_QD" EntityType="BKI_HRMModel.Store.V_GD_LUONG_THEO_QD" store:Type="Views" store:Schema="dbo" store:Name="V_GD_LUONG_THEO_QD" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_GD_LUONG_THEO_QD].[ID] AS [ID], 
       [V_GD_LUONG_THEO_QD].[ID_NV] AS [ID_NV], 
@@ -518,7 +518,7 @@
       [V_GD_LUONG_THEO_QD].[NGUOI_DAI_DIEN] AS [NGUOI_DAI_DIEN]
       FROM [dbo].[V_GD_LUONG_THEO_QD] AS [V_GD_LUONG_THEO_QD]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_GD_QUA_TRINH_LAM_VIEC" EntityType="BKI_HRMModel.Store.V_GD_QUA_TRINH_LAM_VIEC" store:Type="Views" store:Schema="dbo" store:Name="V_GD_QUA_TRINH_LAM_VIEC">
+    <EntitySet Name="V_GD_QUA_TRINH_LAM_VIEC" EntityType="BKI_HRMModel.Store.V_GD_QUA_TRINH_LAM_VIEC" store:Type="Views" store:Schema="dbo" store:Name="V_GD_QUA_TRINH_LAM_VIEC" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_GD_QUA_TRINH_LAM_VIEC].[MA_NV] AS [MA_NV], 
       [V_GD_QUA_TRINH_LAM_VIEC].[HO_DEM] AS [HO_DEM], 
@@ -562,7 +562,7 @@
       [V_GD_QUA_TRINH_LAM_VIEC].[TEN_PHAP_NHAN] AS [TEN_PHAP_NHAN]
       FROM [dbo].[V_GD_QUA_TRINH_LAM_VIEC] AS [V_GD_QUA_TRINH_LAM_VIEC]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_GD_QUA_TRINH_LAM_VIEC_2" EntityType="BKI_HRMModel.Store.V_GD_QUA_TRINH_LAM_VIEC_2" store:Type="Views" store:Schema="dbo" store:Name="V_GD_QUA_TRINH_LAM_VIEC_2">
+    <EntitySet Name="V_GD_QUA_TRINH_LAM_VIEC_2" EntityType="BKI_HRMModel.Store.V_GD_QUA_TRINH_LAM_VIEC_2" store:Type="Views" store:Schema="dbo" store:Name="V_GD_QUA_TRINH_LAM_VIEC_2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_GD_QUA_TRINH_LAM_VIEC_2].[MA_NV] AS [MA_NV], 
       [V_GD_QUA_TRINH_LAM_VIEC_2].[HO_DEM] AS [HO_DEM], 
@@ -614,7 +614,7 @@
       [V_GD_QUA_TRINH_LAM_VIEC_2].[DI_DONG] AS [DI_DONG]
       FROM [dbo].[V_GD_QUA_TRINH_LAM_VIEC_2] AS [V_GD_QUA_TRINH_LAM_VIEC_2]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_GD_QUYET_DINH" EntityType="BKI_HRMModel.Store.V_GD_QUYET_DINH" store:Type="Views" store:Schema="dbo" store:Name="V_GD_QUYET_DINH">
+    <EntitySet Name="V_GD_QUYET_DINH" EntityType="BKI_HRMModel.Store.V_GD_QUYET_DINH" store:Type="Views" store:Schema="dbo" store:Name="V_GD_QUYET_DINH" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_GD_QUYET_DINH].[ID] AS [ID], 
       [V_GD_QUYET_DINH].[MA_QUYET_DINH] AS [MA_QUYET_DINH], 
@@ -633,7 +633,7 @@
       [V_GD_QUYET_DINH].[TEN_PHAP_NHAN] AS [TEN_PHAP_NHAN]
       FROM [dbo].[V_GD_QUYET_DINH] AS [V_GD_QUYET_DINH]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_GD_QUYET_DINH_temp" EntityType="BKI_HRMModel.Store.V_GD_QUYET_DINH_temp" store:Type="Views" store:Schema="dbo" store:Name="V_GD_QUYET_DINH_temp">
+    <EntitySet Name="V_GD_QUYET_DINH_temp" EntityType="BKI_HRMModel.Store.V_GD_QUYET_DINH_temp" store:Type="Views" store:Schema="dbo" store:Name="V_GD_QUYET_DINH_temp" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_GD_QUYET_DINH_temp].[ID] AS [ID], 
       [V_GD_QUYET_DINH_temp].[MA_QUYET_DINH] AS [MA_QUYET_DINH], 
@@ -649,7 +649,7 @@
       [V_GD_QUYET_DINH_temp].[TEN] AS [TEN]
       FROM [dbo].[V_GD_QUYET_DINH_temp] AS [V_GD_QUYET_DINH_temp]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_GD_TRA_CUU_NHAN_SU" EntityType="BKI_HRMModel.Store.V_GD_TRA_CUU_NHAN_SU" store:Type="Views" store:Schema="dbo" store:Name="V_GD_TRA_CUU_NHAN_SU">
+    <EntitySet Name="V_GD_TRA_CUU_NHAN_SU" EntityType="BKI_HRMModel.Store.V_GD_TRA_CUU_NHAN_SU" store:Type="Views" store:Schema="dbo" store:Name="V_GD_TRA_CUU_NHAN_SU" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_GD_TRA_CUU_NHAN_SU].[MA_NV] AS [MA_NV], 
       [V_GD_TRA_CUU_NHAN_SU].[HO_DEM] AS [HO_DEM], 
@@ -717,7 +717,7 @@
       [V_GD_TRA_CUU_NHAN_SU].[ID_LOAI_CV] AS [ID_LOAI_CV]
       FROM [dbo].[V_GD_TRA_CUU_NHAN_SU] AS [V_GD_TRA_CUU_NHAN_SU]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_GD_TRANG_THAI_LAO_DONG" EntityType="BKI_HRMModel.Store.V_GD_TRANG_THAI_LAO_DONG" store:Type="Views" store:Schema="dbo" store:Name="V_GD_TRANG_THAI_LAO_DONG">
+    <EntitySet Name="V_GD_TRANG_THAI_LAO_DONG" EntityType="BKI_HRMModel.Store.V_GD_TRANG_THAI_LAO_DONG" store:Type="Views" store:Schema="dbo" store:Name="V_GD_TRANG_THAI_LAO_DONG" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_GD_TRANG_THAI_LAO_DONG].[MA_NV] AS [MA_NV], 
       [V_GD_TRANG_THAI_LAO_DONG].[HO_DEM] AS [HO_DEM], 
@@ -739,7 +739,7 @@
       [V_GD_TRANG_THAI_LAO_DONG].[TEN_PHAP_NHAN] AS [TEN_PHAP_NHAN]
       FROM [dbo].[V_GD_TRANG_THAI_LAO_DONG] AS [V_GD_TRANG_THAI_LAO_DONG]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_HT_CONTROL_IN_FORM" EntityType="BKI_HRMModel.Store.V_HT_CONTROL_IN_FORM" store:Type="Views" store:Schema="dbo" store:Name="V_HT_CONTROL_IN_FORM">
+    <EntitySet Name="V_HT_CONTROL_IN_FORM" EntityType="BKI_HRMModel.Store.V_HT_CONTROL_IN_FORM" store:Type="Views" store:Schema="dbo" store:Name="V_HT_CONTROL_IN_FORM" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_HT_CONTROL_IN_FORM].[ID] AS [ID], 
       [V_HT_CONTROL_IN_FORM].[FORM_NAME] AS [FORM_NAME], 
@@ -750,7 +750,7 @@
       [V_HT_CONTROL_IN_FORM].[ID_TU_DIEN] AS [ID_TU_DIEN]
       FROM [dbo].[V_HT_CONTROL_IN_FORM] AS [V_HT_CONTROL_IN_FORM]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_HT_PHAN_QUYEN_CHO_NHOM" EntityType="BKI_HRMModel.Store.V_HT_PHAN_QUYEN_CHO_NHOM" store:Type="Views" store:Schema="dbo" store:Name="V_HT_PHAN_QUYEN_CHO_NHOM">
+    <EntitySet Name="V_HT_PHAN_QUYEN_CHO_NHOM" EntityType="BKI_HRMModel.Store.V_HT_PHAN_QUYEN_CHO_NHOM" store:Type="Views" store:Schema="dbo" store:Name="V_HT_PHAN_QUYEN_CHO_NHOM" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_HT_PHAN_QUYEN_CHO_NHOM].[ID] AS [ID], 
       [V_HT_PHAN_QUYEN_CHO_NHOM].[ID_USER_GROUP] AS [ID_USER_GROUP], 
@@ -760,7 +760,7 @@
       [V_HT_PHAN_QUYEN_CHO_NHOM].[LOAI_PHAN_QUYEN] AS [LOAI_PHAN_QUYEN]
       FROM [dbo].[V_HT_PHAN_QUYEN_CHO_NHOM] AS [V_HT_PHAN_QUYEN_CHO_NHOM]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_HT_USER" EntityType="BKI_HRMModel.Store.V_HT_USER" store:Type="Views" store:Schema="dbo" store:Name="V_HT_USER">
+    <EntitySet Name="V_HT_USER" EntityType="BKI_HRMModel.Store.V_HT_USER" store:Type="Views" store:Schema="dbo" store:Name="V_HT_USER" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_HT_USER].[ID] AS [ID], 
       [V_HT_USER].[BHYT] AS [BHYT], 
@@ -776,7 +776,7 @@
       [V_HT_USER].[DESCRIPTION] AS [DESCRIPTION]
       FROM [dbo].[V_HT_USER] AS [V_HT_USER]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_NHAN_VIEN_HIEN_TAI" EntityType="BKI_HRMModel.Store.V_NHAN_VIEN_HIEN_TAI" store:Type="Views" store:Schema="dbo" store:Name="V_NHAN_VIEN_HIEN_TAI">
+    <EntitySet Name="V_NHAN_VIEN_HIEN_TAI" EntityType="BKI_HRMModel.Store.V_NHAN_VIEN_HIEN_TAI" store:Type="Views" store:Schema="dbo" store:Name="V_NHAN_VIEN_HIEN_TAI" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_NHAN_VIEN_HIEN_TAI].[ID] AS [ID], 
       [V_NHAN_VIEN_HIEN_TAI].[MA_NV] AS [MA_NV], 
@@ -791,7 +791,7 @@
       [V_NHAN_VIEN_HIEN_TAI].[MA_DON_VI] AS [MA_DON_VI]
       FROM [dbo].[V_NHAN_VIEN_HIEN_TAI] AS [V_NHAN_VIEN_HIEN_TAI]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="View_2" EntityType="BKI_HRMModel.Store.View_2" store:Type="Views" store:Schema="dbo" store:Name="View_2">
+    <EntitySet Name="View_2" EntityType="BKI_HRMModel.Store.View_2" store:Type="Views" store:Schema="dbo" store:Name="View_2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [View_2].[ID] AS [ID], 
       [View_2].[MA_NV] AS [MA_NV], 
@@ -1380,7 +1380,7 @@
     <Property Name="LUONG_HIEN_TAI_YN" Type="nvarchar" MaxLength="1" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.GD_QUA_TRINH_CONG_TAC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.GD_QUA_TRINH_CONG_TAC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="GD_QUA_TRINH_CONG_TAC">
     <Key>
@@ -1665,7 +1665,7 @@
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_BAO_CAO_NHAN_SU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_BAO_CAO_NHAN_SU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_BAO_CAO_NHAN_SU">
     <Key>
@@ -1705,7 +1705,7 @@
     <Property Name="Expr1" Type="nvarchar" MaxLength="1" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_DM_CAP_BAC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_DM_CAP_BAC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_DM_CAP_BAC">
     <Key>
@@ -1724,7 +1724,7 @@
     <Property Name="MA_CAP_BAC" Type="nvarchar" Nullable="false" MaxLength="31" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_DM_CAP_BAC_2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_DM_CAP_BAC_2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_DM_CAP_BAC_2">
     <Key>
@@ -1741,7 +1741,7 @@
     <Property Name="NGAY_KET_THUC" Type="datetime" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_DM_CHUC_VU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_DM_CHUC_VU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_DM_CHUC_VU">
     <Key>
@@ -1762,7 +1762,7 @@
     <Property Name="TRANG_THAI_SU_DUNG" Type="nvarchar" Nullable="false" MaxLength="13" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_DM_DON_VI' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_DM_DON_VI' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_DM_DON_VI">
     <Key>
@@ -1794,7 +1794,7 @@
     <Property Name="TEN_PHAP_NHAN" Type="nvarchar" MaxLength="250" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_DM_DU_AN_QUYET_DINH_TU_DIEN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_DM_DU_AN_QUYET_DINH_TU_DIEN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_DM_DU_AN_QUYET_DINH_TU_DIEN">
     <Key>
@@ -1829,7 +1829,7 @@
     <Property Name="MA_PHAP_NHAN" Type="nvarchar" Nullable="false" MaxLength="35" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_DM_DU_LIEU_NHAN_VIEN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_DM_DU_LIEU_NHAN_VIEN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_DM_DU_LIEU_NHAN_VIEN">
     <Key>
@@ -1887,7 +1887,7 @@
     <Property Name="ID_LOAI_CV" Type="numeric" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_DM_NHAN_SU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_DM_NHAN_SU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_DM_NHAN_SU">
     <Key>
@@ -1931,7 +1931,7 @@
     <Property Name="HO_TEN" Type="nvarchar" Nullable="false" MaxLength="101" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_DM_NHAN_SU_DU_AN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_DM_NHAN_SU_DU_AN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_DM_NHAN_SU_DU_AN">
     <Key>
@@ -1980,7 +1980,7 @@
     <Property Name="ID_PHAP_NHAN_TTLD" Type="numeric" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_DM_QUYET_DINH' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_DM_QUYET_DINH' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_DM_QUYET_DINH">
     <Key>
@@ -2000,7 +2000,7 @@
     <Property Name="LINK" Type="nvarchar" MaxLength="250" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_DM_TRANG_THAI_UNG_VIEN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_DM_TRANG_THAI_UNG_VIEN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_DM_TRANG_THAI_UNG_VIEN">
     <Key>
@@ -2016,7 +2016,7 @@
     <Property Name="VIEC_CAN_LAM" Type="nvarchar" MaxLength="250" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_GD_BAO_CAO_DU_AN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_GD_BAO_CAO_DU_AN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_GD_BAO_CAO_DU_AN">
     <Key>
@@ -2044,7 +2044,7 @@
     <Property Name="LOAI_DU_AN" Type="nvarchar" MaxLength="250" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_GD_BAO_CAO_DU_AN_2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_GD_BAO_CAO_DU_AN_2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_GD_BAO_CAO_DU_AN_2">
     <Key>
@@ -2073,7 +2073,7 @@
     <Property Name="MA_PHAP_NHAN" Type="nvarchar" MaxLength="35" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_GD_CHI_TIET_CAP_BAC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_GD_CHI_TIET_CAP_BAC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_GD_CHI_TIET_CAP_BAC">
     <Key>
@@ -2102,7 +2102,7 @@
     <Property Name="LOAI_QD" Type="nvarchar" MaxLength="250" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_GD_CONG_TAC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_GD_CONG_TAC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_GD_CONG_TAC">
     <Key>
@@ -2138,7 +2138,7 @@
     <Property Name="TEN_PHAP_NHAN" Type="nvarchar" MaxLength="250" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_GD_HOP_DONG_LAO_DONG' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_GD_HOP_DONG_LAO_DONG' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_GD_HOP_DONG_LAO_DONG">
     <Key>
@@ -2176,7 +2176,7 @@
     <Property Name="ID_PHAP_NHAN_LD" Type="numeric" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_GD_LUONG_THEO_QD' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_GD_LUONG_THEO_QD' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_GD_LUONG_THEO_QD">
     <Key>
@@ -2249,7 +2249,7 @@
     <Property Name="NGUOI_DAI_DIEN" Type="nvarchar" MaxLength="250" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_GD_QUA_TRINH_LAM_VIEC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_GD_QUA_TRINH_LAM_VIEC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_GD_QUA_TRINH_LAM_VIEC">
     <Key>
@@ -2301,7 +2301,7 @@
     <Property Name="TEN_PHAP_NHAN" Type="nvarchar" MaxLength="250" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_GD_QUA_TRINH_LAM_VIEC_2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_GD_QUA_TRINH_LAM_VIEC_2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_GD_QUA_TRINH_LAM_VIEC_2">
     <Key>
@@ -2368,7 +2368,7 @@
     <Property Name="DI_DONG" Type="nvarchar" MaxLength="15" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_GD_QUYET_DINH' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_GD_QUYET_DINH' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_GD_QUYET_DINH">
     <Key>
@@ -2397,7 +2397,7 @@
     <Property Name="TEN_PHAP_NHAN" Type="nvarchar" Nullable="false" MaxLength="250" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_GD_QUYET_DINH_temp' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_GD_QUYET_DINH_temp' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_GD_QUYET_DINH_temp">
     <Key>
@@ -2423,7 +2423,7 @@
     <Property Name="TEN" Type="nvarchar" Nullable="false" MaxLength="50" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_GD_TRA_CUU_NHAN_SU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_GD_TRA_CUU_NHAN_SU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_GD_TRA_CUU_NHAN_SU">
     <Key>
@@ -2500,7 +2500,7 @@
     <Property Name="ID_LOAI_CV" Type="numeric" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_GD_TRANG_THAI_LAO_DONG' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_GD_TRANG_THAI_LAO_DONG' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_GD_TRANG_THAI_LAO_DONG">
     <Key>
@@ -2530,7 +2530,7 @@
     <Property Name="TEN_PHAP_NHAN" Type="nvarchar" MaxLength="250" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_HT_CONTROL_IN_FORM' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_HT_CONTROL_IN_FORM' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_HT_CONTROL_IN_FORM">
     <Key>
@@ -2550,7 +2550,7 @@
     <Property Name="ID_TU_DIEN" Type="numeric" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_HT_PHAN_QUYEN_CHO_NHOM' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_HT_PHAN_QUYEN_CHO_NHOM' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_HT_PHAN_QUYEN_CHO_NHOM">
     <Key>
@@ -2566,7 +2566,7 @@
     <Property Name="LOAI_PHAN_QUYEN" Type="nvarchar" MaxLength="35" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_HT_USER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_HT_USER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_HT_USER">
     <Key>
@@ -2590,7 +2590,7 @@
     <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="250" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.V_NHAN_VIEN_HIEN_TAI' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.V_NHAN_VIEN_HIEN_TAI' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="V_NHAN_VIEN_HIEN_TAI">
     <Key>
@@ -2616,7 +2616,7 @@
     <Property Name="MA_DON_VI" Type="nvarchar" Nullable="false" MaxLength="15" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6002: The table/view 'zinmed.dbo.View_2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'BKI_HRM.dbo.View_2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="View_2">
     <Key>
@@ -5292,7 +5292,7 @@
     <Parameter Name="Ten" Type="nvarchar" Mode="In" />
   </Function>
   <!--Errors Found During Generation:
-      warning 6013: The table/view 'zinmed.dbo.RPT_BO_NHIEM' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      warning 6013: The table/view 'BKI_HRM.dbo.RPT_BO_NHIEM' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
       
       <EntityType Name="RPT_BO_NHIEM">
         <Property Name="ID" Type="numeric" />
@@ -5308,7 +5308,7 @@
         <Property Name="ID_LEVEL" Type="numeric" />
       </EntityType>
       Errors Found During Generation:
-      warning 6013: The table/view 'zinmed.dbo.RPT_CHUC_VU_TRANG_THAI' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      warning 6013: The table/view 'BKI_HRM.dbo.RPT_CHUC_VU_TRANG_THAI' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
       
       <EntityType Name="RPT_CHUC_VU_TRANG_THAI">
         <Property Name="ID" Type="numeric" />
@@ -5319,7 +5319,7 @@
         <Property Name="SO_LUONG" Type="numeric" />
       </EntityType>
       Errors Found During Generation:
-      warning 6013: The table/view 'zinmed.dbo.RPT_DON_VI_TRANG_THAI' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      warning 6013: The table/view 'BKI_HRM.dbo.RPT_DON_VI_TRANG_THAI' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
       
       <EntityType Name="RPT_DON_VI_TRANG_THAI">
         <Property Name="ID" Type="numeric" />
@@ -5332,7 +5332,7 @@
         <Property Name="SO_LUONG" Type="numeric" />
       </EntityType>
       Errors Found During Generation:
-      warning 6013: The table/view 'zinmed.dbo.RPT_LUONG_THEO_QD' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      warning 6013: The table/view 'BKI_HRM.dbo.RPT_LUONG_THEO_QD' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
       
       <EntityType Name="RPT_LUONG_THEO_QD">
         <Property Name="MA_NV" Type="nvarchar" MaxLength="100" />
@@ -5400,7 +5400,7 @@
         <Property Name="LUONG_CUOI_KY_II" Type="numeric" Precision="21" Scale="3" />
       </EntityType>
       Errors Found During Generation:
-      warning 6013: The table/view 'zinmed.dbo.RPT_SO_LUONG_NV_THEO_LOAI' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      warning 6013: The table/view 'BKI_HRM.dbo.RPT_SO_LUONG_NV_THEO_LOAI' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
       
       <EntityType Name="RPT_SO_LUONG_NV_THEO_LOAI">
         <Property Name="ID" Type="numeric" />
@@ -5409,7 +5409,7 @@
         <Property Name="SO_LUONG" Type="numeric" />
       </EntityType>
       Errors Found During Generation:
-      warning 6013: The table/view 'zinmed.dbo.UT_SEQUENCES' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      warning 6013: The table/view 'BKI_HRM.dbo.UT_SEQUENCES' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
       
       <EntityType Name="UT_SEQUENCES">
         <Property Name="SEQ_NAME" Type="varchar" MaxLength="30" />

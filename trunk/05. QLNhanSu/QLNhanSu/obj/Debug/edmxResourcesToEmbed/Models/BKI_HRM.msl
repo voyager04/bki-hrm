@@ -108,6 +108,7 @@
           <ScalarProperty Name="NGAY_KET_THUC" ColumnName="NGAY_KET_THUC" />
           <ScalarProperty Name="NOI_DUNG" ColumnName="NOI_DUNG" />
           <ScalarProperty Name="ID_CO_CHE" ColumnName="ID_CO_CHE" />
+          <ScalarProperty Name="MA_DU_AN_THR" ColumnName="MA_DU_AN_THR" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -790,6 +791,7 @@
         <MappingFragment StoreEntitySet="V_DM_DU_AN_QUYET_DINH_TU_DIEN">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="MA_DU_AN" ColumnName="MA_DU_AN" />
+          <ScalarProperty Name="MA_DU_AN_THR" ColumnName="MA_DU_AN_THR" />
           <ScalarProperty Name="TEN_DU_AN" ColumnName="TEN_DU_AN" />
           <ScalarProperty Name="ID_TRANG_THAI" ColumnName="ID_TRANG_THAI" />
           <ScalarProperty Name="TRANG_THAI_DA" ColumnName="TRANG_THAI_DA" />
@@ -860,6 +862,27 @@
           <ScalarProperty Name="TEN_PHAP_NHAN" ColumnName="TEN_PHAP_NHAN" />
           <ScalarProperty Name="ID_PHAP_NHAN_QD" ColumnName="ID_PHAP_NHAN_QD" />
           <ScalarProperty Name="ID_LOAI_CV" ColumnName="ID_LOAI_CV" />
+          <ScalarProperty Name="NOI_SINH" ColumnName="NOI_SINH" />
+          <ScalarProperty Name="NGUYEN_QUAN" ColumnName="NGUYEN_QUAN" />
+          <ScalarProperty Name="ANH" ColumnName="ANH" />
+          <ScalarProperty Name="CMND" ColumnName="CMND" />
+          <ScalarProperty Name="NGAY_CAP_CMND" ColumnName="NGAY_CAP_CMND" />
+          <ScalarProperty Name="NOI_CAP_CMND" ColumnName="NOI_CAP_CMND" />
+          <ScalarProperty Name="NOI_DAO_TAO" ColumnName="NOI_DAO_TAO" />
+          <ScalarProperty Name="CHUYEN_NGANH" ColumnName="CHUYEN_NGANH" />
+          <ScalarProperty Name="NAM_TOT_NGHIEP" ColumnName="NAM_TOT_NGHIEP" />
+          <ScalarProperty Name="EMAIL_CQ" ColumnName="EMAIL_CQ" />
+          <ScalarProperty Name="EMAIL_CA_NHAN" ColumnName="EMAIL_CA_NHAN" />
+          <ScalarProperty Name="DT_NHA" ColumnName="DT_NHA" />
+          <ScalarProperty Name="DI_DONG" ColumnName="DI_DONG" />
+          <ScalarProperty Name="CHO_O" ColumnName="CHO_O" />
+          <ScalarProperty Name="HO_KHAU" ColumnName="HO_KHAU" />
+          <ScalarProperty Name="NGUOI_LIEN_HE" ColumnName="NGUOI_LIEN_HE" />
+          <ScalarProperty Name="DI_DONG_LIEN_HE" ColumnName="DI_DONG_LIEN_HE" />
+          <ScalarProperty Name="QUAN_HE" ColumnName="QUAN_HE" />
+          <ScalarProperty Name="MA_SO_THUE" ColumnName="MA_SO_THUE" />
+          <ScalarProperty Name="SO_TAI_KHOAN" ColumnName="SO_TAI_KHOAN" />
+          <ScalarProperty Name="CHI_NHANH_NGANHANG" ColumnName="CHI_NHANH_NGANHANG" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1439,6 +1462,16 @@
           <ScalarProperty Name="ID_USER_GROUP" ColumnName="ID_USER_GROUP" />
           <ScalarProperty Name="USER_GROUP_NAME" ColumnName="USER_GROUP_NAME" />
           <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="ID_HT_CONTROLLER" ColumnName="ID_HT_CONTROLLER" />
+          <ScalarProperty Name="CONTROLLER_NAME" ColumnName="CONTROLLER_NAME" />
+          <ScalarProperty Name="ACTIVITY_NAME" ColumnName="ACTIVITY_NAME" />
+          <ScalarProperty Name="VI_TRI" ColumnName="VI_TRI" />
+          <ScalarProperty Name="TRANG_THAI_YN" ColumnName="TRANG_THAI_YN" />
+          <ScalarProperty Name="ID_CHUC_NANG_CHA" ColumnName="ID_CHUC_NANG_CHA" />
+          <ScalarProperty Name="HIEN_THI_YN" ColumnName="HIEN_THI_YN" />
+          <ScalarProperty Name="ICON_CLASS" ColumnName="ICON_CLASS" />
+          <ScalarProperty Name="CHUC_NANG_CON" ColumnName="CHUC_NANG_CON" />
+          <ScalarProperty Name="CHUC_NANG_CHA" ColumnName="CHUC_NANG_CHA" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1474,6 +1507,20 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionName="BKI_HRMModel.Store.fn_get_ma_nv_by_cv_pn_with_time" FunctionImportName="fn_get_ma_nv_by_cv_pn_with_time">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BKI_HRMModel.fn_get_ma_nv_by_cv_pn_with_time_Result">
+          <ScalarProperty Name="MA_NHAN_VIEN" ColumnName="MA_NHAN_VIEN" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="BKI_HRMModel.Store.fn_get_ma_nv_by_ttld_pn_with_time" FunctionImportName="fn_get_ma_nv_by_ttld_pn_with_time">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BKI_HRMModel.fn_get_ma_nv_by_ttld_pn_with_time_Result">
+          <ScalarProperty Name="MA_NHAN_VIEN" ColumnName="MA_NHAN_VIEN" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="desc_table" FunctionName="BKI_HRMModel.Store.desc_table">
       <ResultMapping>
         <ComplexTypeMapping TypeName="BKI_HRMModel.desc_table_Result">
@@ -1495,22 +1542,8 @@
     <FunctionImportMapping FunctionImportName="gen_make_db_name" FunctionName="BKI_HRMModel.Store.gen_make_db_name" />
     <FunctionImportMapping FunctionImportName="gen_null_constraint" FunctionName="BKI_HRMModel.Store.gen_null_constraint" />
     <FunctionImportMapping FunctionImportName="get_nhom" FunctionName="BKI_HRMModel.Store.get_nhom" />
-    <FunctionImportMapping FunctionImportName="get_tong_luong_by_ma_cv" FunctionName="BKI_HRMModel.Store.get_tong_luong_by_ma_cv">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="BKI_HRMModel.get_tong_luong_by_ma_cv_Result">
-          <ScalarProperty Name="MA_KY" ColumnName="MA_KY" />
-          <ScalarProperty Name="TONG_LUONG" ColumnName="TONG_LUONG" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="get_tong_luong_by_ma_ttld" FunctionName="BKI_HRMModel.Store.get_tong_luong_by_ma_ttld">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="BKI_HRMModel.get_tong_luong_by_ma_ttld_Result">
-          <ScalarProperty Name="MA_KY" ColumnName="MA_KY" />
-          <ScalarProperty Name="TONG_LUONG" ColumnName="TONG_LUONG" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="get_tong_luong_by_ma_cv" FunctionName="BKI_HRMModel.Store.get_tong_luong_by_ma_cv" />
+    <FunctionImportMapping FunctionImportName="get_tong_luong_by_ma_ttld" FunctionName="BKI_HRMModel.Store.get_tong_luong_by_ma_ttld" />
     <FunctionImportMapping FunctionImportName="HT_QUYEN_USER_Delele_All_Quyen_Of_user" FunctionName="BKI_HRMModel.Store.HT_QUYEN_USER_Delele_All_Quyen_Of_user" />
     <FunctionImportMapping FunctionImportName="pr_check_and_make_bp_lock_123" FunctionName="BKI_HRMModel.Store.pr_check_and_make_bp_lock_123" />
     <FunctionImportMapping FunctionImportName="pr_CM_DM_TU_DIEN_Delete" FunctionName="BKI_HRMModel.Store.pr_CM_DM_TU_DIEN_Delete" />
@@ -1669,12 +1702,16 @@
     <FunctionImportMapping FunctionImportName="pr_DM_DON_VI_THANH_TOAN_Load_Phan_Quyen" FunctionName="BKI_HRMModel.Store.pr_DM_DON_VI_THANH_TOAN_Load_Phan_Quyen" />
     <FunctionImportMapping FunctionImportName="pr_DM_DON_VI_Update" FunctionName="BKI_HRMModel.Store.pr_DM_DON_VI_Update" />
     <FunctionImportMapping FunctionImportName="pr_DM_DU_AN_Delete" FunctionName="BKI_HRMModel.Store.pr_DM_DU_AN_Delete" />
+    <FunctionImportMapping FunctionImportName="pr_DM_DU_AN_DeleteAllWID_CO_CHELogic" FunctionName="BKI_HRMModel.Store.pr_DM_DU_AN_DeleteAllWID_CO_CHELogic" />
+    <FunctionImportMapping FunctionImportName="pr_DM_DU_AN_DeleteAllWID_LOAI_DU_ANLogic" FunctionName="BKI_HRMModel.Store.pr_DM_DU_AN_DeleteAllWID_LOAI_DU_ANLogic" />
+    <FunctionImportMapping FunctionImportName="pr_DM_DU_AN_DeleteAllWID_TRANG_THAILogic" FunctionName="BKI_HRMModel.Store.pr_DM_DU_AN_DeleteAllWID_TRANG_THAILogic" />
     <FunctionImportMapping FunctionImportName="pr_DM_DU_AN_Insert" FunctionName="BKI_HRMModel.Store.pr_DM_DU_AN_Insert" />
     <FunctionImportMapping FunctionImportName="pr_DM_DU_AN_QUYET_DINH_TU_DIEN_sap_ket_thuc" FunctionName="BKI_HRMModel.Store.pr_DM_DU_AN_QUYET_DINH_TU_DIEN_sap_ket_thuc">
       <ResultMapping>
         <ComplexTypeMapping TypeName="BKI_HRMModel.pr_DM_DU_AN_QUYET_DINH_TU_DIEN_sap_ket_thuc_Result">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="MA_DU_AN" ColumnName="MA_DU_AN" />
+          <ScalarProperty Name="MA_DU_AN_THR" ColumnName="MA_DU_AN_THR" />
           <ScalarProperty Name="TEN_DU_AN" ColumnName="TEN_DU_AN" />
           <ScalarProperty Name="ID_TRANG_THAI" ColumnName="ID_TRANG_THAI" />
           <ScalarProperty Name="TRANG_THAI_DA" ColumnName="TRANG_THAI_DA" />
@@ -1711,6 +1748,7 @@
           <ScalarProperty Name="NGAY_KET_THUC" ColumnName="NGAY_KET_THUC" />
           <ScalarProperty Name="NOI_DUNG" ColumnName="NOI_DUNG" />
           <ScalarProperty Name="ID_CO_CHE" ColumnName="ID_CO_CHE" />
+          <ScalarProperty Name="MA_DU_AN_THR" ColumnName="MA_DU_AN_THR" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -1726,6 +1764,7 @@
           <ScalarProperty Name="NGAY_KET_THUC" ColumnName="NGAY_KET_THUC" />
           <ScalarProperty Name="NOI_DUNG" ColumnName="NOI_DUNG" />
           <ScalarProperty Name="ID_CO_CHE" ColumnName="ID_CO_CHE" />
+          <ScalarProperty Name="MA_DU_AN_THR" ColumnName="MA_DU_AN_THR" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -1742,10 +1781,14 @@
           <ScalarProperty Name="NGAY_KET_THUC" ColumnName="NGAY_KET_THUC" />
           <ScalarProperty Name="NOI_DUNG" ColumnName="NOI_DUNG" />
           <ScalarProperty Name="ID_CO_CHE" ColumnName="ID_CO_CHE" />
+          <ScalarProperty Name="MA_DU_AN_THR" ColumnName="MA_DU_AN_THR" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="pr_DM_DU_AN_Update" FunctionName="BKI_HRMModel.Store.pr_DM_DU_AN_Update" />
+    <FunctionImportMapping FunctionImportName="pr_DM_DU_AN_UpdateAllWID_CO_CHELogic" FunctionName="BKI_HRMModel.Store.pr_DM_DU_AN_UpdateAllWID_CO_CHELogic" />
+    <FunctionImportMapping FunctionImportName="pr_DM_DU_AN_UpdateAllWID_LOAI_DU_ANLogic" FunctionName="BKI_HRMModel.Store.pr_DM_DU_AN_UpdateAllWID_LOAI_DU_ANLogic" />
+    <FunctionImportMapping FunctionImportName="pr_DM_DU_AN_UpdateAllWID_TRANG_THAILogic" FunctionName="BKI_HRMModel.Store.pr_DM_DU_AN_UpdateAllWID_TRANG_THAILogic" />
     <FunctionImportMapping FunctionImportName="pr_DM_HEADCOUNT_Delete" FunctionName="BKI_HRMModel.Store.pr_DM_HEADCOUNT_Delete" />
     <FunctionImportMapping FunctionImportName="pr_DM_HEADCOUNT_Insert" FunctionName="BKI_HRMModel.Store.pr_DM_HEADCOUNT_Insert" />
     <FunctionImportMapping FunctionImportName="pr_DM_HEADCOUNT_Update" FunctionName="BKI_HRMModel.Store.pr_DM_HEADCOUNT_Update" />
@@ -2681,6 +2724,7 @@
         <ComplexTypeMapping TypeName="BKI_HRMModel.pr_V_DM_DU_AN_QUYET_DINH_TU_DIEN_search_Result">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="MA_DU_AN" ColumnName="MA_DU_AN" />
+          <ScalarProperty Name="MA_DU_AN_THR" ColumnName="MA_DU_AN_THR" />
           <ScalarProperty Name="TEN_DU_AN" ColumnName="TEN_DU_AN" />
           <ScalarProperty Name="ID_TRANG_THAI" ColumnName="ID_TRANG_THAI" />
           <ScalarProperty Name="TRANG_THAI_DA" ColumnName="TRANG_THAI_DA" />
@@ -2707,7 +2751,6 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="pr_V_DM_DU_AN_QUYET_DINH_TU_DIEN_Update" FunctionName="BKI_HRMModel.Store.pr_V_DM_DU_AN_QUYET_DINH_TU_DIEN_Update" />
     <FunctionImportMapping FunctionImportName="pr_V_DM_DU_LIEU_NHAN_VIEN_count_nhan_vien" FunctionName="BKI_HRMModel.Store.pr_V_DM_DU_LIEU_NHAN_VIEN_count_nhan_vien" />
-    <FunctionImportMapping FunctionImportName="pr_V_DM_DU_LIEU_NHAN_VIEN_count_nhan_vien_hien_tai" FunctionName="BKI_HRMModel.Store.pr_V_DM_DU_LIEU_NHAN_VIEN_count_nhan_vien_hien_tai" />
     <FunctionImportMapping FunctionImportName="pr_V_DM_DU_LIEU_NHAN_VIEN_count_nhan_vien1" FunctionName="BKI_HRMModel.Store.pr_V_DM_DU_LIEU_NHAN_VIEN_count_nhan_vien1" />
     <FunctionImportMapping FunctionImportName="pr_V_DM_DU_LIEU_NHAN_VIEN_nghi_viec" FunctionName="BKI_HRMModel.Store.pr_V_DM_DU_LIEU_NHAN_VIEN_nghi_viec">
       <ResultMapping>
@@ -2755,6 +2798,27 @@
           <ScalarProperty Name="TEN_PHAP_NHAN" ColumnName="TEN_PHAP_NHAN" />
           <ScalarProperty Name="ID_PHAP_NHAN_QD" ColumnName="ID_PHAP_NHAN_QD" />
           <ScalarProperty Name="ID_LOAI_CV" ColumnName="ID_LOAI_CV" />
+          <ScalarProperty Name="NOI_SINH" ColumnName="NOI_SINH" />
+          <ScalarProperty Name="NGUYEN_QUAN" ColumnName="NGUYEN_QUAN" />
+          <ScalarProperty Name="ANH" ColumnName="ANH" />
+          <ScalarProperty Name="CMND" ColumnName="CMND" />
+          <ScalarProperty Name="NGAY_CAP_CMND" ColumnName="NGAY_CAP_CMND" />
+          <ScalarProperty Name="NOI_CAP_CMND" ColumnName="NOI_CAP_CMND" />
+          <ScalarProperty Name="NOI_DAO_TAO" ColumnName="NOI_DAO_TAO" />
+          <ScalarProperty Name="CHUYEN_NGANH" ColumnName="CHUYEN_NGANH" />
+          <ScalarProperty Name="NAM_TOT_NGHIEP" ColumnName="NAM_TOT_NGHIEP" />
+          <ScalarProperty Name="EMAIL_CQ" ColumnName="EMAIL_CQ" />
+          <ScalarProperty Name="EMAIL_CA_NHAN" ColumnName="EMAIL_CA_NHAN" />
+          <ScalarProperty Name="DT_NHA" ColumnName="DT_NHA" />
+          <ScalarProperty Name="DI_DONG" ColumnName="DI_DONG" />
+          <ScalarProperty Name="CHO_O" ColumnName="CHO_O" />
+          <ScalarProperty Name="HO_KHAU" ColumnName="HO_KHAU" />
+          <ScalarProperty Name="NGUOI_LIEN_HE" ColumnName="NGUOI_LIEN_HE" />
+          <ScalarProperty Name="DI_DONG_LIEN_HE" ColumnName="DI_DONG_LIEN_HE" />
+          <ScalarProperty Name="QUAN_HE" ColumnName="QUAN_HE" />
+          <ScalarProperty Name="MA_SO_THUE" ColumnName="MA_SO_THUE" />
+          <ScalarProperty Name="SO_TAI_KHOAN" ColumnName="SO_TAI_KHOAN" />
+          <ScalarProperty Name="CHI_NHANH_NGANHANG" ColumnName="CHI_NHANH_NGANHANG" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -2804,6 +2868,27 @@
           <ScalarProperty Name="TEN_PHAP_NHAN" ColumnName="TEN_PHAP_NHAN" />
           <ScalarProperty Name="ID_PHAP_NHAN_QD" ColumnName="ID_PHAP_NHAN_QD" />
           <ScalarProperty Name="ID_LOAI_CV" ColumnName="ID_LOAI_CV" />
+          <ScalarProperty Name="NOI_SINH" ColumnName="NOI_SINH" />
+          <ScalarProperty Name="NGUYEN_QUAN" ColumnName="NGUYEN_QUAN" />
+          <ScalarProperty Name="ANH" ColumnName="ANH" />
+          <ScalarProperty Name="CMND" ColumnName="CMND" />
+          <ScalarProperty Name="NGAY_CAP_CMND" ColumnName="NGAY_CAP_CMND" />
+          <ScalarProperty Name="NOI_CAP_CMND" ColumnName="NOI_CAP_CMND" />
+          <ScalarProperty Name="NOI_DAO_TAO" ColumnName="NOI_DAO_TAO" />
+          <ScalarProperty Name="CHUYEN_NGANH" ColumnName="CHUYEN_NGANH" />
+          <ScalarProperty Name="NAM_TOT_NGHIEP" ColumnName="NAM_TOT_NGHIEP" />
+          <ScalarProperty Name="EMAIL_CQ" ColumnName="EMAIL_CQ" />
+          <ScalarProperty Name="EMAIL_CA_NHAN" ColumnName="EMAIL_CA_NHAN" />
+          <ScalarProperty Name="DT_NHA" ColumnName="DT_NHA" />
+          <ScalarProperty Name="DI_DONG" ColumnName="DI_DONG" />
+          <ScalarProperty Name="CHO_O" ColumnName="CHO_O" />
+          <ScalarProperty Name="HO_KHAU" ColumnName="HO_KHAU" />
+          <ScalarProperty Name="NGUOI_LIEN_HE" ColumnName="NGUOI_LIEN_HE" />
+          <ScalarProperty Name="DI_DONG_LIEN_HE" ColumnName="DI_DONG_LIEN_HE" />
+          <ScalarProperty Name="QUAN_HE" ColumnName="QUAN_HE" />
+          <ScalarProperty Name="MA_SO_THUE" ColumnName="MA_SO_THUE" />
+          <ScalarProperty Name="SO_TAI_KHOAN" ColumnName="SO_TAI_KHOAN" />
+          <ScalarProperty Name="CHI_NHANH_NGANHANG" ColumnName="CHI_NHANH_NGANHANG" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -2853,6 +2938,27 @@
           <ScalarProperty Name="TEN_PHAP_NHAN" ColumnName="TEN_PHAP_NHAN" />
           <ScalarProperty Name="ID_PHAP_NHAN_QD" ColumnName="ID_PHAP_NHAN_QD" />
           <ScalarProperty Name="ID_LOAI_CV" ColumnName="ID_LOAI_CV" />
+          <ScalarProperty Name="NOI_SINH" ColumnName="NOI_SINH" />
+          <ScalarProperty Name="NGUYEN_QUAN" ColumnName="NGUYEN_QUAN" />
+          <ScalarProperty Name="ANH" ColumnName="ANH" />
+          <ScalarProperty Name="CMND" ColumnName="CMND" />
+          <ScalarProperty Name="NGAY_CAP_CMND" ColumnName="NGAY_CAP_CMND" />
+          <ScalarProperty Name="NOI_CAP_CMND" ColumnName="NOI_CAP_CMND" />
+          <ScalarProperty Name="NOI_DAO_TAO" ColumnName="NOI_DAO_TAO" />
+          <ScalarProperty Name="CHUYEN_NGANH" ColumnName="CHUYEN_NGANH" />
+          <ScalarProperty Name="NAM_TOT_NGHIEP" ColumnName="NAM_TOT_NGHIEP" />
+          <ScalarProperty Name="EMAIL_CQ" ColumnName="EMAIL_CQ" />
+          <ScalarProperty Name="EMAIL_CA_NHAN" ColumnName="EMAIL_CA_NHAN" />
+          <ScalarProperty Name="DT_NHA" ColumnName="DT_NHA" />
+          <ScalarProperty Name="DI_DONG" ColumnName="DI_DONG" />
+          <ScalarProperty Name="CHO_O" ColumnName="CHO_O" />
+          <ScalarProperty Name="HO_KHAU" ColumnName="HO_KHAU" />
+          <ScalarProperty Name="NGUOI_LIEN_HE" ColumnName="NGUOI_LIEN_HE" />
+          <ScalarProperty Name="DI_DONG_LIEN_HE" ColumnName="DI_DONG_LIEN_HE" />
+          <ScalarProperty Name="QUAN_HE" ColumnName="QUAN_HE" />
+          <ScalarProperty Name="MA_SO_THUE" ColumnName="MA_SO_THUE" />
+          <ScalarProperty Name="SO_TAI_KHOAN" ColumnName="SO_TAI_KHOAN" />
+          <ScalarProperty Name="CHI_NHANH_NGANHANG" ColumnName="CHI_NHANH_NGANHANG" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -2902,6 +3008,27 @@
           <ScalarProperty Name="TEN_PHAP_NHAN" ColumnName="TEN_PHAP_NHAN" />
           <ScalarProperty Name="ID_PHAP_NHAN_QD" ColumnName="ID_PHAP_NHAN_QD" />
           <ScalarProperty Name="ID_LOAI_CV" ColumnName="ID_LOAI_CV" />
+          <ScalarProperty Name="NOI_SINH" ColumnName="NOI_SINH" />
+          <ScalarProperty Name="NGUYEN_QUAN" ColumnName="NGUYEN_QUAN" />
+          <ScalarProperty Name="ANH" ColumnName="ANH" />
+          <ScalarProperty Name="CMND" ColumnName="CMND" />
+          <ScalarProperty Name="NGAY_CAP_CMND" ColumnName="NGAY_CAP_CMND" />
+          <ScalarProperty Name="NOI_CAP_CMND" ColumnName="NOI_CAP_CMND" />
+          <ScalarProperty Name="NOI_DAO_TAO" ColumnName="NOI_DAO_TAO" />
+          <ScalarProperty Name="CHUYEN_NGANH" ColumnName="CHUYEN_NGANH" />
+          <ScalarProperty Name="NAM_TOT_NGHIEP" ColumnName="NAM_TOT_NGHIEP" />
+          <ScalarProperty Name="EMAIL_CQ" ColumnName="EMAIL_CQ" />
+          <ScalarProperty Name="EMAIL_CA_NHAN" ColumnName="EMAIL_CA_NHAN" />
+          <ScalarProperty Name="DT_NHA" ColumnName="DT_NHA" />
+          <ScalarProperty Name="DI_DONG" ColumnName="DI_DONG" />
+          <ScalarProperty Name="CHO_O" ColumnName="CHO_O" />
+          <ScalarProperty Name="HO_KHAU" ColumnName="HO_KHAU" />
+          <ScalarProperty Name="NGUOI_LIEN_HE" ColumnName="NGUOI_LIEN_HE" />
+          <ScalarProperty Name="DI_DONG_LIEN_HE" ColumnName="DI_DONG_LIEN_HE" />
+          <ScalarProperty Name="QUAN_HE" ColumnName="QUAN_HE" />
+          <ScalarProperty Name="MA_SO_THUE" ColumnName="MA_SO_THUE" />
+          <ScalarProperty Name="SO_TAI_KHOAN" ColumnName="SO_TAI_KHOAN" />
+          <ScalarProperty Name="CHI_NHANH_NGANHANG" ColumnName="CHI_NHANH_NGANHANG" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
