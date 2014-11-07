@@ -16,7 +16,7 @@
 
 <h2 class="title-page">F203 Cập nhật thông tin người dùng</h2>
 
-@using (Html.BeginForm("F203_Update", "HeThong", FormMethod.Post, new { @class = "form-horizontal", @role = "form" }))
+@using (Html.BeginForm("F203_Update", "User", FormMethod.Post, new { @class = "form-horizontal", @role = "form" }))
 {
     @Html.Hidden("v_ID", id)
     @Html.Hidden("v_UserName", userName)
@@ -46,7 +46,7 @@
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-success">Lưu</button>
-            <a href="@Url.Action("F201_DanhMucNhanVien", "HeThong")" class="btn btn-danger">Hủy bỏ</a>
+            <a href="@Url.Action("F201_DanhMucNhanVien", "User")" class="btn btn-danger">Hủy bỏ</a>
         </div>
     </div>
 }

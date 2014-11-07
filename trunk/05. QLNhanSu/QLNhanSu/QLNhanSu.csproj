@@ -167,6 +167,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\SystemController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
@@ -246,6 +247,12 @@
     <Compile Include="Models\DOC_TABLE_COMMENT.cs">
       <DependentUpon>BKI_HRM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\fn_get_ma_nv_by_cv_pn_with_time_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fn_get_ma_nv_by_ttld_pn_with_time_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\GD_CHI_TIET_CAP_BAC.cs">
       <DependentUpon>BKI_HRM.tt</DependentUpon>
     </Compile>
@@ -283,12 +290,6 @@
       <DependentUpon>BKI_HRM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GD_TINH_HINH_NV_MOI.cs">
-      <DependentUpon>BKI_HRM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\get_tong_luong_by_ma_cv_Result.cs">
-      <DependentUpon>BKI_HRM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\get_tong_luong_by_ma_ttld_Result.cs">
       <DependentUpon>BKI_HRM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HT_BACKUP_HISTORY.cs">
@@ -829,16 +830,21 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <EntityDeploy Include="Models\BKI_HRM.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BKI_HRM.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <Content Include="Images\default-body.png" />
     <Content Include="Images\intro-bg.jpg" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\slide1.jpg" />
     <Content Include="Images\slide2.jpg" />
     <Content Include="Images\slide3.jpg" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <EntityDeploy Include="Models\BKI_HRM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BKI_HRM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <Content Include="Models\BKI_HRM.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BKI_HRM.edmx</DependentUpon>
@@ -852,11 +858,6 @@
       <DependentUpon>BKI_HRM.edmx</DependentUpon>
       <LastGenOutput>BKI_HRM.cs</LastGenOutput>
     </Content>
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <None Include="Properties\PublishProfiles\test.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\bootstrap-table.js" />
@@ -866,9 +867,10 @@
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery-hethong.js" />
+    <Content Include="Scripts\jquery-nguoidung.js" />
     <Content Include="Scripts\jquery-home-page.js" />
     <Content Include="Scripts\jquery-quatrinhlamviec.js" />
+    <Content Include="Scripts\jquery-system.js" />
     <Content Include="Scripts\jquery-thongtinnhanvien.js" />
     <Content Include="Scripts\jquery-thunhap.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.js" />
@@ -937,6 +939,7 @@
     <Content Include="Views\User\F202_Insert.cshtml" />
     <Content Include="Views\User\F203_Update.cshtml" />
     <Content Include="Views\Shared\_Navigation.cshtml" />
+    <Content Include="Views\System\F301_DanhMucPhanQuyenChucNang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
