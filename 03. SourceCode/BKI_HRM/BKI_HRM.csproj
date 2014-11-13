@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BKI_HRM</RootNamespace>
     <AssemblyName>BKI_HRM</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -77,59 +77,49 @@
     <Reference Include="DevComponents.DotNetBar2, Version=11.0.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
       <HintPath>..\DLL\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Data.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
-      <HintPath>..\DLL\DevExpress.Data.v12.2.dll</HintPath>
+    <Reference Include="DevExpress.Data.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
     </Reference>
-    <Reference Include="DevExpress.Office.v12.2.Core, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
-      <HintPath>..\DLL\DevExpress.Office.v12.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.Office.v12.2.Core, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
     </Reference>
-    <Reference Include="DevExpress.Printing.v12.2.Core, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
-      <HintPath>..\DLL\DevExpress.Printing.v12.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.Printing.v12.2.Core, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
     </Reference>
-    <Reference Include="DevExpress.RichEdit.v12.2.Core, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
-      <HintPath>..\DLL\DevExpress.RichEdit.v12.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.RichEdit.v12.2.Core, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
     </Reference>
-    <Reference Include="DevExpress.Snap.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
-      <HintPath>..\DLL\DevExpress.Snap.v12.2.dll</HintPath>
+    <Reference Include="DevExpress.Snap.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
     </Reference>
-    <Reference Include="DevExpress.Snap.v12.2.Core, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
-      <HintPath>..\DLL\DevExpress.Snap.v12.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.Snap.v12.2.Core, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
     </Reference>
-    <Reference Include="DevExpress.Snap.v12.2.Extensions, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\DLL\DevExpress.Snap.v12.2.Extensions.dll</HintPath>
+    <Reference Include="DevExpress.Snap.v12.2.Extensions, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.Utils.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
-      <HintPath>..\DLL\DevExpress.Utils.v12.2.dll</HintPath>
+    <Reference Include="DevExpress.Utils.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
     </Reference>
-    <Reference Include="DevExpress.Utils.v12.2.UI, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
-      <HintPath>..\DLL\DevExpress.Utils.v12.2.UI.dll</HintPath>
+    <Reference Include="DevExpress.Utils.v12.2.UI, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
     </Reference>
-    <Reference Include="DevExpress.XtraBars.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\DLL\DevExpress.XtraBars.v12.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraBars.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="DevExpress.XtraCharts.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
-      <HintPath>..\DLL\DevExpress.XtraCharts.v12.2.dll</HintPath>
+    <Reference Include="DevExpress.Charts.v12.2.Core, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
     </Reference>
-    <Reference Include="DevExpress.XtraCharts.v12.2.UI, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
-      <HintPath>..\DLL\DevExpress.XtraCharts.v12.2.UI.dll</HintPath>
+    <Reference Include="DevExpress.XtraCharts.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
     </Reference>
-    <Reference Include="DevExpress.XtraCharts.v12.2.Wizard, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
-      <HintPath>..\DLL\DevExpress.XtraCharts.v12.2.Wizard.dll</HintPath>
+    <Reference Include="DevExpress.XtraCharts.v12.2.UI, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
     </Reference>
-    <Reference Include="DevExpress.XtraEditors.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
-      <HintPath>..\DLL\DevExpress.XtraEditors.v12.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraCharts.v12.2.Wizard, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
     </Reference>
-    <Reference Include="DevExpress.XtraPrinting.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
-      <HintPath>..\DLL\DevExpress.XtraPrinting.v12.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraEditors.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
     </Reference>
-    <Reference Include="DevExpress.XtraRichEdit.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
-      <HintPath>..\DLL\DevExpress.XtraRichEdit.v12.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraPrinting.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
     </Reference>
-    <Reference Include="DevExpress.XtraRichEdit.v12.2.Extensions, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
-      <HintPath>..\DLL\DevExpress.XtraRichEdit.v12.2.Extensions.dll</HintPath>
+    <Reference Include="DevExpress.XtraRichEdit.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
     </Reference>
-    <Reference Include="DevExpress.XtraTreeList.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
-      <HintPath>..\DLL\DevExpress.XtraTreeList.v12.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraRichEdit.v12.2.Extensions, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net40\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="EPPlus">
       <HintPath>..\packages\EPPlus.3.1.3.3\lib\net35\EPPlus.dll</HintPath>
@@ -170,6 +160,7 @@
       <HintPath>..\DLL\SiSMenu.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
@@ -210,6 +201,9 @@
     </Compile>
     <Compile Include="BaoCao\f302_RPT_TONG_LUONG.Designer.cs">
       <DependentUpon>f302_RPT_TONG_LUONG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCao\f304_RPT_LUONG_DON_VI_THEO_KY.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="BaoCao\f402_BAO_CAO_NHAN_SU_CHUC_VU.cs">
       <SubType>Form</SubType>
@@ -567,6 +561,9 @@
     <EmbeddedResource Include="BaoCao\f302_RPT_TONG_LUONG.resx">
       <DependentUpon>f302_RPT_TONG_LUONG.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f304_RPT_LUONG_DON_VI_THEO_KY.resx">
+      <DependentUpon>f304_RPT_LUONG_DON_VI_THEO_KY.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f402_BAO_CAO_NHAN_SU_CHUC_VU.resx">
       <DependentUpon>f402_BAO_CAO_NHAN_SU_CHUC_VU.cs</DependentUpon>
     </EmbeddedResource>
@@ -809,9 +806,7 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

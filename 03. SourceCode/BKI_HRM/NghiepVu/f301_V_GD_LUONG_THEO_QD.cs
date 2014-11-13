@@ -802,25 +802,6 @@ namespace BKI_HRM
             m_cmd_import_excel.Click += m_cmd_import_excel_Click;
         }
 
-        private void m_cmd_import_excel_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                import_excel();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void import_excel()
-        {
-            f801_import_excel_luong_theo_qd v_form = new f801_import_excel_luong_theo_qd();
-            v_form.display();
-            load_data_2_grid();
-        }
-
         // ~ DucVT ~
         /// <summary>
         /// Hàm format controls tự tạo bởi DucVT
@@ -900,6 +881,25 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
 
+        }
+
+        private void m_cmd_import_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                import_excel();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void import_excel()
+        {
+            f801_import_excel_luong_theo_qd v_form = new f801_import_excel_luong_theo_qd();
+            v_form.display();
+            load_data_2_grid();
         }
 
         private void m_cmd_exit_Click(object sender, EventArgs e)

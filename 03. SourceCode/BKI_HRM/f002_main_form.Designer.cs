@@ -55,7 +55,6 @@
             this.m_cmd_thong_tin_du_an = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_hop_dong_lao_dong = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_luongqd = new DevExpress.XtraBars.BarButtonItem();
-            this.m_cmd_import_luong_theo_qd = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem31 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem32 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem33 = new DevExpress.XtraBars.BarButtonItem();
@@ -86,6 +85,7 @@
             this.m_cmd_bao_cao_nghi_viec = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_bc_luong_theo_qd = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_rpt_tong_luong = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_rpt_luong_don_vi_theo_ky = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -131,6 +131,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.m_cbo_phap_nhan = new System.Windows.Forms.ComboBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.cM_DM_TU_DIENTableAdapter1 = new BKI_HRM.DS.DS_CM_DM_TU_DIENTableAdapters.CM_DM_TU_DIENTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.m_tab_menu)).BeginInit();
             this.m_pnl_thong_bao.SuspendLayout();
             this.m_pnl_thu_viec_da_het_han.SuspendLayout();
@@ -184,7 +185,6 @@
             this.m_cmd_thong_tin_du_an,
             this.m_cmd_hop_dong_lao_dong,
             this.m_cmd_luongqd,
-            this.m_cmd_import_luong_theo_qd,
             this.barButtonItem31,
             this.barButtonItem32,
             this.barButtonItem33,
@@ -214,9 +214,10 @@
             this.m_cmd_bien_dong_don_vi_trang_thai,
             this.m_cmd_bao_cao_nghi_viec,
             this.m_cmd_bc_luong_theo_qd,
-            this.m_cmd_rpt_tong_luong});
+            this.m_cmd_rpt_tong_luong,
+            this.m_cmd_rpt_luong_don_vi_theo_ky});
             this.m_tab_menu.Location = new System.Drawing.Point(0, 0);
-            this.m_tab_menu.MaxItemId = 81;
+            this.m_tab_menu.MaxItemId = 82;
             this.m_tab_menu.Name = "m_tab_menu";
             this.m_tab_menu.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -463,14 +464,6 @@
             this.m_cmd_luongqd.Name = "m_cmd_luongqd";
             this.m_cmd_luongqd.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
-            // m_cmd_import_luong_theo_qd
-            // 
-            this.m_cmd_import_luong_theo_qd.Caption = "Import lương theo quyết định";
-            this.m_cmd_import_luong_theo_qd.Glyph = global::BKI_HRM.Properties.Resources._1413471434_272709;
-            this.m_cmd_import_luong_theo_qd.Id = 48;
-            this.m_cmd_import_luong_theo_qd.Name = "m_cmd_import_luong_theo_qd";
-            this.m_cmd_import_luong_theo_qd.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            // 
             // barButtonItem31
             // 
             this.barButtonItem31.Caption = "Báo cáo dự án";
@@ -697,6 +690,14 @@
             this.m_cmd_rpt_tong_luong.Name = "m_cmd_rpt_tong_luong";
             this.m_cmd_rpt_tong_luong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
+            // m_cmd_rpt_luong_don_vi_theo_ky
+            // 
+            this.m_cmd_rpt_luong_don_vi_theo_ky.Caption = "Báo cáo lương đơn vị theo kỳ";
+            this.m_cmd_rpt_luong_don_vi_theo_ky.Glyph = global::BKI_HRM.Properties.Resources._1413449845_174971;
+            this.m_cmd_rpt_luong_don_vi_theo_ky.Id = 81;
+            this.m_cmd_rpt_luong_don_vi_theo_ky.Name = "m_cmd_rpt_luong_don_vi_theo_ky";
+            this.m_cmd_rpt_luong_don_vi_theo_ky.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
@@ -788,7 +789,6 @@
             this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_thong_tin_du_an);
             this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_hop_dong_lao_dong);
             this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_luongqd);
-            this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_import_luong_theo_qd);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Quản lý nhân sự";
             // 
@@ -837,6 +837,7 @@
             this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_bien_dong_don_vi_trang_thai);
             this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_bc_luong_theo_qd);
             this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_rpt_tong_luong);
+            this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_rpt_luong_don_vi_theo_ky);
             this.ribbonPageGroup14.Name = "ribbonPageGroup14";
             this.ribbonPageGroup14.Text = "Nhân sự";
             // 
@@ -1134,6 +1135,10 @@
             this.imageList1.Images.SetKeyName(3, "1413449902_103514.ico");
             this.imageList1.Images.SetKeyName(4, "rank.ico");
             // 
+            // cM_DM_TU_DIENTableAdapter1
+            // 
+            this.cM_DM_TU_DIENTableAdapter1.ClearBeforeFill = true;
+            // 
             // f002_main_form
             // 
             this.ClientSize = new System.Drawing.Size(1193, 583);
@@ -1206,7 +1211,6 @@
         private DevExpress.XtraBars.BarButtonItem m_cmd_thong_tin_du_an;
         private DevExpress.XtraBars.BarButtonItem m_cmd_hop_dong_lao_dong;
         private DevExpress.XtraBars.BarButtonItem m_cmd_luongqd;
-        private DevExpress.XtraBars.BarButtonItem m_cmd_import_luong_theo_qd;
         private DevExpress.XtraBars.BarButtonItem barButtonItem31;
         private DevExpress.XtraBars.BarButtonItem barButtonItem32;
         private DevExpress.XtraBars.BarButtonItem barButtonItem33;
@@ -1282,5 +1286,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup15;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup16;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;
+        private DS.DS_CM_DM_TU_DIENTableAdapters.CM_DM_TU_DIENTableAdapter cM_DM_TU_DIENTableAdapter1;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_rpt_luong_don_vi_theo_ky;
     }
 }

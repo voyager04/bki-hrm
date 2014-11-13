@@ -261,7 +261,7 @@ namespace BKI_HRM
                         m_cmd_thong_tin_du_an.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         m_cmd_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         m_cmd_luongqd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        m_cmd_import_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        //m_cmd_import_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         ribbonPageGroup12.Visible = true;
                         break;
                     case "2":
@@ -272,7 +272,7 @@ namespace BKI_HRM
                         m_cmd_thong_tin_du_an.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         m_cmd_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         m_cmd_luongqd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        m_cmd_import_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        //m_cmd_import_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         ribbonPageGroup12.Visible = true;
                         break;
                     case "3":
@@ -283,7 +283,7 @@ namespace BKI_HRM
                         m_cmd_thong_tin_du_an.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                         m_cmd_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                         m_cmd_luongqd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                        m_cmd_import_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                        //m_cmd_import_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                         ribbonPageGroup12.Visible = false;
                         break;
                     default: break;
@@ -356,7 +356,7 @@ namespace BKI_HRM
             m_cmd_thong_tin_du_an.ItemClick += m_cmd_thong_tin_du_an_ItemClick;
             m_cmd_hop_dong_lao_dong.ItemClick += m_cmd_hop_dong_lao_dong_ItemClick;
             m_cmd_luongqd.ItemClick += m_cmd_luongqd_ItemClick;
-            m_cmd_import_luong_theo_qd.ItemClick += m_cmd_import_luong_theo_qd_ItemClick;
+            //m_cmd_import_luong_theo_qd.ItemClick += m_cmd_import_luong_theo_qd_ItemClick;
 
             //Báo cáo
             m_cmd_bao_cao_du_an.ItemClick += m_cmd_bao_cao_du_an_ItemClick;
@@ -374,6 +374,7 @@ namespace BKI_HRM
             m_cmd_bao_cao_nghi_viec.ItemClick += m_cmd_bao_cao_nghi_viec_ItemClick;
             m_cmd_bc_luong_theo_qd.ItemClick += m_cmd_bc_luong_theo_qd_ItemClick;
             m_cmd_rpt_tong_luong.ItemClick += m_cmd_rpt_tong_luong_ItemClick;
+            m_cmd_rpt_luong_don_vi_theo_ky.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(m_cmd_rpt_luong_don_vi_theo_ky_ItemClick);
 
             ///
             m_lbl_tong_so_nv.Click += m_lbl_tong_so_nv_Click;
@@ -412,6 +413,22 @@ namespace BKI_HRM
             m_cmd_exit.ItemClick += m_cmd_exit_ItemClick;
         }
 
+        private void m_cmd_rpt_luong_don_vi_theo_ky_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                f304_RPT_LUONG_DON_VI_THEO_KY v_frm = new f304_RPT_LUONG_DON_VI_THEO_KY();
+                v_frm.close_tab_B = new f304_RPT_LUONG_DON_VI_THEO_KY.close_tab(close_tab_A);
+                uc_for_form v_uc = new uc_for_form();
+                m_obj_tab.AddFormToUC(v_frm, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_uc);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
         void m_cmd_exit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
@@ -439,6 +456,7 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        
         private void panel1_MouseHover(object sender, EventArgs e)
         {
             panel1.BackColor = Color.Aquamarine;
@@ -883,23 +901,6 @@ namespace BKI_HRM
                 f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
                 m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc. Click để xem chi tiết!",
                                                         frm502.count_record_du_an_sap_ket_thuc());
-            }
-            catch (Exception v_e)
-            {
-
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        void m_cmd_import_luong_theo_qd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            try
-            {
-                f801_import_excel_luong_theo_qd v_frm = new f801_import_excel_luong_theo_qd();
-                v_frm.close_tab_B = new f801_import_excel_luong_theo_qd.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_import_luong", v_frm.Text, v_uc);
             }
             catch (Exception v_e)
             {
@@ -1358,7 +1359,7 @@ namespace BKI_HRM
                         m_cmd_thong_tin_du_an.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         m_cmd_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         m_cmd_luongqd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        m_cmd_import_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        //m_cmd_import_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         ribbonPageGroup12.Visible = true;
                         break;
                     case "2":
@@ -1369,7 +1370,7 @@ namespace BKI_HRM
                         m_cmd_thong_tin_du_an.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         m_cmd_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         m_cmd_luongqd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        m_cmd_import_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        //m_cmd_import_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         ribbonPageGroup12.Visible = true;
                         break;
                     case "3":
@@ -1380,7 +1381,7 @@ namespace BKI_HRM
                         m_cmd_thong_tin_du_an.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                         m_cmd_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                         m_cmd_luongqd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                        m_cmd_import_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                        //m_cmd_import_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                         ribbonPageGroup12.Visible = false;
                         break;
                     default: break;
