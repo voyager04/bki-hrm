@@ -121,7 +121,7 @@
       <HintPath>..\BKI_HRM.DS\bin\Debug\BKI_HRM.DS.dll</HintPath>
     </Reference>
     <Reference Include="BKI_HRM.US">
-      <HintPath>..\BKI_HRM.US\bin\Debug\BKI_HRM.US.dll</HintPath>
+      <HintPath>..\..\..\7. BKI_HRM_0\03. SourceCode\BKI_HRM\bin\Debug\BKI_HRM.US.dll</HintPath>
     </Reference>
     <Reference Include="C1.Common">
       <Name>C1.Common</Name>
