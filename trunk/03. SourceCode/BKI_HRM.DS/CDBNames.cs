@@ -1172,4 +1172,12 @@
        public const string LUONG =  "LUONG";
        public const string NGAY_AP_DUNG =  "NGAY_AP_DUNG";
    }
+   public class RPT_LUONG_DON_VI_THEO_KY
+   {
+       public const string ID = "ID";
+       public const string MA_DON_VI = "MA_DON_VI";
+       public const string LUONG_KY_TRUOC = "LUONG_KY_TRUOC";
+       public const string LUONG_KY_HIEN_TAI = "LUONG_KY_HIEN_TAI";
+       public const string TY_LE_TANG = "TY_LE_TANG";
+   }
 }

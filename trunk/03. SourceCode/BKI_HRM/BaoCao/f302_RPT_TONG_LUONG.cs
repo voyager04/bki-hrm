@@ -18,6 +18,7 @@ namespace BKI_HRM.BaoCao
             InitializeComponent();
             init();
         }
+        
         public delegate void close_tab(bool ip_y_n);
         public close_tab close_tab_B;
 

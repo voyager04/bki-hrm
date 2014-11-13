@@ -2,16 +2,11 @@
 using BKI_HRM.DS.CDBNames;
 using BKI_HRM.US;
 using IP.Core.IPCommon;
-using IP.Core.IPUserService;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace BKI_HRM.HelperDucVT
@@ -185,14 +180,13 @@ namespace BKI_HRM.HelperDucVT
         public static AutoCompleteStringCollection create_csac_nhan_su(Int16 ip_type = 0)
         {
             // Initialize
-            US_DM_NHAN_SU v_us_dm_nhan_su = new US_DM_NHAN_SU();
-            DS_DM_NHAN_SU v_ds_dm_nhan_su = new DS_DM_NHAN_SU();
             AutoCompleteStringCollection v_acsc = new AutoCompleteStringCollection();
 
             try
             {
                 // Fill dataset
-                v_us_dm_nhan_su.FillDataset(v_ds_dm_nhan_su);
+                DS_DM_NHAN_SU v_ds_dm_nhan_su = new DS_DM_NHAN_SU();
+                new US_DM_NHAN_SU().FillDataset(v_ds_dm_nhan_su);
 
                 // Create custom source
                 // Tạo thêm type mới ở đây
@@ -351,6 +345,44 @@ namespace BKI_HRM.HelperDucVT
                 return false;
 
             return true;
+        }
+
+        /// <summary>
+        /// Tạo datasource mã kỳ
+        /// </summary>
+        /// <returns>DataSet làm DataSource</returns>
+        public static DataSet create_datasrc_ma_ky()
+        {
+            // Initialize
+            US_DM_KY v_us = new US_DM_KY();
+            DS_DM_KY v_ds = new DS_DM_KY();
+
+            v_us.FillDataset(v_ds);
+
+            return v_ds;
+        }
+
+        /// <summary>
+        /// Load DataSource Mã kỳ cho ComboBox
+        /// </summary>
+        /// <param name="op_cbo"></param>
+        /// <returns>Thành công trả lại true, ngược lại false</returns>
+        public static bool load_datasrc_ma_ky(ComboBox op_cbo)
+        {
+            try
+            {
+                DS_DM_KY v_ds = (DS_DM_KY) create_datasrc_ma_ky();
+
+                op_cbo.DataSource = v_ds.DM_KY;
+                op_cbo.DisplayMember = DM_KY.MA_KY;
+                op_cbo.ValueMember = DM_KY.ID;
+                return true;
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+                return false;
+            }
         }
 
         #endregion
