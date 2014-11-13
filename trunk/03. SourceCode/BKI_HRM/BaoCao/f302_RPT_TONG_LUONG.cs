@@ -38,12 +38,29 @@ namespace BKI_HRM.BaoCao
 
         #region Properties
         /// <summary>
-        /// Lấy danh sách mã trạng thái lao động cần dùng để lấy DS báo cáo tổng lương
+        /// Lấy danh sách mã trạng thái lao động cần dùng để lấy DS báo cáo tổng lương.
+        /// Lưu ý:
+        /// Khi thêm 1 trạng thái lao động mới, cần thêm 1 dòng kiểm tra trạng thái đó vào hàm ttld_2_id.
         /// </summary>
         /// <returns>Danh sách mã trạng thái lao động</returns>
         private IEnumerable<string> get_ttld_n()
         {
             return (new string[] { "Thử việc", "Nghỉ khác" });
+        }
+
+        /// <summary>
+        /// Chuyển đổi từ tên trạng thái lao động về id của nó. (Để biết Id, vui lòng xem trong DataBase bảng CM_TU_DIEN).
+        /// </summary>
+        /// <param name="ip_ttld">Tên trạng thái lao động</param>
+        /// <returns></returns>
+        private int get_id_ttld(string ip_ttld)
+        {
+            if (ip_ttld == "Thử việc")
+                return 653;
+            else if (ip_ttld == "Nghỉ khác")
+                return 701;
+            else
+                return 0;
         }
 
         /// <summary>
@@ -76,7 +93,10 @@ namespace BKI_HRM.BaoCao
                         v_us_tong_luong.FillDatasetByMaCV(op_ds_tong_luong, ip_ma, v_id_phap_nhan);
                         break;
                     case TONG_LUONG_BY_MA.TRANG_THAI_LAO_DONG:
-                        v_us_tong_luong.FillDatasetByMaTTLD(op_ds_tong_luong, ip_ma, v_id_phap_nhan);
+
+                        decimal id_ttld = get_id_ttld(ip_ma);
+
+                        v_us_tong_luong.FillDatasetByMaTTLD(op_ds_tong_luong, id_ttld, v_id_phap_nhan);
                         break;
                     default:
                         return null;
