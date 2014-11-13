@@ -75,7 +75,7 @@
   <xs:element name="DS_V_GD_QUA_TRINH_LAM_VIEC_2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_V_GD_QUA_TRINH_LAM_VIEC_2" msprop:Generator_UserDSName="DS_V_GD_QUA_TRINH_LAM_VIEC_2">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="V_GD_QUA_TRINH_LAM_VIEC_2" msprop:Generator_TableClassName="V_GD_QUA_TRINH_LAM_VIEC_2DataTable" msprop:Generator_TableVarName="tableV_GD_QUA_TRINH_LAM_VIEC_2" msprop:Generator_RowChangedName="V_GD_QUA_TRINH_LAM_VIEC_2RowChanged" msprop:Generator_TablePropName="V_GD_QUA_TRINH_LAM_VIEC_2" msprop:Generator_RowDeletingName="V_GD_QUA_TRINH_LAM_VIEC_2RowDeleting" msprop:Generator_RowChangingName="V_GD_QUA_TRINH_LAM_VIEC_2RowChanging" msprop:Generator_RowEvHandlerName="V_GD_QUA_TRINH_LAM_VIEC_2RowChangeEventHandler" msprop:Generator_RowDeletedName="V_GD_QUA_TRINH_LAM_VIEC_2RowDeleted" msprop:Generator_RowClassName="V_GD_QUA_TRINH_LAM_VIEC_2Row" msprop:Generator_UserTableName="V_GD_QUA_TRINH_LAM_VIEC_2" msprop:Generator_RowEvArgName="V_GD_QUA_TRINH_LAM_VIEC_2RowChangeEvent">
+        <xs:element name="V_GD_QUA_TRINH_LAM_VIEC_2" msprop:Generator_TableClassName="V_GD_QUA_TRINH_LAM_VIEC_2DataTable" msprop:Generator_TableVarName="tableV_GD_QUA_TRINH_LAM_VIEC_2" msprop:Generator_TablePropName="V_GD_QUA_TRINH_LAM_VIEC_2" msprop:Generator_RowDeletingName="V_GD_QUA_TRINH_LAM_VIEC_2RowDeleting" msprop:Generator_RowChangingName="V_GD_QUA_TRINH_LAM_VIEC_2RowChanging" msprop:Generator_RowEvHandlerName="V_GD_QUA_TRINH_LAM_VIEC_2RowChangeEventHandler" msprop:Generator_RowDeletedName="V_GD_QUA_TRINH_LAM_VIEC_2RowDeleted" msprop:Generator_UserTableName="V_GD_QUA_TRINH_LAM_VIEC_2" msprop:Generator_RowChangedName="V_GD_QUA_TRINH_LAM_VIEC_2RowChanged" msprop:Generator_RowEvArgName="V_GD_QUA_TRINH_LAM_VIEC_2RowChangeEvent" msprop:Generator_RowClassName="V_GD_QUA_TRINH_LAM_VIEC_2Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MA_NV" msprop:Generator_ColumnVarNameInTable="columnMA_NV" msprop:Generator_ColumnPropNameInRow="MA_NV" msprop:Generator_ColumnPropNameInTable="MA_NVColumn" msprop:Generator_UserColumnName="MA_NV" minOccurs="0">
@@ -266,9 +266,5 @@
         </xs:element>
       </xs:choice>
     </xs:complexType>
-    <xs:unique name="Constraint1">
-      <xs:selector xpath=".//mstns:V_GD_QUA_TRINH_LAM_VIEC_2" />
-      <xs:field xpath="mstns:ID" />
-    </xs:unique>
   </xs:element>
 </xs:schema>
