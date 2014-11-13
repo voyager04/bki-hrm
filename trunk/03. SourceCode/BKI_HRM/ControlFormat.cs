@@ -60,6 +60,7 @@ namespace BKI_HRM
                         // item cua menu strip chua lam duoc
 //                         set_control_visible(v_c, "m_menuitem_hopdong", true, true, false);
 //                         set_control_visible(v_c, "m_menuitem_bao_cao_hop_dong", true, true, false);
+                        set_control_visible(v_c, "panel5", false, false, true);
                         set_control_visible(v_c, "panel4", true, true, false);
                         set_control_visible(v_c, "panel3", true, true, false);
 
