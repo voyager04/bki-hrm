@@ -745,7 +745,7 @@ namespace BKI_HRM
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(367, 53);
             this.panel5.TabIndex = 4;
-            this.panel5.Click += new System.EventHandler(this.panel5_Click);
+            //this.panel5.Click += new System.EventHandler(this.panel5_Click);
             this.panel5.MouseLeave += new System.EventHandler(this.panel5_MouseLeave);
             this.panel5.MouseHover += new System.EventHandler(this.panel5_MouseHover);
             // 

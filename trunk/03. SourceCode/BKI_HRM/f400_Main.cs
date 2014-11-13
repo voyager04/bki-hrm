@@ -1077,7 +1077,10 @@ namespace BKI_HRM
             }
         }
 
-        private void panel5_Click(object sender, EventArgs e)
+        private void 
+            
+            
+            _Click(object sender, EventArgs e)
         {
             try
             {
