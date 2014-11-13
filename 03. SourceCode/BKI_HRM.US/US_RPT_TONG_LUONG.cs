@@ -126,10 +126,10 @@ namespace BKI_HRM.US
             v_sp.fillDataSetByCommand(this, op_ds_tong_luong);
         }
 
-        public void FillDatasetByMaTTLD(DS_RPT_TONG_LUONG op_ds_tong_luong, string ip_ttld, decimal ip_id_phap_nhan)
+        public void FillDatasetByMaTTLD(DS_RPT_TONG_LUONG op_ds_tong_luong, decimal ip_id_ttld, decimal ip_id_phap_nhan)
         {
             CStoredProc v_sp = new CStoredProc("get_tong_luong_by_ma_ttld");
-            v_sp.addNVarcharInputParam("@ip_ttld", ip_ttld);
+            v_sp.addDecimalInputParam("@ip_id_ttld", ip_id_ttld);
             v_sp.addDecimalInputParam("@ip_id_phap_nhan", ip_id_phap_nhan);
 
             v_sp.fillDataSetByCommand(this, op_ds_tong_luong);
