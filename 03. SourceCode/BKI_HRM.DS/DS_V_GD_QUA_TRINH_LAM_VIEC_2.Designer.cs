@@ -1054,8 +1054,6 @@ namespace BKI_HRM.DS {
                 base.Columns.Add(this.columnID_PHAP_NHAN);
                 this.columnID_PHAP_NHAN_QD = new global::System.Data.DataColumn("ID_PHAP_NHAN_QD", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_PHAP_NHAN_QD);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID}, false));
                 this.columnMA_NV.MaxLength = 35;
                 this.columnHO_DEM.MaxLength = 50;
                 this.columnTEN.MaxLength = 50;
@@ -1068,7 +1066,6 @@ namespace BKI_HRM.DS {
                 this.columnDIA_BAN.MaxLength = 250;
                 this.columnMA_QUYET_DINH.MaxLength = 50;
                 this.columnLOAI_CV.MaxLength = 250;
-                this.columnID.Unique = true;
                 this.columnNGACH.MaxLength = 250;
                 this.columnTRANG_THAI_CHUC_VU_YN.MaxLength = 1;
                 this.columnTRANG_THAI_CV.ReadOnly = true;
