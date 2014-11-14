@@ -1072,6 +1072,34 @@ namespace BKI_HRM.US
             v_sp.fillDataSetByCommand(this, op_ds);
             op_count = CIPConvert.ToDecimal(v_sql.Value.ToString());
         }
+        public void FillDatase_NhanSu_TheoMa(DS_V_GD_QUA_TRINH_LAM_VIEC_2 op_ds, string ip_str_manv, DateTime ip_dat_thoi_diem, decimal ip_dc_phap_nhan, decimal ip_dc_kiem_nhiem, string ip_str_ngach_bac, string ip_str_don_vi, string ip_str_ttld, decimal ip_dc_ty_le)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_2_Search_NhanVien_theo_ma");
+            v_sp.addNVarcharInputParam("@ip_str_ma_nv", ip_str_manv);
+            v_sp.addDecimalInputParam("@ip_dc_phap_nhan", ip_dc_phap_nhan);
+            v_sp.addDatetimeInputParam("@ip_dat_thoi_diem", ip_dat_thoi_diem);
+            v_sp.addDecimalInputParam("@ip_dc_kiem_nhiem", ip_dc_kiem_nhiem);
+            v_sp.addNVarcharInputParam("@ip_str_ngach_bac", ip_str_ngach_bac);
+            v_sp.addNVarcharInputParam("@ip_str_don_vi", ip_str_don_vi);
+            v_sp.addNVarcharInputParam("@ip_str_ttld", ip_str_ttld);
+            v_sp.addDecimalInputParam("@ip_dc_ty_le", ip_dc_ty_le);
+            v_sp.fillDataSetByCommand(this, op_ds);
+        }
+        public void count_NhanSu_TheoMa(DS_V_GD_QUA_TRINH_LAM_VIEC_2 op_ds,ref decimal op_count, string ip_str_manv, DateTime ip_dat_thoi_diem, decimal ip_dc_phap_nhan, decimal ip_dc_kiem_nhiem, string ip_str_ngach_bac, string ip_str_don_vi, string ip_str_ttld, decimal ip_dc_ty_le)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_V_GD_QUA_TRINH_LAM_VIEC_2_Count_NhanVien_theo_ma");
+            v_sp.addNVarcharInputParam("@ip_str_ma_nv", ip_str_manv);
+            v_sp.addDecimalInputParam("@ip_dc_phap_nhan", ip_dc_phap_nhan);
+            v_sp.addDatetimeInputParam("@ip_dat_thoi_diem", ip_dat_thoi_diem);
+            v_sp.addDecimalInputParam("@ip_dc_kiem_nhiem", ip_dc_kiem_nhiem);
+            v_sp.addNVarcharInputParam("@ip_str_ngach_bac", ip_str_ngach_bac);
+            v_sp.addNVarcharInputParam("@ip_str_don_vi", ip_str_don_vi);
+            v_sp.addNVarcharInputParam("@ip_str_ttld", ip_str_ttld);
+            v_sp.addDecimalInputParam("@ip_dc_ty_le", ip_dc_ty_le);
+            SqlParameter v_sql = v_sp.addDecimalOutputParam("@count", op_count);
+            v_sp.fillDataSetByCommand(this, op_ds);
+            op_count = CIPConvert.ToDecimal(v_sql.Value.ToString());
+        }
         public void FillDatasetSearchChucVuThoiDiem(DS_V_GD_QUA_TRINH_LAM_VIEC_2 op_ds,
                 string ip_str_ma_cv,
                 DateTime ip_dat_thoi_diem, decimal ip_dc_phap_nhan, decimal ip_dc_kiem_nhiem)

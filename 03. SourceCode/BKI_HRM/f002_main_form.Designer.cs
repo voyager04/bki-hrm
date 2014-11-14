@@ -74,7 +74,7 @@
             this.m_cmd_tra_cuu_nhan_su_du_an = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_bao_cao_hop_dong_lao_dong = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_tra_cuu_nhan_su_chung = new DevExpress.XtraBars.BarButtonItem();
-            this.m_cmd_nhan_su_theo_phong_ban = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_nhan_su_theo_ma = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_nhan_su_theo_chuc_vu = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_nhan_su_theo_cap_bac = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_qua_trinh_lam_viec = new DevExpress.XtraBars.BarButtonItem();
@@ -204,7 +204,7 @@
             this.m_cmd_tra_cuu_nhan_su_du_an,
             this.m_cmd_bao_cao_hop_dong_lao_dong,
             this.m_cmd_tra_cuu_nhan_su_chung,
-            this.m_cmd_nhan_su_theo_phong_ban,
+            this.m_cmd_nhan_su_theo_ma,
             this.m_cmd_nhan_su_theo_chuc_vu,
             this.m_cmd_nhan_su_theo_cap_bac,
             this.m_cmd_qua_trinh_lam_viec,
@@ -601,13 +601,13 @@
             this.m_cmd_tra_cuu_nhan_su_chung.Name = "m_cmd_tra_cuu_nhan_su_chung";
             this.m_cmd_tra_cuu_nhan_su_chung.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
-            // m_cmd_nhan_su_theo_phong_ban
+            // m_cmd_nhan_su_theo_ma
             // 
-            this.m_cmd_nhan_su_theo_phong_ban.Caption = "Nhân sự theo phòng ban";
-            this.m_cmd_nhan_su_theo_phong_ban.Glyph = global::BKI_HRM.Properties.Resources._1413472114_274900;
-            this.m_cmd_nhan_su_theo_phong_ban.Id = 69;
-            this.m_cmd_nhan_su_theo_phong_ban.Name = "m_cmd_nhan_su_theo_phong_ban";
-            this.m_cmd_nhan_su_theo_phong_ban.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.m_cmd_nhan_su_theo_ma.Caption = "Tra cứu nhân sự theo mã";
+            this.m_cmd_nhan_su_theo_ma.Glyph = global::BKI_HRM.Properties.Resources._1413472114_274900;
+            this.m_cmd_nhan_su_theo_ma.Id = 69;
+            this.m_cmd_nhan_su_theo_ma.Name = "m_cmd_nhan_su_theo_ma";
+            this.m_cmd_nhan_su_theo_ma.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
             // m_cmd_nhan_su_theo_chuc_vu
             // 
@@ -870,7 +870,7 @@
             // ribbonPageGroup15
             // 
             this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_tra_cuu_nhan_su_chung);
-            this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_nhan_su_theo_phong_ban);
+            this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_nhan_su_theo_ma);
             this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_nhan_su_theo_chuc_vu);
             this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_bao_cao_danh_sach_bo_nhiem);
             this.ribbonPageGroup15.ItemLinks.Add(this.m_cmd_bao_cao_nghi_viec);
@@ -1230,7 +1230,7 @@
         private DevExpress.XtraBars.BarButtonItem m_cmd_tra_cuu_nhan_su_du_an;
         private DevExpress.XtraBars.BarButtonItem m_cmd_bao_cao_hop_dong_lao_dong;
         private DevExpress.XtraBars.BarButtonItem m_cmd_tra_cuu_nhan_su_chung;
-        private DevExpress.XtraBars.BarButtonItem m_cmd_nhan_su_theo_phong_ban;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_nhan_su_theo_ma;
         private DevExpress.XtraBars.BarButtonItem m_cmd_nhan_su_theo_chuc_vu;
         private DevExpress.XtraBars.BarButtonItem m_cmd_nhan_su_theo_cap_bac;
         private DevExpress.XtraBars.BarButtonItem m_cmd_qua_trinh_lam_viec;

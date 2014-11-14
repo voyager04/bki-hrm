@@ -91,7 +91,9 @@ namespace BKI_HRM {
         ITransferDataRow m_obj_trans;
         DS_V_GD_QUA_TRINH_LAM_VIEC_2 m_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC_2();
         US_V_GD_QUA_TRINH_LAM_VIEC_2 m_us = new US_V_GD_QUA_TRINH_LAM_VIEC_2();
-        private const String m_str_goi_y_tim_kiem = "Nhập Mã đơn vị, Họ tên, Mã nhân viên...";
+        DS_V_DM_DON_VI m_ds_don_vi = new DS_V_DM_DON_VI();
+        US_V_DM_DON_VI m_us_don_vi = new US_V_DM_DON_VI();
+        //private const String m_str_goi_y_tim_kiem = "Nhập Mã đơn vị, Họ tên, Mã nhân viên...";
         #endregion
 
         #region Private Methods
@@ -103,15 +105,16 @@ namespace BKI_HRM {
             CGridUtils.AddSearch_Handlers(m_fg);
             m_fg.Tree.Column = (int)e_col_Number.MA_DON_VI;
             m_fg.Tree.Style = TreeStyleFlags.SimpleLeaf;
-
+            m_txt_phap_nhan.Text = CAppContext_201.getCurrentIDPhapnhan().ToString();
             set_define_events();
             KeyPreview = true;
         }
         private void set_initial_form_load() {
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_grid();
-            set_search_format_before();
+            //set_search_format_before();
             load_custom_source_2_m_txt_search();
+            load_custom_source_2_m_txt_don_vi();
         }
 
         private void load_custom_source_2_m_txt_search() {
@@ -119,11 +122,12 @@ namespace BKI_HRM {
             m_txt_search.AutoCompleteSource = AutoCompleteSource.CustomSource;
             var v_coll = new AutoCompleteStringCollection();
             var v_rows = m_ds.Tables[0].Rows;
+            
             for (var i = 0; i < v_rows.Count - 1; i++) {
                 v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.HO_DEM] + " " + v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.TEN]);
                 v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.TEN] + "");
-                v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.MA_DON_VI] + "");
-                v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.MA_NV] + "");
+                //v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.MA_DON_VI] + "");
+                //v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.MA_NV] + "");
                 //v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.MA_DON_VI] + " - " + v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.TEN_DON_VI]);
                 //v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.TEN_DON_VI]+" - "+v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.MA_DON_VI]);
                 //v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.TEN_CV] + "");
@@ -131,6 +135,27 @@ namespace BKI_HRM {
             }
 
             m_txt_search.AutoCompleteCustomSource = v_coll;
+        }
+        private void load_custom_source_2_m_txt_don_vi()
+        {
+            m_txt_don_vi.AutoCompleteMode = AutoCompleteMode.Suggest;
+            m_txt_don_vi.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            var v_coll = new AutoCompleteStringCollection();
+            m_us_don_vi.FillDataset(m_ds_don_vi, "WHERE ID_PHAP_NHAN =" + CAppContext_201.getCurrentIDPhapnhan().ToString());
+            var v_rows = m_ds_don_vi.Tables[0].Rows;
+            for (var i = 0; i < v_rows.Count - 1; i++)
+            {
+                //v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.HO_DEM] + " " + v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.TEN]);
+                //v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.TEN] + "");
+                v_coll.Add(v_rows[i][V_DM_DON_VI.MA_DON_VI] + "");
+                //v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.MA_NV] + "");
+                //v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.MA_DON_VI] + " - " + v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.TEN_DON_VI]);
+                //v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.TEN_DON_VI]+" - "+v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.MA_DON_VI]);
+                //v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.TEN_CV] + "");
+                //v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.LOAI_DON_VI] + "");
+            }
+
+            m_txt_don_vi.AutoCompleteCustomSource = v_coll;
         }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
@@ -168,20 +193,27 @@ namespace BKI_HRM {
         }
         private void load_data_2_grid() {
             decimal v_kiem_nhiem;
-            if (m_ckb_kiem_nhiem.Checked)
-                v_kiem_nhiem = -1;
-            else
+            if (m_txt_kiem_nhiem.Text.Trim() == "01")
                 v_kiem_nhiem = 650;
+            else if (m_txt_kiem_nhiem.Text.Trim() == "02")
+                v_kiem_nhiem = 651;
+            else v_kiem_nhiem = -1;
             m_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC_2();
             var v_str_search = m_txt_search.Text.Trim();
-            if (v_str_search.Equals(m_str_goi_y_tim_kiem)) {
+            /*if (v_str_search.Equals(m_str_goi_y_tim_kiem)) {
                 v_str_search = "";
-            }
+            }*/
             var v_dat_thoi_diem = DateTime.Now;
             if (m_dtp_thoidiem.Checked){
                 v_dat_thoi_diem = m_dtp_thoidiem.Value.Date;
             }
-            m_us.FillDatase_NhanSu_TheoPhongBan(m_ds, v_str_search, v_dat_thoi_diem,CAppContext_201.getCurrentIDPhapnhan(),v_kiem_nhiem);
+            string m_str_ngach_bac = m_txt_ngach.Text.Trim() + m_txt_bac.Text.Trim();
+            decimal m_dc_ty_le;
+            if(m_txt_ty_le.Text.Trim() == "")
+                m_dc_ty_le = -1;
+            else
+                m_dc_ty_le = System.Convert.ToDecimal(m_txt_ty_le.Text.Trim().ToString());
+            m_us.FillDatase_NhanSu_TheoMa(m_ds, v_str_search, v_dat_thoi_diem,CAppContext_201.getCurrentIDPhapnhan(),v_kiem_nhiem,m_str_ngach_bac,m_txt_don_vi.Text.Trim(),m_txt_trang_thai_ld.Text.Trim(),m_dc_ty_le);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             /**
@@ -210,22 +242,22 @@ namespace BKI_HRM {
           //  m_lbl_so_luong_ban_ghi.Text = m_ds.V_GD_QUA_TRINH_LAM_VIEC_2.Count.ToString();
 
             decimal count = 0;
-            m_us.count_nhan_vien_theo_phong_ban(m_ds, v_str_search, v_dat_thoi_diem, ref count,CAppContext_201.getCurrentIDPhapnhan(), v_kiem_nhiem);
+            m_us.count_NhanSu_TheoMa(m_ds, ref count, v_str_search, v_dat_thoi_diem, CAppContext_201.getCurrentIDPhapnhan(), v_kiem_nhiem, m_str_ngach_bac, m_txt_don_vi.Text.Trim(), m_txt_trang_thai_ld.Text.Trim(), m_dc_ty_le);
             m_lbl_so_luong_ban_ghi.Text = CIPConvert.ToStr(count);
            // m_lbl_thong_bao.Text = m_fg.ColumnInfo;
         }
-        private void set_search_format_before() {
+        /*private void set_search_format_before() {
             if (m_txt_search.Text == "") {
                 m_txt_search.Text = m_str_goi_y_tim_kiem;
                 m_txt_search.ForeColor = Color.Gray;
             }
-        }
-        private void set_search_format_after() {
+        }*/
+        /*private void set_search_format_after() {
             if (m_txt_search.Text == m_str_goi_y_tim_kiem) {
                 m_txt_search.Text = "";
             }
             m_txt_search.ForeColor = Color.Black;
-        }
+        }*/
 
         private void xuat_excel(){
             var v_start_row = 8;
@@ -284,7 +316,7 @@ namespace BKI_HRM {
                 if (e.KeyData == Keys.Enter) {
                     load_data_2_grid();
                 } else {
-                    set_search_format_after();
+                    //set_search_format_after();
                 }
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
@@ -293,7 +325,7 @@ namespace BKI_HRM {
 
         private void m_txt_search_MouseClick(object sender, MouseEventArgs e) {
             try {
-                set_search_format_after();
+                //set_search_format_after();
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
@@ -301,7 +333,7 @@ namespace BKI_HRM {
 
         private void m_txt_search_Leave(object sender, EventArgs e) {
             try {
-                set_search_format_before();
+                //set_search_format_before();
             } catch (Exception v_e) {
                 CSystemLog_301.ExceptionHandle(v_e);
             }

@@ -93,7 +93,7 @@ namespace BKI_HRM
                 canh_bao_hop_dong();
                 thu_viec_sap_het_han_da_het_han();
                 nghi_viec_sap_quay_lai();
-                nhan_vien_chinh_thuc();
+                //nhan_vien_chinh_thuc();
             }
             catch (Exception v_e)
             {
@@ -253,40 +253,30 @@ namespace BKI_HRM
                 decimal v_id_pn = CAppContext_201.getCurrentIDPhapnhan();
                 switch (v_id_pn.ToString())
                 {
-                    case "1":
-                        m_cmd_bao_cao_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        ribbonPageGroup10.Visible = true;
-                        m_cmd_bc_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        m_cmd_rpt_tong_luong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        m_cmd_thong_tin_du_an.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        m_cmd_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        m_cmd_luongqd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        //m_cmd_import_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        ribbonPageGroup12.Visible = true;
-                        break;
-                    case "2":
-                        m_cmd_bao_cao_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        ribbonPageGroup10.Visible = true;
-                        m_cmd_bc_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        m_cmd_rpt_tong_luong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        m_cmd_thong_tin_du_an.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        m_cmd_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        m_cmd_luongqd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        //m_cmd_import_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        ribbonPageGroup12.Visible = true;
-                        break;
                     case "3":
                         m_cmd_bao_cao_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                        ribbonPageGroup10.Visible = false;
+                        ribbonPageGroup10.Visible = true;
                         m_cmd_bc_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                         m_cmd_rpt_tong_luong.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                        m_cmd_thong_tin_du_an.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                        m_cmd_thong_tin_du_an.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         m_cmd_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                         m_cmd_luongqd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                        m_cmd_nhan_su_theo_chuc_vu.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                         //m_cmd_import_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                         ribbonPageGroup12.Visible = false;
                         break;
-                    default: break;
+                    default:
+                        m_cmd_bao_cao_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        ribbonPageGroup10.Visible = false;
+                        m_cmd_bc_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        m_cmd_rpt_tong_luong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        m_cmd_thong_tin_du_an.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                        m_cmd_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        m_cmd_luongqd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        m_cmd_nhan_su_theo_chuc_vu.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                        //m_cmd_import_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        ribbonPageGroup12.Visible = true;
+                        break;
                 }
                 //
 
@@ -363,7 +353,7 @@ namespace BKI_HRM
             m_cmd_tra_cuu_nhan_su_du_an.ItemClick += m_cmd_tra_cuu_nhan_su_du_an_ItemClick;
             m_cmd_bao_cao_hop_dong_lao_dong.ItemClick += m_cmd_bao_cao_hop_dong_lao_dong_ItemClick;
             m_cmd_tra_cuu_nhan_su_chung.ItemClick += m_cmd_tra_cuu_nhan_su_chung_ItemClick;
-            m_cmd_nhan_su_theo_phong_ban.ItemClick += m_cmd_nhan_su_theo_phong_ban_ItemClick;
+            m_cmd_nhan_su_theo_ma.ItemClick += m_cmd_nhan_su_theo_phong_ban_ItemClick;
             m_cmd_nhan_su_theo_chuc_vu.ItemClick += m_cmd_nhan_su_theo_chuc_vu_ItemClick;
             m_cmd_nhan_su_theo_cap_bac.ItemClick += m_cmd_nhan_su_theo_cap_bac_ItemClick;
             m_cmd_qua_trinh_lam_viec.ItemClick += m_cmd_qua_trinh_lam_viec_ItemClick;
@@ -634,8 +624,9 @@ namespace BKI_HRM
         {
             try
             {
-                f103_bao_cao_tra_cuu_nhan_su v_frm = new f103_bao_cao_tra_cuu_nhan_su();
-                v_frm.close_tab_B = new f103_bao_cao_tra_cuu_nhan_su.close_tab(close_tab_A);
+                //f103_bao_cao_tra_cuu_nhan_su v_frm = new f103_bao_cao_tra_cuu_nhan_su();
+                f104_bao_cao_nhan_su_theo_phong_ban v_frm = new f104_bao_cao_nhan_su_theo_phong_ban();
+                v_frm.close_tab_B = new f104_bao_cao_nhan_su_theo_phong_ban.close_tab(close_tab_A);
                 uc_for_form v_uc = new uc_for_form();
                 m_obj_tab.AddFormToUC(v_frm, v_uc);
                 m_obj_tab.AddTab(m_xtab_control, "tab_bc_tra_cuu_nhan_su", v_frm.Text, v_uc);
@@ -1339,7 +1330,7 @@ namespace BKI_HRM
 
                 load_phap_nhan_to_cbo_phap_nhan();
                 f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
-                m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc!",
+                m_lbl_du_an_sap_kt.Text = string.Format("Có {0} d? án s?p k?t thúc!",
                                                         frm502.count_record_du_an_sap_ket_thuc());
                 //m_tab_menu.SelectedTab = tabPage3;
                 canh_bao_hop_dong();
@@ -1351,40 +1342,30 @@ namespace BKI_HRM
                 decimal v_id_pn = CAppContext_201.getCurrentIDPhapnhan();
                 switch (v_id_pn.ToString())
                 {
-                    case "1":
-                        m_cmd_bao_cao_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        ribbonPageGroup10.Visible = true;
-                        m_cmd_bc_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        m_cmd_rpt_tong_luong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        m_cmd_thong_tin_du_an.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        m_cmd_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        m_cmd_luongqd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        //m_cmd_import_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        ribbonPageGroup12.Visible = true;
-                        break;
-                    case "2":
-                        m_cmd_bao_cao_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        ribbonPageGroup10.Visible = true;
-                        m_cmd_bc_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        m_cmd_rpt_tong_luong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        m_cmd_thong_tin_du_an.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        m_cmd_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        m_cmd_luongqd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        //m_cmd_import_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        ribbonPageGroup12.Visible = true;
-                        break;
                     case "3":
                         m_cmd_bao_cao_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                        ribbonPageGroup10.Visible = false;
+                        ribbonPageGroup10.Visible = true;
                         m_cmd_bc_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                         m_cmd_rpt_tong_luong.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                        m_cmd_thong_tin_du_an.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                        m_cmd_thong_tin_du_an.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         m_cmd_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                         m_cmd_luongqd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                         //m_cmd_import_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                        m_cmd_nhan_su_theo_chuc_vu.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                         ribbonPageGroup12.Visible = false;
                         break;
-                    default: break;
+                    default:
+                        m_cmd_bao_cao_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        ribbonPageGroup10.Visible = false;
+                        m_cmd_bc_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        m_cmd_rpt_tong_luong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        m_cmd_thong_tin_du_an.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                        m_cmd_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        m_cmd_luongqd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        //m_cmd_import_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        m_cmd_nhan_su_theo_chuc_vu.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                        ribbonPageGroup12.Visible = true;
+                        break;
                 }
 
                 f408_bao_cao_don_vi_trang_thai v_frm = new f408_bao_cao_don_vi_trang_thai();

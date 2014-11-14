@@ -75,6 +75,7 @@ namespace BKI_HRM
                         set_control_visible(v_c, "m_cmd_update", false, false, true);
                         set_control_visible(v_c, "m_cmd_delete", false, false, true);
                         set_control_visible(v_c, "m_cmd_chon_phap_nhan", false, false, true);
+                        set_control_visible(v_c, "panel5", false, false, false);
                     }
                     #endregion
                     break;
