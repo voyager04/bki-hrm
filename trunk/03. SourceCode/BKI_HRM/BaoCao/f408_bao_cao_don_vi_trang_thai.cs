@@ -326,7 +326,7 @@ namespace BKI_HRM
         {
             m_fg_donvi.Clear();
             m_fg_donvi.Cols[0].Width = 10;
-            v_us_dm_tu_dien.FillDataset(v_ds_dm_tu_dien, "WHERE Id_loai_tu_dien = 5 AND ID <> 655");
+            v_us_dm_tu_dien.FillDataset(v_ds_dm_tu_dien, "WHERE Id_loai_tu_dien = 5");
             //1.tạo danh sách cột trạng thái
             m_fg_donvi.Cols.Count = v_ds_dm_tu_dien.CM_DM_TU_DIEN.Rows.Count+4;
             //m_fg.Cols[0].Width = 150;

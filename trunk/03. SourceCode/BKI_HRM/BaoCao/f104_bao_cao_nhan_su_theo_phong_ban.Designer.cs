@@ -27,6 +27,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f104_bao_cao_nhan_su_theo_phong_ban));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_txt_trang_thai_ld = new System.Windows.Forms.TextBox();
+            this.m_txt_kiem_nhiem = new System.Windows.Forms.TextBox();
+            this.m_txt_ty_le = new System.Windows.Forms.TextBox();
+            this.m_txt_don_vi = new System.Windows.Forms.TextBox();
+            this.m_txt_bac = new System.Windows.Forms.TextBox();
+            this.m_txt_ngach = new System.Windows.Forms.TextBox();
+            this.m_txt_phap_nhan = new System.Windows.Forms.TextBox();
             this.m_ckb_kiem_nhiem = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.m_rdb_nhom = new System.Windows.Forms.RadioButton();
@@ -80,6 +95,21 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.m_txt_trang_thai_ld);
+            this.panel2.Controls.Add(this.m_txt_kiem_nhiem);
+            this.panel2.Controls.Add(this.m_txt_ty_le);
+            this.panel2.Controls.Add(this.m_txt_don_vi);
+            this.panel2.Controls.Add(this.m_txt_bac);
+            this.panel2.Controls.Add(this.m_txt_ngach);
+            this.panel2.Controls.Add(this.m_txt_phap_nhan);
             this.panel2.Controls.Add(this.m_ckb_kiem_nhiem);
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Controls.Add(this.m_lbl_thong_bao);
@@ -96,6 +126,129 @@
             this.panel2.Size = new System.Drawing.Size(1268, 81);
             this.panel2.TabIndex = 25;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(879, 13);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(69, 13);
+            this.label10.TabIndex = 64;
+            this.label10.Text = "Trạng tháiLĐ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(792, 13);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(61, 13);
+            this.label9.TabIndex = 63;
+            this.label9.Text = "Kiêm nhiệm";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(705, 13);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(58, 13);
+            this.label8.TabIndex = 62;
+            this.label8.Text = "% tham gia";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(618, 13);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 13);
+            this.label7.TabIndex = 61;
+            this.label7.Text = "Mã đơn vị";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(531, 13);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 13);
+            this.label5.TabIndex = 60;
+            this.label5.Text = "Mã bậc";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(444, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.TabIndex = 59;
+            this.label3.Text = "Mã ngạch";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(357, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 13);
+            this.label2.TabIndex = 58;
+            this.label2.Text = "Mã pháp nhân";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(270, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 57;
+            this.label1.Text = "Mã NV";
+            // 
+            // m_txt_trang_thai_ld
+            // 
+            this.m_txt_trang_thai_ld.Location = new System.Drawing.Point(882, 35);
+            this.m_txt_trang_thai_ld.Name = "m_txt_trang_thai_ld";
+            this.m_txt_trang_thai_ld.Size = new System.Drawing.Size(79, 20);
+            this.m_txt_trang_thai_ld.TabIndex = 56;
+            // 
+            // m_txt_kiem_nhiem
+            // 
+            this.m_txt_kiem_nhiem.Location = new System.Drawing.Point(795, 35);
+            this.m_txt_kiem_nhiem.Name = "m_txt_kiem_nhiem";
+            this.m_txt_kiem_nhiem.Size = new System.Drawing.Size(79, 20);
+            this.m_txt_kiem_nhiem.TabIndex = 55;
+            // 
+            // m_txt_ty_le
+            // 
+            this.m_txt_ty_le.Location = new System.Drawing.Point(708, 35);
+            this.m_txt_ty_le.Name = "m_txt_ty_le";
+            this.m_txt_ty_le.Size = new System.Drawing.Size(79, 20);
+            this.m_txt_ty_le.TabIndex = 54;
+            // 
+            // m_txt_don_vi
+            // 
+            this.m_txt_don_vi.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_txt_don_vi.Location = new System.Drawing.Point(621, 35);
+            this.m_txt_don_vi.Name = "m_txt_don_vi";
+            this.m_txt_don_vi.Size = new System.Drawing.Size(79, 20);
+            this.m_txt_don_vi.TabIndex = 53;
+            // 
+            // m_txt_bac
+            // 
+            this.m_txt_bac.Location = new System.Drawing.Point(534, 35);
+            this.m_txt_bac.Name = "m_txt_bac";
+            this.m_txt_bac.Size = new System.Drawing.Size(79, 20);
+            this.m_txt_bac.TabIndex = 52;
+            // 
+            // m_txt_ngach
+            // 
+            this.m_txt_ngach.Location = new System.Drawing.Point(447, 35);
+            this.m_txt_ngach.Name = "m_txt_ngach";
+            this.m_txt_ngach.Size = new System.Drawing.Size(79, 20);
+            this.m_txt_ngach.TabIndex = 51;
+            // 
+            // m_txt_phap_nhan
+            // 
+            this.m_txt_phap_nhan.Enabled = false;
+            this.m_txt_phap_nhan.Location = new System.Drawing.Point(360, 35);
+            this.m_txt_phap_nhan.Name = "m_txt_phap_nhan";
+            this.m_txt_phap_nhan.Size = new System.Drawing.Size(79, 20);
+            this.m_txt_phap_nhan.TabIndex = 50;
+            // 
             // m_ckb_kiem_nhiem
             // 
             this.m_ckb_kiem_nhiem.AutoSize = true;
@@ -105,6 +258,7 @@
             this.m_ckb_kiem_nhiem.TabIndex = 42;
             this.m_ckb_kiem_nhiem.Text = "Hiển thị kiêm nhiệm";
             this.m_ckb_kiem_nhiem.UseVisualStyleBackColor = true;
+            this.m_ckb_kiem_nhiem.Visible = false;
             this.m_ckb_kiem_nhiem.CheckedChanged += new System.EventHandler(this.m_ckb_kiem_nhiem_CheckedChanged);
             // 
             // groupBox1
@@ -152,7 +306,7 @@
             // m_lbl_thoidiem
             // 
             this.m_lbl_thoidiem.AutoSize = true;
-            this.m_lbl_thoidiem.Location = new System.Drawing.Point(782, 28);
+            this.m_lbl_thoidiem.Location = new System.Drawing.Point(989, 29);
             this.m_lbl_thoidiem.Name = "m_lbl_thoidiem";
             this.m_lbl_thoidiem.Size = new System.Drawing.Size(57, 13);
             this.m_lbl_thoidiem.TabIndex = 36;
@@ -162,7 +316,7 @@
             // 
             this.m_dtp_thoidiem.CustomFormat = "dd/MM/yyyy";
             this.m_dtp_thoidiem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dtp_thoidiem.Location = new System.Drawing.Point(844, 23);
+            this.m_dtp_thoidiem.Location = new System.Drawing.Point(1051, 24);
             this.m_dtp_thoidiem.Name = "m_dtp_thoidiem";
             this.m_dtp_thoidiem.Size = new System.Drawing.Size(99, 20);
             this.m_dtp_thoidiem.TabIndex = 2;
@@ -194,7 +348,7 @@
             this.m_cmd_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_search.ImageIndex = 5;
             this.m_cmd_search.ImageList = this.ImageList;
-            this.m_cmd_search.Location = new System.Drawing.Point(961, 19);
+            this.m_cmd_search.Location = new System.Drawing.Point(1168, 20);
             this.m_cmd_search.Name = "m_cmd_search";
             this.m_cmd_search.Size = new System.Drawing.Size(88, 26);
             this.m_cmd_search.TabIndex = 3;
@@ -204,20 +358,21 @@
             // 
             this.m_txt_search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_txt_search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_search.Location = new System.Drawing.Point(363, 23);
+            this.m_txt_search.Location = new System.Drawing.Point(273, 35);
             this.m_txt_search.Name = "m_txt_search";
-            this.m_txt_search.Size = new System.Drawing.Size(413, 20);
+            this.m_txt_search.Size = new System.Drawing.Size(79, 20);
             this.m_txt_search.TabIndex = 1;
-            this.m_tooltip.SetToolTip(this.m_txt_search, "Nhập Tên hoặc Mã sô phòng ban, trung tâm, khối để tìm kiếm");
+            this.m_tooltip.SetToolTip(this.m_txt_search, "\r\n");
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(269, 28);
+            this.label6.Location = new System.Drawing.Point(348, 58);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 13);
             this.label6.TabIndex = 24;
             this.label6.Text = "Từ khoá tìm kiếm";
+            this.label6.Visible = false;
             // 
             // m_pnl_out_place_dm
             // 
@@ -334,5 +489,20 @@
         private System.Windows.Forms.Label m_lbl_phim_tat;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
         private System.Windows.Forms.CheckBox m_ckb_kiem_nhiem;
+        private System.Windows.Forms.TextBox m_txt_trang_thai_ld;
+        private System.Windows.Forms.TextBox m_txt_kiem_nhiem;
+        private System.Windows.Forms.TextBox m_txt_ty_le;
+        private System.Windows.Forms.TextBox m_txt_don_vi;
+        private System.Windows.Forms.TextBox m_txt_bac;
+        private System.Windows.Forms.TextBox m_txt_ngach;
+        private System.Windows.Forms.TextBox m_txt_phap_nhan;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
