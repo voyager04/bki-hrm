@@ -55,7 +55,6 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_donvi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -191,7 +190,7 @@
             this.m_fg_donvi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg_donvi.Location = new System.Drawing.Point(0, 0);
             this.m_fg_donvi.Name = "m_fg_donvi";
-            this.m_fg_donvi.Size = new System.Drawing.Size(436, 609);
+            this.m_fg_donvi.Size = new System.Drawing.Size(407, 609);
             this.m_fg_donvi.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_donvi.Styles"));
             this.m_fg_donvi.TabIndex = 42;
             this.m_fg_donvi.Click += new System.EventHandler(this.m_fg_donvi_Click);
@@ -211,7 +210,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.m_fg);
             this.splitContainer1.Panel2.Controls.Add(this.panel2);
             this.splitContainer1.Size = new System.Drawing.Size(1317, 609);
-            this.splitContainer1.SplitterDistance = 436;
+            this.splitContainer1.SplitterDistance = 407;
             this.splitContainer1.TabIndex = 43;
             // 
             // m_fg
@@ -220,7 +219,7 @@
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.Location = new System.Drawing.Point(0, 89);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(877, 520);
+            this.m_fg.Size = new System.Drawing.Size(906, 520);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 34;
             // 
@@ -238,7 +237,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(877, 89);
+            this.panel2.Size = new System.Drawing.Size(906, 89);
             this.panel2.TabIndex = 47;
             // 
             // groupBox1
@@ -374,7 +373,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_donvi)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.panel2.ResumeLayout(false);
