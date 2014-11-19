@@ -211,7 +211,7 @@ namespace BKI_HRM
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1268, 113);
+            this.panel1.Size = new System.Drawing.Size(1268, 134);
             this.panel1.TabIndex = 24;
             // 
             // m_cbo_gioi_tinh
@@ -421,7 +421,7 @@ namespace BKI_HRM
             // 
             this.m_rdb_thu_viec_da_het_han.AutoSize = true;
             this.m_rdb_thu_viec_da_het_han.Checked = true;
-            this.m_rdb_thu_viec_da_het_han.Location = new System.Drawing.Point(498, 85);
+            this.m_rdb_thu_viec_da_het_han.Location = new System.Drawing.Point(532, 107);
             this.m_rdb_thu_viec_da_het_han.Name = "m_rdb_thu_viec_da_het_han";
             this.m_rdb_thu_viec_da_het_han.Size = new System.Drawing.Size(122, 17);
             this.m_rdb_thu_viec_da_het_han.TabIndex = 33;
@@ -434,7 +434,7 @@ namespace BKI_HRM
             // m_rdb_thu_viec_sap_het_han
             // 
             this.m_rdb_thu_viec_sap_het_han.AutoSize = true;
-            this.m_rdb_thu_viec_sap_het_han.Location = new System.Drawing.Point(375, 85);
+            this.m_rdb_thu_viec_sap_het_han.Location = new System.Drawing.Point(409, 107);
             this.m_rdb_thu_viec_sap_het_han.Name = "m_rdb_thu_viec_sap_het_han";
             this.m_rdb_thu_viec_sap_het_han.Size = new System.Drawing.Size(126, 17);
             this.m_rdb_thu_viec_sap_het_han.TabIndex = 33;
@@ -446,7 +446,7 @@ namespace BKI_HRM
             // m_rdb_nhan_vien_sap_quay_lai
             // 
             this.m_rdb_nhan_vien_sap_quay_lai.AutoSize = true;
-            this.m_rdb_nhan_vien_sap_quay_lai.Location = new System.Drawing.Point(246, 85);
+            this.m_rdb_nhan_vien_sap_quay_lai.Location = new System.Drawing.Point(280, 107);
             this.m_rdb_nhan_vien_sap_quay_lai.Name = "m_rdb_nhan_vien_sap_quay_lai";
             this.m_rdb_nhan_vien_sap_quay_lai.Size = new System.Drawing.Size(125, 17);
             this.m_rdb_nhan_vien_sap_quay_lai.TabIndex = 32;
@@ -577,9 +577,9 @@ namespace BKI_HRM
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 113);
+            this.m_fg.Location = new System.Drawing.Point(0, 134);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1268, 473);
+            this.m_fg.Size = new System.Drawing.Size(1268, 452);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 32;
             // 
@@ -892,7 +892,7 @@ namespace BKI_HRM
                         , ""
                         , "Y"
                         , ""
-                        , "search nghỉ việc quay lại"
+                        , "nghỉ việc quay lại"
                         , CAppContext_201.getCurrentIDPhapnhan());
 
                     m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC_LD].Caption = "Ngày quay lại";
@@ -936,7 +936,7 @@ namespace BKI_HRM
                         , ""
                         , "Y"
                         , ""
-                        , "search thử việc hết hạn"
+                        , "thử việc hết hạn"
                         , CAppContext_201.getCurrentIDPhapnhan());
 
                     m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC_LD].Caption = "Ngày hết hạn thử việc";
@@ -981,7 +981,7 @@ namespace BKI_HRM
                         , ""
                         , "Y"
                         , ""
-                        , "search thử việc đã hết hạn"
+                        , "thử việc đã hết hạn"
                         , CAppContext_201.getCurrentIDPhapnhan());
 
                     m_fg.Cols[(int)e_col_Number.NGAY_HET_HIEU_LUC_LD].Caption = "Ngày hết hạn thử việc";
