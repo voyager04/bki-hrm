@@ -208,6 +208,8 @@ namespace BKI_HRM
             {
                 v_dat_thoi_diem = m_dat_thoidiem.Value.Date;
             }
+
+
             m_us.FillDatase_NhanSu_TheoPhongBan(m_ds, v_str_search, v_dat_thoi_diem, CAppContext_201.getCurrentIDPhapnhan(), v_kiem_nhiem);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
