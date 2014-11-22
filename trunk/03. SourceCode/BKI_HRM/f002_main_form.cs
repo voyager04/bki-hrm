@@ -28,6 +28,7 @@ namespace BKI_HRM
             InitializeComponent();
             add_thong_bao();
             format_controls();
+            m_obj_tab.setCloseButtonTab(m_xtab_control, ClosePageButtonShowMode.InAllTabPageHeaders);
         }
         #region Public Interfaces
         public void display(ref IPConstants.HowUserWantTo_Exit_MainForm v_exitmode)
@@ -289,10 +290,7 @@ namespace BKI_HRM
                 //}
                 m_xtab_control.TabPages.Clear();
                 f408_bao_cao_don_vi_trang_thai v_frm = new f408_bao_cao_don_vi_trang_thai();
-                v_frm.close_tab_B = new f408_bao_cao_don_vi_trang_thai.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_frm, new UserControl());
 
                 f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
                 m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc!",
@@ -314,10 +312,16 @@ namespace BKI_HRM
 
 
         #endregion
+        private void closeTabPage(EventArgs e)
+        {
+            m_obj_tab.setCloseTabInEventCloseForm(m_xtab_control, e);
+        }
 
+       
         #region Events
         private void set_define_events()
         {
+            //
             m_xtab_control.CloseButtonClick += m_xtab_control_CloseButtonClick;
             m_cmd_phan_quyen_chi_tiet.ItemClick += m_cmd_phan_quyen_chi_tiet_ItemClick;
             m_cmd_phan_quyen_he_thong.ItemClick += m_cmd_phan_quyen_he_thong_ItemClick;
@@ -408,10 +412,7 @@ namespace BKI_HRM
             try
             {
                 f304_RPT_LUONG_DON_VI_THEO_KY v_frm = new f304_RPT_LUONG_DON_VI_THEO_KY();
-                v_frm.close_tab_B = new f304_RPT_LUONG_DON_VI_THEO_KY.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_frm, new UserControl());
             }
             catch (Exception v_e)
             {
@@ -626,10 +627,8 @@ namespace BKI_HRM
             {
                 //f103_bao_cao_tra_cuu_nhan_su v_frm = new f103_bao_cao_tra_cuu_nhan_su();
                 f104_bao_cao_nhan_su_theo_phong_ban v_frm = new f104_bao_cao_nhan_su_theo_phong_ban();
-                v_frm.close_tab_B = new f104_bao_cao_nhan_su_theo_phong_ban.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_bc_tra_cuu_nhan_su", v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_bc_tra_cuu_nhan_su", v_frm.Text, v_frm, new UserControl());
+                
             }
             catch (Exception v_e)
             {
@@ -637,15 +636,13 @@ namespace BKI_HRM
             }
         }
 
+
         void m_cmd_rpt_tong_luong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             try
             {
                 f302_RPT_TONG_LUONG v_frm = new f302_RPT_TONG_LUONG();
-                v_frm.close_tab_B = new f302_RPT_TONG_LUONG.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_frm, new UserControl());
             }
             catch (Exception v_e)
             {
@@ -658,10 +655,7 @@ namespace BKI_HRM
             try
             {
                 f800_BC_LUONG_THEO_QD v_frm = new f800_BC_LUONG_THEO_QD();
-                v_frm.close_tab_B = new f800_BC_LUONG_THEO_QD.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_frm, new UserControl());
             }
             catch (Exception v_e)
             {
@@ -674,10 +668,7 @@ namespace BKI_HRM
             try
             {
                 f409_bao_cao_nghi_viec v_frm = new f409_bao_cao_nghi_viec();
-                v_frm.close_tab_B = new f409_bao_cao_nghi_viec.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_frm, new UserControl());
             }
             catch (Exception v_e)
             {
@@ -690,10 +681,7 @@ namespace BKI_HRM
             try
             {
                 f408_bao_cao_don_vi_trang_thai v_frm = new f408_bao_cao_don_vi_trang_thai();
-                v_frm.close_tab_B = new f408_bao_cao_don_vi_trang_thai.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_frm, new UserControl());
             }
             catch (Exception v_e)
             {
@@ -706,10 +694,7 @@ namespace BKI_HRM
             try
             {
                 f407_bao_cao_bo_nhiem v_frm = new f407_bao_cao_bo_nhiem();
-                v_frm.close_tab_B = new f407_bao_cao_bo_nhiem.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_frm, new UserControl());
             }
             catch (Exception v_e)
             {
@@ -723,10 +708,7 @@ namespace BKI_HRM
             try
             {
                 f406_bao_cao_bo_nhiem v_frm = new f406_bao_cao_bo_nhiem();
-                v_frm.close_tab_B = new f406_bao_cao_bo_nhiem.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "bc_sl_bo_nhiem", v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "bc_sl_bo_nhiem", v_frm.Text, v_frm, new UserControl());
 
             }
             catch (Exception v_e)
@@ -741,10 +723,7 @@ namespace BKI_HRM
             try
             {
                 f405_bao_cao_chuc_vu_trang_thai v_frm = new f405_bao_cao_chuc_vu_trang_thai();
-                v_frm.close_tab_B = new f405_bao_cao_chuc_vu_trang_thai.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_bien_dong_chuc_vu", v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_bien_dong_chuc_vu", v_frm.Text, v_frm, new UserControl());
 
             }
             catch (Exception v_e)
@@ -759,11 +738,7 @@ namespace BKI_HRM
             try
             {
                 f404_GD_QUA_TRINH_CONG_TAC v_frm = new f404_GD_QUA_TRINH_CONG_TAC();
-                v_frm.close_tab_B = new f404_GD_QUA_TRINH_CONG_TAC.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_qua_trinh_cong_tac", v_frm.Text, v_uc);
-
+                m_obj_tab.AddTab(m_xtab_control, "tab_qua_trinh_cong_tac", v_frm.Text, v_frm, new UserControl());
             }
             catch (Exception v_e)
             {
@@ -777,10 +752,7 @@ namespace BKI_HRM
             try
             {
                 f403_BAO_CAO_NHAN_SU_CAP_BAC v_frm = new f403_BAO_CAO_NHAN_SU_CAP_BAC();
-                v_frm.close_tab_B = new f403_BAO_CAO_NHAN_SU_CAP_BAC.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_bc_nhan_su_cap_bac", v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_bc_nhan_su_cap_bac", v_frm.Text, v_frm, new UserControl());
 
             }
             catch (Exception v_e)
@@ -795,10 +767,7 @@ namespace BKI_HRM
             try
             {
                 f402_BAO_CAO_NHAN_SU_CHUC_VU v_frm = new f402_BAO_CAO_NHAN_SU_CHUC_VU();
-                v_frm.close_tab_B = new f402_BAO_CAO_NHAN_SU_CHUC_VU.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_bc_nhan_su_chuc_vu", v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_bc_nhan_su_chuc_vu", v_frm.Text, v_frm, new UserControl());
 
             }
             catch (Exception v_e)
@@ -813,10 +782,7 @@ namespace BKI_HRM
             try
             {
                 f104_bao_cao_nhan_su_theo_phong_ban v_frm = new f104_bao_cao_nhan_su_theo_phong_ban();
-                v_frm.close_tab_B = new f104_bao_cao_nhan_su_theo_phong_ban.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_bc_nhan_su_theo_pb", v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_bc_nhan_su_theo_pb", v_frm.Text, v_frm, new UserControl());
 
             }
             catch (Exception v_e)
@@ -831,10 +797,7 @@ namespace BKI_HRM
             try
             {
                 f103_bao_cao_tra_cuu_nhan_su v_frm = new f103_bao_cao_tra_cuu_nhan_su();
-                v_frm.close_tab_B = new f103_bao_cao_tra_cuu_nhan_su.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_bc_tra_cuu_nhan_su", v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_bc_tra_cuu_nhan_su", v_frm.Text, v_frm, new UserControl());
             }
             catch (Exception v_e)
             {
@@ -848,11 +811,8 @@ namespace BKI_HRM
             try
             {
                 f702_bao_cao_hdld v_frm = new f702_bao_cao_hdld();
-                v_frm.close_tab_B = new f702_bao_cao_hdld.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_bao_cao_hdld", v_frm.Text, v_uc);
-
+                m_obj_tab.AddTab(m_xtab_control, "tab_bao_cao_hdld", v_frm.Text, v_frm, new UserControl());
+                
                 v_frm.set_form_mode_for_report(1);
             }
             catch (Exception v_e)
@@ -867,10 +827,7 @@ namespace BKI_HRM
             try
             {
                 f501_v_dm_nhan_su_du_an v_frm = new f501_v_dm_nhan_su_du_an();
-                v_frm.close_tab_B = new f501_v_dm_nhan_su_du_an.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_tra_cuu_nhan_su_du_an", v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_tra_cuu_nhan_su_du_an", v_frm.Text, v_frm, new UserControl());
             }
             catch (Exception v_e)
             {
@@ -884,11 +841,7 @@ namespace BKI_HRM
             try
             {
                 f502_bao_cao_du_an v_frm = new f502_bao_cao_du_an();
-                v_frm.close_tab_B = new f502_bao_cao_du_an.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_bc_du_an", v_frm.Text, v_uc);
-
+                m_obj_tab.AddTab(m_xtab_control, "tab_bc_du_an", v_frm.Text, v_frm, new UserControl());
                 f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
                 m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc. Click để xem chi tiết!",
                                                         frm502.count_record_du_an_sap_ket_thuc());
@@ -905,10 +858,8 @@ namespace BKI_HRM
             try
             {
                 f301_V_GD_LUONG_THEO_QD v_frm = new f301_V_GD_LUONG_THEO_QD();
-                v_frm.close_tab_B = new f301_V_GD_LUONG_THEO_QD.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_luong_theo_qd", v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_luong_theo_qd", v_frm.Text, v_frm, new UserControl());
+
             }
             catch (Exception v_e)
             {
@@ -922,10 +873,7 @@ namespace BKI_HRM
             try
             {
                 f701_v_hop_dong_lao_dong v_frm = new f701_v_hop_dong_lao_dong();
-                v_frm.close_tab_B = new f701_v_hop_dong_lao_dong.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_hop_dong_lao_dong", v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_hop_dong_lao_dong", v_frm.Text, v_frm, new UserControl());
 
                 f702_bao_cao_hdld frm2 = new f702_bao_cao_hdld();
             }
@@ -941,10 +889,7 @@ namespace BKI_HRM
             try
             {
                 F500_DM_DU_AN v_frm = new F500_DM_DU_AN();
-                v_frm.close_tab_B = new F500_DM_DU_AN.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_dm_du_an", v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_dm_du_an", v_frm.Text, v_frm, new UserControl());
 
                 f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
                 m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc!",
@@ -962,10 +907,8 @@ namespace BKI_HRM
             try
             {
                 f206_v_gd_cong_tac v_frm = new f206_v_gd_cong_tac();
-                v_frm.close_tab_B = new f206_v_gd_cong_tac.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_qua_trinh_di_cong_tac", v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_qua_trinh_di_cong_tac", v_frm.Text, v_frm, new UserControl());
+                
             }
             catch (Exception v_e)
             {
@@ -979,10 +922,8 @@ namespace BKI_HRM
             try
             {
                 f105_v_gd_chi_tiet_cap_bac v_frm = new f105_v_gd_chi_tiet_cap_bac();
-                v_frm.close_tab_B = new f105_v_gd_chi_tiet_cap_bac.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_chi_tiet_cap_bac", v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_chi_tiet_cap_bac", v_frm.Text, v_frm, new UserControl());
+                
             }
             catch (Exception v_e)
             {
@@ -996,10 +937,8 @@ namespace BKI_HRM
             try
             {
                 f203_v_gd_trang_thai_lao_dong v_frm = new f203_v_gd_trang_thai_lao_dong(this);
-                v_frm.close_tab_B = new f203_v_gd_trang_thai_lao_dong.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_trang_thai_lao_dong", v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_trang_thai_lao_dong", v_frm.Text, v_frm, new UserControl());
+                
             }
             catch (Exception v_e)
             {
@@ -1013,10 +952,8 @@ namespace BKI_HRM
             try
             {
                 f202_V_GD_QUA_TRINH_LAM_VIEC v_frm = new f202_V_GD_QUA_TRINH_LAM_VIEC(this);
-                v_frm.close_tab_B = new f202_V_GD_QUA_TRINH_LAM_VIEC.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_thay_doi_chuc_vu", v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_thay_doi_chuc_vu", v_frm.Text, v_frm, new UserControl());
+                
             }
             catch (Exception v_e)
             {
@@ -1030,10 +967,8 @@ namespace BKI_HRM
             try
             {
                 f201_dm_nhan_su v_frm = new f201_dm_nhan_su();
-                v_frm.close_tab_B = new f201_dm_nhan_su.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_ho_so_nhan_su", v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_ho_so_nhan_su", v_frm.Text, v_frm, new UserControl());
+                
 
                 nhan_vien_hien_tai();
                 thu_viec_sap_het_han_da_het_han();
@@ -1053,10 +988,8 @@ namespace BKI_HRM
             try
             {
                 f300_DM_KY v_frm = new f300_DM_KY();
-                v_frm.close_tab_B = new f300_DM_KY.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_dm_ky", v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_dm_ky", v_frm.Text, v_frm, new UserControl());
+                
             }
             catch (Exception v_e)
             {
@@ -1070,10 +1003,8 @@ namespace BKI_HRM
             try
             {
                 F205_V_GD_QUYET_DINH v_frm = new F205_V_GD_QUYET_DINH();
-                v_frm.close_tab_B = new F205_V_GD_QUYET_DINH.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_gd_quyet_dinh", v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_gd_quyet_dinh", v_frm.Text, v_frm, new UserControl());
+                
             }
             catch (Exception v_e)
             {
@@ -1087,10 +1018,8 @@ namespace BKI_HRM
             try
             {
                 f703_dm_phap_nhan v_frm = new f703_dm_phap_nhan();
-                v_frm.close_tab_B = new f703_dm_phap_nhan.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_dm_phap_nhan", v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_dm_phap_nhan", v_frm.Text, v_frm, new UserControl());
+                
             }
             catch (Exception v_e)
             {
@@ -1104,10 +1033,8 @@ namespace BKI_HRM
             try
             {
                 f101_v_dm_don_vi v_frm = new f101_v_dm_don_vi();
-                v_frm.close_tab_B = new f101_v_dm_don_vi.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_dm_don_vi", v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_dm_don_vi", v_frm.Text, v_frm, new UserControl());
+                
             }
             catch (Exception v_e)
             {
@@ -1121,10 +1048,8 @@ namespace BKI_HRM
             try
             {
                 F604_v_dm_cap_bac v_frm = new F604_v_dm_cap_bac();
-                v_frm.close_tab_B = new F604_v_dm_cap_bac.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_ql_cap_bac", "F604 - Quản lý danh mục cấp bậc", v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_ql_cap_bac", "F604 - Quản lý danh mục cấp bậc", v_frm, new UserControl());
+                
             }
             catch (Exception v_e)
             {
@@ -1138,10 +1063,8 @@ namespace BKI_HRM
             try
             {
                 f401_V_DM_CHUC_VU v_frm = new f401_V_DM_CHUC_VU();
-                v_frm.close_tab_B = new f401_V_DM_CHUC_VU.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_dm_chuc_vu", "F401 - Danh mục chức vụ", v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_dm_chuc_vu", "F401 - Danh mục chức vụ", v_frm, new UserControl());
+                
             }
             catch (Exception v_e)
             {
@@ -1197,10 +1120,8 @@ namespace BKI_HRM
             try
             {
                 f991_v_ht_control_in_form v_frm = new f991_v_ht_control_in_form();
-                v_frm.close_tab_B = new f991_v_ht_control_in_form.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_dm_control", "F991 - Danh mục Control", v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_dm_control", "F991 - Danh mục Control", v_frm, new UserControl());
+                
             }
             catch (Exception v_e)
             {
@@ -1214,10 +1135,8 @@ namespace BKI_HRM
             try
             {
                 f997_ht_nhom_nguoi_su_dung v_frm = new f997_ht_nhom_nguoi_su_dung();
-                v_frm.close_tab_B = new f997_ht_nhom_nguoi_su_dung.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_nhom_nguoi_sd", "F997 - Thông tin nhóm người sử dụng", v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_nhom_nguoi_sd", "F997 - Thông tin nhóm người sử dụng", v_frm, new UserControl());
+                
             }
             catch (Exception v_e)
             {
@@ -1231,10 +1150,8 @@ namespace BKI_HRM
             try
             {
                 f999_ht_nguoi_su_dung v_frm = new f999_ht_nguoi_su_dung();
-                v_frm.close_tab_B = new f999_ht_nguoi_su_dung.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_ht_nguoi_su_dung", "F999 - Thông tin người sử dụng", v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_ht_nguoi_su_dung", "F999 - Thông tin người sử dụng", v_frm, new UserControl());
+                
             }
             catch (Exception v_e)
             {
@@ -1247,10 +1164,8 @@ namespace BKI_HRM
             try
             {
                 f995_ht_phan_quyen_cho_nhom v_frm = new f995_ht_phan_quyen_cho_nhom();
-                v_frm.close_tab_B = new f995_ht_phan_quyen_cho_nhom.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_phan_quyen_cho_nhom", "F995 - Phân quyền cho nhóm", v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_phan_quyen_cho_nhom", "F995 - Phân quyền cho nhóm", v_frm, new UserControl());
+                
             }
             catch (Exception v_e)
             {
@@ -1263,10 +1178,8 @@ namespace BKI_HRM
             try
             {
                 f993_phan_quyen_he_thong v_frm = new f993_phan_quyen_he_thong();
-                v_frm.close_tab_B = new f993_phan_quyen_he_thong.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_phan_quyen_he_thong", "F993 - Phân quyền hệ thống", v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_phan_quyen_he_thong", "F993 - Phân quyền hệ thống", v_frm, new UserControl());
+                
             }
             catch (Exception v_e)
             {
@@ -1279,10 +1192,8 @@ namespace BKI_HRM
             try
             {
                 f994_phan_quyen_detail v_frm = new f994_phan_quyen_detail();
-                v_frm.close_tab_B = new f994_phan_quyen_detail.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, "tab_phan_quyen_chi_tiet", "F994 - Phân quyền chi tiết", v_uc);
+                m_obj_tab.AddTab(m_xtab_control, "tab_phan_quyen_chi_tiet", "F994 - Phân quyền chi tiết", v_frm, new UserControl());
+                
             }
             catch (Exception v_e)
             {
@@ -1293,7 +1204,7 @@ namespace BKI_HRM
         {
             try
             {
-                m_xtab_control.TabPages.RemoveAt(m_xtab_control.SelectedTabPageIndex);
+                closeTabPage(e);
             }
             catch (Exception v_e)
             {
@@ -1369,10 +1280,7 @@ namespace BKI_HRM
                 }
 
                 f408_bao_cao_don_vi_trang_thai v_frm = new f408_bao_cao_don_vi_trang_thai();
-                v_frm.close_tab_B = new f408_bao_cao_don_vi_trang_thai.close_tab(close_tab_A);
-                uc_for_form v_uc = new uc_for_form();
-                m_obj_tab.AddFormToUC(v_frm, v_uc);
-                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_uc);
+                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_frm, new UserControl());
             }
             catch (Exception v_e)
             {

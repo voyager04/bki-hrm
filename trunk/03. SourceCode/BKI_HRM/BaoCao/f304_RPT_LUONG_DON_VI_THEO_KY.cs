@@ -458,7 +458,6 @@ namespace BKI_HRM
             try
             {
                 set_initial_form_load();
-
                 is_form_loaded = true;
             }
             catch (Exception v_e)
@@ -479,7 +478,7 @@ namespace BKI_HRM
             try
             {
                 //this.Close();
-                close_tab_B(true);
+                //close_tab_B(true);
             }
             catch (Exception v_e)
             {
