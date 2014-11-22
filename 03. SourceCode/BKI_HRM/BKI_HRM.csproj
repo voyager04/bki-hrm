@@ -53,9 +53,6 @@
     <ApplicationIcon>iconhrm.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AddTab">
-      <HintPath>..\DLL\AddTab.dll</HintPath>
-    </Reference>
     <Reference Include="C1.Common, Version=1.0.20031.116, Culture=neutral, PublicKeyToken=e272bb32d11b1948">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DLL\C1.Common.dll</HintPath>
@@ -297,6 +294,7 @@
     <Compile Include="f002_main_form.Designer.cs">
       <DependentUpon>f002_main_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="HelperDucVT\AddTab.cs" />
     <Compile Include="HelperDucVT\CUtils.cs" />
     <Compile Include="HostedControl.cs" />
     <Compile Include="NghiepVu\f107_chuyen_nhan_vien.cs">
