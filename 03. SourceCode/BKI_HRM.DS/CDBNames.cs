@@ -1195,7 +1195,7 @@
        public const string DI_DONG = "DI_DONG";
        public const string HO_KHAU = "HO_KHAU";
        public const string CHO_O = "CHO_O";
-       public const string TEN_CV = "TEN_CV";
+       public const string MA_CV = "MA_CV";
        public const string NGAY_BAT_DAU = "NGAY_BAT_DAU";
        public const string CMND = "CMND";
        public const string NGAY_CAP_CMND = "NGAY_CAP_CMND";
@@ -1231,5 +1231,6 @@
        public const string FACEBOOK = "FACEBOOK";
        public const string GHI_CHU = "GHI_CHU";
    }
+      
 
 }
