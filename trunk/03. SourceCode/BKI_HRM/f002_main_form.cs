@@ -369,6 +369,7 @@ namespace BKI_HRM
             m_cmd_bc_luong_theo_qd.ItemClick += m_cmd_bc_luong_theo_qd_ItemClick;
             m_cmd_rpt_tong_luong.ItemClick += m_cmd_rpt_tong_luong_ItemClick;
             m_cmd_rpt_luong_don_vi_theo_ky.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(m_cmd_rpt_luong_don_vi_theo_ky_ItemClick);
+            m_cmd_rpt_nhan_su_perfect.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(m_cmd_rpt_nhan_su_perfect_ItemClick);
 
             ///
             m_lbl_tong_so_nv.Click += m_lbl_tong_so_nv_Click;
@@ -405,6 +406,19 @@ namespace BKI_HRM
             m_pnl_thu_viec_da_het_han.MouseLeave += m_pnl_thu_viec_da_het_han_MouseLeave;
 
             m_cmd_exit.ItemClick += m_cmd_exit_ItemClick;
+        }
+
+        private void m_cmd_rpt_nhan_su_perfect_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                f306_RPT_NHAN_SU_PERFECT v_frm = new f306_RPT_NHAN_SU_PERFECT();
+                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_frm, new UserControl());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void m_cmd_rpt_luong_don_vi_theo_ky_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -1241,7 +1255,7 @@ namespace BKI_HRM
 
                 load_phap_nhan_to_cbo_phap_nhan();
                 f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
-                m_lbl_du_an_sap_kt.Text = string.Format("Có {0} d? án s?p k?t thúc!",
+                m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc!",
                                                         frm502.count_record_du_an_sap_ket_thuc());
                 //m_tab_menu.SelectedTab = tabPage3;
                 canh_bao_hop_dong();
