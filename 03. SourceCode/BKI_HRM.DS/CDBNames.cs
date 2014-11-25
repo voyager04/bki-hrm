@@ -1184,4 +1184,52 @@
        public const string LUONG_KY_HIEN_TAI = "LUONG_KY_HIEN_TAI";
        public const string TY_LE_TANG = "TY_LE_TANG";
    }
+   public class RPT_NHAN_SU_PERFECT
+   {
+       public const string MA_NV = "MA_NV";
+       public const string HO_DEM = "HO_DEM";
+       public const string TEN = "TEN";
+       public const string NGAY_SINH = "NGAY_SINH";
+       public const string NOI_SINH = "NOI_SINH";
+       public const string GIOI_TINH = "GIOI_TINH";
+       public const string DI_DONG = "DI_DONG";
+       public const string HO_KHAU = "HO_KHAU";
+       public const string CHO_O = "CHO_O";
+       public const string TEN_CV = "TEN_CV";
+       public const string NGAY_BAT_DAU = "NGAY_BAT_DAU";
+       public const string CMND = "CMND";
+       public const string NGAY_CAP_CMND = "NGAY_CAP_CMND";
+       public const string NOI_CAP_CMND = "NOI_CAP_CMND";
+       public const string EMAIL_CA_NHAN = "EMAIL_CA_NHAN";
+       public const string DT_NHA = "DT_NHA";
+       public const string TINH_TRANG_SUC_KHOE = "TINH_TRANG_SUC_KHOE";
+       public const string SO_TAI_KHOAN = "SO_TAI_KHOAN";
+       public const string CHI_NHANH_NGANHANG = "CHI_NHANH_NGANHANG";
+       public const string MA_SO_THUE = "MA_SO_THUE";
+       public const string SO_SO_BHXH = "SO_SO_BHXH";
+       public const string NGAY_CAP_SO_BHXH = "NGAY_CAP_SO_BHXH";
+       public const string SO_THE_BHYT = "SO_THE_BHYT";
+       public const string MA_CHAM_CONG = "MA_CHAM_CONG";
+       public const string LUONG = "LUONG";
+       public const string LUONG_DONG_BHXH = "LUONG_DONG_BHXH";
+       public const string NGAY_CO_HIEU_LUC = "NGAY_CO_HIEU_LUC";
+       public const string NGAY_HET_HIEU_LUC = "NGAY_HET_HIEU_LUC";
+       public const string MA_HOP_DONG = "MA_HOP_DONG";
+       public const string NGAY_KY_HOP_DONG = "NGAY_KY_HOP_DONG";
+       public const string NGAY_BAT_DAU_HOP_DONG = "NGAY_BAT_DAU_HOP_DONG";
+       public const string NGAY_KET_THUC_HOP_DONG = "NGAY_KET_THUC_HOP_DONG";
+       public const string QUOC_TICH = "QUOC_TICH";
+       public const string DAN_TOC = "DAN_TOC";
+       public const string TON_GIAO = "TON_GIAO";
+       public const string TRINH_DO = "TRINH_DO";
+       public const string NGOAI_NGU = "NGOAI_NGU";
+       public const string TIN_HOC = "TIN_HOC";
+       public const string CHUYEN_NGANH = "CHUYEN_NGANH";
+       public const string NOI_DAO_TAO = "NOI_DAO_TAO";
+       public const string SKYPE = "SKYPE";
+       public const string YAHOO = "YAHOO";
+       public const string FACEBOOK = "FACEBOOK";
+       public const string GHI_CHU = "GHI_CHU";
+   }
+
 }

@@ -132,6 +132,7 @@
             this.m_cbo_phap_nhan = new System.Windows.Forms.ComboBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.cM_DM_TU_DIENTableAdapter1 = new BKI_HRM.DS.DS_CM_DM_TU_DIENTableAdapters.CM_DM_TU_DIENTableAdapter();
+            this.m_cmd_rpt_nhan_su_perfect = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.m_tab_menu)).BeginInit();
             this.m_pnl_thong_bao.SuspendLayout();
             this.m_pnl_thu_viec_da_het_han.SuspendLayout();
@@ -215,9 +216,10 @@
             this.m_cmd_bao_cao_nghi_viec,
             this.m_cmd_bc_luong_theo_qd,
             this.m_cmd_rpt_tong_luong,
-            this.m_cmd_rpt_luong_don_vi_theo_ky});
+            this.m_cmd_rpt_luong_don_vi_theo_ky,
+            this.m_cmd_rpt_nhan_su_perfect});
             this.m_tab_menu.Location = new System.Drawing.Point(0, 0);
-            this.m_tab_menu.MaxItemId = 82;
+            this.m_tab_menu.MaxItemId = 83;
             this.m_tab_menu.Name = "m_tab_menu";
             this.m_tab_menu.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -838,6 +840,7 @@
             this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_bc_luong_theo_qd);
             this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_rpt_tong_luong);
             this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_rpt_luong_don_vi_theo_ky);
+            this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_rpt_nhan_su_perfect);
             this.ribbonPageGroup14.Name = "ribbonPageGroup14";
             this.ribbonPageGroup14.Text = "Nhân sự";
             // 
@@ -1139,6 +1142,14 @@
             // 
             this.cM_DM_TU_DIENTableAdapter1.ClearBeforeFill = true;
             // 
+            // m_cmd_rpt_nhan_su_perfect
+            // 
+            this.m_cmd_rpt_nhan_su_perfect.Caption = "Báo cáo nhân sự phần mềm Perfect";
+            this.m_cmd_rpt_nhan_su_perfect.Glyph = global::BKI_HRM.Properties.Resources.excel__1_;
+            this.m_cmd_rpt_nhan_su_perfect.Id = 82;
+            this.m_cmd_rpt_nhan_su_perfect.Name = "m_cmd_rpt_nhan_su_perfect";
+            this.m_cmd_rpt_nhan_su_perfect.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
             // f002_main_form
             // 
             this.ClientSize = new System.Drawing.Size(1193, 583);
@@ -1288,5 +1299,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;
         private DS.DS_CM_DM_TU_DIENTableAdapters.CM_DM_TU_DIENTableAdapter cM_DM_TU_DIENTableAdapter1;
         private DevExpress.XtraBars.BarButtonItem m_cmd_rpt_luong_don_vi_theo_ky;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_rpt_nhan_su_perfect;
     }
 }

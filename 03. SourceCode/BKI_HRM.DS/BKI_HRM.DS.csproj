@@ -251,6 +251,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_RPT_LUONG_THEO_QD.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_RPT_NHAN_SU_PERFECT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_RPT_NHAN_SU_PERFECT.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_RPT_SO_LUONG_NV_THEO_LOAI.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -826,6 +831,17 @@
     </None>
     <None Include="DS_RPT_LUONG_THEO_QD.xss">
       <DependentUpon>DS_RPT_LUONG_THEO_QD.xsd</DependentUpon>
+    </None>
+    <None Include="DS_RPT_NHAN_SU_PERFECT.xsc">
+      <DependentUpon>DS_RPT_NHAN_SU_PERFECT.xsd</DependentUpon>
+    </None>
+    <None Include="DS_RPT_NHAN_SU_PERFECT.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_RPT_NHAN_SU_PERFECT.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_RPT_NHAN_SU_PERFECT.xss">
+      <DependentUpon>DS_RPT_NHAN_SU_PERFECT.xsd</DependentUpon>
     </None>
     <None Include="DS_RPT_SO_LUONG_NV_THEO_LOAI.xsc">
       <DependentUpon>DS_RPT_SO_LUONG_NV_THEO_LOAI.xsd</DependentUpon>
