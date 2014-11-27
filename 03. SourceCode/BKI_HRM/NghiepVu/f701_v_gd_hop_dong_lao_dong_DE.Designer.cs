@@ -47,8 +47,14 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.m_txt_tim_kiem_nhan_vien = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.m_lbl_email_co_quan = new System.Windows.Forms.Label();
+            this.m_lbl_ma_don_vi = new System.Windows.Forms.Label();
+            this.m_lbl_ma_chuc_vu = new System.Windows.Forms.Label();
             this.m_lbl_ho_va_ten = new System.Windows.Forms.Label();
             this.m_lbl_ma_nhan_vien = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.m_cbo_trang_thai = new System.Windows.Forms.ComboBox();
@@ -67,12 +73,6 @@
             this.m_sfd_in_hop_dong = new System.Windows.Forms.SaveFileDialog();
             this.m_cmd_xem_file = new SIS.Controls.Button.SiSButton();
             this.m_lbl_phap_nhan = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.m_lbl_chuc_vu = new System.Windows.Forms.Label();
-            this.m_lbl_don_vi = new System.Windows.Forms.Label();
-            this.m_lbl_email_co_quan = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -260,8 +260,8 @@
             this.groupBox1.Controls.Add(this.m_txt_tim_kiem_nhan_vien);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.m_lbl_email_co_quan);
-            this.groupBox1.Controls.Add(this.m_lbl_don_vi);
-            this.groupBox1.Controls.Add(this.m_lbl_chuc_vu);
+            this.groupBox1.Controls.Add(this.m_lbl_ma_don_vi);
+            this.groupBox1.Controls.Add(this.m_lbl_ma_chuc_vu);
             this.groupBox1.Controls.Add(this.m_lbl_ho_va_ten);
             this.groupBox1.Controls.Add(this.m_lbl_ma_nhan_vien);
             this.groupBox1.Controls.Add(this.label10);
@@ -296,6 +296,39 @@
             this.label3.TabIndex = 70;
             this.label3.Text = "Từ khoá";
             // 
+            // m_lbl_email_co_quan
+            // 
+            this.m_lbl_email_co_quan.AutoSize = true;
+            this.m_lbl_email_co_quan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_email_co_quan.ForeColor = System.Drawing.Color.Blue;
+            this.m_lbl_email_co_quan.Location = new System.Drawing.Point(98, 184);
+            this.m_lbl_email_co_quan.Name = "m_lbl_email_co_quan";
+            this.m_lbl_email_co_quan.Size = new System.Drawing.Size(58, 17);
+            this.m_lbl_email_co_quan.TabIndex = 68;
+            this.m_lbl_email_co_quan.Text = "(email)";
+            // 
+            // m_lbl_ma_don_vi
+            // 
+            this.m_lbl_ma_don_vi.AutoSize = true;
+            this.m_lbl_ma_don_vi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_ma_don_vi.ForeColor = System.Drawing.Color.Blue;
+            this.m_lbl_ma_don_vi.Location = new System.Drawing.Point(98, 153);
+            this.m_lbl_ma_don_vi.Name = "m_lbl_ma_don_vi";
+            this.m_lbl_ma_don_vi.Size = new System.Drawing.Size(90, 17);
+            this.m_lbl_ma_don_vi.TabIndex = 68;
+            this.m_lbl_ma_don_vi.Text = "(mã đơn vị)";
+            // 
+            // m_lbl_ma_chuc_vu
+            // 
+            this.m_lbl_ma_chuc_vu.AutoSize = true;
+            this.m_lbl_ma_chuc_vu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_ma_chuc_vu.ForeColor = System.Drawing.Color.Blue;
+            this.m_lbl_ma_chuc_vu.Location = new System.Drawing.Point(98, 122);
+            this.m_lbl_ma_chuc_vu.Name = "m_lbl_ma_chuc_vu";
+            this.m_lbl_ma_chuc_vu.Size = new System.Drawing.Size(102, 17);
+            this.m_lbl_ma_chuc_vu.TabIndex = 68;
+            this.m_lbl_ma_chuc_vu.Text = "(mã chức vụ)";
+            // 
             // m_lbl_ho_va_ten
             // 
             this.m_lbl_ho_va_ten.AutoSize = true;
@@ -317,6 +350,33 @@
             this.m_lbl_ma_nhan_vien.Size = new System.Drawing.Size(117, 17);
             this.m_lbl_ma_nhan_vien.TabIndex = 67;
             this.m_lbl_ma_nhan_vien.Text = "(mã nhân viên)";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(60, 186);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(32, 13);
+            this.label10.TabIndex = 66;
+            this.label10.Text = "Email";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(37, 157);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 13);
+            this.label9.TabIndex = 66;
+            this.label9.Text = "Mã đơn vị";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(28, 124);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(64, 13);
+            this.label8.TabIndex = 66;
+            this.label8.Text = "Mã chức vụ";
             // 
             // label2
             // 
@@ -481,66 +541,6 @@
             this.m_lbl_phap_nhan.TabIndex = 123;
             this.m_lbl_phap_nhan.Text = "Tên pháp nhân";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(45, 124);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 13);
-            this.label8.TabIndex = 66;
-            this.label8.Text = "Chức vụ";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(54, 155);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 13);
-            this.label9.TabIndex = 66;
-            this.label9.Text = "Đơn vị";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(60, 186);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(32, 13);
-            this.label10.TabIndex = 66;
-            this.label10.Text = "Email";
-            // 
-            // m_lbl_chuc_vu
-            // 
-            this.m_lbl_chuc_vu.AutoSize = true;
-            this.m_lbl_chuc_vu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_chuc_vu.ForeColor = System.Drawing.Color.Blue;
-            this.m_lbl_chuc_vu.Location = new System.Drawing.Point(98, 122);
-            this.m_lbl_chuc_vu.Name = "m_lbl_chuc_vu";
-            this.m_lbl_chuc_vu.Size = new System.Drawing.Size(76, 17);
-            this.m_lbl_chuc_vu.TabIndex = 68;
-            this.m_lbl_chuc_vu.Text = "(chức vụ)";
-            // 
-            // m_lbl_don_vi
-            // 
-            this.m_lbl_don_vi.AutoSize = true;
-            this.m_lbl_don_vi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_don_vi.ForeColor = System.Drawing.Color.Blue;
-            this.m_lbl_don_vi.Location = new System.Drawing.Point(98, 153);
-            this.m_lbl_don_vi.Name = "m_lbl_don_vi";
-            this.m_lbl_don_vi.Size = new System.Drawing.Size(64, 17);
-            this.m_lbl_don_vi.TabIndex = 68;
-            this.m_lbl_don_vi.Text = "(đơn vị)";
-            // 
-            // m_lbl_email_co_quan
-            // 
-            this.m_lbl_email_co_quan.AutoSize = true;
-            this.m_lbl_email_co_quan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_email_co_quan.ForeColor = System.Drawing.Color.Blue;
-            this.m_lbl_email_co_quan.Location = new System.Drawing.Point(98, 184);
-            this.m_lbl_email_co_quan.Name = "m_lbl_email_co_quan";
-            this.m_lbl_email_co_quan.Size = new System.Drawing.Size(58, 17);
-            this.m_lbl_email_co_quan.TabIndex = 68;
-            this.m_lbl_email_co_quan.Text = "(email)";
-            // 
             // f701_v_gd_hop_dong_lao_dong_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -621,8 +621,8 @@
         internal SIS.Controls.Button.SiSButton m_cmd_xem_file;
         private System.Windows.Forms.Label m_lbl_phap_nhan;
         private System.Windows.Forms.Label m_lbl_email_co_quan;
-        private System.Windows.Forms.Label m_lbl_don_vi;
-        private System.Windows.Forms.Label m_lbl_chuc_vu;
+        private System.Windows.Forms.Label m_lbl_ma_don_vi;
+        private System.Windows.Forms.Label m_lbl_ma_chuc_vu;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;

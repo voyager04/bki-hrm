@@ -424,6 +424,7 @@ namespace BKI_HRM
             //	f304_RPT_LUONG_DON_VI_THEO_KY_DE v_fDE = new f304_RPT_LUONG_DON_VI_THEO_KY_DE();			
             //	v_fDE.display(m_us);
         }
+        
         private void set_define_events()
         {
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);

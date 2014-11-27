@@ -65,10 +65,10 @@ namespace BKI_HRM
         private ComboBox m_cbo_thang_sinh;
         private Label m_lbl_thang_sinh;
         private CheckBox m_ckb_group_yn;
-        private C1FlexGrid m_fg;
         private ComboBox m_cbo_gioi_tinh;
         private Label m_lbl_gioi_tinh;
         private RadioButton m_rdb_thu_viec_da_het_han;
+        private C1FlexGrid m_fg;
         private IContainer components;
 
         public f103_bao_cao_tra_cuu_nhan_su()
@@ -298,7 +298,7 @@ namespace BKI_HRM
             this.m_grb_ngay_sinh.Controls.Add(this.m_dat_tu_ngay);
             this.m_grb_ngay_sinh.Location = new System.Drawing.Point(233, 54);
             this.m_grb_ngay_sinh.Name = "m_grb_ngay_sinh";
-            this.m_grb_ngay_sinh.Size = new System.Drawing.Size(292, 27);
+            this.m_grb_ngay_sinh.Size = new System.Drawing.Size(292, 42);
             this.m_grb_ngay_sinh.TabIndex = 41;
             this.m_grb_ngay_sinh.TabStop = false;
             this.m_grb_ngay_sinh.Text = "Ngày sinh";
@@ -524,10 +524,10 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 586);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 584);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1268, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1268, 38);
             this.m_pnl_out_place_dm.TabIndex = 31;
             // 
             // m_lbl_phim_tat
@@ -551,7 +551,7 @@ namespace BKI_HRM
             this.m_cmd_xuat_excel.ImageList = this.ImageList;
             this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
-            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(118, 28);
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(118, 30);
             this.m_cmd_xuat_excel.TabIndex = 3;
             this.m_cmd_xuat_excel.Text = "Xuất Excel";
             // 
@@ -569,7 +569,7 @@ namespace BKI_HRM
             this.m_cmd_exit.ImageList = this.ImageList;
             this.m_cmd_exit.Location = new System.Drawing.Point(1146, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(118, 28);
+            this.m_cmd_exit.Size = new System.Drawing.Size(118, 30);
             this.m_cmd_exit.TabIndex = 4;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
@@ -579,9 +579,9 @@ namespace BKI_HRM
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.Location = new System.Drawing.Point(0, 134);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1268, 452);
+            this.m_fg.Size = new System.Drawing.Size(1268, 450);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 32;
+            this.m_fg.TabIndex = 33;
             // 
             // f103_bao_cao_tra_cuu_nhan_su
             // 
@@ -666,45 +666,148 @@ namespace BKI_HRM
         #region Data Structure
         private enum e_col_Number
         {
-            LOAI_DON_VI = 4
+            EMAIL_CQ = 62
 ,
+            TY_LE_THAM_GIA = 12
+                ,
+            NGHE_NGHIEP_CON_THU_3 = 36
+                ,
+            TEN_DV_CAP_TREN = 26
+                ,
+            NGUOI_LIEN_HE = 33
+                ,
             TEN_DON_VI = 3
                 ,
-            MA_NV = 6
+            ANH = 72
                 ,
-            NGAY_KET_THUC = 17
+            HO_KHAU = 61
                 ,
-            NGAY_BAT_DAU = 16
-                ,
-            CAP_DON_VI = 5
-                ,
-            TRANG_THAI_LAO_DONG = 13
-                ,
-
-            DIA_BAN = 1
-                ,
-            TEN = 9
+            NGAY_HET_HIEU_LUC_LD = 15
                 ,
             MA_HEADCOUNT = 7
                 ,
+            HO_DEM = 8
+                ,
+            DIA_DIEM_LV = 65
+                ,
+            NAM_SINH_VO_OR_CHONG = 45
+                ,
+            NAM_SINH_CON_THU_2 = 48
+                ,
+            LOAI_DON_VI = 4
+                ,
+            NGAY_BAT_DAU = 43
+                ,
+            GIOI_TINH = 18
+                ,
             MA_DON_VI = 2
+                ,
+            TRANG_THAI_CV = 21
+                ,
+            HO_TEN_ME = 56
+                ,
+            NOI_SINH = 29
+                ,
+            NGAY_KET_THUC = 41
+                ,
+            TEN_PHAP_NHAN = 25
+                ,
+            LOAI_QD_LD = 54
+                ,
+            CHI_NHANH_NGANHANG = 71
+                ,
+            TRINH_DO = 20
+                ,
+            HO_TEN_BO = 60
+                ,
+            TRANG_THAI_LAO_DONG = 13
+                ,
+            QUAN_HE = 28
+                ,
+            SO_TAI_KHOAN = 27
+                ,
+            NGHE_NGHIEP_BO = 39
+                ,
+            NOI_DAO_TAO = 30
+                ,
+            MA_SO_THUE = 51
+                ,
+            DI_DONG = 67
+                ,
+            NGAY_KY = 40
+                ,
+            TRANG_THAI_HIEN_TAI = 24
+                ,
+            NGAY_CAP_CMND = 42
+                ,
+            NGHE_NGHIEP_CON_THU_2 = 37
+                ,
+            NGHE_NGHIEP_CON_THU_1 = 38
+                ,
+            MA_PHAP_NHAN = 53
+                ,
+            CAP_DON_VI = 5
+                ,
+            MA_DV_CAP_TREN = 22
+                ,
+            NAM_SINH_CON_THU_1 = 49
                 ,
             NGAY_SINH = 19
                 ,
-            HO_DEM = 8
+            EMAIL_CA_NHAN = 63
                 ,
-            TY_LE_THAM_GIA = 12
+            NAM_SINH_CON_THU_3 = 47
                 ,
-            NGAY_HET_HIEU_LUC_LD = 15
+            HO_TEN_VO_OR_CHONG = 55
                 ,
             NGAY_CO_HIEU_LUC_LD = 14
                 ,
             TEN_CV = 11
                 ,
+            CHO_O = 70
+                ,
+            NGHE_NGHIEP_ME = 35
+                ,
+            NAM_SINH_BO = 50
+                ,
+            HO_TEN_CON_THU_1 = 59
+                ,
+            NGAY_CO_HIEU_LUC = 16
+                ,
+            DIA_BAN = 1
+                ,
+            LOAI_CV = 23
+                ,
+            HO_TEN_CON_THU_3 = 57
+                ,
+            DI_DONG_LIEN_HE = 66
+                ,
+            CMND = 68
+                ,
+            NAM_TOT_NGHIEP = 44
+                ,
+            DT_NHA = 64
+                ,
+            NOI_CAP_CMND = 31
+                ,
+            NGHE_NGHIEP_VO_OR_CHONG = 34
+                ,
+            CHUYEN_NGANH = 69
+                ,
+            NGAY_HET_HIEU_LUC = 17
+                ,
+            NAM_SINH_ME = 46
+                ,
+            MA_NV = 6
+                ,
+            HO_TEN_CON_THU_2 = 58
+                ,
+            TEN = 9
+                ,
             MA_CV = 10
                 ,
-            TRINH_DO = 20
-                , GIOI_TINH = 18
+            NGUYEN_QUAN = 32
+                , MA_QD_TRANG_THAI_LD = 52
 
         }
         #endregion
@@ -814,27 +917,78 @@ namespace BKI_HRM
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
             Hashtable v_htb = new Hashtable();
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.LOAI_DON_VI, e_col_Number.LOAI_DON_VI);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN_DON_VI, e_col_Number.TEN_DON_VI);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_NV, e_col_Number.MA_NV);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_KET_THUC, e_col_Number.NGAY_KET_THUC);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_BAT_DAU, e_col_Number.NGAY_BAT_DAU);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.CAP_DON_VI, e_col_Number.CAP_DON_VI);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRANG_THAI_LAO_DONG, e_col_Number.TRANG_THAI_LAO_DONG);
-
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.DIA_BAN, e_col_Number.DIA_BAN);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN, e_col_Number.TEN);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_HEADCOUNT, e_col_Number.MA_HEADCOUNT);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_DON_VI, e_col_Number.MA_DON_VI);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_SINH, e_col_Number.NGAY_SINH);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.HO_DEM, e_col_Number.HO_DEM);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.EMAIL_CQ, e_col_Number.EMAIL_CQ);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TY_LE_THAM_GIA, e_col_Number.TY_LE_THAM_GIA);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGHE_NGHIEP_CON_THU_3, e_col_Number.NGHE_NGHIEP_CON_THU_3);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN_DV_CAP_TREN, e_col_Number.TEN_DV_CAP_TREN);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGUOI_LIEN_HE, e_col_Number.NGUOI_LIEN_HE);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN_DON_VI, e_col_Number.TEN_DON_VI);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.ANH, e_col_Number.ANH);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.HO_KHAU, e_col_Number.HO_KHAU);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_HET_HIEU_LUC_LD, e_col_Number.NGAY_HET_HIEU_LUC_LD);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_HEADCOUNT, e_col_Number.MA_HEADCOUNT);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.HO_DEM, e_col_Number.HO_DEM);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.DIA_DIEM_LV, e_col_Number.DIA_DIEM_LV);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NAM_SINH_VO_OR_CHONG, e_col_Number.NAM_SINH_VO_OR_CHONG);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NAM_SINH_CON_THU_2, e_col_Number.NAM_SINH_CON_THU_2);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.LOAI_DON_VI, e_col_Number.LOAI_DON_VI);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_BAT_DAU, e_col_Number.NGAY_BAT_DAU);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.GIOI_TINH, e_col_Number.GIOI_TINH);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_DON_VI, e_col_Number.MA_DON_VI);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRANG_THAI_CV, e_col_Number.TRANG_THAI_CV);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.HO_TEN_ME, e_col_Number.HO_TEN_ME);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NOI_SINH, e_col_Number.NOI_SINH);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_KET_THUC, e_col_Number.NGAY_KET_THUC);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN_PHAP_NHAN, e_col_Number.TEN_PHAP_NHAN);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.LOAI_QD_LD, e_col_Number.LOAI_QD_LD);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.CHI_NHANH_NGANHANG, e_col_Number.CHI_NHANH_NGANHANG);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRINH_DO, e_col_Number.TRINH_DO);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.HO_TEN_BO, e_col_Number.HO_TEN_BO);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRANG_THAI_LAO_DONG, e_col_Number.TRANG_THAI_LAO_DONG);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.QUAN_HE, e_col_Number.QUAN_HE);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.SO_TAI_KHOAN, e_col_Number.SO_TAI_KHOAN);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGHE_NGHIEP_BO, e_col_Number.NGHE_NGHIEP_BO);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NOI_DAO_TAO, e_col_Number.NOI_DAO_TAO);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_SO_THUE, e_col_Number.MA_SO_THUE);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.DI_DONG, e_col_Number.DI_DONG);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_KY, e_col_Number.NGAY_KY);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRANG_THAI_HIEN_TAI, e_col_Number.TRANG_THAI_HIEN_TAI);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_CAP_CMND, e_col_Number.NGAY_CAP_CMND);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGHE_NGHIEP_CON_THU_2, e_col_Number.NGHE_NGHIEP_CON_THU_2);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGHE_NGHIEP_CON_THU_1, e_col_Number.NGHE_NGHIEP_CON_THU_1);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_PHAP_NHAN, e_col_Number.MA_PHAP_NHAN);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.CAP_DON_VI, e_col_Number.CAP_DON_VI);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_DV_CAP_TREN, e_col_Number.MA_DV_CAP_TREN);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NAM_SINH_CON_THU_1, e_col_Number.NAM_SINH_CON_THU_1);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_SINH, e_col_Number.NGAY_SINH);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.EMAIL_CA_NHAN, e_col_Number.EMAIL_CA_NHAN);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NAM_SINH_CON_THU_3, e_col_Number.NAM_SINH_CON_THU_3);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.HO_TEN_VO_OR_CHONG, e_col_Number.HO_TEN_VO_OR_CHONG);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_CO_HIEU_LUC_LD, e_col_Number.NGAY_CO_HIEU_LUC_LD);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN_CV, e_col_Number.TEN_CV);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.CHO_O, e_col_Number.CHO_O);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGHE_NGHIEP_ME, e_col_Number.NGHE_NGHIEP_ME);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NAM_SINH_BO, e_col_Number.NAM_SINH_BO);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.HO_TEN_CON_THU_1, e_col_Number.HO_TEN_CON_THU_1);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_CO_HIEU_LUC, e_col_Number.NGAY_CO_HIEU_LUC);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.DIA_BAN, e_col_Number.DIA_BAN);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.LOAI_CV, e_col_Number.LOAI_CV);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.HO_TEN_CON_THU_3, e_col_Number.HO_TEN_CON_THU_3);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.DI_DONG_LIEN_HE, e_col_Number.DI_DONG_LIEN_HE);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.CMND, e_col_Number.CMND);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NAM_TOT_NGHIEP, e_col_Number.NAM_TOT_NGHIEP);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.DT_NHA, e_col_Number.DT_NHA);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NOI_CAP_CMND, e_col_Number.NOI_CAP_CMND);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGHE_NGHIEP_VO_OR_CHONG, e_col_Number.NGHE_NGHIEP_VO_OR_CHONG);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.CHUYEN_NGANH, e_col_Number.CHUYEN_NGANH);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGAY_HET_HIEU_LUC, e_col_Number.NGAY_HET_HIEU_LUC);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NAM_SINH_ME, e_col_Number.NAM_SINH_ME);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_NV, e_col_Number.MA_NV);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.HO_TEN_CON_THU_2, e_col_Number.HO_TEN_CON_THU_2);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TEN, e_col_Number.TEN);
             v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_CV, e_col_Number.MA_CV);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.TRINH_DO, e_col_Number.TRINH_DO);
-            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.GIOI_TINH, e_col_Number.GIOI_TINH);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.NGUYEN_QUAN, e_col_Number.NGUYEN_QUAN);
+            v_htb.Add(V_DM_DU_LIEU_NHAN_VIEN.MA_QD_TRANG_THAI_LD, e_col_Number.MA_QD_TRANG_THAI_LD);
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_DM_DU_LIEU_NHAN_VIEN.NewRow());
             return v_obj_trans;
@@ -1676,11 +1830,6 @@ namespace BKI_HRM
 
 
         #endregion
-
-
-
-
-
 
     }
 }
