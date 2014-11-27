@@ -39,14 +39,15 @@ namespace BKI_HRM
         AlertForm alert;
         ITransferDataRow m_obj_trans;
         private bool load_invisible = true;
-        DS_V_DM_DON_VI m_ds_1 = new DS_V_DM_DON_VI();
-        US_V_DM_DON_VI m_us_1 = new US_V_DM_DON_VI();
-        DS_V_GD_QUA_TRINH_LAM_VIEC_2 m_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC_2();
-        US_V_GD_QUA_TRINH_LAM_VIEC_2 m_us = new US_V_GD_QUA_TRINH_LAM_VIEC_2();
-        IP.Core.IPUserService.US_CM_DM_TU_DIEN v_us_dm_tu_dien = new IP.Core.IPUserService.US_CM_DM_TU_DIEN();
-        IP.Core.IPData.DS_CM_DM_TU_DIEN v_ds_dm_tu_dien = new IP.Core.IPData.DS_CM_DM_TU_DIEN();
-        DS_RPT_DON_VI_TRANG_THAI m_ds_rpt = new DS_RPT_DON_VI_TRANG_THAI();
-        US_RPT_DON_VI_TRANG_THAI m_us_rpt = new US_RPT_DON_VI_TRANG_THAI();
+        //DS_V_DM_DON_VI m_ds_v_dm_don_vi = new DS_V_DM_DON_VI();
+        //US_V_DM_DON_VI m_us_v_dm_don_vi = new US_V_DM_DON_VI();
+
+        DS_V_GD_QUA_TRINH_LAM_VIEC_2 m_ds_v_qtlv2 = new DS_V_GD_QUA_TRINH_LAM_VIEC_2();
+        US_V_GD_QUA_TRINH_LAM_VIEC_2 m_us_v_qtlv2 = new US_V_GD_QUA_TRINH_LAM_VIEC_2();
+        //IP.Core.IPUserService.US_CM_DM_TU_DIEN m_us_dm_tu_dien = new IP.Core.IPUserService.US_CM_DM_TU_DIEN();
+        //IP.Core.IPData.DS_CM_DM_TU_DIEN m_ds_dm_tu_dien = new IP.Core.IPData.DS_CM_DM_TU_DIEN();
+        DS_RPT_DON_VI_TRANG_THAI m_ds_rpt_dv_tt = new DS_RPT_DON_VI_TRANG_THAI();
+        US_RPT_DON_VI_TRANG_THAI m_us_rpt_dv_tt = new US_RPT_DON_VI_TRANG_THAI();
         private const String m_str_goi_y_tim_kiem = "Nhập Họ tên, Mã nhân viên...";
         #endregion
         #region Data Structure
@@ -97,6 +98,7 @@ namespace BKI_HRM
                 , NGACH = 19
 
         }
+        const int m_width_col = 10;
         #endregion
         #region Private Methods
         private void format_controls()
@@ -148,7 +150,7 @@ namespace BKI_HRM
             m_txt_search.AutoCompleteMode = AutoCompleteMode.Suggest;
             m_txt_search.AutoCompleteSource = AutoCompleteSource.CustomSource;
             var v_coll = new AutoCompleteStringCollection();
-            var v_rows = m_ds.Tables[0].Rows;
+            var v_rows = m_ds_v_qtlv2.Tables[0].Rows;
             for (var i = 0; i < v_rows.Count - 1; i++)
             {
                 v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.HO_DEM] + " " + v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.TEN]);
@@ -185,7 +187,7 @@ namespace BKI_HRM
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.MA_QUYET_DINH_MIEN_NHIEM, e_col_Number.MA_QUYET_DINH_MIEN_NHIEM);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGACH, e_col_Number.NGACH);
 
-            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_GD_QUA_TRINH_LAM_VIEC_2.NewRow());
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds_v_qtlv2.V_GD_QUA_TRINH_LAM_VIEC_2.NewRow());
             return v_obj_trans;
         }
         private void load_data_2_grid()
@@ -195,7 +197,7 @@ namespace BKI_HRM
                 v_kiem_nhiem = -1;
             else
                 v_kiem_nhiem = 650;
-            m_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC_2();
+            m_ds_v_qtlv2 = new DS_V_GD_QUA_TRINH_LAM_VIEC_2();
             var v_str_search = m_fg_donvi.Rows[m_fg_donvi.Row][2].ToString();
             /*var v_str_search = m_txt_search.Text.Trim();
             if (v_str_search.Equals(m_str_goi_y_tim_kiem))
@@ -210,9 +212,9 @@ namespace BKI_HRM
             }
 
 
-            m_us.FillDatase_NhanSu_TheoPhongBan(m_ds, v_str_search, v_dat_thoi_diem, CAppContext_201.getCurrentIDPhapnhan(), v_kiem_nhiem);
+            m_us_v_qtlv2.FillDatase_NhanSu_TheoPhongBan(m_ds_v_qtlv2, v_str_search, v_dat_thoi_diem, CAppContext_201.getCurrentIDPhapnhan(), v_kiem_nhiem);
             m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.Dataset2C1Grid(m_ds_v_qtlv2, m_fg, m_obj_trans);
             /**
              * Group (subtotal) trên grid.
              */
@@ -239,7 +241,7 @@ namespace BKI_HRM
             //  m_lbl_so_luong_ban_ghi.Text = m_ds.V_GD_QUA_TRINH_LAM_VIEC_2.Count.ToString();
 
             decimal count = 0;
-            m_us.count_nhan_vien_theo_phong_ban(m_ds, v_str_search, v_dat_thoi_diem, ref count, CAppContext_201.getCurrentIDPhapnhan(), v_kiem_nhiem);
+            m_us_v_qtlv2.count_nhan_vien_theo_phong_ban(m_ds_v_qtlv2, v_str_search, v_dat_thoi_diem, ref count, CAppContext_201.getCurrentIDPhapnhan(), v_kiem_nhiem);
             m_lbl_so_luong_ban_ghi.Text = CIPConvert.ToStr(count);
             // m_lbl_thong_bao.Text = m_fg.ColumnInfo;
         }
@@ -324,15 +326,9 @@ namespace BKI_HRM
 
             i_row_result = v_i_new_grid_row;
         }
-        private void load_data_2_grid_donvi()
+        private void tao_cot_trang_thai_grid_don_vi(IP.Core.IPData.DS_CM_DM_TU_DIEN ip_ds_tu_dien)
         {
-            m_fg_donvi.Clear();
-            m_fg_donvi.Cols[0].Width = 10;
-            v_us_dm_tu_dien.FillDataset(v_ds_dm_tu_dien, "WHERE Id_loai_tu_dien = 5");
-            //1.tạo danh sách cột trạng thái
-            m_fg_donvi.Cols.Count = v_ds_dm_tu_dien.CM_DM_TU_DIEN.Rows.Count+4;
-            //m_fg.Cols[0].Width = 150;
-            //m_fg.Cols[1].Caption = "Trạng thái/Chức vụ";
+            m_fg_donvi.Cols.Count = ip_ds_tu_dien.CM_DM_TU_DIEN.Rows.Count + 4;
             m_fg_donvi.Cols[1].Caption = "Mã đơn vị cấp trên";
             m_fg_donvi.Cols[1].Visible = false;
             m_fg_donvi.Cols[2].Caption = "Mã đơn vị";
@@ -341,22 +337,26 @@ namespace BKI_HRM
             //m_fg.Cols[1].Style.ForeColor = Color.Black; 
             for (int i = 4; i < m_fg_donvi.Cols.Count; i++)
             {
-                m_fg_donvi.Cols[i].Caption = v_ds_dm_tu_dien.CM_DM_TU_DIEN.Rows[i - 4][3].ToString();
-                m_fg_donvi.Cols[i].UserData = v_ds_dm_tu_dien.CM_DM_TU_DIEN.Rows[i - 4][0];
+                m_fg_donvi.Cols[i].Caption = ip_ds_tu_dien.CM_DM_TU_DIEN.Rows[i - 4][3].ToString();
+                m_fg_donvi.Cols[i].UserData = ip_ds_tu_dien.CM_DM_TU_DIEN.Rows[i - 4][0];
             }
-            //2. tạo danh sách dòng trạng thái
-            m_us_1.FillDatasetByKeyWord(m_ds_1, "Y", CAppContext_201.getCurrentIDPhapnhan());
-            int minID_LEVEL = int.Parse(m_ds_1.V_DM_DON_VI.Compute("Min(ID_LEVEL)", "").ToString());
-            DataRow[] v_arr_dr_1 = m_ds_1.V_DM_DON_VI.Select(V_DM_DON_VI.ID_LEVEL + "=" + minID_LEVEL.ToString());
-            if (v_arr_dr_1.Length == 0) return;
+        }
+        private void tao_dong_don_vi_grid_don_vi()
+        {
+            DS_V_DM_DON_VI v_ds_v_dm_don_vi = new DS_V_DM_DON_VI();
+            US_V_DM_DON_VI v_us_v_dm_don_vi = new US_V_DM_DON_VI();
+            v_us_v_dm_don_vi.FillDatasetByKeyWord(v_ds_v_dm_don_vi, "Y", CAppContext_201.getCurrentIDPhapnhan());
+            int v_minID_LEVEL = int.Parse(v_ds_v_dm_don_vi.V_DM_DON_VI.Compute("Min(ID_LEVEL)", "").ToString());
+            DataRow[] v_dr = v_ds_v_dm_don_vi.V_DM_DON_VI.Select(V_DM_DON_VI.ID_LEVEL + "=" + v_minID_LEVEL.ToString());
+            if (v_dr.Length == 0) return;
             CGridUtils.ClearDataInGrid(m_fg_donvi);
-            m_us_1.DataRow2Me(v_arr_dr_1[0]);
+            v_us_v_dm_don_vi.DataRow2Me(v_dr[0]);
             m_fg_donvi.Rows.Count += 1;
             int v_i_root_row = m_fg_donvi.Rows.Count - 1;
             //m_fg.Rows.Count = m_ds_1.V_DM_DON_VI.Rows.Count + 1;
             //int v_i_root_row = 1;
             m_fg_donvi.Rows[v_i_root_row].IsNode = true;
-            m_fg_donvi.Rows[v_i_root_row].Node.Level = int.Parse(m_us_1.dcID_LEVEL.ToString());
+            m_fg_donvi.Rows[v_i_root_row].Node.Level = int.Parse(v_us_v_dm_don_vi.dcID_LEVEL.ToString());
             switch (m_fg_donvi.Rows[v_i_root_row].Node.Level)
             {
                 case 0:
@@ -373,23 +373,37 @@ namespace BKI_HRM
                     break;
 
             }
-            m_fg_donvi.Rows[1][1] = m_us_1.strMA_DON_VI_CAP_TREN;
-            m_fg_donvi.Rows[1][2] = m_us_1.strMA_DON_VI;
-            m_fg_donvi.Rows[1].UserData = m_us_1.dcID;
-            insert_all_child_of_node(v_i_root_row, m_ds_1);
-            //m_fg.Rows[1][1] = "Tổng";
-            //m_fg.Rows[1].UserData = 0;
+            m_fg_donvi.Rows[1][1] = v_us_v_dm_don_vi.strMA_DON_VI_CAP_TREN;
+            m_fg_donvi.Rows[1][2] = v_us_v_dm_don_vi.strMA_DON_VI;
+            m_fg_donvi.Rows[1].UserData = v_us_v_dm_don_vi.dcID;
+            insert_all_child_of_node(v_i_root_row, v_ds_v_dm_don_vi);
+        }
+        private void khoi_tao_grid_don_vi()
+        {
+
+            m_fg_donvi.Clear();
+            m_fg_donvi.Cols[0].Width = m_width_col;
+            //DS_V_DM_DON_VI v_ds_v_dm_don_vi = new DS_V_DM_DON_VI();
+            //US_V_DM_DON_VI v_us_v_dm_don_vi = new US_V_DM_DON_VI();
+            IP.Core.IPUserService.US_CM_DM_TU_DIEN v_us_dm_tu_dien = new IP.Core.IPUserService.US_CM_DM_TU_DIEN();
+            IP.Core.IPData.DS_CM_DM_TU_DIEN v_ds_dm_tu_dien = new IP.Core.IPData.DS_CM_DM_TU_DIEN();
+            v_us_dm_tu_dien.FillDataset(v_ds_dm_tu_dien, "WHERE Id_loai_tu_dien = 5");
+            //1.tạo danh sách cột trạng thái
+            tao_cot_trang_thai_grid_don_vi(v_ds_dm_tu_dien);
+            //m_fg.Cols[0].Width = 150;
+            //m_fg.Cols[1].Caption = "Trạng thái/Chức vụ";
             
-            /*for (int j = 1; j < m_fg.Rows.Count; j++)
-            {
-                m_fg.Rows[j][1] = m_ds_1.V_DM_DON_VI.Rows[j - 1][4].ToString();
-                m_fg.Rows[j][2] = m_ds_1.V_DM_DON_VI.Rows[j - 1][7].ToString();
-                m_fg.Rows[j].UserData = m_ds_1.V_DM_DON_VI.Rows[j - 1][0];
-            }*/
-            m_ds_1.Clear();
+            
+            //2. tạo danh sách dòng trạng thái
+            tao_dong_don_vi_grid_don_vi();
+            //v_ds_v_dm_don_vi.Clear();
+        }
+        private void load_data_2_grid_donvi()
+        {
+            khoi_tao_grid_don_vi();
             //3.Đưa dữ liệu lên lưới
-            m_ds_rpt = new DS_RPT_DON_VI_TRANG_THAI();
-            m_us_rpt.FillDatasetByProc(m_ds_rpt, m_dat_thoidiem.Value.Date, CAppContext_201.getCurrentIDPhapnhan());
+            m_ds_rpt_dv_tt = new DS_RPT_DON_VI_TRANG_THAI();
+            m_us_rpt_dv_tt.FillDatasetByProc(m_ds_rpt_dv_tt, m_dat_thoidiem.Value.Date, CAppContext_201.getCurrentIDPhapnhan());
 
 
             for (int v_i_cur_col = m_fg_donvi.Cols.Fixed+3; v_i_cur_col < m_fg_donvi.Cols.Count; v_i_cur_col++)
@@ -402,7 +416,7 @@ namespace BKI_HRM
 
 
                     DataRow[] v_arr_dr
-                        = m_ds_rpt.RPT_DON_VI_TRANG_THAI.Select(
+                        = m_ds_rpt_dv_tt.RPT_DON_VI_TRANG_THAI.Select(
                         RPT_DON_VI_TRANG_THAI.ID_TRANG_THAI + "="
                         + v_str_id_trang_thai
                         + " AND "
@@ -420,12 +434,6 @@ namespace BKI_HRM
                 m_fg_donvi.Rows[v][3] = sum;
             }
             m_fg_donvi.Redraw = false;
-            //m_fg.SubtotalPosition = SubtotalPositionEnum.AboveData;
-            //m_fg.Tree.Column = 1;
-           // m_fg.Tree.Style = TreeStyleFlags.SimpleLeaf;
-            //m_fg.Subtotal(AggregateEnum.Clear);
-            //for (int u = 1; u < m_fg.Cols.Count; u++)
-            //m_fg.Subtotal(AggregateEnum.Sum, 1, 1, 3);
             m_fg_donvi.Redraw = true;
         }
 

@@ -265,6 +265,7 @@ namespace BKI_HRM
                         m_cmd_nhan_su_theo_chuc_vu.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                         //m_cmd_import_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                         ribbonPageGroup12.Visible = false;
+                        ribbonPageGroup13.Visible = false;
                         break;
                     default:
                         m_cmd_bao_cao_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
@@ -277,6 +278,7 @@ namespace BKI_HRM
                         m_cmd_nhan_su_theo_chuc_vu.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                         //m_cmd_import_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         ribbonPageGroup12.Visible = true;
+                        ribbonPageGroup13.Visible = true;
                         break;
                 }
                 //
@@ -1278,6 +1280,7 @@ namespace BKI_HRM
                         //m_cmd_import_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                         m_cmd_nhan_su_theo_chuc_vu.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                         ribbonPageGroup12.Visible = false;
+                        ribbonPageGroup13.Visible = false;
                         break;
                     default:
                         m_cmd_bao_cao_hop_dong_lao_dong.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
@@ -1290,6 +1293,7 @@ namespace BKI_HRM
                         //m_cmd_import_luong_theo_qd.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         m_cmd_nhan_su_theo_chuc_vu.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                         ribbonPageGroup12.Visible = true;
+                        ribbonPageGroup13.Visible = true;
                         break;
                 }
 
