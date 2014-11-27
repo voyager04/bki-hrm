@@ -83,6 +83,12 @@ namespace BKI_HRM
         {
             CControlFormat.setFormStyle(this, new CAppContext_201());
             this.KeyPreview = true;
+            m_lbl_ma_chuc_vu.Text = String.Empty;
+            m_lbl_ma_nhan_vien.Text = String.Empty;
+            m_lbl_ho_va_ten.Text = String.Empty;
+            m_lbl_ma_don_vi.Text = String.Empty;
+            m_lbl_ngay_sinh.Text = String.Empty;
+            m_lbl_dia_chi.Text = String.Empty;
         }
 
         private void set_inital_form_load()
@@ -157,6 +163,21 @@ namespace BKI_HRM
                 return;
             m_us_dm_nhan_su.DataRow2Me(v_ds_dm_nhan_su.DM_NHAN_SU.Rows[0]);
             load_info_staff(m_us_dm_nhan_su);
+
+            // DucVT
+
+            // Lấy chức vụ bằng Id nhân sự
+            DS_V_GD_QUA_TRINH_LAM_VIEC v_ds_gd_qtlv = new DS_V_GD_QUA_TRINH_LAM_VIEC();
+            US_V_GD_QUA_TRINH_LAM_VIEC v_us_gd_qtlv = new US_V_GD_QUA_TRINH_LAM_VIEC();
+
+            v_us_gd_qtlv.FillDataSet_Now_By_Ma_NV_Id_PN(v_ds_gd_qtlv, v_ds_dm_nhan_su.DM_NHAN_SU.Rows[0][DM_NHAN_SU.MA_NV].ToString(), CAppContext_201.getCurrentIDPhapnhan());
+
+            if (v_ds_gd_qtlv.V_GD_QUA_TRINH_LAM_VIEC.Rows.Count > 0)
+            {
+                m_lbl_ma_chuc_vu.Text = v_ds_gd_qtlv.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.MA_CV].ToString();
+                m_lbl_ma_don_vi.Text = v_ds_gd_qtlv.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.MA_DON_VI].ToString();
+            }
+            // ~DucVT
         }
 
         private void auto_suggest_text()

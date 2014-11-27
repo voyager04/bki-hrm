@@ -56,6 +56,10 @@
             this.m_lbl_dia_diem = new System.Windows.Forms.Label();
             this.m_lbl_mo_ta_cong_viec = new System.Windows.Forms.Label();
             this.m_txt_mo_ta_cong_viec = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.m_lbl_ma_don_vi = new System.Windows.Forms.Label();
+            this.m_lbl_ma_chuc_vu = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -201,6 +205,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.m_lbl_ma_don_vi);
+            this.groupBox1.Controls.Add(this.m_lbl_ma_chuc_vu);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.m_lbl_dia_chi);
             this.groupBox1.Controls.Add(this.m_lbl_ngay_sinh);
             this.groupBox1.Controls.Add(this.label9);
@@ -223,25 +231,27 @@
             this.m_lbl_dia_chi.AutoSize = true;
             this.m_lbl_dia_chi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_dia_chi.ForeColor = System.Drawing.Color.Blue;
-            this.m_lbl_dia_chi.Location = new System.Drawing.Point(122, 184);
+            this.m_lbl_dia_chi.Location = new System.Drawing.Point(94, 177);
             this.m_lbl_dia_chi.Name = "m_lbl_dia_chi";
-            this.m_lbl_dia_chi.Size = new System.Drawing.Size(0, 17);
+            this.m_lbl_dia_chi.Size = new System.Drawing.Size(68, 17);
             this.m_lbl_dia_chi.TabIndex = 74;
+            this.m_lbl_dia_chi.Text = "(địa chỉ)";
             // 
             // m_lbl_ngay_sinh
             // 
             this.m_lbl_ngay_sinh.AutoSize = true;
             this.m_lbl_ngay_sinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_ngay_sinh.ForeColor = System.Drawing.Color.Blue;
-            this.m_lbl_ngay_sinh.Location = new System.Drawing.Point(122, 148);
+            this.m_lbl_ngay_sinh.Location = new System.Drawing.Point(94, 104);
             this.m_lbl_ngay_sinh.Name = "m_lbl_ngay_sinh";
-            this.m_lbl_ngay_sinh.Size = new System.Drawing.Size(0, 17);
+            this.m_lbl_ngay_sinh.Size = new System.Drawing.Size(90, 17);
             this.m_lbl_ngay_sinh.TabIndex = 73;
+            this.m_lbl_ngay_sinh.Text = "(ngày sinh)";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(48, 184);
+            this.label9.Location = new System.Drawing.Point(48, 181);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(40, 13);
             this.label9.TabIndex = 72;
@@ -250,7 +260,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(34, 155);
+            this.label10.Location = new System.Drawing.Point(34, 106);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(54, 13);
             this.label10.TabIndex = 71;
@@ -260,7 +270,7 @@
             // 
             this.m_txt_tim_kiem_nhan_vien.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.m_txt_tim_kiem_nhan_vien.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.m_txt_tim_kiem_nhan_vien.Location = new System.Drawing.Point(94, 28);
+            this.m_txt_tim_kiem_nhan_vien.Location = new System.Drawing.Point(97, 28);
             this.m_txt_tim_kiem_nhan_vien.Name = "m_txt_tim_kiem_nhan_vien";
             this.m_txt_tim_kiem_nhan_vien.Size = new System.Drawing.Size(683, 20);
             this.m_txt_tim_kiem_nhan_vien.TabIndex = 0;
@@ -279,25 +289,27 @@
             this.m_lbl_ho_va_ten.AutoSize = true;
             this.m_lbl_ho_va_ten.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_ho_va_ten.ForeColor = System.Drawing.Color.Blue;
-            this.m_lbl_ho_va_ten.Location = new System.Drawing.Point(122, 111);
+            this.m_lbl_ho_va_ten.Location = new System.Drawing.Point(94, 79);
             this.m_lbl_ho_va_ten.Name = "m_lbl_ho_va_ten";
-            this.m_lbl_ho_va_ten.Size = new System.Drawing.Size(0, 17);
+            this.m_lbl_ho_va_ten.Size = new System.Drawing.Size(88, 17);
             this.m_lbl_ho_va_ten.TabIndex = 68;
+            this.m_lbl_ho_va_ten.Text = "(họ và tên)";
             // 
             // m_lbl_ma_nhan_vien
             // 
             this.m_lbl_ma_nhan_vien.AutoSize = true;
             this.m_lbl_ma_nhan_vien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_ma_nhan_vien.ForeColor = System.Drawing.Color.Blue;
-            this.m_lbl_ma_nhan_vien.Location = new System.Drawing.Point(122, 75);
+            this.m_lbl_ma_nhan_vien.Location = new System.Drawing.Point(94, 54);
             this.m_lbl_ma_nhan_vien.Name = "m_lbl_ma_nhan_vien";
-            this.m_lbl_ma_nhan_vien.Size = new System.Drawing.Size(0, 17);
+            this.m_lbl_ma_nhan_vien.Size = new System.Drawing.Size(117, 17);
             this.m_lbl_ma_nhan_vien.TabIndex = 67;
+            this.m_lbl_ma_nhan_vien.Text = "(mã nhân viên)";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 115);
+            this.label2.Location = new System.Drawing.Point(34, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 66;
@@ -306,7 +318,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 78);
+            this.label1.Location = new System.Drawing.Point(16, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 13);
             this.label1.TabIndex = 64;
@@ -348,6 +360,46 @@
             this.m_txt_mo_ta_cong_viec.Name = "m_txt_mo_ta_cong_viec";
             this.m_txt_mo_ta_cong_viec.Size = new System.Drawing.Size(717, 63);
             this.m_txt_mo_ta_cong_viec.TabIndex = 71;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(33, 156);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.TabIndex = 75;
+            this.label3.Text = "Mã đơn vị";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(24, 131);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(64, 13);
+            this.label8.TabIndex = 76;
+            this.label8.Text = "Mã chức vụ";
+            // 
+            // m_lbl_ma_don_vi
+            // 
+            this.m_lbl_ma_don_vi.AutoSize = true;
+            this.m_lbl_ma_don_vi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_ma_don_vi.ForeColor = System.Drawing.Color.Blue;
+            this.m_lbl_ma_don_vi.Location = new System.Drawing.Point(94, 154);
+            this.m_lbl_ma_don_vi.Name = "m_lbl_ma_don_vi";
+            this.m_lbl_ma_don_vi.Size = new System.Drawing.Size(90, 17);
+            this.m_lbl_ma_don_vi.TabIndex = 79;
+            this.m_lbl_ma_don_vi.Text = "(mã đơn vị)";
+            // 
+            // m_lbl_ma_chuc_vu
+            // 
+            this.m_lbl_ma_chuc_vu.AutoSize = true;
+            this.m_lbl_ma_chuc_vu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_ma_chuc_vu.ForeColor = System.Drawing.Color.Blue;
+            this.m_lbl_ma_chuc_vu.Location = new System.Drawing.Point(94, 129);
+            this.m_lbl_ma_chuc_vu.Name = "m_lbl_ma_chuc_vu";
+            this.m_lbl_ma_chuc_vu.Size = new System.Drawing.Size(102, 17);
+            this.m_lbl_ma_chuc_vu.TabIndex = 80;
+            this.m_lbl_ma_chuc_vu.Text = "(mã chức vụ)";
             // 
             // f206_v_gd_cong_tac_de_de
             // 
@@ -407,5 +459,9 @@
         private System.Windows.Forms.Label m_lbl_dia_diem;
         private System.Windows.Forms.Label m_lbl_mo_ta_cong_viec;
         private System.Windows.Forms.TextBox m_txt_mo_ta_cong_viec;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label m_lbl_ma_don_vi;
+        private System.Windows.Forms.Label m_lbl_ma_chuc_vu;
     }
 }

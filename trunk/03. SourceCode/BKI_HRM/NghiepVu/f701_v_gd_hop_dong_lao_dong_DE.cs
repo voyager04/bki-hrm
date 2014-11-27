@@ -23,10 +23,10 @@ namespace BKI_HRM.NghiepVu
             load_data_2_cbo_loai_hop_dong();
             m_cbo_trang_thai.SelectedIndex = 0;
 
-            m_lbl_chuc_vu.Text = String.Empty;
+            m_lbl_ma_chuc_vu.Text = String.Empty;
             m_lbl_ma_nhan_vien.Text = String.Empty;
             m_lbl_ho_va_ten.Text = String.Empty;
-            m_lbl_don_vi.Text = String.Empty;
+            m_lbl_ma_don_vi.Text = String.Empty;
             m_lbl_email_co_quan.Text = String.Empty;
         }
 
@@ -291,8 +291,8 @@ namespace BKI_HRM.NghiepVu
 
             if (v_ds_gd_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows.Count > 0)
             {
-                m_lbl_chuc_vu.Text = v_ds_gd_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.TEN_CV].ToString();
-                m_lbl_don_vi.Text = v_ds_gd_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.TEN_DON_VI].ToString();
+                m_lbl_ma_chuc_vu.Text = v_ds_gd_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.MA_CV].ToString();
+                m_lbl_ma_don_vi.Text = v_ds_gd_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.MA_DON_VI].ToString();
             }
             // ~DucVT
         }
@@ -316,8 +316,8 @@ namespace BKI_HRM.NghiepVu
 
             if (v_ds_gd_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows.Count > 0)
             {
-                m_lbl_chuc_vu.Text = v_ds_gd_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.TEN_CV].ToString();
-                m_lbl_don_vi.Text = v_ds_gd_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.TEN_DON_VI].ToString();
+                m_lbl_ma_chuc_vu.Text = v_ds_gd_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.MA_CV].ToString();
+                m_lbl_ma_don_vi.Text = v_ds_gd_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.MA_DON_VI].ToString();
             }
             // ~DucVT
         }
@@ -348,8 +348,8 @@ namespace BKI_HRM.NghiepVu
 
             if (v_ds_gd_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows.Count > 0)
             {
-                m_lbl_chuc_vu.Text = v_ds_gd_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.TEN_CV].ToString();
-                m_lbl_don_vi.Text = v_ds_gd_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.TEN_DON_VI].ToString();
+                m_lbl_ma_chuc_vu.Text = v_ds_gd_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.TEN_CV].ToString();
+                m_lbl_ma_don_vi.Text = v_ds_gd_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.TEN_DON_VI].ToString();
             }
             // ~DucVT
 
@@ -402,8 +402,8 @@ namespace BKI_HRM.NghiepVu
 
             if (v_ds_gd_qtlv.V_GD_QUA_TRINH_LAM_VIEC.Rows.Count > 0)
             {
-                m_lbl_chuc_vu.Text = v_ds_gd_qtlv.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.TEN_CV].ToString();
-                m_lbl_don_vi.Text = v_ds_gd_qtlv.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.TEN_DON_VI].ToString();
+                m_lbl_ma_chuc_vu.Text = v_ds_gd_qtlv.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.MA_CV].ToString();
+                m_lbl_ma_don_vi.Text = v_ds_gd_qtlv.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.MA_DON_VI].ToString();
             }
             // ~DucVT
         }
