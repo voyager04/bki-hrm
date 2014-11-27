@@ -86,6 +86,7 @@
             this.m_cmd_bc_luong_theo_qd = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_rpt_tong_luong = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_rpt_luong_don_vi_theo_ky = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_rpt_nhan_su_perfect = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -132,7 +133,6 @@
             this.m_cbo_phap_nhan = new System.Windows.Forms.ComboBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.cM_DM_TU_DIENTableAdapter1 = new BKI_HRM.DS.DS_CM_DM_TU_DIENTableAdapters.CM_DM_TU_DIENTableAdapter();
-            this.m_cmd_rpt_nhan_su_perfect = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.m_tab_menu)).BeginInit();
             this.m_pnl_thong_bao.SuspendLayout();
             this.m_pnl_thu_viec_da_het_han.SuspendLayout();
@@ -700,6 +700,14 @@
             this.m_cmd_rpt_luong_don_vi_theo_ky.Name = "m_cmd_rpt_luong_don_vi_theo_ky";
             this.m_cmd_rpt_luong_don_vi_theo_ky.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
+            // m_cmd_rpt_nhan_su_perfect
+            // 
+            this.m_cmd_rpt_nhan_su_perfect.Caption = "Báo cáo nhân sự phần mềm Perfect";
+            this.m_cmd_rpt_nhan_su_perfect.Glyph = global::BKI_HRM.Properties.Resources.excel__1_;
+            this.m_cmd_rpt_nhan_su_perfect.Id = 82;
+            this.m_cmd_rpt_nhan_su_perfect.Name = "m_cmd_rpt_nhan_su_perfect";
+            this.m_cmd_rpt_nhan_su_perfect.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
@@ -812,8 +820,8 @@
             this.ribbonPage5.Appearance.Options.UseFont = true;
             this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup10,
-            this.ribbonPageGroup13,
-            this.ribbonPageGroup14});
+            this.ribbonPageGroup14,
+            this.ribbonPageGroup13});
             this.ribbonPage5.Name = "ribbonPage5";
             this.ribbonPage5.Text = "Báo cáo";
             // 
@@ -826,9 +834,11 @@
             // ribbonPageGroup13
             // 
             this.ribbonPageGroup13.AllowTextClipping = false;
+            this.ribbonPageGroup13.ItemLinks.Add(this.m_cmd_bc_luong_theo_qd);
+            this.ribbonPageGroup13.ItemLinks.Add(this.m_cmd_rpt_tong_luong);
+            this.ribbonPageGroup13.ItemLinks.Add(this.m_cmd_rpt_luong_don_vi_theo_ky);
             this.ribbonPageGroup13.Name = "ribbonPageGroup13";
-            this.ribbonPageGroup13.Text = "Hợp đồng lao động";
-            this.ribbonPageGroup13.Visible = false;
+            this.ribbonPageGroup13.Text = "Lương theo quyết định";
             // 
             // ribbonPageGroup14
             // 
@@ -837,9 +847,6 @@
             this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_bien_dong_chuc_vu_trang_thai);
             this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_bao_cao_so_luong_bo_nhiem);
             this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_bien_dong_don_vi_trang_thai);
-            this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_bc_luong_theo_qd);
-            this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_rpt_tong_luong);
-            this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_rpt_luong_don_vi_theo_ky);
             this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_rpt_nhan_su_perfect);
             this.ribbonPageGroup14.Name = "ribbonPageGroup14";
             this.ribbonPageGroup14.Text = "Nhân sự";
@@ -1141,14 +1148,6 @@
             // cM_DM_TU_DIENTableAdapter1
             // 
             this.cM_DM_TU_DIENTableAdapter1.ClearBeforeFill = true;
-            // 
-            // m_cmd_rpt_nhan_su_perfect
-            // 
-            this.m_cmd_rpt_nhan_su_perfect.Caption = "Báo cáo nhân sự phần mềm Perfect";
-            this.m_cmd_rpt_nhan_su_perfect.Glyph = global::BKI_HRM.Properties.Resources.excel__1_;
-            this.m_cmd_rpt_nhan_su_perfect.Id = 82;
-            this.m_cmd_rpt_nhan_su_perfect.Name = "m_cmd_rpt_nhan_su_perfect";
-            this.m_cmd_rpt_nhan_su_perfect.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
             // f002_main_form
             // 
