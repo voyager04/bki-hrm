@@ -217,7 +217,11 @@ namespace BKI_HRM.HelperDucVT
         /// Init và Load autocomplete cho Textbox
         /// </summary>
         /// <param name="op_txt">Textbox cần thực hiện</param>
-        /// <param name="ip_type">Loại custom source load</param>
+        /// <param name="ip_type">
+        ///     <para>Loại custom source load.</para> 
+        ///     <para>0 = Kiểu 1: Tách lấy Mã nhân viên ở cuối cùng</para>
+        ///     <para>(Chưa có type khác)</para>
+        /// </param>
         /// <returns>Load thành công hay không</returns>
         public static bool load_autocmp_nhan_su(TextBox op_txt, Int16 ip_type = 0)
         {
@@ -472,6 +476,24 @@ namespace BKI_HRM.HelperDucVT
         public static void show_success_message(String ip_text)
         {
             MessageBox.Show(ip_text, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        #endregion
+
+        #region Filter methods
+
+        /// <summary>
+        /// Lấy mã nhân viên từ xâu tìm kiếm truyền vào.
+        /// </summary>
+        /// <param name="ip_search_str">
+        ///     <para>Xâu tìm kiếm. Cần có mã nhân viên ở cuối cùng, được ngăn cách bởi ký tự '-'</para>
+        /// </param>
+        /// <returns>Mã nhân viên</returns>
+        public static string get_ma_nv(string ip_search_str)
+        {
+            string[] op_strs = ip_search_str.Split('-');
+
+            return op_strs[op_strs.Length - 1].Trim();
         }
 
         #endregion

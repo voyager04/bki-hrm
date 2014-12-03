@@ -1228,5 +1228,14 @@ namespace BKI_HRM.US
             return true;
         }
         #endregion
+
+        public void FillDatasetSearch(DS_DM_NHAN_SU op_ds, string ip_ma_nv)
+        {
+            CStoredProc v_sp = new CStoredProc("pr_RPT_NHAN_VIEN_CHUA_CHUC_VU_TRANG_THAI");
+
+            v_sp.addNVarcharInputParam("@ip_ma_nv", ip_ma_nv);
+
+            v_sp.fillDataSetByCommand(this, op_ds);
+        }
     }
 }

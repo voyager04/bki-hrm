@@ -101,8 +101,8 @@
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -110,6 +110,8 @@
             this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.m_pnl_thong_bao = new System.Windows.Forms.Panel();
+            this.m_pnl_nv_chua_chuc_vu_trang_thai = new System.Windows.Forms.Panel();
+            this.m_lbl_nv_chua_chuc_vu_trang_thai = new System.Windows.Forms.Label();
             this.m_pnl_thu_viec_da_het_han = new System.Windows.Forms.Panel();
             this.m_lbl_thu_viec_da_het_han = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -135,6 +137,7 @@
             this.cM_DM_TU_DIENTableAdapter1 = new BKI_HRM.DS.DS_CM_DM_TU_DIENTableAdapters.CM_DM_TU_DIENTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.m_tab_menu)).BeginInit();
             this.m_pnl_thong_bao.SuspendLayout();
+            this.m_pnl_nv_chua_chuc_vu_trang_thai.SuspendLayout();
             this.m_pnl_thu_viec_da_het_han.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -831,15 +834,6 @@
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             this.ribbonPageGroup10.Text = "Dự án";
             // 
-            // ribbonPageGroup13
-            // 
-            this.ribbonPageGroup13.AllowTextClipping = false;
-            this.ribbonPageGroup13.ItemLinks.Add(this.m_cmd_bc_luong_theo_qd);
-            this.ribbonPageGroup13.ItemLinks.Add(this.m_cmd_rpt_tong_luong);
-            this.ribbonPageGroup13.ItemLinks.Add(this.m_cmd_rpt_luong_don_vi_theo_ky);
-            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
-            this.ribbonPageGroup13.Text = "Lương theo quyết định";
-            // 
             // ribbonPageGroup14
             // 
             this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_nhan_su_theo_cap_bac);
@@ -850,6 +844,15 @@
             this.ribbonPageGroup14.ItemLinks.Add(this.m_cmd_rpt_nhan_su_perfect);
             this.ribbonPageGroup14.Name = "ribbonPageGroup14";
             this.ribbonPageGroup14.Text = "Nhân sự";
+            // 
+            // ribbonPageGroup13
+            // 
+            this.ribbonPageGroup13.AllowTextClipping = false;
+            this.ribbonPageGroup13.ItemLinks.Add(this.m_cmd_bc_luong_theo_qd);
+            this.ribbonPageGroup13.ItemLinks.Add(this.m_cmd_rpt_tong_luong);
+            this.ribbonPageGroup13.ItemLinks.Add(this.m_cmd_rpt_luong_don_vi_theo_ky);
+            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
+            this.ribbonPageGroup13.Text = "Lương theo quyết định";
             // 
             // ribbonPage6
             // 
@@ -902,6 +905,7 @@
             // m_pnl_thong_bao
             // 
             this.m_pnl_thong_bao.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.m_pnl_thong_bao.Controls.Add(this.m_pnl_nv_chua_chuc_vu_trang_thai);
             this.m_pnl_thong_bao.Controls.Add(this.m_pnl_thu_viec_da_het_han);
             this.m_pnl_thong_bao.Controls.Add(this.panel7);
             this.m_pnl_thong_bao.Controls.Add(this.panel5);
@@ -911,8 +915,29 @@
             this.m_pnl_thong_bao.Controls.Add(this.panel1);
             this.m_pnl_thong_bao.Location = new System.Drawing.Point(0, 148);
             this.m_pnl_thong_bao.Name = "m_pnl_thong_bao";
-            this.m_pnl_thong_bao.Size = new System.Drawing.Size(370, 375);
+            this.m_pnl_thong_bao.Size = new System.Drawing.Size(370, 426);
             this.m_pnl_thong_bao.TabIndex = 11;
+            // 
+            // m_pnl_nv_chua_chuc_vu_trang_thai
+            // 
+            this.m_pnl_nv_chua_chuc_vu_trang_thai.Controls.Add(this.m_lbl_nv_chua_chuc_vu_trang_thai);
+            this.m_pnl_nv_chua_chuc_vu_trang_thai.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_pnl_nv_chua_chuc_vu_trang_thai.Location = new System.Drawing.Point(0, 371);
+            this.m_pnl_nv_chua_chuc_vu_trang_thai.Name = "m_pnl_nv_chua_chuc_vu_trang_thai";
+            this.m_pnl_nv_chua_chuc_vu_trang_thai.Size = new System.Drawing.Size(366, 53);
+            this.m_pnl_nv_chua_chuc_vu_trang_thai.TabIndex = 7;
+            // 
+            // m_lbl_nv_chua_chuc_vu_trang_thai
+            // 
+            this.m_lbl_nv_chua_chuc_vu_trang_thai.AutoSize = true;
+            this.m_lbl_nv_chua_chuc_vu_trang_thai.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.m_lbl_nv_chua_chuc_vu_trang_thai.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_nv_chua_chuc_vu_trang_thai.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_nv_chua_chuc_vu_trang_thai.Location = new System.Drawing.Point(0, 20);
+            this.m_lbl_nv_chua_chuc_vu_trang_thai.Name = "m_lbl_nv_chua_chuc_vu_trang_thai";
+            this.m_lbl_nv_chua_chuc_vu_trang_thai.Size = new System.Drawing.Size(335, 18);
+            this.m_lbl_nv_chua_chuc_vu_trang_thai.TabIndex = 2;
+            this.m_lbl_nv_chua_chuc_vu_trang_thai.Text = "Danh sách Nhân viên chưa chức vụ, trạng thái";
             // 
             // m_pnl_thu_viec_da_het_han
             // 
@@ -1081,7 +1106,7 @@
             this.m_xtab_control.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_xtab_control.Location = new System.Drawing.Point(0, 144);
             this.m_xtab_control.Name = "m_xtab_control";
-            this.m_xtab_control.Size = new System.Drawing.Size(1193, 407);
+            this.m_xtab_control.Size = new System.Drawing.Size(1193, 454);
             this.m_xtab_control.TabIndex = 21;
             // 
             // m_lbl_tong_so_nv
@@ -1101,7 +1126,7 @@
             this.panelControl1.Controls.Add(this.panel6);
             this.panelControl1.Controls.Add(this.m_lbl_tong_so_nv);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 551);
+            this.panelControl1.Location = new System.Drawing.Point(0, 598);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1193, 32);
             this.panelControl1.TabIndex = 26;
@@ -1151,7 +1176,7 @@
             // 
             // f002_main_form
             // 
-            this.ClientSize = new System.Drawing.Size(1193, 583);
+            this.ClientSize = new System.Drawing.Size(1193, 630);
             this.Controls.Add(this.m_xtab_control);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.m_pnl_thong_bao);
@@ -1165,6 +1190,8 @@
             this.Load += new System.EventHandler(this.f002_main_form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.m_tab_menu)).EndInit();
             this.m_pnl_thong_bao.ResumeLayout(false);
+            this.m_pnl_nv_chua_chuc_vu_trang_thai.ResumeLayout(false);
+            this.m_pnl_nv_chua_chuc_vu_trang_thai.PerformLayout();
             this.m_pnl_thu_viec_da_het_han.ResumeLayout(false);
             this.m_pnl_thu_viec_da_het_han.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -1299,5 +1326,7 @@
         private DS.DS_CM_DM_TU_DIENTableAdapters.CM_DM_TU_DIENTableAdapter cM_DM_TU_DIENTableAdapter1;
         private DevExpress.XtraBars.BarButtonItem m_cmd_rpt_luong_don_vi_theo_ky;
         private DevExpress.XtraBars.BarButtonItem m_cmd_rpt_nhan_su_perfect;
+        private System.Windows.Forms.Panel m_pnl_nv_chua_chuc_vu_trang_thai;
+        private System.Windows.Forms.Label m_lbl_nv_chua_chuc_vu_trang_thai;
     }
 }

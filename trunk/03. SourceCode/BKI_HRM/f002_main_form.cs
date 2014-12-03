@@ -132,8 +132,6 @@ namespace BKI_HRM
             // m_tab_menu.Images = imageList1;
             // m_cmd_ql_chuc_vu.ImageIndex = imageList1.Images[1].;
             //CControlFormat.setFormStyle(this, new CAppContext_201());
-
-
         }
         private void nhan_vien_hien_tai()
         {
@@ -407,7 +405,41 @@ namespace BKI_HRM
             m_pnl_thu_viec_da_het_han.MouseHover += m_pnl_thu_viec_da_het_han_MouseHover;
             m_pnl_thu_viec_da_het_han.MouseLeave += m_pnl_thu_viec_da_het_han_MouseLeave;
 
+            m_pnl_nv_chua_chuc_vu_trang_thai.Click += new EventHandler(pnl_Click);
+            m_pnl_nv_chua_chuc_vu_trang_thai.MouseHover += new EventHandler(pnl_MouseHover);
+            m_pnl_nv_chua_chuc_vu_trang_thai.MouseLeave += new EventHandler(pnl_MouseLeave);
+
             m_cmd_exit.ItemClick += m_cmd_exit_ItemClick;
+        }
+
+        private void pnl_MouseLeave(object sender, EventArgs e)
+        {
+            Panel v_pnl = (Panel)sender;
+            v_pnl.BackColor = SystemColors.Control;
+        }
+
+        private void pnl_MouseHover(object sender, EventArgs e)
+        {
+            Panel v_pnl = (Panel)sender;
+            v_pnl.BackColor = Color.Aquamarine;
+        }
+
+        private void pnl_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Panel v_pnl = (Panel)sender;
+
+                if (v_pnl.Name == m_pnl_nv_chua_chuc_vu_trang_thai.Name)
+                {
+                    f307_RPT_NHAN_VIEN_CHUA_CHUC_VU_TRANG_THAI v_frm = new f307_RPT_NHAN_VIEN_CHUA_CHUC_VU_TRANG_THAI();
+                    v_frm.display();
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void m_cmd_rpt_nhan_su_perfect_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -1216,6 +1248,7 @@ namespace BKI_HRM
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
         private void m_xtab_control_CloseButtonClick(object sender, EventArgs e)
         {
             try
@@ -1254,11 +1287,26 @@ namespace BKI_HRM
         {
             try
             {
-
                 load_phap_nhan_to_cbo_phap_nhan();
                 f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
                 m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc!",
                                                         frm502.count_record_du_an_sap_ket_thuc());
+
+
+                #region Hiển thị số lượng nhân viên chưa có chức vụ, trạng thái
+                DS_DM_NHAN_SU v_ds_nv = new DS_DM_NHAN_SU();
+                US_DM_NHAN_SU v_us_nv = new US_DM_NHAN_SU();
+
+                v_us_nv.FillDatasetSearch(v_ds_nv, "");
+
+                int v_num_nv = v_ds_nv.Tables[0].Rows.Count;
+                if (v_num_nv > 0)
+                    m_lbl_nv_chua_chuc_vu_trang_thai.Text = string.Format("Có {0} nhân viên chưa có chức vụ, trạng thái", v_num_nv);
+                else
+                    m_lbl_nv_chua_chuc_vu_trang_thai.Text = "Không có nhân viên chưa có chức vụ, trạng thái";
+
+                #endregion
+
                 //m_tab_menu.SelectedTab = tabPage3;
                 canh_bao_hop_dong();
                 thu_viec_sap_het_han_da_het_han();
