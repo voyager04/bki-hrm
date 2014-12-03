@@ -243,6 +243,9 @@
     <Compile Include="BaoCao\f306_RPT_NHAN_SU_PERFECT.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BaoCao\f307_RPT_NHAN_VIEN_CHUA_CHUC_VU_TRANG_THAI.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="BaoCao\f402_BAO_CAO_NHAN_SU_CHUC_VU.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -606,6 +609,9 @@
     <EmbeddedResource Include="BaoCao\f306_RPT_NHAN_SU_PERFECT.resx">
       <DependentUpon>f306_RPT_NHAN_SU_PERFECT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f307_RPT_NHAN_VIEN_CHUA_CHUC_VU_TRANG_THAI.resx">
+      <DependentUpon>f307_RPT_NHAN_VIEN_CHUA_CHUC_VU_TRANG_THAI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f402_BAO_CAO_NHAN_SU_CHUC_VU.resx">
       <DependentUpon>f402_BAO_CAO_NHAN_SU_CHUC_VU.cs</DependentUpon>
     </EmbeddedResource>
@@ -670,6 +676,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="f002_main_form.resx">
       <DependentUpon>f002_main_form.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\f107_chuyen_nhan_vien.resx">
       <DependentUpon>f107_chuyen_nhan_vien.cs</DependentUpon>
