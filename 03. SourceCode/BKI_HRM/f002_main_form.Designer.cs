@@ -935,9 +935,9 @@
             this.m_lbl_nv_chua_chuc_vu_trang_thai.ForeColor = System.Drawing.Color.Red;
             this.m_lbl_nv_chua_chuc_vu_trang_thai.Location = new System.Drawing.Point(0, 20);
             this.m_lbl_nv_chua_chuc_vu_trang_thai.Name = "m_lbl_nv_chua_chuc_vu_trang_thai";
-            this.m_lbl_nv_chua_chuc_vu_trang_thai.Size = new System.Drawing.Size(335, 18);
+            this.m_lbl_nv_chua_chuc_vu_trang_thai.Size = new System.Drawing.Size(345, 18);
             this.m_lbl_nv_chua_chuc_vu_trang_thai.TabIndex = 2;
-            this.m_lbl_nv_chua_chuc_vu_trang_thai.Text = "Danh sách Nhân viên chưa chức vụ, trạng thái";
+            this.m_lbl_nv_chua_chuc_vu_trang_thai.Text = "Nhân viên chưa đủ chức vụ, TTLĐ ở pháp nhân";
             // 
             // m_pnl_thu_viec_da_het_han
             // 

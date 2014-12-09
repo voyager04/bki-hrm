@@ -674,7 +674,7 @@ namespace BKI_HRM
             try
             {
                 //f103_bao_cao_tra_cuu_nhan_su v_frm = new f103_bao_cao_tra_cuu_nhan_su();
-                f104_bao_cao_nhan_su_theo_phong_ban v_frm = new f104_bao_cao_nhan_su_theo_phong_ban();
+                f104_tra_cuu_nhan_su_theo_ma v_frm = new f104_tra_cuu_nhan_su_theo_ma();
                 m_obj_tab.AddTab(m_xtab_control, "tab_bc_tra_cuu_nhan_su", v_frm.Text, v_frm, new UserControl());
                 
             }
@@ -829,7 +829,7 @@ namespace BKI_HRM
         {
             try
             {
-                f104_bao_cao_nhan_su_theo_phong_ban v_frm = new f104_bao_cao_nhan_su_theo_phong_ban();
+                f104_tra_cuu_nhan_su_theo_ma v_frm = new f104_tra_cuu_nhan_su_theo_ma();
                 m_obj_tab.AddTab(m_xtab_control, "tab_bc_nhan_su_theo_pb", v_frm.Text, v_frm, new UserControl());
 
             }

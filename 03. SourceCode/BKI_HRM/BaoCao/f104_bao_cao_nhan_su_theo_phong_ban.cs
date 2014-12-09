@@ -21,9 +21,9 @@ using BKI_HRM.DS.CDBNames;
 using C1.Win.C1FlexGrid;
 
 namespace BKI_HRM {
-    public partial class f104_bao_cao_nhan_su_theo_phong_ban : Form {
+    public partial class f104_tra_cuu_nhan_su_theo_ma : Form {
 
-        public f104_bao_cao_nhan_su_theo_phong_ban() {
+        public f104_tra_cuu_nhan_su_theo_ma() {
             InitializeComponent();
             format_controls();
         }

@@ -420,7 +420,7 @@ namespace BKI_HRM
         {
             try
             {
-                f104_bao_cao_nhan_su_theo_phong_ban frm = new f104_bao_cao_nhan_su_theo_phong_ban();
+                f104_tra_cuu_nhan_su_theo_ma frm = new f104_tra_cuu_nhan_su_theo_ma();
                 frm.Show();
             }
             catch (Exception v_e)
@@ -1474,7 +1474,7 @@ namespace BKI_HRM
         {
             try
             {
-                show_form(new f104_bao_cao_nhan_su_theo_phong_ban());
+                show_form(new f104_tra_cuu_nhan_su_theo_ma());
             }
             catch (Exception v_e)
             {
