@@ -1,5 +1,5 @@
 ﻿namespace BKI_HRM {
-    partial class f104_bao_cao_nhan_su_theo_phong_ban {
+    partial class f104_tra_cuu_nhan_su_theo_ma {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -24,7 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f104_bao_cao_nhan_su_theo_phong_ban));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f104_tra_cuu_nhan_su_theo_ma));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
@@ -439,7 +439,7 @@
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 33;
             // 
-            // f104_bao_cao_nhan_su_theo_phong_ban
+            // f104_tra_cuu_nhan_su_theo_ma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -452,7 +452,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "f104_bao_cao_nhan_su_theo_phong_ban";
+            this.Name = "f104_tra_cuu_nhan_su_theo_ma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F104 - Báo cáo nhân sự theo phòng ban";
             this.Load += new System.EventHandler(this.f104_bao_cao_nhan_su_theo_phong_ban_Load);

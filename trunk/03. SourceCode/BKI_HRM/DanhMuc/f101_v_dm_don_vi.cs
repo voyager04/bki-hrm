@@ -787,7 +787,7 @@ namespace BKI_HRM {
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             //if (m_fg.Rows[m_fg.Row].IsNode) return;
             grid2us_object(m_v_us, m_fg.Row);
-            var frm = new f104_bao_cao_nhan_su_theo_phong_ban();
+            var frm = new f104_tra_cuu_nhan_su_theo_ma();
             frm.display_for_dm_don_vi(m_v_us.strMA_DON_VI.ToString());
         }
         private void chuyen_nhan_su()
