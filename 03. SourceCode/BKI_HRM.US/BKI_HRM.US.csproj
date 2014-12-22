@@ -83,6 +83,7 @@
     <Compile Include="US_HT_QUAN_HE_SU_DUNG_DU_LIEU.cs" />
     <Compile Include="US_HT_QUYEN_GROUP.cs" />
     <Compile Include="US_HT_QUYEN_USER_WEB.cs" />
+    <Compile Include="US_HT_USER.cs" />
     <Compile Include="US_HT_USER_GROUP.cs" />
     <Compile Include="US_HT_USER_GROUP_WEB.cs" />
     <Compile Include="US_IMPORT_EXCEL_LUONG_THEO_QD.cs" />
