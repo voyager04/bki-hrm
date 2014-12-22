@@ -48,16 +48,26 @@ namespace BKI_HRM.NghiepVu
         #region Data Structure
         private enum e_col_Number_nhan_vien
         {
-            HO_DEM = 1,
-            TEN = 2,
-            VI_TRI = 3,
-            TRANG_THAI_LAO_DONG = 4,
-            THOI_DIEM_TG = 5,
-            THOI_DIEM_KT = 6,
-            THOI_GIAN_TG = 7,
-            DANH_HIEU = 8,
-            MA_QUYET_DINH = 9,
-            MO_TA = 10,
+            THOI_GIAN_TG = 8
+,
+            TRANG_THAI_LAO_DONG = 5
+                ,
+            MA_NV = 1
+                ,
+            THOI_DIEM_KT = 7
+                ,
+            MO_TA = 11
+                ,
+            VI_TRI = 4
+                ,
+            TEN = 3
+                ,
+            THOI_DIEM_TG = 6
+                ,
+            HO_DEM = 2
+                ,
+            MA_QUYET_DINH = 10
+                , DANH_HIEU = 9
         }
 
         private enum e_col_Number_quyet_dinh
@@ -299,7 +309,7 @@ namespace BKI_HRM.NghiepVu
             // Đưa thông tin nhân viên vào Grid
             m_fg_nhan_vien.Rows[m_fg_nhan_vien.Row][(int)e_col_Number_nhan_vien.HO_DEM] = v_ds_dm_nhan_su.Tables[0].Rows[0][DM_NHAN_SU.HO_DEM];
             m_fg_nhan_vien.Rows[m_fg_nhan_vien.Row][(int)e_col_Number_nhan_vien.TEN] = v_ds_dm_nhan_su.Tables[0].Rows[0][DM_NHAN_SU.TEN];
-
+            m_fg_nhan_vien.Rows[m_fg_nhan_vien.Row][(int)e_col_Number_nhan_vien.MA_NV] = v_ds_dm_nhan_su.Tables[0].Rows[0][DM_NHAN_SU.MA_NV];
             var rowArray = new object[4];
             rowArray[0] = v_ds_dm_nhan_su.DM_NHAN_SU.Rows[0][DM_NHAN_SU.ID];
             rowArray[1] = v_ds_dm_nhan_su.DM_NHAN_SU.Rows[0][DM_NHAN_SU.ID];
@@ -325,6 +335,7 @@ namespace BKI_HRM.NghiepVu
         private ITransferDataRow get_trans_object_nhan_vien(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
             Hashtable v_htb = new Hashtable();
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_NV, e_col_Number_nhan_vien.MA_NV);
             v_htb.Add(V_DM_NHAN_SU_DU_AN.ID_NHAN_SU, e_col_Number_nhan_vien.HO_DEM);
             v_htb.Add(V_DM_NHAN_SU_DU_AN.HO_DEM, e_col_Number_nhan_vien.HO_DEM);
             v_htb.Add(V_DM_NHAN_SU_DU_AN.TEN, e_col_Number_nhan_vien.TEN);
@@ -337,6 +348,7 @@ namespace BKI_HRM.NghiepVu
             v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_QUYET_DINH, e_col_Number_nhan_vien.MA_QUYET_DINH);
             v_htb.Add(V_DM_NHAN_SU_DU_AN.MO_TA, e_col_Number_nhan_vien.MO_TA);
 
+            
             DS_V_DM_NHAN_SU_DU_AN v_ds = new DS_V_DM_NHAN_SU_DU_AN();
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, v_ds.V_DM_NHAN_SU_DU_AN.NewRow());
             return v_obj_trans;
@@ -1160,5 +1172,48 @@ namespace BKI_HRM.NghiepVu
             this.Close();
         }
         #endregion
+
+        private void m_fg_nhan_vien_CellButtonClick(object sender, RowColEventArgs e)
+        {
+            
+            
+
+        }
+
+        private void m_fg_nhan_vien_Click(object sender, EventArgs e)
+        {
+            string v_strs;
+            
+            if (m_fg_nhan_vien.Rows[m_fg_nhan_vien.CursorCell.TopRow][(int)e_col_Number_nhan_vien.MA_NV] == null)
+                v_strs = "";
+            else
+                v_strs = m_fg_nhan_vien.Rows[m_fg_nhan_vien.CursorCell.TopRow][(int)e_col_Number_nhan_vien.MA_NV].ToString();
+            DS_DM_NHAN_SU v_ds_dm_nhan_su = new DS_DM_NHAN_SU();
+            US_DM_NHAN_SU v_us_dm_nhan_su = new US_DM_NHAN_SU();
+            v_us_dm_nhan_su.FillDataset_search_by_ma_nv(v_ds_dm_nhan_su, v_strs.Trim());
+            if (v_ds_dm_nhan_su.Tables[0].Rows.Count == 0)
+                return;
+            m_lbl_ma_nhan_vien.Text = v_ds_dm_nhan_su.Tables[0].Rows[0][DM_NHAN_SU.MA_NV].ToString();
+            m_lbl_ho_va_ten.Text = v_ds_dm_nhan_su.Tables[0].Rows[0][DM_NHAN_SU.HO_DEM] + " " +
+                                   v_ds_dm_nhan_su.Tables[0].Rows[0][DM_NHAN_SU.TEN];
+            //m_lbl_ngay_sinh.Text = v_ds_dm_nhan_su.Tables[0].Rows[0][DM_NHAN_SU.NGAY_SINH].ToString().Split(' ')[0];
+            //m_lbl_dia_chi.Text = v_ds_dm_nhan_su.Tables[0].Rows[0][DM_NHAN_SU.CHO_O].ToString();
+
+            // DucVT
+            m_lbl_email_ca_nhan.Text = v_ds_dm_nhan_su.Tables[0].Rows[0][DM_NHAN_SU.EMAIL_CQ].ToString();
+
+            // Lấy chức vụ bằng Id nhân sự
+            DS_V_GD_QUA_TRINH_LAM_VIEC v_ds_gd_qtlv = new DS_V_GD_QUA_TRINH_LAM_VIEC();
+            US_V_GD_QUA_TRINH_LAM_VIEC v_us_gd_qtlv = new US_V_GD_QUA_TRINH_LAM_VIEC();
+
+            v_us_gd_qtlv.FillDataSet_Now_By_Ma_NV_Id_PN(v_ds_gd_qtlv, v_ds_dm_nhan_su.DM_NHAN_SU.Rows[0][DM_NHAN_SU.MA_NV].ToString(), CAppContext_201.getCurrentIDPhapnhan());
+
+            if (v_ds_gd_qtlv.V_GD_QUA_TRINH_LAM_VIEC.Rows.Count > 0)
+            {
+                m_lbl_chuc_vu.Text = v_ds_gd_qtlv.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.MA_CV].ToString();
+                m_lbl_don_vi.Text = v_ds_gd_qtlv.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.MA_DON_VI].ToString();
+            }
+            // ~DucVT
+        }
     }
 }
