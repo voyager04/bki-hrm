@@ -293,6 +293,7 @@
     </Compile>
     <Compile Include="CDataBaseProccessing.cs" />
     <Compile Include="ControlFormat.cs" />
+    <Compile Include="ControllerHTUSER.cs" />
     <Compile Include="DanhMuc\f101_v_dm_don_vi.cs">
       <SubType>Form</SubType>
     </Compile>

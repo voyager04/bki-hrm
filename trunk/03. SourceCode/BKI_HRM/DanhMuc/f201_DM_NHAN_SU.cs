@@ -10,6 +10,8 @@ using System.Data;
 using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
+using System.Linq;
+using System.Net.Mail;
 using System.Windows.Forms;
 
 using IP.Core.IPWordReport;
@@ -187,6 +189,7 @@ namespace BKI_HRM
         private TextBox m_txt_nam_sinh_vo_chong;
         private TextBox m_txt_nghe_nghiep_vo_chong;
         private TextBox m_txt_ho_ten_vo_chong;
+        internal SIS.Controls.Button.SiSButton m_cmd_send_email;
         private System.ComponentModel.IContainer components;
 
 
@@ -362,6 +365,7 @@ namespace BKI_HRM
             this.m_cmd_print_cv = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_send_email = new SIS.Controls.Button.SiSButton();
             this.m_tpg_thong_tin_khac.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -678,7 +682,6 @@ namespace BKI_HRM
             // 
             this.m_grv_hop_dong_ld.AllowEditing = false;
             this.m_grv_hop_dong_ld.ColumnInfo = resources.GetString("m_grv_hop_dong_ld.ColumnInfo");
-            this.m_grv_hop_dong_ld.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_hop_dong_ld.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_grv_hop_dong_ld.Location = new System.Drawing.Point(0, 0);
             this.m_grv_hop_dong_ld.Name = "m_grv_hop_dong_ld";
@@ -715,7 +718,6 @@ namespace BKI_HRM
             // 
             this.m_grv_du_an.AllowEditing = false;
             this.m_grv_du_an.ColumnInfo = resources.GetString("m_grv_du_an.ColumnInfo");
-            this.m_grv_du_an.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_du_an.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_du_an.Location = new System.Drawing.Point(3, 25);
             this.m_grv_du_an.Name = "m_grv_du_an";
@@ -816,7 +818,6 @@ namespace BKI_HRM
             // 
             this.m_grv_chuc_vu_hien_tai.AllowEditing = false;
             this.m_grv_chuc_vu_hien_tai.ColumnInfo = resources.GetString("m_grv_chuc_vu_hien_tai.ColumnInfo");
-            this.m_grv_chuc_vu_hien_tai.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_chuc_vu_hien_tai.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_grv_chuc_vu_hien_tai.Location = new System.Drawing.Point(0, 0);
             this.m_grv_chuc_vu_hien_tai.Name = "m_grv_chuc_vu_hien_tai";
@@ -1363,7 +1364,6 @@ namespace BKI_HRM
             // 
             this.m_grv_chuc_vu.AllowEditing = false;
             this.m_grv_chuc_vu.ColumnInfo = resources.GetString("m_grv_chuc_vu.ColumnInfo");
-            this.m_grv_chuc_vu.Cursor = System.Windows.Forms.Cursors.Default;
             this.m_grv_chuc_vu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_grv_chuc_vu.Location = new System.Drawing.Point(3, 25);
             this.m_grv_chuc_vu.Name = "m_grv_chuc_vu";
@@ -1851,6 +1851,7 @@ namespace BKI_HRM
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_send_email);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_import_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_chon_phap_nhan);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_chon_nhan_vien);
@@ -1987,6 +1988,21 @@ namespace BKI_HRM
             this.m_cmd_exit.Size = new System.Drawing.Size(100, 28);
             this.m_cmd_exit.TabIndex = 32;
             this.m_cmd_exit.Text = "Thoát (Esc)";
+            // 
+            // m_cmd_send_email
+            // 
+            this.m_cmd_send_email.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_send_email.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_send_email.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_send_email.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_send_email.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_send_email.ImageIndex = 16;
+            this.m_cmd_send_email.ImageList = this.ImageList;
+            this.m_cmd_send_email.Location = new System.Drawing.Point(219, 4);
+            this.m_cmd_send_email.Name = "m_cmd_send_email";
+            this.m_cmd_send_email.Size = new System.Drawing.Size(118, 28);
+            this.m_cmd_send_email.TabIndex = 38;
+            this.m_cmd_send_email.Text = "&Gửi email";
             // 
             // f201_dm_nhan_su
             // 
@@ -2174,8 +2190,8 @@ namespace BKI_HRM
             NGUYEN_QUAN = 8
                 , DAN_TOC = 27
 
-        }			
-        
+        }
+
         private enum e_col_Number_of_qua_trinh_cong_tac
         {
             DEN_NGAY = 2
@@ -2817,7 +2833,7 @@ namespace BKI_HRM
             m_obj_trans_qua_trinh_lam_viec.GridRow2DataRow(i_grid_row, v_dr);
             i_us.DataRow2Me(v_dr);
         }
-        
+
         private void us_object2grid(US_DM_NHAN_SU i_us
             , int i_grid_row)
         {
@@ -2829,7 +2845,7 @@ namespace BKI_HRM
 
         private void insert_dm_nhan_su()
         {
-            
+
             int v_i_count = m_ds.DM_NHAN_SU.Count;
             f201_DM_NHAN_SU_DE v_fDE = new f201_DM_NHAN_SU_DE();
             DialogResult v_result = v_fDE.display_for_insert();
@@ -2908,6 +2924,19 @@ namespace BKI_HRM
             load_chi_tiet_nhan_vien();
         }
 
+        private void delete_ht_user(US_DM_NHAN_SU ip_us)
+        {
+            var controller = new HT_USER_DataAccess();
+            US_HT_USER v_us_ht_user = new US_HT_USER();
+            var v_list_user = controller.GetAllUsers();
+            var v_user = v_list_user.FirstOrDefault(m => m.BHYT == ip_us.strMA_NV);
+            if (v_user != null)
+            {
+                v_us_ht_user.ID = v_user.ID;
+                controller.Delete(v_us_ht_user);
+            }
+        }
+
         private void delete_dm_nhan_su()
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_nhan_su)) return;
@@ -2919,6 +2948,9 @@ namespace BKI_HRM
             {
                 v_us.BeginTransaction();
                 v_us.Delete();
+
+                delete_ht_user(v_us);  //Xóa HT_USER
+
                 v_us.CommitTransaction();
                 m_grv_nhan_su.Rows.Remove(m_grv_nhan_su.Row);
                 BaseMessages.MsgBox_Infor("Đã xóa thành công.");
@@ -2950,7 +2982,7 @@ namespace BKI_HRM
             grid2us_object(m_us, m_grv_nhan_su.Row);
             this.Close();
         }
-        
+
         private void set_define_events()
         {
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
@@ -2973,6 +3005,46 @@ namespace BKI_HRM
             m_txt_tim_kiem.MouseClick += m_txt_tim_kiem_MouseClick;
 
             m_cmd_import_excel.Click += new EventHandler(m_cmd_import_excel_Click);
+            m_cmd_send_email.Click += m_cmd_send_email_Click;
+        }
+
+        private void send_email()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_nhan_su)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_nhan_su, m_grv_nhan_su.Row)) return;
+
+            US_DM_NHAN_SU v_us = new US_DM_NHAN_SU();
+            grid2us_object(v_us, m_grv_nhan_su.Row);
+            if (v_us.strEMAIL_CQ == "" || v_us.strEMAIL_CQ.Length == 0)
+            {
+                MessageBox.Show("Nhân viên này chưa có tài khoản email cơ quan", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            string v_str_confirm =
+                string.Format(" Bạn muốn dùng email {0} gửi hướng dẫn thêm tài khoản Facebook cho {1} ({2})?",
+                "hoangnh@topica.edu.vn", v_us.strEMAIL_CQ, v_us.strHO_DEM + " " + v_us.strTEN);
+            var dialog = MessageBox.Show(v_str_confirm, 
+                "Thông báo", 
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question, 
+                MessageBoxDefaultButton.Button1);
+            if (dialog == DialogResult.Yes)
+            {
+                MailMessage mail = new MailMessage();
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+                mail.From = new MailAddress("hoangnh@topica.edu.vn");
+                mail.To.Add("91apple.nguyen@gmail.com");
+                mail.Subject = "Hướng dẫn: Thêm tài khoản Facebook vào website quản lý nhân sự của TOPICA";
+                mail.Body = "This is for testing SMTP mail from GMAIL";
+
+                SmtpServer.Port = 587;
+                SmtpServer.Credentials = new System.Net.NetworkCredential("hoangnh@topica.edu.vn", "topica@999");
+                SmtpServer.EnableSsl = true;
+
+                SmtpServer.Send(mail);
+                MessageBox.Show("Email đã được gửi! Xin cám ơn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
         }
 
         private void import_excel()
@@ -3350,6 +3422,18 @@ namespace BKI_HRM
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_send_email_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                send_email();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
         #endregion

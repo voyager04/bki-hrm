@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Collections;
 using System.ComponentModel;
+using System.Reflection;
 using System.Windows.Forms;
 
 using IP.Core.IPCommon;
@@ -119,6 +122,9 @@ namespace BKI_HRM
         #region Members
         DataEntryFormMode m_e_form_mode;
         US_DM_NHAN_SU m_us_dm_nhan_su = new US_DM_NHAN_SU();
+        US_HT_USER m_us_ht_user = new US_HT_USER();
+
+        Guid m_id_user_group = new Guid("dff3e0e9-b0de-42b9-86bd-ea25033425e8");
 
         // File explorer
         private DataEntryFileMode m_e_file_mode;
@@ -229,7 +235,17 @@ namespace BKI_HRM
             m_txt_nghe_nghiep_vo_chong.Text = m_us_dm_nhan_su.strNGHE_NGHIEP_VO_OR_CHONG;
             m_txt_nam_sinh_vo_chong.Text = m_us_dm_nhan_su.dcNAM_SINH_VO_OR_CHONG.ToString();
             // ~DucVT
+
+            // Tài khoản facebook
+            List<US_HT_USER> v_List_Users = new HT_USER_DataAccess().GetAllUsers();
+            var v_User = v_List_Users.FirstOrDefault(m => m.BHYT == m_us_dm_nhan_su.strMA_NV);
+            if (v_User != null)
+            {
+                m_txt_id_facebook.Text = v_User.MSBN;
+                m_txt_name_facebook.Text = v_User.CMND;
+            }
         }
+
         private void form_to_us_object()
         {
             m_us_dm_nhan_su.strMA_NV = m_txt_ma_nhan_vien.Text.Trim();
@@ -303,7 +319,7 @@ namespace BKI_HRM
             if (m_txt_nam_sinh_con_2.Text.Trim().Length > 0)
                 m_us_dm_nhan_su.dcNAM_SINH_CON_THU_2 = CIPConvert.ToDecimal(m_txt_nam_sinh_con_2.Text.Trim());
             else
-                m_us_dm_nhan_su.SetNAM_SINH_CON_THU_2Null();            
+                m_us_dm_nhan_su.SetNAM_SINH_CON_THU_2Null();
             m_us_dm_nhan_su.strNGHE_NGHIEP_CON_THU_2 = m_txt_nghe_nghiep_con_2.Text;
 
             m_us_dm_nhan_su.strHO_TEN_CON_THU_3 = m_txt_ho_ten_con_3.Text;
@@ -321,6 +337,36 @@ namespace BKI_HRM
                 m_us_dm_nhan_su.SetNAM_SINH_VO_OR_CHONGNull();
             // ~DucVT
         }
+        private void controller_ht_user(DataEntryFormMode mode, US_DM_NHAN_SU ip_us)
+        {
+            m_us_ht_user.BHYT = ip_us.strMA_NV;
+            m_us_ht_user.CMND = m_txt_name_facebook.Text;
+            m_us_ht_user.MSBN = m_txt_id_facebook.Text;
+            m_us_ht_user.USERNAME = ip_us.strEMAIL_CQ;
+            m_us_ht_user.PASSWORD = "123456";
+            m_us_ht_user.HO = ip_us.strHO_DEM;
+            m_us_ht_user.TEN = ip_us.strTEN;
+            m_us_ht_user.IS_ACTIVE = true;
+            m_us_ht_user.ID_USER_GROUP = m_id_user_group;
+
+            if (mode == DataEntryFormMode.InsertDataState)
+            {
+                m_us_ht_user.ID = Guid.NewGuid();
+                new HT_USER_DataAccess().Insert(m_us_ht_user);
+            }
+            if (mode == DataEntryFormMode.UpdateDataState)
+            {
+                var controller = new HT_USER_DataAccess();
+                var v_list_user = controller.GetAllUsers();
+                var v_user = v_list_user.FirstOrDefault(m => m.BHYT == ip_us.strMA_NV);
+                if (v_user != null)
+                {
+                    m_us_ht_user.ID = v_user.ID;
+                    controller.Update(m_us_ht_user);
+                }
+            }
+        }
+
         private bool check_trung_ma_nv(string ip_str_ma_nv)
         {
             DS_DM_NHAN_SU v_ds = new DS_DM_NHAN_SU();
@@ -410,14 +456,16 @@ namespace BKI_HRM
                 m_txt_email_ca_nhan.SelectAll();
                 return false;
             }*/
-            /*if (!CValidateTextBox.IsValid(m_txt_email_co_quan, DataType.StringType, allowNull.YES, true) || !check_validate_email(m_txt_email_co_quan.Text))
+
+            if (!(m_txt_email_co_quan.Text.Length > 0 && check_validate_email(m_txt_email_co_quan.Text)))
             {
                 BaseMessages.MsgBox_Warning(211);
                 m_txt_email_co_quan.BackColor = Color.Bisque;
                 m_txt_email_co_quan.Focus();
                 m_txt_email_co_quan.SelectAll();
+                tabControl1.SelectTab(tabPage3);
                 return false;
-            }*/
+            }
             if (!CValidateTextBox.IsValid(m_txt_so_dtdd, DataType.StringType, allowNull.YES, true))
             {
 
@@ -545,6 +593,7 @@ namespace BKI_HRM
                         save_image(m_ofd_chon_anh.FileName);
                         form_to_us_object();
                         m_us_dm_nhan_su.Update();
+                        controller_ht_user(DataEntryFormMode.UpdateDataState, m_us_dm_nhan_su);
                     }
 
                     break;
@@ -568,6 +617,7 @@ namespace BKI_HRM
                             save_image(m_ofd_chon_anh.FileName);
                             form_to_us_object();
                             m_us_dm_nhan_su.Insert();
+                            controller_ht_user(DataEntryFormMode.InsertDataState, m_us_dm_nhan_su);
                         }
 
                     }
@@ -916,9 +966,9 @@ namespace BKI_HRM
 
         private void m_txt_cmnd_KeyPress(object sender, KeyPressEventArgs e)
         {
-           if (!char.IsDigit(e.KeyChar))
+            if (!char.IsDigit(e.KeyChar))
             {
-               if (!char.IsControl(e.KeyChar))
+                if (!char.IsControl(e.KeyChar))
                     e.Handled = true;
             }
         }
@@ -1035,7 +1085,7 @@ namespace BKI_HRM
         {
 
         }
-        
+
         private void m_ptb_anh_MouseHover(object sender, EventArgs e)
         {
             m_ptb_anh.Image = m_ptb_anh.ErrorImage;
