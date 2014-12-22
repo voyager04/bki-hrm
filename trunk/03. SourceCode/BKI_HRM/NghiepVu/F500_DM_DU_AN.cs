@@ -56,12 +56,22 @@ namespace BKI_HRM
         private Label label5;
         private ComboBox m_cbo_loai_du_an;
         private Label label3;
-        private C1FlexGrid m_fg_nhan_su;
         private Label label7;
         internal Panel m_pnl_out_place_dm;
-        private Label label6;
         private Label m_lbl_total_record_grid2;
         private C1FlexGrid m_fg_du_an;
+        private C1FlexGrid m_fg_nhan_su;
+        private GroupBox groupBox3;
+        private Label m_lbl_don_vi;
+        private Label m_lbl_chuc_vu;
+        private Label m_lbl_email_ca_nhan;
+        private Label m_lbl_ma_nhan_vien;
+        private Label m_lbl_ho_va_ten;
+        private Label label11;
+        private Label label6;
+        private Label label8;
+        private Label label9;
+        private Label label12;
         private System.ComponentModel.IContainer components;
 
         public F500_DM_DU_AN()
@@ -125,17 +135,28 @@ namespace BKI_HRM
             this.m_dat_tu_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_cbo_tim_kiem_theo_ngay = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.m_fg_nhan_su = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.m_lbl_don_vi = new System.Windows.Forms.Label();
+            this.m_lbl_chuc_vu = new System.Windows.Forms.Label();
+            this.m_lbl_email_ca_nhan = new System.Windows.Forms.Label();
+            this.m_lbl_ma_nhan_vien = new System.Windows.Forms.Label();
+            this.m_lbl_ho_va_ten = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.m_fg_nhan_su = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_lbl_total_record_grid2 = new System.Windows.Forms.Label();
             this.m_fg_du_an = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg_nhan_su)).BeginInit();
             this.m_pnl_out_place_dm.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg_nhan_su)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_du_an)).BeginInit();
             this.SuspendLayout();
             // 
@@ -425,36 +446,140 @@ namespace BKI_HRM
             this.label2.TabIndex = 0;
             this.label2.Text = "Tìm kiếm theo";
             // 
-            // m_fg_nhan_su
-            // 
-            this.m_fg_nhan_su.ColumnInfo = resources.GetString("m_fg_nhan_su.ColumnInfo");
-            this.m_fg_nhan_su.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg_nhan_su.Location = new System.Drawing.Point(0, 383);
-            this.m_fg_nhan_su.Name = "m_fg_nhan_su";
-            this.m_fg_nhan_su.Size = new System.Drawing.Size(1284, 181);
-            this.m_fg_nhan_su.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_nhan_su.Styles"));
-            this.m_fg_nhan_su.TabIndex = 54;
-            // 
             // m_pnl_out_place_dm
             // 
-            this.m_pnl_out_place_dm.Controls.Add(this.label6);
+            this.m_pnl_out_place_dm.Controls.Add(this.groupBox3);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_fg_nhan_su);
             this.m_pnl_out_place_dm.Controls.Add(this.m_lbl_total_record_grid2);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 358);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 339);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1284, 25);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1284, 225);
             this.m_pnl_out_place_dm.TabIndex = 55;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.m_lbl_don_vi);
+            this.groupBox3.Controls.Add(this.m_lbl_chuc_vu);
+            this.groupBox3.Controls.Add(this.m_lbl_email_ca_nhan);
+            this.groupBox3.Controls.Add(this.m_lbl_ma_nhan_vien);
+            this.groupBox3.Controls.Add(this.m_lbl_ho_va_ten);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox3.Location = new System.Drawing.Point(4, 7);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1276, 62);
+            this.groupBox3.TabIndex = 114;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Thành viên dự án";
+            // 
+            // m_lbl_don_vi
+            // 
+            this.m_lbl_don_vi.AutoSize = true;
+            this.m_lbl_don_vi.Location = new System.Drawing.Point(593, 41);
+            this.m_lbl_don_vi.Name = "m_lbl_don_vi";
+            this.m_lbl_don_vi.Size = new System.Drawing.Size(43, 13);
+            this.m_lbl_don_vi.TabIndex = 110;
+            this.m_lbl_don_vi.Text = "(đơn vị)";
+            // 
+            // m_lbl_chuc_vu
+            // 
+            this.m_lbl_chuc_vu.AutoSize = true;
+            this.m_lbl_chuc_vu.Location = new System.Drawing.Point(330, 41);
+            this.m_lbl_chuc_vu.Name = "m_lbl_chuc_vu";
+            this.m_lbl_chuc_vu.Size = new System.Drawing.Size(52, 13);
+            this.m_lbl_chuc_vu.TabIndex = 110;
+            this.m_lbl_chuc_vu.Text = "(chức vụ)";
+            // 
+            // m_lbl_email_ca_nhan
+            // 
+            this.m_lbl_email_ca_nhan.AutoSize = true;
+            this.m_lbl_email_ca_nhan.Location = new System.Drawing.Point(68, 41);
+            this.m_lbl_email_ca_nhan.Name = "m_lbl_email_ca_nhan";
+            this.m_lbl_email_ca_nhan.Size = new System.Drawing.Size(37, 13);
+            this.m_lbl_email_ca_nhan.TabIndex = 110;
+            this.m_lbl_email_ca_nhan.Text = "(email)";
+            // 
+            // m_lbl_ma_nhan_vien
+            // 
+            this.m_lbl_ma_nhan_vien.AutoSize = true;
+            this.m_lbl_ma_nhan_vien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_ma_nhan_vien.ForeColor = System.Drawing.Color.Blue;
+            this.m_lbl_ma_nhan_vien.Location = new System.Drawing.Point(108, 14);
+            this.m_lbl_ma_nhan_vien.Name = "m_lbl_ma_nhan_vien";
+            this.m_lbl_ma_nhan_vien.Size = new System.Drawing.Size(0, 17);
+            this.m_lbl_ma_nhan_vien.TabIndex = 75;
+            // 
+            // m_lbl_ho_va_ten
+            // 
+            this.m_lbl_ho_va_ten.AutoSize = true;
+            this.m_lbl_ho_va_ten.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_ho_va_ten.ForeColor = System.Drawing.Color.Blue;
+            this.m_lbl_ho_va_ten.Location = new System.Drawing.Point(287, 14);
+            this.m_lbl_ho_va_ten.Name = "m_lbl_ho_va_ten";
+            this.m_lbl_ho_va_ten.Size = new System.Drawing.Size(0, 17);
+            this.m_lbl_ho_va_ten.TabIndex = 68;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(221, 16);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(54, 13);
+            this.label11.TabIndex = 66;
+            this.label11.Text = "Họ và tên";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label6.Location = new System.Drawing.Point(4, 8);
+            this.label6.Location = new System.Drawing.Point(549, 41);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(142, 13);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Danh sách thành viên dự án";
+            this.label6.Size = new System.Drawing.Size(38, 13);
+            this.label6.TabIndex = 64;
+            this.label6.Text = "Đơn vị";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(277, 41);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(47, 13);
+            this.label8.TabIndex = 64;
+            this.label8.Text = "Chức vụ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(30, 41);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(32, 13);
+            this.label9.TabIndex = 64;
+            this.label9.Text = "Email";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(30, 16);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(72, 13);
+            this.label12.TabIndex = 64;
+            this.label12.Text = "Mã nhân viên";
+            // 
+            // m_fg_nhan_su
+            // 
+            this.m_fg_nhan_su.ColumnInfo = resources.GetString("m_fg_nhan_su.ColumnInfo");
+            this.m_fg_nhan_su.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_fg_nhan_su.Location = new System.Drawing.Point(4, 69);
+            this.m_fg_nhan_su.Name = "m_fg_nhan_su";
+            this.m_fg_nhan_su.Size = new System.Drawing.Size(1276, 152);
+            this.m_fg_nhan_su.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_nhan_su.Styles"));
+            this.m_fg_nhan_su.TabIndex = 113;
+            this.m_fg_nhan_su.Click += new System.EventHandler(this.m_fg_nhan_vien_Click);
             // 
             // m_lbl_total_record_grid2
             // 
@@ -471,7 +596,7 @@ namespace BKI_HRM
             this.m_fg_du_an.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg_du_an.Location = new System.Drawing.Point(0, 100);
             this.m_fg_du_an.Name = "m_fg_du_an";
-            this.m_fg_du_an.Size = new System.Drawing.Size(1284, 258);
+            this.m_fg_du_an.Size = new System.Drawing.Size(1284, 239);
             this.m_fg_du_an.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_du_an.Styles"));
             this.m_fg_du_an.TabIndex = 56;
             // 
@@ -481,7 +606,6 @@ namespace BKI_HRM
             this.ClientSize = new System.Drawing.Size(1284, 600);
             this.Controls.Add(this.m_fg_du_an);
             this.Controls.Add(this.m_pnl_out_place_dm);
-            this.Controls.Add(this.m_fg_nhan_su);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -496,9 +620,11 @@ namespace BKI_HRM
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg_nhan_su)).EndInit();
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.m_pnl_out_place_dm.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg_nhan_su)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_du_an)).EndInit();
             this.ResumeLayout(false);
 
@@ -580,17 +706,26 @@ namespace BKI_HRM
 
         private enum e_col_Number_nhan_su
         {
-            HO_DEM = 1,
-            TEN = 2,
-            VI_TRI = 3,
-            TRANG_THAI_LAO_DONG = 4,
-            THOI_DIEM_TG = 5,
-            THOI_DIEM_KT = 6,
-            THOI_GIAN_TG = 7,
-            DANH_HIEU = 8,
-            MA_QUYET_DINH = 9,
-            LOAI_QD = 10,
+            THOI_GIAN_TG = 8
+,
+            TRANG_THAI_LAO_DONG = 5
+                ,
+            MA_NV = 1
+                ,
+            THOI_DIEM_KT = 7
+                ,
             MO_TA = 11
+                ,
+            VI_TRI = 4
+                ,
+            TEN = 3
+                ,
+            THOI_DIEM_TG = 6
+                ,
+            HO_DEM = 2
+                ,
+            MA_QUYET_DINH = 10
+                , DANH_HIEU = 9
         }
         #endregion
 
@@ -678,6 +813,7 @@ namespace BKI_HRM
         private ITransferDataRow get_trans_object_nhan_su(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
             Hashtable v_htb = new Hashtable();
+            v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_NV, e_col_Number_nhan_su.MA_NV);
             v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_GIAN_TG, e_col_Number_nhan_su.THOI_GIAN_TG);
             v_htb.Add(V_DM_NHAN_SU_DU_AN.MO_TA, e_col_Number_nhan_su.MO_TA);
             v_htb.Add(V_DM_NHAN_SU_DU_AN.THOI_DIEM_KT, e_col_Number_nhan_su.THOI_DIEM_KT);
@@ -688,7 +824,6 @@ namespace BKI_HRM
             v_htb.Add(V_DM_NHAN_SU_DU_AN.MA_QUYET_DINH, e_col_Number_nhan_su.MA_QUYET_DINH);
             v_htb.Add(V_DM_NHAN_SU_DU_AN.DANH_HIEU, e_col_Number_nhan_su.DANH_HIEU);
             v_htb.Add(V_DM_NHAN_SU_DU_AN.TRANG_THAI_LAO_DONG, e_col_Number_nhan_su.TRANG_THAI_LAO_DONG);
-            v_htb.Add(V_DM_NHAN_SU_DU_AN.LOAI_QD, e_col_Number_nhan_su.LOAI_QD);
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds_nhan_su.V_DM_NHAN_SU_DU_AN.NewRow());
             return v_obj_trans;
@@ -1104,6 +1239,43 @@ namespace BKI_HRM
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_fg_nhan_vien_Click(object sender, EventArgs e)
+        {
+            
+            string v_strs;
+                v_strs = m_fg_nhan_su.Rows[m_fg_nhan_su.CursorCell.TopRow][(int)e_col_Number_nhan_su.MA_NV].ToString();
+            DS_DM_NHAN_SU v_ds_dm_nhan_su = new DS_DM_NHAN_SU();
+            US_DM_NHAN_SU v_us_dm_nhan_su = new US_DM_NHAN_SU();
+            v_us_dm_nhan_su.FillDataset_search_by_ma_nv(v_ds_dm_nhan_su, v_strs.Trim());
+            if (v_ds_dm_nhan_su.Tables[0].Rows.Count == 0)
+                return;
+            m_lbl_ma_nhan_vien.Text = v_ds_dm_nhan_su.Tables[0].Rows[0][DM_NHAN_SU.MA_NV].ToString();
+            m_lbl_ho_va_ten.Text = v_ds_dm_nhan_su.Tables[0].Rows[0][DM_NHAN_SU.HO_DEM] + " " +
+                                   v_ds_dm_nhan_su.Tables[0].Rows[0][DM_NHAN_SU.TEN];
+            //m_lbl_ngay_sinh.Text = v_ds_dm_nhan_su.Tables[0].Rows[0][DM_NHAN_SU.NGAY_SINH].ToString().Split(' ')[0];
+            //m_lbl_dia_chi.Text = v_ds_dm_nhan_su.Tables[0].Rows[0][DM_NHAN_SU.CHO_O].ToString();
+
+            // DucVT
+            m_lbl_email_ca_nhan.Text = v_ds_dm_nhan_su.Tables[0].Rows[0][DM_NHAN_SU.EMAIL_CQ].ToString();
+
+            // Lấy chức vụ bằng Id nhân sự
+            DS_V_GD_QUA_TRINH_LAM_VIEC v_ds_gd_qtlv = new DS_V_GD_QUA_TRINH_LAM_VIEC();
+            US_V_GD_QUA_TRINH_LAM_VIEC v_us_gd_qtlv = new US_V_GD_QUA_TRINH_LAM_VIEC();
+
+            v_us_gd_qtlv.FillDataSet_Now_By_Ma_NV_Id_PN(v_ds_gd_qtlv, v_ds_dm_nhan_su.DM_NHAN_SU.Rows[0][DM_NHAN_SU.MA_NV].ToString(), CAppContext_201.getCurrentIDPhapnhan());
+
+            if (v_ds_gd_qtlv.V_GD_QUA_TRINH_LAM_VIEC.Rows.Count > 0)
+            {
+                m_lbl_chuc_vu.Text = v_ds_gd_qtlv.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.MA_CV].ToString();
+                m_lbl_don_vi.Text = v_ds_gd_qtlv.V_GD_QUA_TRINH_LAM_VIEC.Rows[0][V_GD_QUA_TRINH_LAM_VIEC.MA_DON_VI].ToString();
             }
         }
     }

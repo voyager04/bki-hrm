@@ -52,6 +52,8 @@
             this.m_lbl_noi_dung = new System.Windows.Forms.Label();
             this.m_txt_ma_du_an = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.m_txt_ma_du_an_thr = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.m_ofd_chon_file = new System.Windows.Forms.OpenFileDialog();
             this.m_tab_du_an = new System.Windows.Forms.TabControl();
             this.tabQuyetDinh = new System.Windows.Forms.TabPage();
@@ -74,8 +76,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.cM_DM_TU_DIENTableAdapter1 = new BKI_HRM.DS.DS_CM_DM_TU_DIENTableAdapters.CM_DM_TU_DIENTableAdapter();
-            this.label4 = new System.Windows.Forms.Label();
-            this.m_txt_ma_du_an_thr = new System.Windows.Forms.TextBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.m_tab_du_an.SuspendLayout();
@@ -346,6 +346,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi tiết dự án";
             // 
+            // m_txt_ma_du_an_thr
+            // 
+            this.m_txt_ma_du_an_thr.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_ma_du_an_thr.Location = new System.Drawing.Point(486, 39);
+            this.m_txt_ma_du_an_thr.Name = "m_txt_ma_du_an_thr";
+            this.m_txt_ma_du_an_thr.Size = new System.Drawing.Size(236, 20);
+            this.m_txt_ma_du_an_thr.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(402, 42);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 13);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Mã dự án THR";
+            // 
             // m_ofd_chon_file
             // 
             this.m_ofd_chon_file.FileName = "openFileDialog1";
@@ -396,7 +413,7 @@
             this.m_fg_quyet_dinh.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_fg_quyet_dinh.Location = new System.Drawing.Point(3, 32);
             this.m_fg_quyet_dinh.Name = "m_fg_quyet_dinh";
-            this.m_fg_quyet_dinh.Rows.Count = 10;
+            this.m_fg_quyet_dinh.Rows.Count = 14;
             this.m_fg_quyet_dinh.Size = new System.Drawing.Size(1079, 327);
             this.m_fg_quyet_dinh.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_quyet_dinh.Styles"));
             this.m_fg_quyet_dinh.TabIndex = 0;
@@ -422,10 +439,11 @@
             this.m_fg_nhan_vien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg_nhan_vien.Location = new System.Drawing.Point(3, 80);
             this.m_fg_nhan_vien.Name = "m_fg_nhan_vien";
-            this.m_fg_nhan_vien.Rows.Count = 10;
+            this.m_fg_nhan_vien.Rows.Count = 11;
             this.m_fg_nhan_vien.Size = new System.Drawing.Size(1079, 279);
             this.m_fg_nhan_vien.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_nhan_vien.Styles"));
             this.m_fg_nhan_vien.TabIndex = 108;
+            this.m_fg_nhan_vien.Click += new System.EventHandler(this.m_fg_nhan_vien_Click);
             // 
             // groupBox2
             // 
@@ -578,23 +596,6 @@
             // 
             this.cM_DM_TU_DIENTableAdapter1.ClearBeforeFill = true;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(402, 42);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 13);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "Mã dự án THR";
-            // 
-            // m_txt_ma_du_an_thr
-            // 
-            this.m_txt_ma_du_an_thr.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_ma_du_an_thr.Location = new System.Drawing.Point(486, 39);
-            this.m_txt_ma_du_an_thr.Name = "m_txt_ma_du_an_thr";
-            this.m_txt_ma_du_an_thr.Size = new System.Drawing.Size(236, 20);
-            this.m_txt_ma_du_an_thr.TabIndex = 0;
-            // 
             // f500_dm_du_an_detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -650,7 +651,6 @@
         private System.Windows.Forms.TabControl m_tab_du_an;
         private System.Windows.Forms.TabPage tabQuyetDinh;
         private System.Windows.Forms.TabPage tabNhanVien;
-        private C1.Win.C1FlexGrid.C1FlexGrid m_fg_nhan_vien;
         internal SIS.Controls.Button.SiSButton m_cmd_delete_nhan_vien;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label m_lbl_ma_nhan_vien;
@@ -669,6 +669,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox m_txt_ma_du_an_thr;
         private System.Windows.Forms.Label label4;
+        private C1.Win.C1FlexGrid.C1FlexGrid m_fg_nhan_vien;
 
     }
 }
