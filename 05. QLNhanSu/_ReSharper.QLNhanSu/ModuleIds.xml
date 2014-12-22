@@ -1,8 +1,0 @@
-<Modules>
-  <Module PersistentId="1AB3A1A7-E91D-4197-8C20-60D29AE5A302" ModuleId="QLNhanSu" />
-  <Module PersistentId="B3CFBDAF-3510-4DCE-8F98-79C6119889FC" ModuleId="Framework.Extensions" />
-  <Module PersistentId="B0E965C9-AEF8-4351-845D-E49DB12D106D" ModuleId="BKISystemAdmin" />
-  <Module PersistentId="80ECE798-7ABD-43A6-AA75-95B50ADEDE53" ModuleId="SQLDataAccess" />
-  <Module PersistentId="02CCFADB-7742-46DC-8FB9-B1A8362F224E" ModuleId="Caching" />
-  <Module PersistentId="128AC081-CFD9-44B4-9392-B244F0F32019" ModuleId="BusinessLogic" />
-</Modules>

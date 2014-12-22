@@ -1,8 +1,0 @@
-E:\0. Working\1. Project\DatPhongHop\03. SourceCode\IPCommon\bin\IPCommon.dll
-E:\0. Working\1. Project\DatPhongHop\03. SourceCode\IPCommon\bin\IPCommon.xml
-E:\0. Working\1. Project\DatPhongHop\03. SourceCode\IPCommon\obj\Release\IPCommon.dll
-E:\0. Working\1. Project\DatPhongHop\03. SourceCode\IPCommon\obj\Release\IPCommon.xml
-C:\Users\Apple\Desktop\QLNhanSu\IPCommon\bin\IPCommon.dll
-C:\Users\Apple\Desktop\QLNhanSu\IPCommon\bin\IPCommon.xml
-C:\Users\Apple\Desktop\QLNhanSu\IPCommon\obj\Release\IPCommon.dll
-C:\Users\Apple\Desktop\QLNhanSu\IPCommon\obj\Release\IPCommon.xml
