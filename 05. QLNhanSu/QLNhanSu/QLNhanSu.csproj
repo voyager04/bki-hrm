@@ -1,0 +1,1028 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{64387146-06F5-4225-9FD6-086E0FAA0DCA}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QLNhanSu</RootNamespace>
+    <AssemblyName>QLNhanSu</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Facebook">
+      <HintPath>..\packages\Facebook.6.8.0\lib\net40-client\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.20710.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.0.3.12153\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\GooglePlusClient.cs" />
+    <Compile Include="App_Start\OAuthConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\FacebookLoginController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Controllers\SystemController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\Utilities.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\BKI_HRM.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BKI_HRM.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BKI_HRM.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BKI_HRM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BKI_HRM.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChucVuModel.cs" />
+    <Compile Include="Models\CM_COMPANY_INFO.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CM_DM_LOAI_TD.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CM_DM_LOAI_TD_WEB.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CM_DM_TU_DIEN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CM_DM_TU_DIEN_WEB.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\desc_table_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_CAP_BAC.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_CHUC_VU.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_DON_VI.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_DU_AN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_HEADCOUNT.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_KY.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_NHAN_SU.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_PHAP_NHAN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_QUYET_DINH.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DM_TRANG_THAI_UNG_VIEN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOC_COLUMN_COMMENT.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOC_TABLE_COMMENT.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FacebookAccount.cs" />
+    <Compile Include="Models\GD_CHI_TIET_CAP_BAC.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GD_CHI_TIET_CHUC_VU.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GD_CHI_TIET_DU_AN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GD_CHI_TIET_TRANG_THAI_LD.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GD_CHI_TIET_TUYEN_DUNG.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GD_CONG_TAC.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GD_DON_VI_PHAP_NHAN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GD_HOP_DONG.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GD_LUONG_THEO_QD.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GD_QUA_TRINH_CONG_TAC.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GD_QUYET_DINH_DU_AN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GD_QUYET_DINH_PHAP_NHAN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GD_TINH_HINH_NV_MOI.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\get_tong_luong_by_ma_cv_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\get_tong_luong_by_ma_ttld_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HT_BACKUP_HISTORY.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HT_BUSINESS_PROCESS_LOCK.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HT_CONTROLLER.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HT_CONTROL_IN_FORM.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HT_FORM.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HT_LOGIN_WEB.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HT_LOG_LOGIN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HT_NGUOI_SU_DUNG.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HT_PHAN_QUYEN_CHO_NHOM.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HT_PHAN_QUYEN_CHUC_NANG.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HT_PHAN_QUYEN_DETAIL.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HT_PHAN_QUYEN_HE_THONG.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HT_QUAN_HE_SU_DUNG_DU_LIEU.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HT_QUYEN_USER.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HT_QUYEN_USER_WEB.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HT_THAM_SO_HE_THONG.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HT_USER.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HT_USER_GROUP.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HT_USER_GROUP_WEB.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMPORT_EXCEL_LUONG_THEO_QD.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InforEmployee.cs" />
+    <Compile Include="Models\pr_CM_DM_TU_DIEN_Load_loai_quyet_dinh_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_CM_DM_TU_DIEN_Load_trang_thai_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_CM_DM_TU_DIEN_Load_Tu_Dien_By_Loai_Tu_Dien_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_CM_DM_TU_DIEN_search_by_id_loai_td_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_CAP_BAC_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_DON_VI_check_ma_don_vi_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_DON_VI_grid_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_DON_VI_Load_to_grid_danh_muc_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_DON_VI_Select_by_user_name_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_DU_AN_QUYET_DINH_TU_DIEN_sap_ket_thuc_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_DU_AN_sap_ket_thuc_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_DU_AN_select_by_ID_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_DU_AN_select_by_ma_da_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_KY_Search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_NHAN_SU_Search_by_ID_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_NHAN_SU_Search_by_ma_ns_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_NHAN_SU_Search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_PHAP_NHAN_Search_by_ma_phap_nhan_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_PHAP_NHAN_Search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_QUYET_DINH_By_Ma_qd_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_QUYET_DINH_search_by_id_loai_qd_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_QUYET_DINH_search_by_id_qd_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_DM_QUYET_DINH_search_by_ma_qd_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_GD_CHI_TIET_DU_AN_select_by_id_du_an_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_GD_CHI_TIET_DU_AN_select_by_ID_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_GD_CHI_TIET_DU_AN_select_trang_thai_yes_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_GD_HOP_DONG_Search_by_ma_hop_dong_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_GD_HOP_DONG_Search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_GD_QUA_TRINH_CONG_TAC_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_GD_QUA_TRINH_CONG_TAC_WEB_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_GD_QUYET_DINH_PHAP_NHAN_Select_by_ID_QUYET_DINH_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_HT_NGUOI_SU_DUNG_fill_data_by_training_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_HT_PHAN_QUYEN_CHO_NHOM_select_by_ma_pq_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_HT_PHAN_QUYEN_DETAIL_fill_dataset_by_user_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_HT_PHAN_QUYEN_HE_THONG_quyen_chua_cap_select_by_id_nhom_quyen_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_HT_PHAN_QUYEN_HE_THONG_quyen_da_cap_select_by_id_nhom_quyen_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_HT_PHAN_QUYEN_HE_THONG_select_by_ma_pq_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_HT_QUAN_HE_SU_DUNG_DU_LIEU_UpdateQuyen4Group_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_HT_QUYEN_USER_fill_data_by_user_id_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_QUYET_DINH_CUA_DU_AN_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_RPT_BO_NHIEM_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_RPT_CHUC_VU_TRANG_THAI_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_RPT_DON_VI_TRANG_THAI_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_RPT_LUONG_DON_VI_THEO_KY_FillData_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_RPT_NHAN_SU_PERFECT_FillData_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_RPT_NHAN_VIEN_CHUA_CHUC_VU_TRANG_THAI_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_RPT_SO_LUONG_NV_THEO_LOAI_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_BAO_CAO_NHAN_SU_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_CAP_BAC_By_Ma_bac_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_CAP_BAC_By_Ma_cap_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_CAP_BAC_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_CHUC_VU_order_by_ma_chuc_vu_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_CHUC_VU_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_DON_VI_search_all_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_DON_VI_search_by_id_phap_nhan_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_DON_VI_search_by_ma_dv_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_DON_VI_search_cap_don_vi_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_DON_VI_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_DON_VI_search_web_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_DU_AN_QUYET_DINH_TU_DIEN_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_DU_LIEU_NHAN_VIEN_nghi_viec_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_DU_LIEU_NHAN_VIEN_Nhan_vien_sap_quay_lai_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_DU_LIEU_NHAN_VIEN_sap_het_han_thu_viec_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_DU_LIEU_NHAN_VIEN_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_NHAN_SU_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_QUYET_DINH_By_Ma_qd_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_QUYET_DINH_Search_by_ma_quyet_dinh_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_QUYET_DINH_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_TRANG_THAI_UNG_VIEN_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_DM_TRANG_THAI_UNG_VIEN_Select_by_ID_Parent_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_BAO_CAO_DU_AN_2_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_CHI_TIET_CAP_BAC_by_Ma_nhan_vien_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_CHI_TIET_CAP_BAC_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_CHI_TIET_CAP_BAC_select_by_MA_CAP_BAC_THOI_DIEM_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_CONG_TAC_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_CONG_TAC_Select_by_ID_QUYET_DINH_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_HOP_DONG_LAO_DONG_By_Loai_hop_dong_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_HOP_DONG_LAO_DONG_By_Ma_nhan_vien_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_HOP_DONG_LAO_DONG_by_trang_thai_hop_dong_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_HOP_DONG_LAO_DONG_Search_HDLD_da_het_han_nhung_chua_ky_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_HOP_DONG_LAO_DONG_Search_HD_hien_tai_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_HOP_DONG_LAO_DONG_Search_HD_sap_het_han_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_HOP_DONG_LAO_DONG_Search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_v_gd_luong_theo_qd_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_LUONG_THEO_QD_Search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_LUONG_THEO_QD_WEB_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_QUA_TRINH_LAM_VIEC_2_Search_NhanVien_TheoPhongBanTaiMotThoiDiem_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_QUA_TRINH_LAM_VIEC_2_Search_NhanVien_theo_ma_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_QUA_TRINH_LAM_VIEC_2_select_by_MA_CHUC_VU_THOI_DIEM_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_QUA_TRINH_LAM_VIEC_All_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_QUA_TRINH_LAM_VIEC_By_Ma_nhan_vien_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_QUA_TRINH_LAM_VIEC_chuc_vu_hien_tai_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_QUA_TRINH_LAM_VIEC_danh_sach_bo_nhiem_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_QUA_TRINH_LAM_VIEC_load_by_id_don_vi_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_QUA_TRINH_LAM_VIEC_Now_By_Ma_NV_Id_PN_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_QUA_TRINH_LAM_VIEC_Search1_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_QUYET_DINH_FillDataset_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_QUYET_DINH_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_TRANG_THAI_LAO_DONG_By_Ma_nhan_vien_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_TRANG_THAI_LAO_DONG_hien_tai_By_Ma_nhan_vien_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_TRANG_THAI_LAO_DONG_Nhan_vien_sap_quay_lai_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_GD_TRANG_THAI_LAO_DONG_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_HT_CONTROL_IN_FORM_select_by_ID_CN_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_HT_PHAN_QUYEN_CHO_NHOM_select_by_id_nhom_quyen_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_NHAN_SU_DU_AN_select_by_ID_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_NHAN_SU_DU_AN_tu_ngay_den_ngay_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_NHAN_SU_HIEN_TAI_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pr_V_QUYET_DINH_select_by_ID_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RPT_LUONG_DON_VI_THEO_KY.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserInfor.cs" />
+    <Compile Include="Models\View_2.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_BAO_CAO_NHAN_SU.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_DM_CAP_BAC.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_DM_CAP_BAC_2.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_DM_CHUC_VU.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_DM_DON_VI.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_DM_DU_AN_QUYET_DINH_TU_DIEN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_DM_DU_LIEU_NHAN_VIEN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_DM_NHAN_SU.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_DM_NHAN_SU_DU_AN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_DM_QUYET_DINH.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_DM_QUYET_DINH_By_Ten_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_DM_TRANG_THAI_UNG_VIEN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_GD_BAO_CAO_DU_AN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_GD_BAO_CAO_DU_AN_2.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_GD_CHI_TIET_CAP_BAC.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_GD_CONG_TAC.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_GD_HOP_DONG_LAO_DONG.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_GD_LUONG_THEO_QD.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_GD_QUA_TRINH_LAM_VIEC.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_GD_QUA_TRINH_LAM_VIEC_2.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_GD_QUYET_DINH.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_GD_QUYET_DINH_temp.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_GD_TRANG_THAI_LAO_DONG.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_GD_TRA_CUU_NHAN_SU.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_HT_CONTROL_IN_FORM.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_HT_PHAN_QUYEN_CHO_NHOM.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_HT_USER.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_NHAN_VIEN_HIEN_TAI.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_RPT_NHAN_SU_PERFECT.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\animate.css" />
+    <Content Include="Content\bootstrap-table.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\jquery.treetable.css" />
+    <Content Include="Content\jquery.treetable.theme.default.css" />
+    <Content Include="Content\screen.css" />
+    <Content Include="Content\selectize.default.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Images\default-body.png" />
+    <Content Include="Images\intro-bg.jpg" />
+    <Content Include="Images\logo.png" />
+    <EntityDeploy Include="Models\BKI_HRM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BKI_HRM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\BKI_HRM.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BKI_HRM.edmx</DependentUpon>
+      <LastGenOutput>BKI_HRM.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\BKI_HRM.edmx.diagram">
+      <DependentUpon>BKI_HRM.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\BKI_HRM.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BKI_HRM.edmx</DependentUpon>
+      <LastGenOutput>BKI_HRM.cs</LastGenOutput>
+    </Content>
+    <None Include="Properties\PublishProfiles\QLNhanSu.pubxml" />
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap-table.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\index.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-fb.js" />
+    <Content Include="Scripts\jquery-home-page.js" />
+    <Content Include="Scripts\jquery-nguoidung.js" />
+    <Content Include="Scripts\jquery-quatrinhlamviec.js" />
+    <Content Include="Scripts\jquery-system.js" />
+    <Content Include="Scripts\jquery-thongtinnhanvien.js" />
+    <Content Include="Scripts\jquery-thunhap.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery-user.js" />
+    <Content Include="Scripts\jquery.treetable.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquerybki.js" />
+    <Content Include="Scripts\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\selectize.js" />
+    <Content Include="Scripts\selectize.min.js" />
+    <Content Include="Scripts\typeahead.tagging.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Account\QuanLyUser.cshtml" />
+    <Content Include="Views\Account\TuChoiTaiKhoan.cshtml" />
+    <Content Include="Views\Report\F101_CoCauTopica.cshtml" />
+    <Content Include="Views\Report\F102_TraCuuQuaTrinhLamViecCaNhan.cshtml" />
+    <Content Include="Views\Report\F103_TraCuuThuNhapCaNhan.cshtml" />
+    <Content Include="Views\Report\F104_ThongTinNhanVien.cshtml" />
+    <Content Include="Views\System\F301_DanhMucPhanQuyenChucNang.cshtml" />
+    <Content Include="Views\User\F201_DanhMucNhanVien.cshtml" />
+    <Content Include="Views\User\F202_Insert.cshtml" />
+    <Content Include="Views\User\F203_Update.cshtml" />
+    <Content Include="Views\Shared\_Navigation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BKISystemAdmin\BKISystemAdmin.csproj">
+      <Project>{9d6a2032-c77b-4642-8fc4-7ab6ad4db7ca}</Project>
+      <Name>BKISystemAdmin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
+      <Project>{8ef96f00-5fd4-4e28-8717-8e6bec3f1e60}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.Extensions\Framework.Extensions.csproj">
+      <Project>{3c327069-2d91-4356-ba6a-c2977c3dd879}</Project>
+      <Name>Framework.Extensions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:34885/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

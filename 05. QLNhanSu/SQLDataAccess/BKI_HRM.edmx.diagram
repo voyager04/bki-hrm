@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1ffae33ff8dd41d192087f19de22f7b7" Name="Diagram1">
+        <EntityTypeShape EntityType="BKI_HRMModel.CM_COMPANY_INFO" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.CM_DM_LOAI_TD" Width="1.5" PointX="0.75" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.CM_DM_LOAI_TD_WEB" Width="1.5" PointX="14.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.CM_DM_TU_DIEN" Width="1.5" PointX="3" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.CM_DM_TU_DIEN_WEB" Width="1.5" PointX="17" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.DM_CAP_BAC" Width="1.5" PointX="8.25" PointY="37.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.DM_CHUC_VU" Width="1.5" PointX="5.25" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.DM_DON_VI" Width="1.5" PointX="5.25" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.DM_DU_AN" Width="1.5" PointX="5.25" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.DM_HEADCOUNT" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.DM_KY" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.DM_NHAN_SU" Width="1.5" PointX="2.625" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.DM_PHAP_NHAN" Width="1.5" PointX="8" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.DM_QUYET_DINH" Width="1.5" PointX="5.25" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.DM_TRANG_THAI_UNG_VIEN" Width="1.5" PointX="12.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.DOC_COLUMN_COMMENT" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.DOC_TABLE_COMMENT" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.GD_CHI_TIET_CAP_BAC" Width="1.5" PointX="10.5" PointY="30.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.GD_CHI_TIET_CHUC_VU" Width="1.5" PointX="7.5" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.GD_CHI_TIET_DU_AN" Width="1.5" PointX="7.5" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.GD_CHI_TIET_TRANG_THAI_LD" Width="1.5" PointX="10.5" PointY="23.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.GD_CHI_TIET_TUYEN_DUNG" Width="1.5" PointX="15" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.GD_CONG_TAC" Width="1.5" PointX="7.5" PointY="33.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.GD_DON_VI_PHAP_NHAN" Width="1.5" PointX="7.5" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.GD_HOP_DONG" Width="1.5" PointX="10.25" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.GD_LUONG_THEO_QD" Width="1.5" PointX="0.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.GD_QUA_TRINH_CONG_TAC" Width="1.5" PointX="17.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.GD_QUYET_DINH_DU_AN" Width="1.5" PointX="10.5" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.GD_QUYET_DINH_PHAP_NHAN" Width="1.5" PointX="10.5" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.GD_TINH_HINH_NV_MOI" Width="1.5" PointX="15.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.HT_BACKUP_HISTORY" Width="1.5" PointX="17.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.HT_BUSINESS_PROCESS_LOCK" Width="1.5" PointX="18.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.HT_CONTROL_IN_FORM" Width="1.5" PointX="13.25" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.HT_CONTROLLER" Width="1.5" PointX="7.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.HT_FORM" Width="1.5" PointX="11" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.HT_LOG_LOGIN" Width="1.5" PointX="18.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.HT_LOGIN_WEB" Width="1.5" PointX="19.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.HT_NGUOI_SU_DUNG" Width="1.5" PointX="11" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.HT_PHAN_QUYEN_CHO_NHOM" Width="1.5" PointX="16" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.HT_PHAN_QUYEN_CHUC_NANG" Width="4" PointX="10" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.HT_PHAN_QUYEN_DETAIL" Width="1.5" PointX="16" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.HT_PHAN_QUYEN_HE_THONG" Width="1.5" PointX="13.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.HT_QUAN_HE_SU_DUNG_DU_LIEU" Width="1.5" PointX="11" PointY="38.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.HT_QUYEN_USER" Width="1.5" PointX="13.25" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.HT_QUYEN_USER_WEB" Width="1.5" PointX="5.25" PointY="44" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.HT_THAM_SO_HE_THONG" Width="1.5" PointX="19.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.HT_USER" Width="1.5" PointX="10" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.HT_USER_GROUP" Width="1.5" PointX="8.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.HT_USER_GROUP_WEB" Width="1.5" PointX="7.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.IMPORT_EXCEL_LUONG_THEO_QD" Width="1.5" PointX="19.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.RPT_LUONG_DON_VI_THEO_KY" Width="1.5" PointX="19.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.sysdiagram" Width="1.5" PointX="20.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_BAO_CAO_NHAN_SU" Width="1.5" PointX="21.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_DM_CAP_BAC" Width="1.5" PointX="21.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_DM_CAP_BAC_2" Width="1.5" PointX="21.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_DM_CHUC_VU" Width="1.5" PointX="21.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_DM_DON_VI" Width="1.5" PointX="17.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_DM_DU_AN_QUYET_DINH_TU_DIEN" Width="1.5" PointX="19.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_DM_DU_LIEU_NHAN_VIEN" Width="1.5" PointX="21.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_DM_NHAN_SU" Width="1.5" PointX="23.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_DM_NHAN_SU_DU_AN" Width="1.5" PointX="23.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_DM_QUYET_DINH" Width="1.5" PointX="23.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_DM_TRANG_THAI_UNG_VIEN" Width="1.5" PointX="23.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_GD_BAO_CAO_DU_AN" Width="1.5" PointX="23.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_GD_BAO_CAO_DU_AN_2" Width="1.5" PointX="25.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_GD_CHI_TIET_CAP_BAC" Width="1.5" PointX="25.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_GD_CONG_TAC" Width="1.5" PointX="25.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_GD_HOP_DONG_LAO_DONG" Width="1.5" PointX="25.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_GD_LUONG_THEO_QD" Width="1.5" PointX="25.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_GD_QUA_TRINH_LAM_VIEC" Width="1.5" PointX="27.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_GD_QUA_TRINH_LAM_VIEC_2" Width="1.5" PointX="27.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_GD_QUYET_DINH" Width="1.5" PointX="12.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_GD_QUYET_DINH_temp" Width="1.5" PointX="14.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_GD_TRA_CUU_NHAN_SU" Width="1.5" PointX="27.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_GD_TRANG_THAI_LAO_DONG" Width="1.5" PointX="0.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_HT_CONTROL_IN_FORM" Width="1.5" PointX="16.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_HT_PHAN_QUYEN_CHO_NHOM" Width="1.5" PointX="29.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_HT_USER" Width="1.5" PointX="29.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_NHAN_VIEN_HIEN_TAI" Width="1.5" PointX="29.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.V_RPT_NHAN_SU_PERFECT" Width="1.5" PointX="29.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BKI_HRMModel.View_2" Width="1.5" PointX="18.75" PointY="29.75" IsExpanded="true" />
+        <AssociationConnector Association="BKI_HRMModel.FK_CM_DM_TU_DIEN_CM_DM_LOAI_TD" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_CM_DM_TU_DIEN_WEB_CM_DM_LOAI_TD_WEB" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_DM_CHUC_VU_CM_DM_TU_DIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_DM_DON_VI_CM_DM_TU_DIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_DM_DON_VI_CM_DM_TU_DIEN1" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_DM_DU_AN_CM_DM_TU_DIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_DM_DU_AN_CM_DM_TU_DIEN1" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_DM_DU_AN_CM_DM_TU_DIEN2" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_DM_QUYET_DINH_CM_DM_TU_DIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_CHI_TIET_CHUC_VU_CM_DM_TU_DIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_CHI_TIET_DU_AN_CM_DM_TU_DIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_CHI_TIET_DU_AN_CM_DM_TU_DIEN1" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_CHI_TIET_TRANG_THAI_LD_CM_DM_TU_DIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_HOP_DONG_CM_DM_TU_DIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_HT_CONTROL_IN_FORM_CM_DM_TU_DIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_HT_QUYEN_USER_CM_DM_TU_DIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_HT_QUYEN_USER_WEB_CM_DM_TU_DIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_CHI_TIET_CAP_BAC_DM_CAP_BAC" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_CHI_TIET_CHUC_VU_DM_CHUC_VU" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_DM_DON_VI_DM_DON_VI" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_CHI_TIET_CHUC_VU_DM_DON_VI" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_DON_VI_PHAP_NHAN_GD_DON_VI_PHAP_NHAN" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_CHI_TIET_DU_AN_DM_DU_AN" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_QUYET_DINH_DU_AN_DM_DU_AN" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_DM_NHAN_SU_DM_HEADCOUNT" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_CHI_TIET_CAP_BAC_DM_NHAN_SU" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_CHI_TIET_CHUC_VU_DM_NHAN_SU" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_CHI_TIET_DU_AN_DM_NHAN_SU" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_CHI_TIET_TRANG_THAI_LD_DM_NHAN_SU" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_CHI_TIET_TUYEN_DUNG_DM_NHAN_SU" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_CONG_TAC_DM_NHAN_SU" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_HOP_DONG_DM_NHAN_SU" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_DON_VI_PHAP_NHAN_DM_PHAP_NHAN" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_HOP_DONG_DM_PHAP_NHAN" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_QUYET_DINH_PHAP_NHAN_DM_PHAP_NHAN" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_CHI_TIET_CAP_BAC_DM_QUYET_DINH" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_CHI_TIET_CHUC_VU_DM_QUYET_DINH" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_CHI_TIET_DU_AN_DM_QUYET_DINH" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_CHI_TIET_TRANG_THAI_LD_DM_QUYET_DINH" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_CONG_TAC_DM_QUYET_DINH" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_QUYET_DINH_DU_AN_DM_QUYET_DINH" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_QUYET_DINH_PHAP_NHAN_DM_QUYET_DINH" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_DM_TRANG_THAI_UNG_VIEN_DM_TRANG_THAI_UNG_VIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_GD_CHI_TIET_TUYEN_DUNG_DM_TRANG_THAI_UNG_VIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_HT_CONTROL_IN_FORM_HT_FORM" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_HT_PHAN_QUYEN_CHUC_NANG_HT_CONTROLLER" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_HT_NGUOI_SU_DUNG_DM_USER_GROUP" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_HT_QUYEN_USER_HT_NGUOI_SU_DUNG" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_HT_PHAN_QUYEN_CHO_NHOM_HT_PHAN_QUYEN_HE_THONG" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_HT_PHAN_QUYEN_CHO_NHOM_HT_USER_GROUP" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_HT_PHAN_QUYEN_CHUC_NANG_HT_PHAN_QUYEN_CHUC_NANG" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_HT_PHAN_QUYEN_CHUC_NANG_HT_USER_GROUP_WEB" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_HT_PHAN_QUYEN_DETAIL_HT_PHAN_QUYEN_HE_THONG" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_HT_QUAN_HE_SU_DUNG_DU_LIEU_HT_USER_GROUP" ManuallyRouted="false" />
+        <AssociationConnector Association="BKI_HRMModel.FK_HT_USER_HT_USER_GROUP_WEB" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

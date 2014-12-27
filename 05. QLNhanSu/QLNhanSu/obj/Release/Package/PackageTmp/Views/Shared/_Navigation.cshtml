@@ -1,0 +1,46 @@
+﻿@model IEnumerable<BKISystemAdmin.Model.CChucNangModel>
+
+
+
+@*****For User Site only****@
+<ul class="nav navbar-nav">
+    @if (Model != null)
+    {
+        foreach (var lp_item in Model)
+        {
+            if (lp_item.HIEN_THI_YN)
+            {
+                if (lp_item.CHUC_NANG_CON != null && lp_item.CHUC_NANG_CON.Any())
+                {
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="@(lp_item.HAS_LINK ? Url.Action(lp_item.ACTIVITY_NAME, lp_item.CONTROLLER_NAME) : "#")">
+                <span class="@lp_item.ICON_CLASS"></span>
+                @lp_item.HIEN_THI_MENU
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                @foreach (var item in lp_item.CHUC_NANG_CON)
+                {
+                    <li>
+                        <a href="@(item.HAS_LINK ? Url.Action(item.ACTIVITY_NAME, item.CONTROLLER_NAME) : "#")">
+                            <span class="@item.ICON_CLASS"></span>
+                            @item.HIEN_THI_MENU
+                        </a>
+                    </li>
+                }
+            </ul>
+        </li>
+                }
+                else
+                {
+        <li>
+            <a href="@(lp_item.HAS_LINK ? Url.Action(lp_item.ACTIVITY_NAME, lp_item.CONTROLLER_NAME) : "#")">
+                <span class="@lp_item.ICON_CLASS"></span>
+                @lp_item.HIEN_THI_MENU
+            </a>
+        </li>
+                }
+            }
+        }
+    }
+</ul>

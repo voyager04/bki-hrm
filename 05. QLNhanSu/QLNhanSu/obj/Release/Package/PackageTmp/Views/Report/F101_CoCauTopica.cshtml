@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Cơ cấu TOPICA";
+}
+
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/bootstrap-table.js"></script>
+<script src="~/Scripts/jquerybki.js"></script>
+
+<h2 class="title-page">Cơ cấu TOPICA</h2>
+
+<div class="btn btn-success" id="btn-search-nhan-vien" data-toggle='modal' data-target='.model-donvi-detail'>
+    <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Tìm kiếm nhân viên
+</div>
+
+<div class="table-responsive">
+    <table class="table table-bordered treetable tablefilter table-topica">
+        <thead>
+            <tr>
+                <th>Mã đơn vị</th>
+                <th>Tên đơn vị</th>
+                <th>Địa bàn</th>
+                <th>Chi tiết</th>
+            </tr>
+        </thead>
+        <tbody>
+            @Html.Raw(ViewBag.CoCauTOPICA)
+        </tbody>
+    </table>
+</div>
+
+
+<!-- Large modal -->
+
+<div class="modal fade model-donvi-detail" id="modalDonViDetails" tabindex="-1" role="dialog" aria-labelledby="modalDonViDetails" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="table-responsive">
+                        <div id="custem-toolbar-tblDonViDetails">
+                        </div>
+                        <table class="table table-bordered" id="tblDonViDetails" data-toolbar="#custem-toolbar-tblDonViDetails">
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+<br />

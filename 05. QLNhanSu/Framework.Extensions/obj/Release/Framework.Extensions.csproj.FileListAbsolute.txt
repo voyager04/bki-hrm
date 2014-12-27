@@ -1,0 +1,17 @@
+F:\temp\QLNhanSu\Framework.Extensions\bin\Release\Framework.Extensions.dll
+F:\temp\QLNhanSu\Framework.Extensions\bin\Release\Framework.Extensions.pdb
+F:\temp\QLNhanSu\Framework.Extensions\bin\Release\log4net.dll
+F:\temp\QLNhanSu\Framework.Extensions\bin\Release\Newtonsoft.Json.dll
+F:\temp\QLNhanSu\Framework.Extensions\bin\Release\log4net.xml
+F:\temp\QLNhanSu\Framework.Extensions\bin\Release\Newtonsoft.Json.xml
+F:\temp\QLNhanSu\Framework.Extensions\obj\Release\Framework.Extensions.dll
+F:\temp\QLNhanSu\Framework.Extensions\obj\Release\Framework.Extensions.pdb
+F:\QLNhanSu\Framework.Extensions\bin\Release\Framework.Extensions.dll
+F:\QLNhanSu\Framework.Extensions\bin\Release\Framework.Extensions.pdb
+F:\QLNhanSu\Framework.Extensions\bin\Release\log4net.dll
+F:\QLNhanSu\Framework.Extensions\bin\Release\Newtonsoft.Json.dll
+F:\QLNhanSu\Framework.Extensions\bin\Release\log4net.xml
+F:\QLNhanSu\Framework.Extensions\bin\Release\Newtonsoft.Json.xml
+F:\QLNhanSu\Framework.Extensions\obj\Release\Framework.Extensions.csprojResolveAssemblyReference.cache
+F:\QLNhanSu\Framework.Extensions\obj\Release\Framework.Extensions.dll
+F:\QLNhanSu\Framework.Extensions\obj\Release\Framework.Extensions.pdb

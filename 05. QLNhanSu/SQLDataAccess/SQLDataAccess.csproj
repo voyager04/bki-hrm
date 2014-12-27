@@ -1,0 +1,690 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ACD25677-8F1E-48FB-8D0D-C9E1CE109F29}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SQLDataAccess</RootNamespace>
+    <AssemblyName>SQLDataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BKI_HRM.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BKI_HRM.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BKI_HRM.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BKI_HRM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BKI_HRM.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="BKI_HRMEntities.cs" />
+    <Compile Include="CM_COMPANY_INFO.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CM_DM_LOAI_TD.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CM_DM_LOAI_TD_WEB.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CM_DM_TU_DIEN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CM_DM_TU_DIEN_WEB.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContextExtensions.cs" />
+    <Compile Include="desc_table_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DM_CAP_BAC.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DM_CHUC_VU.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DM_DON_VI.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DM_DU_AN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DM_HEADCOUNT.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DM_KY.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DM_NHAN_SU.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DM_PHAP_NHAN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DM_QUYET_DINH.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DM_TRANG_THAI_UNG_VIEN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DOC_COLUMN_COMMENT.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DOC_TABLE_COMMENT.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDataState.cs" />
+    <Compile Include="Entities\BaseData.cs" />
+    <Compile Include="GD_CHI_TIET_CAP_BAC.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD_CHI_TIET_CHUC_VU.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD_CHI_TIET_DU_AN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD_CHI_TIET_TRANG_THAI_LD.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD_CHI_TIET_TUYEN_DUNG.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD_CONG_TAC.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD_DON_VI_PHAP_NHAN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD_HOP_DONG.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD_LUONG_THEO_QD.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD_QUA_TRINH_CONG_TAC.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD_QUYET_DINH_DU_AN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD_QUYET_DINH_PHAP_NHAN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD_TINH_HINH_NV_MOI.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="get_tong_luong_by_ma_cv_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="get_tong_luong_by_ma_ttld_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_BACKUP_HISTORY.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_BUSINESS_PROCESS_LOCK.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_CONTROLLER.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_CONTROL_IN_FORM.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_FORM.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_LOGIN_WEB.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_LOG_LOGIN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_NGUOI_SU_DUNG.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_PHAN_QUYEN_CHO_NHOM.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_PHAN_QUYEN_CHUC_NANG.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_PHAN_QUYEN_DETAIL.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_PHAN_QUYEN_HE_THONG.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_QUAN_HE_SU_DUNG_DU_LIEU.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_QUYEN_USER.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_QUYEN_USER_WEB.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_THAM_SO_HE_THONG.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_USER.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_USER_GROUP.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HT_USER_GROUP_WEB.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMPORT_EXCEL_LUONG_THEO_QD.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\IDbContext.cs" />
+    <Compile Include="Interface\IRepository.cs" />
+    <Compile Include="Interface\IUnitOfWork.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="pr_CM_DM_TU_DIEN_Load_loai_quyet_dinh_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_CM_DM_TU_DIEN_Load_trang_thai_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_CM_DM_TU_DIEN_Load_Tu_Dien_By_Loai_Tu_Dien_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_CM_DM_TU_DIEN_search_by_id_loai_td_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_DM_CAP_BAC_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_DM_DON_VI_check_ma_don_vi_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_DM_DON_VI_grid_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_DM_DON_VI_Load_to_grid_danh_muc_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_DM_DON_VI_Select_by_user_name_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_DM_DU_AN_QUYET_DINH_TU_DIEN_sap_ket_thuc_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_DM_DU_AN_sap_ket_thuc_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_DM_DU_AN_select_by_ID_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_DM_DU_AN_select_by_ma_da_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_DM_KY_Search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_DM_NHAN_SU_Search_by_ID_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_DM_NHAN_SU_Search_by_ma_ns_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_DM_NHAN_SU_Search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_DM_PHAP_NHAN_Search_by_ma_phap_nhan_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_DM_PHAP_NHAN_Search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_DM_QUYET_DINH_By_Ma_qd_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_DM_QUYET_DINH_search_by_id_loai_qd_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_DM_QUYET_DINH_search_by_id_qd_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_DM_QUYET_DINH_search_by_ma_qd_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_GD_CHI_TIET_DU_AN_select_by_id_du_an_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_GD_CHI_TIET_DU_AN_select_by_ID_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_GD_CHI_TIET_DU_AN_select_trang_thai_yes_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_GD_HOP_DONG_Search_by_ma_hop_dong_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_GD_HOP_DONG_Search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_GD_QUA_TRINH_CONG_TAC_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_GD_QUA_TRINH_CONG_TAC_WEB_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_GD_QUYET_DINH_PHAP_NHAN_Select_by_ID_QUYET_DINH_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_HT_NGUOI_SU_DUNG_fill_data_by_training_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_HT_PHAN_QUYEN_CHO_NHOM_select_by_ma_pq_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_HT_PHAN_QUYEN_DETAIL_fill_dataset_by_user_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_HT_PHAN_QUYEN_HE_THONG_quyen_chua_cap_select_by_id_nhom_quyen_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_HT_PHAN_QUYEN_HE_THONG_quyen_da_cap_select_by_id_nhom_quyen_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_HT_PHAN_QUYEN_HE_THONG_select_by_ma_pq_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_HT_QUAN_HE_SU_DUNG_DU_LIEU_UpdateQuyen4Group_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_HT_QUYEN_USER_fill_data_by_user_id_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_QUYET_DINH_CUA_DU_AN_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_RPT_BO_NHIEM_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_RPT_CHUC_VU_TRANG_THAI_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_RPT_DON_VI_TRANG_THAI_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_RPT_LUONG_DON_VI_THEO_KY_FillData_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_RPT_NHAN_SU_PERFECT_FillData_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_RPT_SO_LUONG_NV_THEO_LOAI_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_BAO_CAO_NHAN_SU_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_DM_CAP_BAC_By_Ma_bac_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_DM_CAP_BAC_By_Ma_cap_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_DM_CAP_BAC_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_DM_CHUC_VU_order_by_ma_chuc_vu_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_DM_CHUC_VU_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_DM_DON_VI_search_all_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_DM_DON_VI_search_by_id_phap_nhan_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_DM_DON_VI_search_by_ma_dv_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_DM_DON_VI_search_cap_don_vi_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_DM_DON_VI_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_DM_DON_VI_search_web_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_DM_DU_AN_QUYET_DINH_TU_DIEN_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_DM_DU_LIEU_NHAN_VIEN_nghi_viec_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_DM_DU_LIEU_NHAN_VIEN_Nhan_vien_sap_quay_lai_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_DM_DU_LIEU_NHAN_VIEN_sap_het_han_thu_viec_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_DM_DU_LIEU_NHAN_VIEN_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_DM_NHAN_SU_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_DM_QUYET_DINH_By_Ma_qd_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_DM_QUYET_DINH_Search_by_ma_quyet_dinh_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_DM_QUYET_DINH_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_DM_TRANG_THAI_UNG_VIEN_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_DM_TRANG_THAI_UNG_VIEN_Select_by_ID_Parent_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_BAO_CAO_DU_AN_2_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_CHI_TIET_CAP_BAC_by_Ma_nhan_vien_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_CHI_TIET_CAP_BAC_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_CHI_TIET_CAP_BAC_select_by_MA_CAP_BAC_THOI_DIEM_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_CONG_TAC_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_CONG_TAC_Select_by_ID_QUYET_DINH_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_HOP_DONG_LAO_DONG_By_Loai_hop_dong_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_HOP_DONG_LAO_DONG_By_Ma_nhan_vien_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_HOP_DONG_LAO_DONG_by_trang_thai_hop_dong_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_HOP_DONG_LAO_DONG_Search_HDLD_da_het_han_nhung_chua_ky_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_HOP_DONG_LAO_DONG_Search_HD_hien_tai_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_HOP_DONG_LAO_DONG_Search_HD_sap_het_han_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_HOP_DONG_LAO_DONG_Search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_v_gd_luong_theo_qd_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_LUONG_THEO_QD_Search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_LUONG_THEO_QD_WEB_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_QUA_TRINH_LAM_VIEC_2_Search_NhanVien_TheoPhongBanTaiMotThoiDiem_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_QUA_TRINH_LAM_VIEC_2_Search_NhanVien_theo_ma_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_QUA_TRINH_LAM_VIEC_2_select_by_MA_CHUC_VU_THOI_DIEM_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_QUA_TRINH_LAM_VIEC_All_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_QUA_TRINH_LAM_VIEC_By_Ma_nhan_vien_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_QUA_TRINH_LAM_VIEC_chuc_vu_hien_tai_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_QUA_TRINH_LAM_VIEC_danh_sach_bo_nhiem_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_QUA_TRINH_LAM_VIEC_load_by_id_don_vi_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_QUA_TRINH_LAM_VIEC_Now_By_Ma_NV_Id_PN_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_QUA_TRINH_LAM_VIEC_Search1_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_QUYET_DINH_FillDataset_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_QUYET_DINH_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_TRANG_THAI_LAO_DONG_By_Ma_nhan_vien_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_TRANG_THAI_LAO_DONG_hien_tai_By_Ma_nhan_vien_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_TRANG_THAI_LAO_DONG_Nhan_vien_sap_quay_lai_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_GD_TRANG_THAI_LAO_DONG_search_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_HT_CONTROL_IN_FORM_select_by_ID_CN_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_HT_PHAN_QUYEN_CHO_NHOM_select_by_id_nhom_quyen_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_NHAN_SU_DU_AN_select_by_ID_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_NHAN_SU_DU_AN_tu_ngay_den_ngay_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_NHAN_SU_HIEN_TAI_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_V_QUYET_DINH_select_by_ID_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository.cs" />
+    <Compile Include="RepositoryQuery.cs" />
+    <Compile Include="RPT_LUONG_DON_VI_THEO_KY.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnitOfWork.cs" />
+    <Compile Include="View_2.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_BAO_CAO_NHAN_SU.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DM_CAP_BAC.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DM_CAP_BAC_2.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DM_CHUC_VU.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DM_DON_VI.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DM_DU_AN_QUYET_DINH_TU_DIEN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DM_DU_LIEU_NHAN_VIEN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DM_NHAN_SU.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DM_NHAN_SU_DU_AN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DM_QUYET_DINH.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DM_QUYET_DINH_By_Ten_Result.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_DM_TRANG_THAI_UNG_VIEN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GD_BAO_CAO_DU_AN.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GD_BAO_CAO_DU_AN_2.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GD_CHI_TIET_CAP_BAC.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GD_CONG_TAC.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GD_HOP_DONG_LAO_DONG.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GD_LUONG_THEO_QD.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GD_QUA_TRINH_LAM_VIEC.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GD_QUA_TRINH_LAM_VIEC_2.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GD_QUYET_DINH.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GD_QUYET_DINH_temp.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GD_TRANG_THAI_LAO_DONG.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_GD_TRA_CUU_NHAN_SU.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_HT_CONTROL_IN_FORM.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_HT_PHAN_QUYEN_CHO_NHOM.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_HT_USER.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_NHAN_VIEN_HIEN_TAI.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_RPT_NHAN_SU_PERFECT.cs">
+      <DependentUpon>BKI_HRM.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="BKI_HRM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BKI_HRM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config" />
+    <None Include="BKI_HRM.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BKI_HRM.edmx</DependentUpon>
+      <LastGenOutput>BKI_HRM.Context.cs</LastGenOutput>
+    </None>
+    <None Include="BKI_HRM.edmx.diagram">
+      <DependentUpon>BKI_HRM.edmx</DependentUpon>
+    </None>
+    <None Include="BKI_HRM.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BKI_HRM.edmx</DependentUpon>
+      <LastGenOutput>BKI_HRM.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

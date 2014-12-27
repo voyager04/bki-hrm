@@ -1,0 +1,49 @@
+﻿@model QLNhanSu.Models.HT_USER
+
+@{
+    ViewBag.Title = "F202_Insert";
+}
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/selectize.js"></script>
+<script src="~/Scripts/index.js"></script>
+<script src="~/Scripts/jquery-nguoidung.js"></script>
+
+<h2 class="title-page">F202 Thêm mới người dùng</h2>
+
+@using (Html.BeginForm("F202_Insert", "User", FormMethod.Post, new { @class = "form-horizontal", @role = "form" }))
+{
+    <div class="form-group">
+        <label for="txtMaNhanVien" class="col-sm-2 control-label">Mã nhân viên</label>
+        <div class="col-sm-10">
+            <select id="txtMaNhanVien" name="txtMaNhanVien" placeholder="Gõ để tìm kiếm">
+            </select>
+            <span class="loading-ma-nhan-vien"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="txtUserName" class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="txtUserName" name="txtUserName" placeholder="Email">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="ID_USER_GROUP" class="col-sm-2 control-label">Nhóm người dùng</label>
+        <div class="col-sm-10">
+            @Html.DropDownListFor(m => m.ID_USER_GROUP, (SelectList)ViewBag.ID_USER_GROUP, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="txtUserName" class="col-sm-2 control-label">Facebook</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" id="txtFacebook" name="txtFacebook" />
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success">Lưu</button>
+            <a href="@Url.Action("F201_DanhMucNhanVien", "User")" class="btn btn-danger">Hủy bỏ</a>
+        </div>
+    </div>
+}
