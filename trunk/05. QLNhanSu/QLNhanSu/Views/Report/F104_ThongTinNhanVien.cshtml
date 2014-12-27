@@ -1,0 +1,136 @@
+﻿@{
+    ViewBag.Title = "F104 - Thông tin nhân viên";
+}
+
+<link href="~/Content/selectize.default.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/selectize.js"></script>
+<script src="~/Scripts/index.js"></script>
+<script src="~/Scripts/jquery-thongtinnhanvien.js"></script>
+<script src="~/Scripts/jquery-fb.js"></script>
+
+<h2 class="title-page">F104 Tra cứu thông tin nhân viên</h2>
+
+<form class="form-horizontal" role="form">
+    <div class="form-group">
+        <label for="txtMaNhanVien" class="col-sm-2 control-label">Tìm kiếm</label>
+        <div class="col-sm-10">
+            <select id="txtMaNhanVien" name="txtMaNhanVien" placeholder="Gõ tên nhân viên để tìm kiếm">
+            </select>
+            <span class="loading-ma-nhan-vien"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-3">
+            <img id="avatarFb" height="87" width="87" src="" />
+            <span id="nameFb" style="font-weight: bold; margin-left: 5px;"></span>
+            <div id="btnAssignFb" onclick="Login()" class="btn btn-success">Tài khoản Facebook</div>
+        </div>
+
+        <div class="col-md-7">
+            <label class="control-label col-md-4">Họ tên</label>
+            <div class="col-sm-8">
+                <p class="form-control-static control-lable-value" id="lblHoTen"></p>
+            </div>
+            <label class="control-label col-md-4">Giới tính</label>
+            <div class="col-sm-8">
+                <p class="form-control-static control-lable-value" id="lblGioiTinh"></p>
+            </div>
+            <label class="control-label col-md-4">Ngày sinh</label>
+            <div class="col-sm-8">
+                <p class="form-control-static control-lable-value" id="lblNgaySinh"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Nơi sinh</label>
+        <div class="col-sm-10">
+            <p class="form-control-static control-lable-value" id="lblNoiSinh"></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Nguyên quán</label>
+        <div class="col-sm-10">
+            <p class="form-control-static control-lable-value" id="lblNguyenQuan"></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Nơi đăng ký hộ khẩu thường trú</label>
+        <div class="col-sm-10">
+            <p class="form-control-static control-lable-value" id="lblHoKhau"></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Nơi đăng ký địa chỉ thường trú</label>
+        <div class="col-sm-10">
+            <p class="form-control-static control-lable-value" id="lblDcThuongTru"></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Giấy chứng minh thư nhân dân số</label>
+        <div class="col-sm-2">
+            <p class="form-control-static control-lable-value" id="lblCMTND"></p>
+        </div>
+
+        <label class="col-sm-2 control-label">Ngày cấp</label>
+        <div class="col-sm-2">
+            <p class="form-control-static control-lable-value" id="lblNgayCap"></p>
+        </div>
+
+        <label class="col-sm-2 control-label">Nơi cấp</label>
+        <div class="col-sm-2">
+            <p class="form-control-static control-lable-value" id="lblNoiCap"></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Mã số thuế</label>
+        <div class="col-sm-2">
+            <p class="form-control-static control-lable-value" id="lblMaSoThue"></p>
+        </div>
+
+        <label class="col-sm-2 control-label">Số ĐTDĐ</label>
+        <div class="col-sm-2">
+            <p class="form-control-static control-lable-value" id="lblDTDD"></p>
+        </div>
+
+        <label class="col-sm-2 control-label">Số ĐT nhà riêng</label>
+        <div class="col-sm-2">
+            <p class="form-control-static control-lable-value" id="lblDTNhaRieng"></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Email cơ quan</label>
+        <div class="col-sm-4">
+            <p class="form-control-static control-lable-value" id="lblEmailCoQuan"></p>
+        </div>
+
+        <label class="col-sm-2 control-label">Email cá nhân</label>
+        <div class="col-sm-4">
+            <p class="form-control-static control-lable-value" id="lblEmailCaNhan"></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Trạng thái lao động</label>
+        <div class="col-sm-10">
+            <p class="form-control-static control-lable-value" id="lblTrangThaiLaoDong"></p>
+        </div>
+    </div>
+</form>
+
+<div class="table-responsive">
+    <table class="table table-bordered" id="tblChucVuNhanVien">
+    </table>
+</div>
+<p class="loading-data"></p>
+<br />
+<br />
+<div id="fb-root"></div>

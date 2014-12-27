@@ -1,0 +1,200 @@
+﻿body {
+    background-color: #fff;
+}
+
+#body {
+    margin-top: 52px;
+    margin-bottom: 30px;
+}
+
+.navbar-default {
+    background-color: #810913;
+}
+
+.navbar-nav > li > a, .navbar-nav > li > form > a {
+    color: #fff !important;
+}
+
+.navbar-nav > li > form > a {
+    position: relative;
+    display: block;
+    padding: 15px;
+    line-height: 20px;
+}
+
+    .navbar-nav > li > form > a:hover {
+        text-decoration: none;
+    }
+
+    .navbar-nav > li > a:hover, .navbar-nav > li > form > a:hover, #btnLoginGoogle:hover {
+        color: #810913 !important;
+        background-color: #fff !important;
+    }
+
+.navbar-nav > .active > a {
+    background-color: #b1141f !important;
+}
+
+.navbar-nav > li > a:focus, .dropdown-menu > li > a:hover {
+    background-color: #b1141f !important;
+    color: #fff !important;
+}
+
+.navbar-brand {
+    background-color: #fff !important;
+    border-right: 1px solid #b1141f;
+}
+
+#btnLoginGoogle {
+    background: none;
+    border: none;
+    color: #fff;
+    padding: 15px;
+}
+
+#logo {
+    margin-top: -10px;
+    width: 120px;
+    height: 40px;
+}
+
+
+.title-page {
+    color: #4183D7;
+    margin: 10px;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #b1141f;
+}
+
+
+
+
+
+
+
+
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    background-color: #810913;
+    color: #fff;
+    width: 100%;
+}
+
+.footer-float-left {
+    line-height: 30px;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+.table-topica > tbody > tr:hover {
+    background-color: #810913;
+    color: #fff;
+}
+
+#tblDanhMucNhanVien {
+    background-color: #fff;
+}
+
+#tblDanhMucNhanVien > tbody > tr:hover {
+    color: black;
+}
+
+#tblDanhMucNhanVien > thead > tr, #tblQuaTrinhLamViecCaNhan > thead > tr {
+    background-color: #810913;
+    color: #fff;
+}
+
+.btnViewDetails:hover {
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 10px !important;
+}
+
+.modal-footer {
+    margin-top: 0 !important;
+}
+
+.title-table {
+    font-size: 18px;
+    font-weight: bold;
+    color: #810913;
+}
+
+.control-lable-value {
+    border-bottom: 1px dashed black;
+    font-style: italic;
+    color: #4183D7;
+}
+
+ .form-horizontal .form-group {
+     margin-left: 0;
+     margin-right: 0;
+ }
+
+
+
+
+.content-home-page {
+    border-left: 1px solid #810913;
+    border-right: 1px solid #810913;
+}
+
+.content-row {
+    background-color: #810913;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 20px;
+}
+
+.image-row img {
+}
+
+
+
+
+
+
+
+
+.intro-header {
+    text-align: center;
+    color: #f8f8f8;
+    background: url(../Images/intro-bg.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.intro-message {
+    position: relative;
+    padding-top: 10%;
+    padding-bottom: 25%;
+}
+
+.intro-message > h1 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 5em;
+}
+
+.intro-divider {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.intro-message > h3 {
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+}

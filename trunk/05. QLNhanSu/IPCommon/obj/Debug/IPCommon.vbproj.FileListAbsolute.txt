@@ -1,0 +1,30 @@
+E:\0. Working\1. Project\New folder\IPCommon\bin\IPCommon.dll
+E:\0. Working\1. Project\New folder\IPCommon\bin\IPCommon.pdb
+E:\0. Working\1. Project\New folder\IPCommon\bin\IPCommon.xml
+E:\0. Working\1. Project\New folder\IPCommon\obj\Debug\IPCommon.dll
+E:\0. Working\1. Project\New folder\IPCommon\obj\Debug\IPCommon.xml
+E:\0. Working\1. Project\New folder\IPCommon\obj\Debug\IPCommon.pdb
+C:\Users\TuDM\Documents\Visual Studio 2012\Projects\DatPhongHop\IPCommon\bin\IPCommon.dll
+C:\Users\TuDM\Documents\Visual Studio 2012\Projects\DatPhongHop\IPCommon\bin\IPCommon.pdb
+C:\Users\TuDM\Documents\Visual Studio 2012\Projects\DatPhongHop\IPCommon\bin\IPCommon.xml
+C:\Users\TuDM\Documents\Visual Studio 2012\Projects\DatPhongHop\IPCommon\obj\Debug\IPCommon.dll
+C:\Users\TuDM\Documents\Visual Studio 2012\Projects\DatPhongHop\IPCommon\obj\Debug\IPCommon.xml
+C:\Users\TuDM\Documents\Visual Studio 2012\Projects\DatPhongHop\IPCommon\obj\Debug\IPCommon.pdb
+C:\Users\TuDM\Documents\Visual Studio 2012\Projects\DatPhongHop - Copy\IPCommon\bin\IPCommon.dll
+C:\Users\TuDM\Documents\Visual Studio 2012\Projects\DatPhongHop - Copy\IPCommon\bin\IPCommon.pdb
+C:\Users\TuDM\Documents\Visual Studio 2012\Projects\DatPhongHop - Copy\IPCommon\bin\IPCommon.xml
+C:\Users\TuDM\Documents\Visual Studio 2012\Projects\DatPhongHop - Copy\IPCommon\obj\Debug\IPCommon.dll
+C:\Users\TuDM\Documents\Visual Studio 2012\Projects\DatPhongHop - Copy\IPCommon\obj\Debug\IPCommon.xml
+C:\Users\TuDM\Documents\Visual Studio 2012\Projects\DatPhongHop - Copy\IPCommon\obj\Debug\IPCommon.pdb
+E:\0. Working\1. Project\DatPhongHop\03. SourceCode\IPCommon\bin\IPCommon.dll
+E:\0. Working\1. Project\DatPhongHop\03. SourceCode\IPCommon\bin\IPCommon.pdb
+E:\0. Working\1. Project\DatPhongHop\03. SourceCode\IPCommon\bin\IPCommon.xml
+E:\0. Working\1. Project\DatPhongHop\03. SourceCode\IPCommon\obj\Debug\IPCommon.dll
+E:\0. Working\1. Project\DatPhongHop\03. SourceCode\IPCommon\obj\Debug\IPCommon.xml
+E:\0. Working\1. Project\DatPhongHop\03. SourceCode\IPCommon\obj\Debug\IPCommon.pdb
+F:\QLNhanSu\IPCommon\bin\IPCommon.dll
+F:\QLNhanSu\IPCommon\bin\IPCommon.pdb
+F:\QLNhanSu\IPCommon\bin\IPCommon.xml
+F:\QLNhanSu\IPCommon\obj\Debug\IPCommon.dll
+F:\QLNhanSu\IPCommon\obj\Debug\IPCommon.xml
+F:\QLNhanSu\IPCommon\obj\Debug\IPCommon.pdb
