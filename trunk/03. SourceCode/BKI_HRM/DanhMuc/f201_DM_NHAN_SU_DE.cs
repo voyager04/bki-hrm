@@ -734,7 +734,39 @@ namespace BKI_HRM
             }
 
         }
+        private void send_email(US_DM_NHAN_SU ip_us)
+        {
+            if (ip_us.strEMAIL_CQ == "" || ip_us.strEMAIL_CQ.Length == 0)
+            {
+                MessageBox.Show("Nhân viên này chưa có tài khoản email cơ quan", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            string v_str_confirm =
+                string.Format(" Bạn muốn dùng email {0} gửi hướng dẫn thêm tài khoản Facebook cho {1} ({2})?",
+                "hoangnh@topica.edu.vn", ip_us.strEMAIL_CQ, ip_us.strHO_DEM + " " + ip_us.strTEN);
+            var dialog = MessageBox.Show(v_str_confirm,
+                "Thông báo",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button1);
+            if (dialog == DialogResult.Yes)
+            {
+                MailMessage mail = new MailMessage();
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
+                mail.From = new MailAddress("hoangnh@topica.edu.vn");
+                mail.To.Add("91apple.nguyen@gmail.com");
+                mail.Subject = "Hướng dẫn: Thêm tài khoản Facebook vào website quản lý nhân sự của TOPICA";
+                mail.Body = "This is for testing SMTP mail from GMAIL";
+
+                SmtpServer.Port = 587;
+                SmtpServer.Credentials = new System.Net.NetworkCredential("hoangnh@topica.edu.vn", "topica@999");
+                SmtpServer.EnableSsl = true;
+
+                SmtpServer.Send(mail);
+                MessageBox.Show("Email đã được gửi! Xin cám ơn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+        }
         private void set_define_event()
         {
             this.Load += new EventHandler(f201_DM_NHAN_SU_DE_Load);
@@ -1119,6 +1151,18 @@ namespace BKI_HRM
             //                 e.Handled = true;
             //             }
             //            
+        }
+
+        private void m_cmd_send_email_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                send_email(m_us_dm_nhan_su);
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
         #endregion
     }
