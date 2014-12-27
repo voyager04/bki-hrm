@@ -55,6 +55,10 @@
             this.m_lbl_ngay_cap = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.m_txt_name_facebook = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.m_txt_id_facebook = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.m_cmd_xoa_anh = new SIS.Controls.Button.SiSButton();
             this.m_ptb_anh = new System.Windows.Forms.PictureBox();
             this.m_lbl_ma_headcount = new System.Windows.Forms.Label();
@@ -139,10 +143,8 @@
             this.m_txt_nghe_nghiep_bo = new System.Windows.Forms.TextBox();
             this.m_txt_ho_ten_bo = new System.Windows.Forms.TextBox();
             this.m_ofd_chon_anh = new System.Windows.Forms.OpenFileDialog();
-            this.m_txt_id_facebook = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.m_txt_name_facebook = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.m_cmd_send_email = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -150,6 +152,7 @@
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_pnl_out_place_dm
@@ -158,7 +161,7 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_refresh);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 357);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 395);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(812, 36);
@@ -422,15 +425,12 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(812, 357);
+            this.tabControl1.Size = new System.Drawing.Size(812, 395);
             this.tabControl1.TabIndex = 20;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.m_txt_name_facebook);
-            this.tabPage1.Controls.Add(this.label24);
-            this.tabPage1.Controls.Add(this.m_txt_id_facebook);
-            this.tabPage1.Controls.Add(this.label23);
+            this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.m_cmd_xoa_anh);
             this.tabPage1.Controls.Add(this.m_ptb_anh);
             this.tabPage1.Controls.Add(this.m_lbl_ma_headcount);
@@ -462,10 +462,44 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(804, 331);
+            this.tabPage1.Size = new System.Drawing.Size(804, 369);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Thông tin cá nhân";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // m_txt_name_facebook
+            // 
+            this.m_txt_name_facebook.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_name_facebook.Location = new System.Drawing.Point(97, 54);
+            this.m_txt_name_facebook.Name = "m_txt_name_facebook";
+            this.m_txt_name_facebook.Size = new System.Drawing.Size(123, 20);
+            this.m_txt_name_facebook.TabIndex = 51;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(17, 24);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(69, 13);
+            this.label24.TabIndex = 52;
+            this.label24.Text = "ID Facebook";
+            // 
+            // m_txt_id_facebook
+            // 
+            this.m_txt_id_facebook.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_id_facebook.Location = new System.Drawing.Point(97, 22);
+            this.m_txt_id_facebook.Name = "m_txt_id_facebook";
+            this.m_txt_id_facebook.Size = new System.Drawing.Size(123, 20);
+            this.m_txt_id_facebook.TabIndex = 49;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(14, 56);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(77, 13);
+            this.label23.TabIndex = 50;
+            this.label23.Text = "Tên Facebook";
             // 
             // m_cmd_xoa_anh
             // 
@@ -518,9 +552,9 @@
             // m_txt_ma_headcount
             // 
             this.m_txt_ma_headcount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_ma_headcount.Location = new System.Drawing.Point(599, 288);
+            this.m_txt_ma_headcount.Location = new System.Drawing.Point(597, 288);
             this.m_txt_ma_headcount.Name = "m_txt_ma_headcount";
-            this.m_txt_ma_headcount.Size = new System.Drawing.Size(120, 20);
+            this.m_txt_ma_headcount.Size = new System.Drawing.Size(199, 20);
             this.m_txt_ma_headcount.TabIndex = 13;
             // 
             // m_txt_dan_toc
@@ -1274,51 +1308,46 @@
             this.m_txt_ho_ten_bo.Size = new System.Drawing.Size(140, 20);
             this.m_txt_ho_ten_bo.TabIndex = 34;
             // 
-            // m_txt_id_facebook
+            // groupBox1
             // 
-            this.m_txt_id_facebook.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_id_facebook.Location = new System.Drawing.Point(121, 288);
-            this.m_txt_id_facebook.Name = "m_txt_id_facebook";
-            this.m_txt_id_facebook.Size = new System.Drawing.Size(123, 20);
-            this.m_txt_id_facebook.TabIndex = 49;
+            this.groupBox1.Controls.Add(this.m_cmd_send_email);
+            this.groupBox1.Controls.Add(this.m_txt_id_facebook);
+            this.groupBox1.Controls.Add(this.label23);
+            this.groupBox1.Controls.Add(this.m_txt_name_facebook);
+            this.groupBox1.Controls.Add(this.label24);
+            this.groupBox1.Location = new System.Drawing.Point(25, 275);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(456, 88);
+            this.groupBox1.TabIndex = 54;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tài khoản Facebook";
             // 
-            // label23
+            // m_cmd_send_email
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(275, 290);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(77, 13);
-            this.label23.TabIndex = 50;
-            this.label23.Text = "Tên Facebook";
-            // 
-            // m_txt_name_facebook
-            // 
-            this.m_txt_name_facebook.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_name_facebook.Location = new System.Drawing.Point(358, 288);
-            this.m_txt_name_facebook.Name = "m_txt_name_facebook";
-            this.m_txt_name_facebook.Size = new System.Drawing.Size(123, 20);
-            this.m_txt_name_facebook.TabIndex = 51;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(43, 290);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(69, 13);
-            this.label24.TabIndex = 52;
-            this.label24.Text = "ID Facebook";
+            this.m_cmd_send_email.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_send_email.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_send_email.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_send_email.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_send_email.ImageIndex = 16;
+            this.m_cmd_send_email.ImageList = this.ImageList;
+            this.m_cmd_send_email.Location = new System.Drawing.Point(243, 24);
+            this.m_cmd_send_email.Name = "m_cmd_send_email";
+            this.m_cmd_send_email.Size = new System.Drawing.Size(207, 50);
+            this.m_cmd_send_email.TabIndex = 34;
+            this.m_cmd_send_email.Text = "&Gửi mail yêu cầu add tài khoản Facebook";
+            this.m_cmd_send_email.Click += new System.EventHandler(this.m_cmd_send_email_Click);
             // 
             // f201_DM_NHAN_SU_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.m_cmd_exit;
-            this.ClientSize = new System.Drawing.Size(812, 393);
+            this.ClientSize = new System.Drawing.Size(812, 431);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(828, 432);
-            this.MinimumSize = new System.Drawing.Size(828, 432);
+            this.MaximumSize = new System.Drawing.Size(828, 470);
+            this.MinimumSize = new System.Drawing.Size(828, 470);
             this.Name = "f201_DM_NHAN_SU_DE";
             this.Text = "F201 - Chi tiết hồ sơ nhân sự";
             this.m_pnl_out_place_dm.ResumeLayout(false);
@@ -1332,6 +1361,8 @@
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1451,5 +1482,7 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox m_txt_name_facebook;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.GroupBox groupBox1;
+        internal SIS.Controls.Button.SiSButton m_cmd_send_email;
     }
 }
