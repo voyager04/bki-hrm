@@ -1,22 +1,24 @@
 ﻿using System;
-using System.Data;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
+using System.Globalization;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
-using BKI_HRM.DanhMuc;
+using Checkbox_Combobox;
 using IP.Core.IPCommon;
 using IP.Core.IPExcelReport;
-using IP.Core.IPException;
-using IP.Core.IPData;
-using IP.Core.IPUserService;
 using IP.Core.IPSystemAdmin;
 
 using BKI_HRM.US;
 using BKI_HRM.DS;
 using BKI_HRM.DS.CDBNames;
+
+using C1.Win.C1FlexGrid;
+using SIS.Controls.Button;
+using System.Data;
 
 using C1.Win.C1FlexGrid;
 
@@ -125,6 +127,8 @@ namespace BKI_HRM {
         }
         private void set_initial_form_load() {
             m_obj_trans = get_trans_object(m_fg);
+            m_cmd_search.Visible = true;
+            m_cmd_search.Enabled = true;
             load_data_2_grid();
             //set_search_format_before();
             load_custom_source_2_m_txt_search();
@@ -324,10 +328,14 @@ namespace BKI_HRM {
             }
         }
 
-        private void m_cmd_search_Click(object sender, EventArgs e) {
-            try {
+        private void m_cmd_search_Click(object sender, EventArgs e)
+        {
+            try
+            {
                 load_data_2_grid();
-            } catch (Exception v_e) {
+            }
+            catch (Exception v_e)
+            {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
