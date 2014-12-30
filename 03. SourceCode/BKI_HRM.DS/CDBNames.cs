@@ -961,6 +961,8 @@
        public const string HO_DEM = "HO_DEM";
        public const string TEN = "TEN";
        public const string MA_CV = "MA_CV";
+       public const string NGACH = "NGACH";
+       public const string BAC = "BAC";
        public const string TEN_CV = "TEN_CV";
        public const string MA_DON_VI = "MA_DON_VI";
        public const string TEN_DON_VI = "TEN_DON_VI";
@@ -981,7 +983,7 @@
        public const string ID = "ID";
        public const string ID_NGACH = "ID_NGACH";
        public const string ID_DON_VI = "ID_DON_VI";
-       public const string NGACH = "NGACH";
+       public const string Expr2 = "Expr2";
        public const string TRANG_THAI_CHUC_VU_YN = "TRANG_THAI_CHUC_VU_YN";
        public const string TRANG_THAI_CV = "TRANG_THAI_CV";
        public const string MA_QUYET_DINH_MIEN_NHIEM = "MA_QUYET_DINH_MIEN_NHIEM";
@@ -997,7 +999,21 @@
        public const string ID_TRANG_LAO_DONG = "ID_TRANG_LAO_DONG";
        public const string TRANG_THAI_HIEN_TAI = "TRANG_THAI_HIEN_TAI";
        public const string TRANG_THAI_LD_HIEN_TAI = "TRANG_THAI_LD_HIEN_TAI";
+       public const string NGAY_CO_HIEU_LUC_LD = "NGAY_CO_HIEU_LUC_LD";
+       public const string NGAY_HET_HIEU_LUC_LD = "NGAY_HET_HIEU_LUC_LD";
+       public const string TRANG_THAI = "TRANG_THAI";
+       public const string ID_PHAP_NHAN = "ID_PHAP_NHAN";
+       public const string ID_PHAP_NHAN_QD = "ID_PHAP_NHAN_QD";
+       public const string GIOI_TINH = "GIOI_TINH";
+       public const string EMAIL_CQ = "EMAIL_CQ";
+       public const string DI_DONG = "DI_DONG";
+       public const string CHO_O = "CHO_O";
+       public const string MA_TTLD = "MA_TTLD";
+       public const string ID_HEADCOUNT = "ID_HEADCOUNT";
+       public const string MA_HEADCOUNT = "MA_HEADCOUNT";
+       public const string MA_PHAP_NHAN = "MA_PHAP_NHAN";
    }
+
 
    public class GD_DON_VI_PHAP_NHAN
    {

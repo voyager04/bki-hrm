@@ -152,5 +152,15 @@ namespace BKI_HRM.DS.Properties {
                 return ((string)(this["BKI_HRMConnectionString11"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ANHLT_PC;Initial Catalog=HRM;Integrated Security=True")]
+        public string HRMConnectionString {
+            get {
+                return ((string)(this["HRMConnectionString"]));
+            }
+        }
     }
 }
