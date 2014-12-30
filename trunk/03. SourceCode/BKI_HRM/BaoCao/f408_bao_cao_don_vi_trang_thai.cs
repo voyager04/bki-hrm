@@ -54,48 +54,62 @@ namespace BKI_HRM
 
         private enum e_col_Number
         {
-            LOAI_DON_VI = 11
+            EMAIL_CQ = 25
 ,
-            TEN_DON_VI = 3
+            TEN_DON_VI = 22
                 ,
-            MA_NV = 5
+            MA_NV = 1
                 ,
-            NGAY_KET_THUC = 13
+            NGAY_KET_THUC = 12
                 ,
-            NGAY_BAT_DAU = 12
+            NGAY_BAT_DAU = 11
                 ,
-            CAP_DON_VI = 10
+            TRANG_THAI_CV = 21
                 ,
-            TRANG_THAI_CV = 20
+            LOAI_CV = 8
                 ,
-            LOAI_CV = 18
+            MA_QUYET_DINH = 13
                 ,
-            MA_QUYET_DINH = 14
+            DIA_BAN = 23
                 ,
-            DIA_BAN = 4
+            TEN = 3
                 ,
-            TEN = 7
+            LOAI_QD = 16
                 ,
-            LOAI_QD = 15
+            NGAY_CO_HIEU_LUC = 14
                 ,
-            NGAY_CO_HIEU_LUC = 16
+            MA_DON_VI = 7
                 ,
-            MA_DON_VI = 1
+            MA_TTLD = 9
                 ,
-            HO_DEM = 6
+            HO_DEM = 2
                 ,
-            TY_LE_THAM_GIA = 22
+            TY_LE_THAM_GIA = 10
                 ,
-            TEN_CV = 9
+            NGAY_HET_HIEU_LUC_LD = 20
                 ,
-            NGAY_HET_HIEU_LUC = 17
+            NGAY_CO_HIEU_LUC_LD = 19
                 ,
-            TRANG_THAI_LD_HIEN_TAI = 2
+            NGAY_HET_HIEU_LUC = 15
                 ,
-            MA_CV = 8
+            DI_DONG = 26
                 ,
-            MA_QUYET_DINH_MIEN_NHIEM = 21
-                , NGACH = 19
+            TRANG_THAI_LD_HIEN_TAI = 18
+                ,
+            CHO_O = 27
+                ,
+            MA_HEADCOUNT = 28
+                ,
+            MA_CV = 21
+                ,
+            BAC = 6
+                ,
+            MA_QUYET_DINH_MIEN_NHIEM = 17
+                ,
+            NGACH = 5
+                ,
+            GIOI_TINH = 24
+                , MA_PHAP_NHAN = 4
 
         }
         const int m_width_col = 10;
@@ -164,12 +178,11 @@ namespace BKI_HRM
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
             Hashtable v_htb = new Hashtable();
-            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.LOAI_DON_VI, e_col_Number.LOAI_DON_VI);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.EMAIL_CQ, e_col_Number.EMAIL_CQ);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.TEN_DON_VI, e_col_Number.TEN_DON_VI);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.MA_NV, e_col_Number.MA_NV);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGAY_KET_THUC, e_col_Number.NGAY_KET_THUC);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGAY_BAT_DAU, e_col_Number.NGAY_BAT_DAU);
-            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.CAP_DON_VI, e_col_Number.CAP_DON_VI);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.TRANG_THAI_CV, e_col_Number.TRANG_THAI_CV);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.LOAI_CV, e_col_Number.LOAI_CV);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.MA_QUYET_DINH, e_col_Number.MA_QUYET_DINH);
@@ -178,14 +191,23 @@ namespace BKI_HRM
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.LOAI_QD, e_col_Number.LOAI_QD);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGAY_CO_HIEU_LUC, e_col_Number.NGAY_CO_HIEU_LUC);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.MA_DON_VI, e_col_Number.MA_DON_VI);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.MA_TTLD, e_col_Number.MA_TTLD);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.HO_DEM, e_col_Number.HO_DEM);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.TY_LE_THAM_GIA, e_col_Number.TY_LE_THAM_GIA);
-            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.TEN_CV, e_col_Number.TEN_CV);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGAY_HET_HIEU_LUC_LD, e_col_Number.NGAY_HET_HIEU_LUC_LD);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGAY_CO_HIEU_LUC_LD, e_col_Number.NGAY_CO_HIEU_LUC_LD);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGAY_HET_HIEU_LUC, e_col_Number.NGAY_HET_HIEU_LUC);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.DI_DONG, e_col_Number.DI_DONG);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.TRANG_THAI_LD_HIEN_TAI, e_col_Number.TRANG_THAI_LD_HIEN_TAI);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.CHO_O, e_col_Number.CHO_O);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.MA_HEADCOUNT, e_col_Number.MA_HEADCOUNT);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.MA_CV, e_col_Number.MA_CV);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.BAC, e_col_Number.BAC);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.MA_QUYET_DINH_MIEN_NHIEM, e_col_Number.MA_QUYET_DINH_MIEN_NHIEM);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGACH, e_col_Number.NGACH);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.GIOI_TINH, e_col_Number.GIOI_TINH);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.MA_PHAP_NHAN, e_col_Number.MA_PHAP_NHAN);
+
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds_v_qtlv2.V_GD_QUA_TRINH_LAM_VIEC_2.NewRow());
             return v_obj_trans;

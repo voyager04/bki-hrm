@@ -356,7 +356,7 @@ Public Class f101_Dang_Nhap
         Dim v_us As New US_DM_PHAP_NHAN
 
         v_us.FillDataset(v_ds)
-        m_cbo_co_cau.DisplayMember = "MA_PHAP_NHAN"
+        m_cbo_co_cau.DisplayMember = "TEN_PHAP_NHAN"
         m_cbo_co_cau.ValueMember = "ID"
         m_cbo_co_cau.DataSource = v_ds.DM_PHAP_NHAN
         '*****
