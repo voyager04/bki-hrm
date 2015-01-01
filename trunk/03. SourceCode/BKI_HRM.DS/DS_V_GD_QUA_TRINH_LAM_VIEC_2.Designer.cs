@@ -389,6 +389,8 @@ namespace BKI_HRM.DS {
             
             private global::System.Data.DataColumn columnMA_PHAP_NHAN;
             
+            private global::System.Data.DataColumn columnMA_KIEM_NHIEM;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public V_GD_QUA_TRINH_LAM_VIEC_2DataTable() {
@@ -864,6 +866,14 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MA_KIEM_NHIEMColumn {
+                get {
+                    return this.columnMA_KIEM_NHIEM;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -954,7 +964,8 @@ namespace BKI_HRM.DS {
                         string MA_TTLD, 
                         decimal ID_HEADCOUNT, 
                         string MA_HEADCOUNT, 
-                        string MA_PHAP_NHAN) {
+                        string MA_PHAP_NHAN, 
+                        string MA_KIEM_NHIEM) {
                 V_GD_QUA_TRINH_LAM_VIEC_2Row rowV_GD_QUA_TRINH_LAM_VIEC_2Row = ((V_GD_QUA_TRINH_LAM_VIEC_2Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MA_NV,
@@ -1011,7 +1022,8 @@ namespace BKI_HRM.DS {
                         MA_TTLD,
                         ID_HEADCOUNT,
                         MA_HEADCOUNT,
-                        MA_PHAP_NHAN};
+                        MA_PHAP_NHAN,
+                        MA_KIEM_NHIEM};
                 rowV_GD_QUA_TRINH_LAM_VIEC_2Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowV_GD_QUA_TRINH_LAM_VIEC_2Row);
                 return rowV_GD_QUA_TRINH_LAM_VIEC_2Row;
@@ -1089,6 +1101,7 @@ namespace BKI_HRM.DS {
                 this.columnID_HEADCOUNT = base.Columns["ID_HEADCOUNT"];
                 this.columnMA_HEADCOUNT = base.Columns["MA_HEADCOUNT"];
                 this.columnMA_PHAP_NHAN = base.Columns["MA_PHAP_NHAN"];
+                this.columnMA_KIEM_NHIEM = base.Columns["MA_KIEM_NHIEM"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1204,6 +1217,8 @@ namespace BKI_HRM.DS {
                 base.Columns.Add(this.columnMA_HEADCOUNT);
                 this.columnMA_PHAP_NHAN = new global::System.Data.DataColumn("MA_PHAP_NHAN", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMA_PHAP_NHAN);
+                this.columnMA_KIEM_NHIEM = new global::System.Data.DataColumn("MA_KIEM_NHIEM", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMA_KIEM_NHIEM);
                 this.columnMA_NV.AllowDBNull = false;
                 this.columnMA_NV.MaxLength = 35;
                 this.columnHO_DEM.AllowDBNull = false;
@@ -1251,6 +1266,8 @@ namespace BKI_HRM.DS {
                 this.columnMA_TTLD.MaxLength = 50;
                 this.columnMA_HEADCOUNT.MaxLength = 50;
                 this.columnMA_PHAP_NHAN.MaxLength = 35;
+                this.columnMA_KIEM_NHIEM.AllowDBNull = false;
+                this.columnMA_KIEM_NHIEM.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2242,6 +2259,17 @@ namespace BKI_HRM.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MA_KIEM_NHIEM {
+                get {
+                    return ((string)(this[this.tableV_GD_QUA_TRINH_LAM_VIEC_2.MA_KIEM_NHIEMColumn]));
+                }
+                set {
+                    this[this.tableV_GD_QUA_TRINH_LAM_VIEC_2.MA_KIEM_NHIEMColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsMA_CVNull() {
                 return this.IsNull(this.tableV_GD_QUA_TRINH_LAM_VIEC_2.MA_CVColumn);
             }
@@ -2971,6 +2999,7 @@ namespace BKI_HRM.DS.DS_V_GD_QUA_TRINH_LAM_VIEC_2TableAdapters {
             tableMapping.ColumnMappings.Add("ID_HEADCOUNT", "ID_HEADCOUNT");
             tableMapping.ColumnMappings.Add("MA_HEADCOUNT", "MA_HEADCOUNT");
             tableMapping.ColumnMappings.Add("MA_PHAP_NHAN", "MA_PHAP_NHAN");
+            tableMapping.ColumnMappings.Add("MA_KIEM_NHIEM", "MA_KIEM_NHIEM");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -2987,7 +3016,7 @@ namespace BKI_HRM.DS.DS_V_GD_QUA_TRINH_LAM_VIEC_2TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT MA_NV, HO_DEM, TEN, MA_CV, NGACH, BAC, TEN_CV, MA_DON_VI, TEN_DON_VI, ID_CAP_DON_VI, CAP_DON_VI, ID_LOAI_DON_VI, LOAI_DON_VI, ID_DON_VI_CAP_TREN, DIA_BAN, MA_QUYET_DINH, NGAY_CO_HIEU_LUC, NGAY_HET_HIEU_LUC, ID_LOAI_CV, LOAI_CV, NGAY_BAT_DAU, NGAY_KET_THUC, ID_NHAN_SU, ID, ID_NGACH, ID_DON_VI, Expr2, TRANG_THAI_CHUC_VU_YN, TRANG_THAI_CV, MA_QUYET_DINH_MIEN_NHIEM, ID_QUYET_DINH, ID_QUYET_DINH_MIEN_NHIEM, LUA_CHON, TY_LE_THAM_GIA, ID_CHUC_VU, MA_DV_CAP_TREN, TEN_DV_CAP_TREN, ID_LOAI_QD, LOAI_QD, ID_TRANG_LAO_DONG, TRANG_THAI_HIEN_TAI, TRANG_THAI_LD_HIEN_TAI, NGAY_CO_HIEU_LUC_LD, NGAY_HET_HIEU_LUC_LD, TRANG_THAI, ID_PHAP_NHAN, ID_PHAP_NHAN_QD, GIOI_TINH, EMAIL_CQ, DI_DONG, CHO_O, MA_TTLD, ID_HEADCOUNT, MA_HEADCOUNT, MA_PHAP_NHAN FROM dbo.V_GD_QUA_TRINH_LAM_VIEC_2";
+            this._commandCollection[0].CommandText = @"SELECT MA_NV, HO_DEM, TEN, MA_CV, NGACH, BAC, TEN_CV, MA_DON_VI, TEN_DON_VI, ID_CAP_DON_VI, CAP_DON_VI, ID_LOAI_DON_VI, LOAI_DON_VI, ID_DON_VI_CAP_TREN, DIA_BAN, MA_QUYET_DINH, NGAY_CO_HIEU_LUC, NGAY_HET_HIEU_LUC, ID_LOAI_CV, LOAI_CV, NGAY_BAT_DAU, NGAY_KET_THUC, ID_NHAN_SU, ID, ID_NGACH, ID_DON_VI, Expr2, TRANG_THAI_CHUC_VU_YN, TRANG_THAI_CV, MA_QUYET_DINH_MIEN_NHIEM, ID_QUYET_DINH, ID_QUYET_DINH_MIEN_NHIEM, LUA_CHON, TY_LE_THAM_GIA, ID_CHUC_VU, MA_DV_CAP_TREN, TEN_DV_CAP_TREN, ID_LOAI_QD, LOAI_QD, ID_TRANG_LAO_DONG, TRANG_THAI_HIEN_TAI, TRANG_THAI_LD_HIEN_TAI, NGAY_CO_HIEU_LUC_LD, NGAY_HET_HIEU_LUC_LD, TRANG_THAI, ID_PHAP_NHAN, ID_PHAP_NHAN_QD, GIOI_TINH, EMAIL_CQ, DI_DONG, CHO_O, MA_TTLD, ID_HEADCOUNT, MA_HEADCOUNT, MA_PHAP_NHAN, MA_KIEM_NHIEM FROM dbo.V_GD_QUA_TRINH_LAM_VIEC_2";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

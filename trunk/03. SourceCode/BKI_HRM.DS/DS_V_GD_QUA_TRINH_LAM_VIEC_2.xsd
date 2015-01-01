@@ -13,7 +13,7 @@
               <DbSource ConnectionRef="HRMConnectionString (Settings)" DbObjectName="HRM.dbo.V_GD_QUA_TRINH_LAM_VIEC_2" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT MA_NV, HO_DEM, TEN, MA_CV, NGACH, BAC, TEN_CV, MA_DON_VI, TEN_DON_VI, ID_CAP_DON_VI, CAP_DON_VI, ID_LOAI_DON_VI, LOAI_DON_VI, ID_DON_VI_CAP_TREN, DIA_BAN, MA_QUYET_DINH, NGAY_CO_HIEU_LUC, NGAY_HET_HIEU_LUC, ID_LOAI_CV, LOAI_CV, NGAY_BAT_DAU, NGAY_KET_THUC, ID_NHAN_SU, ID, ID_NGACH, ID_DON_VI, Expr2, TRANG_THAI_CHUC_VU_YN, TRANG_THAI_CV, MA_QUYET_DINH_MIEN_NHIEM, ID_QUYET_DINH, ID_QUYET_DINH_MIEN_NHIEM, LUA_CHON, TY_LE_THAM_GIA, ID_CHUC_VU, MA_DV_CAP_TREN, TEN_DV_CAP_TREN, ID_LOAI_QD, LOAI_QD, ID_TRANG_LAO_DONG, TRANG_THAI_HIEN_TAI, TRANG_THAI_LD_HIEN_TAI, NGAY_CO_HIEU_LUC_LD, NGAY_HET_HIEU_LUC_LD, TRANG_THAI, ID_PHAP_NHAN, ID_PHAP_NHAN_QD, GIOI_TINH, EMAIL_CQ, DI_DONG, CHO_O, MA_TTLD, ID_HEADCOUNT, MA_HEADCOUNT, MA_PHAP_NHAN FROM dbo.V_GD_QUA_TRINH_LAM_VIEC_2</CommandText>
+                    <CommandText>SELECT MA_NV, HO_DEM, TEN, MA_CV, NGACH, BAC, TEN_CV, MA_DON_VI, TEN_DON_VI, ID_CAP_DON_VI, CAP_DON_VI, ID_LOAI_DON_VI, LOAI_DON_VI, ID_DON_VI_CAP_TREN, DIA_BAN, MA_QUYET_DINH, NGAY_CO_HIEU_LUC, NGAY_HET_HIEU_LUC, ID_LOAI_CV, LOAI_CV, NGAY_BAT_DAU, NGAY_KET_THUC, ID_NHAN_SU, ID, ID_NGACH, ID_DON_VI, Expr2, TRANG_THAI_CHUC_VU_YN, TRANG_THAI_CV, MA_QUYET_DINH_MIEN_NHIEM, ID_QUYET_DINH, ID_QUYET_DINH_MIEN_NHIEM, LUA_CHON, TY_LE_THAM_GIA, ID_CHUC_VU, MA_DV_CAP_TREN, TEN_DV_CAP_TREN, ID_LOAI_QD, LOAI_QD, ID_TRANG_LAO_DONG, TRANG_THAI_HIEN_TAI, TRANG_THAI_LD_HIEN_TAI, NGAY_CO_HIEU_LUC_LD, NGAY_HET_HIEU_LUC_LD, TRANG_THAI, ID_PHAP_NHAN, ID_PHAP_NHAN_QD, GIOI_TINH, EMAIL_CQ, DI_DONG, CHO_O, MA_TTLD, ID_HEADCOUNT, MA_HEADCOUNT, MA_PHAP_NHAN, MA_KIEM_NHIEM FROM dbo.V_GD_QUA_TRINH_LAM_VIEC_2</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -75,6 +75,7 @@
               <Mapping SourceColumn="ID_HEADCOUNT" DataSetColumn="ID_HEADCOUNT" />
               <Mapping SourceColumn="MA_HEADCOUNT" DataSetColumn="MA_HEADCOUNT" />
               <Mapping SourceColumn="MA_PHAP_NHAN" DataSetColumn="MA_PHAP_NHAN" />
+              <Mapping SourceColumn="MA_KIEM_NHIEM" DataSetColumn="MA_KIEM_NHIEM" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -333,6 +334,13 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MA_KIEM_NHIEM" msprop:Generator_ColumnVarNameInTable="columnMA_KIEM_NHIEM" msprop:Generator_ColumnPropNameInRow="MA_KIEM_NHIEM" msprop:Generator_ColumnPropNameInTable="MA_KIEM_NHIEMColumn" msprop:Generator_UserColumnName="MA_KIEM_NHIEM">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

@@ -1012,6 +1012,7 @@
        public const string ID_HEADCOUNT = "ID_HEADCOUNT";
        public const string MA_HEADCOUNT = "MA_HEADCOUNT";
        public const string MA_PHAP_NHAN = "MA_PHAP_NHAN";
+       public const string MA_KIEM_NHIEM = "MA_KIEM_NHIEM";
    }
 
 
