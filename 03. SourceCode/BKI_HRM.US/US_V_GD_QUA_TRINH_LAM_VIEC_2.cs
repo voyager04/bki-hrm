@@ -1233,6 +1233,28 @@ namespace BKI_HRM.US
             pm_objDR["MA_PHAP_NHAN"] = System.Convert.DBNull;
         }
 
+        public string strMA_KIEM_NHIEM
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "MA_KIEM_NHIEM", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["MA_KIEM_NHIEM"] = value;
+            }
+        }
+
+        public bool IsMA_KIEM_NHIEMNull()
+        {
+            return pm_objDR.IsNull("MA_KIEM_NHIEM");
+        }
+
+        public void SetMA_KIEM_NHIEMNull()
+        {
+            pm_objDR["MA_KIEM_NHIEM"] = System.Convert.DBNull;
+        }
+
         #endregion
         #region "Init Functions"
         public US_V_GD_QUA_TRINH_LAM_VIEC_2()
@@ -1260,6 +1282,7 @@ namespace BKI_HRM.US
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
+
 
         #region Addtional
         public void FillDatase_NhanSu_TheoPhongBan(DS_V_GD_QUA_TRINH_LAM_VIEC_2 op_ds, string ip_str_search, DateTime ip_dat_thoi_diem, decimal ip_dc_phap_nhan, decimal ip_dc_kiem_nhiem)
