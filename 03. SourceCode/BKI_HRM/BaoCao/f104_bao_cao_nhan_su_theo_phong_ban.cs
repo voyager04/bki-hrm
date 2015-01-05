@@ -142,10 +142,10 @@ namespace BKI_HRM {
             var v_rows = m_ds.Tables[0].Rows;
             
             for (var i = 0; i < v_rows.Count - 1; i++) {
-                v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.HO_DEM] + " " + v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.TEN]);
-                v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.TEN] + "");
+                //v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.HO_DEM] + " " + v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.TEN]);
+                //v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.TEN] + "");
                 //v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.MA_DON_VI] + "");
-                //v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.MA_NV] + "");
+                v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.MA_NV] + "");
                 //v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.MA_DON_VI] + " - " + v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.TEN_DON_VI]);
                 //v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.TEN_DON_VI]+" - "+v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.MA_DON_VI]);
                 //v_coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC_2.TEN_CV] + "");

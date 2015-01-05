@@ -366,7 +366,7 @@
             this.MinimumSize = new System.Drawing.Size(877, 451);
             this.Name = "f408_bao_cao_don_vi_trang_thai";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "00";
+            this.Text = "f408_bao_cao_don_vi_trang_thai";
             this.Load += new System.EventHandler(this.f408_bao_cao_don_vi_trang_thai_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.m_pnl_out_place_dm.PerformLayout();
