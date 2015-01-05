@@ -785,7 +785,7 @@ namespace BKI_HRM
         {
             US_V_DM_DON_VI v_us = new US_V_DM_DON_VI();
             DS_V_DM_DON_VI v_ds = new DS_V_DM_DON_VI();
-            v_us.FillDataset_search_by_ma_dv(v_ds, m_txt_don_vi_moi.Text.Trim());
+            v_us.FillDataset_search_by_ma_dv(v_ds, m_txt_don_vi_moi.Text.Trim(),CAppContext_201.getCurrentIDPhapnhan());
             if (v_ds.V_DM_DON_VI.Count == 0)
             {
                 //  BaseMessages.MsgBox_Error("Mã đơn vị không hợp lệ.");
