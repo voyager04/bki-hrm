@@ -770,8 +770,8 @@ namespace BKI_HRM
         {
             try
             {
-                f405_bao_cao_chuc_vu_trang_thai v_frm = new f405_bao_cao_chuc_vu_trang_thai();
-                m_obj_tab.AddTab(m_xtab_control, "tab_bien_dong_chuc_vu", v_frm.Text, v_frm, new UserControl());
+                frm_V_GD_QUA_TRINH_LAM_VIEC_2 v_frm = new frm_V_GD_QUA_TRINH_LAM_VIEC_2();
+                m_obj_tab.AddTab(m_xtab_control, "tab_bien_dong_nhan_su", v_frm.Text, v_frm, new UserControl());
 
             }
             catch (Exception v_e)

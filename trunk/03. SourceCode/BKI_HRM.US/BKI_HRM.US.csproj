@@ -93,6 +93,7 @@
     <Compile Include="US_RPT_LUONG_DON_VI_THEO_KY.cs" />
     <Compile Include="US_RPT_LUONG_THEO_QD.cs" />
     <Compile Include="US_RPT_NHAN_SU_PERFECT.cs" />
+    <Compile Include="US_RPT_SO_LUONG_NV.cs" />
     <Compile Include="US_RPT_SO_LUONG_NV_THEO_LOAI.cs" />
     <Compile Include="US_RPT_TONG_LUONG.cs" />
     <Compile Include="US_V_DM_CAP_BAC.cs" />

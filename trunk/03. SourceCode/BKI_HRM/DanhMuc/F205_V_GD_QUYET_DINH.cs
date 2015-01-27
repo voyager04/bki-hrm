@@ -689,7 +689,7 @@ namespace BKI_HRM
                 v_us.BeginTransaction();
                 // Xoá Quyết định - Pháp nhân
                 v_us_qd_pn.FillDatasetByIdQuyetDinh(v_ds_qd_pn, v_us.dcID);
-                v_us_qd_pn.DeleteByID(CIPConvert.ToDecimal(v_ds_qd_pn.GD_QUYET_DINH_PHAP_NHAN.Rows[0][(int)e_col_Number_quyet_dinh_phap_nhan.ID]));
+                v_us_qd_pn.DeleteByID(v_us.dcID);
 
                 // Xoá Pháp nhân
                 v_us.delete_by_id(v_us.dcID);

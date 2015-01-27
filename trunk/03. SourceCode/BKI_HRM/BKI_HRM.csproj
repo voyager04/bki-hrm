@@ -291,6 +291,9 @@
     <Compile Include="BaoCao\f800_BC_LUONG_THEO_QD.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BaoCao\frm_V_GD_QUA_TRINH_LAM_VIEC_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CDataBaseProccessing.cs" />
     <Compile Include="ControlFormat.cs" />
     <Compile Include="ControllerHTUSER.cs" />
@@ -649,6 +652,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f800_BC_LUONG_THEO_QD.resx">
       <DependentUpon>f800_BC_LUONG_THEO_QD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\frm_V_GD_QUA_TRINH_LAM_VIEC_2.resx">
+      <DependentUpon>frm_V_GD_QUA_TRINH_LAM_VIEC_2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f101_v_dm_don_vi.resx">
       <DependentUpon>f101_v_dm_don_vi.cs</DependentUpon>

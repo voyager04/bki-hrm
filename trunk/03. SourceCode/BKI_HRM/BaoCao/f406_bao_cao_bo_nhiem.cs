@@ -560,7 +560,7 @@ namespace BKI_HRM
             m_fg.Rows[0].AllowMerging = true;
             // Merge the four cells with same contents.
             C1.Win.C1FlexGrid.CellRange rng = m_fg.GetCellRange(0, 4, 0, 5);
-            rng.Data = "Số lượng đã chốt bổ nhiệm nhưng chưa có quyết định";
+            rng.Data = "Số lượng đã bổ nhiệm nhưng chưa có quyết định";
             // Merge the four cells with same contents.
             //rng = m_fg.GetCellRange(0, 5, 0, 8);
             //rng.Data = "South";

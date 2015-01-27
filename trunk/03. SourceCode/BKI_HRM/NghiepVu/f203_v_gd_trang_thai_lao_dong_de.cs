@@ -83,6 +83,17 @@ namespace BKI_HRM
         #endregion
 
         #region Private Methods
+        private bool check_trung_ma_quyet_dinh(string ip_str_ma_quyet_dinh)
+        {
+            DS_V_DM_QUYET_DINH v_ds = new DS_V_DM_QUYET_DINH();
+            US_V_DM_QUYET_DINH v_us = new US_V_DM_QUYET_DINH();
+            decimal count_ma_quyet_dinh;
+            v_us.FillDataset_By_Ma_qd(v_ds, ip_str_ma_quyet_dinh);
+            count_ma_quyet_dinh = v_ds.V_DM_QUYET_DINH.Count;
+            if (count_ma_quyet_dinh > 0)
+                return false;
+            return true;
+        }
         private void format_controls()
         {
             CControlFormat.setFormStyle(this, new CAppContext_201());
@@ -364,7 +375,11 @@ namespace BKI_HRM
                 BaseMessages.MsgBox_Infor("Ngày hết hiệu lực quyết định không thể trước ngày có hiệu lực quyết định hoặc ngày ký.");
                 return false;
             }*/
-          
+            if (!check_trung_ma_quyet_dinh(m_txt_ma_quyet_dinh.Text.Trim()))
+            {
+                BaseMessages.MsgBox_Infor("Mã quyết định đã tồn tại");
+                return false;
+            }
             return true;
         }
         private bool check_trang_thai_hien_tai_phap_nhan()

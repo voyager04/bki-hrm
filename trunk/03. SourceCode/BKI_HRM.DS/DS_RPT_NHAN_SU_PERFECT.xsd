@@ -2,21 +2,23 @@
 <xs:schema id="DS_RPT_NHAN_SU_PERFECT" targetNamespace="http://tempuri.org/DS_RPT_NHAN_SU_PERFECT.xsd" xmlns:mstns="http://tempuri.org/DS_RPT_NHAN_SU_PERFECT.xsd" xmlns="http://tempuri.org/DS_RPT_NHAN_SU_PERFECT.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BKI_HRMConnectionString10" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BKI_HRMConnectionString10 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_HRM.DS.Properties.Settings.GlobalReference.Default.BKI_HRMConnectionString10" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="HRMConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HRMConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BKI_HRM.DS.Properties.Settings.GlobalReference.Default.HRMConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RPT_NHAN_SU_PERFECTTableAdapter" GeneratorDataComponentClassName="RPT_NHAN_SU_PERFECTTableAdapter" Name="RPT_NHAN_SU_PERFECT" UserDataComponentName="RPT_NHAN_SU_PERFECTTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BKI_HRMConnectionString10 (Settings)" DbObjectName="BKI_HRM.dbo.RPT_NHAN_SU_PERFECT" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="HRMConnectionString (Settings)" DbObjectName="HRM.dbo.RPT_NHAN_SU_PERFECT" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[RPT_NHAN_SU_PERFECT] ([MA_NV], [HO_DEM], [TEN], [NGAY_SINH], [NOI_SINH], [GIOI_TINH], [DI_DONG], [HO_KHAU], [CHO_O], [MA_CV], [NGAY_BAT_DAU], [CMND], [NGAY_CAP_CMND], [NOI_CAP_CMND], [EMAIL_CA_NHAN], [DT_NHA], [TINH_TRANG_SUC_KHOE], [SO_TAI_KHOAN], [CHI_NHANH_NGANHANG], [MA_SO_THUE], [SO_SO_BHXH], [NGAY_CAP_SO_BHXH], [SO_THE_BHYT], [MA_CHAM_CONG], [LUONG], [LUONG_DONG_BHXH], [NGAY_CO_HIEU_LUC], [NGAY_HET_HIEU_LUC], [MA_HOP_DONG], [NGAY_KY_HOP_DONG], [NGAY_BAT_DAU_HOP_DONG], [NGAY_KET_THUC_HOP_DONG], [QUOC_TICH], [DAN_TOC], [TON_GIAO], [TRINH_DO], [NGOAI_NGU], [TIN_HOC], [CHUYEN_NGANH], [NOI_DAO_TAO], [SKYPE], [YAHOO], [FACEBOOK], [GHI_CHU]) VALUES (@MA_NV, @HO_DEM, @TEN, @NGAY_SINH, @NOI_SINH, @GIOI_TINH, @DI_DONG, @HO_KHAU, @CHO_O, @MA_CV, @NGAY_BAT_DAU, @CMND, @NGAY_CAP_CMND, @NOI_CAP_CMND, @EMAIL_CA_NHAN, @DT_NHA, @TINH_TRANG_SUC_KHOE, @SO_TAI_KHOAN, @CHI_NHANH_NGANHANG, @MA_SO_THUE, @SO_SO_BHXH, @NGAY_CAP_SO_BHXH, @SO_THE_BHYT, @MA_CHAM_CONG, @LUONG, @LUONG_DONG_BHXH, @NGAY_CO_HIEU_LUC, @NGAY_HET_HIEU_LUC, @MA_HOP_DONG, @NGAY_KY_HOP_DONG, @NGAY_BAT_DAU_HOP_DONG, @NGAY_KET_THUC_HOP_DONG, @QUOC_TICH, @DAN_TOC, @TON_GIAO, @TRINH_DO, @NGOAI_NGU, @TIN_HOC, @CHUYEN_NGANH, @NOI_DAO_TAO, @SKYPE, @YAHOO, @FACEBOOK, @GHI_CHU)</CommandText>
+                    <CommandText>INSERT INTO [dbo].[RPT_NHAN_SU_PERFECT] ([MA_NV], [HO_DEM], [TEN], [DON_VI], [NGAY_SINH], [NOI_SINH], [GIOI_TINH], [DI_DONG], [HO_KHAU], [CHO_O], [MA_CV], [NGAY_BAT_DAU], [CMND], [NGAY_CAP_CMND], [NOI_CAP_CMND], [EMAIL_CA_NHAN], [DT_NHA], [TINH_TRANG_SUC_KHOE], [SO_TAI_KHOAN], [CHI_NHANH_NGANHANG], [MA_SO_THUE], [SO_SO_BHXH], [NGAY_CAP_SO_BHXH], [SO_THE_BHYT], [MA_CHAM_CONG], [LUONG], [LUONG_DONG_BHXH], [NGAY_CO_HIEU_LUC], [NGAY_HET_HIEU_LUC], [MA_HOP_DONG], [NGAY_KY_HOP_DONG], [NGAY_BAT_DAU_HOP_DONG], [NGAY_KET_THUC_HOP_DONG], [QUOC_TICH], [DAN_TOC], [TON_GIAO], [TRINH_DO], [NGOAI_NGU], [TIN_HOC], [CHUYEN_NGANH], [NOI_DAO_TAO], [SKYPE], [YAHOO], [FACEBOOK], [TRANG_THAI_LAM_VIEC], [GHI_CHU], [CAP], [BAC], [BO_PHAN], [DU_AN], [TY_LE_THAM_GIA], [CHINH_THUC], [TRANG_THAI_PHU]) VALUES (@MA_NV, @HO_DEM, @TEN, @DON_VI, @NGAY_SINH, @NOI_SINH, @GIOI_TINH, @DI_DONG, @HO_KHAU, @CHO_O, @MA_CV, @NGAY_BAT_DAU, @CMND, @NGAY_CAP_CMND, @NOI_CAP_CMND, @EMAIL_CA_NHAN, @DT_NHA, @TINH_TRANG_SUC_KHOE, @SO_TAI_KHOAN, @CHI_NHANH_NGANHANG, @MA_SO_THUE, @SO_SO_BHXH, @NGAY_CAP_SO_BHXH, @SO_THE_BHYT, @MA_CHAM_CONG, @LUONG, @LUONG_DONG_BHXH, @NGAY_CO_HIEU_LUC, @NGAY_HET_HIEU_LUC, @MA_HOP_DONG, @NGAY_KY_HOP_DONG, @NGAY_BAT_DAU_HOP_DONG, @NGAY_KET_THUC_HOP_DONG, @QUOC_TICH, @DAN_TOC, @TON_GIAO, @TRINH_DO, @NGOAI_NGU, @TIN_HOC, @CHUYEN_NGANH, @NOI_DAO_TAO, @SKYPE, @YAHOO, @FACEBOOK, @TRANG_THAI_LAM_VIEC, @GHI_CHU, @CAP, @BAC, @BO_PHAN, @DU_AN, @TY_LE_THAM_GIA, @CHINH_THUC, @TRANG_THAI_PHU)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@MA_NV" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="MA_NV" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@HO_DEM" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="HO_DEM" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@TEN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TEN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DON_VI" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DON_VI" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@NGAY_SINH" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_SINH" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NOI_SINH" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NOI_SINH" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@GIOI_TINH" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="GIOI_TINH" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -38,8 +40,8 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@NGAY_CAP_SO_BHXH" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_CAP_SO_BHXH" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@SO_THE_BHYT" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SO_THE_BHYT" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@MA_CHAM_CONG" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="MA_CHAM_CONG" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@LUONG" Precision="21" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="LUONG" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@LUONG_DONG_BHXH" Precision="21" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="LUONG_DONG_BHXH" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@LUONG" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="LUONG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@LUONG_DONG_BHXH" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="LUONG_DONG_BHXH" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@NGAY_CO_HIEU_LUC" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_CO_HIEU_LUC" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@NGAY_HET_HIEU_LUC" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NGAY_HET_HIEU_LUC" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@MA_HOP_DONG" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="MA_HOP_DONG" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -57,13 +59,21 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@SKYPE" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SKYPE" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@YAHOO" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="YAHOO" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@FACEBOOK" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FACEBOOK" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@TRANG_THAI_LAM_VIEC" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="TRANG_THAI_LAM_VIEC" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@GHI_CHU" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="GHI_CHU" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@CAP" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CAP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@BAC" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="BAC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@BO_PHAN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="BO_PHAN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DU_AN" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DU_AN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@TY_LE_THAM_GIA" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="TY_LE_THAM_GIA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@CHINH_THUC" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CHINH_THUC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@TRANG_THAI_PHU" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TRANG_THAI_PHU" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT MA_NV, HO_DEM, TEN, NGAY_SINH, NOI_SINH, GIOI_TINH, DI_DONG, HO_KHAU, CHO_O, MA_CV, NGAY_BAT_DAU, CMND, NGAY_CAP_CMND, NOI_CAP_CMND, EMAIL_CA_NHAN, DT_NHA, TINH_TRANG_SUC_KHOE, SO_TAI_KHOAN, CHI_NHANH_NGANHANG, MA_SO_THUE, SO_SO_BHXH, NGAY_CAP_SO_BHXH, SO_THE_BHYT, MA_CHAM_CONG, LUONG, LUONG_DONG_BHXH, NGAY_CO_HIEU_LUC, NGAY_HET_HIEU_LUC, MA_HOP_DONG, NGAY_KY_HOP_DONG, NGAY_BAT_DAU_HOP_DONG, NGAY_KET_THUC_HOP_DONG, QUOC_TICH, DAN_TOC, TON_GIAO, TRINH_DO, NGOAI_NGU, TIN_HOC, CHUYEN_NGANH, NOI_DAO_TAO, SKYPE, YAHOO, FACEBOOK, GHI_CHU FROM dbo.RPT_NHAN_SU_PERFECT</CommandText>
+                    <CommandText>SELECT MA_NV, HO_DEM, TEN, DON_VI, NGAY_SINH, NOI_SINH, GIOI_TINH, DI_DONG, HO_KHAU, CHO_O, MA_CV, NGAY_BAT_DAU, CMND, NGAY_CAP_CMND, NOI_CAP_CMND, EMAIL_CA_NHAN, DT_NHA, TINH_TRANG_SUC_KHOE, SO_TAI_KHOAN, CHI_NHANH_NGANHANG, MA_SO_THUE, SO_SO_BHXH, NGAY_CAP_SO_BHXH, SO_THE_BHYT, MA_CHAM_CONG, LUONG, LUONG_DONG_BHXH, NGAY_CO_HIEU_LUC, NGAY_HET_HIEU_LUC, MA_HOP_DONG, NGAY_KY_HOP_DONG, NGAY_BAT_DAU_HOP_DONG, NGAY_KET_THUC_HOP_DONG, QUOC_TICH, DAN_TOC, TON_GIAO, TRINH_DO, NGOAI_NGU, TIN_HOC, CHUYEN_NGANH, NOI_DAO_TAO, SKYPE, YAHOO, FACEBOOK, TRANG_THAI_LAM_VIEC, GHI_CHU, CAP, BAC, BO_PHAN, DU_AN, TY_LE_THAM_GIA, CHINH_THUC, TRANG_THAI_PHU FROM dbo.RPT_NHAN_SU_PERFECT</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -73,6 +83,7 @@
               <Mapping SourceColumn="MA_NV" DataSetColumn="MA_NV" />
               <Mapping SourceColumn="HO_DEM" DataSetColumn="HO_DEM" />
               <Mapping SourceColumn="TEN" DataSetColumn="TEN" />
+              <Mapping SourceColumn="DON_VI" DataSetColumn="DON_VI" />
               <Mapping SourceColumn="NGAY_SINH" DataSetColumn="NGAY_SINH" />
               <Mapping SourceColumn="NOI_SINH" DataSetColumn="NOI_SINH" />
               <Mapping SourceColumn="GIOI_TINH" DataSetColumn="GIOI_TINH" />
@@ -113,7 +124,15 @@
               <Mapping SourceColumn="SKYPE" DataSetColumn="SKYPE" />
               <Mapping SourceColumn="YAHOO" DataSetColumn="YAHOO" />
               <Mapping SourceColumn="FACEBOOK" DataSetColumn="FACEBOOK" />
+              <Mapping SourceColumn="TRANG_THAI_LAM_VIEC" DataSetColumn="TRANG_THAI_LAM_VIEC" />
               <Mapping SourceColumn="GHI_CHU" DataSetColumn="GHI_CHU" />
+              <Mapping SourceColumn="CAP" DataSetColumn="CAP" />
+              <Mapping SourceColumn="BAC" DataSetColumn="BAC" />
+              <Mapping SourceColumn="BO_PHAN" DataSetColumn="BO_PHAN" />
+              <Mapping SourceColumn="DU_AN" DataSetColumn="DU_AN" />
+              <Mapping SourceColumn="TY_LE_THAM_GIA" DataSetColumn="TY_LE_THAM_GIA" />
+              <Mapping SourceColumn="CHINH_THUC" DataSetColumn="CHINH_THUC" />
+              <Mapping SourceColumn="TRANG_THAI_PHU" DataSetColumn="TRANG_THAI_PHU" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -149,6 +168,13 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="DON_VI" msprop:Generator_ColumnVarNameInTable="columnDON_VI" msprop:Generator_ColumnPropNameInRow="DON_VI" msprop:Generator_ColumnPropNameInTable="DON_VIColumn" msprop:Generator_UserColumnName="DON_VI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="NGAY_SINH" msprop:Generator_ColumnVarNameInTable="columnNGAY_SINH" msprop:Generator_ColumnPropNameInRow="NGAY_SINH" msprop:Generator_ColumnPropNameInTable="NGAY_SINHColumn" msprop:Generator_UserColumnName="NGAY_SINH" type="xs:dateTime" minOccurs="0" />
               <xs:element name="NOI_SINH" msprop:Generator_ColumnVarNameInTable="columnNOI_SINH" msprop:Generator_ColumnPropNameInRow="NOI_SINH" msprop:Generator_ColumnPropNameInTable="NOI_SINHColumn" msprop:Generator_UserColumnName="NOI_SINH" minOccurs="0">
                 <xs:simpleType>
@@ -167,7 +193,7 @@
               <xs:element name="DI_DONG" msprop:Generator_ColumnVarNameInTable="columnDI_DONG" msprop:Generator_ColumnPropNameInRow="DI_DONG" msprop:Generator_ColumnPropNameInTable="DI_DONGColumn" msprop:Generator_UserColumnName="DI_DONG" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="15" />
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -204,7 +230,7 @@
               <xs:element name="NOI_CAP_CMND" msprop:Generator_ColumnVarNameInTable="columnNOI_CAP_CMND" msprop:Generator_ColumnPropNameInRow="NOI_CAP_CMND" msprop:Generator_ColumnPropNameInTable="NOI_CAP_CMNDColumn" msprop:Generator_UserColumnName="NOI_CAP_CMND" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="35" />
+                    <xs:maxLength value="250" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -273,7 +299,13 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="LUONG" msprop:Generator_ColumnVarNameInTable="columnLUONG" msprop:Generator_ColumnPropNameInRow="LUONG" msprop:Generator_ColumnPropNameInTable="LUONGColumn" msprop:Generator_UserColumnName="LUONG" type="xs:decimal" minOccurs="0" />
-              <xs:element name="LUONG_DONG_BHXH" msprop:Generator_ColumnVarNameInTable="columnLUONG_DONG_BHXH" msprop:Generator_ColumnPropNameInRow="LUONG_DONG_BHXH" msprop:Generator_ColumnPropNameInTable="LUONG_DONG_BHXHColumn" msprop:Generator_UserColumnName="LUONG_DONG_BHXH" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LUONG_DONG_BHXH" msprop:Generator_ColumnVarNameInTable="columnLUONG_DONG_BHXH" msprop:Generator_ColumnPropNameInRow="LUONG_DONG_BHXH" msprop:Generator_ColumnPropNameInTable="LUONG_DONG_BHXHColumn" msprop:Generator_UserColumnName="LUONG_DONG_BHXH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="NGAY_CO_HIEU_LUC" msprop:Generator_ColumnVarNameInTable="columnNGAY_CO_HIEU_LUC" msprop:Generator_ColumnPropNameInRow="NGAY_CO_HIEU_LUC" msprop:Generator_ColumnPropNameInTable="NGAY_CO_HIEU_LUCColumn" msprop:Generator_UserColumnName="NGAY_CO_HIEU_LUC" type="xs:dateTime" minOccurs="0" />
               <xs:element name="NGAY_HET_HIEU_LUC" msprop:Generator_ColumnVarNameInTable="columnNGAY_HET_HIEU_LUC" msprop:Generator_ColumnPropNameInRow="NGAY_HET_HIEU_LUC" msprop:Generator_ColumnPropNameInTable="NGAY_HET_HIEU_LUCColumn" msprop:Generator_UserColumnName="NGAY_HET_HIEU_LUC" type="xs:dateTime" minOccurs="0" />
               <xs:element name="MA_HOP_DONG" msprop:Generator_ColumnVarNameInTable="columnMA_HOP_DONG" msprop:Generator_ColumnPropNameInRow="MA_HOP_DONG" msprop:Generator_ColumnPropNameInTable="MA_HOP_DONGColumn" msprop:Generator_UserColumnName="MA_HOP_DONG" minOccurs="0">
@@ -363,10 +395,60 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="TRANG_THAI_LAM_VIEC" msprop:Generator_ColumnVarNameInTable="columnTRANG_THAI_LAM_VIEC" msprop:Generator_ColumnPropNameInRow="TRANG_THAI_LAM_VIEC" msprop:Generator_ColumnPropNameInTable="TRANG_THAI_LAM_VIECColumn" msprop:Generator_UserColumnName="TRANG_THAI_LAM_VIEC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="GHI_CHU" msprop:Generator_ColumnVarNameInTable="columnGHI_CHU" msprop:Generator_ColumnPropNameInRow="GHI_CHU" msprop:Generator_ColumnPropNameInTable="GHI_CHUColumn" msprop:Generator_UserColumnName="GHI_CHU" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CAP" msprop:Generator_ColumnVarNameInTable="columnCAP" msprop:Generator_ColumnPropNameInRow="CAP" msprop:Generator_ColumnPropNameInTable="CAPColumn" msprop:Generator_UserColumnName="CAP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BAC" msprop:Generator_ColumnVarNameInTable="columnBAC" msprop:Generator_ColumnPropNameInRow="BAC" msprop:Generator_ColumnPropNameInTable="BACColumn" msprop:Generator_UserColumnName="BAC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BO_PHAN" msprop:Generator_ColumnVarNameInTable="columnBO_PHAN" msprop:Generator_ColumnPropNameInRow="BO_PHAN" msprop:Generator_ColumnPropNameInTable="BO_PHANColumn" msprop:Generator_UserColumnName="BO_PHAN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DU_AN" msprop:Generator_ColumnVarNameInTable="columnDU_AN" msprop:Generator_ColumnPropNameInRow="DU_AN" msprop:Generator_ColumnPropNameInTable="DU_ANColumn" msprop:Generator_UserColumnName="DU_AN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TY_LE_THAM_GIA" msprop:Generator_ColumnVarNameInTable="columnTY_LE_THAM_GIA" msprop:Generator_ColumnPropNameInRow="TY_LE_THAM_GIA" msprop:Generator_ColumnPropNameInTable="TY_LE_THAM_GIAColumn" msprop:Generator_UserColumnName="TY_LE_THAM_GIA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CHINH_THUC" msprop:Generator_ColumnVarNameInTable="columnCHINH_THUC" msprop:Generator_ColumnPropNameInRow="CHINH_THUC" msprop:Generator_ColumnPropNameInTable="CHINH_THUCColumn" msprop:Generator_UserColumnName="CHINH_THUC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TRANG_THAI_PHU" msprop:Generator_ColumnVarNameInTable="columnTRANG_THAI_PHU" msprop:Generator_ColumnPropNameInRow="TRANG_THAI_PHU" msprop:Generator_ColumnPropNameInTable="TRANG_THAI_PHUColumn" msprop:Generator_UserColumnName="TRANG_THAI_PHU" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
