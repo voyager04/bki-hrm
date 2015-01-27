@@ -110,6 +110,7 @@ namespace BKI_HRM
                 ,
             GIOI_TINH = 24
                 , MA_PHAP_NHAN = 4
+            ,NGAY_SINH = 28
 
         }
         const int m_width_col = 10;
@@ -207,7 +208,7 @@ namespace BKI_HRM
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGACH, e_col_Number.NGACH);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.GIOI_TINH, e_col_Number.GIOI_TINH);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.MA_PHAP_NHAN, e_col_Number.MA_PHAP_NHAN);
-
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGAY_SINH, e_col_Number.NGAY_SINH);
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds_v_qtlv2.V_GD_QUA_TRINH_LAM_VIEC_2.NewRow());
             return v_obj_trans;

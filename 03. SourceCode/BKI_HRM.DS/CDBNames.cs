@@ -1013,6 +1013,7 @@
        public const string MA_HEADCOUNT = "MA_HEADCOUNT";
        public const string MA_PHAP_NHAN = "MA_PHAP_NHAN";
        public const string MA_KIEM_NHIEM = "MA_KIEM_NHIEM";
+       public const string NGAY_SINH = "NGAY_SINH";
    }
 
 
@@ -1250,6 +1251,7 @@
        public const string MA_NV = "MA_NV";
        public const string HO_DEM = "HO_DEM";
        public const string TEN = "TEN";
+       public const string DON_VI = "DON_VI";
        public const string NGAY_SINH = "NGAY_SINH";
        public const string NOI_SINH = "NOI_SINH";
        public const string GIOI_TINH = "GIOI_TINH";
@@ -1290,8 +1292,29 @@
        public const string SKYPE = "SKYPE";
        public const string YAHOO = "YAHOO";
        public const string FACEBOOK = "FACEBOOK";
+       public const string TRANG_THAI_LAM_VIEC = "TRANG_THAI_LAM_VIEC";
        public const string GHI_CHU = "GHI_CHU";
+       public const string CAP = "CAP";
+       public const string BAC = "BAC";
+       public const string BO_PHAN = "BO_PHAN";
+       public const string DU_AN = "DU_AN";
+       public const string TY_LE_THAM_GIA = "TY_LE_THAM_GIA";
+       public const string CHINH_THUC = "CHINH_THUC";
+       public const string TRANG_THAI_PHU = "TRANG_THAI_PHU";
    }
-      
+
+   public class RPT_SO_LUONG_NV
+   {
+       public const string ID = "ID";
+       public const string ID_TTLD = "ID_TTLD";
+       public const string MA_TTLD = "MA_TTLD";
+       public const string TEN_TTLD = "TEN_TTLD";
+       public const string NGACH = "NGACH";
+       public const string SO_THANG_TRUOC = "SO_THANG_TRUOC";
+       public const string SO_TANG = "SO_TANG";
+       public const string SO_GIAM = "SO_GIAM";
+       public const string SO_HIEN_TAI = "SO_HIEN_TAI";
+   }
+
 
 }

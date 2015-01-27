@@ -110,6 +110,17 @@ namespace BKI_HRM
         #endregion
 
         #region Private Methods
+        private bool check_trung_ma_quyet_dinh(string ip_str_ma_quyet_dinh)
+        {
+            DS_V_DM_QUYET_DINH v_ds = new DS_V_DM_QUYET_DINH();
+            US_V_DM_QUYET_DINH v_us = new US_V_DM_QUYET_DINH();
+            decimal count_ma_quyet_dinh;
+            v_us.FillDataset_By_Ma_qd(v_ds, ip_str_ma_quyet_dinh);
+            count_ma_quyet_dinh = v_ds.V_DM_QUYET_DINH.Count;
+            if (count_ma_quyet_dinh > 0)
+                return false;
+            return true;
+        }
         private void format_controls()
         {
             CControlFormat.setFormStyle(this, new CAppContext_201());
@@ -506,6 +517,11 @@ namespace BKI_HRM
                 BaseMessages.MsgBox_Infor("Không thể tồn tại 2 chức vụ chính tại thời điểm hiện tại.");
                 return false;
             }
+            if (!check_trung_ma_quyet_dinh(m_txt_ma_quyet_dinh.Text.Trim()))
+            {
+                BaseMessages.MsgBox_Infor("Mã quyết định đã tồn tại");
+                return false;
+            }
             return true;
         }
         private bool check_chuc_vu_chinh()
@@ -634,11 +650,11 @@ namespace BKI_HRM
                             {
                                 if (m_b_check_quyet_dinh_mien_nhiem_null)
                                 {
-                                    /*m_us_quyet_dinh_mien_nhiem.Insert();
+                                    m_us_quyet_dinh_mien_nhiem.Insert();
                                     v_us_gd_quyet_dinh_phap_nhan = new US_GD_QUYET_DINH_PHAP_NHAN();
                                     v_us_gd_quyet_dinh_phap_nhan.dcID_QUYET_DINH = m_us_quyet_dinh_mien_nhiem.dcID;
                                     v_us_gd_quyet_dinh_phap_nhan.dcID_PHAP_NHAN = CAppContext_201.getCurrentIDPhapnhan();
-                                    v_us_gd_quyet_dinh_phap_nhan.Insert();*/
+                                    v_us_gd_quyet_dinh_phap_nhan.Insert();
                                 }
                                 else
                                 {

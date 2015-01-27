@@ -222,7 +222,7 @@
             this.m_cmd_rpt_luong_don_vi_theo_ky,
             this.m_cmd_rpt_nhan_su_perfect});
             this.m_tab_menu.Location = new System.Drawing.Point(0, 0);
-            this.m_tab_menu.MaxItemId = 83;
+            this.m_tab_menu.MaxItemId = 84;
             this.m_tab_menu.Name = "m_tab_menu";
             this.m_tab_menu.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
