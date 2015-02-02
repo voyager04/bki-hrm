@@ -1393,6 +1393,8 @@ namespace BKI_HRM.US
             v_sp.addNVarcharInputParam("@ip_str_don_vi", ip_str_don_vi);
             v_sp.addNVarcharInputParam("@ip_str_ttld", ip_str_ttld);
             v_sp.addDecimalInputParam("@ip_dc_ty_le", ip_dc_ty_le);
+            v_sp.addDecimalInputParam("@PageNumber", 0);
+            v_sp.addDecimalInputParam("@RowspPage", 1);
             v_sp.fillDataSetByCommand(this, op_ds);
         }
         public void count_NhanSu_TheoMa(DS_V_GD_QUA_TRINH_LAM_VIEC_2 op_ds,ref decimal op_count, string ip_str_manv, DateTime ip_dat_thoi_diem, decimal ip_dc_phap_nhan, decimal ip_dc_kiem_nhiem, string ip_str_ngach_bac, string ip_str_don_vi, string ip_str_ttld, decimal ip_dc_ty_le)

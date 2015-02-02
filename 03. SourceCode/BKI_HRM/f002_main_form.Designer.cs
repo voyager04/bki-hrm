@@ -641,7 +641,7 @@
             // 
             // m_cmd_bien_dong_chuc_vu_trang_thai
             // 
-            this.m_cmd_bien_dong_chuc_vu_trang_thai.Caption = "Biến động chức vụ trạng thái";
+            this.m_cmd_bien_dong_chuc_vu_trang_thai.Caption = "Tăng giảm nhân viên";
             this.m_cmd_bien_dong_chuc_vu_trang_thai.Glyph = global::BKI_HRM.Properties.Resources.transfer_up_down;
             this.m_cmd_bien_dong_chuc_vu_trang_thai.Id = 73;
             this.m_cmd_bien_dong_chuc_vu_trang_thai.Name = "m_cmd_bien_dong_chuc_vu_trang_thai";

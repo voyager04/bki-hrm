@@ -40,6 +40,14 @@ namespace BKI_HRM
             this.ShowDialog();
 
         }
+        public void display_for_insert()
+        {
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            m_e_file_mode = DataEntryFileMode.UploadFile;
+            load_custom_source_2_m_txt_tim_kiem();
+            this.ShowDialog();
+
+        }
         public void display_for_update(US_V_GD_TRANG_THAI_LAO_DONG ip_us_trang_thai_ld)
         {
             m_us_v_trang_thai_ld = ip_us_trang_thai_ld;
@@ -324,6 +332,13 @@ namespace BKI_HRM
         {
             //m_us_trang_thai_ld.dcID = m_us_v_trang_thai_ld.dcID;
             //m_us_trang_thai_ld.dcID_NHAN_SU = m_us_v_trang_thai_ld.dcID_NHAN_SU;
+            if (m_us_v_trang_thai_ld.dcID == 0)
+            {
+                DS_DM_NHAN_SU v_ds_dm_nhan_su = new DS_DM_NHAN_SU();
+                US_DM_NHAN_SU v_us_dm_nhan_su = new US_DM_NHAN_SU();
+                v_us_dm_nhan_su.FillDataset_search_by_ma_nv(v_ds_dm_nhan_su, m_txt_ma_nv.Text);
+                m_us_v_trang_thai_ld.dcID_NHAN_SU = (decimal)v_ds_dm_nhan_su.Tables[0].Rows[0].ItemArray[0];
+            }
             m_us_v_trang_thai_ld.dcID_PHAP_NHAN = CAppContext_201.getCurrentIDPhapnhan();
             m_us_v_trang_thai_ld.dcID_TRANG_LAO_DONG = CIPConvert.ToDecimal(m_cbo_trang_thai_moi.SelectedValue);
             if (m_txt_ma_quyet_dinh.Text.Trim() != "")
@@ -626,7 +641,7 @@ namespace BKI_HRM
         }
         private void set_inital_form_load()
         {
-
+            
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.UpdateDataState:
@@ -706,6 +721,31 @@ namespace BKI_HRM
             {
                 m_b_check_quyet_dinh_null = true;
             }
+        }
+        private void load_custom_source_2_m_txt_tim_kiem()
+        {
+            DS_DM_NHAN_SU v_ds = new DS_DM_NHAN_SU();
+            US_DM_NHAN_SU v_us = new US_DM_NHAN_SU();
+            v_us.FillDataset(v_ds);
+            int count = v_ds.Tables["DM_NHAN_SU"].Rows.Count;
+            AutoCompleteStringCollection v_acsc_search = new AutoCompleteStringCollection();
+            foreach (DataRow dr in v_ds.DM_NHAN_SU)
+            {
+                v_acsc_search.Add(dr[DM_NHAN_SU.MA_NV].ToString());
+            }
+            m_txt_ma_nv.AutoCompleteCustomSource = v_acsc_search;
+        }
+        private void chon_nhan_su()
+        {
+            
+            DS_DM_NHAN_SU v_ds_dm_nhan_su = new DS_DM_NHAN_SU();
+            US_DM_NHAN_SU v_us_dm_nhan_su = new US_DM_NHAN_SU();
+            v_us_dm_nhan_su.FillDataset_search_by_ma_nv(v_ds_dm_nhan_su, m_txt_ma_nv.Text.Trim());
+            if (v_ds_dm_nhan_su.Tables[0].Rows.Count == 0)
+                return;
+            
+            m_txt_ho_ten.Text = v_ds_dm_nhan_su.Tables[0].Rows[0]["HO_DEM"] + " " +
+                                   v_ds_dm_nhan_su.Tables[0].Rows[0]["TEN"];
         }
         #endregion
 
@@ -875,5 +915,29 @@ namespace BKI_HRM
             }
         }
         #endregion
+
+        private void m_txt_ma_nv_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                chon_nhan_su();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_txt_ma_nv_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                chon_nhan_su();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }

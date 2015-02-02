@@ -472,7 +472,9 @@ namespace BKI_HRM
 
 
 		private void insert_v_gd_trang_thai_lao_dong(){
-            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_trang_thai_ld)) return;
+            f203_v_gd_trang_thai_lao_dong_de v_fDE = new f203_v_gd_trang_thai_lao_dong_de();
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_trang_thai_ld))
+                v_fDE.display_for_insert(); ;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_trang_thai_ld, m_grv_trang_thai_ld.Row)) return;
             if (m_grv_trang_thai_ld.Rows[m_grv_trang_thai_ld.Row].UserData != null)
             {
@@ -484,7 +486,7 @@ namespace BKI_HRM
             {
                 grid2us_object(m_us, m_grv_trang_thai_ld.Row + 1);
             }
-            f203_v_gd_trang_thai_lao_dong_de v_fDE = new f203_v_gd_trang_thai_lao_dong_de();
+            
             v_fDE.display_for_insert(m_us);
             
 		}

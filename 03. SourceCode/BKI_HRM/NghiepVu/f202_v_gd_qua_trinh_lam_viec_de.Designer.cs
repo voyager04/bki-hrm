@@ -830,11 +830,15 @@
             // 
             // m_txt_ma_nv
             // 
+            this.m_txt_ma_nv.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.m_txt_ma_nv.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.m_txt_ma_nv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_txt_ma_nv.Location = new System.Drawing.Point(107, 9);
             this.m_txt_ma_nv.Name = "m_txt_ma_nv";
             this.m_txt_ma_nv.Size = new System.Drawing.Size(100, 20);
             this.m_txt_ma_nv.TabIndex = 109;
+            this.m_txt_ma_nv.TextChanged += new System.EventHandler(this.m_txt_ma_nv_TextChanged);
+            this.m_txt_ma_nv.Leave += new System.EventHandler(this.m_txt_ma_nv_Leave);
             // 
             // m_lbl_ma_nv
             // 

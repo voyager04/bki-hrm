@@ -45,6 +45,18 @@ namespace BKI_HRM
             us_object_to_form();
             this.ShowDialog();
         }
+        public void display_for_bo_nhiem(string ip_str_loai_thay_doi)
+        {
+            m_str_loai_thay_doi = ip_str_loai_thay_doi;
+            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            m_e_file_mode = DataEntryFileMode.UploadFile;
+            m_tpc_quyet_dinh.SelectedTab = m_tp_bo_nhiem;
+            m_cmd_them_quyet_dinh_mien_nhiem.Visible = false;
+            m_cmd_chon_quyet_dinh_mien_nhiem.Visible = false;
+            m_cmd_bo_quyet_dinh_mien_nhiem.Visible = false;
+            load_custom_source_2_m_txt_tim_kiem();
+            this.ShowDialog();
+        }
         public void get_us(ref US_V_GD_QUA_TRINH_LAM_VIEC op_us)
         {
             op_us = m_us_v_qua_trinh_lam_viec;
@@ -401,6 +413,14 @@ namespace BKI_HRM
             if (CIPConvert.is_valid_number(m_txt_ty_le_tham_gia.Text.Trim()))
                 m_us_chi_tiet_chuc_vu.dcTY_LE_THAM_GIA = CIPConvert.ToDecimal(m_txt_ty_le_tham_gia.Text.Trim());
             else m_us_chi_tiet_chuc_vu.dcTY_LE_THAM_GIA = 0;
+            if (m_us_v_qua_trinh_lam_viec.dcID_NHAN_SU == 0)
+            {
+                DS_DM_NHAN_SU v_ds_dm_nhan_su = new DS_DM_NHAN_SU();
+                US_DM_NHAN_SU v_us_dm_nhan_su = new US_DM_NHAN_SU();
+                v_us_dm_nhan_su.FillDataset_search_by_ma_nv(v_ds_dm_nhan_su, m_txt_ma_nv.Text);
+                m_us_chi_tiet_chuc_vu.dcID_NHAN_SU = (decimal)v_ds_dm_nhan_su.Tables[0].Rows[0].ItemArray[0];
+            }
+            else
             m_us_chi_tiet_chuc_vu.dcID_NHAN_SU = m_us_v_qua_trinh_lam_viec.dcID_NHAN_SU;
             m_us_chi_tiet_chuc_vu.dcID_CHUC_VU = CIPConvert.ToDecimal(m_cbo_chuc_vu_moi.SelectedValue);
             
@@ -619,7 +639,7 @@ namespace BKI_HRM
                         decimal v_dc = 0;
                         if (CIPConvert.is_valid_number(m_txt_ty_le_tham_gia.Text.Trim()))
                             v_dc = CIPConvert.ToDecimal(m_txt_ty_le_tham_gia.Text.Trim());
-                        if (m_us_v_qua_trinh_lam_viec.Sum_ty_le_tham_gia(m_us_v_qua_trinh_lam_viec.strMA_NV, m_us_v_qua_trinh_lam_viec.strTRANG_THAI_CHUC_VU_YN) - m_us_v_qua_trinh_lam_viec.dcTY_LE_THAM_GIA + v_dc > 100)
+                        if (m_us_v_qua_trinh_lam_viec.Sum_ty_le_tham_gia(m_us_v_qua_trinh_lam_viec.strMA_NV, m_us_v_qua_trinh_lam_viec.strTRANG_THAI_CHUC_VU_YN,CAppContext_201.getCurrentIDPhapnhan()) - m_us_v_qua_trinh_lam_viec.dcTY_LE_THAM_GIA + v_dc > 100)
                         {
                             BaseMessages.MsgBox_Infor("Tỷ lệ tham gia đã vượt quá 100%.");
                             return;
@@ -673,7 +693,7 @@ namespace BKI_HRM
                         decimal v_dc_ty_le = 0;
                         if (CIPConvert.is_valid_number(m_txt_ty_le_tham_gia.Text.Trim()))
                             v_dc_ty_le = CIPConvert.ToDecimal(m_txt_ty_le_tham_gia.Text.Trim());
-                        if (m_us_v_qua_trinh_lam_viec.Sum_ty_le_tham_gia(m_us_v_qua_trinh_lam_viec.strMA_NV, m_us_v_qua_trinh_lam_viec.strTRANG_THAI_CHUC_VU_YN) + v_dc_ty_le > 100)
+                        if (m_us_v_qua_trinh_lam_viec.Sum_ty_le_tham_gia(m_us_v_qua_trinh_lam_viec.strMA_NV, m_us_v_qua_trinh_lam_viec.strTRANG_THAI_CHUC_VU_YN,CAppContext_201.getCurrentIDPhapnhan()) + v_dc_ty_le > 100)
                         {
                             BaseMessages.MsgBox_Infor("Tỷ lệ tham gia đã đã vượt quá 100%.");
                             return;
@@ -726,6 +746,31 @@ namespace BKI_HRM
                 this.Close();
             }
 
+        }
+        private void load_custom_source_2_m_txt_tim_kiem()
+        {
+            DS_DM_NHAN_SU v_ds = new DS_DM_NHAN_SU();
+            US_DM_NHAN_SU v_us = new US_DM_NHAN_SU();
+            v_us.FillDataset(v_ds);
+            int count = v_ds.Tables["DM_NHAN_SU"].Rows.Count;
+            AutoCompleteStringCollection v_acsc_search = new AutoCompleteStringCollection();
+            foreach (DataRow dr in v_ds.DM_NHAN_SU)
+            {
+                v_acsc_search.Add(dr[DM_NHAN_SU.MA_NV].ToString());
+            }
+            m_txt_ma_nv.AutoCompleteCustomSource = v_acsc_search;
+        }
+        private void chon_nhan_su()
+        {
+
+            DS_DM_NHAN_SU v_ds_dm_nhan_su = new DS_DM_NHAN_SU();
+            US_DM_NHAN_SU v_us_dm_nhan_su = new US_DM_NHAN_SU();
+            v_us_dm_nhan_su.FillDataset_search_by_ma_nv(v_ds_dm_nhan_su, m_txt_ma_nv.Text.Trim());
+            if (v_ds_dm_nhan_su.Tables[0].Rows.Count == 0)
+                return;
+
+            m_txt_ho_ten.Text = v_ds_dm_nhan_su.Tables[0].Rows[0]["HO_DEM"] + " " +
+                                   v_ds_dm_nhan_su.Tables[0].Rows[0]["TEN"];
         }
         private void xoa_trang()
         {
@@ -1183,6 +1228,30 @@ namespace BKI_HRM
         }
        
         #endregion
+
+        private void m_txt_ma_nv_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                chon_nhan_su();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_txt_ma_nv_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                chon_nhan_su();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
     }
 }
