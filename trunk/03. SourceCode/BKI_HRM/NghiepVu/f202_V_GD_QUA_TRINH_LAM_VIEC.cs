@@ -566,7 +566,9 @@ namespace BKI_HRM
             }
         }
 		private void insert_v_gd_qua_trinh_lam_viec(string ip_str_loai_thay_doi){
-            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_qua_trinh_lam_viec)) return;
+            f202_v_gd_qua_trinh_lam_viec_de v_fDE = new f202_v_gd_qua_trinh_lam_viec_de();
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_grv_qua_trinh_lam_viec))
+                v_fDE.display_for_bo_nhiem(ip_str_loai_thay_doi); ;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_grv_qua_trinh_lam_viec, m_grv_qua_trinh_lam_viec.Row)) return;
             
 
@@ -591,7 +593,7 @@ namespace BKI_HRM
             
 //             m_us_qua_trinh_lam_viec.FillDataset_search(m_ds_qua_trinh_lam_viec, "",CAppContext_201.getCurrentIDPhapnhan());
 //             int v_i_count = m_ds_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC.Count;
-            f202_v_gd_qua_trinh_lam_viec_de v_fDE = new f202_v_gd_qua_trinh_lam_viec_de();
+            
             v_fDE.display_for_bo_nhiem(m_us_qua_trinh_lam_viec, ip_str_loai_thay_doi);
 
             if (m_txt_tim_kiem.Text == m_str_message_tim_kiem)
@@ -773,6 +775,7 @@ namespace BKI_HRM
 		private void m_cmd_bo_nhiem_Click(object sender, EventArgs e) {
 			try{
 				insert_v_gd_qua_trinh_lam_viec("kiem_nhiem");
+                load_data_2_grid_search();
                 form.refresh();
 			}
 			catch (Exception v_e){
@@ -783,6 +786,7 @@ namespace BKI_HRM
 		private void m_cmd_delete_Click(object sender, EventArgs e) {
 			try{
 				delete_v_gd_qua_trinh_lam_viec();
+                load_data_2_grid_search();
                 form.refresh();
 			}
 			catch (Exception v_e){
@@ -852,6 +856,7 @@ namespace BKI_HRM
             try
             {
                 update_v_gd_qua_trinh_lam_viec();
+                load_data_2_grid_search();
                 form.refresh();
             }
             catch (Exception v_e)
@@ -865,6 +870,7 @@ namespace BKI_HRM
             try
             {
                 update_data();
+                load_data_2_grid_search();
                 form.refresh();
             }
             catch (Exception v_e)

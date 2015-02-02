@@ -47,6 +47,7 @@ namespace BKI_HRM
         private DateTimePicker m_dat_thoidiem;
         private Label label3;
         private C1FlexGrid m_fg;
+        private BackgroundWorker backgroundWorker1;
 		private System.ComponentModel.IContainer components;
 
 		public frm_V_GD_QUA_TRINH_LAM_VIEC_2()
@@ -102,6 +103,7 @@ namespace BKI_HRM
             this.m_cbo_don_vi = new System.Windows.Forms.ComboBox();
             this.m_cbo_ttld = new System.Windows.Forms.ComboBox();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -315,6 +317,13 @@ namespace BKI_HRM
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 22;
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
             // frm_V_GD_QUA_TRINH_LAM_VIEC_2
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -356,6 +365,7 @@ namespace BKI_HRM
 		#endregion
 
 		#region Members
+        AlertForm alert;
 		ITransferDataRow m_obj_trans;		
 		DS_RPT_SO_LUONG_NV m_ds = new DS_RPT_SO_LUONG_NV();
 		US_RPT_SO_LUONG_NV m_us = new US_RPT_SO_LUONG_NV();
@@ -405,24 +415,28 @@ namespace BKI_HRM
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.RPT_SO_LUONG_NV.NewRow());
 			return v_obj_trans;			
 		}
-		private void load_data_2_grid(){						
+		private void load_data_2_grid(){
+            /*m_fg.Rows[0][6] = "Thời điểm: "	+ m_dat_thoidiem.Text;
 			m_ds = new DS_RPT_SO_LUONG_NV();			
 			m_us.FillDataset(m_ds
                 ,CIPConvert.ToDecimal(m_cbo_don_vi.SelectedValue)
                 ,CIPConvert.ToStr(m_cbo_don_vi.Text)
                 ,CIPConvert.ToDecimal(m_cbo_ttld.SelectedValue)
                 ,CAppContext_201.getCurrentIDPhapnhan()
-                , m_dat_thoidiem.Value.Date);
+                , m_dat_thoidiem.Value.Date);*/
+            if (backgroundWorker1.IsBusy != true)
+            {
+                // create a new instance of the alert form
+                alert = new AlertForm();
+                // event handler for the Cancel button in AlertForm
+                //alert.Canceled += new EventHandler<EventArgs>(buttonCancel_Click);
+                alert.Show();
+                alert.TopMost = true;
+                // Start the asynchronous operation.
+                backgroundWorker1.RunWorkerAsync();
+            }
 			//m_fg.Redraw = false;
-			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            m_fg.Subtotal(
-C1.Win.C1FlexGrid.AggregateEnum.None // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
-              , 0
-              , (int)e_col_Number.TEN_TTLD // chỗ này là tên trường mà mình nhóm
-              , (int)e_col_Number.SO_TANG // chỗ này là tên trường mà mình Count
-              , "{0}"
-              );
-			m_fg.Redraw = true;
+			
 		}
 		private void grid2us_object(US_RPT_SO_LUONG_NV i_us
 			, int i_grid_row) {
@@ -562,6 +576,56 @@ C1.Win.C1FlexGrid.AggregateEnum.None // chỗ này dùng hàm count tức là đ
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+
+            for (int i = 1; i <= 1; i++)
+            {
+                if (worker.CancellationPending == true)
+                {
+                    e.Cancel = true;
+                    break;
+                }
+                else
+                {
+                    // Perform a time consuming operation and report progress.
+                    worker.ReportProgress(i * 10);
+                    //System.Threading.Thread.Sleep(500);
+                }
+            }
+        }
+
+        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            if (!backgroundWorker1.CancellationPending)
+            {
+                alert.Message = "In progress, please wait... " + e.ProgressPercentage.ToString() + "%";
+                alert.ProgressValue = e.ProgressPercentage;
+            }
+            m_fg.Rows[0][6] = "Thời điểm: " + m_dat_thoidiem.Text;
+            m_ds = new DS_RPT_SO_LUONG_NV();
+            m_us.FillDataset(m_ds
+                , CIPConvert.ToDecimal(m_cbo_don_vi.SelectedValue)
+                , CIPConvert.ToStr(m_cbo_don_vi.Text)
+                , CIPConvert.ToDecimal(m_cbo_ttld.SelectedValue)
+                , CAppContext_201.getCurrentIDPhapnhan()
+                , m_dat_thoidiem.Value.Date);
+            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            m_fg.Subtotal(
+C1.Win.C1FlexGrid.AggregateEnum.None // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
+              , 0
+              , (int)e_col_Number.TEN_TTLD // chỗ này là tên trường mà mình nhóm
+              , (int)e_col_Number.SO_TANG // chỗ này là tên trường mà mình Count
+              , "{0}"
+              );
+            m_fg.Redraw = true;
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            alert.Close();
         }
 
 	}

@@ -125,7 +125,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAO
-        HwAAAk1TRnQBSQFMAgEBFgEAAXQBAAF0AQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        HwAAAk1TRnQBSQFMAgEBFgEAAYQBAAGEAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAAWADAAEBAQABCAYAARgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -261,12 +261,15 @@
 </value>
   </data>
   <data name="m_fg.ColumnInfo" xml:space="preserve">
-    <value>6,1,0,0,0,85,Columns:0{Width:13;}	1{Width:202;Caption:"Mã đơn vị";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	2{Width:171;Caption:"Số lượng bổ nhiệm";DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	3{Width:166;Caption:"Số lượng bổ nhiệm có QĐ";DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	4{Width:161;Caption:"Số lượng bổ nhiệm chưa có QĐ";DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	5{Width:163;Caption:"Số lượng bổ nhiệm tháng trước";DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	</value>
+    <value>6,1,0,0,0,85,Columns:0{Width:13;}	1{Width:202;Caption:"Mã đơn vị";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	2{Width:171;Caption:"Số lượng bổ nhiệm trong tháng";DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	3{Width:204;Caption:"Số lượng bổ nhiệm trong tháng có QĐ";DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	4{Width:190;Caption:"Số lượng bổ nhiệm trong tháng chưa có QĐ";DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	5{Width:210;Caption:"Số lượng bổ nhiệm chưa có QĐ tháng trước";DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	</value>
   </data>
   <data name="m_fg.Styles" xml:space="preserve">
     <value>Normal{Font:Microsoft Sans Serif, 8.25pt;}	Alternate{BackColor:Info;}	Fixed{BackColor:Control;ForeColor:ControlText;Border:Flat,1,ControlDark,Both;}	Highlight{BackColor:Highlight;ForeColor:HighlightText;}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	EmptyArea{BackColor:AppWorkspace;Border:Flat,1,ControlDarkDark,Both;}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:Yellow;ForeColor:White;}	Subtotal1{BackColor:255, 128, 0;ForeColor:White;}	Subtotal2{BackColor:Lime;ForeColor:White;}	Subtotal3{BackColor:Silver;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	</value>
   </data>
+  <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>449, 17</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
+    <value>117</value>
   </metadata>
 </root>

@@ -291,10 +291,11 @@ public class US_RPT_BO_NHIEM : US_Object
         pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
     }
     #endregion
-    public void FillDatasetByProc(DS_RPT_BO_NHIEM op_ds_rpt,string ip_str_keyword, decimal ip_dc_phap_nhan)
+    public void FillDatasetByProc(DS_RPT_BO_NHIEM op_ds_rpt,string ip_str_keyword,DateTime ip_dat_thoi_diem ,decimal ip_dc_phap_nhan)
     {
         CStoredProc v_sp = new CStoredProc("pr_RPT_BO_NHIEM");
         v_sp.addNVarcharInputParam("@ip_str_keyword", ip_str_keyword);
+        v_sp.addDatetimeInputParam("@ip_dat_thoi_diem", ip_dat_thoi_diem);
         v_sp.addDecimalInputParam("@ip_dc_phap_nhan", ip_dc_phap_nhan);
         v_sp.fillDataSetByCommand(this, op_ds_rpt);
     }

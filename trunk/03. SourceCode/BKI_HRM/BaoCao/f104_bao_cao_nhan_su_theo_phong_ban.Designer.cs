@@ -286,6 +286,7 @@
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hiển thị:";
+            this.groupBox1.Visible = false;
             // 
             // m_rdb_nhom
             // 

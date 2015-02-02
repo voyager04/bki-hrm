@@ -17,7 +17,7 @@ using IP.Core.IPException;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
 using IP.Core.IPSystemAdmin;
-
+using IP.Core.IPExcelReport;
 using BKI_HRM.US;
 using BKI_HRM.DS;
 using BKI_HRM.DS.CDBNames;
@@ -36,12 +36,13 @@ namespace BKI_HRM
 		internal SIS.Controls.Button.SiSButton m_cmd_delete;
 		internal SIS.Controls.Button.SiSButton m_cmd_update;
 		internal SIS.Controls.Button.SiSButton m_cmd_insert;
-		internal SIS.Controls.Button.SiSButton m_cmd_exit;
-		internal SIS.Controls.Button.SiSButton m_cmd_view;
+        internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private Panel panel1;
         private Label label1;
         private DateTimePicker m_dat_thoi_diem;
         private C1FlexGrid m_fg;
+        internal SIS.Controls.Button.SiSButton m_cmd_xuat_excel;
+        private BackgroundWorker backgroundWorker1;
 		private System.ComponentModel.IContainer components;
 
 		public f306_RPT_NHAN_SU_PERFECT()
@@ -83,15 +84,16 @@ namespace BKI_HRM
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f306_RPT_NHAN_SU_PERFECT));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_xuat_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.m_dat_thoi_diem = new System.Windows.Forms.DateTimePicker();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -126,9 +128,9 @@ namespace BKI_HRM
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xuat_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -137,6 +139,23 @@ namespace BKI_HRM
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(920, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
+            // 
+            // m_cmd_xuat_excel
+            // 
+            this.m_cmd_xuat_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xuat_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xuat_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xuat_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_xuat_excel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.m_cmd_xuat_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xuat_excel.ImageIndex = 19;
+            this.m_cmd_xuat_excel.ImageList = this.ImageList;
+            this.m_cmd_xuat_excel.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_xuat_excel.Name = "m_cmd_xuat_excel";
+            this.m_cmd_xuat_excel.Size = new System.Drawing.Size(118, 28);
+            this.m_cmd_xuat_excel.TabIndex = 15;
+            this.m_cmd_xuat_excel.Text = "Xuất Excel";
+            this.m_cmd_xuat_excel.Click += new System.EventHandler(this.m_cmd_xuat_excel_Click);
             // 
             // m_cmd_insert
             // 
@@ -167,21 +186,6 @@ namespace BKI_HRM
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 13;
             this.m_cmd_update.Text = "&Sửa";
-            // 
-            // m_cmd_view
-            // 
-            this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_view.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_view.ImageIndex = 18;
-            this.m_cmd_view.ImageList = this.ImageList;
-            this.m_cmd_view.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_view.Name = "m_cmd_view";
-            this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_view.TabIndex = 21;
-            this.m_cmd_view.Text = "Xem";
             // 
             // m_cmd_delete
             // 
@@ -251,6 +255,13 @@ namespace BKI_HRM
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 22;
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
             // f306_RPT_NHAN_SU_PERFECT
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -311,7 +322,7 @@ namespace BKI_HRM
 ,FACEBOOK = 47
 ,NGAY_BAT_DAU_HOP_DONG = 35
 ,NGAY_CO_HIEU_LUC = 31
-,GHI_CHU = 49
+,GHI_CHU = 50
 ,MA_CHAM_CONG = 28
 ,TINH_TRANG_SUC_KHOE = 19
 ,SO_SO_BHXH = 25
@@ -328,18 +339,20 @@ namespace BKI_HRM
 ,CHI_NHANH_NGAN_HANG = 22
 ,TINH_THANH_PHO = 23
 ,TRANG_THAI_LAM_VIEC = 48
-,CAP = 50	
-,BAC = 51
-    ,BO_PHAN = 52
-        ,	DU_AN = 53
-            ,	TY_LE_THAM_GIA = 54
-                ,	CHINH_THUC = 55
-                    ,	TRANG_THAI_PHU = 56
+,NGAY_NGHI_VIEC = 49
+,CAP = 51
+,BAC = 52
+    ,BO_PHAN = 53
+        ,	DU_AN = 54
+            ,	TY_LE_THAM_GIA = 55
+                ,	CHINH_THUC = 56
+                    ,	TRANG_THAI_PHU = 57
 
 		}			
 		#endregion
 
 		#region Members
+        AlertForm alert;
 		ITransferDataRow m_obj_trans;		
 		DS_RPT_NHAN_SU_PERFECT m_ds = new DS_RPT_NHAN_SU_PERFECT();
 		US_RPT_NHAN_SU_PERFECT m_us = new US_RPT_NHAN_SU_PERFECT();
@@ -356,6 +369,8 @@ namespace BKI_HRM
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
+            m_cmd_xuat_excel.Visible = true;
+            m_cmd_xuat_excel.Enabled = true;
 			load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
@@ -479,12 +494,25 @@ namespace BKI_HRM
 		//	f306_RPT_NHAN_SU_PERFECT_DE v_fDE = new f306_RPT_NHAN_SU_PERFECT_DE();			
 		//	v_fDE.display(m_us);
 		}
+        private void xuat_excel()
+        {
+            if (backgroundWorker1.IsBusy != true)
+            {
+                // create a new instance of the alert form
+                alert = new AlertForm();
+                // event handler for the Cancel button in AlertForm
+                //alert.Canceled += new EventHandler<EventArgs>(buttonCancel_Click);
+                alert.Show();
+                alert.TopMost = true;
+                // Start the asynchronous operation.
+                backgroundWorker1.RunWorkerAsync();
+            }
+        }
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
             m_dat_thoi_diem.ValueChanged += new EventHandler(m_dat_thoi_diem_ValueChanged);
 		}
 
@@ -562,6 +590,57 @@ namespace BKI_HRM
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
+
+        private void m_cmd_xuat_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                xuat_excel();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+
+            for (int i = 1; i <= 1; i++)
+            {
+                if (worker.CancellationPending == true)
+                {
+                    e.Cancel = true;
+                    break;
+                }
+                else
+                {
+                    // Perform a time consuming operation and report progress.
+                    worker.ReportProgress(i * 10);
+                    //System.Threading.Thread.Sleep(500);
+                }
+            }
+        }
+
+        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            if (!backgroundWorker1.CancellationPending)
+            {
+                alert.Message = "In progress, please wait... " + e.ProgressPercentage.ToString() + "%";
+                alert.ProgressValue = e.ProgressPercentage;
+            }
+            var v_start_row = 2;
+            var v_start_col = 1;
+            var v_obj_excel_rpt = new CExcelReport("Employee.xls", v_start_row, v_start_col);
+            //v_obj_excel_rpt.AddFindAndReplaceItem("<ngay_thang>", string.Format("{0}/{1}/{2}", DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year));
+            v_obj_excel_rpt.FindAndReplace(false);
+            v_obj_excel_rpt.Export2ExcelWithoutFixedRows(m_fg, 1, m_fg.Cols.Count - 1, true);
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            alert.Close();
+        }
 
 	}
 }

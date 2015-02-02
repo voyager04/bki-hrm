@@ -46,6 +46,7 @@ namespace BKI_HRM
         private Label m_lbl_phim_tat;
         private Panel panel1;
         private C1FlexGrid m_fg;
+        private BackgroundWorker backgroundWorker1;
 		private System.ComponentModel.IContainer components;
 
 		public f406_bao_cao_bo_nhiem()
@@ -99,6 +100,7 @@ namespace BKI_HRM
             this.m_cmd_search = new SIS.Controls.Button.SiSButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -291,6 +293,10 @@ namespace BKI_HRM
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 44;
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            // 
             // f406_bao_cao_bo_nhiem
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -405,7 +411,7 @@ namespace BKI_HRM
 
             //var v_str_search = "TEG";
             //if (m_txt_search.Text.Trim() != m_str_goi_y_tim_kiem)
-                m_v_us.FillDatasetByProc(m_ds, v_str_search, CAppContext_201.getCurrentIDPhapnhan());
+                m_v_us.FillDatasetByProc(m_ds, v_str_search,m_dtp_thoidiem.Value.Date, CAppContext_201.getCurrentIDPhapnhan());
             //else
             //{
                 //m_v_us.FillDatasetByKeyWord(m_v_ds, "", CIPConvert.ToDecimal(m_cbo_loaidv.SelectedValue), CIPConvert.ToDecimal(m_cbo_capdv.SelectedValue), m_cbo_trangthai.SelectedValue.ToString(), CAppContext_201.getCurrentIDPhapnhan());
@@ -744,14 +750,14 @@ namespace BKI_HRM
         {
             try
             {
-                if (m_txt_tim_kiem.Text.Trim() == "Nhập mã đơn vị")
+                /*if (m_txt_tim_kiem.Text.Trim() == "Nhập mã đơn vị")
                 {
                     m_txt_tim_kiem.Text = "";
                     load_data_2_grid();
                     m_txt_tim_kiem.Text = "Nhập mã đơn vị";
                 }
                 else
-                    load_data_2_grid();
+                    load_data_2_grid();*/
             }
             catch (Exception v_e)
             {
