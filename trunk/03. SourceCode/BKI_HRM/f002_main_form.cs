@@ -289,8 +289,8 @@ namespace BKI_HRM
                 //    m_xtab_control.TabPages.TabControl.Dispose();
                 //}
                 m_xtab_control.TabPages.Clear();
-                f408_bao_cao_don_vi_trang_thai v_frm = new f408_bao_cao_don_vi_trang_thai();
-                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_frm, new UserControl());
+                /*f408_bao_cao_don_vi_trang_thai v_frm = new f408_bao_cao_don_vi_trang_thai();
+                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_frm, new UserControl());*/
 
                 f502_bao_cao_du_an frm502 = new f502_bao_cao_du_an();
                 m_lbl_du_an_sap_kt.Text = string.Format("Có {0} dự án sắp kết thúc!",
@@ -1345,8 +1345,8 @@ namespace BKI_HRM
                         break;
                 }
 
-                f408_bao_cao_don_vi_trang_thai v_frm = new f408_bao_cao_don_vi_trang_thai();
-                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_frm, new UserControl());
+              /*  f408_bao_cao_don_vi_trang_thai v_frm = new f408_bao_cao_don_vi_trang_thai();
+                m_obj_tab.AddTab(m_xtab_control, v_frm.Name, v_frm.Text, v_frm, new UserControl());*/
             }
             catch (Exception v_e)
             {

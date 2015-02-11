@@ -537,8 +537,15 @@ namespace BKI_HRM
                 BaseMessages.MsgBox_Infor("Không thể tồn tại 2 chức vụ chính tại thời điểm hiện tại.");
                 return false;
             }
-            if (!check_trung_ma_quyet_dinh(m_txt_ma_quyet_dinh.Text.Trim()))
+            /*if (!check_trung_ma_quyet_dinh(m_txt_ma_quyet_dinh.Text.Trim()))
             {
+                BaseMessages.MsgBox_Infor("Mã quyết định đã tồn tại");
+                return false;
+            }*/
+            return true;
+        }
+        private bool check_quyet_dinh(string ip_str_ma_qd) {
+            if (!check_trung_ma_quyet_dinh(ip_str_ma_qd)) {
                 BaseMessages.MsgBox_Infor("Mã quyết định đã tồn tại");
                 return false;
             }
@@ -572,7 +579,7 @@ namespace BKI_HRM
         private void save_data()
         {
             US_GD_QUYET_DINH_PHAP_NHAN v_us_gd_quyet_dinh_phap_nhan = new US_GD_QUYET_DINH_PHAP_NHAN();
-            if (confirm_save_data() && check_validate_data_is_ok())
+            if (confirm_save_data())
             {
                 #region Xử lý file đính kèm
                 // Xử lý file đính kèm
@@ -652,15 +659,22 @@ namespace BKI_HRM
                             form_to_us_object_quyet_dinh();
                             if (m_b_check_quyet_dinh_save)
                             {
-                                if (m_b_check_quyet_dinh_null)
+                                if (m_b_check_quyet_dinh_null&&check_quyet_dinh(m_txt_ma_quyet_dinh.Text.Trim()))
                                 {
-                                    /*m_us_quyet_dinh.Insert();
-                                    v_us_gd_quyet_dinh_phap_nhan = new US_GD_QUYET_DINH_PHAP_NHAN();
-                                    v_us_gd_quyet_dinh_phap_nhan.dcID_QUYET_DINH = m_us_quyet_dinh.dcID;
-                                    v_us_gd_quyet_dinh_phap_nhan.dcID_PHAP_NHAN = CAppContext_201.getCurrentIDPhapnhan();
-                                    v_us_gd_quyet_dinh_phap_nhan.Insert();*/
+                                    if (m_txt_ma_quyet_dinh.Text.Trim() == "") {
+                                        BaseMessages.MsgBox_Infor("Mã quyết định trống");
+                                        return;
+                                    }
+                                    else {
+                                        m_us_quyet_dinh.Insert();
+                                        v_us_gd_quyet_dinh_phap_nhan = new US_GD_QUYET_DINH_PHAP_NHAN();
+                                        v_us_gd_quyet_dinh_phap_nhan.dcID_QUYET_DINH = m_us_quyet_dinh.dcID;
+                                        v_us_gd_quyet_dinh_phap_nhan.dcID_PHAP_NHAN = CAppContext_201.getCurrentIDPhapnhan();
+                                        v_us_gd_quyet_dinh_phap_nhan.Insert();
+                                    }
                                 }
-                                
+                                else
+                                    return;
                             }
                             else
                             {
@@ -668,19 +682,27 @@ namespace BKI_HRM
                             }
                             if (m_b_check_quyet_dinh_mien_nhiem_save)
                             {
-                                if (m_b_check_quyet_dinh_mien_nhiem_null)
-                                {
-                                    m_us_quyet_dinh_mien_nhiem.Insert();
-                                    v_us_gd_quyet_dinh_phap_nhan = new US_GD_QUYET_DINH_PHAP_NHAN();
-                                    v_us_gd_quyet_dinh_phap_nhan.dcID_QUYET_DINH = m_us_quyet_dinh_mien_nhiem.dcID;
-                                    v_us_gd_quyet_dinh_phap_nhan.dcID_PHAP_NHAN = CAppContext_201.getCurrentIDPhapnhan();
-                                    v_us_gd_quyet_dinh_phap_nhan.Insert();
+                                if (m_b_check_quyet_dinh_mien_nhiem_null && check_quyet_dinh(m_txt_ma_quyet_dinh_mien_nhiem.Text.Trim())) {
+                                    if (m_txt_ma_quyet_dinh_mien_nhiem.Text.Trim() == "") {
+                                        BaseMessages.MsgBox_Infor("Mã quyết định miễn nhiệm trống");
+                                        return;
+                                    }
+                                    else {
+                                        m_us_quyet_dinh_mien_nhiem.Insert();
+                                        v_us_gd_quyet_dinh_phap_nhan = new US_GD_QUYET_DINH_PHAP_NHAN();
+                                        v_us_gd_quyet_dinh_phap_nhan.dcID_QUYET_DINH = m_us_quyet_dinh_mien_nhiem.dcID;
+                                        v_us_gd_quyet_dinh_phap_nhan.dcID_PHAP_NHAN = CAppContext_201.getCurrentIDPhapnhan();
+                                        v_us_gd_quyet_dinh_phap_nhan.Insert();
+                                    }
                                 }
+                                else
+                                    return;
+                                
+                            }
                                 else
                                 {
                                     m_us_quyet_dinh_mien_nhiem.Update();
                                 }
-                            }
 
                             form_to_us_object_chi_tiet_chuc_vu();
 
@@ -705,7 +727,7 @@ namespace BKI_HRM
                             if (m_txt_ma_quyet_dinh.Text != "")
                             {
                                 form_to_us_object_quyet_dinh();
-                                if (m_b_check_quyet_dinh_save)
+                                if (m_b_check_quyet_dinh_save&&check_quyet_dinh(m_txt_ma_quyet_dinh.Text.Trim()))
                                 {
                                     m_us_quyet_dinh.Insert();
                                     v_us_gd_quyet_dinh_phap_nhan = new US_GD_QUYET_DINH_PHAP_NHAN();
@@ -715,13 +737,13 @@ namespace BKI_HRM
                                 }
                                 else
                                 {
-                                    m_us_quyet_dinh.Update();
+                                    return;
                                 }
                             }
                             if (m_txt_ma_quyet_dinh_mien_nhiem.Text != "")
                             {
                                 form_to_us_object_quyet_dinh();
-                                if (m_b_check_quyet_dinh_mien_nhiem_save)
+                                if (m_b_check_quyet_dinh_mien_nhiem_save && check_quyet_dinh(m_txt_ma_quyet_dinh_mien_nhiem.Text.Trim()))
                                 {
                                     m_us_quyet_dinh_mien_nhiem.Insert();
                                     v_us_gd_quyet_dinh_phap_nhan = new US_GD_QUYET_DINH_PHAP_NHAN();
@@ -731,7 +753,7 @@ namespace BKI_HRM
                                 }
                                 else
                                 {
-                                    m_us_quyet_dinh_mien_nhiem.Update();
+                                    return;
                                 }
                             }
                             form_to_us_object_chi_tiet_chuc_vu();

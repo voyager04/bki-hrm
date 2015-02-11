@@ -232,12 +232,13 @@ public class US_RPT_SO_LUONG_NV : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-    public void FillDataset(DS_RPT_SO_LUONG_NV op_ds, decimal ip_id_don_vi,string ip_str_ma_son_vi, decimal ip_id_ttld, decimal ip_id_phap_nhan, DateTime ip_thoi_diem)
+    public void FillDataset(DS_RPT_SO_LUONG_NV op_ds, decimal ip_id_don_vi, string ip_str_ma_son_vi, decimal ip_id_ttld, decimal ip_id_phap_nhan, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
     {
         CStoredProc v_sp = new CStoredProc("pr_RPT_SO_LUONG_NV");
         v_sp.addDecimalInputParam("@ip_dc_phap_nhan", ip_id_phap_nhan);
         v_sp.addNVarcharInputParam("@ip_str_ma_don_vi", ip_str_ma_son_vi);
-        v_sp.addDatetimeInputParam("@ip_dat_thoi_diem", ip_thoi_diem);
+        v_sp.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
+        v_sp.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
         v_sp.addDecimalInputParam("@ip_dc_id_don_vi", ip_id_don_vi);
         v_sp.addDecimalInputParam("@ip_dc_id_ttld", ip_id_ttld);
         v_sp.fillDataSetByCommand(this, op_ds);
