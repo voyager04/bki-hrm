@@ -2006,14 +2006,26 @@ namespace BKI_HRM.US
             CStoredProc v_sp = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_Nhan_vien_sap_quay_lai");
             v_sp.fillDataSetByCommand(this, m_ds);
         }
-        public void FillDatasetNVNghiviec(DS_V_DM_DU_LIEU_NHAN_VIEN op_m_ds, string ip_str_key_word, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay,decimal ip_dc_trangthai_ld, decimal ip_dc_phap_nhan)
+        public void FillDatasetNVNghiviec(DS_V_DM_DU_LIEU_NHAN_VIEN op_m_ds, string ip_str_ma_cv, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay,decimal ip_dc_trangthai_ld, decimal ip_dc_phap_nhan, decimal ip_dc_id_don_vi)
         {
             CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_nghi_viec");
-            v_stored_proc.addNVarcharInputParam("@ip_str_tim_kiem", ip_str_key_word);
+            v_stored_proc.addNVarcharInputParam("@ip_str_ma_cv", ip_str_ma_cv);
             v_stored_proc.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
             v_stored_proc.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
             v_stored_proc.addDecimalInputParam("@ip_dc_trangthaild", ip_dc_trangthai_ld);
             v_stored_proc.addDecimalInputParam("@ip_dc_phap_nhan", ip_dc_phap_nhan);
+            v_stored_proc.addDecimalInputParam("@ip_dc_id_don_vi", ip_dc_id_don_vi);
+            v_stored_proc.fillDataSetByCommand(this, op_m_ds);
+        }
+        public void FillDatasetNVNghiviec_2(DS_V_DM_DU_LIEU_NHAN_VIEN op_m_ds, string ip_str_ma_cv, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay, decimal ip_dc_trangthai_ld, decimal ip_dc_phap_nhan, decimal ip_dc_id_don_vi)
+        {
+            CStoredProc v_stored_proc = new CStoredProc("pr_V_DM_DU_LIEU_NHAN_VIEN_nghi_viec_2");
+            v_stored_proc.addNVarcharInputParam("@ip_str_ma_cv", ip_str_ma_cv);
+            v_stored_proc.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);
+            v_stored_proc.addDatetimeInputParam("@ip_dat_den_ngay", ip_dat_den_ngay);
+            v_stored_proc.addDecimalInputParam("@ip_dc_trangthaild", ip_dc_trangthai_ld);
+            v_stored_proc.addDecimalInputParam("@ip_dc_phap_nhan", ip_dc_phap_nhan);
+            v_stored_proc.addDecimalInputParam("@ip_dc_id_don_vi", ip_dc_id_don_vi);
             v_stored_proc.fillDataSetByCommand(this, op_m_ds);
         }
         #endregion

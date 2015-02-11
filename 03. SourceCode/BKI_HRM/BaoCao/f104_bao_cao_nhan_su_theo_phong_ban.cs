@@ -43,62 +43,148 @@ namespace BKI_HRM {
 
         private enum e_col_Number
         {
-            EMAIL_CQ = 25
+            EMAIL_CQ = 26
 ,
-            TEN_DON_VI = 22
+            TEN_DON_VI = 23
                 ,
             MA_NV = 1
                 ,
-            NGAY_KET_THUC = 12
+            NGAY_KET_THUC = 13
                 ,
-            NGAY_BAT_DAU = 11
+            NGAY_BAT_DAU = 12
                 ,
-            TRANG_THAI_CV = 21
+            TRANG_THAI_CV = 22
                 ,
-            LOAI_CV = 8
+            LOAI_CV = 9
                 ,
-            MA_QUYET_DINH = 13
+            MA_QUYET_DINH = 14
                 ,
-            DIA_BAN = 23
+            DIA_BAN = 24
                 ,
             TEN = 3
                 ,
-            LOAI_QD = 16
+            LOAI_QD = 17
                 ,
-            NGAY_CO_HIEU_LUC = 14
+            NGAY_CO_HIEU_LUC = 15
                 ,
             MA_DON_VI = 7
                 ,
-            MA_TTLD = 9
+            MA_DON_VI_CAP_TREN = 8
+                ,
+            MA_TTLD = 10
                 ,
             HO_DEM = 2
                 ,
-            TY_LE_THAM_GIA = 10
+            TY_LE_THAM_GIA = 11
                 ,
-            NGAY_HET_HIEU_LUC_LD = 20
+            NGAY_HET_HIEU_LUC_LD = 21
                 ,
-            NGAY_CO_HIEU_LUC_LD = 19
+            NGAY_CO_HIEU_LUC_LD = 20
                 ,
-            NGAY_HET_HIEU_LUC = 15
+            NGAY_HET_HIEU_LUC = 16
                 ,
-            DI_DONG = 26
+            DI_DONG = 27
                 ,
-            TRANG_THAI_LD_HIEN_TAI = 18
+            TRANG_THAI_LD_HIEN_TAI = 19
                 ,
-            CHO_O = 27
+            CHO_O = 28
                 ,
-            MA_HEADCOUNT = 28
+            MA_HEADCOUNT = 29
                 ,
-            MA_CV = 21
+            MA_CV = 22
                 ,
             BAC = 6
                 ,
-            MA_QUYET_DINH_MIEN_NHIEM = 17
+            MA_QUYET_DINH_MIEN_NHIEM = 18
                 ,
             NGACH = 5
                 ,
-            GIOI_TINH = 24
+            GIOI_TINH = 25
                 , MA_PHAP_NHAN = 4
+                    ,
+            NGAY_SINH = 30
+                ,
+            NGHE_NGHIEP_CON_THU_3 = 66
+                ,
+            NGHE_NGHIEP_CON_THU_2 = 63
+                ,
+            NGUOI_LIEN_HE = 43
+                ,
+            NGHE_NGHIEP_BO = 54
+                ,
+            TRANG_THAI = 49
+                ,
+            
+            NAM_SINH_CON_THU_2 = 64
+                ,
+            
+            CHI_NHANH_NGANHANG = 51
+                ,
+            NAM_SINH_VO_OR_CHONG = 70
+                ,
+            EMAIL_CA_NHAN = 40
+                ,
+            
+            SO_TAI_KHOAN = 50
+                ,
+            TON_GIAO = 46
+                ,
+            HO_TEN_ME = 56
+                ,
+            NOI_SINH = 31
+                ,
+            NAM_SINH_CON_THU_3 = 67
+                ,
+            NGHE_NGHIEP_ME = 57
+                ,
+            TRINH_DO = 36
+                ,
+            QUAN_HE = 45
+                ,
+            HO_KHAU = 42
+                ,
+            NOI_DAO_TAO = 37
+                ,
+            MA_SO_THUE = 48
+                ,
+            DT_NHA = 41
+                ,
+            NGAY_CAP_CMND = 34
+                ,
+            HO_TEN_CON_THU_2 = 62
+                ,
+            NGHE_NGHIEP_CON_THU_1 = 60
+                ,
+            NAM_SINH_CON_THU_1 = 61
+                ,
+            CHUYEN_NGANH = 38
+                ,
+            HO_TEN_VO_OR_CHONG = 68
+                ,
+            NAM_SINH_BO = 55
+                ,
+            HO_TEN_CON_THU_1 = 59
+                ,
+            DI_DONG_LIEN_HE = 44
+                ,
+            HO_TEN_BO = 53
+                ,
+            HO_TEN_CON_THU_3 = 65
+                ,
+            NAM_TOT_NGHIEP = 39
+                ,
+            DIA_DIEM_LV = 52
+                ,
+            NOI_CAP_CMND = 35
+                ,
+            NGHE_NGHIEP_VO_OR_CHONG = 69
+                ,
+            NAM_SINH_ME = 58
+                ,
+            CMND = 33
+                ,
+            NGUYEN_QUAN = 32
+                , DAN_TOC = 47
 
         }			
         #endregion
@@ -207,6 +293,49 @@ namespace BKI_HRM {
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGACH, e_col_Number.NGACH);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.GIOI_TINH, e_col_Number.GIOI_TINH);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.MA_PHAP_NHAN, e_col_Number.MA_PHAP_NHAN);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.MA_DV_CAP_TREN, e_col_Number.MA_DON_VI_CAP_TREN);
+
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGHE_NGHIEP_CON_THU_3, e_col_Number.NGHE_NGHIEP_CON_THU_3);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGHE_NGHIEP_CON_THU_2, e_col_Number.NGHE_NGHIEP_CON_THU_2);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGUOI_LIEN_HE, e_col_Number.NGUOI_LIEN_HE);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGHE_NGHIEP_BO, e_col_Number.NGHE_NGHIEP_BO);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.TRANG_THAI, e_col_Number.TRANG_THAI);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NAM_SINH_CON_THU_2, e_col_Number.NAM_SINH_CON_THU_2);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.CHI_NHANH_NGANHANG, e_col_Number.CHI_NHANH_NGANHANG);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NAM_SINH_VO_OR_CHONG, e_col_Number.NAM_SINH_VO_OR_CHONG);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.EMAIL_CA_NHAN, e_col_Number.EMAIL_CA_NHAN);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.SO_TAI_KHOAN, e_col_Number.SO_TAI_KHOAN);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.TON_GIAO, e_col_Number.TON_GIAO);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.HO_TEN_ME, e_col_Number.HO_TEN_ME);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NOI_SINH, e_col_Number.NOI_SINH);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NAM_SINH_CON_THU_3, e_col_Number.NAM_SINH_CON_THU_3);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGHE_NGHIEP_ME, e_col_Number.NGHE_NGHIEP_ME);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.TRINH_DO, e_col_Number.TRINH_DO);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.QUAN_HE, e_col_Number.QUAN_HE);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.HO_KHAU, e_col_Number.HO_KHAU);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NOI_DAO_TAO, e_col_Number.NOI_DAO_TAO);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.MA_SO_THUE, e_col_Number.MA_SO_THUE);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.DT_NHA, e_col_Number.DT_NHA);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGAY_CAP_CMND, e_col_Number.NGAY_CAP_CMND);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.HO_TEN_CON_THU_2, e_col_Number.HO_TEN_CON_THU_2);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGHE_NGHIEP_CON_THU_1, e_col_Number.NGHE_NGHIEP_CON_THU_1);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NAM_SINH_CON_THU_1, e_col_Number.NAM_SINH_CON_THU_1);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGAY_SINH, e_col_Number.NGAY_SINH);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.CHUYEN_NGANH, e_col_Number.CHUYEN_NGANH);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.HO_TEN_VO_OR_CHONG, e_col_Number.HO_TEN_VO_OR_CHONG);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NAM_SINH_BO, e_col_Number.NAM_SINH_BO);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.HO_TEN_CON_THU_1, e_col_Number.HO_TEN_CON_THU_1);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.DI_DONG_LIEN_HE, e_col_Number.DI_DONG_LIEN_HE);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.HO_TEN_BO, e_col_Number.HO_TEN_BO);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.HO_TEN_CON_THU_3, e_col_Number.HO_TEN_CON_THU_3);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NAM_TOT_NGHIEP, e_col_Number.NAM_TOT_NGHIEP);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.DIA_DIEM_LV, e_col_Number.DIA_DIEM_LV);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NOI_CAP_CMND, e_col_Number.NOI_CAP_CMND);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGHE_NGHIEP_VO_OR_CHONG, e_col_Number.NGHE_NGHIEP_VO_OR_CHONG);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NAM_SINH_ME, e_col_Number.NAM_SINH_ME);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.CMND, e_col_Number.CMND);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGUYEN_QUAN, e_col_Number.NGUYEN_QUAN);
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.DAN_TOC, e_col_Number.DAN_TOC);
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_GD_QUA_TRINH_LAM_VIEC_2.NewRow());
             return v_obj_trans;

@@ -446,7 +446,7 @@ namespace BKI_HRM
 		#endregion
 
 		#region Members
-		ITransferDataRow m_obj_trans;		
+		ITransferDataRow m_obj_trans;
 		DS_V_DM_DU_LIEU_NHAN_VIEN m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
 		US_V_DM_DU_LIEU_NHAN_VIEN m_us = new US_V_DM_DU_LIEU_NHAN_VIEN();
 		#endregion
@@ -506,7 +506,7 @@ namespace BKI_HRM
 			return v_obj_trans;			
 		}
 		private void load_data_2_grid(){						
-			m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
+			/*m_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
             m_us.FillDatasetNVNghiviec(m_ds,m_txt_tim_kiem.Text.Trim(),m_dtp_tu_ngay.Value,m_dtp_den_ngay.Value,decimal.Parse(m_cbo_trang_thai_ld.SelectedValue.ToString()), CAppContext_201.getCurrentIDPhapnhan());
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
@@ -526,7 +526,7 @@ namespace BKI_HRM
                   );
             }
 			m_fg.Redraw = true;
-            m_lbl_soluongns.Text = m_ds.V_DM_DU_LIEU_NHAN_VIEN.Count.ToString();
+            m_lbl_soluongns.Text = m_ds.V_DM_DU_LIEU_NHAN_VIEN.Count.ToString();*/
 		}
 		private void grid2us_object(US_V_DM_DU_LIEU_NHAN_VIEN i_us
 			, int i_grid_row) {

@@ -400,11 +400,11 @@ namespace BKI_HRM
             //    BaseMessages.MsgBox_Warning(204);
             //    return false;
             //}
-            if ((m_dat_ngay_sinh.Checked == true) && (DateTime.Today.Year - m_dat_ngay_sinh.Value.Year) < 15)
+            /*if ((m_dat_ngay_sinh.Checked == true) && (DateTime.Today.Year - m_dat_ngay_sinh.Value.Year) < 15)
             {
                 BaseMessages.MsgBox_Warning(205);
                 return false;
-            }
+            }*/
             /*if ((m_dat_ngay_sinh.Checked == true)
                 && (m_dat_ngay_cap.Checked == true)
                 && (m_dat_ngay_cap.Value.Year - m_dat_ngay_sinh.Value.Year < 10))
@@ -430,11 +430,11 @@ namespace BKI_HRM
             if (!CValidateTextBox.IsValid(m_txt_noi_cap, DataType.StringType, allowNull.YES, true))
                 return false;
 
-            if ((m_dat_ngay_cap.Checked == true) && (m_dat_ngay_cap.Value.Year < (m_dat_ngay_sinh.Value.Year + 14)))
+            /*if ((m_dat_ngay_cap.Checked == true) && (m_dat_ngay_cap.Value.Year < (m_dat_ngay_sinh.Value.Year + 14)))
             {
                 BaseMessages.MsgBox_Warning(209);
                 return false;
-            }
+            }*/
             if (!CValidateTextBox.IsValid(m_txt_ton_giao, DataType.StringType, allowNull.YES, true))
             {
 
@@ -457,7 +457,7 @@ namespace BKI_HRM
                 return false;
             }*/
 
-            if (!(m_txt_email_co_quan.Text.Length > 0 && check_validate_email(m_txt_email_co_quan.Text)))
+            /*if (!(m_txt_email_co_quan.Text.Length > 0 && check_validate_email(m_txt_email_co_quan.Text)))
             {
                 BaseMessages.MsgBox_Warning(211);
                 m_txt_email_co_quan.BackColor = Color.Bisque;
@@ -465,7 +465,7 @@ namespace BKI_HRM
                 m_txt_email_co_quan.SelectAll();
                 tabControl1.SelectTab(tabPage3);
                 return false;
-            }
+            }*/
             if (!CValidateTextBox.IsValid(m_txt_so_dtdd, DataType.StringType, allowNull.YES, true))
             {
 
