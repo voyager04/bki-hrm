@@ -474,7 +474,7 @@ namespace BKI_HRM
 		}
 		private void load_data_2_grid(){						
 			m_ds = new DS_V_GD_QUA_TRINH_LAM_VIEC();
-            m_us.FillDatasetBonhiem(m_ds,m_txt_tim_kiem.Text.Trim(),m_dtp_thoidiem.Value,m_lua_chon,CAppContext_201.getCurrentIDPhapnhan());
+            //m_us.FillDatasetBonhiem(m_ds,m_txt_tim_kiem.Text.Trim(),m_dtp_thoidiem.Value,CAppContext_201.getCurrentIDPhapnhan());
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             if (m_rdb_nhom.Checked == true)

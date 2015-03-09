@@ -469,13 +469,16 @@ namespace BKI_HRM
         }
         private void load_custom_source_2_m_txt_tim_kiem()
         {
+            DS_DM_NHAN_SU m_ds_ns = new DS_DM_NHAN_SU();
+            US_DM_NHAN_SU m_us_ns = new US_DM_NHAN_SU();
+            m_us_ns.FillDataset(m_ds_ns);
           //  int count = m_ds_qua_trinh_lam_viec.Tables["V_GD_QUA_TRINH_LAM_VIEC"].Rows.Count;
             AutoCompleteStringCollection v_acsc_search = new AutoCompleteStringCollection();
-            foreach (DataRow dr in m_ds_qua_trinh_lam_viec.V_GD_QUA_TRINH_LAM_VIEC)
+            foreach (DataRow dr in m_ds_ns.DM_NHAN_SU)
             {
-                v_acsc_search.Add(dr[V_GD_QUA_TRINH_LAM_VIEC.MA_NV].ToString());
-                v_acsc_search.Add(dr[V_GD_QUA_TRINH_LAM_VIEC.HO_DEM].ToString() + " " + dr[V_GD_QUA_TRINH_LAM_VIEC.TEN].ToString());
-                v_acsc_search.Add(dr[V_GD_QUA_TRINH_LAM_VIEC.TEN].ToString());
+                v_acsc_search.Add(dr[DM_NHAN_SU.MA_NV].ToString());
+                v_acsc_search.Add(dr[DM_NHAN_SU.HO_DEM].ToString() + " " + dr[DM_NHAN_SU.TEN].ToString());
+                v_acsc_search.Add(dr[DM_NHAN_SU.TEN].ToString());
             }
             m_txt_tim_kiem.AutoCompleteCustomSource = v_acsc_search;
         }

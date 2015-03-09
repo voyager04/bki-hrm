@@ -234,7 +234,7 @@ public class US_RPT_SO_LUONG_NV : US_Object
 #endregion
     public void FillDataset(DS_RPT_SO_LUONG_NV op_ds, decimal ip_id_don_vi, string ip_str_ma_son_vi, decimal ip_id_ttld, decimal ip_id_phap_nhan, DateTime ip_dat_tu_ngay, DateTime ip_dat_den_ngay)
     {
-        CStoredProc v_sp = new CStoredProc("pr_RPT_SO_LUONG_NV");
+        CStoredProc v_sp = new CStoredProc("pr_RPT_SO_LUONG_NV_2");
         v_sp.addDecimalInputParam("@ip_dc_phap_nhan", ip_id_phap_nhan);
         v_sp.addNVarcharInputParam("@ip_str_ma_don_vi", ip_str_ma_son_vi);
         v_sp.addDatetimeInputParam("@ip_dat_tu_ngay", ip_dat_tu_ngay);

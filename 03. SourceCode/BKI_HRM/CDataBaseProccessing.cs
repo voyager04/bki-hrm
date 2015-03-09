@@ -85,7 +85,9 @@ namespace BKI_HRM
 		public static void BackupDataBase(){
 			try	{
 				string v_str_db_current_name = IP.Core.IPBusinessService.CProvider.getDBname();
-				SaveFileDialog v_save_file = new SaveFileDialog();							
+				SaveFileDialog v_save_file = new SaveFileDialog();
+                v_save_file.InitialDirectory = @"\\10.0.0.1\Images";
+                v_save_file.RestoreDirectory = true;
 				//v_save_file.Filter = "";
 				if(v_save_file.ShowDialog()==DialogResult.OK){					
 					string v_str_output = v_save_file.FileName ;
