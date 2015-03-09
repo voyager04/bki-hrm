@@ -230,7 +230,7 @@ namespace BKI_HRM
             this.m_ckb_capbac.AutoSize = true;
             this.m_ckb_capbac.Checked = true;
             this.m_ckb_capbac.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.m_ckb_capbac.Location = new System.Drawing.Point(342, 44);
+            this.m_ckb_capbac.Location = new System.Drawing.Point(566, 44);
             this.m_ckb_capbac.Name = "m_ckb_capbac";
             this.m_ckb_capbac.Size = new System.Drawing.Size(66, 17);
             this.m_ckb_capbac.TabIndex = 4;
@@ -243,7 +243,7 @@ namespace BKI_HRM
             this.m_ckb_duan.AutoSize = true;
             this.m_ckb_duan.Checked = true;
             this.m_ckb_duan.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.m_ckb_duan.Location = new System.Drawing.Point(414, 43);
+            this.m_ckb_duan.Location = new System.Drawing.Point(342, 43);
             this.m_ckb_duan.Name = "m_ckb_duan";
             this.m_ckb_duan.Size = new System.Drawing.Size(55, 17);
             this.m_ckb_duan.TabIndex = 5;
@@ -314,7 +314,7 @@ namespace BKI_HRM
             this.m_ckb_congtac.AutoSize = true;
             this.m_ckb_congtac.Checked = true;
             this.m_ckb_congtac.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.m_ckb_congtac.Location = new System.Drawing.Point(475, 43);
+            this.m_ckb_congtac.Location = new System.Drawing.Point(403, 43);
             this.m_ckb_congtac.Name = "m_ckb_congtac";
             this.m_ckb_congtac.Size = new System.Drawing.Size(69, 17);
             this.m_ckb_congtac.TabIndex = 41;
@@ -553,8 +553,8 @@ namespace BKI_HRM
             m_str_lua_chon = "";
             if (m_ckb_chucvu.Checked)
                 m_str_lua_chon = String.Concat(m_str_lua_chon,"A");
-            if (m_ckb_capbac.Checked)
-                m_str_lua_chon = String.Concat(m_str_lua_chon, "B");
+            /*if (m_ckb_capbac.Checked)
+                m_str_lua_chon = String.Concat(m_str_lua_chon, "B");*/
             if (m_ckb_duan.Checked)
                 m_str_lua_chon = String.Concat(m_str_lua_chon, "C");
             if (m_ckb_congtac.Checked)

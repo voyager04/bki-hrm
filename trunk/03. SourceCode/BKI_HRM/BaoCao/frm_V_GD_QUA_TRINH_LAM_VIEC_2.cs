@@ -292,6 +292,7 @@ namespace BKI_HRM {
             this.m_lbl_soluongns.Size = new System.Drawing.Size(35, 13);
             this.m_lbl_soluongns.TabIndex = 49;
             this.m_lbl_soluongns.Text = "label2";
+            this.m_lbl_soluongns.Visible = false;
             // 
             // label5
             // 
@@ -301,6 +302,7 @@ namespace BKI_HRM {
             this.label5.Size = new System.Drawing.Size(93, 13);
             this.label5.TabIndex = 48;
             this.label5.Text = "Số lượng nhân sự:";
+            this.label5.Visible = false;
             // 
             // m_dat_tu_ngay
             // 
@@ -566,15 +568,13 @@ namespace BKI_HRM {
             m_fg_danh_sach.Cols[(int)e_col_Number_ds.LOAI_CV].Visible = false;
             m_fg_danh_sach.Cols[(int)e_col_Number_ds.TEN_CV].Visible = false;
             m_fg_danh_sach.Cols[(int)e_col_Number_ds.TEN_DON_VI].Visible = false;
-
-
             set_define_events();
             this.KeyPreview = true;
         }
         private void set_initial_form_load() {
             m_obj_trans = get_trans_object(m_fg);
             m_obj_trans_ds = get_trans_object_ds(m_fg_danh_sach);
-            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_LAO_DONG, WinFormControls.eTAT_CA.YES, m_cbo_ttld);
+            WinFormControls.load_data_to_cbo_tu_dien(WinFormControls.eLOAI_TU_DIEN.TRANG_THAI_LAO_DONG, WinFormControls.eTAT_CA.NO, m_cbo_ttld);
             load_data_2_cbo_don_vi_cap_tren();
             CGridUtils.ClearDataInGrid(m_fg_danh_sach);
             //load_data_2_grid();		
@@ -688,7 +688,7 @@ namespace BKI_HRM {
             CGridUtils.Dataset2C1Grid(m_ds_ds, m_fg_danh_sach, m_obj_trans_ds);
             m_fg_danh_sach.Redraw = true;
             m_lbl_soluongns.Text = m_ds_ds.V_DM_DU_LIEU_NHAN_VIEN.Count.ToString();
-            m_fg_danh_sach.Subtotal(AggregateEnum.Count, 0, -1, (int)e_col_Number_ds.MA_CV);
+            //m_fg_danh_sach.Subtotal(AggregateEnum.Count, 0, -1, (int)e_col_Number_ds.MA_CV);
         }
         private void grid2us_object(US_RPT_SO_LUONG_NV i_us
             , int i_grid_row) {
@@ -766,6 +766,7 @@ namespace BKI_HRM {
                     alert.ProgressValue = e.ProgressPercentage;
                 }
                 m_fg.Rows[0][6] = "Thời điểm: " + m_dat_den_ngay.Text;
+                m_fg.Rows[0][3] = "Thời điểm: " + m_dat_tu_ngay.Text;
                 m_ds = new DS_RPT_SO_LUONG_NV();
                 m_us.FillDataset(m_ds
                     , CIPConvert.ToDecimal(m_cbo_don_vi.SelectedValue)
@@ -775,7 +776,7 @@ namespace BKI_HRM {
                     , m_dat_tu_ngay.Value.Date
                     , m_dat_den_ngay.Value.Date);
                 CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-                m_fg.Subtotal(
+                /*m_fg.Subtotal(
                        C1.Win.C1FlexGrid.AggregateEnum.Sum // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
                      , 0
                      , -1// chỗ này là tên trường mà mình nhóm
@@ -802,7 +803,7 @@ namespace BKI_HRM {
                      , -1// chỗ này là tên trường mà mình nhóm
                      , (int)e_col_Number.SO_GIAM // chỗ này là tên trường mà mình Count
                      , "Tổng cộng"
-                 );
+                 );*/
                 m_fg.Subtotal(
                         C1.Win.C1FlexGrid.AggregateEnum.Sum // chỗ này dùng hàm count tức là để đếm, có thể dùng các hàm khác thay thế
                       , 1

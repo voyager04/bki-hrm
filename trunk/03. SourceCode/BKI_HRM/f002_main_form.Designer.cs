@@ -649,7 +649,7 @@
             // 
             // m_cmd_bao_cao_so_luong_bo_nhiem
             // 
-            this.m_cmd_bao_cao_so_luong_bo_nhiem.Caption = "Báo cáo số lượng bổ nhiệm";
+            this.m_cmd_bao_cao_so_luong_bo_nhiem.Caption = "Báo cáo số lượng nhân viên theo qđ";
             this.m_cmd_bao_cao_so_luong_bo_nhiem.Glyph = global::BKI_HRM.Properties.Resources._1413472741_103845;
             this.m_cmd_bao_cao_so_luong_bo_nhiem.Id = 74;
             this.m_cmd_bao_cao_so_luong_bo_nhiem.Name = "m_cmd_bao_cao_so_luong_bo_nhiem";
@@ -662,6 +662,7 @@
             this.m_cmd_bao_cao_danh_sach_bo_nhiem.Id = 75;
             this.m_cmd_bao_cao_danh_sach_bo_nhiem.Name = "m_cmd_bao_cao_danh_sach_bo_nhiem";
             this.m_cmd_bao_cao_danh_sach_bo_nhiem.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.m_cmd_bao_cao_danh_sach_bo_nhiem.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // m_cmd_bien_dong_don_vi_trang_thai
             // 
@@ -678,6 +679,7 @@
             this.m_cmd_bao_cao_nghi_viec.Id = 77;
             this.m_cmd_bao_cao_nghi_viec.Name = "m_cmd_bao_cao_nghi_viec";
             this.m_cmd_bao_cao_nghi_viec.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.m_cmd_bao_cao_nghi_viec.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // m_cmd_bc_luong_theo_qd
             // 
@@ -853,6 +855,7 @@
             this.ribbonPageGroup13.ItemLinks.Add(this.m_cmd_rpt_luong_don_vi_theo_ky);
             this.ribbonPageGroup13.Name = "ribbonPageGroup13";
             this.ribbonPageGroup13.Text = "Lương theo quyết định";
+            this.ribbonPageGroup13.Visible = false;
             // 
             // ribbonPage6
             // 

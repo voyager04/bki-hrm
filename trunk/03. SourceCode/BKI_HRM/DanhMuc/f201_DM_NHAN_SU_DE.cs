@@ -422,11 +422,11 @@ namespace BKI_HRM
                 BaseMessages.MsgBox_Warning(206);
                 return false;
             }
-            if (!CValidateTextBox.IsValid(m_txt_cmnd, DataType.NumberType, allowNull.YES, true))
+            /*if (!CValidateTextBox.IsValid(m_txt_cmnd, DataType.NumberType, allowNull.YES, true))
             {
                 BaseMessages.MsgBox_Warning(208);
                 return false;
-            }
+            }*/
             if (!CValidateTextBox.IsValid(m_txt_noi_cap, DataType.StringType, allowNull.YES, true))
                 return false;
 
