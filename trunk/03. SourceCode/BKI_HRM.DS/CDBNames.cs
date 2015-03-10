@@ -1357,6 +1357,7 @@
        public const string SO_TANG = "SO_TANG";
        public const string SO_GIAM = "SO_GIAM";
        public const string SO_HIEN_TAI = "SO_HIEN_TAI";
+       public const string ID_CV = "ID_CV";
    }
 
 
