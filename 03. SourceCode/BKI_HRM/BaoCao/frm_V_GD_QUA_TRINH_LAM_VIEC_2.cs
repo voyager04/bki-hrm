@@ -481,6 +481,7 @@ namespace BKI_HRM {
                 ,
             MA_TTLD = 9
                 , NGACH = 2
+            ,ID_CV =10
 
         }
         private enum eDetailMode {
@@ -599,7 +600,7 @@ namespace BKI_HRM {
             v_htb.Add(RPT_SO_LUONG_NV.SO_TANG, e_col_Number.SO_TANG);
             v_htb.Add(RPT_SO_LUONG_NV.MA_TTLD, e_col_Number.MA_TTLD);
             v_htb.Add(RPT_SO_LUONG_NV.NGACH, e_col_Number.NGACH);
-
+            v_htb.Add(RPT_SO_LUONG_NV.ID_CV, e_col_Number.ID_CV);
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.RPT_SO_LUONG_NV.NewRow());
             return v_obj_trans;
         }
@@ -656,6 +657,7 @@ namespace BKI_HRM {
         private void load_data_2_grid_ds(eDetailMode ip_e_detail_mode) {
             var v_str_search = m_fg.Rows[m_fg.Row][(int)e_col_Number.NGACH].ToString();
             decimal v_dc_id_ttld = decimal.Parse(m_fg.Rows[m_fg.Row][(int)e_col_Number.ID_TTLD].ToString());
+            decimal v_dc_id_cv = decimal.Parse(m_fg.Rows[m_fg.Row][(int)e_col_Number.ID_CV].ToString());
             m_ds_ds = new DS_V_DM_DU_LIEU_NHAN_VIEN();
 
             switch (ip_e_detail_mode) {
@@ -667,7 +669,9 @@ namespace BKI_HRM {
                         , m_dat_den_ngay.Value.Date
                         , v_dc_id_ttld
                         , CAppContext_201.getCurrentIDPhapnhan()
-                        , decimal.Parse(m_cbo_don_vi.SelectedValue.ToString()));
+                        , decimal.Parse(m_cbo_don_vi.SelectedValue.ToString())
+                        ,v_dc_id_cv);
+                        
                     break;
                 case eDetailMode.GIAM:
                     m_us_ds.FillDatasetNVNghiviec_2(
@@ -677,7 +681,9 @@ namespace BKI_HRM {
                         , m_dat_den_ngay.Value.Date
                         , v_dc_id_ttld
                         , CAppContext_201.getCurrentIDPhapnhan()
-                        , decimal.Parse(m_cbo_don_vi.SelectedValue.ToString()));
+                        , decimal.Parse(m_cbo_don_vi.SelectedValue.ToString())
+                        , v_dc_id_cv);
+                        
                     break;
                 default:
                     break;
