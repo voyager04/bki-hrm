@@ -236,6 +236,7 @@ namespace BKI_HRM
             this.m_ckb_capbac.TabIndex = 4;
             this.m_ckb_capbac.Text = "Cấp bậc";
             this.m_ckb_capbac.UseVisualStyleBackColor = true;
+            this.m_ckb_capbac.Visible = false;
             this.m_ckb_capbac.CheckedChanged += new System.EventHandler(this.m_ckb_capbac_CheckedChanged);
             // 
             // m_ckb_duan

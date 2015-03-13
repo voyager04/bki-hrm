@@ -54,150 +54,152 @@ namespace BKI_HRM
 
         private enum e_col_Number
         {
-            EMAIL_CQ = 26
+            EMAIL_CQ = 28
 ,
-            TEN_DON_VI = 23
+            TEN_DON_VI = 25
                 ,
             MA_NV = 1
                 ,
-            NGAY_KET_THUC = 13
+            NGAY_KET_THUC = 15
                 ,
-            NGAY_BAT_DAU = 12
+            NGAY_BAT_DAU = 14
                 ,
-            TRANG_THAI_CV = 22
+            TRANG_THAI_CV = 24
                 ,
-            LOAI_CV = 9
+            LOAI_CV = 11
                 ,
-            MA_QUYET_DINH = 14
+            MA_QUYET_DINH = 16
                 ,
-            DIA_BAN = 24
+            DIA_BAN = 26
                 ,
             TEN = 3
                 ,
-            LOAI_QD = 17
+            LOAI_QD = 19
                 ,
-            NGAY_CO_HIEU_LUC = 15
+            NGAY_CO_HIEU_LUC = 17
                 ,
             MA_DON_VI = 7
                 ,
             MA_DON_VI_CAP_TREN = 8
                 ,
-            MA_TTLD = 10
+            MA_TTLD = 12
                 ,
             HO_DEM = 2
                 ,
-            TY_LE_THAM_GIA = 11
+            TY_LE_THAM_GIA = 13
                 ,
-            NGAY_HET_HIEU_LUC_LD = 21
+            NGAY_HET_HIEU_LUC_LD = 23
                 ,
-            NGAY_CO_HIEU_LUC_LD = 20
+            NGAY_CO_HIEU_LUC_LD = 22
                 ,
-            NGAY_HET_HIEU_LUC = 16
+            NGAY_HET_HIEU_LUC = 18
                 ,
-            DI_DONG = 27
+            DI_DONG = 29
                 ,
-            TRANG_THAI_LD_HIEN_TAI = 19
+            TRANG_THAI_LD_HIEN_TAI = 21
                 ,
-            CHO_O = 28
+            CHO_O = 30
                 ,
-            MA_HEADCOUNT = 29
+            MA_HEADCOUNT = 31
                 ,
-            MA_CV = 22
+            MA_CV = 24
                 ,
             BAC = 6
                 ,
-            MA_QUYET_DINH_MIEN_NHIEM = 18
+            MA_QUYET_DINH_MIEN_NHIEM = 20
                 ,
             NGACH = 5
                 ,
-            GIOI_TINH = 25
+            GIOI_TINH = 27
                 ,
             MA_PHAP_NHAN = 4
               ,
-            NGAY_SINH = 30
+            NGAY_SINH = 32
                 ,
-            NGHE_NGHIEP_CON_THU_3 = 66
+            NGHE_NGHIEP_CON_THU_3 = 68
                 ,
-            NGHE_NGHIEP_CON_THU_2 = 63
+            NGHE_NGHIEP_CON_THU_2 = 65
                 ,
-            NGUOI_LIEN_HE = 43
+            NGUOI_LIEN_HE = 45
                 ,
-            NGHE_NGHIEP_BO = 54
+            NGHE_NGHIEP_BO = 56
                 ,
-            TRANG_THAI = 49
-                ,
-
-            NAM_SINH_CON_THU_2 = 64
+            TRANG_THAI = 51
                 ,
 
-            CHI_NHANH_NGANHANG = 51
-                ,
-            NAM_SINH_VO_OR_CHONG = 70
-                ,
-            EMAIL_CA_NHAN = 40
+            NAM_SINH_CON_THU_2 = 66
                 ,
 
-            SO_TAI_KHOAN = 50
+            CHI_NHANH_NGANHANG = 53
                 ,
-            TON_GIAO = 46
+            NAM_SINH_VO_OR_CHONG = 72
                 ,
-            HO_TEN_ME = 56
+            EMAIL_CA_NHAN = 42
                 ,
-            NOI_SINH = 31
-                ,
-            NAM_SINH_CON_THU_3 = 67
-                ,
-            NGHE_NGHIEP_ME = 57
-                ,
-            TRINH_DO = 36
-                ,
-            QUAN_HE = 45
-                ,
-            HO_KHAU = 42
-                ,
-            NOI_DAO_TAO = 37
-                ,
-            MA_SO_THUE = 48
-                ,
-            DT_NHA = 41
-                ,
-            NGAY_CAP_CMND = 34
-                ,
-            HO_TEN_CON_THU_2 = 62
-                ,
-            NGHE_NGHIEP_CON_THU_1 = 60
-                ,
-            NAM_SINH_CON_THU_1 = 61
-                ,
-            CHUYEN_NGANH = 38
-                ,
-            HO_TEN_VO_OR_CHONG = 68
-                ,
-            NAM_SINH_BO = 55
-                ,
-            HO_TEN_CON_THU_1 = 59
-                ,
-            DI_DONG_LIEN_HE = 44
-                ,
-            HO_TEN_BO = 53
-                ,
-            HO_TEN_CON_THU_3 = 65
-                ,
-            NAM_TOT_NGHIEP = 39
-                ,
-            DIA_DIEM_LV = 52
-                ,
-            NOI_CAP_CMND = 35
-                ,
-            NGHE_NGHIEP_VO_OR_CHONG = 69
-                ,
-            NAM_SINH_ME = 58
-                ,
-            CMND = 33
-                ,
-            NGUYEN_QUAN = 32
-                , DAN_TOC = 47
 
+            SO_TAI_KHOAN = 52
+                ,
+            TON_GIAO = 48
+                ,
+            HO_TEN_ME = 58
+                ,
+            NOI_SINH = 33
+                ,
+            NAM_SINH_CON_THU_3 = 69
+                ,
+            NGHE_NGHIEP_ME = 59
+                ,
+            TRINH_DO = 38
+                ,
+            QUAN_HE = 47
+                ,
+            HO_KHAU = 44
+                ,
+            NOI_DAO_TAO = 39
+                ,
+            MA_SO_THUE = 50
+                ,
+            DT_NHA = 43
+                ,
+            NGAY_CAP_CMND = 36
+                ,
+            HO_TEN_CON_THU_2 = 64
+                ,
+            NGHE_NGHIEP_CON_THU_1 = 62
+                ,
+            NAM_SINH_CON_THU_1 = 63
+                ,
+            CHUYEN_NGANH = 40
+                ,
+            HO_TEN_VO_OR_CHONG = 70
+                ,
+            NAM_SINH_BO = 57
+                ,
+            HO_TEN_CON_THU_1 = 61
+                ,
+            DI_DONG_LIEN_HE = 46
+                ,
+            HO_TEN_BO = 55
+                ,
+            HO_TEN_CON_THU_3 = 67
+                ,
+            NAM_TOT_NGHIEP = 41
+                ,
+            DIA_DIEM_LV = 54
+                ,
+            NOI_CAP_CMND = 37
+                ,
+            NGHE_NGHIEP_VO_OR_CHONG = 71
+                ,
+            NAM_SINH_ME = 60
+                ,
+            CMND = 35
+                ,
+            NGUYEN_QUAN = 34
+                , DAN_TOC = 49
+            ,ID_CAP_DON_VI = 73
+            ,MA_PHONG = 9
+            ,MA_DON_VI_2 = 10
         }			
         const int m_width_col = 10;
         #endregion
@@ -295,7 +297,7 @@ namespace BKI_HRM
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.GIOI_TINH, e_col_Number.GIOI_TINH);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.MA_PHAP_NHAN, e_col_Number.MA_PHAP_NHAN);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.MA_DV_CAP_TREN, e_col_Number.MA_DON_VI_CAP_TREN);
-
+            v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.ID_CAP_DON_VI, e_col_Number.ID_CAP_DON_VI);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGHE_NGHIEP_CON_THU_3, e_col_Number.NGHE_NGHIEP_CON_THU_3);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGHE_NGHIEP_CON_THU_2, e_col_Number.NGHE_NGHIEP_CON_THU_2);
             v_htb.Add(V_GD_QUA_TRINH_LAM_VIEC_2.NGUOI_LIEN_HE, e_col_Number.NGUOI_LIEN_HE);
@@ -370,6 +372,14 @@ namespace BKI_HRM
              * Group (subtotal) trên grid.
              */
             //m_fg.Subtotal(AggregateEnum.Count, -1, 0, (int)e_col_Number.MA_NV, "Tổng");
+            for (int i = 1; i < m_fg.Rows.Count; i++) {
+                if (m_fg.Rows[i][(int)e_col_Number.ID_CAP_DON_VI].ToString() == "642") {
+                    m_fg.Rows[i][(int)e_col_Number.MA_PHONG] = m_fg.Rows[i][(int)e_col_Number.MA_DON_VI];
+                    m_fg.Rows[i][(int)e_col_Number.MA_DON_VI_2] = m_fg.Rows[i][(int)e_col_Number.MA_DON_VI_CAP_TREN];
+                }
+                else
+                    m_fg.Rows[i][(int)e_col_Number.MA_DON_VI_2] = m_fg.Rows[i][(int)e_col_Number.MA_DON_VI];
+            }
             if (m_rdb_nhom.Checked == true)
             {
                 m_fg.Subtotal(AggregateEnum.Count

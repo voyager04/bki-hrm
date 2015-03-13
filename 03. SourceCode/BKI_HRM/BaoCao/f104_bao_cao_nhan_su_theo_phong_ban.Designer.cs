@@ -439,7 +439,7 @@
             this.m_fg.Name = "m_fg";
             this.m_fg.Size = new System.Drawing.Size(1268, 508);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 33;
+            this.m_fg.TabIndex = 49;
             // 
             // f104_tra_cuu_nhan_su_theo_ma
             // 
@@ -504,7 +504,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
         internal SIS.Controls.Button.SiSButton m_cmd_search;
+        private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
     }
 }
