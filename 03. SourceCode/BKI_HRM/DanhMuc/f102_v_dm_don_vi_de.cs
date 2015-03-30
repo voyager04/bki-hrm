@@ -67,6 +67,7 @@ namespace BKI_HRM.DanhMuc
                 WinFormControls.eTAT_CA.NO,
                 m_cbo_cap_don_vi);
             load_data_2_cbo_don_vi_cap_tren();
+            auto_suggest_text();
             set_define_events();
         }
         private void set_initial_form_load()
@@ -199,6 +200,8 @@ namespace BKI_HRM.DanhMuc
             //m_us.dcID_LOAI_DON_VI = CIPConvert.ToDecimal(m_cbo_loai_don_vi.SelectedValue);
             //m_us.dcID_CAP_DON_VI = CIPConvert.ToDecimal(m_cbo_cap_don_vi.SelectedValue);
             m_us.datTU_NGAY = m_dat_tu_ngay.Value.Date;
+            m_us.strNGUOI_DUNG_DAU = m_txt_nguoidungdau.Text.Trim();
+            m_us.strCHUC_VU = m_txt_chuc_vu.Text.Trim();
         }
         private static string get_trang_thai(ListControl ip_cbo)
         {
@@ -258,6 +261,8 @@ namespace BKI_HRM.DanhMuc
             m_txt_dia_ban.Text = ip_us_dm_don_vi.strDIA_BAN;
             m_cbo_trang_thai.SelectedIndex = ip_us_dm_don_vi.strTRANG_THAI.ToUpper().Equals("ĐANG SỬ DỤNG") ? 0 : 1;
             m_dat_tu_ngay.Value = ip_us_dm_don_vi.datTU_NGAY.Date;
+            m_txt_nguoidungdau.Text = ip_us_dm_don_vi.strNGUOI_DUNG_DAU;
+            m_txt_chuc_vu.Text = ip_us_dm_don_vi.strCHUC_VU;
         }
         private bool trung_ma_don_vi(string ip_str_ma_don_vi)
         {
@@ -270,6 +275,32 @@ namespace BKI_HRM.DanhMuc
                 return true;
             }
             return false;
+        }
+        private void auto_suggest_text() {
+            m_txt_search_nhan_vien.AutoCompleteMode = AutoCompleteMode.Suggest;
+            m_txt_search_nhan_vien.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            AutoCompleteStringCollection coll = new AutoCompleteStringCollection();
+            US_V_GD_QUA_TRINH_LAM_VIEC v_us_gd_qtlv = new US_V_GD_QUA_TRINH_LAM_VIEC();
+            DS_V_GD_QUA_TRINH_LAM_VIEC v_ds_gd_qtlv = new DS_V_GD_QUA_TRINH_LAM_VIEC();
+            v_us_gd_qtlv.FillDataset_chuc_vu_hien_tai(v_ds_gd_qtlv, "", CAppContext_201.getCurrentIDPhapnhan());
+            var v_rows = v_ds_gd_qtlv.Tables[0].Rows;
+            for (int i = 0; i < v_rows.Count - 1; i++) {
+                coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.HO_DEM] + " " + v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.TEN] + " - " + v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.MA_CV]);
+                coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.TEN] + " " + v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.HO_DEM] + " " + v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.TEN] + " - " + v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.MA_CV]);
+                coll.Add(v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.MA_NV] + "-" + v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.HO_DEM] + " " + v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.TEN] + " - " + v_rows[i][V_GD_QUA_TRINH_LAM_VIEC.MA_CV]);
+            }
+            m_txt_search_nhan_vien.AutoCompleteCustomSource = coll;
+        }
+        private void select_nhan_vien() {
+            string[] v_strs = m_txt_search_nhan_vien.Text.Split('-');
+            if (v_strs.Length > 1) {
+                m_txt_nguoidungdau.Text = v_strs[v_strs.Length - 2].Trim();
+                m_txt_chuc_vu.Text = v_strs[v_strs.Length - 1].Trim();
+            }
+            else {
+                m_txt_nguoidungdau.Text = "";
+                m_txt_chuc_vu.Text ="";
+            }
         }
         #endregion
 
@@ -359,5 +390,24 @@ namespace BKI_HRM.DanhMuc
 
         #endregion
 
+        private void m_txt_search_nhan_vien_Leave(object sender, EventArgs e) {
+            try {
+                select_nhan_vien();
+            }
+            catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_txt_search_nhan_vien_KeyDown(object sender, KeyEventArgs e) {
+            try {
+                if (e.KeyData == Keys.Enter) {
+                    select_nhan_vien();
+                }
+            }
+            catch (Exception v_e) {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }

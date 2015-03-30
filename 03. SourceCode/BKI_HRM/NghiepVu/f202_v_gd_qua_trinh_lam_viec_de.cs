@@ -735,10 +735,7 @@ namespace BKI_HRM
                                     v_us_gd_quyet_dinh_phap_nhan.dcID_PHAP_NHAN = CAppContext_201.getCurrentIDPhapnhan();
                                     v_us_gd_quyet_dinh_phap_nhan.Insert();
                                 }
-                                else
-                                {
-                                    return;
-                                }
+                                
                             }
                             if (m_txt_ma_quyet_dinh_mien_nhiem.Text != "")
                             {

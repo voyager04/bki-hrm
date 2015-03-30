@@ -171,7 +171,7 @@ namespace BKI_HRM {
             this.m_lbl_phim_tat.Size = new System.Drawing.Size(465, 13);
             this.m_lbl_phim_tat.TabIndex = 1001;
             this.m_lbl_phim_tat.Text = "Phím tắt: F6_Mở rộng-Thu gọn danh sách; F2_Xem danh sách nhân viên của phòng ban," +
-                " đơn vị";
+    " đơn vị";
             // 
             // m_cmd_chon_don_vi
             // 
@@ -482,6 +482,8 @@ namespace BKI_HRM {
                 ,
             TU_NGAY = 9
                 , DIA_BAN = 3
+            , NGUOI_DUNG_DAU = 10
+            , CHUC_VU = 11
 
         }			
         private enum TypeNode
@@ -561,6 +563,8 @@ namespace BKI_HRM {
             v_htb.Add(V_DM_DON_VI.LOAI_DON_VI, e_col_Number.LOAI_DON_VI);
             v_htb.Add(V_DM_DON_VI.TU_NGAY, e_col_Number.TU_NGAY);
             v_htb.Add(V_DM_DON_VI.DIA_BAN, e_col_Number.DIA_BAN);
+            v_htb.Add(V_DM_DON_VI.NGUOI_DUNG_DAU, e_col_Number.NGUOI_DUNG_DAU);
+            v_htb.Add(V_DM_DON_VI.CHUC_VU, e_col_Number.CHUC_VU);
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_v_ds.V_DM_DON_VI.NewRow());
             return v_obj_trans;

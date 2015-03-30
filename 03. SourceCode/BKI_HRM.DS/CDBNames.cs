@@ -365,6 +365,8 @@
         public const string TRANG_THAI = "TRANG_THAI";
         public const string TU_NGAY = "TU_NGAY";
         public const string ID_LEVEL = "ID_LEVEL";
+        public const string NGUOI_DUNG_DAU = "NGUOI_DUNG_DAU";
+        public const string CHUC_VU = "CHUC_VU";
 
     }
     public class DM_NHAN_SU
@@ -445,6 +447,8 @@
         public const string ID_PHAP_NHAN = "ID_PHAP_NHAN";
         public const string MA_PHAP_NHAN = "MA_PHAP_NHAN";
         public const string TEN_PHAP_NHAN = "TEN_PHAP_NHAN";
+        public const string NGUOI_DUNG_DAU = "NGUOI_DUNG_DAU";
+        public const string CHUC_VU = "CHUC_VU";
     }
 
 

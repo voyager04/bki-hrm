@@ -48,7 +48,15 @@
             this.label10 = new System.Windows.Forms.Label();
             this.m_dat_tu_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_cbo_trang_thai = new System.Windows.Forms.ComboBox();
+            this.m_txt_search_nhan_vien = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.m_lbl_ma_nhan_su = new System.Windows.Forms.Label();
+            this.m_txt_nguoidungdau = new System.Windows.Forms.TextBox();
+            this.m_txt_chuc_vu = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.m_pnl_out_place_dm.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -131,7 +139,7 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 299);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 393);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(784, 36);
@@ -287,12 +295,82 @@
             this.m_cbo_trang_thai.Size = new System.Drawing.Size(121, 21);
             this.m_cbo_trang_thai.TabIndex = 1000;
             // 
+            // m_txt_search_nhan_vien
+            // 
+            this.m_txt_search_nhan_vien.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_txt_search_nhan_vien.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.m_txt_search_nhan_vien.Location = new System.Drawing.Point(123, 27);
+            this.m_txt_search_nhan_vien.Name = "m_txt_search_nhan_vien";
+            this.m_txt_search_nhan_vien.Size = new System.Drawing.Size(259, 20);
+            this.m_txt_search_nhan_vien.TabIndex = 1001;
+            this.m_txt_search_nhan_vien.KeyDown += new System.Windows.Forms.KeyEventHandler(this.m_txt_search_nhan_vien_KeyDown);
+            this.m_txt_search_nhan_vien.Leave += new System.EventHandler(this.m_txt_search_nhan_vien_Leave);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(15, 53);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(85, 13);
+            this.label8.TabIndex = 1003;
+            this.label8.Text = "Người đứng đầu";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(439, 57);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(47, 13);
+            this.label11.TabIndex = 1004;
+            this.label11.Text = "Chức vụ";
+            // 
+            // m_lbl_ma_nhan_su
+            // 
+            this.m_lbl_ma_nhan_su.AutoSize = true;
+            this.m_lbl_ma_nhan_su.Location = new System.Drawing.Point(6, 26);
+            this.m_lbl_ma_nhan_su.Name = "m_lbl_ma_nhan_su";
+            this.m_lbl_ma_nhan_su.Size = new System.Drawing.Size(99, 13);
+            this.m_lbl_ma_nhan_su.TabIndex = 1005;
+            this.m_lbl_ma_nhan_su.Text = "Tìm kiếm nhân viên";
+            // 
+            // m_txt_nguoidungdau
+            // 
+            this.m_txt_nguoidungdau.Enabled = false;
+            this.m_txt_nguoidungdau.Location = new System.Drawing.Point(123, 53);
+            this.m_txt_nguoidungdau.Name = "m_txt_nguoidungdau";
+            this.m_txt_nguoidungdau.Size = new System.Drawing.Size(204, 20);
+            this.m_txt_nguoidungdau.TabIndex = 1006;
+            // 
+            // m_txt_chuc_vu
+            // 
+            this.m_txt_chuc_vu.Enabled = false;
+            this.m_txt_chuc_vu.Location = new System.Drawing.Point(492, 50);
+            this.m_txt_chuc_vu.Name = "m_txt_chuc_vu";
+            this.m_txt_chuc_vu.Size = new System.Drawing.Size(100, 20);
+            this.m_txt_chuc_vu.TabIndex = 1007;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.m_txt_chuc_vu);
+            this.groupBox1.Controls.Add(this.m_txt_search_nhan_vien);
+            this.groupBox1.Controls.Add(this.m_txt_nguoidungdau);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.m_lbl_ma_nhan_su);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Location = new System.Drawing.Point(39, 294);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(682, 82);
+            this.groupBox1.TabIndex = 1008;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Người đứng đầu";
+            // 
             // f102_v_dm_don_vi_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.m_cmd_exit;
-            this.ClientSize = new System.Drawing.Size(784, 335);
+            this.ClientSize = new System.Drawing.Size(784, 429);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_cbo_trang_thai);
             this.Controls.Add(this.m_dat_tu_ngay);
             this.Controls.Add(this.label10);
@@ -319,6 +397,8 @@
             this.Text = "F102 - Chi tiết đơn vị";
             this.Load += new System.EventHandler(this.f102_v_dm_don_vi_de_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,5 +429,12 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker m_dat_tu_ngay;
         private System.Windows.Forms.ComboBox m_cbo_trang_thai;
+        private System.Windows.Forms.TextBox m_txt_search_nhan_vien;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label m_lbl_ma_nhan_su;
+        private System.Windows.Forms.TextBox m_txt_nguoidungdau;
+        private System.Windows.Forms.TextBox m_txt_chuc_vu;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
