@@ -143,7 +143,7 @@ namespace BKI_HRM.DanhMuc
             // Kiem tra nhap trung Ma Don Vi
             if (m_e_form_mode == DataEntryFormMode.InsertDataState)
             {
-                if (trung_ma_don_vi(m_txt_ma_don_vi.Text.Trim()))
+                if (!trung_ma_don_vi(m_txt_ma_don_vi.Text.Trim()))
                 {
                     BaseMessages.MsgBox_Error("Đã có mã đơn vị này!");
                     return false;
