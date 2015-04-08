@@ -76,6 +76,7 @@
     <Compile Include="US_HT_CHUC_NANG.cs" />
     <Compile Include="US_HT_FORM.cs" />
     <Compile Include="US_HT_LOGIN_WEB.cs" />
+    <Compile Include="US_HT_NGUOI_SU_DUNG.cs" />
     <Compile Include="US_HT_NGUOI_SU_DUNG_WEB.cs" />
     <Compile Include="US_HT_PHAN_QUYEN_CHO_NHOM.cs" />
     <Compile Include="US_HT_PHAN_QUYEN_DETAIL.cs" />

@@ -176,6 +176,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_HT_LOGIN_WEB.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_HT_NGUOI_SU_DUNG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_HT_NGUOI_SU_DUNG.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_HT_NGUOI_SU_DUNG_WEB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -676,6 +681,17 @@
     </None>
     <None Include="DS_HT_LOGIN_WEB.xss">
       <DependentUpon>DS_HT_LOGIN_WEB.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_NGUOI_SU_DUNG.xsc">
+      <DependentUpon>DS_HT_NGUOI_SU_DUNG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_NGUOI_SU_DUNG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_HT_NGUOI_SU_DUNG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_HT_NGUOI_SU_DUNG.xss">
+      <DependentUpon>DS_HT_NGUOI_SU_DUNG.xsd</DependentUpon>
     </None>
     <None Include="DS_HT_NGUOI_SU_DUNG_WEB.xsc">
       <DependentUpon>DS_HT_NGUOI_SU_DUNG_WEB.xsd</DependentUpon>

@@ -184,6 +184,7 @@ namespace BKI_HRM
             this.label4.Size = new System.Drawing.Size(96, 16);
             this.label4.TabIndex = 13;
             this.label4.Text = "Có quyền Admin?";
+            this.label4.Visible = false;
             // 
             // m_txt_ten_truy_cap
             // 
@@ -257,6 +258,7 @@ namespace BKI_HRM
             this.m_chk_is_admin.Size = new System.Drawing.Size(60, 20);
             this.m_chk_is_admin.TabIndex = 14;
             this.m_chk_is_admin.Text = "Không";
+            this.m_chk_is_admin.Visible = false;
             // 
             // groupBox1
             // 
@@ -353,7 +355,7 @@ namespace BKI_HRM
 			m_e_form_mode = DataEntryFormMode.InsertDataState;
 			this.ShowDialog();
 		}
-		public void update_new_user(US_HT_NGUOI_SU_DUNG i_us_user){
+        public void update_new_user(BKI_HRM.US.US_HT_NGUOI_SU_DUNG i_us_user) {
 			m_e_form_mode = DataEntryFormMode.UpdateDataState;
 			m_us_user = i_us_user;
 			this.ShowDialog();
@@ -362,7 +364,7 @@ namespace BKI_HRM
 	
 		#endregion
 		#region Members
-		US_HT_NGUOI_SU_DUNG m_us_user = new US_HT_NGUOI_SU_DUNG();
+        BKI_HRM.US.US_HT_NGUOI_SU_DUNG m_us_user = new BKI_HRM.US.US_HT_NGUOI_SU_DUNG();
 		DataEntryFormMode m_e_form_mode;
 		#endregion
 		#region Data Structures		
@@ -418,7 +420,8 @@ namespace BKI_HRM
 			m_txt_go_lai_mat_khau.Text = CIPConvert.Deciphering ( m_us_user.strMAT_KHAU ) ;
 			m_cbo_trang_thai.SelectedIndex = 
 				(int)CIPConvert.ToDecimal(m_us_user.strTRANG_THAI);
-            //m_cbo_nhom_quyen.SelectedValue = m_us_user.dcID_NHOM_NGUOI_DUNG;
+
+            m_cbo_nhom_quyen.SelectedValue = m_us_user.dcID_USER_GROUP;
 		}
 		private bool check_validate(){
 			if (!CValidateTextBox.IsValid(m_txt_ten_truy_cap, DataType.StringType, allowNull.NO, true)) return false;

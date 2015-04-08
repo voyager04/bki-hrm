@@ -235,7 +235,7 @@ public class US_HT_NGUOI_SU_DUNG : US_Object
 #region "Init Functions"
 	public US_HT_NGUOI_SU_DUNG() 
 	{
-		pm_objDS = new DS_HT_NGUOI_SU_DUNG();
+        pm_objDS = new BKI_HRM.DS.DS_HT_NGUOI_SU_DUNG();
 		pm_strTableName = c_TableName;
 		pm_objDR = pm_objDS.Tables[pm_strTableName].NewRow();
 	}
@@ -247,7 +247,7 @@ public class US_HT_NGUOI_SU_DUNG : US_Object
 
 	public US_HT_NGUOI_SU_DUNG(decimal i_dbID) 
 	{
-		pm_objDS = new DS_HT_NGUOI_SU_DUNG();
+        pm_objDS = new BKI_HRM.DS.DS_HT_NGUOI_SU_DUNG();
 		pm_strTableName = c_TableName;
 		IMakeSelectCmd v_objMkCmd = new CMakeAndSelectCmd(pm_objDS, c_TableName);
 		v_objMkCmd.AddCondition("ID", i_dbID, eKieuDuLieu.KieuNumber, eKieuSoSanh.Bang);

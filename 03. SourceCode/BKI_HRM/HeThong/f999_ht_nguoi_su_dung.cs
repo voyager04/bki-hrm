@@ -18,8 +18,9 @@ using IP.Core.IPData;
 //using IP.Core.IPUserService;
 using IP.Core.IPSystemAdmin;
 
-using IP.Core.IPData.DBNames;
+//using IP.Core.IPData.DBNames;
 using BKI_HRM.US;
+using BKI_HRM.DS;
 using IP.Core.IPUserService;
 
 
@@ -192,14 +193,15 @@ namespace BKI_HRM
 						  ,TEN_TRUY_CAP = 1
 							   ,BUILT_IN_YN = 6
 									,NGAY_TAO = 3
+            ,ID_USER_GROUP = 7
 
 		}			
 		#endregion
 
 		#region Members
-		ITransferDataRow m_obj_trans;		
-		DS_HT_NGUOI_SU_DUNG m_ds = new DS_HT_NGUOI_SU_DUNG();
-		US_HT_NGUOI_SU_DUNG m_us = new US_HT_NGUOI_SU_DUNG();
+		ITransferDataRow m_obj_trans;
+        BKI_HRM.DS.DS_HT_NGUOI_SU_DUNG m_ds = new BKI_HRM.DS.DS_HT_NGUOI_SU_DUNG();
+        BKI_HRM.US.US_HT_NGUOI_SU_DUNG m_us = new BKI_HRM.US.US_HT_NGUOI_SU_DUNG();
 		#endregion
 
 		#region Private Methods
@@ -217,12 +219,13 @@ namespace BKI_HRM
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
-			v_htb.Add(HT_NGUOI_SU_DUNG.TRANG_THAI, e_col_Number.TRANG_THAI);
-			v_htb.Add(HT_NGUOI_SU_DUNG.NGUOI_TAO, e_col_Number.NGUOI_TAO);
-			v_htb.Add(HT_NGUOI_SU_DUNG.TEN, e_col_Number.TEN);
-			v_htb.Add(HT_NGUOI_SU_DUNG.TEN_TRUY_CAP, e_col_Number.TEN_TRUY_CAP);
-			v_htb.Add(HT_NGUOI_SU_DUNG.BUILT_IN_YN, e_col_Number.BUILT_IN_YN);
-			v_htb.Add(HT_NGUOI_SU_DUNG.NGAY_TAO, e_col_Number.NGAY_TAO);
+			v_htb.Add(BKI_HRM.DS.CDBNames.HT_NGUOI_SU_DUNG.TRANG_THAI, e_col_Number.TRANG_THAI);
+			v_htb.Add(BKI_HRM.DS.CDBNames.HT_NGUOI_SU_DUNG.NGUOI_TAO, e_col_Number.NGUOI_TAO);
+			v_htb.Add(BKI_HRM.DS.CDBNames.HT_NGUOI_SU_DUNG.TEN, e_col_Number.TEN);
+			v_htb.Add(BKI_HRM.DS.CDBNames.HT_NGUOI_SU_DUNG.TEN_TRUY_CAP, e_col_Number.TEN_TRUY_CAP);
+			v_htb.Add(BKI_HRM.DS.CDBNames.HT_NGUOI_SU_DUNG.BUILT_IN_YN, e_col_Number.BUILT_IN_YN);
+			v_htb.Add(BKI_HRM.DS.CDBNames.HT_NGUOI_SU_DUNG.NGAY_TAO, e_col_Number.NGAY_TAO);
+            v_htb.Add(BKI_HRM.DS.CDBNames.HT_NGUOI_SU_DUNG.ID_USER_GROUP, e_col_Number.ID_USER_GROUP);
 									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.HT_NGUOI_SU_DUNG.NewRow());
 			return v_obj_trans;			
@@ -233,14 +236,14 @@ namespace BKI_HRM
 			v_hst.Add("1","Đã đóng");
 			return v_hst;
 		}
-		private void load_data_2_grid(){						
-			m_ds = new DS_HT_NGUOI_SU_DUNG();			
+		private void load_data_2_grid(){
+            m_ds = new BKI_HRM.DS.DS_HT_NGUOI_SU_DUNG();			
 			m_us.FillDataset(m_ds);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
 			m_fg.Redraw = true;
 		}
-		private void grid2us_object(US_HT_NGUOI_SU_DUNG i_us
+        private void grid2us_object(BKI_HRM.US.US_HT_NGUOI_SU_DUNG i_us
 			, int i_grid_row) {
 			DataRow v_dr;
 			v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;			
@@ -248,8 +251,8 @@ namespace BKI_HRM
 			i_us.DataRow2Me(v_dr);
 		}
 
-	
-		private void us_object2grid(US_HT_NGUOI_SU_DUNG i_us
+
+        private void us_object2grid(BKI_HRM.US.US_HT_NGUOI_SU_DUNG i_us
 			, int i_grid_row) {
 			DataRow v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
 			i_us.Me2DataRow(v_dr);			
@@ -275,7 +278,7 @@ namespace BKI_HRM
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
 			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			US_HT_NGUOI_SU_DUNG v_us = new US_HT_NGUOI_SU_DUNG();
+            BKI_HRM.US.US_HT_NGUOI_SU_DUNG v_us = new BKI_HRM.US.US_HT_NGUOI_SU_DUNG();
 			grid2us_object(v_us, m_fg.Row);
 			try {			
 				v_us.BeginTransaction();    											
