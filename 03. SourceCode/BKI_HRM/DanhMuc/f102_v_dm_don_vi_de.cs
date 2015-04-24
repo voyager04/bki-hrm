@@ -268,13 +268,13 @@ namespace BKI_HRM.DanhMuc
         {
             var v_ds = new DS_V_DM_DON_VI();
             var v_us = new US_V_DM_DON_VI();
-            v_us.FillDatasetByKeyWord(v_ds, ip_str_ma_don_vi, -1, -1, "",CAppContext_201.getCurrentIDPhapnhan());
+            v_us.FillDataset_search_by_ma_dv(v_ds, ip_str_ma_don_vi, CAppContext_201.getCurrentIDPhapnhan());
             decimal v_count = v_ds.V_DM_DON_VI.Count;
             if (v_count > 0)
             {
-                return true;
+                return false;
             }
-            return false;
+            return true;
         }
         private void auto_suggest_text() {
             m_txt_search_nhan_vien.AutoCompleteMode = AutoCompleteMode.Suggest;
