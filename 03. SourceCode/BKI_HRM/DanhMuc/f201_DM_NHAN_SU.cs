@@ -33,6 +33,9 @@ using BKI_HRM.NghiepVu;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Configuration;
+using System.Net;
+using System.IO;
+using System.Text;
 
 namespace BKI_HRM
 {
@@ -189,6 +192,15 @@ namespace BKI_HRM
         private TextBox m_txt_nam_sinh_vo_chong;
         private TextBox m_txt_nghe_nghiep_vo_chong;
         private TextBox m_txt_ho_ten_vo_chong;
+        private TabPage m_tct_ftp;
+        internal SIS.Controls.Button.SiSButton m_cmd_upload;
+        internal SIS.Controls.Button.SiSButton m_cmd_download;
+        internal SIS.Controls.Button.SiSButton m_cmd_delfile;
+        private C1FlexGrid m_fg_ftp;
+        internal SIS.Controls.Button.SiSButton m_cmd_create_folder;
+        private TextBox m_txt_folder;
+        private Label label27;
+        internal SIS.Controls.Button.SiSButton m_cmd_xem_file;
         private System.ComponentModel.IContainer components;
 
 
@@ -348,6 +360,15 @@ namespace BKI_HRM
             this.m_txt_ho_ten_me = new System.Windows.Forms.TextBox();
             this.m_txt_nghe_nghiep_bo = new System.Windows.Forms.TextBox();
             this.m_txt_ho_ten_bo = new System.Windows.Forms.TextBox();
+            this.m_tct_ftp = new System.Windows.Forms.TabPage();
+            this.m_cmd_xem_file = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_create_folder = new SIS.Controls.Button.SiSButton();
+            this.m_txt_folder = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.m_cmd_upload = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_download = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_delfile = new SIS.Controls.Button.SiSButton();
+            this.m_fg_ftp = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_grv_nhan_su = new C1.Win.C1FlexGrid.C1FlexGrid();
@@ -381,6 +402,8 @@ namespace BKI_HRM
             this.m_tpg_qua_trinh_chuc_vu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_chuc_vu)).BeginInit();
             this.tabPage1.SuspendLayout();
+            this.m_tct_ftp.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg_ftp)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_nhan_su)).BeginInit();
@@ -1260,6 +1283,7 @@ namespace BKI_HRM
             this.m_tct_chi_tiet_nhan_vien.Controls.Add(this.m_tpg_hop_dong);
             this.m_tct_chi_tiet_nhan_vien.Controls.Add(this.m_tpg_thong_tin_khac);
             this.m_tct_chi_tiet_nhan_vien.Controls.Add(this.tabPage1);
+            this.m_tct_chi_tiet_nhan_vien.Controls.Add(this.m_tct_ftp);
             this.m_tct_chi_tiet_nhan_vien.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_tct_chi_tiet_nhan_vien.Location = new System.Drawing.Point(0, 297);
             this.m_tct_chi_tiet_nhan_vien.Name = "m_tct_chi_tiet_nhan_vien";
@@ -1767,6 +1791,134 @@ namespace BKI_HRM
             this.m_txt_ho_ten_bo.Size = new System.Drawing.Size(140, 20);
             this.m_txt_ho_ten_bo.TabIndex = 73;
             // 
+            // m_tct_ftp
+            // 
+            this.m_tct_ftp.Controls.Add(this.m_cmd_xem_file);
+            this.m_tct_ftp.Controls.Add(this.m_cmd_create_folder);
+            this.m_tct_ftp.Controls.Add(this.m_txt_folder);
+            this.m_tct_ftp.Controls.Add(this.label27);
+            this.m_tct_ftp.Controls.Add(this.m_cmd_upload);
+            this.m_tct_ftp.Controls.Add(this.m_cmd_download);
+            this.m_tct_ftp.Controls.Add(this.m_cmd_delfile);
+            this.m_tct_ftp.Controls.Add(this.m_fg_ftp);
+            this.m_tct_ftp.Location = new System.Drawing.Point(4, 22);
+            this.m_tct_ftp.Name = "m_tct_ftp";
+            this.m_tct_ftp.Padding = new System.Windows.Forms.Padding(3);
+            this.m_tct_ftp.Size = new System.Drawing.Size(1272, 227);
+            this.m_tct_ftp.TabIndex = 10;
+            this.m_tct_ftp.Text = "Lưu trữ file";
+            this.m_tct_ftp.UseVisualStyleBackColor = true;
+            // 
+            // m_cmd_xem_file
+            // 
+            this.m_cmd_xem_file.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xem_file.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xem_file.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xem_file.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_xem_file.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xem_file.ImageIndex = 9;
+            this.m_cmd_xem_file.ImageList = this.ImageList;
+            this.m_cmd_xem_file.Location = new System.Drawing.Point(809, 195);
+            this.m_cmd_xem_file.Name = "m_cmd_xem_file";
+            this.m_cmd_xem_file.Size = new System.Drawing.Size(115, 29);
+            this.m_cmd_xem_file.TabIndex = 40;
+            this.m_cmd_xem_file.Text = "&Xem list file";
+            this.m_cmd_xem_file.Click += new System.EventHandler(this.m_cmd_xem_file_Click);
+            // 
+            // m_cmd_create_folder
+            // 
+            this.m_cmd_create_folder.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_create_folder.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_create_folder.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_create_folder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_create_folder.ImageIndex = 9;
+            this.m_cmd_create_folder.ImageList = this.ImageList;
+            this.m_cmd_create_folder.Location = new System.Drawing.Point(242, 195);
+            this.m_cmd_create_folder.Name = "m_cmd_create_folder";
+            this.m_cmd_create_folder.Size = new System.Drawing.Size(115, 29);
+            this.m_cmd_create_folder.TabIndex = 39;
+            this.m_cmd_create_folder.Text = "&Tạo folder";
+            this.m_cmd_create_folder.Click += new System.EventHandler(this.m_cmd_create_folder_Click);
+            // 
+            // m_txt_folder
+            // 
+            this.m_txt_folder.Enabled = false;
+            this.m_txt_folder.Location = new System.Drawing.Point(72, 200);
+            this.m_txt_folder.Name = "m_txt_folder";
+            this.m_txt_folder.Size = new System.Drawing.Size(164, 20);
+            this.m_txt_folder.TabIndex = 38;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(8, 203);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(58, 13);
+            this.label27.TabIndex = 37;
+            this.label27.Text = "Tên folder:";
+            // 
+            // m_cmd_upload
+            // 
+            this.m_cmd_upload.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_upload.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_upload.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_upload.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_upload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_upload.ImageIndex = 9;
+            this.m_cmd_upload.ImageList = this.ImageList;
+            this.m_cmd_upload.Location = new System.Drawing.Point(924, 195);
+            this.m_cmd_upload.Name = "m_cmd_upload";
+            this.m_cmd_upload.Size = new System.Drawing.Size(115, 29);
+            this.m_cmd_upload.TabIndex = 36;
+            this.m_cmd_upload.Text = "&Upload";
+            this.m_cmd_upload.Click += new System.EventHandler(this.m_cmd_upload_Click);
+            // 
+            // m_cmd_download
+            // 
+            this.m_cmd_download.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_download.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_download.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_download.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_download.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_download.ImageIndex = 2;
+            this.m_cmd_download.ImageList = this.ImageList;
+            this.m_cmd_download.Location = new System.Drawing.Point(1039, 195);
+            this.m_cmd_download.Name = "m_cmd_download";
+            this.m_cmd_download.Size = new System.Drawing.Size(115, 29);
+            this.m_cmd_download.TabIndex = 35;
+            this.m_cmd_download.Text = "&Download";
+            this.m_cmd_download.Click += new System.EventHandler(this.m_cmd_download_Click);
+            // 
+            // m_cmd_delfile
+            // 
+            this.m_cmd_delfile.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_delfile.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_delfile.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_delfile.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_delfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_delfile.ImageIndex = 4;
+            this.m_cmd_delfile.ImageList = this.ImageList;
+            this.m_cmd_delfile.Location = new System.Drawing.Point(1154, 195);
+            this.m_cmd_delfile.Name = "m_cmd_delfile";
+            this.m_cmd_delfile.Size = new System.Drawing.Size(115, 29);
+            this.m_cmd_delfile.TabIndex = 34;
+            this.m_cmd_delfile.Text = "Delete";
+            this.m_cmd_delfile.Click += new System.EventHandler(this.m_cmd_delfile_Click);
+            // 
+            // m_fg_ftp
+            // 
+            this.m_fg_ftp.AllowEditing = false;
+            this.m_fg_ftp.ColumnInfo = "2,1,0,0,0,85,Columns:0{Width:13;}\t1{Width:401;Caption:\"Tên file\";DataType:System." +
+    "String;TextAlign:LeftCenter;}\t";
+            this.m_fg_ftp.Cursor = System.Windows.Forms.Cursors.Default;
+            this.m_fg_ftp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_fg_ftp.Location = new System.Drawing.Point(3, 3);
+            this.m_fg_ftp.Name = "m_fg_ftp";
+            this.m_fg_ftp.Size = new System.Drawing.Size(1266, 192);
+            this.m_fg_ftp.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_ftp.Styles"));
+            this.m_fg_ftp.TabIndex = 22;
+            this.m_fg_ftp.Click += new System.EventHandler(this.m_fg_ftp_Click);
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.m_lbl);
@@ -2023,6 +2175,9 @@ namespace BKI_HRM
             ((System.ComponentModel.ISupportInitialize)(this.m_grv_chuc_vu)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.m_tct_ftp.ResumeLayout(false);
+            this.m_tct_ftp.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg_ftp)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -2638,7 +2793,8 @@ namespace BKI_HRM
                     break;
 
             }
-
+            m_txt_folder.Text = m_us.strMA_NV + "-" + m_us.strHO_DEM + " " + m_us.strTEN;
+            load_grid_file();
         }
         private void load_data_2_grid()
         {
@@ -3367,6 +3523,250 @@ namespace BKI_HRM
             }
         }
         #endregion
+        #region FTP
+        private string ftp_link = ConfigurationSettings.AppSettings["FTP_LINK"];
+        private string ftp_user = ConfigurationSettings.AppSettings["FTP_USER"];
+        private string ftp_pass = ConfigurationSettings.AppSettings["FTP_PASSWORD"];
+        private string m_str_file;
+        private void MakeDir(string dirName) {
+            FtpWebRequest reqFTP;
+            try {
+                // dirName = name of the directory to create.
+                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_link + "/" + dirName));
+                reqFTP.Method = WebRequestMethods.Ftp.MakeDirectory;
+                reqFTP.UseBinary = true;
+                reqFTP.Credentials = new NetworkCredential(ftp_user, ftp_pass);
+                FtpWebResponse response = (FtpWebResponse)reqFTP.GetResponse();
+                Stream ftpStream = response.GetResponseStream();
+
+                ftpStream.Close();
+                response.Close();
+                m_txt_folder.Text = dirName;
+                MessageBox.Show("Tạo folder thành công");
+                
+            }
+            catch (Exception ex) {
+                if (ex.Message == "The remote server returned an error: (550) File unavailable (e.g., file not found, no access).")
+                    MessageBox.Show("đã có folder");
+                else
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public string[] GetFileList() {
+            string[] downloadFiles;
+            StringBuilder result = new StringBuilder();
+            FtpWebRequest reqFTP;
+            try {
+                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_link + "/" +m_txt_folder.Text.Trim() + "/"));
+                reqFTP.UseBinary = true;
+                reqFTP.Credentials = new NetworkCredential(ftp_user, ftp_pass);
+                reqFTP.Method = WebRequestMethods.Ftp.ListDirectory;
+                WebResponse response = reqFTP.GetResponse();
+                StreamReader reader = new StreamReader(response.GetResponseStream());
+                //MessageBox.Show(reader.ReadToEnd());
+                string line = reader.ReadLine();
+                while (line != null) {
+                    result.Append(line);
+                    result.Append("\n");
+                    line = reader.ReadLine();
+                }
+                if(result.ToString()!= "")
+                    result.Remove(result.ToString().LastIndexOf('\n'), 1);
+                reader.Close();
+                response.Close();
+                //MessageBox.Show(response.StatusDescription);
+                return result.ToString().Split('\n');
+            }
+            catch (Exception ex) {
+                if (ex.Message == "The remote server returned an error: (550) File unavailable (e.g., file not found, no access).")
+                    m_txt_folder.Text = "chưa có folder";
+                else
+                    System.Windows.Forms.MessageBox.Show(ex.Message);
+                downloadFiles = null;
+                return downloadFiles;
+            }
+        }
+        private void Download(string filePath, string fileName) {
+            FtpWebRequest reqFTP;
+            try {
+                //filePath = <<The full path where the file is to be created.>>, 
+                //fileName = <<Name of the file to be created(Need not be the name of the file on FTP server).>>
+                FileStream outputStream = new FileStream(filePath + "\\" + fileName, FileMode.Create);
+
+                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_link + "/" + m_txt_folder.Text.Trim() + "/" + fileName));
+                reqFTP.Method = WebRequestMethods.Ftp.DownloadFile;
+                reqFTP.UseBinary = true;
+                reqFTP.Credentials = new NetworkCredential(ftp_user, ftp_pass);
+                FtpWebResponse response = (FtpWebResponse)reqFTP.GetResponse();
+                Stream ftpStream = response.GetResponseStream();
+                long cl = response.ContentLength;
+                int bufferSize = 2048;
+                int readCount;
+                byte[] buffer = new byte[bufferSize];
+
+                readCount = ftpStream.Read(buffer, 0, bufferSize);
+                while (readCount > 0) {
+                    outputStream.Write(buffer, 0, readCount);
+                    readCount = ftpStream.Read(buffer, 0, bufferSize);
+                }
+
+                ftpStream.Close();
+                outputStream.Close();
+                response.Close();
+                MessageBox.Show("Download thành công");
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void Upload(string filename) {
+            FileInfo fileInf = new FileInfo(filename);
+            string uri = ftp_link + "/" + m_txt_folder.Text.Trim() + "/" + fileInf.Name;
+            FtpWebRequest reqFTP;
+
+            // Create FtpWebRequest object from the Uri provided
+            reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_link + "/" + m_txt_folder.Text.Trim() + "/" + fileInf.Name));
+
+            // Provide the WebPermission Credintials
+            reqFTP.Credentials = new NetworkCredential(ftp_user, ftp_pass);
+
+            // By default KeepAlive is true, where the control connection is not closed
+            // after a command is executed.
+            reqFTP.KeepAlive = false;
+
+            // Specify the command to be executed.
+            reqFTP.Method = WebRequestMethods.Ftp.UploadFile;
+
+            // Specify the data transfer type.
+            reqFTP.UseBinary = true;
+
+            // Notify the server about the size of the uploaded file
+            reqFTP.ContentLength = fileInf.Length;
+
+            // The buffer size is set to 2kb
+            int buffLength = 2048;
+            byte[] buff = new byte[buffLength];
+            int contentLen;
+
+            // Opens a file stream (System.IO.FileStream) to read the file to be uploaded
+            FileStream fs = fileInf.OpenRead();
+
+            try {
+                // Stream to which the file to be upload is written
+                Stream strm = reqFTP.GetRequestStream();
+
+                // Read from the file stream 2kb at a time
+                contentLen = fs.Read(buff, 0, buffLength);
+
+                // Till Stream content ends
+                while (contentLen != 0) {
+                    // Write Content from the file stream to the FTP Upload Stream
+                    strm.Write(buff, 0, contentLen);
+                    contentLen = fs.Read(buff, 0, buffLength);
+                }
+
+                // Close the file stream and the Request Stream
+                strm.Close();
+                fs.Close();
+                MessageBox.Show("Upload thành công");
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message, "Upload Lỗi");
+            }
+        }
+        public void DeleteFTP(string fileName) {
+            try {
+                string uri = ftp_link + "/" + m_txt_folder.Text.Trim() + "/" + fileName;
+                FtpWebRequest reqFTP;
+                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_link + "/" + m_txt_folder.Text.Trim() + "/" + fileName));
+
+                reqFTP.Credentials = new NetworkCredential(ftp_user, ftp_pass);
+                reqFTP.KeepAlive = false;
+                reqFTP.Method = WebRequestMethods.Ftp.DeleteFile;
+
+                string result = String.Empty;
+                FtpWebResponse response = (FtpWebResponse)reqFTP.GetResponse();
+                long size = response.ContentLength;
+                Stream datastream = response.GetResponseStream();
+                StreamReader sr = new StreamReader(datastream);
+                result = sr.ReadToEnd();
+                sr.Close();
+                datastream.Close();
+                response.Close();
+                MessageBox.Show("Delete thành công");
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message, "FTP 2.0 Delete");
+            }
+        }
+        private void load_grid_file() {
+            if (GetFileList() == null)
+                m_fg_ftp.Rows.Count = 1;
+            else 
+            {
+                string[] filenames = GetFileList();
+                if (filenames[0] == "")
+                    m_fg_ftp.Rows.Count = 1;
+                else{
+                m_fg_ftp.Rows.Count = filenames.Count() + 1;
+                for (int i = 1; i < m_fg_ftp.Rows.Count; i++) {
+                    m_fg_ftp.Rows[i][1] = filenames[i - 1].ToString();
+                    }
+                }
+            }
+        }
+        #endregion
+
+        private void m_cmd_create_folder_Click(object sender, EventArgs e) {
+            MakeDir(m_us.strMA_NV + "-" + m_us.strHO_DEM + " " + m_us.strTEN);
+        }
+
+        private void m_cmd_xem_file_Click(object sender, EventArgs e) {
+            load_grid_file();
+        }
+
+        private void m_cmd_download_Click(object sender, EventArgs e) {
+            FolderBrowserDialog fldDlg = new FolderBrowserDialog();
+
+            if (m_str_file!= "") {
+                if (fldDlg.ShowDialog() == DialogResult.OK) {
+                    Download(fldDlg.SelectedPath, m_str_file);
+                }
+            }
+            else {
+                MessageBox.Show("Please enter the File name to download");
+            }
+        }
+
+        private void m_fg_ftp_Click(object sender, EventArgs e) {
+            if (m_fg_ftp[m_fg_ftp.RowSel, m_fg_ftp.ColSel].ToString() != "") {
+                    m_str_file = m_fg_ftp[m_fg_ftp.RowSel, m_fg_ftp.ColSel].ToString();
+                }
+            }
+
+        private void m_cmd_upload_Click(object sender, EventArgs e) {
+            OpenFileDialog opFilDlg = new OpenFileDialog();
+            if (opFilDlg.ShowDialog() == DialogResult.OK) {
+                Upload(opFilDlg.FileName);
+            }
+            string[] filenames = GetFileList();
+            m_fg_ftp.Rows.Count = filenames.Count() + 1;
+            for (int i = 1; i < m_fg_ftp.Rows.Count; i++) {
+                m_fg_ftp.Rows[i][1] = filenames[i - 1].ToString();
+            }
+        }
+
+        private void m_cmd_delfile_Click(object sender, EventArgs e) {
+            OpenFileDialog fldDlg = new OpenFileDialog();
+            if (m_str_file != "") {
+                DeleteFTP(m_str_file);
+            }
+            else {
+                MessageBox.Show("Please enter the File name to delete");
+            }
+        }
+           
+        
     }
 }
 
