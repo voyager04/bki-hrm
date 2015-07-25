@@ -2998,7 +2998,7 @@ namespace BKI_HRM
                 if (m_ds.DM_NHAN_SU.Count > v_i_count)
                 {
                     v_fDE.get_us(ref m_us);
-                    WinFormControls.set_focus_for_grid(m_grv_nhan_su, m_us.strMA_NV, 1);
+                    //WinFormControls.set_focus_for_grid(m_grv_nhan_su, m_us.strMA_NV, 1);
                     f201_dm_nhan_su_dialog v_frm = new f201_dm_nhan_su_dialog();
                     v_frm.display_them_nhan_vien(m_us);
                 }

@@ -3,6 +3,8 @@ using System.Data;
 using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
+using System.Net;
+using System.Text;
 using System.Windows.Forms;
 using BKI_HRM.NghiepVu;
 using IP.Core.IPCommon;
@@ -761,6 +763,18 @@ namespace BKI_HRM
                     default:
                         break;
                 }
+                var idDonVi = m_us_chi_tiet_chuc_vu.dcID_DON_VI;
+                US_DM_DON_VI usDv = new US_DM_DON_VI(idDonVi);
+                var maDonVi = usDv.strMA_DON_VI;
+
+                var idChucVu = m_us_chi_tiet_chuc_vu.dcID_CHUC_VU;
+                US_DM_CHUC_VU usCv = new US_DM_CHUC_VU(idChucVu);
+                var maChucVu = usCv.strMA_CV;
+
+                var client = new WebClient {
+                    Encoding = Encoding.UTF8
+                };
+                client.DownloadString("http://cloud.topica.vn/QuanLyTaiSan/CapNhatTaiSanNhanSu?idNhanSu=" + m_us_chi_tiet_chuc_vu.dcID_NHAN_SU + "&maCv=" + maChucVu + "&maDv=" + maDonVi);  //Update dữ liệu bằng API
                 BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhât!");
                 this.Close();
             }
